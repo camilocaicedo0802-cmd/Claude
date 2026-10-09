@@ -10,7 +10,7 @@ export const Borrador: React.FC = () => (
     <style>{FONT_FACES}</style>
     <Footage />
     {/* Velo superior en Verde petróleo: legibilidad de los títulos sobre la pared de mármol */}
-    <AbsoluteFill style={{ background: "linear-gradient(180deg, rgba(69,89,90,.62) 0%, rgba(69,89,90,.35) 20%, rgba(69,89,90,0) 34%)" }} />
+    <AbsoluteFill style={{ background: "linear-gradient(180deg, rgba(69,89,90,.55) 0%, rgba(69,89,90,.3) 24%, rgba(69,89,90,0) 38%)" }} />
     <Beats />
     <Captions />
   </AbsoluteFill>

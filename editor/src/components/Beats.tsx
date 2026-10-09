@@ -1,5 +1,5 @@
 import React from "react";
-import { Easing, interpolate, useCurrentFrame, useVideoConfig } from "remotion";
+import { Easing, Img, interpolate, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
 import { COLORS, FONTS } from "../brand";
 import { at, DURATION, pop } from "../lib/timing";
 
@@ -32,8 +32,10 @@ const Pop: React.FC<{ at: number; kind?: Kind; children: React.ReactNode; style?
   return <div style={{ opacity: Math.min(1, p * 1.4), transform: tr, ...style }}>{children}</div>;
 };
 
+// Títulos anclados por abajo justo encima de la cabeza (la cabeza empieza en y ≈ 640–680 según el zoom)
+const BASE_TITULOS = 605;
 const Top: React.FC<{ children: React.ReactNode }> = ({ children }) => (
-  <div style={{ position: "absolute", top: 110, left: 60, right: 60, display: "flex", flexDirection: "column", alignItems: "center", gap: 10 }}>
+  <div style={{ position: "absolute", top: 60, height: BASE_TITULOS - 60, left: 60, right: 60, display: "flex", flexDirection: "column", justifyContent: "flex-end", alignItems: "center", gap: 10 }}>
     {children}
   </div>
 );
@@ -343,66 +345,74 @@ const Claves: React.FC = () => {
   );
 };
 
-// 12 · "guardar el calendario en tu celular o imprímelo" → calendario de 21 días que se construye
-const Calendario: React.FC<{ desde: number; soloDia1?: boolean }> = ({ desde, soloDia1 = false }) => {
-  const { frame, fps } = useT();
-  const pulso = 1 + 0.06 * Math.sin((frame / fps) * Math.PI * 2);
+// 12 · "guardar el calendario en tu celular o imprímelo" → al decir "el calendario" señala el hueco
+//      de arriba a la izquierda: ahí nace el calendario 3D (imagen de marca) con las agujas girando
+const CAL = { w: 650, h: 604, relojX: 0.7723, relojY: 0.6772 }; // public/graficos/calendario_base.png
+const Calendario3D: React.FC<{ desde: number }> = ({ desde }) => {
+  const { frame, fps, t } = useT();
+  const p = pop(frame, fps, desde, 9);
+  if (p <= 0) return null;
+  const ancho = 400;
+  const alto = (ancho * CAL.h) / CAL.w;
+  const k = ancho / CAL.w;
+  const local = t - desde;
+  const flota = Math.sin(local * Math.PI * 1.2) * 10;
+  const balanceo = Math.sin(local * Math.PI * 0.9) * 3;
+  // El minutero da dos vueltas rápidas al aparecer y luego sigue avanzando despacio
+  const giro = interpolate(local, [0, 1.4], [0, 720], { ...CLAMP, easing: Easing.out(Easing.cubic) }) + Math.max(0, local - 1.4) * 40;
+  const aguja = (largo: number, grados: number) => (
+    <rect x={-10 * k} y={-largo * k} width={20 * k} height={(largo + 10) * k} rx={10 * k} fill="#3D424C" transform={`rotate(${grados})`} />
+  );
   return (
-    <div style={{ background: CARD, borderRadius: 32, padding: 28, display: "grid", gridTemplateColumns: "repeat(7, 96px)", gap: 14, boxShadow: "0 16px 40px rgba(69,89,90,.35)" }}>
-      {Array.from({ length: 21 }, (_, i) => {
-        const p = pop(frame, fps, desde + i * 0.03);
-        const dia1 = i === 0;
-        return (
-          <div
-            key={i}
-            style={{
-              height: 72,
-              borderRadius: 18,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              fontFamily: FONTS.body,
-              fontWeight: 700,
-              fontSize: 36,
-              opacity: p * (soloDia1 && !dia1 ? 0.45 : 1),
-              transform: `scale(${(0.5 + 0.5 * p) * (soloDia1 && dia1 ? pulso : 1)})`,
-              background: dia1 ? COLORS.durazno : "rgba(245,240,236,.14)",
-              color: dia1 ? COLORS.petroleo : COLORS.marfil,
-            }}
-          >
-            {i + 1}
-          </div>
-        );
-      })}
+    <div
+      style={{
+        position: "absolute",
+        left: 70,
+        top: 300,
+        width: ancho,
+        height: alto,
+        transform: `translateY(${flota}px) rotate(${(1 - p) * -25 + balanceo}deg) scale(${p})`,
+        transformOrigin: "60% 100%",
+        filter: "drop-shadow(0 18px 30px rgba(69,89,90,.45))",
+      }}
+    >
+      <Img src={staticFile("graficos/calendario_base.png")} style={{ width: "100%", height: "100%" }} />
+      <svg width={ancho} height={alto} style={{ position: "absolute", inset: 0 }}>
+        <g transform={`translate(${CAL.relojX * ancho} ${CAL.relojY * alto})`}>
+          {aguja(52, 45 + giro / 12)}
+          {aguja(78, giro)}
+          <circle r={22 * k} fill="#1F2329" />
+          <circle r={17 * k} fill="#58A9E8" />
+          <circle cx={-5 * k} cy={-5 * k} r={6 * k} fill="#FFFFFF" opacity={0.6} />
+        </g>
+      </svg>
     </div>
   );
 };
-const GuardaCalendario: React.FC = () => {
-  const cal = at("el calendario").start;
-  return (
-    <>
-      <Top>
-        <Pop at={at("recuerda guardar").start}>
-          <div style={kicker}>GUARDA TU</div>
+const GuardaCalendario: React.FC = () => (
+  <>
+    {/* Título arriba del todo: el hueco junto a la cabeza es del calendario */}
+    <div style={{ position: "absolute", top: 120, left: 60, right: 60, display: "flex", flexDirection: "column", alignItems: "center", gap: 6 }}>
+      <Pop at={at("recuerda guardar").start}>
+        <div style={kicker}>GUARDA TU</div>
+      </Pop>
+      <Pop at={at("el calendario").start} kind="scale">
+        <div style={display(115, COLORS.durazno)}>calendario</div>
+      </Pop>
+    </div>
+    <Calendario3D desde={at("calendario").start + 0.15} />
+    <Bottom>
+      <div style={{ display: "flex", gap: 18 }}>
+        <Pop at={at("celular").start} kind="left">
+          <div style={chip(true)}>En tu celular</div>
         </Pop>
-        <Pop at={cal} kind="scale">
-          <div style={display(135, COLORS.durazno)}>calendario</div>
+        <Pop at={at("imprímelo").start} kind="right">
+          <div style={chip(false)}>o impreso</div>
         </Pop>
-      </Top>
-      <Bottom>
-        <Calendario desde={cal + 0.1} />
-        <div style={{ display: "flex", gap: 18 }}>
-          <Pop at={at("celular").start} kind="left">
-            <div style={chip(true)}>En tu celular</div>
-          </Pop>
-          <Pop at={at("imprímelo").start} kind="right">
-            <div style={chip(false)}>o impreso</div>
-          </Pop>
-        </div>
-      </Bottom>
-    </>
-  );
-};
+      </div>
+    </Bottom>
+  </>
+);
 
 // 13 · "adecua muy bien el espacio donde vas a hacer tu rutina de masajes" → prepara tu espacio
 const Espacio: React.FC = () => (
@@ -419,28 +429,20 @@ const Espacio: React.FC = () => (
   </Top>
 );
 
-// 14 · "acompáñame a comenzar el primer día" → Día 1 con el calendario
-const Dia1: React.FC = () => {
-  const d = at("primer día").start;
-  return (
-    <>
-      <Top>
-        <Pop at={at("acompáñame").start}>
-          <div style={kicker}>ACOMPÁÑAME A COMENZAR</div>
-        </Pop>
-        <Pop at={d} kind="scale">
-          <div style={{ display: "flex", alignItems: "baseline", gap: 26 }}>
-            <span style={display(150)}>día</span>
-            <span style={{ ...display(220, COLORS.durazno), fontFamily: FONTS.body, fontWeight: 700 }}>1</span>
-          </div>
-        </Pop>
-      </Top>
-      <Bottom>
-        <Calendario desde={d + 0.15} soloDia1 />
-      </Bottom>
-    </>
-  );
-};
+// 14 · "acompáñame a comenzar el primer día" → Día 1
+const Dia1: React.FC = () => (
+  <Top>
+    <Pop at={at("acompáñame").start}>
+      <div style={kicker}>ACOMPÁÑAME A COMENZAR</div>
+    </Pop>
+    <Pop at={at("primer día").start} kind="scale">
+      <div style={{ display: "flex", alignItems: "baseline", gap: 26 }}>
+        <span style={display(150)}>día</span>
+        <span style={{ ...display(220, COLORS.durazno), fontFamily: FONTS.body, fontWeight: 700 }}>1</span>
+      </div>
+    </Pop>
+  </Top>
+);
 
 type Beat = { nombre: string; desde: number; hasta: number; Comp: React.FC };
 
