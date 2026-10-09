@@ -48,9 +48,17 @@ Cada "beat" nace de una frase concreta, anclada con `at("frase")`. El anclaje ac
 - En `editor/src/components/Sonido.tsx` cada efecto se ancla con `at()` al mismo instante que su animación. Elige el tipo según lo que hace el gráfico (ver `estilo.md` §10.14). Úsalos solo en los momentos importantes, varía los tipos y no los apiles.
 - Verifica la mezcla restando la voz original del render: la voz debe quedar con ganancia 1 y desfase 0, la música ~16 dB por debajo y ningún efecto por encima de la voz.
 
+## 6b. Organización por días y lecciones del día 2
+- **Cada día va en su carpeta y no se toca lo entregado:** `src/dia2/` (composición `Dia2`, con su `timing.ts`, `Footage.tsx`, `Beats.tsx`, `Sonido.tsx`, `Objetos3D.tsx` y `data/edit.json`), `public/dia2/` (vídeo editado, fragmentos de apoyo y `audio/`) y `scripts/dia2/`. El día 1 sigue siendo la composición `Borrador`. Para un día nuevo copia `src/dia2` → `src/diaN` y regístralo en `Root.tsx`.
+- **Crudos a 59,94 fps (DJI Osmo Pocket 3, HEVC 10 bits):** pásalos antes a 30 fps CFR con `scripts/dia2/convertir.sh`; `preparar.py` corta por número de fotograma a 30 fps. Si el crudo ya es 1080×1920, **no recortes** (habría que escalar): la cara queda al ~40 % de alto y los títulos, con base en y = 550, siguen quedando sobre la cabeza.
+- **Tomas repetidas:** lista en `TOMAS` solo los tramos buenos (fuera intentos fallidos, frases que se reinician y el "listo, chao"). Si Whisper funde una frase repetida en una palabra larga, retranscribe ese tramo suelto y corrige los tiempos en `CORRECCIONES`.
+- **Corte de audio exacto:** `aselect` corta por bloques del flujo de audio (con PCM el error se acumula hasta ~50 ms); pon `asetnsamples=n=16:p=0` antes de `aselect`. Comprueba siempre la sincronía tramo a tramo.
+- **Toma de apoyo:** solo fragmentos cortos (≈1 s cada uno) que entran en la palabra que los nombra, con flash blanco y sonido de obturador; nada de títulos arriba durante el apoyo (la cabeza de la otra persona está allí), solo la etiqueta abajo.
+- **Objetos 3D:** se modelan con three.js en `Objetos3D.tsx` (`@remotion/three`, acabado clay mate con la paleta de marca) y se animan según la frase (el pin cae y se clava, la cinta se desenrolla, el lápiz escribe, el candado se cierra). Van a los lados de la cabeza (x < 360 o x > 740). Canva genera buenas referencias, pero desde aquí solo deja descargar miniaturas de 200 px. Para renderizar WebGL en este entorno: `--gl=swangle`.
+
 ## 7. Revisar y entregar
 - `cd editor && npm run lint`.
-- Para revisar: `npx remotion render Borrador out/borrador.mp4 --concurrency=4`. Saca fotogramas en cada beat (hojas de contacto con ffmpeg) y comprueba que nada tapa la cara, que los textos no se cortan y que el gráfico aparece en su palabra.
+- Para revisar: `npx remotion render <Composición> out/borrador.mp4 --concurrency=4` (añade `--gl=swangle` si hay objetos 3D). Saca fotogramas en cada beat (hojas de contacto con ffmpeg) y comprueba que nada tapa la cara, que los textos no se cortan y que el gráfico aparece en su palabra.
 - Para la versión final: `npx remotion render Borrador out/final_alta_calidad.mp4 --crf=16 --audio-bitrate=320k`.
 - Para que el usuario lo revise en el chat, envía una copia de menos de 30 MB (x264 en 2 pasadas a ~3,4 Mbps). La final de alta calidad se entrega por el repositorio (< 100 MB) en `entregas/`.
 - Explica cada decisión citando la frase que la provoca.

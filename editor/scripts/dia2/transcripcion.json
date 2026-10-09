@@ -1,0 +1,1218 @@
+{
+ "model": "large-v3-turbo",
+ "duration": 144.9386875,
+ "segments": [
+  {
+   "start": 9.259999999999998,
+   "end": 14.84,
+   "text": "Antes de comenzar vamos a fijar nuestro punto de partida, sin filtros y sin poses perfectas."
+  },
+  {
+   "start": 27.82,
+   "end": 30.22,
+   "text": "puedes usar un fondo neutro"
+  },
+  {
+   "start": 30.22,
+   "end": 32.8,
+   "text": "una ropa cómoda donde se permita"
+  },
+  {
+   "start": 32.8,
+   "end": 34.36,
+   "text": "ver la silueta de tu cuerpo"
+  },
+  {
+   "start": 40.5,
+   "end": 43.24,
+   "text": "vamos a usar un fondo neutro"
+  },
+  {
+   "start": 43.24,
+   "end": 48.86,
+   "text": "una ropa cómoda donde se permita ver la silueta de tu cuerpo y vas a tomar las medidas."
+  },
+  {
+   "start": 54.46,
+   "end": 59.56,
+   "text": "Usa un fondo neutro, vas a usar una ropa cómoda donde se permita ver tu silueta"
+  },
+  {
+   "start": 59.56,
+   "end": 64.74,
+   "text": "y vas a tomar una foto de perfil, de frente y una de espalda."
+  },
+  {
+   "start": 74.52,
+   "end": 86.06,
+   "text": "Y si quieres llevar un reporte adicional, puedes tomar tus medidas en cintura, en abdomen bajo, en cadera y muslos, solo para llevar un reporte adicional y mirar cómo avanzas con los días."
+  },
+  {
+   "start": 107.46,
+   "end": 112.0,
+   "text": "algo muy importante que también debes registrar"
+  },
+  {
+   "start": 112.0,
+   "end": 114.66,
+   "text": "es cómo sientes la calidad de tus piernas"
+  },
+  {
+   "start": 114.66,
+   "end": 115.98,
+   "text": "la calidad de tu abdomen"
+  },
+  {
+   "start": 115.98,
+   "end": 119.2,
+   "text": "si se sienten pesados, si se sienten inflamados"
+  },
+  {
+   "start": 119.2,
+   "end": 121.8,
+   "text": "anota muy bien esto porque necesitamos revisar"
+  },
+  {
+   "start": 121.8,
+   "end": 125.18,
+   "text": "cómo va a ser el resultado al final de los 21 días"
+  },
+  {
+   "start": 132.12,
+   "end": 134.16,
+   "text": "Estos cambios son personales"
+  },
+  {
+   "start": 134.16,
+   "end": 136.4,
+   "text": "Y nos ayudarán a revisar los resultados"
+  },
+  {
+   "start": 136.4,
+   "end": 138.9,
+   "text": "Sin compararnos con nadie más"
+  },
+  {
+   "start": 140.45999999999998,
+   "end": 141.2,
+   "text": "Listo"
+  },
+  {
+   "start": 141.2,
+   "end": 142.34,
+   "text": "Chao"
+  }
+ ],
+ "words": [
+  {
+   "text": "Antes",
+   "start": 9.26,
+   "end": 9.78,
+   "prob": 0.891
+  },
+  {
+   "text": "de",
+   "start": 9.78,
+   "end": 9.96,
+   "prob": 0.999
+  },
+  {
+   "text": "comenzar",
+   "start": 9.96,
+   "end": 10.4,
+   "prob": 0.999
+  },
+  {
+   "text": "vamos",
+   "start": 10.4,
+   "end": 10.64,
+   "prob": 0.725
+  },
+  {
+   "text": "a",
+   "start": 10.64,
+   "end": 10.76,
+   "prob": 0.999
+  },
+  {
+   "text": "fijar",
+   "start": 10.76,
+   "end": 11.04,
+   "prob": 0.985
+  },
+  {
+   "text": "nuestro",
+   "start": 11.04,
+   "end": 11.3,
+   "prob": 0.992
+  },
+  {
+   "text": "punto",
+   "start": 11.3,
+   "end": 11.56,
+   "prob": 0.999
+  },
+  {
+   "text": "de",
+   "start": 11.56,
+   "end": 11.72,
+   "prob": 0.999
+  },
+  {
+   "text": "partida,",
+   "start": 11.72,
+   "end": 12.22,
+   "prob": 0.999
+  },
+  {
+   "text": "sin",
+   "start": 12.44,
+   "end": 12.54,
+   "prob": 0.999
+  },
+  {
+   "text": "filtros",
+   "start": 12.54,
+   "end": 13.16,
+   "prob": 0.999
+  },
+  {
+   "text": "y",
+   "start": 13.16,
+   "end": 13.36,
+   "prob": 0.997
+  },
+  {
+   "text": "sin",
+   "start": 13.36,
+   "end": 13.54,
+   "prob": 0.998
+  },
+  {
+   "text": "poses",
+   "start": 13.54,
+   "end": 13.9,
+   "prob": 0.98
+  },
+  {
+   "text": "perfectas.",
+   "start": 13.9,
+   "end": 14.84,
+   "prob": 0.998
+  },
+  {
+   "text": "puedes",
+   "start": 27.82,
+   "end": 28.54,
+   "prob": 0.053
+  },
+  {
+   "text": "usar",
+   "start": 28.54,
+   "end": 29.0,
+   "prob": 0.998
+  },
+  {
+   "text": "un",
+   "start": 29.0,
+   "end": 29.32,
+   "prob": 0.995
+  },
+  {
+   "text": "fondo",
+   "start": 29.32,
+   "end": 29.6,
+   "prob": 0.999
+  },
+  {
+   "text": "neutro",
+   "start": 29.6,
+   "end": 30.22,
+   "prob": 0.998
+  },
+  {
+   "text": "una",
+   "start": 30.22,
+   "end": 30.66,
+   "prob": 0.338
+  },
+  {
+   "text": "ropa",
+   "start": 30.66,
+   "end": 31.02,
+   "prob": 1.0
+  },
+  {
+   "text": "cómoda",
+   "start": 31.02,
+   "end": 31.68,
+   "prob": 0.998
+  },
+  {
+   "text": "donde",
+   "start": 31.68,
+   "end": 31.98,
+   "prob": 0.983
+  },
+  {
+   "text": "se",
+   "start": 31.98,
+   "end": 32.16,
+   "prob": 0.997
+  },
+  {
+   "text": "permita",
+   "start": 32.16,
+   "end": 32.8,
+   "prob": 0.999
+  },
+  {
+   "text": "ver",
+   "start": 32.8,
+   "end": 33.12,
+   "prob": 0.996
+  },
+  {
+   "text": "la",
+   "start": 33.12,
+   "end": 33.26,
+   "prob": 0.998
+  },
+  {
+   "text": "silueta",
+   "start": 33.26,
+   "end": 33.64,
+   "prob": 0.999
+  },
+  {
+   "text": "de",
+   "start": 33.64,
+   "end": 33.78,
+   "prob": 0.997
+  },
+  {
+   "text": "tu",
+   "start": 33.78,
+   "end": 33.92,
+   "prob": 0.997
+  },
+  {
+   "text": "cuerpo",
+   "start": 33.92,
+   "end": 34.36,
+   "prob": 1.0
+  },
+  {
+   "text": "vamos",
+   "start": 40.5,
+   "end": 41.22,
+   "prob": 0.901
+  },
+  {
+   "text": "a",
+   "start": 41.22,
+   "end": 41.94,
+   "prob": 1.0
+  },
+  {
+   "text": "usar",
+   "start": 41.94,
+   "end": 42.18,
+   "prob": 0.994
+  },
+  {
+   "text": "un",
+   "start": 42.18,
+   "end": 42.44,
+   "prob": 0.996
+  },
+  {
+   "text": "fondo",
+   "start": 42.44,
+   "end": 42.68,
+   "prob": 1.0
+  },
+  {
+   "text": "neutro",
+   "start": 42.68,
+   "end": 43.24,
+   "prob": 0.999
+  },
+  {
+   "text": "una",
+   "start": 43.24,
+   "end": 43.6,
+   "prob": 0.835
+  },
+  {
+   "text": "ropa",
+   "start": 43.6,
+   "end": 43.94,
+   "prob": 1.0
+  },
+  {
+   "text": "cómoda",
+   "start": 43.94,
+   "end": 44.52,
+   "prob": 0.998
+  },
+  {
+   "text": "donde",
+   "start": 44.52,
+   "end": 44.72,
+   "prob": 0.98
+  },
+  {
+   "text": "se",
+   "start": 44.72,
+   "end": 44.86,
+   "prob": 0.998
+  },
+  {
+   "text": "permita",
+   "start": 44.86,
+   "end": 45.24,
+   "prob": 0.99
+  },
+  {
+   "text": "ver",
+   "start": 45.24,
+   "end": 45.4,
+   "prob": 0.986
+  },
+  {
+   "text": "la",
+   "start": 45.4,
+   "end": 45.52,
+   "prob": 0.998
+  },
+  {
+   "text": "silueta",
+   "start": 45.52,
+   "end": 45.88,
+   "prob": 0.998
+  },
+  {
+   "text": "de",
+   "start": 45.88,
+   "end": 46.02,
+   "prob": 0.998
+  },
+  {
+   "text": "tu",
+   "start": 46.02,
+   "end": 46.18,
+   "prob": 0.999
+  },
+  {
+   "text": "cuerpo",
+   "start": 46.18,
+   "end": 46.72,
+   "prob": 1.0
+  },
+  {
+   "text": "y",
+   "start": 46.72,
+   "end": 47.46,
+   "prob": 0.93
+  },
+  {
+   "text": "vas",
+   "start": 47.46,
+   "end": 47.72,
+   "prob": 0.997
+  },
+  {
+   "text": "a",
+   "start": 47.72,
+   "end": 47.82,
+   "prob": 1.0
+  },
+  {
+   "text": "tomar",
+   "start": 47.82,
+   "end": 48.08,
+   "prob": 0.999
+  },
+  {
+   "text": "las",
+   "start": 48.08,
+   "end": 48.36,
+   "prob": 0.998
+  },
+  {
+   "text": "medidas.",
+   "start": 48.36,
+   "end": 48.86,
+   "prob": 0.999
+  },
+  {
+   "text": "Usa",
+   "start": 54.46,
+   "end": 55.02,
+   "prob": 0.951
+  },
+  {
+   "text": "un",
+   "start": 55.02,
+   "end": 55.1,
+   "prob": 0.999
+  },
+  {
+   "text": "fondo",
+   "start": 55.1,
+   "end": 55.34,
+   "prob": 0.999
+  },
+  {
+   "text": "neutro,",
+   "start": 55.34,
+   "end": 55.92,
+   "prob": 0.995
+  },
+  {
+   "text": "vas",
+   "start": 56.28,
+   "end": 56.38,
+   "prob": 0.998
+  },
+  {
+   "text": "a",
+   "start": 56.38,
+   "end": 56.46,
+   "prob": 1.0
+  },
+  {
+   "text": "usar",
+   "start": 56.46,
+   "end": 56.62,
+   "prob": 0.999
+  },
+  {
+   "text": "una",
+   "start": 56.62,
+   "end": 56.8,
+   "prob": 1.0
+  },
+  {
+   "text": "ropa",
+   "start": 56.8,
+   "end": 57.08,
+   "prob": 1.0
+  },
+  {
+   "text": "cómoda",
+   "start": 57.08,
+   "end": 57.66,
+   "prob": 1.0
+  },
+  {
+   "text": "donde",
+   "start": 57.66,
+   "end": 57.84,
+   "prob": 0.998
+  },
+  {
+   "text": "se",
+   "start": 57.84,
+   "end": 57.98,
+   "prob": 1.0
+  },
+  {
+   "text": "permita",
+   "start": 57.98,
+   "end": 58.36,
+   "prob": 0.998
+  },
+  {
+   "text": "ver",
+   "start": 58.36,
+   "end": 58.54,
+   "prob": 0.996
+  },
+  {
+   "text": "tu",
+   "start": 58.54,
+   "end": 58.92,
+   "prob": 0.999
+  },
+  {
+   "text": "silueta",
+   "start": 58.92,
+   "end": 59.56,
+   "prob": 1.0
+  },
+  {
+   "text": "y",
+   "start": 59.56,
+   "end": 60.18,
+   "prob": 0.999
+  },
+  {
+   "text": "vas",
+   "start": 60.18,
+   "end": 60.36,
+   "prob": 1.0
+  },
+  {
+   "text": "a",
+   "start": 60.36,
+   "end": 60.46,
+   "prob": 1.0
+  },
+  {
+   "text": "tomar",
+   "start": 60.46,
+   "end": 60.76,
+   "prob": 1.0
+  },
+  {
+   "text": "una",
+   "start": 60.76,
+   "end": 61.18,
+   "prob": 1.0
+  },
+  {
+   "text": "foto",
+   "start": 61.18,
+   "end": 61.6,
+   "prob": 1.0
+  },
+  {
+   "text": "de",
+   "start": 61.6,
+   "end": 61.86,
+   "prob": 0.998
+  },
+  {
+   "text": "perfil,",
+   "start": 61.86,
+   "end": 62.48,
+   "prob": 1.0
+  },
+  {
+   "text": "de",
+   "start": 62.68,
+   "end": 63.18,
+   "prob": 1.0
+  },
+  {
+   "text": "frente",
+   "start": 63.18,
+   "end": 63.62,
+   "prob": 1.0
+  },
+  {
+   "text": "y",
+   "start": 63.62,
+   "end": 63.9,
+   "prob": 0.999
+  },
+  {
+   "text": "una",
+   "start": 63.9,
+   "end": 64.08,
+   "prob": 0.994
+  },
+  {
+   "text": "de",
+   "start": 64.08,
+   "end": 64.22,
+   "prob": 0.881
+  },
+  {
+   "text": "espalda.",
+   "start": 64.22,
+   "end": 64.74,
+   "prob": 0.999
+  },
+  {
+   "text": "Y",
+   "start": 74.52,
+   "end": 75.1,
+   "prob": 0.842
+  },
+  {
+   "text": "si",
+   "start": 75.1,
+   "end": 75.24,
+   "prob": 0.999
+  },
+  {
+   "text": "quieres",
+   "start": 75.24,
+   "end": 75.48,
+   "prob": 0.999
+  },
+  {
+   "text": "llevar",
+   "start": 75.48,
+   "end": 75.72,
+   "prob": 0.996
+  },
+  {
+   "text": "un",
+   "start": 75.72,
+   "end": 75.86,
+   "prob": 1.0
+  },
+  {
+   "text": "reporte",
+   "start": 75.86,
+   "end": 76.3,
+   "prob": 0.999
+  },
+  {
+   "text": "adicional,",
+   "start": 76.3,
+   "end": 76.7,
+   "prob": 1.0
+  },
+  {
+   "text": "puedes",
+   "start": 77.04,
+   "end": 77.24,
+   "prob": 0.999
+  },
+  {
+   "text": "tomar",
+   "start": 77.24,
+   "end": 77.5,
+   "prob": 0.999
+  },
+  {
+   "text": "tus",
+   "start": 77.5,
+   "end": 77.88,
+   "prob": 0.999
+  },
+  {
+   "text": "medidas",
+   "start": 77.88,
+   "end": 78.4,
+   "prob": 1.0
+  },
+  {
+   "text": "en",
+   "start": 78.4,
+   "end": 78.8,
+   "prob": 0.999
+  },
+  {
+   "text": "cintura,",
+   "start": 78.8,
+   "end": 79.5,
+   "prob": 1.0
+  },
+  {
+   "text": "en",
+   "start": 79.76,
+   "end": 79.84,
+   "prob": 0.971
+  },
+  {
+   "text": "abdomen",
+   "start": 79.84,
+   "end": 80.18,
+   "prob": 0.999
+  },
+  {
+   "text": "bajo,",
+   "start": 80.18,
+   "end": 80.62,
+   "prob": 0.999
+  },
+  {
+   "text": "en",
+   "start": 81.0,
+   "end": 81.1,
+   "prob": 0.999
+  },
+  {
+   "text": "cadera",
+   "start": 81.1,
+   "end": 81.58,
+   "prob": 0.999
+  },
+  {
+   "text": "y",
+   "start": 81.58,
+   "end": 81.88,
+   "prob": 0.998
+  },
+  {
+   "text": "muslos,",
+   "start": 81.88,
+   "end": 82.4,
+   "prob": 0.995
+  },
+  {
+   "text": "solo",
+   "start": 82.6,
+   "end": 82.92,
+   "prob": 0.937
+  },
+  {
+   "text": "para",
+   "start": 82.92,
+   "end": 83.16,
+   "prob": 1.0
+  },
+  {
+   "text": "llevar",
+   "start": 83.16,
+   "end": 83.36,
+   "prob": 0.999
+  },
+  {
+   "text": "un",
+   "start": 83.36,
+   "end": 83.54,
+   "prob": 1.0
+  },
+  {
+   "text": "reporte",
+   "start": 83.54,
+   "end": 83.98,
+   "prob": 1.0
+  },
+  {
+   "text": "adicional",
+   "start": 83.98,
+   "end": 84.32,
+   "prob": 1.0
+  },
+  {
+   "text": "y",
+   "start": 84.32,
+   "end": 84.56,
+   "prob": 0.997
+  },
+  {
+   "text": "mirar",
+   "start": 84.56,
+   "end": 84.84,
+   "prob": 0.999
+  },
+  {
+   "text": "cómo",
+   "start": 84.84,
+   "end": 85.08,
+   "prob": 0.957
+  },
+  {
+   "text": "avanzas",
+   "start": 85.08,
+   "end": 85.46,
+   "prob": 0.999
+  },
+  {
+   "text": "con",
+   "start": 85.46,
+   "end": 85.62,
+   "prob": 0.999
+  },
+  {
+   "text": "los",
+   "start": 85.62,
+   "end": 85.84,
+   "prob": 0.997
+  },
+  {
+   "text": "días.",
+   "start": 85.84,
+   "end": 86.06,
+   "prob": 0.994
+  },
+  {
+   "text": "algo",
+   "start": 107.46,
+   "end": 108.1,
+   "prob": 0.128
+  },
+  {
+   "text": "muy",
+   "start": 108.1,
+   "end": 108.32,
+   "prob": 0.999
+  },
+  {
+   "text": "importante",
+   "start": 108.32,
+   "end": 108.8,
+   "prob": 0.998
+  },
+  {
+   "text": "que",
+   "start": 108.8,
+   "end": 108.98,
+   "prob": 0.995
+  },
+  {
+   "text": "también",
+   "start": 108.98,
+   "end": 109.42,
+   "prob": 0.994
+  },
+  {
+   "text": "debes",
+   "start": 109.42,
+   "end": 111.38,
+   "prob": 0.973
+  },
+  {
+   "text": "registrar",
+   "start": 111.38,
+   "end": 112.0,
+   "prob": 0.999
+  },
+  {
+   "text": "es",
+   "start": 112.0,
+   "end": 112.6,
+   "prob": 0.964
+  },
+  {
+   "text": "cómo",
+   "start": 112.6,
+   "end": 112.86,
+   "prob": 0.73
+  },
+  {
+   "text": "sientes",
+   "start": 112.86,
+   "end": 113.22,
+   "prob": 0.999
+  },
+  {
+   "text": "la",
+   "start": 113.22,
+   "end": 113.48,
+   "prob": 0.999
+  },
+  {
+   "text": "calidad",
+   "start": 113.48,
+   "end": 113.8,
+   "prob": 0.999
+  },
+  {
+   "text": "de",
+   "start": 113.8,
+   "end": 113.98,
+   "prob": 1.0
+  },
+  {
+   "text": "tus",
+   "start": 113.98,
+   "end": 114.2,
+   "prob": 1.0
+  },
+  {
+   "text": "piernas",
+   "start": 114.2,
+   "end": 114.66,
+   "prob": 1.0
+  },
+  {
+   "text": "la",
+   "start": 114.66,
+   "end": 114.88,
+   "prob": 0.57
+  },
+  {
+   "text": "calidad",
+   "start": 114.88,
+   "end": 115.22,
+   "prob": 1.0
+  },
+  {
+   "text": "de",
+   "start": 115.22,
+   "end": 115.4,
+   "prob": 1.0
+  },
+  {
+   "text": "tu",
+   "start": 115.4,
+   "end": 115.56,
+   "prob": 0.999
+  },
+  {
+   "text": "abdomen",
+   "start": 115.56,
+   "end": 115.98,
+   "prob": 0.999
+  },
+  {
+   "text": "si",
+   "start": 115.98,
+   "end": 116.52,
+   "prob": 0.96
+  },
+  {
+   "text": "se",
+   "start": 116.52,
+   "end": 116.68,
+   "prob": 1.0
+  },
+  {
+   "text": "sienten",
+   "start": 116.68,
+   "end": 117.06,
+   "prob": 1.0
+  },
+  {
+   "text": "pesados,",
+   "start": 117.06,
+   "end": 117.72,
+   "prob": 0.999
+  },
+  {
+   "text": "si",
+   "start": 117.9,
+   "end": 117.9,
+   "prob": 0.998
+  },
+  {
+   "text": "se",
+   "start": 117.9,
+   "end": 118.04,
+   "prob": 1.0
+  },
+  {
+   "text": "sienten",
+   "start": 118.04,
+   "end": 118.42,
+   "prob": 1.0
+  },
+  {
+   "text": "inflamados",
+   "start": 118.42,
+   "end": 119.2,
+   "prob": 0.996
+  },
+  {
+   "text": "anota",
+   "start": 119.2,
+   "end": 119.78,
+   "prob": 0.96
+  },
+  {
+   "text": "muy",
+   "start": 119.78,
+   "end": 120.02,
+   "prob": 0.999
+  },
+  {
+   "text": "bien",
+   "start": 120.02,
+   "end": 120.22,
+   "prob": 1.0
+  },
+  {
+   "text": "esto",
+   "start": 120.22,
+   "end": 120.44,
+   "prob": 0.985
+  },
+  {
+   "text": "porque",
+   "start": 120.44,
+   "end": 120.68,
+   "prob": 0.997
+  },
+  {
+   "text": "necesitamos",
+   "start": 120.68,
+   "end": 121.3,
+   "prob": 1.0
+  },
+  {
+   "text": "revisar",
+   "start": 121.3,
+   "end": 121.8,
+   "prob": 0.999
+  },
+  {
+   "text": "cómo",
+   "start": 121.8,
+   "end": 122.5,
+   "prob": 0.997
+  },
+  {
+   "text": "va",
+   "start": 122.5,
+   "end": 122.72,
+   "prob": 0.991
+  },
+  {
+   "text": "a",
+   "start": 122.72,
+   "end": 122.74,
+   "prob": 1.0
+  },
+  {
+   "text": "ser",
+   "start": 122.74,
+   "end": 122.84,
+   "prob": 0.999
+  },
+  {
+   "text": "el",
+   "start": 122.84,
+   "end": 122.96,
+   "prob": 1.0
+  },
+  {
+   "text": "resultado",
+   "start": 122.96,
+   "end": 123.4,
+   "prob": 1.0
+  },
+  {
+   "text": "al",
+   "start": 123.4,
+   "end": 123.9,
+   "prob": 0.997
+  },
+  {
+   "text": "final",
+   "start": 123.9,
+   "end": 124.18,
+   "prob": 1.0
+  },
+  {
+   "text": "de",
+   "start": 124.18,
+   "end": 124.32,
+   "prob": 1.0
+  },
+  {
+   "text": "los",
+   "start": 124.32,
+   "end": 124.48,
+   "prob": 0.999
+  },
+  {
+   "text": "21",
+   "start": 124.48,
+   "end": 124.82,
+   "prob": 0.991
+  },
+  {
+   "text": "días",
+   "start": 124.82,
+   "end": 125.18,
+   "prob": 1.0
+  },
+  {
+   "text": "Estos",
+   "start": 132.12,
+   "end": 132.86,
+   "prob": 0.864
+  },
+  {
+   "text": "cambios",
+   "start": 132.86,
+   "end": 133.16,
+   "prob": 0.999
+  },
+  {
+   "text": "son",
+   "start": 133.16,
+   "end": 133.32,
+   "prob": 0.995
+  },
+  {
+   "text": "personales",
+   "start": 133.32,
+   "end": 134.16,
+   "prob": 0.996
+  },
+  {
+   "text": "Y",
+   "start": 134.16,
+   "end": 134.28,
+   "prob": 0.068
+  },
+  {
+   "text": "nos",
+   "start": 134.28,
+   "end": 134.44,
+   "prob": 0.999
+  },
+  {
+   "text": "ayudarán",
+   "start": 134.44,
+   "end": 134.92,
+   "prob": 0.994
+  },
+  {
+   "text": "a",
+   "start": 134.92,
+   "end": 135.0,
+   "prob": 0.99
+  },
+  {
+   "text": "revisar",
+   "start": 135.0,
+   "end": 135.4,
+   "prob": 0.998
+  },
+  {
+   "text": "los",
+   "start": 135.4,
+   "end": 135.72,
+   "prob": 0.812
+  },
+  {
+   "text": "resultados",
+   "start": 135.72,
+   "end": 136.4,
+   "prob": 0.999
+  },
+  {
+   "text": "Sin",
+   "start": 136.4,
+   "end": 137.4,
+   "prob": 0.981
+  },
+  {
+   "text": "compararnos",
+   "start": 137.4,
+   "end": 138.02,
+   "prob": 0.999
+  },
+  {
+   "text": "con",
+   "start": 138.02,
+   "end": 138.28,
+   "prob": 0.917
+  },
+  {
+   "text": "nadie",
+   "start": 138.28,
+   "end": 138.56,
+   "prob": 0.997
+  },
+  {
+   "text": "más",
+   "start": 138.56,
+   "end": 138.9,
+   "prob": 0.997
+  },
+  {
+   "text": "Listo",
+   "start": 140.46,
+   "end": 141.2,
+   "prob": 0.915
+  },
+  {
+   "text": "Chao",
+   "start": 141.2,
+   "end": 142.34,
+   "prob": 0.78
+  }
+ ]
+}

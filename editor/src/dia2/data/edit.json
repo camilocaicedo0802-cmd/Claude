@@ -1,0 +1,914 @@
+{
+ "duration": 47.233333333333334,
+ "segments": [
+  {
+   "srcStart": 9.466666666666667,
+   "srcEnd": 14.866666666666667,
+   "outStart": 0.0
+  },
+  {
+   "srcStart": 54.733333333333334,
+   "srcEnd": 59.86666666666667,
+   "outStart": 5.4
+  },
+  {
+   "srcStart": 60.03333333333333,
+   "srcEnd": 62.63333333333333,
+   "outStart": 10.533333333333333
+  },
+  {
+   "srcStart": 62.93333333333333,
+   "srcEnd": 64.8,
+   "outStart": 13.133333333333333
+  },
+  {
+   "srcStart": 74.96666666666667,
+   "srcEnd": 86.1,
+   "outStart": 15.0
+  },
+  {
+   "srcStart": 109.9,
+   "srcEnd": 112.23333333333333,
+   "outStart": 26.133333333333333
+  },
+  {
+   "srcStart": 112.36666666666666,
+   "srcEnd": 116.2,
+   "outStart": 28.466666666666665
+  },
+  {
+   "srcStart": 116.33333333333333,
+   "srcEnd": 122.0,
+   "outStart": 32.3
+  },
+  {
+   "srcStart": 122.13333333333334,
+   "srcEnd": 125.3,
+   "outStart": 37.96666666666667
+  },
+  {
+   "srcStart": 132.56666666666666,
+   "srcEnd": 136.83333333333334,
+   "outStart": 41.13333333333333
+  },
+  {
+   "srcStart": 137.1,
+   "srcEnd": 138.93333333333334,
+   "outStart": 45.4
+  }
+ ],
+ "words": [
+  {
+   "text": "Antes",
+   "start": 0.0,
+   "end": 0.313,
+   "db": 1.2
+  },
+  {
+   "text": "de",
+   "start": 0.313,
+   "end": 0.493,
+   "db": 2.3
+  },
+  {
+   "text": "comenzar",
+   "start": 0.493,
+   "end": 0.933,
+   "db": 2.3
+  },
+  {
+   "text": "vamos",
+   "start": 0.933,
+   "end": 1.173,
+   "db": 2.5
+  },
+  {
+   "text": "a",
+   "start": 1.173,
+   "end": 1.293,
+   "db": 1.2
+  },
+  {
+   "text": "fijar",
+   "start": 1.293,
+   "end": 1.573,
+   "db": -0.4
+  },
+  {
+   "text": "nuestro",
+   "start": 1.573,
+   "end": 1.833,
+   "db": -5.5
+  },
+  {
+   "text": "punto",
+   "start": 1.833,
+   "end": 2.093,
+   "db": -9.3
+  },
+  {
+   "text": "de",
+   "start": 2.093,
+   "end": 2.253,
+   "db": 1.9
+  },
+  {
+   "text": "partida,",
+   "start": 2.253,
+   "end": 2.753,
+   "db": -3.6
+  },
+  {
+   "text": "sin",
+   "start": 2.973,
+   "end": 3.073,
+   "db": -9.8
+  },
+  {
+   "text": "filtros",
+   "start": 3.073,
+   "end": 3.693,
+   "db": 3.8
+  },
+  {
+   "text": "y",
+   "start": 3.693,
+   "end": 3.893,
+   "db": -5.2
+  },
+  {
+   "text": "sin",
+   "start": 3.893,
+   "end": 4.073,
+   "db": -5.7
+  },
+  {
+   "text": "poses",
+   "start": 4.073,
+   "end": 4.433,
+   "db": -0.5
+  },
+  {
+   "text": "perfectas.",
+   "start": 4.433,
+   "end": 5.373,
+   "db": -0.5
+  },
+  {
+   "text": "Usa",
+   "start": 5.4,
+   "end": 5.687,
+   "db": 3.1
+  },
+  {
+   "text": "un",
+   "start": 5.687,
+   "end": 5.767,
+   "db": 2.0
+  },
+  {
+   "text": "fondo",
+   "start": 5.767,
+   "end": 6.007,
+   "db": 3.2
+  },
+  {
+   "text": "neutro,",
+   "start": 6.007,
+   "end": 6.587,
+   "db": 5.0
+  },
+  {
+   "text": "vas",
+   "start": 6.947,
+   "end": 7.047,
+   "db": 4.3
+  },
+  {
+   "text": "a",
+   "start": 7.047,
+   "end": 7.127,
+   "db": -0.2
+  },
+  {
+   "text": "usar",
+   "start": 7.127,
+   "end": 7.287,
+   "db": 1.6
+  },
+  {
+   "text": "una",
+   "start": 7.287,
+   "end": 7.467,
+   "db": 1.1
+  },
+  {
+   "text": "ropa",
+   "start": 7.467,
+   "end": 7.747,
+   "db": -0.5
+  },
+  {
+   "text": "cómoda",
+   "start": 7.747,
+   "end": 8.327,
+   "db": 2.9
+  },
+  {
+   "text": "donde",
+   "start": 8.327,
+   "end": 8.507,
+   "db": 2.3
+  },
+  {
+   "text": "se",
+   "start": 8.507,
+   "end": 8.647,
+   "db": -4.7
+  },
+  {
+   "text": "permita",
+   "start": 8.647,
+   "end": 9.027,
+   "db": -7.4
+  },
+  {
+   "text": "ver",
+   "start": 9.027,
+   "end": 9.207,
+   "db": 2.1
+  },
+  {
+   "text": "tu",
+   "start": 9.207,
+   "end": 9.587,
+   "db": -7.7
+  },
+  {
+   "text": "silueta",
+   "start": 9.587,
+   "end": 10.227,
+   "db": 3.8
+  },
+  {
+   "text": "y",
+   "start": 10.227,
+   "end": 10.68,
+   "db": 1.0
+  },
+  {
+   "text": "vas",
+   "start": 10.68,
+   "end": 10.86,
+   "db": 4.3
+  },
+  {
+   "text": "a",
+   "start": 10.86,
+   "end": 10.96,
+   "db": 0.9
+  },
+  {
+   "text": "tomar",
+   "start": 10.96,
+   "end": 11.26,
+   "db": 4.4
+  },
+  {
+   "text": "una",
+   "start": 11.26,
+   "end": 11.68,
+   "db": 1.4
+  },
+  {
+   "text": "foto",
+   "start": 11.68,
+   "end": 12.1,
+   "db": 3.0
+  },
+  {
+   "text": "de",
+   "start": 12.1,
+   "end": 12.36,
+   "db": -5.0
+  },
+  {
+   "text": "perfil,",
+   "start": 12.36,
+   "end": 12.98,
+   "db": -3.4
+  },
+  {
+   "text": "de",
+   "start": 13.133,
+   "end": 13.38,
+   "db": 1.7
+  },
+  {
+   "text": "frente",
+   "start": 13.38,
+   "end": 13.82,
+   "db": 2.7
+  },
+  {
+   "text": "y",
+   "start": 13.82,
+   "end": 14.1,
+   "db": 0.1
+  },
+  {
+   "text": "una",
+   "start": 14.1,
+   "end": 14.28,
+   "db": -5.4
+  },
+  {
+   "text": "de",
+   "start": 14.28,
+   "end": 14.42,
+   "db": -4.9
+  },
+  {
+   "text": "espalda.",
+   "start": 14.42,
+   "end": 14.94,
+   "db": -3.7
+  },
+  {
+   "text": "Y",
+   "start": 15.0,
+   "end": 15.133,
+   "db": -3.6
+  },
+  {
+   "text": "si",
+   "start": 15.133,
+   "end": 15.273,
+   "db": -4.5
+  },
+  {
+   "text": "quieres",
+   "start": 15.273,
+   "end": 15.513,
+   "db": 1.6
+  },
+  {
+   "text": "llevar",
+   "start": 15.513,
+   "end": 15.753,
+   "db": 5.1
+  },
+  {
+   "text": "un",
+   "start": 15.753,
+   "end": 15.893,
+   "db": -3.2
+  },
+  {
+   "text": "reporte",
+   "start": 15.893,
+   "end": 16.333,
+   "db": 3.3
+  },
+  {
+   "text": "adicional,",
+   "start": 16.333,
+   "end": 16.733,
+   "db": 3.1
+  },
+  {
+   "text": "puedes",
+   "start": 17.073,
+   "end": 17.273,
+   "db": 2.8
+  },
+  {
+   "text": "tomar",
+   "start": 17.273,
+   "end": 17.533,
+   "db": 0.3
+  },
+  {
+   "text": "tus",
+   "start": 17.533,
+   "end": 17.913,
+   "db": 1.4
+  },
+  {
+   "text": "medidas",
+   "start": 17.913,
+   "end": 18.433,
+   "db": 1.4
+  },
+  {
+   "text": "en",
+   "start": 18.433,
+   "end": 18.833,
+   "db": 3.1
+  },
+  {
+   "text": "cintura,",
+   "start": 18.833,
+   "end": 19.533,
+   "db": 1.8
+  },
+  {
+   "text": "en",
+   "start": 19.793,
+   "end": 19.873,
+   "db": -9.2
+  },
+  {
+   "text": "abdomen",
+   "start": 19.873,
+   "end": 20.213,
+   "db": -0.8
+  },
+  {
+   "text": "bajo,",
+   "start": 20.213,
+   "end": 20.653,
+   "db": 3.0
+  },
+  {
+   "text": "en",
+   "start": 21.033,
+   "end": 21.133,
+   "db": -4.6
+  },
+  {
+   "text": "cadera",
+   "start": 21.133,
+   "end": 21.613,
+   "db": 3.2
+  },
+  {
+   "text": "y",
+   "start": 21.613,
+   "end": 21.913,
+   "db": -1.8
+  },
+  {
+   "text": "muslos,",
+   "start": 21.913,
+   "end": 22.433,
+   "db": -0.5
+  },
+  {
+   "text": "solo",
+   "start": 22.633,
+   "end": 22.953,
+   "db": 3.7
+  },
+  {
+   "text": "para",
+   "start": 22.953,
+   "end": 23.193,
+   "db": 3.8
+  },
+  {
+   "text": "llevar",
+   "start": 23.193,
+   "end": 23.393,
+   "db": 3.3
+  },
+  {
+   "text": "un",
+   "start": 23.393,
+   "end": 23.573,
+   "db": 3.3
+  },
+  {
+   "text": "reporte",
+   "start": 23.573,
+   "end": 24.013,
+   "db": 2.0
+  },
+  {
+   "text": "adicional",
+   "start": 24.013,
+   "end": 24.353,
+   "db": 2.5
+  },
+  {
+   "text": "y",
+   "start": 24.353,
+   "end": 24.593,
+   "db": 1.3
+  },
+  {
+   "text": "mirar",
+   "start": 24.593,
+   "end": 24.873,
+   "db": 2.6
+  },
+  {
+   "text": "cómo",
+   "start": 24.873,
+   "end": 25.113,
+   "db": -1.4
+  },
+  {
+   "text": "avanzas",
+   "start": 25.113,
+   "end": 25.493,
+   "db": -0.2
+  },
+  {
+   "text": "con",
+   "start": 25.493,
+   "end": 25.653,
+   "db": -13.3
+  },
+  {
+   "text": "los",
+   "start": 25.653,
+   "end": 25.873,
+   "db": -11.0
+  },
+  {
+   "text": "días.",
+   "start": 25.873,
+   "end": 26.093,
+   "db": -19.9
+  },
+  {
+   "text": "algo",
+   "start": 26.133,
+   "end": 26.353,
+   "db": 2.6
+  },
+  {
+   "text": "muy",
+   "start": 26.353,
+   "end": 26.493,
+   "db": 0.0
+  },
+  {
+   "text": "importante",
+   "start": 26.493,
+   "end": 26.893,
+   "db": 3.8
+  },
+  {
+   "text": "que",
+   "start": 26.893,
+   "end": 27.073,
+   "db": -4.5
+  },
+  {
+   "text": "también",
+   "start": 27.073,
+   "end": 27.313,
+   "db": -2.9
+  },
+  {
+   "text": "debes",
+   "start": 27.313,
+   "end": 27.613,
+   "db": 2.3
+  },
+  {
+   "text": "registrar",
+   "start": 27.613,
+   "end": 28.233,
+   "db": 2.6
+  },
+  {
+   "text": "es",
+   "start": 28.233,
+   "end": 28.7,
+   "db": 4.6
+  },
+  {
+   "text": "cómo",
+   "start": 28.7,
+   "end": 28.96,
+   "db": 2.6
+  },
+  {
+   "text": "sientes",
+   "start": 28.96,
+   "end": 29.32,
+   "db": -0.5
+  },
+  {
+   "text": "la",
+   "start": 29.32,
+   "end": 29.58,
+   "db": 3.0
+  },
+  {
+   "text": "calidad",
+   "start": 29.58,
+   "end": 29.9,
+   "db": -0.3
+  },
+  {
+   "text": "de",
+   "start": 29.9,
+   "end": 30.08,
+   "db": 1.2
+  },
+  {
+   "text": "tus",
+   "start": 30.08,
+   "end": 30.3,
+   "db": -9.5
+  },
+  {
+   "text": "piernas",
+   "start": 30.3,
+   "end": 30.76,
+   "db": -0.7
+  },
+  {
+   "text": "la",
+   "start": 30.76,
+   "end": 30.98,
+   "db": -5.5
+  },
+  {
+   "text": "calidad",
+   "start": 30.98,
+   "end": 31.32,
+   "db": -2.0
+  },
+  {
+   "text": "de",
+   "start": 31.32,
+   "end": 31.5,
+   "db": -4.4
+  },
+  {
+   "text": "tu",
+   "start": 31.5,
+   "end": 31.66,
+   "db": -5.5
+  },
+  {
+   "text": "abdomen",
+   "start": 31.66,
+   "end": 32.08,
+   "db": -1.6
+  },
+  {
+   "text": "si",
+   "start": 32.08,
+   "end": 32.487,
+   "db": -8.0
+  },
+  {
+   "text": "se",
+   "start": 32.487,
+   "end": 32.647,
+   "db": 2.5
+  },
+  {
+   "text": "sienten",
+   "start": 32.647,
+   "end": 33.027,
+   "db": -3.1
+  },
+  {
+   "text": "pesados,",
+   "start": 33.027,
+   "end": 33.687,
+   "db": 3.6
+  },
+  {
+   "text": "si",
+   "start": 33.867,
+   "end": 33.867,
+   "db": -14.1
+  },
+  {
+   "text": "se",
+   "start": 33.867,
+   "end": 34.007,
+   "db": -5.3
+  },
+  {
+   "text": "sienten",
+   "start": 34.007,
+   "end": 34.387,
+   "db": -10.5
+  },
+  {
+   "text": "inflamados",
+   "start": 34.387,
+   "end": 35.167,
+   "db": -0.6
+  },
+  {
+   "text": "anota",
+   "start": 35.167,
+   "end": 35.747,
+   "db": -3.3
+  },
+  {
+   "text": "muy",
+   "start": 35.747,
+   "end": 35.987,
+   "db": 1.9
+  },
+  {
+   "text": "bien",
+   "start": 35.987,
+   "end": 36.187,
+   "db": -0.3
+  },
+  {
+   "text": "esto",
+   "start": 36.187,
+   "end": 36.407,
+   "db": -0.4
+  },
+  {
+   "text": "porque",
+   "start": 36.407,
+   "end": 36.647,
+   "db": -0.7
+  },
+  {
+   "text": "necesitamos",
+   "start": 36.647,
+   "end": 37.267,
+   "db": -3.0
+  },
+  {
+   "text": "revisar",
+   "start": 37.267,
+   "end": 37.767,
+   "db": 3.4
+  },
+  {
+   "text": "cómo",
+   "start": 37.767,
+   "end": 38.333,
+   "db": 4.7
+  },
+  {
+   "text": "va",
+   "start": 38.333,
+   "end": 38.553,
+   "db": 3.7
+  },
+  {
+   "text": "a",
+   "start": 38.553,
+   "end": 38.573,
+   "db": -2.2
+  },
+  {
+   "text": "ser",
+   "start": 38.573,
+   "end": 38.673,
+   "db": -0.9
+  },
+  {
+   "text": "el",
+   "start": 38.673,
+   "end": 38.793,
+   "db": 0.5
+  },
+  {
+   "text": "resultado",
+   "start": 38.793,
+   "end": 39.233,
+   "db": 2.4
+  },
+  {
+   "text": "al",
+   "start": 39.233,
+   "end": 39.733,
+   "db": 4.3
+  },
+  {
+   "text": "final",
+   "start": 39.733,
+   "end": 40.013,
+   "db": -1.0
+  },
+  {
+   "text": "de",
+   "start": 40.013,
+   "end": 40.153,
+   "db": -5.1
+  },
+  {
+   "text": "los",
+   "start": 40.153,
+   "end": 40.313,
+   "db": -5.5
+  },
+  {
+   "text": "21",
+   "start": 40.313,
+   "end": 40.653,
+   "db": -13.7
+  },
+  {
+   "text": "días",
+   "start": 40.653,
+   "end": 41.013,
+   "db": -0.5
+  },
+  {
+   "text": "Estos",
+   "start": 41.133,
+   "end": 41.427,
+   "db": -1.0
+  },
+  {
+   "text": "cambios",
+   "start": 41.427,
+   "end": 41.727,
+   "db": 2.3
+  },
+  {
+   "text": "son",
+   "start": 41.727,
+   "end": 41.887,
+   "db": 0.1
+  },
+  {
+   "text": "personales",
+   "start": 41.887,
+   "end": 42.727,
+   "db": 0.8
+  },
+  {
+   "text": "Y",
+   "start": 42.727,
+   "end": 42.847,
+   "db": -17.6
+  },
+  {
+   "text": "nos",
+   "start": 42.847,
+   "end": 43.007,
+   "db": -10.6
+  },
+  {
+   "text": "ayudarán",
+   "start": 43.007,
+   "end": 43.487,
+   "db": -0.9
+  },
+  {
+   "text": "a",
+   "start": 43.487,
+   "end": 43.567,
+   "db": -3.1
+  },
+  {
+   "text": "revisar",
+   "start": 43.567,
+   "end": 43.967,
+   "db": -2.2
+  },
+  {
+   "text": "los",
+   "start": 43.967,
+   "end": 44.287,
+   "db": -1.4
+  },
+  {
+   "text": "resultados",
+   "start": 44.287,
+   "end": 44.967,
+   "db": 2.5
+  },
+  {
+   "text": "Sin",
+   "start": 44.967,
+   "end": 45.7,
+   "db": 0.4
+  },
+  {
+   "text": "compararnos",
+   "start": 45.7,
+   "end": 46.32,
+   "db": 2.5
+  },
+  {
+   "text": "con",
+   "start": 46.32,
+   "end": 46.58,
+   "db": -7.6
+  },
+  {
+   "text": "nadie",
+   "start": 46.58,
+   "end": 46.86,
+   "db": -6.9
+  },
+  {
+   "text": "más",
+   "start": 46.86,
+   "end": 47.2,
+   "db": -6.6
+  }
+ ]
+}

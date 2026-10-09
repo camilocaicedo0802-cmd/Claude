@@ -117,3 +117,9 @@ Estas reglas mandan sobre todo lo anterior.
 - Plano fijo 1,0×; zoom 1,12× solo en frases clave con la voz alta (regla 12), origen en la cara (52 %, 43 %).
 - Zonas: títulos con base en y = 605 (pared, con velo Verde petróleo 62 %→0 en el tercio superior) · recursos de apoyo con base en y = 1560 (pantalón oscuro, zona segura de Reels) · sin subtítulos.
 - Cortes: silencios > 0,3 s a −35 dB con 0,08 s de margen, a fotograma exacto · audio original sin normalizar.
+
+## 12. Composición aplicada en el día 2 · "Punto de partida" (pendiente de tu visto bueno)
+- Crudo 1080×1920 a 59,94 fps (DJI Osmo Pocket 3): convertido a 30 fps y **sin recorte** (recortar obligaría a escalar). Cara a ~50 % · 40 %; títulos con base en y = 550 para que los trazos descendentes de TAN Pearl no bajen de y = 580.
+- Tomas: solo las buenas (fuera los dos intentos fallidos de "usa un fondo neutro", el reinicio de "algo muy importante…" y el "listo, chao"); 2:25 de crudo → 47 s.
+- Toma de apoyo: tres fragmentos de ≈1 s (perfil, frente, espalda) en las palabras "de perfil", "de frente" y "una de espalda", con visor, flash y obturador.
+- Objetos 3D propios (three.js) a los lados de la cabeza, cada uno nacido de su frase: pin (punto de partida), celular-cámara (foto), cinta métrica (medidas), libreta (anota), calendario del día 1 (21 días) y carpeta "Día 1" con candado (son personales).
