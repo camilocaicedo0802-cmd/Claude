@@ -16,4 +16,5 @@ import fs from "node:fs";
 const chromium = "/opt/pw-browsers/chromium-1194/chrome-linux/chrome";
 if (fs.existsSync(chromium)) {
   Config.setBrowserExecutable(chromium);
+  Config.setChromeMode("chrome-for-testing");
 }

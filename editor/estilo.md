@@ -79,17 +79,22 @@ Paleta: Durazno suave `#FAEDCD` · Marfil cálido `#F5F0EC` · Verde salvia `#6D
 Tipografías: **TAN Pearl** (marca, portadas, frases muy cortas de alto impacto; nunca en textos largos, precios ni instrucciones) y **Glacial Indifference** (cuerpo, descripciones, precios, botones, instrucciones).
 Escala: Titular = TAN Pearl o Glacial Bold, máx. 3–7 palabras · Subtítulo = Glacial Semibold, una idea por bloque · Cuerpo = Glacial Regular · Precio/CTA = Glacial Bold. Máx. 2 familias por pieza.
 Sustitutos del manual: Cormorant Garamond / Bodoni Moda (editorial), Montserrat / Poppins / Arial (funcional).
-**Estado de las fuentes:** Glacial Indifference Regular y Bold instaladas (npm `typeface-glacial-indifference`; no incluye Semibold, uso Bold). **TAN Pearl pendiente de tu archivo** → mientras tanto, Cormorant Garamond.
+**Estado de las fuentes:** Glacial Indifference Regular y Bold instaladas (npm `typeface-glacial-indifference`; no incluye Semibold, uso Bold). **TAN Pearl instalada** (`public/fonts/TAN-Pearl-Regular.otf`, solo peso Regular); Cormorant Garamond queda como respaldo.
 
 ### Traducción de la referencia a tu marca
 | En la referencia | En tu vídeo |
 |---|---|
-| Amarillo `#F4E517` en textos grandes | Gancho/título: TAN Pearl (prov. Cormorant 700) en Marfil `#F5F0EC` con sombra petróleo; contador `3.`/`2.`/`1.`: Glacial Bold en Durazno `#FAEDCD` |
+| Amarillo `#F4E517` en textos grandes | Gancho/título: TAN Pearl en Marfil `#F5F0EC` con sombra petróleo; contador `3.`/`2.`/`1.`: Glacial Bold en Durazno `#FAEDCD` |
 | Frase naranja manuscrita | Glacial Regular en Durazno `#FAEDCD` (sin fuente manuscrita: no está en tu manual) |
 | Píldora amarilla + texto morado | Píldora Durazno `#FAEDCD` + texto Petróleo `#45595A`, Glacial Bold; flechas en Salvia `#6D8B74` |
-| Cierre negro al 65–70 % | Capa Petróleo `#45595A` al 70 %, icono/handle en Marfil, logo Beleza arriba |
+| Cierre negro al 65–70 % | **No se usa** (ver sección 10) |
 | Recorte del tónico de rosas | Recorte de **Drena Oil** (foto enviada: Beleza · aceite corporal drenante y recuperador · árnica, romero, caléndula, almendras), quitando el fondo |
-| URL `www.lulabeauty.co` y `@LULABEAUTY.CO` | **Tu** web/usuario [pendiente: dime cuál] |
+| URL `www.lulabeauty.co` y `@LULABEAUTY.CO` | **No se usa** (ver sección 10) |
 
 ## 10. Correcciones del usuario (se acumulan aquí, paso 4)
-_(vacío por ahora)_
+Estas reglas mandan sobre todo lo anterior.
+
+1. **Sin URL, sin marca de agua de usuario y sin cierre/rótulo final.** Se eliminan las filas 2, 6 y 7 de la sección 4.
+2. **Textos dinámicos según lo que se dice.** Nada de textos fijos de plantilla: cada texto en pantalla sale de la transcripción (ideas clave, beneficios, ingredientes, números, preguntas, llamadas a la acción que diga la persona).
+3. **Animación según el significado.** Cada texto o efecto se elige por lo que se está diciendo en ese momento (p. ej. un ingrediente → aparece con su nombre; un número o lista → contador; un beneficio → palabra grande; una pregunta → texto que entra con pausa). Ser analítico: justificar cada elemento con la frase que lo provoca.
+4. **Vídeo dinámico:** sin tramos de > 3 s sin algún cambio visual (corte, zoom, texto o animación).

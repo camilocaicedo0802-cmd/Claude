@@ -9,13 +9,14 @@ export const COLORS = {
 } as const;
 
 // Tipografías: máximo dos familias por pieza.
-// TAN Pearl no está disponible aún: se sustituye por Cormorant Garamond (sustitución segura del manual).
+// TAN Pearl (archivo de marca) con Cormorant Garamond como respaldo (sustitución segura del manual).
 export const FONTS = {
   display: "'TAN Pearl', 'Cormorant Garamond', serif",
   body: "'Glacial Indifference', 'Montserrat', Arial, sans-serif",
 } as const;
 
 export const FONT_FACES = `
+@font-face { font-family: 'TAN Pearl'; font-weight: 400; src: url(${staticFile("fonts/TAN-Pearl-Regular.otf")}) format('opentype'); }
 @font-face { font-family: 'Glacial Indifference'; font-weight: 400; src: url(${staticFile("fonts/glacial-indifference-400.woff2")}) format('woff2'); }
 @font-face { font-family: 'Glacial Indifference'; font-weight: 700; src: url(${staticFile("fonts/glacial-indifference-700.woff2")}) format('woff2'); }
 @font-face { font-family: 'Cormorant Garamond'; font-weight: 600; src: url(${staticFile("fonts/cormorant-garamond-latin-600-normal.woff2")}) format('woff2'); }

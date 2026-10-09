@@ -6,7 +6,7 @@ export const MyComponent: React.FC = () => {
   return (
     <AbsoluteFill style={{ backgroundColor: COLORS.marfil, justifyContent: "center", alignItems: "center" }}>
       <style>{FONT_FACES}</style>
-      <div style={{ fontFamily: FONTS.display, fontSize: 140, color: COLORS.petroleo }}>Beleza</div>
+      <div style={{ fontFamily: FONTS.display, fontSize: 120, color: COLORS.petroleo }}>BELEZA</div>
       <div style={{ fontFamily: FONTS.body, fontWeight: 700, fontSize: 56, color: COLORS.salvia }}>Drena Oil</div>
     </AbsoluteFill>
   );

@@ -4,3 +4,6 @@ editor/public/referencia/
 editor/out/
 *.mp4
 *.wav
+crudo/
+# fuente comercial: no se sube al repositorio
+editor/public/fonts/TAN-Pearl-Regular.otf
