@@ -1,0 +1,797 @@
+{
+ "duration": 52.751,
+ "segments": [
+  {
+   "srcStart": 0.0,
+   "srcEnd": 5.684,
+   "outStart": 0.0
+  },
+  {
+   "srcStart": 5.85,
+   "srcEnd": 8.604,
+   "outStart": 5.684
+  },
+  {
+   "srcStart": 8.815,
+   "srcEnd": 10.471,
+   "outStart": 8.438
+  },
+  {
+   "srcStart": 10.782,
+   "srcEnd": 15.283,
+   "outStart": 10.094
+  },
+  {
+   "srcStart": 15.542,
+   "srcEnd": 17.741,
+   "outStart": 14.595
+  },
+  {
+   "srcStart": 17.882,
+   "srcEnd": 22.045,
+   "outStart": 16.794
+  },
+  {
+   "srcStart": 22.327,
+   "srcEnd": 23.911,
+   "outStart": 20.957
+  },
+  {
+   "srcStart": 24.094,
+   "srcEnd": 26.371,
+   "outStart": 22.541
+  },
+  {
+   "srcStart": 27.295,
+   "srcEnd": 29.866,
+   "outStart": 24.818
+  },
+  {
+   "srcStart": 30.23,
+   "srcEnd": 33.534,
+   "outStart": 27.389
+  },
+  {
+   "srcStart": 33.781,
+   "srcEnd": 37.27,
+   "outStart": 30.693
+  },
+  {
+   "srcStart": 37.815,
+   "srcEnd": 41.901,
+   "outStart": 34.182
+  },
+  {
+   "srcStart": 42.046,
+   "srcEnd": 45.372,
+   "outStart": 38.268
+  },
+  {
+   "srcStart": 45.71,
+   "srcEnd": 50.476,
+   "outStart": 41.594
+  },
+  {
+   "srcStart": 50.912,
+   "srcEnd": 55.079,
+   "outStart": 46.36
+  },
+  {
+   "srcStart": 55.315,
+   "srcEnd": 57.539,
+   "outStart": 50.527
+  }
+ ],
+ "words": [
+  {
+   "text": "Bienvenidas",
+   "start": 0.0,
+   "end": 0.66
+  },
+  {
+   "text": "al",
+   "start": 0.66,
+   "end": 0.88
+  },
+  {
+   "text": "reto",
+   "start": 0.88,
+   "end": 1.12
+  },
+  {
+   "text": "de",
+   "start": 1.12,
+   "end": 1.26
+  },
+  {
+   "text": "21",
+   "start": 1.26,
+   "end": 1.7
+  },
+  {
+   "text": "días",
+   "start": 1.7,
+   "end": 2.0
+  },
+  {
+   "text": "con",
+   "start": 2.0,
+   "end": 2.4
+  },
+  {
+   "text": "Beleza.",
+   "start": 2.4,
+   "end": 2.78
+  },
+  {
+   "text": "Durante",
+   "start": 2.96,
+   "end": 3.3
+  },
+  {
+   "text": "las",
+   "start": 3.3,
+   "end": 3.48
+  },
+  {
+   "text": "próximas",
+   "start": 3.48,
+   "end": 3.92
+  },
+  {
+   "text": "tres",
+   "start": 3.92,
+   "end": 4.08
+  },
+  {
+   "text": "semanas",
+   "start": 4.08,
+   "end": 4.44
+  },
+  {
+   "text": "aprenderás",
+   "start": 4.44,
+   "end": 5.14
+  },
+  {
+   "text": "a",
+   "start": 5.14,
+   "end": 5.18
+  },
+  {
+   "text": "usar",
+   "start": 5.18,
+   "end": 5.46
+  },
+  {
+   "text": "tu",
+   "start": 5.46,
+   "end": 5.834
+  },
+  {
+   "text": "Luma",
+   "start": 5.834,
+   "end": 6.134
+  },
+  {
+   "text": "Body",
+   "start": 6.134,
+   "end": 6.414
+  },
+  {
+   "text": "con",
+   "start": 6.414,
+   "end": 6.714
+  },
+  {
+   "text": "nuestro",
+   "start": 6.714,
+   "end": 7.154
+  },
+  {
+   "text": "aceite",
+   "start": 7.154,
+   "end": 7.434
+  },
+  {
+   "text": "para",
+   "start": 7.434,
+   "end": 7.734
+  },
+  {
+   "text": "masajes",
+   "start": 7.734,
+   "end": 8.334
+  },
+  {
+   "text": "de",
+   "start": 8.334,
+   "end": 8.583
+  },
+  {
+   "text": "forma",
+   "start": 8.583,
+   "end": 8.923
+  },
+  {
+   "text": "gradual",
+   "start": 8.923,
+   "end": 9.763
+  },
+  {
+   "text": "y",
+   "start": 9.763,
+   "end": 10.252
+  },
+  {
+   "text": "podrás",
+   "start": 10.252,
+   "end": 10.652
+  },
+  {
+   "text": "hacer",
+   "start": 10.652,
+   "end": 10.832
+  },
+  {
+   "text": "uso",
+   "start": 10.832,
+   "end": 11.072
+  },
+  {
+   "text": "de",
+   "start": 11.072,
+   "end": 11.212
+  },
+  {
+   "text": "15",
+   "start": 11.212,
+   "end": 11.512
+  },
+  {
+   "text": "minutos",
+   "start": 11.512,
+   "end": 11.932
+  },
+  {
+   "text": "diarios",
+   "start": 11.932,
+   "end": 12.392
+  },
+  {
+   "text": "que",
+   "start": 12.392,
+   "end": 12.572
+  },
+  {
+   "text": "podrás",
+   "start": 12.572,
+   "end": 12.852
+  },
+  {
+   "text": "convertir",
+   "start": 12.852,
+   "end": 13.252
+  },
+  {
+   "text": "en",
+   "start": 13.252,
+   "end": 13.372
+  },
+  {
+   "text": "rutina",
+   "start": 13.372,
+   "end": 13.752
+  },
+  {
+   "text": "para",
+   "start": 13.752,
+   "end": 14.212
+  },
+  {
+   "text": "ti.",
+   "start": 14.212,
+   "end": 14.472
+  },
+  {
+   "text": "No",
+   "start": 14.595,
+   "end": 14.873
+  },
+  {
+   "text": "recibiste",
+   "start": 14.873,
+   "end": 15.353
+  },
+  {
+   "text": "solamente",
+   "start": 15.353,
+   "end": 15.733
+  },
+  {
+   "text": "un",
+   "start": 15.733,
+   "end": 15.993
+  },
+  {
+   "text": "producto,",
+   "start": 15.993,
+   "end": 16.533
+  },
+  {
+   "text": "también",
+   "start": 16.832,
+   "end": 17.072
+  },
+  {
+   "text": "recibirás",
+   "start": 17.072,
+   "end": 17.652
+  },
+  {
+   "text": "una",
+   "start": 17.652,
+   "end": 18.092
+  },
+  {
+   "text": "guía",
+   "start": 18.092,
+   "end": 18.432
+  },
+  {
+   "text": "donde",
+   "start": 18.432,
+   "end": 18.792
+  },
+  {
+   "text": "sabrás",
+   "start": 18.792,
+   "end": 19.152
+  },
+  {
+   "text": "qué",
+   "start": 19.152,
+   "end": 19.392
+  },
+  {
+   "text": "rutina",
+   "start": 19.392,
+   "end": 19.812
+  },
+  {
+   "text": "realizar",
+   "start": 19.812,
+   "end": 20.152
+  },
+  {
+   "text": "cada",
+   "start": 20.152,
+   "end": 20.532
+  },
+  {
+   "text": "día,",
+   "start": 20.532,
+   "end": 20.792
+  },
+  {
+   "text": "cómo",
+   "start": 21.03,
+   "end": 21.29
+  },
+  {
+   "text": "usar",
+   "start": 21.29,
+   "end": 21.57
+  },
+  {
+   "text": "este",
+   "start": 21.57,
+   "end": 21.83
+  },
+  {
+   "text": "producto",
+   "start": 21.83,
+   "end": 22.33
+  },
+  {
+   "text": "y",
+   "start": 22.33,
+   "end": 22.687
+  },
+  {
+   "text": "cómo",
+   "start": 22.687,
+   "end": 22.967
+  },
+  {
+   "text": "avanzar",
+   "start": 22.967,
+   "end": 23.427
+  },
+  {
+   "text": "según",
+   "start": 23.427,
+   "end": 23.847
+  },
+  {
+   "text": "tu",
+   "start": 23.847,
+   "end": 24.027
+  },
+  {
+   "text": "tolerancia.",
+   "start": 24.027,
+   "end": 24.647
+  },
+  {
+   "text": "En",
+   "start": 24.818,
+   "end": 24.983
+  },
+  {
+   "text": "la",
+   "start": 24.983,
+   "end": 25.083
+  },
+  {
+   "text": "primera",
+   "start": 25.083,
+   "end": 25.383
+  },
+  {
+   "text": "semana",
+   "start": 25.383,
+   "end": 25.783
+  },
+  {
+   "text": "aprenderemos",
+   "start": 25.783,
+   "end": 26.483
+  },
+  {
+   "text": "la",
+   "start": 26.483,
+   "end": 26.683
+  },
+  {
+   "text": "técnica.",
+   "start": 26.683,
+   "end": 27.063
+  },
+  {
+   "text": "En",
+   "start": 27.389,
+   "end": 27.559
+  },
+  {
+   "text": "la",
+   "start": 27.559,
+   "end": 27.699
+  },
+  {
+   "text": "segunda",
+   "start": 27.699,
+   "end": 28.219
+  },
+  {
+   "text": "aumentaremos",
+   "start": 28.219,
+   "end": 29.439
+  },
+  {
+   "text": "el",
+   "start": 29.439,
+   "end": 29.659
+  },
+  {
+   "text": "tiempo",
+   "start": 29.659,
+   "end": 29.939
+  },
+  {
+   "text": "de",
+   "start": 29.939,
+   "end": 30.079
+  },
+  {
+   "text": "trabajo",
+   "start": 30.079,
+   "end": 30.499
+  },
+  {
+   "text": "y",
+   "start": 30.499,
+   "end": 30.832
+  },
+  {
+   "text": "en",
+   "start": 30.832,
+   "end": 30.932
+  },
+  {
+   "text": "la",
+   "start": 30.932,
+   "end": 31.032
+  },
+  {
+   "text": "tercera",
+   "start": 31.032,
+   "end": 31.432
+  },
+  {
+   "text": "integraremos",
+   "start": 31.432,
+   "end": 32.472
+  },
+  {
+   "text": "diferentes",
+   "start": 32.472,
+   "end": 32.892
+  },
+  {
+   "text": "zonas",
+   "start": 32.892,
+   "end": 33.352
+  },
+  {
+   "text": "del",
+   "start": 33.352,
+   "end": 33.552
+  },
+  {
+   "text": "cuerpo.",
+   "start": 33.552,
+   "end": 33.952
+  },
+  {
+   "text": "No",
+   "start": 34.182,
+   "end": 34.407
+  },
+  {
+   "text": "necesitas",
+   "start": 34.407,
+   "end": 34.927
+  },
+  {
+   "text": "hacerlo",
+   "start": 34.927,
+   "end": 35.227
+  },
+  {
+   "text": "perfecto,",
+   "start": 35.227,
+   "end": 35.967
+  },
+  {
+   "text": "solo",
+   "start": 36.167,
+   "end": 36.287
+  },
+  {
+   "text": "necesitas",
+   "start": 36.287,
+   "end": 36.907
+  },
+  {
+   "text": "ser",
+   "start": 36.907,
+   "end": 37.327
+  },
+  {
+   "text": "constante,",
+   "start": 37.327,
+   "end": 37.947
+  },
+  {
+   "text": "escuchar",
+   "start": 38.382,
+   "end": 38.822
+  },
+  {
+   "text": "tu",
+   "start": 38.822,
+   "end": 38.942
+  },
+  {
+   "text": "cuerpo",
+   "start": 38.942,
+   "end": 39.202
+  },
+  {
+   "text": "y",
+   "start": 39.202,
+   "end": 39.322
+  },
+  {
+   "text": "completar",
+   "start": 39.322,
+   "end": 39.922
+  },
+  {
+   "text": "esos",
+   "start": 39.922,
+   "end": 40.102
+  },
+  {
+   "text": "15",
+   "start": 40.102,
+   "end": 40.562
+  },
+  {
+   "text": "minutos",
+   "start": 40.562,
+   "end": 40.982
+  },
+  {
+   "text": "diarios.",
+   "start": 40.982,
+   "end": 41.482
+  },
+  {
+   "text": "Recuerda",
+   "start": 41.624,
+   "end": 42.104
+  },
+  {
+   "text": "guardar",
+   "start": 42.104,
+   "end": 42.524
+  },
+  {
+   "text": "el",
+   "start": 42.524,
+   "end": 42.664
+  },
+  {
+   "text": "calendario",
+   "start": 42.664,
+   "end": 43.484
+  },
+  {
+   "text": "en",
+   "start": 43.484,
+   "end": 43.964
+  },
+  {
+   "text": "tu",
+   "start": 43.964,
+   "end": 44.164
+  },
+  {
+   "text": "celular",
+   "start": 44.164,
+   "end": 44.584
+  },
+  {
+   "text": "o",
+   "start": 44.584,
+   "end": 44.804
+  },
+  {
+   "text": "imprímelo",
+   "start": 44.804,
+   "end": 45.224
+  },
+  {
+   "text": "para",
+   "start": 45.224,
+   "end": 45.444
+  },
+  {
+   "text": "más",
+   "start": 45.444,
+   "end": 45.644
+  },
+  {
+   "text": "facilidad.",
+   "start": 45.644,
+   "end": 46.224
+  },
+  {
+   "text": "Además,",
+   "start": 46.448,
+   "end": 46.828
+  },
+  {
+   "text": "adecua",
+   "start": 46.968,
+   "end": 47.528
+  },
+  {
+   "text": "muy",
+   "start": 47.528,
+   "end": 47.828
+  },
+  {
+   "text": "bien",
+   "start": 47.828,
+   "end": 48.028
+  },
+  {
+   "text": "el",
+   "start": 48.028,
+   "end": 48.148
+  },
+  {
+   "text": "espacio",
+   "start": 48.148,
+   "end": 48.468
+  },
+  {
+   "text": "donde",
+   "start": 48.468,
+   "end": 48.708
+  },
+  {
+   "text": "vas",
+   "start": 48.708,
+   "end": 48.868
+  },
+  {
+   "text": "a",
+   "start": 48.868,
+   "end": 48.948
+  },
+  {
+   "text": "hacer",
+   "start": 48.948,
+   "end": 49.108
+  },
+  {
+   "text": "tu",
+   "start": 49.108,
+   "end": 49.388
+  },
+  {
+   "text": "rutina",
+   "start": 49.388,
+   "end": 49.828
+  },
+  {
+   "text": "de",
+   "start": 49.828,
+   "end": 49.968
+  },
+  {
+   "text": "masajes",
+   "start": 49.968,
+   "end": 50.408
+  },
+  {
+   "text": "y",
+   "start": 50.408,
+   "end": 50.652
+  },
+  {
+   "text": "acompáñame",
+   "start": 50.652,
+   "end": 51.252
+  },
+  {
+   "text": "a",
+   "start": 51.252,
+   "end": 51.452
+  },
+  {
+   "text": "comenzar",
+   "start": 51.452,
+   "end": 51.812
+  },
+  {
+   "text": "el",
+   "start": 51.812,
+   "end": 51.912
+  },
+  {
+   "text": "primer",
+   "start": 51.912,
+   "end": 52.172
+  },
+  {
+   "text": "día.",
+   "start": 52.172,
+   "end": 52.452
+  }
+ ]
+}

@@ -1,0 +1,910 @@
+{
+ "model": "large-v3-turbo",
+ "duration": 57.5390625,
+ "segments": [
+  {
+   "start": 0.0,
+   "end": 2.78,
+   "text": "Bienvenidas al reto de 21 días con Beleza."
+  },
+  {
+   "start": 2.96,
+   "end": 10.14,
+   "text": "Durante las próximas tres semanas aprenderás a usar tu Luma Body con nuestro aceite para masajes de forma gradual"
+  },
+  {
+   "start": 10.14,
+   "end": 15.16,
+   "text": "y podrás hacer uso de 15 minutos diarios que podrás convertir en rutina para ti."
+  },
+  {
+   "start": 15.52,
+   "end": 21.88,
+   "text": "No recibiste solamente un producto, también recibirás una guía donde sabrás qué rutina realizar cada día,"
+  },
+  {
+   "start": 22.4,
+   "end": 26.2,
+   "text": "cómo usar este producto y cómo avanzar según tu tolerancia."
+  },
+  {
+   "start": 26.74,
+   "end": 29.54,
+   "text": "En la primera semana aprenderemos la técnica."
+  },
+  {
+   "start": 30.0,
+   "end": 37.04,
+   "text": "En la segunda aumentaremos el tiempo de trabajo y en la tercera integraremos diferentes zonas del cuerpo."
+  },
+  {
+   "start": 37.56,
+   "end": 45.26,
+   "text": "No necesitas hacerlo perfecto, solo necesitas ser constante, escuchar tu cuerpo y completar esos 15 minutos diarios."
+  },
+  {
+   "start": 45.74,
+   "end": 50.34,
+   "text": "Recuerda guardar el calendario en tu celular o imprímelo para más facilidad."
+  },
+  {
+   "start": 51.0,
+   "end": 57.24,
+   "text": "Además, adecua muy bien el espacio donde vas a hacer tu rutina de masajes y acompáñame a comenzar el primer día."
+  }
+ ],
+ "words": [
+  {
+   "text": "Bienvenidas",
+   "start": 0.0,
+   "end": 0.66,
+   "prob": 0.976
+  },
+  {
+   "text": "al",
+   "start": 0.66,
+   "end": 0.88,
+   "prob": 1.0
+  },
+  {
+   "text": "reto",
+   "start": 0.88,
+   "end": 1.12,
+   "prob": 0.996
+  },
+  {
+   "text": "de",
+   "start": 1.12,
+   "end": 1.26,
+   "prob": 0.999
+  },
+  {
+   "text": "21",
+   "start": 1.26,
+   "end": 1.7,
+   "prob": 0.999
+  },
+  {
+   "text": "días",
+   "start": 1.7,
+   "end": 2.0,
+   "prob": 0.989
+  },
+  {
+   "text": "con",
+   "start": 2.0,
+   "end": 2.4,
+   "prob": 1.0
+  },
+  {
+   "text": "Beleza.",
+   "start": 2.4,
+   "end": 2.78,
+   "prob": 0.731
+  },
+  {
+   "text": "Durante",
+   "start": 2.96,
+   "end": 3.3,
+   "prob": 1.0
+  },
+  {
+   "text": "las",
+   "start": 3.3,
+   "end": 3.48,
+   "prob": 1.0
+  },
+  {
+   "text": "próximas",
+   "start": 3.48,
+   "end": 3.92,
+   "prob": 1.0
+  },
+  {
+   "text": "tres",
+   "start": 3.92,
+   "end": 4.08,
+   "prob": 0.514
+  },
+  {
+   "text": "semanas",
+   "start": 4.08,
+   "end": 4.44,
+   "prob": 1.0
+  },
+  {
+   "text": "aprenderás",
+   "start": 4.44,
+   "end": 5.14,
+   "prob": 0.994
+  },
+  {
+   "text": "a",
+   "start": 5.14,
+   "end": 5.18,
+   "prob": 1.0
+  },
+  {
+   "text": "usar",
+   "start": 5.18,
+   "end": 5.46,
+   "prob": 1.0
+  },
+  {
+   "text": "tu",
+   "start": 5.46,
+   "end": 6.0,
+   "prob": 0.881
+  },
+  {
+   "text": "Luma",
+   "start": 6.0,
+   "end": 6.3,
+   "prob": 0.965
+  },
+  {
+   "text": "Body",
+   "start": 6.3,
+   "end": 6.58,
+   "prob": 0.941
+  },
+  {
+   "text": "con",
+   "start": 6.58,
+   "end": 6.88,
+   "prob": 0.991
+  },
+  {
+   "text": "nuestro",
+   "start": 6.88,
+   "end": 7.32,
+   "prob": 1.0
+  },
+  {
+   "text": "aceite",
+   "start": 7.32,
+   "end": 7.6,
+   "prob": 1.0
+  },
+  {
+   "text": "para",
+   "start": 7.6,
+   "end": 7.9,
+   "prob": 0.999
+  },
+  {
+   "text": "masajes",
+   "start": 7.9,
+   "end": 8.5,
+   "prob": 0.991
+  },
+  {
+   "text": "de",
+   "start": 8.5,
+   "end": 8.96,
+   "prob": 0.993
+  },
+  {
+   "text": "forma",
+   "start": 8.96,
+   "end": 9.3,
+   "prob": 1.0
+  },
+  {
+   "text": "gradual",
+   "start": 9.3,
+   "end": 10.14,
+   "prob": 1.0
+  },
+  {
+   "text": "y",
+   "start": 10.14,
+   "end": 10.94,
+   "prob": 0.972
+  },
+  {
+   "text": "podrás",
+   "start": 10.94,
+   "end": 11.34,
+   "prob": 0.997
+  },
+  {
+   "text": "hacer",
+   "start": 11.34,
+   "end": 11.52,
+   "prob": 1.0
+  },
+  {
+   "text": "uso",
+   "start": 11.52,
+   "end": 11.76,
+   "prob": 1.0
+  },
+  {
+   "text": "de",
+   "start": 11.76,
+   "end": 11.9,
+   "prob": 1.0
+  },
+  {
+   "text": "15",
+   "start": 11.9,
+   "end": 12.2,
+   "prob": 0.999
+  },
+  {
+   "text": "minutos",
+   "start": 12.2,
+   "end": 12.62,
+   "prob": 1.0
+  },
+  {
+   "text": "diarios",
+   "start": 12.62,
+   "end": 13.08,
+   "prob": 1.0
+  },
+  {
+   "text": "que",
+   "start": 13.08,
+   "end": 13.26,
+   "prob": 1.0
+  },
+  {
+   "text": "podrás",
+   "start": 13.26,
+   "end": 13.54,
+   "prob": 0.999
+  },
+  {
+   "text": "convertir",
+   "start": 13.54,
+   "end": 13.94,
+   "prob": 1.0
+  },
+  {
+   "text": "en",
+   "start": 13.94,
+   "end": 14.06,
+   "prob": 0.999
+  },
+  {
+   "text": "rutina",
+   "start": 14.06,
+   "end": 14.44,
+   "prob": 1.0
+  },
+  {
+   "text": "para",
+   "start": 14.44,
+   "end": 14.9,
+   "prob": 1.0
+  },
+  {
+   "text": "ti.",
+   "start": 14.9,
+   "end": 15.16,
+   "prob": 1.0
+  },
+  {
+   "text": "No",
+   "start": 15.52,
+   "end": 15.82,
+   "prob": 1.0
+  },
+  {
+   "text": "recibiste",
+   "start": 15.82,
+   "end": 16.3,
+   "prob": 0.874
+  },
+  {
+   "text": "solamente",
+   "start": 16.3,
+   "end": 16.68,
+   "prob": 1.0
+  },
+  {
+   "text": "un",
+   "start": 16.68,
+   "end": 16.94,
+   "prob": 1.0
+  },
+  {
+   "text": "producto,",
+   "start": 16.94,
+   "end": 17.48,
+   "prob": 1.0
+  },
+  {
+   "text": "también",
+   "start": 17.92,
+   "end": 18.16,
+   "prob": 1.0
+  },
+  {
+   "text": "recibirás",
+   "start": 18.16,
+   "end": 18.74,
+   "prob": 1.0
+  },
+  {
+   "text": "una",
+   "start": 18.74,
+   "end": 19.18,
+   "prob": 1.0
+  },
+  {
+   "text": "guía",
+   "start": 19.18,
+   "end": 19.52,
+   "prob": 1.0
+  },
+  {
+   "text": "donde",
+   "start": 19.52,
+   "end": 19.88,
+   "prob": 1.0
+  },
+  {
+   "text": "sabrás",
+   "start": 19.88,
+   "end": 20.24,
+   "prob": 0.999
+  },
+  {
+   "text": "qué",
+   "start": 20.24,
+   "end": 20.48,
+   "prob": 0.981
+  },
+  {
+   "text": "rutina",
+   "start": 20.48,
+   "end": 20.9,
+   "prob": 0.999
+  },
+  {
+   "text": "realizar",
+   "start": 20.9,
+   "end": 21.24,
+   "prob": 1.0
+  },
+  {
+   "text": "cada",
+   "start": 21.24,
+   "end": 21.62,
+   "prob": 1.0
+  },
+  {
+   "text": "día,",
+   "start": 21.62,
+   "end": 21.88,
+   "prob": 1.0
+  },
+  {
+   "text": "cómo",
+   "start": 22.4,
+   "end": 22.66,
+   "prob": 1.0
+  },
+  {
+   "text": "usar",
+   "start": 22.66,
+   "end": 22.94,
+   "prob": 1.0
+  },
+  {
+   "text": "este",
+   "start": 22.94,
+   "end": 23.2,
+   "prob": 0.998
+  },
+  {
+   "text": "producto",
+   "start": 23.2,
+   "end": 23.7,
+   "prob": 1.0
+  },
+  {
+   "text": "y",
+   "start": 23.7,
+   "end": 24.24,
+   "prob": 1.0
+  },
+  {
+   "text": "cómo",
+   "start": 24.24,
+   "end": 24.52,
+   "prob": 1.0
+  },
+  {
+   "text": "avanzar",
+   "start": 24.52,
+   "end": 24.98,
+   "prob": 1.0
+  },
+  {
+   "text": "según",
+   "start": 24.98,
+   "end": 25.4,
+   "prob": 1.0
+  },
+  {
+   "text": "tu",
+   "start": 25.4,
+   "end": 25.58,
+   "prob": 1.0
+  },
+  {
+   "text": "tolerancia.",
+   "start": 25.58,
+   "end": 26.2,
+   "prob": 1.0
+  },
+  {
+   "text": "En",
+   "start": 26.74,
+   "end": 27.46,
+   "prob": 1.0
+  },
+  {
+   "text": "la",
+   "start": 27.46,
+   "end": 27.56,
+   "prob": 1.0
+  },
+  {
+   "text": "primera",
+   "start": 27.56,
+   "end": 27.86,
+   "prob": 1.0
+  },
+  {
+   "text": "semana",
+   "start": 27.86,
+   "end": 28.26,
+   "prob": 1.0
+  },
+  {
+   "text": "aprenderemos",
+   "start": 28.26,
+   "end": 28.96,
+   "prob": 0.999
+  },
+  {
+   "text": "la",
+   "start": 28.96,
+   "end": 29.16,
+   "prob": 1.0
+  },
+  {
+   "text": "técnica.",
+   "start": 29.16,
+   "end": 29.54,
+   "prob": 1.0
+  },
+  {
+   "text": "En",
+   "start": 30.0,
+   "end": 30.4,
+   "prob": 0.675
+  },
+  {
+   "text": "la",
+   "start": 30.4,
+   "end": 30.54,
+   "prob": 0.998
+  },
+  {
+   "text": "segunda",
+   "start": 30.54,
+   "end": 31.06,
+   "prob": 0.993
+  },
+  {
+   "text": "aumentaremos",
+   "start": 31.06,
+   "end": 32.28,
+   "prob": 0.851
+  },
+  {
+   "text": "el",
+   "start": 32.28,
+   "end": 32.5,
+   "prob": 0.998
+  },
+  {
+   "text": "tiempo",
+   "start": 32.5,
+   "end": 32.78,
+   "prob": 0.999
+  },
+  {
+   "text": "de",
+   "start": 32.78,
+   "end": 32.92,
+   "prob": 0.997
+  },
+  {
+   "text": "trabajo",
+   "start": 32.92,
+   "end": 33.34,
+   "prob": 0.999
+  },
+  {
+   "text": "y",
+   "start": 33.34,
+   "end": 33.92,
+   "prob": 0.371
+  },
+  {
+   "text": "en",
+   "start": 33.92,
+   "end": 34.02,
+   "prob": 0.996
+  },
+  {
+   "text": "la",
+   "start": 34.02,
+   "end": 34.12,
+   "prob": 0.999
+  },
+  {
+   "text": "tercera",
+   "start": 34.12,
+   "end": 34.52,
+   "prob": 1.0
+  },
+  {
+   "text": "integraremos",
+   "start": 34.52,
+   "end": 35.56,
+   "prob": 0.997
+  },
+  {
+   "text": "diferentes",
+   "start": 35.56,
+   "end": 35.98,
+   "prob": 0.998
+  },
+  {
+   "text": "zonas",
+   "start": 35.98,
+   "end": 36.44,
+   "prob": 0.999
+  },
+  {
+   "text": "del",
+   "start": 36.44,
+   "end": 36.64,
+   "prob": 0.996
+  },
+  {
+   "text": "cuerpo.",
+   "start": 36.64,
+   "end": 37.04,
+   "prob": 0.999
+  },
+  {
+   "text": "No",
+   "start": 37.56,
+   "end": 38.04,
+   "prob": 0.998
+  },
+  {
+   "text": "necesitas",
+   "start": 38.04,
+   "end": 38.56,
+   "prob": 0.998
+  },
+  {
+   "text": "hacerlo",
+   "start": 38.56,
+   "end": 38.86,
+   "prob": 0.954
+  },
+  {
+   "text": "perfecto,",
+   "start": 38.86,
+   "end": 39.6,
+   "prob": 0.999
+  },
+  {
+   "text": "solo",
+   "start": 39.8,
+   "end": 39.92,
+   "prob": 0.969
+  },
+  {
+   "text": "necesitas",
+   "start": 39.92,
+   "end": 40.54,
+   "prob": 0.999
+  },
+  {
+   "text": "ser",
+   "start": 40.54,
+   "end": 40.96,
+   "prob": 0.998
+  },
+  {
+   "text": "constante,",
+   "start": 40.96,
+   "end": 41.58,
+   "prob": 0.999
+  },
+  {
+   "text": "escuchar",
+   "start": 42.16,
+   "end": 42.6,
+   "prob": 0.999
+  },
+  {
+   "text": "tu",
+   "start": 42.6,
+   "end": 42.72,
+   "prob": 0.998
+  },
+  {
+   "text": "cuerpo",
+   "start": 42.72,
+   "end": 42.98,
+   "prob": 1.0
+  },
+  {
+   "text": "y",
+   "start": 42.98,
+   "end": 43.1,
+   "prob": 1.0
+  },
+  {
+   "text": "completar",
+   "start": 43.1,
+   "end": 43.7,
+   "prob": 1.0
+  },
+  {
+   "text": "esos",
+   "start": 43.7,
+   "end": 43.88,
+   "prob": 0.998
+  },
+  {
+   "text": "15",
+   "start": 43.88,
+   "end": 44.34,
+   "prob": 0.981
+  },
+  {
+   "text": "minutos",
+   "start": 44.34,
+   "end": 44.76,
+   "prob": 0.999
+  },
+  {
+   "text": "diarios.",
+   "start": 44.76,
+   "end": 45.26,
+   "prob": 1.0
+  },
+  {
+   "text": "Recuerda",
+   "start": 45.74,
+   "end": 46.22,
+   "prob": 1.0
+  },
+  {
+   "text": "guardar",
+   "start": 46.22,
+   "end": 46.64,
+   "prob": 1.0
+  },
+  {
+   "text": "el",
+   "start": 46.64,
+   "end": 46.78,
+   "prob": 0.998
+  },
+  {
+   "text": "calendario",
+   "start": 46.78,
+   "end": 47.6,
+   "prob": 1.0
+  },
+  {
+   "text": "en",
+   "start": 47.6,
+   "end": 48.08,
+   "prob": 0.999
+  },
+  {
+   "text": "tu",
+   "start": 48.08,
+   "end": 48.28,
+   "prob": 1.0
+  },
+  {
+   "text": "celular",
+   "start": 48.28,
+   "end": 48.7,
+   "prob": 1.0
+  },
+  {
+   "text": "o",
+   "start": 48.7,
+   "end": 48.92,
+   "prob": 0.998
+  },
+  {
+   "text": "imprímelo",
+   "start": 48.92,
+   "end": 49.34,
+   "prob": 0.904
+  },
+  {
+   "text": "para",
+   "start": 49.34,
+   "end": 49.56,
+   "prob": 1.0
+  },
+  {
+   "text": "más",
+   "start": 49.56,
+   "end": 49.76,
+   "prob": 0.999
+  },
+  {
+   "text": "facilidad.",
+   "start": 49.76,
+   "end": 50.34,
+   "prob": 0.999
+  },
+  {
+   "text": "Además,",
+   "start": 51.0,
+   "end": 51.38,
+   "prob": 0.998
+  },
+  {
+   "text": "adecua",
+   "start": 51.52,
+   "end": 52.08,
+   "prob": 0.933
+  },
+  {
+   "text": "muy",
+   "start": 52.08,
+   "end": 52.38,
+   "prob": 1.0
+  },
+  {
+   "text": "bien",
+   "start": 52.38,
+   "end": 52.58,
+   "prob": 1.0
+  },
+  {
+   "text": "el",
+   "start": 52.58,
+   "end": 52.7,
+   "prob": 1.0
+  },
+  {
+   "text": "espacio",
+   "start": 52.7,
+   "end": 53.02,
+   "prob": 1.0
+  },
+  {
+   "text": "donde",
+   "start": 53.02,
+   "end": 53.26,
+   "prob": 0.998
+  },
+  {
+   "text": "vas",
+   "start": 53.26,
+   "end": 53.42,
+   "prob": 0.999
+  },
+  {
+   "text": "a",
+   "start": 53.42,
+   "end": 53.5,
+   "prob": 1.0
+  },
+  {
+   "text": "hacer",
+   "start": 53.5,
+   "end": 53.66,
+   "prob": 0.999
+  },
+  {
+   "text": "tu",
+   "start": 53.66,
+   "end": 53.94,
+   "prob": 1.0
+  },
+  {
+   "text": "rutina",
+   "start": 53.94,
+   "end": 54.38,
+   "prob": 1.0
+  },
+  {
+   "text": "de",
+   "start": 54.38,
+   "end": 54.52,
+   "prob": 1.0
+  },
+  {
+   "text": "masajes",
+   "start": 54.52,
+   "end": 54.96,
+   "prob": 0.999
+  },
+  {
+   "text": "y",
+   "start": 54.96,
+   "end": 55.44,
+   "prob": 0.997
+  },
+  {
+   "text": "acompáñame",
+   "start": 55.44,
+   "end": 56.04,
+   "prob": 0.999
+  },
+  {
+   "text": "a",
+   "start": 56.04,
+   "end": 56.24,
+   "prob": 1.0
+  },
+  {
+   "text": "comenzar",
+   "start": 56.24,
+   "end": 56.6,
+   "prob": 1.0
+  },
+  {
+   "text": "el",
+   "start": 56.6,
+   "end": 56.7,
+   "prob": 1.0
+  },
+  {
+   "text": "primer",
+   "start": 56.7,
+   "end": 56.96,
+   "prob": 1.0
+  },
+  {
+   "text": "día.",
+   "start": 56.96,
+   "end": 57.24,
+   "prob": 1.0
+  }
+ ]
+}
