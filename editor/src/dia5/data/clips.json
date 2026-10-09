@@ -1,0 +1,128 @@
+[
+ {
+  "frase": "prepara la piel",
+  "outStart": 0.0,
+  "src": 878.0,
+  "frames": 68
+ },
+ {
+  "frase": "distribuye",
+  "outStart": 2.2666666666666666,
+  "src": 889.0,
+  "frames": 93
+ },
+ {
+  "frase": "los laterales",
+  "outStart": 5.366666666666666,
+  "src": 902.0,
+  "frames": 30
+ },
+ {
+  "frase": "recuerda mantener una",
+  "outStart": 6.366666666666666,
+  "src": 930.5,
+  "frames": 133
+ },
+ {
+  "frase": "realiza círculos",
+  "outStart": 10.8,
+  "src": 939.0,
+  "frames": 216
+ },
+ {
+  "frase": "luego vas a realizar",
+  "outStart": 18.0,
+  "src": 966.0,
+  "frames": 189
+ },
+ {
+  "frase": "arrastras y sueltas",
+  "outStart": 24.3,
+  "src": 985.0,
+  "frames": 63
+ },
+ {
+  "frase": "recuerda no sostener",
+  "outStart": 26.4,
+  "src": 1002.0,
+  "frames": 133
+ },
+ {
+  "frase": "ahora trabajarás",
+  "outStart": 30.833333333333332,
+  "src": 1035.0,
+  "frames": 127
+ },
+ {
+  "frase": "desde el costado",
+  "outStart": 35.06666666666667,
+  "src": 1040.0,
+  "frames": 185
+ },
+ {
+  "frase": "movimientos lentos",
+  "outStart": 41.233333333333334,
+  "src": 1047.0,
+  "frames": 186
+ },
+ {
+  "frase": "pasando por tu cintura",
+  "outStart": 47.43333333333333,
+  "src": 1056.0,
+  "frames": 168
+ },
+ {
+  "frase": "ahora vamos otros",
+  "outStart": 53.03333333333333,
+  "src": 1076.5,
+  "frames": 190
+ },
+ {
+  "frase": "arrastras desde",
+  "outStart": 59.36666666666667,
+  "src": 1085.0,
+  "frames": 201
+ },
+ {
+  "frase": "finalizamos",
+  "outStart": 66.06666666666666,
+  "src": 1129.0,
+  "frames": 151
+ },
+ {
+  "frase": "recuerda mantener siempre",
+  "outStart": 71.1,
+  "src": 1140.0,
+  "frames": 127
+ },
+ {
+  "frase": "y al finalizar",
+  "outStart": 75.33333333333333,
+  "src": 1207.5,
+  "frames": 159
+ },
+ {
+  "frase": "ahora ya completaste",
+  "outStart": 80.63333333333334,
+  "src": 1157.5,
+  "frames": 86
+ },
+ {
+  "frase": "recuerda que la constancia",
+  "outStart": 83.5,
+  "src": 1160.5,
+  "frames": 161
+ },
+ {
+  "frase": "apaga el equipo",
+  "outStart": 88.86666666666666,
+  "src": 1166.0,
+  "frames": 56
+ },
+ {
+  "frase": "retira el exceso",
+  "outStart": 90.73333333333333,
+  "src": 1177.0,
+  "frames": 84
+ }
+]

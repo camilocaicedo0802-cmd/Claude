@@ -102,19 +102,57 @@ def main() -> None:
         f1 = anclas[i + 1][0] if i + 1 < len(anclas) else nfin
         clips.append({"frase": frase, "outStart": f0 / FPS, "src": src, "frames": f1 - f0})
         print(f"{f0 / FPS:6.2f}s  {(f1 - f0) / FPS:5.2f}s  crudo {src:7.2f}–{src + (f1 - f0) / FPS:7.2f}  «{frase}»")
-    # Recorte por fotograma exacto de cada fragmento y concatenación (sin audio)
-    filtro = "".join(f"[0:v]trim=start_frame={round(c['src'] * FPS)}:end_frame={round(c['src'] * FPS) + c['frames']},setpts=PTS-STARTPTS[v{i}];" for i, c in enumerate(clips))
-    filtro += "".join(f"[v{i}]" for i in range(len(clips))) + f"concat=n={len(clips)}:v=1:a=0[v]"
+    # Cada fragmento se recorta por separado (búsqueda precisa + número exacto de fotogramas) y luego se concatenan
+    # sin recodificar: con un único filter_complex de 25 trims ffmpeg se queda sin memoria.
+    import tempfile
     dst = RAIZ / f"public/{dia}/apoyo.mp4"
-    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", crudo, "-filter_complex", filtro, "-map", "[v]", "-c:v", "libx264", "-preset", "medium", "-crf", "15", "-g", "15", "-pix_fmt", "yuv420p", "-r", str(FPS), "-movflags", "+faststart", str(dst)], check=True)
+    with tempfile.TemporaryDirectory() as tmp:
+        lista = Path(tmp) / "lista.txt"
+        with open(lista, "w") as fl:
+            for i, c in enumerate(clips):
+                parte = Path(tmp) / f"c{i:02d}.mp4"
+                subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", f"{c['src']:.4f}", "-i", crudo, "-frames:v", str(c["frames"]), "-an",
+                                "-c:v", "libx264", "-preset", "medium", "-crf", "15", "-g", "15", "-pix_fmt", "yuv420p", "-r", str(FPS), str(parte)], check=True)
+                fl.write(f"file '{parte}'\n")
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", str(lista), "-c", "copy", "-movflags", "+faststart", str(dst)], check=True)
     json.dump(clips, open(RAIZ / f"src/{dia}/data/clips.json", "w"), ensure_ascii=False, indent=1)
 
-    # Cara fotograma a fotograma (cada 3) con YuNet, para que ningún gráfico la toque
+    # Cabeza fotograma a fotograma (cada 3), para que ningún gráfico la toque:
+    #  1) YuNet cuando la cara se ve (de frente);
+    #  2) si no (de perfil, agachada): la cámara está fija, así que se compara con el fondo vacío (crudo 842–844,5 s,
+    #     cuando sale de cuadro) y la parte más alta de la silueta es la cabeza.
     if len(sys.argv) > 3:
         import cv2
-        det = cv2.FaceDetectorYN.create(sys.argv[3], "", (540, 960), 0.6)
+        import numpy as np
+        det = cv2.FaceDetectorYN.create(sys.argv[3], "", (540, 960), 0.55)
+        fondo_cap = cv2.VideoCapture(crudo)
+        placas = []
+        for seg in (842.0, 842.5, 843.0, 843.5, 844.0, 844.5):
+            fondo_cap.set(cv2.CAP_PROP_POS_MSEC, seg * 1000)
+            ok, fr = fondo_cap.read()
+            if ok:
+                placas.append(cv2.GaussianBlur(cv2.resize(fr, (270, 480)), (5, 5), 0).astype(np.int16))
+        fondo = np.median(np.stack(placas), axis=0).astype(np.int16)
+        k = np.ones((5, 5), np.uint8)
+
+        def silueta(fr):
+            peq = cv2.GaussianBlur(cv2.resize(fr, (270, 480)), (5, 5), 0).astype(np.int16)
+            m = (np.abs(peq - fondo).max(axis=2) > 28).astype(np.uint8)
+            m = cv2.morphologyEx(cv2.morphologyEx(m, cv2.MORPH_OPEN, k), cv2.MORPH_CLOSE, k)
+            n, lab, st, _ = cv2.connectedComponentsWithStats(m, 8)
+            if n < 2:
+                return None
+            i = 1 + int(np.argmax(st[1:, cv2.CC_STAT_AREA]))
+            if st[i, cv2.CC_STAT_AREA] < 1500:
+                return None
+            top = st[i, cv2.CC_STAT_TOP]
+            banda = lab[top:top + 55] == i  # ~220 px en 1080×1920: la cabeza
+            xs = np.nonzero(banda.any(axis=0))[0]
+            x0, x1 = int(xs.min()) * 4, int(xs.max() + 1) * 4
+            return [int(x0), int(top) * 4 + 60, int(x1 - x0), 200]  # misma forma que YuNet (la caja de YuNet empieza en la frente)
+
         cap = cv2.VideoCapture(str(dst))
-        caras, n = [], 0
+        caras, n, por_cara, por_silueta = [], 0, 0, 0
         while True:
             ok, fr = cap.read()
             if not ok:
@@ -124,12 +162,14 @@ def main() -> None:
                 if res is not None and len(res):
                     x, y, w, h = (float(v) * 2 for v in max(res, key=lambda r: r[14])[:4])
                     caras.append([n, round(x), round(y), round(w), round(h)])
+                    por_cara += 1
                 else:
-                    caras.append([n, None, None, None, None])
+                    sil = silueta(fr)
+                    caras.append([n, *sil] if sil else [n, None, None, None, None])
+                    por_silueta += 1 if sil else 0
             n += 1
         json.dump({"cada": 3, "caras": caras}, open(RAIZ / f"src/{dia}/data/caras.json", "w"))
-        vistas = sum(1 for c in caras if c[1] is not None)
-        print(f"caras: {vistas}/{len(caras)} muestras con cara")
+        print(f"cabeza: {por_cara} por cara, {por_silueta} por silueta, {len(caras) - por_cara - por_silueta} sin datos (de {len(caras)})")
 
 
 if __name__ == "__main__":
