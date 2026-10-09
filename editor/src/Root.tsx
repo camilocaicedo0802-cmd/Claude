@@ -1,6 +1,8 @@
 import { MyComposition } from "./Composition";
 import { Dia2 } from "./dia2/Dia2";
 import { Dia3 } from "./dia3/Dia3";
+import { Dia4 } from "./dia4/Dia4";
+import { Dia5 } from "./dia5/Dia5";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -11,6 +13,9 @@ export const RemotionRoot: React.FC = () => {
       <Dia2 />
       {/* Día 3 · Preparación y uso seguro */}
       <Dia3 />
+      {/* Días 4 y 5 · rutinas con voz en off sobre el mismo crudo largo */}
+      <Dia4 />
+      <Dia5 />
     </>
   );
 };
