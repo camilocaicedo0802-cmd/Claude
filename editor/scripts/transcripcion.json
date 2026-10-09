@@ -1,55 +1,55 @@
 {
  "model": "large-v3-turbo",
- "duration": 57.5390625,
+ "duration": 57.5158125,
  "segments": [
   {
    "start": 0.0,
-   "end": 2.78,
+   "end": 2.76,
    "text": "Bienvenidas al reto de 21 días con Beleza."
   },
   {
-   "start": 2.96,
-   "end": 10.14,
-   "text": "Durante las próximas tres semanas aprenderás a usar tu Luma Body con nuestro aceite para masajes de forma gradual"
+   "start": 2.92,
+   "end": 10.1,
+   "text": "Durante las próximas 3 semanas aprenderás a usar tu Luma Body con nuestro aceite para masajes de forma gradual"
   },
   {
-   "start": 10.14,
-   "end": 15.16,
+   "start": 10.1,
+   "end": 15.14,
    "text": "y podrás hacer uso de 15 minutos diarios que podrás convertir en rutina para ti."
   },
   {
-   "start": 15.52,
-   "end": 21.88,
+   "start": 15.3,
+   "end": 21.86,
    "text": "No recibiste solamente un producto, también recibirás una guía donde sabrás qué rutina realizar cada día,"
   },
   {
-   "start": 22.4,
-   "end": 26.2,
+   "start": 22.36,
+   "end": 26.16,
    "text": "cómo usar este producto y cómo avanzar según tu tolerancia."
   },
   {
-   "start": 26.74,
-   "end": 29.54,
+   "start": 26.92,
+   "end": 29.52,
    "text": "En la primera semana aprenderemos la técnica."
   },
   {
    "start": 30.0,
-   "end": 37.04,
+   "end": 37.02,
    "text": "En la segunda aumentaremos el tiempo de trabajo y en la tercera integraremos diferentes zonas del cuerpo."
   },
   {
-   "start": 37.56,
-   "end": 45.26,
+   "start": 37.34,
+   "end": 45.24,
    "text": "No necesitas hacerlo perfecto, solo necesitas ser constante, escuchar tu cuerpo y completar esos 15 minutos diarios."
   },
   {
-   "start": 45.74,
-   "end": 50.34,
+   "start": 45.5,
+   "end": 50.32,
    "text": "Recuerda guardar el calendario en tu celular o imprímelo para más facilidad."
   },
   {
-   "start": 51.0,
-   "end": 57.24,
+   "start": 50.98,
+   "end": 57.22,
    "text": "Además, adecua muy bien el espacio donde vas a hacer tu rutina de masajes y acompáñame a comenzar el primer día."
   }
  ],
@@ -57,853 +57,853 @@
   {
    "text": "Bienvenidas",
    "start": 0.0,
-   "end": 0.66,
-   "prob": 0.976
+   "end": 0.62,
+   "prob": 0.988
   },
   {
    "text": "al",
-   "start": 0.66,
-   "end": 0.88,
+   "start": 0.62,
+   "end": 0.86,
    "prob": 1.0
   },
   {
    "text": "reto",
-   "start": 0.88,
-   "end": 1.12,
-   "prob": 0.996
+   "start": 0.86,
+   "end": 1.1,
+   "prob": 0.992
   },
   {
    "text": "de",
-   "start": 1.12,
-   "end": 1.26,
+   "start": 1.1,
+   "end": 1.24,
    "prob": 0.999
   },
   {
    "text": "21",
-   "start": 1.26,
-   "end": 1.7,
+   "start": 1.24,
+   "end": 1.68,
    "prob": 0.999
   },
   {
    "text": "días",
-   "start": 1.7,
-   "end": 2.0,
-   "prob": 0.989
+   "start": 1.68,
+   "end": 1.96,
+   "prob": 0.986
   },
   {
    "text": "con",
-   "start": 2.0,
-   "end": 2.4,
-   "prob": 1.0
+   "start": 1.96,
+   "end": 2.36,
+   "prob": 0.999
   },
   {
    "text": "Beleza.",
-   "start": 2.4,
-   "end": 2.78,
-   "prob": 0.731
+   "start": 2.36,
+   "end": 2.76,
+   "prob": 0.774
   },
   {
    "text": "Durante",
-   "start": 2.96,
-   "end": 3.3,
+   "start": 2.92,
+   "end": 3.28,
    "prob": 1.0
   },
   {
    "text": "las",
-   "start": 3.3,
-   "end": 3.48,
+   "start": 3.28,
+   "end": 3.44,
    "prob": 1.0
   },
   {
    "text": "próximas",
-   "start": 3.48,
-   "end": 3.92,
+   "start": 3.44,
+   "end": 3.9,
    "prob": 1.0
   },
   {
-   "text": "tres",
-   "start": 3.92,
-   "end": 4.08,
-   "prob": 0.514
+   "text": "3",
+   "start": 3.9,
+   "end": 4.06,
+   "prob": 0.614
   },
   {
    "text": "semanas",
-   "start": 4.08,
+   "start": 4.06,
    "end": 4.44,
    "prob": 1.0
   },
   {
    "text": "aprenderás",
    "start": 4.44,
-   "end": 5.14,
-   "prob": 0.994
+   "end": 5.1,
+   "prob": 0.995
   },
   {
    "text": "a",
-   "start": 5.14,
-   "end": 5.18,
+   "start": 5.1,
+   "end": 5.16,
    "prob": 1.0
   },
   {
    "text": "usar",
-   "start": 5.18,
-   "end": 5.46,
+   "start": 5.16,
+   "end": 5.44,
    "prob": 1.0
   },
   {
    "text": "tu",
-   "start": 5.46,
-   "end": 6.0,
-   "prob": 0.881
+   "start": 5.44,
+   "end": 5.98,
+   "prob": 0.848
   },
   {
    "text": "Luma",
-   "start": 6.0,
-   "end": 6.3,
-   "prob": 0.965
+   "start": 5.98,
+   "end": 6.28,
+   "prob": 0.955
   },
   {
    "text": "Body",
-   "start": 6.3,
-   "end": 6.58,
-   "prob": 0.941
+   "start": 6.28,
+   "end": 6.56,
+   "prob": 0.944
   },
   {
    "text": "con",
-   "start": 6.58,
-   "end": 6.88,
-   "prob": 0.991
+   "start": 6.56,
+   "end": 6.86,
+   "prob": 0.994
   },
   {
    "text": "nuestro",
-   "start": 6.88,
-   "end": 7.32,
+   "start": 6.86,
+   "end": 7.3,
    "prob": 1.0
   },
   {
    "text": "aceite",
-   "start": 7.32,
-   "end": 7.6,
+   "start": 7.3,
+   "end": 7.58,
    "prob": 1.0
   },
   {
    "text": "para",
-   "start": 7.6,
-   "end": 7.9,
+   "start": 7.58,
+   "end": 7.88,
    "prob": 0.999
   },
   {
    "text": "masajes",
-   "start": 7.9,
-   "end": 8.5,
-   "prob": 0.991
+   "start": 7.88,
+   "end": 8.46,
+   "prob": 0.994
   },
   {
    "text": "de",
-   "start": 8.5,
-   "end": 8.96,
-   "prob": 0.993
+   "start": 8.46,
+   "end": 8.94,
+   "prob": 0.992
   },
   {
    "text": "forma",
-   "start": 8.96,
-   "end": 9.3,
+   "start": 8.94,
+   "end": 9.28,
    "prob": 1.0
   },
   {
    "text": "gradual",
-   "start": 9.3,
-   "end": 10.14,
+   "start": 9.28,
+   "end": 10.1,
    "prob": 1.0
   },
   {
    "text": "y",
-   "start": 10.14,
-   "end": 10.94,
-   "prob": 0.972
+   "start": 10.1,
+   "end": 10.92,
+   "prob": 0.892
   },
   {
    "text": "podrás",
-   "start": 10.94,
-   "end": 11.34,
+   "start": 10.92,
+   "end": 11.32,
    "prob": 0.997
   },
   {
    "text": "hacer",
-   "start": 11.34,
+   "start": 11.32,
    "end": 11.52,
    "prob": 1.0
   },
   {
    "text": "uso",
    "start": 11.52,
-   "end": 11.76,
+   "end": 11.74,
    "prob": 1.0
   },
   {
    "text": "de",
-   "start": 11.76,
-   "end": 11.9,
+   "start": 11.74,
+   "end": 11.88,
    "prob": 1.0
   },
   {
    "text": "15",
-   "start": 11.9,
-   "end": 12.2,
-   "prob": 0.999
+   "start": 11.88,
+   "end": 12.18,
+   "prob": 1.0
   },
   {
    "text": "minutos",
-   "start": 12.2,
-   "end": 12.62,
+   "start": 12.18,
+   "end": 12.6,
    "prob": 1.0
   },
   {
    "text": "diarios",
-   "start": 12.62,
-   "end": 13.08,
-   "prob": 1.0
+   "start": 12.6,
+   "end": 13.06,
+   "prob": 0.999
   },
   {
    "text": "que",
-   "start": 13.08,
-   "end": 13.26,
-   "prob": 1.0
+   "start": 13.06,
+   "end": 13.22,
+   "prob": 0.999
   },
   {
    "text": "podrás",
-   "start": 13.26,
-   "end": 13.54,
+   "start": 13.22,
+   "end": 13.52,
    "prob": 0.999
   },
   {
    "text": "convertir",
-   "start": 13.54,
-   "end": 13.94,
+   "start": 13.52,
+   "end": 13.92,
    "prob": 1.0
   },
   {
    "text": "en",
-   "start": 13.94,
-   "end": 14.06,
+   "start": 13.92,
+   "end": 14.04,
    "prob": 0.999
   },
   {
    "text": "rutina",
-   "start": 14.06,
-   "end": 14.44,
+   "start": 14.04,
+   "end": 14.42,
    "prob": 1.0
   },
   {
    "text": "para",
-   "start": 14.44,
-   "end": 14.9,
+   "start": 14.42,
+   "end": 14.86,
    "prob": 1.0
   },
   {
    "text": "ti.",
-   "start": 14.9,
-   "end": 15.16,
+   "start": 14.86,
+   "end": 15.14,
    "prob": 1.0
   },
   {
    "text": "No",
-   "start": 15.52,
-   "end": 15.82,
+   "start": 15.3,
+   "end": 15.8,
    "prob": 1.0
   },
   {
    "text": "recibiste",
-   "start": 15.82,
-   "end": 16.3,
-   "prob": 0.874
+   "start": 15.8,
+   "end": 16.28,
+   "prob": 0.953
   },
   {
    "text": "solamente",
-   "start": 16.3,
-   "end": 16.68,
+   "start": 16.28,
+   "end": 16.66,
    "prob": 1.0
   },
   {
    "text": "un",
-   "start": 16.68,
-   "end": 16.94,
+   "start": 16.66,
+   "end": 16.9,
    "prob": 1.0
   },
   {
    "text": "producto,",
-   "start": 16.94,
-   "end": 17.48,
+   "start": 16.9,
+   "end": 17.44,
    "prob": 1.0
   },
   {
    "text": "también",
-   "start": 17.92,
-   "end": 18.16,
+   "start": 17.72,
+   "end": 18.14,
    "prob": 1.0
   },
   {
    "text": "recibirás",
-   "start": 18.16,
-   "end": 18.74,
+   "start": 18.14,
+   "end": 18.72,
    "prob": 1.0
   },
   {
    "text": "una",
-   "start": 18.74,
-   "end": 19.18,
+   "start": 18.72,
+   "end": 19.16,
    "prob": 1.0
   },
   {
    "text": "guía",
-   "start": 19.18,
-   "end": 19.52,
+   "start": 19.16,
+   "end": 19.5,
    "prob": 1.0
   },
   {
    "text": "donde",
-   "start": 19.52,
-   "end": 19.88,
+   "start": 19.5,
+   "end": 19.86,
    "prob": 1.0
   },
   {
    "text": "sabrás",
-   "start": 19.88,
-   "end": 20.24,
+   "start": 19.86,
+   "end": 20.22,
    "prob": 0.999
   },
   {
    "text": "qué",
-   "start": 20.24,
-   "end": 20.48,
-   "prob": 0.981
+   "start": 20.22,
+   "end": 20.44,
+   "prob": 0.884
   },
   {
    "text": "rutina",
-   "start": 20.48,
-   "end": 20.9,
-   "prob": 0.999
+   "start": 20.44,
+   "end": 20.86,
+   "prob": 1.0
   },
   {
    "text": "realizar",
-   "start": 20.9,
-   "end": 21.24,
+   "start": 20.86,
+   "end": 21.2,
    "prob": 1.0
   },
   {
    "text": "cada",
-   "start": 21.24,
-   "end": 21.62,
+   "start": 21.2,
+   "end": 21.6,
    "prob": 1.0
   },
   {
    "text": "día,",
-   "start": 21.62,
-   "end": 21.88,
+   "start": 21.6,
+   "end": 21.86,
    "prob": 1.0
   },
   {
    "text": "cómo",
-   "start": 22.4,
-   "end": 22.66,
+   "start": 22.36,
+   "end": 22.62,
    "prob": 1.0
   },
   {
    "text": "usar",
-   "start": 22.66,
-   "end": 22.94,
+   "start": 22.62,
+   "end": 22.92,
    "prob": 1.0
   },
   {
    "text": "este",
-   "start": 22.94,
-   "end": 23.2,
-   "prob": 0.998
+   "start": 22.92,
+   "end": 23.18,
+   "prob": 0.997
   },
   {
    "text": "producto",
-   "start": 23.2,
-   "end": 23.7,
+   "start": 23.18,
+   "end": 23.68,
    "prob": 1.0
   },
   {
    "text": "y",
-   "start": 23.7,
-   "end": 24.24,
+   "start": 23.68,
+   "end": 24.22,
    "prob": 1.0
   },
   {
    "text": "cómo",
-   "start": 24.24,
-   "end": 24.52,
+   "start": 24.22,
+   "end": 24.5,
    "prob": 1.0
   },
   {
    "text": "avanzar",
-   "start": 24.52,
-   "end": 24.98,
+   "start": 24.5,
+   "end": 24.96,
    "prob": 1.0
   },
   {
    "text": "según",
-   "start": 24.98,
-   "end": 25.4,
-   "prob": 1.0
+   "start": 24.96,
+   "end": 25.38,
+   "prob": 0.999
   },
   {
    "text": "tu",
-   "start": 25.4,
-   "end": 25.58,
+   "start": 25.38,
+   "end": 25.56,
    "prob": 1.0
   },
   {
    "text": "tolerancia.",
-   "start": 25.58,
-   "end": 26.2,
+   "start": 25.56,
+   "end": 26.16,
    "prob": 1.0
   },
   {
    "text": "En",
-   "start": 26.74,
-   "end": 27.46,
-   "prob": 1.0
+   "start": 26.92,
+   "end": 27.44,
+   "prob": 0.998
   },
   {
    "text": "la",
-   "start": 27.46,
-   "end": 27.56,
+   "start": 27.44,
+   "end": 27.54,
    "prob": 1.0
   },
   {
    "text": "primera",
-   "start": 27.56,
-   "end": 27.86,
+   "start": 27.54,
+   "end": 27.84,
    "prob": 1.0
   },
   {
    "text": "semana",
-   "start": 27.86,
-   "end": 28.26,
+   "start": 27.84,
+   "end": 28.24,
    "prob": 1.0
   },
   {
    "text": "aprenderemos",
-   "start": 28.26,
-   "end": 28.96,
+   "start": 28.24,
+   "end": 28.92,
    "prob": 0.999
   },
   {
    "text": "la",
-   "start": 28.96,
-   "end": 29.16,
+   "start": 28.92,
+   "end": 29.14,
    "prob": 1.0
   },
   {
    "text": "técnica.",
-   "start": 29.16,
-   "end": 29.54,
+   "start": 29.14,
+   "end": 29.52,
    "prob": 1.0
   },
   {
    "text": "En",
    "start": 30.0,
-   "end": 30.4,
-   "prob": 0.675
+   "end": 30.38,
+   "prob": 0.72
   },
   {
    "text": "la",
-   "start": 30.4,
-   "end": 30.54,
-   "prob": 0.998
+   "start": 30.38,
+   "end": 30.5,
+   "prob": 0.999
   },
   {
    "text": "segunda",
-   "start": 30.54,
-   "end": 31.06,
-   "prob": 0.993
+   "start": 30.5,
+   "end": 31.04,
+   "prob": 0.997
   },
   {
    "text": "aumentaremos",
-   "start": 31.06,
-   "end": 32.28,
-   "prob": 0.851
+   "start": 31.04,
+   "end": 32.26,
+   "prob": 0.865
   },
   {
    "text": "el",
-   "start": 32.28,
-   "end": 32.5,
-   "prob": 0.998
+   "start": 32.26,
+   "end": 32.48,
+   "prob": 0.999
   },
   {
    "text": "tiempo",
-   "start": 32.5,
-   "end": 32.78,
+   "start": 32.48,
+   "end": 32.76,
    "prob": 0.999
   },
   {
    "text": "de",
-   "start": 32.78,
-   "end": 32.92,
-   "prob": 0.997
+   "start": 32.76,
+   "end": 32.88,
+   "prob": 0.999
   },
   {
    "text": "trabajo",
-   "start": 32.92,
-   "end": 33.34,
-   "prob": 0.999
+   "start": 32.88,
+   "end": 33.32,
+   "prob": 1.0
   },
   {
    "text": "y",
-   "start": 33.34,
-   "end": 33.92,
-   "prob": 0.371
+   "start": 33.32,
+   "end": 33.9,
+   "prob": 0.292
   },
   {
    "text": "en",
-   "start": 33.92,
-   "end": 34.02,
-   "prob": 0.996
+   "start": 33.9,
+   "end": 34.0,
+   "prob": 0.998
   },
   {
    "text": "la",
-   "start": 34.02,
-   "end": 34.12,
-   "prob": 0.999
+   "start": 34.0,
+   "end": 34.1,
+   "prob": 1.0
   },
   {
    "text": "tercera",
-   "start": 34.12,
-   "end": 34.52,
+   "start": 34.1,
+   "end": 34.5,
    "prob": 1.0
   },
   {
    "text": "integraremos",
-   "start": 34.52,
-   "end": 35.56,
-   "prob": 0.997
+   "start": 34.5,
+   "end": 35.54,
+   "prob": 0.998
   },
   {
    "text": "diferentes",
-   "start": 35.56,
+   "start": 35.54,
    "end": 35.98,
-   "prob": 0.998
+   "prob": 0.999
   },
   {
    "text": "zonas",
    "start": 35.98,
-   "end": 36.44,
+   "end": 36.42,
    "prob": 0.999
   },
   {
    "text": "del",
-   "start": 36.44,
-   "end": 36.64,
-   "prob": 0.996
+   "start": 36.42,
+   "end": 36.62,
+   "prob": 0.998
   },
   {
    "text": "cuerpo.",
-   "start": 36.64,
-   "end": 37.04,
-   "prob": 0.999
+   "start": 36.62,
+   "end": 37.02,
+   "prob": 1.0
   },
   {
    "text": "No",
-   "start": 37.56,
-   "end": 38.04,
-   "prob": 0.998
+   "start": 37.34,
+   "end": 38.02,
+   "prob": 0.999
   },
   {
    "text": "necesitas",
-   "start": 38.04,
-   "end": 38.56,
-   "prob": 0.998
+   "start": 38.02,
+   "end": 38.54,
+   "prob": 0.999
   },
   {
    "text": "hacerlo",
-   "start": 38.56,
-   "end": 38.86,
-   "prob": 0.954
+   "start": 38.54,
+   "end": 38.84,
+   "prob": 0.968
   },
   {
    "text": "perfecto,",
-   "start": 38.86,
-   "end": 39.6,
-   "prob": 0.999
+   "start": 38.84,
+   "end": 39.56,
+   "prob": 1.0
   },
   {
    "text": "solo",
-   "start": 39.8,
-   "end": 39.92,
-   "prob": 0.969
+   "start": 39.78,
+   "end": 39.9,
+   "prob": 0.977
   },
   {
    "text": "necesitas",
-   "start": 39.92,
-   "end": 40.54,
-   "prob": 0.999
+   "start": 39.9,
+   "end": 40.52,
+   "prob": 1.0
   },
   {
    "text": "ser",
-   "start": 40.54,
-   "end": 40.96,
-   "prob": 0.998
+   "start": 40.52,
+   "end": 40.92,
+   "prob": 0.999
   },
   {
    "text": "constante,",
-   "start": 40.96,
-   "end": 41.58,
-   "prob": 0.999
+   "start": 40.92,
+   "end": 41.56,
+   "prob": 1.0
   },
   {
    "text": "escuchar",
-   "start": 42.16,
-   "end": 42.6,
-   "prob": 0.999
+   "start": 42.12,
+   "end": 42.58,
+   "prob": 1.0
   },
   {
    "text": "tu",
-   "start": 42.6,
-   "end": 42.72,
-   "prob": 0.998
+   "start": 42.58,
+   "end": 42.68,
+   "prob": 1.0
   },
   {
    "text": "cuerpo",
-   "start": 42.72,
-   "end": 42.98,
+   "start": 42.68,
+   "end": 42.96,
    "prob": 1.0
   },
   {
    "text": "y",
-   "start": 42.98,
-   "end": 43.1,
+   "start": 42.96,
+   "end": 43.08,
    "prob": 1.0
   },
   {
    "text": "completar",
-   "start": 43.1,
-   "end": 43.7,
+   "start": 43.08,
+   "end": 43.66,
    "prob": 1.0
   },
   {
    "text": "esos",
-   "start": 43.7,
-   "end": 43.88,
-   "prob": 0.998
+   "start": 43.66,
+   "end": 43.86,
+   "prob": 0.999
   },
   {
    "text": "15",
-   "start": 43.88,
-   "end": 44.34,
-   "prob": 0.981
+   "start": 43.86,
+   "end": 44.32,
+   "prob": 0.988
   },
   {
    "text": "minutos",
-   "start": 44.34,
+   "start": 44.32,
    "end": 44.76,
-   "prob": 0.999
+   "prob": 1.0
   },
   {
    "text": "diarios.",
    "start": 44.76,
-   "end": 45.26,
-   "prob": 1.0
+   "end": 45.24,
+   "prob": 0.999
   },
   {
    "text": "Recuerda",
-   "start": 45.74,
-   "end": 46.22,
+   "start": 45.5,
+   "end": 46.2,
    "prob": 1.0
   },
   {
    "text": "guardar",
-   "start": 46.22,
-   "end": 46.64,
+   "start": 46.2,
+   "end": 46.62,
    "prob": 1.0
   },
   {
    "text": "el",
-   "start": 46.64,
-   "end": 46.78,
-   "prob": 0.998
+   "start": 46.62,
+   "end": 46.76,
+   "prob": 0.999
   },
   {
    "text": "calendario",
-   "start": 46.78,
-   "end": 47.6,
+   "start": 46.76,
+   "end": 47.58,
    "prob": 1.0
   },
   {
    "text": "en",
-   "start": 47.6,
-   "end": 48.08,
-   "prob": 0.999
+   "start": 47.58,
+   "end": 48.06,
+   "prob": 1.0
   },
   {
    "text": "tu",
-   "start": 48.08,
-   "end": 48.28,
+   "start": 48.06,
+   "end": 48.26,
    "prob": 1.0
   },
   {
    "text": "celular",
-   "start": 48.28,
-   "end": 48.7,
+   "start": 48.26,
+   "end": 48.68,
    "prob": 1.0
   },
   {
    "text": "o",
-   "start": 48.7,
-   "end": 48.92,
-   "prob": 0.998
+   "start": 48.68,
+   "end": 48.9,
+   "prob": 0.999
   },
   {
    "text": "imprímelo",
-   "start": 48.92,
-   "end": 49.34,
-   "prob": 0.904
+   "start": 48.9,
+   "end": 49.32,
+   "prob": 0.909
   },
   {
    "text": "para",
-   "start": 49.34,
-   "end": 49.56,
+   "start": 49.32,
+   "end": 49.54,
    "prob": 1.0
   },
   {
    "text": "más",
-   "start": 49.56,
-   "end": 49.76,
-   "prob": 0.999
+   "start": 49.54,
+   "end": 49.74,
+   "prob": 1.0
   },
   {
    "text": "facilidad.",
-   "start": 49.76,
-   "end": 50.34,
+   "start": 49.74,
+   "end": 50.32,
    "prob": 0.999
   },
   {
    "text": "Además,",
-   "start": 51.0,
-   "end": 51.38,
+   "start": 50.98,
+   "end": 51.36,
    "prob": 0.998
   },
   {
    "text": "adecua",
-   "start": 51.52,
-   "end": 52.08,
-   "prob": 0.933
+   "start": 51.5,
+   "end": 52.06,
+   "prob": 0.95
   },
   {
    "text": "muy",
-   "start": 52.08,
-   "end": 52.38,
+   "start": 52.06,
+   "end": 52.36,
    "prob": 1.0
   },
   {
    "text": "bien",
-   "start": 52.38,
-   "end": 52.58,
+   "start": 52.36,
+   "end": 52.54,
    "prob": 1.0
   },
   {
    "text": "el",
-   "start": 52.58,
-   "end": 52.7,
+   "start": 52.54,
+   "end": 52.66,
    "prob": 1.0
   },
   {
    "text": "espacio",
-   "start": 52.7,
-   "end": 53.02,
+   "start": 52.66,
+   "end": 53.0,
    "prob": 1.0
   },
   {
    "text": "donde",
-   "start": 53.02,
-   "end": 53.26,
-   "prob": 0.998
-  },
-  {
-   "text": "vas",
-   "start": 53.26,
-   "end": 53.42,
+   "start": 53.0,
+   "end": 53.22,
    "prob": 0.999
   },
   {
+   "text": "vas",
+   "start": 53.22,
+   "end": 53.4,
+   "prob": 1.0
+  },
+  {
    "text": "a",
-   "start": 53.42,
-   "end": 53.5,
+   "start": 53.4,
+   "end": 53.48,
    "prob": 1.0
   },
   {
    "text": "hacer",
-   "start": 53.5,
-   "end": 53.66,
-   "prob": 0.999
+   "start": 53.48,
+   "end": 53.64,
+   "prob": 1.0
   },
   {
    "text": "tu",
-   "start": 53.66,
-   "end": 53.94,
+   "start": 53.64,
+   "end": 53.92,
    "prob": 1.0
   },
   {
    "text": "rutina",
-   "start": 53.94,
-   "end": 54.38,
+   "start": 53.92,
+   "end": 54.36,
    "prob": 1.0
   },
   {
    "text": "de",
-   "start": 54.38,
-   "end": 54.52,
+   "start": 54.36,
+   "end": 54.5,
    "prob": 1.0
   },
   {
    "text": "masajes",
-   "start": 54.52,
-   "end": 54.96,
+   "start": 54.5,
+   "end": 54.94,
    "prob": 0.999
   },
   {
    "text": "y",
-   "start": 54.96,
-   "end": 55.44,
-   "prob": 0.997
+   "start": 54.94,
+   "end": 55.42,
+   "prob": 0.998
   },
   {
    "text": "acompáñame",
-   "start": 55.44,
-   "end": 56.04,
+   "start": 55.42,
+   "end": 56.02,
    "prob": 0.999
   },
   {
    "text": "a",
-   "start": 56.04,
-   "end": 56.24,
+   "start": 56.02,
+   "end": 56.22,
    "prob": 1.0
   },
   {
    "text": "comenzar",
-   "start": 56.24,
-   "end": 56.6,
+   "start": 56.22,
+   "end": 56.58,
    "prob": 1.0
   },
   {
    "text": "el",
-   "start": 56.6,
-   "end": 56.7,
+   "start": 56.58,
+   "end": 56.68,
    "prob": 1.0
   },
   {
    "text": "primer",
-   "start": 56.7,
-   "end": 56.96,
+   "start": 56.68,
+   "end": 56.94,
    "prob": 1.0
   },
   {
    "text": "día.",
-   "start": 56.96,
-   "end": 57.24,
+   "start": 56.94,
+   "end": 57.22,
    "prob": 1.0
   }
  ]

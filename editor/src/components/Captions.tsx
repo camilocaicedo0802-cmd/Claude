@@ -53,7 +53,7 @@ export const Captions: React.FC = () => {
     <div
       style={{
         position: "absolute",
-        top: 1170,
+        top: 1390, // sobre el pantalón oscuro: contraste alto y dentro de la zona segura de Reels
         left: 90,
         right: 90,
         textAlign: "center",

@@ -16,15 +16,16 @@ const norm = (s: string) =>
     .toLowerCase()
     .normalize("NFD")
     .replace(/[̀-ͯ]/g, "")
-    .replace(/[^a-z0-9 ]/g, "")
+    .replace(/[^a-z0-9 |]/g, "")
     .trim();
 
-/** Busca una frase en la transcripción y devuelve sus tiempos en el vídeo editado. */
+/** Busca una frase en la transcripción y devuelve sus tiempos en el vídeo editado.
+ *  Un token puede llevar alternativas con «|» (p. ej. "3|tres semanas"), porque Whisper alterna cifras y letras. */
 export const at = (phrase: string, afterSec = 0) => {
   const tokens = norm(phrase).split(/\s+/);
   for (let i = 0; i <= WORDS.length - tokens.length; i++) {
     if (WORDS[i].start < afterSec) continue;
-    if (tokens.every((t, k) => norm(WORDS[i + k].text) === t)) {
+    if (tokens.every((t, k) => t.split("|").includes(norm(WORDS[i + k].text)))) {
       return { start: WORDS[i].start, end: WORDS[i + tokens.length - 1].end };
     }
   }

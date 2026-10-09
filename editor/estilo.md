@@ -98,3 +98,9 @@ Estas reglas mandan sobre todo lo anterior.
 2. **Textos dinámicos según lo que se dice.** Nada de textos fijos de plantilla: cada texto en pantalla sale de la transcripción (ideas clave, beneficios, ingredientes, números, preguntas, llamadas a la acción que diga la persona).
 3. **Animación según el significado.** Cada texto o efecto se elige por lo que se está diciendo en ese momento (p. ej. un ingrediente → aparece con su nombre; un número o lista → contador; un beneficio → palabra grande; una pregunta → texto que entra con pausa). Ser analítico: justificar cada elemento con la frase que lo provoca.
 4. **Vídeo dinámico:** sin tramos de > 3 s sin algún cambio visual (corte, zoom, texto o animación).
+
+## 11. Composición aplicada en el borrador (pendiente de tu visto bueno)
+- Fuente 4K (2160×3840) recortada sin escalar a 1620×2880 (`crop=1620:2880:270:268`): plano medio con la cara al 43 % de altura.
+- Zoom alterno por corte: 1,00× (plano medio) ↔ 1,22× (plano medio corto), origen en la cara (52 %, 43 %); empuje lento +2,5 % por plano; golpe +6 % en la palabra clave.
+- Zonas: títulos y = 110–600 (pared, con velo Verde petróleo 62 %→0 en el tercio superior) · tarjetas y = 980–1360 (torso) · subtítulos desde y = 1390 (pantalón oscuro, zona segura de Reels).
+- Cortes: silencios > 0,3 s a −35 dB con 0,08 s de margen · voz a −14 LUFS.

@@ -3,13 +3,16 @@ import { AbsoluteFill, Easing, interpolate, Sequence, staticFile, useCurrentFram
 import { COLORS, FONTS } from "../brand";
 import { at, DURATION, HOLD, SEGMENTS } from "../lib/timing";
 
-// Ruta del vídeo en crudo dentro de public/. null = aún no disponible → vista previa con silueta.
-export const VIDEO_SRC: string | null = null;
+// Vídeo de trabajo: recorte 1620×2880 del 4K original (crop=1620:2880:270:268), sin escalar.
+// null = vista previa con silueta.
+export const VIDEO_SRC: string | null = "crudo/video.mp4";
+// Centro de la cara en el encuadre (origen de todos los zooms)
+const CARA = "52% 43%";
 
 // Palabras que reciben un "golpe" de zoom (+6 %) porque son el dato clave de su frase.
 const ENFASIS = [
   at("21 días").start,
-  at("tres semanas").start,
+  at("3|tres semanas").start,
   at("15 minutos").start,
   at("una guía").end - 0.2,
   at("perfecto").start,
@@ -52,7 +55,7 @@ const Plano: React.FC<{ index: number; from: number; duration: number; trimBefor
   const global = frame + from;
 
   // Reencuadre alterno en cada corte (estilo.md §2) + empuje lento para que ningún plano quede estático
-  const base = index % 2 === 0 ? 1 : 1.12;
+  const base = index % 2 === 0 ? 1 : 1.22; // plano medio ↔ plano medio corto
   const empuje = interpolate(frame, [0, duration], [1, 1.025]);
   const golpe = ENFASIS.reduce((acc, t) => {
     const d = global - Math.round(t * fps);
@@ -64,8 +67,8 @@ const Plano: React.FC<{ index: number; from: number; duration: number; trimBefor
   }, 0);
 
   return (
-    <AbsoluteFill style={{ transform: `scale(${base * empuje + golpe})`, transformOrigin: "50% 38%" }}>
-      {VIDEO_SRC ? <Video src={staticFile(VIDEO_SRC)} trimBefore={trimBefore} muted /> : <Placeholder />}
+    <AbsoluteFill style={{ transform: `scale(${base * empuje + golpe})`, transformOrigin: CARA }}>
+      {VIDEO_SRC ? <Video src={staticFile(VIDEO_SRC)} trimBefore={trimBefore} muted objectFit="cover" style={{ width: "100%", height: "100%" }} /> : <Placeholder />}
     </AbsoluteFill>
   );
 };

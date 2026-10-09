@@ -33,12 +33,12 @@ const Pop: React.FC<{ at: number; kind?: Kind; children: React.ReactNode; style?
 };
 
 const Top: React.FC<{ children: React.ReactNode }> = ({ children }) => (
-  <div style={{ position: "absolute", top: 150, left: 60, right: 60, display: "flex", flexDirection: "column", alignItems: "center", gap: 10 }}>
+  <div style={{ position: "absolute", top: 110, left: 60, right: 60, display: "flex", flexDirection: "column", alignItems: "center", gap: 10 }}>
     {children}
   </div>
 );
 const Bottom: React.FC<{ children: React.ReactNode }> = ({ children }) => (
-  <div style={{ position: "absolute", top: 1390, left: 66, right: 66, display: "flex", flexDirection: "column", alignItems: "center", gap: 16 }}>
+  <div style={{ position: "absolute", top: 980, left: 66, right: 66, display: "flex", flexDirection: "column", alignItems: "center", gap: 16 }}>
     {children}
   </div>
 );
@@ -98,7 +98,7 @@ const Reto: React.FC = () => {
 // 2 · "las próximas tres semanas" → 3 barras que se llenan una a una
 const TresSemanas: React.FC = () => {
   const { t } = useT();
-  const s = at("tres semanas").start;
+  const s = at("3|tres semanas").start;
   return (
     <Top>
       <Pop at={s} kind="scale">
@@ -236,7 +236,7 @@ const Check: React.FC<{ at: number; texto: string }> = ({ at: atSec, texto }) =>
 };
 const Guia: React.FC = () => (
   <Bottom>
-    <Pop at={at("donde sabrás").start} kind="up" style={{ width: "100%" }}>
+    <Pop at={at("qué rutina realizar").start - 0.15} kind="up" style={{ width: "100%" }}>
       <div style={{ background: CARD, borderRadius: 32, padding: "28px 44px", boxShadow: "0 16px 40px rgba(69,89,90,.35)" }}>
         <div style={{ ...kicker, textShadow: "none", fontSize: 30, color: COLORS.durazno, textAlign: "left", marginBottom: 6 }}>TU GUÍA INCLUYE</div>
         <Check at={at("qué rutina realizar").start} texto="Qué rutina hacer cada día" />
@@ -356,7 +356,7 @@ const Calendario: React.FC<{ desde: number; soloDia1?: boolean }> = ({ desde, so
           <div
             key={i}
             style={{
-              height: 84,
+              height: 72,
               borderRadius: 18,
               display: "flex",
               alignItems: "center",
