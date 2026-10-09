@@ -107,6 +107,10 @@ Estas reglas mandan sobre todo lo anterior.
 11. **Entrega en alta calidad:** render final H.264 CRF 16 desde el recorte 4K.
 12. **Zoom solo en lo importante dicho con la voz alta:** frase clave del guion cuyo pico de volumen supera en ≥ 3,5 dB la mediana de la voz (lo mide `scripts/preparar.py`, campo `db`); zoom suave 1,0 → 1,12 (entra 10 fotogramas, se mantiene la frase, sale 15), mínimo 4 s entre zooms; nunca mientras señala. El resto del vídeo, plano fijo. Transiciones de tema sin zoom: destello Durazno 22 % + desenfoque 8 px.
 13. **Nada cerca de la cara:** zona libre entre y ≈ 620 y 1180 y ≥ 100 px alrededor de la cabeza; los gráficos que acompañan un gesto (p. ej. el calendario) van en el hueco señalado pero a esa distancia.
+14. **Música y efectos de sonido** (`scripts/audio_marca.py`, sintetizados: propios, sin derechos de terceros):
+    - Música de fondo cálida tipo belleza/bienestar (Fa mayor, 84 BPM: pad + piano eléctrico en arpegio + bajo suave + percusión ligera), sin graves < 70 Hz y con hueco en 1–3 kHz para la voz; ~16 dB bajo la voz (volumen 0,1 ≈ −32 LUFS), sube a 0,2 al acabar de hablar.
+    - Efectos variados según lo que hace el gráfico, solo en los momentos importantes y nunca encima de otro: blips (contadores), impacto suave (cifra o cierre clave), whoosh (títulos grandes), swish (títulos secundarios), pop (etiquetas), marimba ascendente (escalones/progreso), tic-tac (relojes/temporizadores), tecleo (texto que se escribe letra a letra), tarjeta (tarjetas que entran), tachado (palabra que se tacha), brillo (palabra clave positiva), campanita (logro) y subida (antes del momento final).
+    - Ningún efecto por encima del nivel de la voz (impactos a 0,22).
 
 ## 11. Composición aplicada en el borrador (pendiente de tu visto bueno)
 - Fuente 4K (2160×3840) recortada sin escalar a 1620×2880 (`crop=1620:2880:270:268`): plano medio con la cara al 43 % de altura.

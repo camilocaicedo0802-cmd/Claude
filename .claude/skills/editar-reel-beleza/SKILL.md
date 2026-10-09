@@ -1,6 +1,6 @@
 ---
 name: editar-reel-beleza
-description: Edita un vídeo en crudo de Beleza (persona hablando a cámara) y lo convierte en un Reel vertical 1080×1920 con Remotion. Corta silencios, mantiene el audio original, añade títulos grandes y recursos visuales animados según lo que se dice, y hace zoom solo en frases clave dichas con la voz alta. Úsala cuando el usuario pase un vídeo en crudo para editar, pida "edita este vídeo" o "otro día del reto", o quiera aplicar el estilo de marca a un nuevo vídeo.
+description: Edita un vídeo en crudo de Beleza (persona hablando a cámara) y lo convierte en un Reel vertical 1080×1920 con Remotion. Corta silencios, mantiene el audio original, añade títulos grandes y recursos visuales animados según lo que se dice, hace zoom solo en frases clave dichas con la voz alta y añade música de fondo y efectos de sonido propios. Úsala cuando el usuario pase un vídeo en crudo para editar, pida "edita este vídeo" o "otro día del reto", o quiera aplicar el estilo de marca a un nuevo vídeo.
 ---
 
 # Editar un Reel de Beleza
@@ -43,7 +43,12 @@ Cada "beat" nace de una frase concreta, anclada con `at("frase")`. El anclaje ac
 - Transiciones de tema sin zoom: destello Durazno + desenfoque breve.
 - Actualiza `FRASES_CLAVE`, `TRANSICIONES` y `SIN_ZOOM` para cada vídeo.
 
-## 6. Revisar y entregar
+## 6. Música y efectos de sonido
+- `<venv>/bin/python -I editor/scripts/audio_marca.py` sintetiza en `public/audio/` la música (con la duración del vídeo editado) y 13 efectos. Son propios, así que no hay problemas de derechos en Instagram.
+- En `editor/src/components/Sonido.tsx` cada efecto se ancla con `at()` al mismo instante que su animación. Elige el tipo según lo que hace el gráfico (ver `estilo.md` §10.14). Úsalos solo en los momentos importantes, varía los tipos y no los apiles.
+- Verifica la mezcla restando la voz original del render: la voz debe quedar con ganancia 1 y desfase 0, la música ~16 dB por debajo y ningún efecto por encima de la voz.
+
+## 7. Revisar y entregar
 - `cd editor && npm run lint`.
 - Para revisar: `npx remotion render Borrador out/borrador.mp4 --concurrency=4`. Saca fotogramas en cada beat (hojas de contacto con ffmpeg) y comprueba que nada tapa la cara, que los textos no se cortan y que el gráfico aparece en su palabra.
 - Para la versión final: `npx remotion render Borrador out/final_alta_calidad.mp4 --crf=16 --audio-bitrate=320k`.

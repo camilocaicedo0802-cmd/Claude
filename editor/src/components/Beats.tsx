@@ -226,9 +226,12 @@ const MasGuia: React.FC = () => (
 );
 
 // 8 · "qué rutina realizar cada día, cómo usar este producto y cómo avanzar según tu tolerancia" → checklist
+// Los puntos de la guía se escriben letra a letra (con sonido de tecleo en Sonido.tsx)
+export const SEG_POR_LETRA = 0.03;
 const Check: React.FC<{ at: number; texto: string }> = ({ at: atSec, texto }) => {
   const { t } = useT();
   const d = interpolate(t, [atSec + 0.1, atSec + 0.4], [0, 1], CLAMP);
+  const letras = Math.floor(interpolate(t, [atSec + 0.05, atSec + 0.05 + texto.length * SEG_POR_LETRA], [0, texto.length], CLAMP));
   return (
     <Pop at={atSec} kind="left">
       <div style={{ display: "flex", alignItems: "center", gap: 22, padding: "14px 0" }}>
@@ -236,7 +239,10 @@ const Check: React.FC<{ at: number; texto: string }> = ({ at: atSec, texto }) =>
           <circle cx={28} cy={28} r={26} fill={COLORS.salvia} />
           <path d="M16 29 L25 38 L41 20" stroke={COLORS.marfil} strokeWidth={6} fill="none" strokeLinecap="round" strokeLinejoin="round" strokeDasharray={40} strokeDashoffset={40 * (1 - d)} />
         </svg>
-        <div style={{ fontFamily: FONTS.body, fontWeight: 700, fontSize: 44, color: COLORS.marfil }}>{texto}</div>
+        <div style={{ fontFamily: FONTS.body, fontWeight: 700, fontSize: 44, color: COLORS.marfil }}>
+          {texto.slice(0, letras)}
+          <span style={{ opacity: 0 }}>{texto.slice(letras)}</span>
+        </div>
       </div>
     </Pop>
   );
