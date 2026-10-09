@@ -1,13 +1,17 @@
 """Prepara el borrador: corta silencios > 0,3 s y genera el vídeo ya editado con su audio original.
 
-Uso: python3 scripts/preparar.py <video_crudo> <transcripcion.json>
+Uso: python3 scripts/preparar.py <video_crudo> <transcripcion.json> [--sin-video]
+     --sin-video: solo regenera src/data/edit.json (no vuelve a renderizar editado.mp4)
 
 Salidas:
-  src/data/edit.json           tramos conservados (a fotograma exacto) + palabras en la línea de tiempo editada
+  src/data/edit.json           tramos conservados (a fotograma exacto) + palabras en la línea de tiempo editada,
+                               cada una con "db": su pico de volumen respecto a la mediana de la voz (para los zooms)
   public/crudo/editado.mp4     vídeo recortado del 4K (1620×2880) con los silencios ya quitados y el audio
                                ORIGINAL del vídeo (sin normalizar); congela el último fotograma HOLD segundos
 """
+import array
 import json
+import math
 import re
 import subprocess
 import sys
@@ -32,6 +36,27 @@ def silencios(src: str) -> list[tuple[float, float]]:
     starts = [float(x) for x in re.findall(r"silence_start: ([0-9.]+)", out)]
     ends = [float(x) for x in re.findall(r"silence_end: ([0-9.]+)", out)]
     return list(zip(starts, ends))
+
+
+def volumen_por_palabra(src: str, palabras: list[dict]) -> list[float]:
+    """Pico de RMS (ventanas de 50 ms) de cada palabra, en dB respecto a la mediana de todas las palabras."""
+    pcm = subprocess.run(
+        ["ffmpeg", "-v", "error", "-i", src, "-vn", "-ac", "1", "-ar", "16000", "-f", "s16le", "-"],
+        capture_output=True, check=True,
+    ).stdout
+    a = array.array("h")
+    a.frombytes(pcm)
+    picos = []
+    for w in palabras:
+        i0, i1 = int(w["start"] * 16000), int(w["end"] * 16000)
+        mejor = 1e-9
+        for j in range(i0, max(i0 + 1, i1 - 800), 400):
+            v = a[j:j + 800]
+            if v:
+                mejor = max(mejor, math.sqrt(sum(x * x for x in v) / len(v)) / 32768)
+        picos.append(20 * math.log10(mejor))
+    mediana = sorted(picos)[len(picos) // 2]
+    return [round(p - mediana, 1) for p in picos]
 
 
 def render_editado(src: str, tramos: list[tuple[int, int]], dst: Path) -> None:
@@ -86,14 +111,16 @@ def main() -> None:
                 return tr["outStart"] + t - tr["srcStart"]
         return duracion
 
+    db = volumen_por_palabra(src, palabras)
     words = [
-        {"text": w["text"], "start": round(mapear(w["start"]), 3), "end": round(mapear(w["end"]), 3)}
-        for w in palabras
+        {"text": w["text"], "start": round(mapear(w["start"]), 3), "end": round(mapear(w["end"]), 3), "db": d}
+        for w, d in zip(palabras, db)
     ]
     edit = {"duration": duracion, "segments": salida, "words": words}
     (RAIZ / "src/data").mkdir(parents=True, exist_ok=True)
     json.dump(edit, open(RAIZ / "src/data/edit.json", "w"), ensure_ascii=False, indent=1)
-    render_editado(src, tramos, RAIZ / "public/crudo/editado.mp4")
+    if "--sin-video" not in sys.argv:
+        render_editado(src, tramos, RAIZ / "public/crudo/editado.mp4")
     print(f"{len(salida)} tramos · {len(salida) - 1} cortes · {datos['duration']:.2f}s → {duracion:.2f}s (+{HOLD}s final)")
 
 

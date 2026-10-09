@@ -25,7 +25,7 @@ No hay subtítulos palabra a palabra. En su lugar usa **textos en pantalla puntu
 - Pausas: no hay pausas > 0,35 s dentro del discurso (única: 1,78–2,12 s, justo en el primer corte). El audio de voz está cortado "al hueso".
 - **Regla para tu vídeo:** cortar todo silencio > 0,3 s (tu petición) y forzar un reencuadre 1,0× ↔ 1,15× en cada corte; objetivo 1 corte cada 2,5–3,5 s.
 
-## 3. Subtítulos (palabra a palabra) — todo [SUPOSICIÓN]
+## 3. Subtítulos (palabra a palabra) — ANULADO por §10.9 (se conserva como referencia)
 | Parámetro | Valor propuesto |
 |---|---|
 | Fuente | Glacial Indifference Bold (cuerpo/funcional según manual) |
@@ -101,10 +101,15 @@ Estas reglas mandan sobre todo lo anterior.
 5. **Audio original del vídeo**, sin normalizar ni procesar; los cortes se hacen con ffmpeg en un único archivo ya editado (nunca recortes de audio por tramo dentro de Remotion: repetían el inicio).
 6. **Cuando la persona señala un hueco, ahí va un gráfico animado** que nazca de su dedo. Para el calendario: el calendario 3D de marca (`public/graficos/calendario_base.png`, agujas animadas), no una cuadrícula de días.
 7. **Títulos grandes pegados a la cabeza:** anclados por abajo a y ≈ 605 px (≈ 40–80 px por encima de la cabeza), no arriba del todo.
-8. **Más transiciones y zoom:** ningún plano > 2,4 s sin cambio de encuadre (zoom suave en el arranque de una palabra), 6 niveles de zoom (1,0 – 1,36) y transición whip (zoom +28 %, desenfoque 14 px, destello Durazno 32 %) en cada cambio de tema.
+8. ~~Más transiciones y zoom~~ → sustituida por la regla 12 (se veía saturado).
+9. **Sin subtítulos.** Solo títulos grandes (arriba, base en y = 580) y recursos visuales de apoyo. La sección 3 queda anulada.
+10. **Recursos de apoyo abajo:** tarjetas, listas y etiquetas ancladas por abajo, entre y = 1180 y 1560 (sobre el pantalón, fuera de la interfaz de Reels), nunca a la altura del pecho.
+11. **Entrega en alta calidad:** render final H.264 CRF 16 desde el recorte 4K.
+12. **Zoom solo en lo importante dicho con la voz alta:** frase clave del guion cuyo pico de volumen supera en ≥ 3,5 dB la mediana de la voz (lo mide `scripts/preparar.py`, campo `db`); zoom suave 1,0 → 1,12 (entra 10 fotogramas, se mantiene la frase, sale 15), mínimo 4 s entre zooms; nunca mientras señala. El resto del vídeo, plano fijo. Transiciones de tema sin zoom: destello Durazno 22 % + desenfoque 8 px.
+13. **Nada cerca de la cara:** zona libre entre y ≈ 620 y 1180 y ≥ 100 px alrededor de la cabeza; los gráficos que acompañan un gesto (p. ej. el calendario) van en el hueco señalado pero a esa distancia.
 
 ## 11. Composición aplicada en el borrador (pendiente de tu visto bueno)
 - Fuente 4K (2160×3840) recortada sin escalar a 1620×2880 (`crop=1620:2880:270:268`): plano medio con la cara al 43 % de altura.
-- Zoom por plano entre 6 niveles (1,0 · 1,22 · 1,08 · 1,36 · 1,15 · 1,28), origen en la cara (52 %, 43 %); empuje lento +3 % por plano; golpe +6 % en la palabra clave; cámara fija a 1,0 mientras señala.
-- Zonas: títulos con base en y = 605 (pared, con velo Verde petróleo 62 %→0 en el tercio superior) · tarjetas y = 980–1360 (torso) · subtítulos desde y = 1390 (pantalón oscuro, zona segura de Reels).
+- Plano fijo 1,0×; zoom 1,12× solo en frases clave con la voz alta (regla 12), origen en la cara (52 %, 43 %).
+- Zonas: títulos con base en y = 605 (pared, con velo Verde petróleo 62 %→0 en el tercio superior) · recursos de apoyo con base en y = 1560 (pantalón oscuro, zona segura de Reels) · sin subtítulos.
 - Cortes: silencios > 0,3 s a −35 dB con 0,08 s de margen, a fotograma exacto · audio original sin normalizar.

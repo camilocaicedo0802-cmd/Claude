@@ -86,712 +86,854 @@
   {
    "text": "Bienvenidas",
    "start": 0.0,
-   "end": 0.62
+   "end": 0.62,
+   "db": 4.0
   },
   {
    "text": "al",
    "start": 0.62,
-   "end": 0.86
+   "end": 0.86,
+   "db": 3.0
   },
   {
    "text": "reto",
    "start": 0.86,
-   "end": 1.1
+   "end": 1.1,
+   "db": 0.2
   },
   {
    "text": "de",
    "start": 1.1,
-   "end": 1.24
+   "end": 1.24,
+   "db": -1.7
   },
   {
    "text": "21",
    "start": 1.24,
-   "end": 1.68
+   "end": 1.68,
+   "db": -0.6
   },
   {
    "text": "días",
    "start": 1.68,
-   "end": 1.96
+   "end": 1.96,
+   "db": 3.6
   },
   {
    "text": "con",
    "start": 1.96,
-   "end": 2.36
+   "end": 2.36,
+   "db": 4.2
   },
   {
    "text": "Beleza.",
    "start": 2.36,
-   "end": 2.76
+   "end": 2.76,
+   "db": 0.5
   },
   {
    "text": "Durante",
    "start": 2.92,
-   "end": 3.28
+   "end": 3.28,
+   "db": 2.7
   },
   {
    "text": "las",
    "start": 3.28,
-   "end": 3.44
+   "end": 3.44,
+   "db": 1.3
   },
   {
    "text": "próximas",
    "start": 3.44,
-   "end": 3.9
+   "end": 3.9,
+   "db": -0.6
   },
   {
    "text": "3",
    "start": 3.9,
-   "end": 4.06
+   "end": 4.06,
+   "db": -3.6
   },
   {
    "text": "semanas",
    "start": 4.06,
-   "end": 4.44
+   "end": 4.44,
+   "db": -3.6
   },
   {
    "text": "aprenderás",
    "start": 4.44,
-   "end": 5.1
+   "end": 5.1,
+   "db": 0.0
   },
   {
    "text": "a",
    "start": 5.1,
-   "end": 5.16
+   "end": 5.16,
+   "db": -3.8
   },
   {
    "text": "usar",
    "start": 5.16,
-   "end": 5.44
+   "end": 5.44,
+   "db": 4.4
   },
   {
    "text": "tu",
    "start": 5.44,
-   "end": 5.813
+   "end": 5.813,
+   "db": -0.1
   },
   {
    "text": "Luma",
    "start": 5.813,
-   "end": 6.113
+   "end": 6.113,
+   "db": 1.2
   },
   {
    "text": "Body",
    "start": 6.113,
-   "end": 6.393
+   "end": 6.393,
+   "db": 3.9
   },
   {
    "text": "con",
    "start": 6.393,
-   "end": 6.693
+   "end": 6.693,
+   "db": -5.6
   },
   {
    "text": "nuestro",
    "start": 6.693,
-   "end": 7.133
+   "end": 7.133,
+   "db": -5.9
   },
   {
    "text": "aceite",
    "start": 7.133,
-   "end": 7.413
+   "end": 7.413,
+   "db": -3.2
   },
   {
    "text": "para",
    "start": 7.413,
-   "end": 7.713
+   "end": 7.713,
+   "db": -3.2
   },
   {
    "text": "masajes",
    "start": 7.713,
-   "end": 8.293
+   "end": 8.293,
+   "db": -2.4
   },
   {
    "text": "de",
    "start": 8.293,
-   "end": 8.54
+   "end": 8.54,
+   "db": 1.6
   },
   {
    "text": "forma",
    "start": 8.54,
-   "end": 8.88
+   "end": 8.88,
+   "db": 3.3
   },
   {
    "text": "gradual",
    "start": 8.88,
-   "end": 9.7
+   "end": 9.7,
+   "db": 4.3
   },
   {
    "text": "y",
    "start": 9.7,
-   "end": 10.187
+   "end": 10.187,
+   "db": 3.5
   },
   {
    "text": "podrás",
    "start": 10.187,
-   "end": 10.587
+   "end": 10.587,
+   "db": 5.0
   },
   {
    "text": "hacer",
    "start": 10.587,
-   "end": 10.787
+   "end": 10.787,
+   "db": 2.0
   },
   {
    "text": "uso",
    "start": 10.787,
-   "end": 11.007
+   "end": 11.007,
+   "db": -0.6
   },
   {
    "text": "de",
    "start": 11.007,
-   "end": 11.147
+   "end": 11.147,
+   "db": 2.1
   },
   {
    "text": "15",
    "start": 11.147,
-   "end": 11.447
+   "end": 11.447,
+   "db": -5.0
   },
   {
    "text": "minutos",
    "start": 11.447,
-   "end": 11.867
+   "end": 11.867,
+   "db": -3.2
   },
   {
    "text": "diarios",
    "start": 11.867,
-   "end": 12.327
+   "end": 12.327,
+   "db": 3.8
   },
   {
    "text": "que",
    "start": 12.327,
-   "end": 12.487
+   "end": 12.487,
+   "db": -6.5
   },
   {
    "text": "podrás",
    "start": 12.487,
-   "end": 12.787
+   "end": 12.787,
+   "db": 3.4
   },
   {
    "text": "convertir",
    "start": 12.787,
-   "end": 13.187
+   "end": 13.187,
+   "db": -1.5
   },
   {
    "text": "en",
    "start": 13.187,
-   "end": 13.307
+   "end": 13.307,
+   "db": -11.6
   },
   {
    "text": "rutina",
    "start": 13.307,
-   "end": 13.687
+   "end": 13.687,
+   "db": -1.3
   },
   {
    "text": "para",
    "start": 13.687,
-   "end": 14.127
+   "end": 14.127,
+   "db": 1.9
   },
   {
    "text": "ti.",
    "start": 14.127,
-   "end": 14.407
+   "end": 14.407,
+   "db": -4.1
   },
   {
    "text": "No",
    "start": 14.533,
-   "end": 14.8
+   "end": 14.8,
+   "db": -0.3
   },
   {
    "text": "recibiste",
    "start": 14.8,
-   "end": 15.28
+   "end": 15.28,
+   "db": 1.5
   },
   {
    "text": "solamente",
    "start": 15.28,
-   "end": 15.66
+   "end": 15.66,
+   "db": 3.2
   },
   {
    "text": "un",
    "start": 15.66,
-   "end": 15.9
+   "end": 15.9,
+   "db": -4.3
   },
   {
    "text": "producto,",
    "start": 15.9,
-   "end": 16.44
+   "end": 16.44,
+   "db": 4.7
   },
   {
    "text": "también",
    "start": 16.72,
-   "end": 17.007
+   "end": 17.007,
+   "db": 0.0
   },
   {
    "text": "recibirás",
    "start": 17.007,
-   "end": 17.587
+   "end": 17.587,
+   "db": 3.5
   },
   {
    "text": "una",
    "start": 17.587,
-   "end": 18.027
+   "end": 18.027,
+   "db": -3.3
   },
   {
    "text": "guía",
    "start": 18.027,
-   "end": 18.367
+   "end": 18.367,
+   "db": 1.5
   },
   {
    "text": "donde",
    "start": 18.367,
-   "end": 18.727
+   "end": 18.727,
+   "db": -1.0
   },
   {
    "text": "sabrás",
    "start": 18.727,
-   "end": 19.087
+   "end": 19.087,
+   "db": 0.7
   },
   {
    "text": "qué",
    "start": 19.087,
-   "end": 19.307
+   "end": 19.307,
+   "db": -6.5
   },
   {
    "text": "rutina",
    "start": 19.307,
-   "end": 19.727
+   "end": 19.727,
+   "db": 1.1
   },
   {
    "text": "realizar",
    "start": 19.727,
-   "end": 20.067
+   "end": 20.067,
+   "db": -0.4
   },
   {
    "text": "cada",
    "start": 20.067,
-   "end": 20.467
+   "end": 20.467,
+   "db": -0.2
   },
   {
    "text": "día,",
    "start": 20.467,
-   "end": 20.727
+   "end": 20.727,
+   "db": 2.4
   },
   {
    "text": "cómo",
    "start": 20.96,
-   "end": 21.22
+   "end": 21.22,
+   "db": 3.4
   },
   {
    "text": "usar",
    "start": 21.22,
-   "end": 21.52
+   "end": 21.52,
+   "db": 0.1
   },
   {
    "text": "este",
    "start": 21.52,
-   "end": 21.78
+   "end": 21.78,
+   "db": -0.1
   },
   {
    "text": "producto",
    "start": 21.78,
-   "end": 22.28
+   "end": 22.28,
+   "db": 3.2
   },
   {
    "text": "y",
    "start": 22.28,
-   "end": 22.653
+   "end": 22.653,
+   "db": -5.0
   },
   {
    "text": "cómo",
    "start": 22.653,
-   "end": 22.933
+   "end": 22.933,
+   "db": 2.5
   },
   {
    "text": "avanzar",
    "start": 22.933,
-   "end": 23.393
+   "end": 23.393,
+   "db": 2.4
   },
   {
    "text": "según",
    "start": 23.393,
-   "end": 23.813
+   "end": 23.813,
+   "db": -4.5
   },
   {
    "text": "tu",
    "start": 23.813,
-   "end": 23.993
+   "end": 23.993,
+   "db": -2.7
   },
   {
    "text": "tolerancia.",
    "start": 23.993,
-   "end": 24.593
+   "end": 24.593,
+   "db": 1.8
   },
   {
    "text": "En",
    "start": 24.767,
-   "end": 24.94
+   "end": 24.94,
+   "db": 1.5
   },
   {
    "text": "la",
    "start": 24.94,
-   "end": 25.04
+   "end": 25.04,
+   "db": 2.9
   },
   {
    "text": "primera",
    "start": 25.04,
-   "end": 25.34
+   "end": 25.34,
+   "db": -3.3
   },
   {
    "text": "semana",
    "start": 25.34,
-   "end": 25.74
+   "end": 25.74,
+   "db": 2.2
   },
   {
    "text": "aprenderemos",
    "start": 25.74,
-   "end": 26.42
+   "end": 26.42,
+   "db": 3.0
   },
   {
    "text": "la",
    "start": 26.42,
-   "end": 26.64
+   "end": 26.64,
+   "db": 1.0
   },
   {
    "text": "técnica.",
    "start": 26.64,
-   "end": 27.02
+   "end": 27.02,
+   "db": -1.2
   },
   {
    "text": "En",
    "start": 27.333,
-   "end": 27.513
+   "end": 27.513,
+   "db": -2.7
   },
   {
    "text": "la",
    "start": 27.513,
-   "end": 27.633
+   "end": 27.633,
+   "db": 2.6
   },
   {
    "text": "segunda",
    "start": 27.633,
-   "end": 28.173
+   "end": 28.173,
+   "db": 2.5
   },
   {
    "text": "aumentaremos",
    "start": 28.173,
-   "end": 29.393
+   "end": 29.393,
+   "db": 3.9
   },
   {
    "text": "el",
    "start": 29.393,
-   "end": 29.613
+   "end": 29.613,
+   "db": -0.8
   },
   {
    "text": "tiempo",
    "start": 29.613,
-   "end": 29.893
+   "end": 29.893,
+   "db": -2.9
   },
   {
    "text": "de",
    "start": 29.893,
-   "end": 30.013
+   "end": 30.013,
+   "db": -2.2
   },
   {
    "text": "trabajo",
    "start": 30.013,
-   "end": 30.453
+   "end": 30.453,
+   "db": 3.7
   },
   {
    "text": "y",
    "start": 30.453,
-   "end": 30.767
+   "end": 30.767,
+   "db": -9.0
   },
   {
    "text": "en",
    "start": 30.767,
-   "end": 30.867
+   "end": 30.867,
+   "db": -3.1
   },
   {
    "text": "la",
    "start": 30.867,
-   "end": 30.967
+   "end": 30.967,
+   "db": -2.6
   },
   {
    "text": "tercera",
    "start": 30.967,
-   "end": 31.367
+   "end": 31.367,
+   "db": 1.9
   },
   {
    "text": "integraremos",
    "start": 31.367,
-   "end": 32.407
+   "end": 32.407,
+   "db": 4.6
   },
   {
    "text": "diferentes",
    "start": 32.407,
-   "end": 32.847
+   "end": 32.847,
+   "db": 1.7
   },
   {
    "text": "zonas",
    "start": 32.847,
-   "end": 33.287
+   "end": 33.287,
+   "db": 0.0
   },
   {
    "text": "del",
    "start": 33.287,
-   "end": 33.487
+   "end": 33.487,
+   "db": -2.7
   },
   {
    "text": "cuerpo.",
    "start": 33.487,
-   "end": 33.887
+   "end": 33.887,
+   "db": -3.2
   },
   {
    "text": "No",
    "start": 34.1,
-   "end": 34.32
+   "end": 34.32,
+   "db": -0.2
   },
   {
    "text": "necesitas",
    "start": 34.32,
-   "end": 34.84
+   "end": 34.84,
+   "db": 3.4
   },
   {
    "text": "hacerlo",
    "start": 34.84,
-   "end": 35.14
+   "end": 35.14,
+   "db": 0.6
   },
   {
    "text": "perfecto,",
    "start": 35.14,
-   "end": 35.86
+   "end": 35.86,
+   "db": 0.7
   },
   {
    "text": "solo",
    "start": 36.08,
-   "end": 36.2
+   "end": 36.2,
+   "db": -2.0
   },
   {
    "text": "necesitas",
    "start": 36.2,
-   "end": 36.82
+   "end": 36.82,
+   "db": -0.6
   },
   {
    "text": "ser",
    "start": 36.82,
-   "end": 37.22
+   "end": 37.22,
+   "db": 3.4
   },
   {
    "text": "constante,",
    "start": 37.22,
-   "end": 37.86
+   "end": 37.86,
+   "db": 0.1
   },
   {
    "text": "escuchar",
    "start": 38.253,
-   "end": 38.713
+   "end": 38.713,
+   "db": 2.9
   },
   {
    "text": "tu",
    "start": 38.713,
-   "end": 38.813
+   "end": 38.813,
+   "db": -10.2
   },
   {
    "text": "cuerpo",
    "start": 38.813,
-   "end": 39.093
+   "end": 39.093,
+   "db": 1.5
   },
   {
    "text": "y",
    "start": 39.093,
-   "end": 39.213
+   "end": 39.213,
+   "db": -5.7
   },
   {
    "text": "completar",
    "start": 39.213,
-   "end": 39.793
+   "end": 39.793,
+   "db": 2.9
   },
   {
    "text": "esos",
    "start": 39.793,
-   "end": 39.993
+   "end": 39.993,
+   "db": -0.6
   },
   {
    "text": "15",
    "start": 39.993,
-   "end": 40.453
+   "end": 40.453,
+   "db": -5.6
   },
   {
    "text": "minutos",
    "start": 40.453,
-   "end": 40.893
+   "end": 40.893,
+   "db": -3.6
   },
   {
    "text": "diarios.",
    "start": 40.893,
-   "end": 41.373
+   "end": 41.373,
+   "db": -4.5
   },
   {
    "text": "Recuerda",
    "start": 41.467,
-   "end": 41.967
+   "end": 41.967,
+   "db": 4.7
   },
   {
    "text": "guardar",
    "start": 41.967,
-   "end": 42.387
+   "end": 42.387,
+   "db": 4.7
   },
   {
    "text": "el",
    "start": 42.387,
-   "end": 42.527
+   "end": 42.527,
+   "db": 1.2
   },
   {
    "text": "calendario",
    "start": 42.527,
-   "end": 43.347
+   "end": 43.347,
+   "db": 4.2
   },
   {
    "text": "en",
    "start": 43.347,
-   "end": 43.827
+   "end": 43.827,
+   "db": -1.6
   },
   {
    "text": "tu",
    "start": 43.827,
-   "end": 44.027
+   "end": 44.027,
+   "db": -5.6
   },
   {
    "text": "celular",
    "start": 44.027,
-   "end": 44.447
+   "end": 44.447,
+   "db": 2.4
   },
   {
    "text": "o",
    "start": 44.447,
-   "end": 44.667
+   "end": 44.667,
+   "db": 3.6
   },
   {
    "text": "imprímelo",
    "start": 44.667,
-   "end": 45.087
+   "end": 45.087,
+   "db": -3.1
   },
   {
    "text": "para",
    "start": 45.087,
-   "end": 45.307
+   "end": 45.307,
+   "db": 2.8
   },
   {
    "text": "más",
    "start": 45.307,
-   "end": 45.507
+   "end": 45.507,
+   "db": -2.5
   },
   {
    "text": "facilidad.",
    "start": 45.507,
-   "end": 46.087
+   "end": 46.087,
+   "db": -3.9
   },
   {
    "text": "Además,",
    "start": 46.313,
-   "end": 46.693
+   "end": 46.693,
+   "db": 2.7
   },
   {
    "text": "adecua",
    "start": 46.833,
-   "end": 47.393
+   "end": 47.393,
+   "db": 4.7
   },
   {
    "text": "muy",
    "start": 47.393,
-   "end": 47.693
+   "end": 47.693,
+   "db": -1.5
   },
   {
    "text": "bien",
    "start": 47.693,
-   "end": 47.873
+   "end": 47.873,
+   "db": -2.4
   },
   {
    "text": "el",
    "start": 47.873,
-   "end": 47.993
+   "end": 47.993,
+   "db": -7.1
   },
   {
    "text": "espacio",
    "start": 47.993,
-   "end": 48.333
+   "end": 48.333,
+   "db": 1.1
   },
   {
    "text": "donde",
    "start": 48.333,
-   "end": 48.553
+   "end": 48.553,
+   "db": -4.5
   },
   {
    "text": "vas",
    "start": 48.553,
-   "end": 48.733
+   "end": 48.733,
+   "db": -0.6
   },
   {
    "text": "a",
    "start": 48.733,
-   "end": 48.813
+   "end": 48.813,
+   "db": -4.0
   },
   {
    "text": "hacer",
    "start": 48.813,
-   "end": 48.973
+   "end": 48.973,
+   "db": -2.9
   },
   {
    "text": "tu",
    "start": 48.973,
-   "end": 49.253
+   "end": 49.253,
+   "db": -5.8
   },
   {
    "text": "rutina",
    "start": 49.253,
-   "end": 49.693
+   "end": 49.693,
+   "db": -3.5
   },
   {
    "text": "de",
    "start": 49.693,
-   "end": 49.833
+   "end": 49.833,
+   "db": -6.4
   },
   {
    "text": "masajes",
    "start": 49.833,
-   "end": 50.273
+   "end": 50.273,
+   "db": -1.3
   },
   {
    "text": "y",
    "start": 50.273,
-   "end": 50.52
+   "end": 50.52,
+   "db": -1.0
   },
   {
    "text": "acompáñame",
    "start": 50.52,
-   "end": 51.12
+   "end": 51.12,
+   "db": 3.5
   },
   {
    "text": "a",
    "start": 51.12,
-   "end": 51.32
+   "end": 51.32,
+   "db": 0.3
   },
   {
    "text": "comenzar",
    "start": 51.32,
-   "end": 51.68
+   "end": 51.68,
+   "db": 0.4
   },
   {
    "text": "el",
    "start": 51.68,
-   "end": 51.78
+   "end": 51.78,
+   "db": -6.2
   },
   {
    "text": "primer",
    "start": 51.78,
-   "end": 52.04
+   "end": 52.04,
+   "db": -9.7
   },
   {
    "text": "día.",
    "start": 52.04,
-   "end": 52.32
+   "end": 52.32,
+   "db": -12.1
   }
  ]
 }

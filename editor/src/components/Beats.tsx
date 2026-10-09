@@ -33,14 +33,19 @@ const Pop: React.FC<{ at: number; kind?: Kind; children: React.ReactNode; style?
 };
 
 // Títulos anclados por abajo justo encima de la cabeza (la cabeza empieza en y ≈ 640–680 según el zoom)
-const BASE_TITULOS = 605;
+// Distribución (estilo.md §10): títulos con base en y = 580 (≈ 100 px sobre la cabeza), cara libre
+// entre y ≈ 620 y 1180, recursos de apoyo entre y = 1180 y 1560 (fuera de la interfaz de Reels).
+const BASE_TITULOS = 580;
 const Top: React.FC<{ children: React.ReactNode }> = ({ children }) => (
   <div style={{ position: "absolute", top: 60, height: BASE_TITULOS - 60, left: 60, right: 60, display: "flex", flexDirection: "column", justifyContent: "flex-end", alignItems: "center", gap: 10 }}>
     {children}
   </div>
 );
+// Recursos de apoyo anclados por abajo, sobre el pantalón; terminan en y = 1560 (fuera de la interfaz de Reels)
+const TECHO_RECURSOS = 1180;
+const BASE_RECURSOS = 1560;
 const Bottom: React.FC<{ children: React.ReactNode }> = ({ children }) => (
-  <div style={{ position: "absolute", top: 980, left: 66, right: 66, display: "flex", flexDirection: "column", alignItems: "center", gap: 16 }}>
+  <div style={{ position: "absolute", top: TECHO_RECURSOS, height: BASE_RECURSOS - TECHO_RECURSOS, left: 66, right: 66, display: "flex", flexDirection: "column", justifyContent: "flex-end", alignItems: "center", gap: 16 }}>
     {children}
   </div>
 );
@@ -352,7 +357,7 @@ const Calendario3D: React.FC<{ desde: number }> = ({ desde }) => {
   const { frame, fps, t } = useT();
   const p = pop(frame, fps, desde, 9);
   if (p <= 0) return null;
-  const ancho = 400;
+  const ancho = 340;
   const alto = (ancho * CAL.h) / CAL.w;
   const k = ancho / CAL.w;
   const local = t - desde;
@@ -367,8 +372,8 @@ const Calendario3D: React.FC<{ desde: number }> = ({ desde }) => {
     <div
       style={{
         position: "absolute",
-        left: 70,
-        top: 375, // justo encima del dedo con el que señala (≈ x 320, y 790)
+        left: 50,
+        top: 300, // en el hueco que señala (dedo ≈ x 320, y 790), a > 100 px de la cara
         width: ancho,
         height: alto,
         transform: `translateY(${flota}px) rotate(${(1 - p) * -25 + balanceo}deg) scale(${p})`,

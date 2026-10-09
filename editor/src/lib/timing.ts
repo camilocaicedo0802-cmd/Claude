@@ -1,7 +1,7 @@
 import { spring } from "remotion";
 import edit from "../data/edit.json";
 
-export type Word = { text: string; start: number; end: number };
+export type Word = { text: string; start: number; end: number; db?: number };
 export type Segment = { srcStart: number; srcEnd: number; outStart: number };
 
 // Línea de tiempo YA editada (silencios cortados) generada por scripts/preparar.py
