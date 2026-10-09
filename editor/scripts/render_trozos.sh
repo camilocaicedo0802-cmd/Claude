@@ -7,7 +7,7 @@ set -uo pipefail
 comp=$1; out=$2; tramo=${3:-450}; crf=${4:-16}
 cd "$(dirname "$0")/.."
 tmp=$(mktemp -d)
-total=$(npx remotion compositions --log=error 2>/dev/null | awk -v c="$comp" '$1==c {print $4}')
+total=$(npx remotion compositions 2>/dev/null | awk -v c="$comp" '$1==c {print $4}')
 [ -z "$total" ] && { echo "No encuentro $comp"; exit 1; }
 echo "$comp: $total fotogramas en tramos de $tramo"
 npx remotion bundle --out-dir="$tmp/bundle" --log=error > /dev/null 2>&1
