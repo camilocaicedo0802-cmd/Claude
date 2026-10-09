@@ -126,3 +126,8 @@ Estas reglas mandan sobre todo lo anterior.
 - Tomas: solo las buenas (fuera los dos intentos fallidos de "usa un fondo neutro", el reinicio de "algo muy importante…" y el "listo, chao"); 2:25 de crudo → 47 s.
 - Toma de apoyo: tres fragmentos de ≈1 s (perfil, frente, espalda) en las palabras "de perfil", "de frente" y "una de espalda", con visor, flash y obturador.
 - Objetos 3D propios (three.js) a los lados de la cabeza, cada uno nacido de su frase: pin (punto de partida), celular-cámara (foto), cinta métrica (medidas), libreta (anota), calendario del día 1 (21 días) y carpeta "Día 1" con candado (son personales).
+
+## 13. Composición aplicada en el día 3 · "Preparación y uso seguro"
+- Crudo 1080×1920 a 59,94 fps, 5:22 → 1:19 con solo las tomas buenas (fuera la charla inicial sobre las hojas, el "antes de empezar… cosas no", los intentos de "tercero/tres", "o no veo", los "quinto" incompletos y el "listo/gracias").
+- Estructura por pasos: número en círculo Durazno + idea en TAN Pearl (1 revisa tu piel · 2 piel seca → aceite · 3 más baja · 4 prueba · 5 movimiento · apaga y limpia), con destello en cada paso.
+- Objetos 3D propios (sin calendario): lupa (revisar la piel), frasco Drena Oil que vierte gotas (aceite), gota de agua con señal de prohibido (no uses agua), perilla de intensidad que sube y baja de nivel, flechas abajo y en círculo (movimiento) y botón de encendido que se apaga con brillos (apagar y limpiar).
