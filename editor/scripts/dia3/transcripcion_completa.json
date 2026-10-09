@@ -1,0 +1,2980 @@
+{
+ "model": "large-v3-turbo",
+ "duration": 321.8986875,
+ "segments": [
+  {
+   "start": 0.0,
+   "end": 14.12,
+   "text": "una hojita de estas, que son unas trocecitas, detrás, es como para que no se vea ese rayado de atrás."
+  },
+  {
+   "start": 18.1,
+   "end": 20.86,
+   "text": "Es más nada, ¿sabes qué se puede hacer en la hoja de esto?"
+  },
+  {
+   "start": 21.06,
+   "end": 24.86,
+   "text": "No sé si han visto que uno en televisión cuando está conduciendo un programa o algo así,"
+  },
+  {
+   "start": 25.0,
+   "end": 29.74,
+   "text": "uno tiene como una cosita referente a lo que se está haciendo."
+  },
+  {
+   "start": 29.74,
+   "end": 36.48,
+   "text": "alusivo, entonces por detrás se puede hacer con el logo de la marca, y de manera que cuando"
+  },
+  {
+   "start": 36.48,
+   "end": 40.04,
+   "text": "tú levantes, por ejemplo, que sea como un tarjetoncito, donde se coloca un fichero"
+  },
+  {
+   "start": 40.04,
+   "end": 51.98,
+   "text": "como para ideas puntuales, pero tiene más contenido, entonces se lo podemos hacer de"
+  },
+  {
+   "start": 51.98,
+   "end": 56.2,
+   "text": "manera que cuando tú levantes la hoja, así como se ve, acá la cámara muestra, por"
+  },
+  {
+   "start": 56.2,
+   "end": 57.48,
+   "text": "ejemplo, el logo de la marca."
+  },
+  {
+   "start": 82.03999999999999,
+   "end": 86.14,
+   "text": "Antes de empezar vamos a tener las siguientes cosas en cuenta, cosas no."
+  },
+  {
+   "start": 91.5,
+   "end": 95.1,
+   "text": "antes de empezar vamos a tener las siguientes instrucciones en cuenta"
+  },
+  {
+   "start": 95.1,
+   "end": 97.78,
+   "text": "primero vas a revisar muy bien tu piel"
+  },
+  {
+   "start": 97.78,
+   "end": 103.78,
+   "text": "no puedes pasar el luma body sobre moretones, sobre varices, sobre el hueso"
+  },
+  {
+   "start": 103.78,
+   "end": 107.06,
+   "text": "porque puede generar dolor y mucha más irritación"
+  },
+  {
+   "start": 127.03999999999999,
+   "end": 134.8,
+   "text": "Además, el Luma Body nunca, nunca puede utilizarse sobre la piel seca, siempre debes usar el"
+  },
+  {
+   "start": 134.8,
+   "end": 140.44,
+   "text": "aceite para poder deslizar mucho mejor el producto, entre más aceite pongas, mucho"
+  },
+  {
+   "start": 140.44,
+   "end": 146.1,
+   "text": "mejor se va a deslizar, no uses agua para deslizar el producto, debes usar un aceite para masajes."
+  },
+  {
+   "start": 156.2,
+   "end": 156.76,
+   "text": "Tercero"
+  },
+  {
+   "start": 156.76,
+   "end": 158.16,
+   "text": "Vas a empezar desde"
+  },
+  {
+   "start": 159.56,
+   "end": 160.12,
+   "text": "Tres"
+  },
+  {
+   "start": 162.2,
+   "end": 162.76,
+   "text": "Tres"
+  },
+  {
+   "start": 162.76,
+   "end": 164.88,
+   "text": "Vas a empezar a usar tu Luma Body"
+  },
+  {
+   "start": 164.88,
+   "end": 167.3,
+   "text": "Desde la intensidad"
+  },
+  {
+   "start": 167.3,
+   "end": 168.2,
+   "text": "Más baja"
+  },
+  {
+   "start": 168.2,
+   "end": 170.24,
+   "text": "No vas a empezar por la más alta"
+  },
+  {
+   "start": 170.24,
+   "end": 171.26,
+   "text": "Siempre desde la más baja"
+  },
+  {
+   "start": 175.18,
+   "end": 175.74,
+   "text": "Tres"
+  },
+  {
+   "start": 175.74,
+   "end": 177.98,
+   "text": "Comienza siempre con la intensidad más baja"
+  },
+  {
+   "start": 184.23999999999998,
+   "end": 191.2,
+   "text": "3. Vas a empezar a usar tu Luma Body desde la intensidad más baja. Aumenta solo si te"
+  },
+  {
+   "start": 191.2,
+   "end": 196.64,
+   "text": "empiezas a sentir cómoda con la intensidad y la succión. Recuerda, la intensidad sí"
+  },
+  {
+   "start": 196.64,
+   "end": 199.12,
+   "text": "sí debe sentirse, pero no debe doler."
+  },
+  {
+   "start": 203.76,
+   "end": 204.52,
+   "text": "¿O no?"
+  },
+  {
+   "start": 204.94,
+   "end": 205.6,
+   "text": "¿O no veo?"
+  },
+  {
+   "start": 206.18,
+   "end": 207.56,
+   "text": "¿O no veo me ganado?"
+  },
+  {
+   "start": 208.12,
+   "end": 209.3,
+   "text": "¿O no veo?"
+  },
+  {
+   "start": 210.36,
+   "end": 211.62,
+   "text": "¿O no veo?"
+  },
+  {
+   "start": 224.44,
+   "end": 228.6,
+   "text": "Cuarto, vas a hacer primero una prueba"
+  },
+  {
+   "start": 228.6,
+   "end": 234.74,
+   "text": "en una zona pequeña de tu abdomen o de tus piernas, si jala demasiado o si duele demasiado"
+  },
+  {
+   "start": 234.74,
+   "end": 252.26,
+   "text": "vas a parar, vas a bajar la intensidad y vas a aplicar más aceite, quinto, siempre, siempre"
+  },
+  {
+   "start": 252.26,
+   "end": 253.18,
+   "text": "vas a tener"
+  },
+  {
+   "start": 258.12,
+   "end": 260.12,
+   "text": "quinto, vas a mantener siempre"
+  },
+  {
+   "start": 260.12,
+   "end": 262.32,
+   "text": "tu luma body en movimiento"
+  },
+  {
+   "start": 272.64,
+   "end": 274.4,
+   "text": "quinto, vas a mantener siempre"
+  },
+  {
+   "start": 274.4,
+   "end": 276.08,
+   "text": "tu luma body en movimiento"
+  },
+  {
+   "start": 276.08,
+   "end": 279.08,
+   "text": "siempre en forma descendente"
+  },
+  {
+   "start": 279.98,
+   "end": 281.84,
+   "text": "quinto, vas a mantener siempre"
+  },
+  {
+   "start": 281.84,
+   "end": 287.4,
+   "text": "El Luma Body en movimiento nunca lo puedes dejar quieto porque van a salir moretones."
+  },
+  {
+   "start": 287.9,
+   "end": 293.58,
+   "text": "Además, siempre el movimiento debe ser de arriba hacia abajo o en forma de círculos,"
+  },
+  {
+   "start": 293.88,
+   "end": 295.82,
+   "text": "pero nunca debes quedarse en un solo lugar."
+  },
+  {
+   "start": 304.66,
+   "end": 308.88,
+   "text": "Y al terminar solo debes apagar y limpiar muy bien tu dispositivo."
+  },
+  {
+   "start": 310.72,
+   "end": 311.4,
+   "text": "Listo."
+  },
+  {
+   "start": 315.32000000000005,
+   "end": 316.72,
+   "text": "¡Gracias!"
+  }
+ ],
+ "words": [
+  {
+   "text": "una",
+   "start": 0.0,
+   "end": 0.16,
+   "prob": 0.283
+  },
+  {
+   "text": "hojita",
+   "start": 0.16,
+   "end": 0.5,
+   "prob": 0.783
+  },
+  {
+   "text": "de",
+   "start": 0.5,
+   "end": 0.66,
+   "prob": 0.925
+  },
+  {
+   "text": "estas,",
+   "start": 0.66,
+   "end": 1.14,
+   "prob": 0.829
+  },
+  {
+   "text": "que",
+   "start": 1.48,
+   "end": 1.8,
+   "prob": 0.424
+  },
+  {
+   "text": "son",
+   "start": 1.8,
+   "end": 1.98,
+   "prob": 0.971
+  },
+  {
+   "text": "unas",
+   "start": 1.98,
+   "end": 2.16,
+   "prob": 0.914
+  },
+  {
+   "text": "trocecitas,",
+   "start": 2.16,
+   "end": 2.84,
+   "prob": 0.702
+  },
+  {
+   "text": "detrás,",
+   "start": 3.2,
+   "end": 3.6,
+   "prob": 0.834
+  },
+  {
+   "text": "es",
+   "start": 5.2,
+   "end": 7.32,
+   "prob": 0.121
+  },
+  {
+   "text": "como",
+   "start": 7.32,
+   "end": 8.24,
+   "prob": 0.786
+  },
+  {
+   "text": "para",
+   "start": 8.24,
+   "end": 9.02,
+   "prob": 0.948
+  },
+  {
+   "text": "que",
+   "start": 9.02,
+   "end": 9.16,
+   "prob": 0.971
+  },
+  {
+   "text": "no",
+   "start": 9.16,
+   "end": 9.32,
+   "prob": 0.989
+  },
+  {
+   "text": "se",
+   "start": 9.32,
+   "end": 9.48,
+   "prob": 0.992
+  },
+  {
+   "text": "vea",
+   "start": 9.48,
+   "end": 9.78,
+   "prob": 0.994
+  },
+  {
+   "text": "ese",
+   "start": 9.78,
+   "end": 10.12,
+   "prob": 0.772
+  },
+  {
+   "text": "rayado",
+   "start": 10.12,
+   "end": 13.68,
+   "prob": 0.64
+  },
+  {
+   "text": "de",
+   "start": 13.68,
+   "end": 13.84,
+   "prob": 0.97
+  },
+  {
+   "text": "atrás.",
+   "start": 13.84,
+   "end": 14.12,
+   "prob": 0.861
+  },
+  {
+   "text": "Es",
+   "start": 18.1,
+   "end": 18.5,
+   "prob": 0.559
+  },
+  {
+   "text": "más",
+   "start": 18.5,
+   "end": 18.72,
+   "prob": 0.775
+  },
+  {
+   "text": "nada,",
+   "start": 18.72,
+   "end": 18.88,
+   "prob": 0.436
+  },
+  {
+   "text": "¿sabes",
+   "start": 18.98,
+   "end": 19.2,
+   "prob": 0.925
+  },
+  {
+   "text": "qué",
+   "start": 19.2,
+   "end": 19.3,
+   "prob": 0.591
+  },
+  {
+   "text": "se",
+   "start": 19.3,
+   "end": 19.44,
+   "prob": 0.988
+  },
+  {
+   "text": "puede",
+   "start": 19.44,
+   "end": 19.64,
+   "prob": 0.996
+  },
+  {
+   "text": "hacer",
+   "start": 19.64,
+   "end": 19.84,
+   "prob": 0.998
+  },
+  {
+   "text": "en",
+   "start": 19.84,
+   "end": 20.02,
+   "prob": 0.883
+  },
+  {
+   "text": "la",
+   "start": 20.02,
+   "end": 20.14,
+   "prob": 0.373
+  },
+  {
+   "text": "hoja",
+   "start": 20.14,
+   "end": 20.38,
+   "prob": 0.994
+  },
+  {
+   "text": "de",
+   "start": 20.38,
+   "end": 20.6,
+   "prob": 0.464
+  },
+  {
+   "text": "esto?",
+   "start": 20.6,
+   "end": 20.86,
+   "prob": 0.86
+  },
+  {
+   "text": "No",
+   "start": 21.06,
+   "end": 21.38,
+   "prob": 0.937
+  },
+  {
+   "text": "sé",
+   "start": 21.38,
+   "end": 21.5,
+   "prob": 0.942
+  },
+  {
+   "text": "si",
+   "start": 21.5,
+   "end": 21.62,
+   "prob": 0.991
+  },
+  {
+   "text": "han",
+   "start": 21.62,
+   "end": 21.7,
+   "prob": 0.648
+  },
+  {
+   "text": "visto",
+   "start": 21.7,
+   "end": 21.96,
+   "prob": 0.997
+  },
+  {
+   "text": "que",
+   "start": 21.96,
+   "end": 22.14,
+   "prob": 0.466
+  },
+  {
+   "text": "uno",
+   "start": 22.14,
+   "end": 22.28,
+   "prob": 0.928
+  },
+  {
+   "text": "en",
+   "start": 22.28,
+   "end": 22.38,
+   "prob": 0.949
+  },
+  {
+   "text": "televisión",
+   "start": 22.38,
+   "end": 22.92,
+   "prob": 0.957
+  },
+  {
+   "text": "cuando",
+   "start": 22.92,
+   "end": 23.14,
+   "prob": 0.717
+  },
+  {
+   "text": "está",
+   "start": 23.14,
+   "end": 23.32,
+   "prob": 0.897
+  },
+  {
+   "text": "conduciendo",
+   "start": 23.32,
+   "end": 23.8,
+   "prob": 0.778
+  },
+  {
+   "text": "un",
+   "start": 23.8,
+   "end": 23.98,
+   "prob": 0.993
+  },
+  {
+   "text": "programa",
+   "start": 23.98,
+   "end": 24.34,
+   "prob": 0.996
+  },
+  {
+   "text": "o",
+   "start": 24.34,
+   "end": 24.5,
+   "prob": 0.905
+  },
+  {
+   "text": "algo",
+   "start": 24.5,
+   "end": 24.68,
+   "prob": 0.993
+  },
+  {
+   "text": "así,",
+   "start": 24.68,
+   "end": 24.86,
+   "prob": 0.993
+  },
+  {
+   "text": "uno",
+   "start": 25.0,
+   "end": 25.04,
+   "prob": 0.936
+  },
+  {
+   "text": "tiene",
+   "start": 25.04,
+   "end": 25.22,
+   "prob": 0.998
+  },
+  {
+   "text": "como",
+   "start": 25.22,
+   "end": 25.54,
+   "prob": 0.98
+  },
+  {
+   "text": "una",
+   "start": 25.54,
+   "end": 27.38,
+   "prob": 0.993
+  },
+  {
+   "text": "cosita",
+   "start": 27.38,
+   "end": 28.08,
+   "prob": 0.989
+  },
+  {
+   "text": "referente",
+   "start": 28.08,
+   "end": 29.06,
+   "prob": 0.698
+  },
+  {
+   "text": "a",
+   "start": 29.06,
+   "end": 29.18,
+   "prob": 0.989
+  },
+  {
+   "text": "lo",
+   "start": 29.18,
+   "end": 29.24,
+   "prob": 0.979
+  },
+  {
+   "text": "que",
+   "start": 29.24,
+   "end": 29.36,
+   "prob": 0.996
+  },
+  {
+   "text": "se",
+   "start": 29.36,
+   "end": 29.5,
+   "prob": 0.204
+  },
+  {
+   "text": "está",
+   "start": 29.5,
+   "end": 29.74,
+   "prob": 0.816
+  },
+  {
+   "text": "haciendo.",
+   "start": 29.74,
+   "end": 29.74,
+   "prob": 0.339
+  },
+  {
+   "text": "alusivo,",
+   "start": 29.74,
+   "end": 30.3,
+   "prob": 0.692
+  },
+  {
+   "text": "entonces",
+   "start": 30.38,
+   "end": 30.56,
+   "prob": 0.897
+  },
+  {
+   "text": "por",
+   "start": 30.56,
+   "end": 30.8,
+   "prob": 0.931
+  },
+  {
+   "text": "detrás",
+   "start": 30.8,
+   "end": 31.32,
+   "prob": 0.979
+  },
+  {
+   "text": "se",
+   "start": 31.32,
+   "end": 31.76,
+   "prob": 0.889
+  },
+  {
+   "text": "puede",
+   "start": 31.76,
+   "end": 31.98,
+   "prob": 0.982
+  },
+  {
+   "text": "hacer",
+   "start": 31.98,
+   "end": 32.2,
+   "prob": 0.986
+  },
+  {
+   "text": "con",
+   "start": 32.2,
+   "end": 32.46,
+   "prob": 0.931
+  },
+  {
+   "text": "el",
+   "start": 32.46,
+   "end": 32.6,
+   "prob": 0.997
+  },
+  {
+   "text": "logo",
+   "start": 32.6,
+   "end": 32.84,
+   "prob": 0.989
+  },
+  {
+   "text": "de",
+   "start": 32.84,
+   "end": 32.98,
+   "prob": 0.993
+  },
+  {
+   "text": "la",
+   "start": 32.98,
+   "end": 34.42,
+   "prob": 0.996
+  },
+  {
+   "text": "marca,",
+   "start": 34.42,
+   "end": 34.72,
+   "prob": 0.717
+  },
+  {
+   "text": "y",
+   "start": 34.94,
+   "end": 35.42,
+   "prob": 0.808
+  },
+  {
+   "text": "de",
+   "start": 35.42,
+   "end": 35.62,
+   "prob": 0.92
+  },
+  {
+   "text": "manera",
+   "start": 35.62,
+   "end": 36.0,
+   "prob": 0.945
+  },
+  {
+   "text": "que",
+   "start": 36.0,
+   "end": 36.22,
+   "prob": 0.986
+  },
+  {
+   "text": "cuando",
+   "start": 36.22,
+   "end": 36.48,
+   "prob": 0.965
+  },
+  {
+   "text": "tú",
+   "start": 36.48,
+   "end": 36.62,
+   "prob": 0.68
+  },
+  {
+   "text": "levantes,",
+   "start": 36.62,
+   "end": 37.1,
+   "prob": 0.932
+  },
+  {
+   "text": "por",
+   "start": 37.2,
+   "end": 37.3,
+   "prob": 0.979
+  },
+  {
+   "text": "ejemplo,",
+   "start": 37.3,
+   "end": 37.46,
+   "prob": 0.999
+  },
+  {
+   "text": "que",
+   "start": 37.56,
+   "end": 37.66,
+   "prob": 0.619
+  },
+  {
+   "text": "sea",
+   "start": 37.66,
+   "end": 37.8,
+   "prob": 0.925
+  },
+  {
+   "text": "como",
+   "start": 37.8,
+   "end": 38.0,
+   "prob": 0.969
+  },
+  {
+   "text": "un",
+   "start": 38.0,
+   "end": 38.12,
+   "prob": 0.998
+  },
+  {
+   "text": "tarjetoncito,",
+   "start": 38.12,
+   "end": 38.86,
+   "prob": 0.938
+  },
+  {
+   "text": "donde",
+   "start": 39.02,
+   "end": 39.08,
+   "prob": 0.975
+  },
+  {
+   "text": "se",
+   "start": 39.08,
+   "end": 39.18,
+   "prob": 0.999
+  },
+  {
+   "text": "coloca",
+   "start": 39.18,
+   "end": 39.44,
+   "prob": 0.918
+  },
+  {
+   "text": "un",
+   "start": 39.44,
+   "end": 39.62,
+   "prob": 0.995
+  },
+  {
+   "text": "fichero",
+   "start": 39.62,
+   "end": 40.04,
+   "prob": 0.999
+  },
+  {
+   "text": "como",
+   "start": 40.04,
+   "end": 40.24,
+   "prob": 0.963
+  },
+  {
+   "text": "para",
+   "start": 40.24,
+   "end": 40.48,
+   "prob": 0.999
+  },
+  {
+   "text": "ideas",
+   "start": 40.48,
+   "end": 41.28,
+   "prob": 0.998
+  },
+  {
+   "text": "puntuales,",
+   "start": 41.28,
+   "end": 42.04,
+   "prob": 0.996
+  },
+  {
+   "text": "pero",
+   "start": 42.04,
+   "end": 45.9,
+   "prob": 0.428
+  },
+  {
+   "text": "tiene",
+   "start": 45.9,
+   "end": 49.16,
+   "prob": 0.806
+  },
+  {
+   "text": "más",
+   "start": 49.16,
+   "end": 49.36,
+   "prob": 0.997
+  },
+  {
+   "text": "contenido,",
+   "start": 49.36,
+   "end": 49.88,
+   "prob": 0.996
+  },
+  {
+   "text": "entonces",
+   "start": 50.32,
+   "end": 50.64,
+   "prob": 0.998
+  },
+  {
+   "text": "se",
+   "start": 50.64,
+   "end": 50.82,
+   "prob": 0.363
+  },
+  {
+   "text": "lo",
+   "start": 50.82,
+   "end": 50.9,
+   "prob": 0.999
+  },
+  {
+   "text": "podemos",
+   "start": 50.9,
+   "end": 51.12,
+   "prob": 0.996
+  },
+  {
+   "text": "hacer",
+   "start": 51.12,
+   "end": 51.54,
+   "prob": 1.0
+  },
+  {
+   "text": "de",
+   "start": 51.54,
+   "end": 51.98,
+   "prob": 0.746
+  },
+  {
+   "text": "manera",
+   "start": 51.98,
+   "end": 52.18,
+   "prob": 0.999
+  },
+  {
+   "text": "que",
+   "start": 52.18,
+   "end": 52.38,
+   "prob": 0.998
+  },
+  {
+   "text": "cuando",
+   "start": 52.38,
+   "end": 52.58,
+   "prob": 0.999
+  },
+  {
+   "text": "tú",
+   "start": 52.58,
+   "end": 52.74,
+   "prob": 0.994
+  },
+  {
+   "text": "levantes",
+   "start": 52.74,
+   "end": 53.2,
+   "prob": 0.995
+  },
+  {
+   "text": "la",
+   "start": 53.2,
+   "end": 53.34,
+   "prob": 0.96
+  },
+  {
+   "text": "hoja,",
+   "start": 53.34,
+   "end": 53.58,
+   "prob": 0.981
+  },
+  {
+   "text": "así",
+   "start": 53.72,
+   "end": 53.74,
+   "prob": 0.974
+  },
+  {
+   "text": "como",
+   "start": 53.74,
+   "end": 53.92,
+   "prob": 0.997
+  },
+  {
+   "text": "se",
+   "start": 53.92,
+   "end": 54.1,
+   "prob": 0.991
+  },
+  {
+   "text": "ve,",
+   "start": 54.1,
+   "end": 54.28,
+   "prob": 0.999
+  },
+  {
+   "text": "acá",
+   "start": 54.66,
+   "end": 55.0,
+   "prob": 0.997
+  },
+  {
+   "text": "la",
+   "start": 55.0,
+   "end": 55.14,
+   "prob": 0.998
+  },
+  {
+   "text": "cámara",
+   "start": 55.14,
+   "end": 55.46,
+   "prob": 0.999
+  },
+  {
+   "text": "muestra,",
+   "start": 55.46,
+   "end": 55.94,
+   "prob": 0.965
+  },
+  {
+   "text": "por",
+   "start": 56.02,
+   "end": 56.2,
+   "prob": 1.0
+  },
+  {
+   "text": "ejemplo,",
+   "start": 56.2,
+   "end": 56.42,
+   "prob": 1.0
+  },
+  {
+   "text": "el",
+   "start": 56.56,
+   "end": 56.72,
+   "prob": 1.0
+  },
+  {
+   "text": "logo",
+   "start": 56.72,
+   "end": 56.94,
+   "prob": 1.0
+  },
+  {
+   "text": "de",
+   "start": 56.94,
+   "end": 57.06,
+   "prob": 1.0
+  },
+  {
+   "text": "la",
+   "start": 57.06,
+   "end": 57.16,
+   "prob": 1.0
+  },
+  {
+   "text": "marca.",
+   "start": 57.16,
+   "end": 57.48,
+   "prob": 0.999
+  },
+  {
+   "text": "Antes",
+   "start": 82.04,
+   "end": 82.6,
+   "prob": 0.653
+  },
+  {
+   "text": "de",
+   "start": 82.6,
+   "end": 82.78,
+   "prob": 1.0
+  },
+  {
+   "text": "empezar",
+   "start": 82.78,
+   "end": 83.06,
+   "prob": 0.999
+  },
+  {
+   "text": "vamos",
+   "start": 83.06,
+   "end": 83.36,
+   "prob": 0.674
+  },
+  {
+   "text": "a",
+   "start": 83.36,
+   "end": 83.48,
+   "prob": 1.0
+  },
+  {
+   "text": "tener",
+   "start": 83.48,
+   "end": 83.72,
+   "prob": 0.997
+  },
+  {
+   "text": "las",
+   "start": 83.72,
+   "end": 84.02,
+   "prob": 0.995
+  },
+  {
+   "text": "siguientes",
+   "start": 84.02,
+   "end": 84.42,
+   "prob": 1.0
+  },
+  {
+   "text": "cosas",
+   "start": 84.42,
+   "end": 84.76,
+   "prob": 0.996
+  },
+  {
+   "text": "en",
+   "start": 84.76,
+   "end": 85.02,
+   "prob": 0.999
+  },
+  {
+   "text": "cuenta,",
+   "start": 85.02,
+   "end": 85.44,
+   "prob": 0.998
+  },
+  {
+   "text": "cosas",
+   "start": 85.62,
+   "end": 85.9,
+   "prob": 0.991
+  },
+  {
+   "text": "no.",
+   "start": 85.9,
+   "end": 86.14,
+   "prob": 0.986
+  },
+  {
+   "text": "antes",
+   "start": 91.5,
+   "end": 92.14,
+   "prob": 0.067
+  },
+  {
+   "text": "de",
+   "start": 92.14,
+   "end": 92.32,
+   "prob": 0.993
+  },
+  {
+   "text": "empezar",
+   "start": 92.32,
+   "end": 92.58,
+   "prob": 0.991
+  },
+  {
+   "text": "vamos",
+   "start": 92.58,
+   "end": 92.84,
+   "prob": 0.983
+  },
+  {
+   "text": "a",
+   "start": 92.84,
+   "end": 92.98,
+   "prob": 0.997
+  },
+  {
+   "text": "tener",
+   "start": 92.98,
+   "end": 93.18,
+   "prob": 0.997
+  },
+  {
+   "text": "las",
+   "start": 93.18,
+   "end": 93.38,
+   "prob": 0.99
+  },
+  {
+   "text": "siguientes",
+   "start": 93.38,
+   "end": 93.72,
+   "prob": 0.998
+  },
+  {
+   "text": "instrucciones",
+   "start": 93.72,
+   "end": 94.4,
+   "prob": 0.997
+  },
+  {
+   "text": "en",
+   "start": 94.4,
+   "end": 94.64,
+   "prob": 0.871
+  },
+  {
+   "text": "cuenta",
+   "start": 94.64,
+   "end": 95.1,
+   "prob": 0.994
+  },
+  {
+   "text": "primero",
+   "start": 95.1,
+   "end": 95.88,
+   "prob": 0.718
+  },
+  {
+   "text": "vas",
+   "start": 95.88,
+   "end": 96.12,
+   "prob": 0.732
+  },
+  {
+   "text": "a",
+   "start": 96.12,
+   "end": 96.2,
+   "prob": 0.998
+  },
+  {
+   "text": "revisar",
+   "start": 96.2,
+   "end": 96.54,
+   "prob": 0.79
+  },
+  {
+   "text": "muy",
+   "start": 96.54,
+   "end": 97.04,
+   "prob": 0.993
+  },
+  {
+   "text": "bien",
+   "start": 97.04,
+   "end": 97.28,
+   "prob": 0.981
+  },
+  {
+   "text": "tu",
+   "start": 97.28,
+   "end": 97.46,
+   "prob": 0.971
+  },
+  {
+   "text": "piel",
+   "start": 97.46,
+   "end": 97.78,
+   "prob": 0.995
+  },
+  {
+   "text": "no",
+   "start": 97.78,
+   "end": 98.28,
+   "prob": 0.846
+  },
+  {
+   "text": "puedes",
+   "start": 98.28,
+   "end": 98.58,
+   "prob": 0.968
+  },
+  {
+   "text": "pasar",
+   "start": 98.58,
+   "end": 98.84,
+   "prob": 0.982
+  },
+  {
+   "text": "el",
+   "start": 98.84,
+   "end": 99.02,
+   "prob": 0.944
+  },
+  {
+   "text": "luma",
+   "start": 99.02,
+   "end": 99.24,
+   "prob": 0.729
+  },
+  {
+   "text": "body",
+   "start": 99.24,
+   "end": 99.54,
+   "prob": 0.927
+  },
+  {
+   "text": "sobre",
+   "start": 99.54,
+   "end": 100.06,
+   "prob": 0.981
+  },
+  {
+   "text": "moretones,",
+   "start": 100.06,
+   "end": 100.94,
+   "prob": 0.963
+  },
+  {
+   "text": "sobre",
+   "start": 101.36,
+   "end": 101.54,
+   "prob": 0.981
+  },
+  {
+   "text": "varices,",
+   "start": 101.54,
+   "end": 102.14,
+   "prob": 0.849
+  },
+  {
+   "text": "sobre",
+   "start": 102.66,
+   "end": 102.84,
+   "prob": 0.993
+  },
+  {
+   "text": "el",
+   "start": 102.84,
+   "end": 103.3,
+   "prob": 0.977
+  },
+  {
+   "text": "hueso",
+   "start": 103.3,
+   "end": 103.78,
+   "prob": 0.998
+  },
+  {
+   "text": "porque",
+   "start": 103.78,
+   "end": 104.34,
+   "prob": 0.857
+  },
+  {
+   "text": "puede",
+   "start": 104.34,
+   "end": 104.7,
+   "prob": 0.919
+  },
+  {
+   "text": "generar",
+   "start": 104.7,
+   "end": 105.02,
+   "prob": 0.994
+  },
+  {
+   "text": "dolor",
+   "start": 105.02,
+   "end": 105.3,
+   "prob": 0.992
+  },
+  {
+   "text": "y",
+   "start": 105.3,
+   "end": 105.7,
+   "prob": 0.994
+  },
+  {
+   "text": "mucha",
+   "start": 105.7,
+   "end": 106.2,
+   "prob": 0.959
+  },
+  {
+   "text": "más",
+   "start": 106.2,
+   "end": 106.4,
+   "prob": 0.893
+  },
+  {
+   "text": "irritación",
+   "start": 106.4,
+   "end": 107.06,
+   "prob": 0.981
+  },
+  {
+   "text": "Además,",
+   "start": 127.04,
+   "end": 127.68,
+   "prob": 0.847
+  },
+  {
+   "text": "el",
+   "start": 127.68,
+   "end": 128.32,
+   "prob": 0.333
+  },
+  {
+   "text": "Luma",
+   "start": 128.32,
+   "end": 128.6,
+   "prob": 0.879
+  },
+  {
+   "text": "Body",
+   "start": 128.6,
+   "end": 128.86,
+   "prob": 0.734
+  },
+  {
+   "text": "nunca,",
+   "start": 128.86,
+   "end": 129.74,
+   "prob": 0.998
+  },
+  {
+   "text": "nunca",
+   "start": 129.94,
+   "end": 130.4,
+   "prob": 1.0
+  },
+  {
+   "text": "puede",
+   "start": 130.4,
+   "end": 130.7,
+   "prob": 0.997
+  },
+  {
+   "text": "utilizarse",
+   "start": 130.7,
+   "end": 131.38,
+   "prob": 0.999
+  },
+  {
+   "text": "sobre",
+   "start": 131.38,
+   "end": 131.74,
+   "prob": 0.999
+  },
+  {
+   "text": "la",
+   "start": 131.74,
+   "end": 131.9,
+   "prob": 1.0
+  },
+  {
+   "text": "piel",
+   "start": 131.9,
+   "end": 132.12,
+   "prob": 1.0
+  },
+  {
+   "text": "seca,",
+   "start": 132.12,
+   "end": 132.5,
+   "prob": 1.0
+  },
+  {
+   "text": "siempre",
+   "start": 132.82,
+   "end": 133.88,
+   "prob": 0.992
+  },
+  {
+   "text": "debes",
+   "start": 133.88,
+   "end": 134.14,
+   "prob": 0.996
+  },
+  {
+   "text": "usar",
+   "start": 134.14,
+   "end": 134.38,
+   "prob": 0.999
+  },
+  {
+   "text": "el",
+   "start": 134.38,
+   "end": 134.8,
+   "prob": 0.999
+  },
+  {
+   "text": "aceite",
+   "start": 134.8,
+   "end": 135.3,
+   "prob": 0.999
+  },
+  {
+   "text": "para",
+   "start": 135.3,
+   "end": 135.76,
+   "prob": 0.994
+  },
+  {
+   "text": "poder",
+   "start": 135.76,
+   "end": 136.04,
+   "prob": 0.998
+  },
+  {
+   "text": "deslizar",
+   "start": 136.04,
+   "end": 136.58,
+   "prob": 0.999
+  },
+  {
+   "text": "mucho",
+   "start": 136.58,
+   "end": 137.12,
+   "prob": 0.998
+  },
+  {
+   "text": "mejor",
+   "start": 137.12,
+   "end": 137.44,
+   "prob": 1.0
+  },
+  {
+   "text": "el",
+   "start": 137.44,
+   "end": 137.62,
+   "prob": 0.999
+  },
+  {
+   "text": "producto,",
+   "start": 137.62,
+   "end": 138.02,
+   "prob": 0.999
+  },
+  {
+   "text": "entre",
+   "start": 138.56,
+   "end": 138.78,
+   "prob": 0.997
+  },
+  {
+   "text": "más",
+   "start": 138.78,
+   "end": 138.96,
+   "prob": 0.989
+  },
+  {
+   "text": "aceite",
+   "start": 138.96,
+   "end": 139.32,
+   "prob": 0.996
+  },
+  {
+   "text": "pongas,",
+   "start": 139.32,
+   "end": 139.86,
+   "prob": 0.996
+  },
+  {
+   "text": "mucho",
+   "start": 140.26,
+   "end": 140.44,
+   "prob": 0.999
+  },
+  {
+   "text": "mejor",
+   "start": 140.44,
+   "end": 140.7,
+   "prob": 0.999
+  },
+  {
+   "text": "se",
+   "start": 140.7,
+   "end": 140.88,
+   "prob": 1.0
+  },
+  {
+   "text": "va",
+   "start": 140.88,
+   "end": 140.98,
+   "prob": 0.999
+  },
+  {
+   "text": "a",
+   "start": 140.98,
+   "end": 141.06,
+   "prob": 0.999
+  },
+  {
+   "text": "deslizar,",
+   "start": 141.06,
+   "end": 141.42,
+   "prob": 1.0
+  },
+  {
+   "text": "no",
+   "start": 141.66,
+   "end": 142.0,
+   "prob": 0.999
+  },
+  {
+   "text": "uses",
+   "start": 142.0,
+   "end": 142.28,
+   "prob": 0.997
+  },
+  {
+   "text": "agua",
+   "start": 142.28,
+   "end": 142.56,
+   "prob": 1.0
+  },
+  {
+   "text": "para",
+   "start": 142.56,
+   "end": 142.78,
+   "prob": 1.0
+  },
+  {
+   "text": "deslizar",
+   "start": 142.78,
+   "end": 143.12,
+   "prob": 1.0
+  },
+  {
+   "text": "el",
+   "start": 143.12,
+   "end": 143.28,
+   "prob": 0.999
+  },
+  {
+   "text": "producto,",
+   "start": 143.28,
+   "end": 143.62,
+   "prob": 1.0
+  },
+  {
+   "text": "debes",
+   "start": 143.82,
+   "end": 144.04,
+   "prob": 0.999
+  },
+  {
+   "text": "usar",
+   "start": 144.04,
+   "end": 144.26,
+   "prob": 0.999
+  },
+  {
+   "text": "un",
+   "start": 144.26,
+   "end": 144.4,
+   "prob": 0.997
+  },
+  {
+   "text": "aceite",
+   "start": 144.4,
+   "end": 144.84,
+   "prob": 1.0
+  },
+  {
+   "text": "para",
+   "start": 144.84,
+   "end": 145.58,
+   "prob": 0.999
+  },
+  {
+   "text": "masajes.",
+   "start": 145.58,
+   "end": 146.1,
+   "prob": 0.992
+  },
+  {
+   "text": "Tercero",
+   "start": 156.2,
+   "end": 156.76,
+   "prob": 0.929
+  },
+  {
+   "text": "Vas",
+   "start": 156.76,
+   "end": 157.12,
+   "prob": 0.027
+  },
+  {
+   "text": "a",
+   "start": 157.12,
+   "end": 157.24,
+   "prob": 0.998
+  },
+  {
+   "text": "empezar",
+   "start": 157.24,
+   "end": 157.54,
+   "prob": 0.998
+  },
+  {
+   "text": "desde",
+   "start": 157.54,
+   "end": 158.16,
+   "prob": 0.928
+  },
+  {
+   "text": "Tres",
+   "start": 159.56,
+   "end": 160.12,
+   "prob": 0.811
+  },
+  {
+   "text": "Tres",
+   "start": 162.2,
+   "end": 162.76,
+   "prob": 0.641
+  },
+  {
+   "text": "Vas",
+   "start": 162.76,
+   "end": 163.18,
+   "prob": 0.962
+  },
+  {
+   "text": "a",
+   "start": 163.18,
+   "end": 163.28,
+   "prob": 0.999
+  },
+  {
+   "text": "empezar",
+   "start": 163.28,
+   "end": 163.54,
+   "prob": 1.0
+  },
+  {
+   "text": "a",
+   "start": 163.54,
+   "end": 163.66,
+   "prob": 0.998
+  },
+  {
+   "text": "usar",
+   "start": 163.66,
+   "end": 163.98,
+   "prob": 0.998
+  },
+  {
+   "text": "tu",
+   "start": 163.98,
+   "end": 164.26,
+   "prob": 0.877
+  },
+  {
+   "text": "Luma",
+   "start": 164.26,
+   "end": 164.54,
+   "prob": 0.881
+  },
+  {
+   "text": "Body",
+   "start": 164.54,
+   "end": 164.88,
+   "prob": 0.941
+  },
+  {
+   "text": "Desde",
+   "start": 164.88,
+   "end": 165.94,
+   "prob": 0.545
+  },
+  {
+   "text": "la",
+   "start": 165.94,
+   "end": 166.48,
+   "prob": 0.996
+  },
+  {
+   "text": "intensidad",
+   "start": 166.48,
+   "end": 167.3,
+   "prob": 1.0
+  },
+  {
+   "text": "Más",
+   "start": 167.3,
+   "end": 167.8,
+   "prob": 0.7
+  },
+  {
+   "text": "baja",
+   "start": 167.8,
+   "end": 168.2,
+   "prob": 0.999
+  },
+  {
+   "text": "No",
+   "start": 168.2,
+   "end": 169.06,
+   "prob": 0.964
+  },
+  {
+   "text": "vas",
+   "start": 169.06,
+   "end": 169.26,
+   "prob": 0.997
+  },
+  {
+   "text": "a",
+   "start": 169.26,
+   "end": 169.32,
+   "prob": 1.0
+  },
+  {
+   "text": "empezar",
+   "start": 169.32,
+   "end": 169.54,
+   "prob": 1.0
+  },
+  {
+   "text": "por",
+   "start": 169.54,
+   "end": 169.72,
+   "prob": 0.984
+  },
+  {
+   "text": "la",
+   "start": 169.72,
+   "end": 169.82,
+   "prob": 1.0
+  },
+  {
+   "text": "más",
+   "start": 169.82,
+   "end": 170.04,
+   "prob": 0.997
+  },
+  {
+   "text": "alta",
+   "start": 170.04,
+   "end": 170.24,
+   "prob": 0.994
+  },
+  {
+   "text": "Siempre",
+   "start": 170.24,
+   "end": 170.62,
+   "prob": 0.943
+  },
+  {
+   "text": "desde",
+   "start": 170.62,
+   "end": 170.78,
+   "prob": 0.995
+  },
+  {
+   "text": "la",
+   "start": 170.78,
+   "end": 170.9,
+   "prob": 1.0
+  },
+  {
+   "text": "más",
+   "start": 170.9,
+   "end": 171.12,
+   "prob": 0.999
+  },
+  {
+   "text": "baja",
+   "start": 171.12,
+   "end": 171.26,
+   "prob": 0.586
+  },
+  {
+   "text": "Tres",
+   "start": 175.18,
+   "end": 175.74,
+   "prob": 0.905
+  },
+  {
+   "text": "Comienza",
+   "start": 175.74,
+   "end": 176.84,
+   "prob": 0.947
+  },
+  {
+   "text": "siempre",
+   "start": 176.84,
+   "end": 177.06,
+   "prob": 0.999
+  },
+  {
+   "text": "con",
+   "start": 177.06,
+   "end": 177.2,
+   "prob": 0.932
+  },
+  {
+   "text": "la",
+   "start": 177.2,
+   "end": 177.3,
+   "prob": 1.0
+  },
+  {
+   "text": "intensidad",
+   "start": 177.3,
+   "end": 177.58,
+   "prob": 0.999
+  },
+  {
+   "text": "más",
+   "start": 177.58,
+   "end": 177.74,
+   "prob": 0.89
+  },
+  {
+   "text": "baja",
+   "start": 177.74,
+   "end": 177.98,
+   "prob": 0.998
+  },
+  {
+   "text": "3.",
+   "start": 184.24,
+   "end": 184.82,
+   "prob": 0.383
+  },
+  {
+   "text": "Vas",
+   "start": 185.38,
+   "end": 185.5,
+   "prob": 0.947
+  },
+  {
+   "text": "a",
+   "start": 185.5,
+   "end": 185.62,
+   "prob": 0.998
+  },
+  {
+   "text": "empezar",
+   "start": 185.62,
+   "end": 185.84,
+   "prob": 0.997
+  },
+  {
+   "text": "a",
+   "start": 185.84,
+   "end": 185.94,
+   "prob": 0.999
+  },
+  {
+   "text": "usar",
+   "start": 185.94,
+   "end": 186.24,
+   "prob": 0.991
+  },
+  {
+   "text": "tu",
+   "start": 186.24,
+   "end": 186.5,
+   "prob": 0.979
+  },
+  {
+   "text": "Luma",
+   "start": 186.5,
+   "end": 186.8,
+   "prob": 0.859
+  },
+  {
+   "text": "Body",
+   "start": 186.8,
+   "end": 187.14,
+   "prob": 0.89
+  },
+  {
+   "text": "desde",
+   "start": 187.14,
+   "end": 187.78,
+   "prob": 0.99
+  },
+  {
+   "text": "la",
+   "start": 187.78,
+   "end": 187.96,
+   "prob": 0.999
+  },
+  {
+   "text": "intensidad",
+   "start": 187.96,
+   "end": 188.44,
+   "prob": 0.999
+  },
+  {
+   "text": "más",
+   "start": 188.44,
+   "end": 188.76,
+   "prob": 0.981
+  },
+  {
+   "text": "baja.",
+   "start": 188.76,
+   "end": 189.18,
+   "prob": 0.993
+  },
+  {
+   "text": "Aumenta",
+   "start": 189.72,
+   "end": 190.3,
+   "prob": 0.998
+  },
+  {
+   "text": "solo",
+   "start": 190.3,
+   "end": 190.82,
+   "prob": 0.832
+  },
+  {
+   "text": "si",
+   "start": 190.82,
+   "end": 191.04,
+   "prob": 0.999
+  },
+  {
+   "text": "te",
+   "start": 191.04,
+   "end": 191.2,
+   "prob": 0.999
+  },
+  {
+   "text": "empiezas",
+   "start": 191.2,
+   "end": 191.62,
+   "prob": 1.0
+  },
+  {
+   "text": "a",
+   "start": 191.62,
+   "end": 191.72,
+   "prob": 1.0
+  },
+  {
+   "text": "sentir",
+   "start": 191.72,
+   "end": 191.98,
+   "prob": 1.0
+  },
+  {
+   "text": "cómoda",
+   "start": 191.98,
+   "end": 192.5,
+   "prob": 0.996
+  },
+  {
+   "text": "con",
+   "start": 192.5,
+   "end": 192.7,
+   "prob": 0.997
+  },
+  {
+   "text": "la",
+   "start": 192.7,
+   "end": 192.82,
+   "prob": 1.0
+  },
+  {
+   "text": "intensidad",
+   "start": 192.82,
+   "end": 193.36,
+   "prob": 1.0
+  },
+  {
+   "text": "y",
+   "start": 193.36,
+   "end": 193.58,
+   "prob": 0.996
+  },
+  {
+   "text": "la",
+   "start": 193.58,
+   "end": 193.72,
+   "prob": 0.974
+  },
+  {
+   "text": "succión.",
+   "start": 193.72,
+   "end": 194.26,
+   "prob": 0.768
+  },
+  {
+   "text": "Recuerda,",
+   "start": 194.96,
+   "end": 195.54,
+   "prob": 0.998
+  },
+  {
+   "text": "la",
+   "start": 195.72,
+   "end": 195.84,
+   "prob": 1.0
+  },
+  {
+   "text": "intensidad",
+   "start": 195.84,
+   "end": 196.36,
+   "prob": 1.0
+  },
+  {
+   "text": "sí",
+   "start": 196.36,
+   "end": 196.64,
+   "prob": 0.925
+  },
+  {
+   "text": "sí",
+   "start": 196.64,
+   "end": 196.64,
+   "prob": 0.127
+  },
+  {
+   "text": "debe",
+   "start": 196.64,
+   "end": 196.84,
+   "prob": 0.878
+  },
+  {
+   "text": "sentirse,",
+   "start": 196.84,
+   "end": 197.48,
+   "prob": 0.804
+  },
+  {
+   "text": "pero",
+   "start": 197.66,
+   "end": 198.0,
+   "prob": 0.987
+  },
+  {
+   "text": "no",
+   "start": 198.0,
+   "end": 198.26,
+   "prob": 0.964
+  },
+  {
+   "text": "debe",
+   "start": 198.26,
+   "end": 198.62,
+   "prob": 0.994
+  },
+  {
+   "text": "doler.",
+   "start": 198.62,
+   "end": 199.12,
+   "prob": 0.983
+  },
+  {
+   "text": "¿O",
+   "start": 203.76,
+   "end": 204.4,
+   "prob": 0.102
+  },
+  {
+   "text": "no?",
+   "start": 204.4,
+   "end": 204.52,
+   "prob": 0.41
+  },
+  {
+   "text": "¿O",
+   "start": 204.94,
+   "end": 205.32,
+   "prob": 0.832
+  },
+  {
+   "text": "no",
+   "start": 205.32,
+   "end": 205.5,
+   "prob": 0.946
+  },
+  {
+   "text": "veo?",
+   "start": 205.5,
+   "end": 205.6,
+   "prob": 0.057
+  },
+  {
+   "text": "¿O",
+   "start": 206.18,
+   "end": 206.46,
+   "prob": 0.954
+  },
+  {
+   "text": "no",
+   "start": 206.46,
+   "end": 206.6,
+   "prob": 0.991
+  },
+  {
+   "text": "veo",
+   "start": 206.6,
+   "end": 206.92,
+   "prob": 0.987
+  },
+  {
+   "text": "me",
+   "start": 206.92,
+   "end": 207.16,
+   "prob": 0.098
+  },
+  {
+   "text": "ganado?",
+   "start": 207.16,
+   "end": 207.56,
+   "prob": 0.461
+  },
+  {
+   "text": "¿O",
+   "start": 208.12,
+   "end": 208.74,
+   "prob": 0.848
+  },
+  {
+   "text": "no",
+   "start": 208.74,
+   "end": 208.92,
+   "prob": 0.903
+  },
+  {
+   "text": "veo?",
+   "start": 208.92,
+   "end": 209.3,
+   "prob": 0.97
+  },
+  {
+   "text": "¿O",
+   "start": 210.36,
+   "end": 210.68,
+   "prob": 0.862
+  },
+  {
+   "text": "no",
+   "start": 210.68,
+   "end": 211.5,
+   "prob": 0.986
+  },
+  {
+   "text": "veo?",
+   "start": 211.5,
+   "end": 211.62,
+   "prob": 0.985
+  },
+  {
+   "text": "Cuarto,",
+   "start": 224.44,
+   "end": 225.08,
+   "prob": 0.475
+  },
+  {
+   "text": "vas",
+   "start": 227.04,
+   "end": 227.24,
+   "prob": 0.731
+  },
+  {
+   "text": "a",
+   "start": 227.24,
+   "end": 227.32,
+   "prob": 1.0
+  },
+  {
+   "text": "hacer",
+   "start": 227.32,
+   "end": 227.48,
+   "prob": 0.991
+  },
+  {
+   "text": "primero",
+   "start": 227.48,
+   "end": 227.98,
+   "prob": 0.998
+  },
+  {
+   "text": "una",
+   "start": 227.98,
+   "end": 228.3,
+   "prob": 0.996
+  },
+  {
+   "text": "prueba",
+   "start": 228.3,
+   "end": 228.6,
+   "prob": 0.999
+  },
+  {
+   "text": "en",
+   "start": 228.6,
+   "end": 228.76,
+   "prob": 0.936
+  },
+  {
+   "text": "una",
+   "start": 228.76,
+   "end": 228.9,
+   "prob": 0.998
+  },
+  {
+   "text": "zona",
+   "start": 228.9,
+   "end": 229.28,
+   "prob": 0.999
+  },
+  {
+   "text": "pequeña",
+   "start": 229.28,
+   "end": 229.76,
+   "prob": 0.999
+  },
+  {
+   "text": "de",
+   "start": 229.76,
+   "end": 229.98,
+   "prob": 0.997
+  },
+  {
+   "text": "tu",
+   "start": 229.98,
+   "end": 230.14,
+   "prob": 0.996
+  },
+  {
+   "text": "abdomen",
+   "start": 230.14,
+   "end": 230.54,
+   "prob": 1.0
+  },
+  {
+   "text": "o",
+   "start": 230.54,
+   "end": 230.8,
+   "prob": 0.998
+  },
+  {
+   "text": "de",
+   "start": 230.8,
+   "end": 230.94,
+   "prob": 0.998
+  },
+  {
+   "text": "tus",
+   "start": 230.94,
+   "end": 231.18,
+   "prob": 0.999
+  },
+  {
+   "text": "piernas,",
+   "start": 231.18,
+   "end": 231.8,
+   "prob": 1.0
+  },
+  {
+   "text": "si",
+   "start": 232.04,
+   "end": 232.44,
+   "prob": 0.998
+  },
+  {
+   "text": "jala",
+   "start": 232.44,
+   "end": 232.86,
+   "prob": 0.998
+  },
+  {
+   "text": "demasiado",
+   "start": 232.86,
+   "end": 233.44,
+   "prob": 0.999
+  },
+  {
+   "text": "o",
+   "start": 233.44,
+   "end": 233.66,
+   "prob": 0.988
+  },
+  {
+   "text": "si",
+   "start": 233.66,
+   "end": 233.78,
+   "prob": 0.859
+  },
+  {
+   "text": "duele",
+   "start": 233.78,
+   "end": 234.18,
+   "prob": 0.996
+  },
+  {
+   "text": "demasiado",
+   "start": 234.18,
+   "end": 234.74,
+   "prob": 1.0
+  },
+  {
+   "text": "vas",
+   "start": 234.74,
+   "end": 235.36,
+   "prob": 0.539
+  },
+  {
+   "text": "a",
+   "start": 235.36,
+   "end": 235.46,
+   "prob": 1.0
+  },
+  {
+   "text": "parar,",
+   "start": 235.46,
+   "end": 235.8,
+   "prob": 0.997
+  },
+  {
+   "text": "vas",
+   "start": 235.98,
+   "end": 236.12,
+   "prob": 0.998
+  },
+  {
+   "text": "a",
+   "start": 236.12,
+   "end": 236.18,
+   "prob": 1.0
+  },
+  {
+   "text": "bajar",
+   "start": 236.18,
+   "end": 236.44,
+   "prob": 1.0
+  },
+  {
+   "text": "la",
+   "start": 236.44,
+   "end": 236.54,
+   "prob": 1.0
+  },
+  {
+   "text": "intensidad",
+   "start": 236.54,
+   "end": 237.08,
+   "prob": 1.0
+  },
+  {
+   "text": "y",
+   "start": 237.08,
+   "end": 237.28,
+   "prob": 0.999
+  },
+  {
+   "text": "vas",
+   "start": 237.28,
+   "end": 237.44,
+   "prob": 0.999
+  },
+  {
+   "text": "a",
+   "start": 237.44,
+   "end": 237.52,
+   "prob": 1.0
+  },
+  {
+   "text": "aplicar",
+   "start": 237.52,
+   "end": 237.84,
+   "prob": 0.99
+  },
+  {
+   "text": "más",
+   "start": 237.84,
+   "end": 238.02,
+   "prob": 0.983
+  },
+  {
+   "text": "aceite,",
+   "start": 238.02,
+   "end": 238.38,
+   "prob": 0.993
+  },
+  {
+   "text": "quinto,",
+   "start": 238.76,
+   "end": 250.86,
+   "prob": 0.939
+  },
+  {
+   "text": "siempre,",
+   "start": 251.3,
+   "end": 251.86,
+   "prob": 0.978
+  },
+  {
+   "text": "siempre",
+   "start": 252.02,
+   "end": 252.26,
+   "prob": 0.999
+  },
+  {
+   "text": "vas",
+   "start": 252.26,
+   "end": 252.6,
+   "prob": 0.449
+  },
+  {
+   "text": "a",
+   "start": 252.6,
+   "end": 252.8,
+   "prob": 0.999
+  },
+  {
+   "text": "tener",
+   "start": 252.8,
+   "end": 253.18,
+   "prob": 0.554
+  },
+  {
+   "text": "quinto,",
+   "start": 258.12,
+   "end": 258.8,
+   "prob": 0.62
+  },
+  {
+   "text": "vas",
+   "start": 259.12,
+   "end": 259.18,
+   "prob": 0.97
+  },
+  {
+   "text": "a",
+   "start": 259.18,
+   "end": 259.28,
+   "prob": 1.0
+  },
+  {
+   "text": "mantener",
+   "start": 259.28,
+   "end": 259.68,
+   "prob": 0.997
+  },
+  {
+   "text": "siempre",
+   "start": 259.68,
+   "end": 260.12,
+   "prob": 0.978
+  },
+  {
+   "text": "tu",
+   "start": 260.12,
+   "end": 260.38,
+   "prob": 0.962
+  },
+  {
+   "text": "luma",
+   "start": 260.38,
+   "end": 260.64,
+   "prob": 0.782
+  },
+  {
+   "text": "body",
+   "start": 260.64,
+   "end": 260.92,
+   "prob": 0.557
+  },
+  {
+   "text": "en",
+   "start": 260.92,
+   "end": 261.38,
+   "prob": 0.998
+  },
+  {
+   "text": "movimiento",
+   "start": 261.38,
+   "end": 262.32,
+   "prob": 0.999
+  },
+  {
+   "text": "quinto,",
+   "start": 272.64,
+   "end": 273.32,
+   "prob": 0.735
+  },
+  {
+   "text": "vas",
+   "start": 273.5,
+   "end": 273.62,
+   "prob": 0.999
+  },
+  {
+   "text": "a",
+   "start": 273.62,
+   "end": 273.68,
+   "prob": 1.0
+  },
+  {
+   "text": "mantener",
+   "start": 273.68,
+   "end": 274.02,
+   "prob": 0.998
+  },
+  {
+   "text": "siempre",
+   "start": 274.02,
+   "end": 274.4,
+   "prob": 0.998
+  },
+  {
+   "text": "tu",
+   "start": 274.4,
+   "end": 274.58,
+   "prob": 0.997
+  },
+  {
+   "text": "luma",
+   "start": 274.58,
+   "end": 274.82,
+   "prob": 0.998
+  },
+  {
+   "text": "body",
+   "start": 274.82,
+   "end": 275.12,
+   "prob": 0.999
+  },
+  {
+   "text": "en",
+   "start": 275.12,
+   "end": 275.44,
+   "prob": 1.0
+  },
+  {
+   "text": "movimiento",
+   "start": 275.44,
+   "end": 276.08,
+   "prob": 0.999
+  },
+  {
+   "text": "siempre",
+   "start": 276.08,
+   "end": 277.14,
+   "prob": 0.525
+  },
+  {
+   "text": "en",
+   "start": 277.14,
+   "end": 277.82,
+   "prob": 0.953
+  },
+  {
+   "text": "forma",
+   "start": 277.82,
+   "end": 278.24,
+   "prob": 0.995
+  },
+  {
+   "text": "descendente",
+   "start": 278.24,
+   "end": 279.08,
+   "prob": 0.982
+  },
+  {
+   "text": "quinto,",
+   "start": 279.98,
+   "end": 280.66,
+   "prob": 0.973
+  },
+  {
+   "text": "vas",
+   "start": 280.76,
+   "end": 280.88,
+   "prob": 1.0
+  },
+  {
+   "text": "a",
+   "start": 280.88,
+   "end": 280.96,
+   "prob": 1.0
+  },
+  {
+   "text": "mantener",
+   "start": 280.96,
+   "end": 281.3,
+   "prob": 0.998
+  },
+  {
+   "text": "siempre",
+   "start": 281.3,
+   "end": 281.84,
+   "prob": 1.0
+  },
+  {
+   "text": "El",
+   "start": 281.84,
+   "end": 282.14,
+   "prob": 0.232
+  },
+  {
+   "text": "Luma",
+   "start": 282.14,
+   "end": 282.36,
+   "prob": 0.808
+  },
+  {
+   "text": "Body",
+   "start": 282.36,
+   "end": 282.7,
+   "prob": 0.837
+  },
+  {
+   "text": "en",
+   "start": 282.7,
+   "end": 283.22,
+   "prob": 0.951
+  },
+  {
+   "text": "movimiento",
+   "start": 283.22,
+   "end": 283.94,
+   "prob": 0.999
+  },
+  {
+   "text": "nunca",
+   "start": 283.94,
+   "end": 284.58,
+   "prob": 0.686
+  },
+  {
+   "text": "lo",
+   "start": 284.58,
+   "end": 284.76,
+   "prob": 0.999
+  },
+  {
+   "text": "puedes",
+   "start": 284.76,
+   "end": 284.96,
+   "prob": 0.992
+  },
+  {
+   "text": "dejar",
+   "start": 284.96,
+   "end": 285.24,
+   "prob": 0.999
+  },
+  {
+   "text": "quieto",
+   "start": 285.24,
+   "end": 285.7,
+   "prob": 0.993
+  },
+  {
+   "text": "porque",
+   "start": 285.7,
+   "end": 286.3,
+   "prob": 0.838
+  },
+  {
+   "text": "van",
+   "start": 286.3,
+   "end": 286.5,
+   "prob": 0.999
+  },
+  {
+   "text": "a",
+   "start": 286.5,
+   "end": 286.58,
+   "prob": 1.0
+  },
+  {
+   "text": "salir",
+   "start": 286.58,
+   "end": 286.82,
+   "prob": 0.999
+  },
+  {
+   "text": "moretones.",
+   "start": 286.82,
+   "end": 287.4,
+   "prob": 0.988
+  },
+  {
+   "text": "Además,",
+   "start": 287.9,
+   "end": 288.2,
+   "prob": 0.997
+  },
+  {
+   "text": "siempre",
+   "start": 288.36,
+   "end": 288.54,
+   "prob": 0.991
+  },
+  {
+   "text": "el",
+   "start": 288.54,
+   "end": 288.68,
+   "prob": 0.999
+  },
+  {
+   "text": "movimiento",
+   "start": 288.68,
+   "end": 289.28,
+   "prob": 1.0
+  },
+  {
+   "text": "debe",
+   "start": 289.28,
+   "end": 289.62,
+   "prob": 0.997
+  },
+  {
+   "text": "ser",
+   "start": 289.62,
+   "end": 289.86,
+   "prob": 0.998
+  },
+  {
+   "text": "de",
+   "start": 289.86,
+   "end": 290.18,
+   "prob": 1.0
+  },
+  {
+   "text": "arriba",
+   "start": 290.18,
+   "end": 290.62,
+   "prob": 1.0
+  },
+  {
+   "text": "hacia",
+   "start": 290.62,
+   "end": 290.84,
+   "prob": 0.999
+  },
+  {
+   "text": "abajo",
+   "start": 290.84,
+   "end": 291.48,
+   "prob": 1.0
+  },
+  {
+   "text": "o",
+   "start": 291.48,
+   "end": 292.3,
+   "prob": 0.997
+  },
+  {
+   "text": "en",
+   "start": 292.3,
+   "end": 292.64,
+   "prob": 1.0
+  },
+  {
+   "text": "forma",
+   "start": 292.64,
+   "end": 292.98,
+   "prob": 1.0
+  },
+  {
+   "text": "de",
+   "start": 292.98,
+   "end": 293.12,
+   "prob": 1.0
+  },
+  {
+   "text": "círculos,",
+   "start": 293.12,
+   "end": 293.58,
+   "prob": 0.994
+  },
+  {
+   "text": "pero",
+   "start": 293.88,
+   "end": 293.98,
+   "prob": 1.0
+  },
+  {
+   "text": "nunca",
+   "start": 293.98,
+   "end": 294.36,
+   "prob": 1.0
+  },
+  {
+   "text": "debes",
+   "start": 294.36,
+   "end": 294.62,
+   "prob": 0.669
+  },
+  {
+   "text": "quedarse",
+   "start": 294.62,
+   "end": 294.92,
+   "prob": 0.995
+  },
+  {
+   "text": "en",
+   "start": 294.92,
+   "end": 295.16,
+   "prob": 1.0
+  },
+  {
+   "text": "un",
+   "start": 295.16,
+   "end": 295.3,
+   "prob": 0.999
+  },
+  {
+   "text": "solo",
+   "start": 295.3,
+   "end": 295.48,
+   "prob": 0.999
+  },
+  {
+   "text": "lugar.",
+   "start": 295.48,
+   "end": 295.82,
+   "prob": 1.0
+  },
+  {
+   "text": "Y",
+   "start": 304.66,
+   "end": 305.34,
+   "prob": 0.985
+  },
+  {
+   "text": "al",
+   "start": 305.34,
+   "end": 305.44,
+   "prob": 0.998
+  },
+  {
+   "text": "terminar",
+   "start": 305.44,
+   "end": 305.84,
+   "prob": 1.0
+  },
+  {
+   "text": "solo",
+   "start": 305.84,
+   "end": 306.18,
+   "prob": 0.608
+  },
+  {
+   "text": "debes",
+   "start": 306.18,
+   "end": 306.6,
+   "prob": 1.0
+  },
+  {
+   "text": "apagar",
+   "start": 306.6,
+   "end": 307.08,
+   "prob": 0.999
+  },
+  {
+   "text": "y",
+   "start": 307.08,
+   "end": 307.34,
+   "prob": 1.0
+  },
+  {
+   "text": "limpiar",
+   "start": 307.34,
+   "end": 307.7,
+   "prob": 1.0
+  },
+  {
+   "text": "muy",
+   "start": 307.7,
+   "end": 307.84,
+   "prob": 0.998
+  },
+  {
+   "text": "bien",
+   "start": 307.84,
+   "end": 308.04,
+   "prob": 1.0
+  },
+  {
+   "text": "tu",
+   "start": 308.04,
+   "end": 308.18,
+   "prob": 0.999
+  },
+  {
+   "text": "dispositivo.",
+   "start": 308.18,
+   "end": 308.88,
+   "prob": 1.0
+  },
+  {
+   "text": "Listo.",
+   "start": 310.72,
+   "end": 311.4,
+   "prob": 0.964
+  },
+  {
+   "text": "¡Gracias!",
+   "start": 315.32,
+   "end": 316.72,
+   "prob": 0.566
+  }
+ ]
+}
