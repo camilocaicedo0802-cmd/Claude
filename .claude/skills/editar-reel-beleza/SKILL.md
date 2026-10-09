@@ -54,11 +54,11 @@ Cada "beat" nace de una frase concreta, anclada con `at("frase")`. El anclaje ac
 - **Tomas repetidas:** lista en `TOMAS` solo los tramos buenos (fuera intentos fallidos, frases que se reinician y el "listo, chao"). Si Whisper funde una frase repetida en una palabra larga, retranscribe ese tramo suelto y corrige los tiempos en `CORRECCIONES`.
 - **Corte de audio exacto:** `aselect` corta por bloques del flujo de audio (con PCM el error se acumula hasta ~50 ms); pon `asetnsamples=n=16:p=0` antes de `aselect`. Comprueba siempre la sincronía tramo a tramo.
 - **Toma de apoyo:** solo fragmentos cortos (≈1 s cada uno) que entran en la palabra que los nombra, con flash blanco y sonido de obturador; nada de títulos arriba durante el apoyo (la cabeza de la otra persona está allí), solo la etiqueta abajo.
-- **Objetos 3D:** se modelan con three.js en `Objetos3D.tsx` (`@remotion/three`, acabado clay mate con la paleta de marca) y se animan según la frase (el pin cae y se clava, la cinta se desenrolla, el lápiz escribe, el candado se cierra). Van a los lados de la cabeza (x < 360 o x > 740). Canva genera buenas referencias, pero desde aquí solo deja descargar miniaturas de 200 px. Para renderizar WebGL en este entorno: `--gl=swangle`.
+- **Objetos 3D:** se modelan con three.js en `Objetos3D.tsx` (`@remotion/three`, acabado clay mate con la paleta de marca) y se animan según la frase (el pin cae y se clava, la cinta se desenrolla, el lápiz escribe, el candado se cierra). Van a los lados de la cabeza (x < 360 o x > 740). Canva genera buenas referencias, pero desde aquí solo deja descargar miniaturas de 200 px. Para renderizar WebGL en este entorno: `--gl=swangle --concurrency=2` (con 4 pestañas WebGL el render se queda colgado sin error; vigila que el contador de fotogramas avance).
 
 ## 7. Revisar y entregar
 - `cd editor && npm run lint`.
 - Para revisar: `npx remotion render <Composición> out/borrador.mp4 --concurrency=4` (añade `--gl=swangle` si hay objetos 3D). Saca fotogramas en cada beat (hojas de contacto con ffmpeg) y comprueba que nada tapa la cara, que los textos no se cortan y que el gráfico aparece en su palabra.
-- Para la versión final: `npx remotion render Borrador out/final_alta_calidad.mp4 --crf=16 --audio-bitrate=320k`.
+- Para la versión final: `npx remotion render <Composición> out/final_alta_calidad.mp4 --crf=16 --audio-bitrate=320k` (+ `--gl=swangle --concurrency=2` si hay 3D).
 - Para que el usuario lo revise en el chat, envía una copia de menos de 30 MB (x264 en 2 pasadas a ~3,4 Mbps). La final de alta calidad se entrega por el repositorio (< 100 MB) en `entregas/`.
 - Explica cada decisión citando la frase que la provoca.

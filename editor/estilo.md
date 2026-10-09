@@ -111,6 +111,9 @@ Estas reglas mandan sobre todo lo anterior.
     - Música de fondo cálida tipo belleza/bienestar (Fa mayor, 84 BPM: pad + piano eléctrico en arpegio + bajo suave + percusión ligera), sin graves < 70 Hz y con hueco en 1–3 kHz para la voz; ~16 dB bajo la voz (volumen 0,1 ≈ −32 LUFS), sube a 0,2 al acabar de hablar.
     - Efectos variados según lo que hace el gráfico, solo en los momentos importantes y nunca encima de otro: blips (contadores), impacto suave (cifra o cierre clave), whoosh (títulos grandes), swish (títulos secundarios), pop (etiquetas), marimba ascendente (escalones/progreso), tic-tac (relojes/temporizadores), tecleo (texto que se escribe letra a letra), tarjeta (tarjetas que entran), tachado (palabra que se tacha), brillo (palabra clave positiva), campanita (logro) y subida (antes del momento final).
     - Ningún efecto por encima del nivel de la voz (impactos a 0,22).
+15. **Solo las tomas buenas** (aprobado en el día 2): fuera intentos fallidos, frases que se reinician y despedidas fuera de guion ("listo, chao"); cuando hay varias tomas de la misma frase, la completa y correcta.
+16. **Toma de apoyo en fragmentos cortos** (aprobado en el día 2): ≈1 s por idea, entrando en la palabra que la nombra, con flash + obturador y etiqueta abajo; sin títulos arriba mientras se ve el apoyo.
+17. **Objetos 3D de marca según lo que se dice** (aprobado en el día 2): modelados con three.js (acabado clay mate, paleta Beleza), a los lados de la cabeza (x < 360 o x > 740) y con una animación que exprese la frase (el pin se clava, la cinta se desenrolla, el lápiz escribe, el candado se cierra). Si el guion indica un elemento (p. ej. carpeta "Día 1"), se puede rotular aunque no se diga.
 
 ## 11. Composición aplicada en el borrador (pendiente de tu visto bueno)
 - Fuente 4K (2160×3840) recortada sin escalar a 1620×2880 (`crop=1620:2880:270:268`): plano medio con la cara al 43 % de altura.
@@ -118,7 +121,7 @@ Estas reglas mandan sobre todo lo anterior.
 - Zonas: títulos con base en y = 605 (pared, con velo Verde petróleo 62 %→0 en el tercio superior) · recursos de apoyo con base en y = 1560 (pantalón oscuro, zona segura de Reels) · sin subtítulos.
 - Cortes: silencios > 0,3 s a −35 dB con 0,08 s de margen, a fotograma exacto · audio original sin normalizar.
 
-## 12. Composición aplicada en el día 2 · "Punto de partida" (pendiente de tu visto bueno)
+## 12. Composición aplicada en el día 2 · "Punto de partida" (aprobada)
 - Crudo 1080×1920 a 59,94 fps (DJI Osmo Pocket 3): convertido a 30 fps y **sin recorte** (recortar obligaría a escalar). Cara a ~50 % · 40 %; títulos con base en y = 550 para que los trazos descendentes de TAN Pearl no bajen de y = 580.
 - Tomas: solo las buenas (fuera los dos intentos fallidos de "usa un fondo neutro", el reinicio de "algo muy importante…" y el "listo, chao"); 2:25 de crudo → 47 s.
 - Toma de apoyo: tres fragmentos de ≈1 s (perfil, frente, espalda) en las palabras "de perfil", "de frente" y "una de espalda", con visor, flash y obturador.
