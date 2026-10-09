@@ -117,7 +117,7 @@ const Intro: React.FC = () => (
 // 1 · "primero vas a revisar muy bien tu piel" → lupa 3D; "no… sobre moretones, várices, el hueso" → lista de lo que se evita
 const RevisaPiel: React.FC = () => (
   <>
-    <Paso n={1} numAt={PASOS.uno} titulo="revisa tu piel" tituloAt={at("revisar").start} size={112} />
+    <Paso n={1} numAt={PASOS.uno} titulo="revisa tu piel" tituloAt={at("revisar").start} size={92} />
     <Lupa3D desde={at("revisar").start} ancho={330} alto={360} style={{ left: 735, top: 600 }} />
   </>
 );
@@ -343,7 +343,7 @@ const SiDuele: React.FC = () => {
 
 // 5 · "mantener siempre el Luma Body en movimiento, nunca lo puedes dejar quieto porque van a salir moretones"
 const Movimiento: React.FC = () => (
-  <Paso n={5} numAt={PASOS.cinco} kicker="SIEMPRE EN" kickerAt={at("vas a mantener").start} titulo="movimiento" tituloAt={at("movimiento").start} size={112} />
+  <Paso n={5} numAt={PASOS.cinco} kicker="SIEMPRE EN" kickerAt={at("vas a mantener").start} titulo="movimiento" tituloAt={at("movimiento").start} size={104} />
 );
 const NoQuieto: React.FC = () => {
   const { t } = useT();
@@ -389,7 +389,7 @@ const Cierre: React.FC = () => (
         <div style={kicker}>AL TERMINAR</div>
       </Pop>
       <Pop at={at("apagar").start} kind="scale">
-        <div style={display(120, COLORS.durazno)}>apaga y limpia</div>
+        <div style={display(100, COLORS.durazno)}>apaga y limpia</div>
       </Pop>
     </Top>
     <Apagar3D desde={at("al terminar").start} apaga={at("apagar").start} limpia={at("limpiar").start} ancho={320} alto={340} style={DER} />
