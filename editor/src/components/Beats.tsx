@@ -368,7 +368,7 @@ const Calendario3D: React.FC<{ desde: number }> = ({ desde }) => {
       style={{
         position: "absolute",
         left: 70,
-        top: 300,
+        top: 375, // justo encima del dedo con el que señala (≈ x 320, y 790)
         width: ancho,
         height: alto,
         transform: `translateY(${flota}px) rotate(${(1 - p) * -25 + balanceo}deg) scale(${p})`,
@@ -397,7 +397,7 @@ const GuardaCalendario: React.FC = () => (
         <div style={kicker}>GUARDA TU</div>
       </Pop>
       <Pop at={at("el calendario").start} kind="scale">
-        <div style={display(115, COLORS.durazno)}>calendario</div>
+        <div style={display(105, COLORS.durazno)}>calendario</div>
       </Pop>
     </div>
     <Calendario3D desde={at("calendario").start + 0.15} />
