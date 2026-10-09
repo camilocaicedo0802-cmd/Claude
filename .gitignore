@@ -1,0 +1,6 @@
+# medios y artefactos de análisis (pesados / del usuario)
+referencia/
+editor/public/referencia/
+editor/out/
+*.mp4
+*.wav
