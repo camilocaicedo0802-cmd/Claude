@@ -2,7 +2,15 @@ import React from "react";
 import { Composition } from "remotion";
 import { VIDEO } from "../brand";
 import { DatosCaras, useCaras, zonasEn } from "../rutinas/Caras";
-import { Aviso, Resumen, Tiempo, Titulo } from "../rutinas/Graficos";
+import {
+  Aviso,
+  ItemSubtitulo,
+  lectura,
+  Resumen,
+  Subtitulo,
+  Tiempo,
+  Titulo,
+} from "../rutinas/Graficos";
 import {
   Aceite3D,
   Flecha3D,
@@ -14,13 +22,15 @@ import { useT } from "../rutinas/util";
 import caras from "./data/caras.json";
 import clips from "./data/clips.json";
 import { Lista } from "./Graficos";
-import { ajustar, Columnas, Elem, Lado } from "./Maqueta";
-import { Paso, Piernas3D } from "./Objetos3D";
+import { ajustar, Columnas, Elem, Lado, Limites } from "./Maqueta";
+import { MapaPiernas, Paso } from "./MapaPiernas";
 import { at, DURATION, TOTAL, WORDS } from "./timing";
 
 // Reto de 21 días · Vídeo 6 "Piernas y apariencia de la celulitis" (voz en off + tomas de apoyo del crudo).
 // Cada tramo de la toma de apoyo coincide con la frase (scripts/rutinas/montar.py) y cada gráfico nace de su frase.
-// Hilo conductor: el mapa 3D de piernas y glúteos (Piernas3D) enciende la zona que se trabaja y dibuja el movimiento.
+// Hilo conductor: el mapa de piernas y glúteos (MapaPiernas, 2D) enciende la zona que se trabaja y dibuja el movimiento.
+// Corrección: el texto recurrente de las tarjetas y los avisos largos van como subtítulo grande abajo, solo el tiempo
+// de lectura (como en los días 4 y 5); las tarjetas quedan con los minutos y la zona.
 
 const ZONAS = {
   prep: 0,
@@ -69,10 +79,26 @@ type Seccion = {
   tituloAt?: number;
   tiempo?: { minutos: number; zona: string };
   extras: Extra[];
+  subs?: ItemSubtitulo[];
 };
 
 const IZQ: Lado = "izq";
 const DER: Lado = "der";
+// Frase larga → subtítulo grande abajo, el tiempo justo para leerla (§10, corrección de los días 4–6)
+const sub = (
+  frase: string,
+  texto: string,
+  tipo?: "si" | "no",
+): ItemSubtitulo => ({
+  desde: at(frase).start,
+  hasta: at(frase).start + lectura(texto),
+  texto,
+  tipo,
+});
+const RECURRENTE =
+  "Continúa este movimiento hasta completar el tiempo indicado";
+// Las columnas no bajan hasta la franja del subtítulo (y ≥ 1420)
+const LIM: Limites = { arriba: 240, abajo: 1400, bajoTitulo: true };
 const aviso = (
   frase: string,
   texto: string,
@@ -86,9 +112,11 @@ const aviso = (
     desde: t0,
     hasta,
     h: 110,
-    escala: 0.85,
+    escala: 0.9,
     lado: orden,
-    el: (pos) => <Aviso at={t0} tipo={tipo} texto={texto} style={pos} />,
+    el: (pos) => (
+      <Aviso at={t0} tipo={tipo} texto={texto} tamano={30} style={pos} />
+    ),
   };
 };
 const flecha = (t0: number, hasta?: number, orden: Lado = IZQ): Extra => ({
@@ -159,8 +187,8 @@ const SECCIONES: Seccion[] = [
           />
         ),
       },
-      aviso("celulitis", "Donde más se nota la celulitis"),
     ],
+    subs: [sub("celulitis", "Las zonas donde más se nota la celulitis", "si")],
   },
   // "Comenzamos con tres minutos de barridos largos en el muslo derecho. Desliza desde encima de la rodilla hacia la
   // parte alta del muslo. Trabaja por líneas y evita pasar sobre la rodilla o la ingle."
@@ -174,8 +202,8 @@ const SECCIONES: Seccion[] = [
     extras: [
       flecha(at("hacia la parte alta").start, at("evita").start),
       aviso("trabaja por líneas", "Trabaja por líneas"),
-      aviso("evita", "Evita la rodilla y la ingle", "no"),
     ],
+    subs: [sub("evita", "Evita pasar sobre la rodilla o la ingle", "no")],
   },
   // "Continúa durante dos minutos más con círculos amplios en el mismo muslo, sin detener el dispositivo en un solo
   // lugar. Haz círculos amplios, no pequeños ni agresivos. Recuerda verificar la intensidad… y si es necesario baja
@@ -186,21 +214,9 @@ const SECCIONES: Seccion[] = [
     hasta: ZONAS.musloI,
     kicker: "MUSLO DERECHO",
     titulo: "círculos amplios",
-    tiempo: { minutos: 2, zona: "Círculos · muslo derecho" },
+    tiempo: { minutos: 2, zona: "Muslo derecho" },
     extras: [
       circulo(at("círculos amplios").start, at("recuerda verificar").start),
-      aviso(
-        "sin detener",
-        "Sin detenerte en un solo lugar",
-        "no",
-        at("recuerda verificar").start,
-      ),
-      aviso(
-        "no pequeños",
-        "Ni pequeños ni agresivos",
-        "no",
-        at("recuerda verificar").start,
-      ),
       // La perilla sube al "verificar la intensidad" y baja en "baja la intensidad de succión"
       perilla(at("recuerda verificar").start, [
         [at("recuerda verificar").start, 2],
@@ -208,7 +224,11 @@ const SECCIONES: Seccion[] = [
         [at("baja").start, 3],
         [at("baja").start + 0.8, 1],
       ]),
-      aviso("baja", "Si es necesario, baja la succión"),
+    ],
+    subs: [
+      sub("sin detener", "No dejes el dispositivo en un solo lugar", "no"),
+      sub("no pequeños", "Círculos amplios: ni pequeños ni agresivos", "no"),
+      sub("baja", "Si es necesario, baja la intensidad de succión", "si"),
     ],
   },
   // "Ahora vamos a repetir la misma secuencia en el muslo izquierdo. Deslizas desde encima de la rodilla hacia la
@@ -229,7 +249,7 @@ const SECCIONES: Seccion[] = [
     hasta: ZONAS.gluteos,
     kicker: "MUSLO IZQUIERDO",
     titulo: "círculos amplios",
-    tiempo: { minutos: 2, zona: "Círculos · muslo izquierdo" },
+    tiempo: { minutos: 2, zona: "Muslo izquierdo" },
     extras: [circulo(at("movimientos amplios").start)],
   },
   // "Para finalizar vamos a hacerlo con dos minutos en cada glúteo, el masaje debe sentirse firme pero nunca doloroso,
@@ -242,16 +262,12 @@ const SECCIONES: Seccion[] = [
     titulo: "glúteos",
     tiempo: { minutos: 2, zona: "Cada glúteo" },
     extras: [
-      aviso("firme", "Firme", "si", at("círculos amplios", 70).start),
-      aviso(
-        "nunca doloroso",
-        "Nunca doloroso",
-        "no",
-        at("círculos amplios", 70).start,
-      ),
       circulo(at("círculos amplios", 70).start, at("barridos de abajo").start),
       flecha(at("barridos de abajo").start),
-      aviso("levantamiento", "Ayuda al levantamiento"),
+    ],
+    subs: [
+      sub("firme", "Firme, pero nunca doloroso", "si"),
+      sub("levantamiento", "Para ayudar con el levantamiento", "si"),
     ],
   },
   // "Terminamos los 15 minutos del día. Una mayor intensidad no significa mejores resultados, así que prioriza la
@@ -313,7 +329,13 @@ const SECCIONES: Seccion[] = [
         ],
         DER,
       ),
-      aviso("no significa", "Más intensidad ≠ mejores resultados", "no"),
+    ],
+    subs: [
+      sub(
+        "no significa",
+        "Más intensidad no significa mejores resultados",
+        "no",
+      ),
     ],
   },
 ];
@@ -327,15 +349,13 @@ const useElementos = (s: Seccion): Elem[] => {
   const { actual } = zonasEn(caras, t, s.desde, s.hasta);
   const muneco: Elem = {
     w: 240,
-    h: 380,
+    h: 400,
     lado: DER,
     render: (style) => (
-      <Piernas3D
+      <MapaPiernas
         desde={MUNECO_DESDE}
         pasos={PASOS}
         evita={EVITA}
-        ancho={240}
-        alto={380}
         style={style}
       />
     ),
@@ -344,8 +364,8 @@ const useElementos = (s: Seccion): Elem[] => {
     ? [
         {
           w: 260,
-          h: 350,
-          escala: 0.82,
+          h: 310,
+          escala: 0.85,
           lado: IZQ,
           render: (style) => (
             <Tiempo
@@ -353,6 +373,8 @@ const useElementos = (s: Seccion): Elem[] => {
               hasta={s.hasta}
               minutos={s.tiempo!.minutos}
               zona={s.tiempo!.zona}
+              recordatorio={false}
+              etiquetaGrande
               style={style}
             />
           ),
@@ -368,7 +390,7 @@ const useElementos = (s: Seccion): Elem[] => {
       lado: e.lado,
       render: e.el,
     }));
-  return ajustar(actual, [muneco], [...tiempo, ...extras]);
+  return ajustar(actual, [muneco], [...tiempo, ...extras], LIM);
 };
 
 const SeccionComp: React.FC<{ s: Seccion }> = ({ s }) => {
@@ -388,6 +410,7 @@ const SeccionComp: React.FC<{ s: Seccion }> = ({ s }) => {
         hasta={s.hasta}
         elementos={elementos}
         dibujar={(i) => i > 0}
+        lim={LIM}
       />
     </>
   );
@@ -425,6 +448,7 @@ const MunecoSeccion: React.FC<{ s: Seccion }> = ({ s }) => (
     hasta={s.hasta}
     elementos={useElementos(s)}
     dibujar={(i) => i === 0}
+    lim={LIM}
   />
 );
 const Muneco: React.FC = () => {
@@ -588,6 +612,24 @@ const EFECTOS: Efecto[] = [
 // (música ≈ 16 dB bajo la voz, ningún efecto por encima de ella).
 const NIVEL = 0.35;
 
+// Subtítulos: el texto recurrente de cada zona (si hay un aviso justo antes, espera a que termine) y los avisos largos
+const SUBS: ItemSubtitulo[] = (() => {
+  const avisos = SECCIONES.flatMap((s) => s.subs ?? []);
+  const recurrentes = SECCIONES.filter((s) => s.tiempo).map((s) => {
+    const previos = avisos.filter(
+      (a) => a.desde < s.desde + 1.2 && a.hasta > s.desde,
+    );
+    const desde = Math.max(s.desde + 1.2, ...previos.map((a) => a.hasta + 0.2));
+    return {
+      desde,
+      hasta: Math.min(s.hasta, desde + lectura(RECURRENTE)),
+      texto: RECURRENTE,
+    };
+  });
+  return [...recurrentes, ...avisos];
+})();
+const Subtitulos: React.FC = () => <Subtitulo items={SUBS} limiteCara={1400} />;
+
 export const Dia6Video: React.FC = () => (
   <Rutina
     dia="dia6"
@@ -601,6 +643,7 @@ export const Dia6Video: React.FC = () => (
   >
     <Beats />
     <Muneco />
+    <Subtitulos />
   </Rutina>
 );
 

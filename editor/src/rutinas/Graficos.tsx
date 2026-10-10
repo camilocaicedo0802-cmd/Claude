@@ -463,14 +463,18 @@ export type ItemSubtitulo = {
   texto: string;
   tipo?: "si" | "no";
 };
-export const Subtitulo: React.FC<{ items: ItemSubtitulo[] }> = ({ items }) => {
+export const Subtitulo: React.FC<{
+  items: ItemSubtitulo[];
+  /** Si la zona de la cara (con su margen) baja de aquí, no se muestra. El cuadro del subtítulo empieza en y ≈ 1420. */
+  limiteCara?: number;
+}> = ({ items, limiteCara = 1330 }) => {
   const caras = useCaras();
   const { t, frame, fps } = useT();
   const activos = items.filter((i) => t >= i.desde && t < i.hasta);
   if (!activos.length) return null;
   const item = activos.reduce((a, b) => (b.desde > a.desde ? b : a));
   const { actual } = zonasEn(caras, t, item.desde, item.hasta);
-  if (actual.y1 > 1330) return null; // la cara nunca baja tanto, pero si pasara, el subtítulo no se muestra
+  if (actual.y1 > limiteCara) return null; // la cara nunca baja tanto, pero si pasara, el subtítulo no se muestra
   const p = pop(frame, fps, item.desde, 16);
   const salida = interpolate(t, [item.hasta - 0.2, item.hasta], [1, 0], CLAMP);
   const d = interpolate(t, [item.desde + 0.1, item.desde + 0.4], [0, 1], CLAMP);
