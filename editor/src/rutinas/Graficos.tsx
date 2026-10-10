@@ -184,8 +184,17 @@ export const Tiempo: React.FC<{
   minutos: number;
   zona: string;
   recordatorio?: boolean;
+  etiquetaGrande?: boolean;
   style: React.CSSProperties;
-}> = ({ desde, hasta, minutos, zona, recordatorio = true, style }) => {
+}> = ({
+  desde,
+  hasta,
+  minutos,
+  zona,
+  recordatorio = true,
+  etiquetaGrande = false,
+  style,
+}) => {
   const { t } = useT();
   const p = interpolate(t, [desde + 0.2, hasta], [0, 1], CLAMP);
   const R = 62;
@@ -269,7 +278,7 @@ export const Tiempo: React.FC<{
             style={{
               fontFamily: FONTS.body,
               fontWeight: 700,
-              fontSize: 28,
+              fontSize: etiquetaGrande ? 36 : 28,
               color: COLORS.marfil,
               textAlign: "center",
               lineHeight: 1.1,
@@ -308,8 +317,9 @@ export const Aviso: React.FC<{
   texto: string;
   tipo?: "si" | "no";
   ancho?: number;
+  tamano?: number;
   style: React.CSSProperties;
-}> = ({ at: atSec, texto, tipo = "si", ancho = 260, style }) => {
+}> = ({ at: atSec, texto, tipo = "si", ancho = 260, tamano = 25, style }) => {
   const { t } = useT();
   const d = interpolate(t, [atSec + 0.1, atSec + 0.4], [0, 1], CLAMP);
   return (
@@ -366,7 +376,7 @@ export const Aviso: React.FC<{
             style={{
               fontFamily: FONTS.body,
               fontWeight: 700,
-              fontSize: 25,
+              fontSize: tamano,
               lineHeight: 1.15,
             }}
           >
@@ -438,6 +448,107 @@ export const Resumen: React.FC<{
           ))}
         </div>
       </Pop>
+    </div>
+  );
+};
+
+/** Subtítulo inferior para frases largas (texto recurrente del guion y avisos), legible a tamaño grande.
+ *  Muestra el elemento activo que empezó más tarde; base en y = 1560 (fuera de la interfaz de Reels) y nunca sobre la cara. */
+/** Segundos que tarda una persona promedio en leer un texto en pantalla (~16 caracteres/s, mínimo 1,6 s). */
+export const lectura = (texto: string) =>
+  Math.max(1.6, texto.length / 16 + 0.3);
+export type ItemSubtitulo = {
+  desde: number;
+  hasta: number;
+  texto: string;
+  tipo?: "si" | "no";
+};
+export const Subtitulo: React.FC<{ items: ItemSubtitulo[] }> = ({ items }) => {
+  const caras = useCaras();
+  const { t, frame, fps } = useT();
+  const activos = items.filter((i) => t >= i.desde && t < i.hasta);
+  if (!activos.length) return null;
+  const item = activos.reduce((a, b) => (b.desde > a.desde ? b : a));
+  const { actual } = zonasEn(caras, t, item.desde, item.hasta);
+  if (actual.y1 > 1330) return null; // la cara nunca baja tanto, pero si pasara, el subtítulo no se muestra
+  const p = pop(frame, fps, item.desde, 16);
+  const salida = interpolate(t, [item.hasta - 0.2, item.hasta], [1, 0], CLAMP);
+  const d = interpolate(t, [item.desde + 0.1, item.desde + 0.4], [0, 1], CLAMP);
+  return (
+    <div
+      style={{
+        position: "absolute",
+        left: 50,
+        right: 50,
+        bottom: 1920 - 1560,
+        display: "flex",
+        justifyContent: "center",
+        opacity: Math.min(1, p * 1.4) * salida,
+        transform: `translateY(${(1 - p) * 30}px)`,
+      }}
+    >
+      <div
+        style={{
+          background: "rgba(69,89,90,0.92)",
+          borderRadius: 30,
+          padding: "18px 30px 22px",
+          display: "flex",
+          alignItems: "center",
+          gap: 18,
+          maxWidth: 980,
+          boxShadow: "0 14px 36px rgba(69,89,90,.4)",
+        }}
+      >
+        {item.tipo ? (
+          <svg
+            width={52}
+            height={52}
+            viewBox="0 0 56 56"
+            style={{ flexShrink: 0 }}
+          >
+            <circle
+              cx={28}
+              cy={28}
+              r={26}
+              fill={item.tipo === "si" ? COLORS.salvia : COLORS.durazno}
+            />
+            {item.tipo === "si" ? (
+              <path
+                d="M16 29 L25 38 L41 20"
+                stroke={COLORS.marfil}
+                strokeWidth={6}
+                fill="none"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeDasharray={40}
+                strokeDashoffset={40 * (1 - d)}
+              />
+            ) : (
+              <path
+                d="M19 19 L37 37 M37 19 L19 37"
+                stroke={COLORS.petroleo}
+                strokeWidth={6}
+                fill="none"
+                strokeLinecap="round"
+                strokeDasharray={52}
+                strokeDashoffset={52 * (1 - d)}
+              />
+            )}
+          </svg>
+        ) : null}
+        <div
+          style={{
+            fontFamily: FONTS.body,
+            fontWeight: 700,
+            fontSize: 42,
+            lineHeight: 1.18,
+            color: COLORS.marfil,
+            textAlign: item.tipo ? "left" : "center",
+          }}
+        >
+          {item.texto}
+        </div>
+      </div>
     </div>
   );
 };

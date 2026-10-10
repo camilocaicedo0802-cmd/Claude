@@ -2,7 +2,16 @@ import React from "react";
 import { Composition } from "remotion";
 import { VIDEO } from "../brand";
 import { DatosCaras } from "../rutinas/Caras";
-import { Aviso, Laterales, Resumen, Tiempo, Titulo } from "../rutinas/Graficos";
+import {
+  Aviso,
+  ItemSubtitulo,
+  lectura,
+  Laterales,
+  Resumen,
+  Subtitulo,
+  Tiempo,
+  Titulo,
+} from "../rutinas/Graficos";
 import {
   Aceite3D,
   Apagar3D,
@@ -63,17 +72,19 @@ const Prep: React.FC = () => {
               />
             ),
           },
+        ]}
+      />
+      <Subtitulo
+        items={[
           {
-            w: 260,
-            h: 110,
-            orden: ["izq", "der"],
-            render: (pos) => (
-              <Aviso
-                at={at("deslizarse").start}
-                texto="Suficiente aceite para deslizar"
-                style={pos}
-              />
+            desde: at("deslizarse").start,
+            hasta: Math.min(
+              ZONAS.pantD,
+              at("deslizarse").start +
+                lectura("Aceite suficiente para que el Luma Body se deslice"),
             ),
+            texto: "Aceite suficiente para que el Luma Body se deslice",
+            tipo: "si",
           },
         ]}
       />
@@ -99,7 +110,17 @@ const Zona: React.FC<{
   minutos: number;
   etiqueta: string;
   extras: Extra[];
-}> = ({ desde, hasta, titulo, kicker: k, minutos, etiqueta, extras }) => {
+  avisos?: ItemSubtitulo[];
+}> = ({
+  desde,
+  hasta,
+  titulo,
+  kicker: k,
+  minutos,
+  etiqueta,
+  extras,
+  avisos = [],
+}) => {
   const { t } = useT();
   const activos = extras.filter(
     (e) => t >= e.desde - 0.05 && t < (e.hasta ?? hasta),
@@ -121,6 +142,8 @@ const Zona: React.FC<{
                 hasta={hasta}
                 minutos={minutos}
                 zona={etiqueta}
+                recordatorio={false}
+                etiquetaGrande
                 style={pos}
               />
             ),
@@ -133,9 +156,34 @@ const Zona: React.FC<{
           })),
         ]}
       />
+      {/* Texto recurrente del guion y avisos largos: como subtítulo grande abajo (legible), no dentro de la tarjeta */}
+      <Subtitulo
+        items={[
+          {
+            desde: desde + 1.2,
+            hasta: Math.min(hasta, desde + 1.2 + lectura(RECURRENTE)),
+            texto: RECURRENTE,
+          },
+          ...avisos,
+        ]}
+      />
     </>
   );
 };
+const RECURRENTE =
+  "Continúa este movimiento hasta completar el tiempo indicado";
+// Aviso largo → subtítulo el tiempo justo para leerlo
+const sub = (
+  frase: string,
+  texto: string,
+  tipo: "si" | "no",
+  hasta?: number,
+): ItemSubtitulo => ({
+  desde: at(frase).start,
+  hasta: hasta ?? at(frase).start + lectura(texto),
+  texto,
+  tipo,
+});
 const aviso = (
   frase: string,
   texto: string,
@@ -146,7 +194,13 @@ const aviso = (
   hasta,
   h: 110,
   el: (pos) => (
-    <Aviso at={at(frase).start} tipo={tipo} texto={texto} style={pos} />
+    <Aviso
+      at={at(frase).start}
+      tipo={tipo}
+      texto={texto}
+      tamano={30}
+      style={pos}
+    />
   ),
 });
 
@@ -172,8 +226,8 @@ const PantD: React.FC = () => (
           />
         ),
       },
-      aviso("sin pasar", "Sin pasar detrás de la rodilla", "no"),
     ]}
+    avisos={[sub("sin pasar", "Sin pasar detrás de la rodilla", "no")]}
   />
 );
 const PantI: React.FC = () => (
@@ -207,7 +261,7 @@ const MusloD: React.FC = () => (
         "si",
         at("terminando").start,
       ),
-      aviso("terminando", "Termina antes de la ingle", "no"),
+
       {
         desde: at("de abajo hacia arriba").start,
         h: 290,
@@ -222,6 +276,7 @@ const MusloD: React.FC = () => (
         ),
       },
     ]}
+    avisos={[sub("terminando", "Termina antes de la ingle", "no")]}
   />
 );
 const MusloI: React.FC = () => (
@@ -261,7 +316,9 @@ const MusloI: React.FC = () => (
           />
         ),
       },
-      aviso("para y aplica", "Para y aplica más aceite"),
+    ]}
+    avisos={[
+      sub("para y aplica", "Si no se desliza: para y aplica más aceite", "si"),
     ]}
   />
 );
@@ -314,14 +371,15 @@ const Gluteos: React.FC = () => (
           />
         ),
       },
-      aviso("no dejar", "Nunca en un solo punto", "no"),
+    ]}
+    avisos={[
+      sub("no dejar", "Nunca dejes el dispositivo en un solo punto", "no"),
     ]}
   />
 );
 
 // Cierre · "Completaste 15 minutos… Apaga el dispositivo y realiza pases suaves con tus manos… hacia los ganglios inguinales"
 const Cierre: React.FC = () => {
-  const { t } = useT();
   return (
     <>
       <Titulo
@@ -368,22 +426,20 @@ const Cierre: React.FC = () => {
               />
             ),
           },
-          ...(t >= at("realiza pases").start
-            ? [
-                {
-                  w: 260,
-                  h: 140,
-                  orden: ["der", "izq"] as ("der" | "izq")[],
-                  render: (pos: React.CSSProperties) => (
-                    <Aviso
-                      at={at("realiza pases").start}
-                      texto="Pases suaves con las manos hacia la ingle"
-                      style={pos}
-                    />
-                  ),
-                },
-              ]
-            : []),
+        ]}
+      />
+      <Subtitulo
+        items={[
+          {
+            desde: at("realiza pases").start,
+            hasta:
+              at("realiza pases").start +
+              lectura(
+                "Pases suaves con las manos hacia los ganglios inguinales",
+              ),
+            texto: "Pases suaves con las manos hacia los ganglios inguinales",
+            tipo: "si",
+          },
         ]}
       />
     </>
