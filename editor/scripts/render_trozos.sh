@@ -3,7 +3,8 @@
 # navegador en cada tramo y reintentando si se cuelga (con muchas escenas 3D seguidas swiftshader acaba bloqueándose).
 # Es REANUDABLE: cada tramo terminado queda en out/trozos_<Composición>/ y no se repite si se relanza
 # (p. ej. tras un reinicio del contenedor). El audio se renderiza aparte y se une al final sin recodificar el vídeo.
-# Uso: scripts/render_trozos.sh <Composición> <salida.mp4> [tramo=450] [crf=16]
+# Uso: [TIEMPO=900] scripts/render_trozos.sh <Composición> <salida.mp4> [tramo=450] [crf=16]
+# TIEMPO: segundos máximos por tramo antes de darlo por colgado y reintentarlo (por defecto 900).
 set -uo pipefail
 comp=$1; out=$2; tramo=${3:-450}; crf=${4:-16}
 cd "$(dirname "$0")/.."
@@ -21,7 +22,7 @@ for ((a=0; a<total; a+=tramo)); do
     echo "tramo $a-$b ya estaba"
   else
     for intento in 1 2 3; do
-      timeout 900 npx remotion render "$dir/bundle" "$comp" "$parte.tmp.mp4" --frames=$a-$b --muted --gl=swangle --concurrency=2 --timeout=60000 --crf=$crf --log=error && mv "$parte.tmp.mp4" "$parte" && break
+      timeout "${TIEMPO:-900}" npx remotion render "$dir/bundle" "$comp" "$parte.tmp.mp4" --frames=$a-$b --muted --gl=swangle --concurrency=2 --timeout=60000 --crf=$crf --log=error && mv "$parte.tmp.mp4" "$parte" && break
       echo "tramo $a-$b: reintento $intento"; ps -C chrome -o pid= | xargs -r kill -9
     done
     [ -f "$parte" ] || { echo "tramo $a-$b falló"; exit 1; }
