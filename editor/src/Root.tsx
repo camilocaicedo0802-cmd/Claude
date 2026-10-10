@@ -6,6 +6,8 @@ import { Dia5 } from "./dia5/Dia5";
 import { Dia6 } from "./dia6/Dia6";
 import { Dia7 } from "./dia7/Dia7";
 import { Dia8 } from "./dia8/Dia8";
+import { Dia9 } from "./dia9/Dia9";
+import { Dia10 } from "./dia10/Dia10";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -25,6 +27,10 @@ export const RemotionRoot: React.FC = () => {
       <Dia7 />
       {/* Día 8 · Evaluación del Día 10 (a cámara) */}
       <Dia8 />
+      {/* Día 9 · Rutina integrada (voz en off; mosaicos, tarjetas de capítulo y pizarra sobre congelados) */}
+      <Dia9 />
+      {/* Día 10 · Día 21 y continuidad (a cámara; el último del reto) */}
+      <Dia10 />
     </>
   );
 };

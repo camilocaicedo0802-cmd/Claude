@@ -1,0 +1,1296 @@
+{
+ "model": "large-v3-turbo",
+ "duration": 113.0013125,
+ "segments": [
+  {
+   "start": 1.719999999999997,
+   "end": 8.14,
+   "text": "hoy integraremos diferentes zonas en una sola rutina aplica el aceite únicamente en la zona"
+  },
+  {
+   "start": 8.14,
+   "end": 15.96,
+   "text": "que vas a trabajar para conservar el deslizamiento aplica el aceite únicamente en la zona que vas"
+  },
+  {
+   "start": 15.96,
+   "end": 21.52,
+   "text": "a trabajar para conservar el deslizamiento empezamos con tres minutos en cada pierna"
+  },
+  {
+   "start": 21.52,
+   "end": 28.64,
+   "text": "divide la zona en líneas y trabaja siempre con movimientos ascendentes y continuos realiza"
+  },
+  {
+   "start": 28.64,
+   "end": 37.16,
+   "text": "líneas ascendentes desde la parte baja hacia arriba del muslo. Continúa durante cuatro minutos en"
+  },
+  {
+   "start": 37.16,
+   "end": 46.28,
+   "text": "abdomen y laterales. Mantén una intensidad baja y evita pasar directamente sobre el ombligo. Realiza"
+  },
+  {
+   "start": 46.28,
+   "end": 54.08,
+   "text": "círculos amplios y movimientos suaves. Movimientos de arrastre desde la espalda hacia la cintura"
+  },
+  {
+   "start": 54.08,
+   "end": 61.94,
+   "text": "bajando por la ingle. Trabaja los glúteos durante tres minutos con movimientos circulares"
+  },
+  {
+   "start": 61.94,
+   "end": 72.18,
+   "text": "y barridos ascendentes. Haz círculos amplios alternando ambos lados. Finaliza con 30 segundos"
+  },
+  {
+   "start": 72.18,
+   "end": 79.92,
+   "text": "en cada brazo. Esta parte puedes hacerla solo con tus manos. Si lo vas a hacer con el dispositivo"
+  },
+  {
+   "start": 79.92,
+   "end": 89.66,
+   "text": "recuerda no pasar sobre el codo. Finaliza con 30 segundos en cada brazo. Los brazos puedes"
+  },
+  {
+   "start": 89.66,
+   "end": 95.36,
+   "text": "hacerlo solo con tus manos o si lo vas a hacer con el dispositivo recuerda no pasar sobre las"
+  },
+  {
+   "start": 95.36,
+   "end": 108.62,
+   "text": "articulaciones. Y listo, tu rutina completa de 15 minutos para trabajar diferentes zonas sin"
+  },
+  {
+   "start": 108.62,
+   "end": 111.46,
+   "text": "necesidad de utilizar una intensidad dolorosa."
+  }
+ ],
+ "words": [
+  {
+   "text": "hoy",
+   "start": 1.72,
+   "end": 2.32,
+   "prob": 0.003
+  },
+  {
+   "text": "integraremos",
+   "start": 2.32,
+   "end": 2.92,
+   "prob": 0.992
+  },
+  {
+   "text": "diferentes",
+   "start": 2.92,
+   "end": 3.66,
+   "prob": 0.999
+  },
+  {
+   "text": "zonas",
+   "start": 3.66,
+   "end": 4.16,
+   "prob": 0.999
+  },
+  {
+   "text": "en",
+   "start": 4.16,
+   "end": 4.4,
+   "prob": 1.0
+  },
+  {
+   "text": "una",
+   "start": 4.4,
+   "end": 4.58,
+   "prob": 1.0
+  },
+  {
+   "text": "sola",
+   "start": 4.58,
+   "end": 4.82,
+   "prob": 0.999
+  },
+  {
+   "text": "rutina",
+   "start": 4.82,
+   "end": 5.42,
+   "prob": 1.0
+  },
+  {
+   "text": "aplica",
+   "start": 5.42,
+   "end": 6.54,
+   "prob": 0.858
+  },
+  {
+   "text": "el",
+   "start": 6.54,
+   "end": 6.66,
+   "prob": 0.987
+  },
+  {
+   "text": "aceite",
+   "start": 6.66,
+   "end": 6.96,
+   "prob": 1.0
+  },
+  {
+   "text": "únicamente",
+   "start": 6.96,
+   "end": 7.58,
+   "prob": 0.999
+  },
+  {
+   "text": "en",
+   "start": 7.58,
+   "end": 7.72,
+   "prob": 1.0
+  },
+  {
+   "text": "la",
+   "start": 7.72,
+   "end": 7.82,
+   "prob": 1.0
+  },
+  {
+   "text": "zona",
+   "start": 7.82,
+   "end": 8.14,
+   "prob": 1.0
+  },
+  {
+   "text": "que",
+   "start": 8.14,
+   "end": 8.44,
+   "prob": 0.999
+  },
+  {
+   "text": "vas",
+   "start": 8.44,
+   "end": 8.68,
+   "prob": 0.999
+  },
+  {
+   "text": "a",
+   "start": 8.68,
+   "end": 8.78,
+   "prob": 1.0
+  },
+  {
+   "text": "trabajar",
+   "start": 8.78,
+   "end": 9.28,
+   "prob": 0.999
+  },
+  {
+   "text": "para",
+   "start": 9.28,
+   "end": 10.24,
+   "prob": 0.998
+  },
+  {
+   "text": "conservar",
+   "start": 10.24,
+   "end": 10.94,
+   "prob": 0.999
+  },
+  {
+   "text": "el",
+   "start": 10.94,
+   "end": 11.06,
+   "prob": 1.0
+  },
+  {
+   "text": "deslizamiento",
+   "start": 11.06,
+   "end": 12.64,
+   "prob": 0.99
+  },
+  {
+   "text": "aplica",
+   "start": 12.64,
+   "end": 14.26,
+   "prob": 0.972
+  },
+  {
+   "text": "el",
+   "start": 14.26,
+   "end": 14.38,
+   "prob": 0.999
+  },
+  {
+   "text": "aceite",
+   "start": 14.38,
+   "end": 14.64,
+   "prob": 1.0
+  },
+  {
+   "text": "únicamente",
+   "start": 14.64,
+   "end": 15.22,
+   "prob": 1.0
+  },
+  {
+   "text": "en",
+   "start": 15.22,
+   "end": 15.34,
+   "prob": 1.0
+  },
+  {
+   "text": "la",
+   "start": 15.34,
+   "end": 15.44,
+   "prob": 1.0
+  },
+  {
+   "text": "zona",
+   "start": 15.44,
+   "end": 15.62,
+   "prob": 1.0
+  },
+  {
+   "text": "que",
+   "start": 15.62,
+   "end": 15.8,
+   "prob": 1.0
+  },
+  {
+   "text": "vas",
+   "start": 15.8,
+   "end": 15.96,
+   "prob": 0.999
+  },
+  {
+   "text": "a",
+   "start": 15.96,
+   "end": 16.06,
+   "prob": 1.0
+  },
+  {
+   "text": "trabajar",
+   "start": 16.06,
+   "end": 16.36,
+   "prob": 1.0
+  },
+  {
+   "text": "para",
+   "start": 16.36,
+   "end": 16.66,
+   "prob": 1.0
+  },
+  {
+   "text": "conservar",
+   "start": 16.66,
+   "end": 17.24,
+   "prob": 1.0
+  },
+  {
+   "text": "el",
+   "start": 17.24,
+   "end": 17.36,
+   "prob": 1.0
+  },
+  {
+   "text": "deslizamiento",
+   "start": 17.36,
+   "end": 18.2,
+   "prob": 1.0
+  },
+  {
+   "text": "empezamos",
+   "start": 18.2,
+   "end": 19.7,
+   "prob": 0.993
+  },
+  {
+   "text": "con",
+   "start": 19.7,
+   "end": 19.92,
+   "prob": 1.0
+  },
+  {
+   "text": "tres",
+   "start": 19.92,
+   "end": 20.14,
+   "prob": 0.804
+  },
+  {
+   "text": "minutos",
+   "start": 20.14,
+   "end": 20.52,
+   "prob": 1.0
+  },
+  {
+   "text": "en",
+   "start": 20.52,
+   "end": 20.76,
+   "prob": 1.0
+  },
+  {
+   "text": "cada",
+   "start": 20.76,
+   "end": 21.0,
+   "prob": 1.0
+  },
+  {
+   "text": "pierna",
+   "start": 21.0,
+   "end": 21.52,
+   "prob": 0.999
+  },
+  {
+   "text": "divide",
+   "start": 21.52,
+   "end": 22.6,
+   "prob": 0.972
+  },
+  {
+   "text": "la",
+   "start": 22.6,
+   "end": 22.84,
+   "prob": 0.998
+  },
+  {
+   "text": "zona",
+   "start": 22.84,
+   "end": 23.06,
+   "prob": 1.0
+  },
+  {
+   "text": "en",
+   "start": 23.06,
+   "end": 23.26,
+   "prob": 1.0
+  },
+  {
+   "text": "líneas",
+   "start": 23.26,
+   "end": 23.62,
+   "prob": 0.999
+  },
+  {
+   "text": "y",
+   "start": 23.62,
+   "end": 23.76,
+   "prob": 1.0
+  },
+  {
+   "text": "trabaja",
+   "start": 23.76,
+   "end": 24.2,
+   "prob": 0.998
+  },
+  {
+   "text": "siempre",
+   "start": 24.2,
+   "end": 24.66,
+   "prob": 1.0
+  },
+  {
+   "text": "con",
+   "start": 24.66,
+   "end": 24.96,
+   "prob": 1.0
+  },
+  {
+   "text": "movimientos",
+   "start": 24.96,
+   "end": 25.54,
+   "prob": 1.0
+  },
+  {
+   "text": "ascendentes",
+   "start": 25.54,
+   "end": 26.36,
+   "prob": 0.998
+  },
+  {
+   "text": "y",
+   "start": 26.36,
+   "end": 26.58,
+   "prob": 1.0
+  },
+  {
+   "text": "continuos",
+   "start": 26.58,
+   "end": 27.34,
+   "prob": 0.998
+  },
+  {
+   "text": "realiza",
+   "start": 27.34,
+   "end": 28.64,
+   "prob": 0.987
+  },
+  {
+   "text": "líneas",
+   "start": 28.64,
+   "end": 29.02,
+   "prob": 0.992
+  },
+  {
+   "text": "ascendentes",
+   "start": 29.02,
+   "end": 29.62,
+   "prob": 0.996
+  },
+  {
+   "text": "desde",
+   "start": 29.62,
+   "end": 29.88,
+   "prob": 1.0
+  },
+  {
+   "text": "la",
+   "start": 29.88,
+   "end": 30.08,
+   "prob": 1.0
+  },
+  {
+   "text": "parte",
+   "start": 30.08,
+   "end": 30.5,
+   "prob": 1.0
+  },
+  {
+   "text": "baja",
+   "start": 30.5,
+   "end": 31.12,
+   "prob": 1.0
+  },
+  {
+   "text": "hacia",
+   "start": 31.12,
+   "end": 31.98,
+   "prob": 1.0
+  },
+  {
+   "text": "arriba",
+   "start": 31.98,
+   "end": 32.44,
+   "prob": 1.0
+  },
+  {
+   "text": "del",
+   "start": 32.44,
+   "end": 32.64,
+   "prob": 0.999
+  },
+  {
+   "text": "muslo.",
+   "start": 32.64,
+   "end": 33.08,
+   "prob": 0.997
+  },
+  {
+   "text": "Continúa",
+   "start": 34.38,
+   "end": 35.38,
+   "prob": 0.998
+  },
+  {
+   "text": "durante",
+   "start": 35.38,
+   "end": 35.74,
+   "prob": 1.0
+  },
+  {
+   "text": "cuatro",
+   "start": 35.74,
+   "end": 36.12,
+   "prob": 0.688
+  },
+  {
+   "text": "minutos",
+   "start": 36.12,
+   "end": 36.66,
+   "prob": 1.0
+  },
+  {
+   "text": "en",
+   "start": 36.66,
+   "end": 37.16,
+   "prob": 1.0
+  },
+  {
+   "text": "abdomen",
+   "start": 37.16,
+   "end": 37.78,
+   "prob": 0.999
+  },
+  {
+   "text": "y",
+   "start": 37.78,
+   "end": 38.28,
+   "prob": 1.0
+  },
+  {
+   "text": "laterales.",
+   "start": 38.28,
+   "end": 39.3,
+   "prob": 1.0
+  },
+  {
+   "text": "Mantén",
+   "start": 39.68,
+   "end": 40.54,
+   "prob": 0.989
+  },
+  {
+   "text": "una",
+   "start": 40.54,
+   "end": 40.72,
+   "prob": 0.999
+  },
+  {
+   "text": "intensidad",
+   "start": 40.72,
+   "end": 41.3,
+   "prob": 1.0
+  },
+  {
+   "text": "baja",
+   "start": 41.3,
+   "end": 41.8,
+   "prob": 1.0
+  },
+  {
+   "text": "y",
+   "start": 41.8,
+   "end": 42.22,
+   "prob": 1.0
+  },
+  {
+   "text": "evita",
+   "start": 42.22,
+   "end": 42.5,
+   "prob": 0.999
+  },
+  {
+   "text": "pasar",
+   "start": 42.5,
+   "end": 42.82,
+   "prob": 1.0
+  },
+  {
+   "text": "directamente",
+   "start": 42.82,
+   "end": 43.44,
+   "prob": 1.0
+  },
+  {
+   "text": "sobre",
+   "start": 43.44,
+   "end": 44.0,
+   "prob": 1.0
+  },
+  {
+   "text": "el",
+   "start": 44.0,
+   "end": 44.16,
+   "prob": 1.0
+  },
+  {
+   "text": "ombligo.",
+   "start": 44.16,
+   "end": 44.72,
+   "prob": 0.999
+  },
+  {
+   "text": "Realiza",
+   "start": 45.72,
+   "end": 46.28,
+   "prob": 0.998
+  },
+  {
+   "text": "círculos",
+   "start": 46.28,
+   "end": 46.76,
+   "prob": 0.999
+  },
+  {
+   "text": "amplios",
+   "start": 46.76,
+   "end": 47.36,
+   "prob": 1.0
+  },
+  {
+   "text": "y",
+   "start": 47.36,
+   "end": 47.62,
+   "prob": 1.0
+  },
+  {
+   "text": "movimientos",
+   "start": 47.62,
+   "end": 48.26,
+   "prob": 1.0
+  },
+  {
+   "text": "suaves.",
+   "start": 48.26,
+   "end": 48.98,
+   "prob": 1.0
+  },
+  {
+   "text": "Movimientos",
+   "start": 49.38,
+   "end": 50.22,
+   "prob": 0.999
+  },
+  {
+   "text": "de",
+   "start": 50.22,
+   "end": 50.48,
+   "prob": 1.0
+  },
+  {
+   "text": "arrastre",
+   "start": 50.48,
+   "end": 51.2,
+   "prob": 1.0
+  },
+  {
+   "text": "desde",
+   "start": 51.2,
+   "end": 51.42,
+   "prob": 0.999
+  },
+  {
+   "text": "la",
+   "start": 51.42,
+   "end": 51.62,
+   "prob": 1.0
+  },
+  {
+   "text": "espalda",
+   "start": 51.62,
+   "end": 52.2,
+   "prob": 1.0
+  },
+  {
+   "text": "hacia",
+   "start": 52.2,
+   "end": 52.9,
+   "prob": 1.0
+  },
+  {
+   "text": "la",
+   "start": 52.9,
+   "end": 53.24,
+   "prob": 1.0
+  },
+  {
+   "text": "cintura",
+   "start": 53.24,
+   "end": 54.08,
+   "prob": 1.0
+  },
+  {
+   "text": "bajando",
+   "start": 54.08,
+   "end": 54.7,
+   "prob": 0.991
+  },
+  {
+   "text": "por",
+   "start": 54.7,
+   "end": 54.94,
+   "prob": 1.0
+  },
+  {
+   "text": "la",
+   "start": 54.94,
+   "end": 55.1,
+   "prob": 1.0
+  },
+  {
+   "text": "ingle.",
+   "start": 55.1,
+   "end": 55.52,
+   "prob": 0.985
+  },
+  {
+   "text": "Trabaja",
+   "start": 56.7,
+   "end": 57.66,
+   "prob": 0.997
+  },
+  {
+   "text": "los",
+   "start": 57.66,
+   "end": 57.9,
+   "prob": 1.0
+  },
+  {
+   "text": "glúteos",
+   "start": 57.9,
+   "end": 58.42,
+   "prob": 0.999
+  },
+  {
+   "text": "durante",
+   "start": 58.42,
+   "end": 58.76,
+   "prob": 1.0
+  },
+  {
+   "text": "tres",
+   "start": 58.76,
+   "end": 59.24,
+   "prob": 0.636
+  },
+  {
+   "text": "minutos",
+   "start": 59.24,
+   "end": 59.72,
+   "prob": 1.0
+  },
+  {
+   "text": "con",
+   "start": 59.72,
+   "end": 60.64,
+   "prob": 0.995
+  },
+  {
+   "text": "movimientos",
+   "start": 60.64,
+   "end": 61.2,
+   "prob": 1.0
+  },
+  {
+   "text": "circulares",
+   "start": 61.2,
+   "end": 61.94,
+   "prob": 1.0
+  },
+  {
+   "text": "y",
+   "start": 61.94,
+   "end": 62.14,
+   "prob": 1.0
+  },
+  {
+   "text": "barridos",
+   "start": 62.14,
+   "end": 62.68,
+   "prob": 0.998
+  },
+  {
+   "text": "ascendentes.",
+   "start": 62.68,
+   "end": 63.58,
+   "prob": 0.998
+  },
+  {
+   "text": "Haz",
+   "start": 64.22,
+   "end": 64.92,
+   "prob": 0.99
+  },
+  {
+   "text": "círculos",
+   "start": 64.92,
+   "end": 65.66,
+   "prob": 1.0
+  },
+  {
+   "text": "amplios",
+   "start": 65.66,
+   "end": 66.2,
+   "prob": 1.0
+  },
+  {
+   "text": "alternando",
+   "start": 66.2,
+   "end": 67.24,
+   "prob": 0.991
+  },
+  {
+   "text": "ambos",
+   "start": 67.24,
+   "end": 67.78,
+   "prob": 0.999
+  },
+  {
+   "text": "lados.",
+   "start": 67.78,
+   "end": 68.18,
+   "prob": 1.0
+  },
+  {
+   "text": "Finaliza",
+   "start": 70.22,
+   "end": 71.18,
+   "prob": 1.0
+  },
+  {
+   "text": "con",
+   "start": 71.18,
+   "end": 71.38,
+   "prob": 1.0
+  },
+  {
+   "text": "30",
+   "start": 71.38,
+   "end": 71.7,
+   "prob": 0.985
+  },
+  {
+   "text": "segundos",
+   "start": 71.7,
+   "end": 72.18,
+   "prob": 1.0
+  },
+  {
+   "text": "en",
+   "start": 72.18,
+   "end": 72.46,
+   "prob": 1.0
+  },
+  {
+   "text": "cada",
+   "start": 72.46,
+   "end": 72.82,
+   "prob": 0.997
+  },
+  {
+   "text": "brazo.",
+   "start": 72.82,
+   "end": 73.36,
+   "prob": 0.99
+  },
+  {
+   "text": "Esta",
+   "start": 74.1,
+   "end": 74.54,
+   "prob": 0.999
+  },
+  {
+   "text": "parte",
+   "start": 74.54,
+   "end": 74.94,
+   "prob": 1.0
+  },
+  {
+   "text": "puedes",
+   "start": 74.94,
+   "end": 75.26,
+   "prob": 0.998
+  },
+  {
+   "text": "hacerla",
+   "start": 75.26,
+   "end": 75.68,
+   "prob": 0.998
+  },
+  {
+   "text": "solo",
+   "start": 75.68,
+   "end": 76.18,
+   "prob": 0.953
+  },
+  {
+   "text": "con",
+   "start": 76.18,
+   "end": 76.46,
+   "prob": 1.0
+  },
+  {
+   "text": "tus",
+   "start": 76.46,
+   "end": 76.76,
+   "prob": 1.0
+  },
+  {
+   "text": "manos.",
+   "start": 76.76,
+   "end": 77.12,
+   "prob": 1.0
+  },
+  {
+   "text": "Si",
+   "start": 77.88,
+   "end": 78.4,
+   "prob": 0.999
+  },
+  {
+   "text": "lo",
+   "start": 78.4,
+   "end": 78.52,
+   "prob": 0.999
+  },
+  {
+   "text": "vas",
+   "start": 78.52,
+   "end": 78.7,
+   "prob": 0.996
+  },
+  {
+   "text": "a",
+   "start": 78.7,
+   "end": 78.74,
+   "prob": 1.0
+  },
+  {
+   "text": "hacer",
+   "start": 78.74,
+   "end": 78.88,
+   "prob": 1.0
+  },
+  {
+   "text": "con",
+   "start": 78.88,
+   "end": 79.04,
+   "prob": 1.0
+  },
+  {
+   "text": "el",
+   "start": 79.04,
+   "end": 79.16,
+   "prob": 1.0
+  },
+  {
+   "text": "dispositivo",
+   "start": 79.16,
+   "end": 79.92,
+   "prob": 0.999
+  },
+  {
+   "text": "recuerda",
+   "start": 79.92,
+   "end": 80.46,
+   "prob": 0.955
+  },
+  {
+   "text": "no",
+   "start": 80.46,
+   "end": 80.74,
+   "prob": 0.999
+  },
+  {
+   "text": "pasar",
+   "start": 80.74,
+   "end": 81.16,
+   "prob": 1.0
+  },
+  {
+   "text": "sobre",
+   "start": 81.16,
+   "end": 81.56,
+   "prob": 1.0
+  },
+  {
+   "text": "el",
+   "start": 81.56,
+   "end": 82.22,
+   "prob": 1.0
+  },
+  {
+   "text": "codo.",
+   "start": 82.22,
+   "end": 82.78,
+   "prob": 0.999
+  },
+  {
+   "text": "Finaliza",
+   "start": 85.16,
+   "end": 85.92,
+   "prob": 0.989
+  },
+  {
+   "text": "con",
+   "start": 85.92,
+   "end": 86.1,
+   "prob": 1.0
+  },
+  {
+   "text": "30",
+   "start": 86.1,
+   "end": 86.42,
+   "prob": 0.996
+  },
+  {
+   "text": "segundos",
+   "start": 86.42,
+   "end": 86.88,
+   "prob": 1.0
+  },
+  {
+   "text": "en",
+   "start": 86.88,
+   "end": 87.14,
+   "prob": 0.997
+  },
+  {
+   "text": "cada",
+   "start": 87.14,
+   "end": 87.34,
+   "prob": 0.995
+  },
+  {
+   "text": "brazo.",
+   "start": 87.34,
+   "end": 87.78,
+   "prob": 0.999
+  },
+  {
+   "text": "Los",
+   "start": 88.4,
+   "end": 89.02,
+   "prob": 0.999
+  },
+  {
+   "text": "brazos",
+   "start": 89.02,
+   "end": 89.4,
+   "prob": 1.0
+  },
+  {
+   "text": "puedes",
+   "start": 89.4,
+   "end": 89.66,
+   "prob": 0.998
+  },
+  {
+   "text": "hacerlo",
+   "start": 89.66,
+   "end": 90.02,
+   "prob": 0.999
+  },
+  {
+   "text": "solo",
+   "start": 90.02,
+   "end": 90.56,
+   "prob": 0.936
+  },
+  {
+   "text": "con",
+   "start": 90.56,
+   "end": 90.8,
+   "prob": 1.0
+  },
+  {
+   "text": "tus",
+   "start": 90.8,
+   "end": 91.08,
+   "prob": 1.0
+  },
+  {
+   "text": "manos",
+   "start": 91.08,
+   "end": 91.44,
+   "prob": 1.0
+  },
+  {
+   "text": "o",
+   "start": 91.44,
+   "end": 92.02,
+   "prob": 0.29
+  },
+  {
+   "text": "si",
+   "start": 92.02,
+   "end": 92.14,
+   "prob": 0.997
+  },
+  {
+   "text": "lo",
+   "start": 92.14,
+   "end": 92.24,
+   "prob": 1.0
+  },
+  {
+   "text": "vas",
+   "start": 92.24,
+   "end": 92.4,
+   "prob": 0.997
+  },
+  {
+   "text": "a",
+   "start": 92.4,
+   "end": 92.44,
+   "prob": 1.0
+  },
+  {
+   "text": "hacer",
+   "start": 92.44,
+   "end": 92.58,
+   "prob": 1.0
+  },
+  {
+   "text": "con",
+   "start": 92.58,
+   "end": 92.76,
+   "prob": 1.0
+  },
+  {
+   "text": "el",
+   "start": 92.76,
+   "end": 92.88,
+   "prob": 1.0
+  },
+  {
+   "text": "dispositivo",
+   "start": 92.88,
+   "end": 93.62,
+   "prob": 1.0
+  },
+  {
+   "text": "recuerda",
+   "start": 93.62,
+   "end": 94.32,
+   "prob": 0.734
+  },
+  {
+   "text": "no",
+   "start": 94.32,
+   "end": 94.48,
+   "prob": 1.0
+  },
+  {
+   "text": "pasar",
+   "start": 94.48,
+   "end": 94.76,
+   "prob": 1.0
+  },
+  {
+   "text": "sobre",
+   "start": 94.76,
+   "end": 95.14,
+   "prob": 1.0
+  },
+  {
+   "text": "las",
+   "start": 95.14,
+   "end": 95.36,
+   "prob": 1.0
+  },
+  {
+   "text": "articulaciones.",
+   "start": 95.36,
+   "end": 96.38,
+   "prob": 1.0
+  },
+  {
+   "text": "Y",
+   "start": 102.64,
+   "end": 103.4,
+   "prob": 0.929
+  },
+  {
+   "text": "listo,",
+   "start": 103.4,
+   "end": 103.9,
+   "prob": 1.0
+  },
+  {
+   "text": "tu",
+   "start": 104.2,
+   "end": 104.3,
+   "prob": 0.999
+  },
+  {
+   "text": "rutina",
+   "start": 104.3,
+   "end": 104.68,
+   "prob": 1.0
+  },
+  {
+   "text": "completa",
+   "start": 104.68,
+   "end": 105.28,
+   "prob": 1.0
+  },
+  {
+   "text": "de",
+   "start": 105.28,
+   "end": 105.46,
+   "prob": 0.998
+  },
+  {
+   "text": "15",
+   "start": 105.46,
+   "end": 105.84,
+   "prob": 0.999
+  },
+  {
+   "text": "minutos",
+   "start": 105.84,
+   "end": 106.26,
+   "prob": 1.0
+  },
+  {
+   "text": "para",
+   "start": 106.26,
+   "end": 106.58,
+   "prob": 0.999
+  },
+  {
+   "text": "trabajar",
+   "start": 106.58,
+   "end": 106.98,
+   "prob": 0.999
+  },
+  {
+   "text": "diferentes",
+   "start": 106.98,
+   "end": 107.6,
+   "prob": 0.986
+  },
+  {
+   "text": "zonas",
+   "start": 107.6,
+   "end": 108.06,
+   "prob": 1.0
+  },
+  {
+   "text": "sin",
+   "start": 108.06,
+   "end": 108.62,
+   "prob": 0.991
+  },
+  {
+   "text": "necesidad",
+   "start": 108.62,
+   "end": 109.14,
+   "prob": 0.946
+  },
+  {
+   "text": "de",
+   "start": 109.14,
+   "end": 109.26,
+   "prob": 0.999
+  },
+  {
+   "text": "utilizar",
+   "start": 109.26,
+   "end": 109.74,
+   "prob": 0.999
+  },
+  {
+   "text": "una",
+   "start": 109.74,
+   "end": 110.2,
+   "prob": 0.996
+  },
+  {
+   "text": "intensidad",
+   "start": 110.2,
+   "end": 110.8,
+   "prob": 1.0
+  },
+  {
+   "text": "dolorosa.",
+   "start": 110.8,
+   "end": 111.46,
+   "prob": 0.999
+  }
+ ]
+}

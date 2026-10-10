@@ -1,0 +1,170 @@
+[
+ {
+  "frase": "hoy",
+  "outStart": 0.0,
+  "frames": 124,
+  "src": 7.4
+ },
+ {
+  "frase": "aplica",
+  "outStart": 4.133333333333334,
+  "frames": 52,
+  "src": 81.3
+ },
+ {
+  "frase": "que vas",
+  "outStart": 5.866666666666666,
+  "frames": 85,
+  "src": 16.0
+ },
+ {
+  "frase": "empezamos",
+  "outStart": 8.7,
+  "frames": 79,
+  "src": 37.0
+ },
+ {
+  "frase": "divide",
+  "outStart": 11.333333333333334,
+  "frames": 76,
+  "src": 91.4,
+  "congela": true
+ },
+ {
+  "frase": "movimientos ascendentes",
+  "outStart": 13.866666666666667,
+  "frames": 80,
+  "src": 164.0
+ },
+ {
+  "frase": "realiza líneas",
+  "outStart": 16.533333333333335,
+  "frames": 89,
+  "src": 105.5
+ },
+ {
+  "frase": "hacia arriba",
+  "outStart": 19.5,
+  "frames": 76,
+  "src": 116.0
+ },
+ {
+  "frase": "continúa",
+  "outStart": 22.033333333333335,
+  "frames": 102,
+  "src": 196.3
+ },
+ {
+  "frase": "laterales",
+  "outStart": 25.433333333333334,
+  "frames": 40,
+  "src": 476.0
+ },
+ {
+  "frase": "mantén",
+  "outStart": 26.766666666666666,
+  "frames": 56,
+  "src": 470.3
+ },
+ {
+  "frase": "y evita",
+  "outStart": 28.633333333333333,
+  "frames": 87,
+  "src": 479.5,
+  "congela": true
+ },
+ {
+  "frase": "realiza círculos",
+  "outStart": 31.533333333333335,
+  "frames": 100,
+  "src": 227.3
+ },
+ {
+  "frase": "movimientos de",
+  "outStart": 34.86666666666667,
+  "frames": 83,
+  "src": 217.0
+ },
+ {
+  "frase": "hacia la cintura",
+  "outStart": 37.63333333333333,
+  "frames": 57,
+  "src": 503.6
+ },
+ {
+  "frase": "bajando",
+  "outStart": 39.53333333333333,
+  "frames": 52,
+  "src": 88.4
+ },
+ {
+  "frase": "trabaja",
+  "outStart": 41.266666666666666,
+  "frames": 71,
+  "src": 240.2
+ },
+ {
+  "frase": "con movimientos",
+  "outStart": 43.63333333333333,
+  "frames": 66,
+  "src": 249.0
+ },
+ {
+  "frase": "barridos",
+  "outStart": 45.833333333333336,
+  "frames": 45,
+  "src": 260.0
+ },
+ {
+  "frase": "haz círculos",
+  "outStart": 47.333333333333336,
+  "frames": 111,
+  "splitv": [
+   [
+    243.0,
+    140
+   ],
+   [
+    256.4,
+    140
+   ]
+  ]
+ },
+ {
+  "frase": "finaliza",
+  "outStart": 51.03333333333333,
+  "frames": 80,
+  "src": 481.2
+ },
+ {
+  "frase": "los brazos",
+  "outStart": 53.7,
+  "frames": 76,
+  "src": 590.0
+ },
+ {
+  "frase": "o si",
+  "outStart": 56.233333333333334,
+  "frames": 69,
+  "src": 501.0
+ },
+ {
+  "frase": "recuerda no",
+  "outStart": 58.53333333333333,
+  "frames": 80,
+  "src": 488.0,
+  "congela": true
+ },
+ {
+  "frase": "y listo",
+  "outStart": 61.2,
+  "frames": 88,
+  "src": 617.0
+ },
+ {
+  "frase": "para trabajar",
+  "outStart": 64.13333333333334,
+  "frames": 178,
+  "src": 609.98
+ }
+]

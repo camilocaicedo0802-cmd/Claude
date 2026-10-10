@@ -1,0 +1,1295 @@
+{
+ "model": "large-v3-turbo",
+ "duration": 63.872,
+ "segments": [
+  {
+   "start": 0.0,
+   "end": 6.26,
+   "text": "¡Felicitaciones! Llegaste al día 21 y más allá de cualquier logro en cuanto a nuestra parte estética,"
+  },
+  {
+   "start": 6.42,
+   "end": 10.34,
+   "text": "pudiste hacer de esto una rutina y ese ya es un gran logro."
+  },
+  {
+   "start": 10.56,
+   "end": 15.42,
+   "text": "Ahora vas a volver a revisar tus medidas, te vas a tomar las fotos en las mismas posiciones"
+  },
+  {
+   "start": 15.42,
+   "end": 19.76,
+   "text": "y vas a empezar a mirar cuáles fueron los cambios que tuviste a nivel corporal."
+  },
+  {
+   "start": 19.84,
+   "end": 24.1,
+   "text": "Vas a tomarte una foto de frente, de costado, de espalda y luego del otro costado."
+  },
+  {
+   "start": 24.2,
+   "end": 27.84,
+   "text": "Y si es necesario, toma medidas si fue que al principio las tomaste"
+  },
+  {
+   "start": 27.84,
+   "end": 33.76,
+   "text": "y vuelve a revisar estas medidas para saber qué tanto bajaste en esas medidas puntuales que necesitabas"
+  },
+  {
+   "start": 33.76,
+   "end": 34.92,
+   "text": "o qué más te importaban."
+  },
+  {
+   "start": 35.18,
+   "end": 37.24,
+   "text": "Compara tus registros con los anteriores."
+  },
+  {
+   "start": 37.4,
+   "end": 41.08,
+   "text": "Recuerda, no puedes frustrarte si los cambios no fueron lo que tú esperabas"
+  },
+  {
+   "start": 41.08,
+   "end": 44.38,
+   "text": "y debes seguir repitiendo esta misma rutina de aquí en adelante,"
+  },
+  {
+   "start": 44.88,
+   "end": 49.04,
+   "text": "aumentando la presión y sobre todo respetando las instrucciones del producto."
+  },
+  {
+   "start": 49.12,
+   "end": 52.82,
+   "text": "Y lo más importante, revisando cómo se va comportando tu piel y tu cuerpo."
+  },
+  {
+   "start": 52.92,
+   "end": 56.98,
+   "text": "Ahora, cuéntanos vía WhatsApp cómo viste este reto, cuáles fueron tus resultados"
+  },
+  {
+   "start": 56.98,
+   "end": 63.46,
+   "text": "y recuerda que tu experiencia puede motivar a otras mujeres a sentirse mejor y hacer de su cuidado corporal una rutina."
+  }
+ ],
+ "words": [
+  {
+   "text": "¡Felicitaciones!",
+   "start": 0.0,
+   "end": 0.76,
+   "prob": 0.871
+  },
+  {
+   "text": "Llegaste",
+   "start": 0.98,
+   "end": 1.42,
+   "prob": 0.984
+  },
+  {
+   "text": "al",
+   "start": 1.42,
+   "end": 1.62,
+   "prob": 0.944
+  },
+  {
+   "text": "día",
+   "start": 1.62,
+   "end": 1.74,
+   "prob": 0.978
+  },
+  {
+   "text": "21",
+   "start": 1.74,
+   "end": 2.28,
+   "prob": 0.984
+  },
+  {
+   "text": "y",
+   "start": 2.28,
+   "end": 2.56,
+   "prob": 0.645
+  },
+  {
+   "text": "más",
+   "start": 2.56,
+   "end": 2.72,
+   "prob": 0.983
+  },
+  {
+   "text": "allá",
+   "start": 2.72,
+   "end": 2.9,
+   "prob": 0.996
+  },
+  {
+   "text": "de",
+   "start": 2.9,
+   "end": 3.08,
+   "prob": 0.999
+  },
+  {
+   "text": "cualquier",
+   "start": 3.08,
+   "end": 3.7,
+   "prob": 0.998
+  },
+  {
+   "text": "logro",
+   "start": 3.7,
+   "end": 4.42,
+   "prob": 0.996
+  },
+  {
+   "text": "en",
+   "start": 4.42,
+   "end": 4.74,
+   "prob": 0.974
+  },
+  {
+   "text": "cuanto",
+   "start": 4.74,
+   "end": 5.02,
+   "prob": 0.996
+  },
+  {
+   "text": "a",
+   "start": 5.02,
+   "end": 5.14,
+   "prob": 0.999
+  },
+  {
+   "text": "nuestra",
+   "start": 5.14,
+   "end": 5.36,
+   "prob": 0.997
+  },
+  {
+   "text": "parte",
+   "start": 5.36,
+   "end": 5.68,
+   "prob": 0.997
+  },
+  {
+   "text": "estética,",
+   "start": 5.68,
+   "end": 6.26,
+   "prob": 0.984
+  },
+  {
+   "text": "pudiste",
+   "start": 6.42,
+   "end": 7.0,
+   "prob": 0.999
+  },
+  {
+   "text": "hacer",
+   "start": 7.0,
+   "end": 7.4,
+   "prob": 0.999
+  },
+  {
+   "text": "de",
+   "start": 7.4,
+   "end": 7.58,
+   "prob": 0.999
+  },
+  {
+   "text": "esto",
+   "start": 7.58,
+   "end": 7.92,
+   "prob": 0.989
+  },
+  {
+   "text": "una",
+   "start": 7.92,
+   "end": 8.36,
+   "prob": 0.998
+  },
+  {
+   "text": "rutina",
+   "start": 8.36,
+   "end": 8.86,
+   "prob": 0.999
+  },
+  {
+   "text": "y",
+   "start": 8.86,
+   "end": 9.06,
+   "prob": 0.856
+  },
+  {
+   "text": "ese",
+   "start": 9.06,
+   "end": 9.28,
+   "prob": 0.992
+  },
+  {
+   "text": "ya",
+   "start": 9.28,
+   "end": 9.58,
+   "prob": 0.999
+  },
+  {
+   "text": "es",
+   "start": 9.58,
+   "end": 9.76,
+   "prob": 0.999
+  },
+  {
+   "text": "un",
+   "start": 9.76,
+   "end": 9.86,
+   "prob": 0.999
+  },
+  {
+   "text": "gran",
+   "start": 9.86,
+   "end": 10.02,
+   "prob": 0.999
+  },
+  {
+   "text": "logro.",
+   "start": 10.02,
+   "end": 10.34,
+   "prob": 0.991
+  },
+  {
+   "text": "Ahora",
+   "start": 10.56,
+   "end": 10.92,
+   "prob": 0.999
+  },
+  {
+   "text": "vas",
+   "start": 10.92,
+   "end": 11.26,
+   "prob": 0.987
+  },
+  {
+   "text": "a",
+   "start": 11.26,
+   "end": 11.32,
+   "prob": 1.0
+  },
+  {
+   "text": "volver",
+   "start": 11.32,
+   "end": 11.52,
+   "prob": 1.0
+  },
+  {
+   "text": "a",
+   "start": 11.52,
+   "end": 11.68,
+   "prob": 1.0
+  },
+  {
+   "text": "revisar",
+   "start": 11.68,
+   "end": 12.1,
+   "prob": 1.0
+  },
+  {
+   "text": "tus",
+   "start": 12.1,
+   "end": 12.52,
+   "prob": 0.998
+  },
+  {
+   "text": "medidas,",
+   "start": 12.52,
+   "end": 13.02,
+   "prob": 1.0
+  },
+  {
+   "text": "te",
+   "start": 13.3,
+   "end": 13.36,
+   "prob": 0.837
+  },
+  {
+   "text": "vas",
+   "start": 13.36,
+   "end": 13.46,
+   "prob": 0.999
+  },
+  {
+   "text": "a",
+   "start": 13.46,
+   "end": 13.54,
+   "prob": 1.0
+  },
+  {
+   "text": "tomar",
+   "start": 13.54,
+   "end": 13.74,
+   "prob": 1.0
+  },
+  {
+   "text": "las",
+   "start": 13.74,
+   "end": 13.96,
+   "prob": 1.0
+  },
+  {
+   "text": "fotos",
+   "start": 13.96,
+   "end": 14.18,
+   "prob": 1.0
+  },
+  {
+   "text": "en",
+   "start": 14.18,
+   "end": 14.34,
+   "prob": 0.969
+  },
+  {
+   "text": "las",
+   "start": 14.34,
+   "end": 14.48,
+   "prob": 1.0
+  },
+  {
+   "text": "mismas",
+   "start": 14.48,
+   "end": 14.86,
+   "prob": 1.0
+  },
+  {
+   "text": "posiciones",
+   "start": 14.86,
+   "end": 15.42,
+   "prob": 1.0
+  },
+  {
+   "text": "y",
+   "start": 15.42,
+   "end": 16.1,
+   "prob": 0.998
+  },
+  {
+   "text": "vas",
+   "start": 16.1,
+   "end": 16.3,
+   "prob": 1.0
+  },
+  {
+   "text": "a",
+   "start": 16.3,
+   "end": 16.4,
+   "prob": 1.0
+  },
+  {
+   "text": "empezar",
+   "start": 16.4,
+   "end": 16.68,
+   "prob": 0.999
+  },
+  {
+   "text": "a",
+   "start": 16.68,
+   "end": 16.84,
+   "prob": 1.0
+  },
+  {
+   "text": "mirar",
+   "start": 16.84,
+   "end": 17.2,
+   "prob": 1.0
+  },
+  {
+   "text": "cuáles",
+   "start": 17.2,
+   "end": 17.56,
+   "prob": 0.999
+  },
+  {
+   "text": "fueron",
+   "start": 17.56,
+   "end": 17.74,
+   "prob": 0.999
+  },
+  {
+   "text": "los",
+   "start": 17.74,
+   "end": 17.94,
+   "prob": 1.0
+  },
+  {
+   "text": "cambios",
+   "start": 17.94,
+   "end": 18.32,
+   "prob": 1.0
+  },
+  {
+   "text": "que",
+   "start": 18.32,
+   "end": 18.54,
+   "prob": 0.999
+  },
+  {
+   "text": "tuviste",
+   "start": 18.54,
+   "end": 18.96,
+   "prob": 0.998
+  },
+  {
+   "text": "a",
+   "start": 18.96,
+   "end": 19.06,
+   "prob": 0.999
+  },
+  {
+   "text": "nivel",
+   "start": 19.06,
+   "end": 19.22,
+   "prob": 1.0
+  },
+  {
+   "text": "corporal.",
+   "start": 19.22,
+   "end": 19.76,
+   "prob": 0.999
+  },
+  {
+   "text": "Vas",
+   "start": 19.84,
+   "end": 19.94,
+   "prob": 0.999
+  },
+  {
+   "text": "a",
+   "start": 19.94,
+   "end": 20.04,
+   "prob": 1.0
+  },
+  {
+   "text": "tomarte",
+   "start": 20.04,
+   "end": 20.34,
+   "prob": 0.997
+  },
+  {
+   "text": "una",
+   "start": 20.34,
+   "end": 20.48,
+   "prob": 1.0
+  },
+  {
+   "text": "foto",
+   "start": 20.48,
+   "end": 20.76,
+   "prob": 1.0
+  },
+  {
+   "text": "de",
+   "start": 20.76,
+   "end": 20.92,
+   "prob": 0.996
+  },
+  {
+   "text": "frente,",
+   "start": 20.92,
+   "end": 21.38,
+   "prob": 1.0
+  },
+  {
+   "text": "de",
+   "start": 21.58,
+   "end": 21.72,
+   "prob": 1.0
+  },
+  {
+   "text": "costado,",
+   "start": 21.72,
+   "end": 22.26,
+   "prob": 0.998
+  },
+  {
+   "text": "de",
+   "start": 22.4,
+   "end": 22.48,
+   "prob": 1.0
+  },
+  {
+   "text": "espalda",
+   "start": 22.48,
+   "end": 22.86,
+   "prob": 0.998
+  },
+  {
+   "text": "y",
+   "start": 22.86,
+   "end": 22.98,
+   "prob": 0.998
+  },
+  {
+   "text": "luego",
+   "start": 22.98,
+   "end": 23.24,
+   "prob": 1.0
+  },
+  {
+   "text": "del",
+   "start": 23.24,
+   "end": 23.42,
+   "prob": 0.943
+  },
+  {
+   "text": "otro",
+   "start": 23.42,
+   "end": 23.6,
+   "prob": 1.0
+  },
+  {
+   "text": "costado.",
+   "start": 23.6,
+   "end": 24.1,
+   "prob": 0.997
+  },
+  {
+   "text": "Y",
+   "start": 24.2,
+   "end": 24.28,
+   "prob": 0.99
+  },
+  {
+   "text": "si",
+   "start": 24.28,
+   "end": 24.4,
+   "prob": 0.999
+  },
+  {
+   "text": "es",
+   "start": 24.4,
+   "end": 24.5,
+   "prob": 1.0
+  },
+  {
+   "text": "necesario,",
+   "start": 24.5,
+   "end": 25.0,
+   "prob": 1.0
+  },
+  {
+   "text": "toma",
+   "start": 25.38,
+   "end": 25.54,
+   "prob": 0.998
+  },
+  {
+   "text": "medidas",
+   "start": 25.54,
+   "end": 26.02,
+   "prob": 1.0
+  },
+  {
+   "text": "si",
+   "start": 26.02,
+   "end": 26.36,
+   "prob": 0.41
+  },
+  {
+   "text": "fue",
+   "start": 26.36,
+   "end": 26.52,
+   "prob": 0.993
+  },
+  {
+   "text": "que",
+   "start": 26.52,
+   "end": 26.62,
+   "prob": 0.998
+  },
+  {
+   "text": "al",
+   "start": 26.62,
+   "end": 26.74,
+   "prob": 1.0
+  },
+  {
+   "text": "principio",
+   "start": 26.74,
+   "end": 27.08,
+   "prob": 1.0
+  },
+  {
+   "text": "las",
+   "start": 27.08,
+   "end": 27.32,
+   "prob": 1.0
+  },
+  {
+   "text": "tomaste",
+   "start": 27.32,
+   "end": 27.84,
+   "prob": 0.999
+  },
+  {
+   "text": "y",
+   "start": 27.84,
+   "end": 28.08,
+   "prob": 0.755
+  },
+  {
+   "text": "vuelve",
+   "start": 28.08,
+   "end": 28.34,
+   "prob": 0.999
+  },
+  {
+   "text": "a",
+   "start": 28.34,
+   "end": 28.42,
+   "prob": 1.0
+  },
+  {
+   "text": "revisar",
+   "start": 28.42,
+   "end": 28.86,
+   "prob": 1.0
+  },
+  {
+   "text": "estas",
+   "start": 28.86,
+   "end": 29.08,
+   "prob": 0.992
+  },
+  {
+   "text": "medidas",
+   "start": 29.08,
+   "end": 29.5,
+   "prob": 1.0
+  },
+  {
+   "text": "para",
+   "start": 29.5,
+   "end": 29.8,
+   "prob": 1.0
+  },
+  {
+   "text": "saber",
+   "start": 29.8,
+   "end": 30.12,
+   "prob": 1.0
+  },
+  {
+   "text": "qué",
+   "start": 30.12,
+   "end": 30.42,
+   "prob": 0.982
+  },
+  {
+   "text": "tanto",
+   "start": 30.42,
+   "end": 30.82,
+   "prob": 1.0
+  },
+  {
+   "text": "bajaste",
+   "start": 30.82,
+   "end": 31.46,
+   "prob": 0.998
+  },
+  {
+   "text": "en",
+   "start": 31.46,
+   "end": 31.74,
+   "prob": 0.999
+  },
+  {
+   "text": "esas",
+   "start": 31.74,
+   "end": 31.96,
+   "prob": 0.987
+  },
+  {
+   "text": "medidas",
+   "start": 31.96,
+   "end": 32.3,
+   "prob": 1.0
+  },
+  {
+   "text": "puntuales",
+   "start": 32.3,
+   "end": 33.04,
+   "prob": 1.0
+  },
+  {
+   "text": "que",
+   "start": 33.04,
+   "end": 33.14,
+   "prob": 0.998
+  },
+  {
+   "text": "necesitabas",
+   "start": 33.14,
+   "end": 33.76,
+   "prob": 0.811
+  },
+  {
+   "text": "o",
+   "start": 33.76,
+   "end": 33.92,
+   "prob": 0.989
+  },
+  {
+   "text": "qué",
+   "start": 33.92,
+   "end": 34.04,
+   "prob": 0.729
+  },
+  {
+   "text": "más",
+   "start": 34.04,
+   "end": 34.22,
+   "prob": 1.0
+  },
+  {
+   "text": "te",
+   "start": 34.22,
+   "end": 34.38,
+   "prob": 0.984
+  },
+  {
+   "text": "importaban.",
+   "start": 34.38,
+   "end": 34.92,
+   "prob": 0.846
+  },
+  {
+   "text": "Compara",
+   "start": 35.18,
+   "end": 35.38,
+   "prob": 0.984
+  },
+  {
+   "text": "tus",
+   "start": 35.38,
+   "end": 35.6,
+   "prob": 1.0
+  },
+  {
+   "text": "registros",
+   "start": 35.6,
+   "end": 36.18,
+   "prob": 1.0
+  },
+  {
+   "text": "con",
+   "start": 36.18,
+   "end": 36.4,
+   "prob": 1.0
+  },
+  {
+   "text": "los",
+   "start": 36.4,
+   "end": 36.6,
+   "prob": 1.0
+  },
+  {
+   "text": "anteriores.",
+   "start": 36.6,
+   "end": 37.24,
+   "prob": 1.0
+  },
+  {
+   "text": "Recuerda,",
+   "start": 37.4,
+   "end": 37.84,
+   "prob": 1.0
+  },
+  {
+   "text": "no",
+   "start": 37.88,
+   "end": 38.06,
+   "prob": 1.0
+  },
+  {
+   "text": "puedes",
+   "start": 38.06,
+   "end": 38.36,
+   "prob": 1.0
+  },
+  {
+   "text": "frustrarte",
+   "start": 38.36,
+   "end": 39.14,
+   "prob": 1.0
+  },
+  {
+   "text": "si",
+   "start": 39.14,
+   "end": 39.42,
+   "prob": 1.0
+  },
+  {
+   "text": "los",
+   "start": 39.42,
+   "end": 39.58,
+   "prob": 1.0
+  },
+  {
+   "text": "cambios",
+   "start": 39.58,
+   "end": 39.88,
+   "prob": 1.0
+  },
+  {
+   "text": "no",
+   "start": 39.88,
+   "end": 40.0,
+   "prob": 1.0
+  },
+  {
+   "text": "fueron",
+   "start": 40.0,
+   "end": 40.2,
+   "prob": 0.999
+  },
+  {
+   "text": "lo",
+   "start": 40.2,
+   "end": 40.36,
+   "prob": 0.998
+  },
+  {
+   "text": "que",
+   "start": 40.36,
+   "end": 40.48,
+   "prob": 1.0
+  },
+  {
+   "text": "tú",
+   "start": 40.48,
+   "end": 40.6,
+   "prob": 0.99
+  },
+  {
+   "text": "esperabas",
+   "start": 40.6,
+   "end": 41.08,
+   "prob": 0.999
+  },
+  {
+   "text": "y",
+   "start": 41.08,
+   "end": 41.22,
+   "prob": 0.537
+  },
+  {
+   "text": "debes",
+   "start": 41.22,
+   "end": 41.4,
+   "prob": 0.885
+  },
+  {
+   "text": "seguir",
+   "start": 41.4,
+   "end": 41.6,
+   "prob": 0.987
+  },
+  {
+   "text": "repitiendo",
+   "start": 41.6,
+   "end": 42.14,
+   "prob": 1.0
+  },
+  {
+   "text": "esta",
+   "start": 42.14,
+   "end": 42.34,
+   "prob": 0.923
+  },
+  {
+   "text": "misma",
+   "start": 42.34,
+   "end": 42.72,
+   "prob": 1.0
+  },
+  {
+   "text": "rutina",
+   "start": 42.72,
+   "end": 43.24,
+   "prob": 1.0
+  },
+  {
+   "text": "de",
+   "start": 43.24,
+   "end": 43.54,
+   "prob": 0.993
+  },
+  {
+   "text": "aquí",
+   "start": 43.54,
+   "end": 43.78,
+   "prob": 1.0
+  },
+  {
+   "text": "en",
+   "start": 43.78,
+   "end": 43.94,
+   "prob": 1.0
+  },
+  {
+   "text": "adelante,",
+   "start": 43.94,
+   "end": 44.38,
+   "prob": 1.0
+  },
+  {
+   "text": "aumentando",
+   "start": 44.88,
+   "end": 45.36,
+   "prob": 1.0
+  },
+  {
+   "text": "la",
+   "start": 45.36,
+   "end": 45.52,
+   "prob": 1.0
+  },
+  {
+   "text": "presión",
+   "start": 45.52,
+   "end": 46.0,
+   "prob": 1.0
+  },
+  {
+   "text": "y",
+   "start": 46.0,
+   "end": 46.26,
+   "prob": 0.999
+  },
+  {
+   "text": "sobre",
+   "start": 46.26,
+   "end": 46.48,
+   "prob": 0.936
+  },
+  {
+   "text": "todo",
+   "start": 46.48,
+   "end": 46.72,
+   "prob": 1.0
+  },
+  {
+   "text": "respetando",
+   "start": 46.72,
+   "end": 47.4,
+   "prob": 0.988
+  },
+  {
+   "text": "las",
+   "start": 47.4,
+   "end": 47.8,
+   "prob": 1.0
+  },
+  {
+   "text": "instrucciones",
+   "start": 47.8,
+   "end": 48.38,
+   "prob": 1.0
+  },
+  {
+   "text": "del",
+   "start": 48.38,
+   "end": 48.68,
+   "prob": 1.0
+  },
+  {
+   "text": "producto.",
+   "start": 48.68,
+   "end": 49.04,
+   "prob": 0.996
+  },
+  {
+   "text": "Y",
+   "start": 49.12,
+   "end": 49.2,
+   "prob": 0.998
+  },
+  {
+   "text": "lo",
+   "start": 49.2,
+   "end": 49.28,
+   "prob": 1.0
+  },
+  {
+   "text": "más",
+   "start": 49.28,
+   "end": 49.42,
+   "prob": 1.0
+  },
+  {
+   "text": "importante,",
+   "start": 49.42,
+   "end": 49.96,
+   "prob": 1.0
+  },
+  {
+   "text": "revisando",
+   "start": 50.12,
+   "end": 50.6,
+   "prob": 0.996
+  },
+  {
+   "text": "cómo",
+   "start": 50.6,
+   "end": 50.82,
+   "prob": 1.0
+  },
+  {
+   "text": "se",
+   "start": 50.82,
+   "end": 50.96,
+   "prob": 1.0
+  },
+  {
+   "text": "va",
+   "start": 50.96,
+   "end": 51.08,
+   "prob": 0.989
+  },
+  {
+   "text": "comportando",
+   "start": 51.08,
+   "end": 51.8,
+   "prob": 0.998
+  },
+  {
+   "text": "tu",
+   "start": 51.8,
+   "end": 52.06,
+   "prob": 1.0
+  },
+  {
+   "text": "piel",
+   "start": 52.06,
+   "end": 52.3,
+   "prob": 1.0
+  },
+  {
+   "text": "y",
+   "start": 52.3,
+   "end": 52.46,
+   "prob": 1.0
+  },
+  {
+   "text": "tu",
+   "start": 52.46,
+   "end": 52.56,
+   "prob": 1.0
+  },
+  {
+   "text": "cuerpo.",
+   "start": 52.56,
+   "end": 52.82,
+   "prob": 0.993
+  },
+  {
+   "text": "Ahora,",
+   "start": 52.92,
+   "end": 53.14,
+   "prob": 0.999
+  },
+  {
+   "text": "cuéntanos",
+   "start": 53.3,
+   "end": 53.62,
+   "prob": 0.999
+  },
+  {
+   "text": "vía",
+   "start": 53.62,
+   "end": 53.84,
+   "prob": 0.985
+  },
+  {
+   "text": "WhatsApp",
+   "start": 53.84,
+   "end": 54.22,
+   "prob": 0.979
+  },
+  {
+   "text": "cómo",
+   "start": 54.22,
+   "end": 54.64,
+   "prob": 0.959
+  },
+  {
+   "text": "viste",
+   "start": 54.64,
+   "end": 55.02,
+   "prob": 0.853
+  },
+  {
+   "text": "este",
+   "start": 55.02,
+   "end": 55.26,
+   "prob": 0.99
+  },
+  {
+   "text": "reto,",
+   "start": 55.26,
+   "end": 55.54,
+   "prob": 0.999
+  },
+  {
+   "text": "cuáles",
+   "start": 55.7,
+   "end": 55.92,
+   "prob": 0.992
+  },
+  {
+   "text": "fueron",
+   "start": 55.92,
+   "end": 56.14,
+   "prob": 0.999
+  },
+  {
+   "text": "tus",
+   "start": 56.14,
+   "end": 56.34,
+   "prob": 0.998
+  },
+  {
+   "text": "resultados",
+   "start": 56.34,
+   "end": 56.98,
+   "prob": 1.0
+  },
+  {
+   "text": "y",
+   "start": 56.98,
+   "end": 57.34,
+   "prob": 0.551
+  },
+  {
+   "text": "recuerda",
+   "start": 57.34,
+   "end": 57.72,
+   "prob": 0.998
+  },
+  {
+   "text": "que",
+   "start": 57.72,
+   "end": 57.84,
+   "prob": 0.996
+  },
+  {
+   "text": "tu",
+   "start": 57.84,
+   "end": 58.02,
+   "prob": 0.983
+  },
+  {
+   "text": "experiencia",
+   "start": 58.02,
+   "end": 58.5,
+   "prob": 0.999
+  },
+  {
+   "text": "puede",
+   "start": 58.5,
+   "end": 58.8,
+   "prob": 0.967
+  },
+  {
+   "text": "motivar",
+   "start": 58.8,
+   "end": 59.22,
+   "prob": 0.997
+  },
+  {
+   "text": "a",
+   "start": 59.22,
+   "end": 59.26,
+   "prob": 0.988
+  },
+  {
+   "text": "otras",
+   "start": 59.26,
+   "end": 59.44,
+   "prob": 0.997
+  },
+  {
+   "text": "mujeres",
+   "start": 59.44,
+   "end": 59.76,
+   "prob": 0.998
+  },
+  {
+   "text": "a",
+   "start": 59.76,
+   "end": 60.04,
+   "prob": 0.991
+  },
+  {
+   "text": "sentirse",
+   "start": 60.04,
+   "end": 60.58,
+   "prob": 0.998
+  },
+  {
+   "text": "mejor",
+   "start": 60.58,
+   "end": 60.84,
+   "prob": 0.997
+  },
+  {
+   "text": "y",
+   "start": 60.84,
+   "end": 61.1,
+   "prob": 0.984
+  },
+  {
+   "text": "hacer",
+   "start": 61.1,
+   "end": 61.38,
+   "prob": 0.83
+  },
+  {
+   "text": "de",
+   "start": 61.38,
+   "end": 61.68,
+   "prob": 0.994
+  },
+  {
+   "text": "su",
+   "start": 61.68,
+   "end": 61.84,
+   "prob": 0.996
+  },
+  {
+   "text": "cuidado",
+   "start": 61.84,
+   "end": 62.08,
+   "prob": 0.959
+  },
+  {
+   "text": "corporal",
+   "start": 62.08,
+   "end": 62.64,
+   "prob": 0.999
+  },
+  {
+   "text": "una",
+   "start": 62.64,
+   "end": 62.96,
+   "prob": 0.977
+  },
+  {
+   "text": "rutina.",
+   "start": 62.96,
+   "end": 63.46,
+   "prob": 0.967
+  }
+ ]
+}

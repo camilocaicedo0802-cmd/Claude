@@ -1,0 +1,1345 @@
+{
+ "duration": 63.166666666666664,
+ "segments": [
+  {
+   "toma": 0,
+   "srcStart": 4.5,
+   "srcEnd": 6.933333333333334,
+   "outStart": 0.0
+  },
+  {
+   "toma": 0,
+   "srcStart": 7.266666666666667,
+   "srcEnd": 11.266666666666667,
+   "outStart": 2.433333333333333
+  },
+  {
+   "toma": 0,
+   "srcStart": 11.5,
+   "srcEnd": 14.0,
+   "outStart": 6.433333333333334
+  },
+  {
+   "toma": 0,
+   "srcStart": 14.166666666666666,
+   "srcEnd": 15.566666666666666,
+   "outStart": 8.933333333333334
+  },
+  {
+   "toma": 0,
+   "srcStart": 15.766666666666667,
+   "srcEnd": 25.2,
+   "outStart": 10.333333333333334
+  },
+  {
+   "toma": 0,
+   "srcStart": 25.866666666666667,
+   "srcEnd": 30.233333333333334,
+   "outStart": 19.766666666666666
+  },
+  {
+   "toma": 0,
+   "srcStart": 30.733333333333334,
+   "srcEnd": 34.53333333333333,
+   "outStart": 24.133333333333333
+  },
+  {
+   "toma": 0,
+   "srcStart": 34.8,
+   "srcEnd": 37.1,
+   "outStart": 27.933333333333334
+  },
+  {
+   "toma": 0,
+   "srcStart": 37.4,
+   "srcEnd": 40.93333333333333,
+   "outStart": 30.233333333333334
+  },
+  {
+   "toma": 0,
+   "srcStart": 41.166666666666664,
+   "srcEnd": 42.4,
+   "outStart": 33.766666666666666
+  },
+  {
+   "toma": 1,
+   "srcStart": 69.3,
+   "srcEnd": 71.63333333333334,
+   "outStart": 35.0
+  },
+  {
+   "toma": 1,
+   "srcStart": 71.93333333333334,
+   "srcEnd": 75.7,
+   "outStart": 37.333333333333336
+  },
+  {
+   "toma": 1,
+   "srcStart": 76.03333333333333,
+   "srcEnd": 78.3,
+   "outStart": 41.1
+  },
+  {
+   "toma": 1,
+   "srcStart": 78.5,
+   "srcEnd": 79.66666666666667,
+   "outStart": 43.36666666666667
+  },
+  {
+   "toma": 1,
+   "srcStart": 79.9,
+   "srcEnd": 81.5,
+   "outStart": 44.53333333333333
+  },
+  {
+   "toma": 1,
+   "srcStart": 81.8,
+   "srcEnd": 84.73333333333333,
+   "outStart": 46.13333333333333
+  },
+  {
+   "toma": 2,
+   "srcStart": 89.5,
+   "srcEnd": 93.26666666666667,
+   "outStart": 49.06666666666667
+  },
+  {
+   "toma": 3,
+   "srcStart": 116.6,
+   "srcEnd": 118.16666666666667,
+   "outStart": 52.833333333333336
+  },
+  {
+   "toma": 3,
+   "srcStart": 118.5,
+   "srcEnd": 121.3,
+   "outStart": 54.4
+  },
+  {
+   "toma": 3,
+   "srcStart": 121.5,
+   "srcEnd": 125.26666666666667,
+   "outStart": 57.2
+  },
+  {
+   "toma": 3,
+   "srcStart": 125.5,
+   "srcEnd": 127.7,
+   "outStart": 60.96666666666667
+  }
+ ],
+ "words": [
+  {
+   "text": "¡Felicitaciones!",
+   "start": 0.0,
+   "end": 0.76,
+   "db": 7.7
+  },
+  {
+   "text": "Llegaste",
+   "start": 0.98,
+   "end": 1.42,
+   "db": 5.9
+  },
+  {
+   "text": "al",
+   "start": 1.42,
+   "end": 1.62,
+   "db": 4.8
+  },
+  {
+   "text": "día",
+   "start": 1.62,
+   "end": 1.74,
+   "db": -0.7
+  },
+  {
+   "text": "21",
+   "start": 1.74,
+   "end": 2.28,
+   "db": 2.4
+  },
+  {
+   "text": "y",
+   "start": 2.28,
+   "end": 2.56,
+   "db": 2.0
+  },
+  {
+   "text": "más",
+   "start": 2.56,
+   "end": 2.72,
+   "db": 4.1
+  },
+  {
+   "text": "allá",
+   "start": 2.72,
+   "end": 2.9,
+   "db": -1.0
+  },
+  {
+   "text": "de",
+   "start": 2.9,
+   "end": 3.08,
+   "db": 1.7
+  },
+  {
+   "text": "cualquier",
+   "start": 3.08,
+   "end": 3.7,
+   "db": 4.2
+  },
+  {
+   "text": "logro",
+   "start": 3.7,
+   "end": 4.42,
+   "db": 4.6
+  },
+  {
+   "text": "en",
+   "start": 4.42,
+   "end": 4.74,
+   "db": -0.2
+  },
+  {
+   "text": "cuanto",
+   "start": 4.74,
+   "end": 5.02,
+   "db": 2.7
+  },
+  {
+   "text": "a",
+   "start": 5.02,
+   "end": 5.14,
+   "db": -3.2
+  },
+  {
+   "text": "nuestra",
+   "start": 5.14,
+   "end": 5.36,
+   "db": -5.5
+  },
+  {
+   "text": "parte",
+   "start": 5.36,
+   "end": 5.68,
+   "db": -3.2
+  },
+  {
+   "text": "estética,",
+   "start": 5.68,
+   "end": 6.26,
+   "db": -5.2
+  },
+  {
+   "text": "pudiste",
+   "start": 6.42,
+   "end": 7.0,
+   "db": 8.2
+  },
+  {
+   "text": "hacer",
+   "start": 7.0,
+   "end": 7.4,
+   "db": 5.0
+  },
+  {
+   "text": "de",
+   "start": 7.4,
+   "end": 7.58,
+   "db": 3.3
+  },
+  {
+   "text": "esto",
+   "start": 7.58,
+   "end": 7.92,
+   "db": 3.5
+  },
+  {
+   "text": "una",
+   "start": 7.92,
+   "end": 8.36,
+   "db": 5.1
+  },
+  {
+   "text": "rutina",
+   "start": 8.36,
+   "end": 8.86,
+   "db": -1.6
+  },
+  {
+   "text": "y",
+   "start": 8.86,
+   "end": 9.06,
+   "db": -3.5
+  },
+  {
+   "text": "ese",
+   "start": 9.06,
+   "end": 9.28,
+   "db": 5.0
+  },
+  {
+   "text": "ya",
+   "start": 9.28,
+   "end": 9.58,
+   "db": 3.8
+  },
+  {
+   "text": "es",
+   "start": 9.58,
+   "end": 9.76,
+   "db": 5.2
+  },
+  {
+   "text": "un",
+   "start": 9.76,
+   "end": 9.86,
+   "db": -4.4
+  },
+  {
+   "text": "gran",
+   "start": 9.86,
+   "end": 10.02,
+   "db": -0.3
+  },
+  {
+   "text": "logro.",
+   "start": 10.02,
+   "end": 10.34,
+   "db": -4.1
+  },
+  {
+   "text": "Ahora",
+   "start": 10.56,
+   "end": 10.92,
+   "db": 7.6
+  },
+  {
+   "text": "vas",
+   "start": 10.92,
+   "end": 11.26,
+   "db": 5.9
+  },
+  {
+   "text": "a",
+   "start": 11.26,
+   "end": 11.32,
+   "db": -1.3
+  },
+  {
+   "text": "volver",
+   "start": 11.32,
+   "end": 11.52,
+   "db": 2.5
+  },
+  {
+   "text": "a",
+   "start": 11.52,
+   "end": 11.68,
+   "db": -1.0
+  },
+  {
+   "text": "revisar",
+   "start": 11.68,
+   "end": 12.1,
+   "db": -0.3
+  },
+  {
+   "text": "tus",
+   "start": 12.1,
+   "end": 12.52,
+   "db": 0.1
+  },
+  {
+   "text": "medidas,",
+   "start": 12.52,
+   "end": 13.02,
+   "db": 0.5
+  },
+  {
+   "text": "te",
+   "start": 13.3,
+   "end": 13.36,
+   "db": -21.3
+  },
+  {
+   "text": "vas",
+   "start": 13.36,
+   "end": 13.46,
+   "db": -3.8
+  },
+  {
+   "text": "a",
+   "start": 13.46,
+   "end": 13.54,
+   "db": -3.3
+  },
+  {
+   "text": "tomar",
+   "start": 13.54,
+   "end": 13.74,
+   "db": -3.5
+  },
+  {
+   "text": "las",
+   "start": 13.74,
+   "end": 13.96,
+   "db": -4.0
+  },
+  {
+   "text": "fotos",
+   "start": 13.96,
+   "end": 14.18,
+   "db": -5.6
+  },
+  {
+   "text": "en",
+   "start": 14.18,
+   "end": 14.34,
+   "db": -4.4
+  },
+  {
+   "text": "las",
+   "start": 14.34,
+   "end": 14.48,
+   "db": -12.0
+  },
+  {
+   "text": "mismas",
+   "start": 14.48,
+   "end": 14.86,
+   "db": -8.3
+  },
+  {
+   "text": "posiciones",
+   "start": 14.86,
+   "end": 15.42,
+   "db": -4.6
+  },
+  {
+   "text": "y",
+   "start": 15.42,
+   "end": 16.1,
+   "db": 3.4
+  },
+  {
+   "text": "vas",
+   "start": 16.1,
+   "end": 16.3,
+   "db": 7.0
+  },
+  {
+   "text": "a",
+   "start": 16.3,
+   "end": 16.4,
+   "db": 1.9
+  },
+  {
+   "text": "empezar",
+   "start": 16.4,
+   "end": 16.68,
+   "db": -0.8
+  },
+  {
+   "text": "a",
+   "start": 16.68,
+   "end": 16.84,
+   "db": 1.0
+  },
+  {
+   "text": "mirar",
+   "start": 16.84,
+   "end": 17.2,
+   "db": 4.7
+  },
+  {
+   "text": "cuáles",
+   "start": 17.2,
+   "end": 17.56,
+   "db": 5.9
+  },
+  {
+   "text": "fueron",
+   "start": 17.56,
+   "end": 17.74,
+   "db": -2.7
+  },
+  {
+   "text": "los",
+   "start": 17.74,
+   "end": 17.94,
+   "db": 0.3
+  },
+  {
+   "text": "cambios",
+   "start": 17.94,
+   "end": 18.32,
+   "db": -2.2
+  },
+  {
+   "text": "que",
+   "start": 18.32,
+   "end": 18.54,
+   "db": -14.1
+  },
+  {
+   "text": "tuviste",
+   "start": 18.54,
+   "end": 18.96,
+   "db": 2.7
+  },
+  {
+   "text": "a",
+   "start": 18.96,
+   "end": 19.06,
+   "db": -9.1
+  },
+  {
+   "text": "nivel",
+   "start": 19.06,
+   "end": 19.22,
+   "db": -8.8
+  },
+  {
+   "text": "corporal.",
+   "start": 19.22,
+   "end": 19.76,
+   "db": -8.3
+  },
+  {
+   "text": "Vas",
+   "start": 19.84,
+   "end": 19.94,
+   "db": 3.0
+  },
+  {
+   "text": "a",
+   "start": 19.94,
+   "end": 20.04,
+   "db": 1.2
+  },
+  {
+   "text": "tomarte",
+   "start": 20.04,
+   "end": 20.34,
+   "db": -0.1
+  },
+  {
+   "text": "una",
+   "start": 20.34,
+   "end": 20.48,
+   "db": -7.2
+  },
+  {
+   "text": "foto",
+   "start": 20.48,
+   "end": 20.76,
+   "db": -2.8
+  },
+  {
+   "text": "de",
+   "start": 20.76,
+   "end": 20.92,
+   "db": -4.2
+  },
+  {
+   "text": "frente,",
+   "start": 20.92,
+   "end": 21.38,
+   "db": 1.8
+  },
+  {
+   "text": "de",
+   "start": 21.58,
+   "end": 21.72,
+   "db": -0.9
+  },
+  {
+   "text": "costado,",
+   "start": 21.72,
+   "end": 22.26,
+   "db": 4.0
+  },
+  {
+   "text": "de",
+   "start": 22.4,
+   "end": 22.48,
+   "db": -4.3
+  },
+  {
+   "text": "espalda",
+   "start": 22.48,
+   "end": 22.86,
+   "db": -0.2
+  },
+  {
+   "text": "y",
+   "start": 22.86,
+   "end": 22.98,
+   "db": 0.3
+  },
+  {
+   "text": "luego",
+   "start": 22.98,
+   "end": 23.24,
+   "db": 3.6
+  },
+  {
+   "text": "del",
+   "start": 23.24,
+   "end": 23.42,
+   "db": 2.4
+  },
+  {
+   "text": "otro",
+   "start": 23.42,
+   "end": 23.6,
+   "db": -1.8
+  },
+  {
+   "text": "costado.",
+   "start": 23.6,
+   "end": 24.1,
+   "db": -7.7
+  },
+  {
+   "text": "Y",
+   "start": 24.2,
+   "end": 24.28,
+   "db": 3.2
+  },
+  {
+   "text": "si",
+   "start": 24.28,
+   "end": 24.4,
+   "db": -0.4
+  },
+  {
+   "text": "es",
+   "start": 24.4,
+   "end": 24.5,
+   "db": 1.5
+  },
+  {
+   "text": "necesario,",
+   "start": 24.5,
+   "end": 25.0,
+   "db": 6.1
+  },
+  {
+   "text": "toma",
+   "start": 25.38,
+   "end": 25.54,
+   "db": 3.4
+  },
+  {
+   "text": "medidas",
+   "start": 25.54,
+   "end": 26.02,
+   "db": 2.9
+  },
+  {
+   "text": "si",
+   "start": 26.02,
+   "end": 26.36,
+   "db": -3.0
+  },
+  {
+   "text": "fue",
+   "start": 26.36,
+   "end": 26.52,
+   "db": -6.9
+  },
+  {
+   "text": "que",
+   "start": 26.52,
+   "end": 26.62,
+   "db": -13.2
+  },
+  {
+   "text": "al",
+   "start": 26.62,
+   "end": 26.74,
+   "db": 2.0
+  },
+  {
+   "text": "principio",
+   "start": 26.74,
+   "end": 27.08,
+   "db": -3.4
+  },
+  {
+   "text": "las",
+   "start": 27.08,
+   "end": 27.32,
+   "db": -4.8
+  },
+  {
+   "text": "tomaste",
+   "start": 27.32,
+   "end": 27.84,
+   "db": -2.3
+  },
+  {
+   "text": "y",
+   "start": 27.84,
+   "end": 28.08,
+   "db": 1.5
+  },
+  {
+   "text": "vuelve",
+   "start": 28.08,
+   "end": 28.34,
+   "db": 7.7
+  },
+  {
+   "text": "a",
+   "start": 28.34,
+   "end": 28.42,
+   "db": 3.6
+  },
+  {
+   "text": "revisar",
+   "start": 28.42,
+   "end": 28.86,
+   "db": 2.9
+  },
+  {
+   "text": "estas",
+   "start": 28.86,
+   "end": 29.08,
+   "db": -5.3
+  },
+  {
+   "text": "medidas",
+   "start": 29.08,
+   "end": 29.5,
+   "db": -0.7
+  },
+  {
+   "text": "para",
+   "start": 29.5,
+   "end": 29.8,
+   "db": -0.4
+  },
+  {
+   "text": "saber",
+   "start": 29.8,
+   "end": 30.12,
+   "db": -1.2
+  },
+  {
+   "text": "qué",
+   "start": 30.12,
+   "end": 30.42,
+   "db": 8.2
+  },
+  {
+   "text": "tanto",
+   "start": 30.42,
+   "end": 30.82,
+   "db": 4.5
+  },
+  {
+   "text": "bajaste",
+   "start": 30.82,
+   "end": 31.46,
+   "db": 3.8
+  },
+  {
+   "text": "en",
+   "start": 31.46,
+   "end": 31.74,
+   "db": -2.9
+  },
+  {
+   "text": "esas",
+   "start": 31.74,
+   "end": 31.96,
+   "db": -3.3
+  },
+  {
+   "text": "medidas",
+   "start": 31.96,
+   "end": 32.3,
+   "db": -3.9
+  },
+  {
+   "text": "puntuales",
+   "start": 32.3,
+   "end": 33.04,
+   "db": -1.3
+  },
+  {
+   "text": "que",
+   "start": 33.04,
+   "end": 33.14,
+   "db": -21.1
+  },
+  {
+   "text": "necesitabas",
+   "start": 33.14,
+   "end": 33.76,
+   "db": -5.2
+  },
+  {
+   "text": "o",
+   "start": 33.76,
+   "end": 33.92,
+   "db": -0.5
+  },
+  {
+   "text": "qué",
+   "start": 33.92,
+   "end": 34.04,
+   "db": -6.8
+  },
+  {
+   "text": "más",
+   "start": 34.04,
+   "end": 34.22,
+   "db": -3.2
+  },
+  {
+   "text": "te",
+   "start": 34.22,
+   "end": 34.38,
+   "db": -11.4
+  },
+  {
+   "text": "importaban.",
+   "start": 34.38,
+   "end": 34.92,
+   "db": -4.2
+  },
+  {
+   "text": "Compara",
+   "start": 35.18,
+   "end": 35.38,
+   "db": 6.9
+  },
+  {
+   "text": "tus",
+   "start": 35.38,
+   "end": 35.6,
+   "db": 0.4
+  },
+  {
+   "text": "registros",
+   "start": 35.6,
+   "end": 36.18,
+   "db": 3.6
+  },
+  {
+   "text": "con",
+   "start": 36.18,
+   "end": 36.4,
+   "db": 2.3
+  },
+  {
+   "text": "los",
+   "start": 36.4,
+   "end": 36.6,
+   "db": -0.9
+  },
+  {
+   "text": "anteriores.",
+   "start": 36.6,
+   "end": 37.24,
+   "db": -1.6
+  },
+  {
+   "text": "Recuerda,",
+   "start": 37.4,
+   "end": 37.84,
+   "db": 8.1
+  },
+  {
+   "text": "no",
+   "start": 37.88,
+   "end": 38.06,
+   "db": -1.2
+  },
+  {
+   "text": "puedes",
+   "start": 38.06,
+   "end": 38.36,
+   "db": 4.3
+  },
+  {
+   "text": "frustrarte",
+   "start": 38.36,
+   "end": 39.14,
+   "db": 3.9
+  },
+  {
+   "text": "si",
+   "start": 39.14,
+   "end": 39.42,
+   "db": -0.3
+  },
+  {
+   "text": "los",
+   "start": 39.42,
+   "end": 39.58,
+   "db": -1.4
+  },
+  {
+   "text": "cambios",
+   "start": 39.58,
+   "end": 39.88,
+   "db": -0.9
+  },
+  {
+   "text": "no",
+   "start": 39.88,
+   "end": 40.0,
+   "db": -2.4
+  },
+  {
+   "text": "fueron",
+   "start": 40.0,
+   "end": 40.2,
+   "db": -0.8
+  },
+  {
+   "text": "lo",
+   "start": 40.2,
+   "end": 40.36,
+   "db": -2.0
+  },
+  {
+   "text": "que",
+   "start": 40.36,
+   "end": 40.48,
+   "db": -17.0
+  },
+  {
+   "text": "tú",
+   "start": 40.48,
+   "end": 40.6,
+   "db": -15.9
+  },
+  {
+   "text": "esperabas",
+   "start": 40.6,
+   "end": 41.08,
+   "db": -6.8
+  },
+  {
+   "text": "y",
+   "start": 41.08,
+   "end": 41.22,
+   "db": 1.3
+  },
+  {
+   "text": "debes",
+   "start": 41.22,
+   "end": 41.4,
+   "db": 11.9
+  },
+  {
+   "text": "seguir",
+   "start": 41.4,
+   "end": 41.6,
+   "db": 4.7
+  },
+  {
+   "text": "repitiendo",
+   "start": 41.6,
+   "end": 42.14,
+   "db": 1.1
+  },
+  {
+   "text": "esta",
+   "start": 42.14,
+   "end": 42.34,
+   "db": -7.9
+  },
+  {
+   "text": "misma",
+   "start": 42.34,
+   "end": 42.72,
+   "db": 0.8
+  },
+  {
+   "text": "rutina",
+   "start": 42.72,
+   "end": 43.24,
+   "db": 0.9
+  },
+  {
+   "text": "de",
+   "start": 43.24,
+   "end": 43.54,
+   "db": 5.0
+  },
+  {
+   "text": "aquí",
+   "start": 43.54,
+   "end": 43.78,
+   "db": 0.2
+  },
+  {
+   "text": "en",
+   "start": 43.78,
+   "end": 43.94,
+   "db": 3.4
+  },
+  {
+   "text": "adelante,",
+   "start": 43.94,
+   "end": 44.38,
+   "db": 2.3
+  },
+  {
+   "text": "aumentando",
+   "start": 44.88,
+   "end": 45.36,
+   "db": 4.5
+  },
+  {
+   "text": "la",
+   "start": 45.36,
+   "end": 45.52,
+   "db": 0.2
+  },
+  {
+   "text": "presión",
+   "start": 45.52,
+   "end": 46.0,
+   "db": -2.5
+  },
+  {
+   "text": "y",
+   "start": 46.0,
+   "end": 46.26,
+   "db": 1.2
+  },
+  {
+   "text": "sobre",
+   "start": 46.26,
+   "end": 46.48,
+   "db": 7.6
+  },
+  {
+   "text": "todo",
+   "start": 46.48,
+   "end": 46.72,
+   "db": 4.4
+  },
+  {
+   "text": "respetando",
+   "start": 46.72,
+   "end": 47.4,
+   "db": 2.6
+  },
+  {
+   "text": "las",
+   "start": 47.4,
+   "end": 47.8,
+   "db": 3.1
+  },
+  {
+   "text": "instrucciones",
+   "start": 47.8,
+   "end": 48.38,
+   "db": 0.3
+  },
+  {
+   "text": "del",
+   "start": 48.38,
+   "end": 48.68,
+   "db": 0.0
+  },
+  {
+   "text": "producto.",
+   "start": 48.68,
+   "end": 49.04,
+   "db": -0.7
+  },
+  {
+   "text": "Y",
+   "start": 49.12,
+   "end": 49.2,
+   "db": 5.5
+  },
+  {
+   "text": "lo",
+   "start": 49.2,
+   "end": 49.28,
+   "db": 3.0
+  },
+  {
+   "text": "más",
+   "start": 49.28,
+   "end": 49.42,
+   "db": 5.1
+  },
+  {
+   "text": "importante,",
+   "start": 49.42,
+   "end": 49.96,
+   "db": 3.3
+  },
+  {
+   "text": "revisando",
+   "start": 50.12,
+   "end": 50.6,
+   "db": 2.6
+  },
+  {
+   "text": "cómo",
+   "start": 50.6,
+   "end": 50.82,
+   "db": -4.0
+  },
+  {
+   "text": "se",
+   "start": 50.82,
+   "end": 50.96,
+   "db": -9.5
+  },
+  {
+   "text": "va",
+   "start": 50.96,
+   "end": 51.08,
+   "db": -2.1
+  },
+  {
+   "text": "comportando",
+   "start": 51.08,
+   "end": 51.8,
+   "db": -4.2
+  },
+  {
+   "text": "tu",
+   "start": 51.8,
+   "end": 52.06,
+   "db": -8.1
+  },
+  {
+   "text": "piel",
+   "start": 52.06,
+   "end": 52.3,
+   "db": 3.3
+  },
+  {
+   "text": "y",
+   "start": 52.3,
+   "end": 52.46,
+   "db": 0.1
+  },
+  {
+   "text": "tu",
+   "start": 52.46,
+   "end": 52.56,
+   "db": -8.8
+  },
+  {
+   "text": "cuerpo.",
+   "start": 52.56,
+   "end": 52.82,
+   "db": -8.3
+  },
+  {
+   "text": "Ahora,",
+   "start": 52.92,
+   "end": 53.14,
+   "db": 8.8
+  },
+  {
+   "text": "cuéntanos",
+   "start": 53.3,
+   "end": 53.62,
+   "db": -0.9
+  },
+  {
+   "text": "vía",
+   "start": 53.62,
+   "end": 53.84,
+   "db": 0.7
+  },
+  {
+   "text": "WhatsApp",
+   "start": 53.84,
+   "end": 54.22,
+   "db": 2.3
+  },
+  {
+   "text": "cómo",
+   "start": 54.22,
+   "end": 54.64,
+   "db": 9.4
+  },
+  {
+   "text": "viste",
+   "start": 54.64,
+   "end": 55.02,
+   "db": 9.0
+  },
+  {
+   "text": "este",
+   "start": 55.02,
+   "end": 55.26,
+   "db": -0.4
+  },
+  {
+   "text": "reto,",
+   "start": 55.26,
+   "end": 55.54,
+   "db": 0.0
+  },
+  {
+   "text": "cuáles",
+   "start": 55.7,
+   "end": 55.92,
+   "db": 6.9
+  },
+  {
+   "text": "fueron",
+   "start": 55.92,
+   "end": 56.14,
+   "db": -2.0
+  },
+  {
+   "text": "tus",
+   "start": 56.14,
+   "end": 56.34,
+   "db": -2.2
+  },
+  {
+   "text": "resultados",
+   "start": 56.34,
+   "end": 56.98,
+   "db": 3.0
+  },
+  {
+   "text": "y",
+   "start": 56.98,
+   "end": 57.34,
+   "db": 0.8
+  },
+  {
+   "text": "recuerda",
+   "start": 57.34,
+   "end": 57.72,
+   "db": 3.8
+  },
+  {
+   "text": "que",
+   "start": 57.72,
+   "end": 57.84,
+   "db": -9.6
+  },
+  {
+   "text": "tu",
+   "start": 57.84,
+   "end": 58.02,
+   "db": -8.5
+  },
+  {
+   "text": "experiencia",
+   "start": 58.02,
+   "end": 58.5,
+   "db": 1.4
+  },
+  {
+   "text": "puede",
+   "start": 58.5,
+   "end": 58.8,
+   "db": -0.4
+  },
+  {
+   "text": "motivar",
+   "start": 58.8,
+   "end": 59.22,
+   "db": -0.7
+  },
+  {
+   "text": "a",
+   "start": 59.22,
+   "end": 59.26,
+   "db": -2.8
+  },
+  {
+   "text": "otras",
+   "start": 59.26,
+   "end": 59.44,
+   "db": 0.8
+  },
+  {
+   "text": "mujeres",
+   "start": 59.44,
+   "end": 59.76,
+   "db": -4.2
+  },
+  {
+   "text": "a",
+   "start": 59.76,
+   "end": 60.04,
+   "db": -2.8
+  },
+  {
+   "text": "sentirse",
+   "start": 60.04,
+   "end": 60.58,
+   "db": 4.3
+  },
+  {
+   "text": "mejor",
+   "start": 60.58,
+   "end": 60.84,
+   "db": 0.0
+  },
+  {
+   "text": "y",
+   "start": 60.84,
+   "end": 61.1,
+   "db": 3.1
+  },
+  {
+   "text": "hacer",
+   "start": 61.1,
+   "end": 61.38,
+   "db": 5.0
+  },
+  {
+   "text": "de",
+   "start": 61.38,
+   "end": 61.68,
+   "db": -4.3
+  },
+  {
+   "text": "su",
+   "start": 61.68,
+   "end": 61.84,
+   "db": -0.0
+  },
+  {
+   "text": "cuidado",
+   "start": 61.84,
+   "end": 62.08,
+   "db": -2.3
+  },
+  {
+   "text": "corporal",
+   "start": 62.08,
+   "end": 62.64,
+   "db": 1.4
+  },
+  {
+   "text": "una",
+   "start": 62.64,
+   "end": 62.96,
+   "db": -2.5
+  },
+  {
+   "text": "rutina.",
+   "start": 62.96,
+   "end": 63.46,
+   "db": -6.8
+  }
+ ]
+}

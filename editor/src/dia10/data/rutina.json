@@ -1,0 +1,22 @@
+[
+ {
+  "zona": "piernas",
+  "desde": 0,
+  "frames": 26
+ },
+ {
+  "zona": "abdomen",
+  "desde": 26,
+  "frames": 26
+ },
+ {
+  "zona": "glúteos",
+  "desde": 52,
+  "frames": 26
+ },
+ {
+  "zona": "brazos",
+  "desde": 78,
+  "frames": 28
+ }
+]
