@@ -1,10 +1,13 @@
 """Día 10 · "Día 21 y continuidad" (a cámara): elige las tomas buenas, corta silencios y genera el vídeo editado.
 
-Uso: python3 scripts/dia10/preparar.py <crudo.mp4 original> <crudo30.mov> <transcripcion_completa.json> [--sin-video]
+Uso: python3 scripts/dia10/preparar.py <crudo.mp4 original> <crudo30.mov> <transcripcion_completa.json> [--sin-video|--solo-audio]
 
 Mismo método que el día 8 (scripts/dia8/preparar.py): el vídeo se monta por tramos de fotogramas exactos y el audio
 con atrim + concat a muestra exacta. Salidas: src/dia10/data/edit.json y public/dia10/editado.mp4 (audio ORIGINAL,
 sin normalizar). Los tiempos por palabra se afinan después con scripts/dia10/retiempos.py.
+Con --solo-audio escribe solo public/dia10/voz.wav: la misma voz ORIGINAL en PCM, a muestra exacta y con los mismos
+tramos, para Remotion. El vídeo va aparte en VP9 (editado_video.webm, sin audio): el Chromium del entorno no decodifica
+H.264 y, con el MP4, Remotion extrae cada fotograma por el servidor y a veces se queda colgado.
 """
 import json
 import subprocess
@@ -55,6 +58,15 @@ def main() -> None:
     # A fotograma exacto
     tramos = [(k, round(a * FPS), round(b * FPS)) for k, a, b in tramos]
     tramos = [(k, a, b) for k, a, b in tramos if b - a >= 2]
+
+    if "--solo-audio" in sys.argv:
+        filtro = "".join(f"[0:a]atrim=start={a / FPS:.6f}:end={b / FPS:.6f},asetpts=N/SR/TB[t{i}];" for i, (_, a, b) in enumerate(tramos))
+        filtro += "".join(f"[t{i}]" for i in range(len(tramos))) + f"concat=n={len(tramos)}:v=0:a=1,apad=pad_dur={HOLD}[a]"
+        dst = RAIZ / "public/dia10/voz.wav"
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", crudo, "-filter_complex", filtro, "-map", "[a]", "-ar", str(SR),
+                        "-c:a", "pcm_s16le", str(dst)], check=True)
+        print(f"voz.wav · {len(tramos)} tramos")
+        return
 
     salida, f_out = [], 0
     for k, a, b in tramos:

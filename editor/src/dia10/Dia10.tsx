@@ -406,8 +406,8 @@ export const Dia10Video: React.FC = () => {
     <AbsoluteFill style={{ backgroundColor: "#000" }}>
       <style>{FONT_FACES}</style>
       <AbsoluteFill style={{ transform: `translateX(${dx}px) scale(${s})`, transformOrigin: `${OX}px ${OY}px` }}>
-        {/* Audio ORIGINAL dentro del vídeo editado (scripts/dia10/preparar.py), sin recortes en Remotion */}
-        <Video src={staticFile("dia10/editado.mp4")} objectFit="cover" style={{ width: "100%", height: "100%" }} />
+        {/* Vídeo editado en VP9 sin audio (el Chromium del entorno no decodifica H.264): ver scripts/dia10/preparar.py */}
+        <Video src={staticFile("dia10/editado_video.webm")} muted objectFit="cover" style={{ width: "100%", height: "100%" }} />
       </AbsoluteFill>
       {/* Velo Verde petróleo arriba: legibilidad del título sobre la pared clara */}
       <AbsoluteFill style={{ background: "linear-gradient(180deg, rgba(69,89,90,.32) 0%, rgba(69,89,90,.12) 14%, rgba(69,89,90,0) 24%)" }} />
@@ -419,6 +419,8 @@ export const Dia10Video: React.FC = () => {
       <CamaraMovil fotos={FOTOS} hasta={FOTOS_FIN} />
       <Brillo en={[at("gran logro").start, at("rutina", S.final).start]} />
       <Ventana21 en={[{ t: 0 }, { t: S.registro, cierra: true }, { t: S.testimonio, cierra: true }]} />
+      {/* Voz ORIGINAL, cortada a muestra exacta con los mismos tramos (preparar.py --solo-audio), sin recortes en Remotion */}
+      <Audio src={staticFile("dia10/voz.wav")} />
       <Audio
         src={staticFile("dia10/audio/musica.wav")}
         volume={(f) => interpolate(f / fps, [FIN_VOZ, FIN_VOZ + 0.4], [0.1 * NIVEL, 0.2 * NIVEL], CLAMP)}

@@ -648,7 +648,7 @@ export const Montaje: React.FC<{
         }}
       >
         <Sequence from={Math.round(desde * fps)} durationInFrames={total} layout="none">
-          <Video src={staticFile("dia10/rutina.mp4")} muted style={{ width: "100%", height: "100%" }} />
+          <Video src={staticFile("dia10/rutina.webm")} muted style={{ width: "100%", height: "100%" }} />
         </Sequence>
       </div>
       <div style={{ position: "absolute", inset: 0, background: "#FFFFFF", opacity: interpolate(local, [0, 6], [0.8, 0], CLAMP) }} />

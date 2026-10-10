@@ -80,6 +80,8 @@ Cada "beat" nace de una frase concreta, anclada con `at("frase")`. El anclaje ac
 - `scripts/dia10/caras.py`: caja de la cara con YuNet sobre el vídeo editado (a cámara se ve siempre). El modelo se descarga de `huggingface.co/opencv/face_detection_yunet` (raw.githubusercontent.com está bloqueado).
 - B-roll de otro día: `scripts/dia10/apoyos.py` corta fragmentos cortos de otro crudo ya pasado a 30 fps.
 - `src/dia10/Dia10.tsx`: panel lateral (la toma se desliza y la cara se recalcula con el mismo desplazamiento y zoom), ventana con forma de texto (máscara SVG) y cámara de móvil con fotos. Los dígitos 3D salen de `three/examples/fonts/helvetiker_bold.typeface.json` con `TextGeometry`.
+- **Render que se cuelga sin error** (un tramo pasa de 15 min y el registro se queda en "Rendered N/…"): con `--log=verbose` aparece "Cannot decode … falling back to <OffthreadVideo>". El Chromium del entorno no decodifica H.264, así que Remotion pide cada fotograma al servidor y alguna petición no vuelve. Solución del día 10: el vídeo en VP9 sin audio (`ffmpeg -an -c:v libvpx-vp9 -crf 15 -b:v 0 -row-mt 1`, `muted`) y la voz original aparte en WAV a muestra exacta (`preparar.py --solo-audio`); comprueba el desfase (0 ms) antes de renderizar.
+- Para matar un render no uses `pkill -f` con el nombre del script: también mata la propia orden. Busca los PID con `ps -eo pid,args`.
 - Si un objeto 3D compartido sale pequeño en su columna, dale un lienzo más grande que la columna (el tamaño en píxeles crece con el alto del lienzo) en vez de escalarlo con CSS.
 
 ## 7. Revisar y entregar
