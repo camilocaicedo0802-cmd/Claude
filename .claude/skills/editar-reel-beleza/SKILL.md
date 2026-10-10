@@ -67,6 +67,14 @@ Cada "beat" nace de una frase concreta, anclada con `at("frase")`. El anclaje ac
 - Si la cabeza está pegada al borde superior, el título va en la franja baja (`TituloBajo` del día 7).
 - Si el render a CRF 16 pasa de 100 MB, recodifica a 2 pasadas (≈ 7,5 Mbps de vídeo + copia del audio) para el repositorio.
 
+## 6d. Día 9 (rutina integrada) — herramientas nuevas
+- Si en la voz en off Whisper funde la toma repetida con la buena (tiempos adelantados hasta 1 s o una palabra duplicada en el borde de una toma descartada), transcribe la voz YA LIMPIA (`public/<dia>/voz.wav`) y aplica sus tiempos con `scripts/dia9/retiempos.py` (adelanta al final del silencio los inicios que caen en una pausa).
+- `scripts/dia9/montar.py` añade a las tomas: `"congela"` (fotograma congelado para la pizarra de análisis), `"splitv"` (pantalla partida vertical, 540 px de cada momento sin escalar) y los mosaicos 2×2 de zonas en archivos aparte (`mosaico_intro.mp4`, `mosaico_cierre.mp4`), que en Remotion se abren hacia las esquinas.
+- `src/dia9/Base9.tsx`: el "escenario" (toma + gráficos colocados) se encoge a una tarjeta de capítulo con el título en el margen (nunca toca la cara) y hace barridos con desenfoque horizontal (filtro SVG) en los cortes que se indiquen.
+- `src/dia9/Maqueta9.tsx`: como la del día 6 pero prueba el otro lado de la cabeza antes de bajar por debajo de ella (no tapa la acción).
+- La pizarra (`Pizarra` en `src/dia9/Graficos.tsx`) dibuja sobre el congelado en coordenadas de la toma: mide antes los puntos (fotograma a 540×960 con rejilla de 100 px) y deja ≥ 100 px con la cara.
+- Música propia por día: `scripts/dia9/audio_dia9.py` cambia tonalidad, tempo y figura (mismos timbres y limpieza para la voz).
+
 ## 7. Revisar y entregar
 - `cd editor && npm run lint`.
 - Para revisar: `npx remotion render <Composición> out/borrador.mp4 --concurrency=4` (añade `--gl=swangle` si hay objetos 3D). Saca fotogramas en cada beat (hojas de contacto con ffmpeg) y comprueba que nada tapa la cara, que los textos no se cortan y que el gráfico aparece en su palabra.
