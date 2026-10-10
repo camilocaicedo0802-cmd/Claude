@@ -1,0 +1,1033 @@
+{
+  "duration": 50.2,
+  "segments": [
+    {
+      "toma": 0,
+      "srcStart": 5.266666666666667,
+      "srcEnd": 7.433333333333334,
+      "outStart": 0.0
+    },
+    {
+      "toma": 0,
+      "srcStart": 8.0,
+      "srcEnd": 13.233333333333333,
+      "outStart": 2.1666666666666665
+    },
+    {
+      "toma": 1,
+      "srcStart": 48.86666666666667,
+      "srcEnd": 53.266666666666666,
+      "outStart": 7.4
+    },
+    {
+      "toma": 1,
+      "srcStart": 53.43333333333333,
+      "srcEnd": 55.93333333333333,
+      "outStart": 11.8
+    },
+    {
+      "toma": 2,
+      "srcStart": 74.13333333333334,
+      "srcEnd": 77.16666666666667,
+      "outStart": 14.3
+    },
+    {
+      "toma": 2,
+      "srcStart": 77.56666666666666,
+      "srcEnd": 81.96666666666667,
+      "outStart": 17.333333333333332
+    },
+    {
+      "toma": 3,
+      "srcStart": 129.0,
+      "srcEnd": 129.16666666666666,
+      "outStart": 21.733333333333334
+    },
+    {
+      "toma": 3,
+      "srcStart": 130.13333333333333,
+      "srcEnd": 132.56666666666666,
+      "outStart": 21.9
+    },
+    {
+      "toma": 3,
+      "srcStart": 132.76666666666668,
+      "srcEnd": 138.0,
+      "outStart": 24.333333333333332
+    },
+    {
+      "toma": 3,
+      "srcStart": 138.2,
+      "srcEnd": 138.56666666666666,
+      "outStart": 29.566666666666666
+    },
+    {
+      "toma": 4,
+      "srcStart": 102.36666666666666,
+      "srcEnd": 106.16666666666667,
+      "outStart": 29.933333333333334
+    },
+    {
+      "toma": 5,
+      "srcStart": 139.33333333333334,
+      "srcEnd": 144.43333333333334,
+      "outStart": 33.733333333333334
+    },
+    {
+      "toma": 5,
+      "srcStart": 144.93333333333334,
+      "srcEnd": 146.03333333333333,
+      "outStart": 38.833333333333336
+    },
+    {
+      "toma": 5,
+      "srcStart": 146.26666666666668,
+      "srcEnd": 148.1,
+      "outStart": 39.93333333333333
+    },
+    {
+      "toma": 6,
+      "srcStart": 169.86666666666667,
+      "srcEnd": 173.43333333333334,
+      "outStart": 41.766666666666666
+    },
+    {
+      "toma": 6,
+      "srcStart": 173.7,
+      "srcEnd": 178.56666666666666,
+      "outStart": 45.333333333333336
+    }
+  ],
+  "words": [
+    {
+      "text": "Felicitaciones,",
+      "start": 0.173,
+      "end": 0.853,
+      "db": 5.3
+    },
+    {
+      "text": "llegaste",
+      "start": 1.153,
+      "end": 1.513,
+      "db": 7.9
+    },
+    {
+      "text": "al",
+      "start": 1.513,
+      "end": 1.633,
+      "db": 1.1
+    },
+    {
+      "text": "día",
+      "start": 1.633,
+      "end": 1.793,
+      "db": -0.2
+    },
+    {
+      "text": "10",
+      "start": 1.793,
+      "end": 2.133,
+      "db": -0.7
+    },
+    {
+      "text": "y",
+      "start": 2.133,
+      "end": 2.287,
+      "db": -7.5
+    },
+    {
+      "text": "antes",
+      "start": 2.287,
+      "end": 2.487,
+      "db": 6.6
+    },
+    {
+      "text": "de",
+      "start": 2.487,
+      "end": 2.687,
+      "db": -1.0
+    },
+    {
+      "text": "continuar",
+      "start": 2.687,
+      "end": 3.107,
+      "db": 0.8
+    },
+    {
+      "text": "vamos",
+      "start": 3.107,
+      "end": 3.467,
+      "db": 1.8
+    },
+    {
+      "text": "a",
+      "start": 3.467,
+      "end": 3.607,
+      "db": -0.2
+    },
+    {
+      "text": "revisar",
+      "start": 3.607,
+      "end": 3.987,
+      "db": 1.1
+    },
+    {
+      "text": "cómo",
+      "start": 3.987,
+      "end": 4.427,
+      "db": 2.8
+    },
+    {
+      "text": "se",
+      "start": 4.427,
+      "end": 4.667,
+      "db": -5.9
+    },
+    {
+      "text": "ha",
+      "start": 4.667,
+      "end": 4.787,
+      "db": 0.9
+    },
+    {
+      "text": "sentido",
+      "start": 4.787,
+      "end": 5.147,
+      "db": -1.8
+    },
+    {
+      "text": "tu",
+      "start": 5.147,
+      "end": 5.367,
+      "db": 2.8
+    },
+    {
+      "text": "cuerpo",
+      "start": 5.367,
+      "end": 5.727,
+      "db": 3.1
+    },
+    {
+      "text": "con",
+      "start": 5.727,
+      "end": 5.967,
+      "db": -0.5
+    },
+    {
+      "text": "la",
+      "start": 5.967,
+      "end": 6.087,
+      "db": -5.3
+    },
+    {
+      "text": "rutina",
+      "start": 6.087,
+      "end": 6.487,
+      "db": -2.9
+    },
+    {
+      "text": "de",
+      "start": 6.487,
+      "end": 6.747,
+      "db": 1.0
+    },
+    {
+      "text": "los",
+      "start": 6.747,
+      "end": 6.907,
+      "db": -0.4
+    },
+    {
+      "text": "últimos",
+      "start": 6.907,
+      "end": 7.227,
+      "db": -3.8
+    },
+    {
+      "text": "días.",
+      "start": 7.227,
+      "end": 7.4,
+      "db": -9.6
+    },
+    {
+      "text": "vuelve",
+      "start": 7.4,
+      "end": 7.693,
+      "db": 8.6
+    },
+    {
+      "text": "a",
+      "start": 7.693,
+      "end": 7.773,
+      "db": 0.7
+    },
+    {
+      "text": "calificar",
+      "start": 7.773,
+      "end": 8.173,
+      "db": 0.9
+    },
+    {
+      "text": "la",
+      "start": 8.173,
+      "end": 8.453,
+      "db": 4.6
+    },
+    {
+      "text": "sensación",
+      "start": 8.453,
+      "end": 9.173,
+      "db": -0.5
+    },
+    {
+      "text": "de",
+      "start": 9.173,
+      "end": 9.333,
+      "db": -2.4
+    },
+    {
+      "text": "pesadez,",
+      "start": 9.333,
+      "end": 10.093,
+      "db": 1.0
+    },
+    {
+      "text": "la",
+      "start": 10.313,
+      "end": 10.393,
+      "db": 1.3
+    },
+    {
+      "text": "suavidad",
+      "start": 10.393,
+      "end": 10.973,
+      "db": -0.1
+    },
+    {
+      "text": "de",
+      "start": 10.973,
+      "end": 11.153,
+      "db": -13.0
+    },
+    {
+      "text": "la",
+      "start": 11.153,
+      "end": 11.273,
+      "db": -8.1
+    },
+    {
+      "text": "piel",
+      "start": 11.273,
+      "end": 11.633,
+      "db": -0.4
+    },
+    {
+      "text": "o",
+      "start": 11.633,
+      "end": 11.947,
+      "db": 3.7
+    },
+    {
+      "text": "cómo",
+      "start": 11.947,
+      "end": 12.227,
+      "db": 4.0
+    },
+    {
+      "text": "sigues",
+      "start": 12.227,
+      "end": 12.607,
+      "db": -1.0
+    },
+    {
+      "text": "percibiendo",
+      "start": 12.607,
+      "end": 13.107,
+      "db": -1.6
+    },
+    {
+      "text": "la",
+      "start": 13.107,
+      "end": 13.247,
+      "db": -1.6
+    },
+    {
+      "text": "inflamación",
+      "start": 13.247,
+      "end": 13.707,
+      "db": -4.0
+    },
+    {
+      "text": "en",
+      "start": 13.707,
+      "end": 13.887,
+      "db": -9.2
+    },
+    {
+      "text": "tu",
+      "start": 13.887,
+      "end": 14.027,
+      "db": -8.1
+    },
+    {
+      "text": "cuerpo.",
+      "start": 14.027,
+      "end": 14.3,
+      "db": -9.7
+    },
+    {
+      "text": "vas",
+      "start": 14.3,
+      "end": 14.447,
+      "db": 3.8
+    },
+    {
+      "text": "a",
+      "start": 14.447,
+      "end": 14.547,
+      "db": 4.4
+    },
+    {
+      "text": "tomarte",
+      "start": 14.547,
+      "end": 14.887,
+      "db": 4.8
+    },
+    {
+      "text": "las",
+      "start": 14.887,
+      "end": 15.087,
+      "db": 5.3
+    },
+    {
+      "text": "mismas",
+      "start": 15.087,
+      "end": 15.527,
+      "db": 2.0
+    },
+    {
+      "text": "fotografías",
+      "start": 15.527,
+      "end": 16.167,
+      "db": -0.1
+    },
+    {
+      "text": "que",
+      "start": 16.167,
+      "end": 16.327,
+      "db": -9.6
+    },
+    {
+      "text": "el",
+      "start": 16.327,
+      "end": 16.407,
+      "db": -2.4
+    },
+    {
+      "text": "día",
+      "start": 16.407,
+      "end": 16.547,
+      "db": 3.9
+    },
+    {
+      "text": "número",
+      "start": 16.547,
+      "end": 16.847,
+      "db": -3.1
+    },
+    {
+      "text": "uno",
+      "start": 16.847,
+      "end": 17.207,
+      "db": 3.1
+    },
+    {
+      "text": "de",
+      "start": 17.207,
+      "end": 17.507,
+      "db": 1.2
+    },
+    {
+      "text": "frente,",
+      "start": 17.507,
+      "end": 18.007,
+      "db": 8.3
+    },
+    {
+      "text": "de",
+      "start": 18.327,
+      "end": 18.667,
+      "db": 5.1
+    },
+    {
+      "text": "costado,",
+      "start": 18.667,
+      "end": 19.387,
+      "db": 7.1
+    },
+    {
+      "text": "de",
+      "start": 19.547,
+      "end": 19.667,
+      "db": -0.2
+    },
+    {
+      "text": "espalda",
+      "start": 19.667,
+      "end": 20.147,
+      "db": 3.7
+    },
+    {
+      "text": "y",
+      "start": 20.147,
+      "end": 20.467,
+      "db": 3.0
+    },
+    {
+      "text": "luego",
+      "start": 20.467,
+      "end": 20.807,
+      "db": 11.1
+    },
+    {
+      "text": "del",
+      "start": 20.807,
+      "end": 20.987,
+      "db": 1.9
+    },
+    {
+      "text": "otro",
+      "start": 20.987,
+      "end": 21.167,
+      "db": -1.0
+    },
+    {
+      "text": "costado",
+      "start": 21.167,
+      "end": 21.733,
+      "db": -5.2
+    },
+    {
+      "text": "revisa",
+      "start": 21.733,
+      "end": 22.347,
+      "db": 6.2
+    },
+    {
+      "text": "si",
+      "start": 22.347,
+      "end": 22.467,
+      "db": 0.7
+    },
+    {
+      "text": "aparecieron",
+      "start": 22.467,
+      "end": 22.947,
+      "db": 3.3
+    },
+    {
+      "text": "moretones,",
+      "start": 22.947,
+      "end": 23.567,
+      "db": 0.6
+    },
+    {
+      "text": "irritación",
+      "start": 23.607,
+      "end": 24.227,
+      "db": -1.8
+    },
+    {
+      "text": "y",
+      "start": 24.227,
+      "end": 24.447,
+      "db": -7.9
+    },
+    {
+      "text": "determina",
+      "start": 24.447,
+      "end": 24.967,
+      "db": 8.8
+    },
+    {
+      "text": "si",
+      "start": 24.967,
+      "end": 25.247,
+      "db": -2.0
+    },
+    {
+      "text": "es",
+      "start": 25.247,
+      "end": 25.407,
+      "db": 4.2
+    },
+    {
+      "text": "necesario",
+      "start": 25.407,
+      "end": 25.827,
+      "db": 0.6
+    },
+    {
+      "text": "suspender",
+      "start": 25.827,
+      "end": 26.387,
+      "db": 2.3
+    },
+    {
+      "text": "el",
+      "start": 26.387,
+      "end": 26.687,
+      "db": 0.4
+    },
+    {
+      "text": "uso",
+      "start": 26.687,
+      "end": 26.947,
+      "db": 2.2
+    },
+    {
+      "text": "del",
+      "start": 26.947,
+      "end": 27.107,
+      "db": -4.2
+    },
+    {
+      "text": "aceite",
+      "start": 27.107,
+      "end": 27.447,
+      "db": -1.4
+    },
+    {
+      "text": "y",
+      "start": 27.447,
+      "end": 27.607,
+      "db": -0.9
+    },
+    {
+      "text": "cambiarlo",
+      "start": 27.607,
+      "end": 28.207,
+      "db": -0.7
+    },
+    {
+      "text": "por",
+      "start": 28.207,
+      "end": 28.427,
+      "db": -4.7
+    },
+    {
+      "text": "otro",
+      "start": 28.427,
+      "end": 28.667,
+      "db": -0.3
+    },
+    {
+      "text": "o",
+      "start": 28.667,
+      "end": 28.827,
+      "db": -4.5
+    },
+    {
+      "text": "por",
+      "start": 28.827,
+      "end": 29.007,
+      "db": -4.1
+    },
+    {
+      "text": "una",
+      "start": 29.007,
+      "end": 29.207,
+      "db": -6.9
+    },
+    {
+      "text": "crema",
+      "start": 29.207,
+      "end": 29.527,
+      "db": -8.0
+    },
+    {
+      "text": "más",
+      "start": 29.527,
+      "end": 29.587,
+      "db": -9.3
+    },
+    {
+      "text": "suave.",
+      "start": 29.587,
+      "end": 29.867,
+      "db": 1.9
+    },
+    {
+      "text": "de",
+      "start": 29.967,
+      "end": 30.047,
+      "db": 2.7
+    },
+    {
+      "text": "lo",
+      "start": 30.047,
+      "end": 30.167,
+      "db": 3.0
+    },
+    {
+      "text": "contrario",
+      "start": 30.167,
+      "end": 30.567,
+      "db": 4.4
+    },
+    {
+      "text": "puedes",
+      "start": 30.567,
+      "end": 30.987,
+      "db": 3.2
+    },
+    {
+      "text": "seguir",
+      "start": 30.987,
+      "end": 31.267,
+      "db": 2.7
+    },
+    {
+      "text": "con",
+      "start": 31.267,
+      "end": 31.447,
+      "db": -4.9
+    },
+    {
+      "text": "la",
+      "start": 31.447,
+      "end": 31.567,
+      "db": -3.5
+    },
+    {
+      "text": "rutina",
+      "start": 31.567,
+      "end": 31.967,
+      "db": 0.3
+    },
+    {
+      "text": "el",
+      "start": 31.967,
+      "end": 32.247,
+      "db": -2.3
+    },
+    {
+      "text": "resto",
+      "start": 32.247,
+      "end": 32.607,
+      "db": -5.1
+    },
+    {
+      "text": "de",
+      "start": 32.607,
+      "end": 32.787,
+      "db": -0.7
+    },
+    {
+      "text": "estos",
+      "start": 32.787,
+      "end": 33.067,
+      "db": -4.2
+    },
+    {
+      "text": "10",
+      "start": 33.067,
+      "end": 33.347,
+      "db": -5.2
+    },
+    {
+      "text": "días.",
+      "start": 33.347,
+      "end": 33.733,
+      "db": -6.1
+    },
+    {
+      "text": "Además",
+      "start": 33.733,
+      "end": 34.06,
+      "db": 10.7
+    },
+    {
+      "text": "recuerda",
+      "start": 34.06,
+      "end": 34.58,
+      "db": 5.9
+    },
+    {
+      "text": "no",
+      "start": 34.58,
+      "end": 34.72,
+      "db": -0.4
+    },
+    {
+      "text": "estamos",
+      "start": 34.72,
+      "end": 35.0,
+      "db": 3.2
+    },
+    {
+      "text": "buscando",
+      "start": 35.0,
+      "end": 35.52,
+      "db": 0.1
+    },
+    {
+      "text": "perfección",
+      "start": 35.52,
+      "end": 36.18,
+      "db": -2.0
+    },
+    {
+      "text": "ni",
+      "start": 36.18,
+      "end": 36.7,
+      "db": 9.2
+    },
+    {
+      "text": "los",
+      "start": 36.7,
+      "end": 37.02,
+      "db": 6.4
+    },
+    {
+      "text": "cambios",
+      "start": 37.02,
+      "end": 37.56,
+      "db": 3.2
+    },
+    {
+      "text": "en",
+      "start": 37.56,
+      "end": 37.72,
+      "db": 0.2
+    },
+    {
+      "text": "el",
+      "start": 37.72,
+      "end": 37.84,
+      "db": -2.8
+    },
+    {
+      "text": "menor",
+      "start": 37.84,
+      "end": 38.08,
+      "db": -3.4
+    },
+    {
+      "text": "tiempo",
+      "start": 38.08,
+      "end": 38.36,
+      "db": -5.9
+    },
+    {
+      "text": "posible,",
+      "start": 38.36,
+      "end": 38.833,
+      "db": -5.3
+    },
+    {
+      "text": "estamos",
+      "start": 39.0,
+      "end": 39.14,
+      "db": -1.0
+    },
+    {
+      "text": "buscando",
+      "start": 39.14,
+      "end": 39.64,
+      "db": 0.8
+    },
+    {
+      "text": "que",
+      "start": 39.64,
+      "end": 39.86,
+      "db": -0.7
+    },
+    {
+      "text": "tú",
+      "start": 39.86,
+      "end": 39.933,
+      "db": -16.0
+    },
+    {
+      "text": "puedas",
+      "start": 39.933,
+      "end": 40.327,
+      "db": 0.7
+    },
+    {
+      "text": "adaptarte",
+      "start": 40.327,
+      "end": 40.887,
+      "db": 7.1
+    },
+    {
+      "text": "a",
+      "start": 40.887,
+      "end": 41.247,
+      "db": 5.5
+    },
+    {
+      "text": "una",
+      "start": 41.247,
+      "end": 41.507,
+      "db": 4.5
+    },
+    {
+      "text": "rutina.",
+      "start": 41.507,
+      "end": 41.767,
+      "db": -0.9
+    },
+    {
+      "text": "Y",
+      "start": 41.767,
+      "end": 41.88,
+      "db": -0.1
+    },
+    {
+      "text": "recuerda",
+      "start": 41.88,
+      "end": 42.32,
+      "db": 7.1
+    },
+    {
+      "text": "calificar",
+      "start": 42.32,
+      "end": 42.8,
+      "db": 0.8
+    },
+    {
+      "text": "tus",
+      "start": 42.8,
+      "end": 43.06,
+      "db": 0.6
+    },
+    {
+      "text": "objetivos",
+      "start": 43.06,
+      "end": 43.7,
+      "db": 6.2
+    },
+    {
+      "text": "según",
+      "start": 43.7,
+      "end": 43.98,
+      "db": 1.9
+    },
+    {
+      "text": "la",
+      "start": 43.98,
+      "end": 44.38,
+      "db": 0.0
+    },
+    {
+      "text": "constancia",
+      "start": 44.38,
+      "end": 45.18,
+      "db": -0.6
+    },
+    {
+      "text": "y",
+      "start": 45.18,
+      "end": 45.453,
+      "db": 1.9
+    },
+    {
+      "text": "un",
+      "start": 45.453,
+      "end": 45.573,
+      "db": 9.8
+    },
+    {
+      "text": "mejor",
+      "start": 45.573,
+      "end": 45.813,
+      "db": 3.8
+    },
+    {
+      "text": "manejo",
+      "start": 45.813,
+      "end": 46.253,
+      "db": 0.0
+    },
+    {
+      "text": "del",
+      "start": 46.253,
+      "end": 46.453,
+      "db": -3.1
+    },
+    {
+      "text": "producto,",
+      "start": 46.453,
+      "end": 46.973,
+      "db": -0.3
+    },
+    {
+      "text": "además",
+      "start": 47.113,
+      "end": 47.373,
+      "db": 4.0
+    },
+    {
+      "text": "de",
+      "start": 47.373,
+      "end": 47.813,
+      "db": 4.5
+    },
+    {
+      "text": "las",
+      "start": 47.813,
+      "end": 48.013,
+      "db": 2.5
+    },
+    {
+      "text": "mejores",
+      "start": 48.013,
+      "end": 48.353,
+      "db": -4.0
+    },
+    {
+      "text": "sensaciones",
+      "start": 48.353,
+      "end": 48.913,
+      "db": -4.3
+    },
+    {
+      "text": "que",
+      "start": 48.913,
+      "end": 49.213,
+      "db": -10.4
+    },
+    {
+      "text": "vas",
+      "start": 49.213,
+      "end": 49.373,
+      "db": -1.0
+    },
+    {
+      "text": "teniendo",
+      "start": 49.373,
+      "end": 49.713,
+      "db": -5.5
+    },
+    {
+      "text": "en",
+      "start": 49.713,
+      "end": 49.833,
+      "db": -9.0
+    },
+    {
+      "text": "tu",
+      "start": 49.833,
+      "end": 49.933,
+      "db": -16.0
+    },
+    {
+      "text": "cuerpo.",
+      "start": 49.933,
+      "end": 50.2,
+      "db": -12.0
+    }
+  ]
+}
