@@ -583,6 +583,11 @@ const EFECTOS: Efecto[] = [
   },
 ];
 
+// La voz en off del día 6 está grabada más baja (−25,2 LUFS frente a ≈ −16 de los otros días) y no se normaliza
+// (estilo.md §10.5): música y efectos bajan lo mismo (≈ −9 dB) para mantener la mezcla de marca
+// (música ≈ 16 dB bajo la voz, ningún efecto por encima de ella).
+const NIVEL = 0.35;
+
 export const Dia6Video: React.FC = () => (
   <Rutina
     dia="dia6"
@@ -590,7 +595,9 @@ export const Dia6Video: React.FC = () => (
     transiciones={Object.values(ZONAS).slice(1)}
     finVoz={WORDS[WORDS.length - 1].end}
     duracion={DURATION}
-    efectos={EFECTOS}
+    efectos={EFECTOS.map((e) => ({ ...e, vol: e.vol * NIVEL }))}
+    musica={0.1 * NIVEL}
+    musicaCierre={0.2 * NIVEL}
   >
     <Beats />
     <Muneco />

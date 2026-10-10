@@ -87,7 +87,13 @@
     "frase": "para finalizar",
     "outStart": 61.166666666666664,
     "src": 415.5,
-    "frames": 153
+    "frames": 62
+  },
+  {
+    "frase": "con dos minutos",
+    "outStart": 63.233333333333334,
+    "src": 432.0,
+    "frames": 91
   },
   {
     "frase": "el masaje",
@@ -110,7 +116,7 @@
   {
     "frase": "terminamos",
     "outStart": 80.26666666666667,
-    "src": 468.0,
+    "src": 465.0,
     "frames": 91
   },
   {

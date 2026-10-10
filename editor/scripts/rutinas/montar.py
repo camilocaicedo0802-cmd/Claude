@@ -69,7 +69,7 @@ PLAN = {
         ("retira el exceso", 1177.0),  # toalla
     ],
     # Día 6 (crudo propio de 9 min): fuera los momentos en que mira a cámara o habla con quien graba
-    # (195, 246–249, 267, 321, 345, 411 s) y el cambio de banco (366–369 s).
+    # (195, 246–249, 267, 321, 345, 411, 414, 420, 469–472 s) y el cambio de banco (366–369 s).
     "dia6": [
         ("prepara la piel", 6.0),  # se frota el aceite en las manos
         ("aplica aceite", 15.0),  # lo extiende por los muslos
@@ -85,11 +85,12 @@ PLAN = {
         ("deslizas", 282.0),
         ("y por otros", 324.0),  # pierna sobre el banco: círculos
         ("movimientos amplios", 348.0),
-        ("para finalizar", 415.5),  # glúteo derecho (antes mira a cámara)
+        ("para finalizar", 415.5),  # glúteo derecho (antes y después mira a cámara)
+        ("con dos minutos", 432.0),
         ("el masaje", 423.0),
         ("trabaja dos minutos", 444.0),  # glúteo izquierdo
         ("barridos de abajo", 453.0),
-        ("terminamos", 468.0),  # enseña el equipo a cámara
+        ("terminamos", 465.0),  # de espaldas y se gira (después habla a cámara)
         ("una mayor", 520.0),  # masaje con las manos
         ("así que prioriza", 527.5),
         ("la constancia", 539.8),

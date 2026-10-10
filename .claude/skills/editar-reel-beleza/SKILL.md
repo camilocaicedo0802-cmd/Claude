@@ -61,7 +61,9 @@ Cada "beat" nace de una frase concreta, anclada con `at("frase")`. El anclaje ac
 - `scripts/rutinas/preparar_voz.py <diaN> <voz.m4a>` (añade sus `TOMAS`), `scripts/rutinas/montar.py <diaN> <crudo30.mp4> <yunet.onnx>` (añade su `PLAN`: frase → segundo del crudo; evita los momentos en que mira a cámara) y `scripts/rutinas/audio.py <diaN>`.
 - Si el crudo no tiene un plano con el fondo vacío, no lo añadas a `FONDO`: la silueta sale por color. Revisa las cajas de la cabeza dibujándolas sobre `apoyo.mp4`.
 - Si la cabeza se mueve mucho dentro de cada toma (ella en el centro, plano general), usa la maqueta de columnas del día 6 (`src/dia6/Maqueta.tsx`) en vez de `Laterales`.
-- Render con 3D: `scripts/render_trozos.sh <Composición> out/<salida>.mp4 450 16`.
+- Render con 3D: `scripts/render_trozos.sh <Composición> out/<salida>.mp4 450 16` (reanudable: si cambias solo un tramo, borra ese `out/trozos_<Composición>/pNNN.mp4` y vuelve a lanzarlo).
+- Mide la voz en off (`ffmpeg -af ebur128`): si no ronda −16 LUFS, ajusta `musica`/`musicaCierre` y el volumen de los efectos de `Rutina` en la misma proporción (nunca normalices la voz).
+- Si el render a CRF 16 pasa de 100 MB, recodifica a 2 pasadas (≈ 7,5 Mbps de vídeo + copia del audio) para el repositorio.
 
 ## 7. Revisar y entregar
 - `cd editor && npm run lint`.

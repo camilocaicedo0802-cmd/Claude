@@ -17,7 +17,7 @@ i=0; : > "$dir/lista.txt"
 for ((a=0; a<total; a+=tramo)); do
   b=$((a+tramo-1)); [ $b -ge $total ] && b=$((total-1))
   parte=$(printf "%s/p%03d.mp4" "$dir" $i)
-  if [ -f "$parte" ] && [ "$(ffprobe -v error -count_frames -select_streams v:0 -show_entries stream=nb_read_frames -of csv=p=0 "$parte" 2>/dev/null)" = "$((b-a+1))" ]; then
+  if [ -f "$parte" ] && [ "$(ffprobe -v error -count_frames -select_streams v:0 -show_entries stream=nb_read_frames -of default=nw=1:nk=1 "$parte" 2>/dev/null)" = "$((b-a+1))" ]; then
     echo "tramo $a-$b ya estaba"
   else
     for intento in 1 2 3; do

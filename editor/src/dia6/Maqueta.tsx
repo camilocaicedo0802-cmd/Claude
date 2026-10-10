@@ -65,7 +65,9 @@ export const Columnas: React.FC<{
       {elementos.map((e, i) => {
         const a = ahora[i];
         if (!a || !dibujar(i)) return null;
-        const b = antes[i] ?? a;
+        // Si cambia de lado, salta en el corte: deslizarse de una columna a otra cruzaría por delante de la cara
+        const previo = antes[i];
+        const b = previo && previo.left < 540 === a.left < 540 ? previo : a;
         const s = b.s + (a.s - b.s) * k;
         return (
           <React.Fragment key={i}>

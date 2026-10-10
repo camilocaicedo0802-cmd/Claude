@@ -30,8 +30,21 @@ export const Rutina: React.FC<{
   finVoz: number;
   duracion: number;
   efectos: Efecto[];
+  /** Volumen de la música (por defecto 0,1 ≈ 16 dB bajo una voz de ≈ −16 LUFS) y al acabar de hablar. */
+  musica?: number;
+  musicaCierre?: number;
   children: React.ReactNode;
-}> = ({ dia, caras, transiciones, finVoz, duracion, efectos, children }) => {
+}> = ({
+  dia,
+  caras,
+  transiciones,
+  finVoz,
+  duracion,
+  efectos,
+  musica = MUSICA,
+  musicaCierre = MUSICA_CIERRE,
+  children,
+}) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   // Cambios de zona del cuerpo → destello Durazno + desenfoque breve (estilo.md §10.12)
@@ -77,7 +90,7 @@ export const Rutina: React.FC<{
           interpolate(
             f / fps,
             [finVoz, Math.min(duracion, finVoz + 0.4)],
-            [MUSICA, MUSICA_CIERRE],
+            [musica, musicaCierre],
             CLAMP,
           )
         }
