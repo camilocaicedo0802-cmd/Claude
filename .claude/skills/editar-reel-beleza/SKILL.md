@@ -56,6 +56,13 @@ Cada "beat" nace de una frase concreta, anclada con `at("frase")`. El anclaje ac
 - **Toma de apoyo:** solo fragmentos cortos (≈1 s cada uno) que entran en la palabra que los nombra, con flash blanco y sonido de obturador; nada de títulos arriba durante el apoyo (la cabeza de la otra persona está allí), solo la etiqueta abajo.
 - **Objetos 3D:** se modelan con three.js en `Objetos3D.tsx` (`@remotion/three`, acabado clay mate con la paleta de marca) y se animan según la frase (el pin cae y se clava, la cinta se desenrolla, el lápiz escribe, el candado se cierra). Van a los lados de la cabeza (x < 360 o x > 740). Canva genera buenas referencias, pero desde aquí solo deja descargar miniaturas de 200 px. Para renderizar WebGL en este entorno: `--gl=swangle --concurrency=2` (con 4 pestañas WebGL el render se queda colgado sin error; vigila que el contador de fotogramas avance).
 
+## 6c. Rutinas con voz en off (días 4, 5 y 6)
+- La voz en off llega en un audio aparte; el audio del crudo suele ser charla de detrás de cámaras. Si no llega, pídela.
+- `scripts/rutinas/preparar_voz.py <diaN> <voz.m4a>` (añade sus `TOMAS`), `scripts/rutinas/montar.py <diaN> <crudo30.mp4> <yunet.onnx>` (añade su `PLAN`: frase → segundo del crudo; evita los momentos en que mira a cámara) y `scripts/rutinas/audio.py <diaN>`.
+- Si el crudo no tiene un plano con el fondo vacío, no lo añadas a `FONDO`: la silueta sale por color. Revisa las cajas de la cabeza dibujándolas sobre `apoyo.mp4`.
+- Si la cabeza se mueve mucho dentro de cada toma (ella en el centro, plano general), usa la maqueta de columnas del día 6 (`src/dia6/Maqueta.tsx`) en vez de `Laterales`.
+- Render con 3D: `scripts/render_trozos.sh <Composición> out/<salida>.mp4 450 16`.
+
 ## 7. Revisar y entregar
 - `cd editor && npm run lint`.
 - Para revisar: `npx remotion render <Composición> out/borrador.mp4 --concurrency=4` (añade `--gl=swangle` si hay objetos 3D). Saca fotogramas en cada beat (hojas de contacto con ffmpeg) y comprueba que nada tapa la cara, que los textos no se cortan y que el gráfico aparece en su palabra.

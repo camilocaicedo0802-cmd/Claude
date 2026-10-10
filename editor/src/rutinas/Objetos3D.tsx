@@ -13,7 +13,7 @@ import { pop } from "./util";
 // Objetos 3D de marca modelados con three.js (acabado "clay" mate, paleta de Beleza).
 // Todo se anima con useCurrentFrame (nunca useFrame) para que el render sea determinista.
 
-const C = {
+export const C = {
   durazno: "#F3CFA0", // durazno más saturado: con la luz de estudio el #FAEDCD se ve blanco
   marfil: COLORS.marfil,
   salvia: COLORS.salvia,
@@ -22,7 +22,7 @@ const C = {
   cristal: "#1E2A2B",
 };
 
-const Clay: React.FC<{
+export const Clay: React.FC<{
   color: string;
   rough?: number;
   side?: THREE.Side;
@@ -38,7 +38,7 @@ const Clay: React.FC<{
 );
 
 /** Disco de bordes redondeados (torno): radio r, alto h, radio del canto rr. Eje Y. */
-const discoRedondeado = (r: number, h: number, rr: number) => {
+export const discoRedondeado = (r: number, h: number, rr: number) => {
   const pts: THREE.Vector2[] = [new THREE.Vector2(0, -h / 2)];
   const esquina = (cx: number, cy: number, a0: number, a1: number) => {
     for (let i = 0; i <= 8; i++) {
@@ -52,7 +52,7 @@ const discoRedondeado = (r: number, h: number, rr: number) => {
   return new THREE.LatheGeometry(pts, 64);
 };
 
-const textura = (
+export const textura = (
   w: number,
   h: number,
   dibujar: (ctx: CanvasRenderingContext2D) => void,
@@ -68,14 +68,14 @@ const textura = (
 };
 
 // ---------- Escena común: luz de estudio suave y entrada con muelle ----------
-type Props = {
+export type Props = {
   desde: number;
   ancho: number;
   alto: number;
   style?: React.CSSProperties;
 };
 
-const Escena: React.FC<
+export const Escena: React.FC<
   Props & { children: (p: number, t: number) => React.ReactNode; z?: number }
 > = ({ desde, ancho, alto, style, children, z = 8 }) => {
   const frame = useCurrentFrame();
@@ -112,14 +112,14 @@ const Escena: React.FC<
     </div>
   );
 };
-const CLAMP = (x: number) => Math.min(1, Math.max(0, x));
-const suave = (x: number) => {
+export const CLAMP = (x: number) => Math.min(1, Math.max(0, x));
+export const suave = (x: number) => {
   const c = CLAMP(x);
   return c * c * (3 - 2 * c);
 };
 
 /** Carga una fuente antes de dibujar texto en una textura 3D (si no, saldría con la fuente por defecto). */
-const useFuente = (css: string) => {
+export const useFuente = (css: string) => {
   const [handle] = useState(() => delayRender(`Fuente 3D ${css}`));
   const [lista, setLista] = useState(false);
   useEffect(() => {
@@ -495,7 +495,10 @@ export const FlechaCirculo3D: React.FC<Props> = (props) => (
     {(p, t) => {
       const arco = Math.PI * 1.55;
       return (
-        <group scale={1.2 * (0.55 + 0.45 * p)} rotation={[0.45, -0.3, -t * 2.4]}>
+        <group
+          scale={1.2 * (0.55 + 0.45 * p)}
+          rotation={[0.45, -0.3, -t * 2.4]}
+        >
           <mesh>
             <torusGeometry args={[1.0, 0.2, 24, 72, arco]} />
             <Clay color={C.salvia} />

@@ -1,0 +1,134 @@
+[
+  {
+    "frase": "prepara la piel",
+    "outStart": 0.0,
+    "src": 6.0,
+    "frames": 70
+  },
+  {
+    "frase": "aplica aceite",
+    "outStart": 2.3333333333333335,
+    "src": 15.0,
+    "frames": 100
+  },
+  {
+    "frase": "hoy nos",
+    "outStart": 5.666666666666667,
+    "src": 27.0,
+    "frames": 143
+  },
+  {
+    "frase": "comenzamos",
+    "outStart": 10.433333333333334,
+    "src": 88.5,
+    "frames": 134
+  },
+  {
+    "frase": "desliza desde",
+    "outStart": 14.9,
+    "src": 99.0,
+    "frames": 137
+  },
+  {
+    "frase": "trabaja por líneas",
+    "outStart": 19.466666666666665,
+    "src": 126.0,
+    "frames": 149
+  },
+  {
+    "frase": "continúa durante",
+    "outStart": 24.433333333333334,
+    "src": 219.0,
+    "frames": 184
+  },
+  {
+    "frase": "sin detener",
+    "outStart": 30.566666666666666,
+    "src": 252.0,
+    "frames": 99
+  },
+  {
+    "frase": "haz círculos",
+    "outStart": 33.86666666666667,
+    "src": 230.0,
+    "frames": 107
+  },
+  {
+    "frase": "recuerda verificar",
+    "outStart": 37.43333333333333,
+    "src": 205.5,
+    "frames": 248
+  },
+  {
+    "frase": "ahora vamos a repetir",
+    "outStart": 45.7,
+    "src": 270.0,
+    "frames": 146
+  },
+  {
+    "frase": "deslizas",
+    "outStart": 50.56666666666667,
+    "src": 282.0,
+    "frames": 142
+  },
+  {
+    "frase": "y por otros",
+    "outStart": 55.3,
+    "src": 324.0,
+    "frames": 90
+  },
+  {
+    "frase": "movimientos amplios",
+    "outStart": 58.3,
+    "src": 348.0,
+    "frames": 86
+  },
+  {
+    "frase": "para finalizar",
+    "outStart": 61.166666666666664,
+    "src": 415.5,
+    "frames": 153
+  },
+  {
+    "frase": "el masaje",
+    "outStart": 66.26666666666667,
+    "src": 423.0,
+    "frames": 139
+  },
+  {
+    "frase": "trabaja dos minutos",
+    "outStart": 70.9,
+    "src": 444.0,
+    "frames": 140
+  },
+  {
+    "frase": "barridos de abajo",
+    "outStart": 75.56666666666666,
+    "src": 453.0,
+    "frames": 141
+  },
+  {
+    "frase": "terminamos",
+    "outStart": 80.26666666666667,
+    "src": 468.0,
+    "frames": 91
+  },
+  {
+    "frase": "una mayor",
+    "outStart": 83.3,
+    "src": 520.0,
+    "frames": 116
+  },
+  {
+    "frase": "así que prioriza",
+    "outStart": 87.16666666666667,
+    "src": 527.5,
+    "frames": 91
+  },
+  {
+    "frase": "la constancia",
+    "outStart": 90.2,
+    "src": 539.8,
+    "frames": 61
+  }
+]

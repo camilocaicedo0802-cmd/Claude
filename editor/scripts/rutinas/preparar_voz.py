@@ -1,6 +1,6 @@
-"""Días 4 y 5 (rutinas con voz en off): limpia la voz en off y genera su línea de tiempo.
+"""Días 4, 5 y 6 (rutinas con voz en off): limpia la voz en off y genera su línea de tiempo.
 
-Uso: python3 scripts/rutinas/preparar_voz.py <dia4|dia5> <voz.m4a>
+Uso: python3 scripts/rutinas/preparar_voz.py <dia4|dia5|dia6> <voz.m4a>
 Salidas: public/<dia>/voz.wav (voz ORIGINAL sin normalizar, solo cortada) y src/<dia>/data/edit.json (palabras en
 la línea de tiempo editada, con su volumen relativo "db").
 
@@ -27,6 +27,9 @@ TOMAS = {
     # Fuera: "Ahora vamos otros tres minutos hacia el lateral izquierdo. Vas a repetir." (69,6–76,9 s, repetida) y el
     # bloque 110,2–134,7 s que repite el cierre con un error ("para realizar").
     "dia5": [(0.85, 69.60), (76.90, 110.20), (134.70, 148.90)],
+    # Fuera: el primer "Ahora vamos a repetir la misma secuencia en el muslo izquierdo. Tres minutos de barridos y
+    # tres." (57,3–67,2 s), que se corta a mitad y se repite completo enseguida.
+    "dia6": [(1.50, 56.30), (69.30, 125.20)],
 }
 
 

@@ -1,6 +1,6 @@
-"""Días 4 y 5: monta la toma de apoyo siguiendo la voz en off y detecta la cara en cada fotograma.
+"""Días 4, 5 y 6: monta la toma de apoyo siguiendo la voz en off y detecta la cara en cada fotograma.
 
-Uso: python -I scripts/rutinas/montar.py <dia4|dia5> <crudo30.mp4> [modelo_yunet.onnx]
+Uso: python -I scripts/rutinas/montar.py <dia4|dia5|dia6> <crudo30.mp4> [modelo_yunet.onnx]
      (crudo30.mp4 = el crudo de 20 min pasado a 30 fps CFR, sin audio)
 
 PLAN: cada entrada es (frase de la voz en off, segundo del crudo). El fragmento empieza cuando se dice la frase y dura
@@ -68,6 +68,40 @@ PLAN = {
         ("apaga el equipo", 1166.0),
         ("retira el exceso", 1177.0),  # toalla
     ],
+    # Día 6 (crudo propio de 9 min): fuera los momentos en que mira a cámara o habla con quien graba
+    # (195, 246–249, 267, 321, 345, 411 s) y el cambio de banco (366–369 s).
+    "dia6": [
+        ("prepara la piel", 6.0),  # se frota el aceite en las manos
+        ("aplica aceite", 15.0),  # lo extiende por los muslos
+        ("hoy nos", 27.0),
+        ("comenzamos", 88.5),  # coge el equipo
+        ("desliza desde", 99.0),  # muslo derecho: desde encima de la rodilla hacia arriba
+        ("trabaja por líneas", 126.0),
+        ("continúa durante", 219.0),  # círculos amplios en el muslo derecho
+        ("sin detener", 252.0),
+        ("haz círculos", 230.0),
+        ("recuerda verificar", 205.5),  # mira el equipo y baja la intensidad
+        ("ahora vamos a repetir", 270.0),  # muslo izquierdo: barridos
+        ("deslizas", 282.0),
+        ("y por otros", 324.0),  # pierna sobre el banco: círculos
+        ("movimientos amplios", 348.0),
+        ("para finalizar", 415.5),  # glúteo derecho (antes mira a cámara)
+        ("el masaje", 423.0),
+        ("trabaja dos minutos", 444.0),  # glúteo izquierdo
+        ("barridos de abajo", 453.0),
+        ("terminamos", 468.0),  # enseña el equipo a cámara
+        ("una mayor", 520.0),  # masaje con las manos
+        ("así que prioriza", 527.5),
+        ("la constancia", 539.8),
+    ],
+}
+
+
+# Segundos del crudo con el fondo vacío (sale de cuadro), para localizar la silueta cuando la cara no se ve.
+# El crudo del día 6 no tiene plano vacío: allí la silueta se saca por color.
+FONDO = {
+    "dia4": (842.0, 842.5, 843.0, 843.5, 844.0, 844.5),
+    "dia5": (842.0, 842.5, 843.0, 843.5, 844.0, 844.5),
 }
 
 
@@ -119,25 +153,32 @@ def main() -> None:
 
     # Cabeza fotograma a fotograma (cada 3), para que ningún gráfico la toque:
     #  1) YuNet cuando la cara se ve (de frente);
-    #  2) si no (de perfil, agachada): la cámara está fija, así que se compara con el fondo vacío (crudo 842–844,5 s,
-    #     cuando sale de cuadro) y la parte más alta de la silueta es la cabeza.
+    #  2) si no (de perfil, agachada): la cámara está fija, así que se compara con el fondo vacío (FONDO) o, si no lo
+    #     hay, con el color de la cortina; la parte más alta de la silueta es la cabeza.
     if len(sys.argv) > 3:
         import cv2
         import numpy as np
         det = cv2.FaceDetectorYN.create(sys.argv[3], "", (540, 960), 0.55)
-        fondo_cap = cv2.VideoCapture(crudo)
-        placas = []
-        for seg in (842.0, 842.5, 843.0, 843.5, 844.0, 844.5):
-            fondo_cap.set(cv2.CAP_PROP_POS_MSEC, seg * 1000)
-            ok, fr = fondo_cap.read()
-            if ok:
-                placas.append(cv2.GaussianBlur(cv2.resize(fr, (270, 480)), (5, 5), 0).astype(np.int16))
-        fondo = np.median(np.stack(placas), axis=0).astype(np.int16)
+        fondo = None
+        if dia in FONDO:
+            fondo_cap = cv2.VideoCapture(crudo)
+            placas = []
+            for seg in FONDO[dia]:
+                fondo_cap.set(cv2.CAP_PROP_POS_MSEC, seg * 1000)
+                ok, fr = fondo_cap.read()
+                if ok:
+                    placas.append(cv2.GaussianBlur(cv2.resize(fr, (270, 480)), (5, 5), 0).astype(np.int16))
+            fondo = np.median(np.stack(placas), axis=0).astype(np.int16)
         k = np.ones((5, 5), np.uint8)
 
         def silueta(fr):
-            peq = cv2.GaussianBlur(cv2.resize(fr, (270, 480)), (5, 5), 0).astype(np.int16)
-            m = (np.abs(peq - fondo).max(axis=2) > 28).astype(np.uint8)
+            peq = cv2.GaussianBlur(cv2.resize(fr, (270, 480)), (5, 5), 0)
+            if fondo is not None:
+                m = (np.abs(peq.astype(np.int16) - fondo).max(axis=2) > 28).astype(np.uint8)
+            else:
+                # Sin plano vacío (día 6): la cortina es clara y poco saturada; piel y pelo no
+                hsv = cv2.cvtColor(peq, cv2.COLOR_BGR2HSV)
+                m = ((hsv[..., 1] > 70) | (hsv[..., 2] < 110)).astype(np.uint8)
             m = cv2.morphologyEx(cv2.morphologyEx(m, cv2.MORPH_OPEN, k), cv2.MORPH_CLOSE, k)
             n, lab, st, _ = cv2.connectedComponentsWithStats(m, 8)
             if n < 2:
@@ -146,7 +187,9 @@ def main() -> None:
             if st[i, cv2.CC_STAT_AREA] < 1500:
                 return None
             top = st[i, cv2.CC_STAT_TOP]
-            banda = lab[top:top + 55] == i  # ~220 px en 1080×1920: la cabeza
+            # ~220 px en 1080×1920: la cabeza. Sin plano vacío (día 6) basta ~120 px: con 220 entran hombros y brazos
+            # cuando se agacha, y la caja sale el doble de ancha.
+            banda = lab[top:top + (55 if fondo is not None else 30)] == i
             xs = np.nonzero(banda.any(axis=0))[0]
             x0, x1 = int(xs.min()) * 4, int(xs.max() + 1) * 4
             return [int(x0), int(top) * 4 + 60, int(x1 - x0), 200]  # misma forma que YuNet (la caja de YuNet empieza en la frente)
