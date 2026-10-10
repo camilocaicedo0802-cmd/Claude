@@ -3,7 +3,8 @@
 Uso: python3 scripts/dia10/apoyos.py <crudo_30 del día 9>
 Cuatro fragmentos cortos (≈0,9 s) del crudo del día 9 —piernas, abdomen, glúteos y brazos con el equipo—, sin
 escalar, uno detrás de otro: public/dia10/rutina.mp4 (sin audio) y src/dia10/data/rutina.json (zona y fotograma
-de inicio de cada fragmento dentro del archivo).
+de inicio de cada fragmento dentro del archivo). Para Remotion se pasa a JPEG:
+ffmpeg -i public/dia10/rutina.mp4 -an -q:v 2 -start_number 0 public/dia10/rutina_fotogramas/%04d.jpg
 """
 import json
 import subprocess

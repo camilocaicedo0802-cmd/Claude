@@ -1,6 +1,6 @@
-import { Audio, Video } from "@remotion/media";
+import { Audio } from "@remotion/media";
 import React from "react";
-import { AbsoluteFill, Composition, Easing, interpolate, Sequence, staticFile } from "remotion";
+import { AbsoluteFill, Composition, Easing, Img, interpolate, Sequence, staticFile } from "remotion";
 import { FONT_FACES, VIDEO } from "../brand";
 import { CarasProvider, DatosCaras } from "../rutinas/Caras";
 import { Aceite3D } from "../rutinas/Objetos3D";
@@ -398,16 +398,21 @@ const EFECTOS: Efecto[] = [
 const NIVEL = 0.22;
 const FIN_VOZ = WORDS[WORDS.length - 1].end;
 
+const FOTOGRAMAS = Math.round(TOTAL * VIDEO.fps);
 export const Dia10Video: React.FC = () => {
-  const { t, fps } = useT();
+  const { t, fps, frame } = useT();
   const s = zoomEn(t);
   const dx = desliz(t);
   return (
     <AbsoluteFill style={{ backgroundColor: "#000" }}>
       <style>{FONT_FACES}</style>
       <AbsoluteFill style={{ transform: `translateX(${dx}px) scale(${s})`, transformOrigin: `${OX}px ${OY}px` }}>
-        {/* Vídeo editado en VP9 sin audio (el Chromium del entorno no decodifica H.264): ver scripts/dia10/preparar.py */}
-        <Video src={staticFile("dia10/editado_video.webm")} muted objectFit="cover" style={{ width: "100%", height: "100%" }} />
+        {/* El vídeo editado como secuencia de JPEG (un archivo por fotograma): el Chromium del entorno no decodifica
+            H.264 y con VP9 daba fotogramas negros; así el render es determinista. Ver scripts/dia10/preparar.py */}
+        <Img
+          src={staticFile(`dia10/fotogramas/${String(Math.min(frame, FOTOGRAMAS - 1)).padStart(5, "0")}.jpg`)}
+          style={{ width: "100%", height: "100%", objectFit: "cover" }}
+        />
       </AbsoluteFill>
       {/* Velo Verde petróleo arriba: legibilidad del título sobre la pared clara */}
       <AbsoluteFill style={{ background: "linear-gradient(180deg, rgba(69,89,90,.32) 0%, rgba(69,89,90,.12) 14%, rgba(69,89,90,0) 24%)" }} />

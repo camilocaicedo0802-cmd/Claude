@@ -6,8 +6,9 @@ Mismo método que el día 8 (scripts/dia8/preparar.py): el vídeo se monta por t
 con atrim + concat a muestra exacta. Salidas: src/dia10/data/edit.json y public/dia10/editado.mp4 (audio ORIGINAL,
 sin normalizar). Los tiempos por palabra se afinan después con scripts/dia10/retiempos.py.
 Con --solo-audio escribe solo public/dia10/voz.wav: la misma voz ORIGINAL en PCM, a muestra exacta y con los mismos
-tramos, para Remotion. El vídeo va aparte en VP9 (editado_video.webm, sin audio): el Chromium del entorno no decodifica
-H.264 y, con el MP4, Remotion extrae cada fotograma por el servidor y a veces se queda colgado.
+tramos, para Remotion. El vídeo va aparte como secuencia de JPEG (ffmpeg -i public/dia10/editado.mp4 -an -q:v 2
+-start_number 0 public/dia10/fotogramas/%05d.jpg): el Chromium del entorno no decodifica H.264 (con el MP4 Remotion
+extrae cada fotograma por el servidor y a veces se cuelga) y con VP9 daba fotogramas negros sueltos.
 """
 import json
 import subprocess

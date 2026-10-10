@@ -4,6 +4,8 @@ editor/public/referencia/
 editor/out/
 *.mp4
 *.webm
+editor/public/*/fotogramas/
+editor/public/*/rutina_fotogramas/
 *.wav
 crudo/
 # fuente comercial: no se sube al repositorio

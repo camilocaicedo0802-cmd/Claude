@@ -1,6 +1,5 @@
-import { Video } from "@remotion/media";
 import React from "react";
-import { Img, interpolate, Sequence, spring, staticFile } from "remotion";
+import { Img, interpolate, spring, staticFile } from "remotion";
 import { COLORS, FONTS } from "../brand";
 import { useCaras, zonasEn } from "../rutinas/Caras";
 import { CLAMP, pop, useT } from "../rutinas/util";
@@ -647,9 +646,11 @@ export const Montaje: React.FC<{
           filter: borr > 0.05 ? `blur(${10 * borr}px)` : undefined,
         }}
       >
-        <Sequence from={Math.round(desde * fps)} durationInFrames={total} layout="none">
-          <Video src={staticFile("dia10/rutina.webm")} muted style={{ width: "100%", height: "100%" }} />
-        </Sequence>
+        {/* Fotograma a fotograma desde una secuencia de JPEG (ver Dia10.tsx) */}
+        <Img
+          src={staticFile(`dia10/rutina_fotogramas/${String(Math.min(local, total - 1)).padStart(4, "0")}.jpg`)}
+          style={{ width: "100%", height: "100%", objectFit: "cover" }}
+        />
       </div>
       <div style={{ position: "absolute", inset: 0, background: "#FFFFFF", opacity: interpolate(local, [0, 6], [0.8, 0], CLAMP) }} />
       <div style={{ position: "absolute", left: 0, right: 0, top: 1300, display: "flex", flexDirection: "column", alignItems: "center", gap: 14 }}>
