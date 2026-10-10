@@ -394,8 +394,8 @@ const EFECTOS: Efecto[] = [
   ef("fiesta · brillo", at("rutina", S.final).start, "brillo", 0.2),
 ];
 
-// Voz original a −28,9 LUFS (como la del día 8): música y efectos bajan ≈ −13 dB, la voz no se toca.
-const NIVEL = 0.22;
+// Voz original a −28,9 LUFS (como la del día 8): música y efectos bajan ≈ −14 dB (medido: 16 dB bajo la voz), la voz no se toca.
+const NIVEL = 0.19;
 const FIN_VOZ = WORDS[WORDS.length - 1].end;
 
 const FOTOGRAMAS = Math.round(TOTAL * VIDEO.fps);
