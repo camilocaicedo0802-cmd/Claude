@@ -5,6 +5,7 @@ import { DatosCaras } from "../rutinas/Caras";
 import {
   Aviso,
   ItemSubtitulo,
+  lectura,
   Laterales,
   Resumen,
   Subtitulo,
@@ -77,7 +78,11 @@ const Prep: React.FC = () => {
         items={[
           {
             desde: at("deslizarse").start,
-            hasta: ZONAS.pantD,
+            hasta: Math.min(
+              ZONAS.pantD,
+              at("deslizarse").start +
+                lectura("Aceite suficiente para que el Luma Body se deslice"),
+            ),
             texto: "Aceite suficiente para que el Luma Body se deslice",
             tipo: "si",
           },
@@ -153,14 +158,21 @@ const Zona: React.FC<{
       />
       {/* Texto recurrente del guion y avisos largos: como subtítulo grande abajo (legible), no dentro de la tarjeta */}
       <Subtitulo
-        items={[{ desde: desde + 1.2, hasta, texto: RECURRENTE }, ...avisos]}
+        items={[
+          {
+            desde: desde + 1.2,
+            hasta: Math.min(hasta, desde + 1.2 + lectura(RECURRENTE)),
+            texto: RECURRENTE,
+          },
+          ...avisos,
+        ]}
       />
     </>
   );
 };
 const RECURRENTE =
   "Continúa este movimiento hasta completar el tiempo indicado";
-// Aviso largo → subtítulo durante ~3,5 s (luego vuelve el texto recurrente)
+// Aviso largo → subtítulo el tiempo justo para leerlo
 const sub = (
   frase: string,
   texto: string,
@@ -168,7 +180,7 @@ const sub = (
   hasta?: number,
 ): ItemSubtitulo => ({
   desde: at(frase).start,
-  hasta: hasta ?? at(frase).start + 3.5,
+  hasta: hasta ?? at(frase).start + lectura(texto),
   texto,
   tipo,
 });
@@ -420,7 +432,11 @@ const Cierre: React.FC = () => {
         items={[
           {
             desde: at("realiza pases").start,
-            hasta: FIN,
+            hasta:
+              at("realiza pases").start +
+              lectura(
+                "Pases suaves con las manos hacia los ganglios inguinales",
+              ),
             texto: "Pases suaves con las manos hacia los ganglios inguinales",
             tipo: "si",
           },

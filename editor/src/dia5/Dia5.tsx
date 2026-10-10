@@ -2,7 +2,16 @@ import React from "react";
 import { Composition } from "remotion";
 import { VIDEO } from "../brand";
 import { DatosCaras } from "../rutinas/Caras";
-import { Aviso, Laterales, Resumen, Tiempo, Titulo } from "../rutinas/Graficos";
+import {
+  Aviso,
+  ItemSubtitulo,
+  Laterales,
+  lectura,
+  Resumen,
+  Subtitulo,
+  Tiempo,
+  Titulo,
+} from "../rutinas/Graficos";
 import {
   Aceite3D,
   Apagar3D,
@@ -54,7 +63,6 @@ const PrepObjeto: React.FC<{ pos: React.CSSProperties }> = ({ pos }) => {
   );
 };
 const Prep: React.FC = () => {
-  const { t } = useT();
   return (
     <>
       <Titulo
@@ -80,6 +88,7 @@ const Prep: React.FC = () => {
                 minutos={1}
                 zona="Preparación"
                 recordatorio={false}
+                etiquetaGrande
                 style={pos}
               />
             ),
@@ -90,22 +99,11 @@ const Prep: React.FC = () => {
             orden: ["der", "izq"],
             render: (pos) => <PrepObjeto pos={pos} />,
           },
-          ...(t >= at("intensidad baja").start
-            ? [
-                {
-                  w: 260,
-                  h: 110,
-                  orden: ["izq", "der"] as Lado,
-                  render: (pos: React.CSSProperties) => (
-                    <Aviso
-                      at={at("intensidad baja").start}
-                      texto="Intensidad baja y cómoda"
-                      style={pos}
-                    />
-                  ),
-                },
-              ]
-            : []),
+        ]}
+      />
+      <Subtitulo
+        items={[
+          sub("intensidad baja", "Intensidad baja y cómoda para tu piel", "si"),
         ]}
       />
     </>
@@ -127,7 +125,17 @@ const Zona: React.FC<{
   minutos: number;
   etiqueta: string;
   extras: Extra[];
-}> = ({ desde, hasta, titulo, kicker: k, minutos, etiqueta, extras }) => {
+  avisos?: ItemSubtitulo[];
+}> = ({
+  desde,
+  hasta,
+  titulo,
+  kicker: k,
+  minutos,
+  etiqueta,
+  extras,
+  avisos = [],
+}) => {
   const { t } = useT();
   const activos = extras.filter(
     (e) => t >= e.desde - 0.05 && t < (e.hasta ?? hasta),
@@ -149,6 +157,8 @@ const Zona: React.FC<{
                 hasta={hasta}
                 minutos={minutos}
                 zona={etiqueta}
+                recordatorio={false}
+                etiquetaGrande
                 style={pos}
               />
             ),
@@ -161,9 +171,33 @@ const Zona: React.FC<{
           })),
         ]}
       />
+      {/* Texto recurrente y avisos largos: subtítulo grande abajo, solo el tiempo que se tarda en leerlo */}
+      <Subtitulo
+        items={[
+          {
+            desde: desde + 1.2,
+            hasta: Math.min(hasta, desde + 1.2 + lectura(RECURRENTE)),
+            texto: RECURRENTE,
+          },
+          ...avisos,
+        ]}
+      />
     </>
   );
 };
+const RECURRENTE =
+  "Continúa este movimiento hasta completar el tiempo indicado";
+const sub = (
+  frase: string,
+  texto: string,
+  tipo: "si" | "no",
+  despues = 0,
+): ItemSubtitulo => ({
+  desde: at(frase, despues).start,
+  hasta: at(frase, despues).start + lectura(texto),
+  texto,
+  tipo,
+});
 const aviso = (
   frase: string,
   texto: string,
@@ -179,6 +213,7 @@ const aviso = (
       at={at(frase, despues).start}
       tipo={tipo}
       texto={texto}
+      tamano={30}
       style={pos}
     />
   ),
@@ -207,18 +242,19 @@ const Circulos: React.FC = () => (
         ),
       },
       aviso(
-        "sin pasar",
-        "Sin pasar sobre el ombligo",
-        "no",
-        at("arrastras y sueltas").start,
-      ),
-      aviso(
         "arrastras y sueltas",
         "Arrastras y sueltas",
         "si",
         at("no sostener").start,
       ),
-      aviso("no sostener", "Nunca en un solo punto", "no"),
+    ]}
+    avisos={[
+      sub("sin pasar", "Sin pasar directamente sobre el ombligo", "no"),
+      sub(
+        "no sostener",
+        "Nunca sostengas el dispositivo en un solo punto",
+        "no",
+      ),
     ]}
   />
 );
@@ -245,13 +281,14 @@ const LatD: React.FC = () => (
           />
         ),
       },
-      aviso(
-        "movimientos lentos",
-        "Lentos y controlados",
+      aviso("movimientos lentos", "Lentos y controlados", "si"),
+    ]}
+    avisos={[
+      sub(
+        "ganglio inguinal",
+        "Lleva los líquidos hacia el ganglio inguinal",
         "si",
-        at("ganglio inguinal").start,
       ),
-      aviso("ganglio inguinal", "Hacia el ganglio inguinal"),
     ]}
   />
 );
@@ -278,7 +315,13 @@ const LatI: React.FC = () => (
           />
         ),
       },
-      aviso("arrastras desde", "De la espalda a la ingle"),
+    ]}
+    avisos={[
+      sub(
+        "arrastras desde",
+        "Arrastra desde la espalda hacia el ganglio inguinal",
+        "si",
+      ),
     ]}
   />
 );
@@ -305,34 +348,30 @@ const Bajo: React.FC = () => (
           />
         ),
       },
-      aviso("recuerda mantener siempre", "Siempre en movimiento"),
+    ]}
+    avisos={[
+      sub(
+        "recuerda mantener siempre",
+        "Mantén siempre el dispositivo en movimiento",
+        "si",
+      ),
     ]}
   />
 );
 
 // Cierre · "haz masajes suaves con tus manos… completaste tus 15 minutos… la constancia… Apaga el equipo y retira el exceso de aceite"
 const Manos: React.FC = () => (
-  <Laterales
-    desde={ZONAS.cierre}
-    hasta={at("ahora ya completaste").start}
-    elementos={[
-      {
-        w: 260,
-        h: 110,
-        orden: ["izq", "der"],
-        render: (pos) => (
-          <Aviso
-            at={at("masajes suaves").start}
-            texto="Masaje suave con las manos"
-            style={pos}
-          />
-        ),
-      },
+  <Subtitulo
+    items={[
+      sub(
+        "masajes suaves",
+        "Masaje suave con tus manos para relajar la piel",
+        "si",
+      ),
     ]}
   />
 );
 const Cierre: React.FC = () => {
-  const { t } = useT();
   const c = at("ahora ya completaste").start;
   return (
     <>
@@ -381,22 +420,15 @@ const Cierre: React.FC = () => {
               />
             ),
           },
-          ...(t >= at("constancia").start
-            ? [
-                {
-                  w: 260,
-                  h: 110,
-                  orden: ["izq", "der"] as Lado,
-                  render: (pos: React.CSSProperties) => (
-                    <Aviso
-                      at={at("constancia").start}
-                      texto="Constancia antes que intensidad"
-                      style={pos}
-                    />
-                  ),
-                },
-              ]
-            : []),
+        ]}
+      />
+      <Subtitulo
+        items={[
+          sub(
+            "constancia",
+            "La constancia es más importante que una intensidad alta",
+            "si",
+          ),
         ]}
       />
     </>

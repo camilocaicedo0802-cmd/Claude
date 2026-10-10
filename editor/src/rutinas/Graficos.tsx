@@ -454,6 +454,9 @@ export const Resumen: React.FC<{
 
 /** Subtítulo inferior para frases largas (texto recurrente del guion y avisos), legible a tamaño grande.
  *  Muestra el elemento activo que empezó más tarde; base en y = 1560 (fuera de la interfaz de Reels) y nunca sobre la cara. */
+/** Segundos que tarda una persona promedio en leer un texto en pantalla (~16 caracteres/s, mínimo 1,6 s). */
+export const lectura = (texto: string) =>
+  Math.max(1.6, texto.length / 16 + 0.3);
 export type ItemSubtitulo = {
   desde: number;
   hasta: number;
