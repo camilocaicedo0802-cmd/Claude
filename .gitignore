@@ -3,6 +3,7 @@ referencia/
 editor/public/referencia/
 editor/out/
 *.mp4
+*.webm
 *.wav
 crudo/
 # fuente comercial: no se sube al repositorio
