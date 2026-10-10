@@ -75,6 +75,13 @@ Cada "beat" nace de una frase concreta, anclada con `at("frase")`. El anclaje ac
 - La pizarra (`Pizarra` en `src/dia9/Graficos.tsx`) dibuja sobre el congelado en coordenadas de la toma: mide antes los puntos (fotograma a 540×960 con rejilla de 100 px) y deja ≥ 100 px con la cara.
 - Música propia por día: `scripts/dia9/audio_dia9.py` cambia tonalidad, tempo y figura (mismos timbres y limpieza para la voz).
 
+## 6e. Día 10 (a cámara, cierre del reto) — herramientas nuevas
+- `scripts/dia10/preparar.py`: igual que el del día 8 (tomas en el orden que se quiera, vídeo por fotogramas y audio a muestra exacta). Si Whisper funde una frase repetida en una palabra de varios segundos, transcribe `public/<dia>/editado.mp4` y aplica sus tiempos con `scripts/dia10/retiempos.py`.
+- `scripts/dia10/caras.py`: caja de la cara con YuNet sobre el vídeo editado (a cámara se ve siempre). El modelo se descarga de `huggingface.co/opencv/face_detection_yunet` (raw.githubusercontent.com está bloqueado).
+- B-roll de otro día: `scripts/dia10/apoyos.py` corta fragmentos cortos de otro crudo ya pasado a 30 fps.
+- `src/dia10/Dia10.tsx`: panel lateral (la toma se desliza y la cara se recalcula con el mismo desplazamiento y zoom), ventana con forma de texto (máscara SVG) y cámara de móvil con fotos. Los dígitos 3D salen de `three/examples/fonts/helvetiker_bold.typeface.json` con `TextGeometry`.
+- Si un objeto 3D compartido sale pequeño en su columna, dale un lienzo más grande que la columna (el tamaño en píxeles crece con el alto del lienzo) en vez de escalarlo con CSS.
+
 ## 7. Revisar y entregar
 - `cd editor && npm run lint`.
 - Para revisar: `npx remotion render <Composición> out/borrador.mp4 --concurrency=4` (añade `--gl=swangle` si hay objetos 3D). Saca fotogramas en cada beat (hojas de contacto con ffmpeg) y comprueba que nada tapa la cara, que los textos no se cortan y que el gráfico aparece en su palabra.
