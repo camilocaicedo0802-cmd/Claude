@@ -4,6 +4,7 @@ import { Dia3 } from "./dia3/Dia3";
 import { Dia4 } from "./dia4/Dia4";
 import { Dia5 } from "./dia5/Dia5";
 import { Dia6 } from "./dia6/Dia6";
+import { Dia7 } from "./dia7/Dia7";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -19,6 +20,8 @@ export const RemotionRoot: React.FC = () => {
       <Dia5 />
       {/* Día 6 · Piernas y apariencia de la celulitis (rutina con voz en off sobre su propio crudo) */}
       <Dia6 />
+      {/* Día 7 · Piernas ligeras (voz en off sobre dos crudos) */}
+      <Dia7 />
     </>
   );
 };

@@ -63,6 +63,8 @@ Cada "beat" nace de una frase concreta, anclada con `at("frase")`. El anclaje ac
 - Si la cabeza se mueve mucho dentro de cada toma (ella en el centro, plano general), usa la maqueta de columnas del día 6 (`src/dia6/Maqueta.tsx`) en vez de `Laterales`.
 - Render con 3D: `scripts/render_trozos.sh <Composición> out/<salida>.mp4 450 16` (reanudable: si cambias solo un tramo, borra ese `out/trozos_<Composición>/pNNN.mp4` y vuelve a lanzarlo).
 - Mide la voz en off (`ffmpeg -af ebur128`): si no ronda −16 LUFS, ajusta `musica`/`musicaCierre` y el volumen de los efectos de `Rutina` en la misma proporción (nunca normalices la voz).
+- Si hay varios crudos o se quiere variar el ritmo (cámara lenta, timelapse, pantalla partida) usa `scripts/dia7/montar.py` como base, y `src/dia7/Base7.tsx` para reencuadres, etalonaje por momento y cortinas.
+- Si la cabeza está pegada al borde superior, el título va en la franja baja (`TituloBajo` del día 7).
 - Si el render a CRF 16 pasa de 100 MB, recodifica a 2 pasadas (≈ 7,5 Mbps de vídeo + copia del audio) para el repositorio.
 
 ## 7. Revisar y entregar

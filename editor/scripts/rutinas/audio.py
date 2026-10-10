@@ -1,7 +1,7 @@
-"""Días 4, 5 y 6: música (con la duración de la voz en off editada) y efectos en public/<dia>/audio/.
+"""Días 4 a 7: música (con la duración de la voz en off editada) y efectos en public/<dia>/audio/.
 
 Reutiliza el sintetizador del día 1 (scripts/audio_marca.py) sin tocarlo.
-Uso: python -I scripts/rutinas/audio.py <dia4|dia5|dia6>
+Uso: python -I scripts/rutinas/audio.py <dia4|dia5|dia6|dia7>
 """
 import json
 import sys

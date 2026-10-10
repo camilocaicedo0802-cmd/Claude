@@ -1,0 +1,918 @@
+{
+ "model": "large-v3-turbo",
+ "duration": 78.5266875,
+ "segments": [
+  {
+   "start": 1.6799999999999993,
+   "end": 7.34,
+   "text": "La rutina de hoy es para esos días en los que estás cansada pero no quieres abandonar"
+  },
+  {
+   "start": 7.34,
+   "end": 14.2,
+   "text": "el hábito. Siéntate o ponte cómoda con las piernas apoyadas sobre una silla o sobre"
+  },
+  {
+   "start": 14.2,
+   "end": 20.32,
+   "text": "la cama. Prepara ambas piernas con suficiente aceite y selecciona una intensidad suave."
+  },
+  {
+   "start": 20.32,
+   "end": 24.3,
+   "text": "Aplica aceite en pantorrillas y muslos"
+  },
+  {
+   "start": 26.0,
+   "end": 30.58,
+   "text": "Trabajamos 4 minutos por cada pantorrilla"
+  },
+  {
+   "start": 30.58,
+   "end": 35.56,
+   "text": "Con movimientos ascendentes, lentos y continuos"
+  },
+  {
+   "start": 35.56,
+   "end": 40.16,
+   "text": "Haz pasadas suaves desde el tobillo hacia arriba"
+  },
+  {
+   "start": 40.16,
+   "end": 43.1,
+   "text": "Terminando antes de la parte posterior de la rodilla"
+  },
+  {
+   "start": 44.72,
+   "end": 47.86,
+   "text": "Después que hayas terminado ambas pantorrillas"
+  },
+  {
+   "start": 47.86,
+   "end": 56.42,
+   "text": "vas a continuar 3 minutos en cada muslo. No necesitas hacerlo rápido, necesitas mantener"
+  },
+  {
+   "start": 56.42,
+   "end": 65.62,
+   "text": "el movimiento. Recuerda no dejar el dispositivo en un solo punto. Cuando termines cada pierna,"
+  },
+  {
+   "start": 66.46000000000001,
+   "end": 71.96,
+   "text": "puedes descansar unos minutos con las piernas cómodamente apoyadas sobre una almohada."
+  },
+  {
+   "start": 72.9,
+   "end": 77.16,
+   "text": "Incluso en un día difícil, cumpliste con tus 15 minutos del día."
+  },
+  {
+   "start": 77.86,
+   "end": 77.88,
+   "text": "Gracias."
+  }
+ ],
+ "words": [
+  {
+   "text": "La",
+   "start": 1.68,
+   "end": 2.32,
+   "prob": 0.994
+  },
+  {
+   "text": "rutina",
+   "start": 2.32,
+   "end": 2.7,
+   "prob": 1.0
+  },
+  {
+   "text": "de",
+   "start": 2.7,
+   "end": 2.86,
+   "prob": 1.0
+  },
+  {
+   "text": "hoy",
+   "start": 2.86,
+   "end": 3.04,
+   "prob": 1.0
+  },
+  {
+   "text": "es",
+   "start": 3.04,
+   "end": 3.34,
+   "prob": 1.0
+  },
+  {
+   "text": "para",
+   "start": 3.34,
+   "end": 3.56,
+   "prob": 1.0
+  },
+  {
+   "text": "esos",
+   "start": 3.56,
+   "end": 3.76,
+   "prob": 0.999
+  },
+  {
+   "text": "días",
+   "start": 3.76,
+   "end": 4.04,
+   "prob": 1.0
+  },
+  {
+   "text": "en",
+   "start": 4.04,
+   "end": 4.26,
+   "prob": 1.0
+  },
+  {
+   "text": "los",
+   "start": 4.26,
+   "end": 4.38,
+   "prob": 1.0
+  },
+  {
+   "text": "que",
+   "start": 4.38,
+   "end": 4.54,
+   "prob": 1.0
+  },
+  {
+   "text": "estás",
+   "start": 4.54,
+   "end": 4.86,
+   "prob": 0.999
+  },
+  {
+   "text": "cansada",
+   "start": 4.86,
+   "end": 5.82,
+   "prob": 1.0
+  },
+  {
+   "text": "pero",
+   "start": 5.82,
+   "end": 6.1,
+   "prob": 0.978
+  },
+  {
+   "text": "no",
+   "start": 6.1,
+   "end": 6.3,
+   "prob": 1.0
+  },
+  {
+   "text": "quieres",
+   "start": 6.3,
+   "end": 6.74,
+   "prob": 1.0
+  },
+  {
+   "text": "abandonar",
+   "start": 6.74,
+   "end": 7.34,
+   "prob": 1.0
+  },
+  {
+   "text": "el",
+   "start": 7.34,
+   "end": 7.46,
+   "prob": 1.0
+  },
+  {
+   "text": "hábito.",
+   "start": 7.46,
+   "end": 7.9,
+   "prob": 1.0
+  },
+  {
+   "text": "Siéntate",
+   "start": 9.56,
+   "end": 10.2,
+   "prob": 1.0
+  },
+  {
+   "text": "o",
+   "start": 10.2,
+   "end": 10.44,
+   "prob": 1.0
+  },
+  {
+   "text": "ponte",
+   "start": 10.44,
+   "end": 10.76,
+   "prob": 0.999
+  },
+  {
+   "text": "cómoda",
+   "start": 10.76,
+   "end": 11.38,
+   "prob": 1.0
+  },
+  {
+   "text": "con",
+   "start": 11.38,
+   "end": 11.6,
+   "prob": 1.0
+  },
+  {
+   "text": "las",
+   "start": 11.6,
+   "end": 11.8,
+   "prob": 1.0
+  },
+  {
+   "text": "piernas",
+   "start": 11.8,
+   "end": 12.14,
+   "prob": 1.0
+  },
+  {
+   "text": "apoyadas",
+   "start": 12.14,
+   "end": 12.66,
+   "prob": 0.999
+  },
+  {
+   "text": "sobre",
+   "start": 12.66,
+   "end": 12.96,
+   "prob": 1.0
+  },
+  {
+   "text": "una",
+   "start": 12.96,
+   "end": 13.18,
+   "prob": 1.0
+  },
+  {
+   "text": "silla",
+   "start": 13.18,
+   "end": 13.56,
+   "prob": 1.0
+  },
+  {
+   "text": "o",
+   "start": 13.56,
+   "end": 13.88,
+   "prob": 1.0
+  },
+  {
+   "text": "sobre",
+   "start": 13.88,
+   "end": 14.2,
+   "prob": 1.0
+  },
+  {
+   "text": "la",
+   "start": 14.2,
+   "end": 14.36,
+   "prob": 1.0
+  },
+  {
+   "text": "cama.",
+   "start": 14.36,
+   "end": 14.72,
+   "prob": 1.0
+  },
+  {
+   "text": "Prepara",
+   "start": 15.88,
+   "end": 16.22,
+   "prob": 0.996
+  },
+  {
+   "text": "ambas",
+   "start": 16.22,
+   "end": 16.52,
+   "prob": 1.0
+  },
+  {
+   "text": "piernas",
+   "start": 16.52,
+   "end": 16.96,
+   "prob": 1.0
+  },
+  {
+   "text": "con",
+   "start": 16.96,
+   "end": 17.14,
+   "prob": 1.0
+  },
+  {
+   "text": "suficiente",
+   "start": 17.14,
+   "end": 17.68,
+   "prob": 1.0
+  },
+  {
+   "text": "aceite",
+   "start": 17.68,
+   "end": 18.12,
+   "prob": 1.0
+  },
+  {
+   "text": "y",
+   "start": 18.12,
+   "end": 18.28,
+   "prob": 1.0
+  },
+  {
+   "text": "selecciona",
+   "start": 18.28,
+   "end": 18.82,
+   "prob": 0.999
+  },
+  {
+   "text": "una",
+   "start": 18.82,
+   "end": 19.0,
+   "prob": 1.0
+  },
+  {
+   "text": "intensidad",
+   "start": 19.0,
+   "end": 19.68,
+   "prob": 1.0
+  },
+  {
+   "text": "suave.",
+   "start": 19.68,
+   "end": 20.32,
+   "prob": 1.0
+  },
+  {
+   "text": "Aplica",
+   "start": 20.32,
+   "end": 21.9,
+   "prob": 0.99
+  },
+  {
+   "text": "aceite",
+   "start": 21.9,
+   "end": 22.28,
+   "prob": 0.999
+  },
+  {
+   "text": "en",
+   "start": 22.28,
+   "end": 22.66,
+   "prob": 0.999
+  },
+  {
+   "text": "pantorrillas",
+   "start": 22.66,
+   "end": 23.5,
+   "prob": 0.998
+  },
+  {
+   "text": "y",
+   "start": 23.5,
+   "end": 23.86,
+   "prob": 0.999
+  },
+  {
+   "text": "muslos",
+   "start": 23.86,
+   "end": 24.3,
+   "prob": 0.999
+  },
+  {
+   "text": "Trabajamos",
+   "start": 26.0,
+   "end": 26.96,
+   "prob": 0.758
+  },
+  {
+   "text": "4",
+   "start": 26.96,
+   "end": 27.56,
+   "prob": 0.813
+  },
+  {
+   "text": "minutos",
+   "start": 27.56,
+   "end": 27.96,
+   "prob": 1.0
+  },
+  {
+   "text": "por",
+   "start": 27.96,
+   "end": 29.22,
+   "prob": 0.993
+  },
+  {
+   "text": "cada",
+   "start": 29.22,
+   "end": 29.66,
+   "prob": 1.0
+  },
+  {
+   "text": "pantorrilla",
+   "start": 29.66,
+   "end": 30.58,
+   "prob": 1.0
+  },
+  {
+   "text": "Con",
+   "start": 30.58,
+   "end": 31.76,
+   "prob": 0.5
+  },
+  {
+   "text": "movimientos",
+   "start": 31.76,
+   "end": 32.3,
+   "prob": 1.0
+  },
+  {
+   "text": "ascendentes,",
+   "start": 32.3,
+   "end": 33.4,
+   "prob": 0.997
+  },
+  {
+   "text": "lentos",
+   "start": 33.58,
+   "end": 34.4,
+   "prob": 1.0
+  },
+  {
+   "text": "y",
+   "start": 34.4,
+   "end": 34.62,
+   "prob": 1.0
+  },
+  {
+   "text": "continuos",
+   "start": 34.62,
+   "end": 35.56,
+   "prob": 1.0
+  },
+  {
+   "text": "Haz",
+   "start": 35.56,
+   "end": 36.88,
+   "prob": 0.98
+  },
+  {
+   "text": "pasadas",
+   "start": 36.88,
+   "end": 37.32,
+   "prob": 0.998
+  },
+  {
+   "text": "suaves",
+   "start": 37.32,
+   "end": 38.0,
+   "prob": 1.0
+  },
+  {
+   "text": "desde",
+   "start": 38.0,
+   "end": 38.4,
+   "prob": 0.998
+  },
+  {
+   "text": "el",
+   "start": 38.4,
+   "end": 38.62,
+   "prob": 1.0
+  },
+  {
+   "text": "tobillo",
+   "start": 38.62,
+   "end": 39.26,
+   "prob": 1.0
+  },
+  {
+   "text": "hacia",
+   "start": 39.26,
+   "end": 39.68,
+   "prob": 1.0
+  },
+  {
+   "text": "arriba",
+   "start": 39.68,
+   "end": 40.16,
+   "prob": 1.0
+  },
+  {
+   "text": "Terminando",
+   "start": 40.16,
+   "end": 40.86,
+   "prob": 0.872
+  },
+  {
+   "text": "antes",
+   "start": 40.86,
+   "end": 41.2,
+   "prob": 1.0
+  },
+  {
+   "text": "de",
+   "start": 41.2,
+   "end": 41.38,
+   "prob": 0.999
+  },
+  {
+   "text": "la",
+   "start": 41.38,
+   "end": 41.5,
+   "prob": 1.0
+  },
+  {
+   "text": "parte",
+   "start": 41.5,
+   "end": 41.78,
+   "prob": 1.0
+  },
+  {
+   "text": "posterior",
+   "start": 41.78,
+   "end": 42.32,
+   "prob": 0.999
+  },
+  {
+   "text": "de",
+   "start": 42.32,
+   "end": 42.48,
+   "prob": 1.0
+  },
+  {
+   "text": "la",
+   "start": 42.48,
+   "end": 42.6,
+   "prob": 1.0
+  },
+  {
+   "text": "rodilla",
+   "start": 42.6,
+   "end": 43.1,
+   "prob": 1.0
+  },
+  {
+   "text": "Después",
+   "start": 44.72,
+   "end": 45.68,
+   "prob": 0.995
+  },
+  {
+   "text": "que",
+   "start": 45.68,
+   "end": 45.9,
+   "prob": 0.991
+  },
+  {
+   "text": "hayas",
+   "start": 45.9,
+   "end": 46.12,
+   "prob": 1.0
+  },
+  {
+   "text": "terminado",
+   "start": 46.12,
+   "end": 46.6,
+   "prob": 1.0
+  },
+  {
+   "text": "ambas",
+   "start": 46.6,
+   "end": 47.1,
+   "prob": 1.0
+  },
+  {
+   "text": "pantorrillas",
+   "start": 47.1,
+   "end": 47.86,
+   "prob": 1.0
+  },
+  {
+   "text": "vas",
+   "start": 47.86,
+   "end": 48.42,
+   "prob": 0.952
+  },
+  {
+   "text": "a",
+   "start": 48.42,
+   "end": 48.58,
+   "prob": 1.0
+  },
+  {
+   "text": "continuar",
+   "start": 48.58,
+   "end": 49.0,
+   "prob": 1.0
+  },
+  {
+   "text": "3",
+   "start": 49.0,
+   "end": 49.54,
+   "prob": 0.447
+  },
+  {
+   "text": "minutos",
+   "start": 49.54,
+   "end": 50.1,
+   "prob": 1.0
+  },
+  {
+   "text": "en",
+   "start": 50.1,
+   "end": 50.62,
+   "prob": 1.0
+  },
+  {
+   "text": "cada",
+   "start": 50.62,
+   "end": 51.08,
+   "prob": 1.0
+  },
+  {
+   "text": "muslo.",
+   "start": 51.08,
+   "end": 51.72,
+   "prob": 0.999
+  },
+  {
+   "text": "No",
+   "start": 52.02,
+   "end": 52.94,
+   "prob": 1.0
+  },
+  {
+   "text": "necesitas",
+   "start": 52.94,
+   "end": 53.54,
+   "prob": 1.0
+  },
+  {
+   "text": "hacerlo",
+   "start": 53.54,
+   "end": 54.42,
+   "prob": 0.999
+  },
+  {
+   "text": "rápido,",
+   "start": 54.42,
+   "end": 54.96,
+   "prob": 1.0
+  },
+  {
+   "text": "necesitas",
+   "start": 55.28,
+   "end": 55.82,
+   "prob": 1.0
+  },
+  {
+   "text": "mantener",
+   "start": 55.82,
+   "end": 56.42,
+   "prob": 1.0
+  },
+  {
+   "text": "el",
+   "start": 56.42,
+   "end": 57.0,
+   "prob": 1.0
+  },
+  {
+   "text": "movimiento.",
+   "start": 57.0,
+   "end": 57.82,
+   "prob": 1.0
+  },
+  {
+   "text": "Recuerda",
+   "start": 58.78,
+   "end": 59.7,
+   "prob": 1.0
+  },
+  {
+   "text": "no",
+   "start": 59.7,
+   "end": 59.86,
+   "prob": 0.999
+  },
+  {
+   "text": "dejar",
+   "start": 59.86,
+   "end": 60.1,
+   "prob": 1.0
+  },
+  {
+   "text": "el",
+   "start": 60.1,
+   "end": 60.26,
+   "prob": 1.0
+  },
+  {
+   "text": "dispositivo",
+   "start": 60.26,
+   "end": 60.94,
+   "prob": 1.0
+  },
+  {
+   "text": "en",
+   "start": 60.94,
+   "end": 61.08,
+   "prob": 1.0
+  },
+  {
+   "text": "un",
+   "start": 61.08,
+   "end": 61.2,
+   "prob": 1.0
+  },
+  {
+   "text": "solo",
+   "start": 61.2,
+   "end": 61.42,
+   "prob": 0.999
+  },
+  {
+   "text": "punto.",
+   "start": 61.42,
+   "end": 61.9,
+   "prob": 1.0
+  },
+  {
+   "text": "Cuando",
+   "start": 63.06,
+   "end": 63.98,
+   "prob": 1.0
+  },
+  {
+   "text": "termines",
+   "start": 63.98,
+   "end": 64.48,
+   "prob": 0.999
+  },
+  {
+   "text": "cada",
+   "start": 64.48,
+   "end": 64.98,
+   "prob": 1.0
+  },
+  {
+   "text": "pierna,",
+   "start": 64.98,
+   "end": 65.62,
+   "prob": 1.0
+  },
+  {
+   "text": "puedes",
+   "start": 66.26,
+   "end": 66.72,
+   "prob": 0.999
+  },
+  {
+   "text": "descansar",
+   "start": 66.72,
+   "end": 67.48,
+   "prob": 1.0
+  },
+  {
+   "text": "unos",
+   "start": 67.48,
+   "end": 67.72,
+   "prob": 1.0
+  },
+  {
+   "text": "minutos",
+   "start": 67.72,
+   "end": 68.16,
+   "prob": 1.0
+  },
+  {
+   "text": "con",
+   "start": 68.16,
+   "end": 68.46,
+   "prob": 1.0
+  },
+  {
+   "text": "las",
+   "start": 68.46,
+   "end": 68.66,
+   "prob": 1.0
+  },
+  {
+   "text": "piernas",
+   "start": 68.66,
+   "end": 69.06,
+   "prob": 1.0
+  },
+  {
+   "text": "cómodamente",
+   "start": 69.06,
+   "end": 70.38,
+   "prob": 0.999
+  },
+  {
+   "text": "apoyadas",
+   "start": 70.38,
+   "end": 71.06,
+   "prob": 0.998
+  },
+  {
+   "text": "sobre",
+   "start": 71.06,
+   "end": 71.3,
+   "prob": 0.999
+  },
+  {
+   "text": "una",
+   "start": 71.3,
+   "end": 71.48,
+   "prob": 0.996
+  },
+  {
+   "text": "almohada.",
+   "start": 71.48,
+   "end": 71.96,
+   "prob": 1.0
+  },
+  {
+   "text": "Incluso",
+   "start": 72.9,
+   "end": 73.82,
+   "prob": 1.0
+  },
+  {
+   "text": "en",
+   "start": 73.82,
+   "end": 73.94,
+   "prob": 0.998
+  },
+  {
+   "text": "un",
+   "start": 73.94,
+   "end": 74.04,
+   "prob": 1.0
+  },
+  {
+   "text": "día",
+   "start": 74.04,
+   "end": 74.2,
+   "prob": 1.0
+  },
+  {
+   "text": "difícil,",
+   "start": 74.2,
+   "end": 74.66,
+   "prob": 1.0
+  },
+  {
+   "text": "cumpliste",
+   "start": 74.9,
+   "end": 75.5,
+   "prob": 0.996
+  },
+  {
+   "text": "con",
+   "start": 75.5,
+   "end": 75.7,
+   "prob": 1.0
+  },
+  {
+   "text": "tus",
+   "start": 75.7,
+   "end": 75.9,
+   "prob": 1.0
+  },
+  {
+   "text": "15",
+   "start": 75.9,
+   "end": 76.2,
+   "prob": 1.0
+  },
+  {
+   "text": "minutos",
+   "start": 76.2,
+   "end": 76.62,
+   "prob": 1.0
+  },
+  {
+   "text": "del",
+   "start": 76.62,
+   "end": 76.9,
+   "prob": 1.0
+  },
+  {
+   "text": "día.",
+   "start": 76.9,
+   "end": 77.16,
+   "prob": 1.0
+  },
+  {
+   "text": "Gracias.",
+   "start": 77.86,
+   "end": 77.88,
+   "prob": 0.667
+  }
+ ]
+}

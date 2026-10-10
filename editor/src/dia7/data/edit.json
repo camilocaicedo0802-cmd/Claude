@@ -1,0 +1,931 @@
+{
+  "duration": 62.35946,
+  "segments": [
+    {
+      "srcStart": 2.0642,
+      "srcEnd": 8.007,
+      "outStart": 0.0
+    },
+    {
+      "srcStart": 9.3508,
+      "srcEnd": 14.8539,
+      "outStart": 5.9429
+    },
+    {
+      "srcStart": 15.0578,
+      "srcEnd": 15.434,
+      "outStart": 11.446
+    },
+    {
+      "srcStart": 15.7247,
+      "srcEnd": 20.4585,
+      "outStart": 11.8222
+    },
+    {
+      "srcStart": 21.1933,
+      "srcEnd": 24.4677,
+      "outStart": 16.556
+    },
+    {
+      "srcStart": 26.0977,
+      "srcEnd": 28.4841,
+      "outStart": 19.8304
+    },
+    {
+      "srcStart": 28.9272,
+      "srcEnd": 30.6673,
+      "outStart": 22.2168
+    },
+    {
+      "srcStart": 31.3898,
+      "srcEnd": 35.599,
+      "outStart": 23.9569
+    },
+    {
+      "srcStart": 36.6148,
+      "srcEnd": 43.1839,
+      "outStart": 28.1661
+    },
+    {
+      "srcStart": 45.2656,
+      "srcEnd": 51.9107,
+      "outStart": 34.7352
+    },
+    {
+      "srcStart": 52.6635,
+      "srcEnd": 53.7487,
+      "outStart": 41.3803
+    },
+    {
+      "srcStart": 53.7495,
+      "srcEnd": 58.1807,
+      "outStart": 42.4655
+    },
+    {
+      "srcStart": 58.4457,
+      "srcEnd": 58.7633,
+      "outStart": 46.8967
+    },
+    {
+      "srcStart": 58.9674,
+      "srcEnd": 62.063,
+      "outStart": 47.2143
+    },
+    {
+      "srcStart": 63.4685,
+      "srcEnd": 65.7966,
+      "outStart": 50.3099
+    },
+    {
+      "srcStart": 66.2884,
+      "srcEnd": 69.284,
+      "outStart": 52.638
+    },
+    {
+      "srcStart": 69.4015,
+      "srcEnd": 72.0086,
+      "outStart": 55.6336
+    },
+    {
+      "srcStart": 73.1537,
+      "srcEnd": 77.2725,
+      "outStart": 58.2407
+    }
+  ],
+  "words": [
+    {
+      "text": "La",
+      "start": 0.0,
+      "end": 0.256,
+      "db": 0.5
+    },
+    {
+      "text": "rutina",
+      "start": 0.256,
+      "end": 0.636,
+      "db": -0.6
+    },
+    {
+      "text": "de",
+      "start": 0.636,
+      "end": 0.796,
+      "db": -0.5
+    },
+    {
+      "text": "hoy",
+      "start": 0.796,
+      "end": 0.976,
+      "db": 2.1
+    },
+    {
+      "text": "es",
+      "start": 0.976,
+      "end": 1.276,
+      "db": -2.1
+    },
+    {
+      "text": "para",
+      "start": 1.276,
+      "end": 1.496,
+      "db": -0.0
+    },
+    {
+      "text": "esos",
+      "start": 1.496,
+      "end": 1.696,
+      "db": 0.9
+    },
+    {
+      "text": "días",
+      "start": 1.696,
+      "end": 1.976,
+      "db": 0.9
+    },
+    {
+      "text": "en",
+      "start": 1.976,
+      "end": 2.196,
+      "db": -0.6
+    },
+    {
+      "text": "los",
+      "start": 2.196,
+      "end": 2.316,
+      "db": -3.3
+    },
+    {
+      "text": "que",
+      "start": 2.316,
+      "end": 2.476,
+      "db": -9.1
+    },
+    {
+      "text": "estás",
+      "start": 2.476,
+      "end": 2.796,
+      "db": -2.7
+    },
+    {
+      "text": "cansada",
+      "start": 2.796,
+      "end": 3.756,
+      "db": 1.2
+    },
+    {
+      "text": "pero",
+      "start": 3.756,
+      "end": 4.036,
+      "db": 0.0
+    },
+    {
+      "text": "no",
+      "start": 4.036,
+      "end": 4.236,
+      "db": -1.3
+    },
+    {
+      "text": "quieres",
+      "start": 4.236,
+      "end": 4.676,
+      "db": 2.2
+    },
+    {
+      "text": "abandonar",
+      "start": 4.676,
+      "end": 5.276,
+      "db": -2.3
+    },
+    {
+      "text": "el",
+      "start": 5.276,
+      "end": 5.396,
+      "db": -5.6
+    },
+    {
+      "text": "hábito.",
+      "start": 5.396,
+      "end": 5.836,
+      "db": -3.4
+    },
+    {
+      "text": "Siéntate",
+      "start": 6.152,
+      "end": 6.792,
+      "db": 3.8
+    },
+    {
+      "text": "o",
+      "start": 6.792,
+      "end": 7.032,
+      "db": 1.8
+    },
+    {
+      "text": "ponte",
+      "start": 7.032,
+      "end": 7.352,
+      "db": -0.0
+    },
+    {
+      "text": "cómoda",
+      "start": 7.352,
+      "end": 7.972,
+      "db": 2.5
+    },
+    {
+      "text": "con",
+      "start": 7.972,
+      "end": 8.192,
+      "db": -3.1
+    },
+    {
+      "text": "las",
+      "start": 8.192,
+      "end": 8.392,
+      "db": -3.4
+    },
+    {
+      "text": "piernas",
+      "start": 8.392,
+      "end": 8.732,
+      "db": 1.0
+    },
+    {
+      "text": "apoyadas",
+      "start": 8.732,
+      "end": 9.252,
+      "db": -2.0
+    },
+    {
+      "text": "sobre",
+      "start": 9.252,
+      "end": 9.552,
+      "db": -0.2
+    },
+    {
+      "text": "una",
+      "start": 9.552,
+      "end": 9.772,
+      "db": -0.2
+    },
+    {
+      "text": "silla",
+      "start": 9.772,
+      "end": 10.152,
+      "db": 2.8
+    },
+    {
+      "text": "o",
+      "start": 10.152,
+      "end": 10.472,
+      "db": -1.1
+    },
+    {
+      "text": "sobre",
+      "start": 10.472,
+      "end": 10.792,
+      "db": -2.1
+    },
+    {
+      "text": "la",
+      "start": 10.792,
+      "end": 10.952,
+      "db": -4.1
+    },
+    {
+      "text": "cama.",
+      "start": 10.952,
+      "end": 11.312,
+      "db": -3.6
+    },
+    {
+      "text": "Prepara",
+      "start": 11.978,
+      "end": 12.318,
+      "db": 3.6
+    },
+    {
+      "text": "ambas",
+      "start": 12.318,
+      "end": 12.617,
+      "db": -1.2
+    },
+    {
+      "text": "piernas",
+      "start": 12.617,
+      "end": 13.058,
+      "db": 6.1
+    },
+    {
+      "text": "con",
+      "start": 13.058,
+      "end": 13.238,
+      "db": -4.5
+    },
+    {
+      "text": "suficiente",
+      "start": 13.238,
+      "end": 13.778,
+      "db": -3.2
+    },
+    {
+      "text": "aceite",
+      "start": 13.778,
+      "end": 14.217,
+      "db": 0.7
+    },
+    {
+      "text": "y",
+      "start": 14.217,
+      "end": 14.378,
+      "db": 1.6
+    },
+    {
+      "text": "selecciona",
+      "start": 14.378,
+      "end": 14.918,
+      "db": -0.0
+    },
+    {
+      "text": "una",
+      "start": 14.918,
+      "end": 15.098,
+      "db": 0.6
+    },
+    {
+      "text": "intensidad",
+      "start": 15.098,
+      "end": 15.778,
+      "db": -0.5
+    },
+    {
+      "text": "suave.",
+      "start": 15.778,
+      "end": 16.418,
+      "db": -0.0
+    },
+    {
+      "text": "Aplica",
+      "start": 16.418,
+      "end": 17.263,
+      "db": 0.4
+    },
+    {
+      "text": "aceite",
+      "start": 17.263,
+      "end": 17.643,
+      "db": 5.8
+    },
+    {
+      "text": "en",
+      "start": 17.643,
+      "end": 18.023,
+      "db": 1.3
+    },
+    {
+      "text": "pantorrillas",
+      "start": 18.023,
+      "end": 18.863,
+      "db": 0.9
+    },
+    {
+      "text": "y",
+      "start": 18.863,
+      "end": 19.223,
+      "db": 1.8
+    },
+    {
+      "text": "muslos",
+      "start": 19.223,
+      "end": 19.663,
+      "db": -0.8
+    },
+    {
+      "text": "Trabajamos",
+      "start": 19.83,
+      "end": 20.693,
+      "db": 5.1
+    },
+    {
+      "text": "4",
+      "start": 20.693,
+      "end": 21.293,
+      "db": 6.1
+    },
+    {
+      "text": "minutos",
+      "start": 21.293,
+      "end": 21.693,
+      "db": 0.3
+    },
+    {
+      "text": "por",
+      "start": 21.693,
+      "end": 22.51,
+      "db": 6.8
+    },
+    {
+      "text": "cada",
+      "start": 22.51,
+      "end": 22.95,
+      "db": 2.8
+    },
+    {
+      "text": "pantorrilla",
+      "start": 22.95,
+      "end": 23.87,
+      "db": 0.5
+    },
+    {
+      "text": "Con",
+      "start": 23.87,
+      "end": 24.327,
+      "db": 3.8
+    },
+    {
+      "text": "movimientos",
+      "start": 24.327,
+      "end": 24.867,
+      "db": 1.9
+    },
+    {
+      "text": "ascendentes,",
+      "start": 24.867,
+      "end": 25.967,
+      "db": 3.0
+    },
+    {
+      "text": "lentos",
+      "start": 26.147,
+      "end": 26.967,
+      "db": 0.8
+    },
+    {
+      "text": "y",
+      "start": 26.967,
+      "end": 27.187,
+      "db": -0.0
+    },
+    {
+      "text": "continuos",
+      "start": 27.187,
+      "end": 28.127,
+      "db": 1.9
+    },
+    {
+      "text": "Haz",
+      "start": 28.127,
+      "end": 28.431,
+      "db": 1.5
+    },
+    {
+      "text": "pasadas",
+      "start": 28.431,
+      "end": 28.871,
+      "db": -1.1
+    },
+    {
+      "text": "suaves",
+      "start": 28.871,
+      "end": 29.551,
+      "db": 4.2
+    },
+    {
+      "text": "desde",
+      "start": 29.551,
+      "end": 29.951,
+      "db": -2.1
+    },
+    {
+      "text": "el",
+      "start": 29.951,
+      "end": 30.171,
+      "db": -6.2
+    },
+    {
+      "text": "tobillo",
+      "start": 30.171,
+      "end": 30.811,
+      "db": 1.3
+    },
+    {
+      "text": "hacia",
+      "start": 30.811,
+      "end": 31.231,
+      "db": -3.6
+    },
+    {
+      "text": "arriba",
+      "start": 31.231,
+      "end": 31.711,
+      "db": 1.0
+    },
+    {
+      "text": "Terminando",
+      "start": 31.711,
+      "end": 32.411,
+      "db": -4.3
+    },
+    {
+      "text": "antes",
+      "start": 32.411,
+      "end": 32.751,
+      "db": -0.6
+    },
+    {
+      "text": "de",
+      "start": 32.751,
+      "end": 32.931,
+      "db": -2.5
+    },
+    {
+      "text": "la",
+      "start": 32.931,
+      "end": 33.051,
+      "db": -3.5
+    },
+    {
+      "text": "parte",
+      "start": 33.051,
+      "end": 33.331,
+      "db": -3.9
+    },
+    {
+      "text": "posterior",
+      "start": 33.331,
+      "end": 33.871,
+      "db": -2.0
+    },
+    {
+      "text": "de",
+      "start": 33.871,
+      "end": 34.031,
+      "db": -5.1
+    },
+    {
+      "text": "la",
+      "start": 34.031,
+      "end": 34.151,
+      "db": -2.4
+    },
+    {
+      "text": "rodilla",
+      "start": 34.151,
+      "end": 34.651,
+      "db": -5.9
+    },
+    {
+      "text": "Después",
+      "start": 34.735,
+      "end": 35.15,
+      "db": 2.8
+    },
+    {
+      "text": "que",
+      "start": 35.15,
+      "end": 35.37,
+      "db": 2.6
+    },
+    {
+      "text": "hayas",
+      "start": 35.37,
+      "end": 35.59,
+      "db": 2.9
+    },
+    {
+      "text": "terminado",
+      "start": 35.59,
+      "end": 36.07,
+      "db": 1.7
+    },
+    {
+      "text": "ambas",
+      "start": 36.07,
+      "end": 36.57,
+      "db": 4.8
+    },
+    {
+      "text": "pantorrillas",
+      "start": 36.57,
+      "end": 37.33,
+      "db": 1.5
+    },
+    {
+      "text": "vas",
+      "start": 37.33,
+      "end": 37.89,
+      "db": 1.6
+    },
+    {
+      "text": "a",
+      "start": 37.89,
+      "end": 38.05,
+      "db": -1.9
+    },
+    {
+      "text": "continuar",
+      "start": 38.05,
+      "end": 38.47,
+      "db": -0.1
+    },
+    {
+      "text": "3",
+      "start": 38.47,
+      "end": 39.01,
+      "db": 5.2
+    },
+    {
+      "text": "minutos",
+      "start": 39.01,
+      "end": 39.57,
+      "db": -0.0
+    },
+    {
+      "text": "en",
+      "start": 39.57,
+      "end": 40.09,
+      "db": 2.7
+    },
+    {
+      "text": "cada",
+      "start": 40.09,
+      "end": 40.55,
+      "db": -1.0
+    },
+    {
+      "text": "muslo.",
+      "start": 40.55,
+      "end": 41.19,
+      "db": 2.5
+    },
+    {
+      "text": "No",
+      "start": 41.38,
+      "end": 41.657,
+      "db": 3.3
+    },
+    {
+      "text": "necesitas",
+      "start": 41.657,
+      "end": 42.257,
+      "db": 1.7
+    },
+    {
+      "text": "hacerlo",
+      "start": 42.257,
+      "end": 43.136,
+      "db": 0.6
+    },
+    {
+      "text": "rápido,",
+      "start": 43.136,
+      "end": 43.676,
+      "db": 1.3
+    },
+    {
+      "text": "necesitas",
+      "start": 43.996,
+      "end": 44.536,
+      "db": 1.3
+    },
+    {
+      "text": "mantener",
+      "start": 44.536,
+      "end": 45.136,
+      "db": 0.4
+    },
+    {
+      "text": "el",
+      "start": 45.136,
+      "end": 45.716,
+      "db": 3.9
+    },
+    {
+      "text": "movimiento.",
+      "start": 45.716,
+      "end": 46.536,
+      "db": 1.5
+    },
+    {
+      "text": "Recuerda",
+      "start": 47.214,
+      "end": 47.947,
+      "db": 7.4
+    },
+    {
+      "text": "no",
+      "start": 47.947,
+      "end": 48.107,
+      "db": 0.1
+    },
+    {
+      "text": "dejar",
+      "start": 48.107,
+      "end": 48.347,
+      "db": -3.6
+    },
+    {
+      "text": "el",
+      "start": 48.347,
+      "end": 48.507,
+      "db": -1.8
+    },
+    {
+      "text": "dispositivo",
+      "start": 48.507,
+      "end": 49.187,
+      "db": 0.2
+    },
+    {
+      "text": "en",
+      "start": 49.187,
+      "end": 49.327,
+      "db": 0.1
+    },
+    {
+      "text": "un",
+      "start": 49.327,
+      "end": 49.447,
+      "db": -6.2
+    },
+    {
+      "text": "solo",
+      "start": 49.447,
+      "end": 49.667,
+      "db": -2.1
+    },
+    {
+      "text": "punto.",
+      "start": 49.667,
+      "end": 50.147,
+      "db": -0.2
+    },
+    {
+      "text": "Cuando",
+      "start": 50.31,
+      "end": 50.821,
+      "db": -0.4
+    },
+    {
+      "text": "termines",
+      "start": 50.821,
+      "end": 51.321,
+      "db": -1.6
+    },
+    {
+      "text": "cada",
+      "start": 51.321,
+      "end": 51.821,
+      "db": 3.6
+    },
+    {
+      "text": "pierna,",
+      "start": 51.821,
+      "end": 52.461,
+      "db": 5.4
+    },
+    {
+      "text": "puedes",
+      "start": 52.638,
+      "end": 53.07,
+      "db": 9.5
+    },
+    {
+      "text": "descansar",
+      "start": 53.07,
+      "end": 53.83,
+      "db": 5.8
+    },
+    {
+      "text": "unos",
+      "start": 53.83,
+      "end": 54.07,
+      "db": -2.0
+    },
+    {
+      "text": "minutos",
+      "start": 54.07,
+      "end": 54.51,
+      "db": -0.5
+    },
+    {
+      "text": "con",
+      "start": 54.51,
+      "end": 54.81,
+      "db": -1.8
+    },
+    {
+      "text": "las",
+      "start": 54.81,
+      "end": 55.01,
+      "db": -3.0
+    },
+    {
+      "text": "piernas",
+      "start": 55.01,
+      "end": 55.41,
+      "db": -0.4
+    },
+    {
+      "text": "cómodamente",
+      "start": 55.41,
+      "end": 56.612,
+      "db": 6.9
+    },
+    {
+      "text": "apoyadas",
+      "start": 56.612,
+      "end": 57.292,
+      "db": 1.1
+    },
+    {
+      "text": "sobre",
+      "start": 57.292,
+      "end": 57.532,
+      "db": -1.1
+    },
+    {
+      "text": "una",
+      "start": 57.532,
+      "end": 57.712,
+      "db": -3.7
+    },
+    {
+      "text": "almohada.",
+      "start": 57.712,
+      "end": 58.192,
+      "db": -5.1
+    },
+    {
+      "text": "Incluso",
+      "start": 58.241,
+      "end": 58.907,
+      "db": 5.0
+    },
+    {
+      "text": "en",
+      "start": 58.907,
+      "end": 59.027,
+      "db": -1.3
+    },
+    {
+      "text": "un",
+      "start": 59.027,
+      "end": 59.127,
+      "db": -6.1
+    },
+    {
+      "text": "día",
+      "start": 59.127,
+      "end": 59.287,
+      "db": -0.9
+    },
+    {
+      "text": "difícil,",
+      "start": 59.287,
+      "end": 59.747,
+      "db": 2.5
+    },
+    {
+      "text": "cumpliste",
+      "start": 59.987,
+      "end": 60.587,
+      "db": 4.3
+    },
+    {
+      "text": "con",
+      "start": 60.587,
+      "end": 60.787,
+      "db": 1.5
+    },
+    {
+      "text": "tus",
+      "start": 60.787,
+      "end": 60.987,
+      "db": -1.7
+    },
+    {
+      "text": "15",
+      "start": 60.987,
+      "end": 61.287,
+      "db": -0.5
+    },
+    {
+      "text": "minutos",
+      "start": 61.287,
+      "end": 61.707,
+      "db": 0.8
+    },
+    {
+      "text": "del",
+      "start": 61.707,
+      "end": 61.987,
+      "db": -0.9
+    },
+    {
+      "text": "día.",
+      "start": 61.987,
+      "end": 62.247,
+      "db": -8.6
+    }
+  ]
+}

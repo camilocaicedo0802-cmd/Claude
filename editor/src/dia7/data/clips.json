@@ -1,0 +1,117 @@
+[
+  {
+    "frase": "la rutina de hoy",
+    "outStart": 0.0,
+    "frames": 113,
+    "src": [2, 154.8]
+  },
+  {
+    "frase": "pero no quieres",
+    "outStart": 3.7666666666666666,
+    "frames": 72,
+    "src": [2, 20.5]
+  },
+  {
+    "frase": "siéntate",
+    "outStart": 6.166666666666667,
+    "frames": 174,
+    "src": [1, 145.5]
+  },
+  {
+    "frase": "prepara ambas",
+    "outStart": 11.966666666666667,
+    "frames": 72,
+    "src": [1, 138.0]
+  },
+  {
+    "frase": "selecciona",
+    "outStart": 14.366666666666667,
+    "frames": 62,
+    "src": [2, 34.6]
+  },
+  {
+    "frase": "aplica aceite",
+    "outStart": 16.433333333333334,
+    "frames": 102,
+    "src": [1, 178.0]
+  },
+  {
+    "frase": "trabajamos",
+    "outStart": 19.833333333333332,
+    "frames": 121,
+    "src": [2, 47.0],
+    "vel": 2.0
+  },
+  {
+    "frase": "con movimientos",
+    "outStart": 23.866666666666667,
+    "frames": 128,
+    "src": [1, 291.0],
+    "vel": 0.6
+  },
+  {
+    "frase": "haz pasadas",
+    "outStart": 28.133333333333333,
+    "frames": 107,
+    "src": [2, 56.5]
+  },
+  {
+    "frase": "terminando",
+    "outStart": 31.7,
+    "frames": 91,
+    "src": [2, 69.5]
+  },
+  {
+    "frase": "después que",
+    "outStart": 34.733333333333334,
+    "frames": 78,
+    "split": [
+      [2, 50.0],
+      [1, 300.0]
+    ]
+  },
+  {
+    "frase": "vas a continuar",
+    "outStart": 37.333333333333336,
+    "frames": 121,
+    "src": [1, 363.0]
+  },
+  {
+    "frase": "no necesitas",
+    "outStart": 41.36666666666667,
+    "frames": 79,
+    "src": [2, 76.0],
+    "vel": 3.0
+  },
+  {
+    "frase": "necesitas mantener",
+    "outStart": 44.0,
+    "frames": 96,
+    "src": [1, 381.0]
+  },
+  {
+    "frase": "recuerda no dejar",
+    "outStart": 47.2,
+    "frames": 93,
+    "src": [1, 396.0]
+  },
+  {
+    "frase": "cuando termines",
+    "outStart": 50.3,
+    "frames": 70,
+    "src": [2, 85.5]
+  },
+  {
+    "frase": "puedes descansar",
+    "outStart": 52.63333333333333,
+    "frames": 168,
+    "src": [2, 159.0],
+    "vel": 0.8
+  },
+  {
+    "frase": "incluso",
+    "outStart": 58.233333333333334,
+    "frames": 145,
+    "src": [2, 163.5]
+  }
+]

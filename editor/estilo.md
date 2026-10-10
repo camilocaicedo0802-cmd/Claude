@@ -142,3 +142,18 @@ Estas reglas mandan sobre todo lo anterior.
 - Resto: tarjeta de minutos por zona, frasco Drena Oil que vierte ("aplica aceite generosamente"), flecha que sube ("hacia la parte alta del muslo", "de abajo hacia arriba"), flecha en círculo ("círculos amplios"), perilla de intensidad que baja ("baja la intensidad de succión"; "una mayor intensidad no significa mejores resultados"), resumen que cuenta hasta 15 min y lista que se marca en "la técnica, el movimiento y la constancia". Sin calendario 3D.
 - Mezcla: la voz en off llegó más baja (−25,2 LUFS frente a ≈ −16) y no se normaliza (§10.5); música y efectos bajan ×0,35 (≈ −9 dB). Medido sobre el render: voz con ganancia 1,0 y desfase 0, música 16,5 dB por debajo y ningún efecto por encima de la voz.
 - Entrega: render CRF 16 por tramos y, para que quepa en el repositorio (< 100 MB), x264 a 2 pasadas a 7,5 Mbps + AAC 320 kbps (90 MB); copia ligera de 28,8 MB.
+
+## 15. Composición aplicada en el día 7 · "Piernas ligeras"
+- Voz en off limpia (2:19 → 1:02; sin repeticiones, solo silencios > 0,3 s) sobre **dos crudos** (cuarto con pared y puerta; uno de 7 min y otro de 3 min). Composición `Dia7`, montaje en `scripts/dia7/montar.py`.
+- Pedido: que no sea monótono y se diferencie de los días anteriores sin perder la secuencia. Cambios de lenguaje:
+  - **Título en la franja baja** (la cabeza está casi en el borde superior y no cabe encima): entra letra a letra con el kicker en píldora Durazno y a los ~2,4 s se recoge en una píldora pequeña en la columna lateral.
+  - **Cortinas** diagonales Salvia/Durazno/Marfil en los cambios de zona (en vez de destello + desenfoque).
+  - **Anillo de la rutina** con los 5 tramos del cuadro (1·4·4·3·3 min) en vez de la tarjeta de minutos.
+  - **Ritmo del montaje según la frase:** timelapse ×2 en "trabajamos 4 minutos", cámara lenta (desde el original a 60 fps) en "lentos y continuos", la toma a ×3 en "no necesitas hacerlo rápido" y vuelta al ritmo normal en "necesitas mantener el movimiento", pantalla partida en "ambas pantorrillas", reencuadres lentos hacia la pierna.
+  - **Etalonaje por momento:** "cansada" apagada y fría con viñeta que se calienta en "pero no quieres abandonar el hábito"; el descanso, cálido con viñeta suave.
+  - **3D nuevos:** pluma ("piernas ligeras"), batería que se recarga ("cansada" → "no quieres abandonar"), almohada que se hunde ("apoyadas sobre una almohada") y sello "Día 7 cumplido" (cuadro: "marca el día cumplido"); racha de 7 días que se completa en "cumpliste".
+  - **2D nuevos:** elección silla/cama, chips "ascendentes · lentos · continuos", palabra tachada "rápido" → "mantén el movimiento", insignia de velocidad ×2/×3.
+- Maqueta: columnas a los lados de la cabeza (`bajoCabeza`: si no cabe al lado, siguen por debajo); tomas sin cabeza (tumbada, pantalla partida) marcadas como tales; YuNet descarta detecciones por debajo de la mitad del cuadro (falsos positivos).
+- Intensidad: "suave" (perilla al nivel 1) y "Calor: opcional", nunca "calor máximo" (cuadro del día 7).
+- Mezcla: voz a −25,6 LUFS sin tocar; música y efectos ×0,35.
+

@@ -24,18 +24,41 @@ const ABAJO = 1480;
 const HUECO = 18;
 const BORDE = 24;
 
-const maqueta = (zona: Caja, elems: Elem[]): (Pos | null)[] => {
-  const y0 = Math.max(ARRIBA, zona.y0 + 12);
+/** Límites verticales de las columnas. `bajoTitulo`: empiezan debajo del título que se apoya sobre la cabeza. */
+export type Limites = {
+  arriba: number;
+  abajo: number;
+  bajoTitulo: boolean;
+  /** Si al lado de la cabeza no cabe, la columna sigue por debajo de ella (con media pantalla de ancho). */
+  bajoCabeza?: boolean;
+};
+const LIM: Limites = { arriba: ARRIBA, abajo: ABAJO, bajoTitulo: true };
+
+const maqueta = (
+  zona: Caja,
+  elems: Elem[],
+  lim: Limites = LIM,
+): (Pos | null)[] => {
+  const y0 = lim.bajoTitulo ? Math.max(lim.arriba, zona.y0 + 12) : lim.arriba;
   const libre = { izq: zona.x0 - BORDE, der: 1080 - BORDE - zona.x1 };
   const ocupado = { izq: y0, der: y0 };
   return elems.map((e) => {
     const pref = e.lado ?? "izq";
     for (const lado of [pref, pref === "izq" ? "der" : "izq"] as Lado[]) {
       const b = e.escala ?? 1;
-      const s = Math.min(b, libre[lado] / e.w);
+      const debajo = Math.max(y0, zona.y1 + 12);
+      const mitad = 540 - BORDE;
+      let top = ocupado[lado];
+      let s = Math.min(
+        b,
+        (lim.bajoCabeza && top >= debajo ? mitad : libre[lado]) / e.w,
+      );
+      if (s < b * 0.8 && lim.bajoCabeza && top < debajo) {
+        top = debajo;
+        s = Math.min(b, mitad / e.w);
+      }
       if (s < b * 0.8) continue;
-      if (ocupado[lado] + e.h * s > ABAJO) continue;
-      const top = ocupado[lado];
+      if (top + e.h * s > lim.abajo) continue;
       ocupado[lado] = top + e.h * s + HUECO;
       return {
         left: lado === "izq" ? BORDE : 1080 - BORDE - e.w * s,
@@ -54,12 +77,13 @@ export const Columnas: React.FC<{
   elementos: Elem[];
   /** Índices que se dibujan (el resto solo ocupa su sitio). Por defecto, todos. */
   dibujar?: (i: number) => boolean;
-}> = ({ desde, hasta, elementos, dibujar = () => true }) => {
+  lim?: Limites;
+}> = ({ desde, hasta, elementos, dibujar = () => true, lim = LIM }) => {
   const caras = useCaras();
   const { t } = useT();
   const { actual, previa, k } = zonasEn(caras, t, desde, hasta);
-  const ahora = maqueta(actual, elementos);
-  const antes = maqueta(previa, elementos);
+  const ahora = maqueta(actual, elementos, lim);
+  const antes = maqueta(previa, elementos, lim);
   return (
     <>
       {elementos.map((e, i) => {
@@ -85,10 +109,15 @@ export const Columnas: React.FC<{
 };
 
 /** Quita los extras más antiguos hasta que el más reciente cabe (nunca desaparece lo último que se ha dicho). */
-export const ajustar = (zona: Caja, fijos: Elem[], extras: Elem[]): Elem[] => {
+export const ajustar = (
+  zona: Caja,
+  fijos: Elem[],
+  extras: Elem[],
+  lim: Limites = LIM,
+): Elem[] => {
   for (let quitar = 0; quitar <= extras.length; quitar++) {
     const lista = [...fijos, ...extras.slice(quitar)];
-    const pos = maqueta(zona, lista);
+    const pos = maqueta(zona, lista, lim);
     if (pos.slice(fijos.length).every(Boolean)) return lista;
   }
   return fijos;

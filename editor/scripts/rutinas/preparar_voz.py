@@ -1,6 +1,6 @@
-"""Días 4, 5 y 6 (rutinas con voz en off): limpia la voz en off y genera su línea de tiempo.
+"""Días 4 a 7 (rutinas con voz en off): limpia la voz en off y genera su línea de tiempo.
 
-Uso: python3 scripts/rutinas/preparar_voz.py <dia4|dia5|dia6> <voz.m4a>
+Uso: python3 scripts/rutinas/preparar_voz.py <dia4|dia5|dia6|dia7> <voz.m4a>
 Salidas: public/<dia>/voz.wav (voz ORIGINAL sin normalizar, solo cortada) y src/<dia>/data/edit.json (palabras en
 la línea de tiempo editada, con su volumen relativo "db").
 
@@ -30,6 +30,8 @@ TOMAS = {
     # Fuera: el primer "Ahora vamos a repetir la misma secuencia en el muslo izquierdo. Tres minutos de barridos y
     # tres." (57,3–67,2 s), que se corta a mitad y se repite completo enseguida.
     "dia6": [(1.50, 56.30), (69.30, 125.20)],
+    # Sin repeticiones; fuera solo el ruido final que Whisper lee como "Gracias" (77,9 s).
+    "dia7": [(1.50, 77.45)],
 }
 
 
