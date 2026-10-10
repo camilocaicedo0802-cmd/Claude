@@ -51,7 +51,7 @@ export const Pluma3D: React.FC<Props> = (props) => {
     <Escena {...props}>
       {(p, t) => (
         <group
-          scale={1.25 * (0.62 + 0.38 * p)}
+          scale={1.6 * (0.62 + 0.38 * p)}
           position={[Math.sin(t * 1.4) * 0.45, Math.cos(t * 2.8) * 0.12, 0]}
           rotation={[
             0.3,
@@ -180,17 +180,25 @@ export const Almohada3D: React.FC<Props & { apoya: number }> = ({
     <Escena {...props}>
       {(p, t) => (
         <group
-          scale={1.25 * (0.55 + 0.45 * p)}
-          rotation={[0.85, 0, 0.12 + Math.sin(t * 0.8) * 0.06]}
-          position={[0, -0.1, 0]}
+          scale={1.45 * (0.55 + 0.45 * p)}
+          rotation={[0.42, -0.35 + Math.sin(t * 0.7) * 0.12, 0.08]}
+          position={[0, -0.05, 0]}
         >
-          <mesh geometry={almohada} scale={[1, 1, 1 - 0.18 * hunde]}>
-            <Clay color={C.durazno} rough={0.8} />
+          <mesh geometry={almohada} scale={[1, 1, 1 - 0.22 * hunde]}>
+            <Clay color={C.marfil} rough={0.85} />
           </mesh>
-          {/* Ribete salvia */}
-          <mesh rotation={[0, 0, 0]} scale={[1.18, 0.73, 1]}>
-            <torusGeometry args={[1, 0.035, 8, 64]} />
-            <Clay color={C.salvia} />
+          {/* Hundimiento: una sombra salvia en el centro cuando se apoyan las piernas */}
+          <mesh
+            position={[0, 0, 0.47 * (1 - 0.22 * hunde)]}
+            scale={[1, 0.55, 1]}
+          >
+            <circleGeometry args={[0.55 * hunde + 0.001, 40]} />
+            <meshStandardMaterial
+              color={C.durazno}
+              transparent
+              opacity={0.55 * hunde}
+              roughness={0.9}
+            />
           </mesh>
           {/* Respiración: tres burbujas durazno que suben despacio */}
           {[0, 1, 2].map((i) => {
@@ -198,16 +206,14 @@ export const Almohada3D: React.FC<Props & { apoya: number }> = ({
             return (
               <mesh
                 key={i}
-                position={[0.7 - i * 0.5, 0.2 + k * 0.4, 0.55 + k * 1.4]}
-                scale={Math.sin(k * Math.PI) * (0.1 + 0.04 * i)}
+                position={[0.9 - i * 0.45, 0.6 + k * 1.1, 0.5]}
+                scale={Math.sin(k * Math.PI) * (0.09 + 0.03 * i)}
               >
                 <sphereGeometry args={[1, 16, 12]} />
                 <meshStandardMaterial
                   color="#FFF3DF"
                   emissive={C.durazno}
-                  emissiveIntensity={0.4}
-                  transparent
-                  opacity={0.85}
+                  emissiveIntensity={0.5}
                 />
               </mesh>
             );

@@ -144,7 +144,7 @@ Estas reglas mandan sobre todo lo anterior.
 - Entrega: render CRF 16 por tramos y, para que quepa en el repositorio (< 100 MB), x264 a 2 pasadas a 7,5 Mbps + AAC 320 kbps (90 MB); copia ligera de 28,8 MB.
 
 ## 15. Composición aplicada en el día 7 · "Piernas ligeras"
-- Voz en off limpia (2:19 → 1:02; sin repeticiones, solo silencios > 0,3 s) sobre **dos crudos** (cuarto con pared y puerta; uno de 7 min y otro de 3 min). Composición `Dia7`, montaje en `scripts/dia7/montar.py`.
+- Voz en off limpia (1:19 → 1:02; sin repeticiones, solo silencios > 0,3 s) sobre **dos crudos** (cuarto con pared y puerta; uno de 7 min y otro de 3 min). Composición `Dia7`, montaje en `scripts/dia7/montar.py`.
 - Pedido: que no sea monótono y se diferencie de los días anteriores sin perder la secuencia. Cambios de lenguaje:
   - **Título en la franja baja** (la cabeza está casi en el borde superior y no cabe encima): entra letra a letra con el kicker en píldora Durazno y a los ~2,4 s se recoge en una píldora pequeña en la columna lateral.
   - **Cortinas** diagonales Salvia/Durazno/Marfil en los cambios de zona (en vez de destello + desenfoque).

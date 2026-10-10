@@ -239,18 +239,8 @@ const SECCIONES: Seccion[] = [
         at("aplica aceite").start,
         DER,
       ),
-      aviso(
-        at("suave").start,
-        "Intensidad suave",
-        "si",
-        at("aplica aceite").start,
-      ),
-      aviso(
-        at("suave").start + 0.5,
-        "Calor: opcional",
-        "si",
-        at("aplica aceite").start,
-      ),
+      aviso(at("suave").start, "Intensidad suave", "si"),
+      aviso(at("suave").start + 0.5, "Calor: opcional", "si"),
       {
         desde: at("pantorrillas").start,
         w: 250,
@@ -355,7 +345,7 @@ const SECCIONES: Seccion[] = [
       {
         desde: at("no necesitas").start,
         hasta: at("recuerda no dejar").start,
-        w: 260,
+        w: 300,
         h: 170,
         lado: DER,
         el: (pos) => (
