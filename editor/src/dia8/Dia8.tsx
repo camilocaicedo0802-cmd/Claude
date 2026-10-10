@@ -673,7 +673,7 @@ const EFECTOS: Efecto[] = [
 ];
 // La voz del día 8 está a −29 LUFS (≈ 13 dB por debajo de la del día 1) y no se normaliza (§10.5):
 // música y efectos bajan lo mismo para mantener la mezcla de marca.
-const NIVEL = 0.25;
+const NIVEL = 0.15;
 const FIN_VOZ = WORDS[WORDS.length - 1].end;
 
 export const Dia8Video: React.FC = () => {
