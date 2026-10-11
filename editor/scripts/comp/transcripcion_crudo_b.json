@@ -1,0 +1,1472 @@
+{
+ "model": "large-v3",
+ "duration": 99.392,
+ "segments": [
+  {
+   "start": 0.0,
+   "end": 1.04,
+   "text": "Creo que tengo algo."
+  },
+  {
+   "start": 1.26,
+   "end": 3.04,
+   "text": "Lo oigo chicos, creo que agarró otro."
+  },
+  {
+   "start": 3.42,
+   "end": 4.18,
+   "text": "¿Qué pasa?"
+  },
+  {
+   "start": 4.38,
+   "end": 6.14,
+   "text": "Ahí vamos, creo que ha agarrado otro presente."
+  },
+  {
+   "start": 8.4,
+   "end": 9.96,
+   "text": "¡Ahí está! ¡Ahí está!"
+  },
+  {
+   "start": 11.76,
+   "end": 12.28,
+   "text": "¿Tiburón?"
+  },
+  {
+   "start": 12.4,
+   "end": 13.36,
+   "text": "¿Tienes un tiburón?"
+  },
+  {
+   "start": 16.26,
+   "end": 16.78,
+   "text": "¡Capitán!"
+  },
+  {
+   "start": 17.66,
+   "end": 18.78,
+   "text": "¡Ese es un tiburón!"
+  },
+  {
+   "start": 19.02,
+   "end": 19.84,
+   "text": "¡Oh, sí lo tenemos!"
+  },
+  {
+   "start": 20.22,
+   "end": 22.34,
+   "text": "Es un tiburón nariz apilado del Atlántico."
+  },
+  {
+   "start": 22.42,
+   "end": 23.54,
+   "text": "Tiene dientes pequeños."
+  },
+  {
+   "start": 23.8,
+   "end": 24.96,
+   "text": "Veamos qué tamaño tiene."
+  },
+  {
+   "start": 26.22,
+   "end": 27.92,
+   "text": "4,7 libras."
+  },
+  {
+   "start": 27.92,
+   "end": 30.02,
+   "text": "Bien, no está mal, no está mal."
+  },
+  {
+   "start": 30.02,
+   "end": 33.08,
+   "text": "No es suficiente, pero necesitamos capturarlas. Sigamos."
+  },
+  {
+   "start": 33.4,
+   "end": 35.62,
+   "text": "Venga, otro equipo. Pesca, nos da energía."
+  },
+  {
+   "start": 36.04,
+   "end": 37.66,
+   "text": "Pescamos otro pez, muy rápido."
+  },
+  {
+   "start": 38.06,
+   "end": 39.72,
+   "text": "Dios mío, ¿por qué tenemos que hacer esto?"
+  },
+  {
+   "start": 39.82,
+   "end": 42.76,
+   "text": "Vamos, es gigante. Vamos, hay que girar, girar."
+  },
+  {
+   "start": 42.78,
+   "end": 44.56,
+   "text": "Oh, Dios mío, es enorme."
+  },
+  {
+   "start": 44.96,
+   "end": 45.6,
+   "text": "Vamos, Jenny."
+  },
+  {
+   "start": 46.2,
+   "end": 47.32,
+   "text": "Enrolla, enrolla, enrolla."
+  },
+  {
+   "start": 47.78,
+   "end": 49.66,
+   "text": "Mírenme, mirenme, mirenme, mirenme, mirenme."
+  },
+  {
+   "start": 49.72,
+   "end": 51.02,
+   "text": "Ya casi está aquí."
+  },
+  {
+   "start": 52.28,
+   "end": 53.14,
+   "text": "Mírenlo, ahí está."
+  },
+  {
+   "start": 53.56,
+   "end": 55.72,
+   "text": "Sosten esto y yo os arreglaré, ¿ok?"
+  },
+  {
+   "start": 55.72,
+   "end": 56.64,
+   "text": "¿Qué? ¡Ay, por Dios!"
+  },
+  {
+   "start": 58.34,
+   "end": 59.46,
+   "text": "¡Judy! ¡Enrolla!"
+  },
+  {
+   "start": 61.879999999999995,
+   "end": 66.58,
+   "text": "No esperábamos un pez tan grande. Ahora es un problema porque no podemos sacarlo."
+  },
+  {
+   "start": 66.78,
+   "end": 67.58,
+   "text": "¡Sí! ¡Vamos!"
+  },
+  {
+   "start": 68.24,
+   "end": 70.44,
+   "text": "¡Por fin lo tengo! ¡Ya está en posición!"
+  },
+  {
+   "start": 75.98,
+   "end": 79.66,
+   "text": "Así chicos, hemos venido a otro sitio y esperamos que nos pasen."
+  },
+  {
+   "start": 79.66,
+   "end": 86.08,
+   "text": "Tenemos tiempo, estamos en un sitio muy bueno, hay un antiguo justo debajo de nosotros y un montón de peces."
+  },
+  {
+   "start": 86.52,
+   "end": 91.84,
+   "text": "Chicos, la verdad es que estoy emocionado, es un pez muy grande, vamos a ver."
+  },
+  {
+   "start": 95.06,
+   "end": 97.56,
+   "text": "Es un pez que la vas por ahí, no quiere pesarlo."
+  }
+ ],
+ "words": [
+  {
+   "text": "Creo",
+   "start": 0.0,
+   "end": 0.24,
+   "prob": 0.178
+  },
+  {
+   "text": "que",
+   "start": 0.24,
+   "end": 0.48,
+   "prob": 0.995
+  },
+  {
+   "text": "tengo",
+   "start": 0.48,
+   "end": 0.72,
+   "prob": 0.958
+  },
+  {
+   "text": "algo.",
+   "start": 0.72,
+   "end": 1.04,
+   "prob": 0.988
+  },
+  {
+   "text": "Lo",
+   "start": 1.26,
+   "end": 1.44,
+   "prob": 0.899
+  },
+  {
+   "text": "oigo",
+   "start": 1.44,
+   "end": 1.68,
+   "prob": 0.783
+  },
+  {
+   "text": "chicos,",
+   "start": 1.68,
+   "end": 1.9,
+   "prob": 0.868
+  },
+  {
+   "text": "creo",
+   "start": 2.12,
+   "end": 2.3,
+   "prob": 0.986
+  },
+  {
+   "text": "que",
+   "start": 2.3,
+   "end": 2.46,
+   "prob": 0.999
+  },
+  {
+   "text": "agarró",
+   "start": 2.46,
+   "end": 2.76,
+   "prob": 0.978
+  },
+  {
+   "text": "otro.",
+   "start": 2.76,
+   "end": 3.04,
+   "prob": 0.935
+  },
+  {
+   "text": "¿Qué",
+   "start": 3.42,
+   "end": 3.94,
+   "prob": 0.976
+  },
+  {
+   "text": "pasa?",
+   "start": 3.94,
+   "end": 4.18,
+   "prob": 1.0
+  },
+  {
+   "text": "Ahí",
+   "start": 4.38,
+   "end": 4.52,
+   "prob": 0.942
+  },
+  {
+   "text": "vamos,",
+   "start": 4.52,
+   "end": 4.72,
+   "prob": 0.905
+  },
+  {
+   "text": "creo",
+   "start": 4.88,
+   "end": 5.06,
+   "prob": 1.0
+  },
+  {
+   "text": "que",
+   "start": 5.06,
+   "end": 5.24,
+   "prob": 1.0
+  },
+  {
+   "text": "ha",
+   "start": 5.24,
+   "end": 5.3,
+   "prob": 0.788
+  },
+  {
+   "text": "agarrado",
+   "start": 5.3,
+   "end": 5.64,
+   "prob": 0.999
+  },
+  {
+   "text": "otro",
+   "start": 5.64,
+   "end": 5.86,
+   "prob": 0.886
+  },
+  {
+   "text": "presente.",
+   "start": 5.86,
+   "end": 6.14,
+   "prob": 0.1
+  },
+  {
+   "text": "¡Ahí",
+   "start": 8.4,
+   "end": 8.92,
+   "prob": 0.816
+  },
+  {
+   "text": "está!",
+   "start": 8.92,
+   "end": 9.18,
+   "prob": 0.998
+  },
+  {
+   "text": "¡Ahí",
+   "start": 9.38,
+   "end": 9.7,
+   "prob": 0.99
+  },
+  {
+   "text": "está!",
+   "start": 9.7,
+   "end": 9.96,
+   "prob": 0.999
+  },
+  {
+   "text": "¿Tiburón?",
+   "start": 11.76,
+   "end": 12.28,
+   "prob": 0.905
+  },
+  {
+   "text": "¿Tienes",
+   "start": 12.4,
+   "end": 12.84,
+   "prob": 0.742
+  },
+  {
+   "text": "un",
+   "start": 12.84,
+   "end": 12.98,
+   "prob": 0.935
+  },
+  {
+   "text": "tiburón?",
+   "start": 12.98,
+   "end": 13.36,
+   "prob": 0.997
+  },
+  {
+   "text": "¡Capitán!",
+   "start": 16.26,
+   "end": 16.78,
+   "prob": 0.723
+  },
+  {
+   "text": "¡Ese",
+   "start": 17.66,
+   "end": 18.18,
+   "prob": 0.802
+  },
+  {
+   "text": "es",
+   "start": 18.18,
+   "end": 18.26,
+   "prob": 1.0
+  },
+  {
+   "text": "un",
+   "start": 18.26,
+   "end": 18.38,
+   "prob": 1.0
+  },
+  {
+   "text": "tiburón!",
+   "start": 18.38,
+   "end": 18.78,
+   "prob": 1.0
+  },
+  {
+   "text": "¡Oh,",
+   "start": 19.02,
+   "end": 19.06,
+   "prob": 0.511
+  },
+  {
+   "text": "sí",
+   "start": 19.06,
+   "end": 19.32,
+   "prob": 0.676
+  },
+  {
+   "text": "lo",
+   "start": 19.32,
+   "end": 19.48,
+   "prob": 0.995
+  },
+  {
+   "text": "tenemos!",
+   "start": 19.48,
+   "end": 19.84,
+   "prob": 1.0
+  },
+  {
+   "text": "Es",
+   "start": 20.22,
+   "end": 20.46,
+   "prob": 0.995
+  },
+  {
+   "text": "un",
+   "start": 20.46,
+   "end": 20.58,
+   "prob": 1.0
+  },
+  {
+   "text": "tiburón",
+   "start": 20.58,
+   "end": 20.94,
+   "prob": 1.0
+  },
+  {
+   "text": "nariz",
+   "start": 20.94,
+   "end": 21.26,
+   "prob": 0.964
+  },
+  {
+   "text": "apilado",
+   "start": 21.26,
+   "end": 21.72,
+   "prob": 0.731
+  },
+  {
+   "text": "del",
+   "start": 21.72,
+   "end": 21.84,
+   "prob": 0.738
+  },
+  {
+   "text": "Atlántico.",
+   "start": 21.84,
+   "end": 22.34,
+   "prob": 0.929
+  },
+  {
+   "text": "Tiene",
+   "start": 22.42,
+   "end": 22.78,
+   "prob": 0.999
+  },
+  {
+   "text": "dientes",
+   "start": 22.78,
+   "end": 23.1,
+   "prob": 0.979
+  },
+  {
+   "text": "pequeños.",
+   "start": 23.1,
+   "end": 23.54,
+   "prob": 0.995
+  },
+  {
+   "text": "Veamos",
+   "start": 23.8,
+   "end": 24.16,
+   "prob": 0.99
+  },
+  {
+   "text": "qué",
+   "start": 24.16,
+   "end": 24.38,
+   "prob": 0.871
+  },
+  {
+   "text": "tamaño",
+   "start": 24.38,
+   "end": 24.68,
+   "prob": 0.989
+  },
+  {
+   "text": "tiene.",
+   "start": 24.68,
+   "end": 24.96,
+   "prob": 0.991
+  },
+  {
+   "text": "4",
+   "start": 26.22,
+   "end": 26.74,
+   "prob": 0.883
+  },
+  {
+   "text": ",7",
+   "start": 26.74,
+   "end": 27.2,
+   "prob": 0.947
+  },
+  {
+   "text": "libras.",
+   "start": 27.2,
+   "end": 27.92,
+   "prob": 0.999
+  },
+  {
+   "text": "Bien,",
+   "start": 27.92,
+   "end": 28.52,
+   "prob": 0.255
+  },
+  {
+   "text": "no",
+   "start": 28.52,
+   "end": 28.8,
+   "prob": 0.969
+  },
+  {
+   "text": "está",
+   "start": 28.8,
+   "end": 29.04,
+   "prob": 0.965
+  },
+  {
+   "text": "mal,",
+   "start": 29.04,
+   "end": 29.38,
+   "prob": 1.0
+  },
+  {
+   "text": "no",
+   "start": 29.54,
+   "end": 29.68,
+   "prob": 0.99
+  },
+  {
+   "text": "está",
+   "start": 29.68,
+   "end": 29.94,
+   "prob": 0.931
+  },
+  {
+   "text": "mal.",
+   "start": 29.94,
+   "end": 30.02,
+   "prob": 0.983
+  },
+  {
+   "text": "No",
+   "start": 30.02,
+   "end": 30.1,
+   "prob": 0.328
+  },
+  {
+   "text": "es",
+   "start": 30.1,
+   "end": 30.28,
+   "prob": 0.792
+  },
+  {
+   "text": "suficiente,",
+   "start": 30.28,
+   "end": 30.6,
+   "prob": 0.985
+  },
+  {
+   "text": "pero",
+   "start": 30.82,
+   "end": 31.1,
+   "prob": 0.998
+  },
+  {
+   "text": "necesitamos",
+   "start": 31.1,
+   "end": 31.72,
+   "prob": 1.0
+  },
+  {
+   "text": "capturarlas.",
+   "start": 31.72,
+   "end": 32.46,
+   "prob": 0.885
+  },
+  {
+   "text": "Sigamos.",
+   "start": 32.6,
+   "end": 33.08,
+   "prob": 0.996
+  },
+  {
+   "text": "Venga,",
+   "start": 33.4,
+   "end": 33.74,
+   "prob": 0.329
+  },
+  {
+   "text": "otro",
+   "start": 33.74,
+   "end": 33.98,
+   "prob": 0.724
+  },
+  {
+   "text": "equipo.",
+   "start": 33.98,
+   "end": 34.32,
+   "prob": 0.997
+  },
+  {
+   "text": "Pesca,",
+   "start": 34.58,
+   "end": 34.74,
+   "prob": 0.549
+  },
+  {
+   "text": "nos",
+   "start": 34.86,
+   "end": 35.08,
+   "prob": 0.936
+  },
+  {
+   "text": "da",
+   "start": 35.08,
+   "end": 35.28,
+   "prob": 0.998
+  },
+  {
+   "text": "energía.",
+   "start": 35.28,
+   "end": 35.62,
+   "prob": 0.999
+  },
+  {
+   "text": "Pescamos",
+   "start": 36.04,
+   "end": 36.52,
+   "prob": 0.714
+  },
+  {
+   "text": "otro",
+   "start": 36.52,
+   "end": 36.74,
+   "prob": 0.875
+  },
+  {
+   "text": "pez,",
+   "start": 36.74,
+   "end": 37.1,
+   "prob": 0.939
+  },
+  {
+   "text": "muy",
+   "start": 37.1,
+   "end": 37.24,
+   "prob": 0.948
+  },
+  {
+   "text": "rápido.",
+   "start": 37.24,
+   "end": 37.66,
+   "prob": 0.999
+  },
+  {
+   "text": "Dios",
+   "start": 38.06,
+   "end": 38.34,
+   "prob": 0.813
+  },
+  {
+   "text": "mío,",
+   "start": 38.34,
+   "end": 38.56,
+   "prob": 1.0
+  },
+  {
+   "text": "¿por",
+   "start": 38.58,
+   "end": 38.7,
+   "prob": 0.965
+  },
+  {
+   "text": "qué",
+   "start": 38.7,
+   "end": 38.84,
+   "prob": 0.983
+  },
+  {
+   "text": "tenemos",
+   "start": 38.84,
+   "end": 39.1,
+   "prob": 0.952
+  },
+  {
+   "text": "que",
+   "start": 39.1,
+   "end": 39.3,
+   "prob": 0.802
+  },
+  {
+   "text": "hacer",
+   "start": 39.3,
+   "end": 39.5,
+   "prob": 0.159
+  },
+  {
+   "text": "esto?",
+   "start": 39.5,
+   "end": 39.72,
+   "prob": 0.8
+  },
+  {
+   "text": "Vamos,",
+   "start": 39.82,
+   "end": 40.3,
+   "prob": 0.74
+  },
+  {
+   "text": "es",
+   "start": 40.48,
+   "end": 40.76,
+   "prob": 0.989
+  },
+  {
+   "text": "gigante.",
+   "start": 40.76,
+   "end": 41.28,
+   "prob": 0.999
+  },
+  {
+   "text": "Vamos,",
+   "start": 41.42,
+   "end": 41.8,
+   "prob": 0.987
+  },
+  {
+   "text": "hay",
+   "start": 41.88,
+   "end": 42.02,
+   "prob": 0.974
+  },
+  {
+   "text": "que",
+   "start": 42.02,
+   "end": 42.1,
+   "prob": 1.0
+  },
+  {
+   "text": "girar,",
+   "start": 42.1,
+   "end": 42.46,
+   "prob": 0.998
+  },
+  {
+   "text": "girar.",
+   "start": 42.46,
+   "end": 42.76,
+   "prob": 0.993
+  },
+  {
+   "text": "Oh,",
+   "start": 42.78,
+   "end": 43.06,
+   "prob": 0.732
+  },
+  {
+   "text": "Dios",
+   "start": 43.06,
+   "end": 43.22,
+   "prob": 0.999
+  },
+  {
+   "text": "mío,",
+   "start": 43.22,
+   "end": 43.74,
+   "prob": 1.0
+  },
+  {
+   "text": "es",
+   "start": 43.74,
+   "end": 43.98,
+   "prob": 0.999
+  },
+  {
+   "text": "enorme.",
+   "start": 43.98,
+   "end": 44.56,
+   "prob": 0.985
+  },
+  {
+   "text": "Vamos,",
+   "start": 44.96,
+   "end": 45.38,
+   "prob": 0.993
+  },
+  {
+   "text": "Jenny.",
+   "start": 45.44,
+   "end": 45.6,
+   "prob": 0.459
+  },
+  {
+   "text": "Enrolla,",
+   "start": 46.2,
+   "end": 46.68,
+   "prob": 0.917
+  },
+  {
+   "text": "enrolla,",
+   "start": 46.76,
+   "end": 47.0,
+   "prob": 0.997
+  },
+  {
+   "text": "enrolla.",
+   "start": 47.14,
+   "end": 47.32,
+   "prob": 1.0
+  },
+  {
+   "text": "Mírenme,",
+   "start": 47.78,
+   "end": 48.26,
+   "prob": 0.592
+  },
+  {
+   "text": "mirenme,",
+   "start": 48.28,
+   "end": 48.76,
+   "prob": 0.871
+  },
+  {
+   "text": "mirenme,",
+   "start": 48.76,
+   "end": 49.02,
+   "prob": 0.791
+  },
+  {
+   "text": "mirenme,",
+   "start": 49.02,
+   "end": 49.22,
+   "prob": 0.837
+  },
+  {
+   "text": "mirenme.",
+   "start": 49.26,
+   "end": 49.66,
+   "prob": 0.898
+  },
+  {
+   "text": "Ya",
+   "start": 49.72,
+   "end": 50.2,
+   "prob": 0.745
+  },
+  {
+   "text": "casi",
+   "start": 50.2,
+   "end": 50.52,
+   "prob": 0.891
+  },
+  {
+   "text": "está",
+   "start": 50.52,
+   "end": 50.76,
+   "prob": 0.961
+  },
+  {
+   "text": "aquí.",
+   "start": 50.76,
+   "end": 51.02,
+   "prob": 0.622
+  },
+  {
+   "text": "Mírenlo,",
+   "start": 52.28,
+   "end": 52.76,
+   "prob": 0.988
+  },
+  {
+   "text": "ahí",
+   "start": 52.78,
+   "end": 52.92,
+   "prob": 0.888
+  },
+  {
+   "text": "está.",
+   "start": 52.92,
+   "end": 53.14,
+   "prob": 0.999
+  },
+  {
+   "text": "Sosten",
+   "start": 53.56,
+   "end": 54.04,
+   "prob": 0.926
+  },
+  {
+   "text": "esto",
+   "start": 54.04,
+   "end": 54.32,
+   "prob": 0.949
+  },
+  {
+   "text": "y",
+   "start": 54.32,
+   "end": 54.78,
+   "prob": 0.819
+  },
+  {
+   "text": "yo",
+   "start": 54.78,
+   "end": 54.94,
+   "prob": 0.937
+  },
+  {
+   "text": "os",
+   "start": 54.94,
+   "end": 55.02,
+   "prob": 0.523
+  },
+  {
+   "text": "arreglaré,",
+   "start": 55.02,
+   "end": 55.5,
+   "prob": 0.781
+  },
+  {
+   "text": "¿ok?",
+   "start": 55.54,
+   "end": 55.72,
+   "prob": 0.943
+  },
+  {
+   "text": "¿Qué?",
+   "start": 55.72,
+   "end": 55.8,
+   "prob": 0.279
+  },
+  {
+   "text": "¡Ay,",
+   "start": 55.84,
+   "end": 56.2,
+   "prob": 0.784
+  },
+  {
+   "text": "por",
+   "start": 56.2,
+   "end": 56.4,
+   "prob": 0.274
+  },
+  {
+   "text": "Dios!",
+   "start": 56.4,
+   "end": 56.64,
+   "prob": 0.963
+  },
+  {
+   "text": "¡Judy!",
+   "start": 58.34,
+   "end": 58.9,
+   "prob": 0.566
+  },
+  {
+   "text": "¡Enrolla!",
+   "start": 58.9,
+   "end": 59.46,
+   "prob": 0.689
+  },
+  {
+   "text": "No",
+   "start": 61.88,
+   "end": 62.44,
+   "prob": 0.542
+  },
+  {
+   "text": "esperábamos",
+   "start": 62.44,
+   "end": 63.0,
+   "prob": 0.99
+  },
+  {
+   "text": "un",
+   "start": 63.0,
+   "end": 63.2,
+   "prob": 0.993
+  },
+  {
+   "text": "pez",
+   "start": 63.2,
+   "end": 63.42,
+   "prob": 0.652
+  },
+  {
+   "text": "tan",
+   "start": 63.42,
+   "end": 63.54,
+   "prob": 0.996
+  },
+  {
+   "text": "grande.",
+   "start": 63.54,
+   "end": 63.9,
+   "prob": 1.0
+  },
+  {
+   "text": "Ahora",
+   "start": 64.06,
+   "end": 64.5,
+   "prob": 0.937
+  },
+  {
+   "text": "es",
+   "start": 64.5,
+   "end": 64.64,
+   "prob": 0.996
+  },
+  {
+   "text": "un",
+   "start": 64.64,
+   "end": 64.74,
+   "prob": 0.65
+  },
+  {
+   "text": "problema",
+   "start": 64.74,
+   "end": 65.04,
+   "prob": 1.0
+  },
+  {
+   "text": "porque",
+   "start": 65.04,
+   "end": 65.6,
+   "prob": 0.599
+  },
+  {
+   "text": "no",
+   "start": 65.6,
+   "end": 65.76,
+   "prob": 1.0
+  },
+  {
+   "text": "podemos",
+   "start": 65.76,
+   "end": 66.06,
+   "prob": 0.999
+  },
+  {
+   "text": "sacarlo.",
+   "start": 66.06,
+   "end": 66.58,
+   "prob": 0.988
+  },
+  {
+   "text": "¡Sí!",
+   "start": 66.78,
+   "end": 67.14,
+   "prob": 0.979
+  },
+  {
+   "text": "¡Vamos!",
+   "start": 67.14,
+   "end": 67.58,
+   "prob": 0.997
+  },
+  {
+   "text": "¡Por",
+   "start": 68.24,
+   "end": 68.52,
+   "prob": 0.892
+  },
+  {
+   "text": "fin",
+   "start": 68.52,
+   "end": 68.74,
+   "prob": 0.968
+  },
+  {
+   "text": "lo",
+   "start": 68.74,
+   "end": 68.88,
+   "prob": 0.974
+  },
+  {
+   "text": "tengo!",
+   "start": 68.88,
+   "end": 69.08,
+   "prob": 0.993
+  },
+  {
+   "text": "¡Ya",
+   "start": 69.42,
+   "end": 69.86,
+   "prob": 0.855
+  },
+  {
+   "text": "está",
+   "start": 69.86,
+   "end": 70.06,
+   "prob": 0.997
+  },
+  {
+   "text": "en",
+   "start": 70.06,
+   "end": 70.16,
+   "prob": 0.995
+  },
+  {
+   "text": "posición!",
+   "start": 70.16,
+   "end": 70.44,
+   "prob": 0.997
+  },
+  {
+   "text": "Así",
+   "start": 75.98,
+   "end": 76.54,
+   "prob": 0.761
+  },
+  {
+   "text": "chicos,",
+   "start": 76.54,
+   "end": 77.06,
+   "prob": 0.514
+  },
+  {
+   "text": "hemos",
+   "start": 77.14,
+   "end": 77.42,
+   "prob": 0.995
+  },
+  {
+   "text": "venido",
+   "start": 77.42,
+   "end": 77.8,
+   "prob": 0.801
+  },
+  {
+   "text": "a",
+   "start": 77.8,
+   "end": 77.92,
+   "prob": 0.849
+  },
+  {
+   "text": "otro",
+   "start": 77.92,
+   "end": 78.08,
+   "prob": 0.651
+  },
+  {
+   "text": "sitio",
+   "start": 78.08,
+   "end": 78.28,
+   "prob": 0.954
+  },
+  {
+   "text": "y",
+   "start": 78.28,
+   "end": 78.42,
+   "prob": 0.988
+  },
+  {
+   "text": "esperamos",
+   "start": 78.42,
+   "end": 78.84,
+   "prob": 0.746
+  },
+  {
+   "text": "que",
+   "start": 78.84,
+   "end": 79.06,
+   "prob": 0.876
+  },
+  {
+   "text": "nos",
+   "start": 79.06,
+   "end": 79.3,
+   "prob": 0.676
+  },
+  {
+   "text": "pasen.",
+   "start": 79.3,
+   "end": 79.66,
+   "prob": 0.696
+  },
+  {
+   "text": "Tenemos",
+   "start": 79.66,
+   "end": 79.94,
+   "prob": 0.268
+  },
+  {
+   "text": "tiempo,",
+   "start": 79.94,
+   "end": 80.52,
+   "prob": 0.99
+  },
+  {
+   "text": "estamos",
+   "start": 80.62,
+   "end": 80.94,
+   "prob": 0.98
+  },
+  {
+   "text": "en",
+   "start": 80.94,
+   "end": 81.26,
+   "prob": 0.999
+  },
+  {
+   "text": "un",
+   "start": 81.26,
+   "end": 81.38,
+   "prob": 0.996
+  },
+  {
+   "text": "sitio",
+   "start": 81.38,
+   "end": 81.56,
+   "prob": 0.997
+  },
+  {
+   "text": "muy",
+   "start": 81.56,
+   "end": 81.8,
+   "prob": 0.993
+  },
+  {
+   "text": "bueno,",
+   "start": 81.8,
+   "end": 82.1,
+   "prob": 0.88
+  },
+  {
+   "text": "hay",
+   "start": 82.1,
+   "end": 82.36,
+   "prob": 0.746
+  },
+  {
+   "text": "un",
+   "start": 82.36,
+   "end": 82.4,
+   "prob": 0.937
+  },
+  {
+   "text": "antiguo",
+   "start": 82.4,
+   "end": 83.04,
+   "prob": 0.591
+  },
+  {
+   "text": "justo",
+   "start": 83.04,
+   "end": 83.3,
+   "prob": 0.847
+  },
+  {
+   "text": "debajo",
+   "start": 83.3,
+   "end": 84.02,
+   "prob": 1.0
+  },
+  {
+   "text": "de",
+   "start": 84.02,
+   "end": 84.14,
+   "prob": 1.0
+  },
+  {
+   "text": "nosotros",
+   "start": 84.14,
+   "end": 84.4,
+   "prob": 0.999
+  },
+  {
+   "text": "y",
+   "start": 84.4,
+   "end": 84.84,
+   "prob": 0.978
+  },
+  {
+   "text": "un",
+   "start": 84.84,
+   "end": 85.04,
+   "prob": 0.952
+  },
+  {
+   "text": "montón",
+   "start": 85.04,
+   "end": 85.34,
+   "prob": 0.997
+  },
+  {
+   "text": "de",
+   "start": 85.34,
+   "end": 85.62,
+   "prob": 1.0
+  },
+  {
+   "text": "peces.",
+   "start": 85.62,
+   "end": 86.08,
+   "prob": 0.998
+  },
+  {
+   "text": "Chicos,",
+   "start": 86.52,
+   "end": 87.04,
+   "prob": 0.969
+  },
+  {
+   "text": "la",
+   "start": 87.04,
+   "end": 87.44,
+   "prob": 0.997
+  },
+  {
+   "text": "verdad",
+   "start": 87.44,
+   "end": 87.76,
+   "prob": 1.0
+  },
+  {
+   "text": "es",
+   "start": 87.76,
+   "end": 88.04,
+   "prob": 1.0
+  },
+  {
+   "text": "que",
+   "start": 88.04,
+   "end": 88.16,
+   "prob": 1.0
+  },
+  {
+   "text": "estoy",
+   "start": 88.16,
+   "end": 88.44,
+   "prob": 0.999
+  },
+  {
+   "text": "emocionado,",
+   "start": 88.44,
+   "end": 89.62,
+   "prob": 0.945
+  },
+  {
+   "text": "es",
+   "start": 89.74,
+   "end": 90.04,
+   "prob": 0.952
+  },
+  {
+   "text": "un",
+   "start": 90.04,
+   "end": 90.16,
+   "prob": 0.999
+  },
+  {
+   "text": "pez",
+   "start": 90.16,
+   "end": 90.44,
+   "prob": 0.999
+  },
+  {
+   "text": "muy",
+   "start": 90.44,
+   "end": 90.56,
+   "prob": 0.999
+  },
+  {
+   "text": "grande,",
+   "start": 90.56,
+   "end": 90.84,
+   "prob": 0.999
+  },
+  {
+   "text": "vamos",
+   "start": 91.08,
+   "end": 91.52,
+   "prob": 0.867
+  },
+  {
+   "text": "a",
+   "start": 91.52,
+   "end": 91.82,
+   "prob": 0.524
+  },
+  {
+   "text": "ver.",
+   "start": 91.82,
+   "end": 91.84,
+   "prob": 0.576
+  },
+  {
+   "text": "Es",
+   "start": 95.06,
+   "end": 95.58,
+   "prob": 0.72
+  },
+  {
+   "text": "un",
+   "start": 95.58,
+   "end": 95.72,
+   "prob": 0.89
+  },
+  {
+   "text": "pez",
+   "start": 95.72,
+   "end": 95.9,
+   "prob": 0.687
+  },
+  {
+   "text": "que",
+   "start": 95.9,
+   "end": 96.04,
+   "prob": 0.489
+  },
+  {
+   "text": "la",
+   "start": 96.04,
+   "end": 96.24,
+   "prob": 0.908
+  },
+  {
+   "text": "vas",
+   "start": 96.24,
+   "end": 96.44,
+   "prob": 0.655
+  },
+  {
+   "text": "por",
+   "start": 96.44,
+   "end": 96.62,
+   "prob": 0.249
+  },
+  {
+   "text": "ahí,",
+   "start": 96.62,
+   "end": 96.78,
+   "prob": 0.612
+  },
+  {
+   "text": "no",
+   "start": 96.8,
+   "end": 96.88,
+   "prob": 0.995
+  },
+  {
+   "text": "quiere",
+   "start": 96.88,
+   "end": 97.04,
+   "prob": 0.818
+  },
+  {
+   "text": "pesarlo.",
+   "start": 97.04,
+   "end": 97.56,
+   "prob": 0.834
+  }
+ ]
+}

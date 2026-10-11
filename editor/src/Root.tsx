@@ -10,6 +10,7 @@ import { Dia9 } from "./dia9/Dia9";
 import { Dia10 } from "./dia10/Dia10";
 import { CompAbdomen } from "./comp_abdomen/CompAbdomen";
 import { CompPiernas } from "./comp_piernas/CompPiernas";
+import { CompProducto } from "./comp_producto/CompProducto";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -36,6 +37,7 @@ export const RemotionRoot: React.FC = () => {
       {/* Vídeos complementarios (voz en off): preparación del abdomen, preparación de las piernas, cómo funciona */}
       <CompAbdomen />
       <CompPiernas />
+      <CompProducto />
     </>
   );
 };

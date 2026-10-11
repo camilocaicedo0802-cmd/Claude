@@ -1,0 +1,112 @@
+[
+ {
+  "frase": "antes",
+  "outStart": 0.0,
+  "frames": 64,
+  "b": 1.0
+ },
+ {
+  "frase": "aprendamos",
+  "outStart": 2.1333333333333333,
+  "frames": 75,
+  "b": 11.8,
+  "congela": true
+ },
+ {
+  "frase": "el primero",
+  "outStart": 4.633333333333334,
+  "frames": 60,
+  "b": 5.2
+ },
+ {
+  "frase": "presionalo",
+  "outStart": 6.633333333333334,
+  "frames": 112,
+  "b": 7.23
+ },
+ {
+  "frase": "el segundo",
+  "outStart": 10.366666666666667,
+  "frames": 78,
+  "b": 20.9
+ },
+ {
+  "frase": "al activarlo",
+  "outStart": 12.966666666666667,
+  "frames": 69,
+  "b": 23.6
+ },
+ {
+  "frase": "y comienza",
+  "outStart": 15.266666666666667,
+  "frames": 73,
+  "b": 32.6
+ },
+ {
+  "frase": "puedes ajustar",
+  "outStart": 17.7,
+  "frames": 101,
+  "b": 14.4
+ },
+ {
+  "frase": "entre mayor",
+  "outStart": 21.066666666666666,
+  "frames": 104,
+  "b": 35.0
+ },
+ {
+  "frase": "el tercer",
+  "outStart": 24.533333333333335,
+  "frames": 57,
+  "b": 11.8,
+  "congela": true
+ },
+ {
+  "frase": "con el que",
+  "outStart": 26.433333333333334,
+  "frames": 60,
+  "b": 46.2
+ },
+ {
+  "frase": "cada vez",
+  "outStart": 28.433333333333334,
+  "frames": 109,
+  "b": 48.2
+ },
+ {
+  "frase": "si es",
+  "outStart": 32.06666666666667,
+  "frames": 165,
+  "b": 59.8
+ },
+ {
+  "frase": "prueba siempre",
+  "outStart": 37.56666666666667,
+  "frames": 149,
+  "b": 66.9
+ },
+ {
+  "frase": "recuerda",
+  "outStart": 42.53333333333333,
+  "frames": 103,
+  "b": 74.7
+ },
+ {
+  "frase": "si se siente",
+  "outStart": 45.96666666666667,
+  "frames": 85,
+  "b": 80.5
+ },
+ {
+  "frase": "aplica",
+  "outStart": 48.8,
+  "frames": 44,
+  "src": 199.0
+ },
+ {
+  "frase": "mantiene",
+  "outStart": 50.266666666666666,
+  "frames": 97,
+  "orig": 951.6
+ }
+]

@@ -639,7 +639,7 @@ export const PanelLuma: React.FC<{
     <g transform={`translate(${x} ${y}) scale(${1 - 0.12 * pulsado(b)})`}>
       <circle r={24} fill={luz > 0.5 ? "rgba(255,255,255,.95)" : "rgba(255,255,255,.12)"} stroke="rgba(255,255,255,.6)" strokeWidth={2} />
       <path d="M -10 7 L 0 -9 L 10 7 Z" fill={luz > 0.5 ? "#1D2526" : "rgba(255,255,255,.75)"} />
-      {anillo(b) > 0 ? <circle r={34} fill="none" stroke={COLORS.durazno} strokeWidth={5} opacity={anillo(b)} /> : null}
+      {anillo(b) > 0 ? <circle r={30} fill="none" stroke={COLORS.durazno} strokeWidth={5} opacity={anillo(b)} /> : null}
     </g>
   );
   return (
@@ -649,26 +649,70 @@ export const PanelLuma: React.FC<{
         <ellipse cx={150} cy={185} rx={146} ry={172} fill="#F7F5F2" stroke="#C9A35B" strokeWidth={6} />
         {/* panel negro */}
         <ellipse cx={150} cy={182} rx={104} ry={136} fill="#141A1B" />
-        <text x={150} y={92} textAnchor="middle" fontFamily="Glacial Indifference, sans-serif" fontWeight={700} fontSize={17} letterSpacing={2} fill={`rgba(255,255,255,${0.35 + 0.65 * on})`}>
+        <text x={150} y={92} textAnchor="middle" fontFamily="Glacial Indifference, sans-serif" fontWeight={700} fontSize={20} letterSpacing={2} fill={`rgba(255,255,255,${0.35 + 0.65 * on})`}>
           LUMA BODY
         </text>
         {barras(-1, nC, "#E0473B")}
         {barras(1, nS, COLORS.salvia)}
         {triangulo(BOT.heat.x, BOT.heat.y, "heat", heat)}
         {triangulo(BOT.presion.x, BOT.presion.y, "presion", nS > 0 ? 1 : 0)}
-        <text x={BOT.heat.x} y={BOT.heat.y + 42} textAnchor="middle" fontFamily="Glacial Indifference, sans-serif" fontWeight={700} fontSize={14} fill="rgba(255,255,255,.8)">Heat</text>
-        <text x={BOT.presion.x} y={BOT.presion.y + 42} textAnchor="middle" fontFamily="Glacial Indifference, sans-serif" fontWeight={700} fontSize={12} fill="rgba(255,255,255,.8)">Negative pressure</text>
+        <text x={BOT.heat.x} y={BOT.heat.y + 46} textAnchor="middle" fontFamily="Glacial Indifference, sans-serif" fontWeight={700} fontSize={19} fill="rgba(255,255,255,.9)">Heat</text>
+        <text x={BOT.presion.x} y={BOT.presion.y + 45} textAnchor="middle" fontFamily="Glacial Indifference, sans-serif" fontWeight={700} fontSize={16} fill="rgba(255,255,255,.9)">
+          <tspan x={BOT.presion.x}>Negative</tspan>
+          <tspan x={BOT.presion.x} dy={16}>pressure</tspan>
+        </text>
         {/* Power: rojo */}
         <g transform={`translate(${BOT.power.x} ${BOT.power.y}) scale(${1 - 0.12 * pulsado("power")})`}>
           <circle r={20} fill={on > 0.5 ? "#E0473B" : "#7A2A24"} stroke="rgba(255,255,255,.6)" strokeWidth={2} />
           <path d="M -6 -5 A 8 8 0 1 0 6 -5 M 0 -10 L 0 -1" stroke="#FFFFFF" strokeWidth={2.5} fill="none" strokeLinecap="round" />
           {anillo("power") > 0 ? <circle r={30} fill="none" stroke={COLORS.durazno} strokeWidth={5} opacity={anillo("power")} /> : null}
         </g>
-        <text x={BOT.power.x} y={BOT.power.y + 36} textAnchor="middle" fontFamily="Glacial Indifference, sans-serif" fontWeight={700} fontSize={14} fill="rgba(255,255,255,.8)">Power</text>
+        <text x={BOT.power.x} y={BOT.power.y + 36} textAnchor="middle" fontFamily="Glacial Indifference, sans-serif" fontWeight={700} fontSize={19} fill="rgba(255,255,255,.9)">Power</text>
         {/* luz roja del calor */}
         <circle cx={150} cy={130} r={7} fill="#E0473B" opacity={heat} />
         <circle cx={150} cy={130} r={16} fill="#E0473B" opacity={0.25 * heat * (0.6 + 0.4 * Math.sin(t * 6))} />
       </svg>
+    </div>
+  );
+};
+
+// ---------- Niveles 1–5 con el rango recomendado resaltado ("comienza entre los niveles 1 a 3") ----------
+export const Niveles: React.FC<{ at: number; rango: [number, number]; resalta: number; titulo: string; style: React.CSSProperties }> = ({
+  at: atSec,
+  rango,
+  resalta,
+  titulo,
+  style,
+}) => {
+  const { t, frame, fps } = useT();
+  const k = sube(frame, fps, atSec);
+  if (k <= 0) return null;
+  const on = interpolate(t, [resalta, resalta + 0.35], [0, 1], CLAMP);
+  return (
+    <div style={{ position: "absolute", width: 300, ...style, opacity: Math.min(1, k * 1.4), transform: `${style.transform ?? ""} translateY(${(1 - k) * 24}px)` }}>
+      <div style={{ background: NOTA_BG, border: `3px solid ${COLORS.durazno}`, borderRadius: 30, padding: "14px 16px 12px", boxShadow: SOMBRA9 }}>
+        <div style={{ fontFamily: FONTS.body, fontWeight: 700, fontSize: 24, letterSpacing: "0.16em", color: COLORS.salvia, textAlign: "center" }}>{titulo}</div>
+        <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "center", gap: 8, marginTop: 10, height: 120 }}>
+          {[1, 2, 3, 4, 5].map((n) => {
+            const dentro = n >= rango[0] && n <= rango[1];
+            const aparece = interpolate(t, [atSec + 0.1 + n * 0.08, atSec + 0.3 + n * 0.08], [0, 1], CLAMP);
+            return (
+              <div key={n} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 6 }}>
+                <div
+                  style={{
+                    width: 40,
+                    height: (30 + n * 17) * aparece,
+                    borderRadius: 10,
+                    background: dentro && on > 0.5 ? COLORS.salvia : "rgba(69,89,90,.18)",
+                    transform: `scale(${dentro ? 1 + 0.08 * on : 1})`,
+                  }}
+                />
+                <div style={{ fontFamily: FONTS.body, fontWeight: 700, fontSize: 30, color: dentro && on > 0.5 ? COLORS.petroleo : "rgba(69,89,90,.45)" }}>{n}</div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
     </div>
   );
 };

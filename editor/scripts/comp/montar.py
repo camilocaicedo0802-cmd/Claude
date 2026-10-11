@@ -82,7 +82,29 @@ PLAN: dict[str, list] = {
         ("no necesitas", {"src": 352.0}),
         ("antes de comenzar", {"orig": 453.0}),  # el Luma Body en la pantorrilla: "tu rutina con Luma Body"
     ],
-    "producto": [],
+    # Cómo funciona el producto: primeros planos del Luma Body en sus manos (crudo B, sin la cara a la vista; el
+    # audio del crudo es un programa que sonaba de fondo y no se usa) y, para "aplica más aceite y mantén el
+    # dispositivo en movimiento", el aceite y el equipo sobre el abdomen del crudo A.
+    "producto": [
+        ("antes", {"b": 1.0}),  # (debajo de la tarjeta) el equipo apagado en sus manos
+        ("aprendamos", {"b": 11.8, "congela": True}),  # congelado (pizarra): los tres botones
+        ("el primero", {"b": 5.2}),  # apagado; el pulgar va hacia Power
+        ("presionalo", {"b": 7.23}),  # pulsa Power (7,75 s) y la pantalla se enciende (8,5 s)
+        ("el segundo", {"b": 20.9}),  # el dedo en Heat
+        ("al activarlo", {"b": 23.6}),  # le da la vuelta: la luz roja encendida
+        ("y comienza", {"b": 32.6}),  # la luz roja sobre la mano: calor
+        ("puedes ajustar", {"b": 14.4}),  # pulsa y cambian las barras de nivel
+        ("entre mayor", {"b": 35.0}),  # la mano sobre el cabezal con la luz roja
+        ("el tercer", {"b": 11.8, "congela": True}),  # congelado (pizarra): Negative pressure
+        ("con el que", {"b": 46.2}),  # pulsa Negative pressure
+        ("cada vez", {"b": 48.2}),  # sigue pulsando: sube la succión
+        ("si es", {"b": 59.8}),  # la succión sobre la palma
+        ("prueba siempre", {"b": 66.9}),  # sube poco a poco
+        ("recuerda", {"b": 74.7}),  # la succión sobre la palma
+        ("si se siente", {"b": 80.5}),  # pulsa para bajar
+        ("aplica", {"src": 199.0}),  # (crudo A) se sirve aceite en la palma
+        ("mantiene", {"orig": 951.6}),  # (crudo A) el equipo en movimiento sobre el abdomen
+    ],
 }
 
 
@@ -91,7 +113,10 @@ def trozo(carpeta: Path, toma: dict, frames: int, dst: Path) -> None:
                "-pix_fmt", "yuv420p", "-r", str(FPS), str(dst)]
     encuadre = globals()["encuadre"](toma.get("rec", ENCUADRE_REC))
     vel = toma.get("vel", 1.0)
-    if vel > 1:
+    if "b" in toma:  # crudo B (primeros planos del producto), sin recorte
+        fuente, s = carpeta.parent / "comp_b" / "crudo_30.mp4", toma["b"]
+        filtro = globals()["encuadre"](toma.get("rec", (0, 0, 1080)))
+    elif vel > 1:
         fuente, s = carpeta / "crudo_30.mp4", toma["src"]
         filtro = f"setpts=(PTS-STARTPTS)/{vel},fps={FPS},{encuadre}"
     elif "orig" in toma:
