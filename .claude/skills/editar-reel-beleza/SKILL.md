@@ -93,6 +93,12 @@ Cada "beat" nace de una frase concreta, anclada con `at("frase")`. El anclaje ac
 - Fotos de control (frente, costado, espalda, otro costado): siempre las escenas de la toma de apoyo del día 2 (estilo.md §10.20). `scripts/dia10/apoyos.py` las saca como secuencias de JPEG cortas (1,2 s) para verlas en movimiento dentro del visor; la toma del día 2 se descarga del enlace que da el usuario (en `crudo/dia2apoyo/apoyo.mp4`).
 - Si una corrección solo toca unos segundos de un vídeo ya renderizado, renderiza solo esos tramos (alineados a tramos completos) y sustitúyelos en el render anterior (recodificando todo una vez a CRF 16 y copiando el audio), en vez de repetir el render entero; comprueba con PSNR que los fotogramas de antes y después del parche coinciden con el render anterior.
 
+## 6f. Vídeos complementarios (preparación, producto) — herramientas nuevas
+- Voz en off de un vídeo nuevo: `scripts/rutinas/preparar_voz.py comp_<vídeo> <voz.m4a> <transcripción.json>` (añade sus `TOMAS`) y después transcribe la voz limpia con **large-v3** y `scripts/dia9/retiempos.py <json> comp_<vídeo>`. Antes de dar la voz por buena, busca palabras de más de 0,85 s en la transcripción y transcribe por trozos esos tramos: casi siempre esconden una toma repetida.
+- `scripts/comp/montar.py <vídeo> crudo/comp_a <yunet>`: el plan admite `"src"` (crudo a 30 fps), `"orig"` (crudo completo, para tomas de más allá de los 6 min), `"vel"` (< 1 cámara lenta del original a 60 fps; > 1 timelapse), `"congela"` y `"rec"` (recorte propio x, y, ancho). `--solo-caras` recalcula solo las cajas de la cabeza.
+- `src/comp/`: `BaseComp` (la base del día 9 con la carpeta como parámetro), `MaquetaComp` (columnas hasta y = 1390 para dejar libre el subtítulo, o `ColumnasLibres` con el lado libre por toma cuando la cabeza se mueve mucho) y `Graficos` (título con barra de pasos, orden manual → Luma Body, mapas 2D del abdomen y de la pierna, respiración, cronómetro, calor, lista).
+- Si un enlace de Drive devuelve un HTML de inicio de sesión (archivo de ~900 KB), no está compartido como "Cualquier persona con el enlace": pídeselo al usuario y sigue con lo demás.
+
 ## 7. Revisar y entregar
 - `cd editor && npm run lint`.
 - Para revisar: `npx remotion render <Composición> out/borrador.mp4 --concurrency=4` (añade `--gl=swangle` si hay objetos 3D). Saca fotogramas en cada beat (hojas de contacto con ffmpeg) y comprueba que nada tapa la cara, que los textos no se cortan y que el gráfico aparece en su palabra.

@@ -581,3 +581,94 @@ export const Checks: React.FC<{ titulo?: string; items: { texto: string; at: num
     </div>
   );
 };
+
+// ---------- Panel del Luma Body (2D, como el real): ovalado negro, Heat y Negative pressure, Power rojo y barras ----------
+// "encendido": la pantalla se enciende (Power). "calor": el botón Heat y su luz roja; "nivelCalor": barras rojas de la
+// izquierda (0–5). "succion": niveles de succión de la derecha [instante, nivel]; "pulsa": instantes en que un dedo
+// pulsa un botón (efecto de pulsación). "resalta": botón que se rodea con un anillo Durazno.
+export type BotonLuma = "power" | "heat" | "presion";
+export const PanelLuma: React.FC<{
+  at: number;
+  encendido: number;
+  calor?: number;
+  nivelesCalor?: [number, number][];
+  succion?: [number, number][];
+  pulsa?: [number, BotonLuma][];
+  resalta?: [number, number, BotonLuma][];
+  ancho?: number;
+  style: React.CSSProperties;
+}> = ({ at: atSec, encendido, calor, nivelesCalor = [], succion = [], pulsa = [], resalta = [], ancho = 340, style }) => {
+  const { t, frame, fps } = useT();
+  const k = sube(frame, fps, atSec);
+  if (k <= 0) return null;
+  const on = interpolate(t, [encendido, encendido + 0.3], [0, 1], CLAMP);
+  const heat = calor === undefined ? 0 : interpolate(t, [calor, calor + 0.25], [0, 1], CLAMP);
+  const nivel = (lista: [number, number][]) => lista.reduce((acc, [ts, n]) => (t >= ts ? n : acc), 0);
+  const nC = nivel(nivelesCalor);
+  const nS = nivel(succion);
+  const pulsado = (b: BotonLuma) =>
+    pulsa.reduce((acc, [ts, bb]) => (bb === b ? Math.max(acc, interpolate(t, [ts, ts + 0.08, ts + 0.3], [0, 1, 0], CLAMP)) : acc), 0);
+  const anillo = (b: BotonLuma) =>
+    resalta.reduce((acc, [a, z, bb]) => (bb === b ? Math.max(acc, interpolate(t, [a, a + 0.2, z - 0.2, z], [0, 1, 1, 0], CLAMP)) : acc), 0);
+  const W = 300;
+  const H = 360;
+  const BOT = { heat: { x: 105, y: 190 }, presion: { x: 195, y: 190 }, power: { x: 150, y: 262 } };
+  // Barras en arco a cada lado (5 por lado)
+  const barras = (lado: -1 | 1, n: number, color: string) =>
+    Array.from({ length: 5 }, (_, i) => {
+      const a = (lado === -1 ? Math.PI : 0) + lado * (-0.62 + i * 0.31);
+      const r0 = 112;
+      const r1 = 128;
+      const cx = 150;
+      const cy = 180;
+      const encend = on > 0.5 && i < n;
+      return (
+        <line
+          key={`${lado}${i}`}
+          x1={cx + r0 * Math.cos(a)}
+          y1={cy - r0 * Math.sin(a) * 1.25}
+          x2={cx + r1 * Math.cos(a)}
+          y2={cy - r1 * Math.sin(a) * 1.25}
+          stroke={encend ? color : "rgba(255,255,255,.18)"}
+          strokeWidth={9}
+          strokeLinecap="round"
+        />
+      );
+    });
+  const triangulo = (x: number, y: number, b: BotonLuma, luz: number) => (
+    <g transform={`translate(${x} ${y}) scale(${1 - 0.12 * pulsado(b)})`}>
+      <circle r={24} fill={luz > 0.5 ? "rgba(255,255,255,.95)" : "rgba(255,255,255,.12)"} stroke="rgba(255,255,255,.6)" strokeWidth={2} />
+      <path d="M -10 7 L 0 -9 L 10 7 Z" fill={luz > 0.5 ? "#1D2526" : "rgba(255,255,255,.75)"} />
+      {anillo(b) > 0 ? <circle r={34} fill="none" stroke={COLORS.durazno} strokeWidth={5} opacity={anillo(b)} /> : null}
+    </g>
+  );
+  return (
+    <div style={{ position: "absolute", width: ancho, ...style, opacity: Math.min(1, k * 1.4), transform: `${style.transform ?? ""} scale(${0.88 + 0.12 * k})` }}>
+      <svg width={ancho} height={(ancho * H) / W} viewBox={`0 0 ${W} ${H}`}>
+        {/* cuerpo blanco con aro dorado */}
+        <ellipse cx={150} cy={185} rx={146} ry={172} fill="#F7F5F2" stroke="#C9A35B" strokeWidth={6} />
+        {/* panel negro */}
+        <ellipse cx={150} cy={182} rx={104} ry={136} fill="#141A1B" />
+        <text x={150} y={92} textAnchor="middle" fontFamily="Glacial Indifference, sans-serif" fontWeight={700} fontSize={17} letterSpacing={2} fill={`rgba(255,255,255,${0.35 + 0.65 * on})`}>
+          LUMA BODY
+        </text>
+        {barras(-1, nC, "#E0473B")}
+        {barras(1, nS, COLORS.salvia)}
+        {triangulo(BOT.heat.x, BOT.heat.y, "heat", heat)}
+        {triangulo(BOT.presion.x, BOT.presion.y, "presion", nS > 0 ? 1 : 0)}
+        <text x={BOT.heat.x} y={BOT.heat.y + 42} textAnchor="middle" fontFamily="Glacial Indifference, sans-serif" fontWeight={700} fontSize={14} fill="rgba(255,255,255,.8)">Heat</text>
+        <text x={BOT.presion.x} y={BOT.presion.y + 42} textAnchor="middle" fontFamily="Glacial Indifference, sans-serif" fontWeight={700} fontSize={12} fill="rgba(255,255,255,.8)">Negative pressure</text>
+        {/* Power: rojo */}
+        <g transform={`translate(${BOT.power.x} ${BOT.power.y}) scale(${1 - 0.12 * pulsado("power")})`}>
+          <circle r={20} fill={on > 0.5 ? "#E0473B" : "#7A2A24"} stroke="rgba(255,255,255,.6)" strokeWidth={2} />
+          <path d="M -6 -5 A 8 8 0 1 0 6 -5 M 0 -10 L 0 -1" stroke="#FFFFFF" strokeWidth={2.5} fill="none" strokeLinecap="round" />
+          {anillo("power") > 0 ? <circle r={30} fill="none" stroke={COLORS.durazno} strokeWidth={5} opacity={anillo("power")} /> : null}
+        </g>
+        <text x={BOT.power.x} y={BOT.power.y + 36} textAnchor="middle" fontFamily="Glacial Indifference, sans-serif" fontWeight={700} fontSize={14} fill="rgba(255,255,255,.8)">Power</text>
+        {/* luz roja del calor */}
+        <circle cx={150} cy={130} r={7} fill="#E0473B" opacity={heat} />
+        <circle cx={150} cy={130} r={16} fill="#E0473B" opacity={0.25 * heat * (0.6 + 0.4 * Math.sin(t * 6))} />
+      </svg>
+    </div>
+  );
+};
