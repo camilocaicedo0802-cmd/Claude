@@ -51,11 +51,12 @@ const S = {
 };
 
 // ---------- Fotos (cámara de móvil) y montaje de la rutina ----------
+// Las mismas escenas de la toma de apoyo del día 2 (frente, costado, espalda y el otro costado), como en el día 8.
 const FOTOS: Foto[] = [
-  { src: "dia8/foto_frente.jpg", at: at("frente").start, pose: "frente" },
-  { src: "dia8/foto_costado.jpg", at: at("de costado").start + 0.12, pose: "costado" },
-  { src: "dia8/foto_espalda.jpg", at: at("de espalda").start + 0.08, pose: "espalda" },
-  { src: "dia8/foto_otro.jpg", at: at("otro costado").start, pose: "otro costado" },
+  { src: "dia10/fotos_dia2/frente", at: at("frente").start, pose: "frente" },
+  { src: "dia10/fotos_dia2/costado", at: at("de costado").start + 0.12, pose: "costado" },
+  { src: "dia10/fotos_dia2/espalda", at: at("de espalda").start + 0.08, pose: "espalda" },
+  { src: "dia10/fotos_dia2/otro", at: at("otro costado").start, pose: "otro costado" },
 ];
 const FOTOS_FIN = S.medidas;
 const MONTAJE_FIN = S.montaje + rutina.reduce((a, f) => a + f.frames, 0) / VIDEO.fps;

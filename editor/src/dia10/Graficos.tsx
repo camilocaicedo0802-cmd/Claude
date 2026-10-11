@@ -347,7 +347,11 @@ export const Registro: React.FC<{ at: number; filas: { texto: string; at: number
 };
 
 // ---------- Inserción de cámara de móvil: las 4 fotos (fragmentos cortos con destello, §10.16) ----------
+// Cada foto es una escena de la toma de apoyo del día 2 en movimiento dentro del visor (secuencia de JPEG,
+// scripts/dia10/apoyos.py): dispara al entrar y la miniatura queda con el fotograma del disparo.
+export const FOTO_FOTOGRAMAS = 36;
 export type Foto = { src: string; at: number; pose: string };
+const fotograma = (f: Foto, n: number) => staticFile(`${f.src}/${String(Math.min(Math.max(0, n), FOTO_FOTOGRAMAS - 1)).padStart(2, "0")}.jpg`);
 export const CamaraMovil: React.FC<{ fotos: Foto[]; hasta: number }> = ({ fotos, hasta }) => {
   const { t, frame, fps } = useT();
   if (t < fotos[0].at || t >= hasta) return null;
@@ -396,7 +400,7 @@ export const CamaraMovil: React.FC<{ fotos: Foto[]; hasta: number }> = ({ fotos,
         }}
       >
         <div style={{ position: "relative", width: "100%", height: "100%", borderRadius: 62, overflow: "hidden", background: "#111" }}>
-          <Img src={staticFile(f.src)} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+          <Img src={fotograma(f, frame - Math.round(f.at * fps))} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
           {/* Cuadrícula de la cámara */}
           <svg width={W - 40} height={H - 40} style={{ position: "absolute", inset: 0 }}>
             {[1, 2].map((k) => (
@@ -427,7 +431,7 @@ export const CamaraMovil: React.FC<{ fotos: Foto[]; hasta: number }> = ({ fotos,
           {/* Disparador y miniaturas de las fotos ya hechas */}
           <div style={{ position: "absolute", left: 0, right: 0, bottom: 34, display: "flex", justifyContent: "center", alignItems: "center", gap: 18 }}>
             {fotos.slice(0, i).map((g) => (
-              <Img key={g.src} src={staticFile(g.src)} style={{ width: 58, height: 80, objectFit: "cover", borderRadius: 10, border: `3px solid ${COLORS.marfil}` }} />
+              <Img key={g.src} src={fotograma(g, 0)} style={{ width: 58, height: 80, objectFit: "cover", borderRadius: 10, border: `3px solid ${COLORS.marfil}` }} />
             ))}
             <div style={{ width: 96, height: 96, borderRadius: 48, border: `7px solid ${COLORS.marfil}`, boxSizing: "border-box", display: "flex", alignItems: "center", justifyContent: "center" }}>
               <div style={{ width: 70, height: 70, borderRadius: 35, background: COLORS.marfil, transform: `scale(${1 - 0.15 * destello})` }} />
