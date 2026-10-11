@@ -52,46 +52,45 @@
   "frase": "continúa",
   "outStart": 22.033333333333335,
   "frames": 102,
-  "src": 227.95
+  "a": 951.0
  },
  {
   "frase": "laterales",
   "outStart": 25.433333333333334,
   "frames": 40,
-  "src": 205.95
+  "a": 1046.5
  },
  {
   "frase": "mantén",
   "outStart": 26.766666666666666,
   "frames": 56,
-  "src": 470.0
+  "a": 966.8
  },
  {
   "frase": "y evita",
   "outStart": 28.633333333333333,
   "frames": 87,
-  "src": 479.5,
+  "a": 958.5,
   "congela": true
  },
  {
   "frase": "realiza círculos",
   "outStart": 31.533333333333335,
   "frames": 100,
-  "src": 195.55,
-  "vel": 0.8
+  "a": 977.0
  },
  {
   "frase": "movimientos de",
   "outStart": 34.86666666666667,
   "frames": 83,
-  "src": 474.6
+  "a": 1054.0
  },
  {
   "frase": "hacia la cintura",
   "outStart": 37.63333333333333,
   "frames": 109,
-  "src": 503.4,
-  "vel": 0.55
+  "a": 1067.5,
+  "vel": 0.8
  },
  {
   "frase": "trabaja",

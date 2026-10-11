@@ -455,10 +455,10 @@ const Pizarras: React.FC = () => (
     <Pizarra
       desde={PZ_OMBLIGO.desde}
       hasta={PZ_OMBLIGO.hasta}
-      foco={{ cx: 535, cy: 875, rx: 250, ry: 200 }}
+      foco={{ cx: 440, cy: 850, rx: 250, ry: 200 }}
       trazos={[
-        { tipo: "prohibido", x: 535, y: 862, r: 60, at: at("evita").start },
-        { tipo: "etiqueta", x: 680, y: 1050, texto: "Evita el ombligo", at: at("ombligo").start - 0.25, ancla: "izq", tono: "no" },
+        { tipo: "prohibido", x: 422, y: 838, r: 56, at: at("evita").start },
+        { tipo: "etiqueta", x: 560, y: 1010, texto: "Evita el ombligo", at: at("ombligo").start - 0.25, ancla: "izq", tono: "no" },
       ]}
     />
     {/* "Recuerda no pasar sobre las articulaciones" (cuadro: desde encima del codo hacia el hombro, evitando axila).
@@ -548,9 +548,9 @@ const Fuera: React.FC = () => {
 const z = (frase: string, z0: number, z1: number, ox: number, oy: number): Zoom => ({ ...clip(frase), z0, z1, ox, oy });
 const ZOOMS: Zoom[] = [
   z("hacia arriba", 1.0, 1.18, 506, 1170),
-  z("mantén", 1.0, 1.14, 465, 720), // hacia la pantalla del equipo: "intensidad baja"
-  z("realiza círculos", 1.0, 1.12, 470, 900),
-  z("movimientos de", 1.0, 1.07, 480, 950),
+  z("mantén", 1.0, 1.12, 450, 880), // hacia el equipo en la parte baja del abdomen
+  z("realiza círculos", 1.0, 1.15, 420, 850), // hacia los círculos alrededor del ombligo
+  z("movimientos de", 1.0, 1.08, 500, 900),
   z("y listo", 1.08, 1.0, 540, 900),
   z("para trabajar", 1.0, 1.08, 500, 800),
 ];

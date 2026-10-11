@@ -49,13 +49,16 @@ PLAN = [
     ("movimientos ascendentes", {"src": 164.0}),  # de perfil: sube por la parte de atrás del muslo
     ("realiza líneas", {"src": 105.5}),  # desde la rodilla hacia arriba
     ("hacia arriba", {"src": 116.0}),  # parte alta del muslo (se reencuadra hacia la pierna)
-    ("continúa", {"src": 227.95}),  # el equipo en el abdomen
-    ("laterales", {"src": 205.95}),  # en el costado del abdomen
-    ("mantén", {"src": 470.0}),  # mira la pantalla del equipo: la intensidad
-    ("y evita", {"src": 479.5, "congela": True}),  # congelado de frente: el ombligo a la vista
-    ("realiza círculos", {"src": 195.55, "vel": 0.8}),  # círculos en el abdomen, un poco más lentos ("suaves")
-    ("movimientos de", {"src": 474.6}),  # inclinada: el equipo arrastra por el costado hacia la cintura
-    ("hacia la cintura", {"src": 503.4, "vel": 0.55}),  # cámara lenta: de la cintura baja por la ingle
+    # Bloque del abdomen (segunda corrección: en el crudo del día 9 el equipo apenas se veía sobre el abdomen): el
+    # Luma Body moviéndose sobre el abdomen, los costados y hacia la ingle, del crudo de 20 min de los días 4 y 5
+    # ("a": segundo de crudo/comp_a/crudo.mp4; mismo set y misma ropa; tramos sin conversación, mirada en su cuerpo).
+    ("continúa", {"a": 951.0}),  # el equipo sobre el abdomen
+    ("laterales", {"a": 1046.5}),  # en el costado
+    ("mantén", {"a": 966.8}),  # movimientos lentos en la parte baja del abdomen
+    ("y evita", {"a": 958.5, "congela": True}),  # congelado: el equipo junto al ombligo, sin pasar por encima
+    ("realiza círculos", {"a": 977.0}),  # círculos amplios alrededor del ombligo
+    ("movimientos de", {"a": 1054.0}),  # de lado: arrastra desde la espalda hacia la cintura
+    ("hacia la cintura", {"a": 1067.5, "vel": 0.8}),  # de la cintura baja hacia la ingle
     ("trabaja", {"src": 240.2}),  # glúteos de espaldas
     ("con movimientos", {"src": 249.0}),
     ("barridos", {"src": 260.0}),
@@ -76,11 +79,22 @@ MOSAICOS = {
 }
 
 ENCUADRE = (f"crop={ENCUADRE_ANCHO}:{ENCUADRE_ALTO}:0:{ENCUADRE_Y},scale=1080:1920:flags=lanczos,setsar=1")
+ENCUADRE_A = "crop=960:1707:120:160,scale=1080:1920:flags=lanczos,setsar=1"
 
 
 def trozo(crudo: str, toma: dict, frames: int, dst: Path) -> None:
     comunes = ["-frames:v", str(frames), "-an", "-c:v", "libx264", "-preset", "medium", "-crf", "15", "-g", "15",
                "-pix_fmt", "yuv420p", "-r", str(FPS), str(dst)]
+    if "a" in toma:
+        # Crudo de 20 min de los días 4 y 5 (59,94 fps), con el reencuadre de los vídeos complementarios (desde x = 120)
+        crudo_a = str(Path(crudo).resolve().parent.parent / "comp_a" / "crudo.mp4")
+        vel = toma.get("vel", 1.0)
+        filtro = f"setpts=(PTS-STARTPTS)/{vel},fps={FPS},{ENCUADRE_A}"
+        if toma.get("congela"):
+            filtro = f"trim=end_frame=1,{filtro},tpad=stop_mode=clone:stop={frames}"
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", f"{toma['a']:.4f}", "-i", crudo_a, "-map", "0:v:0",
+                        "-vf", filtro, *comunes], check=True)
+        return
     if "splitv" in toma:
         # Columnas de 540 px del crudo sin escalar (x + 540 ≤ 960: no llegan al borde con el cuarto de al lado)
         (sa, xa), (sb, xb) = toma["splitv"]
