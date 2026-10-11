@@ -12,3 +12,6 @@ referencia/scene.txt
 tomas/
 node_modules/
 out/
+
+# Entregas finales sí se versionan
+!entregas/*.mp4
