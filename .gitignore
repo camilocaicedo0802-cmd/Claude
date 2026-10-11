@@ -1,0 +1,15 @@
+# Intermedios del análisis de la referencia (se regeneran con ffmpeg / demucs)
+referencia/hi/
+referencia/separado/
+referencia/separado4/
+referencia/audio_ref.wav
+referencia/font_*.png
+referencia/anim_aprendiste.png
+referencia/anim_noimporta.png
+referencia/anim_script.png
+referencia/detail_0_1.jpg
+referencia/wave_*.png
+referencia/stems.png
+referencia/spec_music.png
+referencia/scores.txt
+__pycache__/
