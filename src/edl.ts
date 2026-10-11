@@ -1,5 +1,6 @@
 // Lista de montaje (EDL). 30 fps; 90 BPM => 1 pulso = 20 fotogramas, 1 compás = 80.
 // Audio: estribillo de BOMBASTIK desde 67,245 s (compás 25, el drop) durante 8 compases.
+// Movimientos alternados: giro, ←, →, ←, →, ←, →, fijo (medido con analisis/movimiento.py).
 // Estructura calcada de la referencia (ver estilo.md §2): general espalda → macros espalda →
 // delantero → macros espalda → general espalda fijo → general delantero.
 
@@ -18,6 +19,7 @@ export type Shot = {
 	start: number; // fotograma de entrada en el timeline
 	end: number; // fotograma de salida (exclusivo)
 	diseno: 'espalda' | 'delantero';
+	velocidad?: number; // playbackRate (tomas a 60 fps → cámara lenta limpia)
 };
 
 export const SHOTS: Shot[] = [
@@ -25,16 +27,17 @@ export const SHOTS: Shot[] = [
 	{take: 'IMG_6016', from: 1.0, start: 0, end: 4 * BEAT, diseno: 'espalda'},
 	// 2. Macro espalda: grafiti "EL CANTANTE DEL GHETTO" + retrato, paneo lento
 	{take: 'IMG_6017', from: 0.6, start: 4 * BEAT, end: ACENTO_1, diseno: 'espalda'},
-	// 3. Macro cara (corto)
-	{take: 'IMG_6019', from: 1.0, start: ACENTO_1, end: 12 * BEAT, diseno: 'espalda'},
+	// 3. Macro cara (corto) — la cara se desplaza a la DERECHA
+	{take: 'IMG_6019', from: 4.4, start: ACENTO_1, end: 12 * BEAT, diseno: 'espalda'},
 	// 4. Delantero de cerca, el logo crece — entra en "loba, loba bombastik" (compás de respiro)
 	{take: 'IMG_6024', from: 5.2, start: 12 * BEAT, end: 16 * BEAT, diseno: 'delantero'},
-	// 5. Macro espalda: "CASTRO" → retrato → grafiti, vuelve el beat
-	{take: 'IMG_6018', from: 2.4, start: 16 * BEAT, end: 20 * BEAT, diseno: 'espalda'},
-	// 6. Macro cara, encuadre distinto (jump cut corto)
-	{take: 'IMG_6019', from: 7.3, start: 20 * BEAT, end: 22 * BEAT, diseno: 'espalda'},
-	// 7. General espalda, recta y casi fija
-	{take: 'IMG_6022', from: 6.87, start: 22 * BEAT, end: ACENTO_2, diseno: 'espalda'},
+	// 5. Macro espalda: retrato → grafiti, barrido a la DERECHA; vuelve el beat
+	{take: 'IMG_6018', from: 3.0, start: 16 * BEAT, end: 20 * BEAT, diseno: 'espalda'},
+	// 6. Macro cara, encuadre distinto (jump cut corto) — a la IZQUIERDA
+	{take: 'IMG_6019', from: 6.5, start: 20 * BEAT, end: 22 * BEAT, diseno: 'espalda'},
+	// 7. General espalda, deriva lenta a la DERECHA: tramo 8,45–10,2 s de IMG_6022 invertido
+	//    (camiseta sobre superficie fija, sin manos: la marcha atrás no se nota) y a 0,54×
+	{take: 'IMG_6022_rev', from: 0, start: 22 * BEAT, end: ACENTO_2, diseno: 'espalda', velocidad: 0.54},
 	// 8. General delantero con etiqueta del cuello, girando — cierre en "loba, loba bombastik"
 	{take: 'IMG_6023', from: 4.0, start: ACENTO_2, end: 32 * BEAT, diseno: 'delantero'},
 ];

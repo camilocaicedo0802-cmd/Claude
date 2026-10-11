@@ -15,15 +15,19 @@ Render: `REMOTION_BROWSER=<ruta a headless_shell> npx remotion render src/index.
 |---|---|---|---|---|
 | 1 | 0,00–2,67 | IMG_6016 (1,0) | Espalda | General girado + acercamiento rápido final |
 | 2 | 2,67–5,90 | IMG_6017 (0,6) | Espalda | Macro grafiti + retrato, paneo |
-| 3 | 5,90–8,00 | IMG_6019 (1,0) | Espalda | Macro cara |
+| 3 | 5,90–8,00 | IMG_6019 (4,4) | Espalda | Macro cara, se desplaza → |
 | 4 | 8,00–10,67 | IMG_6024 (5,2) | Delantero | Logo de cerca, crece (en "loba bombastik") |
-| 5 | 10,67–13,33 | IMG_6018 (2,4) | Espalda | Macro "CASTRO" → retrato → grafiti |
-| 6 | 13,33–14,67 | IMG_6019 (7,3) | Espalda | Macro cara, otro encuadre (jump cut) |
-| 7 | 14,67–17,90 | IMG_6022 (6,87) | Espalda | General recto, casi fijo |
+| 5 | 10,67–13,33 | IMG_6018 (3,0) | Espalda | Macro retrato → grafiti, barrido → |
+| 6 | 13,33–14,67 | IMG_6019 (6,5) | Espalda | Macro cara, otro encuadre (jump cut), ← |
+| 7 | 14,67–17,90 | IMG_6022 (8,45–10,2 invertido, 0,54×) | Espalda | General recto, deriva lenta → |
 | 8 | 17,90–21,33 | IMG_6023 (4,0) | Delantero | General con etiqueta, girando (cierre en "loba bombastik") |
 
 Espalda **15,3 s (72 %)** · Delantero **6,0 s (28 %)** (referencia: 68 / 32).
 Descartadas: IMG_6015 y IMG_6021 (generales casi iguales a 6016/6022, se eligió la de movimiento más parecido a la referencia), IMG_6020 (dominante verde), y los tramos de 6017/6024 donde la cámara sale del estampado (desenfoque, tela vacía).
+
+## Dirección de movimiento
+Alternada a petición: giro · ← · → · ← · → · ← · → · fijo (medido por correlación de fase con `analisis/movimiento.py`).
+No se usa espejo (invertiría los textos). El plano 7 es un tramo invertido en el tiempo y a cámara lenta: la camiseta está sobre una superficie fija y no aparecen manos, así que la marcha atrás no se nota.
 
 ## Cortes y ritmo
 Cortes secos en los fotogramas 80, 177, 240, 320, 400, 440, 537 → todos en pulso del tema; los de 177 y 537 adelantados 3 fotogramas al acento real del dembow (medido), como hace la referencia. Duraciones alternas largo/corto: 2,7 · 3,2 · 2,1 · 2,7 · 2,7 · 1,3 · 3,2 · 3,4 s.

@@ -31,6 +31,7 @@ export const CamisetaBombastik: React.FC = () => {
 						<OffthreadVideo
 							src={staticFile(`tomas/${s.take}.mp4`)}
 							trimBefore={Math.round(s.from * FPS)}
+							playbackRate={s.velocidad ?? 1}
 							muted
 							style={{width: '100%', height: '100%', objectFit: 'cover'}}
 						/>
