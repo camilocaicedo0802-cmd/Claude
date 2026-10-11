@@ -1,0 +1,9 @@
+node_modules/
+out/
+referencia/*.mp4
+referencia/*.wav
+referencia/frames/
+referencia/cortes*/
+referencia/scores.txt
+assets/stock_cand/
+assets/cand_sheet.jpg
