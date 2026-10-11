@@ -1,0 +1,14 @@
+# Media pesada / con derechos: no se versiona
+*.mp4
+*.mov
+*.MOV
+*.mp3
+*.wav
+referencia/frames/
+referencia/cortes/
+referencia/tr/
+referencia/*.jpg
+referencia/scene.txt
+tomas/
+node_modules/
+out/
