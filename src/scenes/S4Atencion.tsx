@@ -85,8 +85,8 @@ export const S4Atencion: React.FC<{f: number}> = ({f}) => {
       <Phone w={ph.w} h={ph.h} style={{left: ph.cx - ph.w / 2, top: ph.cy - ph.h / 2}}>
         <div style={{position: 'absolute', inset: 0, background: cardGradient}} />
         <Img
-          src={staticFile('img/podcaster_recorte.png')}
-          style={{position: 'absolute', height: '78%', bottom: 0, left: -460, transform: `scale(${reelZoom})`, transformOrigin: '70% 100%'}}
+          src={staticFile('img/creador_recorte.png')}
+          style={{position: 'absolute', height: '84%', bottom: 0, left: -48, transform: `scale(${reelZoom})`, transformOrigin: '50% 100%'}}
         />
         {/* barra de progreso */}
         <div style={{position: 'absolute', left: 24, right: 24, top: 64, height: 6, borderRadius: 3, background: 'rgba(255,255,255,.3)'}}>

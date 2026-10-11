@@ -41,8 +41,8 @@ export const S1Intro: React.FC<{f: number}> = ({f}) => {
 
   // --- recorte que emerge
   const rise = E.expoOut(prog(f, 68, 18));
-  const imgW = 1250;
-  const imgH = (imgW * 1067) / 1600;
+  const imgH = 900;
+  const imgW = (imgH * 734) / 1075;
 
   const fluidezLetters = 'fluidez'.split('');
   return (
@@ -132,7 +132,7 @@ export const S1Intro: React.FC<{f: number}> = ({f}) => {
             {fluidezLetters.map((l, i) => {
               const wave = f > W_.fluidez ? Math.sin((f - W_.fluidez) / 3.2 - i * 0.7) * 22 * Math.exp(-(f - W_.fluidez) / 18) : 0;
               return (
-                <Word key={i} f={f} at={W_.fluidez - 1 + i * 0.6} size={200} color={C.white} dx={16} style={{marginTop: wave, letterSpacing: '-0.05em'}}>
+                <Word key={i} f={f} at={W_.fluidez - 1 + i * 0.6} size={172} color={C.white} dx={16} style={{marginTop: wave, letterSpacing: '-0.05em'}}>
                   {l}
                 </Word>
               );
@@ -143,12 +143,12 @@ export const S1Intro: React.FC<{f: number}> = ({f}) => {
         {/* recorte de la creadora: recortado a los lados y abajo, libre por arriba */}
         <div style={{position: 'absolute', inset: 0, clipPath: `inset(-600px 0px 0px 0px round 0 0 ${sr}px ${sr}px)`, opacity: m}}>
           <Img
-            src={staticFile('img/podcaster_bn.png')}
+            src={staticFile('img/creador_bn.png')}
             style={{
               position: 'absolute',
               width: imgW,
               height: imgH,
-              left: 560 - imgW * 0.62,
+              left: 365,
               top: card.h - imgH + 6 + (1 - rise) * 420,
               filter: `blur(${(1 - rise) * 10}px) drop-shadow(0 18px 30px rgba(10,4,14,0.45))`,
             }}
