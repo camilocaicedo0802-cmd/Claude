@@ -72,7 +72,7 @@ export const Main: React.FC = () => {
         name="Música (referencia, en bucle)"
         src={staticFile("audio/musica_ref_loop.wav")}
         premountFor={fps}
-        volume={(f) => interpolate(f, [0, 0.6 * fps, 41.2 * fps, DURATION_S * fps], [0, 0.42, 0.42, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" })}
+        volume={(f) => interpolate(f, [0, 0.6 * fps, 41.2 * fps, DURATION_S * fps], [0, 0.6, 0.6, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" })}
       />
       {SFX.map((s, i) => (
         <Audio key={i} name={`SFX ${s.note || s.file}`} from={Math.round(s.t * fps)} src={staticFile(`sfx/${s.file}.wav`)} volume={s.vol} premountFor={fps} />

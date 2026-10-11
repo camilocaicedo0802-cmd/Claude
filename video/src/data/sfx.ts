@@ -29,7 +29,7 @@ export const SFX: Sfx[] = [
   { t: 16.66, file: "ref_whoosh_soft", vol: 0.6, note: "ENTREGANDO" },
   { t: 18.96, file: "sand", vol: 0.8, note: "RECUPERAR: el reloj se desintegra" },
   { t: 18.96, file: "ref_whoosh_soft", vol: 0.35, note: "" },
-  { t: 20.09, file: "boom", vol: 0.85, note: "TU TIEMPO" },
+  { t: 20.09, file: "boom", vol: 0.6, note: "TU TIEMPO" },
   { t: 20.41, file: "tick", vol: 0.55, note: "tic" },
   { t: 20.73, file: "tick", vol: 0.5, note: "tac" },
   { t: 20.9, file: "ref_whoosh_tr", vol: 0.8, note: "empuje horizontal" },
@@ -54,6 +54,6 @@ export const SFX: Sfx[] = [
   { t: 38.38, file: "ref_whoosh_soft", vol: 0.5, note: "oscurecimiento" },
   { t: 39.3, file: "tick", vol: 0.45, note: "tic" },
   { t: 39.62, file: "tick", vol: 0.4, note: "tac" },
-  { t: 40.27, file: "boom", vol: 0.75, note: "JAMÁS" },
+  { t: 40.27, file: "boom", vol: 0.55, note: "JAMÁS" },
   { t: 41.3, file: "ref_impact", vol: 0.75, note: "iris a la tarjeta final" },
 ];

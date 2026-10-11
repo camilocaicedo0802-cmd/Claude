@@ -18,5 +18,7 @@ cd video
 npm i
 npx remotion studio                                   # vista previa interactiva
 npx remotion render Main out/video.mp4 --crf=18       # render final
+# limitador de audio (pico real ≤ -1 dBFS) sin recodificar el vídeo:
+ffmpeg -i out/video.mp4 -c:v copy -af "alimiter=limit=0.85:attack=2:release=60:level=disabled" -c:a aac -b:a 192k -movflags +faststart ../render/video.mp4
 OUT_DIR=/tmp/stills node scripts/stills.mjs 1 5 10    # fotogramas sueltos para revisar
 ```
