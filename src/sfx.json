@@ -1,0 +1,37 @@
+{
+  "_doc": "Cue list de efectos de sonido: [frame, tipo, ganancia dB]. La usa tools/audio.py. Tipos: whoosh, whoosh_big, whoosh_soft, swoosh, click, pop, tick, impact, impact_big, impact_soft, riser, riser_long, keys, mouse, scroll, shutter, scribble, counter",
+  "cues": [
+    [3, "pop", -6], [20, "impact_soft", -3], [21, "pop", -4], [31, "tick", -8], [33, "click", -10], [41, "click", -10], [46, "tick", -6], [49, "click", -10],
+    [52, "riser", -12], [59, "whoosh_soft", -6], [70, "shutter", -9], [88, "whoosh_soft", -10], [116, "tick", -7], [135, "pop", -6], [145, "click", -8],
+    [150, "riser", -9], [157, "whoosh_big", -4], [164, "impact", -5],
+    [187, "keys", -12], [226, "click", -3], [235, "click", -3], [243, "swoosh", -8], [245, "pop", -6], [250, "whoosh_soft", -8],
+    [257, "pop", -5], [260, "scroll", -11], [293, "pop", -5], [297, "click", -9], [303, "click", -9], [309, "click", -9],
+    [326, "pop", -5], [329, "whoosh", -7], [341, "shutter", -6],
+    [345, "riser", -9], [351, "whoosh_big", -4], [364, "impact_soft", -6],
+    [371, "whoosh", -7], [378, "whoosh_soft", -8], [398, "swoosh", -10], [401, "click", -7], [404, "tick", -9], [408, "tick", -9], [412, "tick", -9],
+    [428, "swoosh", -10], [430, "whoosh", -8], [440, "pop", -8], [443, "pop", -8],
+    [455, "whoosh", -6], [463, "pop", -8], [498, "tick", -7], [509, "pop", -5], [513, "impact", -5],
+    [537, "pop", -6], [542, "counter", -14], [555, "pop", -7],
+    [580, "riser", -10], [586, "whoosh_big", -5], [595, "shutter", -6], [609, "impact_soft", -4], [610, "pop", -6],
+    [628, "whoosh", -7], [636, "pop", -7], [655, "mouse", -3], [658, "pop", -5], [665, "whoosh_big", -5],
+    [675, "pop", -9], [679, "scribble", -9], [683, "scribble", -9], [687, "scribble", -9], [689, "pop", -5],
+    [692, "riser_long", -7], [708, "impact_big", -3], [709, "whoosh", -7], [730, "whoosh_soft", -7], [746, "pop", -5], [747, "impact", -4],
+    [758, "riser", -9], [763, "whoosh_big", -4], [768, "impact_soft", -9],
+    [785, "pop", -7], [798, "pop", -7], [817, "pop", -7], [822, "pop", -4], [826, "shutter", -6],
+    [834, "riser", -8], [840, "whoosh_big", -4], [844, "impact_big", -4], [845, "pop", -5],
+    [852, "pop", -6], [866, "mouse", -3], [860, "tick", -10], [863, "tick", -10], [866, "tick", -10], [869, "tick", -10], [872, "tick", -10]
+  ],
+  "music": {
+    "bpm": 104,
+    "sections": [
+      {"from": 0, "to": 164, "kind": "groove", "filterOpenAt": 20},
+      {"from": 164, "to": 364, "kind": "groove"},
+      {"from": 364, "to": 513, "kind": "groove", "perc": true},
+      {"from": 513, "to": 668, "kind": "groove", "perc": true},
+      {"from": 668, "to": 708, "kind": "break"},
+      {"from": 708, "to": 844, "kind": "groove", "perc": true},
+      {"from": 844, "to": 900, "kind": "outro"}
+    ],
+    "stops": [[155, 164], [352, 364], [836, 844]]
+  }
+}

@@ -7,3 +7,8 @@ referencia/cortes*/
 referencia/scores.txt
 assets/stock_cand/
 assets/cand_sheet.jpg
+build/
+assets/fotos_src/
+referencia/*.png
+referencia/*.jpg
+assets/sin_usar/
