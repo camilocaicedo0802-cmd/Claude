@@ -1,54 +1,17 @@
-# Remotion video
+# CR7 — vídeo vertical con Remotion
 
-<p align="center">
-  <a href="https://github.com/remotion-dev/logo">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://github.com/remotion-dev/logo/raw/main/animated-logo-banner-dark.apng">
-      <img alt="Animated Remotion Logo" src="https://github.com/remotion-dev/logo/raw/main/animated-logo-banner-light.gif">
-    </picture>
-  </a>
-</p>
+Vídeo de 30 s (1080x1920, 30 fps) sobre Cristiano Ronaldo con el estilo del vídeo de referencia.
 
-Welcome to your Remotion project!
+- `estilo.md` — guía de estilo extraída de la referencia (valores concretos) + correcciones aprobadas.
+- `src/` — composición `CR7` (escenas en `src/scenes/`, tiempos por palabra en `src/data/palabras.ts`).
+- `public/` — voz, música limpia, SFX extraídos, fotos, recortes, escudos y fuentes.
+- `analisis/` — material del análisis de la referencia (fotogramas, transcripción, SFX).
+- `scripts/` — preparación de fondos, fuente condensada, extracción de audio y render.
+- `entregas/` — vídeos finales renderizados.
+- `CREDITOS.md` — fuentes y licencias de cada recurso.
 
-## Commands
-
-**Install Dependencies**
-
-```console
-npm i --loglevel=error
+```bash
+npm i
+npm run dev                         # Remotion Studio
+bash scripts/render.sh out/cr7.mp4  # render + masterizado a -14 LUFS
 ```
-
-**Start Preview**
-
-```console
-npm run dev
-```
-
-**Render video**
-
-```console
-npx remotion render
-```
-
-**Upgrade Remotion**
-
-```console
-npx remotion upgrade
-```
-
-## Docs
-
-Get started with Remotion by reading the [fundamentals page](https://www.remotion.dev/docs/the-fundamentals).
-
-## Help
-
-We provide help on our [Discord server](https://discord.gg/6VzzNDwUwV).
-
-## Issues
-
-Found an issue with Remotion? [File an issue here](https://github.com/remotion-dev/remotion/issues/new).
-
-## License
-
-Note that for some entities a company license is needed. [Read the terms here](https://github.com/remotion-dev/remotion/blob/main/LICENSE.md).
