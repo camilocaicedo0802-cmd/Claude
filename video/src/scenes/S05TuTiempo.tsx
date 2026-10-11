@@ -51,7 +51,7 @@ export const S05TuTiempo: React.FC<{ start?: number }> = ({ start = S05.start })
           <Cutout name="watch_dark" cx={ccx} cy={ccy - 86} width={700} shadow={false} />
         </Camera>
       )}
-      {show && <TextBlock g={g} theme="dark" guide={[43, 43]} keyw={[44, 44]} x={130} y={150} guideSize={64} keySize={250} />}
+      {show && <TextBlock g={g} theme="darkInv" guide={[43, 43]} keyw={[44, 44]} x={120} y={130} guideSize={70} keySize={290} />}
     </AbsoluteFill>
   );
 };

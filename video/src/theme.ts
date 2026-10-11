@@ -16,4 +16,8 @@ export const F = {
 export const W = 1080;
 export const H = 1920;
 export const FPS = 30;
-export const DURATION_S = 42.6;
+export const DURATION_S = 43.2;
+
+// Geometría compartida entre escenas (para que las transiciones sean continuas, sin cortes visibles)
+export const BAND = { y: 1120, h: 220 }; // franja negra E1 -> E2 (en pantalla)
+export const PHONE_E2 = { cx: 540, cy: 1060, w: 500 }; // móvil al final de E2 = inicio de E3

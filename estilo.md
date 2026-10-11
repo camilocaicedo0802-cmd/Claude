@@ -122,3 +122,44 @@ Los subtítulos no son una franja fija abajo: son **tipografía editorial coloca
 
 ## Correcciones aprobadas por el usuario
 _(Aquí se añaden las correcciones que el usuario apruebe para que se mantengan en futuros vídeos.)_
+- **2026-10-11 · Borrador v1 aprobado** («me gusta mucho el estilo»). Se mantiene como base para próximos vídeos con esta referencia:
+  - escenas de 2–6 s que alternan papel y negro;
+  - transiciones solo del catálogo de §5, más el zoom dentro de una pantalla;
+  - subtítulos de dos niveles con la jerarquía invertida en las escenas oscuras;
+  - recortes en B/N con sombra, más vectores monocromos (móvil, tarjeta, notificaciones) para lo que no existe en foto;
+  - un SFX en cada objeto, palabra clave y transición;
+  - música de la referencia en bucle, entre 14 y 18 dB bajo la voz;
+  - mezcla final a −14 LUFS con el pico real ≤ −1 dBFS.
+- **2026-10-11 · Revisión v2 (correcciones del usuario).** Estas reglas mandan sobre lo anterior:
+  1. **La continuidad está por encima de todo.** Cada elemento gráfico prepara el siguiente; no se usan elementos decorativos sueltos. Patrones aprobados:
+     - unas monedas que salen y arrastran la franja negra;
+     - la franja que se transforma en el móvil;
+     - el objeto que se queda quieto mientras el entorno cambia de blanco a negro;
+     - *match cut* circular (toque en la pantalla → círculo del siguiente objeto; pantalla → máscara circular);
+     - la línea que dibuja el contorno del siguiente objeto (señal);
+     - la franja de censura que se expande hasta ser el fondo;
+     - dos objetos que se mueven por un eje compartido (cerebro ↓ móvil);
+     - la línea que engorda y barre a negro para traer el último objeto.
+     Los cortes y empujes secos se reservan como máximo para un momento.
+  2. **Gancho.** El objeto protagonista está en cuadro desde el fotograma 0 (entrada de ≤ 0.45 s con desaceleración suave) y el círculo discontinuo se **dibuja** en unos 0.8 s; nunca aparece estático.
+  3. **Legibilidad en móvil.**
+     - Tamaños mínimos (sobre la referencia, que era más pequeña): guía 72 px y palabra clave 112–170 px. Las palabras importantes no deben quedarse pequeñas al lado de la guía.
+     - Bloque de texto pegado al objeto al que se refiere (no al otro lado del cuadro).
+     - En las escenas oscuras normales: guía caligráfica blanca + clave en palo seco blanca con entrada contundente (pop). La jerarquía invertida (guía palo seco + clave caligráfica gigante) se reserva para el clímax («tu tiempo», «jamás»).
+     - Tipografías: Archivo 800 (sustituto de Helvetica Neue Bold/Heavy) + Parisienne. No se cambia a Anton para no apartarse de la referencia.
+  4. **Movimiento.**
+     - La cámara hace un único movimiento ease-in-out por escena, siguiendo la línea, sin cambios bruscos de dirección.
+     - Entradas rápidas con desaceleración suave; salidas con aceleración; nada lineal.
+     - Profundidad con movimientos opuestos: el texto avanza (escala 0.94–0.96 → 1.04–1.05) mientras el objeto retrocede (1 → 0.9–0.92).
+     - Antes de un cambio de tono, una pausa breve: el movimiento se reduce antes de que entre la franja o la escultura.
+  5. **Objetos.**
+     - La misma luz (sombra abajo a la derecha) en todos.
+     - En fondo oscuro, luz de contorno blanca suave en esculturas y borde iluminado en el móvil para separar los planos.
+     - En fondo negro, objetos más grandes y con más contraste (reloj de arena con luz trasera y reflejos en el cristal).
+  6. **Escalada de ritmo.** Comienzo dinámico, parte central intensa (notificaciones que llegan cada vez más rápido, scroll que acelera), pausa reflexiva y cierre contundente. En el clímax todo se aquieta y la palabra final entra a gran escala sobre el objeto apagado.
+  7. **Sonido.**
+     - No se pone un whoosh en cada transición: se alternan impactos suaves, desplazamientos, sonidos digitales, ticks, monedas, vibración y **silencio**.
+     - Vibración del móvil solo cuando suena su SFX.
+     - La música baja en las frases finales, se hunde casi en silencio justo antes de la palabra final y cierra con cola de reverberación, sin cortes.
+  8. **Cierre.** Fundido suave desde el último objeto a una pantalla clara (`#E4E4E4`); el usuario entra con opacidad y una subida de 22 px; después, fundido a negro. Sin efectos llamativos.
+  9. **Monedas, listas y cantidades.** Aparecen de forma progresiva, de mayor a menor y al ritmo de la voz, con un borde de revelado suave (nunca un corte vertical duro).

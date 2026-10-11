@@ -9,9 +9,13 @@ export const Phone: React.FC<{
   scale?: number;
   screen?: string;
   glow?: number;
+  /** borde iluminado (0–1) para separarlo de fondos oscuros */
+  rim?: number;
+  /** vibración: desplazamiento horizontal en px (se anima desde fuera) */
+  shake?: number;
   children?: React.ReactNode;
   style?: React.CSSProperties;
-}> = ({ cx, cy, w, rotate = 0, scale = 1, screen = "#1d1d1e", glow = 0, children, style }) => {
+}> = ({ cx, cy, w, rotate = 0, scale = 1, screen = "#1d1d1e", glow = 0, rim = 0.35, shake = 0, children, style }) => {
   const h = w * 2.05;
   const r = w * 0.15;
   const inset = w * 0.038;
@@ -21,13 +25,13 @@ export const Phone: React.FC<{
     <div
       style={{
         position: "absolute",
-        left: cx - w / 2,
+        left: cx - w / 2 + shake,
         top: cy - h / 2,
         width: w,
         height: h,
         rotate: `${rotate}deg`,
         scale: `${scale}`,
-        filter: `drop-shadow(24px 30px 30px rgba(0,0,0,0.45))${glow > 0 ? ` drop-shadow(0 0 ${60 * glow}px rgba(255,255,255,${0.35 * glow}))` : ""}`,
+        filter: `drop-shadow(20px 24px 26px rgba(0,0,0,0.5))${glow > 0 ? ` drop-shadow(0 0 ${60 * glow}px rgba(255,255,255,${0.32 * glow}))` : ""}`,
         ...style,
       }}
     >
@@ -42,7 +46,8 @@ export const Phone: React.FC<{
           inset: 0,
           borderRadius: r,
           background: "linear-gradient(135deg, #3a3a3b 0%, #121213 22%, #0b0b0c 70%, #2a2a2b 100%)",
-          boxShadow: "inset 0 0 0 3px #4a4a4b, inset 0 0 0 7px #0a0a0a",
+          // marco metálico con borde iluminado arriba-izquierda (misma dirección de luz que las sombras)
+          boxShadow: `inset 0 0 0 3px #5a5a5b, inset 0 0 0 7px #0a0a0a, inset 3px 3px 0 1px rgba(255,255,255,${0.25 * rim}), 0 0 0 ${1.5 + rim * 1.5}px rgba(255,255,255,${0.18 + 0.4 * rim})`,
         }}
       />
       {/* pantalla */}

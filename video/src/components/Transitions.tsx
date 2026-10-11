@@ -53,3 +53,37 @@ export const Iris: React.FC<{ x: number; y: number; dur?: number; soft?: number;
   const mask = `radial-gradient(circle at ${x}px ${y}px, #000 ${r}px, transparent ${r + soft}px)`;
   return <AbsoluteFill style={done ? undefined : { WebkitMaskImage: mask, maskImage: mask }}>{children}</AbsoluteFill>;
 };
+
+/**
+ * Iris en dos tiempos para "match cuts" circulares: crece desde un punto/círculo de la escena anterior (from)
+ * hasta coincidir con el círculo de la escena nueva (mid), se sostiene un instante y se abre a pantalla completa.
+ * Tiempos en segundos locales de la secuencia.
+ */
+export const IrisMatch: React.FC<{
+  from: { x: number; y: number; r: number };
+  mid: { x: number; y: number; r: number };
+  grow?: number;
+  hold?: number;
+  open?: number;
+  soft?: number;
+  children: React.ReactNode;
+}> = ({ from, mid, grow = 0.25, hold = 0.15, open = 0.3, soft = 18, children }) => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  const t = frame / fps;
+  const p1 = kf(t, [0, grow], [0, 1], easeOut);
+  const p2 = kf(t, [grow + hold, grow + hold + open], [0, 1], easeIn);
+  if (p2 >= 1) return <AbsoluteFill>{children}</AbsoluteFill>;
+  const x = from.x + (mid.x - from.x) * p1;
+  const y = from.y + (mid.y - from.y) * p1;
+  const r = from.r + (mid.r - from.r) * p1 + p2 * 2400;
+  const mask = `radial-gradient(circle at ${x}px ${y}px, #000 ${r}px, transparent ${r + soft}px)`;
+  return <AbsoluteFill style={{ WebkitMaskImage: mask, maskImage: mask }}>{children}</AbsoluteFill>;
+};
+
+/** Fundido de entrada simple (cierre suave). */
+export const FadeIn: React.FC<{ dur?: number; children: React.ReactNode }> = ({ dur = 0.5, children }) => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  return <AbsoluteFill style={{ opacity: kf(frame / fps, [0, dur], [0, 1]) }}>{children}</AbsoluteFill>;
+};

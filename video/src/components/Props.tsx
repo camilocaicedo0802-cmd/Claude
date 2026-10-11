@@ -3,7 +3,7 @@ import { random } from "remotion";
 import { evolvePath } from "@remotion/paths";
 
 /** Tarjeta bancaria vectorial negra (chip, contactless, número). */
-export const CreditCard: React.FC<{ cx: number; cy: number; w: number; rotate?: number; scale?: number; opacity?: number }> = ({ cx, cy, w, rotate = 0, scale = 1, opacity = 1 }) => {
+export const CreditCard: React.FC<{ cx: number; cy: number; w: number; rotate?: number; rotY?: number; scale?: number; opacity?: number }> = ({ cx, cy, w, rotate = 0, rotY = 0, scale = 1, opacity = 1 }) => {
   const h = w * 0.63;
   return (
     <div
@@ -18,6 +18,7 @@ export const CreditCard: React.FC<{ cx: number; cy: number; w: number; rotate?: 
         boxShadow: "inset 0 0 0 2px rgba(255,255,255,0.12), 22px 28px 34px rgba(0,0,0,0.45)",
         rotate: `${rotate}deg`,
         scale: `${scale}`,
+        transform: rotY ? `perspective(1400px) rotateY(${rotY}deg)` : undefined,
         opacity,
         fontFamily: "Archivo",
         color: "#E6E6E6",
