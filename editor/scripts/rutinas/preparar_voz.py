@@ -1,6 +1,7 @@
 """Días 4 a 7 (rutinas con voz en off): limpia la voz en off y genera su línea de tiempo.
 
-Uso: python3 scripts/rutinas/preparar_voz.py <dia4|dia5|dia6|dia7|dia9> <voz.m4a>
+Uso: python3 scripts/rutinas/preparar_voz.py <dia4|dia5|dia6|dia7|dia9|comp_*> <voz.m4a> [transcripción.json]
+     (por defecto la transcripción es scripts/rutinas/voz_<dia>.json)
 Salidas: public/<dia>/voz.wav (voz ORIGINAL sin normalizar, solo cortada) y src/<dia>/data/edit.json (palabras en
 la línea de tiempo editada, con su volumen relativo "db").
 
@@ -36,13 +37,23 @@ TOMAS = {
     # se repite seguida y fluida) y la primera toma de los brazos (70,7–84 s, vacila en "sobre el… codo" y se repite
     # entera con "articulaciones"); los 6 s de silencio antes de "Y listo" se cortan solos.
     "dia9": [(1.50, 5.80), (13.60, 69.20), (84.90, 96.60), (103.00, 112.20)],
+    # Vídeos complementarios (cada toma repetida se encontró transcribiendo por trozos la voz ya limpia: Whisper las
+    # fundía en una palabra larga). Abdomen: fuera el primer "Ahora vamos a preparar el…" (1,8–3,9 s, se corta y se
+    # repite entero) y la primera toma de "Deslizando las manos desde los costados hacia el frente" (31,9–35,1 s).
+    "comp_abdomen": [(5.42, 31.10), (36.55, 69.82)],
+    # Piernas: fuera la primera toma de "Luego continúa desde encima de la rodilla…" (31,9–41 s, se corta en "en
+    # dirección") y el primer "Repite la misma secuencia en la otra pierna… durante" (59,2–64,5 s), repetido entero.
+    "comp_piernas": [(0.60, 31.25), (43.20, 58.90), (65.30, 80.57)],
+    # Producto: fuera la primera toma de "El tercer botón es el Negative Pressure" (30,5–34,9 s, con una pausa a mitad
+    # de frase), repetida enseguida de corrido.
+    "comp_producto": [(1.00, 30.35), (36.15, 68.54)],
 }
 
 
 def main() -> None:
     dia, src = sys.argv[1], sys.argv[2]
     tomas = TOMAS[dia]
-    datos = json.load(open(RAIZ / f"scripts/rutinas/voz_{dia}.json"))
+    datos = json.load(open(sys.argv[3] if len(sys.argv) > 3 else RAIZ / f"scripts/rutinas/voz_{dia}.json"))
     palabras = [w for w in datos["words"] if any(w["end"] > a and w["start"] < b for a, b in tomas)]
 
     tramos = []

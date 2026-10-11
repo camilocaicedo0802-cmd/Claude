@@ -8,6 +8,8 @@ import { Dia7 } from "./dia7/Dia7";
 import { Dia8 } from "./dia8/Dia8";
 import { Dia9 } from "./dia9/Dia9";
 import { Dia10 } from "./dia10/Dia10";
+import { CompAbdomen } from "./comp_abdomen/CompAbdomen";
+import { CompPiernas } from "./comp_piernas/CompPiernas";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -31,6 +33,9 @@ export const RemotionRoot: React.FC = () => {
       <Dia9 />
       {/* Día 10 · Día 21 y continuidad (a cámara; el último del reto) */}
       <Dia10 />
+      {/* Vídeos complementarios (voz en off): preparación del abdomen, preparación de las piernas, cómo funciona */}
+      <CompAbdomen />
+      <CompPiernas />
     </>
   );
 };

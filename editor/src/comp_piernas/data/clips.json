@@ -1,0 +1,120 @@
+[
+ {
+  "frase": "ahora",
+  "outStart": 0.0,
+  "frames": 87,
+  "src": 322.0
+ },
+ {
+  "frase": "antes de utilizar",
+  "outStart": 2.9,
+  "frames": 49,
+  "orig": 450.0
+ },
+ {
+  "frase": "prepara ambas",
+  "outStart": 4.533333333333333,
+  "frames": 112,
+  "src": 263.2
+ },
+ {
+  "frase": "comienza",
+  "outStart": 8.266666666666667,
+  "frames": 66,
+  "src": 247.6
+ },
+ {
+  "frase": "desde la pantorrilla",
+  "outStart": 10.466666666666667,
+  "frames": 51,
+  "src": 205.4,
+  "rec": [
+   270,
+   100,
+   810
+  ]
+ },
+ {
+  "frase": "y distribuyelo",
+  "outStart": 12.166666666666666,
+  "frames": 105,
+  "src": 272.0
+ },
+ {
+  "frase": "desde encima del tobillo",
+  "outStart": 15.666666666666666,
+  "frames": 71,
+  "src": 337.0
+ },
+ {
+  "frase": "hasta llegar",
+  "outStart": 18.033333333333335,
+  "frames": 95,
+  "src": 339.0,
+  "congela": true
+ },
+ {
+  "frase": "al llegar",
+  "outStart": 21.2,
+  "frames": 101,
+  "src": 302.0
+ },
+ {
+  "frase": "sin presionar",
+  "outStart": 24.566666666666666,
+  "frames": 94,
+  "src": 345.5
+ },
+ {
+  "frase": "luego",
+  "outStart": 27.7,
+  "frames": 146,
+  "src": 340.4,
+  "vel": 0.65
+ },
+ {
+  "frase": "deslizando",
+  "outStart": 32.56666666666667,
+  "frames": 117,
+  "src": 310.0,
+  "vel": 0.6
+ },
+ {
+  "frase": "cuando te acerques",
+  "outStart": 36.46666666666667,
+  "frames": 55,
+  "src": 334.6
+ },
+ {
+  "frase": "disminuye",
+  "outStart": 38.3,
+  "frames": 110,
+  "src": 336.0,
+  "congela": true
+ },
+ {
+  "frase": "repite",
+  "outStart": 41.96666666666667,
+  "frames": 164,
+  "src": 319.0,
+  "vel": 3.0
+ },
+ {
+  "frase": "recuerda",
+  "outStart": 47.43333333333333,
+  "frames": 93,
+  "src": 348.0
+ },
+ {
+  "frase": "no necesitas",
+  "outStart": 50.53333333333333,
+  "frames": 92,
+  "src": 352.0
+ },
+ {
+  "frase": "antes de comenzar",
+  "outStart": 53.6,
+  "frames": 113,
+  "orig": 453.0
+ }
+]

@@ -1,0 +1,95 @@
+[
+ {
+  "frase": "ahora",
+  "outStart": 0.0,
+  "frames": 89,
+  "src": 86.0
+ },
+ {
+  "frase": "antes de comenzar",
+  "outStart": 2.966666666666667,
+  "frames": 61,
+  "orig": 951.6
+ },
+ {
+  "frase": "vamos a preparar suavemente",
+  "outStart": 5.0,
+  "frames": 139,
+  "src": 165.0
+ },
+ {
+  "frase": "aplica",
+  "outStart": 9.633333333333333,
+  "frames": 57,
+  "src": 199.0
+ },
+ {
+  "frase": "y frotalas",
+  "outStart": 11.533333333333333,
+  "frames": 50,
+  "src": 251.3
+ },
+ {
+  "frase": "distribuirlo",
+  "outStart": 13.2,
+  "frames": 88,
+  "src": 297.9,
+  "vel": 0.5
+ },
+ {
+  "frase": "ahora ubica",
+  "outStart": 16.133333333333333,
+  "frames": 120,
+  "src": 112.0
+ },
+ {
+  "frase": "y realiza movimientos",
+  "outStart": 20.133333333333333,
+  "frames": 109,
+  "src": 76.0
+ },
+ {
+  "frase": "deslizando",
+  "outStart": 23.766666666666666,
+  "frames": 108,
+  "src": 107.4
+ },
+ {
+  "frase": "no necesitas",
+  "outStart": 27.366666666666667,
+  "frames": 171,
+  "src": 126.0
+ },
+ {
+  "frase": "despues lleva",
+  "outStart": 33.06666666666667,
+  "frames": 105,
+  "src": 80.0
+ },
+ {
+  "frase": "alrededor",
+  "outStart": 36.56666666666667,
+  "frames": 108,
+  "src": 99.0,
+  "congela": true
+ },
+ {
+  "frase": "acompana",
+  "outStart": 40.166666666666664,
+  "frames": 141,
+  "src": 100.0
+ },
+ {
+  "frase": "repite",
+  "outStart": 44.86666666666667,
+  "frames": 194,
+  "src": 162.0,
+  "vel": 3.0
+ },
+ {
+  "frase": "continua",
+  "outStart": 51.333333333333336,
+  "frames": 109,
+  "orig": 973.0
+ }
+]

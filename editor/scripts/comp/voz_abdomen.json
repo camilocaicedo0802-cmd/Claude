@@ -1,0 +1,954 @@
+{
+ "model": "large-v3-turbo",
+ "duration": 69.8226875,
+ "segments": [
+  {
+   "start": 1.8200000000000003,
+   "end": 7.92,
+   "text": "Ahora vamos a preparar el abdomen."
+  },
+  {
+   "start": 8.42,
+   "end": 14.98,
+   "text": "Antes de comenzar con nuestra rutina de Luma Body, vamos a preparar suavemente la piel con un pequeño masaje manual."
+  },
+  {
+   "start": 15.78,
+   "end": 21.92,
+   "text": "Aplica suficiente aceite en las manos y frótalas entre sí para distribuirlo y calentarlo ligeramente."
+  },
+  {
+   "start": 22.84,
+   "end": 27.2,
+   "text": "Ahora, ubica las manos en la parte baja del abdomen, cerca de la zona inguinal"
+  },
+  {
+   "start": 27.2,
+   "end": 30.92,
+   "text": "Y realiza movimientos circulares muy suaves"
+  },
+  {
+   "start": 31.94,
+   "end": 35.06,
+   "text": "Deslizando las manos desde los costados hacia el frente"
+  },
+  {
+   "start": 36.699999999999996,
+   "end": 39.72,
+   "text": "Deslizando las manos desde los costados hacia el frente"
+  },
+  {
+   "start": 41.4,
+   "end": 43.18,
+   "text": "No necesitas hacer fuerza"
+  },
+  {
+   "start": 43.18,
+   "end": 46.68,
+   "text": "La presión debe ser ligera, lenta y muy cómoda"
+  },
+  {
+   "start": 46.68,
+   "end": 52.3,
+   "text": "Después lleva las manos hacia el abdomen y realiza círculos amplios alrededor del ombligo"
+  },
+  {
+   "start": 52.3,
+   "end": 54.74,
+   "text": "sin presionar directamente sobre él"
+  },
+  {
+   "start": 54.74,
+   "end": 59.42,
+   "text": "Acompaña el movimiento con respiraciones lentas y profundas para relajar la zona"
+  },
+  {
+   "start": 59.42,
+   "end": 63.6,
+   "text": "Repite esta preparación durante 1 o 2 minutos"
+  },
+  {
+   "start": 63.6,
+   "end": 68.6,
+   "text": "y cuando la piel tenga suficiente deslizamiento continúa con tu rutina de Luma Ode"
+  }
+ ],
+ "words": [
+  {
+   "text": "Ahora",
+   "start": 1.82,
+   "end": 2.5,
+   "prob": 0.988
+  },
+  {
+   "text": "vamos",
+   "start": 2.5,
+   "end": 2.9,
+   "prob": 0.984
+  },
+  {
+   "text": "a",
+   "start": 2.9,
+   "end": 3.06,
+   "prob": 1.0
+  },
+  {
+   "text": "preparar",
+   "start": 3.06,
+   "end": 3.86,
+   "prob": 1.0
+  },
+  {
+   "text": "el",
+   "start": 3.86,
+   "end": 7.42,
+   "prob": 0.963
+  },
+  {
+   "text": "abdomen.",
+   "start": 7.42,
+   "end": 7.92,
+   "prob": 0.999
+  },
+  {
+   "text": "Antes",
+   "start": 8.42,
+   "end": 9.1,
+   "prob": 1.0
+  },
+  {
+   "text": "de",
+   "start": 9.1,
+   "end": 9.24,
+   "prob": 1.0
+  },
+  {
+   "text": "comenzar",
+   "start": 9.24,
+   "end": 9.58,
+   "prob": 0.999
+  },
+  {
+   "text": "con",
+   "start": 9.58,
+   "end": 9.7,
+   "prob": 1.0
+  },
+  {
+   "text": "nuestra",
+   "start": 9.7,
+   "end": 9.96,
+   "prob": 1.0
+  },
+  {
+   "text": "rutina",
+   "start": 9.96,
+   "end": 10.4,
+   "prob": 1.0
+  },
+  {
+   "text": "de",
+   "start": 10.4,
+   "end": 10.52,
+   "prob": 0.78
+  },
+  {
+   "text": "Luma",
+   "start": 10.52,
+   "end": 10.74,
+   "prob": 0.865
+  },
+  {
+   "text": "Body,",
+   "start": 10.74,
+   "end": 11.02,
+   "prob": 0.798
+  },
+  {
+   "text": "vamos",
+   "start": 11.24,
+   "end": 11.4,
+   "prob": 1.0
+  },
+  {
+   "text": "a",
+   "start": 11.4,
+   "end": 11.56,
+   "prob": 1.0
+  },
+  {
+   "text": "preparar",
+   "start": 11.56,
+   "end": 11.98,
+   "prob": 1.0
+  },
+  {
+   "text": "suavemente",
+   "start": 11.98,
+   "end": 12.52,
+   "prob": 0.989
+  },
+  {
+   "text": "la",
+   "start": 12.52,
+   "end": 12.7,
+   "prob": 1.0
+  },
+  {
+   "text": "piel",
+   "start": 12.7,
+   "end": 13.0,
+   "prob": 1.0
+  },
+  {
+   "text": "con",
+   "start": 13.0,
+   "end": 13.56,
+   "prob": 1.0
+  },
+  {
+   "text": "un",
+   "start": 13.56,
+   "end": 13.74,
+   "prob": 1.0
+  },
+  {
+   "text": "pequeño",
+   "start": 13.74,
+   "end": 14.14,
+   "prob": 1.0
+  },
+  {
+   "text": "masaje",
+   "start": 14.14,
+   "end": 14.62,
+   "prob": 0.999
+  },
+  {
+   "text": "manual.",
+   "start": 14.62,
+   "end": 14.98,
+   "prob": 1.0
+  },
+  {
+   "text": "Aplica",
+   "start": 15.78,
+   "end": 16.12,
+   "prob": 0.999
+  },
+  {
+   "text": "suficiente",
+   "start": 16.12,
+   "end": 16.66,
+   "prob": 0.999
+  },
+  {
+   "text": "aceite",
+   "start": 16.66,
+   "end": 17.0,
+   "prob": 0.999
+  },
+  {
+   "text": "en",
+   "start": 17.0,
+   "end": 17.2,
+   "prob": 1.0
+  },
+  {
+   "text": "las",
+   "start": 17.2,
+   "end": 17.36,
+   "prob": 1.0
+  },
+  {
+   "text": "manos",
+   "start": 17.36,
+   "end": 17.68,
+   "prob": 1.0
+  },
+  {
+   "text": "y",
+   "start": 17.68,
+   "end": 17.86,
+   "prob": 1.0
+  },
+  {
+   "text": "frótalas",
+   "start": 17.86,
+   "end": 18.44,
+   "prob": 0.868
+  },
+  {
+   "text": "entre",
+   "start": 18.44,
+   "end": 18.74,
+   "prob": 1.0
+  },
+  {
+   "text": "sí",
+   "start": 18.74,
+   "end": 19.02,
+   "prob": 0.996
+  },
+  {
+   "text": "para",
+   "start": 19.02,
+   "end": 19.48,
+   "prob": 1.0
+  },
+  {
+   "text": "distribuirlo",
+   "start": 19.48,
+   "end": 20.44,
+   "prob": 0.999
+  },
+  {
+   "text": "y",
+   "start": 20.44,
+   "end": 20.52,
+   "prob": 1.0
+  },
+  {
+   "text": "calentarlo",
+   "start": 20.52,
+   "end": 21.16,
+   "prob": 0.997
+  },
+  {
+   "text": "ligeramente.",
+   "start": 21.16,
+   "end": 21.92,
+   "prob": 1.0
+  },
+  {
+   "text": "Ahora,",
+   "start": 22.84,
+   "end": 23.4,
+   "prob": 0.966
+  },
+  {
+   "text": "ubica",
+   "start": 23.68,
+   "end": 23.9,
+   "prob": 0.998
+  },
+  {
+   "text": "las",
+   "start": 23.9,
+   "end": 24.06,
+   "prob": 1.0
+  },
+  {
+   "text": "manos",
+   "start": 24.06,
+   "end": 24.28,
+   "prob": 1.0
+  },
+  {
+   "text": "en",
+   "start": 24.28,
+   "end": 24.46,
+   "prob": 1.0
+  },
+  {
+   "text": "la",
+   "start": 24.46,
+   "end": 24.56,
+   "prob": 1.0
+  },
+  {
+   "text": "parte",
+   "start": 24.56,
+   "end": 24.84,
+   "prob": 1.0
+  },
+  {
+   "text": "baja",
+   "start": 24.84,
+   "end": 25.1,
+   "prob": 0.999
+  },
+  {
+   "text": "del",
+   "start": 25.1,
+   "end": 25.26,
+   "prob": 1.0
+  },
+  {
+   "text": "abdomen,",
+   "start": 25.26,
+   "end": 25.7,
+   "prob": 1.0
+  },
+  {
+   "text": "cerca",
+   "start": 25.96,
+   "end": 26.2,
+   "prob": 1.0
+  },
+  {
+   "text": "de",
+   "start": 26.2,
+   "end": 26.38,
+   "prob": 1.0
+  },
+  {
+   "text": "la",
+   "start": 26.38,
+   "end": 26.46,
+   "prob": 1.0
+  },
+  {
+   "text": "zona",
+   "start": 26.46,
+   "end": 26.7,
+   "prob": 1.0
+  },
+  {
+   "text": "inguinal",
+   "start": 26.7,
+   "end": 27.2,
+   "prob": 0.99
+  },
+  {
+   "text": "Y",
+   "start": 27.2,
+   "end": 27.9,
+   "prob": 0.018
+  },
+  {
+   "text": "realiza",
+   "start": 27.9,
+   "end": 28.42,
+   "prob": 0.998
+  },
+  {
+   "text": "movimientos",
+   "start": 28.42,
+   "end": 28.94,
+   "prob": 1.0
+  },
+  {
+   "text": "circulares",
+   "start": 28.94,
+   "end": 29.86,
+   "prob": 1.0
+  },
+  {
+   "text": "muy",
+   "start": 29.86,
+   "end": 30.42,
+   "prob": 0.999
+  },
+  {
+   "text": "suaves",
+   "start": 30.42,
+   "end": 30.92,
+   "prob": 1.0
+  },
+  {
+   "text": "Deslizando",
+   "start": 31.94,
+   "end": 32.5,
+   "prob": 0.954
+  },
+  {
+   "text": "las",
+   "start": 32.5,
+   "end": 32.72,
+   "prob": 1.0
+  },
+  {
+   "text": "manos",
+   "start": 32.72,
+   "end": 33.1,
+   "prob": 1.0
+  },
+  {
+   "text": "desde",
+   "start": 33.1,
+   "end": 33.36,
+   "prob": 1.0
+  },
+  {
+   "text": "los",
+   "start": 33.36,
+   "end": 33.6,
+   "prob": 1.0
+  },
+  {
+   "text": "costados",
+   "start": 33.6,
+   "end": 34.22,
+   "prob": 0.999
+  },
+  {
+   "text": "hacia",
+   "start": 34.22,
+   "end": 34.46,
+   "prob": 0.999
+  },
+  {
+   "text": "el",
+   "start": 34.46,
+   "end": 34.66,
+   "prob": 1.0
+  },
+  {
+   "text": "frente",
+   "start": 34.66,
+   "end": 35.06,
+   "prob": 0.999
+  },
+  {
+   "text": "Deslizando",
+   "start": 36.7,
+   "end": 37.26,
+   "prob": 0.907
+  },
+  {
+   "text": "las",
+   "start": 37.26,
+   "end": 37.46,
+   "prob": 1.0
+  },
+  {
+   "text": "manos",
+   "start": 37.46,
+   "end": 37.86,
+   "prob": 1.0
+  },
+  {
+   "text": "desde",
+   "start": 37.86,
+   "end": 38.2,
+   "prob": 1.0
+  },
+  {
+   "text": "los",
+   "start": 38.2,
+   "end": 38.42,
+   "prob": 1.0
+  },
+  {
+   "text": "costados",
+   "start": 38.42,
+   "end": 38.94,
+   "prob": 1.0
+  },
+  {
+   "text": "hacia",
+   "start": 38.94,
+   "end": 39.14,
+   "prob": 1.0
+  },
+  {
+   "text": "el",
+   "start": 39.14,
+   "end": 39.3,
+   "prob": 1.0
+  },
+  {
+   "text": "frente",
+   "start": 39.3,
+   "end": 39.72,
+   "prob": 1.0
+  },
+  {
+   "text": "No",
+   "start": 41.4,
+   "end": 41.96,
+   "prob": 0.998
+  },
+  {
+   "text": "necesitas",
+   "start": 41.96,
+   "end": 42.52,
+   "prob": 1.0
+  },
+  {
+   "text": "hacer",
+   "start": 42.52,
+   "end": 42.76,
+   "prob": 1.0
+  },
+  {
+   "text": "fuerza",
+   "start": 42.76,
+   "end": 43.18,
+   "prob": 1.0
+  },
+  {
+   "text": "La",
+   "start": 43.18,
+   "end": 43.6,
+   "prob": 0.161
+  },
+  {
+   "text": "presión",
+   "start": 43.6,
+   "end": 44.02,
+   "prob": 1.0
+  },
+  {
+   "text": "debe",
+   "start": 44.02,
+   "end": 44.26,
+   "prob": 0.999
+  },
+  {
+   "text": "ser",
+   "start": 44.26,
+   "end": 44.48,
+   "prob": 1.0
+  },
+  {
+   "text": "ligera,",
+   "start": 44.48,
+   "end": 44.96,
+   "prob": 1.0
+  },
+  {
+   "text": "lenta",
+   "start": 45.12,
+   "end": 45.56,
+   "prob": 1.0
+  },
+  {
+   "text": "y",
+   "start": 45.56,
+   "end": 45.74,
+   "prob": 1.0
+  },
+  {
+   "text": "muy",
+   "start": 45.74,
+   "end": 46.06,
+   "prob": 0.998
+  },
+  {
+   "text": "cómoda",
+   "start": 46.06,
+   "end": 46.68,
+   "prob": 1.0
+  },
+  {
+   "text": "Después",
+   "start": 46.68,
+   "end": 47.86,
+   "prob": 0.915
+  },
+  {
+   "text": "lleva",
+   "start": 47.86,
+   "end": 48.16,
+   "prob": 0.879
+  },
+  {
+   "text": "las",
+   "start": 48.16,
+   "end": 48.36,
+   "prob": 1.0
+  },
+  {
+   "text": "manos",
+   "start": 48.36,
+   "end": 48.62,
+   "prob": 1.0
+  },
+  {
+   "text": "hacia",
+   "start": 48.62,
+   "end": 48.82,
+   "prob": 1.0
+  },
+  {
+   "text": "el",
+   "start": 48.82,
+   "end": 48.96,
+   "prob": 1.0
+  },
+  {
+   "text": "abdomen",
+   "start": 48.96,
+   "end": 49.3,
+   "prob": 0.999
+  },
+  {
+   "text": "y",
+   "start": 49.3,
+   "end": 49.48,
+   "prob": 0.998
+  },
+  {
+   "text": "realiza",
+   "start": 49.48,
+   "end": 49.82,
+   "prob": 0.999
+  },
+  {
+   "text": "círculos",
+   "start": 49.82,
+   "end": 50.42,
+   "prob": 1.0
+  },
+  {
+   "text": "amplios",
+   "start": 50.42,
+   "end": 51.08,
+   "prob": 0.999
+  },
+  {
+   "text": "alrededor",
+   "start": 51.08,
+   "end": 51.44,
+   "prob": 0.999
+  },
+  {
+   "text": "del",
+   "start": 51.44,
+   "end": 51.74,
+   "prob": 1.0
+  },
+  {
+   "text": "ombligo",
+   "start": 51.74,
+   "end": 52.3,
+   "prob": 1.0
+  },
+  {
+   "text": "sin",
+   "start": 52.3,
+   "end": 52.92,
+   "prob": 0.537
+  },
+  {
+   "text": "presionar",
+   "start": 52.92,
+   "end": 53.44,
+   "prob": 1.0
+  },
+  {
+   "text": "directamente",
+   "start": 53.44,
+   "end": 53.98,
+   "prob": 0.999
+  },
+  {
+   "text": "sobre",
+   "start": 53.98,
+   "end": 54.4,
+   "prob": 1.0
+  },
+  {
+   "text": "él",
+   "start": 54.4,
+   "end": 54.74,
+   "prob": 0.995
+  },
+  {
+   "text": "Acompaña",
+   "start": 54.74,
+   "end": 55.64,
+   "prob": 0.773
+  },
+  {
+   "text": "el",
+   "start": 55.64,
+   "end": 55.74,
+   "prob": 0.999
+  },
+  {
+   "text": "movimiento",
+   "start": 55.74,
+   "end": 56.22,
+   "prob": 1.0
+  },
+  {
+   "text": "con",
+   "start": 56.22,
+   "end": 56.5,
+   "prob": 1.0
+  },
+  {
+   "text": "respiraciones",
+   "start": 56.5,
+   "end": 57.16,
+   "prob": 1.0
+  },
+  {
+   "text": "lentas",
+   "start": 57.16,
+   "end": 57.6,
+   "prob": 1.0
+  },
+  {
+   "text": "y",
+   "start": 57.6,
+   "end": 57.72,
+   "prob": 1.0
+  },
+  {
+   "text": "profundas",
+   "start": 57.72,
+   "end": 58.3,
+   "prob": 1.0
+  },
+  {
+   "text": "para",
+   "start": 58.3,
+   "end": 58.5,
+   "prob": 1.0
+  },
+  {
+   "text": "relajar",
+   "start": 58.5,
+   "end": 58.96,
+   "prob": 1.0
+  },
+  {
+   "text": "la",
+   "start": 58.96,
+   "end": 59.1,
+   "prob": 0.999
+  },
+  {
+   "text": "zona",
+   "start": 59.1,
+   "end": 59.42,
+   "prob": 0.999
+  },
+  {
+   "text": "Repite",
+   "start": 59.42,
+   "end": 60.48,
+   "prob": 0.991
+  },
+  {
+   "text": "esta",
+   "start": 60.48,
+   "end": 60.76,
+   "prob": 0.999
+  },
+  {
+   "text": "preparación",
+   "start": 60.76,
+   "end": 61.62,
+   "prob": 1.0
+  },
+  {
+   "text": "durante",
+   "start": 61.62,
+   "end": 62.04,
+   "prob": 1.0
+  },
+  {
+   "text": "1",
+   "start": 62.04,
+   "end": 62.62,
+   "prob": 0.618
+  },
+  {
+   "text": "o",
+   "start": 62.62,
+   "end": 62.9,
+   "prob": 0.973
+  },
+  {
+   "text": "2",
+   "start": 62.9,
+   "end": 63.14,
+   "prob": 1.0
+  },
+  {
+   "text": "minutos",
+   "start": 63.14,
+   "end": 63.6,
+   "prob": 1.0
+  },
+  {
+   "text": "y",
+   "start": 63.6,
+   "end": 64.28,
+   "prob": 0.903
+  },
+  {
+   "text": "cuando",
+   "start": 64.28,
+   "end": 64.5,
+   "prob": 1.0
+  },
+  {
+   "text": "la",
+   "start": 64.5,
+   "end": 64.66,
+   "prob": 0.999
+  },
+  {
+   "text": "piel",
+   "start": 64.66,
+   "end": 64.86,
+   "prob": 0.998
+  },
+  {
+   "text": "tenga",
+   "start": 64.86,
+   "end": 65.18,
+   "prob": 0.999
+  },
+  {
+   "text": "suficiente",
+   "start": 65.18,
+   "end": 65.66,
+   "prob": 0.999
+  },
+  {
+   "text": "deslizamiento",
+   "start": 65.66,
+   "end": 66.54,
+   "prob": 1.0
+  },
+  {
+   "text": "continúa",
+   "start": 66.54,
+   "end": 67.24,
+   "prob": 0.953
+  },
+  {
+   "text": "con",
+   "start": 67.24,
+   "end": 67.46,
+   "prob": 1.0
+  },
+  {
+   "text": "tu",
+   "start": 67.46,
+   "end": 67.6,
+   "prob": 0.998
+  },
+  {
+   "text": "rutina",
+   "start": 67.6,
+   "end": 67.98,
+   "prob": 0.999
+  },
+  {
+   "text": "de",
+   "start": 67.98,
+   "end": 68.12,
+   "prob": 0.8
+  },
+  {
+   "text": "Luma",
+   "start": 68.12,
+   "end": 68.34,
+   "prob": 0.753
+  },
+  {
+   "text": "Ode",
+   "start": 68.34,
+   "end": 68.6,
+   "prob": 0.527
+  }
+ ]
+}

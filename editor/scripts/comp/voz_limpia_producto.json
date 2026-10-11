@@ -1,0 +1,941 @@
+{
+ "model": "large-v3",
+ "duration": 52.7946875,
+ "segments": [
+  {
+   "start": 0.0,
+   "end": 4.18,
+   "text": "Antes de comenzar a utilizar tu LumaBody, aprendamos a manejar sus tres botones."
+  },
+  {
+   "start": 4.28,
+   "end": 10.24,
+   "text": "El primero es el botón de Power. Presiónalo una vez para encender o apagar el dispositivo."
+  },
+  {
+   "start": 10.36,
+   "end": 17.18,
+   "text": "El segundo es el botón Heat. Al activarlo, se enciende la luz roja y comienza la función de calor."
+  },
+  {
+   "start": 17.42,
+   "end": 24.1,
+   "text": "Puedes ajustar su intensidad según tu comodidad. Entre mayor sea el nivel, más calor sentirás sobre la piel."
+  },
+  {
+   "start": 24.28,
+   "end": 28.44,
+   "text": "El tercer botón es el Negative Pressure, con el que regulas el nivel de succión."
+  },
+  {
+   "start": 28.44,
+   "end": 34.28,
+   "text": "cada vez que lo presiones la intensidad de succión aumentará si es su primera vez utilizando el humo"
+  },
+  {
+   "start": 34.28,
+   "end": 40.52,
+   "text": "body comienza entre los niveles 1 a 3 prueba siempre desde el nivel más bajo y aumenta"
+  },
+  {
+   "start": 40.52,
+   "end": 46.6,
+   "text": "gradualmente según lo que tu piel tolere recuerda debe sentir la succión pero nunca dolor si se"
+  },
+  {
+   "start": 46.6,
+   "end": 51.98,
+   "text": "siente demasiado fuerte baja la intensidad aplica más aceite y mantiene el dispositivo en movimiento"
+  }
+ ],
+ "words": [
+  {
+   "text": "Antes",
+   "start": 0.0,
+   "end": 0.22,
+   "prob": 0.962
+  },
+  {
+   "text": "de",
+   "start": 0.22,
+   "end": 0.42,
+   "prob": 0.999
+  },
+  {
+   "text": "comenzar",
+   "start": 0.42,
+   "end": 0.86,
+   "prob": 0.998
+  },
+  {
+   "text": "a",
+   "start": 0.86,
+   "end": 0.88,
+   "prob": 0.997
+  },
+  {
+   "text": "utilizar",
+   "start": 0.88,
+   "end": 1.14,
+   "prob": 0.988
+  },
+  {
+   "text": "tu",
+   "start": 1.14,
+   "end": 1.44,
+   "prob": 0.967
+  },
+  {
+   "text": "LumaBody,",
+   "start": 1.44,
+   "end": 2.0,
+   "prob": 0.896
+  },
+  {
+   "text": "aprendamos",
+   "start": 2.12,
+   "end": 2.68,
+   "prob": 1.0
+  },
+  {
+   "text": "a",
+   "start": 2.68,
+   "end": 2.88,
+   "prob": 1.0
+  },
+  {
+   "text": "manejar",
+   "start": 2.88,
+   "end": 3.2,
+   "prob": 1.0
+  },
+  {
+   "text": "sus",
+   "start": 3.2,
+   "end": 3.34,
+   "prob": 0.998
+  },
+  {
+   "text": "tres",
+   "start": 3.34,
+   "end": 3.6,
+   "prob": 0.805
+  },
+  {
+   "text": "botones.",
+   "start": 3.6,
+   "end": 4.18,
+   "prob": 1.0
+  },
+  {
+   "text": "El",
+   "start": 4.28,
+   "end": 4.62,
+   "prob": 0.999
+  },
+  {
+   "text": "primero",
+   "start": 4.62,
+   "end": 4.94,
+   "prob": 0.999
+  },
+  {
+   "text": "es",
+   "start": 4.94,
+   "end": 5.12,
+   "prob": 0.999
+  },
+  {
+   "text": "el",
+   "start": 5.12,
+   "end": 5.22,
+   "prob": 1.0
+  },
+  {
+   "text": "botón",
+   "start": 5.22,
+   "end": 5.68,
+   "prob": 1.0
+  },
+  {
+   "text": "de",
+   "start": 5.68,
+   "end": 5.76,
+   "prob": 0.998
+  },
+  {
+   "text": "Power.",
+   "start": 5.76,
+   "end": 6.1,
+   "prob": 0.865
+  },
+  {
+   "text": "Presiónalo",
+   "start": 6.58,
+   "end": 7.14,
+   "prob": 0.936
+  },
+  {
+   "text": "una",
+   "start": 7.14,
+   "end": 7.64,
+   "prob": 0.999
+  },
+  {
+   "text": "vez",
+   "start": 7.64,
+   "end": 7.9,
+   "prob": 1.0
+  },
+  {
+   "text": "para",
+   "start": 7.9,
+   "end": 8.24,
+   "prob": 0.999
+  },
+  {
+   "text": "encender",
+   "start": 8.24,
+   "end": 8.74,
+   "prob": 1.0
+  },
+  {
+   "text": "o",
+   "start": 8.74,
+   "end": 8.98,
+   "prob": 0.999
+  },
+  {
+   "text": "apagar",
+   "start": 8.98,
+   "end": 9.34,
+   "prob": 1.0
+  },
+  {
+   "text": "el",
+   "start": 9.34,
+   "end": 9.48,
+   "prob": 1.0
+  },
+  {
+   "text": "dispositivo.",
+   "start": 9.48,
+   "end": 10.24,
+   "prob": 1.0
+  },
+  {
+   "text": "El",
+   "start": 10.36,
+   "end": 10.72,
+   "prob": 1.0
+  },
+  {
+   "text": "segundo",
+   "start": 10.72,
+   "end": 11.06,
+   "prob": 1.0
+  },
+  {
+   "text": "es",
+   "start": 11.06,
+   "end": 11.3,
+   "prob": 1.0
+  },
+  {
+   "text": "el",
+   "start": 11.3,
+   "end": 11.42,
+   "prob": 1.0
+  },
+  {
+   "text": "botón",
+   "start": 11.42,
+   "end": 11.86,
+   "prob": 1.0
+  },
+  {
+   "text": "Heat.",
+   "start": 11.86,
+   "end": 12.4,
+   "prob": 0.994
+  },
+  {
+   "text": "Al",
+   "start": 12.64,
+   "end": 13.0,
+   "prob": 1.0
+  },
+  {
+   "text": "activarlo,",
+   "start": 13.0,
+   "end": 13.66,
+   "prob": 1.0
+  },
+  {
+   "text": "se",
+   "start": 13.76,
+   "end": 14.12,
+   "prob": 1.0
+  },
+  {
+   "text": "enciende",
+   "start": 14.12,
+   "end": 14.46,
+   "prob": 1.0
+  },
+  {
+   "text": "la",
+   "start": 14.46,
+   "end": 14.62,
+   "prob": 1.0
+  },
+  {
+   "text": "luz",
+   "start": 14.62,
+   "end": 14.82,
+   "prob": 1.0
+  },
+  {
+   "text": "roja",
+   "start": 14.82,
+   "end": 15.28,
+   "prob": 1.0
+  },
+  {
+   "text": "y",
+   "start": 15.28,
+   "end": 15.48,
+   "prob": 0.999
+  },
+  {
+   "text": "comienza",
+   "start": 15.48,
+   "end": 16.04,
+   "prob": 1.0
+  },
+  {
+   "text": "la",
+   "start": 16.04,
+   "end": 16.2,
+   "prob": 1.0
+  },
+  {
+   "text": "función",
+   "start": 16.2,
+   "end": 16.42,
+   "prob": 1.0
+  },
+  {
+   "text": "de",
+   "start": 16.42,
+   "end": 16.86,
+   "prob": 1.0
+  },
+  {
+   "text": "calor.",
+   "start": 16.86,
+   "end": 17.18,
+   "prob": 0.998
+  },
+  {
+   "text": "Puedes",
+   "start": 17.42,
+   "end": 17.86,
+   "prob": 1.0
+  },
+  {
+   "text": "ajustar",
+   "start": 17.86,
+   "end": 18.24,
+   "prob": 1.0
+  },
+  {
+   "text": "su",
+   "start": 18.24,
+   "end": 18.32,
+   "prob": 1.0
+  },
+  {
+   "text": "intensidad",
+   "start": 18.32,
+   "end": 19.0,
+   "prob": 1.0
+  },
+  {
+   "text": "según",
+   "start": 19.0,
+   "end": 19.36,
+   "prob": 1.0
+  },
+  {
+   "text": "tu",
+   "start": 19.36,
+   "end": 19.9,
+   "prob": 1.0
+  },
+  {
+   "text": "comodidad.",
+   "start": 19.9,
+   "end": 20.62,
+   "prob": 1.0
+  },
+  {
+   "text": "Entre",
+   "start": 20.8,
+   "end": 21.14,
+   "prob": 1.0
+  },
+  {
+   "text": "mayor",
+   "start": 21.14,
+   "end": 21.44,
+   "prob": 1.0
+  },
+  {
+   "text": "sea",
+   "start": 21.44,
+   "end": 21.72,
+   "prob": 1.0
+  },
+  {
+   "text": "el",
+   "start": 21.72,
+   "end": 21.84,
+   "prob": 1.0
+  },
+  {
+   "text": "nivel,",
+   "start": 21.84,
+   "end": 22.12,
+   "prob": 1.0
+  },
+  {
+   "text": "más",
+   "start": 22.36,
+   "end": 22.64,
+   "prob": 1.0
+  },
+  {
+   "text": "calor",
+   "start": 22.64,
+   "end": 23.02,
+   "prob": 1.0
+  },
+  {
+   "text": "sentirás",
+   "start": 23.02,
+   "end": 23.5,
+   "prob": 0.765
+  },
+  {
+   "text": "sobre",
+   "start": 23.5,
+   "end": 23.66,
+   "prob": 1.0
+  },
+  {
+   "text": "la",
+   "start": 23.66,
+   "end": 23.84,
+   "prob": 1.0
+  },
+  {
+   "text": "piel.",
+   "start": 23.84,
+   "end": 24.1,
+   "prob": 1.0
+  },
+  {
+   "text": "El",
+   "start": 24.28,
+   "end": 24.54,
+   "prob": 1.0
+  },
+  {
+   "text": "tercer",
+   "start": 24.54,
+   "end": 24.76,
+   "prob": 1.0
+  },
+  {
+   "text": "botón",
+   "start": 24.76,
+   "end": 25.16,
+   "prob": 1.0
+  },
+  {
+   "text": "es",
+   "start": 25.16,
+   "end": 25.3,
+   "prob": 1.0
+  },
+  {
+   "text": "el",
+   "start": 25.3,
+   "end": 25.42,
+   "prob": 1.0
+  },
+  {
+   "text": "Negative",
+   "start": 25.42,
+   "end": 25.7,
+   "prob": 0.997
+  },
+  {
+   "text": "Pressure,",
+   "start": 25.7,
+   "end": 26.32,
+   "prob": 0.999
+  },
+  {
+   "text": "con",
+   "start": 26.42,
+   "end": 26.8,
+   "prob": 1.0
+  },
+  {
+   "text": "el",
+   "start": 26.8,
+   "end": 26.94,
+   "prob": 1.0
+  },
+  {
+   "text": "que",
+   "start": 26.94,
+   "end": 27.04,
+   "prob": 1.0
+  },
+  {
+   "text": "regulas",
+   "start": 27.04,
+   "end": 27.44,
+   "prob": 0.998
+  },
+  {
+   "text": "el",
+   "start": 27.44,
+   "end": 27.54,
+   "prob": 1.0
+  },
+  {
+   "text": "nivel",
+   "start": 27.54,
+   "end": 27.8,
+   "prob": 1.0
+  },
+  {
+   "text": "de",
+   "start": 27.8,
+   "end": 27.98,
+   "prob": 1.0
+  },
+  {
+   "text": "succión.",
+   "start": 27.98,
+   "end": 28.44,
+   "prob": 0.995
+  },
+  {
+   "text": "cada",
+   "start": 28.44,
+   "end": 29.12,
+   "prob": 0.362
+  },
+  {
+   "text": "vez",
+   "start": 29.12,
+   "end": 29.4,
+   "prob": 0.998
+  },
+  {
+   "text": "que",
+   "start": 29.4,
+   "end": 29.54,
+   "prob": 0.999
+  },
+  {
+   "text": "lo",
+   "start": 29.54,
+   "end": 29.62,
+   "prob": 0.94
+  },
+  {
+   "text": "presiones",
+   "start": 29.62,
+   "end": 30.08,
+   "prob": 0.973
+  },
+  {
+   "text": "la",
+   "start": 30.08,
+   "end": 30.32,
+   "prob": 0.888
+  },
+  {
+   "text": "intensidad",
+   "start": 30.32,
+   "end": 31.0,
+   "prob": 0.999
+  },
+  {
+   "text": "de",
+   "start": 31.0,
+   "end": 31.08,
+   "prob": 0.998
+  },
+  {
+   "text": "succión",
+   "start": 31.08,
+   "end": 31.46,
+   "prob": 0.993
+  },
+  {
+   "text": "aumentará",
+   "start": 31.46,
+   "end": 32.08,
+   "prob": 0.964
+  },
+  {
+   "text": "si",
+   "start": 32.08,
+   "end": 32.78,
+   "prob": 0.551
+  },
+  {
+   "text": "es",
+   "start": 32.78,
+   "end": 32.92,
+   "prob": 0.989
+  },
+  {
+   "text": "su",
+   "start": 32.92,
+   "end": 33.02,
+   "prob": 0.683
+  },
+  {
+   "text": "primera",
+   "start": 33.02,
+   "end": 33.3,
+   "prob": 0.996
+  },
+  {
+   "text": "vez",
+   "start": 33.3,
+   "end": 33.5,
+   "prob": 0.995
+  },
+  {
+   "text": "utilizando",
+   "start": 33.5,
+   "end": 34.06,
+   "prob": 0.989
+  },
+  {
+   "text": "el",
+   "start": 34.06,
+   "end": 34.12,
+   "prob": 0.612
+  },
+  {
+   "text": "humo",
+   "start": 34.12,
+   "end": 34.28,
+   "prob": 0.659
+  },
+  {
+   "text": "body",
+   "start": 34.28,
+   "end": 34.54,
+   "prob": 0.52
+  },
+  {
+   "text": "comienza",
+   "start": 34.54,
+   "end": 35.38,
+   "prob": 0.982
+  },
+  {
+   "text": "entre",
+   "start": 35.38,
+   "end": 35.76,
+   "prob": 0.992
+  },
+  {
+   "text": "los",
+   "start": 35.76,
+   "end": 36.02,
+   "prob": 0.998
+  },
+  {
+   "text": "niveles",
+   "start": 36.02,
+   "end": 36.5,
+   "prob": 0.999
+  },
+  {
+   "text": "1",
+   "start": 36.5,
+   "end": 36.8,
+   "prob": 0.974
+  },
+  {
+   "text": "a",
+   "start": 36.8,
+   "end": 37.18,
+   "prob": 0.982
+  },
+  {
+   "text": "3",
+   "start": 37.18,
+   "end": 37.58,
+   "prob": 0.994
+  },
+  {
+   "text": "prueba",
+   "start": 37.58,
+   "end": 38.38,
+   "prob": 0.946
+  },
+  {
+   "text": "siempre",
+   "start": 38.38,
+   "end": 38.66,
+   "prob": 0.999
+  },
+  {
+   "text": "desde",
+   "start": 38.66,
+   "end": 38.98,
+   "prob": 0.597
+  },
+  {
+   "text": "el",
+   "start": 38.98,
+   "end": 39.08,
+   "prob": 0.995
+  },
+  {
+   "text": "nivel",
+   "start": 39.08,
+   "end": 39.28,
+   "prob": 0.996
+  },
+  {
+   "text": "más",
+   "start": 39.28,
+   "end": 39.52,
+   "prob": 0.997
+  },
+  {
+   "text": "bajo",
+   "start": 39.52,
+   "end": 39.94,
+   "prob": 0.999
+  },
+  {
+   "text": "y",
+   "start": 39.94,
+   "end": 40.1,
+   "prob": 0.998
+  },
+  {
+   "text": "aumenta",
+   "start": 40.1,
+   "end": 40.52,
+   "prob": 0.998
+  },
+  {
+   "text": "gradualmente",
+   "start": 40.52,
+   "end": 41.14,
+   "prob": 0.999
+  },
+  {
+   "text": "según",
+   "start": 41.14,
+   "end": 41.44,
+   "prob": 0.999
+  },
+  {
+   "text": "lo",
+   "start": 41.44,
+   "end": 41.64,
+   "prob": 0.999
+  },
+  {
+   "text": "que",
+   "start": 41.64,
+   "end": 41.82,
+   "prob": 1.0
+  },
+  {
+   "text": "tu",
+   "start": 41.82,
+   "end": 41.9,
+   "prob": 0.927
+  },
+  {
+   "text": "piel",
+   "start": 41.9,
+   "end": 42.14,
+   "prob": 0.997
+  },
+  {
+   "text": "tolere",
+   "start": 42.14,
+   "end": 42.52,
+   "prob": 0.883
+  },
+  {
+   "text": "recuerda",
+   "start": 42.52,
+   "end": 43.44,
+   "prob": 0.973
+  },
+  {
+   "text": "debe",
+   "start": 43.44,
+   "end": 43.92,
+   "prob": 0.769
+  },
+  {
+   "text": "sentir",
+   "start": 43.92,
+   "end": 44.22,
+   "prob": 0.998
+  },
+  {
+   "text": "la",
+   "start": 44.22,
+   "end": 44.46,
+   "prob": 0.996
+  },
+  {
+   "text": "succión",
+   "start": 44.46,
+   "end": 44.86,
+   "prob": 0.996
+  },
+  {
+   "text": "pero",
+   "start": 44.86,
+   "end": 45.2,
+   "prob": 0.997
+  },
+  {
+   "text": "nunca",
+   "start": 45.2,
+   "end": 45.54,
+   "prob": 0.998
+  },
+  {
+   "text": "dolor",
+   "start": 45.54,
+   "end": 45.96,
+   "prob": 0.989
+  },
+  {
+   "text": "si",
+   "start": 45.96,
+   "end": 46.48,
+   "prob": 0.977
+  },
+  {
+   "text": "se",
+   "start": 46.48,
+   "end": 46.6,
+   "prob": 0.999
+  },
+  {
+   "text": "siente",
+   "start": 46.6,
+   "end": 46.92,
+   "prob": 0.999
+  },
+  {
+   "text": "demasiado",
+   "start": 46.92,
+   "end": 47.14,
+   "prob": 0.984
+  },
+  {
+   "text": "fuerte",
+   "start": 47.14,
+   "end": 47.6,
+   "prob": 0.999
+  },
+  {
+   "text": "baja",
+   "start": 47.6,
+   "end": 48.0,
+   "prob": 0.988
+  },
+  {
+   "text": "la",
+   "start": 48.0,
+   "end": 48.16,
+   "prob": 0.998
+  },
+  {
+   "text": "intensidad",
+   "start": 48.16,
+   "end": 48.8,
+   "prob": 0.999
+  },
+  {
+   "text": "aplica",
+   "start": 48.8,
+   "end": 49.5,
+   "prob": 0.98
+  },
+  {
+   "text": "más",
+   "start": 49.5,
+   "end": 49.58,
+   "prob": 0.989
+  },
+  {
+   "text": "aceite",
+   "start": 49.58,
+   "end": 49.88,
+   "prob": 0.998
+  },
+  {
+   "text": "y",
+   "start": 49.88,
+   "end": 50.26,
+   "prob": 0.995
+  },
+  {
+   "text": "mantiene",
+   "start": 50.26,
+   "end": 50.86,
+   "prob": 0.622
+  },
+  {
+   "text": "el",
+   "start": 50.86,
+   "end": 51.02,
+   "prob": 0.98
+  },
+  {
+   "text": "dispositivo",
+   "start": 51.02,
+   "end": 51.72,
+   "prob": 1.0
+  },
+  {
+   "text": "en",
+   "start": 51.72,
+   "end": 51.8,
+   "prob": 0.996
+  },
+  {
+   "text": "movimiento",
+   "start": 51.8,
+   "end": 51.98,
+   "prob": 0.997
+  }
+ ]
+}

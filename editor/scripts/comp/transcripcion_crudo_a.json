@@ -1,0 +1,1352 @@
+{
+ "model": "large-v3-turbo",
+ "duration": 372.0106875,
+ "segments": [
+  {
+   "start": 0.0,
+   "end": 1.54,
+   "text": "Ah, ahí está grabando la barata."
+  },
+  {
+   "start": 5.34,
+   "end": 10.12,
+   "text": "Dice, aplica aceite en ambas piernas y glúteos, o sea, la acción."
+  },
+  {
+   "start": 10.8,
+   "end": 14.14,
+   "text": "Entonces, empezamos preparando la piel."
+  },
+  {
+   "start": 14.48,
+   "end": 15.16,
+   "text": "Hola."
+  },
+  {
+   "start": 15.58,
+   "end": 16.2,
+   "text": "¿Cuántas?"
+  },
+  {
+   "start": 16.28,
+   "end": 17.16,
+   "text": "¿Cómo se dio?"
+  },
+  {
+   "start": 18.5,
+   "end": 20.92,
+   "text": "Están allá en la bolsita que están afuera, Gita."
+  },
+  {
+   "start": 21.02,
+   "end": 21.66,
+   "text": "¿Cuántos?"
+  },
+  {
+   "start": 22.26,
+   "end": 26.48,
+   "text": "Yo saqué uno, creo que quedan 12."
+  },
+  {
+   "start": 28.6,
+   "end": 37.88,
+   "text": "Es más, vamos a preparar toda la piel, podemos grabar la preparación del abdomen."
+  },
+  {
+   "start": 50.84,
+   "end": 53.58,
+   "text": "Es importante no salir de las horas para que no se sienta."
+  },
+  {
+   "start": 65.52,
+   "end": 67.02,
+   "text": "a ver Natalia"
+  },
+  {
+   "start": 67.02,
+   "end": 69.46,
+   "text": "cuando dices acción exacta"
+  },
+  {
+   "start": 69.46,
+   "end": 71.46,
+   "text": "vas a hablar al mismo tiempo"
+  },
+  {
+   "start": 73.1,
+   "end": 73.66,
+   "text": "no"
+  },
+  {
+   "start": 73.66,
+   "end": 75.66,
+   "text": "porque la acción es exacta"
+  },
+  {
+   "start": 75.66,
+   "end": 77.5,
+   "text": "entonces eso es lo que estás haciendo"
+  },
+  {
+   "start": 77.5,
+   "end": 78.78,
+   "text": "preparando la piel"
+  },
+  {
+   "start": 79.36,
+   "end": 80.7,
+   "text": "duele más rico eso"
+  },
+  {
+   "start": 84.2,
+   "end": 85.4,
+   "text": "¿te vas a hacer una silla?"
+  },
+  {
+   "start": 85.68,
+   "end": 85.88,
+   "text": "no"
+  },
+  {
+   "start": 91.91999999999999,
+   "end": 93.32,
+   "text": "Gracias."
+  },
+  {
+   "start": 142.44,
+   "end": 143.7,
+   "text": "Ahí está."
+  },
+  {
+   "start": 152.48,
+   "end": 154.38,
+   "text": "Te tienes que acercar, Nata, un poquito."
+  },
+  {
+   "start": 187.42000000000002,
+   "end": 202.92,
+   "text": "Bueno, ahora vamos a preparar la piel de las piernas."
+  },
+  {
+   "start": 216.42000000000002,
+   "end": 217.94,
+   "text": "Ay, está como perdida"
+  },
+  {
+   "start": 219.4,
+   "end": 221.64,
+   "text": "Yo creo que tenemos que ponerlas como"
+  },
+  {
+   "start": 221.64,
+   "end": 223.2,
+   "text": "No sé, como está mal"
+  },
+  {
+   "start": 231.4,
+   "end": 233.88,
+   "text": "Trata de hacerlo como con una gelita de zanata"
+  },
+  {
+   "start": 239.06,
+   "end": 244.72,
+   "text": "¿Qué es lo que se llama?"
+  },
+  {
+   "start": 263.88,
+   "end": 292.44,
+   "text": "Bien, vamos a ver."
+  },
+  {
+   "start": 293.88,
+   "end": 294.3,
+   "text": "El cabrillo."
+  },
+  {
+   "start": 331.14000000000004,
+   "end": 332.54,
+   "text": "Gracias."
+  },
+  {
+   "start": 361.7,
+   "end": 364.48,
+   "text": "Muflo derecho, realiza la línea ascendente."
+  },
+  {
+   "start": 364.64,
+   "end": 370.28,
+   "text": "Bueno, espérame, pues se supone que estoy preparando la piel, entonces ahora sí vamos"
+  },
+  {
+   "start": 370.28,
+   "end": 371.2,
+   "text": "a empezar con el guión."
+  }
+ ],
+ "words": [
+  {
+   "text": "Ah,",
+   "start": 0.0,
+   "end": 0.1,
+   "prob": 0.129
+  },
+  {
+   "text": "ahí",
+   "start": 0.28,
+   "end": 0.46,
+   "prob": 0.965
+  },
+  {
+   "text": "está",
+   "start": 0.46,
+   "end": 0.6,
+   "prob": 0.986
+  },
+  {
+   "text": "grabando",
+   "start": 0.6,
+   "end": 1.02,
+   "prob": 0.883
+  },
+  {
+   "text": "la",
+   "start": 1.02,
+   "end": 1.18,
+   "prob": 0.901
+  },
+  {
+   "text": "barata.",
+   "start": 1.18,
+   "end": 1.54,
+   "prob": 0.495
+  },
+  {
+   "text": "Dice,",
+   "start": 5.34,
+   "end": 6.02,
+   "prob": 0.972
+  },
+  {
+   "text": "aplica",
+   "start": 6.22,
+   "end": 6.58,
+   "prob": 0.993
+  },
+  {
+   "text": "aceite",
+   "start": 6.58,
+   "end": 6.96,
+   "prob": 0.998
+  },
+  {
+   "text": "en",
+   "start": 6.96,
+   "end": 7.38,
+   "prob": 0.999
+  },
+  {
+   "text": "ambas",
+   "start": 7.38,
+   "end": 8.42,
+   "prob": 0.962
+  },
+  {
+   "text": "piernas",
+   "start": 8.42,
+   "end": 8.76,
+   "prob": 0.999
+  },
+  {
+   "text": "y",
+   "start": 8.76,
+   "end": 8.92,
+   "prob": 0.997
+  },
+  {
+   "text": "glúteos,",
+   "start": 8.92,
+   "end": 9.32,
+   "prob": 0.984
+  },
+  {
+   "text": "o",
+   "start": 9.42,
+   "end": 9.56,
+   "prob": 0.999
+  },
+  {
+   "text": "sea,",
+   "start": 9.56,
+   "end": 9.56,
+   "prob": 1.0
+  },
+  {
+   "text": "la",
+   "start": 9.62,
+   "end": 9.74,
+   "prob": 0.917
+  },
+  {
+   "text": "acción.",
+   "start": 9.74,
+   "end": 10.12,
+   "prob": 1.0
+  },
+  {
+   "text": "Entonces,",
+   "start": 10.8,
+   "end": 11.38,
+   "prob": 0.423
+  },
+  {
+   "text": "empezamos",
+   "start": 12.3,
+   "end": 12.86,
+   "prob": 0.981
+  },
+  {
+   "text": "preparando",
+   "start": 12.86,
+   "end": 13.68,
+   "prob": 0.999
+  },
+  {
+   "text": "la",
+   "start": 13.68,
+   "end": 13.84,
+   "prob": 0.999
+  },
+  {
+   "text": "piel.",
+   "start": 13.84,
+   "end": 14.14,
+   "prob": 0.499
+  },
+  {
+   "text": "Hola.",
+   "start": 14.48,
+   "end": 15.16,
+   "prob": 0.321
+  },
+  {
+   "text": "¿Cuántas?",
+   "start": 15.58,
+   "end": 16.2,
+   "prob": 0.951
+  },
+  {
+   "text": "¿Cómo",
+   "start": 16.28,
+   "end": 16.7,
+   "prob": 0.861
+  },
+  {
+   "text": "se",
+   "start": 16.7,
+   "end": 16.92,
+   "prob": 0.871
+  },
+  {
+   "text": "dio?",
+   "start": 16.92,
+   "end": 17.16,
+   "prob": 0.626
+  },
+  {
+   "text": "Están",
+   "start": 18.5,
+   "end": 19.18,
+   "prob": 0.918
+  },
+  {
+   "text": "allá",
+   "start": 19.18,
+   "end": 19.32,
+   "prob": 0.977
+  },
+  {
+   "text": "en",
+   "start": 19.32,
+   "end": 19.42,
+   "prob": 1.0
+  },
+  {
+   "text": "la",
+   "start": 19.42,
+   "end": 19.5,
+   "prob": 0.999
+  },
+  {
+   "text": "bolsita",
+   "start": 19.5,
+   "end": 19.88,
+   "prob": 0.998
+  },
+  {
+   "text": "que",
+   "start": 19.88,
+   "end": 20.02,
+   "prob": 0.871
+  },
+  {
+   "text": "están",
+   "start": 20.02,
+   "end": 20.22,
+   "prob": 0.994
+  },
+  {
+   "text": "afuera,",
+   "start": 20.22,
+   "end": 20.56,
+   "prob": 1.0
+  },
+  {
+   "text": "Gita.",
+   "start": 20.66,
+   "end": 20.92,
+   "prob": 0.494
+  },
+  {
+   "text": "¿Cuántos?",
+   "start": 21.02,
+   "end": 21.66,
+   "prob": 0.81
+  },
+  {
+   "text": "Yo",
+   "start": 22.26,
+   "end": 22.78,
+   "prob": 0.587
+  },
+  {
+   "text": "saqué",
+   "start": 22.78,
+   "end": 23.14,
+   "prob": 0.979
+  },
+  {
+   "text": "uno,",
+   "start": 23.14,
+   "end": 23.36,
+   "prob": 0.989
+  },
+  {
+   "text": "creo",
+   "start": 23.48,
+   "end": 23.62,
+   "prob": 0.999
+  },
+  {
+   "text": "que",
+   "start": 23.62,
+   "end": 23.78,
+   "prob": 1.0
+  },
+  {
+   "text": "quedan",
+   "start": 23.78,
+   "end": 24.32,
+   "prob": 1.0
+  },
+  {
+   "text": "12.",
+   "start": 24.32,
+   "end": 26.48,
+   "prob": 0.49
+  },
+  {
+   "text": "Es",
+   "start": 28.6,
+   "end": 29.08,
+   "prob": 0.174
+  },
+  {
+   "text": "más,",
+   "start": 29.08,
+   "end": 29.26,
+   "prob": 0.981
+  },
+  {
+   "text": "vamos",
+   "start": 29.42,
+   "end": 29.52,
+   "prob": 0.997
+  },
+  {
+   "text": "a",
+   "start": 29.52,
+   "end": 29.64,
+   "prob": 1.0
+  },
+  {
+   "text": "preparar",
+   "start": 29.64,
+   "end": 30.06,
+   "prob": 0.999
+  },
+  {
+   "text": "toda",
+   "start": 30.06,
+   "end": 30.3,
+   "prob": 0.988
+  },
+  {
+   "text": "la",
+   "start": 30.3,
+   "end": 30.52,
+   "prob": 1.0
+  },
+  {
+   "text": "piel,",
+   "start": 30.52,
+   "end": 30.92,
+   "prob": 0.999
+  },
+  {
+   "text": "podemos",
+   "start": 31.82,
+   "end": 35.86,
+   "prob": 0.784
+  },
+  {
+   "text": "grabar",
+   "start": 35.86,
+   "end": 36.32,
+   "prob": 0.986
+  },
+  {
+   "text": "la",
+   "start": 36.32,
+   "end": 36.46,
+   "prob": 0.996
+  },
+  {
+   "text": "preparación",
+   "start": 36.46,
+   "end": 37.02,
+   "prob": 0.999
+  },
+  {
+   "text": "del",
+   "start": 37.02,
+   "end": 37.18,
+   "prob": 0.994
+  },
+  {
+   "text": "abdomen.",
+   "start": 37.18,
+   "end": 37.88,
+   "prob": 0.997
+  },
+  {
+   "text": "Es",
+   "start": 50.84,
+   "end": 51.32,
+   "prob": 0.424
+  },
+  {
+   "text": "importante",
+   "start": 51.32,
+   "end": 51.8,
+   "prob": 0.984
+  },
+  {
+   "text": "no",
+   "start": 51.8,
+   "end": 52.04,
+   "prob": 0.932
+  },
+  {
+   "text": "salir",
+   "start": 52.04,
+   "end": 52.28,
+   "prob": 0.26
+  },
+  {
+   "text": "de",
+   "start": 52.28,
+   "end": 52.44,
+   "prob": 0.21
+  },
+  {
+   "text": "las",
+   "start": 52.44,
+   "end": 52.58,
+   "prob": 0.627
+  },
+  {
+   "text": "horas",
+   "start": 52.58,
+   "end": 52.7,
+   "prob": 0.309
+  },
+  {
+   "text": "para",
+   "start": 52.7,
+   "end": 53.0,
+   "prob": 0.795
+  },
+  {
+   "text": "que",
+   "start": 53.0,
+   "end": 53.2,
+   "prob": 0.38
+  },
+  {
+   "text": "no",
+   "start": 53.2,
+   "end": 53.28,
+   "prob": 0.2
+  },
+  {
+   "text": "se",
+   "start": 53.28,
+   "end": 53.52,
+   "prob": 0.319
+  },
+  {
+   "text": "sienta.",
+   "start": 53.52,
+   "end": 53.58,
+   "prob": 0.367
+  },
+  {
+   "text": "a",
+   "start": 65.52,
+   "end": 66.08,
+   "prob": 0.05
+  },
+  {
+   "text": "ver",
+   "start": 66.08,
+   "end": 66.64,
+   "prob": 0.97
+  },
+  {
+   "text": "Natalia",
+   "start": 66.64,
+   "end": 67.02,
+   "prob": 0.879
+  },
+  {
+   "text": "cuando",
+   "start": 67.02,
+   "end": 67.28,
+   "prob": 0.47
+  },
+  {
+   "text": "dices",
+   "start": 67.28,
+   "end": 68.34,
+   "prob": 0.826
+  },
+  {
+   "text": "acción",
+   "start": 68.34,
+   "end": 68.86,
+   "prob": 0.81
+  },
+  {
+   "text": "exacta",
+   "start": 68.86,
+   "end": 69.46,
+   "prob": 0.996
+  },
+  {
+   "text": "vas",
+   "start": 69.46,
+   "end": 70.06,
+   "prob": 0.777
+  },
+  {
+   "text": "a",
+   "start": 70.06,
+   "end": 70.18,
+   "prob": 0.724
+  },
+  {
+   "text": "hablar",
+   "start": 70.18,
+   "end": 70.42,
+   "prob": 0.973
+  },
+  {
+   "text": "al",
+   "start": 70.42,
+   "end": 70.86,
+   "prob": 0.939
+  },
+  {
+   "text": "mismo",
+   "start": 70.86,
+   "end": 71.1,
+   "prob": 0.999
+  },
+  {
+   "text": "tiempo",
+   "start": 71.1,
+   "end": 71.46,
+   "prob": 0.999
+  },
+  {
+   "text": "no",
+   "start": 73.1,
+   "end": 73.66,
+   "prob": 0.503
+  },
+  {
+   "text": "porque",
+   "start": 73.66,
+   "end": 74.5,
+   "prob": 0.725
+  },
+  {
+   "text": "la",
+   "start": 74.5,
+   "end": 74.94,
+   "prob": 0.964
+  },
+  {
+   "text": "acción",
+   "start": 74.94,
+   "end": 75.2,
+   "prob": 0.998
+  },
+  {
+   "text": "es",
+   "start": 75.2,
+   "end": 75.36,
+   "prob": 0.518
+  },
+  {
+   "text": "exacta",
+   "start": 75.36,
+   "end": 75.66,
+   "prob": 0.992
+  },
+  {
+   "text": "entonces",
+   "start": 75.66,
+   "end": 75.9,
+   "prob": 0.931
+  },
+  {
+   "text": "eso",
+   "start": 75.9,
+   "end": 76.3,
+   "prob": 0.274
+  },
+  {
+   "text": "es",
+   "start": 76.3,
+   "end": 76.54,
+   "prob": 0.669
+  },
+  {
+   "text": "lo",
+   "start": 76.54,
+   "end": 76.76,
+   "prob": 0.998
+  },
+  {
+   "text": "que",
+   "start": 76.76,
+   "end": 76.88,
+   "prob": 1.0
+  },
+  {
+   "text": "estás",
+   "start": 76.88,
+   "end": 77.06,
+   "prob": 0.565
+  },
+  {
+   "text": "haciendo",
+   "start": 77.06,
+   "end": 77.5,
+   "prob": 0.999
+  },
+  {
+   "text": "preparando",
+   "start": 77.5,
+   "end": 78.34,
+   "prob": 0.938
+  },
+  {
+   "text": "la",
+   "start": 78.34,
+   "end": 78.48,
+   "prob": 0.99
+  },
+  {
+   "text": "piel",
+   "start": 78.48,
+   "end": 78.78,
+   "prob": 0.997
+  },
+  {
+   "text": "duele",
+   "start": 79.36,
+   "end": 79.92,
+   "prob": 0.557
+  },
+  {
+   "text": "más",
+   "start": 79.92,
+   "end": 80.02,
+   "prob": 0.905
+  },
+  {
+   "text": "rico",
+   "start": 80.02,
+   "end": 80.3,
+   "prob": 0.735
+  },
+  {
+   "text": "eso",
+   "start": 80.3,
+   "end": 80.7,
+   "prob": 0.918
+  },
+  {
+   "text": "¿te",
+   "start": 84.2,
+   "end": 84.76,
+   "prob": 0.634
+  },
+  {
+   "text": "vas",
+   "start": 84.76,
+   "end": 84.8,
+   "prob": 0.28
+  },
+  {
+   "text": "a",
+   "start": 84.8,
+   "end": 84.94,
+   "prob": 0.894
+  },
+  {
+   "text": "hacer",
+   "start": 84.94,
+   "end": 85.02,
+   "prob": 0.871
+  },
+  {
+   "text": "una",
+   "start": 85.02,
+   "end": 85.18,
+   "prob": 0.293
+  },
+  {
+   "text": "silla?",
+   "start": 85.18,
+   "end": 85.4,
+   "prob": 0.69
+  },
+  {
+   "text": "no",
+   "start": 85.68,
+   "end": 85.88,
+   "prob": 0.982
+  },
+  {
+   "text": "Gracias.",
+   "start": 91.92,
+   "end": 93.32,
+   "prob": 0.191
+  },
+  {
+   "text": "Ahí",
+   "start": 142.44,
+   "end": 143.4,
+   "prob": 0.398
+  },
+  {
+   "text": "está.",
+   "start": 143.4,
+   "end": 143.7,
+   "prob": 0.985
+  },
+  {
+   "text": "Te",
+   "start": 152.48,
+   "end": 152.88,
+   "prob": 0.568
+  },
+  {
+   "text": "tienes",
+   "start": 152.88,
+   "end": 153.08,
+   "prob": 0.989
+  },
+  {
+   "text": "que",
+   "start": 153.08,
+   "end": 153.2,
+   "prob": 1.0
+  },
+  {
+   "text": "acercar,",
+   "start": 153.2,
+   "end": 153.62,
+   "prob": 0.985
+  },
+  {
+   "text": "Nata,",
+   "start": 153.64,
+   "end": 153.84,
+   "prob": 0.849
+  },
+  {
+   "text": "un",
+   "start": 153.84,
+   "end": 154.02,
+   "prob": 0.999
+  },
+  {
+   "text": "poquito.",
+   "start": 154.02,
+   "end": 154.38,
+   "prob": 0.999
+  },
+  {
+   "text": "Bueno,",
+   "start": 187.42,
+   "end": 188.46,
+   "prob": 0.083
+  },
+  {
+   "text": "ahora",
+   "start": 189.78,
+   "end": 190.32,
+   "prob": 0.988
+  },
+  {
+   "text": "vamos",
+   "start": 190.32,
+   "end": 193.02,
+   "prob": 0.759
+  },
+  {
+   "text": "a",
+   "start": 193.02,
+   "end": 193.16,
+   "prob": 1.0
+  },
+  {
+   "text": "preparar",
+   "start": 193.16,
+   "end": 193.58,
+   "prob": 0.992
+  },
+  {
+   "text": "la",
+   "start": 193.58,
+   "end": 193.7,
+   "prob": 0.999
+  },
+  {
+   "text": "piel",
+   "start": 193.7,
+   "end": 194.24,
+   "prob": 0.999
+  },
+  {
+   "text": "de",
+   "start": 194.24,
+   "end": 202.14,
+   "prob": 0.576
+  },
+  {
+   "text": "las",
+   "start": 202.14,
+   "end": 202.42,
+   "prob": 0.584
+  },
+  {
+   "text": "piernas.",
+   "start": 202.42,
+   "end": 202.92,
+   "prob": 0.898
+  },
+  {
+   "text": "Ay,",
+   "start": 216.42,
+   "end": 216.9,
+   "prob": 0.165
+  },
+  {
+   "text": "está",
+   "start": 217.04,
+   "end": 217.12,
+   "prob": 0.51
+  },
+  {
+   "text": "como",
+   "start": 217.12,
+   "end": 217.38,
+   "prob": 0.987
+  },
+  {
+   "text": "perdida",
+   "start": 217.38,
+   "end": 217.94,
+   "prob": 0.886
+  },
+  {
+   "text": "Yo",
+   "start": 219.4,
+   "end": 219.88,
+   "prob": 0.279
+  },
+  {
+   "text": "creo",
+   "start": 219.88,
+   "end": 220.06,
+   "prob": 0.998
+  },
+  {
+   "text": "que",
+   "start": 220.06,
+   "end": 220.18,
+   "prob": 0.998
+  },
+  {
+   "text": "tenemos",
+   "start": 220.18,
+   "end": 220.42,
+   "prob": 0.992
+  },
+  {
+   "text": "que",
+   "start": 220.42,
+   "end": 220.6,
+   "prob": 0.997
+  },
+  {
+   "text": "ponerlas",
+   "start": 220.6,
+   "end": 221.08,
+   "prob": 0.959
+  },
+  {
+   "text": "como",
+   "start": 221.08,
+   "end": 221.64,
+   "prob": 0.935
+  },
+  {
+   "text": "No",
+   "start": 221.64,
+   "end": 222.4,
+   "prob": 0.138
+  },
+  {
+   "text": "sé,",
+   "start": 222.4,
+   "end": 222.56,
+   "prob": 0.974
+  },
+  {
+   "text": "como",
+   "start": 222.68,
+   "end": 222.76,
+   "prob": 0.763
+  },
+  {
+   "text": "está",
+   "start": 222.76,
+   "end": 222.92,
+   "prob": 0.521
+  },
+  {
+   "text": "mal",
+   "start": 222.92,
+   "end": 223.2,
+   "prob": 0.917
+  },
+  {
+   "text": "Trata",
+   "start": 231.4,
+   "end": 231.88,
+   "prob": 0.699
+  },
+  {
+   "text": "de",
+   "start": 231.88,
+   "end": 232.04,
+   "prob": 0.999
+  },
+  {
+   "text": "hacerlo",
+   "start": 232.04,
+   "end": 232.36,
+   "prob": 0.985
+  },
+  {
+   "text": "como",
+   "start": 232.36,
+   "end": 232.62,
+   "prob": 0.902
+  },
+  {
+   "text": "con",
+   "start": 232.62,
+   "end": 232.82,
+   "prob": 0.787
+  },
+  {
+   "text": "una",
+   "start": 232.82,
+   "end": 232.94,
+   "prob": 0.511
+  },
+  {
+   "text": "gelita",
+   "start": 232.94,
+   "end": 233.34,
+   "prob": 0.951
+  },
+  {
+   "text": "de",
+   "start": 233.34,
+   "end": 233.5,
+   "prob": 0.989
+  },
+  {
+   "text": "zanata",
+   "start": 233.5,
+   "end": 233.88,
+   "prob": 0.65
+  },
+  {
+   "text": "¿Qué",
+   "start": 239.06,
+   "end": 240.46,
+   "prob": 0.136
+  },
+  {
+   "text": "es",
+   "start": 240.46,
+   "end": 241.86,
+   "prob": 0.157
+  },
+  {
+   "text": "lo",
+   "start": 241.86,
+   "end": 243.66,
+   "prob": 0.356
+  },
+  {
+   "text": "que",
+   "start": 243.66,
+   "end": 244.12,
+   "prob": 0.784
+  },
+  {
+   "text": "se",
+   "start": 244.12,
+   "end": 244.12,
+   "prob": 0.128
+  },
+  {
+   "text": "llama?",
+   "start": 244.12,
+   "end": 244.72,
+   "prob": 0.085
+  },
+  {
+   "text": "Bien,",
+   "start": 263.82,
+   "end": 264.52,
+   "prob": 0.035
+  },
+  {
+   "text": "vamos",
+   "start": 289.04,
+   "end": 289.52,
+   "prob": 0.42
+  },
+  {
+   "text": "a",
+   "start": 289.52,
+   "end": 289.54,
+   "prob": 0.671
+  },
+  {
+   "text": "ver.",
+   "start": 289.54,
+   "end": 292.44,
+   "prob": 0.115
+  },
+  {
+   "text": "El",
+   "start": 293.88,
+   "end": 294.06,
+   "prob": 0.011
+  },
+  {
+   "text": "cabrillo.",
+   "start": 294.06,
+   "end": 294.3,
+   "prob": 0.519
+  },
+  {
+   "text": "Gracias.",
+   "start": 331.14,
+   "end": 332.54,
+   "prob": 0.251
+  },
+  {
+   "text": "Muflo",
+   "start": 361.7,
+   "end": 362.14,
+   "prob": 0.422
+  },
+  {
+   "text": "derecho,",
+   "start": 362.14,
+   "end": 362.56,
+   "prob": 0.981
+  },
+  {
+   "text": "realiza",
+   "start": 362.8,
+   "end": 363.3,
+   "prob": 0.867
+  },
+  {
+   "text": "la",
+   "start": 363.3,
+   "end": 363.46,
+   "prob": 0.781
+  },
+  {
+   "text": "línea",
+   "start": 363.46,
+   "end": 363.74,
+   "prob": 0.883
+  },
+  {
+   "text": "ascendente.",
+   "start": 363.74,
+   "end": 364.48,
+   "prob": 0.98
+  },
+  {
+   "text": "Bueno,",
+   "start": 364.64,
+   "end": 364.76,
+   "prob": 0.669
+  },
+  {
+   "text": "espérame,",
+   "start": 364.9,
+   "end": 365.56,
+   "prob": 0.678
+  },
+  {
+   "text": "pues",
+   "start": 366.32,
+   "end": 366.52,
+   "prob": 0.407
+  },
+  {
+   "text": "se",
+   "start": 366.52,
+   "end": 366.7,
+   "prob": 0.961
+  },
+  {
+   "text": "supone",
+   "start": 366.7,
+   "end": 367.0,
+   "prob": 0.996
+  },
+  {
+   "text": "que",
+   "start": 367.0,
+   "end": 367.1,
+   "prob": 0.99
+  },
+  {
+   "text": "estoy",
+   "start": 367.1,
+   "end": 367.2,
+   "prob": 0.979
+  },
+  {
+   "text": "preparando",
+   "start": 367.2,
+   "end": 367.64,
+   "prob": 0.994
+  },
+  {
+   "text": "la",
+   "start": 367.64,
+   "end": 367.76,
+   "prob": 0.987
+  },
+  {
+   "text": "piel,",
+   "start": 367.76,
+   "end": 368.04,
+   "prob": 0.972
+  },
+  {
+   "text": "entonces",
+   "start": 368.24,
+   "end": 369.26,
+   "prob": 0.967
+  },
+  {
+   "text": "ahora",
+   "start": 369.26,
+   "end": 369.92,
+   "prob": 0.774
+  },
+  {
+   "text": "sí",
+   "start": 369.92,
+   "end": 370.14,
+   "prob": 0.914
+  },
+  {
+   "text": "vamos",
+   "start": 370.14,
+   "end": 370.28,
+   "prob": 0.994
+  },
+  {
+   "text": "a",
+   "start": 370.28,
+   "end": 370.4,
+   "prob": 0.998
+  },
+  {
+   "text": "empezar",
+   "start": 370.4,
+   "end": 370.62,
+   "prob": 0.251
+  },
+  {
+   "text": "con",
+   "start": 370.62,
+   "end": 370.82,
+   "prob": 0.9
+  },
+  {
+   "text": "el",
+   "start": 370.82,
+   "end": 370.92,
+   "prob": 0.969
+  },
+  {
+   "text": "guión.",
+   "start": 370.92,
+   "end": 371.2,
+   "prob": 0.451
+  }
+ ]
+}
