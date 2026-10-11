@@ -31,7 +31,7 @@ export const S06Mundo: React.FC = () => {
   const fConq = pf(P.conquistar) - from;
   const fMundo = pf(P.mundo) - from;
   const escudos: Array<[string, number, number]> = [
-    ["img/escudos/sporting.svg", 205, 1000],
+    ["img/escudos/sporting.png", 205, 1000],
     ["img/escudos/manchester_united.svg", 880, 930],
     ["img/escudos/real_madrid.svg", 190, 1420],
     ["img/escudos/juventus.svg", 890, 1400],

@@ -155,7 +155,9 @@ export const Insignia: React.FC<{
 };
 
 /* ------------------------------------------------------------------ */
-/* Globo terráqueo 3D en escala de grises que gira */
+/* Globo terráqueo de mesa en escala de grises que gira: eje inclinado 23,5°,
+   aro meridiano con pivotes en los polos, cuello y peana. El contorno de la esfera
+   se oscurece siempre para que no se funda con el fondo blanco. */
 export const Globo: React.FC<{
   cx: number;
   cy: number;
@@ -167,51 +169,78 @@ export const Globo: React.FC<{
 }> = ({ cx, cy, d, vel = 2.2, peana = true, blur = 0, fase = 0 }) => {
   const frame = useCurrentFrame();
   const tex = staticFile("img/globo_textura.jpg");
+  const R = d / 2;
   const off = -((frame * vel + fase) % (d * 2));
+  const M = 70; // margen para el aro
+  const ancho = d + M * 2;
+  const alto = d + M + (peana ? 200 : M);
+  const scx = M + R;
+  const scy = M + R;
+  const inc = -23.5; // inclinación del eje terrestre
+  const Rm = R + 22; // radio del aro meridiano
+  const pt = (ang: number, r: number) => {
+    const a = (ang * Math.PI) / 180;
+    return [scx + r * Math.cos(a), scy + r * Math.sin(a)] as const;
+  };
+  const aN = -90 + inc; // polo norte (arriba a la izquierda)
+  const aS = 90 + inc; // polo sur
+  const [nx, ny] = pt(aN, Rm);
+  const [sx, sy] = pt(aS, Rm);
+  const [bx, by] = pt(90, Rm); // punto más bajo del aro, donde nace el cuello
+  const arco = `M ${nx.toFixed(1)} ${ny.toFixed(1)} A ${Rm} ${Rm} 0 1 1 ${bx.toFixed(1)} ${by.toFixed(1)}`;
+  const [enx, eny] = pt(aN, R + 4);
+  const [esx, esy] = pt(aS, R + 4);
+  const baseY = scy + R + 150;
   return (
     <div
       style={{
         position: "absolute",
-        left: cx - d / 2,
-        top: cy - d / 2,
-        width: d,
-        height: d * (peana ? 1.32 : 1),
+        left: cx - scx,
+        top: cy - scy,
+        width: ancho,
+        height: alto,
         filter: `${SOMBRA}${blur ? ` blur(${blur}px)` : ""}`,
       }}
     >
       {peana ? (
         <svg
-          width={d * 1.3}
-          height={d * 1.4}
-          style={{ position: "absolute", left: -d * 0.15, top: -d * 0.06 }}
-          viewBox="0 0 130 140"
+          width={ancho}
+          height={alto}
+          style={{ position: "absolute", left: 0, top: 0, overflow: "visible" }}
         >
+          {/* cuello y peana */}
           <path
-            d="M 18 12 A 54 54 0 0 1 112 70"
-            fill="none"
-            stroke="#3a3a3a"
-            strokeWidth={3.2}
+            d={`M ${scx - 9} ${by} L ${scx + 9} ${by} L ${scx + 16} ${baseY - 18} L ${scx - 16} ${baseY - 18} Z`}
+            fill="#2a2a2a"
           />
-          <path
-            d="M 112 70 A 54 54 0 0 1 60 117"
-            fill="none"
-            stroke="#3a3a3a"
-            strokeWidth={3.2}
+          <ellipse cx={scx} cy={baseY} rx={R * 0.58} ry={26} fill="#161616" />
+          <ellipse
+            cx={scx}
+            cy={baseY - 6}
+            rx={R * 0.5}
+            ry={18}
+            fill="#3a3a3a"
           />
-          <rect x={58} y={116} width={10} height={12} fill="#2b2b2b" />
-          <ellipse cx={63} cy={132} rx={26} ry={6} fill="#1c1c1c" />
-          <ellipse cx={63} cy={130} rx={22} ry={4} fill="#3b3b3b" />
+          <ellipse
+            cx={scx}
+            cy={baseY - 9}
+            rx={R * 0.34}
+            ry={10}
+            fill="#4a4a4a"
+          />
         </svg>
       ) : null}
+      {/* esfera: el mapa gira a lo largo del ecuador inclinado */}
       <div
         style={{
           position: "absolute",
-          left: 0,
-          top: 0,
+          left: M,
+          top: M,
           width: d,
           height: d,
           borderRadius: "50%",
           overflow: "hidden",
+          rotate: `${inc}deg`,
         }}
       >
         {[0, 1].map((k) => (
@@ -228,16 +257,70 @@ export const Globo: React.FC<{
           />
         ))}
       </div>
+      {/* sombreado esférico + contorno siempre visible */}
       <div
         style={{
           position: "absolute",
-          inset: 0,
+          left: M,
+          top: M,
+          width: d,
           height: d,
           borderRadius: "50%",
           background:
-            "radial-gradient(circle at 34% 28%, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0) 36%), radial-gradient(circle at 50% 50%, rgba(0,0,0,0) 52%, rgba(0,0,0,0.6) 100%)",
+            "radial-gradient(circle at 35% 30%, rgba(255,255,255,0.45) 0%, rgba(255,255,255,0) 24%), radial-gradient(circle at 42% 38%, rgba(0,0,0,0) 44%, rgba(0,0,0,0.16) 70%, rgba(0,0,0,0.58) 100%)",
+          boxShadow:
+            "inset -20px -28px 54px rgba(0,0,0,0.35), inset 0 0 0 2px rgba(0,0,0,0.28)",
         }}
       />
+      {peana ? (
+        <svg
+          width={ancho}
+          height={alto}
+          style={{ position: "absolute", left: 0, top: 0, overflow: "visible" }}
+        >
+          {/* aro meridiano con brillo metálico */}
+          <path
+            d={arco}
+            fill="none"
+            stroke="#262626"
+            strokeWidth={13}
+            strokeLinecap="round"
+          />
+          <path
+            d={arco}
+            fill="none"
+            stroke="#7d7d7d"
+            strokeWidth={3}
+            strokeLinecap="round"
+          />
+          {/* eje y pivotes en los polos */}
+          <line
+            x1={enx}
+            y1={eny}
+            x2={nx}
+            y2={ny}
+            stroke="#262626"
+            strokeWidth={7}
+          />
+          <line
+            x1={esx}
+            y1={esy}
+            x2={sx}
+            y2={sy}
+            stroke="#262626"
+            strokeWidth={7}
+          />
+          {[
+            [nx, ny],
+            [sx, sy],
+          ].map(([x, y], k) => (
+            <g key={k}>
+              <circle cx={x} cy={y} r={14} fill="#262626" />
+              <circle cx={x} cy={y} r={6} fill="#8a8a8a" />
+            </g>
+          ))}
+        </svg>
+      ) : null}
     </div>
   );
 };

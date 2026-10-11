@@ -11,6 +11,6 @@ MEAS=$(ffmpeg -hide_banner -i "$RAW" -af loudnorm=I=-14:TP=-1.5:LRA=7:print_form
 get() { echo "$MEAS" | python3 -c "import json,sys; print(json.load(sys.stdin)['$1'])"; }
 ffmpeg -hide_banner -v error -y -i "$RAW" -c:v copy \
   -af "loudnorm=I=-14:TP=-1.5:LRA=7:measured_I=$(get input_i):measured_TP=$(get input_tp):measured_LRA=$(get input_lra):measured_thresh=$(get input_thresh):offset=$(get target_offset):linear=true,aresample=48000" \
-  -c:a aac -b:a 256k -movflags +faststart "$OUT"
+  -c:a aac -b:a 256k -shortest -movflags +faststart "$OUT"
 ffmpeg -hide_banner -i "$OUT" -af ebur128=peak=true -f null - 2>&1 | grep -E "^\s+(I:|Peak:)" | tr -s ' '
 echo "OK -> $OUT"

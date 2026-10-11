@@ -192,3 +192,9 @@ Paleta global: **blanco y negro dominantes + 1 acento rojo**. El color solo apar
 
 ## 11. Correcciones aprobadas por el usuario
 _(Se irán añadiendo aquí las correcciones que el usuario apruebe para que se mantengan en futuras ediciones.)_
+
+| # | Fecha | Corrección (regla a mantener) | Aplicación en el proyecto |
+|---|---|---|---|
+| 0 | 2026-10-11 | **El estilo general de `cr7_v2` (v2) queda aprobado** como base: ritmo, tipografía cinética, transiciones, modos oscuro/blanco, música y SFX. | Mantener estos valores en futuras ediciones salvo nueva indicación. |
+| 1 | 2026-10-11 | **Escudos y logos siempre en PNG con fondo transparente.** Nunca con caja o fondo blanco detrás; si el archivo original trae fondo, se elimina antes de usarlo. | `public/img/escudos/sporting.png` (se quitó el rectángulo blanco del SVG original). |
+| 2 | 2026-10-11 | **Los objetos protagonistas se ven completos, nunca "cortados".** En fondo blanco, el contorno del objeto debe distinguirse siempre (borde oscurecido o perfilado, brillos contenidos que no se fundan con el blanco), y los objetos con estructura se dibujan enteros (p. ej. globo de mesa con aro meridiano, pivotes en los polos, cuello y peana). Si una imagen no se ve completa, se sustituye por otra que sí. | Componente `Globo` en `src/components/graficos.tsx`. |
