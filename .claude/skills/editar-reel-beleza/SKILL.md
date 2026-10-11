@@ -74,6 +74,13 @@ Cada "beat" nace de una frase concreta, anclada con `at("frase")`. El anclaje ac
 - `src/dia9/Maqueta9.tsx`: como la del día 6 pero prueba el otro lado de la cabeza antes de bajar por debajo de ella (no tapa la acción).
 - La pizarra (`Pizarra` en `src/dia9/Graficos.tsx`) dibuja sobre el congelado en coordenadas de la toma: mide antes los puntos (fotograma a 540×960 con rejilla de 100 px) y deja ≥ 100 px con la cara.
 - Música propia por día: `scripts/dia9/audio_dia9.py` cambia tonalidad, tempo y figura (mismos timbres y limpieza para la voz).
+- **Elegir tomas del crudo (lección de la corrección del día 9, estilo.md §10.18–21):**
+  1. Transcribe también el AUDIO DEL CRUDO (faster-whisper) y guarda los tramos con habla (`scripts/dia9/transcripcion_crudo.json`): ahí habla con quien graba. Monta solo con tramos sin conversación.
+  2. Hojas de contacto del crudo (1 fotograma por segundo, luego cada 0,3–0,5 s en las candidatas) para comprobar mirada (en su cuerpo, no fuera de cámara) y que la acción es la que dice la voz (equipo SOBRE la zona, no sosteniéndolo).
+  3. Revisa los cuatro bordes del plano fijo: si se ve otro cuarto, otro suelo o la escoba, reencuadra todas las tomas (`ENCUADRE` en `scripts/dia9/montar.py`). Nada de primeros planos a mano fuera del set.
+  4. Si una acción dura poco, alárgala con cámara lenta desde el original a 60 fps (`"vel"` < 1) en vez de repetir o rellenar con otra cosa.
+  5. Con el montaje hecho, hoja con el principio, el centro y el final de cada toma: ningún final mirando a cámara si queda a la vista (debajo de mosaicos o tarjetas se ve parte de la toma).
+- Remotion lee la toma de apoyo y los mosaicos como secuencias de JPEG (`montar.py` las saca al final): con los MP4 el render se colgaba (ver 6e).
 
 ## 6e. Día 10 (a cámara, cierre del reto) — herramientas nuevas
 - `scripts/dia10/preparar.py`: igual que el del día 8 (tomas en el orden que se quiera, vídeo por fotogramas y audio a muestra exacta). Si Whisper funde una frase repetida en una palabra de varios segundos, transcribe `public/<dia>/editado.mp4` y aplica sus tiempos con `scripts/dia10/retiempos.py`.

@@ -55,18 +55,10 @@ const clip = (frase: string) => {
 const IZQ: Lado = "izq";
 const DER: Lado = "der";
 
-// ---------- Tomas sin cabeza ----------
-// Primeros planos (sin cara): una cabeza ficticia arriba en el centro, así las columnas quedan a los dos lados del
-// cuerpo. Pantalla partida (dos cabezas): no se colocan columnas (solo la superposición de Alterna).
-const PRIMEROS_PLANOS = ["aplica", "divide", "bajando"].map(clip);
+// ---------- Pantalla partida ----------
+// Todas las tomas son del plano fijo y reencuadradas (scripts/dia9/montar.py), con la cabeza a la vista. En la
+// pantalla partida (dos cabezas) no se colocan columnas: solo la superposición de Alterna.
 const PARTIDA = clip("haz círculos");
-const ajustarCaras = (d: DatosCaras): DatosCaras => ({
-  ...d,
-  caras: d.caras.map((c) => {
-    const s = (c[0] as number) / 30;
-    return PRIMEROS_PLANOS.some((q) => s >= q.desde - 0.1 && s < q.hasta + 0.1) ? [c[0], 400, -300, 280, 100] : c;
-  }),
-});
 
 // ---------- Tarjetas de capítulo (la toma se encoge) y sus títulos ----------
 const TARJETAS: Tarjeta[] = [
@@ -445,42 +437,44 @@ const PZ_BRAZO = clip("recuerda no");
 const lineas = at("líneas").start;
 const Pizarras: React.FC = () => (
   <>
-    {/* "Divide la zona en líneas y trabaja siempre con movimientos ascendentes" (muslo izquierdo de la imagen) */}
+    {/* "Divide la zona en líneas y trabaja siempre con movimientos ascendentes" (de frente: muslo izquierdo de la
+        imagen, de la rodilla a la cadera, donde está el equipo) */}
     <Pizarra
       desde={PZ_LINEAS.desde}
       hasta={PZ_LINEAS.hasta}
-      foco={{ cx: 265, cy: 1270, rx: 230, ry: 260 }}
+      foco={{ cx: 495, cy: 1255, rx: 165, ry: 225 }}
       trazos={[
-        { tipo: "flecha", pts: [[170, 1420], [180, 1150]], at: lineas - 0.25, dur: 0.35 },
-        { tipo: "flecha", pts: [[262, 1430], [268, 1135]], at: lineas, dur: 0.35 },
-        { tipo: "flecha", pts: [[350, 1420], [352, 1145]], at: lineas + 0.25, dur: 0.35 },
-        { tipo: "etiqueta", x: 520, y: 1090, texto: "Divide en líneas", at: at("divide").start + 0.15, ancla: "izq" },
-        { tipo: "etiqueta", x: 520, y: 1200, texto: "Siempre hacia arriba", at: at("trabaja", PZ_LINEAS.desde).start, ancla: "izq" },
+        { tipo: "flecha", pts: [[440, 1385], [438, 1135]], at: lineas - 0.25, dur: 0.35 },
+        { tipo: "flecha", pts: [[495, 1395], [495, 1120]], at: lineas, dur: 0.35 },
+        { tipo: "flecha", pts: [[550, 1385], [552, 1135]], at: lineas + 0.25, dur: 0.35 },
+        { tipo: "etiqueta", x: 395, y: 1215, texto: "Divide en líneas", at: at("divide").start + 0.15, ancla: "der" },
+        { tipo: "etiqueta", x: 395, y: 1325, texto: "Siempre hacia arriba", at: at("trabaja", PZ_LINEAS.desde).start, ancla: "der" },
       ]}
     />
     {/* "Evita pasar directamente sobre el ombligo" */}
     <Pizarra
       desde={PZ_OMBLIGO.desde}
       hasta={PZ_OMBLIGO.hasta}
-      foco={{ cx: 470, cy: 930, rx: 270, ry: 230 }}
+      foco={{ cx: 535, cy: 875, rx: 250, ry: 200 }}
       trazos={[
-        { tipo: "prohibido", x: 470, y: 924, r: 64, at: at("evita").start },
-        { tipo: "etiqueta", x: 610, y: 1110, texto: "Evita el ombligo", at: at("ombligo").start - 0.25, ancla: "izq", tono: "no" },
+        { tipo: "prohibido", x: 535, y: 862, r: 60, at: at("evita").start },
+        { tipo: "etiqueta", x: 680, y: 1050, texto: "Evita el ombligo", at: at("ombligo").start - 0.25, ancla: "izq", tono: "no" },
       ]}
     />
-    {/* "Recuerda no pasar sobre las articulaciones" (cuadro: desde encima del codo hacia el hombro, evitando axila) */}
+    {/* "Recuerda no pasar sobre las articulaciones" (cuadro: desde encima del codo hacia el hombro, evitando axila).
+        Brazo extendido hacia la derecha de la imagen, masaje con la otra mano. */}
     <Pizarra
       desde={PZ_BRAZO.desde}
       hasta={PZ_BRAZO.hasta}
-      foco={{ cx: 740, cy: 620, rx: 330, ry: 170 }}
+      foco={{ cx: 680, cy: 500, rx: 230, ry: 150 }}
       trazos={[
-        { tipo: "banda", pts: [[860, 598], [640, 600]], at: at("recuerda", PZ_BRAZO.desde).start, ancho: 70 },
-        { tipo: "flecha", pts: [[860, 520], [660, 520]], at: at("recuerda", PZ_BRAZO.desde).start + 0.2, dur: 0.4, color: COLORS.marfil, ancho: 9 },
-        { tipo: "cruz", x: 945, y: 596, r: 46, at: at("sobre", PZ_BRAZO.desde).start },
-        { tipo: "cruz", x: 560, y: 665, r: 40, at: at("articulaciones").start },
-        { tipo: "etiqueta", x: 945, y: 690, texto: "Codo", at: at("sobre", PZ_BRAZO.desde).start + 0.1, ancla: "centro", tono: "no" },
-        { tipo: "etiqueta", x: 560, y: 755, texto: "Axila", at: at("articulaciones").start + 0.1, ancla: "centro", tono: "no" },
-        { tipo: "etiqueta", x: 830, y: 450, texto: "Del codo al hombro", at: at("recuerda", PZ_BRAZO.desde).start + 0.4, ancla: "centro" },
+        { tipo: "banda", pts: [[712, 484], [602, 456]], at: at("recuerda", PZ_BRAZO.desde).start, ancho: 70 },
+        { tipo: "flecha", pts: [[705, 482], [612, 458]], at: at("recuerda", PZ_BRAZO.desde).start + 0.2, dur: 0.4, color: COLORS.marfil, ancho: 9 },
+        { tipo: "cruz", x: 752, y: 488, r: 40, at: at("sobre", PZ_BRAZO.desde).start },
+        { tipo: "cruz", x: 588, y: 578, r: 36, at: at("articulaciones").start },
+        { tipo: "etiqueta", x: 762, y: 592, texto: "Codo", at: at("sobre", PZ_BRAZO.desde).start + 0.1, ancla: "centro", tono: "no" },
+        { tipo: "etiqueta", x: 588, y: 690, texto: "Axila", at: at("articulaciones").start + 0.1, ancla: "centro", tono: "no" },
+        { tipo: "etiqueta", x: 800, y: 330, texto: "Del codo al hombro", at: at("recuerda", PZ_BRAZO.desde).start + 0.4, ancla: "centro" },
       ]}
     />
   </>
@@ -521,7 +515,7 @@ const Fuera: React.FC = () => {
       <TituloCapitulo caps={CAPITULOS} p={TARJ(t)} />
       {/* "Hoy integraremos diferentes zonas en una sola rutina": 4 celdas → se abren en "una sola" */}
       <Mosaico
-        src="dia9/mosaico_intro.mp4"
+        src="dia9/mosaico_intro"
         desde={mi.desde}
         hasta={mi.hasta}
         entra={[0, 0.25, 0.5, 0.75]}
@@ -530,7 +524,7 @@ const Fuera: React.FC = () => {
       />
       {/* "para trabajar diferentes zonas": las 4 celdas vuelven, cada una con su ✓ */}
       <Mosaico
-        src="dia9/mosaico_cierre.mp4"
+        src="dia9/mosaico_cierre"
         desde={mc.desde}
         hasta={mc.hasta}
         entra={[mc.desde, mc.desde + 0.12, mc.desde + 0.24, mc.desde + 0.36]}
@@ -553,9 +547,10 @@ const Fuera: React.FC = () => {
 // ---------- Cámara ----------
 const z = (frase: string, z0: number, z1: number, ox: number, oy: number): Zoom => ({ ...clip(frase), z0, z1, ox, oy });
 const ZOOMS: Zoom[] = [
-  z("hacia arriba", 1.0, 1.18, 450, 1200),
-  z("realiza círculos", 1.0, 1.12, 470, 950),
-  z("movimientos de", 1.0, 1.07, 540, 1000),
+  z("hacia arriba", 1.0, 1.18, 506, 1170),
+  z("mantén", 1.0, 1.14, 465, 720), // hacia la pantalla del equipo: "intensidad baja"
+  z("realiza círculos", 1.0, 1.12, 470, 900),
+  z("movimientos de", 1.0, 1.07, 480, 950),
   z("y listo", 1.08, 1.0, 540, 900),
   z("para trabajar", 1.0, 1.08, 500, 800),
 ];
@@ -618,7 +613,7 @@ const NIVEL = 0.34;
 
 export const Dia9Video: React.FC = () => (
   <Base9
-    caras={ajustarCaras({ ...(caras as DatosCaras), cortes: clips.map((c) => c.outStart) })}
+    caras={{ ...(caras as DatosCaras), cortes: clips.map((c) => c.outStart) }}
     zooms={ZOOMS}
     tarjetas={TARJETAS}
     whips={WHIPS}

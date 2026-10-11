@@ -1,7 +1,8 @@
 """Día 9 "Rutina integrada": monta la toma de apoyo siguiendo la voz en off, los dos mosaicos de zonas y la cabeza.
 
 Uso: python -I scripts/dia9/montar.py <crudo_30.mp4> <modelo_yunet.onnx>
-     (crudo_30.mp4 = el crudo de 10 min (59,94 fps, HEVC 10 bits) pasado a 30 fps CFR, sin audio)
+     (crudo_30.mp4 = el crudo de 10 min (59,94 fps, HEVC 10 bits) pasado a 30 fps CFR, sin audio; las tomas con
+     "vel" < 1 salen del original, crudo.mp4, en la misma carpeta)
 
 Novedades frente a los días 4–8, para que el día 9 no se vea igual:
 - "congela": la toma es un fotograma congelado (análisis tipo pizarra: líneas en el muslo, ombligo, codo y axila).
@@ -10,7 +11,10 @@ Novedades frente a los días 4–8, para que el día 9 no se vea igual:
 - Mosaicos 2×2 de las cuatro zonas (piernas, abdomen, glúteos, brazos), cada celda un recorte de 540×960 sin
   escalar: al empezar ("integraremos diferentes zonas en una sola rutina") y al cerrar ("para trabajar diferentes
   zonas"). Van en archivos aparte para que en Remotion las celdas se abran y dejen ver la toma de debajo.
-Salidas: public/dia9/apoyo.mp4, public/dia9/mosaico_intro.mp4, public/dia9/mosaico_cierre.mp4,
+Todas las tomas (salvo la pantalla partida y los mosaicos, que ya son recortes) se reencuadran ×1,125 para que el
+borde derecho no deje ver el cuarto de al lado (ENCUADRE).
+Salidas: public/dia9/apoyo.mp4, public/dia9/mosaico_intro.mp4, public/dia9/mosaico_cierre.mp4 (y sus secuencias
+         de JPEG en public/dia9/fotogramas, mosaico_intro y mosaico_cierre, que son las que usa Remotion),
          src/dia9/data/clips.json y src/dia9/data/caras.json.
 """
 import json
@@ -26,48 +30,59 @@ RAIZ = Path(__file__).resolve().parent.parent.parent
 FPS = 30
 HOLD = 0.7
 
-# (frase de la voz en off, toma). Cada toma dura hasta la frase siguiente. Fuera los momentos en que mira a cámara
-# o habla con quien graba (29–35, 57–62, 102, 130–137, 145–154, 162, 205, 233–235, 265, 341, 469 s).
+# Reencuadre de todas las tomas: el crudo deja ver, por el borde derecho, el suelo rojo y la puerta del cuarto de al
+# lado (x > 960 entre y 1180 y 1460). Se recorta 960×1707 desde (0, ENCUADRE_Y) y se escala a 1080×1920 (×1,125).
+ENCUADRE_ANCHO, ENCUADRE_ALTO, ENCUADRE_Y = 960, 1707, 160
+
+# (frase de la voz en off, toma). Cada toma dura hasta la frase siguiente. Solo tomas del plano fijo (fuera los
+# primeros planos de 80–97 s, grabados a mano sobre el suelo rojo y con la escoba al fondo) y solo de los tramos sin
+# conversación, con la mirada en su cuerpo: fuera 0–11, 20–31, 72–98, 128–137, 145–152, 198,3–199,6, 203–227,8,
+# 269–347, 412–427, 506–521, 579–584 y 596–625 s (mira a cámara o habla con quien graba).
+# Brazos solo con las manos (con el equipo se nota incómoda); el abdomen, con el equipo de verdad sobre el abdomen.
+# "vel" < 1: cámara lenta sacada del original a 60 fps (fluida).
 PLAN = [
-    ("hoy", {"src": 7.4}),  # debajo del mosaico; en "una sola rutina" está de pie frotándose el aceite en las manos
-    ("aplica", {"src": 81.3}),  # primer plano: el aceite en la palma (sin cara)
-    ("que vas", {"src": 16.0}),  # se aplica el aceite solo en las piernas
+    ("hoy", {"src": 12.6}),  # (debajo del mosaico) se extiende el aceite entre las manos y se inclina hacia las piernas
+    ("aplica", {"src": 347.4}),  # se sirve el aceite en la palma y se frota las manos
+    ("que vas", {"src": 16.9}),  # inclinada, se aplica el aceite solo en las piernas
     ("empezamos", {"src": 37.0}),  # el equipo en la pantorrilla
-    ("divide", {"src": 91.4, "congela": True}),  # primer plano de los muslos congelado: "divide la zona en líneas"
+    ("divide", {"src": 102.5, "congela": True}),  # de frente, el equipo en la cadera: "divide la zona en líneas"
     ("movimientos ascendentes", {"src": 164.0}),  # de perfil: sube por la parte de atrás del muslo
     ("realiza líneas", {"src": 105.5}),  # desde la rodilla hacia arriba
     ("hacia arriba", {"src": 116.0}),  # parte alta del muslo (se reencuadra hacia la pierna)
-    ("continúa", {"src": 196.3}),  # el equipo en el abdomen
-    ("laterales", {"src": 476.0}),  # en el costado
-    ("mantén", {"src": 470.3}),  # mira la pantalla del equipo: intensidad
-    ("y evita", {"src": 479.5, "congela": True}),  # congelado de frente: el ombligo
-    ("realiza círculos", {"src": 227.3}),  # abdomen bajo
-    ("movimientos de", {"src": 217.0}),  # manos desde la espalda hacia la cintura
-    ("hacia la cintura", {"src": 503.6}),  # el equipo baja hacia la ingle
-    ("bajando", {"src": 88.4}),  # primer plano: la mano baja por el pliegue de la ingle
+    ("continúa", {"src": 227.95}),  # el equipo en el abdomen
+    ("laterales", {"src": 205.95}),  # en el costado del abdomen
+    ("mantén", {"src": 470.0}),  # mira la pantalla del equipo: la intensidad
+    ("y evita", {"src": 479.5, "congela": True}),  # congelado de frente: el ombligo a la vista
+    ("realiza círculos", {"src": 195.55, "vel": 0.8}),  # círculos en el abdomen, un poco más lentos ("suaves")
+    ("movimientos de", {"src": 474.6}),  # inclinada: el equipo arrastra por el costado hacia la cintura
+    ("hacia la cintura", {"src": 503.4, "vel": 0.55}),  # cámara lenta: de la cintura baja por la ingle
     ("trabaja", {"src": 240.2}),  # glúteos de espaldas
     ("con movimientos", {"src": 249.0}),
     ("barridos", {"src": 260.0}),
     ("haz círculos", {"splitv": ((243.0, 140), (256.4, 140))}),  # un lado y el otro, a la vez
-    ("finaliza", {"src": 481.2}),  # brazo extendido con el equipo
+    ("finaliza", {"src": 537.0}),  # brazo extendido, la otra mano lo recorre
     ("los brazos", {"src": 590.0}),  # solo con las manos
-    ("o si", {"src": 501.0}),  # con el dispositivo, el otro brazo
-    ("recuerda no", {"src": 488.0, "congela": True}),  # congelado: codo y axila
-    ("y listo", {"src": 617.0}),
-    ("para trabajar", {"src": 609.98}),  # (debajo del mosaico de cierre) se frota los brazos con calma
+    ("o si", {"src": 572.0}),  # brazo arriba: la mano sube del codo al hombro
+    ("recuerda no", {"src": 540.5, "congela": True}),  # congelado: brazo extendido (codo, hombro y axila)
+    ("y listo", {"src": 458.4}),  # se frota los brazos cruzados, con calma
+    ("para trabajar", {"src": 583.9}),  # (debajo del mosaico de cierre) masaje del brazo con la mano
 ]
 
 # Mosaicos: celdas en orden piernas · abdomen · glúteos · brazos, (segundo del crudo, x, y) de su recorte 540×960
+# (x + 540 ≤ 960: nunca llega al borde derecho del crudo)
 MOSAICOS = {
-    "intro": {"desde": "hoy", "hasta": ("sola", 0.9), "celdas": [(44.0, 230, 880), (196.5, 270, 520), (244.0, 150, 760), (482.0, 260, 150)]},
-    "cierre": {"desde": "para trabajar", "hasta": ("sin", 0.6), "celdas": [(117.0, 250, 860), (229.0, 270, 560), (256.0, 130, 760), (502.0, 120, 150)]},
+    "intro": {"desde": "hoy", "hasta": ("sola", 0.9), "celdas": [(44.0, 230, 880), (196.5, 270, 520), (244.0, 150, 760), (586.0, 20, 150)]},
+    "cierre": {"desde": "para trabajar", "hasta": ("sin", 0.6), "celdas": [(117.0, 250, 860), (229.0, 270, 560), (256.0, 130, 760), (538.5, 300, 170)]},
 }
+
+ENCUADRE = (f"crop={ENCUADRE_ANCHO}:{ENCUADRE_ALTO}:0:{ENCUADRE_Y},scale=1080:1920:flags=lanczos,setsar=1")
 
 
 def trozo(crudo: str, toma: dict, frames: int, dst: Path) -> None:
     comunes = ["-frames:v", str(frames), "-an", "-c:v", "libx264", "-preset", "medium", "-crf", "15", "-g", "15",
                "-pix_fmt", "yuv420p", "-r", str(FPS), str(dst)]
     if "splitv" in toma:
+        # Columnas de 540 px del crudo sin escalar (x + 540 ≤ 960: no llegan al borde con el cuarto de al lado)
         (sa, xa), (sb, xb) = toma["splitv"]
         dur = frames / FPS + 1
         filtro = (f"[0:v]crop=540:1920:{xa}:0,setpts=PTS-STARTPTS[a];[1:v]crop=540:1920:{xb}:0,setpts=PTS-STARTPTS[b];"
@@ -79,10 +94,17 @@ def trozo(crudo: str, toma: dict, frames: int, dst: Path) -> None:
     if toma.get("congela"):
         # Un solo fotograma repetido (tpad lo clona hasta completar la duración)
         subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", f"{toma['src']:.4f}", "-i", crudo, "-map", "0:v:0",
-                        "-vf", f"trim=end_frame=1,tpad=stop_mode=clone:stop={frames}", *comunes], check=True)
+                        "-vf", f"trim=end_frame=1,{ENCUADRE},tpad=stop_mode=clone:stop={frames}", *comunes], check=True)
+        return
+    vel = toma.get("vel", 1.0)
+    if vel < 1:
+        # Cámara lenta desde el original a 59,94 fps (HEVC 10 bits), junto al crudo a 30 fps
+        original = str(Path(crudo).with_name("crudo.mp4"))
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", f"{toma['src']:.4f}", "-i", original, "-map", "0:v:0",
+                        "-vf", f"setpts=(PTS-STARTPTS)/{vel},fps={FPS},{ENCUADRE}", *comunes], check=True)
         return
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", f"{toma['src']:.4f}", "-i", crudo, "-map", "0:v:0",
-                    *comunes], check=True)
+                    "-vf", ENCUADRE, *comunes], check=True)
 
 
 def mosaico(crudo: str, celdas, frames: int, dst: Path) -> None:
@@ -135,6 +157,17 @@ def main() -> None:
         mosaicos[nombre] = {"desde": round(a, 3), "hasta": round(a + frames / FPS, 3)}
         print(f"mosaico {nombre}: {a:.2f}–{a + frames / FPS:.2f}s")
     json.dump(mosaicos, open(RAIZ / "src/dia9/data/mosaicos.json", "w"), indent=1)
+
+    # Secuencias de JPEG para Remotion (el Chromium del entorno no decodifica H.264: con los MP4 el render se colgaba)
+    for mp4, carpeta, patron in [("apoyo.mp4", "fotogramas", "%05d.jpg"),
+                                 *((f"mosaico_{n}.mp4", f"mosaico_{n}", "%04d.jpg") for n in MOSAICOS)]:
+        d = pub / carpeta
+        if d.exists():
+            for f in d.glob("*.jpg"):
+                f.unlink()
+        d.mkdir(exist_ok=True)
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(pub / mp4), "-an", "-q:v", "2", "-start_number", "0",
+                        str(d / patron)], check=True)
 
     # Cabeza cada 3 fotogramas: YuNet si se ve la cara; si no, la parte más alta de la silueta (la cortina es clara y
     # poco saturada; piel y pelo no). En la pantalla partida hay dos cabezas y en los primeros planos ninguna: allí

@@ -1,8 +1,9 @@
-import { Audio, Video } from "@remotion/media";
+import { Audio } from "@remotion/media";
 import React from "react";
 import {
   AbsoluteFill,
   Easing,
+  Img,
   interpolate,
   Sequence,
   staticFile,
@@ -14,6 +15,7 @@ import { CarasProvider, DatosCaras } from "../rutinas/Caras";
 import { Efecto } from "../rutinas/Rutina";
 import { CLAMP } from "../rutinas/util";
 import { carasConZoom, Zoom } from "../dia7/Base7";
+import clips from "./data/clips.json";
 
 // Base del día 9 "Rutina integrada". Lenguaje nuevo frente a los días 4–8:
 // - Tarjeta de capítulo: en cada cambio de zona el "escenario" (toma + gráficos colocados sobre ella) se encoge a una
@@ -21,6 +23,9 @@ import { carasConZoom, Zoom } from "../dia7/Base7";
 //   minutos) con la barra de los 5 tramos de la rutina. Así el título nunca toca la cara.
 // - Barrido (whip): en algunos cortes dentro de una zona la toma sale y entra con desenfoque horizontal (filtro SVG).
 // - Reencuadres lentos hacia la zona que se trabaja (zoom CSS; la cabeza se recalcula con el mismo zoom).
+
+/** Fotogramas de la toma de apoyo (apoyo.mp4 → public/dia9/fotogramas/00000.jpg…). */
+export const FOTOGRAMAS9 = clips.reduce((n, c) => n + c.frames, 0);
 
 /** Tarjeta: el escenario se reduce a ESCALA y se coloca en (IZQ, ARRIBA). */
 export const ESCALA = 0.68;
@@ -132,10 +137,10 @@ export const Base9: React.FC<{
             filter: w.blur > 0.5 ? "url(#barrido9)" : undefined,
           }}
         >
-          <Video
-            src={staticFile("dia9/apoyo.mp4")}
-            muted
-            objectFit="cover"
+          {/* La toma de apoyo como secuencia de JPEG (public/dia9/fotogramas, sacada de apoyo.mp4): el Chromium del
+              entorno no decodifica H.264 y el respaldo de Remotion se colgaba; así el render es determinista. */}
+          <Img
+            src={staticFile(`dia9/fotogramas/${String(Math.min(frame, FOTOGRAMAS9 - 1)).padStart(5, "0")}.jpg`)}
             style={{ width: "100%", height: "100%" }}
           />
         </AbsoluteFill>

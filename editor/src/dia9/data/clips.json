@@ -3,19 +3,19 @@
   "frase": "hoy",
   "outStart": 0.0,
   "frames": 124,
-  "src": 7.4
+  "src": 12.6
  },
  {
   "frase": "aplica",
   "outStart": 4.133333333333334,
   "frames": 52,
-  "src": 81.3
+  "src": 347.4
  },
  {
   "frase": "que vas",
   "outStart": 5.866666666666666,
   "frames": 85,
-  "src": 16.0
+  "src": 16.9
  },
  {
   "frase": "empezamos",
@@ -27,7 +27,7 @@
   "frase": "divide",
   "outStart": 11.333333333333334,
   "frames": 76,
-  "src": 91.4,
+  "src": 102.5,
   "congela": true
  },
  {
@@ -52,19 +52,19 @@
   "frase": "continúa",
   "outStart": 22.033333333333335,
   "frames": 102,
-  "src": 196.3
+  "src": 227.95
  },
  {
   "frase": "laterales",
   "outStart": 25.433333333333334,
   "frames": 40,
-  "src": 476.0
+  "src": 205.95
  },
  {
   "frase": "mantén",
   "outStart": 26.766666666666666,
   "frames": 56,
-  "src": 470.3
+  "src": 470.0
  },
  {
   "frase": "y evita",
@@ -77,25 +77,21 @@
   "frase": "realiza círculos",
   "outStart": 31.533333333333335,
   "frames": 100,
-  "src": 227.3
+  "src": 195.55,
+  "vel": 0.8
  },
  {
   "frase": "movimientos de",
   "outStart": 34.86666666666667,
   "frames": 83,
-  "src": 217.0
+  "src": 474.6
  },
  {
   "frase": "hacia la cintura",
   "outStart": 37.63333333333333,
-  "frames": 57,
-  "src": 503.6
- },
- {
-  "frase": "bajando",
-  "outStart": 39.53333333333333,
-  "frames": 52,
-  "src": 88.4
+  "frames": 109,
+  "src": 503.4,
+  "vel": 0.55
  },
  {
   "frase": "trabaja",
@@ -134,7 +130,7 @@
   "frase": "finaliza",
   "outStart": 51.03333333333333,
   "frames": 80,
-  "src": 481.2
+  "src": 537.0
  },
  {
   "frase": "los brazos",
@@ -146,25 +142,25 @@
   "frase": "o si",
   "outStart": 56.233333333333334,
   "frames": 69,
-  "src": 501.0
+  "src": 572.0
  },
  {
   "frase": "recuerda no",
   "outStart": 58.53333333333333,
   "frames": 80,
-  "src": 488.0,
+  "src": 540.5,
   "congela": true
  },
  {
   "frase": "y listo",
   "outStart": 61.2,
   "frames": 88,
-  "src": 617.0
+  "src": 458.4
  },
  {
   "frase": "para trabajar",
   "outStart": 64.13333333333334,
   "frames": 178,
-  "src": 609.98
+  "src": 583.9
  }
 ]

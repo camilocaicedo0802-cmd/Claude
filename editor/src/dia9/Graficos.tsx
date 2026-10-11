@@ -1,6 +1,5 @@
-import { Video } from "@remotion/media";
 import React from "react";
-import { interpolate, Sequence, spring, staticFile } from "remotion";
+import { Img, interpolate, Sequence, spring, staticFile } from "remotion";
 import { COLORS, FONTS } from "../brand";
 import { CLAMP, pop, useT } from "../rutinas/util";
 import { TARJETA_ARRIBA } from "./Base9";
@@ -210,6 +209,7 @@ export const TituloCapitulo: React.FC<{ caps: Capitulo[]; p: number }> = ({ caps
 // ---------- Mosaico 2×2 de las zonas (fuera del escenario, a pantalla completa) ----------
 const ZONAS = ["piernas", "abdomen", "glúteos", "brazos"];
 export const Mosaico: React.FC<{
+  /** Carpeta con la secuencia de JPEG del mosaico (0000.jpg…), sacada de su MP4 (ver scripts/dia9/montar.py). */
   src: string;
   desde: number;
   hasta: number;
@@ -254,9 +254,8 @@ export const Mosaico: React.FC<{
                 opacity: Math.min(1, k * 1.5),
               }}
             >
-              <Video
-                src={staticFile(src)}
-                muted
+              <Img
+                src={staticFile(`${src}/${String(Math.min(Math.max(0, frame - Math.round(desde * fps)), Math.round((hasta - desde) * fps) - 1)).padStart(4, "0")}.jpg`)}
                 style={{ position: "absolute", left: -left, top: -top, width: 1080, height: 1920 }}
               />
               {kr > 0 ? (
