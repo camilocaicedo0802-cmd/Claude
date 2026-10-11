@@ -1,0 +1,13 @@
+node_modules
+dist
+.DS_Store
+.env
+
+# Ignore the output video from Git but not videos you import into src/.
+out
+
+# Análisis regenerable (pesado)
+analisis/stems/
+analisis/*.wav
+analisis/audio_extraido/*.wav
+analisis/whisper_leak/
