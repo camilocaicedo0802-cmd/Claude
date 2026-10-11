@@ -1,5 +1,13 @@
 import React from "react";
-import { Img, interpolate, spring, staticFile } from "remotion";
+import { Video } from "@remotion/media";
+import {
+  Freeze,
+  Img,
+  interpolate,
+  Sequence,
+  spring,
+  staticFile,
+} from "remotion";
 import { COLORS, FONTS } from "../brand";
 import { useCaras, zonasEn } from "../rutinas/Caras";
 import { CARD, Pop, SOMBRA } from "../rutinas/Graficos";
@@ -364,15 +372,35 @@ export const Polaroids: React.FC<{ fotos: Foto[]; hasta: number }> = ({
                 filter: ultima ? undefined : "brightness(.92)",
               }}
             >
-              <Img
-                src={staticFile(f.src)}
-                style={{
-                  width: 608,
-                  height: 912,
-                  objectFit: "cover",
-                  display: "block",
-                }}
-              />
+              {/* Clip de la toma de apoyo del día 2: se mueve mientras está arriba y se congela cuando cae la siguiente */}
+              <div style={{ width: 608, height: 912, overflow: "hidden" }}>
+                <Freeze
+                  frame={
+                    i + 1 < fotos.length
+                      ? Math.round(fotos[i + 1].at * fps)
+                      : Math.round(hasta * fps)
+                  }
+                  active={(f2) =>
+                    f2 >=
+                    (i + 1 < fotos.length
+                      ? Math.round(fotos[i + 1].at * fps)
+                      : Math.round(hasta * fps))
+                  }
+                >
+                  <Sequence
+                    from={Math.round(f.at * fps)}
+                    durationInFrames={Math.round(1.55 * fps)}
+                    layout="none"
+                  >
+                    <Video
+                      src={staticFile(f.src)}
+                      muted
+                      objectFit="cover"
+                      style={{ width: 608, height: 912, display: "block" }}
+                    />
+                  </Sequence>
+                </Freeze>
+              </div>
               <div
                 style={{
                   height: 130,
@@ -820,6 +848,165 @@ export const Iris: React.FC<{ en: number[] }> = ({ en }) => {
           />
         );
       })}
+    </>
+  );
+};
+
+/** Galería de moretones ("revisa si aparecieron moretones, irritación"): tarjetas con las fotos que entran en su
+ *  palabra desde lados alternos, con zoom lento; la anterior se aparta y se desvanece; un círculo discontinuo se dibuja
+ *  alrededor del morado y una etiqueta abajo nombra lo que hay que revisar. Debajo, la toma se apaga en Verde petróleo. */
+export type Moreton = {
+  src: string;
+  at: number;
+  cx: number;
+  cy: number;
+  r: number;
+};
+export const GaleriaMoretones: React.FC<{
+  fotos: Moreton[];
+  hasta: number;
+  etiqueta: (t: number) => string;
+}> = ({ fotos, hasta, etiqueta }) => {
+  const { t, frame, fps } = useT();
+  const desde = fotos[0].at - 0.1;
+  if (t < desde || t > hasta + 0.3) return null;
+  const sale = interpolate(t, [hasta, hasta + 0.3], [0, 1], CLAMP);
+  const fondo = Math.min(
+    interpolate(t, [desde, desde + 0.2], [0, 1], CLAMP),
+    1 - sale,
+  );
+  const L = 720;
+  const activa = fotos.filter((f) => t >= f.at).length - 1;
+  const texto = etiqueta(t);
+  return (
+    <>
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          background: "rgba(69,89,90,.72)",
+          opacity: fondo,
+          backdropFilter: "blur(12px)",
+        }}
+      />
+      {fotos.map((f, i) => {
+        if (i > activa || i < activa - 1) return null;
+        const loc = frame - Math.round(f.at * fps);
+        const p = spring({
+          frame: loc,
+          fps,
+          config: { damping: 15, mass: 0.6 },
+        });
+        const lado = i % 2 === 0 ? -1 : 1;
+        // La anterior se aparta hacia el lado contrario y se desvanece al entrar la nueva
+        const fuera =
+          i < activa
+            ? interpolate(
+                frame - Math.round(fotos[activa].at * fps),
+                [0, 8],
+                [0, 1],
+                CLAMP,
+              )
+            : sale;
+        const zoom = 1 + 0.08 * Math.min(1, Math.max(0, t - f.at) / 2);
+        const trazo = interpolate(t, [f.at + 0.15, f.at + 0.5], [0, 1], CLAMP);
+        return (
+          <div
+            key={f.src}
+            style={{
+              position: "absolute",
+              left: 540 - L / 2,
+              top: 470,
+              width: L,
+              height: L,
+              borderRadius: 40,
+              overflow: "hidden",
+              border: `12px solid ${COLORS.marfil}`,
+              boxShadow: "0 30px 70px rgba(0,0,0,.35)",
+              opacity: Math.min(1, p * 1.6) * (1 - fuera),
+              transform: `translateX(${(1 - p) * lado * 700 - fuera * lado * 260}px) rotate(${lado * -3 * p + (1 - p) * lado * 10}deg) scale(${1 - 0.1 * fuera})`,
+            }}
+          >
+            <Img
+              src={staticFile(f.src)}
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                transform: `scale(${zoom})`,
+                transformOrigin: `${f.cx * 100}% ${f.cy * 100}%`,
+              }}
+            />
+            <svg
+              width={L - 24}
+              height={L - 24}
+              viewBox={`0 0 ${L - 24} ${L - 24}`}
+              style={{ position: "absolute", inset: 0 }}
+            >
+              <circle
+                cx={f.cx * (L - 24)}
+                cy={f.cy * (L - 24)}
+                r={f.r * (L - 24)}
+                fill="none"
+                stroke={COLORS.durazno}
+                strokeWidth={7}
+                strokeDasharray="18 12"
+                pathLength={1000}
+                strokeDashoffset={0}
+                opacity={trazo}
+                transform={`rotate(${-90 + t * 40} ${f.cx * (L - 24)} ${f.cy * (L - 24)})`}
+                style={{ filter: "drop-shadow(0 2px 6px rgba(0,0,0,.35))" }}
+              />
+            </svg>
+          </div>
+        );
+      })}
+      {/* Contador de fotos y etiqueta */}
+      <div
+        style={{
+          position: "absolute",
+          left: 0,
+          right: 0,
+          top: 1250,
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          gap: 18,
+          opacity: fondo,
+        }}
+      >
+        <div style={{ display: "flex", gap: 12 }}>
+          {fotos.map((f, i) => (
+            <div
+              key={f.src}
+              style={{
+                width: i === activa ? 40 : 14,
+                height: 14,
+                borderRadius: 7,
+                background:
+                  i <= activa ? COLORS.durazno : "rgba(245,240,236,.35)",
+              }}
+            />
+          ))}
+        </div>
+        <Pop at={fotos[0].at} kind="up">
+          <div
+            key={texto}
+            style={{
+              fontFamily: FONTS.body,
+              fontWeight: 700,
+              fontSize: 54,
+              color: COLORS.petroleo,
+              background: COLORS.durazno,
+              borderRadius: 50,
+              padding: "14px 40px 12px",
+              boxShadow: "0 12px 30px rgba(69,89,90,.35)",
+            }}
+          >
+            {texto}
+          </div>
+        </Pop>
+      </div>
     </>
   );
 };

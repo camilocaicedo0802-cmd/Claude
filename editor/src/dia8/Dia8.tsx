@@ -25,7 +25,7 @@ import {
   Escala,
   Evaluacion,
   Iris,
-  LupaPiel,
+  GaleriaMoretones,
   NoSi,
   Polaroids,
   TituloSubrayado,
@@ -51,26 +51,66 @@ const FIN = TOTAL + 1;
 
 // ---------- Apoyos (fragmentos cortos, §10.16: entran en la palabra, con flash y obturador; sin títulos encima) ----
 const FOTOS = [
-  { src: "dia8/foto_frente.jpg", at: at("frente").start, etiqueta: "frente" },
+  { src: "dia8/foto_frente.mp4", at: at("frente").start, etiqueta: "frente" },
   {
-    src: "dia8/foto_costado.jpg",
+    src: "dia8/foto_costado.mp4",
     at: at("de costado").start,
     etiqueta: "costado",
   },
   {
-    src: "dia8/foto_espalda.jpg",
+    src: "dia8/foto_espalda.mp4",
     at: at("de espalda").start,
     etiqueta: "espalda",
   },
   {
-    src: "dia8/foto_otro.jpg",
+    src: "dia8/foto_otro.mp4",
     at: at("otro costado").start,
     etiqueta: "otro costado",
   },
 ];
 const FOTOS_FIN = S.piel - 0.05;
-const PIEL1 = { desde: at("moretones").start, hasta: at("irritación").start };
-const PIEL2 = { desde: at("irritación").start, hasta: at("y determina").start };
+// "revisa si aparecieron moretones, irritación y determina si es necesario…" → galería de fotos de moretones (las
+// que pasó el usuario), una en cada palabra; termina justo antes de "suspender", donde entra el botón de pausa
+const MORETONES = [
+  {
+    src: "dia8/moreton_1.jpg",
+    at: at("aparecieron").start,
+    cx: 0.475,
+    cy: 0.55,
+    r: 0.2,
+  },
+  {
+    src: "dia8/moreton_2.jpg",
+    at: at("moretones").start,
+    cx: 0.5,
+    cy: 0.5,
+    r: 0.13,
+  },
+  {
+    src: "dia8/moreton_3.jpg",
+    at: at("irritación").start,
+    cx: 0.525,
+    cy: 0.43,
+    r: 0.17,
+  },
+  {
+    src: "dia8/moreton_4.jpg",
+    at: at("determina").start,
+    cx: 0.525,
+    cy: 0.475,
+    r: 0.22,
+  },
+];
+const GALERIA = {
+  desde: MORETONES[0].at - 0.1,
+  hasta: at("suspender").start - 0.3,
+};
+const etiquetaGaleria = (t: number) =>
+  t >= at("determina").start
+    ? "¿Moretones o irritación?"
+    : t >= at("irritación").start
+      ? "¿Irritación?"
+      : "¿Moretones?";
 const RUTINA = {
   desde: at("puedes seguir").start,
   hasta: at("el resto").start,
@@ -78,7 +118,7 @@ const RUTINA = {
 // Intervalos en que manda un apoyo (sin títulos ni columnas encima)
 const APOYOS = [
   { desde: FOTOS[0].at, hasta: FOTOS_FIN + 0.3 },
-  { desde: PIEL1.desde, hasta: PIEL2.hasta },
+  GALERIA,
   RUTINA,
 ];
 const enApoyo = (t: number) => APOYOS.some((a) => t >= a.desde && t < a.hasta);
@@ -618,8 +658,12 @@ const EFECTOS: Efecto[] = [
     src: "obturador",
     vol: 0.32,
   })),
-  { nombre: "moretones · tarjeta", t: PIEL1.desde, src: "tarjeta", vol: 0.22 },
-  { nombre: "irritación · tarjeta", t: PIEL2.desde, src: "tarjeta", vol: 0.22 },
+  ...MORETONES.map((m, i) => ({
+    nombre: `moretón ${i} · ${i % 2 ? "swish" : "tarjeta"}`,
+    t: m.at,
+    src: i % 2 ? "swish" : "tarjeta",
+    vol: 0.2,
+  })),
   {
     nombre: "suspender · tachado",
     t: at("suspender").start + 0.15,
@@ -682,8 +726,6 @@ export const Dia8Video: React.FC = () => {
     <AbsoluteFill style={{ backgroundColor: "#000" }}>
       <style>{FONT_FACES}</style>
       <Footage />
-      <Fragmento {...PIEL1} src="dia8/apoyo_piel1.mp4" />
-      <Fragmento {...PIEL2} src="dia8/apoyo_piel2.mp4" />
       <Fragmento {...RUTINA} src="dia8/apoyo_rutina.mp4" />
       <AbsoluteFill
         style={{
@@ -700,11 +742,14 @@ export const Dia8Video: React.FC = () => {
         <Beats />
       </CarasProvider>
       <Confeti at={at("felicitaciones").start + 0.1} x={540} y={420} />
-      <LupaPiel {...PIEL1} etiqueta="¿Moretones?" />
-      <LupaPiel {...PIEL2} etiqueta="¿Irritación?" />
+      <GaleriaMoretones
+        fotos={MORETONES}
+        hasta={GALERIA.hasta}
+        etiqueta={etiquetaGaleria}
+      />
       <LupaPielRutina />
       <Polaroids fotos={FOTOS} hasta={FOTOS_FIN} />
-      <Flash en={[PIEL1.desde, PIEL2.desde, RUTINA.desde]} />
+      <Flash en={[RUTINA.desde]} />
       <Iris en={TRANSICIONES} />
       <Audio
         src={staticFile("dia8/audio/musica.wav")}
