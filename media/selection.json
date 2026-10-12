@@ -1,0 +1,50 @@
+{
+  "_comment": "Curated videos. driveId points to the original file listed in media/sources.json. posterAt / previewAt are fractions of the clip duration (0-1). Run scripts/media/build_media.py to regenerate media/out.",
+  "videos": [
+    { "slug": "tiempo-motion", "driveId": "11-KEX63uqkb6t1Mz8EZxyCETNQD_p369", "posterAt": 0.9375, "previewAt": 0.05 },
+    { "slug": "editor-promo", "driveId": "14Geo0KILe9JHLMQCrRqVMEEsn561vlnL", "posterAt": 0.5625, "previewAt": 0.3 },
+    { "slug": "cr7-legado", "driveId": "1JutLB_3GdKE1HeN7rRO7QAJG_C_-iaZA", "posterAt": 0.8125, "previewAt": 0.15 },
+    { "slug": "multivitaminico", "driveId": "1a1LQOBjOGN_jJ2-uyGTZDJBub5OBPnKV", "posterAt": 0.1875, "previewAt": 0.0 },
+    { "slug": "max-security", "driveId": "1AEiFYy_gUYIWtwxKZ3HhBjrYrO_D_LVv", "posterAt": 0.8125, "previewAt": 0.0 },
+    { "slug": "alanna-coming-soon", "driveId": "19HBTKZNFJP2GCDPeiSjPPBWwl2uctLSb", "posterAt": 0.5625, "previewAt": 0.0 },
+    { "slug": "alanna-highline", "driveId": "1VAw5NSimXFVOl81MYe9GDa7LnppprHgi", "posterAt": 0.1875, "previewAt": 0.0 },
+    { "slug": "boxarome", "driveId": "19NuqH29izDYmJMTA_HzkkH-xUPKOprhk", "posterAt": 0.5625, "previewAt": 0.4 },
+    { "slug": "iconicas", "driveId": "1JFI8gWmEA-ugPZ8ErF3XSarF2dxVVLwO", "posterAt": 0.0625, "previewAt": 0.0 },
+    { "slug": "luisa-lopez", "driveId": "1zd_6uiC4aNCMm976dNuFyNVM4d_Z424j", "posterAt": 0.3125, "previewAt": 0.0 },
+    { "slug": "awamala", "driveId": "1xYNjTxBcvKeyNX4aqOE01fJMgCYFmT0K", "posterAt": 0.5625, "previewAt": 0.0 },
+    { "slug": "theology-llamado", "driveId": "1CHGvTwuLquFaaNpl4jRo7IfbsejJoGdg", "posterAt": 0.0625, "previewAt": 0.0 },
+    { "slug": "theology-proposito", "driveId": "1YsDmuIOBCQifsSayZoX0_1V0YjyIh2v-", "posterAt": 0.4375, "previewAt": 0.0 },
+    { "slug": "principe-jovenes", "driveId": "1dzz7wyzYVNTZyVpewU6uOVoJsWVUyn9f", "posterAt": 0.1875, "previewAt": 0.0 },
+    { "slug": "ccve-citas", "driveId": "1TDhgMa4CMp2nXNPSdpParUik-B6apwIl", "posterAt": 0.1875, "previewAt": 0.0 },
+    { "slug": "konexion-orientacion", "driveId": "1br_1-QLPa2xxS_lKEUhtzuw8C4a0Tm-E", "posterAt": 0.8125, "previewAt": 0.5 },
+    { "slug": "konexion-estudiar", "driveId": "1Pjcn20mbNebI93ZEOYKGdZsy5z-EdzQO", "posterAt": 0.5625, "previewAt": 0.0 },
+    { "slug": "rau-hook", "driveId": "1SX2DpAFBMDanCiJ6-xn9SfPw6ucgGMVP", "posterAt": 0.4375, "previewAt": 0.0 },
+    { "slug": "gerencia-podcast", "driveId": "1DndK-W8LUZ2ElckmaZud4hk_eVZbmith", "posterAt": 0.4375, "previewAt": 0.1 },
+    { "slug": "gerencia-escenarios", "driveId": "1FwXIZ9nhKTibJk-vw6rlS7OAQKCiUOgm", "posterAt": 0.5625, "previewAt": 0.0 },
+    { "slug": "principe-sermon", "driveId": "1P4cH9Kj6Y4VadLBMe4ndlyK-eAbdnn_a", "posterAt": 0.5625, "previewAt": 0.1 },
+    { "slug": "evangel-retiro", "driveId": "1ayNqBVPMlhJUjsoIVheNjYJTid5VQ0oE", "posterAt": 0.0625, "previewAt": 0.1 },
+    { "slug": "ryhar-cr7", "driveId": "1dkij4EfoD9jg6H84_9D4sc3mBiHi5rxU", "posterAt": 0.4375, "previewAt": 0.1 },
+    { "slug": "ryhar-feid", "driveId": "1VA-G60f0ZPLJnrhdO38ubl_6A0KhUYSJ", "posterAt": 0.6875, "previewAt": 0.3 },
+    { "slug": "stone-design", "driveId": "1ArFZFV2loVl1bYQR_8pTMPEU4aXGD2na", "posterAt": 0.5625, "previewAt": 0.0 },
+    { "slug": "poolex-corporativo", "driveId": "1njMeQ8D9PP_V-bj02pLW45lvmk-hzfBD", "posterAt": 0.0625, "previewAt": 0.0 }
+  ],
+  "showreel": {
+    "_comment": "Real montage cut from the clips above. Each segment: slug, start second, duration. Audio comes from each clip.",
+    "slug": "showreel",
+    "transition": 0.25,
+    "segments": [
+      { "slug": "tiempo-motion", "start": 0.4, "dur": 3.2 },
+      { "slug": "cr7-legado", "start": 8.4, "dur": 2.8 },
+      { "slug": "editor-promo", "start": 11.8, "dur": 3.0 },
+      { "slug": "multivitaminico", "start": 1.2, "dur": 2.6 },
+      { "slug": "alanna-coming-soon", "start": 3.0, "dur": 2.6 },
+      { "slug": "theology-llamado", "start": 0.6, "dur": 2.6 },
+      { "slug": "principe-jovenes", "start": 0.4, "dur": 2.8 },
+      { "slug": "konexion-orientacion", "start": 22.4, "dur": 2.6 },
+      { "slug": "boxarome", "start": 14.6, "dur": 2.6 },
+      { "slug": "ccve-citas", "start": 1.0, "dur": 2.6 },
+      { "slug": "cr7-legado", "start": 23.2, "dur": 2.8 },
+      { "slug": "tiempo-motion", "start": 38.5, "dur": 2.8 }
+    ]
+  }
+}
