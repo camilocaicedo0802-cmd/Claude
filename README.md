@@ -109,6 +109,13 @@ No hay analítica configurada: no se agregó ningún servicio de terceros sin tu
 
 Son sitios estáticos (`output: "export"`), así que funcionan en cualquier hosting estático.
 
+**GitHub Pages (configurado):** el flujo `.github/workflows/pages.yml` construye las dos webs en modo relativo y las publica cada vez que se actualiza `main`:
+
+- Editor de video: `https://camilocaicedo0802-cmd.github.io/Claude/`
+- Diseñador: `https://camilocaicedo0802-cmd.github.io/Claude/disenador/`
+
+Para activarlo, una sola vez: *Settings → Pages → Build and deployment → Source: GitHub Actions*. Si el primer intento corrió antes de activarlo, vuelve a ejecutarlo desde *Actions → Publicar en GitHub Pages → Run workflow*. El flujo define `NEXT_PUBLIC_SITE_URL` y `NEXT_PUBLIC_OTHER_SITE_URL` solo, así que canonical, sitemap, Open Graph y los enlaces entre las dos webs apuntan a esas direcciones.
+
 **Vercel (recomendado):** crea dos proyectos desde el mismo repositorio.
 - Proyecto 1: *Root Directory* `apps/editor`.
 - Proyecto 2: *Root Directory* `apps/disenador`.

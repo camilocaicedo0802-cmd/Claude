@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { SiteShell } from "@jcc/core/components/SiteShell";
 import { pieceSrc, posterSrc } from "@jcc/core/content/media";
-import { homeHref } from "@jcc/core/lib/paths";
+import { caseHref, homeHref } from "@jcc/core/lib/paths";
 import { ChapterPage } from "@jcc/core/sections/ChapterPage";
 import { Contact } from "@jcc/core/sections/Contact";
 import { chapters, copy, links, otherSite } from "../../site";
@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title,
     description: chapter.description,
-    alternates: { canonical: `/trabajos/${slug}/` },
+    alternates: { canonical: caseHref(slug) },
     openGraph: { title, description: chapter.description, images: [{ url: image }] },
   };
 }

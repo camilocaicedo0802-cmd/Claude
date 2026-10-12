@@ -28,6 +28,7 @@ export function MediaCard({ entry, onOpen, layout = "grid", sizes = "(min-width:
   const ratio = isVideo ? meta!.width / meta!.height : item.image.width / item.image.height;
   const label = `${isVideo ? "Reproducir" : "Ver"} ${item.title}`;
 
+  // Buttons shrink to fit their content, so the grid layout sets the width explicitly.
   const frame =
     layout === "rail"
       ? { aspectRatio: `${ratio}`, height: `min(var(--rail-h), calc(var(--rail-max-w) / ${ratio.toFixed(4)}))` }
@@ -43,7 +44,7 @@ export function MediaCard({ entry, onOpen, layout = "grid", sizes = "(min-width:
         onFocus={() => fine && setHover(true)}
         onBlur={() => setHover(false)}
         aria-label={label}
-        className="group relative block overflow-hidden bg-panel text-left"
+        className={`group relative block overflow-hidden bg-panel text-left ${layout === "grid" ? "w-full" : ""}`}
         style={frame}
       >
         <div className={`h-full w-full transition-transform duration-500 ease-[var(--ease-out)] ${hover ? "scale-[1.03]" : ""}`}>
