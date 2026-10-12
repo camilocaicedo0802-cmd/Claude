@@ -57,6 +57,8 @@ export interface ProcessStep {
 
 export interface SiteSections {
   hero: {
+    /** Line above the headline; the highlight is set in white. */
+    eyebrow: { highlight: string; text: string };
     lines: { text: string; em?: boolean; red?: boolean }[][];
     subtitle: string;
     video: string;
@@ -121,6 +123,7 @@ const process: ProcessStep[] = [
 export const sections: Record<SiteId, SiteSections> = {
   editor: {
     hero: {
+      eyebrow: { highlight: "4 años", text: "de experiencia en edición y motion" },
       lines: [
         [{ text: "Transformo ideas en" }],
         [{ text: "experiencias", em: true }, { text: " visuales" }],
@@ -166,6 +169,7 @@ export const sections: Record<SiteId, SiteSections> = {
   },
   disenador: {
     hero: {
+      eyebrow: { highlight: "4 años", text: "de experiencia como diseñador y editor" },
       lines: [
         [{ text: "Diseño que detiene" }],
         [{ text: "el " }, { text: "scroll", em: true, red: true }, { text: " y se pone" }],

@@ -10,11 +10,9 @@ import type { SiteSections } from "../content/site-content";
 
 interface Props {
   hero: SiteSections["hero"];
-  /** Extra visual for the designer site: real pieces behind the video. */
-  aside?: React.ReactNode;
 }
 
-export function Hero({ hero, aside }: Props) {
+export function Hero({ hero }: Props) {
   const reduced = useReducedMotion();
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
@@ -36,7 +34,6 @@ export function Hero({ hero, aside }: Props) {
         {/* Phones and tablets: video first, centered, short enough to leave the headline on the first screen */}
         <div className="order-first flex justify-center lg:order-last lg:col-span-5 lg:col-start-8">
           <motion.div className="relative w-[min(100%,calc(50svh*0.5625))] lg:w-[min(100%,calc(82svh*0.5625))]" style={{ y: videoY }}>
-            {aside}
             <motion.div
               initial={reduced ? { opacity: 0 } : { clipPath: "inset(100% 0% 0% 0%)" }}
               animate={reduced ? { opacity: 1 } : { clipPath: "inset(0% 0% 0% 0%)" }}
@@ -49,6 +46,17 @@ export function Hero({ hero, aside }: Props) {
         </div>
 
         <div className="min-w-0 text-center lg:col-span-7 lg:pr-4 lg:text-left">
+          <motion.p
+            className="mb-5 flex items-center justify-center gap-3 text-[0.75rem] font-semibold uppercase tracking-[0.1em] text-fog md:mb-7 md:text-[0.8125rem] lg:justify-start lg:tracking-[0.12em]"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.15, duration: 0.6 }}
+          >
+            <span aria-hidden className="hidden h-px w-8 shrink-0 bg-signal sm:block" />
+            <span className="text-balance">
+              <span className="text-paper">{hero.eyebrow.highlight}</span> {hero.eyebrow.text}
+            </span>
+          </motion.p>
           <RevealText as="h1" lines={lines} immediate delay={0.25} className="display-hero" />
           <motion.p
             className="mt-6 text-balance text-[0.9375rem] font-medium text-fog md:mt-8 md:text-base"

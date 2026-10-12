@@ -3,18 +3,17 @@ import { About } from "@jcc/core/sections/About";
 import { Chapters } from "@jcc/core/sections/Chapters";
 import { Contact } from "@jcc/core/sections/Contact";
 import { Hero } from "@jcc/core/sections/Hero";
-import { HeroPieces } from "@jcc/core/sections/HeroPieces";
 import { Impact } from "@jcc/core/sections/Impact";
 import { MotionShowcase } from "@jcc/core/sections/MotionShowcase";
 import { Process } from "@jcc/core/sections/Process";
 import { Skills } from "@jcc/core/sections/Skills";
 import { Toolkit } from "@jcc/core/sections/Toolkit";
-import { chapters, content, copy, heroPieces, links, motionChapter, otherSite, workChapters } from "./site";
+import { chapters, content, copy, links, motionChapter, otherSite, workChapters } from "./site";
 
 export default function Home() {
   return (
     <SiteShell links={links} role={copy.role}>
-      <Hero hero={content.hero} aside={<HeroPieces pieces={heroPieces} />} />
+      <Hero hero={content.hero} />
       <MotionShowcase
         chapter={motionChapter}
         heading={[
@@ -27,7 +26,7 @@ export default function Home() {
       <Chapters
         chapters={workChapters}
         leading={[{ href: "#motion", number: motionChapter.number, title: motionChapter.title }]}
-        intro="Cada proyecto con sus piezas y videos, en orden de importancia. Toca cualquiera para verlo en grande; los videos suenan al abrirlos."
+        intro="Explora cada proyecto a través de sus videos y piezas. Selecciona cualquiera para verlo en pantalla completa; al reproducir un video, el sonido se activa."
       />
       <About copy={copy} />
       <Skills groups={content.skills} />

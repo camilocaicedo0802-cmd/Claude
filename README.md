@@ -81,12 +81,13 @@ Todo el contenido está en `packages/core/src/content/chapters.ts`. Cada capítu
    { "file": "mi-pieza", "driveId": "<id del archivo en Drive>" }
    ```
    (en `pieces`). `posterAt` y `previewAt` son fracciones de la duración (0 a 1): de dónde sale el fotograma de portada y dónde empieza la preview de 6 s.
-2. Ejecuta `npm run media:build`: descarga el original de Drive si no está en `media/raw/`, genera MP4, preview, poster y piezas WebP, y actualiza `manifest.json` y `pieces.json`. Los videos de más de 40 s se exportan a 540×960 para que ningún archivo pase de ~12 MB; los marcados con `"quality": "high"` se mantienen en 720×1280.
+2. Ejecuta `npm run media:build`: descarga el original de Drive si no está en `media/raw/`, genera MP4, preview, poster y piezas WebP, y actualiza `manifest.json` y `pieces.json`. Los videos de más de 40 s se exportan a 540×960 para que ningún archivo pase de ~12 MB; los marcados con `"quality": "high"` se mantienen en 720×1280. Un campo `"encode"` cambia la exportación de un video puntual (lo usa el episodio de YouTube de 38 min: 640 px, audio mono, ~53 MB).
 3. Agrégalo al capítulo en `chapters.ts`:
    ```ts
    video("mi-video", "Título visible"),
    piece("mi-pieza", "Título visible", "Texto alternativo que describe la imagen"),
    ```
+   Para un video horizontal de formato largo (por ejemplo un episodio completo de YouTube) pasa la plataforma como cuarto argumento: `video("mi-episodio", "Título", "Descripción", { platform: "YouTube" })`. Aparece en un bloque propio debajo del carrusel del capítulo, con la etiqueta de la plataforma y la duración.
    Para un capítulo nuevo copia uno existente y dale el `number` de su carpeta.
 
 **Métricas:** edita `reelMetrics` y `campaignMetrics` en `site-content.ts`.
@@ -133,7 +134,7 @@ Para activarlo, una sola vez: *Settings → Pages → Build and deployment → S
 - Cada clip tiene `videos/<slug>.mp4` (H.264, máx. 1280 px), `previews/<slug>.mp4` + `.webm` (6 s sin audio para hover) y `posters/<slug>.webp`.
 - Las tarjetas muestran el poster y solo descargan la preview al pasar el cursor; nunca suenan dos videos a la vez.
 - Los videos completos solo se descargan al abrir el reproductor (`preload` mínimo).
-- El video principal (hero) de las dos webs es `promo_editor_motion.mp4`, con autoplay silenciado, loop y controles de pausa y sonido.
+- El video principal (hero) de las dos webs es `promo_editor_motion.mp4`, con autoplay silenciado, loop y controles de pausa y sonido. En la web de diseñador cada capítulo muestra primero sus videos y después sus piezas.
 - Las piezas se sirven en dos tamaños (`pieces/sm/` de 720 px para tarjetas y `pieces/` de 1600 px para el visor).
 - `python3 scripts/media/build_media.py --raw media/raw --webm-full` genera además versiones WebM completas para navegadores sin H.264 (duplica el peso; no hacen falta en Chrome, Safari, Edge ni Firefox).
 
@@ -145,7 +146,8 @@ Con Playwright (Chromium) sobre el build de producción de las dos webs (segunda
 | --- | --- |
 | Móvil 390, tablet 820 y desktop 1440 | Sin scroll horizontal, sin errores de consola, sin peticiones fallidas, ningún título oculto (home y las 10 + 15 páginas de proyecto) |
 | Portada | `promo_editor_motion.mp4` en las dos webs; en móvil y tablet el video va centrado y el título y los botones caben en la primera pantalla |
-| Contenido | Editor: 39 videos y 0 piezas en 10 capítulos. Diseñador: 39 videos y 83 piezas en 15 capítulos, en el orden de las carpetas |
+| Contenido | Editor: 40 videos y 0 piezas en 10 capítulos. Diseñador: 40 videos y 83 piezas en 15 capítulos, en el orden de las carpetas y con los videos antes que las piezas |
+| YouTube | El episodio de 38 min de María Elena Badillo aparece en su capítulo y en su página de proyecto, abre en el visor y su archivo web se decodificó completo sin errores (37:56, igual al original) |
 | Trabajos | Índice fijo de capítulos, carrusel horizontal por capítulo (deslizable en móvil, flechas en desktop) |
 | Visor | Abre videos con sonido y piezas a 1600 px; flechas, teclado (← → Esc) y swipe en móvil; enlace al proyecto completo |
 | Videos | Duración de cada archivo web comparada con su original: 39 de 39 completos |
@@ -157,5 +159,5 @@ Nota: el Chromium de pruebas no incluye el códec H.264, así que la reproducci�
 
 - **Métricas:** los reels de 207.283 y 259.373 visualizaciones se muestran sin asociarlos a un video, como pediste. Si me dices cuáles son, se enlazan a su proyecto. Los montos de pauta no se publican porque la moneda no aparece en las capturas.
 - **Redes sociales:** no había URLs en las fuentes; el footer no muestra redes hasta que las agregues.
-- **Contraste del rojo:** `#E50914` sobre `#080808` da 4,2:1. Se usa solo en titulares grandes, numeración y elementos gráficos (cumple AA para texto grande), nunca en texto de cuerpo.
+- **Contraste del rojo:** `#E50914` sobre `#080808` da 4,2:1. Se usa en titulares grandes, numeración y elementos gráficos (cumple AA para texto grande), nunca en texto de cuerpo. Por decisión de diseño también va en el cargo junto al nombre (menú y footer), un texto pequeño que queda algo por debajo del 4,5:1 que pide AA.
 - **Dominio:** define `NEXT_PUBLIC_SITE_URL` al publicar para que canonical, sitemap y Open Graph usen tu dominio.

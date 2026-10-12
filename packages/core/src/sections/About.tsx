@@ -31,7 +31,8 @@ export function About({ copy }: { copy: SiteCopy }) {
             />
           </div>
 
-          <div ref={ref} className="w-full max-w-[22rem] md:col-span-5 md:row-span-2 md:row-start-1 md:max-w-[26rem]">
+          {/* Desktop: the portrait stays in view while the longer text column scrolls past it. */}
+          <div ref={ref} className="w-full max-w-[22rem] md:sticky md:top-[calc(var(--nav-h)+2.5rem)] md:col-span-5 md:row-span-2 md:row-start-1 md:max-w-[26rem] md:self-start">
             <Reveal variant="wipe" className="relative overflow-hidden bg-panel">
               <div style={{ aspectRatio: `${portrait.width} / ${portrait.height}` }} className="relative">
                 <motion.img
@@ -68,6 +69,17 @@ export function About({ copy }: { copy: SiteCopy }) {
                 </Reveal>
               ))}
             </dl>
+            <Reveal className="mt-12 border-t border-line pt-10">
+              <h3 className="text-sm font-semibold text-signal">Formación</h3>
+              <ul className="mt-5 space-y-4">
+                {copy.education.map((e) => (
+                  <li key={e.title} className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6">
+                    <span className="text-lg font-semibold leading-snug tracking-[-0.01em]">{e.title}</span>
+                    <span className="shrink-0 text-sm text-smoke">{e.detail}</span>
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
           </div>
         </div>
       </div>

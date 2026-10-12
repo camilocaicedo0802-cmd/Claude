@@ -12,7 +12,7 @@ interface Props {
   poster: string;
 }
 
-/** 1200x630 share card: black ground, white Poppins, red Playfair word, a real poster. */
+/** 1200x630 share card: black ground, white Poppins name, red role and Playfair word, a real poster. */
 export function ogImage({ role, headline, subtitle, poster }: Props) {
   const posterData = `data:image/png;base64,${readFileSync(join(root, "media", "out", "og", `${poster}.png`)).toString("base64")}`;
   return new ImageResponse(
@@ -21,14 +21,14 @@ export function ogImage({ role, headline, subtitle, poster }: Props) {
         <div style={{ width: 6, height: "100%", background: "#e50914" }} />
         <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", padding: "64px 56px", flex: 1 }}>
           <div style={{ display: "flex", fontSize: 26, fontWeight: 600 }}>
-            Juan Camilo&nbsp;<span style={{ fontFamily: "Playfair", fontStyle: "italic", color: "#e50914" }}>Caicedo</span>
+            Juan Camilo Caicedo
           </div>
           <div style={{ display: "flex", flexDirection: "column" }}>
             <div style={{ fontSize: 56, fontWeight: 700, letterSpacing: -2, lineHeight: 1.05 }}>{headline[0]}</div>
             <div style={{ fontSize: 58, fontFamily: "Playfair", fontStyle: "italic", color: "#e50914", lineHeight: 1.2 }}>{headline[1]}</div>
             <div style={{ marginTop: 24, fontSize: 26, color: "#a3a3a3" }}>{subtitle}</div>
           </div>
-          <div style={{ fontSize: 22, color: "#7a7a7a" }}>{role}</div>
+          <div style={{ fontSize: 22, color: "#e50914" }}>{role}</div>
         </div>
         <div style={{ display: "flex", alignItems: "center", paddingRight: 56 }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}

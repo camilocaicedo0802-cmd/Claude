@@ -26,7 +26,7 @@ export default function Home() {
       <Chapters
         chapters={workChapters}
         leading={[{ href: "#motion", number: motionChapter.number, title: motionChapter.title }]}
-        intro="Cada proyecto con sus videos, en orden de importancia. Toca cualquiera para verlo con sonido."
+        intro="Explora cada proyecto a través de sus videos. Selecciona cualquiera para verlo en pantalla completa; al reproducirlo, el sonido se activa."
       />
       <About copy={copy} />
       <Skills groups={content.skills} />
