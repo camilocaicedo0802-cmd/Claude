@@ -8,6 +8,6 @@ export function GET() {
     role: "Editor de video y motion designer",
     headline: ["Transformo ideas en", "experiencias que se sienten."],
     subtitle: "Video Editing · Motion Graphics · Visual Storytelling",
-    poster: "showreel",
+    poster: "editor-promo",
   });
 }

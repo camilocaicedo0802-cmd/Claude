@@ -50,7 +50,8 @@ All-sharp system: radius 0 on media frames, cards and chips; buttons are 0-radiu
 ## Layout
 
 - 12-column grid, `max-width: 1440px`, gutters 24 px (16 px on phones).
-- Hero: headline left (cols 1-7), showreel 9:16 frame right (cols 8-12) at up to 82 vh; on phones the video comes first, full width, capped at 72 svh, headline under it.
+- Hero: headline left (cols 1-7), 9:16 video right (cols 8-12) at up to 82 vh; on phones the video comes first, centered, capped at 50 svh tall so the headline and buttons fit on the first screen, text centered under it.
+- Selected Works: one numbered chapter per Drive folder, in folder order. Each chapter is a header (number, title, context, description, link to the full page) plus a horizontal reel of its videos and pieces at a shared height (300 px phones, 380 px tablet, 440 px desktop); a sticky chip index jumps between chapters. Tapping any card opens the full-screen viewer (video with sound or the piece at 1600 px), with arrows, keyboard and swipe.
 - Motion section: asymmetric editorial grid. The strongest piece takes a double-height 9:16 tile; 16:9 work spans wide; vertical pieces keep 9:16 (no cropping).
 - Selected Works: filter bar + varied grid (alternating spans), case-study pages at `/trabajos/[slug]`.
 - Sections alternate layout families: split hero, asymmetric grid, catalog grid, portrait split, stacked expanding rows (skills), typographic wall (toolkit), number field (impact), sticky timeline (process), full-bleed CTA (contact).
@@ -76,7 +77,7 @@ Curves: `--ease-out: cubic-bezier(0.23, 1, 0.32, 1)`, `--ease-in-out: cubic-bezi
 ## Video system
 
 - Every clip ships as `videos/<slug>.mp4` (H.264, ≤1280 px), `previews/<slug>.mp4` (6 s, muted, 640 px) and `posters/<slug>.webp`.
-- Hero showreel: real montage (`scripts/media/build_media.py`), autoplay muted loop playsInline, poster first, sound toggle, play/pause, red progress.
+- Hero video: `promo_editor_motion.mp4` on both sites, autoplay muted loop playsInline, poster first, sound toggle, play/pause, red progress.
 - Grid: posters by default, previews load and play only on hover/visible-in-center, one at a time (a shared controller pauses the previous one).
 - Full playback in a modal / case page with native controls, original aspect ratio, `preload="none"` until opened.
 

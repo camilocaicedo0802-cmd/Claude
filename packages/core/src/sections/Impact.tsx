@@ -2,24 +2,27 @@ import { Counter } from "../components/Counter";
 import { RedRule, Reveal } from "../components/Reveal";
 import { SectionHeading } from "../components/SectionHeading";
 import { campaignMetrics, reelMetrics, reelTotals } from "../content/site-content";
-import type { Project } from "../content/types";
+import { counts } from "../content/chapters";
+import type { Chapter } from "../content/types";
 
 interface Props {
-  projects: Project[];
+  chapters: Chapter[];
   showCampaigns?: boolean;
 }
 
 /** Only numbers from his own Instagram and Meta Ads screenshots, each with its context. */
-export function Impact({ projects, showCampaigns = false }: Props) {
-  const clients = new Set(projects.map((p) => p.client).filter(Boolean)).size;
-  const videos = projects.filter((p) => p.media.kind === "video").length;
+export function Impact({ chapters, showCampaigns = false }: Props) {
+  const clients = new Set(chapters.map((c) => c.client).filter(Boolean)).size;
+  const videos = chapters.reduce((n, c) => n + counts(c).videos, 0);
+  const pieces = chapters.reduce((n, c) => n + counts(c).pieces, 0);
   const work = [
-    { value: videos, label: "videos seleccionados en este portafolio" },
+    { value: videos, label: "videos en este portafolio" },
+    ...(pieces > 0 ? [{ value: pieces, label: "piezas gráficas en este portafolio" }] : []),
     { value: clients, label: "marcas y clientes con trabajo publicado aquí" },
   ];
 
   return (
-    <section id="impacto" aria-labelledby="impacto-title" className="py-24 md:py-36">
+    <section id="impacto" aria-labelledby="impacto-title" className="py-16 md:py-36">
       <div className="shell">
         <RedRule className="mb-10 md:mb-14" />
         <SectionHeading
@@ -83,8 +86,8 @@ export function Impact({ projects, showCampaigns = false }: Props) {
           </div>
         )}
 
-        <div className="mt-16 grid gap-8 border-t border-line pt-10 sm:grid-cols-3 md:mt-24">
-          <h3 className="text-sm font-medium text-smoke sm:col-span-3">Volumen de trabajo</h3>
+        <div className={`mt-16 grid gap-8 border-t border-line pt-10 md:mt-24 ${work.length > 2 ? "grid-cols-2 lg:grid-cols-4" : "sm:grid-cols-3"}`}>
+          <h3 className="col-span-full text-sm font-medium text-smoke">Volumen de trabajo</h3>
           {work.map((w) => (
             <Reveal key={w.label}>
               <p className="text-5xl font-bold tracking-[-0.03em]">

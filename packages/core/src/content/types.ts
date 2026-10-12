@@ -44,10 +44,6 @@ export interface ImageAsset {
   height: number;
 }
 
-export type ProjectMedia =
-  | { kind: "video"; video: string }
-  | { kind: "images"; images: ImageAsset[] };
-
 export interface CaseStudy {
   objective?: string;
   need?: string;
@@ -57,27 +53,53 @@ export interface CaseStudy {
   result?: string;
 }
 
-export interface Project {
+/** One video inside a chapter. `video` is a slug from media/selection.json. */
+export interface VideoItem {
+  kind: "video";
+  video: string;
+  title: string;
+  /** Optional detail shown in the motion showcase and the chapter page. */
+  description?: string;
+}
+
+/** One graphic piece inside a chapter. */
+export interface ImageItem {
+  kind: "image";
+  image: ImageAsset;
+  title: string;
+  description?: string;
+}
+
+export type MediaItem = VideoItem | ImageItem;
+
+/**
+ * A chapter is one numbered folder of the portfolio (a client or a body of work).
+ * The folder number is the priority: 1 is the most important.
+ */
+export interface Chapter {
   slug: string;
+  number: number;
   title: string;
   /** Client or brand, only when the source names one. */
   client?: string;
-  /** Short line shown under the title, e.g. "Agencia Mente Nueva Marketing". */
-  context?: string;
+  /** Short line shown under the title. */
+  context: string;
   categories: Category[];
   description: string;
-  media: ProjectMedia;
-  /** Optional cover image for image projects or override poster for video. */
-  cover?: ImageAsset;
   role: string;
   tools: Tool[];
   year?: number;
-  metrics?: Metric[];
-  /** Lower number = more visible. */
-  priority: number;
-  /** Which websites show this project. */
-  sites: SiteId[];
-  /** Original source reference (Drive file id or Canva page). */
-  source: string;
+  /** Ordered media. The editor site keeps only the videos. */
+  items: MediaItem[];
   caseStudy?: CaseStudy;
+  /** Original source reference (Drive folder). */
+  source: string;
+}
+
+/** A media item with the chapter it belongs to, as shown by cards and the viewer. */
+export interface Entry {
+  item: MediaItem;
+  chapter: Chapter;
+  /** Position inside the chapter, 0-based. */
+  index: number;
 }

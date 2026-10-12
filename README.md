@@ -4,10 +4,12 @@ Dos webs de portafolio construidas con el material real de Juan Camilo Caicedo (
 
 | Web | Carpeta | Enfoque | Puerto local |
 | --- | --- | --- | --- |
-| **Editor de video** | `apps/editor` | Solo video: showreel, motion graphics, edición, reels | 3001 |
-| **Diseñador digital y audiovisual** | `apps/disenador` | Piezas gráficas, campañas con IA, redes y video | 3002 |
+| **Editor de video** | `apps/editor` | Solo los videos de cada carpeta | 3001 |
+| **Diseñador digital y audiovisual** | `apps/disenador` | Todas las piezas y todos los videos | 3002 |
 
-Las dos comparten la misma identidad visual ("Corte final": negro, blanco y rojo; Poppins + Playfair Display Italic), los mismos componentes y un único archivo de datos de proyectos.
+Las dos comparten la misma identidad visual ("Corte final": negro, blanco y rojo; Poppins + Playfair Display Italic), los mismos componentes y un único archivo de contenido.
+
+El contenido sigue las carpetas numeradas de Drive *Videos y Piezas para portafolio*: cada carpeta es un **capítulo** y su número es su importancia (01 Motion Graphics, 02 María Elena Badillo, 03 Ryhar… 15 Otros proyectos). El video principal de las dos webs es `promo_editor_motion.mp4`.
 
 - Auditoría de fuentes, inventario y material faltante: [`docs/AUDITORIA.md`](docs/AUDITORIA.md)
 - Producto, público y evidencia disponible: [`PRODUCT.md`](PRODUCT.md)
@@ -47,58 +49,49 @@ apps/
   disenador/         Next.js: web de diseñador digital y audiovisual
 packages/core/src/
   content/
-    projects.ts      TODOS los proyectos (tipados) y en qué web aparece cada uno
+    chapters.ts      los 15 capítulos (carpetas) con sus videos y piezas, en orden
     profile.ts       nombre, WhatsApp, correo, redes, textos "Sobre mí"
     site-content.ts  hero, filtros, habilidades, herramientas, proceso, métricas
     media.ts         rutas de video/poster y lectura del manifest
     types.ts         tipos Project, Metric, Category, Tool...
   components/        Nav, reproductores, tarjetas, modal, reveals, botones
-  sections/          Hero, MotionShowcase, SelectedWorks, About, Skills, Toolkit,
-                     Impact, Process, Contact, FeaturedPieces, CaseStudy
+  sections/          Hero, MotionShowcase (capítulo 01), Chapters (trabajos), About,
+                     Skills, Toolkit, Impact, Process, Contact, ChapterPage
   styles/theme.css   tokens de color, tipografía, curvas de animación
 media/
   sources.json       inventario completo de Drive (IDs, duración, resolución)
-  selection.json     videos curados + cortes del showreel
-  out/               videos web, previews, posters, piezas e índice (manifest.json)
+  selection.json     cada video y pieza con su ID de Drive
+  out/               videos web, previews, posters, piezas (2 tamaños), manifest.json y pieces.json
 scripts/
-  media/build_media.py   transcodifica y arma el showreel con ffmpeg
+  media/build_media.py   transcodifica videos y convierte piezas con ffmpeg
   sync-media.mjs         copia media/out a cada app
 docs/AUDITORIA.md
 ```
 
-## Cómo agregar o editar un proyecto
+## Cómo agregar o editar contenido
 
-1. **Video nuevo:** súbelo a la carpeta de Drive y agrega una línea en `media/selection.json`:
+Todo el contenido está en `packages/core/src/content/chapters.ts`. Cada capítulo es una carpeta de Drive y su campo `number` define el orden (1 = lo más importante). La web de editor muestra solo los videos de cada capítulo; la de diseñador muestra videos y piezas.
+
+1. **Archivo nuevo:** súbelo a la carpeta de Drive y agrégalo en `media/selection.json`:
    ```json
    { "slug": "mi-video", "driveId": "<id del archivo en Drive>", "posterAt": 0.5, "previewAt": 0.1 }
    ```
-   `posterAt` y `previewAt` son fracciones de la duración (0 a 1): de dónde sale el fotograma de portada y dónde empieza la preview de 6 s.
-2. Ejecuta `npm run media:build` (descarga el original de Drive si no está en `media/raw/`, genera MP4, preview, poster y actualiza `media/out/manifest.json`).
-3. Agrega el proyecto en `packages/core/src/content/projects.ts` copiando una entrada existente:
-   ```ts
-   {
-     slug: "mi-proyecto",
-     title: "Título",
-     client: "Cliente",            // solo si es real
-     categories: ["Video Editing", "Reels & Short Form"],
-     description: "Qué es y qué se hizo.",
-     media: { kind: "video", video: "mi-video" },
-     role: "Edición y motion graphics",
-     tools: ["After Effects", "Premiere Pro"], // solo si están verificadas
-     priority: 30,                 // menor número = más arriba
-     sites: ["editor", "disenador"],
-     source: "Drive: ...",
-     caseStudy: { objective: "...", process: ["...", "..."] }, // opcional
-   }
+   (en `videos`) o
+   ```json
+   { "file": "mi-pieza", "driveId": "<id del archivo en Drive>" }
    ```
-   Para piezas gráficas usa `media: { kind: "images", images: [img("archivo", "texto alternativo")] }` con imágenes `.webp` en `media/out/pieces/` (y su tamaño en `media/out/pieces.json`).
-4. Para que un proyecto aparezca en la sección destacada, agrega su `slug` a `motionProjects` (o `featuredTiles` en diseñador) en `apps/<web>/app/site.tsx`.
+   (en `pieces`). `posterAt` y `previewAt` son fracciones de la duración (0 a 1): de dónde sale el fotograma de portada y dónde empieza la preview de 6 s.
+2. Ejecuta `npm run media:build`: descarga el original de Drive si no está en `media/raw/`, genera MP4, preview, poster y piezas WebP, y actualiza `manifest.json` y `pieces.json`. Los videos de más de 40 s se exportan a 540×960 para que ningún archivo pase de ~12 MB; los marcados con `"quality": "high"` se mantienen en 720×1280.
+3. Agrégalo al capítulo en `chapters.ts`:
+   ```ts
+   video("mi-video", "Título visible"),
+   piece("mi-pieza", "Título visible", "Texto alternativo que describe la imagen"),
+   ```
+   Para un capítulo nuevo copia uno existente y dale el `number` de su carpeta.
 
-**Métricas:** edita `reelMetrics` y `campaignMetrics` en `site-content.ts`. Para atar métricas a un proyecto concreto usa el campo `metrics` del proyecto; se muestran en su caso de estudio.
+**Métricas:** edita `reelMetrics` y `campaignMetrics` en `site-content.ts`.
 
 **Redes sociales:** agrega `{ label: "Instagram", href: "https://..." }` en `profile.socials`; aparecen en el footer y en los datos estructurados.
-
-**Showreel:** los cortes están en `media/selection.json > showreel.segments` (video, segundo de inicio, duración). Borra `media/out/videos/showreel.*` y ejecuta `npm run media:build`.
 
 ## Variables de entorno
 
@@ -133,32 +126,28 @@ Son sitios estáticos (`output: "export"`), así que funcionan en cualquier host
 - Cada clip tiene `videos/<slug>.mp4` (H.264, máx. 1280 px), `previews/<slug>.mp4` + `.webm` (6 s sin audio para hover) y `posters/<slug>.webp`.
 - Las tarjetas muestran el poster y solo descargan la preview al pasar el cursor; nunca suenan dos videos a la vez.
 - Los videos completos solo se descargan al abrir el reproductor (`preload` mínimo).
-- El showreel del hero es un montaje real de 12 cortes de los proyectos (33 s), con autoplay silenciado, loop y controles de pausa y sonido.
+- El video principal (hero) de las dos webs es `promo_editor_motion.mp4`, con autoplay silenciado, loop y controles de pausa y sonido.
+- Las piezas se sirven en dos tamaños (`pieces/sm/` de 720 px para tarjetas y `pieces/` de 1600 px para el visor).
 - `python3 scripts/media/build_media.py --raw media/raw --webm-full` genera además versiones WebM completas para navegadores sin H.264 (duplica el peso; no hacen falta en Chrome, Safari, Edge ni Firefox).
 
 ## Pruebas realizadas
 
-Con Playwright (Chromium) sobre el build de producción de las dos webs:
+Con Playwright (Chromium) sobre el build de producción de las dos webs (segunda entrega):
 
 | Prueba | Resultado |
 | --- | --- |
-| Desktop 1440, tablet 820, móvil 390 (más 1024 y 1280 para el nav) | Sin scroll horizontal; nav en una línea; capturas revisadas y corregidas |
-| Showreel del hero | Autoplay silenciado, play/pausa y sonido funcionan |
-| Previews al pasar el cursor | Se cargan bajo demanda y se reproducen |
-| Modal de video | Abre, reproduce, foco en "Cerrar", flechas cambian de video, Esc cierra y devuelve el foco |
-| Filtros de Selected Works | Todos 26, Video Editing 8, vuelve a 26; `aria-pressed` correcto |
-| Casos de estudio | 26 + 21 páginas estáticas, video o galería, anterior/siguiente |
-| WhatsApp | `https://wa.me/573187227063?text=...` con el mensaje codificado; botón flotante en móvil y tablet |
-| Títulos y reveals | Ningún título queda oculto tras recorrer la página |
-| Imágenes | Ninguna rota |
-| Open Graph | `/og.png` 1200×630 generado en el build |
-| Detector de Impeccable | Sin antipatrones estructurales; contraste corregido (ver limitaciones) |
+| Móvil 390, tablet 820 y desktop 1440 | Sin scroll horizontal, sin errores de consola, sin peticiones fallidas, ningún título oculto (home y las 10 + 15 páginas de proyecto) |
+| Portada | `promo_editor_motion.mp4` en las dos webs; en móvil y tablet el video va centrado y el título y los botones caben en la primera pantalla |
+| Contenido | Editor: 39 videos y 0 piezas en 10 capítulos. Diseñador: 39 videos y 83 piezas en 15 capítulos, en el orden de las carpetas |
+| Trabajos | Índice fijo de capítulos, carrusel horizontal por capítulo (deslizable en móvil, flechas en desktop) |
+| Visor | Abre videos con sonido y piezas a 1600 px; flechas, teclado (← → Esc) y swipe en móvil; enlace al proyecto completo |
+| Videos | Duración de cada archivo web comparada con su original: 39 de 39 completos |
+| Versión portable (`build:relative`) | Probada dentro de una subcarpeta y envuelta como página de claude.ai: navegación, visor y casos de estudio sin errores |
 
 Nota: el Chromium de pruebas no incluye el códec H.264, así que la reproducción se verificó con las versiones WebM. Los navegadores reales usan el MP4.
 
 ## Limitaciones pendientes
 
-- **Material que no está en Drive:** los videos de Beleza, los reels y el video de YouTube de María Elena Badillo, y tres videos de Ryhar existen solo dentro del Canva 2. Súbelos a Drive y agrégalos con los pasos de arriba.
 - **Métricas:** los reels de 207.283 y 259.373 visualizaciones se muestran sin asociarlos a un video, como pediste. Si me dices cuáles son, se enlazan a su proyecto. Los montos de pauta no se publican porque la moneda no aparece en las capturas.
 - **Redes sociales:** no había URLs en las fuentes; el footer no muestra redes hasta que las agregues.
 - **Contraste del rojo:** `#E50914` sobre `#080808` da 4,2:1. Se usa solo en titulares grandes, numeración y elementos gráficos (cumple AA para texto grande), nunca en texto de cuerpo.

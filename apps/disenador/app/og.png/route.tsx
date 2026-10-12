@@ -8,6 +8,6 @@ export function GET() {
     role: "Diseñador digital y audiovisual",
     headline: ["Diseño que detiene el", "scroll y se mueve."],
     subtitle: "Diseño digital · Motion Graphics · Contenido con IA",
-    poster: "tiempo-motion",
+    poster: "editor-promo",
   });
 }

@@ -37,6 +37,9 @@ export const previewSources = (slug: string) => [
 ];
 export const posterSrc = (slug: string) => `${MEDIA_BASE}/posters/${slug}.webp`;
 export const pieceSrc = (file: string) => `${MEDIA_BASE}/pieces/${file}.webp`;
+/** 720 px version for cards and thumbnails. */
+export const pieceSmallSrc = (file: string) => `${MEDIA_BASE}/pieces/sm/${file}.webp`;
+export const pieceSrcSet = (file: string) => `${pieceSmallSrc(file)} 720w, ${pieceSrc(file)} 1600w`;
 
 export function aspectOf(slug: string) {
   const { width, height } = videoMeta(slug);

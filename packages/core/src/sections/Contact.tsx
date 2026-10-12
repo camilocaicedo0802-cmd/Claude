@@ -14,7 +14,7 @@ export function Contact({ links, otherSite, role }: Props) {
   const year = new Date().getFullYear();
   return (
     <>
-      <section id="contacto" aria-labelledby="contacto-title" className="relative overflow-hidden border-t border-line pb-16 pt-24 md:pb-24 md:pt-40">
+      <section id="contacto" aria-labelledby="contacto-title" className="relative overflow-hidden border-t border-line pb-16 pt-16 md:pb-24 md:pt-40">
         <div className="shell">
           <RevealText
             as="h2"
@@ -33,8 +33,8 @@ export function Contact({ links, otherSite, role }: Props) {
               ¿Tienes una idea, una marca o un proyecto que necesita destacar? Hagamos que cobre vida a través de una edición que conecte, comunique y
               genere impacto.
             </p>
-            <div className="flex flex-col items-start gap-5 md:col-span-5 md:col-start-8 md:items-end">
-              <Button href={whatsappUrl()} target="_blank" rel="noopener noreferrer" size="lg" magnetic icon={<ArrowUpRight size={22} />}>
+            <div className="flex flex-col items-stretch gap-5 sm:items-start md:col-span-5 md:col-start-8 md:items-end">
+              <Button href={whatsappUrl()} target="_blank" rel="noopener noreferrer" size="lg" magnetic className="w-full sm:w-auto" icon={<ArrowUpRight size={22} />}>
                 Hablemos por WhatsApp
               </Button>
               <a href={`mailto:${profile.email}`} className="inline-flex items-center gap-2 text-fog underline decoration-white/20 underline-offset-[6px] hover:text-paper hover:decoration-signal">

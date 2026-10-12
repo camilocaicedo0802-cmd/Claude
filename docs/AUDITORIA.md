@@ -107,7 +107,33 @@ Coca-Cola, Costeña, Amazon y Samsung se presentan como **proyectos conceptuales
 
 ## Material faltante
 
-- **Beleza** (3 videos), **María Elena Badillo** (3 reels y el video de YouTube) y 3 videos de **Ryhar** ("New drop Ryan", "Outfit", "Paramos un rato"): están incrustados en Canva 2 pero no en Drive. Canva no permite descargarlos desde la vista pública. Para incluirlos, súbelos a la carpeta de Drive y vuelve a ejecutar `build_media.py`.
+- ~~Beleza, María Elena Badillo y 3 videos de Ryhar solo estaban en Canva 2~~: resuelto. En la segunda entrega el material se reorganizó en 15 carpetas numeradas en Drive (*Videos y Piezas para portafolio*) y todo está en las webs. El video de YouTube de María Elena Badillo no está en esas carpetas.
 - **Asociación de métricas**: no se sabe a qué reels corresponden las métricas A y B (se muestran sin video, como pediste).
 - **Redes sociales**: no hay URLs de Instagram, TikTok, LinkedIn o Behance. El footer no muestra redes hasta que se agreguen en `packages/core/src/content/profile.ts`.
 - **Testimonios, certificaciones y años de experiencia**: no existen en las fuentes y no se muestran.
+
+## Segunda entrega: carpetas numeradas
+
+El contenido de las dos webs se rehízo a partir de las 15 carpetas numeradas de Drive (123 archivos). El número de cada carpeta es su importancia y define el orden en las webs:
+
+| # | Carpeta | Videos | Piezas |
+| --- | --- | --- | --- |
+| 01 | Motion Graphics | 3 | 0 |
+| 02 | María Elena Badillo | 6 | 0 |
+| 03 | Ryhar | 4 | 14 |
+| 04 | Beleza | 13 | 0 |
+| 05 | Konexión Académica | 1 | 14 |
+| 06 | Mente Nueva Marketing | 4 | 14 |
+| 07 | Gmedia | 0 | 5 |
+| 08 | CMI | 0 | 7 |
+| 09 | Poolex | 2 | 7 |
+| 10 | Common Room | 3 | 0 |
+| 11 | Extrarome | 2 | 6 |
+| 12 | Bellatriz | 0 | 4 |
+| 13 | Coca Cola Freeze (Proyecto Universitario) | 0 | 5 |
+| 14 | Costeña Bacana | 0 | 4 |
+| 15 | Otros proyectos | 1 | 3 |
+
+- En Beleza hay dos versiones del día 4; se usa `Reto21dias_Dia4_final corregido.mp4`.
+- Los proyectos de la primera entrega que no están en estas carpetas (Príncipe de Paz, Gerencia en Redes, Stone Design, RAU, Max Security y otros) ya no se muestran.
+- Las piezas de Bellatriz incluyen datos de ejemplo de plantilla (dirección "Calle cualquiera 123", teléfono y web genéricos); se publican tal como están en Drive.

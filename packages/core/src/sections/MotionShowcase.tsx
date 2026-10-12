@@ -3,17 +3,19 @@ import { ArrowUpRight, Play } from "lucide-react";
 import { motion, useReducedMotion } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 import type { ReactNode } from "react";
-import { useOpenPlayer } from "../components/PlayerModal";
+import { useOpenViewer } from "../components/MediaViewer";
 import { RedRule, Reveal } from "../components/Reveal";
 import { SectionHeading } from "../components/SectionHeading";
 import { VideoPreview } from "../components/VideoPreview";
 import { formatDuration, videoMeta } from "../content/media";
-import type { Project } from "../content/types";
+import { entriesOf } from "../content/chapters";
+import type { Chapter, Entry } from "../content/types";
 import { pad2 } from "../lib/format";
 import { useMediaQuery } from "../lib/media-query";
 
 interface Props {
-  projects: Project[];
+  /** Chapter 01: its videos fill the reel. */
+  chapter: Chapter;
   heading: ReactNode[];
   intro: string;
   id?: string;
@@ -24,11 +26,11 @@ interface Props {
  * crosses the middle of the screen, morphing its frame to each clip's aspect ratio.
  * Phones: a swipeable strip with the active slide playing.
  */
-export function MotionShowcase({ projects, heading, intro, id = "motion" }: Props) {
-  const videos = projects.filter((p) => p.media.kind === "video");
+export function MotionShowcase({ chapter, heading, intro, id = "motion" }: Props) {
+  const videos = entriesOf(chapter).filter((e) => e.item.kind === "video");
   const desktop = useMediaQuery("(min-width: 1024px)");
   return (
-    <section id={id} aria-labelledby={`${id}-title`} className="relative py-24 md:py-36">
+    <section id={id} aria-labelledby={`${id}-title`} className="relative py-16 md:py-36">
       <div className="shell">
         <RedRule className="mb-10 md:mb-14" />
         <div className="grid gap-6 md:grid-cols-12">
@@ -38,17 +40,17 @@ export function MotionShowcase({ projects, heading, intro, id = "motion" }: Prop
           </Reveal>
         </div>
       </div>
-      {desktop ? <StickyReel projects={videos} /> : <SwipeReel projects={videos} />}
+      {desktop ? <StickyReel entries={videos} /> : <SwipeReel entries={videos} />}
     </section>
   );
 }
 
-function StickyReel({ projects }: { projects: Project[] }) {
+function StickyReel({ entries }: { entries: Entry[] }) {
   const [active, setActive] = useState(0);
   const [inSection, setInSection] = useState(false);
   const rows = useRef<(HTMLLIElement | null)[]>([]);
   const wrap = useRef<HTMLDivElement>(null);
-  const openPlayer = useOpenPlayer();
+  const openViewer = useOpenViewer();
   const reduced = useReducedMotion();
 
   useEffect(() => {
@@ -65,10 +67,10 @@ function StickyReel({ projects }: { projects: Project[] }) {
       io.disconnect();
       sectionIo.disconnect();
     };
-  }, [projects.length]);
+  }, [entries.length]);
 
-  const current = projects[active];
-  const slug = current.media.kind === "video" ? current.media.video : "";
+  const current = entries[active].item;
+  const slug = current.kind === "video" ? current.video : "";
   const meta = videoMeta(slug);
   const ratio = meta.width / meta.height;
 
@@ -80,20 +82,20 @@ function StickyReel({ projects }: { projects: Project[] }) {
             type="button"
             layout={!reduced}
             transition={{ duration: 0.5, ease: [0.77, 0, 0.175, 1] }}
-            onClick={() => openPlayer(projects, active)}
+            onClick={() => openViewer(entries, active)}
             aria-label={`Reproducir ${current.title} con sonido`}
             className="group relative block max-h-full overflow-hidden"
             style={{ aspectRatio: ratio, height: ratio < 1 ? "100%" : "auto", width: ratio < 1 ? "auto" : "100%" }}
           >
-            {projects.map((p, i) =>
-              p.media.kind === "video" ? (
+            {entries.map(({ item }, i) =>
+              item.kind === "video" ? (
                 <div
-                  key={p.slug}
+                  key={item.video}
                   className={`absolute inset-0 transition-opacity duration-500 ${i === active ? "opacity-100" : "opacity-0"}`}
                   aria-hidden={i !== active}
                 >
                   {Math.abs(i - active) <= 1 && (
-                    <VideoPreview slug={p.media.video} alt="" active={inSection && i === active} fill eager={i === 0} />
+                    <VideoPreview slug={item.video} alt="" active={inSection && i === active} fill eager={i === 0} />
                   )}
                 </div>
               ) : null,
@@ -109,9 +111,9 @@ function StickyReel({ projects }: { projects: Project[] }) {
       </div>
 
       <ol className="col-span-6 col-start-7">
-        {projects.map((p, i) => (
+        {entries.map(({ item, chapter }, i) => (
           <li
-            key={p.slug}
+            key={i}
             ref={(el) => {
               rows.current[i] = el;
             }}
@@ -121,30 +123,30 @@ function StickyReel({ projects }: { projects: Project[] }) {
             <div>
               <p className="flex items-center gap-4 text-sm font-semibold">
                 <span className={`tabular text-2xl transition-colors duration-500 ${i === active ? "text-signal" : "text-smoke"}`}>{pad2(i + 1)}</span>
-                <span className="text-smoke font-medium">{p.categories.join(" / ")}</span>
+                <span className="text-smoke font-medium">{chapter.categories.join(" / ")}</span>
               </p>
               <h3
                 className={`mt-5 text-[clamp(2rem,3.4vw,3.5rem)] font-bold leading-[1.02] tracking-[-0.03em] transition-colors duration-500 ${
                   i === active ? "text-paper" : "text-white/50"
                 }`}
               >
-                {p.title}
+                {item.title}
               </h3>
-              <p className="mt-3 text-fog">{[p.client, p.context].filter(Boolean).join(" · ")}</p>
-              <p className="body-copy mt-6">{p.description}</p>
+              <p className="mt-3 text-fog">{chapter.context}</p>
+              <p className="body-copy mt-6">{item.description ?? chapter.description}</p>
               <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm">
                 <span className="text-smoke">
-                  Rol: <span className="text-paper">{p.role}</span>
+                  Rol: <span className="text-paper">{chapter.role}</span>
                 </span>
-                {p.tools.length > 0 && (
+                {chapter.tools.length > 0 && (
                   <span className="text-smoke">
-                    Herramientas: <span className="text-paper">{p.tools.join(", ")}</span>
+                    Herramientas: <span className="text-paper">{chapter.tools.join(", ")}</span>
                   </span>
                 )}
               </div>
               <button
                 type="button"
-                onClick={() => openPlayer(projects, i)}
+                onClick={() => openViewer(entries, i)}
                 className="press mt-8 inline-flex h-12 items-center gap-2 border border-white/25 px-5 text-[0.8125rem] font-medium uppercase tracking-[0.06em] hover:border-paper"
               >
                 Reproducir <ArrowUpRight aria-hidden size={15} />
@@ -157,11 +159,11 @@ function StickyReel({ projects }: { projects: Project[] }) {
   );
 }
 
-function SwipeReel({ projects }: { projects: Project[] }) {
+function SwipeReel({ entries }: { entries: Entry[] }) {
   const [active, setActive] = useState(0);
   const strip = useRef<HTMLUListElement>(null);
   const [inView, setInView] = useState(false);
-  const openPlayer = useOpenPlayer();
+  const openViewer = useOpenViewer();
 
   useEffect(() => {
     const root = strip.current;
@@ -188,26 +190,26 @@ function SwipeReel({ projects }: { projects: Project[] }) {
         className="flex snap-x snap-mandatory gap-3 overflow-x-auto px-[var(--gutter)] pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
         aria-label="Proyectos de motion graphics, desliza para ver más"
       >
-        {projects.map((p, i) => {
-          const slug = p.media.kind === "video" ? p.media.video : "";
+        {entries.map(({ item, chapter }, i) => {
+          const slug = item.kind === "video" ? item.video : "";
           const vertical = videoMeta(slug).height > videoMeta(slug).width;
           return (
-            <li key={p.slug} data-index={i} className={`shrink-0 snap-center ${vertical ? "w-[72vw] max-w-[340px]" : "w-[86vw] max-w-[560px] self-center"}`}>
-              <button type="button" onClick={() => openPlayer(projects, i)} className="block w-full text-left" aria-label={`Reproducir ${p.title}`}>
+            <li key={slug} data-index={i} className={`shrink-0 snap-center ${vertical ? "w-[72vw] max-w-[340px]" : "w-[86vw] max-w-[560px] self-center"}`}>
+              <button type="button" onClick={() => openViewer(entries, i)} className="block w-full text-left" aria-label={`Reproducir ${item.title}`}>
                 <VideoPreview slug={slug} alt="" active={inView && i === active} eager={i < 2} />
               </button>
               <p className="mt-3 flex items-baseline gap-3 text-sm">
                 <span className="font-semibold text-signal tabular">{pad2(i + 1)}</span>
-                <span className="font-semibold">{p.title}</span>
+                <span className="font-semibold">{item.title}</span>
               </p>
-              <p className="mt-1 text-xs text-smoke">{[p.client, p.categories[0]].filter(Boolean).join(" · ")}</p>
+              <p className="mt-1 text-xs text-smoke">{chapter.title}</p>
             </li>
           );
         })}
       </ul>
       <div className="shell mt-2 flex items-center gap-3" aria-hidden>
-        {projects.map((p, i) => (
-          <span key={p.slug} className={`h-[2px] flex-1 transition-colors duration-300 ${i === active ? "bg-signal" : "bg-white/15"}`} />
+        {entries.map((e, i) => (
+          <span key={i} className={`h-[2px] flex-1 transition-colors duration-300 ${i === active ? "bg-signal" : "bg-white/15"}`} />
         ))}
       </div>
     </div>

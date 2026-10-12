@@ -12,7 +12,7 @@ export function Process({ steps }: { steps: ProcessStep[] }) {
   const fill = useSpring(scrollYProgress, { stiffness: 200, damping: 40 });
 
   return (
-    <section id="proceso" aria-labelledby="proceso-title" className="py-24 md:py-36">
+    <section id="proceso" aria-labelledby="proceso-title" className="py-16 md:py-36">
       <div className="shell grid gap-12 md:grid-cols-12 md:gap-6">
         <div className="md:col-span-5">
           <div className="md:sticky md:top-[calc(var(--nav-h)+48px)]">

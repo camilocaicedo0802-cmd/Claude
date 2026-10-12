@@ -14,12 +14,25 @@ export function About({ copy }: { copy: SiteCopy }) {
   const { portrait } = profile;
 
   return (
-    <section id="sobre-mi" aria-labelledby="sobre-mi-title" className="py-24 md:py-36">
+    <section id="sobre-mi" aria-labelledby="sobre-mi-title" className="py-16 md:py-36">
       <div className="shell">
         <RedRule className="mb-10 md:mb-14" />
-        <div className="grid gap-12 md:grid-cols-12 md:gap-6">
-          <div ref={ref} className="md:col-span-5">
-            <Reveal variant="wipe" className="relative overflow-hidden bg-panel" >
+        <div className="grid gap-10 md:grid-cols-12 md:gap-x-6 md:gap-y-0">
+          {/* Phones: heading, portrait, text. Desktop: portrait on the left spanning both rows. */}
+          <div className="md:col-span-6 md:col-start-7 md:row-start-1">
+            <SectionHeading
+              id="sobre-mi-title"
+              lines={[
+                <span key="a">Behind the</span>,
+                <span key="b" className="em text-signal">
+                  Frames.
+                </span>,
+              ]}
+            />
+          </div>
+
+          <div ref={ref} className="w-full max-w-[22rem] md:col-span-5 md:row-span-2 md:row-start-1 md:max-w-[26rem]">
+            <Reveal variant="wipe" className="relative overflow-hidden bg-panel">
               <div style={{ aspectRatio: `${portrait.width} / ${portrait.height}` }} className="relative">
                 <motion.img
                   src={pieceSrc(portrait.file)}
@@ -33,23 +46,14 @@ export function About({ copy }: { copy: SiteCopy }) {
                 />
               </div>
             </Reveal>
-            <p className="mt-4 flex items-center justify-between text-sm">
+            <p className="mt-4 flex items-center justify-between gap-4 text-sm">
               <span className="font-semibold">{profile.name}</span>
-              <span className="text-smoke">{copy.role}</span>
+              <span className="text-right text-smoke">{copy.role}</span>
             </p>
           </div>
 
-          <div className="md:col-span-6 md:col-start-7">
-            <SectionHeading
-              id="sobre-mi-title"
-              lines={[
-                <span key="a">Behind the</span>,
-                <span key="b" className="em text-signal">
-                  Frames.
-                </span>,
-              ]}
-            />
-            <div className="mt-10 space-y-5">
+          <div className="md:col-span-6 md:col-start-7 md:row-start-2">
+            <div className="space-y-5 md:mt-10">
               {copy.about.map((p, i) => (
                 <Reveal key={i} delay={i * 0.06}>
                   <p className={i === 0 ? "text-lg leading-relaxed text-paper md:text-xl" : "body-copy"}>{p}</p>

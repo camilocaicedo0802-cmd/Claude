@@ -31,7 +31,7 @@ An editor who designs: his motion pieces (CR7 story, "tiempo" B&W piece, his own
 
 - Agency work: 12 to 15 client portfolios at once (stated in his Canva portfolio).
 - Mente Nueva Marketing: agency specialised in evangelical churches (clients in the US: C.C.V.E, Evangel Chapel, Global University of Theology, Príncipe de Paz, Living Word, Stone Design & Countertops, Gerencia en Redes).
-- Other clients in the material: Konexion Académica, RAU (pregrados), Ryhar (clothing brand), Alanna / Common Room (fashion), Extrarome (aromas), Poolex (investment education), María Elena Badillo (YouTube, 1.3M subscribers, 300k+ Instagram followers).
+- Content order (second delivery): 15 numbered Drive folders, folder number = priority: 01 Motion Graphics, 02 María Elena Badillo (YouTube, 1.3M subscribers, 300k+ Instagram followers), 03 Ryhar, 04 Beleza, 05 Konexión Académica, 06 Mente Nueva Marketing, 07 Gmedia, 08 CMI, 09 Poolex, 10 Common Room (Alanna, Luisa López), 11 Extrarome, 12 Bellatriz, 13 Coca-Cola Freeze, 14 Costeña Bacana, 15 Otros proyectos. Editor site: videos only. Designer site: every piece and video.
 - Role on client videos (confirmed by the user): editing and motion; filming was done by others.
 
 ## Capabilities and Constraints
@@ -56,7 +56,7 @@ An editor who designs: his motion pieces (CR7 story, "tiempo" B&W piece, his own
   - Reel A: 207,283 views, 129,676 accounts reached, 7,214 interactions, 318 new followers.
   - Reel B: 259,373 views, 176,620 accounts reached, 11,651 interactions (8,196 likes, 1,866 shares, 1,582 saves), 392 new followers.
 - Campaign metrics (Meta ads screenshots in Canva 1): 278 conversations started in one interaction campaign (19 Nov to 2 Dec), reach 5,747; second campaign 59 conversations, reach 1,867.
-- NOT available, never fabricate: testimonials, certifications, years of experience, client logos as endorsements, Instagram/LinkedIn URLs, the María Elena Badillo YouTube video file, the Beleza videos and three Ryhar videos embedded only in Canva 2.
+- NOT available, never fabricate: testimonials, certifications, years of experience, client logos as endorsements, Instagram/LinkedIn URLs, the María Elena Badillo YouTube video file.
 
 ## Product Principles
 

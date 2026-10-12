@@ -12,7 +12,7 @@ export function Skills({ groups }: { groups: SkillGroup[] }) {
   const [open, setOpen] = useState(0);
   const fine = useFinePointer();
   return (
-    <section id="habilidades" aria-labelledby="habilidades-title" className="py-24 md:py-36">
+    <section id="habilidades" aria-labelledby="habilidades-title" className="py-16 md:py-36">
       <div className="shell">
         <RedRule className="mb-10 md:mb-14" />
         <SectionHeading
@@ -41,7 +41,7 @@ export function Skills({ groups }: { groups: SkillGroup[] }) {
                       {String(i + 1).padStart(2, "0")}
                     </span>
                     <span
-                      className={`flex-1 text-[clamp(1.9rem,5.2vw,5rem)] font-bold leading-none tracking-[-0.035em] transition-colors duration-300 ${
+                      className={`min-w-0 flex-1 text-[clamp(1.75rem,5.2vw,5rem)] font-bold leading-none tracking-[-0.035em] transition-colors duration-300 ${
                         isOpen ? "text-paper" : "text-white/50 group-hover:text-white/75"
                       }`}
                     >

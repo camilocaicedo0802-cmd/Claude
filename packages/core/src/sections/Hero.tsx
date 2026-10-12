@@ -32,27 +32,26 @@ export function Hero({ hero, aside }: Props) {
 
   return (
     <section ref={ref} id="inicio" aria-label="Presentación" className="relative overflow-hidden pt-[var(--nav-h)]">
-      <div className="shell grid items-center gap-8 pb-14 pt-4 md:min-h-[calc(100svh-var(--nav-h))] md:grid-cols-12 md:gap-6 md:pb-16 md:pt-6">
-        {/* Video first on phones */}
-        <motion.div
-          className="relative order-first mx-auto w-full max-w-[min(100%,calc(56svh*0.5625))] md:order-last md:col-span-5 md:col-start-8 md:max-w-[calc(82svh*0.5625)]"
-          style={{ y: videoY }}
-        >
-          {aside}
-          <motion.div
-            initial={reduced ? { opacity: 0 } : { clipPath: "inset(100% 0% 0% 0%)" }}
-            animate={reduced ? { opacity: 1 } : { clipPath: "inset(0% 0% 0% 0%)" }}
-            transition={{ duration: reduced ? 0.2 : 0.95, delay: 0.1, ease: [0.7, 0, 0.2, 1] }}
-            className="relative"
-          >
-            <ShowreelPlayer slug={hero.video} label={hero.videoLabel} tag={hero.videoTag} className="w-full" />
+      <div className="shell grid items-center gap-7 pb-14 pt-4 md:gap-9 md:pb-16 lg:min-h-[calc(100svh-var(--nav-h))] lg:grid-cols-12 lg:gap-6 lg:pt-6">
+        {/* Phones and tablets: video first, centered, short enough to leave the headline on the first screen */}
+        <div className="order-first flex justify-center lg:order-last lg:col-span-5 lg:col-start-8">
+          <motion.div className="relative w-[min(100%,calc(50svh*0.5625))] lg:w-[min(100%,calc(82svh*0.5625))]" style={{ y: videoY }}>
+            {aside}
+            <motion.div
+              initial={reduced ? { opacity: 0 } : { clipPath: "inset(100% 0% 0% 0%)" }}
+              animate={reduced ? { opacity: 1 } : { clipPath: "inset(0% 0% 0% 0%)" }}
+              transition={{ duration: reduced ? 0.2 : 0.95, delay: 0.1, ease: [0.7, 0, 0.2, 1] }}
+              className="relative"
+            >
+              <ShowreelPlayer slug={hero.video} label={hero.videoLabel} tag={hero.videoTag} className="w-full" />
+            </motion.div>
           </motion.div>
-        </motion.div>
+        </div>
 
-        <div className="md:col-span-7 md:pr-4">
+        <div className="min-w-0 text-center lg:col-span-7 lg:pr-4 lg:text-left">
           <RevealText as="h1" lines={lines} immediate delay={0.25} className="display-hero" />
           <motion.p
-            className="mt-6 text-[0.9375rem] font-medium text-fog md:mt-8 md:text-base"
+            className="mt-6 text-balance text-[0.9375rem] font-medium text-fog md:mt-8 md:text-base"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.75, duration: 0.6 }}
@@ -60,7 +59,7 @@ export function Hero({ hero, aside }: Props) {
             {hero.subtitle}
           </motion.p>
           <motion.div
-            className="mt-8 flex flex-col gap-3 xs:flex-row md:mt-10"
+            className="mt-8 flex flex-col gap-3 xs:flex-row xs:justify-center md:mt-10 lg:justify-start"
             initial={reduced ? { opacity: 0 } : { opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.85, duration: 0.6, ease: [0.23, 1, 0.32, 1] }}
@@ -76,7 +75,7 @@ export function Hero({ hero, aside }: Props) {
       </div>
 
       {/* Scroll indicator: a red playhead running down a short track */}
-      <div aria-hidden className="pointer-events-none absolute bottom-6 left-1/2 hidden h-12 w-px -translate-x-1/2 overflow-hidden bg-white/15 md:block">
+      <div aria-hidden className="pointer-events-none absolute bottom-6 left-1/2 hidden h-12 w-px -translate-x-1/2 overflow-hidden bg-white/15 lg:block">
         <span className="absolute inset-x-0 top-0 h-1/2 animate-[playhead_1.8s_var(--ease-in-out)_infinite] bg-signal motion-reduce:hidden" />
       </div>
     </section>

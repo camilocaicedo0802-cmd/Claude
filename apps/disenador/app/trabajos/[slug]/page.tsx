@@ -3,43 +3,42 @@ import { notFound } from "next/navigation";
 import { SiteShell } from "@jcc/core/components/SiteShell";
 import { pieceSrc, posterSrc } from "@jcc/core/content/media";
 import { homeHref } from "@jcc/core/lib/paths";
-import { CaseStudy } from "@jcc/core/sections/CaseStudy";
+import { ChapterPage } from "@jcc/core/sections/ChapterPage";
 import { Contact } from "@jcc/core/sections/Contact";
-import { copy, links, otherSite, projects } from "../../site";
+import { chapters, copy, links, otherSite } from "../../site";
 
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return projects.map((p) => ({ slug: p.slug }));
+  return chapters.map((c) => ({ slug: c.slug }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
-  const project = projects.find((p) => p.slug === slug);
-  if (!project) return {};
-  const image = project.media.kind === "video" ? posterSrc(project.media.video) : pieceSrc(project.media.images[0].file);
-  const title = project.client ? `${project.title} para ${project.client}` : project.title;
+  const chapter = chapters.find((c) => c.slug === slug);
+  if (!chapter) return {};
+  const first = chapter.items[0];
+  const image = first.kind === "video" ? posterSrc(first.video) : pieceSrc(first.image.file);
+  const title = `${chapter.title}: ${chapter.context}`;
   return {
     title,
-    description: project.description,
+    description: chapter.description,
     alternates: { canonical: `/trabajos/${slug}/` },
-    openGraph: { title, description: project.description, images: [{ url: image }] },
+    openGraph: { title, description: chapter.description, images: [{ url: image }] },
   };
 }
 
 export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const index = projects.findIndex((p) => p.slug === slug);
+  const index = chapters.findIndex((c) => c.slug === slug);
   if (index === -1) notFound();
   const homeLinks = links.map((l) => ({ ...l, href: homeHref(l.href) }));
   return (
     <SiteShell links={links} role={copy.role} home={homeHref()}>
-      <CaseStudy
-        project={projects[index]}
-        index={index}
-        total={projects.length}
-        prev={projects[(index - 1 + projects.length) % projects.length]}
-        next={projects[(index + 1) % projects.length]}
+      <ChapterPage
+        chapter={chapters[index]}
+        prev={chapters[(index - 1 + chapters.length) % chapters.length]}
+        next={chapters[(index + 1) % chapters.length]}
       />
       <Contact links={homeLinks} otherSite={otherSite} role={copy.role} />
     </SiteShell>

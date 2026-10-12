@@ -1,4 +1,4 @@
-import type { Category, Metric, SiteId, Tool } from "./types";
+import type { Metric, SiteId, Tool } from "./types";
 
 /** Reel insights from Instagram screenshots in Canva portfolio 1 (page 4). */
 export const reelMetrics: { name: string; metrics: Metric[] }[] = [
@@ -64,7 +64,6 @@ export interface SiteSections {
     videoLabel: string;
     videoTag: string;
   };
-  filters: Category[];
   skills: SkillGroup[];
   toolkit: ToolGroup[];
   process: ProcessStep[];
@@ -128,18 +127,17 @@ export const sections: Record<SiteId, SiteSections> = {
         [{ text: "que se " }, { text: "sienten.", em: true, red: true }],
       ],
       subtitle: "Video Editing · Motion Graphics · Visual Storytelling",
-      video: "showreel",
-      videoLabel: "Showreel de Juan Camilo Caicedo: montaje con fragmentos reales de sus proyectos",
-      videoTag: "Showreel",
+      video: "editor-promo",
+      videoLabel: "Video de motion graphics ¿Necesitas editor?, de Juan Camilo Caicedo",
+      videoTag: "Motion graphics",
     },
-    filters: ["Motion Graphics", "Video Editing", "Commercial Ads", "Reels & Short Form"],
     skills: [
       {
         title: "Video",
         emphasis: "Editing",
         summary: "Montaje con ritmo para contenido corto y largo, de la toma en bruto al video final.",
         items: ["Edición profesional", "Storytelling audiovisual", "Contenido corto y largo", "Ritmo narrativo", "Transiciones", "Corrección de color", "Diseño sonoro y limpieza de audio"],
-        example: "konexion-orientacion",
+        example: "meb-podcast",
       },
       {
         title: "Motion",
@@ -153,14 +151,14 @@ export const sections: Record<SiteId, SiteSections> = {
         emphasis: "Creation",
         summary: "Piezas pensadas para cada plataforma y para el comportamiento de su audiencia.",
         items: ["Reels", "TikTok", "YouTube (intro, outro, infografías)", "Video ads", "Contenido corporativo", "Formatos verticales y horizontales"],
-        example: "principe-jovenes",
+        example: "alanna-coming-soon",
       },
       {
         title: "Workflow &",
         emphasis: "IA",
         summary: "Procesos ordenados y herramientas de IA para entregar más rápido sin perder calidad.",
         items: ["Organización de material", "Adaptación multiplataforma", "Optimización de formatos", "Consistencia visual entre piezas", "Exportación profesional", "Generación y edición con IA"],
-        example: "editor-promo",
+        example: "beleza-dia-01",
       },
     ],
     toolkit: toolkitEditor,
@@ -174,11 +172,10 @@ export const sections: Record<SiteId, SiteSections> = {
         [{ text: "en " }, { text: "movimiento.", em: true }],
       ],
       subtitle: "Diseño digital · Motion Graphics · Contenido con IA",
-      video: "tiempo-motion",
-      videoLabel: "Video de motion graphics Tu tiempo, de Juan Camilo Caicedo",
-      videoTag: "Motion: Tu tiempo",
+      video: "editor-promo",
+      videoLabel: "Video de motion graphics ¿Necesitas editor?, de Juan Camilo Caicedo",
+      videoTag: "Motion graphics",
     },
-    filters: ["Visual Design", "Social Media", "Campañas con IA", "Motion Graphics", "Video Editing"],
     skills: [
       {
         title: "Diseño",
