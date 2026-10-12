@@ -35,7 +35,14 @@ export interface SiteCopy {
   role: string;
   about: string[];
   values: { title: string; text: string }[];
+  /** Degree and courses, shown under "Sobre mí". */
+  education: { title: string; detail: string }[];
 }
+
+const education = [
+  { title: "Profesional en Publicidad y Mercadeo", detail: "Título profesional" },
+  { title: "De Jr a Senior: Creatividad e innovación con IA", detail: "Seminario" },
+];
 
 export const siteCopy: Record<SiteId, SiteCopy> = {
   editor: {
@@ -43,7 +50,7 @@ export const siteCopy: Record<SiteId, SiteCopy> = {
     url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3001",
     title: "Juan Camilo Caicedo | Editor de video y Motion Graphics",
     description:
-      "Editor de video freelance y motion designer. Edición de reels, anuncios, contenido para YouTube y motion graphics para marcas, creadores y agencias.",
+      "Editor de video y motion designer con 4 años de experiencia. Edición de reels, anuncios, contenido para YouTube y motion graphics para marcas, creadores y agencias.",
     keywords: [
       "editor de video profesional",
       "editor de videos freelance",
@@ -54,9 +61,9 @@ export const siteCopy: Record<SiteId, SiteCopy> = {
     ],
     role: "Editor de video y motion designer",
     about: [
-      "Soy Juan Camilo Caicedo, editor de video y motion designer. Hago la postproducción de contenido para redes, marcas y campañas digitales: tomo el material grabado y lo convierto en piezas con ritmo, intención y un acabado que se nota desde el primer segundo.",
+      "Soy Juan Camilo Caicedo, editor de video y motion designer, profesional en Publicidad y Mercadeo y con 4 años de experiencia en edición y diseño. Hago la postproducción de contenido para redes, marcas y campañas digitales: tomo el material grabado y lo convierto en piezas con ritmo, intención y un acabado que se nota desde el primer segundo.",
       "Vengo del diseño gráfico y del trabajo en agencia, donde he llevado portafolios de 12 a 15 clientes al mismo tiempo. De ahí salen dos hábitos: pensar cada corte según la plataforma y la audiencia, y entregar a tiempo sin bajar el estándar.",
-      "Animo tipografía, limpio y diseño el audio, corrijo color y construyo transiciones en After Effects y Premiere Pro, y uso inteligencia artificial para acelerar el proceso sin perder el criterio visual.",
+      "Animo tipografía, limpio y diseño el audio, corrijo color y construyo transiciones en After Effects y Premiere Pro, y uso inteligencia artificial para acelerar el proceso sin perder el criterio visual, un campo en el que me formé con el seminario «De Jr a Senior: Creatividad e innovación con IA».",
     ],
     values: [
       { title: "Ritmo narrativo", text: "Cada corte tiene una razón: sostener la atención y llevar al mensaje." },
@@ -64,13 +71,14 @@ export const siteCopy: Record<SiteId, SiteCopy> = {
       { title: "Hecho para rendir", text: "Edito sabiendo cómo funcionan los reels, los anuncios y sus métricas." },
       { title: "Flujo con IA", text: "Más velocidad en audio, imagen y versiones, con el mismo estándar." },
     ],
+    education,
   },
   disenador: {
     id: "disenador",
     url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3002",
     title: "Juan Camilo Caicedo | Diseñador digital y audiovisual",
     description:
-      "Diseñador digital y creador audiovisual. Piezas para redes, campañas con IA, identidad visual, edición de video y motion graphics para marcas y agencias.",
+      "Diseñador digital y creador audiovisual con 4 años de experiencia. Piezas para redes, campañas con IA, identidad visual, edición de video y motion graphics para marcas y agencias.",
     keywords: [
       "diseñador digital",
       "diseñador gráfico freelance",
@@ -81,9 +89,9 @@ export const siteCopy: Record<SiteId, SiteCopy> = {
     ],
     role: "Diseñador digital y audiovisual",
     about: [
-      "Soy Juan Camilo Caicedo, diseñador digital y creador audiovisual. Diseño piezas, campañas e identidades para redes sociales, y las llevo al movimiento con edición de video y motion graphics.",
+      "Soy Juan Camilo Caicedo, diseñador digital y creador audiovisual, profesional en Publicidad y Mercadeo y con 4 años de experiencia como diseñador y editor. Diseño piezas, campañas e identidades para redes sociales, y las llevo al movimiento con edición de video y motion graphics.",
       "He trabajado en agencias con portafolios de 12 a 15 clientes al mismo tiempo, gestionando comunidades de marca personal y campañas pagas. Por eso diseño con una pregunta en mente: qué tiene que pasar después de que alguien vea la pieza.",
-      "Integro la Suite de Adobe con inteligencia artificial para generar, editar y optimizar contenido, cuidando que cada marca mantenga su coherencia estética y emocional.",
+      "Integro la Suite de Adobe con inteligencia artificial para generar, editar y optimizar contenido, cuidando que cada marca mantenga su coherencia estética y emocional. En ese camino me sigo formando: completé el seminario «De Jr a Senior: Creatividad e innovación con IA».",
     ],
     values: [
       { title: "Diseño y video", text: "La pieza estática y su versión en movimiento salen de la misma mano." },
@@ -91,5 +99,6 @@ export const siteCopy: Record<SiteId, SiteCopy> = {
       { title: "IA con criterio", text: "Generación de imágenes y contenido con dirección de arte, no al azar." },
       { title: "Volumen con calidad", text: "Experiencia sosteniendo de 12 a 15 marcas en paralelo." },
     ],
+    education,
   },
 };

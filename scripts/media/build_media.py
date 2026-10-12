@@ -6,6 +6,7 @@ Usage:
 
 For every video in media/selection.json it writes, under media/out/:
     videos/<slug>.mp4    H.264 + AAC, faststart, sized by duration so each file stays under ~12 MB
+                         (an entry's "encode" object overrides long_side, crf, maxrate, audio, channels)
     videos/<slug>.webm   VP9 + Opus fallback, only with --webm-full (doubles the size)
     previews/<slug>.mp4  6 s muted loop for hover / autoplay previews (+ .webm)
     posters/<slug>.webp  poster frame
@@ -88,8 +89,8 @@ def encode_settings(duration, high=False):
     audio_kbps = 80 if long_form else 112
     budget = int(MAX_VIDEO_BYTES * 8 / max(duration, 1) / 1000) - audio_kbps
     if long_form:
-        return {"long_side": 960, "crf": 27, "maxrate": min(900, budget), "audio": audio_kbps}
-    return {"long_side": 1280, "crf": 25, "maxrate": min(1800, budget), "audio": audio_kbps}
+        return {"long_side": 960, "crf": 27, "maxrate": min(900, budget), "audio": audio_kbps, "channels": 2}
+    return {"long_side": 1280, "crf": 25, "maxrate": min(1800, budget), "audio": audio_kbps, "channels": 2}
 
 
 def webm_from(mp4_path, webm_path, crf, audio):
@@ -111,6 +112,8 @@ def build_video(item, raw_dir, webm_full=False):
     preview_out = os.path.join(OUT, "previews", slug + ".mp4")
     poster_out = os.path.join(OUT, "posters", slug + ".webp")
     cfg = encode_settings(dur, item.get("quality") == "high")
+    # Per-video overrides, e.g. full-length YouTube episodes that cannot fit the per-file budget.
+    cfg.update(item.get("encode", {}))
     vf = fit_filter(info["w"], info["h"], cfg["long_side"]) + ",fps='min(30,source_fps)',format=yuv420p"
 
     if not os.path.exists(video_out):
@@ -118,7 +121,7 @@ def build_video(item, raw_dir, webm_full=False):
                "-c:v", "libx264", "-preset", "slow", "-crf", str(cfg["crf"]),
                "-maxrate", f"{cfg['maxrate']}k", "-bufsize", f"{cfg['maxrate'] * 2}k", "-profile:v", "high",
                "-movflags", "+faststart"]
-        cmd += ["-c:a", "aac", "-b:a", f"{cfg['audio']}k", "-ac", "2"] if info["audio"] else ["-an"]
+        cmd += ["-c:a", "aac", "-b:a", f"{cfg['audio']}k", "-ac", str(cfg["channels"])] if info["audio"] else ["-an"]
         run(cmd + [video_out])
 
     if not os.path.exists(preview_out):

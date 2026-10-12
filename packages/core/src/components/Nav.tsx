@@ -60,10 +60,8 @@ export function Nav({ links, home = "", role }: Props) {
     >
       <nav aria-label="Principal" className="shell flex h-[var(--nav-h)] items-center justify-between gap-6">
         <SiteLink href={home || homeHref()} className="group flex items-baseline gap-3 whitespace-nowrap" aria-label={`${profile.name}, inicio`}>
-          <span className="text-[0.95rem] font-semibold tracking-[-0.01em]">
-            Juan Camilo <span className="em text-signal">Caicedo</span>
-          </span>
-          <span className="hidden text-xs text-smoke xl:inline">{role}</span>
+          <span className="text-[0.95rem] font-semibold tracking-[-0.01em]">{profile.name}</span>
+          <span className="hidden text-xs text-signal xl:inline">{role}</span>
         </SiteLink>
 
         <ul className="hidden items-center gap-8 lg:flex">

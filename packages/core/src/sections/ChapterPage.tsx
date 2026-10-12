@@ -1,6 +1,7 @@
 "use client";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useMemo } from "react";
+import { LongForm, isLongForm } from "../components/LongForm";
 import { MediaCard } from "../components/MediaCard";
 import { useOpenViewer } from "../components/MediaViewer";
 import { Reveal } from "../components/Reveal";
@@ -47,9 +48,9 @@ const heightOf = (e: Entry) => {
 function toColumns(items: Entry[], count: number) {
   const cols: { entry: Entry; at: number }[][] = Array.from({ length: count }, () => []);
   const heights = new Array(count).fill(0);
-  items.forEach((entry, at) => {
+  items.forEach((entry) => {
     const i = heights.indexOf(Math.min(...heights));
-    cols[i].push({ entry, at });
+    cols[i].push({ entry, at: entry.index });
     heights[i] += heightOf(entry);
   });
   return cols;
@@ -59,10 +60,12 @@ function toColumns(items: Entry[], count: number) {
 export function ChapterPage({ chapter, prev, next }: Props) {
   const openViewer = useOpenViewer();
   const entries = entriesOf(chapter);
+  const grid = entries.filter((e) => !isLongForm(e));
+  const long = entries.filter(isLongForm);
   const xl = useMediaQuery("(min-width: 1280px)");
   const md = useMediaQuery("(min-width: 768px)");
-  const count = Math.min(entries.length, xl ? 4 : md ? 3 : 2);
-  const columns = useMemo(() => toColumns(entries, count), [entries, count]);
+  const count = Math.min(grid.length, xl ? 4 : md ? 3 : 2);
+  const columns = useMemo(() => toColumns(grid, count), [grid, count]);
   const cs = chapter.caseStudy ?? {};
 
   return (
@@ -129,6 +132,10 @@ export function ChapterPage({ chapter, prev, next }: Props) {
           ))}
         </div>
       </div>
+
+      {long.map((e) => (
+        <LongForm key={e.index} entry={e} onOpen={() => openViewer(entries, e.index)} className="mt-14 md:mt-20" />
+      ))}
 
       {(cs.objective || cs.solution || cs.process) && (
         <div className="shell mt-16 md:mt-24">

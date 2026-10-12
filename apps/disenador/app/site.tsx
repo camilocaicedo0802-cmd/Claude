@@ -21,12 +21,6 @@ export const links: NavLink[] = [
   { href: "#contacto", label: "Contacto" },
 ];
 
-/** Real pieces floating beside the hero video. */
-export const heroPieces = ["ryhar-01", "konexion-01"].map((file) => {
-  for (const c of chapters) for (const i of c.items) if (i.kind === "image" && i.image.file === file) return i.image;
-  throw new Error(`Hero piece ${file} not found`);
-});
-
 export const otherSite = process.env.NEXT_PUBLIC_OTHER_SITE_URL
   ? { href: process.env.NEXT_PUBLIC_OTHER_SITE_URL, label: "Ver mi portafolio de edición de video" }
   : undefined;

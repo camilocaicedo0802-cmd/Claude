@@ -9,7 +9,13 @@ function img(file: string, alt: string): ImageAsset {
   return { file, alt, width: size[0], height: size[1] };
 }
 
-const video = (slug: string, title: string, description?: string): VideoItem => ({ kind: "video", video: slug, title, description });
+const video = (slug: string, title: string, description?: string, longForm?: VideoItem["longForm"]): VideoItem => ({
+  kind: "video",
+  video: slug,
+  title,
+  description,
+  longForm,
+});
 const piece = (file: string, title: string, alt: string): ImageItem => ({ kind: "image", image: img(file, alt), title });
 
 const AE_PR = ["After Effects", "Premiere Pro"] as const;
@@ -63,10 +69,10 @@ export const chapters: Chapter[] = [
     title: "María Elena Badillo",
     client: "María Elena Badillo",
     context: "Psicóloga, autora, empresaria y guía",
-    categories: ["Video Editing", "Reels & Short Form"],
+    categories: ["Video Editing", "Reels & Short Form", "Motion Graphics"],
     description:
-      "Reels para su marca personal: conversaciones a cámara, clips de podcast, un día real en casa y la invitación a un retiro. Subtítulos con palabras clave resaltadas, tipografía que acompaña cada idea y cortes al ritmo de la voz.",
-    role: "Edición, subtítulos y motion graphics",
+      "María Elena Badillo es psicóloga, autora y empresaria, y su canal de YouTube reúne 1,3 millones de suscriptores. Para su marca personal edito reels a partir de conversaciones a cámara, clips de su podcast y momentos de su día a día, con subtítulos que resaltan cada idea clave, tipografía que acompaña su voz y un ritmo pensado para que el mensaje llegue completo. Su canal también me contactó para editar uno de sus episodios: corte y mezcla de tomas, limpieza de audio, animaciones de texto e infografías, intro y outro.",
+    role: "Edición de reels y de un episodio para YouTube, subtítulos y motion graphics",
     tools: [],
     source: `${DRIVE} / 2. Maria Elena Badillo`,
     items: [
@@ -76,6 +82,12 @@ export const chapters: Chapter[] = [
       video("meb-cobrar", "Cobrar lo que realmente vales"),
       video("meb-domingo", "Un domingo real"),
       video("meb-reflexion", "Conversación al aire libre"),
+      video(
+        "meb-youtube",
+        "Cómo volver a levantarte cuando sientes que todo se derrumbó",
+        "Episodio completo de 38 minutos para su canal: adelanto de apertura, título animado, rótulo de presentación, cortes entre dos planos de cámara, palabras clave en pantalla, imágenes de apoyo y pantalla final de suscripción.",
+        { platform: "YouTube" },
+      ),
     ],
   },
   {
@@ -404,9 +416,14 @@ export const chapters: Chapter[] = [
   },
 ];
 
-/** Chapters as each site shows them: the editor site keeps only chapters with video, and only their videos. */
+/**
+ * Chapters as each site shows them. The designer site shows every item, videos first;
+ * the editor site keeps only chapters with video, and only their videos.
+ */
 export function chaptersFor(site: SiteId): Chapter[] {
-  if (site === "disenador") return chapters;
+  if (site === "disenador") {
+    return chapters.map((c) => ({ ...c, items: [...c.items.filter((i) => i.kind === "video"), ...c.items.filter((i) => i.kind === "image")] }));
+  }
   return chapters
     .map((c) => ({ ...c, items: c.items.filter((i) => i.kind === "video") }))
     .filter((c) => c.items.length > 0);

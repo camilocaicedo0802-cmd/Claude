@@ -60,6 +60,8 @@ export interface VideoItem {
   title: string;
   /** Optional detail shown in the motion showcase and the chapter page. */
   description?: string;
+  /** Long-form piece (e.g. a full YouTube episode), shown in its own block instead of the reel. */
+  longForm?: { platform: string };
 }
 
 /** One graphic piece inside a chapter. */

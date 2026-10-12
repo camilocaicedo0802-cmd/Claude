@@ -68,6 +68,20 @@
    "previewAt": 0.1
   },
   {
+   "slug": "meb-youtube",
+   "driveId": "1t1vXMOgl9Cdc28FcJ7A5fsleUh4pkhdc",
+   "source": "2. Maria Elena Badillo / YouTube: Cómo volver a levantarte cuando sientes que todo se derrumbó",
+   "posterAt": 0.0108,
+   "previewAt": 0.0,
+   "encode": {
+    "long_side": 640,
+    "crf": 30,
+    "maxrate": 220,
+    "audio": 48,
+    "channels": 1
+   }
+  },
+  {
    "slug": "ryhar-new-drop",
    "driveId": "1aalsVqxU-9T5DwsDNOlm8HqUObo8a6zh",
    "source": "3. Ryhar/IMG_5989.MOV",

@@ -2,6 +2,7 @@
 import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import type { ReactNode } from "react";
+import { LongForm, isLongForm } from "../components/LongForm";
 import { MediaCard } from "../components/MediaCard";
 import { useOpenViewer } from "../components/MediaViewer";
 import { RedRule, Reveal } from "../components/Reveal";
@@ -109,6 +110,9 @@ function ChapterReel({ chapter }: { chapter: Chapter }) {
   const [edges, setEdges] = useState({ start: true, end: false });
   const openViewer = useOpenViewer();
   const entries = entriesOf(chapter);
+  // Long-form videos get their own block under the reel; the viewer still steps through the whole chapter.
+  const reel = entries.filter((e) => !isLongForm(e));
+  const long = entries.filter(isLongForm);
 
   const update = () => {
     const el = rail.current;
@@ -144,7 +148,7 @@ function ChapterReel({ chapter }: { chapter: Chapter }) {
             >
               Ver proyecto completo <ArrowUpRight aria-hidden size={15} />
             </SiteLink>
-            {entries.length > 2 && (
+            {reel.length > 2 && (
               <div className="ml-auto hidden gap-2 md:flex">
                 <button type="button" onClick={() => scrollBy(-1)} disabled={edges.start} className="press grid size-11 place-items-center bg-panel hover:bg-panel-2 disabled:opacity-30" aria-label={`Anteriores de ${chapter.title}`}>
                   <ArrowLeft size={18} />
@@ -165,10 +169,14 @@ function ChapterReel({ chapter }: { chapter: Chapter }) {
         aria-label={`${chapter.title}: ${countLabel(chapter)}. Desliza para ver más.`}
         role="region"
       >
-        {entries.map((e, i) => (
-          <MediaCard key={i} entry={e} layout="rail" sizes="(min-width: 768px) 360px, 60vw" onOpen={() => openViewer(entries, i)} />
+        {reel.map((e) => (
+          <MediaCard key={e.index} entry={e} layout="rail" sizes="(min-width: 768px) 360px, 60vw" onOpen={() => openViewer(entries, e.index)} />
         ))}
       </div>
+
+      {long.map((e) => (
+        <LongForm key={e.index} entry={e} onOpen={() => openViewer(entries, e.index)} className="mt-10 md:mt-14" />
+      ))}
     </article>
   );
 }

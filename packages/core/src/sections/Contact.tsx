@@ -49,10 +49,8 @@ export function Contact({ links, otherSite, role }: Props) {
       <footer className="border-t border-line">
         <div className="shell grid gap-10 py-12 md:grid-cols-12 md:gap-6">
           <div className="md:col-span-5">
-            <p className="text-2xl font-semibold tracking-[-0.02em]">
-              Juan Camilo <span className="em text-signal">Caicedo</span>
-            </p>
-            <p className="mt-2 text-sm text-fog">{role}</p>
+            <p className="text-2xl font-semibold tracking-[-0.02em]">{profile.name}</p>
+            <p className="mt-2 text-sm text-signal">{role}</p>
           </div>
           <nav aria-label="Secciones" className="md:col-span-3">
             <ul className="space-y-2 text-sm">
