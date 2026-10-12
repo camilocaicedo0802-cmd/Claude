@@ -171,9 +171,9 @@ export const sections: Record<SiteId, SiteSections> = {
     hero: {
       eyebrow: { highlight: "4 años", text: "de experiencia como diseñador y editor" },
       lines: [
-        [{ text: "Diseño que detiene" }],
-        [{ text: "el " }, { text: "scroll", em: true, red: true }, { text: " y se pone" }],
-        [{ text: "en " }, { text: "movimiento.", em: true }],
+        [{ text: "Transformo ideas en" }],
+        [{ text: "experiencias", em: true }, { text: " visuales" }],
+        [{ text: "que se " }, { text: "sienten.", em: true, red: true }],
       ],
       subtitle: "Diseño digital · Motion Graphics · Contenido con IA",
       video: "editor-promo",

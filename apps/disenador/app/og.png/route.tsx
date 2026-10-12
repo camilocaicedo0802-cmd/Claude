@@ -6,7 +6,8 @@ export const dynamic = "force-static";
 export function GET() {
   return ogImage({
     role: "Diseñador digital y audiovisual",
-    headline: ["Diseño que detiene el", "scroll y se mueve."],
+    // Non-breaking spaces keep "que se sienten." together on the second line of the card.
+    headline: ["Transformo ideas en", "experiencias visuales que\u00A0se\u00A0sienten."],
     subtitle: "Diseño digital · Motion Graphics · Contenido con IA",
     poster: "editor-promo",
   });
