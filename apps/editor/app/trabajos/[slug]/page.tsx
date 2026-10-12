@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { SiteShell } from "@jcc/core/components/SiteShell";
 import { pieceSrc, posterSrc } from "@jcc/core/content/media";
+import { homeHref } from "@jcc/core/lib/paths";
 import { CaseStudy } from "@jcc/core/sections/CaseStudy";
 import { Contact } from "@jcc/core/sections/Contact";
 import { copy, links, otherSite, projects } from "../../site";
@@ -30,9 +31,9 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
   const { slug } = await params;
   const index = projects.findIndex((p) => p.slug === slug);
   if (index === -1) notFound();
-  const homeLinks = links.map((l) => ({ ...l, href: `/${l.href}` }));
+  const homeLinks = links.map((l) => ({ ...l, href: homeHref(l.href) }));
   return (
-    <SiteShell links={links} role={copy.role} home="/">
+    <SiteShell links={links} role={copy.role} home={homeHref()}>
       <CaseStudy
         project={projects[index]}
         index={index}

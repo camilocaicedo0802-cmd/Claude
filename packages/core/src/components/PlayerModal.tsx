@@ -1,13 +1,14 @@
 "use client";
 import { ArrowLeft, ArrowRight, ArrowUpRight, X } from "lucide-react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
-import Link from "next/link";
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from "react";
 import type { ReactNode } from "react";
 import { formatDuration, posterSrc, videoMeta, videoSources } from "../content/media";
 import type { Project } from "../content/types";
+import { caseHref } from "../lib/paths";
 import { pauseAll } from "../lib/playback";
 import { lockScroll } from "../lib/scroll";
+import { SiteLink } from "./SiteLink";
 
 interface PlayerState {
   list: Project[];
@@ -19,7 +20,7 @@ const PlayerContext = createContext<(list: Project[], index: number) => void>(()
 export const useOpenPlayer = () => useContext(PlayerContext);
 
 /** Full-screen player for video projects, shared by every grid on the page. */
-export function PlayerProvider({ children, caseBase = "/trabajos" }: { children: ReactNode; caseBase?: string }) {
+export function PlayerProvider({ children }: { children: ReactNode }) {
   const [state, setState] = useState<PlayerState | null>(null);
   const opener = useRef<HTMLElement | null>(null);
   const open = useCallback((list: Project[], index: number) => {
@@ -41,7 +42,6 @@ export function PlayerProvider({ children, caseBase = "/trabajos" }: { children:
           <PlayerDialog
             key="player"
             state={state}
-            caseBase={caseBase}
             onClose={close}
             onMove={(delta) => setState((s) => (s ? { ...s, index: (s.index + delta + s.list.length) % s.list.length } : s))}
           />
@@ -55,12 +55,10 @@ function PlayerDialog({
   state,
   onClose,
   onMove,
-  caseBase,
 }: {
   state: PlayerState;
   onClose: () => void;
   onMove: (delta: number) => void;
-  caseBase: string;
 }) {
   const project = state.list[state.index];
   const slug = project.media.kind === "video" ? project.media.video : "";
@@ -173,12 +171,12 @@ function PlayerDialog({
             )}
           </dl>
           <div className="mt-7 flex items-center gap-3">
-            <Link
-              href={`${caseBase}/${project.slug}/`}
+            <SiteLink
+              href={caseHref(project.slug)}
               className="press inline-flex h-12 items-center gap-2 border border-white/25 px-5 text-[0.8125rem] font-medium uppercase tracking-[0.06em] hover:border-paper"
             >
               Ver caso <ArrowUpRight aria-hidden size={16} />
-            </Link>
+            </SiteLink>
             {multiple && (
               <div className="ml-auto flex gap-2">
                 <button type="button" onClick={() => onMove(-1)} className="press grid size-12 place-items-center bg-panel hover:bg-panel-2" aria-label="Video anterior">

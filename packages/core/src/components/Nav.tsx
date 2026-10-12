@@ -1,10 +1,11 @@
 "use client";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import { AnimatePresence, motion, useMotionValueEvent, useReducedMotion, useScroll } from "motion/react";
-import Link from "next/link";
 import { useEffect, useState } from "react";
 import { profile, whatsappUrl } from "../content/profile";
+import { homeHref } from "../lib/paths";
 import { lockScroll } from "../lib/scroll";
+import { SiteLink } from "./SiteLink";
 
 export interface NavLink {
   href: string;
@@ -13,7 +14,7 @@ export interface NavLink {
 
 interface Props {
   links: NavLink[];
-  /** Base path for anchors when rendered outside the home page (case studies). */
+  /** Home page URL that anchors are prefixed with outside the home page (case studies). */
   home?: string;
   role: string;
 }
@@ -58,12 +59,12 @@ export function Nav({ links, home = "", role }: Props) {
       }`}
     >
       <nav aria-label="Principal" className="shell flex h-[var(--nav-h)] items-center justify-between gap-6">
-        <Link href={home || "/"} className="group flex items-baseline gap-3 whitespace-nowrap" aria-label={`${profile.name}, inicio`}>
+        <SiteLink href={home || homeHref()} className="group flex items-baseline gap-3 whitespace-nowrap" aria-label={`${profile.name}, inicio`}>
           <span className="text-[0.95rem] font-semibold tracking-[-0.01em]">
             Juan Camilo <span className="em text-signal">Caicedo</span>
           </span>
           <span className="hidden text-xs text-smoke xl:inline">{role}</span>
-        </Link>
+        </SiteLink>
 
         <ul className="hidden items-center gap-8 lg:flex">
           {links.map((link) => (

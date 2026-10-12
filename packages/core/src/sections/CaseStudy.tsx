@@ -1,10 +1,11 @@
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import Link from "next/link";
 import { Reveal } from "../components/Reveal";
 import { RevealText } from "../components/RevealText";
+import { SiteLink } from "../components/SiteLink";
 import { formatDuration, pieceSrc, posterSrc, videoMeta, videoSources } from "../content/media";
 import type { Project } from "../content/types";
 import { pad2 } from "../lib/format";
+import { caseHref, homeHref } from "../lib/paths";
 
 interface Props {
   project: Project;
@@ -31,9 +32,9 @@ export function CaseStudy({ project, index, total, prev, next }: Props) {
   return (
     <article className="pt-[var(--nav-h)]">
       <div className="shell pb-10 pt-10 md:pb-14 md:pt-16">
-        <Link href="/#trabajos" className="inline-flex items-center gap-2 text-sm text-fog hover:text-paper">
+        <SiteLink href={homeHref("#trabajos")} className="inline-flex items-center gap-2 text-sm text-fog hover:text-paper">
           <ArrowLeft aria-hidden size={16} /> Todos los proyectos
-        </Link>
+        </SiteLink>
         <p className="mt-10 flex flex-wrap items-baseline gap-x-4 gap-y-1 text-sm font-medium">
           <span className="text-signal tabular">
             {pad2(index + 1)} / {pad2(total)}
@@ -146,7 +147,7 @@ export function CaseStudy({ project, index, total, prev, next }: Props) {
           { p: prev, label: "Anterior", icon: <ArrowLeft aria-hidden size={18} /> },
           { p: next, label: "Siguiente", icon: <ArrowRight aria-hidden size={18} /> },
         ].map(({ p, label, icon }) => (
-          <Link key={label} href={`/trabajos/${p.slug}/`} className={`group flex items-center gap-5 bg-ink py-8 md:px-6 ${label === "Siguiente" ? "md:flex-row-reverse md:text-right" : ""}`}>
+          <SiteLink key={label} href={caseHref(p.slug)} className={`group flex items-center gap-5 bg-ink py-8 md:px-6 ${label === "Siguiente" ? "md:flex-row-reverse md:text-right" : ""}`}>
             <span className="w-16 shrink-0 overflow-hidden bg-panel">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
@@ -162,7 +163,7 @@ export function CaseStudy({ project, index, total, prev, next }: Props) {
               </span>
               <span className="mt-1 block truncate text-xl font-semibold tracking-[-0.02em] group-hover:text-signal md:text-2xl">{p.title}</span>
             </span>
-          </Link>
+          </SiteLink>
         ))}
       </nav>
 

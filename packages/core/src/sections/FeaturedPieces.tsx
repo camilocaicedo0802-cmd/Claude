@@ -1,12 +1,13 @@
 "use client";
 import { ArrowUpRight } from "lucide-react";
-import Link from "next/link";
 import type { ReactNode } from "react";
 import { RedRule, Reveal } from "../components/Reveal";
 import { SectionHeading } from "../components/SectionHeading";
+import { SiteLink } from "../components/SiteLink";
 import { pieceSrc } from "../content/media";
 import type { ImageAsset, Project } from "../content/types";
 import { pad2 } from "../lib/format";
+import { caseHref } from "../lib/paths";
 
 interface Tile {
   project: Project;
@@ -49,7 +50,7 @@ function PieceTile({ tile, index }: { tile: Tile; index: number }) {
   const { project } = tile;
   const images: ImageAsset[] = project.media.kind === "images" ? project.media.images.slice(0, tile.show) : [];
   return (
-    <Link href={`/trabajos/${project.slug}/`} className="group block" aria-label={`Ver proyecto ${project.title}`}>
+    <SiteLink href={caseHref(project.slug)} className="group block" aria-label={`Ver proyecto ${project.title}`}>
       <div className="relative flex aspect-[4/5] items-center justify-center gap-3 overflow-hidden bg-panel p-5 transition-colors duration-300 group-hover:bg-panel-2 sm:aspect-[4/3] sm:p-8 md:aspect-auto md:h-[clamp(320px,36vw,540px)] md:gap-4 md:p-10">
         {images.map((im) => (
           <div key={im.file} className="min-w-0" style={{ flex: `${im.width / im.height} 1 0%` }}>
@@ -76,7 +77,7 @@ function PieceTile({ tile, index }: { tile: Tile; index: number }) {
           <p className="text-sm text-fog">{[project.client, project.context].filter(Boolean).join(" · ")}</p>
         </div>
       </div>
-    </Link>
+    </SiteLink>
   );
 }
 

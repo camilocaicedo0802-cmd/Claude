@@ -124,6 +124,8 @@ Son sitios estáticos (`output: "export"`), así que funcionan en cualquier host
 
 **Netlify / Cloudflare Pages / cualquier hosting estático:** ejecuta `npm run build` y publica `apps/editor/out` y `apps/disenador/out`.
 
+**Carpeta portable (cualquier subcarpeta o servidor de archivos):** `npm run build:relative` genera las dos webs con rutas relativas: los casos de estudio quedan como `trabajo-<slug>.html` en la raíz, los archivos de Next en `assets/_next/` y los medios en `media/`. Esa carpeta `out` funciona aunque se suba dentro de otra ruta (por ejemplo `https://usuario.github.io/repo/`), sin configurar `basePath`. Es la versión publicada como páginas de claude.ai.
+
 **Videos en producción:** los videos pesan unos 100 MB por web. Funcionan servidos desde el propio hosting, pero para mejor velocidad y para no depender de los límites del plan, súbelos a un almacenamiento con CDN (Cloudflare R2, Bunny, S3 + CloudFront) y define `NEXT_PUBLIC_MEDIA_BASE`.
 
 ## Video

@@ -1,4 +1,5 @@
 import manifest from "../../../../media/out/manifest.json";
+import { RELATIVE_EXPORT } from "../lib/paths";
 
 export interface VideoMeta {
   width: number;
@@ -14,7 +15,7 @@ export interface VideoMeta {
 const videos = manifest as Record<string, VideoMeta>;
 
 /** Base URL for media. Point NEXT_PUBLIC_MEDIA_BASE to a CDN to serve videos from there. */
-export const MEDIA_BASE = (process.env.NEXT_PUBLIC_MEDIA_BASE ?? "/media").replace(/\/$/, "");
+export const MEDIA_BASE = (process.env.NEXT_PUBLIC_MEDIA_BASE ?? (RELATIVE_EXPORT ? "media" : "/media")).replace(/\/$/, "");
 
 export function videoMeta(slug: string): VideoMeta {
   const meta = videos[slug];

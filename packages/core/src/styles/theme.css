@@ -63,6 +63,8 @@ html.lenis body {
 
 body {
   font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.5;
   background: var(--color-ink);
   color: var(--color-paper);
   -webkit-font-smoothing: antialiased;

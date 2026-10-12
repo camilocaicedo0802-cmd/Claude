@@ -1,12 +1,13 @@
 "use client";
 import { ArrowUpRight, Images, Play } from "lucide-react";
-import Link from "next/link";
 import { useState } from "react";
 import { formatDuration, pieceSrc, videoMeta } from "../content/media";
 import type { Project } from "../content/types";
 import { useFinePointer } from "../lib/media-query";
+import { caseHref } from "../lib/paths";
 import { pad2 } from "../lib/format";
 import { useOpenPlayer } from "./PlayerModal";
+import { SiteLink } from "./SiteLink";
 import { VideoPreview } from "./VideoPreview";
 
 interface Props {
@@ -14,14 +15,13 @@ interface Props {
   index: number;
   /** List the player can step through. */
   list: Project[];
-  caseBase?: string;
 }
 
-export function ProjectCard({ project, index, list, caseBase = "/trabajos" }: Props) {
+export function ProjectCard({ project, index, list }: Props) {
   const [hover, setHover] = useState(false);
   const fine = useFinePointer();
   const openPlayer = useOpenPlayer();
-  const href = `${caseBase}/${project.slug}/`;
+  const href = caseHref(project.slug);
   const isVideo = project.media.kind === "video";
   const cover = project.media.kind === "images" ? project.media.images[0] : undefined;
   const meta = project.media.kind === "video" ? videoMeta(project.media.video) : undefined;
@@ -84,9 +84,9 @@ export function ProjectCard({ project, index, list, caseBase = "/trabajos" }: Pr
           {media}
         </button>
       ) : (
-        <Link href={href} className="block" aria-label={label}>
+        <SiteLink href={href} className="block" aria-label={label}>
           {media}
-        </Link>
+        </SiteLink>
       )}
 
       <div className="pt-4">
@@ -99,12 +99,12 @@ export function ProjectCard({ project, index, list, caseBase = "/trabajos" }: Pr
         {project.client && <p className="mt-0.5 text-sm text-fog">{project.client}</p>}
         <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-smoke">{project.description}</p>
         {project.tools.length > 0 && <p className="mt-2 text-xs text-fog">{project.tools.join(" + ")}</p>}
-        <Link
+        <SiteLink
           href={href}
           className="mt-3 inline-flex items-center gap-1.5 text-[0.8125rem] font-medium text-paper underline decoration-white/25 underline-offset-[6px] transition-colors hover:decoration-signal"
         >
           Explorar proyecto <ArrowUpRight aria-hidden size={14} />
-        </Link>
+        </SiteLink>
       </div>
     </article>
   );
