@@ -1,0 +1,230 @@
+/* Shared design tokens and base styles for both portfolios (see DESIGN.md). */
+@import "@fontsource/poppins/latin-400.css";
+@import "@fontsource/poppins/latin-500.css";
+@import "@fontsource/poppins/latin-600.css";
+@import "@fontsource/poppins/latin-700.css";
+@import "@fontsource/playfair-display/latin-400-italic.css";
+@import "@fontsource/playfair-display/latin-500-italic.css";
+
+@theme {
+  --color-ink: #080808;
+  --color-panel: #181818;
+  --color-panel-2: #202020;
+  --color-line: #2a2a2a;
+  --color-paper: #ffffff;
+  --color-fog: #a3a3a3;
+  --color-smoke: #7a7a7a;
+  --color-signal: #e50914;
+  --color-signal-deep: #a80f19;
+
+  --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", ui-serif, Georgia, serif;
+
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-cut: cubic-bezier(0.7, 0, 0.2, 1);
+  --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+
+  --breakpoint-xs: 26rem;
+}
+
+:root {
+  color-scheme: dark;
+  --nav-h: 68px;
+  --gutter: 16px;
+  accent-color: var(--color-signal);
+  caret-color: var(--color-signal);
+}
+
+@media (min-width: 768px) {
+  :root {
+    --gutter: 24px;
+  }
+}
+
+html {
+  background: var(--color-ink);
+  color: var(--color-paper);
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-padding-top: var(--nav-h);
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.5;
+  background: var(--color-ink);
+  color: var(--color-paper);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: clip;
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+  background: var(--color-signal);
+  color: var(--color-paper);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-signal);
+  outline-offset: 3px;
+}
+
+/* Scrollbar */
+html {
+  scrollbar-color: #2e2e2e var(--color-ink);
+  scrollbar-width: thin;
+}
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-ink);
+}
+::-webkit-scrollbar-thumb {
+  background: #2e2e2e;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-signal-deep);
+}
+
+a {
+  text-underline-offset: 0.22em;
+  text-decoration-thickness: 1px;
+}
+
+video {
+  background: var(--color-ink);
+}
+
+/* Layout helpers */
+.shell {
+  width: 100%;
+  max-width: 1440px;
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+/* Horizontal reel that bleeds to the screen edge but starts aligned with .shell content. */
+.rail {
+  --rail-h: 300px;
+  --rail-max-w: calc(100vw - 2 * var(--gutter) - 2.5rem);
+  /* Percentages in padding resolve against the full-width parent, so this matches .shell exactly. */
+  --rail-pad: max(var(--gutter), calc((100% - 1440px) / 2 + var(--gutter)));
+  padding-inline: var(--rail-pad);
+  scroll-padding-inline: var(--rail-pad);
+}
+@media (min-width: 768px) {
+  .rail {
+    --rail-h: 380px;
+    --rail-max-w: 760px;
+  }
+}
+@media (min-width: 1280px) {
+  .rail {
+    --rail-h: 440px;
+  }
+}
+
+/* Type */
+.display {
+  font-weight: 700;
+  font-size: clamp(2.5rem, 6.2vw, 6rem);
+  line-height: 0.98;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+.display-hero {
+  font-weight: 700;
+  font-size: clamp(1.9rem, 4.75vw, 4.75rem);
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+}
+.title {
+  font-weight: 700;
+  font-size: clamp(2.25rem, 5vw, 4.5rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+.em {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+  padding-right: 0.06em;
+}
+.body-copy {
+  color: var(--color-fog);
+  font-size: 1rem;
+  line-height: 1.7;
+  max-width: 62ch;
+  text-wrap: pretty;
+}
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+@keyframes playhead {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(200%);
+  }
+}
+
+/* Line mask used by RevealText */
+.line-mask {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.08em;
+  margin-bottom: -0.08em;
+}
+
+/* Hover only where a real pointer exists */
+@media (hover: hover) and (pointer: fine) {
+  .hover-lift {
+    transition: transform 240ms var(--ease-out);
+  }
+  .hover-lift:hover {
+    transform: translateY(-2px);
+  }
+}
+
+.press {
+  transition: transform 160ms var(--ease-out), background-color 200ms ease, color 200ms ease,
+    border-color 200ms ease;
+}
+.press:active {
+  transform: scale(0.97);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 150ms !important;
+    scroll-behavior: auto !important;
+  }
+  .press:active {
+    transform: none;
+  }
+}

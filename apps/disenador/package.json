@@ -1,0 +1,29 @@
+{
+  "name": "@jcc/disenador",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "sync-media": "node ../../scripts/sync-media.mjs disenador",
+    "predev": "npm run sync-media",
+    "dev": "next dev -p 3002",
+    "prebuild": "npm run sync-media",
+    "build": "next build",
+    "start": "npx serve@14.2.4 out -l 3002",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@jcc/core": "*",
+    "next": "16.3.6",
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "4.3.3",
+    "@types/node": "24.19.0",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "postcss": "8.5.6",
+    "tailwindcss": "4.3.3",
+    "typescript": "5.9.3"
+  }
+}

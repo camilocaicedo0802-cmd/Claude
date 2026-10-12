@@ -1,0 +1,22 @@
+{
+  "name": "juan-camilo-caicedo-portafolios",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "media:build": "python3 scripts/media/build_media.py --raw media/raw",
+    "dev:editor": "npm run dev -w @jcc/editor",
+    "dev:disenador": "npm run dev -w @jcc/disenador",
+    "build": "npm run build -w @jcc/editor && npm run build -w @jcc/disenador",
+    "build:editor": "npm run build -w @jcc/editor",
+    "build:disenador": "npm run build -w @jcc/disenador",
+    "build:relative": "NEXT_PUBLIC_RELATIVE_EXPORT=1 npm run build && node scripts/relative-export.mjs editor && node scripts/relative-export.mjs disenador",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present"
+  },
+  "engines": {
+    "node": ">=20.9"
+  }
+}

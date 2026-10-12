@@ -1,0 +1,698 @@
+{
+ "_comment": "Media for both sites, taken from Drive 'Videos y Piezas para portafolio' (folders 1-15 in priority order). videos: web MP4 + preview + poster per slug. pieces: WebP in two sizes. Run npm run media:build after editing.",
+ "videos": [
+  {
+   "slug": "editor-promo",
+   "driveId": "14Geo0KILe9JHLMQCrRqVMEEsn561vlnL",
+   "source": "1.Motion Graphics/promo_editor_motion.mp4",
+   "posterAt": 0.5625,
+   "previewAt": 0.3,
+   "quality": "high"
+  },
+  {
+   "slug": "cr7-legado",
+   "driveId": "1JutLB_3GdKE1HeN7rRO7QAJG_C_-iaZA",
+   "source": "1.Motion Graphics/cr7_v3.mp4",
+   "posterAt": 0.8125,
+   "previewAt": 0.15,
+   "quality": "high"
+  },
+  {
+   "slug": "tiempo-motion",
+   "driveId": "11-KEX63uqkb6t1Mz8EZxyCETNQD_p369",
+   "source": "1.Motion Graphics/Video 1 Motion.mp4",
+   "posterAt": 0.9375,
+   "previewAt": 0.05,
+   "quality": "high"
+  },
+  {
+   "slug": "meb-proposito",
+   "driveId": "1LDG9uuDjSj5tA_augYaxAQVB5Q-86sSJ",
+   "source": "2. Maria Elena Badillo/Te han hecho creer que encontrar tu propósito es dejar todo y empezar de cero. Tu propósito no e.mp4",
+   "posterAt": 0.04,
+   "previewAt": 0.05
+  },
+  {
+   "slug": "meb-podcast",
+   "driveId": "1aqW7JwQ6tzgYL19OtsULZbW8pdjSjGhp",
+   "source": "2. Maria Elena Badillo/maria elena 1.mp4",
+   "posterAt": 0.08,
+   "previewAt": 0.06
+  },
+  {
+   "slug": "meb-vacaciones",
+   "driveId": "1zh6Tz2Guj-JRrrjOzTeTRkD_1uAVAVdA",
+   "source": "2. Maria Elena Badillo/¿Y si tus próximas vacaciones no fueran para escapar… sino para encontrartePorque puedes seguir.mp4",
+   "posterAt": 0.35,
+   "previewAt": 0.3
+  },
+  {
+   "slug": "meb-cobrar",
+   "driveId": "1mb0KXjvfyFdQ0Ehxayvz9CjlyAyh9jE_",
+   "source": "2. Maria Elena Badillo/Imagínate poder cobrar lo que realmente vales, sin culpa, sin pena y sin sentir que tienes que j.mp4",
+   "posterAt": 0.08,
+   "previewAt": 0.05
+  },
+  {
+   "slug": "meb-domingo",
+   "driveId": "1R0Mqe5VuhOiNR9UwIEXQjbeFJ-8G6hMw",
+   "source": "2. Maria Elena Badillo/Te comparto un día normal, real... Como este domingo- sin perfección, con pendientes, con una me.mp4",
+   "posterAt": 0.35,
+   "previewAt": 0.1
+  },
+  {
+   "slug": "meb-reflexion",
+   "driveId": "1QO-i5I4koVOP2A-sRhsfE0X5yIMjFwCm",
+   "source": "2. Maria Elena Badillo/maria elena 2.mp4",
+   "posterAt": 0.35,
+   "previewAt": 0.1
+  },
+  {
+   "slug": "ryhar-new-drop",
+   "driveId": "1aalsVqxU-9T5DwsDNOlm8HqUObo8a6zh",
+   "source": "3. Ryhar/IMG_5989.MOV",
+   "posterAt": 0.08,
+   "previewAt": 0.0
+  },
+  {
+   "slug": "ryhar-outfit",
+   "driveId": "15LpP6oRS5SMF3c-wQPy44np0x8_Y6JVj",
+   "source": "3. Ryhar/IMG_5418.MP4",
+   "posterAt": 0.08,
+   "previewAt": 0.0
+  },
+  {
+   "slug": "ryhar-coleccion",
+   "driveId": "102JAiRtOsKh1JlmnXiwy6W2dhjXVepEE",
+   "source": "3. Ryhar/IMG_5758.MOV",
+   "posterAt": 0.35,
+   "previewAt": 0.0
+  },
+  {
+   "slug": "ryhar-volvemos",
+   "driveId": "1cpI0xz6n_6dEkFQ4nPnQDok-BLtM1MIH",
+   "source": "3. Ryhar/Video ryhar volvemos.mp4",
+   "posterAt": 0.35,
+   "previewAt": 0.2
+  },
+  {
+   "slug": "beleza-dia-01",
+   "driveId": "1gKYiWKWDA7_rne2qvcRjaQVn953tKF41",
+   "source": "4. Beleza/Reto21dias_Dia1_final 1.mp4",
+   "posterAt": 0.08,
+   "previewAt": 0.05
+  },
+  {
+   "slug": "beleza-dia-02",
+   "driveId": "1lmzcdfyrbBdOIG0KVqIb-w_dqNySyTl8",
+   "source": "4. Beleza/Reto21dias_Dia2_final.mp4",
+   "posterAt": 0.08,
+   "previewAt": 0.05
+  },
+  {
+   "slug": "beleza-dia-03",
+   "driveId": "1o1lmpCyJRRltB1i6Ox2mCq_AmBn-vNSu",
+   "source": "4. Beleza/Reto21dias_Dia3_final.mp4",
+   "posterAt": 0.08,
+   "previewAt": 0.05
+  },
+  {
+   "slug": "beleza-dia-04",
+   "driveId": "1T3epIMgkkriTQ_pAa9AUJVsU5gxJH8oa",
+   "source": "4. Beleza/Reto21dias_Dia4_final corregido.mp4",
+   "posterAt": 0.08,
+   "previewAt": 0.05
+  },
+  {
+   "slug": "beleza-dia-05",
+   "driveId": "1Rz7eBDdz3Zbz8A60lXciXYJGxrulRwod",
+   "source": "4. Beleza/Reto21dias_Dia5_final.mp4",
+   "posterAt": 0.35,
+   "previewAt": 0.3
+  },
+  {
+   "slug": "beleza-dia-06",
+   "driveId": "1EQ_DAOP8dmF8GqWgNWunoCvyDUl3s3tO",
+   "source": "4. Beleza/Reto21dias_Dia6_final.mp4",
+   "posterAt": 0.08,
+   "previewAt": 0.05
+  },
+  {
+   "slug": "beleza-dia-07",
+   "driveId": "13EQo70zv8k98Z0qR460uajznTpfmYKQu",
+   "source": "4. Beleza/Reto21dias_Dia7_final.mp4",
+   "posterAt": 0.35,
+   "previewAt": 0.3
+  },
+  {
+   "slug": "beleza-dia-08",
+   "driveId": "1N1BbnSHPbNK0T9m_jlzic5KgSuKPpoGc",
+   "source": "4. Beleza/Reto21dias_Dia8_final.mp4",
+   "posterAt": 0.08,
+   "previewAt": 0.05
+  },
+  {
+   "slug": "beleza-dia-09",
+   "driveId": "1PtDf_pOF9Ub-kqbeXQDLNfsDmN8Tl0-U",
+   "source": "4. Beleza/Reto21dias_Dia9_final.mp4",
+   "posterAt": 0.08,
+   "previewAt": 0.05
+  },
+  {
+   "slug": "beleza-dia-10",
+   "driveId": "1_ug4gg8a0eq1y-OqxyUwALAJLBVWBVE0",
+   "source": "4. Beleza/Reto21dias_Dia10_final.mp4",
+   "posterAt": 0.08,
+   "previewAt": 0.05
+  },
+  {
+   "slug": "beleza-funciona",
+   "driveId": "16ItTpGZuwNFYbu1-d2YRH7bcEBz0v47f",
+   "source": "4. Beleza/Complementario_Como_Funciona_Producto_final.mp4",
+   "posterAt": 0.08,
+   "previewAt": 0.05
+  },
+  {
+   "slug": "beleza-abdomen",
+   "driveId": "1XtxN36G4rGRFeR6BIiqYmYcIZSm9Xjkb",
+   "source": "4. Beleza/Complementario_Preparacion_Abdomen_final.mp4",
+   "posterAt": 0.08,
+   "previewAt": 0.05
+  },
+  {
+   "slug": "beleza-piernas",
+   "driveId": "1nUYT1w26XcD5ZSXoIm7rdA4AFutjm6Qp",
+   "source": "4. Beleza/Complementario_Preparacion_Piernas_final.mp4",
+   "posterAt": 0.08,
+   "previewAt": 0.05
+  },
+  {
+   "slug": "konexion-reel",
+   "driveId": "1XgDXjUr7jGU8q2FJf4iUav3kwQccWf-X",
+   "source": "5. Konexión Académica/Reel Konexión.mp4",
+   "posterAt": 0.08,
+   "previewAt": 0.05
+  },
+  {
+   "slug": "mnm-evangel-retiro",
+   "driveId": "1nUczTvj71EpVjwmlp4DY9PVkAOsh7Tgm",
+   "source": "6. Mente Nueva Marketing/Reel Evangel Portafolio 3.mp4",
+   "posterAt": 0.08,
+   "previewAt": 0.1
+  },
+  {
+   "slug": "mnm-theology",
+   "driveId": "1CL83qpOtAZMCPtgCLaulphYOPVqiNcGj",
+   "source": "6. Mente Nueva Marketing/Reel Theology Portafolio 5.mp4",
+   "posterAt": 0.08,
+   "previewAt": 0.05
+  },
+  {
+   "slug": "mnm-ccve",
+   "driveId": "1jiZK-4pk5bGzw4lfR-vptdg5KnWbaTdc",
+   "source": "6. Mente Nueva Marketing/Reel C.C.V.E Portafolio.mp4",
+   "posterAt": 0.08,
+   "previewAt": 0.05
+  },
+  {
+   "slug": "mnm-evangel-servicio",
+   "driveId": "1f3LJ2sE6VGlXYl4aGopSjvX_UW_LPrT1",
+   "source": "6. Mente Nueva Marketing/Reel Evangel 1 Portafolio.mp4",
+   "posterAt": 0.35,
+   "previewAt": 0.05
+  },
+  {
+   "slug": "poolex-corporativo",
+   "driveId": "1M3lvQzG7lXPpUP1QEacafbGQ79beRPFz",
+   "source": "9. Poolex/Video Llamada corp Inicio.mp4",
+   "posterAt": 0.08,
+   "previewAt": 0.05
+  },
+  {
+   "slug": "poolex-agenda",
+   "driveId": "1vpW4XgwCtfINd9-vCfIrC9DpftC3hkVO",
+   "source": "9. Poolex/Agenda Poolex.mp4",
+   "posterAt": 0.08,
+   "previewAt": 0.05
+  },
+  {
+   "slug": "alanna-coming-soon",
+   "driveId": "1dvjbk7W-XYmLTQO9L0vOZaTdiqBmKIze",
+   "source": "10. Common Room/Reel 2 Alanna Portafolio.mp4",
+   "posterAt": 0.35,
+   "previewAt": 0.05
+  },
+  {
+   "slug": "alanna-lookbook",
+   "driveId": "1ok4UshJIZbbmWyLjqQDUh3wUsmip0hkz",
+   "source": "10. Common Room/Reel 5 Alanna Portafolio.mp4",
+   "posterAt": 0.35,
+   "previewAt": 0.05
+  },
+  {
+   "slug": "luisa-lopez",
+   "driveId": "1oGRWRTHVnAmFuZOa-yNO1aolQpWDiJyo",
+   "source": "10. Common Room/Reel 6 Alanna Portafolio.mp4",
+   "posterAt": 0.35,
+   "previewAt": 0.05
+  },
+  {
+   "slug": "boxarome",
+   "driveId": "1CiJtf1KbZTXGVDjLxQ-9u0_1fnxAaCCr",
+   "source": "11. Extrarome/Video boxarome 1.mp4",
+   "posterAt": 0.08,
+   "previewAt": 0.05
+  },
+  {
+   "slug": "iconicas",
+   "driveId": "1iGp7nJG8Tx0PpVWEFxLNFSkLmddlTWux",
+   "source": "11. Extrarome/Video iconicas.mp4",
+   "posterAt": 0.08,
+   "previewAt": 0.05
+  },
+  {
+   "slug": "multivitaminico",
+   "driveId": "1PfDQ9wyS3bEburhQ-tbzLF91iZ8IYArG",
+   "source": "15. Otros proyectos/Reel Multivitaminico.mp4",
+   "posterAt": 0.08,
+   "previewAt": 0.05
+  }
+ ],
+ "pieces": [
+  {
+   "file": "ryhar-01",
+   "driveId": "16mdOHDPQEilURaRXVLrp3UdqRxs-2OgV",
+   "source": "3. Ryhar/1.png"
+  },
+  {
+   "file": "ryhar-02",
+   "driveId": "1Qd18ShbAzVN7k_ej1ZRnBqiSks4t3nRP",
+   "source": "3. Ryhar/2.png"
+  },
+  {
+   "file": "ryhar-03",
+   "driveId": "1xZx_t8AOe2RIHJvOs6-a9-nl17-3T3aZ",
+   "source": "3. Ryhar/3.png"
+  },
+  {
+   "file": "ryhar-04",
+   "driveId": "16JF0v8Lm2Qg8X9BPxG6ABqd5V4mhY-GF",
+   "source": "3. Ryhar/4.png"
+  },
+  {
+   "file": "ryhar-05",
+   "driveId": "1StKql_de-Dk_sHGb52UWNwg2fNeFa60A",
+   "source": "3. Ryhar/5.png"
+  },
+  {
+   "file": "ryhar-06",
+   "driveId": "12nWkxcJY4bVji3aPFRhib7otl13kakHZ",
+   "source": "3. Ryhar/6.png"
+  },
+  {
+   "file": "ryhar-07",
+   "driveId": "1WTArn621E88I1blwd4NeQUIxQpamsT74",
+   "source": "3. Ryhar/7.png"
+  },
+  {
+   "file": "ryhar-08",
+   "driveId": "1gTBEA-MjDHEDdP2BlASYMVmdLOGRP7kR",
+   "source": "3. Ryhar/8.png"
+  },
+  {
+   "file": "ryhar-09",
+   "driveId": "1GwpRVBSBKgwmhbTxNa_5vKT9thvk1iLa",
+   "source": "3. Ryhar/9.png"
+  },
+  {
+   "file": "ryhar-10",
+   "driveId": "1hGP_gxYaeXVis-Qve8DPGc8uTdXmnMdM",
+   "source": "3. Ryhar/10.png"
+  },
+  {
+   "file": "ryhar-11",
+   "driveId": "1UzfSPNGoajzj-3RNmo74WAQIKfTq9RXu",
+   "source": "3. Ryhar/11.png"
+  },
+  {
+   "file": "ryhar-deadpool",
+   "driveId": "1VzQONwN0UgXEAK_PF1rIkqYYcfRftN7S",
+   "source": "3. Ryhar/Deadpool historia.png"
+  },
+  {
+   "file": "ryhar-setlist",
+   "driveId": "1tkB50mRXVtFNmbKJ1H1r3fLd7IQtjsVx",
+   "source": "3. Ryhar/Historia Setlist Ryan.jfif"
+  },
+  {
+   "file": "ryhar-sende",
+   "driveId": "1yd4jp-PvcjWpdFkr15BfqqHaPpqs6SLs",
+   "source": "3. Ryhar/Post Sende ryan.jfif"
+  },
+  {
+   "file": "konexion-01",
+   "driveId": "1AQ7LMt--nGPfn4zYivGfKUV9wQ2ey2Lk",
+   "source": "5. Konexión Académica/1.png"
+  },
+  {
+   "file": "konexion-02",
+   "driveId": "1RdfRl8DRBuX1pC7o3YoUr_TPEbrrdx6P",
+   "source": "5. Konexión Académica/2.png"
+  },
+  {
+   "file": "konexion-03",
+   "driveId": "1LgqKy5obYuIDt3Ha-N8XGEAuifCMwtkC",
+   "source": "5. Konexión Académica/3.png"
+  },
+  {
+   "file": "konexion-04",
+   "driveId": "1Xi9H01VFd7_Ifh1x8HG5EcK4xavv9SSB",
+   "source": "5. Konexión Académica/4.png"
+  },
+  {
+   "file": "konexion-05",
+   "driveId": "1ZYKxcdcJRlMajkwHt8pUICJonCeIymNc",
+   "source": "5. Konexión Académica/5.png"
+  },
+  {
+   "file": "konexion-06",
+   "driveId": "1CHZiEamRkftgtayThL2iFyIt7H-VMSrQ",
+   "source": "5. Konexión Académica/6.png"
+  },
+  {
+   "file": "konexion-07",
+   "driveId": "134FBCMF_HMK7qgpyEaAZjzZ-1NEPPJnL",
+   "source": "5. Konexión Académica/7.png"
+  },
+  {
+   "file": "konexion-08",
+   "driveId": "1nRkcdKxOxtb3pHBTTqEiQpy3oTVbaDRY",
+   "source": "5. Konexión Académica/8.png"
+  },
+  {
+   "file": "konexion-09",
+   "driveId": "1tEo6_Hz60PxXY5znwIaPLxayzK7ORHY4",
+   "source": "5. Konexión Académica/9.png"
+  },
+  {
+   "file": "konexion-10",
+   "driveId": "1wWbU25sE6Gm2FLobVd42I-_MtYGNvPrj",
+   "source": "5. Konexión Académica/10.png"
+  },
+  {
+   "file": "konexion-11",
+   "driveId": "1W_-j72nE9Fw_1cunHJN_jMmSD5_vS-SB",
+   "source": "5. Konexión Académica/11.png"
+  },
+  {
+   "file": "konexion-12",
+   "driveId": "1qymBznayVG29sVAi4csb-lWgbbEzuw1_",
+   "source": "5. Konexión Académica/12.png"
+  },
+  {
+   "file": "konexion-13",
+   "driveId": "19UnXbxaBz_EAc9vr7N_5snJJMAvKDRwC",
+   "source": "5. Konexión Académica/13.png"
+  },
+  {
+   "file": "konexion-14",
+   "driveId": "1E0JFFmzXJUPLeAPJEGWdr6qOFobyIpoz",
+   "source": "5. Konexión Académica/14.png"
+  },
+  {
+   "file": "mnm-banner",
+   "driveId": "15_uLgMD_DT6o5Xa-bDivJ4je_Y0env_c",
+   "source": "6. Mente Nueva Marketing/banner MENTE NUEVA.png"
+  },
+  {
+   "file": "mnm-jovenes",
+   "driveId": "1zXuGiSwGgzXGkm8bP3plvtxYE7h5y4Vj",
+   "source": "6. Mente Nueva Marketing/4.5 MENTE NUEVA.png"
+  },
+  {
+   "file": "mnm-family",
+   "driveId": "1AJGoTgdKFCTFi_zy2A2NoonDB2px_Occ",
+   "source": "6. Mente Nueva Marketing/1 (1).png"
+  },
+  {
+   "file": "mnm-bendicion",
+   "driveId": "1q2hexQCw8PsLKK-Npu-7gF3cfLZk9n7e",
+   "source": "6. Mente Nueva Marketing/1.png"
+  },
+  {
+   "file": "mnm-ensenanza",
+   "driveId": "1gH8eCFtexeg1jtiMhjG5vjIS_o9u8uWP",
+   "source": "6. Mente Nueva Marketing/2 (1).png"
+  },
+  {
+   "file": "mnm-cafe-mujeres",
+   "driveId": "1-wf4TZVeEADgaoN7N7Dsp7uKKvIQcSxc",
+   "source": "6. Mente Nueva Marketing/2.png"
+  },
+  {
+   "file": "mnm-ayuno",
+   "driveId": "1PKZmvE_ThSCCGyT3i-YGaKCtxfMF-tIY",
+   "source": "6. Mente Nueva Marketing/3.png"
+  },
+  {
+   "file": "mnm-avivamiento",
+   "driveId": "1h5s6-yth2K3idjoMKQ3vaLqxWc4wZsmC",
+   "source": "6. Mente Nueva Marketing/4.png"
+  },
+  {
+   "file": "mnm-retiro-mujeres",
+   "driveId": "1-HB3kWaGXly-1j0SRR942zSAq8TeqTAG",
+   "source": "6. Mente Nueva Marketing/5.png"
+  },
+  {
+   "file": "mnm-discipulado",
+   "driveId": "1uzUo5jYb9seIjOIdN56DuMwj_BjZSiDV",
+   "source": "6. Mente Nueva Marketing/6.png"
+  },
+  {
+   "file": "mnm-escuela-dominical",
+   "driveId": "1Vsjr7CdykDHmx7y9zTTkLEc_CZnerSaZ",
+   "source": "6. Mente Nueva Marketing/7.png"
+  },
+  {
+   "file": "mnm-estudio-biblico",
+   "driveId": "1qN8XruZGpYBEBdJAT_4paZZypYZo32aj",
+   "source": "6. Mente Nueva Marketing/8.png"
+  },
+  {
+   "file": "mnm-estudio-biblico-2",
+   "driveId": "1FhLOMIqLPWcdhI_c7djtB3F8wuT-zruG",
+   "source": "6. Mente Nueva Marketing/9.png"
+  },
+  {
+   "file": "mnm-lunes-oracion",
+   "driveId": "1HbrLKkWZNTQmYiCaK7Zvcchhdbzta6HA",
+   "source": "6. Mente Nueva Marketing/10.png"
+  },
+  {
+   "file": "gmedia-05",
+   "driveId": "1mjvkncvpQJYZdEksUrMJhZNi1sbSsl7N",
+   "source": "7. Gmedia/WhatsApp Image 2026-10-11 at 7.40.56 PM.jpeg"
+  },
+  {
+   "file": "gmedia-01",
+   "driveId": "15tN6HdMu_LXcEN3KDgY74ek61b4HlsHi",
+   "source": "7. Gmedia/WhatsApp Image 2026-10-11 at 7.40.55 PM.jpeg"
+  },
+  {
+   "file": "gmedia-02",
+   "driveId": "163XCj8z3Q5BJMSir8wbh-Ub5-AK4-ZGR",
+   "source": "7. Gmedia/WhatsApp Image 2026-10-11 at 7.40.55 PM (1).jpeg"
+  },
+  {
+   "file": "gmedia-03",
+   "driveId": "1Fc3dcw95Bt-4iRwQbMrHLAEa79W0vlOn",
+   "source": "7. Gmedia/WhatsApp Image 2026-10-11 at 7.40.55 PM (2).jpeg"
+  },
+  {
+   "file": "gmedia-04",
+   "driveId": "1LAOzm3vgq7omgYS_Q4maFg8T7r4fFZqe",
+   "source": "7. Gmedia/WhatsApp Image 2026-10-11 at 7.40.55 PM (3).jpeg"
+  },
+  {
+   "file": "cmi-01",
+   "driveId": "1sWueJJH9XH_rNB7vGmwrIrDDQnQ4f-06",
+   "source": "8. CMI/AD-JAQ-1-SEP.png"
+  },
+  {
+   "file": "cmi-02",
+   "driveId": "1feyPm2lgzbOKCRDBHr1_912PjvoTb2eP",
+   "source": "8. CMI/AD-JAQ-2-SEP.png"
+  },
+  {
+   "file": "cmi-03",
+   "driveId": "1qkY9uMHwYU9GTDvV7GZ1DEze7OwCm0Ub",
+   "source": "8. CMI/AD-JAQ-3-SEP.png"
+  },
+  {
+   "file": "cmi-04",
+   "driveId": "1D7i_cV-TKk8TCF2EtV7seuKkrDzsKB09",
+   "source": "8. CMI/AD-JAQ-4-SEP.png"
+  },
+  {
+   "file": "cmi-05",
+   "driveId": "12duyOBCv223EmEXrbR0uMXNkenn8Vi-h",
+   "source": "8. CMI/AD-JAQ-6-SEP.png"
+  },
+  {
+   "file": "cmi-06",
+   "driveId": "1wZTNdz-51SkOUm76LZyVCYA0A5q2sHWM",
+   "source": "8. CMI/AD-JAQ-7-SEP Storie.png"
+  },
+  {
+   "file": "cmi-07",
+   "driveId": "1ii4R94a-32aRBnNVHglwKuYJP6TZJ013",
+   "source": "8. CMI/AD-JAQ-9-SEP.png"
+  },
+  {
+   "file": "poolex-banner",
+   "driveId": "1dx6BWzpLyorS8ZEIFrx2UvUWyMl-Pvb_",
+   "source": "9. Poolex/Poolex banner.png"
+  },
+  {
+   "file": "poolex-peru",
+   "driveId": "1Zo7jlJuED_2dWKhUQ1Bwu_Lv8pH7neGW",
+   "source": "9. Poolex/1 (1).png"
+  },
+  {
+   "file": "poolex-nueva-york",
+   "driveId": "1PQTrJcgzNWW9sTHYbIp2V66vKX8XAnZi",
+   "source": "9. Poolex/1.png"
+  },
+  {
+   "file": "poolex-persuasion",
+   "driveId": "1oCJb6582YFAUo6JUXFxTS0tiQdbD8MDp",
+   "source": "9. Poolex/2 (1).png"
+  },
+  {
+   "file": "poolex-acciones",
+   "driveId": "12MhbvOEIzr7YVnDznxCBUPzyRjJ8YOna",
+   "source": "9. Poolex/2.png"
+  },
+  {
+   "file": "poolex-crowdfunding",
+   "driveId": "1pVhx9rrK6eh_MrSCKu2VOYgwOw39KQW3",
+   "source": "9. Poolex/3.png"
+  },
+  {
+   "file": "poolex-trading",
+   "driveId": "1z8oyzVCTIvjcFHZV35G9W8m8bj7vJi9w",
+   "source": "9. Poolex/4.png"
+  },
+  {
+   "file": "extrarome-hogar",
+   "driveId": "17k3-ZhsmmpbumK_BjHwaRvxklVFYUccB",
+   "source": "11. Extrarome/1 (1).png"
+  },
+  {
+   "file": "extrarome-elegancia",
+   "driveId": "1E72vF0NuM-DJn0JKHYgaotPWLdrvA-QD",
+   "source": "11. Extrarome/2 (1).png"
+  },
+  {
+   "file": "extrarome-aromas",
+   "driveId": "11VY765oL4q8L84r9RdhWiKnLXxX0Xzhs",
+   "source": "11. Extrarome/3.png"
+  },
+  {
+   "file": "extrarome-plan",
+   "driveId": "1Jrl4oowykDMaU09LnZZLswObFjwAB58_",
+   "source": "11. Extrarome/4.png"
+  },
+  {
+   "file": "extrarome-scent",
+   "driveId": "1XyfAV0JHMqSGOezX0zy24ZSUxgybv-H7",
+   "source": "11. Extrarome/1.png"
+  },
+  {
+   "file": "extrarome-aromaterapia",
+   "driveId": "17XVYONkhP52_s9WJZ9xrltNq8FY6cLBq",
+   "source": "11. Extrarome/2.png"
+  },
+  {
+   "file": "bellatriz-01",
+   "driveId": "1rCc-BhRMkU9WpoWp4qkDbF8j_J75r_R_",
+   "source": "12. Bellatriz/1.png"
+  },
+  {
+   "file": "bellatriz-02",
+   "driveId": "19grYDANVj6aZ22MQSni-t_RfF5OxR6DA",
+   "source": "12. Bellatriz/2.png"
+  },
+  {
+   "file": "bellatriz-03",
+   "driveId": "19wL43qOZovT-GxTmA-Iz9jGgZe_YZPon",
+   "source": "12. Bellatriz/3.png"
+  },
+  {
+   "file": "bellatriz-04",
+   "driveId": "19q3Wf-qR1htgbS-x65WwY2uTjCJfU66X",
+   "source": "12. Bellatriz/4.png"
+  },
+  {
+   "file": "cocacola-banner",
+   "driveId": "11b8r6FqUhlxhkshMAL4ZKQ3UWNJpErML",
+   "source": "13. Coca Cola Freeze (Proyecto Universitario)/Coca cola freeze banner.png"
+  },
+  {
+   "file": "cocacola-post",
+   "driveId": "1GrVDy6Knrnl1HU-5my4KND9qPT-5o0zV",
+   "source": "13. Coca Cola Freeze (Proyecto Universitario)/1.png"
+  },
+  {
+   "file": "cocacola-can",
+   "driveId": "1buHhbP4aC9-86KrOFqtsRcYqooC1gE2B",
+   "source": "13. Coca Cola Freeze (Proyecto Universitario)/2.png"
+  },
+  {
+   "file": "cocacola-register",
+   "driveId": "1jHAZBg-xl3Szl2eAB7da6KP7D1rwSWfR",
+   "source": "13. Coca Cola Freeze (Proyecto Universitario)/2 (1).png"
+  },
+  {
+   "file": "cocacola-lab",
+   "driveId": "1xhB0UUwcH6ZGtv19H6zwp7kg2ZA8Q9NW",
+   "source": "13. Coca Cola Freeze (Proyecto Universitario)/1 (1).png"
+  },
+  {
+   "file": "costena-square",
+   "driveId": "1LxbxE9VL8lOfgTNBZZVRuLXRZ-mHznAg",
+   "source": "14. Costeña Bacana/Costeña bacana 1.1.png"
+  },
+  {
+   "file": "costena-banner",
+   "driveId": "1kxwSiReUz2YVpDTeGiY3_vmgB9F4nGL6",
+   "source": "14. Costeña Bacana/1.png"
+  },
+  {
+   "file": "costena-vertical",
+   "driveId": "1PzRrDqbXAJzaxPD2ayDog40AZk7S3iWf",
+   "source": "14. Costeña Bacana/Costeña bacana st.png"
+  },
+  {
+   "file": "costena-stage",
+   "driveId": "1Vq2L8BjfCdI7P5Q5Ur0LHZ6soG7EgOTx",
+   "source": "14. Costeña Bacana/2.png"
+  },
+  {
+   "file": "multicentrum-post",
+   "driveId": "1ZP4zp3jlSBd7naRajUK1qrJhsNvEuXtw",
+   "source": "15. Otros proyectos/Multivitaminico 4 5.png"
+  },
+  {
+   "file": "amazon-vr",
+   "driveId": "1-YI5S7vw1OcTjJnqWeAqVZy2VfL4XEsf",
+   "source": "15. Otros proyectos/banner amazon.png"
+  },
+  {
+   "file": "samsung-ring",
+   "driveId": "1eiVjMOL37xcBvRn2eDmSoNS7-aM8hg0t",
+   "source": "15. Otros proyectos/Samsung 1 1.png"
+  }
+ ]
+}

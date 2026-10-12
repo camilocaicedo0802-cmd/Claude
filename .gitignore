@@ -1,0 +1,9 @@
+node_modules/
+.next/
+apps/*/out/
+apps/*/public/media/
+media/raw/
+*.tsbuildinfo
+next-env.d.ts
+.playwright-mcp/
+.DS_Store
