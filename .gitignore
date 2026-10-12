@@ -1,6 +1,6 @@
 node_modules/
 .next/
-out/
+apps/*/out/
 apps/*/public/media/
 media/raw/
 *.tsbuildinfo
