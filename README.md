@@ -144,7 +144,7 @@ Con Playwright (Chromium) sobre el build de producción de las dos webs (segunda
 
 | Prueba | Resultado |
 | --- | --- |
-| Móvil 390, tablet 820 y desktop 1440 | Sin scroll horizontal, sin errores de consola, sin peticiones fallidas, ningún título oculto (home y las 10 + 15 páginas de proyecto) |
+| Móvil 360 y 390, tablet 820 y desktop 1440 | Sin scroll horizontal (medido sin emulación móvil, que lo esconde al alejar la página), sin errores de consola, sin peticiones fallidas, ningún título oculto (home y las 10 + 15 páginas de proyecto) |
 | Portada | `promo_editor_motion.mp4` en las dos webs; en móvil y tablet el video va centrado y el título y los botones caben en la primera pantalla |
 | Contenido | Editor: 40 videos y 0 piezas en 10 capítulos. Diseñador: 40 videos y 83 piezas en 15 capítulos, en el orden de las carpetas y con los videos antes que las piezas |
 | YouTube | El episodio de 38 min de María Elena Badillo aparece en su capítulo y en su página de proyecto, abre en el visor y su archivo web se decodificó completo sin errores (37:56, igual al original) |
