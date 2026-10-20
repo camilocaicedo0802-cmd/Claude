@@ -1,0 +1,37 @@
+{
+  "campana": "Té Matcha Grado Ceremonial Premium — LO Laboratorios Outlet",
+  "plataforma": "Higgsfield (MCP)",
+  "formato": { "aspect_ratio": "9:16", "idioma_voz": "Latin American Spanish with a warm, natural Colombian accent" },
+  "referencias": {
+    "producto": { "id": "850cf9d2-5981-41bd-8b88-6c127eac798f", "tipo": "media_input", "archivo_local": "assets/producto-te-matcha.jpg" },
+    "avatar_doctor": { "id": "b7b169c4-79ba-429c-b7da-d2e8019c5b66", "tipo": "image_job", "archivo_local": "assets/avatar-doctor.jpg" },
+    "avatar_creadora": { "id": "c3eef1aa-e355-4d37-87a0-f865097cfe86", "tipo": "image_job", "archivo_local": "assets/avatar-creadora.jpg" }
+  },
+  "modelos": {
+    "avatar": { "model": "soul_2", "aspect_ratio": "9:16" },
+    "fotograma": { "model": "nano_banana_2_1", "aspect_ratio": "9:16", "resolution": "2k", "thinking_level": "medium" },
+    "video_con_voz": { "model": "veo3_1_lite", "aspect_ratio": "9:16", "duration": 8, "generate_audio": true, "media_role": "start_image" },
+    "video_broll": { "model": "kling3_0", "aspect_ratio": "9:16", "duration": 5, "mode": "std", "sound": "off", "media_role": "start_image" },
+    "storyboard": { "model": "gpt_image_2", "aspect_ratio": "21:9", "resolution": "2k", "quality": "high" },
+    "realismo_storyboard": { "model": "seedream_v5_pro", "aspect_ratio": "21:9", "resolution": "2k" }
+  },
+  "flujo_doctor": [
+    { "escena": 1, "nombre": "gancho",     "medias": ["avatar_doctor"],             "fotograma_job": "f430cc11-4bbd-44eb-b47a-66ac0fc2051b", "video_job": "7c4087dc-f8d1-4eae-9b59-b474c1078442" },
+    { "escena": 2, "nombre": "problema",   "medias": ["avatar_doctor"],             "fotograma_job": "28a9694e-0eb3-4bf6-b824-04379cb3cde4", "video_job": "e62d3cdc-5fe4-4441-9a16-c6d6f37adc40" },
+    { "escena": 3, "nombre": "revelacion", "medias": ["avatar_doctor", "producto"], "fotograma_job": "82e36b41-a668-41bf-a5b2-0a70b9caff61", "video_job": "beb4d980-ae4e-4f4e-ba78-ed3f9f64735c" },
+    { "escena": 4, "nombre": "por_que",    "medias": ["avatar_doctor", "producto"], "fotograma_job": "33fc5a74-b43c-4291-b399-f39a6911de88", "video_job": "a01efd59-3c94-4065-bf35-d66d5cc87a50" },
+    { "escena": 5, "nombre": "beneficio",  "medias": ["avatar_doctor", "producto"], "fotograma_job": "f477f76e-a726-4f4f-8331-4a942084945d", "video_job": "1e99403f-2685-4ffd-9125-f0e668c16818" },
+    { "escena": 6, "nombre": "cta",        "medias": ["avatar_doctor", "producto"], "fotograma_job": "ac3cf1e9-649b-43fc-a563-3d18c5166b0f", "video_job": "bb30519c-a636-4a52-8115-5db7648a7cf7" }
+  ],
+  "flujo_broll": [
+    { "toma": 1, "nombre": "oficinista_cansada",   "medias": [],           "fotograma_job": "917f01a9-b216-438e-92fa-23a8595281e6", "video_job": "aeaef50b-c81e-46cc-9802-6af326140efa" },
+    { "toma": 2, "nombre": "hero_producto",        "medias": ["producto"], "fotograma_job": "c601c7d5-653f-4a69-a1b3-b432d309be03", "video_job": "81aa0506-5282-4c93-bc2d-d3bf586ea336" },
+    { "toma": 3, "nombre": "batido_macro",         "medias": ["producto"], "fotograma_job": "927d70ba-69b5-4e75-a665-c20a5144a0a9", "video_job": "9c2974bc-ea80-45d3-adbc-5b49329e50e5" },
+    { "toma": 4, "nombre": "vertido_leche_hielo",  "medias": ["producto"], "fotograma_job": "e0096cc5-3652-456e-b0d7-74d02c0451a4", "video_job": "e52cb2e2-0991-49f4-9d33-7959c3a48fe7" },
+    { "toma": 5, "nombre": "profesional_energia",  "medias": ["producto"], "fotograma_job": "2df89c1a-823b-4305-b64a-80085bdf9367", "video_job": "9b8b0128-38f0-426d-a8a3-4ab03cfa46cb" }
+  ],
+  "flujo_creadora": [
+    { "tablero": 1, "medias": ["producto", "avatar_creadora"],                    "tablero_job": "85d2305a-6328-4997-8229-47319223c374", "realismo_job": "5bffaba6-2c93-4485-bc39-3dcb32d63674" },
+    { "tablero": 2, "medias": ["producto", "avatar_creadora", "tablero_1_realismo"], "tablero_job": "7c39cd4b-8aa8-4a9e-b517-2aaf7122a8f0", "realismo_job": "c415b80a-5991-40c0-8117-0e5514ba4141" }
+  ]
+}

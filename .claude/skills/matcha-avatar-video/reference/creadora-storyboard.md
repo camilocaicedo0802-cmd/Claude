@@ -1,0 +1,85 @@
+# Flujo C — Creadora UGC en cocina: prompts completos
+
+Cada tablero es una hoja de 8 viñetas verticales en una fila (21:9), que equivalen a un clip continuo de 15 s. El tablero 1 abre el video y el tablero 2 continúa desde donde terminó el 1.
+
+## Avatar base
+
+`model: "soul_2"`, `aspect_ratio: "3:4"`, estilo General. Job original: `c3eef1aa-e355-4d37-87a0-f865097cfe86`
+```
+A spontaneous iPhone snap of a young woman in her mid-20s, caught mid-laugh, soft natural laugh, head slightly tilted, long honey-blonde balayage hair with darker roots and soft face-framing layers falling past her shoulders, light hazel eyes, a few faint freckles across the nose, slim natural build, with high model facial features, symmetrical features, well-proportioned figure, natural skin texture, standing in a bright modern apartment kitchen with white cabinets, a light oak countertop and a large window. Soft natural window light streams in from the left across her face — clean, neutral, no warm cast, no retouched glow. Skin texture is real, with visible pores and natural unevenness, light natural makeup. She wears a fitted off-white ribbed long-sleeve top with a crew neckline sitting at the collarbone, top fully closed at the front, classic high-coverage fit, with tiny gold hoop earrings. Body in a calm neutral pose — relaxed standing, one hand resting naturally. The kitchen background features white flat-front cabinets, a light oak open shelf with a few plain ceramic cups, a green trailing plant and pale wood floors. The color palette is bright and fresh, dominated by whites, warm creams, light oak and soft sage greens. Casual handheld iPhone selfie taken by her at arm's length — head and shoulders fill the frame, slight natural tilt, slightly off-center, intuitive composition, captured mid-moment. Subject in clear focus with the background naturally falling out as in any phone photo. Self-portrait selfie shot on iPhone front-facing camera held by the subject at arm's length — head and shoulders fill the frame, casual handheld framing, slight natural tilt, slightly off-center, slightly imperfect, not posed. Phone-sensor grain and realistic skin texture preserved, no retouch, no smooth-skin filter. No fisheye lens, no ultra-wide distortion. Authentic UGC creator phone selfie, NOT editorial portrait, NOT fashion magazine.
+```
+
+## Tablero 1 — Presentación del producto
+
+`model: "gpt_image_2"`, `aspect_ratio: "21:9"`, `resolution: "2k"`, `quality: "high"`.
+medias (en este orden, todas con `role: "image"`): [producto `850cf9d2-…`, creadora `c3eef1aa-…`]. Job original: `85d2305a-6328-4997-8229-47319223c374`
+
+```
+@Image1 is the product reference: a cylindrical matcha tea canister, about 13 cm tall and 9 cm wide, fits in one hand gripped around its body; cream off-white paper label with the LO Laboratorios Outlet logo at the top, a big dark-green 'TÉ MATCHA' wordmark, a gold 'GRADO CEREMONIAL PREMIUM' line, a small dark-green vertical tab at the upper right, an illustrated pagoda and tea leaves, a dark-green band at the bottom with five white icon badges; the top is open, showing a white inner rim; it contains vivid bright-green fine powder. ANGLE LOCK: the product shows only the visible front-facing side from @Image1, the same angle in every slot. Do not rotate, spin, flip, or reveal unseen sides. The label keeps its real text exactly as in @Image1. @Image2 is the character reference. The same person appears in every slot with identical face, hair, body, and identity. Do not alter facial features, hairstyle, body proportions, or skin tone between slots. Performance persona: a warm, easy-going girl-next-door creator who explains things to the camera like she is chatting with a friend in her own kitchen. Opening staging: in slot 1 she is already leaning in toward the lens with one finger pointed at the viewer, eyebrow raised, as if challenging them.
+
+LAYOUT IS THE TOP PRIORITY: a single horizontal storyboard sheet composed of exactly EIGHT (8) equal-size narrow vertical slots in ONE HORIZONTAL ROW that spans the FULL height and FULL width of the canvas, separated by thin white gutters, total sheet aspect 21:9. Count them: 1, 2, 3, 4, 5, 6, 7, 8 — exactly eight panels, never six, never seven, never ten. No empty white band above or below the row; every panel touches the top and bottom edge. Each panel is a tall vertical crop. All eight slots are active photorealistic UGC iPhone-style stills that tell one continuous 15-second video clip as eight sequential beats — slot 1 is beat 1, slot 8 is beat 8. Each adjacent pair of slots is a DIFFERENT camera setup — a different POV (selfie vs static camera), a different distance band (tight/macro vs medium vs wide), and a different action — so every beat boundary reads as a crisp hard cut, never a morph.
+
+Setting and lighting in all eight slots: the bright modern apartment kitchen from the character reference — white flat-front cabinets, light oak countertop and open shelf, a green trailing plant, soft neutral daylight from a window on the left. Outfit identical across slots: the off-white fitted long-sleeve top and small gold hoops from the character reference.
+
+Product appears at realistic real-world scale, approximately 13 cm tall, fitting naturally in her hand without enlargement. EXACTLY ONE matcha canister exists in the whole scene of every slot — if she is holding it, there is NO second canister on the counter; never a duplicate, never a look-alike clone. Product placement in every slot is clean: fully visible held in her hand, standing fully visible on the counter, or absent — never partial.
+
+The character has exactly two hands. In selfie POV slots, one hand holds the phone (off-frame or at the edge), so only one hand acts. Every slot names each hand's single role, the idle hand parked explicitly. Two-hand actions are static camera POV with the phone not in frame.
+
+Slot 1 — selfie POV, MEDIUM CLOSE-UP: mid-moment, leaning toward the lens with a playful challenging look, one eyebrow raised and a grin starting to break; left hand holds the phone off-frame, right index finger points toward the lens; product absent.
+
+Slot 2 — static camera POV, THREE-QUARTER WIDE: she steps up to the oak counter where the single matcha canister stands label-forward and reaches for it with her right hand, left hand flat on the counter; curious glance down.
+
+Slot 3 — static camera POV, MACRO: tight macro on the single canister's front label held upright — left hand grips the canister body, right index fingertip taps the gold 'GRADO CEREMONIAL PREMIUM' line; label sharp and readable.
+
+Slot 4 — selfie POV, MEDIUM CLOSE-UP: she holds the single canister up beside her cheek, label facing the lens, raised brows with a genuine grin breaking; left hand holds the phone off-frame, right hand holds the canister; counter behind her is empty.
+
+Slot 5 — static camera POV, WAIST-UP WIDE: she tilts the open canister toward the camera with both hands (left cradles the base, right supports the side) so the vivid bright-green powder inside is visible; surprised blink, mouth open mid-word; the counter in front of her is EMPTY — no second canister.
+
+Slot 6 — static camera POV, MACRO from above: the single open canister stands on the counter, her right hand lifts a level bamboo scoop of vivid bright-green fine powder out of it, her left hand flat on the counter beside it.
+
+Slot 7 — static camera POV, MEDIUM: she taps the bamboo scoop against a small fine-mesh strainer held over a white ceramic bowl, a soft cloud of vivid green powder falling in — right hand taps the scoop, left hand holds the strainer handle; the single canister stands label-forward on the counter beside the bowl; delighted half-laugh with a small happy shoulder lift (peak beat).
+
+Slot 8 — selfie POV, TIGHT CLOSE-UP: tight on her face, she glances down toward the bowl then back to the lens with a knowing smile and lifted brows, leaning in as if about to show the next step; left hand holds the phone, right hand off-frame on the counter edge; product absent.
+
+Rendering rules: exactly eight equal vertical slots in one horizontal row filling the entire 21:9 canvas edge to edge, thin white gutters, no empty margins. No two adjacent slots share both their POV and their distance band. Photorealistic iPhone-style UGC stills, natural window light, deep focus, slight phone noise, pore-level skin realism. Identity identical across all eight panels. Count hands per slot: exactly two hands; selfie POV = phone hand plus one acting hand; two-handed actions are static POV; no third arm, no extra hands, no duplicated limbs, no impossible grip. Product at realistic real-world scale, same front angle as the reference everywhere, exactly one canister per slot, never duplicated, never floating or partial. No on-image text of any kind: no header, captions, pop-text, badges, numbers, subtitles, watermarks. No legible text on any prop beyond the product's own label. No shallow depth of field, no bokeh, no lens flare, no beauty filter, no cinematic color grade. No fisheye, no ultra-wide distortion. No mirrors. No deformed hands. No additional brands or logos. No invented product claims.
+```
+
+## Tablero 2 — Preparación y cierre
+
+Mismos parámetros. medias: [producto, creadora, tablero 1 ya pasado por realismo]. En la campaña original, el tablero 1 refinado fue el job `5bffaba6-2c93-4485-bc39-3dcb32d63674`. Job original del tablero 2: `7c39cd4b-8aa8-4a9e-b517-2aaf7122a8f0`
+
+```
+@Image1 is the product reference: a cylindrical matcha tea canister, about 13 cm tall and 9 cm wide, fits in one hand gripped around its body; cream off-white paper label with the LO Laboratorios Outlet logo at the top, a big dark-green 'TÉ MATCHA' wordmark, a gold 'GRADO CEREMONIAL PREMIUM' line, a small dark-green vertical tab at the upper right, an illustrated pagoda and tea leaves, a dark-green band at the bottom with five white icon badges; the top is open, showing a white inner rim; it contains vivid bright-green fine powder. ANGLE LOCK: the product shows only the visible front-facing side from @Image1, the same angle in every slot. Do not rotate, spin, flip, or reveal unseen sides. The label keeps its real text exactly as in @Image1. @Image2 is the character reference. The same person appears in every slot with identical face, hair, body, and identity. Do not alter facial features, hairstyle, body proportions, or skin tone between slots. @Image3 is the previous board: preserve its identity, kitchen location, oak counter, window light direction, wardrobe (off-white fitted long-sleeve top, light jeans, small gold hoops), the open canister, the white ceramic bowl with sifted green powder, the bamboo scoop and the strainer exactly as shown there. Performance persona: a warm, easy-going girl-next-door creator who explains things to the camera like she is chatting with a friend in her own kitchen.
+
+LAYOUT IS THE TOP PRIORITY: a single horizontal storyboard sheet composed of exactly EIGHT (8) equal-size narrow vertical slots in ONE HORIZONTAL ROW that spans the FULL height and FULL width of the canvas, separated by thin white gutters, total sheet aspect 21:9. Count them: 1, 2, 3, 4, 5, 6, 7, 8 — exactly eight panels, never six, never seven, never ten. No empty white band above or below the row; every panel touches the top and bottom edge. All eight slots are active photorealistic UGC iPhone-style stills that continue the same video as one continuous 15-second clip, eight sequential beats — slot 1 picks up right where the previous board ended, slot 8 is the closing beat. Each adjacent pair of slots is a DIFFERENT camera setup — a different POV (selfie vs static camera), a different distance band (tight/macro vs medium vs wide), and a different action — so every beat boundary reads as a crisp hard cut, never a morph.
+
+Product appears at realistic real-world scale, approximately 13 cm tall, without enlargement. EXACTLY ONE matcha canister exists in the whole scene of every slot where it appears — never a duplicate, never a look-alike clone; the canister stays open-topped as in the previous board. Product placement is clean: fully visible held in her hand, standing fully visible on the counter, or absent — never partial.
+
+The character has exactly two hands. In selfie POV slots, one hand holds the phone (off-frame or at the edge), so only one hand acts. Every slot names each hand's single role, the idle hand parked explicitly. Two-hand actions are static camera POV with the phone not in frame.
+
+Slot 1 — static camera POV, MEDIUM: continuing mid-thought, she points with her right index finger at the canister standing label-forward on the counter beside the bowl, left hand flat on the counter, lively explaining face with raised brows.
+
+Slot 2 — static camera POV, MACRO from above: a small kettle in her right hand pours a thin stream of hot water into the white bowl over the bright green powder, her left hand steadies the bowl rim; steam rising softly.
+
+Slot 3 — static camera POV, WAIST-UP WIDE: she whisks the matcha in the bowl with a bamboo whisk in a quick zigzag motion — right hand whisks, left hand holds the bowl on the counter; focused, a small surprised blink; the canister stands label-forward on the counter beside the bowl.
+
+Slot 4 — static camera POV, MACRO: macro of the bowl showing vivid bright-green frothy matcha with fine foam, the whisk lifting out of it in her right hand, her left hand resting on the counter.
+
+Slot 5 — static camera POV, MEDIUM: she pours the whisked green matcha from the bowl into a tall clear glass filled with ice and milk, green swirls cascading down — right hand pours the bowl, left hand steadies the glass; the canister stands label-forward beside the glass.
+
+Slot 6 — selfie POV, TIGHT CLOSE-UP: she sips the iced matcha latte through a straw, eyes crinkling into a genuine delighted grin (peak beat, a small happy head tilt); left hand holds the phone, right hand holds the glass; canister absent from this slot.
+
+Slot 7 — static camera POV, THREE-QUARTER WIDE: she slides the single canister forward across the counter toward the camera with her right hand, label facing the lens, left hand holding the glass of matcha latte at chest height; warm confident smile.
+
+Slot 8 — selfie POV, MEDIUM CLOSE-UP: she holds the canister up beside her face with the label facing the lens and gives a small satisfied nod and warm recommending smile; left hand holds the phone off-frame, right hand holds the canister; the glass is not in frame.
+
+Rendering rules: exactly eight equal vertical slots in one horizontal row filling the entire 21:9 canvas edge to edge, thin white gutters, no empty margins. No two adjacent slots share both their POV and their distance band. Photorealistic iPhone-style UGC stills, natural window light, deep focus, slight phone noise, pore-level skin realism. Identity, location, lighting and wardrobe match @Image3. Count hands per slot: exactly two hands; selfie POV = phone hand plus one acting hand; two-handed actions are static POV; no third arm, no extra hands, no duplicated limbs, no impossible grip. Product at realistic real-world scale, same front angle as the reference everywhere, exactly one canister per slot, never duplicated, never floating or partial. Each prop holds exactly one state per slot. No on-image text of any kind: no header, captions, pop-text, badges, numbers, subtitles, step labels, watermarks. No legible text on any prop beyond the product's own label. No shallow depth of field, no bokeh, no lens flare, no beauty filter, no cinematic color grade. No fisheye, no ultra-wide distortion. No mirrors. No deformed hands. No additional brands or logos. No invented product claims.
+```
+
+## Pase de realismo (después de cada tablero)
+
+`model: "seedream_v5_pro"`, `aspect_ratio: "21:9"`, `resolution: "2k"`, con el tablero como única referencia (`role: "image"`). Jobs originales: `5bffaba6-…` (tablero 1) y `c415b80a-5991-40c0-8117-0e5514ba4141` (tablero 2).
+
+```
+KEEP EXACTLY the framing, composition, slot layout, camera distances, poses, identity, body, product geometry and real label. Change only micro-realism: natural skin/material texture, gentle daylight and fine sensor noise, authentic phone photo, deep focus. Preserve face proportions exactly. Avoid waxy skin, beauty filters, oversaturation, HDR glow, oversharpening and cinematic bokeh. No added watermark or text: do not add any headings, labels, step numbers, captions or words anywhere on the sheet — the only text allowed is the product's own printed label that already exists.
+```
