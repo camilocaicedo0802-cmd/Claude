@@ -21,7 +21,7 @@ for i, t in enumerate(TR):
     if t in ('whip', 'punch'): sfx.append((2, starts[i] - 0.18, 0.55 if t == 'whip' else 0.35))
 for w in ['beautiful', 'ceramic', 'Cecilia', 'gift bag', 'favorite']:
     sfx.append((3, keys[w], 0.35))
-sfx.append((5, keys['one-of-a-kind'], 0.45))
+sfx.append((5, keys['one of a kind'], 0.45))
 sfx.append((4, keys['Get one'], 0.55))
 labels = []
 for j, (idx, t, vol) in enumerate(sfx):
