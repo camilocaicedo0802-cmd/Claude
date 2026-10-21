@@ -7,3 +7,4 @@ media/raw/
 next-env.d.ts
 .playwright-mcp/
 .DS_Store
+scripts/jet-intro/work/
