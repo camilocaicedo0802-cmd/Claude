@@ -49,56 +49,50 @@ SHOTS = [
 ]
 END_T = 43 * BEAT
 
-# ---------------- kinetic text: (t_in, t_out, kind, size, text, color, y, anim) ----------------
-# VO sits at t = src - 0.48; word starts from the transcription
+# ---------------- kinetic text ----------------
+# VO sits at t = src - 0.48; word starts come from the transcription
 def v(src): return src - 0.48
+VIOLET = (140, 90, 255)
+
+# Each element: dict(kind, size, text, color, y, t, end, anim, tracking=0, words=[(word, t)], lines=...)
+def E(t, end, kind, size, text, color, y, anim, tracking=0, words=None):
+    return dict(t=t, end=end, kind=kind, size=size, text=text, color=color, y=y, anim=anim, tracking=tracking, words=words)
+
 TEXT = [
-    (v(0.84), v(2.02), 'thin', 160, 'DANCE', WHITE, 0.43, 'ghost', 24),
-    (v(1.18), v(2.02), 'script', 200, 'for a cause', PINK, 0.515, 'ghost', 0),
-    (v(2.36), v(3.26), 'heavy', 150, 'SALSA &', WHITE, 0.44, 'pop', 0),
-    (v(2.90), v(3.26), 'heavy', 165, 'BACHATA', PINK, 0.525, 'pop', 0),
-    (v(3.26), v(4.82), 'thin', 96, 'LATIN DANCE', WHITE, 0.40, 'ghost', 18),
-    (v(3.94), v(4.82), 'heavy', 175, 'SOCIAL', WHITE, 0.48, 'pop', 0),
-    (v(4.40), v(4.82), 'heavy', 175, 'PARTY', PINK, 0.565, 'pop', 0),
-    (v(5.24), v(6.06), 'bold', 150, 'join us', WHITE, 0.45, 'bounce', 0),
-    (v(5.74), v(6.06), 'semi', 110, 'for the', WHITE, 0.525, 'bounce', 0),
-    (v(6.10), v(7.50), 'bold', 100, '8TH ANNUAL', WHITE, 0.39, 'ghost', 16),
-    (v(6.86), v(7.50), 'script', 300, 'Pinktober', PINK, 0.49, 'neonpop', 0),
-    (v(7.62), v(8.94), 'thin', 124, 'SATURDAY', WHITE, 0.42, 'ghost', 20),
-    (v(7.84), v(8.94), 'date', 128, 'October|24|th', WHITE, 0.505, 'ghost', 0),
-    (v(8.94), v(10.66), 'bold', 112, 'raising funds', WHITE, 0.40, 'bounce', 0),
-    (v(9.74), v(10.66), 'semi', 96, 'for the', WHITE, 0.46, 'bounce', 0),
-    (v(10.10), v(10.66), 'heavy', 175, 'PINK', PINK, 0.535, 'pop', 0),
-    (v(10.26), v(10.66), 'heavy', 140, 'PROGRAM', PINK, 0.61, 'pop', 0),
-    (v(10.66), v(12.02), 'bold', 112, 'bringing', WHITE, 0.41, 'bounce', 0),
-    (v(11.26), v(12.02), 'heavy', 165, 'DANCE', WHITE, 0.49, 'pop', 0),
-    (v(11.72), v(12.02), 'script', 230, 'wellness', PINK, 0.575, 'neonpop', 0),
-    (v(12.02), END_T, 'bold', 100, 'to breast cancer', WHITE, 0.385, 'bounce', 0),
-    (v(12.74), END_T, 'heavy', 140, 'SURVIVORS', WHITE, 0.46, 'pop', 0),
-    (v(13.20), END_T, 'heavy', 140, '& THRIVERS', PINK, 0.535, 'pop', 0),
+    E(v(0.84), v(2.02), 'thin', 160, 'DANCE', WHITE, 0.43, 'track', 24),
+    E(v(1.18), v(2.02), 'script', 210, 'for a cause', PINK, 0.52, 'write'),
+    E(v(2.36), v(3.26), 'heavy', 150, 'SALSA &', WHITE, 0.44, 'slam'),
+    E(v(2.90), v(3.26), 'heavy', 165, 'BACHATA', PINK, 0.525, 'slam'),
+    E(v(3.26), v(4.82), 'thin', 96, '', WHITE, 0.40, 'words', 18, [('LATIN', v(3.26)), ('DANCE', v(3.60))]),
+    E(v(3.94), v(4.82), 'heavy', 175, 'SOCIAL', WHITE, 0.48, 'slam'),
+    E(v(4.40), v(4.82), 'heavy', 175, 'PARTY', PINK, 0.565, 'slam'),
+    E(v(5.24), v(6.06), 'bold', 150, '', WHITE, 0.45, 'words', 0, [('join', v(5.24)), ('us', v(5.46))]),
+    E(v(5.74), v(6.06), 'semi', 110, '', WHITE, 0.525, 'words', 0, [('for', v(5.74)), ('the', v(5.96))]),
+    E(v(6.10), v(7.50), 'bold', 100, '', WHITE, 0.385, 'words', 16, [('8TH', v(6.10)), ('ANNUAL', v(6.54))]),
+    E(v(6.86), v(7.50), 'script', 300, 'Pinktober', PINK, 0.49, 'write'),
+    E(v(7.62), v(8.94), 'badge', 0, 'SATURDAY|OCTOBER|24|TH', WHITE, 0.47, 'badge'),
+    E(v(8.94), v(10.66), 'bold', 112, '', WHITE, 0.395, 'words', 0, [('raising', v(8.94)), ('funds', v(9.38))]),
+    E(v(9.74), v(10.66), 'semi', 96, '', WHITE, 0.455, 'words', 0, [('for', v(9.74)), ('the', v(9.98))]),
+    E(v(10.10), v(10.66), 'heavy', 175, 'PINK', PINK, 0.535, 'slam'),
+    E(v(10.26), v(10.66), 'heavy', 140, 'PROGRAM', PINK, 0.61, 'slam'),
+    E(v(10.66), v(12.02), 'bold', 112, '', WHITE, 0.41, 'words', 0, [('bringing', v(10.66))]),
+    E(v(11.26), v(12.02), 'heavy', 165, 'DANCE', WHITE, 0.49, 'slam'),
+    E(v(11.72), v(12.02), 'script', 230, 'wellness', PINK, 0.575, 'write'),
+    E(v(12.02), END_T, 'bold', 100, '', WHITE, 0.385, 'words', 0, [('to', v(12.02)), ('breast', v(12.24)), ('cancer', v(12.48))]),
+    E(v(12.74), END_T, 'heavy', 140, 'SURVIVORS', WHITE, 0.46, 'slam'),
+    E(v(13.20), END_T, 'heavy', 140, '& THRIVERS', PINK, 0.535, 'slam'),
 ]
-# end card
 END_TEXT = [
-    (END_T + 0.05, TOTAL, 'script', 230, 'Pinktober', PINK, 0.235, 'neonpop', 0),
-    (END_T + 0.20, TOTAL, 'bold', 54, 'SATURDAY · OCTOBER 24TH', WHITE, 0.315, 'ghost', 10),
-    (END_T + 0.45, TOTAL, 'semi', 76, 'Harnessing Wellness', WHITE, 0.665, 'ghost', 0),
-    (END_T + 0.55, TOTAL, 'semi', 76, 'Through Dance', WHITE, 0.715, 'ghost', 0),
+    E(END_T + 0.05, TOTAL, 'script', 230, 'Pinktober', PINK, 0.235, 'write'),
+    E(END_T + 0.30, TOTAL, 'bold', 54, 'SATURDAY · OCTOBER 24TH', WHITE, 0.315, 'ghost', 10),
+    E(END_T + 0.45, TOTAL, 'semi', 76, 'Harnessing Wellness', WHITE, 0.665, 'ghost'),
+    E(END_T + 0.55, TOTAL, 'semi', 76, 'Through Dance', WHITE, 0.715, 'ghost'),
 ]
 
 # ---------------- text rendering ----------------
+GPAD = 60
 def text_img(kind, size, text, color, tracking):
     """RGBA element with neon glow (glow strength by style)."""
-    if kind == 'date':  # "October 24th": October white, 24 pink, th superscript pink
-        a, b, c = text.split('|')
-        fA, fB, fC = F('bold', size), F('bold', size), F('bold', int(size * 0.5))
-        wa = fA.getlength(a + ' '); wb = fB.getlength(b); wc = fC.getlength(c)
-        tw = int(wa + wb + wc) + 4; th = int(size * 1.3)
-        core = Image.new('RGBA', (tw, th), (0, 0, 0, 0)); d = ImageDraw.Draw(core)
-        asc = fA.getmetrics()[0]
-        d.text((0, 0), a, font=fA, fill=WHITE + (255,))
-        d.text((wa, 0), b, font=fB, fill=PINK + (255,))
-        d.text((wa + wb + 2, asc - fC.getmetrics()[0] - int(size * 0.28)), c, font=fC, fill=PINK + (255,))
-        return glowify(core, PINK_GLOW, 0.75)
     f = F(kind, size)
     if tracking:
         widths = [f.getlength(ch) for ch in text]
@@ -123,7 +117,7 @@ def text_img(kind, size, text, color, tracking):
     return glowify(core, PINK_GLOW if color == PINK else (255, 200, 235), strength)
 
 def glowify(core, gcol, strength):
-    pad = 60
+    pad = GPAD
     W2, H2 = core.width + 2 * pad, core.height + 2 * pad
     out = Image.new('RGBA', (W2, H2), (0, 0, 0, 0))
     a = Image.new('L', (W2, H2), 0); a.paste(core.getchannel('A'), (pad, pad))
@@ -142,36 +136,216 @@ def glowify(core, gcol, strength):
     return base
 
 _cache = {}
-def element(e):
-    key = e[2:5] + (e[8],)
-    if key not in _cache: _cache[key] = text_img(e[2], e[3], e[4], e[5], e[8])
+def cached(key, fn):
+    if key not in _cache: _cache[key] = fn()
     return _cache[key]
+
+def element(e, text=None, tracking=None):
+    text = e['text'] if text is None else text
+    tracking = e['tracking'] if tracking is None else tracking
+    return cached(('el', e['kind'], e['size'], text, e['color'], tracking),
+                  lambda: text_img(e['kind'], e['size'], text, e['color'], tracking))
+
+def tinted(img, col, key):
+    def mk():
+        t = Image.new('RGBA', img.size, col + (0,)); t.putalpha(img.getchannel('A')); return t
+    return cached(('tint', key, col), mk)
+
+def with_alpha(img, alpha):
+    if alpha >= 0.999: return img
+    img = img.copy(); img.putalpha(img.getchannel('A').point(lambda p: int(p * max(0, alpha)))); return img
+
+def scaled(img, sc):
+    if abs(sc - 1) < 1e-3: return img
+    return img.resize((max(1, int(img.width * sc)), max(1, int(img.height * sc))), Image.BILINEAR)
 
 def ease_out(x): return 1 - (1 - x) ** 3
 def ease_back(x, s=1.9): return 1 + (s + 1) * (x - 1) ** 3 + s * (x - 1) ** 2
+def clamp01(x): return max(0.0, min(1.0, x))
+
+def beat_pulse(T):
+    """Tiny scale kick on every beat for type that has already landed."""
+    return 1 + 0.022 * max(0, 1 - ((T % BEAT) / BEAT) * 4)
+
+def place(frame, img, cx, cy):
+    frame.alpha_composite(img, (int(cx - img.width / 2), int(cy - img.height / 2)))
+
+# --- slam: huge, translucent and colour-split, settles to size (reference: TROPICAL NIGHTS)
+def fx_slam(frame, e, T, cx, cy):
+    base = element(e); u = T - e['t']; D = 0.28
+    x = clamp01(u / D); k = ease_out(x)
+    sc = 1.0 + 0.9 * (1 - k)
+    if u > D: sc = 1 - 0.045 * math.sin(math.pi * clamp01((u - D) / 0.14))   # little settle bounce
+    if x >= 1: sc *= beat_pulse(T)
+    if x < 1:
+        key = (e['text'], e['size'])
+        ghost_a = 0.55 * (1 - k); off = 46 * (1 - k)
+        for col, dx in [((255, 40, 160), -off), (VIOLET, off)]:
+            g = with_alpha(scaled(tinted(base, col, key), sc * (1 + 0.06 * (1 - k))), ghost_a)
+            place(frame, g, cx + dx, cy)
+        main = with_alpha(scaled(base, sc), 0.35 + 0.65 * k)
+        tint_col = PINK if e['color'] == WHITE else VIOLET
+        if k < 0.85:  # starts colour-washed, clears to its own colour
+            mix = Image.blend(tinted(base, tint_col, key), base, k / 0.85)
+            main = with_alpha(scaled(mix, sc), 0.35 + 0.65 * k)
+        place(frame, main, cx, cy)
+    else:
+        place(frame, scaled(base, sc), cx, cy)
+
+# --- write-on: neon script drawn left to right (reference: "lovers")
+def fx_write(frame, e, T, cx, cy, tip=False):
+    base = element(e); u = T - e['t']; D = 0.42 if e['size'] >= 280 else 0.34
+    x = clamp01(u / D); k = ease_out(x) if x < 1 else 1
+    img = base
+    if k < 1:
+        a = np.asarray(base.getchannel('A'), np.float32)
+        wpx = base.width; feather = 90
+        front = -feather + k * (wpx + feather)
+        ramp = np.clip((front - np.arange(wpx)) / feather, 0, 1)[None, :]
+        img = base.copy(); img.putalpha(Image.fromarray((a * ramp).astype(np.uint8)))
+    else:
+        img = scaled(base, beat_pulse(T))
+    # brief neon flicker right after it lands
+    if 0.0 < u - D < 0.12 and int((u - D) * 30) % 2 == 1: img = with_alpha(img, 0.55)
+    place(frame, img, cx, cy)
+    if tip and 0 < k < 1:  # glint riding the writing front
+        fx = cx - base.width / 2 + GPAD + k * (base.width - 2 * GPAD)
+        st = scaled(star(), 0.75 + 0.35 * math.sin(u * 40) ** 2)
+        place(frame, st, fx, cy - e['size'] * 0.08)
+
+def star():
+    def mk():
+        n = 160; c = n / 2
+        core = Image.new('RGBA', (n, n), (0, 0, 0, 0)); d = ImageDraw.Draw(core)
+        for ang, L, w in [(0, 70, 7), (90, 70, 7), (45, 30, 4), (135, 30, 4)]:
+            dx, dy = math.cos(math.radians(ang)), math.sin(math.radians(ang))
+            px, py = -dy * w / 2, dx * w / 2
+            d.polygon([(c - dx * L, c - dy * L), (c + px, c + py), (c + dx * L, c + dy * L), (c - px, c - py)], fill=(255, 255, 255, 255))
+        glow = Image.new('RGBA', (n, n), PINK_GLOW + (0,)); glow.putalpha(core.getchannel('A').filter(ImageFilter.GaussianBlur(9)).point(lambda p: min(255, p * 2)))
+        out = Image.new('RGBA', (n, n), (0, 0, 0, 0)); out.alpha_composite(glow); out.alpha_composite(core)
+        return out
+    return cached(('star',), mk)
+
+# --- tracking: letters gather from wide spacing with a soft blur
+def fx_track(frame, e, T, cx, cy):
+    u = T - e['t']; D = 0.4; x = clamp01(u / D); k = ease_out(x)
+    tr = int(round(e['tracking'] + 70 * (1 - k)))
+    img = element(e, tracking=tr)
+    if x < 1:
+        img = with_alpha(img, k)
+        if k < 0.8: img = img.filter(ImageFilter.GaussianBlur(int(10 * (1 - k))))
+    else:
+        img = scaled(img, beat_pulse(T))
+    place(frame, img, cx, cy)
+
+# --- words: each word drops in on its own syllable (reference: "presale tickets are live now!")
+def fx_words(frame, e, T, cx, cy):
+    f = F(e['kind'], e['size']); space = f.getlength(' ') + e['tracking'] * 2
+    imgs = [element(e, text=w) for w, _ in e['words']]
+    core_w = [im.width - 2 * GPAD for im in imgs]
+    total = sum(core_w) + space * (len(imgs) - 1)
+    x0 = cx - total / 2
+    for (w, tw), im, cw in zip(e['words'], imgs, core_w):
+        u = T - tw
+        if u >= 0:
+            x = clamp01(u / 0.2)
+            dy = -70 * (1 - ease_back(x, 2.2)); sc = 1.35 - 0.35 * ease_out(x)
+            img = with_alpha(scaled(im, sc if x < 1 else beat_pulse(T)), min(1, x * 3))
+            place(frame, img, x0 + cw / 2, cy + dy)
+        x0 += cw + space
+
+# --- date badge: glitchy calendar sticker that pops and tilts (reference: SEPTEMBER 26TH)
+def badge_parts():
+    def mk():
+        CW, CH = 620, 460
+        card = Image.new('RGBA', (CW + 120, CH + 200), (0, 0, 0, 0))
+        ox, oy = 60, 110
+        # shadow
+        sh = Image.new('L', card.size, 0); ImageDraw.Draw(sh).rounded_rectangle((ox + 6, oy + 26, ox + CW + 6, oy + CH + 26), 52, fill=170)
+        sh = sh.filter(ImageFilter.GaussianBlur(18)); shl = Image.new('RGBA', card.size, (40, 0, 25, 0)); shl.putalpha(sh)
+        card.alpha_composite(shl)
+        # gradient body
+        grad = np.zeros((CH, CW, 4), np.uint8)
+        top, bot = np.array([255, 110, 195]), np.array([200, 22, 128])
+        for yy in range(CH):
+            grad[yy, :, :3] = top + (bot - top) * (yy / CH); grad[yy, :, 3] = 255
+        body = Image.fromarray(grad, 'RGBA')
+        m = Image.new('L', (CW, CH), 0); ImageDraw.Draw(m).rounded_rectangle((0, 0, CW - 1, CH - 1), 52, fill=255)
+        body.putalpha(m); card.alpha_composite(body, (ox, oy))
+        d = ImageDraw.Draw(card)
+        d.rounded_rectangle((ox, oy, ox + CW, oy + CH), 52, outline=(255, 255, 255, 255), width=9)
+        # glossy highlight
+        gl = Image.new('L', card.size, 0); ImageDraw.Draw(gl).rounded_rectangle((ox + 24, oy + 18, ox + CW - 24, oy + CH * 0.42), 40, fill=55)
+        gll = Image.new('RGBA', card.size, (255, 255, 255, 0)); gll.putalpha(gl.filter(ImageFilter.GaussianBlur(6)))
+        card.alpha_composite(gll)
+        # OCTOBER with extrude
+        fo = F('heavy', 104); txt = 'OCTOBER'; tw = fo.getlength(txt); tx = ox + CW / 2 - tw / 2; ty = oy + 50
+        for s in range(8, 0, -1): d.text((tx + s * 0.6, ty + s), txt, font=fo, fill=(120, 0, 70, 255))
+        d.text((tx, ty), txt, font=fo, fill=(255, 255, 255, 255))
+        # SATURDAY pill (rotated), sits across the card's top edge
+        fp = F('heavy', 62); pt = 'SATURDAY'; pw = int(fp.getlength(pt)) + 70; ph = 104
+        pill = Image.new('RGBA', (pw + 40, ph + 40), (0, 0, 0, 0)); dp = ImageDraw.Draw(pill)
+        dp.rounded_rectangle((20, 20, 20 + pw, 20 + ph), ph // 2, fill=(255, 255, 255, 255))
+        dp.text((20 + 35, 20 + 14), pt, font=fp, fill=(214, 18, 128, 255))
+        pill = pill.rotate(6, resample=Image.BICUBIC, expand=True)
+        card.alpha_composite(pill, (int(ox + CW / 2 - pill.width / 2 + 40), oy - pill.height // 2 - 8))
+        # big number layer (separate so it can land on "24th")
+        fn = F('heavy', 250); ft = F('heavy', 92)
+        num = Image.new('RGBA', (CW, 300), (0, 0, 0, 0)); dn = ImageDraw.Draw(num)
+        nw = fn.getlength('24'); tw2 = ft.getlength('TH'); nx = CW / 2 - (nw + tw2 + 8) / 2
+        for s in range(14, 0, -1):
+            dn.text((nx + s * 0.6, 0 + s), '24', font=fn, fill=(110, 0, 64, 255))
+            dn.text((nx + nw + 8 + s * 0.4, 34 + s * 0.7), 'TH', font=ft, fill=(110, 0, 64, 255))
+        dn.text((nx, 0), '24', font=fn, fill=(255, 255, 255, 255))
+        dn.text((nx + nw + 8, 34), 'TH', font=ft, fill=(255, 255, 255, 255))
+        return card, num, (ox, oy + 170)
+    return cached(('badge',), mk)
+
+def fx_badge(frame, e, T, cx, cy):
+    card, num, (nx, ny) = badge_parts(); u = T - e['t']
+    t_num = v(8.18) - e['t']
+    comp = card.copy()
+    if u >= t_num:
+        un = u - t_num; x = clamp01(un / 0.22)
+        sc = 1.7 - 0.7 * ease_back(x, 1.6) if x < 1 else 1
+        n = with_alpha(scaled(num, sc), min(1, x * 3))
+        comp.alpha_composite(n, (int(nx + num.width / 2 - n.width / 2), int(ny + num.height / 2 - n.height / 2)))
+    if u < 0.12:   # glitch shards before the pop
+        k = u / 0.12; img = Image.new('RGBA', comp.size, (0, 0, 0, 0)); rs = np.random.default_rng(int(T * 1000))
+        hh = comp.height // 7
+        for i in range(7):
+            sl = comp.crop((0, i * hh, comp.width, (i + 1) * hh))
+            dx = int(rs.uniform(-120, 120) * (1 - k))
+            col = [(255, 40, 160), VIOLET, (255, 255, 255)][i % 3]
+            img.alpha_composite(with_alpha(tinted(sl, col, ('shard', i)) if i % 2 else sl, 0.5 + 0.5 * k), (dx, i * hh))
+        comp = scaled(img, 0.7 + 0.2 * k); ang = -18
+    else:
+        x = clamp01((u - 0.12) / 0.28)
+        sc = 0.9 + 0.1 * ease_back(x, 2.2) if x < 1 else beat_pulse(T)
+        ang = (-18 + 14 * ease_back(x, 1.6)) if x < 1 else (-4 + 1.4 * math.sin(2 * math.pi * 0.9 * (u - 0.4)))
+        comp = scaled(comp, sc * 0.92)
+    comp = comp.rotate(ang, resample=Image.BICUBIC, expand=True)
+    bob = 6 * math.sin(2 * math.pi * 1.1 * u)
+    place(frame, comp, cx, cy + bob)
+
+# --- ghost: soft blur-in (end card lines)
+def fx_ghost(frame, e, T, cx, cy):
+    img = element(e); u = T - e['t']; x = clamp01(u / 0.2)
+    sc = 1.2 - 0.2 * ease_out(x)
+    img = with_alpha(scaled(img, sc), ease_out(x))
+    if x < 0.8: img = img.filter(ImageFilter.GaussianBlur(int(12 * (1 - x))))
+    place(frame, img, cx, cy)
 
 def draw_element(frame, e, T):
-    t_in, t_out, kind, size, text, color, y, anim, _ = e
-    if not (t_in <= T < t_out): return
-    img = element(e); u = (T - t_in)
-    dur = 0.18 if anim in ('ghost',) else 0.14
-    x = min(1, u / dur)
-    blur = 0; alpha = 1.0; sc = 1.0; dy = 0
-    if anim == 'ghost':     # blur-in from larger, like the reference's soft fades
-        sc = 1.25 - 0.25 * ease_out(x); alpha = ease_out(x); blur = int(14 * (1 - x))
-    elif anim == 'pop':     # punchy overshoot
-        sc = 0.55 + 0.45 * ease_back(x); alpha = min(1, x * 2.5)
-    elif anim == 'bounce':  # drop in from above with bounce
-        dy = -60 * (1 - ease_back(x, 2.4)); alpha = min(1, x * 2)
-    elif anim == 'neonpop': # neon flicker + pop
-        sc = 0.7 + 0.3 * ease_back(x, 1.4); alpha = 1.0 if (u > 0.2 or int(u * 30) % 3 != 1) else 0.35
-    # exit: quick fade in the last 2 frames
-    if t_out - T < 2 / FPS and t_out < TOTAL - 0.01: alpha *= 0.5
-    if sc != 1.0: img = img.resize((max(1, int(img.width * sc)), max(1, int(img.height * sc))), Image.BILINEAR)
-    if blur: img = img.filter(ImageFilter.GaussianBlur(blur))
-    if alpha < 1:
-        img = img.copy(); img.putalpha(img.getchannel('A').point(lambda p: int(p * alpha)))
-    frame.alpha_composite(img, (W // 2 - img.width // 2, int(H * y - img.height / 2 + dy)))
+    if not (e['t'] <= T < e['end']): return
+    cx, cy = W / 2, H * e['y']
+    a = e['anim']
+    if a == 'slam': fx_slam(frame, e, T, cx, cy)
+    elif a == 'write': fx_write(frame, e, T, cx, cy, tip=e['text'] == 'Pinktober')
+    elif a == 'track': fx_track(frame, e, T, cx, cy)
+    elif a == 'words': fx_words(frame, e, T, cx, cy)
+    elif a == 'badge': fx_badge(frame, e, T, cx, cy)
+    else: fx_ghost(frame, e, T, cx, cy)
 
 # ---------------- footage ----------------
 VIGNETTE = None
