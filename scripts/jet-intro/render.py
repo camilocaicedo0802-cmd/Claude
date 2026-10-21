@@ -76,25 +76,22 @@ def grade(img, look):
     return np.clip(f, 0, 1)
 
 
-def zoom_shift(img, z, dx=0.0, dy=0.0):
-    M = np.float32([[z, 0, (1 - z) * W / 2 + dx], [0, z, (1 - z) * H / 2 + dy]])
+def zoom_shift(img, z, dx=0.0, dy=0.0, anchor=(0.5, 0.5)):
+    ax, ay = anchor[0] * W, anchor[1] * H
+    M = np.float32([[z, 0, (1 - z) * ax + dx], [0, z, (1 - z) * ay + dy]])
     return cv2.warpAffine(img, M, (W, H), flags=cv2.INTER_LINEAR, borderMode=cv2.BORDER_REFLECT)
 
 
-def vertical_fill(img):
-    fg = img[:, VERT_X0:VERT_X1]
-    bg = cv2.resize(fg, (W, int(W * fg.shape[0] / fg.shape[1])))
-    oy = (bg.shape[0] - H) // 2
-    bg = bg[oy:oy + H]
-    bg = cv2.GaussianBlur(cv2.resize(bg, (W // 8, H // 8)), (0, 0), 3)
-    bg = (cv2.resize(bg, (W, H)) * 0.55).astype(np.uint8)
-    # foreground scaled up a bit, with a soft drop shadow
-    fh = H
-    fw = int(fg.shape[1] * fh / fg.shape[0])
-    fg2 = cv2.resize(fg, (fw, fh))
-    x0 = (W - fw) // 2
-    bg[:, x0:x0 + fw] = fg2
-    return bg
+def vertical_crop(img, cy):
+    """Vertical (pillarboxed) source: crop a 16:9 window out of the 9:16 picture so it fills the frame."""
+    strip = img[:, VERT_X0:VERT_X1]
+    sw = strip.shape[1]
+    ch = int(round(sw * H / W))
+    y0 = int(np.clip(cy * H - ch / 2, 0, H - ch))
+    crop = strip[y0:y0 + ch]
+    up = cv2.resize(crop, (W, H), interpolation=cv2.INTER_LANCZOS4)
+    soft = cv2.GaussianBlur(up, (0, 0), 2.2)
+    return cv2.addWeighted(up, 1.6, soft, -0.6, 0)  # unsharp mask to recover some crispness
 
 
 # ---------- text ----------
@@ -242,8 +239,9 @@ for ci, c in enumerate(EDL):
         tt = k / FPS
         u = k / max(1, nf - 1)
         img = frames[idxs[k]]
-        if c['vert']:
-            img = vertical_fill(img)
+        if c['vert'] is not None:
+            v0, v1 = c['vert'] if isinstance(c['vert'], tuple) else (c['vert'], c['vert'])
+            img = vertical_crop(img, v0 + (v1 - v0) * u)
         # geometry
         z0, z1 = c['zoom']
         z = z0 + (z1 - z0) * ease_io(u)
@@ -254,11 +252,11 @@ for ci, c in enumerate(EDL):
             amp = 26 * math.exp(-tt / 0.3) + 7 * math.exp(-((tt % BEAT) / 0.12))
             dx, dy = RNG.normal(0, amp, 2)
             z *= 1.03
-        g = zoom_shift(img, z, dx, dy)
+        g = zoom_shift(img, z, dx, dy, c['anchor'])
         if 'punch' in fx and k < 3:  # zoom motion blur on the cut
             acc = g.astype(np.float32)
             for j in (1, 2, 3):
-                acc += zoom_shift(img, z * (1 + 0.025 * j * (3 - k)), dx, dy)
+                acc += zoom_shift(img, z * (1 + 0.025 * j * (3 - k)), dx, dy, c['anchor'])
             g = (acc / 4).astype(np.uint8)
         f = grade(g, c['look'])
 

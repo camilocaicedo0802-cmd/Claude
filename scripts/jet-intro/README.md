@@ -11,7 +11,7 @@ Resultado: [`media/edits/jet-privado-intro.mp4`](../../media/edits/jet-privado-i
 | 0:00–2:8 | Flash montage B/N | 12 cortes de medio beat (yates, Cuatro Torres, rooftop, jet, Lamborghini…) con punch-zoom y blur de movimiento; termina en flash blanco |
 | 2:8–7:4 | Vlog | Selfie en el jet, hablando a cámara con jump cuts, Lamborghini; parpadeo en negativo antes del drop |
 | 7:4–10:2 | **Drop + título** | Impacto, shake, "VUELO EN / JET PRIVADO" con efecto máquina de escribir, flashes en negativo y destello dorado |
-| 10:2–17:5 | Viaje | Lamborghini, terminal privada, caminata a la pista, embarque, cabina, ventanilla sobre las nubes. Gradación teal-orange, light leaks, aberración RGB |
+| 10:2–17:5 | Viaje | El protagonista en el Lamborghini, terminal privada, bajada del jet y subida al auto (tomas verticales recortadas a pantalla completa), cabina, ventanilla sobre las nubes. Gradación teal-orange, light leaks, aberración RGB |
 | 17:5–19:4 | "LET'S DO IT" | Plano en negativo con el texto y su copia invertida, como en la referencia |
 | 19:4–25:9 | Atardecer / noche | Rooftop sobre Madrid, cena, puerto con yates, palmeras, compras. Gradación dorada |
 | 25:9–29:1 | Cierre | "JET PRIVADO" con tracking animado y glow, fade a negro |
