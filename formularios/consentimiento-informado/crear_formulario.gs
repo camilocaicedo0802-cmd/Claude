@@ -4,14 +4,17 @@
  * (Proyectos Integradores V-1, Fundación Universitaria Konrad Lorenz).
  *
  * Cómo usarlo:
- * 1. Entra a https://script.google.com con tu cuenta de Google y pulsa "Nuevo proyecto".
- * 2. Borra el código que aparece, pega todo este archivo y guarda (Ctrl + S).
- * 3. Arriba, elige la función "crearFormulario" y pulsa "Ejecutar".
+ * 1. Entra a https://forms.google.com y crea un formulario en blanco.
+ * 2. En ese formulario, abre el menú ⋮ (arriba a la derecha) > "Apps Script".
+ * 3. Borra el código que aparece, pega todo este archivo y guarda (Ctrl + S).
+ * 4. Arriba, elige la función "crearFormulario" y pulsa "Ejecutar".
  *    La primera vez Google pide permisos: "Revisar permisos" > tu cuenta > "Permitir".
- * 4. Abre el "Registro de ejecución": ahí salen el enlace para editar el formulario
- *    y el enlace para enviarlo a los participantes. El formulario queda en tu Google Drive.
+ * 5. Recarga la pestaña del formulario. En el "Registro de ejecución" salen el enlace
+ *    para editarlo y el enlace para enviarlo a los participantes.
  *
- * Cada vez que ejecutes la función se crea un formulario nuevo.
+ * Ejecutarlo otra vez borra las preguntas de ese formulario y las vuelve a crear.
+ * También funciona pegado en un proyecto nuevo de https://script.google.com:
+ * ahí crea un formulario nuevo cada vez.
  */
 
 const TITULO = 'Consentimiento informado';
@@ -81,8 +84,25 @@ const SECCIONES = [
 ];
 
 function crearFormulario() {
-  const form = FormApp.create(TITULO);
+  // Si el script se abrió desde un formulario (⋮ > Apps Script), se llena ese formulario;
+  // si no, se crea uno nuevo. Usar un formulario existente evita el error
+  // "No se pudo crear el nuevo formulario" que a veces da FormApp.create.
+  let form = null;
+  try {
+    form = FormApp.getActiveForm();
+  } catch (e) {
+    // Script independiente: no hay formulario activo.
+  }
+  if (form) {
+    form.getItems().forEach(function (item) {
+      form.deleteItem(item);
+    });
+  } else {
+    form = FormApp.create(TITULO);
+  }
+
   form
+    .setTitle(TITULO)
     .setDescription(INTRODUCCION)
     .setProgressBar(true)
     .setAllowResponseEdits(false)
