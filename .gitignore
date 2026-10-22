@@ -7,3 +7,6 @@ media/raw/
 next-env.d.ts
 .playwright-mcp/
 .DS_Store
+
+# video-edit pipeline outputs
+scripts/video-edit/*/sfx_cues.json
