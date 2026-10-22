@@ -31,14 +31,20 @@ for a, b in zip(cuts[:-1], cuts[1:]):
         for k in idx: res[k] = [540, 800, 300]
         continue
     ks = np.array([p[0] for p in pts]); vals = np.array([p[1] for p in pts], float)
-    # reject outliers vs median
-    med = np.median(vals, axis=0)
-    good = np.abs(vals[:, 0] - med[0]) < 250
-    ks, vals = ks[good], vals[good]
+    # keep detections that agree with their neighbours (she can cross the frame within a shot)
+    good = []
+    for j in range(len(ks)):
+        near = [m for m in range(len(ks)) if abs(ks[m] - ks[j]) <= 5 and m != j]
+        if len(near) < 2: continue
+        med = np.median(vals[near], axis=0)
+        if np.hypot(*(vals[j, :2] - med[:2])) < 120 and abs(vals[j, 2] - med[2]) < 0.35 * med[2]:
+            good.append(j)
+    if good:
+        ks, vals = ks[good], vals[good]
     full = np.stack([np.interp(idx, ks, vals[:, c]) for c in range(3)], 1)
-    # smooth (gaussian, sigma 6 frames) within shot
-    sig = 6; r = np.arange(-18, 19); kern = np.exp(-r**2 / (2 * sig**2)); kern /= kern.sum()
-    pad = np.pad(full, ((18, 18), (0, 0)), mode="edge")
+    # smooth (gaussian, sigma 3 frames) within shot
+    sig = 3; r = np.arange(-9, 10); kern = np.exp(-r**2 / (2 * sig**2)); kern /= kern.sum()
+    pad = np.pad(full, ((9, 9), (0, 0)), mode="edge")
     sm = np.stack([np.convolve(pad[:, c], kern, mode="valid") for c in range(3)], 1)
     for j, k in enumerate(idx): res[k] = [round(float(v), 1) for v in sm[j]]
 json.dump(res, open(out, "w"))

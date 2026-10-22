@@ -1,6 +1,6 @@
 """Matcha UGC re-edit: zooms, transitions, B-roll inserts, motion graphics and new captions.
 
-Usage: python3 render.py <work_dir> <assets_dir> <source.mov> <out_video_noaudio.mp4> [--frames 0,90,300] [--preview]
+Usage: python3 render.py <work_dir> <assets_dir> <source.mov> <out_video_noaudio.mp4> [--frames 0,90,300] [--check]
 
 Every visual decision lives in the EDIT TIMELINE section below; the rest is the engine.
 """
@@ -63,21 +63,27 @@ PUNCHES = [  # (t0, t1, extra zoom, focus point in source px or None, focus weig
     (13.66, 14.80, 0.16, None, 0),        # tan fan de la cafeína
     (16.32, 17.05, 0.20, None, 0),        # súper suavecito
     (20.32, 21.30, 0.16, None, 0),        # no sabe a pasto
-    (22.98, 24.20, 0.38, (350, 900), 0.75),   # comprueba 100%  -> toward the can
+    (22.98, 24.20, 0.22, (350, 900), 0.6),    # comprueba 100%  -> toward the can
     (24.66, 25.40, 0.10, None, 0),        # originales
-    (27.30, 28.10, 0.45, (480, 1160), 0.85),  # súper vivo -> into the powder
+    (27.30, 28.10, 0.12, (480, 1160), 0.5),   # súper vivo -> toward the powder
     (28.12, 29.00, 0.12, None, 0),        # cero opaco
     (29.76, 30.70, 0.16, None, 0),        # antioxidantes
     (32.76, 33.20, 0.10, None, 0),        # algo rico
     (34.30, 35.50, 0.12, None, 0),        # claramente lo preparan
     (36.36, 37.10, 0.12, None, 0),        # todos prefieren
-    (38.14, 39.05, 0.40, (330, 880), 0.7),    # Laboratorios Outlet -> toward the can
+    (38.14, 39.05, 0.22, (330, 880), 0.6),    # Laboratorios Outlet -> toward the can
     (40.16, 40.70, 0.16, None, 0),        # claramente
 ]
 SHAKES = [(17.95, 18.80, 22.0)]           # "los otros me dejan como..." (caffeine jitters)
 
-# B-roll: full-screen powder close-up taken from the moment she opens the can
-BROLL = dict(t0=5.30, t1=6.15, src_t=27.0, center=(470, 1140), z0=2.75, z1=3.0)
+# B-roll: powder close-up taken from the moment she opens the can (framed so the can sits above the captions)
+BROLL = dict(t0=5.30, t1=6.15, src_t=27.0, center=(470, 1200), z0=1.90, z1=2.05)
+
+# Nothing drawn may touch her head/face or the product (the can). The head never goes below
+# HEAD_LIMIT (zooms are capped), which keeps the lower band free for the caption stack.
+HEAD_LIMIT = 1130
+HEAD_PAD, CAN_PAD = 34, 24       # clearance used when placing elements (output px)
+CHECK_PAD = 6                    # anything closer than this counts as touching in --check
 # kinetic insert "HOJA COMPLETA"
 INSERT = dict(t0=8.40, t1=9.467)
 
@@ -87,10 +93,10 @@ SECTIONS = [  # number, slam time, chip text, section end
     (3, 9.50, "CAFEÍNA… PERO DIFERENTE", 18.84),
     (4, 18.84, "NO SABE A PASTO", 21.88),
     (5, 21.88, "COLOR 100% ORIGINAL", 29.06),
-    (6, 29.06, "TIENE ANTIOXIDANTES", 35.56),
+    (6, 29.30, "TIENE ANTIOXIDANTES", 35.30),
 ]
 
-STICKERS = [  # (t0, dur, emoji name(s), x, y, size)
+STICKERS = [  # (t0, dur, emoji name(s), preferred x, preferred y, size) — moved if that spot is taken
     (1.10, 0.95, ["fire"], 900, 800, 180),
     (2.36, 0.40, ["eyes"], 180, 800, 160),
     (3.94, 0.50, ["x"], 880, 1110, 150),
@@ -133,8 +139,8 @@ SFX = [
     (18.84, "impact", -13), (18.84, "click", -10), (19.20, "glitch", -13), (19.40, "whoosh3", -16),
     (20.88, "pop2", -14), (21.88, "impact", -13), (21.88, "click", -10), (22.00, "whoosh2", -11),
     (22.45, "whoosh3", -16), (23.36, "ding", -13), (24.74, "pop1", -15), (26.40, "whoosh1", -10),
-    (27.30, "shimmer", -11), (27.60, "pop3", -15), (28.66, "pop2", -16), (29.06, "impact", -13),
-    (29.06, "click", -10), (29.28, "impact", -14), (29.60, "whoosh3", -16), (29.96, "pop1", -14),
+    (27.30, "shimmer", -11), (27.60, "pop3", -15), (28.66, "pop2", -16), (29.28, "impact", -11),
+    (29.30, "click", -10), (29.60, "whoosh3", -16), (29.96, "pop1", -14),
     (32.92, "pop2", -16), (34.04, "pop3", -16), (34.73, "riser", -12), (35.80, "whoosh2", -9),
     (35.93, "impact", -9), (36.36, "pop1", -15), (37.30, "whoosh3", -12), (38.14, "ding", -12),
     (38.20, "shimmer", -12), (40.16, "pop2", -15), (41.10, "whoosh2", -10), (41.60, "impact", -8),
@@ -146,6 +152,7 @@ SFX = [
 # ----------------------------------------------------------------------------------------------
 WORDS = json.load(open(os.path.join(WORK, "words.json")))
 FACES = json.load(open(os.path.join(WORK, "faces.json")))
+CANS = {int(k): v for k, v in json.load(open(os.path.join(WORK, "cans.json"))).items()}  # x0,y0,x1,y1,kind
 
 def norm(w): return w.lower().strip(",.¿?¡!…").replace("...", "")
 
@@ -188,11 +195,35 @@ class Sprite:
         a[..., :3] *= a[..., 3:4]
         self.img = a
         self.h, self.w = a.shape[:2]
+        ys, xs = np.nonzero(a[..., 3] > 0.6)          # visible content, without the soft shadow
+        self.content = (xs.min(), ys.min(), xs.max() + 1, ys.max() + 1) if len(xs) else (0, 0, self.w, self.h)
 
-def draw(frame, spr, cx, cy, scale=1.0, rot=0.0, alpha=1.0):
-    if alpha <= 0.004 or scale <= 0.02: return
+def sprite_matrix(spr, cx, cy, scale, rot):
     M = cv2.getRotationMatrix2D((spr.w / 2, spr.h / 2), rot, scale)
     M[0, 2] += cx - spr.w / 2; M[1, 2] += cy - spr.h / 2
+    return M
+
+def box(spr, cx, cy, scale=1.0, rot=0.0):
+    """Axis-aligned bounds of the sprite's visible content once placed."""
+    x0, y0, x1, y1 = spr.content
+    c = sprite_matrix(spr, cx, cy, scale, rot) @ np.array([[x0, x1, x0, x1], [y0, y0, y1, y1], [1, 1, 1, 1]], np.float64)
+    return (c[0].min(), c[1].min(), c[0].max(), c[1].max())
+
+def hits(b, head, pad):
+    """True when box b comes within pad px of the head ellipse."""
+    if b is None or head is None: return False
+    hx, hy, a, bb = head
+    a += pad; bb += pad
+    px, py = clamp(hx, b[0], b[2]), clamp(hy, b[1], b[3])
+    return ((px - hx) / a) ** 2 + ((py - hy) / bb) ** 2 < 1.0
+
+RECORD = None    # when a list, draw() only records (tag, content box) — used by the layout check
+
+def draw(frame, spr, cx, cy, scale=1.0, rot=0.0, alpha=1.0, tag="graphic"):
+    if alpha <= 0.004 or scale <= 0.02: return
+    if RECORD is not None:
+        RECORD.append((tag, box(spr, cx, cy, scale, rot))); return
+    M = sprite_matrix(spr, cx, cy, scale, rot)
     c = M @ np.array([[0, spr.w, 0, spr.w], [0, 0, spr.h, spr.h], [1, 1, 1, 1]], np.float64)
     x0, x1 = int(max(0, math.floor(c[0].min()))), int(min(W, math.ceil(c[0].max())))
     y0, y1 = int(max(0, math.floor(c[1].min()))), int(min(H, math.ceil(c[1].max())))
@@ -282,12 +313,28 @@ def camera(t, fidx):
             w = p[4] * clamp(e)
             fxs += p[3][0] * w; fys += p[3][1] * w; wsum += w
     z = max(1.20, z)
-    cy_face = ty + 192.0 / z           # face lands at 40 % of the frame height
-    cx, cy = tx, cy_face
-    if wsum > 0:                       # pull the framing toward the punch focus point
-        wb = min(wsum, 0.95)
-        cx = lerp(tx, fxs / wsum, wb)
-        cy = lerp(cy_face, fys / wsum, wb)
+
+    def framing(z):
+        cy_face = ty + 192.0 / z       # face lands at 40 % of the frame height
+        cx, cy = tx, cy_face
+        if wsum > 0:                   # pull the framing toward the punch focus point
+            wb = min(wsum, 0.95)
+            cx = lerp(tx, fxs / wsum, wb)
+            cy = lerp(cy_face, fys / wsum, wb)
+        return cx, cy
+
+    def head_bottom(z):
+        cx, cy = clamp_center(z, *framing(z), 0)
+        return (fy + 0.62 * fw - cy) * z + H / 2
+
+    if head_bottom(z) > HEAD_LIMIT:    # cap the zoom so the head stays out of the text band
+        lo_z, hi_z = 1.20, z
+        for _ in range(18):
+            mid = (lo_z + hi_z) / 2
+            if head_bottom(mid) <= HEAD_LIMIT: lo_z = mid
+            else: hi_z = mid
+        z = lo_z
+    cx, cy = framing(z)
     dx = dy = rot = 0.0
     for s0, s1, amp in SHAKES:
         if s0 <= t < s1:
@@ -304,6 +351,32 @@ def clamp_center(z, cx, cy, rot):
     lo = SUB_BAND_BOTTOM + hh + margin / z
     cy = clamp(cy, lo, max(lo, H - hh))
     return cx, cy
+
+def view(t, i):
+    """Resting camera for output frame i (no transition effects): source frame index and framing."""
+    if BROLL["t0"] <= t < BROLL["t1"]:
+        q = (t - BROLL["t0"]) / (BROLL["t1"] - BROLL["t0"])
+        k = int(round(BROLL["src_t"] * FPS)) + int(round((t - BROLL["t0"]) * FPS))
+        return k, lerp(BROLL["z0"], BROLL["z1"], q), BROLL["center"][0], BROLL["center"][1] + 20 * q, 0.0, 0.0, 0.0
+    z, cx, cy, rot, dx, dy = camera(t, i)
+    return i, z, cx, cy, rot, dx, dy
+
+def subjects(i):
+    """Head ellipse (cx, cy, a, b) and can box (x0, y0, x1, y1, kind) in output px for frame i."""
+    t = i / FPS
+    if t >= END_T or INSERT["t0"] <= t < INSERT["t1"]: return None, None
+    k, z, cx, cy, rot, dx, dy = view(t, i)
+    cx, cy = clamp_center(z, cx, cy, rot)
+    out = lambda x, y: ((x - cx) * z + W / 2 + dx, (y - cy) * z + H / 2 + dy)
+    fx, fy, fw = FACES[min(k, len(FACES) - 1)]
+    hx, hy = out(fx, fy - 0.08 * fw)
+    head = (hx, hy, 0.62 * fw * z, 0.70 * fw * z)
+    can = None
+    if k in CANS:
+        c = CANS[k]
+        (x0, y0), (x1, y1) = out(c[0], c[1]), out(c[2], c[3])
+        can = (x0, y0, x1, y1, c[4])
+    return head, can
 
 def warp_src(src, z, cx, cy, rot=0.0, dx=0.0, dy=0.0, border=cv2.BORDER_REFLECT101):
     cx, cy = clamp_center(z, cx, cy, rot)
@@ -478,6 +551,8 @@ def end_background():
 END_BG = end_background()
 
 # captions ------------------------------------------------------------------------------------
+ORDINALS = {"primero", "segundo", "tercero", "cuarto", "quinto", "sexto"}
+LINE_H = 112
 CAP_CACHE = {}
 def caption_layout(gi):
     if gi in CAP_CACHE: return CAP_CACHE[gi]
@@ -485,7 +560,6 @@ def caption_layout(gi):
     items = []
     for w in g["words"]:
         raw = w["w"].upper().rstrip(",.").replace("...", "…")
-        if raw.endswith("…"): raw = raw[:-1] + "…"
         kw = norm(w["w"]) in KEYWORDS
         if kw:
             img, tw, th = text_img(raw, F_BLACK, 84, INK, box=LIME + (255,), pad=(20, 8), radius=18, margin=30)
@@ -500,36 +574,26 @@ def caption_layout(gi):
             lines.append(cur); cur, cw = [], 0; add = it["w"]
         cur.append(it); cw += add
     lines.append(cur)
-    lh = 112
     for li, ln in enumerate(lines):
         tot = sum(it["w"] for it in ln) + gap * (len(ln) - 1)
         x = W / 2 - tot / 2
         for it in ln:
             it["cx"] = x + it["w"] / 2
-            it["dy"] = (li - (len(lines) - 1) / 2) * lh
+            it["line"] = li
             x += it["w"] + gap
     for k, it in enumerate(items):
         it["rot"] = (-3 if k % 2 == 0 else 3) if it["kw"] else 0
     CAP_CACHE[gi] = items
     return items
 
-def caption_y(t):
-    if t < 2.733: return 1350
-    return 1300
+def caption_hidden(gi, t):
+    g = GROUPS[gi]
+    if len(g["words"]) == 1 and norm(g["words"][0]["w"]) in ORDINALS: return True   # the "RAZÓN #N" slam says it
+    return INSERT["t0"] <= t < INSERT["t1"] or t >= 40.95
 
-# chip vertical position: above the head when there is room, otherwise below the chin
-CHIP_Y = {}
-def chip_y(t, fidx):
-    # decided once per shot from its median face and resting framing, so the chip never jumps mid-shot
-    k = shot_index(t)
-    if k not in CHIP_Y:
-        a, b = SHOT_BOUNDS[k], min(SHOT_BOUNDS[k + 1], END_T)
-        fx, fy, fw = np.median(np.array(FACES[int(a * FPS):int(b * FPS)]), axis=0)
-        z = sum(SHOT_ZOOM[k]) / 2
-        cxx, cyy = clamp_center(z, fx, fy + 192.0 / z, 0)
-        if (fy - cyy) * z + H / 2 > 520: CHIP_Y[k] = 262       # face sits low enough: chip goes on top
-        else: CHIP_Y[k] = min(1120, (fy + 0.85 * fw - cyy) * z + H / 2 + 80)
-    return CHIP_Y[k]
+def word_pose(it, t, top):
+    sc = pop_scale(t, it["s"] - 0.02, 0.15, 2.2 if it["kw"] else 1.4)
+    return it["cx"], top + LINE_H / 2 + it["line"] * LINE_H, sc, it["rot"]
 
 # ----------------------------------------------------------------------------------------------
 # frame composition
@@ -547,15 +611,9 @@ def base_frame(t, i, src):
         if kind == "whip_u": edy = amt * H * 0.6
         else: edx = amt * W
 
-    if BROLL["t0"] <= t < BROLL["t1"]:
-        k = broll_idx0 + int(round((t - BROLL["t0"]) * FPS))
-        fr = STORE[min(k, max(STORE))]
-        q = (t - BROLL["t0"]) / (BROLL["t1"] - BROLL["t0"])
-        z = lerp(BROLL["z0"], BROLL["z1"], q) * ez
-        img = warp_src(fr, z, BROLL["center"][0], BROLL["center"][1] + 20 * q, erot, edx, edy)
-    else:
-        z, cx, cy, rot, dx, dy = camera(t, i)
-        img = warp_src(src, z * ez, cx, cy, rot + erot, dx + edx, dy + edy)
+    k, z, cx, cy, rot, dx, dy = view(t, i)
+    fr = src if k == i else STORE[k]
+    img = warp_src(fr, z * ez, cx, cy, rot + erot, dx + edx, dy + edy)
 
     img = grade(img)
     if kind and kind.startswith("whip"):
@@ -579,116 +637,341 @@ def flash_alpha(t):
 def pop_scale(t, t0, dur=0.16, over=1.7):
     return e_back((t - t0) / dur, over)
 
+STK = {(t0, tuple(n)): combo(n, size) for t0, d, n, x, y, size in STICKERS}
+
+# poses: (x, y, scale, rot, alpha) for each animated element at time t --------------------------
+def hook_poses(t):
+    out = e_in3((t - 2.62) / 0.16); sx = -out * 900; a = 1 - out * 0.3
+    res = []
+    if t >= 0.04:
+        s = 1 + 0.6 * (1 - e_out3((t - 0.04) / 0.16)) if t < 0.2 else 1
+        res.append((HOOK_A, 540 + sx, 1035, s, -4, a * clamp((t - 0.04) / 0.05)))
+    if t >= 0.42: res.append((HOOK_B, 540 + sx, 1175, pop_scale(t, 0.42), 2, a))
+    return res
+
+def chip_pose(n, t, pos, run_start, chip_end):
+    sc = e_back((t - run_start) / 0.28, 1.6) * (1 - e_in3((t - (chip_end - 0.16)) / 0.16))
+    return pos[0], pos[1], sc, 0, 1
+
+def slam_end(ts):
+    """The slam lives while the ordinal word is spoken, so it is gone before the next caption."""
+    w = [w for w in WORDS if norm(w["w"]) in ORDINALS and w["s"] <= ts + 0.3 and w["e"] > ts - 0.3]
+    return max(ts + 0.45, (w[0]["e"] + 0.05) if w else ts + 0.75)
+
+def slam_pose(t, ts, pos):
+    p = t - ts; base = pos[2]; hold = slam_end(ts) - ts - 0.18
+    if p < hold: return pos[0], pos[1], base * (1 + 0.45 * (1 - e_out3(p / 0.14))), -7, clamp(p / 0.05)
+    q = e_in3((p - hold) / 0.18)
+    return pos[0], pos[1], base * (1 - 0.8 * q), -7, 1 - q
+
+def sticker_pose(t, t0, d, pos):
+    s = pos[2] * pop_scale(t, t0, 0.18, 2.6) * (1 - e_in3((t - (t0 + d - 0.1)) / 0.1))
+    return pos[0], pos[1] - 30 * (t - t0), s, 9 * math.sin((t - t0) * 9), 1
+
+BRAND_T0, BRAND_T1, BRAND_TB = 37.36, 41.0, 38.14
+def brand_poses(t, ya):
+    out = e_in3((t - 40.75) / 0.25)
+    res = [(BRAND_A, 540, ya, pop_scale(t, BRAND_T0, 0.2, 2.0) * (1 - out), -3, 1)]
+    if t >= BRAND_TB: res.append((BRAND_B, 540, ya + 140, pop_scale(t, BRAND_TB, 0.18, 2.4) * (1 - out), 2, 1))
+    return res
+
+BRAND_SPARKS = [(120, -30), (960, 0), (180, 190)]   # offsets from the brand lockup
+def brand_spark_pose(t, k, ya):
+    t0 = 38.18 + 0.07 * k
+    sx, oy = BRAND_SPARKS[k]
+    s = pop_scale(t, t0, 0.2, 2.5) * (1 - e_in3((t - 39.1) / 0.2))
+    return sx, ya + oy, s, 15 * math.sin(t * 6 + k), 1
+
+# ----------------------------------------------------------------------------------------------
+# layout: every element looks for a spot that stays clear of the head and the can for its whole
+# life on screen; captions and stickers also avoid the other graphics
+# ----------------------------------------------------------------------------------------------
+SUBJ = [subjects(i) for i in range(NF)]
+SOFT = [[] for _ in range(NF)]          # boxes of already placed graphics, per frame
+
+def frames_in(a, b): return range(max(0, int(math.ceil(a * FPS - 1e-6))), min(NF, int(math.ceil(b * FPS - 1e-6))))
+
+def hard_hit(b, i, pad_head=HEAD_PAD, pad_can=CAN_PAD):
+    head, can = SUBJ[i]
+    if hits(b, head, pad_head): return True
+    if can is not None:
+        p = pad_can + (16 if can[4] == 0 else 0)          # interpolated can positions get extra room
+        if b[0] < can[2] + p and b[2] > can[0] - p and b[1] < can[3] + p and b[3] > can[1] - p: return True
+    return False
+
+def soft_hit(b, i):
+    return any(b[0] < s[2] + 14 and b[2] > s[0] - 14 and b[1] < s[3] + 14 and b[3] > s[1] - 14 for s in SOFT[i])
+
+def choose(cands, test):
+    """First candidate whose test passes on hard+soft obstacles, else on hard only, else the least bad."""
+    scored = []
+    for c in cands:
+        h, s = test(c)
+        if h == 0 and s == 0: return c
+        scored.append((h, s, c))
+    ok_hard = [x for x in scored if x[0] == 0]
+    if ok_hard: return min(ok_hard, key=lambda x: x[1])[2]
+    return min(scored, key=lambda x: (x[0], x[1]))[2]
+
+def mark(i, boxes):
+    SOFT[i].extend(boxes)
+
+# hook (fixed)
+for i in frames_in(0, 2.80):
+    mark(i, [box(s, x, y, sc, r) for s, x, y, sc, r, a in hook_poses(i / FPS)])
+
+# section chips: one position per run of shots, popped in at the start of each run
+LOWER_YS = list(range(1222, 1421, 14))
+CHIP_RUNS = {}
+for n, ts, txt, te in SECTIONS:
+    spr = CHIPS[n]
+    cw = spr.content[2] - spr.content[0]
+    c_top_l, c_top_r = (40 + cw / 2, 262), (1040 - cw / 2, 262)
+    a0, a1 = slam_end(ts), te + 0.2      # the chip enters once the "RAZÓN #N" slam is gone
+    hidden = [(BROLL["t0"], BROLL["t1"]), (INSERT["t0"], INSERT["t1"])]
+    cuts = sorted({a0, a1} | {c for c in SHOT_BOUNDS if a0 < c < a1} | {x for h in hidden for x in h if a0 < x < a1})
+    segs = [(a, b) for a, b in zip(cuts[:-1], cuts[1:]) if not any(h0 <= a < h1 for h0, h1 in hidden)]
+    lower = [(x, y) for y in LOWER_YS for x in (540, 420, 660, 320, 760) if 20 <= x - cw / 2 and x + cw / 2 <= 1060]
+    lower.sort(key=lambda c: (c[1] - LOWER_YS[0]) + 1.6 * abs(c[0] - 540))
+    cands = [c_top_l, c_top_r] + lower
+    def test_chip(pos, frames):
+        h = s = 0
+        for i in frames:
+            b = box(spr, pos[0], pos[1], 1.06, 0)
+            h += hard_hit(b, i); s += soft_hit(b, i)
+        return h, s
+    whole = [i for a, b in segs for i in frames_in(a, b)]
+    pos_all = choose(cands, lambda p: test_chip(p, whole))
+    if test_chip(pos_all, whole)[0] == 0:
+        plan = [(a, b, pos_all) for a, b in segs]
+    else:   # split into the longest stretches that share a free spot; hide it where nothing is free
+        plan = []
+        for a, b in segs:
+            fr_ab = list(frames_in(a, b))
+            ok = [[c for c in cands if not hard_hit(box(spr, c[0], c[1], 1.06, 0), i)] for i in fr_ab]
+            j = 0
+            while j < len(fr_ab):
+                common, k = ok[j], j
+                while k + 1 < len(fr_ab) and [c for c in common if c in ok[k + 1]]:
+                    common = [c for c in common if c in ok[k + 1]]; k += 1
+                if common and k - j + 1 >= 18:                 # at least 0.6 s on screen
+                    plan.append((fr_ab[j] / FPS, (fr_ab[k] + 1) / FPS, common[0]))
+                j = k + 1
+    runs = []
+    for a, b, pos in plan:
+        if runs and runs[-1][2] == pos and abs(runs[-1][1] - a) < 1e-6: runs[-1][1] = b
+        else: runs.append([a, b, pos])
+    runs = [r for r in runs if r[1] - r[0] >= 0.5]   # no blink-length appearances
+    CHIP_RUNS[n] = (runs, a1)
+    for a, b, pos in runs:
+        for i in frames_in(a, b):
+            x, y, sc, r, al = chip_pose(n, i / FPS, pos, a, a1)
+            mark(i, [box(spr, x, y, max(sc, 0.01), r)])
+
+# brand lockup: top if the head allows it, otherwise in the lower stack
+def test_brand(ya):
+    h = s = 0
+    for i in frames_in(BRAND_T0, BRAND_T1):
+        for spr, x, y, sc, r, a in brand_poses(i / FPS, ya):
+            b = box(spr, x, y, max(sc, 0.01), r)
+            h += hard_hit(b, i); s += soft_hit(b, i)
+    return h, s
+BRAND_Y = choose([330] + list(range(1160, 1640, 14)), test_brand)
+for i in frames_in(BRAND_T0, BRAND_T1):
+    mark(i, [box(spr, x, y, max(sc, 0.01), r) for spr, x, y, sc, r, a in brand_poses(i / FPS, BRAND_Y)])
+BRAND_SPARK_ON = []
+for k in range(len(BRAND_SPARKS)):
+    ok = all(not hard_hit(box(SPARK, *brand_spark_pose(i / FPS, k, BRAND_Y)[:4]), i)
+             for i in frames_in(38.18 + 0.07 * k, 39.3))
+    BRAND_SPARK_ON.append(ok)
+
+# "RAZÓN #N" slams
+SLAM_POS = {}
+for n, ts, txt, te in SECTIONS:
+    spr = NUMBERS[n]
+    cands = [(270, 760, 0.85), (810, 760, 0.85), (270, 980, 0.85), (810, 980, 0.85)] + \
+            [(540, y, 0.7) for y in range(1330, 1700, 20)] + [(250, y, 0.6) for y in range(1300, 1700, 40)] + \
+            [(830, y, 0.6) for y in range(1300, 1700, 40)]
+    def test_slam(pos):
+        h = s = 0
+        for i in frames_in(ts, slam_end(ts)):
+            x, y, sc, r, a = slam_pose(i / FPS, ts, pos)
+            b = box(spr, x, y, sc, r)
+            h += hard_hit(b, i); s += soft_hit(b, i)
+        return h, s
+    SLAM_POS[n] = choose(cands, test_slam)
+    for i in frames_in(ts, slam_end(ts)):
+        x, y, sc, r, a = slam_pose(i / FPS, ts, SLAM_POS[n])
+        mark(i, [box(spr, x, y, sc, r)])
+
+# captions: block top as close as possible to the default line, moving down when needed
+CAP_TOP = {}
+for gi, g in enumerate(GROUPS):
+    fr = [i for i in frames_in(g["s"] - 0.02, g["e"]) if not caption_hidden(gi, i / FPS)]
+    if not fr: continue
+    items = caption_layout(gi)
+    base = 1294 if g["s"] < 2.733 else 1244
+    ext = [box(it["spr"], *word_pose(it, 99, 0)) for it in items]
+    dx_lo, dx_hi = 30 - min(b[0] for b in ext), 1050 - max(b[2] for b in ext)
+    cands = [(top, dx) for top in range(base, 1601, 12) for dx in (0, 110, -110, 200, -200) if dx_lo <= dx <= dx_hi]
+    cands.sort(key=lambda c: (c[0] - base) + 1.6 * abs(c[1]))
+    def test_cap(c):
+        h = s = 0
+        for i in fr:
+            t = i / FPS
+            for it in items:
+                if t < it["s"] - 0.02: continue
+                x, y, sc, r = word_pose(it, t, c[0])
+                b = box(it["spr"], x + c[1], y, max(sc, 1.0), r)
+                h += hard_hit(b, i); s += soft_hit(b, i)
+        return h, s
+    CAP_TOP[gi] = choose(cands, test_cap)
+    for i in fr:
+        t = i / FPS
+        top, dx = CAP_TOP[gi]
+        mark(i, [box(it["spr"], word_pose(it, t, top)[0] + dx, *word_pose(it, t, top)[1:]) for it in items if t >= it["s"] - 0.02])
+
+# stickers
+STK_POS = {}
+for t0, d, names, px, py, size in STICKERS:
+    spr = STK[(t0, tuple(names))]
+    cands = [(px, py, 1.0)] + [(x, y, 1.0) for y in (1000, 860, 720, 580, 440, 1150, 1300, 1450, 1600) for x in (905, 175)] \
+        + [(x, y, sc) for sc in (0.85, 0.7) for y in range(1000, 1660, 50) for x in (125, 955)]
+    def test_stk(pos):
+        h = s = 0
+        for i in frames_in(t0, t0 + d):
+            x, y, sc, r, a = sticker_pose(i / FPS, t0, d, pos)
+            b = box(spr, x, y, sc, r)
+            h += hard_hit(b, i); s += soft_hit(b, i)
+        return h, s
+    pos = choose(cands, test_stk)
+    if test_stk(pos) != (0, 0): continue          # decoration only: skip it rather than cover anything
+    STK_POS[t0] = pos
+    for i in frames_in(t0, t0 + d):
+        x, y, sc, r, a = sticker_pose(i / FPS, t0, d, STK_POS[t0])
+        mark(i, [box(spr, x, y, sc, r)])
+
+# ----------------------------------------------------------------------------------------------
+# overlays
+# ----------------------------------------------------------------------------------------------
 def overlays(f, t, i):
-    # hook ---------------------------------------------------------------------------------
     if t < 2.80:
-        out = e_in3((t - 2.62) / 0.16)
-        sx = -out * 900
-        a = 1 - out * 0.3
-        s = 1 + 1.6 * (1 - e_out3((t - 0.04) / 0.16)) if t < 0.2 else 1
-        if t >= 0.04: draw(f, HOOK_A, 540 + sx, 1035, s, -4, a * clamp((t - 0.04) / 0.05))
-        if t >= 0.42: draw(f, HOOK_B, 540 + sx, 1175, pop_scale(t, 0.42), 2, a)
-    # captions -----------------------------------------------------------------------------
-    hide = INSERT["t0"] <= t < INSERT["t1"] or t >= 40.95
-    if not hide:
-        for gi, g in enumerate(GROUPS):
-            if g["s"] <= t < g["e"]:
-                items = caption_layout(gi)
-                y = caption_y(t)
-                for it in items:
-                    if t < it["s"] - 0.02: continue
-                    sc = pop_scale(t, it["s"] - 0.02, 0.15, 2.2 if it["kw"] else 1.4)
-                    draw(f, it["spr"], it["cx"], y + it["dy"], sc, it["rot"], clamp((t - it["s"] + 0.02) / 0.05))
-    # section numbers + chips ---------------------------------------------------------------
+        for spr, x, y, sc, r, a in hook_poses(t):
+            draw(f, spr, x, y, sc, r, a, tag="hook")
+    for gi, g in enumerate(GROUPS):
+        if g["s"] - 0.02 <= t < g["e"] and gi in CAP_TOP and not caption_hidden(gi, t):
+            for it in caption_layout(gi):
+                if t < it["s"] - 0.02: continue
+                top, dx = CAP_TOP[gi]
+                x, y, sc, r = word_pose(it, t, top)
+                draw(f, it["spr"], x + dx, y, sc, r, clamp((t - it["s"] + 0.02) / 0.05), tag="caption")
     for n, ts, txt, te in SECTIONS:
-        if ts <= t < ts + 0.75:
-            p = (t - ts)
-            if p < 0.55:
-                s = 1 + 1.4 * (1 - e_out3(p / 0.14))
-                draw(f, NUMBERS[n], 300, 900, s * 0.9, -7, clamp(p / 0.05))
-            else:
-                q = e_in3((p - 0.55) / 0.2)
-                draw(f, NUMBERS[n], lerp(300, 150, q), lerp(900, chip_y(t, i), q), 0.9 * (1 - 0.75 * q), -7 * (1 - q), 1 - q)
-        if ts + 0.5 <= t < te + 0.2 and not (INSERT["t0"] <= t < INSERT["t1"]):
-            spr = CHIPS[n]
-            tin = e_back((t - ts - 0.5) / 0.32, 1.3)
-            tout = e_in3((t - te) / 0.2)
-            x = lerp(-spr.w / 2, 40 + spr.w / 2 - 30, tin) - tout * (spr.w + 100)
-            focus = max([punch_env(t, pp) * pp[4] for pp in PUNCHES if pp[3] is not None] + [0])
-            draw(f, spr, x, chip_y(t, i), 1.0, 0, 1 - clamp(focus * 1.3))   # step aside during product close-ups
-    # stickers ------------------------------------------------------------------------------
-    for t0, d, names, x, y, size in STICKERS:
-        if t0 <= t < t0 + d:
-            spr = STK[(t0, tuple(names))]
-            s = pop_scale(t, t0, 0.18, 2.6) * (1 - e_in3((t - (t0 + d - 0.1)) / 0.1))
-            rot = 9 * math.sin((t - t0) * 9)
-            draw(f, spr, x, y - 30 * (t - t0), s, rot, 1)
-    # kinetic insert "HOJA COMPLETA" ---------------------------------------------------------
+        if ts <= t < slam_end(ts):
+            x, y, sc, r, a = slam_pose(t, ts, SLAM_POS[n])
+            draw(f, NUMBERS[n], x, y, sc, r, a, tag="number")
+        runs, chip_end = CHIP_RUNS[n]
+        for a0, a1, pos in runs:
+            if a0 <= t < a1:
+                x, y, sc, r, a = chip_pose(n, t, pos, a0, chip_end)
+                draw(f, CHIPS[n], x, y, sc, r, a, tag="chip")
+    for t0, d, names, px, py, size in STICKERS:
+        if t0 <= t < t0 + d and t0 in STK_POS:
+            x, y, sc, r, a = sticker_pose(t, t0, d, STK_POS[t0])
+            draw(f, STK[(t0, tuple(names))], x, y, sc, r, a, tag="sticker")
+    # kinetic insert "HOJA COMPLETA" (full-screen graphic, nobody on screen)
     if INSERT["t0"] <= t < INSERT["t1"]:
         p = t - INSERT["t0"]
-        draw(f, LEAF, 540, 700, pop_scale(t, INSERT["t0"] + 0.04, 0.22, 1.8), -25 + 50 * p, 1)
-        draw(f, INS_A, 540, 1010, pop_scale(t, INSERT["t0"] + 0.12, 0.16, 2.2), -3, 1)
+        draw(f, LEAF, 540, 700, pop_scale(t, INSERT["t0"] + 0.04, 0.22, 1.8), -25 + 50 * p, 1, tag="insert")
+        draw(f, INS_A, 540, 1010, pop_scale(t, INSERT["t0"] + 0.12, 0.16, 2.2), -3, 1, tag="insert")
         if t >= INSERT["t0"] + 0.30:
-            draw(f, INS_B, 540, 1215, pop_scale(t, INSERT["t0"] + 0.30, 0.16, 2.0), 2, 1)
+            draw(f, INS_B, 540, 1215, pop_scale(t, INSERT["t0"] + 0.30, 0.16, 2.0), 2, 1, tag="insert")
         for k, (sx, sy) in enumerate([(250, 560), (820, 640), (300, 1330), (800, 1380)]):
             t0 = INSERT["t0"] + 0.1 + 0.08 * k
             if t >= t0:
-                draw(f, SPARK, sx, sy, pop_scale(t, t0, 0.2, 2.5) * (0.8 + 0.2 * math.sin(t * 12 + k)), 15 * math.sin(t * 5 + k), 1)
-    # brand lockup ---------------------------------------------------------------------------
-    if 37.36 <= t < 41.0:
-        out = e_in3((t - 40.75) / 0.25)
-        draw(f, BRAND_A, 540, 330 - out * 400, pop_scale(t, 37.36, 0.2, 2.0), -3, 1)
-        if t >= 38.14:
-            draw(f, BRAND_B, 540, 470 - out * 400, pop_scale(t, 38.14, 0.18, 2.4), 2, 1)
-        if 38.14 <= t < 39.3:
-            for k, (sx, sy) in enumerate([(120, 300), (960, 330), (180, 520)]):
-                t0 = 38.18 + 0.07 * k
-                if t >= t0:
-                    draw(f, SPARK, sx, sy, pop_scale(t, t0, 0.2, 2.5) * (1 - e_in3((t - 39.1) / 0.2)), 15 * math.sin(t * 6 + k), 1)
-    # end card -------------------------------------------------------------------------------
+                draw(f, SPARK, sx, sy, pop_scale(t, t0, 0.2, 2.5) * (0.8 + 0.2 * math.sin(t * 12 + k)), 15 * math.sin(t * 5 + k), 1, tag="insert")
+    if BRAND_T0 <= t < BRAND_T1:
+        for spr, x, y, sc, r, a in brand_poses(t, BRAND_Y):
+            draw(f, spr, x, y, sc, r, a, tag="brand")
+        for k in range(len(BRAND_SPARKS)):
+            if BRAND_SPARK_ON[k] and 38.18 + 0.07 * k <= t < 39.3:
+                draw(f, SPARK, *brand_spark_pose(t, k, BRAND_Y), tag="sparkle")
     if t >= END_T:
         p = t - END_T
-        draw(f, CAN_CARD, 540, 760 + 10 * math.sin(p * 3), pop_scale(t, END_T + 0.02, 0.3, 1.8) * 0.92, -5 + 2 * math.sin(p * 2.2), 1)
-        draw(f, END_E, 860, 420, pop_scale(t, END_T + 0.35, 0.2, 2.5), 12 * math.sin(p * 5), 1)
-        draw(f, END_A, 540, 1260, pop_scale(t, END_T + 0.20, 0.18, 2.0), -3, 1)
-        if p >= 0.42: draw(f, END_B, 540, 1418, pop_scale(t, END_T + 0.42, 0.16, 2.0), 0, 1)
-        if p >= 0.62: draw(f, END_C, 540, 1515, pop_scale(t, END_T + 0.62, 0.16, 1.6), 0, 1)
+        draw(f, CAN_CARD, *end_card_pose(t), tag="product")
+        draw(f, END_E, 930, 300, pop_scale(t, END_T + 0.35, 0.2, 2.5), 12 * math.sin(p * 5), 1, tag="end")
+        if p >= 0.30: draw(f, END_A, 540, 1300, pop_scale(t, END_T + 0.30, 0.18, 2.0), -3, 1, tag="end")
+        if p >= 0.48: draw(f, END_B, 540, 1458, pop_scale(t, END_T + 0.48, 0.16, 2.0), 0, 1, tag="end")
+        if p >= 0.66: draw(f, END_C, 540, 1553, pop_scale(t, END_T + 0.66, 0.16, 1.6), 0, 1, tag="end")
         if p >= 0.85:
             pulse = 1 + 0.04 * math.sin((p - 0.85) * 8)
-            draw(f, END_D, 540, 1665, pop_scale(t, END_T + 0.85, 0.2, 2.2) * pulse, -2, 1)
-        for k, (sx, sy) in enumerate([(200, 470), (900, 980), (170, 1060)]):
+            draw(f, END_D, 540, 1698, pop_scale(t, END_T + 0.85, 0.2, 2.2) * pulse, -2, 1, tag="end")
+        for k, (sx, sy) in enumerate([(130, 470), (950, 980), (112, 1075)]):
             t0 = END_T + 0.25 + 0.1 * k
             if t >= t0:
-                draw(f, SPARK, sx, sy, pop_scale(t, t0, 0.2, 2.5) * (0.85 + 0.15 * math.sin(t * 7 + k)), 20 * math.sin(t * 4 + k), 1)
+                draw(f, SPARK, sx, sy, pop_scale(t, t0, 0.2, 2.5) * (0.85 + 0.15 * math.sin(t * 7 + k)), 20 * math.sin(t * 4 + k), 1, tag="end")
 
-STK = {(t0, tuple(n)): combo(n, size) for t0, d, n, x, y, size in STICKERS}
+def end_card_pose(t):
+    p = t - END_T
+    return 540, 760 + 10 * math.sin(p * 3), pop_scale(t, END_T + 0.02, 0.3, 1.8) * 0.92, -5 + 2 * math.sin(p * 2.2), 1
+
+def insert_background():
+    yy, xx = np.mgrid[0:H, 0:W].astype(np.float32)
+    r = np.sqrt(((xx - W / 2) / W) ** 2 + ((yy - H * 0.45) / H) ** 2) / 0.62
+    r = np.clip(r, 0, 1)[..., None]
+    inner = np.array([66, 128, 52], np.float32) / 255
+    outer = np.array([7, 34, 16], np.float32) / 255
+    return inner * (1 - r) + outer * r
+
+INS_BG = insert_background()
 
 def render_frame(i, src):
     t = i / FPS
     if t >= END_T:
         f = END_BG.copy()
+    elif INSERT["t0"] <= t < INSERT["t1"]:
+        f = INS_BG.copy()
     else:
         img = base_frame(t, i, src)
-        if INSERT["t0"] <= t < INSERT["t1"]:
-            sm = cv2.resize(img, (W // 8, H // 8), interpolation=cv2.INTER_AREA)
-            sm = cv2.GaussianBlur(sm, (0, 0), 3)
-            img = cv2.resize(sm, (W, H), interpolation=cv2.INTER_LINEAR)
-            f = img.astype(np.float32) / 255.0
-            f = f * 0.45 + np.array([0.04, 0.20, 0.08], np.float32) * 0.45
-        else:
-            if t >= 41.25:   # she walks out of frame: blur into the end card
-                k = (t - 41.25) / (END_T - 41.25)
-                img = cv2.GaussianBlur(img, (0, 0), 0.1 + 20 * k * k)
-            f = img.astype(np.float32) / 255.0
+        if t >= 41.25:   # she walks out of frame: blur into the end card
+            k = (t - 41.25) / (END_T - 41.25)
+            img = cv2.GaussianBlur(img, (0, 0), 0.1 + 20 * k * k)
+        f = img.astype(np.float32) / 255.0
         f *= VIG
     a = flash_alpha(t)
     if a > 0: f = f * (1 - a) + a
     overlays(f, t, i)
     return (np.clip(f, 0, 1) * 255 + 0.5).astype(np.uint8)
 
+def check_layout():
+    """Every drawn graphic vs the head and the can, frame by frame. Returns the list of contacts."""
+    global RECORD
+    bad = []
+    for i in range(NF):
+        t = i / FPS
+        RECORD = []
+        overlays(None, t, i)
+        rec, RECORD = RECORD, None
+        head, can = SUBJ[i]
+        if t >= END_T:
+            prod = box(CAN_CARD, *end_card_pose(t)[:4])
+            can = (prod[0], prod[1], prod[2], prod[3], 1)
+        for tag, b in rec:
+            if tag == "product": continue
+            if hits(b, head, CHECK_PAD): bad.append((i, tag, "head"))
+            if can is not None and b[0] < can[2] + CHECK_PAD and b[2] > can[0] - CHECK_PAD \
+                    and b[1] < can[3] + CHECK_PAD and b[3] > can[1] - CHECK_PAD:
+                bad.append((i, tag, "can"))
+    return bad
+
 # ----------------------------------------------------------------------------------------------
 # main
 # ----------------------------------------------------------------------------------------------
+if "--check" in ARGS:
+    bad = check_layout()
+    print("contacts:", len(bad))
+    for i, tag, what in bad: print(f"  frame {i} t={i / FPS:.2f} {tag} touches {what}")
+    sys.exit(1 if bad else 0)
+
 if "--frames" in ARGS:
     want = sorted(int(x) for x in ARGS[ARGS.index("--frames") + 1].split(","))
     os.makedirs(OUT, exist_ok=True)
