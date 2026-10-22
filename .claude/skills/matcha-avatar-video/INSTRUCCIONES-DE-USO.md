@@ -1,6 +1,6 @@
 # Skill `matcha-avatar-video` — Instrucciones de uso
 
-Esta skill guarda la configuración de los videos con avatar que hicimos en **Higgsfield** para promocionar el **Té Matcha Grado Ceremonial de LO Laboratorios Outlet**. Con ella, Claude puede repetir la campaña o crear videos nuevos con el mismo estilo sin que tengas que explicarle todo otra vez.
+Esta skill guarda la configuración de los videos con avatar que hicimos en **Higgsfield** para promocionar el **Té Matcha Grado Ceremonial de fytosofy Nutrition**. Con ella, Claude puede repetir la campaña o crear videos nuevos con el mismo estilo sin que tengas que explicarle todo otra vez.
 
 ## Qué incluye
 
@@ -14,7 +14,8 @@ matcha-avatar-video/
 │   ├── broll-kling.md               ← 5 tomas de apoyo sin diálogo
 │   └── creadora-storyboard.md       ← variante de la creadora en cocina (tableros de 8 tomas)
 └── assets/
-    ├── producto-te-matcha.jpg       ← foto de referencia de la lata
+    ├── producto-te-matcha.jpg       ← frasco fytosofy, vista frontal (la referencia principal)
+    ├── producto-te-matcha-frente-y-reverso.jpg
     ├── avatar-doctor.jpg            ← avatar del doctor
     └── avatar-creadora.jpg          ← avatar de la creadora
 ```

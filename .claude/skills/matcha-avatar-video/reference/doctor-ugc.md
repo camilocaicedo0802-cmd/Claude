@@ -1,6 +1,6 @@
 # Flujo A — Doctor UGC: prompts completos
 
-Estos son los prompts exactos de la campaña original. Escena = fotograma (Nano Banana 2.1) + clip (Veo 3.1 Lite).
+Estos son los prompts de la campaña original. La descripción de la etiqueta ya está actualizada al frasco **fytosofy Nutrition**; los jobs originales de las escenas 3 a 6 usaron el frasco anterior, así que hay que regenerarlos (fotograma y video) con el producto nuevo `59675887-7a35-45f3-9e99-b0e6393e8b9b`. Escena = fotograma (Nano Banana 2.1) + clip (Veo 3.1 Lite).
 
 ## Avatar base (solo si hay que recrearlo)
 
@@ -40,7 +40,7 @@ Smartphone UGC video on a tripod. The doctor sits at his desk and talks to the c
 
 **Fotograma** — medias: [doctor, producto]. Job original: `82e36b41-a668-41bf-a5b2-0a70b9caff61`
 ```
-Hyperrealistic vertical video still. The exact same man from the first reference photo (same face, glasses, grey hair, beard, white lab coat with no text, light blue shirt, black stethoscope) sits at his desk in the same bright office and proudly holds up the exact matcha tin from the second reference image next to his face, label facing the camera and clearly readable, reproducing the label design faithfully (cream label, 'TÉ MATCHA' in big dark green letters, Laboratorios Outlet logo, green bottom band). He smiles confidently at the camera. Natural window light, real skin texture, UGC smartphone look. No badge.
+Hyperrealistic vertical video still. The exact same man from the first reference photo (same face, glasses, grey hair, beard, white lab coat with no text, light blue shirt, black stethoscope) sits at his desk in the same bright office and proudly holds up the exact matcha tin from the second reference image next to his face, label facing the camera and clearly readable, reproducing the label design faithfully (reproduced pixel-faithfully like a photo of the same physical object: 'fytosofy' / 'Nutrition' under the green leaf emblem, 'TÉ MATCHA', 'GRADO CEREMONIAL PREMIUM', upper-right tab 'ORIGEN' 'JAPÓN' '日本産' with torii icon and Japanese flag, bottom band 'TÉ VERDE EN POLVO', 'Contenido Neto 60g', 'Porciones 30 (2 g por porción)'; do not redesign, re-letter or recolor anything). He smiles confidently at the camera. Natural window light, real skin texture, UGC smartphone look. No badge.
 ```
 
 **Video** — Job original: `beb4d980-ae4e-4f4e-ba78-ed3f9f64735c`
@@ -52,7 +52,7 @@ Smartphone UGC video. The doctor holds the matcha tin steady next to his face, l
 
 **Fotograma** — medias: [doctor, producto]. Job original: `33fc5a74-b43c-4291-b399-f39a6911de88`
 ```
-Hyperrealistic vertical video still, slightly closer medium shot. The exact same man from the first reference photo (same face, glasses, grey hair, beard, white lab coat with no text, light blue shirt, black stethoscope) leans slightly toward the camera explaining something, one hand gesturing like counting a point, serious but warm expression. On the desk in front of him stands the exact matcha tin from the second reference image with its label facing the camera (cream label, 'TÉ MATCHA' dark green letters, green bottom band). Same bright office, window light, real skin texture, UGC look. No badge.
+Hyperrealistic vertical video still, slightly closer medium shot. The exact same man from the first reference photo (same face, glasses, grey hair, beard, white lab coat with no text, light blue shirt, black stethoscope) leans slightly toward the camera explaining something, one hand gesturing like counting a point, serious but warm expression. On the desk in front of him stands the exact matcha tin from the second reference image with its label facing the camera (reproduced pixel-faithfully like a photo of the same physical object: 'fytosofy' / 'Nutrition' under the green leaf emblem, 'TÉ MATCHA', 'GRADO CEREMONIAL PREMIUM', upper-right tab 'ORIGEN' 'JAPÓN' '日本産' with torii icon and Japanese flag, bottom band 'TÉ VERDE EN POLVO', 'Contenido Neto 60g', 'Porciones 30 (2 g por porción)'; do not redesign, re-letter or recolor anything). Same bright office, window light, real skin texture, UGC look. No badge.
 ```
 
 **Video** — Job original: `a01efd59-3c94-4065-bf35-d66d5cc87a50`
@@ -64,7 +64,7 @@ Smartphone UGC video on a tripod. The doctor leans slightly toward the camera an
 
 **Fotograma** — medias: [doctor, producto]. Job original: `f477f76e-a726-4f4f-8331-4a942084945d`
 ```
-Hyperrealistic vertical video still. The exact same man from the first reference photo (same face, glasses, grey hair, beard, white lab coat with no text, light blue shirt, black stethoscope) sits at his desk holding a tall clear glass of iced matcha latte (vivid green layered over white milk with ice) and smiles at the camera, relaxed and energized. Next to him on the desk stands the exact matcha tin from the second reference image, label facing the camera (cream label, 'TÉ MATCHA' dark green letters, green bottom band). Same bright office, window light, real skin texture, UGC look. No badge.
+Hyperrealistic vertical video still. The exact same man from the first reference photo (same face, glasses, grey hair, beard, white lab coat with no text, light blue shirt, black stethoscope) sits at his desk holding a tall clear glass of iced matcha latte (vivid green layered over white milk with ice) and smiles at the camera, relaxed and energized. Next to him on the desk stands the exact matcha tin from the second reference image, label facing the camera (reproduced pixel-faithfully like a photo of the same physical object: 'fytosofy' / 'Nutrition' under the green leaf emblem, 'TÉ MATCHA', 'GRADO CEREMONIAL PREMIUM', upper-right tab 'ORIGEN' 'JAPÓN' '日本産' with torii icon and Japanese flag, bottom band 'TÉ VERDE EN POLVO', 'Contenido Neto 60g', 'Porciones 30 (2 g por porción)'; do not redesign, re-letter or recolor anything). Same bright office, window light, real skin texture, UGC look. No badge.
 ```
 
 **Video** — Job original: `1e99403f-2685-4ffd-9125-f0e668c16818`
@@ -76,7 +76,7 @@ Smartphone UGC video. The doctor holds the glass of iced matcha latte, takes a s
 
 **Fotograma** — medias: [doctor, producto]. Job original: `ac3cf1e9-649b-43fc-a563-3d18c5166b0f`
 ```
-Hyperrealistic vertical video still. The exact same man from the first reference photo (same face, glasses, grey hair, beard, white lab coat with no text, light blue shirt, black stethoscope) stands in his bright office holding the exact matcha tin from the second reference image at chest height with the label facing the camera, clearly readable (cream label, 'TÉ MATCHA' big dark green letters, Laboratorios Outlet logo, green bottom band), pointing at it with his other hand and smiling broadly at the camera like a friendly recommendation. Natural window light, real skin texture, UGC smartphone look. No badge.
+Hyperrealistic vertical video still. The exact same man from the first reference photo (same face, glasses, grey hair, beard, white lab coat with no text, light blue shirt, black stethoscope) stands in his bright office holding the exact matcha tin from the second reference image at chest height with the label facing the camera, clearly readable (reproduced pixel-faithfully like a photo of the same physical object: 'fytosofy' / 'Nutrition' under the green leaf emblem, 'TÉ MATCHA', 'GRADO CEREMONIAL PREMIUM', upper-right tab 'ORIGEN' 'JAPÓN' '日本産' with torii icon and Japanese flag, bottom band 'TÉ VERDE EN POLVO', 'Contenido Neto 60g', 'Porciones 30 (2 g por porción)'; do not redesign, re-letter or recolor anything), pointing at it with his other hand and smiling broadly at the camera like a friendly recommendation. Natural window light, real skin texture, UGC smartphone look. No badge.
 ```
 
 **Video** — Job original: `bb30519c-a636-4a52-8115-5db7648a7cf7`
@@ -90,7 +90,7 @@ Smartphone UGC video. The doctor holds the matcha tin at chest height with the l
 
 **Fotograma:**
 ```
-Hyperrealistic vertical video still. The exact same man from the first reference photo (same face, glasses, grey hair, beard, white lab coat with no text, light blue shirt, black stethoscope) <ACCIÓN Y ENCUADRE>. <SI SALE LA LATA: the exact matcha tin from the second reference image, label facing the camera (cream label, 'TÉ MATCHA' dark green letters, green bottom band)>. Same bright office, window light, real skin texture, UGC look. No badge.
+Hyperrealistic vertical video still. The exact same man from the first reference photo (same face, glasses, grey hair, beard, white lab coat with no text, light blue shirt, black stethoscope) <ACCIÓN Y ENCUADRE>. <SI SALE LA LATA: the exact matcha tin from the second reference image, label facing the camera (reproduced pixel-faithfully like a photo of the same physical object: 'fytosofy' / 'Nutrition' under the green leaf emblem, 'TÉ MATCHA', 'GRADO CEREMONIAL PREMIUM', upper-right tab 'ORIGEN' 'JAPÓN' '日本産' with torii icon and Japanese flag, bottom band 'TÉ VERDE EN POLVO', 'Contenido Neto 60g', 'Porciones 30 (2 g por porción)'; do not redesign, re-letter or recolor anything)>. Same bright office, window light, real skin texture, UGC look. No badge.
 ```
 
 **Video:**
