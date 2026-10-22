@@ -3,10 +3,10 @@ import sys, subprocess, math, os
 import numpy as np, cv2
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from edl import EDL, BEAT, MUSIC_START
+from edl import EDL, BEAT, MUSIC_START, DROP_BEAT
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-S = os.environ.get("JET_WORKDIR", os.path.join(HERE, "work"))  # raw/raw.mov, music/364.mp3, fonts2/*.ttf
+S = os.environ.get("JET_WORKDIR", os.path.join(HERE, "work"))  # raw/, newclips/, music2/, fonts2/
 RAW = f'{S}/raw/raw.mov'
 FONT_BIG = f'{S}/fonts2/Syncopate.ttf'
 FONT_SERIF = f'{S}/fonts2/Playfair.ttf'
@@ -84,10 +84,11 @@ def zoom_shift(img, z, dx=0.0, dy=0.0, anchor=(0.5, 0.5)):
 
 def vertical_crop(img, cy):
     """Vertical (pillarboxed) source: crop a 16:9 window out of the 9:16 picture so it fills the frame."""
-    strip = img[:, VERT_X0:VERT_X1]
+    strip = img if img.shape[1] != W else img[:, VERT_X0:VERT_X1]  # iPhone clips arrive already vertical
     sw = strip.shape[1]
     ch = int(round(sw * H / W))
-    y0 = int(np.clip(cy * H - ch / 2, 0, H - ch))
+    sh = strip.shape[0]
+    y0 = int(np.clip(cy * sh - ch / 2, 0, sh - ch))
     crop = strip[y0:y0 + ch]
     up = cv2.resize(crop, (W, H), interpolation=cv2.INTER_LANCZOS4)
     soft = cv2.GaussianBlur(up, (0, 0), 2.2)
@@ -188,21 +189,34 @@ def light_leak(phase, strength):
 
 
 # ---------- source reading ----------
+# iPhone HDR (HLG) clips -> SDR bt709
+TONEMAP = ('zscale=t=linear:npl=203,format=gbrpf32le,zscale=p=bt709,tonemap=tonemap=hable:desat=0,'
+           'zscale=t=bt709:m=bt709:r=tv,format=yuv420p')
+
+
 def read_frames(src, idxs):
-    """Return dict idx->frame for source frame offsets (at 60fps) starting at src seconds."""
+    """Return dict idx->frame for source frame offsets (at 60fps) starting at src seconds.
+    src is a time in raw.mov, or (clip_name, time) for an extra vertical iPhone clip."""
     need = sorted(set(idxs))
     n = need[-1] + 1
-    cmd = ['ffmpeg', '-v', 'error', '-ss', f'{src:.3f}', '-i', RAW, '-frames:v', str(n),
-           '-f', 'rawvideo', '-pix_fmt', 'bgr24', '-']
+    if isinstance(src, tuple):
+        name, at = src
+        fw, fh = 1080, 1920
+        cmd = ['ffmpeg', '-v', 'error', '-ss', f'{at:.3f}', '-i', f'{S}/newclips/{name}.MOV', '-frames:v', str(n),
+               '-vf', TONEMAP, '-f', 'rawvideo', '-pix_fmt', 'bgr24', '-']
+    else:
+        fw, fh = W, H
+        cmd = ['ffmpeg', '-v', 'error', '-ss', f'{src:.3f}', '-i', RAW, '-frames:v', str(n),
+               '-f', 'rawvideo', '-pix_fmt', 'bgr24', '-']
     p = subprocess.Popen(cmd, stdout=subprocess.PIPE)
     out, want, i = {}, set(need), 0
-    fsz = W * H * 3
+    fsz = fw * fh * 3
     while i < n:
         buf = p.stdout.read(fsz)
         if len(buf) < fsz:
             break
         if i in want:
-            out[i] = np.frombuffer(buf, np.uint8).reshape(H, W, 3)
+            out[i] = np.frombuffer(buf, np.uint8).reshape(fh, fw, 3)
         i += 1
     p.stdout.close(); p.wait()
     last = out[max(out)]
@@ -232,7 +246,7 @@ for ci, c in enumerate(EDL):
     T0 = c['f0'] / FPS
     if 'punch' in fx or 'flashin' in fx:
         events.append((T0, 'whoosh' if c['beats'] >= 1 else 'tick'))
-    if ci > 0 and c['t0'] == 16:
+    if ci > 0 and c['t0'] == DROP_BEAT:
         events.append((T0, 'impact'))
     last_ticks = 0
     for k in range(nf):

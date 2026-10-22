@@ -2,16 +2,16 @@
 import sys, os, subprocess, wave
 import numpy as np
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from edl import MUSIC_START, BEAT
+from edl import MUSIC_START, MUSIC_FILE
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-S = os.environ.get("JET_WORKDIR", os.path.join(HERE, "work"))  # raw/raw.mov, music/364.mp3, fonts2/*.ttf
+S = os.environ.get("JET_WORKDIR", os.path.join(HERE, "work"))  # raw/, newclips/, music2/, fonts2/
 SR = 48000
 DUR = float(sys.argv[1])
 rng = np.random.default_rng(3)
 
 raw = subprocess.run(['ffmpeg', '-v', 'error', '-ss', f'{MUSIC_START:.4f}', '-t', f'{DUR:.4f}',
-                      '-i', f'{S}/music/364.mp3', '-f', 'f32le', '-ac', '2', '-ar', str(SR), '-'],
+                      '-i', f'{S}/{MUSIC_FILE}', '-f', 'f32le', '-ac', '2', '-ar', str(SR), '-'],
                      capture_output=True).stdout
 music = np.frombuffer(raw, np.float32).reshape(-1, 2).copy()
 n = int(DUR * SR)
@@ -20,7 +20,7 @@ music /= np.abs(music).max() + 1e-9
 music *= 0.89
 fade = int(1.3 * SR)
 music[-fade:] *= np.linspace(1, 0, fade)[:, None] ** 1.5
-music[:int(0.02 * SR)] *= np.linspace(0, 1, int(0.02 * SR))[:, None]
+music[:int(0.12 * SR)] *= np.linspace(0, 1, int(0.12 * SR))[:, None]
 
 
 def bandsweep(noise, f_lo, f_hi):
@@ -75,7 +75,7 @@ ev = np.load(f'{S}/events.npy')
 W_SAMPLE, I_SAMPLE, T_SAMPLE = whoosh(), impact(), tick()
 for t, kind in ev:
     kind = int(kind)
-    snd, peak, gain = {0: (*W_SAMPLE, 0.16), 1: (*T_SAMPLE, 0.10), 2: (*I_SAMPLE, 0.55), 3: (*T_SAMPLE, 0.07)}[kind]
+    snd, peak, gain = {0: (*W_SAMPLE, 0.12), 1: (*T_SAMPLE, 0.08), 2: (*I_SAMPLE, 0.35), 3: (*T_SAMPLE, 0.06)}[kind]
     st = int(t * SR) - peak
     a, b = max(0, st), min(n, st + len(snd))
     if b > a:
