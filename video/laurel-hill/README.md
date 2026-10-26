@@ -30,8 +30,8 @@ mkdir -p work && cp data/words.json data/retx.json work/ && cp -r data/scenes wo
 venv/bin/python edit/check.py                      # valida la línea de tiempo
 venv/bin/python edit/audio.py out/mix.wav          # voz + música con ducking + efectos
 venv/bin/python edit/render.py out/video_noaudio.mp4 --workers 4
-ffmpeg -i out/video_noaudio.mp4 -i out/mix.wav -map 0:v -map 1:a -c:v copy \
-  -af loudnorm=I=-14:TP=-1.5:LRA=11 -c:a aac -b:a 192k out/laurel_hill.mp4
+venv/bin/python edit/splice.py out/video_noaudio.mp4 out/mix.wav out/laurel_hill.mp4   # [T0 T1 ...] re-renderiza tramos
 ```
 
-El render a 1080p30 tarda unos 45–60 min con 4 núcleos.
+El render a 1080p30 tarda unos 60 min con 4 núcleos; `splice.py` codifica la entrega (x264 CRF 20, ≤10 Mbps,
+audio a −14 LUFS) en trozos de 90 s que se pueden reanudar, y tarda unos 30 min más.
