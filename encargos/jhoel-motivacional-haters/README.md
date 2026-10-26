@@ -3,7 +3,8 @@
 Reel vertical (1080×1920, 30 fps, 12,4 s) que recrea el video de referencia con los B-rolls propios de Jhoel.
 
 - **Texto** (igual a la referencia): "Los haters saben quién eres, pero tú no los conoces a ellos." → "Sabes por qué?" → "tú has hecho algo increíble y ellos no han hecho nada."
-- **Tipografía**: TikTok Sans Bold, blanca con sombra suave (la del texto nativo de TikTok/IG que usa la referencia).
+- **Tipografía**: TikTok Sans Black (900), blanca con sombra suave. Es la familia del texto nativo de TikTok/IG que usa la referencia, un peso más grueso a pedido.
+- **Color**: los planos claros están oscurecidos (medios y altas luces más bajos); los de gym quedan como estaban.
 - **Música**: provisional, *akiaura, LONOWN, STM – Sleepwalker* (carpeta "Musica reals/motivacion"), con el drop en el corte de 5,33 s. El archivo de referencia no trae audio; hay que cambiarla por la canción original del ejemplo.
 
 ## Cortes

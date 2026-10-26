@@ -19,7 +19,7 @@ TIMING = sys.argv[5] if len(sys.argv) > 5 else "beat"
 CLIPS = S / "clips"
 WORK = S / "work"
 WORK.mkdir(exist_ok=True)
-FONT = S / "fonts" / "TikTokSans-700.ttf"
+FONT = S / "fonts" / "TikTokSans-900.ttf"  # Black: bolder than the reference, as requested
 W, H, FPS = 1080, 1920, 30
 TOTAL = 12.4
 
@@ -37,18 +37,23 @@ HLG = (
 SDR = "format=yuv420p,eq=contrast=1.04:saturation=1.04"
 COVER = f"scale={W}:{H}:force_original_aspect_ratio=increase:flags=lanczos,crop={W}:{H}"
 
-# (clip, in-point s, is_hlg, framing filter)
+# Darkening for the bright shots: pulls midtones down and keeps whites off pure white.
+NONE = "null"
+DARK = "curves=all='0/0 0.5/0.42 1/0.9'"
+DARKER = "curves=all='0/0 0.5/0.37 1/0.86'"
+
+# (clip, in-point s, is_hlg, framing filter, darkening)
 SHOTS = [
-    ("gym_6502", 1.9, True, COVER),            # curl, dramatic side light
-    ("gym_5956", 7.0, True, COVER),            # lat pulldown, shirtless back
-    ("gym_8724", 0.4, True, COVER),            # silhouette vs skyline ("Sabes por qué?")
+    ("gym_6502", 1.9, True, COVER, NONE),      # curl, dramatic side light
+    ("gym_5956", 7.0, True, COVER, NONE),      # lat pulldown, shirtless back
+    ("gym_8724", 0.4, True, COVER, DARK),      # silhouette vs skyline ("Sabes por qué?")
     ("paraca_5950", 0.0, False,                # skydive freefall: the drop
-     f"crop=608:1080:541:0,scale={W}:{H}:flags=lanczos"),
-    ("run_C0294", 0.4, False, COVER),          # running toward camera, trees
-    ("avio_selfie2", 0.25, False, COVER),      # cockpit selfie over the city
-    ("run_atardecer", 0.2, True, COVER),       # running on the bridge, dramatic sky
-    ("avio_despegue", 37.3, True, COVER),      # takeoff: side window, ground dropping away
-    ("run_C0292", 2.6, False, COVER),          # running past camera
+     f"crop=608:1080:541:0,scale={W}:{H}:flags=lanczos", DARK),
+    ("run_C0294", 0.4, False, COVER, DARKER),  # running toward camera, trees
+    ("avio_selfie2", 0.25, False, COVER, DARK),  # cockpit selfie over the city
+    ("run_atardecer", 0.2, True, COVER, DARK),   # running on the bridge, dramatic sky
+    ("avio_despegue", 37.3, True, COVER, DARK),  # takeoff: side window, ground dropping away
+    ("run_C0292", 2.6, False, COVER, DARKER),  # running past camera
 ]
 
 TEXTS = [
@@ -57,7 +62,7 @@ TEXTS = [
     (CUTS[2], CUTS[3], ["Sabes por qué?"], [991]),
     (CUTS[3], TOTAL, ["tú has hecho algo increíble y ellos", "no han hecho nada."], [973, 1009]),
 ]
-FONT_SIZE = 32  # matches the reference line width (447px @720 -> ~670px @1080)
+FONT_SIZE = 32  # same size as the reference (~670-685px first line @1080)
 
 
 def run(cmd):
@@ -70,10 +75,10 @@ def frame_index(t):
 
 def render_shots():
     parts = []
-    for k, (name, t_in, hlg, framing) in enumerate(SHOTS):
+    for k, (name, t_in, hlg, framing, dark) in enumerate(SHOTS):
         n = frame_index(CUTS[k + 1]) - frame_index(CUTS[k])
         out = WORK / f"shot{k}.mp4"
-        vf = ",".join([HLG if hlg else SDR, framing, f"fps={FPS}",
+        vf = ",".join([HLG if hlg else SDR, dark, framing, f"fps={FPS}",
                        "unsharp=5:5:0.35:5:5:0", "setsar=1"])
         run(["ffmpeg", "-v", "error", "-y", "-ss", str(t_in), "-i", str(CLIPS / f"{name}.mov"),
              "-vf", vf, "-frames:v", str(n), "-an", "-c:v", "libx264", "-preset", "medium",
