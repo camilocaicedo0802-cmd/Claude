@@ -1,0 +1,41 @@
+CLIPS OPCIONALES DE PIXABAY PARA LA VERSIÓN 2
+================================================
+El video ya está completo y es 100 % libre de derechos. Estos clips solo lo harían más "vivo"
+reemplazando fotos con movimiento simulado por video real. Descárgalos de Pixabay (videos, licencia
+Pixabay: uso comercial permitido, sin atribución) en 1080p o 4K, guárdalos en UNA carpeta con
+exactamente estos nombres y súbemela. Yo los coloco en su sitio y vuelvo a renderizar.
+
+Si un clip no lo encuentras, sáltalo: ya hay una imagen cubriendo ese momento.
+
+NOMBRE DE ARCHIVO        MINUTO(S) DEL VIDEO        QUÉ BUSCAR EN PIXABAY (en inglés funciona mejor)
+-----------------------  -------------------------  ------------------------------------------------------------
+01_bosque_nieve.mp4      0:00–0:07, 16:36           "winter forest walk snow" (caminando por sendero nevado, árboles sin hojas)
+02_nieve_cayendo.mp4     0:00–0:07, 13:11           "snow falling forest" (nieve cayendo, plano fijo)
+03_montanas_niebla.mp4   0:07–0:13, 14:08           "appalachian mountains fog drone" / "foggy mountains aerial"
+04_dron_bosque.mp4       0:22, 11:05, 15:41         "aerial forest road drone autumn" (carretera abandonada entre bosque)
+05_puerta_metalica.mp4   0:24–0:28, 13:40, 15:56    "garage door closing" / "rolling shutter door"
+06_camara_seguridad.mp4  0:31–0:33, 17:53           "security camera" / "cctv camera rotating"
+07_candado_cadena.mp4    0:29, 13:06, 15:52         "padlock chain gate"
+08_entrar_tunel.mp4      2:56, 3:09                 "car driving into tunnel" (POV conductor entrando a túnel de montaña)
+09_dentro_tunel.mp4      3:11–3:20, 13:16, 14:16    "driving through tunnel lights pov"
+10_trafico_frenos.mp4    4:33–4:40                  "traffic jam brake lights" / "traffic jam highway dusk"
+11_camiones.mp4          4:02, 4:15, 11:20, 16:44   "trucks highway mountains" / "semi truck highway"
+12_excavadora.mp4        5:20–5:32                  "excavator digging rocks" / "construction site excavator"
+13_tren_vapor.mp4        6:38, 7:51, 15:22          "steam train" / "steam locomotive smoke"
+14_acero_fundido.mp4     7:31–7:45, 9:03            "molten steel" / "steel mill foundry"
+15_fragua_chispas.mp4    9:03–9:07                  "blacksmith forge sparks"
+16_carreras_formula.mp4  11:41, 12:14, 15:56        "race car track" / "formula racing"
+17_auto_carreras_vel.mp4 12:52–13:01, 14:12, 17:18  "race car speed" / "racing car motion blur"
+18_helicoptero.mp4       11:58                      "rescue helicopter takeoff"
+19_pantallas_datos.mp4   13:18, 13:27               "control room monitors" / "data screens graph"
+20_velocimetro.mp4       2:27, 12:06                "speedometer acceleration"
+21_humo_aerodinamica.mp4 12:23                      "smoke wind tunnel" / "aerodynamics smoke"
+22_autopista_noche.mp4   10:51, 16:58               "highway night timelapse light trails"
+23_auto_antiguo.mp4      3:01–3:08                  "vintage car driving" / "classic car road" (años 30–50)
+
+NOTA SOBRE MÚSICA: la música usada es de Kevin MacLeod (CC BY 4.0, ya acreditada en la descripción).
+Si prefieres música 100 % sin atribución, descarga 6–8 pistas de la Biblioteca de audio de YouTube
+(Estudio de YouTube > Biblioteca de audio > filtro "No se requiere atribución") con estos estados de
+ánimo: oscuro/suspenso (intro), documental con pulso (1940), tenso (atascos), épico industrial
+(guerra del ferrocarril), ambiental triste (abandono), electrónico/tecnológico (Ganassi), reflexivo
+(final). Ponles nombre m1.mp3 … m8.mp3 y las cambio.

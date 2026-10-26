@@ -1,0 +1,82 @@
+{
+ "Bedford, Pennsylvania": [
+  -78.50416667,
+  40.01638889
+ ],
+ "Carlisle, Pennsylvania": [
+  -77.195,
+  40.2025
+ ],
+ "Donegal, Pennsylvania": [
+  -79.38194444,
+  40.11166667
+ ],
+ "Harrisburg, Pennsylvania": [
+  -76.87555556,
+  40.26972222
+ ],
+ "Irwin, Pennsylvania": [
+  -79.70305556,
+  40.32777778
+ ],
+ "Marysville, Pennsylvania": [
+  -76.93305556,
+  40.34111111
+ ],
+ "Monessen, Pennsylvania": [
+  -79.88277778,
+  40.15416667
+ ],
+ "Philadelphia": [
+  -75.1636,
+  39.9528
+ ],
+ "Pittsburgh": [
+  -79.97638889,
+  40.43972222
+ ],
+ "Somerset, Pennsylvania": [
+  -79.08138889,
+  40.00694444
+ ],
+ "Albany, New York": [
+  -73.75722222,
+  42.6525
+ ],
+ "Altoona, Pennsylvania": [
+  -78.4,
+  40.51
+ ],
+ "Buffalo, New York": [
+  -78.87805556,
+  42.88638889
+ ],
+ "Daytona International Speedway": [
+  -81.06944444,
+  29.18555556
+ ],
+ "Indianapolis Motor Speedway": [
+  -86.23277778,
+  39.79833333
+ ],
+ "Johnstown, Pennsylvania": [
+  -78.91944444,
+  40.32611111
+ ],
+ "Lancaster, Pennsylvania": [
+  -76.30444444,
+  40.03972222
+ ],
+ "Michigan International Speedway": [
+  -84.24138889,
+  42.06638889
+ ],
+ "Newburgh, New York": [
+  -74.01,
+  41.5
+ ],
+ "Weehawken, New Jersey": [
+  -74.0194,
+  40.7714
+ ]
+}
