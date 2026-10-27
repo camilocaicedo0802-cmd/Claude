@@ -19,7 +19,7 @@ Proyecto para diseñar, desde la evidencia, un canal de YouTube con producción 
 | Fase 9: retención y estructura | Hecho | [`12-fase9-retencion.md`](12-fase9-retencion.md) |
 | Fase 11: plan de 90 días | Hecho: del 2-nov-2026 al 31-ene-2027, con escenarios | [`13-fase11-plan-90-dias.md`](13-fase11-plan-90-dias.md) |
 | Fase 12: dashboard | Hecho y verificado | [`dashboard_canal.xlsx`](dashboard_canal.xlsx), [`14-fase12-dashboard.md`](14-fase12-dashboard.md) |
-| **Reporte completo (14 entregables)** | **Hecho** | [**`00-REPORTE-COMPLETO.md`**](00-REPORTE-COMPLETO.md) |
+| **Reporte completo (14 entregables)** | **Hecho** | [**`00-REPORTE-COMPLETO.md`**](00-REPORTE-COMPLETO.md) · PDF: [`reporte/Reporte-completo-canal-youtube-IA.pdf`](reporte/Reporte-completo-canal-youtube-IA.pdf) |
 
 ## Canales analizados (lote 1)
 
@@ -74,4 +74,5 @@ Regenerar el dashboard y las puntuaciones:
 python3 scripts/banco_ideas.py      # -> datos/banco_ideas.csv
 python3 scripts/matriz_nicho.py     # -> datos/matriz_nicho.csv
 python3 scripts/dashboard.py        # -> dashboard_canal.xlsx (abrir y recalcular, o recalcular con LibreOffice)
+python3 scripts/reporte_pdf.py FUENTES  # -> reporte/*.pdf (markdown-it-py, pypdf y Playwright de Node; FUENTES = carpeta con local.css de Google Fonts)
 ```
