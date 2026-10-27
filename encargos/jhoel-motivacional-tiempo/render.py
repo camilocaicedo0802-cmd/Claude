@@ -1,8 +1,10 @@
 """Render Jhoel reel 2 ("El tiempo es lo que menos sobra"): one driving shot + top text + music.
 
-Usage: python3 -I render2.py <scratchpad_dir> <music> <music_start_s> <out.mp4> [clip in_s source_span_s]
+The reel lasts exactly as long as the music file, which is used as-is (final mix).
+
+Usage: python3 -I render2.py <scratchpad_dir> <music> <out.mp4> [clip in_s source_span_s [extra_dark]]
 Defaults to IMG_6925 (whole 6.08 s take stretched over the reel); the alternative is
-`auto_6924 0 9.2` (IMG_6924 at normal speed).
+`auto_6924 0 4.62 1` (IMG_6924, first seconds at half speed, a bit darker).
 """
 import subprocess
 import sys
@@ -12,18 +14,19 @@ from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
 S = Path(sys.argv[1])
 MUSIC = sys.argv[2]
-MUSIC_START = float(sys.argv[3])
-OUT = Path(sys.argv[4])
-
-CLIP_NAME, CLIP_IN, SOURCE_SPAN = (sys.argv[5], float(sys.argv[6]), float(sys.argv[7])) \
-    if len(sys.argv) > 7 else ("drive_6925", 0.0, 6.08)
+OUT = Path(sys.argv[3])
+CLIP_NAME, CLIP_IN, SOURCE_SPAN = (sys.argv[4], float(sys.argv[5]), float(sys.argv[6])) \
+    if len(sys.argv) > 6 else ("drive_6925", 0.0, 6.08)
+EXTRA_DARK = len(sys.argv) > 7 and sys.argv[7] == "1"
 
 WORK = S / "work2"
 WORK.mkdir(exist_ok=True)
 CLIP = S / "clips" / f"{CLIP_NAME}.mov"  # Drive: B rols/auto/IMG_6925.mov or IMG_6924 (1).mov
 FONT = S / "fonts" / "SofiaSansCond-500.ttf"
 W, H, FPS = 1080, 1920, 30
-TOTAL = 9.2                              # same length as the reference
+TOTAL = float(subprocess.run(
+    ["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", MUSIC],
+    check=True, capture_output=True, text=True).stdout)
 SPEED = SOURCE_SPAN / TOTAL              # <1 stretches the take to fill the reel
 
 LINES = ["El tiempo es lo que menos sobra", "Tienes que jubilarte a los 30", "para ver a tus hijos crecer"]
@@ -35,6 +38,8 @@ HLG = ("zscale=t=linear:npl=203,format=gbrpf32le,zscale=p=bt709,tonemap=hable,"
 # Dark, cool, slightly desaturated look closer to the night reference.
 GRADE = ("curves=all='0/0 0.5/0.25 1/0.68',eq=saturation=0.8,"
          "colorbalance=bs=0.07:bm=0.04:rh=-0.03,vignette=PI/4")
+if EXTRA_DARK:
+    GRADE += ",curves=all='0/0 0.5/0.43 1/0.9'"
 COVER = f"scale={W}:{H}:force_original_aspect_ratio=increase:flags=lanczos,crop={W}:{H}"
 
 
@@ -74,17 +79,16 @@ def main():
     n = round(TOTAL * FPS)
     vf = (f"[0:v]{HLG},{GRADE},setpts=(PTS-STARTPTS)/{SPEED:.5f},fps={FPS},{COVER},"
           f"unsharp=5:5:0.35:5:5:0,setsar=1[v];[v][1:v]overlay=0:0[vo];"
-          f"[2:a]afade=t=in:d=0.08,afade=t=out:st={TOTAL - 0.6}:d=0.6,"
-          f"loudnorm=I=-14:TP=-1.5:LRA=11,aresample=48000[a]")
+          f"[2:a]aresample=48000[a]")
     run(["ffmpeg", "-v", "error", "-y", "-ss", str(CLIP_IN), "-i", str(CLIP),
-         "-loop", "1", "-i", str(overlay),
-         "-ss", str(MUSIC_START), "-t", str(TOTAL), "-i", MUSIC,
-         "-filter_complex", vf, "-map", "[vo]", "-map", "[a]", "-frames:v", str(n), "-t", str(TOTAL),
+         "-loop", "1", "-t", f"{TOTAL:.3f}", "-i", str(overlay), "-i", MUSIC,
+         "-filter_complex", vf, "-map", "[vo]", "-map", "[a]", "-frames:v", str(n),
+         "-t", f"{TOTAL:.3f}",
          "-c:v", "libx264", "-preset", "slow", "-crf", "18", "-profile:v", "high",
          "-pix_fmt", "yuv420p", "-color_primaries", "bt709", "-color_trc", "bt709",
          "-colorspace", "bt709", "-r", str(FPS),
-         "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", str(OUT)])
-    print(OUT)
+         "-c:a", "aac", "-b:a", "256k", "-movflags", "+faststart", str(OUT)])
+    print(OUT, f"{TOTAL:.3f}s", f"speed={SPEED:.4f}")
 
 
 if __name__ == "__main__":
