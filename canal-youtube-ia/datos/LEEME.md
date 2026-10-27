@@ -63,3 +63,9 @@ Los historiales diarios de los demás canales se consultaron, pero solo se guard
   - `hook`, `estructura`, `llamada_a_la_accion`: solo en los 12 videos con transcripción leída (`transcrito = sí`).
 
 Las transcripciones completas no se guardan en el repositorio por derechos de autor. El informe cita fragmentos breves.
+
+## Fase 3
+
+- `keywords_vidiq.csv`: transcripción de las 5 consultas de palabras clave de vidIQ (modo `research`, con país México o Colombia). Volumen, competencia y puntuación son índices de vidIQ de 0 a 100. `busquedas_mensuales_estimadas` es la estimación de vidIQ para el texto exacto en todos los países. `volumen_pais_consulta` y `mercados_principales` vacíos significan "desconocido", no 0.
+- `autocompletar_youtube_2026-10-27.json`: sugerencias del autocompletado de YouTube (`suggestqueries.google.com`, `ds=yt`, `hl=es`) para México, Colombia y Argentina, por grupo de semillas; la clave `ampliacion` tiene la segunda tanda. Indica qué se escribe, sin volumen. Script: `scripts/autocompletar_youtube.py`.
+- `outliers_es_historia.csv`: los 42 videos largos en español que vidIQ devolvió como "breakout" para "historia" (últimos 6 meses). La columna `relevante_para_el_nicho` (sí / parcial / no) es mi clasificación.

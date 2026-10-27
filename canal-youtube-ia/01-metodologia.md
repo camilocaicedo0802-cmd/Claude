@@ -45,7 +45,7 @@ Probado en esta sesión, no supuesto.
 | Edad, país e intereses de la audiencia de canales ajenos | Privado | No | Solo puedo inferirlo como hipótesis, por idioma, tema y comentarios |
 | Métricas de nuestro propio canal | YouTube Studio | Cuando exista el canal | Exportaciones de Studio (CSV) o capturas |
 
-**Presupuesto de vidIQ.** Tu cuenta tiene 150 créditos al mes (se renuevan el 27 de noviembre de 2026). En la fase 1 usé 55: 30 en el historial de 6 canales y 25 en datos exactos de 250 videos. Quedaban **95 créditos (19 consultas)**. En la fase 2 usé 60 en 12 transcripciones, porque YouTube siguió bloqueando la vía gratuita. Quedan **35 créditos (7 consultas)** para las palabras clave de la fase 3 hasta la renovación del 27 de noviembre.
+**Presupuesto de vidIQ.** Tu cuenta tiene 150 créditos al mes (se renuevan el 27 de noviembre de 2026). En la fase 1 usé 55: 30 en el historial de 6 canales y 25 en datos exactos de 250 videos. Quedaban **95 créditos (19 consultas)**. En la fase 2 usé 60 en 12 transcripciones, porque YouTube siguió bloqueando la vía gratuita. Los últimos **35 créditos** se usaron en la fase 3 (palabras clave, videos destacados en español y comentarios). El saldo es 0 hasta la renovación del 27 de noviembre.
 
 **Nota sobre el bloqueo.** Al pedir metadatos video a video desde este contenedor, YouTube respondió primero "HTTP 429" (demasiadas peticiones) y luego "Sign in to confirm you're not a bot". Paré para no prolongar el bloqueo. Suele ser temporal. Para la fase 2 tengo tres vías, de más barata a más cara:
 

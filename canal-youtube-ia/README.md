@@ -9,7 +9,8 @@ Proyecto para diseñar, desde la evidencia, un canal de YouTube con producción 
 | Metodología, accesos y requerimientos | Hecho | [`01-metodologia.md`](01-metodologia.md) |
 | Fase 1: análisis de los 8 canales | Hecho (datos, crecimiento, modelo de contenido, miniaturas) | [`02-analisis-canales.md`](02-analisis-canales.md) |
 | Fase 2: mejores videos | Hecho: 97 videos seleccionados y codificados, 12 transcripciones leídas, fotogramas revisados | [`03-ranking-videos.md`](03-ranking-videos.md), [`04-fase2-mejores-videos.md`](04-fase2-mejores-videos.md) |
-| Fases 3 a 12 | Pendientes | — |
+| Fase 3: palabras clave (español, Latinoamérica) | Hecho con los 35 créditos disponibles; quedan volúmenes sin medir hasta el 27-nov | [`05-fase3-palabras-clave.md`](05-fase3-palabras-clave.md) |
+| Fases 4 a 12 | Pendientes (siguiente: políticas y monetización, antes del nicho) | — |
 
 ## Canales analizados (lote 1)
 
@@ -25,6 +26,9 @@ Proyecto para diseñar, desde la evidencia, un canal de YouTube con producción 
 | [`datos/suscriptores_series.csv`](datos/suscriptores_series.csv) | Suscriptores por fecha (puntos de vidIQ), para interpolar los suscriptores al publicar |
 | [`datos/videos_fase2.csv`](datos/videos_fase2.csv) | Los 97 videos de la fase 2 con su categoría y suscriptores al publicar |
 | [`datos/videos_analizados.csv`](datos/videos_analizados.csv) | Lo anterior + rasgos del título, sistema y texto de miniatura, nivel de producción, y gancho, estructura y llamada a la acción de los 12 transcritos |
+| [`datos/keywords_vidiq.csv`](datos/keywords_vidiq.csv) | 89 filas de palabras clave de vidIQ (volumen, competencia, búsquedas estimadas, crecimiento, mercados) |
+| [`datos/autocompletar_youtube_2026-10-27.json`](datos/autocompletar_youtube_2026-10-27.json) | Sugerencias del autocompletado de YouTube por semilla y país (México, Colombia, Argentina) |
+| [`datos/outliers_es_historia.csv`](datos/outliers_es_historia.csv) | 42 videos en español que superaron a su canal ("historia", últimos 6 meses), con relevancia para el nicho |
 | [`datos/LEEME.md`](datos/LEEME.md) | Diccionario de columnas, fuentes y márgenes de error |
 | `datos/crudos-2026-10-27.tar.gz` | Respuestas originales de yt-dlp y vidIQ, para rehacer cálculos sin volver a consultar |
 
