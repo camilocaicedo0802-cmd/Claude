@@ -7,3 +7,7 @@ media/raw/
 next-env.d.ts
 .playwright-mcp/
 .DS_Store
+
+# Proyecto canal de YouTube: carpeta de trabajo local y cachés
+canal-youtube-ia/trabajo/
+__pycache__/
