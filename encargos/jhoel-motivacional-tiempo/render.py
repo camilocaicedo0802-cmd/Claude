@@ -1,6 +1,8 @@
 """Render Jhoel reel 2 ("El tiempo es lo que menos sobra"): one driving shot + top text + music.
 
-Usage: python3 -I render2.py <scratchpad_dir> <music> <music_start_s> <out.mp4>
+Usage: python3 -I render2.py <scratchpad_dir> <music> <music_start_s> <out.mp4> [clip in_s source_span_s]
+Defaults to IMG_6925 (whole 6.08 s take stretched over the reel); the alternative is
+`auto_6924 0 9.2` (IMG_6924 at normal speed).
 """
 import subprocess
 import sys
@@ -13,13 +15,16 @@ MUSIC = sys.argv[2]
 MUSIC_START = float(sys.argv[3])
 OUT = Path(sys.argv[4])
 
+CLIP_NAME, CLIP_IN, SOURCE_SPAN = (sys.argv[5], float(sys.argv[6]), float(sys.argv[7])) \
+    if len(sys.argv) > 7 else ("drive_6925", 0.0, 6.08)
+
 WORK = S / "work2"
 WORK.mkdir(exist_ok=True)
-CLIP = S / "clips" / "drive_6925.mov"   # Drive: B rols/auto/IMG_6925.mov (60 fps, HLG)
+CLIP = S / "clips" / f"{CLIP_NAME}.mov"  # Drive: B rols/auto/IMG_6925.mov or IMG_6924 (1).mov
 FONT = S / "fonts" / "SofiaSansCond-500.ttf"
 W, H, FPS = 1080, 1920, 30
 TOTAL = 9.2                              # same length as the reference
-SPEED = 6.08 / TOTAL                     # stretch the whole 6.08 s take over the reel
+SPEED = SOURCE_SPAN / TOTAL              # <1 stretches the take to fill the reel
 
 LINES = ["El tiempo es lo que menos sobra", "Tienes que jubilarte a los 30", "para ver a tus hijos crecer"]
 BASELINES = [389, 482, 575]              # reference positions scaled from 720x1280
@@ -28,8 +33,8 @@ LINE1_WIDTH = 830                        # reference first-line width (553px @72
 HLG = ("zscale=t=linear:npl=203,format=gbrpf32le,zscale=p=bt709,tonemap=hable,"
        "zscale=t=bt709:m=bt709:r=tv,format=yuv420p,eq=contrast=1.06:saturation=1.08")
 # Dark, cool, slightly desaturated look closer to the night reference.
-GRADE = ("curves=all='0/0 0.5/0.30 1/0.76',eq=saturation=0.82,"
-         "colorbalance=bs=0.07:bm=0.04:rh=-0.03,vignette=PI/4.5")
+GRADE = ("curves=all='0/0 0.5/0.25 1/0.68',eq=saturation=0.8,"
+         "colorbalance=bs=0.07:bm=0.04:rh=-0.03,vignette=PI/4")
 COVER = f"scale={W}:{H}:force_original_aspect_ratio=increase:flags=lanczos,crop={W}:{H}"
 
 
@@ -71,7 +76,8 @@ def main():
           f"unsharp=5:5:0.35:5:5:0,setsar=1[v];[v][1:v]overlay=0:0[vo];"
           f"[2:a]afade=t=in:d=0.08,afade=t=out:st={TOTAL - 0.6}:d=0.6,"
           f"loudnorm=I=-14:TP=-1.5:LRA=11,aresample=48000[a]")
-    run(["ffmpeg", "-v", "error", "-y", "-i", str(CLIP), "-loop", "1", "-i", str(overlay),
+    run(["ffmpeg", "-v", "error", "-y", "-ss", str(CLIP_IN), "-i", str(CLIP),
+         "-loop", "1", "-i", str(overlay),
          "-ss", str(MUSIC_START), "-t", str(TOTAL), "-i", MUSIC,
          "-filter_complex", vf, "-map", "[vo]", "-map", "[a]", "-frames:v", str(n), "-t", str(TOTAL),
          "-c:v", "libx264", "-preset", "slow", "-crf", "18", "-profile:v", "high",
