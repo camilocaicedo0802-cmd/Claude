@@ -15,11 +15,11 @@ Reel vertical (1080×1920, 30 fps, 12,4 s) que recrea el video de referencia con
 | 1,83–3,82 | Deporte/gym superior/IMG_5956 (jalón) | Los haters… |
 | 3,82–5,33 | Deporte/gym superior/IMG_8724 (silueta) | Sabes por qué? |
 | 5,33–7,33 | life stile/santo paracaídas/IMG_5950 | tú has hecho… |
-| 7,33–8,33 | life stile/piscina-sauna/Piscina/Clavado puerto madero | tú has hecho… |
+| 7,33–8,33 | life stile/piscina-sauna/Piscina/Clavado puerto madero (zoom 2x, cámara lenta 0,55x) | tú has hecho… |
 | 8,33–9,33 | Rolex/IMG_8180 (Daytona) | tú has hecho… |
 | 9,33–10,33 | auto/C0035 (BMW en el garaje) | tú has hecho… |
 | 10,33–11,32 | life stile/mansión/1 (escalera) | tú has hecho… |
-| 11,32–12,40 | life stile/piscina-sauna/Reposeras/C0360 (terraza) | tú has hecho… |
+| 11,32–12,40 | life stile/piscina-sauna/Jaccuzzi/C0324 (piscina del penthouse, zoom lento) | tú has hecho… |
 
 ## Regenerar
 

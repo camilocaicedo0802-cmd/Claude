@@ -42,6 +42,13 @@ NONE = "null"
 DARK = "curves=all='0/0 0.5/0.42 1/0.9'"
 DARKER = "curves=all='0/0 0.5/0.37 1/0.86'"
 
+# Dive: 1:1 crop of the 4K frame around the diver (2x zoom) at 0.55x with motion interpolation.
+DIVE = ("crop=1080:1920:720:1120,setpts=(PTS-STARTPTS)/0.55,"
+        f"minterpolate=fps={FPS}:mi_mode=mci:mc_mode=aobmc:me_mode=bidir:vsbmc=1")
+# Slow push-in (1.0 -> ~1.07) rendered from the 4K frame to keep it sharp.
+PUSH_IN = (f"fps={FPS},zoompan=z='1+0.07*on/32':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)'"
+           f":d=1:s={W}x{H}:fps={FPS}")
+
 # (clip, in-point s, is_hlg, framing filter, darkening)
 SHOTS = [
     ("gym_6502", 1.9, True, COVER, NONE),      # curl, dramatic side light
@@ -49,11 +56,11 @@ SHOTS = [
     ("gym_8724", 0.4, True, COVER, DARK),      # silhouette vs skyline ("Sabes por qué?")
     ("paraca_5950", 0.0, False,                # skydive freefall: the drop
      f"crop=608:1080:541:0,scale={W}:{H}:flags=lanczos", DARK),
-    ("clav_pmadero", 1.6, False, COVER, DARK),  # dive into the rooftop pool, skyline behind
+    ("clav_pmadero", 1.6, False, DIVE, DARK),  # dive into the rooftop pool, zoomed slow motion
     ("rolex_8180", 0.0, True, COVER, DARK),    # Rolex Daytona close-up over the lake
     ("auto_C0035", 0.35, False, COVER, NONE),   # walking past the purple BMW in the garage
     ("mansion_1", 1.1, False, COVER, DARKER),  # coming down the mansion staircase
-    ("terr_C0360", 0.5, False, COVER, DARK),   # lounger on the terrace, city view
+    ("jac_C0324", 1.0, False, PUSH_IN, DARK),  # penthouse indoor pool over the skyline
 ]
 
 TEXTS = [
