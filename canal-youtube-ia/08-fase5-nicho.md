@@ -183,9 +183,9 @@ Los criterios son los que pediste. Los pesos reflejan tus prioridades: monetizar
    - **Más adelante (mes 3+):** recopilaciones largas de episodios propios para "maratón" o para dormir, solo con 6+ episodios. Es contenido propio reorganizado, a revisar contra la política de contenido reutilizado de la fase 10.
 8. **Idioma y mercado inicial:** español latinoamericano **neutro**, sin regionalismos fuertes, con voz de acento neutro. Primeros temas: México y Colombia, más un tema pan-regional al mes. El doblaje a inglés o portugués queda para cuando haya tracción (fase 11, etapa 4).
 9. **Duración inicial:** 8 a 12 min en largos y 45 a 75 s en Shorts. Se mantiene estable; la fase 4 mostró que alargar no distingue a los ganadores.
-10. **Frecuencia viable** (supuesto: 10-15 h/semana; ver estimación de horas en la fase 7):
-    - **Semanas 1 a 8:** 1 largo cada 10 a 14 días + 2 a 3 Shorts a la semana.
-    - **Hacia las semanas 9 a 13:** 1 largo a la semana, si la biblioteca de recursos y las plantillas lo permiten.
+10. **Frecuencia viable** (supuesto: 10-15 h/semana; horas por video en la fase 7, unas 34 h al inicio y unas 22 h con la biblioteca de recursos):
+    - **Semanas 1 a 13:** 1 largo cada 2 semanas + 1 a 2 Shorts a la semana. Son 6 largos y unos 15 Shorts en 90 días, con unas 14 h semanales.
+    - **Después de los 90 días:** 1 largo cada 10 días con 15 h semanales y la biblioteca hecha. Para publicar 1 largo cada semana hacen falta más de 20 h semanales o un ayudante (fase 7).
     - **No** se publica más rápido a costa de la calidad: la fase 4 mostró que el volumen no es lo que distingue a los que crecen.
 11. **Riesgos principales y mitigación:**
 
@@ -197,5 +197,6 @@ Los criterios son los que pediste. Los pesos reflejan tus prioridades: monetizar
 | Polarización por política y herida colonial | Media | Excluir la política reciente; presentar varias interpretaciones con fuentes; moderar los comentarios |
 | Errores históricos que dañen la credibilidad | Media | Verificación con dos fuentes y fuentes primarias; tarjeta "lo documentado frente a la leyenda"; correcciones fijadas |
 | Dilución de marca entre leyendas e historia | Media | Una sola promesa ("lo que es verdad") y una sola plantilla visual para ambos pilares |
+| Umbral más alto para entrar en YPP: 8.000 horas en 365 días desde el 1-feb-2027 [dato, fase 10] | Alta: un canal que empieza ahora difícilmente llega a 1.000 suscriptores y 4.000 horas antes de esa fecha | Video largo como núcleo; catálogo mensual y recopilaciones para sumar horas; membresías y Super Thanks desde los 500 suscriptores (fase 10) |
 | Crecimiento lento al inicio | Alta | Plan de 90 días como experimento con criterios de decisión (fase 11); los referentes necesitaron de 16 a 52 videos |
 | Ingresos por anuncio en español más bajos que en inglés | Probable [hipótesis; sin cifra propia] | Medir el RPM real en Studio; ingresos alternativos (membresías, patrocinios educativos); doblaje en la etapa 4 |
