@@ -94,11 +94,11 @@ Primero investigamos, después identificamos oportunidades, luego definimos la i
 | Bloque | Fases | Entregables (numeración de tu lista) | Estado |
 |---|---|---|---|
 | A. Investigación | 1. Canales | 1 (informe comparativo), 3 (base de datos) | **Hecho para los 8 canales** (`02-analisis-canales.md`, `datos/`) |
-| | 2. Mejores videos | 2 (ranking) | Ranking cuantitativo hecho (`03-ranking-videos.md`); falta la lectura de guion, hook y producción |
-| | 3. Palabras clave (vidIQ) | parte de 4 y 5 | Pendiente |
-| | 4. Patrones | 4 (matriz) | Primeras hipótesis en `02-analisis-canales.md` |
-| B. Oportunidad | 10. Políticas y monetización (adelantada) | 10 | Pendiente, con fuentes oficiales de YouTube |
-| | 5. Nicho y posicionamiento | 5, 6 | Pendiente |
-| C. Marca | 6. Identidad visual | 7 | Pendiente. Sin nombres ni logos hasta cerrar el bloque B |
-| D. Sistema | 7. Producción con IA, 8. SEO y empaquetado, 9. Retención | 8, 9 | Pendiente |
-| E. Ejecución | 11. Plan de 90 días, 12. Dashboard | 11, 12, 13, 14 | Pendiente |
+| | 2. Mejores videos | 2 (ranking) | **Hecho** (`03-ranking-videos.md`, `04-fase2-mejores-videos.md`) |
+| | 3. Palabras clave (vidIQ) | parte de 4 y 5 | **Hecho** (`05-fase3-palabras-clave.md`) |
+| | 4. Patrones | 4 (matriz) | **Hecho** (`06-fase4-patrones.md`) |
+| B. Oportunidad | 10. Políticas y monetización (adelantada) | 10 | **Hecho** (`07-fase10-monetizacion-politicas.md`) |
+| | 5. Nicho y posicionamiento | 5, 6 | **Hecho** (`08-fase5-nicho.md`) |
+| C. Marca | 6. Identidad visual | 7 | **Hecho** (`09-fase6-identidad.md`) |
+| D. Sistema | 7. Producción con IA, 8. SEO y empaquetado, 9. Retención | 8, 9 | **Hecho** (`10-` a `12-`) |
+| E. Ejecución | 11. Plan de 90 días, 12. Dashboard | 11, 12, 13, 14 | **Hecho** (`13-`, `14-`, `dashboard_canal.xlsx` y `00-REPORTE-COMPLETO.md`) |

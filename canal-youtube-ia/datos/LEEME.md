@@ -69,3 +69,8 @@ Las transcripciones completas no se guardan en el repositorio por derechos de au
 - `keywords_vidiq.csv`: transcripción de las 5 consultas de palabras clave de vidIQ (modo `research`, con país México o Colombia). Volumen, competencia y puntuación son índices de vidIQ de 0 a 100. `busquedas_mensuales_estimadas` es la estimación de vidIQ para el texto exacto en todos los países. `volumen_pais_consulta` y `mercados_principales` vacíos significan "desconocido", no 0.
 - `autocompletar_youtube_2026-10-27.json`: sugerencias del autocompletado de YouTube (`suggestqueries.google.com`, `ds=yt`, `hl=es`) para México, Colombia y Argentina, por grupo de semillas; la clave `ampliacion` tiene la segunda tanda. Indica qué se escribe, sin volumen. Script: `scripts/autocompletar_youtube.py`.
 - `outliers_es_historia.csv`: los 42 videos largos en español que vidIQ devolvió como "breakout" para "historia" (últimos 6 meses). La columna `relevante_para_el_nicho` (sí / parcial / no) es mi clasificación.
+
+## Fases 5 y 8
+
+- `matriz_nicho.csv`: puntuaciones (1 a 5) de las 6 opciones de nicho en los 12 criterios, con pesos y total sobre 100. Las puntuaciones son juicios apoyados en las fases 1 a 4, no mediciones. Script: `scripts/matriz_nicho.py` (incluye el análisis de sensibilidad).
+- `banco_ideas.csv`: 16 ideas de video con pilar, término de búsqueda principal, evidencia de demanda (vidIQ o autocompletado), puntos en los 8 criterios de la fase 8, total sobre 100 y decisión (≥ 75 producir pronto; 60–74 banco; < 60 reformular o descartar). Script: `scripts/banco_ideas.py`. La hoja "Ideas" del dashboard parte de este archivo.
