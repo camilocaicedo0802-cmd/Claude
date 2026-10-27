@@ -49,11 +49,11 @@ SHOTS = [
     ("gym_8724", 0.4, True, COVER, DARK),      # silhouette vs skyline ("Sabes por qué?")
     ("paraca_5950", 0.0, False,                # skydive freefall: the drop
      f"crop=608:1080:541:0,scale={W}:{H}:flags=lanczos", DARK),
-    ("run_C0294", 0.4, False, COVER, DARKER),  # running toward camera, trees
-    ("avio_selfie2", 0.25, False, COVER, DARK),  # cockpit selfie over the city
-    ("run_atardecer", 0.2, True, COVER, DARK),   # running on the bridge, dramatic sky
-    ("avio_despegue", 37.3, True, COVER, DARK),  # takeoff: side window, ground dropping away
-    ("run_C0292", 2.6, False, COVER, DARKER),  # running past camera
+    ("clav_pmadero", 1.6, False, COVER, DARK),  # dive into the rooftop pool, skyline behind
+    ("rolex_8180", 0.0, True, COVER, DARK),    # Rolex Daytona close-up over the lake
+    ("auto_C0035", 0.35, False, COVER, NONE),   # walking past the purple BMW in the garage
+    ("mansion_1", 1.1, False, COVER, DARKER),  # coming down the mansion staircase
+    ("terr_C0360", 0.5, False, COVER, DARK),   # lounger on the terrace, city view
 ]
 
 TEXTS = [
@@ -100,7 +100,7 @@ def render_text(lines, baselines, path):
     for line, y in zip(lines, baselines):
         d.text((W / 2, y), line, font=font, fill=255, anchor="ms")
     # Soft, faint drop shadow like TikTok's classic text.
-    shadow = text.filter(ImageFilter.GaussianBlur(3)).point(lambda v: int(v * 0.45))
+    shadow = text.filter(ImageFilter.GaussianBlur(3)).point(lambda v: int(v * 0.6))
     img = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     img.paste((0, 0, 0, 255), (0, 1), shadow)
     img.paste((255, 255, 255, 255), (0, 0), text)
