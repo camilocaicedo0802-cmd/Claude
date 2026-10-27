@@ -52,3 +52,14 @@ Hitos extraídos del historial diario de vidIQ. La columna `video_asociado` rela
 - `vidiq/`: respuestas de `vidiq_get_videos_by_ids` y el historial diario de Te Lo Pinto Fácil.
 
 Los historiales diarios de los demás canales se consultaron, pero solo se guardaron sus hitos.
+
+## Fase 2
+
+- `suscriptores_series.csv`: puntos de suscriptores por fecha tomados del historial diario de vidIQ (cada día en canales recientes; días 1 y 15 de cada mes en Te Lo Pinto Fácil). Los suscriptores "al publicar" de `videos_fase2.csv` se **interpolan linealmente** entre esos puntos: son una estimación, con error de unos días.
+- `videos_fase2.csv`: los 97 videos seleccionados. `categorias` puede combinar `absoluto`, `relativo`, `reciente`, `canal_pequeno` (los que más vistas por suscriptor sacaron con el canal por debajo de 20.000 suscriptores) y `contraste` (peor múltiplo con datos exactos). `views_per_sub` = vistas actuales ÷ suscriptores al publicar.
+- `videos_analizados.csv`: añade rasgos automáticos del título (pregunta, número, superlativo o totalidad, segunda persona) y codificación manual:
+  - `sistema_miniatura` y `texto_miniatura`: revisados en las hojas de miniaturas.
+  - `produccion_interior`: según los 3 fotogramas automáticos que YouTube publica de cada video; describe el canal, no cada video.
+  - `hook`, `estructura`, `llamada_a_la_accion`: solo en los 12 videos con transcripción leída (`transcrito = sí`).
+
+Las transcripciones completas no se guardan en el repositorio por derechos de autor. El informe cita fragmentos breves.

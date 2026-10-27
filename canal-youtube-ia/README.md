@@ -8,7 +8,7 @@ Proyecto para diseñar, desde la evidencia, un canal de YouTube con producción 
 |---|---|---|
 | Metodología, accesos y requerimientos | Hecho | [`01-metodologia.md`](01-metodologia.md) |
 | Fase 1: análisis de los 8 canales | Hecho (datos, crecimiento, modelo de contenido, miniaturas) | [`02-analisis-canales.md`](02-analisis-canales.md) |
-| Fase 2: mejores videos | Ranking cuantitativo hecho; falta la lectura de guion, hook y producción | [`03-ranking-videos.md`](03-ranking-videos.md) |
+| Fase 2: mejores videos | Hecho: 97 videos seleccionados y codificados, 12 transcripciones leídas, fotogramas revisados | [`03-ranking-videos.md`](03-ranking-videos.md), [`04-fase2-mejores-videos.md`](04-fase2-mejores-videos.md) |
 | Fases 3 a 12 | Pendientes | — |
 
 ## Canales analizados (lote 1)
@@ -22,6 +22,9 @@ Proyecto para diseñar, desde la evidencia, un canal de YouTube con producción 
 | [`datos/canales.csv`](datos/canales.csv) | Una fila por canal: creación, totales, ritmo, medianas, concentración, engagement, hitos |
 | [`datos/videos.csv`](datos/videos.csv) | 1.020 videos y Shorts con vistas, fecha, duración y rendimiento relativo |
 | [`datos/hitos_crecimiento.csv`](datos/hitos_crecimiento.csv) | Momentos clave del crecimiento según el historial diario de vidIQ |
+| [`datos/suscriptores_series.csv`](datos/suscriptores_series.csv) | Suscriptores por fecha (puntos de vidIQ), para interpolar los suscriptores al publicar |
+| [`datos/videos_fase2.csv`](datos/videos_fase2.csv) | Los 97 videos de la fase 2 con su categoría y suscriptores al publicar |
+| [`datos/videos_analizados.csv`](datos/videos_analizados.csv) | Lo anterior + rasgos del título, sistema y texto de miniatura, nivel de producción, y gancho, estructura y llamada a la acción de los 12 transcritos |
 | [`datos/LEEME.md`](datos/LEEME.md) | Diccionario de columnas, fuentes y márgenes de error |
 | `datos/crudos-2026-10-27.tar.gz` | Respuestas originales de yt-dlp y vidIQ, para rehacer cálculos sin volver a consultar |
 

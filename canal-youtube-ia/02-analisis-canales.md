@@ -349,7 +349,7 @@ Fuentes: página "Acerca de" (fecha, totales, país), vidIQ (hitos de suscriptor
   - Pregunta en blanco y en mayúsculas a la izquierda ("VÌ SAO…?").
   - Un personaje histórico en ilustración vectorial plana a la derecha.
   - Fondos oscuros y apagados.
-- **Excepción:** la única miniatura con estilo fotográfico realista (Mao frente a Chiang) está entre sus peores resultados. Es un solo caso y no permite concluir.
+- **Excepciones:** hay al menos dos miniaturas de estilo fotográfico realista y dan resultados opuestos. La de Mao frente a Chiang rinde ×0,39; la de "Pháp đánh Việt Nam sai lầm thế kỷ?" rinde ×2,2. Corregido en la fase 2; antes decía que era la única. No permiten concluir nada.
 
 **Lección para nosotros**
 - Historia local, en el idioma local y con fuentes rigurosas atrae una audiencia comprometida y creciente sin competir con los gigantes en inglés.
