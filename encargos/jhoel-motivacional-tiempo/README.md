@@ -7,7 +7,7 @@ Reel vertical (1080×1920, 30 fps, 9,25 s: lo que dura la música) que recrea la
 - **Texto** (igual a la referencia, mismas líneas y posición): "El tiempo es lo que menos sobra / Tienes que jubilarte a los 30 / para ver a tus hijos crecer".
 - **Tipografía**: Sofia Sans Condensed Medium (500), blanca con sombra suave. Es la alternativa libre más parecida a la condensada de la referencia (probablemente la fuente propia de Instagram, que no es de uso libre).
 - **Color**: oscuro (medios y altas luces bajos), frío y algo desaturado para acercarse al clima nocturno de la referencia, con un degradado oscuro arriba para que el texto se lea sobre el techo claro del auto.
-- **Música**: `musica.mp3`, el audio del reel que pasó Jhoel, sin cambios (sin fundidos ni ajuste de volumen).
+- **Música**: `musica.mp3`, el audio original del reel de referencia, sin cambios (sin fundidos ni ajuste de volumen).
 
 ## Regenerar
 
