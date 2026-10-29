@@ -82,3 +82,4 @@ Las transcripciones completas no se guardan en el repositorio por derechos de au
   - `com_libre`: el registro RDAP de Verisign devolvió 404 (dominio .com no registrado ese día).
   - `autocompletado_youtube_mx`: sugerencias de YouTube para el nombre (México); sirven para detectar choques con canciones, programas o juegos.
   - `en_lista_final`: los 50 nombres propuestos. No se comprobaron marcas registradas (IMPI, SIC, WIPO).
+- `nombres_creativos_2026-10-29.csv`: segunda búsqueda, con nombres creativos (metáforas, latinismos, palabras inventadas, expresiones del español). Mismas columnas; `en_lista_creativa` marca los 50 propuestos. Todos tienen el identificador de YouTube libre ese día; el .com no siempre.
