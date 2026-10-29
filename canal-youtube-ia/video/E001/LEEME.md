@@ -1,6 +1,6 @@
 # E001 · Producción del video "Le hicieron un funeral de Estado a una pierna"
 
-Estado al 29-oct-2026: guion terminado (`guiones/E001-pierna-santa-anna.md`) y guion de planos del piloto con sus prompts (`guiones/E001-piloto-prompts-nano-banana.md`, `video/E001/planos_piloto.json`). Faltan la voz, las imágenes y el montaje.
+Estado al 29-oct-2026: guion terminado (`guiones/E001-pierna-santa-anna.md`), guion de planos del piloto con sus prompts (`guiones/E001-piloto-prompts-nano-banana.md`, `video/E001/planos_piloto.json`) y **montaje automático listo** (`scripts/e001_montaje.py`). Ya hay una animática del piloto (93,6 s) con marcadores en lugar de imágenes y sin voz. Faltan la voz y las imágenes, y las dos esperan una decisión de pago del usuario (ver abajo).
 
 ## Decisiones del usuario
 
@@ -18,14 +18,52 @@ Estado al 29-oct-2026: guion terminado (`guiones/E001-pierna-santa-anna.md`) y g
 
 Se añaden en el menú del entorno → Editar, y se cargan en una sesión nueva. `.env.local` está en `.gitignore`.
 
-## Pasos en la sesión nueva
+## Verificación del 29-oct-2026
 
-1. `npx -y @elevenlabs/cli@latest onboard check` para verificar la clave de ElevenLabs.
-2. Proponer 3 o 4 voces en español latino de la biblioteca de ElevenLabs para que el usuario elija.
-3. Generar la narración del piloto (bloques 1 a 3 de `guiones/E001-pierna-santa-anna-narracion.txt`) con marcas de tiempo por carácter.
-4. Imágenes:
-   - Por API: generar primero `REF` (hoja de personaje de Santa Anna) y usarla como referencia en los planos marcados. Confirmar antes el nombre y la tarifa vigente del modelo de imagen de Gemini.
-   - A mano en Flow: el usuario sube los PNG a `video/E001/img/` con el código del plano.
-5. Montaje: movimiento sobre cada imagen, textos con Anton, Fraunces e Inter, mapa por código (Natural Earth, dominio público), sellos del veredicto y efectos de sonido. Render en 1920×1080 a 30 fps.
-6. Entregar el piloto, recoger comentarios y producir el resto del video.
-7. Antes del video completo, verificar los 23 datos marcados en `guiones/E001-pierna-santa-anna.md`.
+**ElevenLabs.** La clave funciona, pero la cuenta está en el **plan gratuito**:
+
+- Quedan **1.672 de 10.000 caracteres** hasta el 10-nov-2026. La parte 01 (piloto) usa 1.140; el video completo, 12.272.
+- La API responde `402 paid_plan_required` con las voces de la biblioteca: *"Free users cannot use library voices via the API"*. Solo se podrían usar por API las voces prediseñadas, que no tienen acento latinoamericano.
+- El plan gratuito **no da licencia comercial** y exige atribuir a ElevenLabs. Para un canal monetizado hace falta al menos **Starter** (6 USD al mes; 1 USD el primer mes según la página de precios; 30.000 caracteres al mes).
+- La cuenta ya tiene 7 voces latinoamericanas añadidas desde la biblioteca. Candidatas para el narrador:
+
+| Clave en `e001_voz.py` | Voz | Descripción de ElevenLabs |
+|---|---|---|
+| `lujan` (recomendada) | Luján - Warm, Natural, Neutral | Cálida, natural, acento colombiano neutro, para narración |
+| `rodrigo` | Rodrigo Zabú - Latin Spanish | Cálida, conversacional; locutor con experiencia en documental |
+| `albert` | Albert - Deep, Resonate and Compelling | Grave y resonante, de audiolibro |
+| `cesar` | Cesar - Slow, Meditative, Warm | Lenta y meditativa |
+
+**Gemini.** La clave funciona, pero el proyecto **no tiene facturación activa**: los modelos de imagen responden `429` con `generate_content_free_tier_requests, limit: 0`, y ninguno tiene nivel gratuito. Modelos disponibles para la clave y tarifa por imagen en 2K:
+
+| Modelo | Nombre comercial | USD por imagen 2K |
+|---|---|---|
+| `gemini-3.1-flash-image` (el que usa `e001_imagenes.py`) | Nano Banana 2 | 0,101 |
+| `gemini-3-pro-image` | Nano Banana Pro | 0,134 |
+| `gemini-nano-banana-2.1` | Nano Banana 2.1 | 0,0504 |
+| `gemini-2.5-flash-image` | Nano Banana (retirada prevista el 15-mar-2027) | 0,039 (1K) |
+
+El piloto lleva 24 imágenes (REF y 23 planos; S12 es un mapa por código): unos **2,40 USD** con Nano Banana 2, más los reintentos.
+
+## Scripts
+
+| Script | Qué hace |
+|---|---|
+| `scripts/e001_voz.py` | `generar --voz lujan`: narración por API con tiempos por carácter. `alinear`: tiempos de un MP3 hecho a mano en la web. `cuota`: caracteres que quedan |
+| `scripts/e001_imagenes.py` | Genera `REF` y luego los planos que falten en `video/E001/img/`, adjuntando `REF` donde el plano lo pide |
+| `scripts/e001_montaje.py` | Montaje completo: movimiento de cámara, rótulos (Anton, Fraunces, Inter), mapa de Natural Earth, sellos, efectos de sonido sintetizados y normalización a -14 LUFS. Sale en `trabajo/E001/piloto.mp4` y `piloto.srt` |
+
+El montaje funciona con lo que haya: sin narración estima los tiempos y quema subtítulos (animática); sin una imagen, pone un marcador "imagen pendiente". Los textos en pantalla, su posición y los efectos de cada plano están en `EDICION`, dentro del script. Fuentes y mapas se descargan solos a `trabajo/` (no se versiona).
+
+## Pasos siguientes
+
+1. **Voz.** El usuario elige una de las 4 voces y uno de estos caminos:
+   - **Recomendado:** pasar ElevenLabs a Starter y ejecutar `python3 scripts/e001_voz.py generar --voz <clave>`.
+   - Gratis (sin uso comercial): generar a mano la parte 01 de `guiones/E001-textos-elevenlabs.md` en la web con la voz elegida y la configuración recomendada, subirla como `video/E001/audio/E001_01.mp3` y ejecutar `python3 scripts/e001_voz.py alinear`.
+2. **Imágenes.** Uno de estos caminos:
+   - Activar la facturación del proyecto de Gemini y ejecutar `python3 scripts/e001_imagenes.py REF`; revisar `REF.png` y luego `python3 scripts/e001_imagenes.py` para el resto.
+   - A mano en Flow: subir los PNG a `video/E001/img/` con el código del plano.
+3. Con las imágenes, ajustar en `EDICION` el `foco` de la cámara y la posición de los textos según dónde quede el espacio libre de cada imagen.
+4. `python3 scripts/e001_montaje.py` y entregar el piloto. Opcional: música de la Biblioteca de Audio de YouTube en `video/E001/audio/musica.mp3` (se baja sola bajo la voz).
+5. Recoger comentarios y producir el resto del video.
+6. Antes del video completo, verificar los 23 datos marcados en `guiones/E001-pierna-santa-anna.md`.
