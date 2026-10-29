@@ -2,7 +2,7 @@
 
 **Video:** "Le hicieron un funeral de Estado a una pierna" (canal Desarmando Relatos).
 
-**Total:** 12.272 caracteres en 9 partes. todas de menos de 2.500 caracteres para que entren en cualquier plan.
+**Total:** 12.272 caracteres en 9 partes, todas de menos de 2.500 caracteres para que entren en cualquier plan.
 
 Para ver cuántos caracteres te quedan, revisa tu plan en ElevenLabs.
 
