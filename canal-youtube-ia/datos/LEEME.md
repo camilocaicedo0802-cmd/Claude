@@ -74,3 +74,11 @@ Las transcripciones completas no se guardan en el repositorio por derechos de au
 
 - `matriz_nicho.csv`: puntuaciones (1 a 5) de las 6 opciones de nicho en los 12 criterios, con pesos y total sobre 100. Las puntuaciones son juicios apoyados en las fases 1 a 4, no mediciones. Script: `scripts/matriz_nicho.py` (incluye el análisis de sensibilidad).
 - `banco_ideas.csv`: 16 ideas de video con pilar, término de búsqueda principal, evidencia de demanda (vidIQ o autocompletado), puntos en los 8 criterios de la fase 8, total sobre 100 y decisión (≥ 75 producir pronto; 60–74 banco; < 60 reformular o descartar). Script: `scripts/banco_ideas.py`. La hoja "Ideas" del dashboard parte de este archivo.
+
+## Nombres del canal (29-oct-2026)
+
+- `nombres_canal_2026-10-29.csv`: 152 nombres comprobados en cuatro rondas para la idea de "historias reales improbables".
+  - `handle_libre`: la página `youtube.com/@Nombre` devolvió 404 (no hay canal con ese identificador). No garantiza que YouTube acepte el identificador: hay que reclamarlo.
+  - `com_libre`: el registro RDAP de Verisign devolvió 404 (dominio .com no registrado ese día).
+  - `autocompletado_youtube_mx`: sugerencias de YouTube para el nombre (México); sirven para detectar choques con canciones, programas o juegos.
+  - `en_lista_final`: los 50 nombres propuestos. No se comprobaron marcas registradas (IMPI, SIC, WIPO).
