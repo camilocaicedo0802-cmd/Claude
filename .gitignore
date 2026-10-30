@@ -7,3 +7,9 @@ media/raw/
 next-env.d.ts
 .playwright-mcp/
 .DS_Store
+
+# video renders / assets
+videos/**/*.mp4
+videos/**/*.wav
+videos/**/workdir/
+__pycache__/
