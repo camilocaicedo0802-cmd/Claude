@@ -15,8 +15,11 @@ Estado al 29-oct-2026: guion terminado (`guiones/E001-pierna-santa-anna.md`), gu
 |---|---|
 | `ELEVENLABS_API_KEY` | Narración con marcas de tiempo para sincronizar imágenes y textos |
 | `GEMINI_API_KEY` | Imágenes con Nano Banana por API (solo si no se generan a mano en Flow) |
+| `OPENAI_API_KEY` | Alternativa: voz con `gpt-4o-mini-tts` (tiempos por palabra con transcripción) e imágenes con `gpt-image` |
 
 Se añaden en el menú del entorno → Editar, y se cargan en una sesión nueva. `.env.local` está en `.gitignore`.
+
+**30-oct-2026:** el usuario va a añadir `OPENAI_API_KEY` y a cambiar `GEMINI_API_KEY` por la de otra cuenta de Google. Al abrir la sesión nueva: listar los modelos de cada clave, comprobar que ambas tienen saldo (ni OpenAI ni los modelos de imagen de Gemini tienen nivel gratuito), comparar la voz de OpenAI con las 4 voces de ElevenLabs y añadir a `e001_voz.py` y `e001_imagenes.py` la opción de usar OpenAI. Si la nueva clave de Gemini tiene facturación, las imágenes siguen con Nano Banana: OpenAI avisa que `gpt-image` puede fallar al mantener un personaje recurrente.
 
 ## Verificación del 29-oct-2026
 
