@@ -45,6 +45,8 @@ def build():
         add(t, "black", None, grade="raw", tin=tin, dark=1.0)
 
     def T(t0, t1, markup, **kw):
+        if kw.get("tlist"):
+            kw["tlist"] = [x + OFF for x in kw["tlist"]]
         ovs.append(O.Text(t0 + OFF, t1 + OFF, markup, **kw))
 
     def X(t, name, vol=1.0, dur=None):
@@ -56,7 +58,7 @@ def build():
     X(-0.42, "2900", 0.9)
     I(2.36, "us:cash_stacks", z=(1.0, 1.25), pan=(-0.5, 0, 0.5, 0), grade="warm", dark=0.8, tin=("whip", 0.15))
     X(2.2, "1492", 0.6)
-    I(3.95, "us:skyscraper_dark", z=(1.0, 1.3), grade="cold", dark=0.95)
+    I(3.95, "us:skyscraper_dark", z=(1.0, 1.3), grade="cold", dark=1.35)
     T(2.4, 5.7, "MÁS *RICAS / Y *HERMÉTICAS", size=58)
     I(5.94, "us:server_corridor", z=(1.0, 1.35), grade="cold", tin=("whip", 0.15))
     X(5.8, "1490", 0.6)
@@ -313,7 +315,7 @@ def build():
     tes = wt("estancado", 213.5)
     T(tes, 215.6, "!ESTANCADO", size=130, timed=False, anim="slam", y=300)
     X(tes, "2942", 0.8)
-    V(215.64, "cv:tv_flicker", ss=2, z=(1.0, 1.1), grade="doc+red", tin=("glitch", 0.12))
+    V(215.64, "cv:trader_upset", ss=3, z=(1.0, 1.15), grade="cold", dark=0.9, tin=("glitch", 0.12))
     T(215.8, 217.35, "EL *CAOS INTERNO", size=62)
     X(215.6, "2548", 0.5)
     G(217.4, "LogoGlitch", base_int=0.35)

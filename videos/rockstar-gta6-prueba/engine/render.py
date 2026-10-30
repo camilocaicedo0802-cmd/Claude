@@ -105,7 +105,7 @@ def work(args):
     cv2.setNumThreads(1)
     R = Renderer()
     p = subprocess.Popen(["ffmpeg", "-v", "error", "-y", "-f", "rawvideo", "-pix_fmt", "bgr24", "-s", f"{W}x{H}",
-                          "-r", str(FPS), "-i", "-", "-c:v", "libx264", "-preset", preset, "-crf", "17",
+                          "-r", str(FPS), "-i", "-", "-c:v", "libx264", "-preset", preset, "-crf", os.environ.get("CRF", "19"),
                           "-pix_fmt", "yuv420p", "-threads", "2", out], stdin=subprocess.PIPE)
     t0 = time.time()
     for fi in range(a, b):

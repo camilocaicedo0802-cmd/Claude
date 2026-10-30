@@ -445,12 +445,13 @@ class Map:
                 if cid in SA:
                     cv2.fillPoly(hi_sa, rings, 255)
         lf = land.astype(np.float32)[:, :, None] / 255
-        f = f * (1 - lf) + np.array([0.11, 0.11, 0.12], np.float32) * lf
+        f = f * (1 - lf) + np.array([0.16, 0.16, 0.17], np.float32) * lf
         f = f + borders.astype(np.float32)[:, :, None] / 255 * 0.18
         green = np.array([0.25, 1.0, 0.35], np.float32)
         if self.mode == "unite":
-            a_na = ease_out((tl - self.t_na) / 0.5)
-            a_sa = ease_out((tl - self.t_sa) / 0.5)
+            base = 0.3 * ease_out((tl - 0.3) / 0.8)
+            a_na = max(base, ease_out((tl - self.t_na) / 0.5))
+            a_sa = max(base, ease_out((tl - self.t_sa) / 0.5))
             fade = 1.0
         else:
             a_na = a_sa = 1 - ease_out((tl - self.t_zoom) / 0.8)

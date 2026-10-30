@@ -392,7 +392,7 @@ def _look_init():
     _look["grain"] = grains
 
 
-def look(frame, fi, ca=0.0032, grain=0.032, vig=True, edge=True):
+def look(frame, fi, ca=0.0032, grain=0.026, vig=True, edge=True):
     if not _look:
         _look_init()
     if edge:
@@ -512,7 +512,7 @@ def word_times(words, t0, window=8.0):
         hit = None
         for k in range(j, len(cands)):
             cw = cands[k][0]
-            if nw and (cw == nw or (len(nw) > 3 and (cw.startswith(nw[:4]) or nw.startswith(cw[:4]) and len(cw) > 3))):
+            if nw and (cw == nw or (len(nw) > 4 and len(cw) > 4 and (cw.startswith(nw[:6]) or nw.startswith(cw[:6])))):
                 hit = k
                 break
         if hit is not None and cands[hit][1] - last < 3.0:
