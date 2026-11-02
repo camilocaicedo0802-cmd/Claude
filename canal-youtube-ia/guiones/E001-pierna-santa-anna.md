@@ -441,7 +441,7 @@ Las páginas exactas se apuntan al consultar cada obra.
 1. Que gobernó "once veces", y cómo lo cuenta cada fuente.
 2. Que primero sirvió en el ejército realista y luego se unió a la independencia (1821).
 3. El pastelero Remontel en Tacubaya: el año, qué daños hubo y si "se comieron los pasteles" consta en su reclamo.
-4. La cifra de 600.000 pesos, como reclamo y como pago final en 1839.
+4. La cifra de 600.000 pesos, como reclamo y como pago final en 1839. **Confirmado:** Francia exigió 600.000 pesos en 1838 y México aceptó pagarlos en marzo de 1839 (Mexico News Daily, Wikipedia). El año del saqueo de la pastelería de Remontel varía según la fuente (1828, 1832 o 1837).
 5. Bloqueo de Veracruz y rendición de San Juan de Ulúa (noviembre de 1838).
 6. El 5 de diciembre de 1838: desembarco francés, persecución hasta el muelle, metralla y amputación de la pierna izquierda.
 7. El parte de guerra en tono de despedida. Se cita como paráfrasis, no textual.
@@ -457,10 +457,10 @@ Las páginas exactas se apuntan al consultar cada obra.
 17. La exhibición de la pierna en ferias cobrando entrada.
 18. Que la pierna está hoy en el Museo Militar del Estado de Illinois, en Springfield. **Confirmado:** está allí desde 1922 y se exhibe de octubre a diciembre de 2026 (NPR Illinois, 31-ago-2026).
 19. Las peticiones de devolución y la respuesta de Illinois. **Corregido en el guion:** las pidieron estudiantes de Texas en 2016, no el gobierno de México. Según NPR Illinois, ningún funcionario mexicano la ha pedido formalmente, y el museo siempre se ha negado.
-20. La segunda pierna, de madera, en otro lugar de Illinois.
+20. La segunda pierna, de madera, en otro lugar de Illinois. **Confirmado:** es una pata de palo que está en la mansión del gobernador Oglesby, en Decatur (NPR Illinois 2026, Austin Chronicle 2023). Según el Austin Chronicle, hay además una tercera prótesis en el Museo Nacional de Historia de la Ciudad de México.
 21. La pérdida de "alrededor de la mitad" del territorio en 1848.
-22. Santa Anna en Nueva York, el chicle, Thomas Adams y el origen del negocio de la goma de mascar.
-23. El brazo de Obregón (1915, Celaya), guardado durante décadas en su monumento. Es el adelanto del siguiente video.
+22. Santa Anna en Nueva York, el chicle, Thomas Adams y el origen del negocio de la goma de mascar. **Confirmado en lo esencial:** fue en Staten Island; el chicle no sirvió como caucho y Adams lo vendió como goma de mascar (Atlas Obscura). Las fechas varían según la fuente.
+23. El brazo de Obregón, guardado durante décadas en su monumento. Es el adelanto del siguiente video. **Confirmado:** lo perdió el 3 de junio de 1915 en la hacienda de Santa Ana del Conde, cerca de León (no en Celaya), durante la campaña del Bajío. Estuvo en formol en el monumento de La Bombilla hasta que la familia lo incineró en 1989 (El Financiero, Chilango).
 
 ## SHORT DERIVADO (60 a 75 segundos)
 
