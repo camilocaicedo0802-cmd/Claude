@@ -10,7 +10,28 @@ Todos tienen como máximo 60 caracteres y no afirman nada que el video no muestr
 2. Le hicieron un funeral de Estado a una pierna
 3. México la enterró con honores. EE. UU. aún tiene la otra
 
-**La lista completa está en la respuesta del chat del 2-nov-2026.**
+**Lista completa:**
+
+1. Santa Anna: el hombre que perdió una pierna dos veces
+2. Le hicieron un funeral de Estado a una pierna
+3. México la enterró con honores. EE. UU. aún tiene la otra
+4. El presidente que le hizo un funeral de Estado a su pierna
+5. ¿Por qué la pierna de Santa Anna está en Estados Unidos?
+6. Cañonazos, discursos y desfile... para enterrar una pierna
+7. Unos pasteles le costaron una pierna a Santa Anna
+8. Enterrada con honores, arrastrada por la calle: su pierna
+9. Desenterraron la pierna de un presidente y la arrastraron
+10. La pierna que México honró y Estados Unidos conserva
+11. Una pierna tuvo funeral; la otra, una vitrina en EE. UU.
+12. La pierna de Santa Anna tuvo mejor funeral que muchos héroes
+13. Illinois se niega a devolver la pierna de Santa Anna
+14. La pierna más famosa de México (y dónde está hoy)
+15. 1842: México entierra una pierna con honores militares
+16. El funeral más absurdo de la historia de México
+17. La pierna de Santa Anna: de héroe a trofeo de guerra
+18. ¿Quién es el dueño de la pierna de Santa Anna?
+19. Esta pierna tuvo desfile, cañonazos y versos... ¿por qué?
+20. Verdad o mito: ¿México le hizo un funeral a una pierna?
 
 ## Descripción
 
