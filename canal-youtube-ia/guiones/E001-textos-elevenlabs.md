@@ -2,7 +2,7 @@
 
 **Video:** "Le hicieron un funeral de Estado a una pierna" (canal Desarmando Relatos).
 
-**Total:** 12.272 caracteres en 9 partes, todas de menos de 2.500 caracteres para que entren en cualquier plan.
+**Total:** 12.353 caracteres en 9 partes, todas de menos de 2.500 caracteres para que entren en cualquier plan.
 
 Para ver cuántos caracteres te quedan, revisa tu plan en ElevenLabs.
 
@@ -179,7 +179,7 @@ Pero espera. Porque cuando juntas las dos piernas, aparece algo que casi nadie n
 
 ## Parte 07 · Bloque 5: Punto de inflexión
 
-962 caracteres · archivo: `E001_07.mp3`
+1.043 caracteres · archivo: `E001_07.mp3`
 
 ```
 Piénsalo un momento.
@@ -191,8 +191,8 @@ Y sobrevivió.
 La pierna que México honró desapareció en México.
 La pierna que México perdió en una derrota es la que se conserva... en el país que lo venció.
 Casi ciento ochenta años después, sigue ahí.
-Y no es solo una curiosidad de museo. Desde México ha habido peticiones para que la devuelvan.
-Desde Ilinói, la respuesta ha sido básicamente la misma: es un trofeo ganado en batalla, y se queda donde está.
+Y no es solo una curiosidad de museo. Ha habido peticiones para que se la devuelvan a México. En dos mil dieciséis, un grupo de estudiantes de Texas viajó hasta allá para pedirla.
+La respuesta del museo ha sido siempre la misma: no. Es un trofeo ganado en batalla, y se queda donde está.
 Incluso se habla de una segunda pierna artificial del general, de madera, guardada en otro lugar de Ilinói.
 Así que la pregunta ya no es por qué un país le hizo un funeral a una pierna.
 La pregunta es otra. ¿Quién es dueño de la historia? ¿El que la vivió... o el que se quedó con los pedazos?

@@ -23,7 +23,7 @@ santa anna · pierna de santa anna · santa anna pierna funeral · guerra de los
 | # | Técnica | Gancho | Nota | Por qué |
 |---|---|---|---|---|
 | A | Escenario + dato que rompe creencias | "México, mil ochocientos cuarenta y dos. Hay desfile, hay cañonazos, hay discursos... para enterrar una pierna." | **9/10** | La paradoja completa llega en unos 5 segundos y deja una imagen absurda y concreta. Abre el "¿por qué?" de inmediato. Es la opción usada en el guion |
-| B | Dato que rompe creencias | "En este momento, en un museo de Estados Unidos, hay una vitrina con la pierna de un presidente mexicano. Y México lleva años pidiendo que se la devuelvan." | 8/10 | Tiene actualidad y orgullo nacional, pero es menos visual. Funciona mejor como segunda frase, y así se usa |
+| B | Dato que rompe creencias | "En este momento, en un museo de Estados Unidos, hay una vitrina con la pierna de un presidente mexicano. Y el museo se niega a devolverla." | 8/10 | Tiene actualidad y orgullo nacional, pero es menos visual. Funciona mejor como segunda frase, y así se usa |
 | C | Pregunta imposible | "¿Qué tiene que hacer un hombre para que su país le haga un funeral de Estado... a una sola de sus piernas?" | 7/10 | Despierta curiosidad, pero es abstracta. Sin imagen inicial, cuesta más retener en el celular |
 
 ## GUION COMPLETO
@@ -272,9 +272,9 @@ La pierna que México perdió en una derrota es la que se conserva... en el paí
 
 Casi ciento ochenta años después, sigue ahí.
 
-Y no es solo una curiosidad de museo. Desde México ha habido peticiones para que la devuelvan.
+Y no es solo una curiosidad de museo. Ha habido peticiones para que se la devuelvan a México. En dos mil dieciséis, un grupo de estudiantes de Texas viajó hasta allá para pedirla.
 
-Desde Illinois, la respuesta ha sido básicamente la misma: es un trofeo ganado en batalla, y se queda donde está.
+La respuesta del museo ha sido siempre la misma: no. Es un trofeo ganado en batalla, y se queda donde está.
 
 Incluso se habla de una segunda pierna artificial del general, de madera, guardada en otro lugar de Illinois.
 
@@ -446,17 +446,17 @@ Las páginas exactas se apuntan al consultar cada obra.
 6. El 5 de diciembre de 1838: desembarco francés, persecución hasta el muelle, metralla y amputación de la pierna izquierda.
 7. El parte de guerra en tono de despedida. Se cita como paráfrasis, no textual.
 8. Entierro inicial en Manga de Clavo.
-9. El 27 de septiembre de 1842: exhumación, traslado, ceremonia (procesión, discursos, versos, salvas) y monumento con columna en el cementerio de Santa Paula.
+9. El 27 de septiembre de 1842: exhumación, traslado, ceremonia (procesión, discursos, versos, salvas) y monumento con columna en el cementerio de Santa Paula. **Fecha, cementerio y ceremonia confirmados** (History.com); falta confirmar el detalle de la columna.
 10. Que esa fecha coincidía con el aniversario de la consumación de la independencia.
 11. Revuelta de diciembre de 1844: estatua derribada, cambio de nombre del teatro y pierna sacada y arrastrada por las calles.
 12. Paradero desconocido de la pierna tras 1844.
 13. Exilio y regreso a tiempo para la guerra de 1846.
 14. Cerro Gordo, 18 de abril de 1847: el rodeo por los cerros y el carruaje abandonado.
-15. El 4.º Regimiento de Voluntarios de Illinois y la pierna de corcho encontrada en el carruaje.
+15. El 4.º Regimiento de Voluntarios de Illinois y la pierna de corcho encontrada en el carruaje. **Confirmado:** compañía G del 4.º Regimiento, 18 de abril de 1847 (Sangamon County Historical Society).
 16. El almuerzo (pollo) que se habrían comido los soldados. En el guion ya se presenta como dudoso.
 17. La exhibición de la pierna en ferias cobrando entrada.
-18. Que la pierna está hoy en el Museo Militar del Estado de Illinois, en Springfield.
-19. Las peticiones mexicanas de devolución y la respuesta de Illinois.
+18. Que la pierna está hoy en el Museo Militar del Estado de Illinois, en Springfield. **Confirmado:** está allí desde 1922 y se exhibe de octubre a diciembre de 2026 (NPR Illinois, 31-ago-2026).
+19. Las peticiones de devolución y la respuesta de Illinois. **Corregido en el guion:** las pidieron estudiantes de Texas en 2016, no el gobierno de México. Según NPR Illinois, ningún funcionario mexicano la ha pedido formalmente, y el museo siempre se ha negado.
 20. La segunda pierna, de madera, en otro lugar de Illinois.
 21. La pérdida de "alrededor de la mitad" del territorio en 1848.
 22. Santa Anna en Nueva York, el chicle, Thomas Adams y el origen del negocio de la goma de mascar.

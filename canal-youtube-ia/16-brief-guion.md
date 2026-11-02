@@ -67,7 +67,7 @@ Hechos que guían el guion (VERIFICAR todos con fuentes antes de grabar):
    arrastró por las calles.
 5. En 1847, en la batalla de Cerro Gordo, soldados de Illinois capturaron una de sus
    piernas ortopédicas. Hoy se exhibe en el Museo Militar del Estado de Illinois
-   (Springfield). México ha pedido su devolución.
+   (Springfield). Ha habido peticiones para devolverla a México (estudiantes de Texas, 2016), y el museo siempre se ha negado.
 Veredicto previsto: VERDAD (con matices sobre detalles y cifras).
 
 [TONO]
