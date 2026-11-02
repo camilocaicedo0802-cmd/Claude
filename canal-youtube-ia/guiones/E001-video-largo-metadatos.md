@@ -79,3 +79,28 @@ Al final, el veredicto: ¿VERDAD, A MEDIAS o MITO? 👀
 ```
 
 Los capítulos usan los tiempos estimados del guion. Ajústalos al montaje real: el primero debe ser 00:00, hacen falta al menos 3 y cada uno debe durar 10 segundos o más.
+
+## Títulos exagerados (versión emocional)
+
+Estilo de "Japón, El País Más SÁDICO de la Historia": exageran la emoción o la opinión, nunca los hechos.
+
+1. México, El País Que Le Hizo Un FUNERAL a Una Pierna
+2. El Funeral Más RIDÍCULO de la Historia de México
+3. Santa Anna, El Presidente Más EGOCÉNTRICO de México
+4. 1842: El Día Que México Perdió La Cabeza… Por Una PIERNA
+5. Le Hicieron Un Funeral a Su Pierna… Y Luego La ARRASTRARON
+6. La Historia Más ABSURDA de México (Y Es 100% Real)
+7. El Presidente Que Perdió Su Pierna DOS VECES
+8. Le ROBARON La Pierna a Un Presidente (Y No La Devuelven)
+9. Una Guerra Por PASTELES Le Costó Una Pierna a Un Presidente
+10. Desfile, Cañones y Discursos… Para Enterrar Una PIERNA
+11. La Pierna Más FAMOSA del Mundo Sigue Secuestrada en EE.UU.
+12. El Ego Más GRANDE de México Tenía Una Sola Pierna
+13. Santa Anna, El Hombre Que Convirtió Su Pierna en Un HÉROE
+14. Ni En Una Película: México Le Hizo Funeral a Una Pierna
+15. De Héroe a Burla: La Pierna Más LOCA de la Historia
+16. Estados Unidos Tiene La Pierna de Un Presidente Mexicano
+17. El Funeral Más DEMENTE Que Ha Visto México
+18. La Venganza Contra Una PIERNA: Santa Anna 1844
+19. México Lloró Por Una Pierna… y 2 Años Después La Odió
+20. La Pierna Que HUMILLÓ a Todo Un País
