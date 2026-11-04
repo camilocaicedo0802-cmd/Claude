@@ -1,5 +1,5 @@
 import sys, os, json, re, time, urllib.request, urllib.error
-UA = "Mozilla/5.0 (X11; Linux x86_64) LaurelHillDoc/1.0 (camilocaicedo0802@gmail.com)"
+UA = "Mozilla/5.0 (X11; Linux x86_64) LaurelHillDoc/1.0"
 OUT = sys.argv[1]
 reg = json.load(open('registry.json'))
 items = {v['id']: v['title'] for v in reg.values()}

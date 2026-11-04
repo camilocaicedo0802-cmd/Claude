@@ -1,7 +1,7 @@
 """Polite Wikimedia Commons helper: search files, fetch info, download thumbs (retries on 429)."""
 import json, os, sys, time, urllib.parse, urllib.request, re, html
 
-UA = "LaurelHillDoc/1.0 (https://github.com/camilocaicedo0802-cmd; camilocaicedo0802@gmail.com) python-urllib"
+UA = "LaurelHillDoc/1.0 (https://github.com/camilocaicedo0802-cmd) python-urllib"
 API = "https://commons.wikimedia.org/w/api.php"
 
 def get(url, binary=False, tries=8):

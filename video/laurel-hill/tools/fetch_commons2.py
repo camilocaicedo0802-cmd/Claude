@@ -1,5 +1,5 @@
 import sys, os, json, time, re, urllib.request, urllib.error
-UA = "LaurelHillDoc/1.0 (https://github.com/camilocaicedo0802-cmd; camilocaicedo0802@gmail.com) python-urllib"
+UA = "LaurelHillDoc/1.0 (https://github.com/camilocaicedo0802-cmd) python-urllib"
 OUT = sys.argv[1]
 reg = json.load(open('registry.json'))
 skip = {'c005', 'c017', 'c048', 'c056', 'c128'}

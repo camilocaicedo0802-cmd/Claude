@@ -4,7 +4,7 @@ usage: python ia.py OUT_DIR REGISTRY.json id1 id2 ...
 """
 import json, os, sys, time, urllib.parse, urllib.request
 
-UA = "Mozilla/5.0 (X11; Linux x86_64) CGDoc/1.0 (camilocaicedo0802@gmail.com)"
+UA = "Mozilla/5.0 (X11; Linux x86_64) CGDoc/1.0"
 OK = ("publicdomain", "zero/1.0", "/by/")  # PD mark, CC0, CC BY (not BY-SA/NC/ND)
 
 

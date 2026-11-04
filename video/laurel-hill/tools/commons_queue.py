@@ -1,5 +1,5 @@
 import json, os, sys, time, urllib.request, urllib.error
-UA = "LaurelHillDoc/1.0 (https://github.com/camilocaicedo0802-cmd; camilocaicedo0802@gmail.com) python-urllib"
+UA = "LaurelHillDoc/1.0 (https://github.com/camilocaicedo0802-cmd) python-urllib"
 ROOT = sys.argv[1]
 q = json.load(open('commons_queue.json'))
 for it in q:

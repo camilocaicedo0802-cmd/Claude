@@ -2,7 +2,7 @@ import json, os, sys, time, urllib.request
 from PIL import Image, ImageDraw, ImageFont
 P = sys.argv[1]
 db = json.load(open(f"{P}/work/loc.json"))
-UA = "Mozilla/5.0 I80Doc/1.0 (camilocaicedo0802@gmail.com)"
+UA = "Mozilla/5.0 I80Doc/1.0"
 items = list(db.values())
 f = ImageFont.truetype(f"{P}/assets/fonts/Poppins-SemiBold.ttf", 14)
 cells = []

@@ -5,7 +5,7 @@ usage: python fl.py search OUT.json "query 1" "query 2" ...   (appends to OUT.js
 """
 import json, os, re, sys, time, urllib.parse, urllib.request
 
-UA = "Mozilla/5.0 (X11; Linux x86_64) DPDoc/1.0 (camilocaicedo0802@gmail.com)"
+UA = "Mozilla/5.0 (X11; Linux x86_64) DPDoc/1.0"
 LIC = {4: "CC BY 2.0", 7: "No known copyright restrictions", 8: "United States Government Work", 9: "CC0 1.0",
        10: "Public Domain Mark", 11: "CC BY 4.0"}
 

@@ -5,7 +5,7 @@ usage: python loc.py search DB.json "q1" "q2" ...
 """
 import json, os, re, sys, time, urllib.parse, urllib.request
 
-UA = "Mozilla/5.0 (X11; Linux x86_64) DPDoc/1.0 (camilocaicedo0802@gmail.com)"
+UA = "Mozilla/5.0 (X11; Linux x86_64) DPDoc/1.0"
 
 
 def get(url, binary=False):
