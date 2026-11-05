@@ -1,0 +1,7 @@
+Fuentes usadas por el motor (assets/fonts). Todas permiten uso comercial y redistribución:
+- Bebas Neue — SIL Open Font License 1.1
+- Playfair Display (normal y cursiva) — SIL Open Font License 1.1
+- Poppins (Medium, SemiBold, Bold, ExtraBold) — SIL Open Font License 1.1
+- JetBrains Mono — SIL Open Font License 1.1
+- Oswald — SIL Open Font License 1.1
+- Special Elite — Apache License 2.0
