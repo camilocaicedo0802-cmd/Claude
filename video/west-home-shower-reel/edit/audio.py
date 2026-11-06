@@ -210,7 +210,7 @@ def put(t, gen):
 B = T.beat
 # hook
 put(0.0, impact(-19, 1.0)); put(0.03, whoosh(0.35, 0.5, 600, 4500, gain=-24))
-put(0.05, pop(700, 200, gain=-19)); put(0.32, pop(820, 240, gain=-19)); put(0.55, pop(1100, 400, 0.09, gain=-21))
+put(0.05, pop(700, 200, gain=-19)); put(0.32, pop(820, 240, gain=-19))
 put(1.15, shutter(-20)); put(1.17, whoosh(0.3, 0.3, 900, 5000, pan=0.5, gain=-25))
 # transitions
 for tc, kind in [(B(6.5), 'left'), (B(18), 'up'), (B(30), 'right'), (B(36), 'left'), (B(40), 'up')]:

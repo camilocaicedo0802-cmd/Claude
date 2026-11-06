@@ -30,8 +30,6 @@ def build():
                  shadow=dict(radius=18, offset=(0, 10), opacity=0.45))
     els.append(El(home, 540, 455, wt('IMG_9096.wav', 1, 0.0, 0.38, floor=0.3), 2.25, 'blurup', 'blurout', d_in=0.3,
                   dy=60, behind=True))
-    emo = G.pil_to_spr(G.emoji_img('🚿', 150), radius=12, offset=(0, 8), opacity=0.45)
-    els.append(El(emo, 912, 222, 0.55, 2.25, 'pop', 'blurout', d_in=0.32, rot=-12, float_amp=6))
     c = 'IMG_9096.wav'; tp, si = 0.0, 0.38
     els.append(Caption([('Thinking', 'l', wt(c, 2, tp, si)), ('about', 'l', wt(c, 3, tp, si))], wt(c, 4, tp, si)))
     els.append(Caption([('remodeling', 'l', wt(c, 4, tp, si)), ('your', 'l', wt(c, 5, tp, si)),
@@ -306,14 +304,6 @@ class Price:
                 shine[..., :3] = 255 * band[..., None] * core[..., None]
                 shine[..., 3] = band * core
                 G.blit(canvas, shine, 540, cy, scale=s)
-        # tiny sparkles at landing
-        if t >= self.tland:
-            q = t - self.tland
-            for k, (dx, dy, ph) in enumerate([(-420, -150, 0.0), (410, -170, 0.08), (380, 140, 0.16), (-360, 160, 0.12)]):
-                e = q - ph
-                if 0 < e < 0.6:
-                    r = 26 * math.sin(math.pi * e / 0.6)
-                    sparkle(canvas, 540 + dx, cy + dy, r)
 
 
 def sparkle(canvas, x, y, r):
