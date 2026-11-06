@@ -22,9 +22,15 @@ El estilo sigue la referencia `Referencia_video_automotriz.mp4` (ver [`ANALISIS_
 
 ## Audio
 - **Voz**: cortada en 7 tramos sobre los silencios, con fundidos de 8 ms y realce de presencia.
-- **Música**: beat phonk/trap **original, sintetizado en el script** (`scripts/audio_mix.py`), así que no tiene copyright. Va a 140 BPM en La menor, con cencerro, 808, clap y hats. Entra en el primer corte, como en la referencia, se corta antes de "BAJA PRESIÓN" y se filtra en el CTA. Se atenúa ~14 dB bajo la voz (ducking).
+- **Música**: beat phonk/trap **original, sintetizado en el script** (`scripts/audio_mix.py`), así que no tiene copyright. Va a 140 BPM en La menor, con cencerro, 808, clap y hats. Entra en el primer corte, como en la referencia, se corta antes de "BAJA PRESIÓN" y se filtra en el CTA. Se atenúa ~12 dB bajo la voz (ducking).
 - **SFX** sintetizados de los mismos tipos y en los mismos momentos que la referencia: whoosh en cada transición, pops en títulos, clics de tipeo, impactos y booms en las palabras de golpe, glitch, error en los códigos, datos y ding en la clonación, riser y stamp en el cierre.
-- Master a −14 LUFS y pico de −1,5 dBTP.
+  - Van como acompañamiento: cada efecto se nivela por su sonoridad (su ventana más fuerte de 100 ms) a unos 8 dB bajo la voz, o más bajo según el tipo. El golpe más fuerte queda ~8 dB bajo la voz.
+  - Llevan ataque suave de 4 ms y un filtro de agudos a 9 kHz para que no suenen bruscos.
+- Master a −14 LUFS y pico de −2 dBTP.
+
+## Marca de agua
+- **Patrón diagonal** "JUAN CAICEDO" en todo el cuadro, al 10 % de opacidad. Es texto blanco con contorno oscuro, así que se ve en fondos claros y oscuros, y se desplaza lento, lo que lo hace difícil de recortar o tapar.
+- **Firma "© JUAN CAICEDO"** al 46 % de opacidad. Cambia de posición cada 5 s (arriba y abajo, fuera de la zona de títulos y subtítulos).
 
 ## Cómo regenerarlo
 1. Descargar el material del Drive en `media/raw/` (no se versiona).

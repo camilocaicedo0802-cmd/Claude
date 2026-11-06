@@ -4,6 +4,7 @@ import edl from './edl.json';
 import {Grain, Vignette, f} from './fx';
 import {Overlay, Subtitle} from './Overlays';
 import {Visual} from './Scenes';
+import {Watermark} from './Watermark';
 
 export const Main: React.FC = () => {
 	const e: any = edl;
@@ -25,6 +26,7 @@ export const Main: React.FC = () => {
 					<Overlay o={o} total={e.total} />
 				</Sequence>
 			))}
+			<Watermark />
 			<Grain />
 		</AbsoluteFill>
 	);

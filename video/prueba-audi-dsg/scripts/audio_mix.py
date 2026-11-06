@@ -66,6 +66,27 @@ for seg in edl["voice"]:
     voice[o:o + len(chunk)] += chunk
 # gentle presence lift
 voice = voice + 0.25 * bp(voice, 2500, 6000)
+VPK = np.max(np.abs(voice)) + 1e-9
+_vn = voice / VPK * 0.95
+_w = int(0.05 * SR)
+_venv = np.sqrt(np.convolve(_vn ** 2, np.ones(_w) / _w, mode="same"))
+V_REF_DB = 20 * np.log10(np.sqrt(np.mean(_vn[_venv > 0.02] ** 2)) + 1e-12)  # voice RMS while talking
+
+# SFX sit UNDER the voice: each sound is levelled by its loudest 100 ms window.
+SFX_BASE = -8.0  # dB relative to the voice RMS
+SFX_OFF = {"whoosh": 0, "whoosh_short": -1, "swish": -3, "pop": -3, "tick": -8, "impact": -2, "boom": -2,
+           "glitch": -7, "error": -6, "data": -9, "ding": -5, "riser": -4, "stamp": -3}
+
+
+def level(x, kind):
+    w = int(0.1 * SR)
+    if len(x) <= w:
+        loud = np.sqrt(np.mean(x ** 2))
+    else:
+        c = np.convolve(x ** 2, np.ones(w) / w, mode="valid")
+        loud = np.sqrt(np.max(c))
+    target = V_REF_DB + SFX_BASE + SFX_OFF.get(kind, -4)
+    return x * 10 ** ((target - 20 * np.log10(loud + 1e-12)) / 20)
 
 # ------------------------------------------------------------------ SFX
 def s_whoosh(dur=0.42, up=True):
@@ -199,8 +220,11 @@ sfx = np.zeros(N, np.float32)
 for e in edl["sfx"]:
     k = e["kind"]
     x = s_data() if k == "data" else BANK[k]
+    x = level(x, k)
+    a3 = int(0.004 * SR)
+    x = x.copy(); x[:a3] *= np.linspace(0, 1, a3)
     if k == "riser" and e["t"] > edl["music"]["end"] - 2:
-        x = s_riser(1.2)
+        x = level(s_riser(1.2), k)
         off = -1.2
     else:
         off = OFFSET.get(k, 0.0)
@@ -373,8 +397,8 @@ v_db = db(voice_n[hold])
 mus_d = mus * music_gain
 m_db = db(mus_d[hold])
 mus_d = mus_d * 10 ** ((v_db - 12 - m_db) / 20)  # music 12 dB under the voice while talking
-s_peak = np.max(np.abs(sfx)) + 1e-9
-sfx_n = sfx / s_peak * 0.75
+sfx_n = lp(sfx, 9000)
+print("voice ref dB", round(V_REF_DB, 1), "sfx peak", round(float(np.max(np.abs(sfx_n))), 3))
 print("voice dB", round(v_db, 1), "music under voice dB", round(db(mus_d[hold]), 1), "music in gaps dB", round(db(mus_d[~hold & (tt < edl['music']['end'])]), 1))
 mix = voice_n + mus_d + sfx_n
 pk = np.max(np.abs(mix)) + 1e-9
