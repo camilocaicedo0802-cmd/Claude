@@ -1,0 +1,6 @@
+node_modules/
+out/
+stills/
+public/*.mp4
+public/fonts/
+work/

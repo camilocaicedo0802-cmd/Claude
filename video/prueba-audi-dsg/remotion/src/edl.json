@@ -1,0 +1,1913 @@
+{
+ "fps": 30,
+ "width": 1080,
+ "height": 1920,
+ "total": 53.625,
+ "durationInFrames": 1609,
+ "voice": [
+  {
+   "src": [
+    0.0,
+    3.165
+   ],
+   "out": 0.0
+  },
+  {
+   "src": [
+    4.905,
+    14.585
+   ],
+   "out": 3.165
+  },
+  {
+   "src": [
+    17.38,
+    23.86
+   ],
+   "out": 12.845
+  },
+  {
+   "src": [
+    24.045,
+    35.095
+   ],
+   "out": 19.325
+  },
+  {
+   "src": [
+    37.035,
+    45.66
+   ],
+   "out": 30.375
+  },
+  {
+   "src": [
+    47.0,
+    55.415
+   ],
+   "out": 39.0
+  },
+  {
+   "src": [
+    72.69,
+    76.25
+   ],
+   "out": 47.415
+  }
+ ],
+ "visuals": [
+  {
+   "kind": "speaker",
+   "from": 0.0,
+   "to": 1.96,
+   "src": "LienzoAudi.mp4",
+   "srcStart": 0.0,
+   "zoom": [
+    1.16,
+    1.24
+   ],
+   "origin": [
+    50,
+    30
+   ],
+   "enter": "zoomblur"
+  },
+  {
+   "kind": "speaker",
+   "from": 1.96,
+   "to": 3.165,
+   "src": "LienzoAudi.mp4",
+   "srcStart": 1.96,
+   "zoom": [
+    1.42,
+    1.48
+   ],
+   "origin": [
+    50,
+    30
+   ],
+   "enter": "zoomblur"
+  },
+  {
+   "kind": "speaker",
+   "from": 3.165,
+   "to": 5.26,
+   "src": "LienzoAudi.mp4",
+   "srcStart": 4.905,
+   "zoom": [
+    1.04,
+    1.1
+   ],
+   "origin": [
+    50,
+    30
+   ],
+   "enter": "zoomblur"
+  },
+  {
+   "kind": "broll",
+   "from": 5.26,
+   "to": 7.21,
+   "src": "LienzoAudi.mp4",
+   "srcStart": 70.45,
+   "rate": 0.7,
+   "zoom": [
+    1.18,
+    1.05
+   ],
+   "origin": [
+    50,
+    55
+   ],
+   "enter": "zoomblur"
+  },
+  {
+   "kind": "speaker",
+   "from": 7.21,
+   "to": 9.1,
+   "src": "LienzoAudi.mp4",
+   "srcStart": 8.95,
+   "zoom": [
+    1.26,
+    1.3
+   ],
+   "origin": [
+    50,
+    30
+   ],
+   "enter": "cut"
+  },
+  {
+   "kind": "darkcards",
+   "from": 9.1,
+   "to": 12.845,
+   "cards": [
+    {
+     "src": "IMG_6311.mp4",
+     "srcStart": 0.4,
+     "at": 0.0,
+     "x": 300,
+     "y": 640,
+     "w": 470,
+     "h": 700,
+     "from": "zoom"
+    },
+    {
+     "src": "IMG_6302.mp4",
+     "srcStart": 1.2,
+     "at": 1.26,
+     "x": 780,
+     "y": 700,
+     "w": 470,
+     "h": 700,
+     "from": "right"
+    }
+   ],
+   "enter": "zoomblur"
+  },
+  {
+   "kind": "speaker",
+   "from": 12.845,
+   "to": 15.765,
+   "src": "LienzoAudi.mp4",
+   "srcStart": 17.38,
+   "zoom": [
+    1.02,
+    1.08
+   ],
+   "origin": [
+    50,
+    25
+   ],
+   "enter": "zoomblur"
+  },
+  {
+   "kind": "collage",
+   "from": 15.765,
+   "to": 19.325,
+   "tiles": [
+    [
+     "IMG_6302.mp4",
+     0.5
+    ],
+    [
+     "IMG_6311.mp4",
+     1.5
+    ],
+    [
+     "IMG_6306.mp4",
+     1.0
+    ],
+    [
+     "IMG_6313.mp4",
+     2.0
+    ],
+    [
+     "IMG_6304.mp4",
+     0.2
+    ],
+    [
+     "IMG_6307.mp4",
+     0.5
+    ],
+    [
+     "IMG_6310.mp4",
+     0.0
+    ],
+    [
+     "IMG_6305.mp4",
+     0.5
+    ],
+    [
+     "IMG_6315.mp4",
+     1.0
+    ],
+    [
+     "IMG_6318.mp4",
+     0.2
+    ]
+   ],
+   "enter": "zoomblur"
+  },
+  {
+   "kind": "speaker",
+   "from": 19.325,
+   "to": 21.18,
+   "src": "LienzoAudi.mp4",
+   "srcStart": 24.045,
+   "zoom": [
+    1.22,
+    1.26
+   ],
+   "origin": [
+    50,
+    25
+   ],
+   "enter": "zoomblur"
+  },
+  {
+   "kind": "broll",
+   "from": 21.18,
+   "to": 22.72,
+   "src": "IMG_6318.mp4",
+   "srcStart": 0.2,
+   "zoom": [
+    1.35,
+    1.15
+   ],
+   "origin": [
+    50,
+    55
+   ],
+   "enter": "zoomblur",
+   "grade": "dark"
+  },
+  {
+   "kind": "speaker",
+   "from": 22.72,
+   "to": 25.5,
+   "src": "LienzoAudi.mp4",
+   "srcStart": 27.44,
+   "zoom": [
+    1.02,
+    1.07
+   ],
+   "origin": [
+    50,
+    25
+   ],
+   "enter": "zoomblur"
+  },
+  {
+   "kind": "float3d",
+   "from": 25.5,
+   "to": 27.23,
+   "cards": [
+    {
+     "src": "IMG_6311.mp4",
+     "srcStart": 2.0,
+     "at": 0.0,
+     "label": "HIDRÁULICA"
+    },
+    {
+     "src": "IMG_6307.mp4",
+     "srcStart": 1.0,
+     "at": 0.86,
+     "label": "TARJETA ELECTRÓNICA"
+    }
+   ],
+   "enter": "zoomblur"
+  },
+  {
+   "kind": "speaker",
+   "from": 27.23,
+   "to": 28.74,
+   "src": "LienzoAudi.mp4",
+   "srcStart": 31.95,
+   "zoom": [
+    1.12,
+    1.16
+   ],
+   "origin": [
+    50,
+    25
+   ],
+   "enter": "zoomblur"
+  },
+  {
+   "kind": "speaker",
+   "from": 28.74,
+   "to": 30.375,
+   "src": "LienzoAudi.mp4",
+   "srcStart": 33.46,
+   "zoom": [
+    1.38,
+    1.42
+   ],
+   "origin": [
+    50,
+    22
+   ],
+   "enter": "cut",
+   "shake": 0.35
+  },
+  {
+   "kind": "lightcard",
+   "from": 30.375,
+   "to": 33.27,
+   "src": "IMG_6309.mp4",
+   "srcStart": 7.2,
+   "step": "PASO 01",
+   "title": "DESMONTAJE",
+   "enter": "zoomblur"
+  },
+  {
+   "kind": "speaker",
+   "from": 33.27,
+   "to": 34.33,
+   "src": "LienzoAudi.mp4",
+   "srcStart": 39.93,
+   "zoom": [
+    1.18,
+    1.22
+   ],
+   "origin": [
+    50,
+    25
+   ],
+   "enter": "zoomblur"
+  },
+  {
+   "kind": "clone",
+   "from": 34.33,
+   "to": 39.0,
+   "left": {
+    "src": "IMG_6311.mp4",
+    "srcStart": 3.0
+   },
+   "right": {
+    "src": "IMG_6302.mp4",
+    "srcStart": 3.0
+   },
+   "tVieja": 1.62,
+   "tNueva": 2.64,
+   "tValores": 3.98,
+   "enter": "zoomblur"
+  },
+  {
+   "kind": "speaker",
+   "from": 39.0,
+   "to": 42.27,
+   "src": "LienzoAudi.mp4",
+   "srcStart": 47.0,
+   "zoom": [
+    1.04,
+    1.12
+   ],
+   "origin": [
+    50,
+    30
+   ],
+   "enter": "zoomblur"
+  },
+  {
+   "kind": "broll",
+   "from": 42.27,
+   "to": 43.81,
+   "src": "IMG_6303.mp4",
+   "srcStart": 12.0,
+   "zoom": [
+    1.25,
+    1.12
+   ],
+   "origin": [
+    50,
+    50
+   ],
+   "enter": "zoomblur"
+  },
+  {
+   "kind": "darkwide",
+   "from": 43.81,
+   "to": 46.11,
+   "src": "IMG_6312.mp4",
+   "srcStart": 44.6,
+   "enter": "zoomblur"
+  },
+  {
+   "kind": "broll",
+   "from": 46.11,
+   "to": 47.415,
+   "src": "IMG_6316.mp4",
+   "srcStart": 6.3,
+   "zoom": [
+    1.15,
+    1.28
+   ],
+   "origin": [
+    50,
+    50
+   ],
+   "enter": "zoomblur"
+  },
+  {
+   "kind": "speaker",
+   "from": 47.415,
+   "to": 50.035,
+   "src": "LienzoAudi.mp4",
+   "srcStart": 72.69,
+   "zoom": [
+    1.06,
+    1.12
+   ],
+   "origin": [
+    50,
+    25
+   ],
+   "enter": "zoomblur"
+  },
+  {
+   "kind": "speaker",
+   "from": 50.035,
+   "to": 50.975,
+   "src": "LienzoAudi.mp4",
+   "srcStart": 75.31,
+   "zoom": [
+    1.32,
+    1.36
+   ],
+   "origin": [
+    50,
+    25
+   ],
+   "enter": "cut"
+  },
+  {
+   "kind": "endcard",
+   "from": 50.975,
+   "to": 53.625,
+   "src": "LienzoAudi.mp4",
+   "srcStart": 70.45,
+   "rate": 0.5,
+   "enter": "zoomblur"
+  }
+ ],
+ "overlays": [
+  {
+   "kind": "hook",
+   "from": 0.0,
+   "to": 1.92,
+   "line1": "¿LA TRANSMISIÓN DE TU AUDI",
+   "line2": "ESTÁ FALLANDO?",
+   "tLine2": 0.98
+  },
+  {
+   "kind": "bigword",
+   "from": 3.34,
+   "to": 5.21,
+   "small": "ESTE",
+   "big": "AUDI A3",
+   "pill": "DSG",
+   "y": 1180
+  },
+  {
+   "kind": "location",
+   "from": 5.34,
+   "to": 7.21,
+   "a": "HIDALGO",
+   "b": "TIZAYUCA",
+   "tB": 1.2
+  },
+  {
+   "kind": "label",
+   "from": 9.18,
+   "to": 12.845,
+   "line1": "TRANSMISIÓN DSG",
+   "line2": "MECATRÓNICA",
+   "tLine2": 2.82,
+   "y": 1420
+  },
+  {
+   "kind": "codes",
+   "from": 15.765,
+   "to": 19.325,
+   "title": "CÓDIGOS DE FALLA",
+   "codes": [
+    [
+     "P17BF",
+     1.1
+    ],
+    [
+     "P189C",
+     2.28
+    ]
+   ]
+  },
+  {
+   "kind": "impact",
+   "from": 21.18,
+   "to": 22.72,
+   "small": "BAJA",
+   "big": "PRESIÓN",
+   "under": "DE ACEITE",
+   "y": 960
+  },
+  {
+   "kind": "stepchip",
+   "from": 30.375,
+   "to": 33.27,
+   "text": "PASO 01",
+   "sub": "DESMONTAJE"
+  },
+  {
+   "kind": "stepchip",
+   "from": 34.33,
+   "to": 39.0,
+   "text": "PASO 02",
+   "sub": "CLONACIÓN"
+  },
+  {
+   "kind": "stepword",
+   "from": 42.27,
+   "to": 43.81,
+   "step": "PASO 03",
+   "small": "LLENADO DE",
+   "big": "ACEITE"
+  },
+  {
+   "kind": "stepword",
+   "from": 43.81,
+   "to": 46.11,
+   "step": "PASO 04",
+   "small": "",
+   "big": "INSTALACIÓN",
+   "y": 1430
+  },
+  {
+   "kind": "stepword",
+   "from": 46.11,
+   "to": 47.415,
+   "step": "PASO 05",
+   "small": "Y LOS",
+   "big": "AJUSTES"
+  },
+  {
+   "kind": "cta",
+   "from": 50.035,
+   "to": 53.625,
+   "small": "MÁNDANOS",
+   "big": "UN MENSAJE",
+   "endAt": 50.975
+  }
+ ],
+ "subs": [
+  {
+   "from": 1.96,
+   "to": 2.48,
+   "lines": [
+    [
+     {
+      "t": "VEN,",
+      "red": false
+     }
+    ]
+   ],
+   "at": [
+    1.96
+   ]
+  },
+  {
+   "from": 2.48,
+   "to": 3.14,
+   "lines": [
+    [
+     {
+      "t": "ACOMPÁÑAME.",
+      "red": true
+     }
+    ]
+   ],
+   "at": [
+    2.48
+   ]
+  },
+  {
+   "from": 3.94,
+   "to": 4.54,
+   "lines": [
+    [
+     {
+      "t": "NOS",
+      "red": false
+     },
+     {
+      "t": "LO",
+      "red": false
+     }
+    ],
+    [
+     {
+      "t": "TRAEN",
+      "red": false
+     },
+     {
+      "t": "DESDE",
+      "red": false
+     }
+    ]
+   ],
+   "at": [
+    3.94,
+    4.1,
+    4.22,
+    4.38
+   ]
+  },
+  {
+   "from": 4.54,
+   "to": 5.34,
+   "lines": [
+    [
+     {
+      "t": "EL",
+      "red": false
+     },
+     {
+      "t": "ESTADO",
+      "red": false
+     },
+     {
+      "t": "DE",
+      "red": false
+     }
+    ]
+   ],
+   "at": [
+    4.54,
+    4.66,
+    4.9
+   ]
+  },
+  {
+   "from": 5.34,
+   "to": 5.84,
+   "lines": [
+    [
+     {
+      "t": "HIDALGO,",
+      "red": false
+     }
+    ]
+   ],
+   "at": [
+    5.34
+   ]
+  },
+  {
+   "from": 5.84,
+   "to": 6.54,
+   "lines": [
+    [
+     {
+      "t": "ESPECÍFICAMENTE",
+      "red": false
+     },
+     {
+      "t": "DE",
+      "red": false
+     }
+    ]
+   ],
+   "at": [
+    5.84,
+    6.38
+   ]
+  },
+  {
+   "from": 6.54,
+   "to": 7.24,
+   "lines": [
+    [
+     {
+      "t": "TIZAYUCA,",
+      "red": false
+     }
+    ]
+   ],
+   "at": [
+    6.54
+   ]
+  },
+  {
+   "from": 7.24,
+   "to": 8.16,
+   "lines": [
+    [
+     {
+      "t": "PORQUE",
+      "red": false
+     },
+     {
+      "t": "TIENE",
+      "red": false
+     }
+    ],
+    [
+     {
+      "t": "PROBLEMAS",
+      "red": true
+     }
+    ]
+   ],
+   "at": [
+    7.24,
+    7.38,
+    7.62
+   ]
+  },
+  {
+   "from": 8.16,
+   "to": 8.86,
+   "lines": [
+    [
+     {
+      "t": "EN",
+      "red": false
+     },
+     {
+      "t": "LO",
+      "red": false
+     },
+     {
+      "t": "QUE",
+      "red": false
+     },
+     {
+      "t": "ES",
+      "red": false
+     }
+    ]
+   ],
+   "at": [
+    8.16,
+    8.38,
+    8.56,
+    8.72
+   ]
+  },
+  {
+   "from": 8.86,
+   "to": 9.219999999999999,
+   "lines": [
+    [
+     {
+      "t": "SU",
+      "red": false
+     }
+    ]
+   ],
+   "at": [
+    8.86
+   ]
+  },
+  {
+   "from": 13.005,
+   "to": 13.825,
+   "lines": [
+    [
+     {
+      "t": "AL",
+      "red": false
+     },
+     {
+      "t": "MOMENTO",
+      "red": false
+     }
+    ],
+    [
+     {
+      "t": "DE",
+      "red": false
+     },
+     {
+      "t": "REALIZAR",
+      "red": false
+     }
+    ]
+   ],
+   "at": [
+    13.005,
+    13.165,
+    13.445,
+    13.605
+   ]
+  },
+  {
+   "from": 13.825,
+   "to": 14.485,
+   "lines": [
+    [
+     {
+      "t": "EL",
+      "red": false
+     },
+     {
+      "t": "DIAGNÓSTICO,",
+      "red": true
+     }
+    ]
+   ],
+   "at": [
+    13.825,
+    14.045
+   ]
+  },
+  {
+   "from": 14.485,
+   "to": 15.305,
+   "lines": [
+    [
+     {
+      "t": "EL",
+      "red": false
+     },
+     {
+      "t": "EQUIPO",
+      "red": false
+     },
+     {
+      "t": "DE",
+      "red": false
+     }
+    ],
+    [
+     {
+      "t": "DIAGNÓSTICO",
+      "red": false
+     }
+    ]
+   ],
+   "at": [
+    14.485,
+    14.585,
+    14.785,
+    14.925
+   ]
+  },
+  {
+   "from": 15.305,
+   "to": 15.885,
+   "lines": [
+    [
+     {
+      "t": "NOS",
+      "red": false
+     },
+     {
+      "t": "ARROJABA",
+      "red": false
+     }
+    ]
+   ],
+   "at": [
+    15.305,
+    15.465
+   ]
+  },
+  {
+   "from": 19.44,
+   "to": 20.28,
+   "lines": [
+    [
+     {
+      "t": "LOS",
+      "red": false
+     },
+     {
+      "t": "CUALES",
+      "red": false
+     }
+    ],
+    [
+     {
+      "t": "NOS",
+      "red": false
+     },
+     {
+      "t": "HACEN",
+      "red": false
+     }
+    ]
+   ],
+   "at": [
+    19.44,
+    19.66,
+    19.88,
+    20.12
+   ]
+  },
+  {
+   "from": 20.28,
+   "to": 21.3,
+   "lines": [
+    [
+     {
+      "t": "REFERENCIA",
+      "red": false
+     },
+     {
+      "t": "A",
+      "red": false
+     },
+     {
+      "t": "UNA",
+      "red": false
+     }
+    ]
+   ],
+   "at": [
+    20.28,
+    20.84,
+    21.06
+   ]
+  },
+  {
+   "from": 22.72,
+   "to": 24.38,
+   "lines": [
+    [
+     {
+      "t": "LA",
+      "red": false
+     },
+     {
+      "t": "CUAL",
+      "red": false
+     },
+     {
+      "t": "TIENE",
+      "red": false
+     }
+    ],
+    [
+     {
+      "t": "PROBLEMAS",
+      "red": true
+     }
+    ]
+   ],
+   "at": [
+    22.72,
+    23.36,
+    23.58,
+    23.88
+   ]
+  },
+  {
+   "from": 24.38,
+   "to": 25.62,
+   "lines": [
+    [
+     {
+      "t": "TANTO",
+      "red": false
+     },
+     {
+      "t": "EN",
+      "red": false
+     }
+    ],
+    [
+     {
+      "t": "LA",
+      "red": false
+     },
+     {
+      "t": "PARTE",
+      "red": false
+     }
+    ]
+   ],
+   "at": [
+    24.38,
+    24.74,
+    25.16,
+    25.32
+   ]
+  },
+  {
+   "from": 27.28,
+   "to": 28.04,
+   "lines": [
+    [
+     {
+      "t": "YA",
+      "red": false
+     },
+     {
+      "t": "QUE",
+      "red": false
+     },
+     {
+      "t": "EL",
+      "red": false
+     },
+     {
+      "t": "SENSOR",
+      "red": true
+     }
+    ]
+   ],
+   "at": [
+    27.28,
+    27.48,
+    27.6,
+    27.74
+   ]
+  },
+  {
+   "from": 28.04,
+   "to": 28.74,
+   "lines": [
+    [
+     {
+      "t": "LLEGA",
+      "red": false
+     },
+     {
+      "t": "A",
+      "red": false
+     },
+     {
+      "t": "SUFRIR",
+      "red": false
+     }
+    ]
+   ],
+   "at": [
+    28.04,
+    28.36,
+    28.48
+   ]
+  },
+  {
+   "from": 28.74,
+   "to": 29.54,
+   "lines": [
+    [
+     {
+      "t": "DAÑO",
+      "red": true
+     },
+     {
+      "t": "POR",
+      "red": false
+     }
+    ],
+    [
+     {
+      "t": "UNA",
+      "red": false
+     },
+     {
+      "t": "BAJA",
+      "red": false
+     }
+    ]
+   ],
+   "at": [
+    28.74,
+    29.04,
+    29.26,
+    29.4
+   ]
+  },
+  {
+   "from": 29.54,
+   "to": 30.26,
+   "lines": [
+    [
+     {
+      "t": "PRESIÓN",
+      "red": false
+     }
+    ],
+    [
+     {
+      "t": "DE",
+      "red": false
+     },
+     {
+      "t": "ACEITE.",
+      "red": true
+     }
+    ]
+   ],
+   "at": [
+    29.54,
+    29.82,
+    29.94
+   ]
+  },
+  {
+   "from": 30.55,
+   "to": 31.41,
+   "lines": [
+    [
+     {
+      "t": "EL",
+      "red": false
+     },
+     {
+      "t": "SIGUIENTE",
+      "red": false
+     }
+    ],
+    [
+     {
+      "t": "PASO",
+      "red": false
+     },
+     {
+      "t": "SERÍA",
+      "red": false
+     }
+    ]
+   ],
+   "at": [
+    30.55,
+    30.67,
+    30.89,
+    31.17
+   ]
+  },
+  {
+   "from": 31.41,
+   "to": 32.35,
+   "lines": [
+    [
+     {
+      "t": "DESMONTAR",
+      "red": true
+     }
+    ],
+    [
+     {
+      "t": "LA",
+      "red": false
+     },
+     {
+      "t": "UNIDAD",
+      "red": false
+     }
+    ]
+   ],
+   "at": [
+    31.41,
+    31.99,
+    32.13
+   ]
+  },
+  {
+   "from": 32.35,
+   "to": 33.27,
+   "lines": [
+    [
+     {
+      "t": "MECATRÓNICA,",
+      "red": true
+     }
+    ]
+   ],
+   "at": [
+    32.35
+   ]
+  },
+  {
+   "from": 33.27,
+   "to": 33.83,
+   "lines": [
+    [
+     {
+      "t": "ENTONCES",
+      "red": false
+     },
+     {
+      "t": "LO",
+      "red": false
+     }
+    ],
+    [
+     {
+      "t": "QUE",
+      "red": false
+     },
+     {
+      "t": "VAMOS",
+      "red": false
+     }
+    ]
+   ],
+   "at": [
+    33.27,
+    33.43,
+    33.57,
+    33.63
+   ]
+  },
+  {
+   "from": 33.83,
+   "to": 34.449999999999996,
+   "lines": [
+    [
+     {
+      "t": "A",
+      "red": false
+     },
+     {
+      "t": "HACER",
+      "red": false
+     },
+     {
+      "t": "ES",
+      "red": false
+     }
+    ]
+   ],
+   "at": [
+    33.83,
+    33.99,
+    34.13
+   ]
+  },
+  {
+   "from": 39.17,
+   "to": 39.87,
+   "lines": [
+    [
+     {
+      "t": "UNA",
+      "red": false
+     },
+     {
+      "t": "VEZ",
+      "red": false
+     }
+    ],
+    [
+     {
+      "t": "QUE",
+      "red": false
+     },
+     {
+      "t": "TENEMOS",
+      "red": false
+     }
+    ]
+   ],
+   "at": [
+    39.17,
+    39.39,
+    39.53,
+    39.65
+   ]
+  },
+  {
+   "from": 39.87,
+   "to": 40.65,
+   "lines": [
+    [
+     {
+      "t": "PROGRAMADA",
+      "red": true
+     }
+    ],
+    [
+     {
+      "t": "LA",
+      "red": false
+     },
+     {
+      "t": "UNIDAD",
+      "red": false
+     }
+    ]
+   ],
+   "at": [
+    39.87,
+    40.35,
+    40.45
+   ]
+  },
+  {
+   "from": 40.65,
+   "to": 41.77,
+   "lines": [
+    [
+     {
+      "t": "MECATRÓNICA",
+      "red": false
+     },
+     {
+      "t": "NUEVA,",
+      "red": false
+     }
+    ]
+   ],
+   "at": [
+    40.65,
+    41.19
+   ]
+  },
+  {
+   "from": 41.77,
+   "to": 42.39,
+   "lines": [
+    [
+     {
+      "t": "HAY",
+      "red": false
+     },
+     {
+      "t": "QUE",
+      "red": false
+     }
+    ]
+   ],
+   "at": [
+    41.77,
+    41.89
+   ]
+  },
+  {
+   "from": 47.535,
+   "to": 48.155,
+   "lines": [
+    [
+     {
+      "t": "SI",
+      "red": false
+     },
+     {
+      "t": "TÚ",
+      "red": false
+     },
+     {
+      "t": "TIENES",
+      "red": false
+     },
+     {
+      "t": "UN",
+      "red": false
+     }
+    ]
+   ],
+   "at": [
+    47.535,
+    47.615,
+    47.735,
+    47.955
+   ]
+  },
+  {
+   "from": 48.155,
+   "to": 48.995,
+   "lines": [
+    [
+     {
+      "t": "AUDI",
+      "red": true
+     },
+     {
+      "t": "CON",
+      "red": false
+     }
+    ],
+    [
+     {
+      "t": "PROBLEMAS",
+      "red": true
+     },
+     {
+      "t": "EN",
+      "red": false
+     }
+    ]
+   ],
+   "at": [
+    48.155,
+    48.335,
+    48.555,
+    48.855
+   ]
+  },
+  {
+   "from": 48.995,
+   "to": 49.835,
+   "lines": [
+    [
+     {
+      "t": "LA",
+      "red": false
+     },
+     {
+      "t": "TRANSMISIÓN,",
+      "red": true
+     }
+    ]
+   ],
+   "at": [
+    48.995,
+    49.175
+   ]
+  }
+ ],
+ "sfx": [
+  {
+   "kind": "boom",
+   "t": 0.0,
+   "gain": 0.9
+  },
+  {
+   "kind": "tick",
+   "t": 0.03,
+   "gain": 0.55
+  },
+  {
+   "kind": "tick",
+   "t": 0.07,
+   "gain": 0.55
+  },
+  {
+   "kind": "tick",
+   "t": 0.11,
+   "gain": 0.55
+  },
+  {
+   "kind": "tick",
+   "t": 0.15,
+   "gain": 0.55
+  },
+  {
+   "kind": "tick",
+   "t": 0.19,
+   "gain": 0.55
+  },
+  {
+   "kind": "tick",
+   "t": 0.23,
+   "gain": 0.55
+  },
+  {
+   "kind": "tick",
+   "t": 0.27,
+   "gain": 0.55
+  },
+  {
+   "kind": "tick",
+   "t": 0.31,
+   "gain": 0.55
+  },
+  {
+   "kind": "tick",
+   "t": 0.35,
+   "gain": 0.55
+  },
+  {
+   "kind": "tick",
+   "t": 0.39,
+   "gain": 0.55
+  },
+  {
+   "kind": "tick",
+   "t": 0.43,
+   "gain": 0.55
+  },
+  {
+   "kind": "tick",
+   "t": 0.47,
+   "gain": 0.55
+  },
+  {
+   "kind": "tick",
+   "t": 0.51,
+   "gain": 0.55
+  },
+  {
+   "kind": "tick",
+   "t": 0.55,
+   "gain": 0.55
+  },
+  {
+   "kind": "tick",
+   "t": 0.59,
+   "gain": 0.55
+  },
+  {
+   "kind": "tick",
+   "t": 0.63,
+   "gain": 0.55
+  },
+  {
+   "kind": "tick",
+   "t": 0.67,
+   "gain": 0.55
+  },
+  {
+   "kind": "tick",
+   "t": 0.71,
+   "gain": 0.55
+  },
+  {
+   "kind": "tick",
+   "t": 0.75,
+   "gain": 0.55
+  },
+  {
+   "kind": "tick",
+   "t": 0.79,
+   "gain": 0.55
+  },
+  {
+   "kind": "tick",
+   "t": 0.83,
+   "gain": 0.55
+  },
+  {
+   "kind": "tick",
+   "t": 0.87,
+   "gain": 0.55
+  },
+  {
+   "kind": "glitch",
+   "t": 0.98,
+   "gain": 0.8
+  },
+  {
+   "kind": "impact",
+   "t": 0.98,
+   "gain": 0.9
+  },
+  {
+   "kind": "whoosh",
+   "t": 1.96,
+   "gain": 0.85
+  },
+  {
+   "kind": "whoosh",
+   "t": 3.165,
+   "gain": 0.85
+  },
+  {
+   "kind": "pop",
+   "t": 3.37,
+   "gain": 0.8
+  },
+  {
+   "kind": "pop",
+   "t": 3.64,
+   "gain": 0.6
+  },
+  {
+   "kind": "whoosh",
+   "t": 5.26,
+   "gain": 0.85
+  },
+  {
+   "kind": "pop",
+   "t": 5.34,
+   "gain": 0.7
+  },
+  {
+   "kind": "pop",
+   "t": 6.54,
+   "gain": 0.6
+  },
+  {
+   "kind": "swish",
+   "t": 7.21,
+   "gain": 0.6
+  },
+  {
+   "kind": "whoosh",
+   "t": 9.1,
+   "gain": 0.85
+  },
+  {
+   "kind": "pop",
+   "t": 9.2,
+   "gain": 0.8
+  },
+  {
+   "kind": "whoosh_short",
+   "t": 10.36,
+   "gain": 0.7
+  },
+  {
+   "kind": "impact",
+   "t": 12.0,
+   "gain": 0.6
+  },
+  {
+   "kind": "whoosh",
+   "t": 12.845,
+   "gain": 0.85
+  },
+  {
+   "kind": "whoosh",
+   "t": 15.765,
+   "gain": 0.85
+  },
+  {
+   "kind": "pop",
+   "t": 15.865,
+   "gain": 0.7
+  },
+  {
+   "kind": "error",
+   "t": 16.865,
+   "gain": 0.7
+  },
+  {
+   "kind": "error",
+   "t": 18.045,
+   "gain": 0.7
+  },
+  {
+   "kind": "whoosh",
+   "t": 19.325,
+   "gain": 0.85
+  },
+  {
+   "kind": "riser",
+   "t": 20.18,
+   "gain": 0.6
+  },
+  {
+   "kind": "whoosh",
+   "t": 21.18,
+   "gain": 0.85
+  },
+  {
+   "kind": "boom",
+   "t": 21.18,
+   "gain": 1.0
+  },
+  {
+   "kind": "whoosh",
+   "t": 22.72,
+   "gain": 0.85
+  },
+  {
+   "kind": "whoosh",
+   "t": 25.5,
+   "gain": 0.85
+  },
+  {
+   "kind": "pop",
+   "t": 25.55,
+   "gain": 0.6
+  },
+  {
+   "kind": "pop",
+   "t": 26.36,
+   "gain": 0.6
+  },
+  {
+   "kind": "whoosh",
+   "t": 27.23,
+   "gain": 0.85
+  },
+  {
+   "kind": "swish",
+   "t": 28.74,
+   "gain": 0.6
+  },
+  {
+   "kind": "impact",
+   "t": 28.74,
+   "gain": 0.7
+  },
+  {
+   "kind": "whoosh",
+   "t": 30.375,
+   "gain": 0.85
+  },
+  {
+   "kind": "pop",
+   "t": 30.525,
+   "gain": 0.6
+  },
+  {
+   "kind": "whoosh",
+   "t": 33.27,
+   "gain": 0.85
+  },
+  {
+   "kind": "whoosh",
+   "t": 34.33,
+   "gain": 0.85
+  },
+  {
+   "kind": "pop",
+   "t": 34.43,
+   "gain": 0.7
+  },
+  {
+   "kind": "data",
+   "t": 34.74,
+   "gain": 0.35
+  },
+  {
+   "kind": "data",
+   "t": 34.98,
+   "gain": 0.35
+  },
+  {
+   "kind": "data",
+   "t": 35.22,
+   "gain": 0.35
+  },
+  {
+   "kind": "data",
+   "t": 35.46,
+   "gain": 0.35
+  },
+  {
+   "kind": "data",
+   "t": 35.7,
+   "gain": 0.35
+  },
+  {
+   "kind": "data",
+   "t": 35.94,
+   "gain": 0.35
+  },
+  {
+   "kind": "pop",
+   "t": 35.95,
+   "gain": 0.6
+  },
+  {
+   "kind": "data",
+   "t": 36.18,
+   "gain": 0.35
+  },
+  {
+   "kind": "data",
+   "t": 36.42,
+   "gain": 0.35
+  },
+  {
+   "kind": "data",
+   "t": 36.66,
+   "gain": 0.35
+  },
+  {
+   "kind": "data",
+   "t": 36.9,
+   "gain": 0.35
+  },
+  {
+   "kind": "pop",
+   "t": 36.97,
+   "gain": 0.6
+  },
+  {
+   "kind": "data",
+   "t": 37.14,
+   "gain": 0.35
+  },
+  {
+   "kind": "data",
+   "t": 37.38,
+   "gain": 0.35
+  },
+  {
+   "kind": "data",
+   "t": 37.62,
+   "gain": 0.35
+  },
+  {
+   "kind": "data",
+   "t": 37.86,
+   "gain": 0.35
+  },
+  {
+   "kind": "ding",
+   "t": 38.31,
+   "gain": 0.7
+  },
+  {
+   "kind": "whoosh",
+   "t": 39.0,
+   "gain": 0.85
+  },
+  {
+   "kind": "whoosh",
+   "t": 42.27,
+   "gain": 0.85
+  },
+  {
+   "kind": "pop",
+   "t": 42.35,
+   "gain": 0.7
+  },
+  {
+   "kind": "whoosh",
+   "t": 43.81,
+   "gain": 0.85
+  },
+  {
+   "kind": "pop",
+   "t": 43.91,
+   "gain": 0.7
+  },
+  {
+   "kind": "whoosh",
+   "t": 46.11,
+   "gain": 0.85
+  },
+  {
+   "kind": "pop",
+   "t": 46.19,
+   "gain": 0.7
+  },
+  {
+   "kind": "whoosh",
+   "t": 47.415,
+   "gain": 0.85
+  },
+  {
+   "kind": "riser",
+   "t": 49.775,
+   "gain": 0.5
+  },
+  {
+   "kind": "swish",
+   "t": 50.035,
+   "gain": 0.6
+  },
+  {
+   "kind": "impact",
+   "t": 50.035,
+   "gain": 0.85
+  },
+  {
+   "kind": "pop",
+   "t": 50.285,
+   "gain": 0.6
+  },
+  {
+   "kind": "whoosh",
+   "t": 50.975,
+   "gain": 0.85
+  },
+  {
+   "kind": "boom",
+   "t": 50.975,
+   "gain": 0.9
+  },
+  {
+   "kind": "stamp",
+   "t": 51.525,
+   "gain": 0.9
+  },
+  {
+   "kind": "ding",
+   "t": 51.975,
+   "gain": 0.5
+  }
+ ],
+ "music": {
+  "bpm": 140,
+  "drop": 3.165,
+  "dropout": [
+   20.63,
+   21.18
+  ],
+  "cta": 47.415,
+  "end": 50.975,
+  "total": 53.625
+ }
+}
