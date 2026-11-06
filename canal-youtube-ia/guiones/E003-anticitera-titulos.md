@@ -109,3 +109,48 @@ Todos miden entre 36 y 63 caracteres. Exageran la emoción, no los hechos.
 - No se conoce nada comparable en unos mil años.
 - "Apagar el Sol" y "leer el futuro del cielo" son formas emotivas de decir que predecía eclipses.
 - "Imposible" y "no debería existir" se usan como gancho. El veredicto del video lo aclara: era real, y no era magia ni tecnología extraterrestre.
+
+---
+
+## Ronda 3: variaciones del título que sacó 85 en vidIQ
+
+Título base: "El misterio de la computadora de 2.000 años" (85 puntos, propuesto por ti).
+
+**Por qué puede funcionar (es una hipótesis: vidIQ no publica su fórmula):**
+
+- Es corto: 43 caracteres.
+- Se entiende a la primera.
+- "Misterio" despierta curiosidad.
+- "2.000 años" es un dato concreto que choca con "computadora".
+
+**Cómo probarlo:** cada variación mantiene la base y añade **un solo elemento**, para saber cuál sube el puntaje. Pruébalas por grupos y avanza con el grupo que mejor salga.
+
+**A. La misma base, con otra forma:**
+
+1. El Misterio de la Computadora de 2.000 AÑOS
+2. El Misterio de la Computadora Más Antigua del Mundo
+3. El Verdadero Misterio de la Computadora de 2.000 Años
+
+**B. La base más el lugar:**
+
+4. El Misterio de la Computadora de 2.000 Años Bajo el Mar
+5. El Misterio de la Computadora de 2.000 Años Hallada en un Naufragio
+6. El Misterio de la Computadora Griega de 2.000 Años
+
+**C. La base más lo que hacía:**
+
+7. El Misterio de la Computadora de 2.000 Años Que Predecía Eclipses
+8. El Misterio de la Computadora de 2.000 Años Que Leía el Cielo
+
+**D. La base más intensidad:**
+
+9. El Misterio de la Computadora de 2.000 Años Que No Debería Existir
+10. El Misterio de la Computadora IMPOSIBLE de 2.000 Años
+11. El Inquietante Misterio de la Computadora de 2.000 Años
+12. El Misterio de la Computadora de 2.000 Años Que Cambió la Historia
+
+**E. La base más la palabra clave o la promesa de explicación:**
+
+13. Mecanismo de Anticitera: El Misterio de la Computadora de 2.000 Años
+14. El Misterio de la Computadora de 2.000 Años, Explicado
+15. Descifrando el Misterio de la Computadora de 2.000 Años
