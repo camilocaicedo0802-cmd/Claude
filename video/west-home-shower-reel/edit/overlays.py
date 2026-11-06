@@ -24,9 +24,9 @@ def build():
     els = []
     # ================================================================ 1 HOOK
     # TULSA (behind the two of them) + HOMEOWNERS 🚿
-    tulsa = title('TULSA', 'black', 175, tracking=40, shadow=dict(radius=18, offset=(0, 10), opacity=0.5))
+    tulsa = title('TULSA', 'black', 175, tracking=-45, shadow=dict(radius=18, offset=(0, 10), opacity=0.5))
     els.append(El(tulsa, 540, 300, 0.03, 2.25, 'blurup', 'blurout', d_in=0.3, dy=60))
-    home = title('HOMEOWNERS', 'black', 134, tracking=-12, grad=(ORANGE_L, ORANGE),
+    home = title('HOMEOWNERS', 'black', 134, tracking=-45, grad=(ORANGE_L, ORANGE),
                  shadow=dict(radius=18, offset=(0, 10), opacity=0.45))
     els.append(El(home, 540, 455, wt('IMG_9096.wav', 1, 0.0, 0.38, floor=0.3), 2.25, 'blurup', 'blurout', d_in=0.3,
                   dy=60, behind=True))
@@ -55,8 +55,8 @@ def build():
     ys = [700, 865, 1030]
     t_out = T.beat(18) - 0.17
     for k, ((txt, ton), y) in enumerate(zip(items, ys)):
-        w = title(txt, 'xbold', 132, tracking=20)
-        o = title(txt, 'xbold', 132, tracking=20, grad=(ORANGE_L, ORANGE))
+        w = title(txt, 'xbold', 132, tracking=-50)
+        o = title(txt, 'xbold', 132, tracking=-50, grad=(ORANGE_L, ORANGE))
         nxt = items[k + 1][1] if k + 1 < len(items) else t_out
         els.append(El(o, 540, y, ton, nxt, 'blurup', 'cut', d_in=0.26, dy=55))
         if k + 1 < len(items):
@@ -64,15 +64,15 @@ def build():
         else:
             pass
     # last item stays orange until the exit
-    els.append(El(title('FINISHES', 'xbold', 132, tracking=20, grad=(ORANGE_L, ORANGE)), 540, ys[2], t_out - 0.0001,
+    els.append(El(title('FINISHES', 'xbold', 132, tracking=-50, grad=(ORANGE_L, ORANGE)), 540, ys[2], t_out - 0.0001,
                   t_out, 'cut', 'blurout', d_in=0.0))
     # ================================================================ 4 YOUR HOME. YOUR STYLE.
     els.append(Scrim(T.beat(18), T.beat(22), y0=520, y1=1150, strength=0.4))
     els.append(El(title('your', 'light', 92), 540, 690, T.beat(18) + 0.04, T.beat(20) - 0.12, 'blurup', 'blurout', dy=40))
-    els.append(El(title('HOME.', 'black', 230, tracking=-8), 540, 860, T.beat(18) + 0.12, T.beat(20) - 0.12, 'blurup',
+    els.append(El(title('HOME.', 'black', 230, tracking=-45), 540, 860, T.beat(18) + 0.12, T.beat(20) - 0.12, 'blurup',
                   'blurout', dy=60))
     els.append(El(title('your', 'light', 92), 540, 690, T.beat(20) + 0.04, T.beat(22) - 0.15, 'blurup', 'blurout', dy=40))
-    els.append(El(title('STYLE.', 'black', 230, tracking=-8, grad=(ORANGE_L, ORANGE)), 540, 860, T.beat(20) + 0.12,
+    els.append(El(title('STYLE.', 'black', 230, tracking=-45, grad=(ORANGE_L, ORANGE)), 540, 860, T.beat(20) + 0.12,
                   T.beat(22) - 0.15, 'blurup', 'blurout', dy=60))
     # ================================================================ 5 And you know what? ... WE HANDLE EVERYTHING
     c = 'IMG_9111.wav'; tp, si = 13.20, 1.42
@@ -81,7 +81,7 @@ def build():
     els.append(Caption([('The', 'l', wt(c, 4, tp, si)), ('best', 'b', wt(c, 5, tp, si)), ('part?', 'o', wt(c, 6, tp, si))],
                        wt(c, 7, tp, si)))
     els.append(El(title('we handle', 'light', 96), 540, 445, wt(c, 7, tp, si), T.beat(26) - 0.1, 'blurup', 'blurout', dy=40))
-    els.append(El(title('EVERYTHING.', 'black', 136, tracking=-14), 540, 590, wt(c, 9, tp, si), T.beat(26) - 0.1,
+    els.append(El(title('EVERYTHING.', 'black', 136, tracking=-45), 540, 590, wt(c, 9, tp, si), T.beat(26) - 0.1,
                   'blurup', 'blurout', dy=60, behind=True))
     els.append(Caption([('from', 'l', wt(c, 10, tp, si)), ('demolition', 'b', wt(c, 11, tp, si))], wt(c, 12, tp, si)))
     els.append(Caption([('to the', 'l', wt(c, 12, tp, si)), ('final', 'l', wt(c, 14, tp, si)),
@@ -105,8 +105,8 @@ def build():
     # ================================================================ 9 END
     tE = T.beat(43)
     els.append(El(title('ready to upgrade', 'light', 82), 540, 640, tE + 0.15, 28.55, 'blurup', 'blurout', dy=40))
-    els.append(El(title('YOUR', 'black', 190, tracking=-8), 540, 800, tE + 0.3, 28.55, 'blurup', 'blurout', dy=60))
-    els.append(El(title('SHOWER?', 'black', 190, tracking=-8, grad=(ORANGE_L, ORANGE)), 540, 985, tE + 0.48, 28.55,
+    els.append(El(title('YOUR', 'black', 190, tracking=-45), 540, 800, tE + 0.3, 28.55, 'blurup', 'blurout', dy=60))
+    els.append(El(title('SHOWER?', 'black', 190, tracking=-45, grad=(ORANGE_L, ORANGE)), 540, 985, tE + 0.48, 28.55,
                   'blurup', 'blurout', dy=60))
     tL = T.beat(64 - 16)   # outro downbeat after the music splice (28.835)
     logo = G.load_logo(ROOT + 'raw/brand/WEST HOME/PNG/Recurso 7@4x.png', 720)
@@ -173,8 +173,8 @@ class Pill:
         ImageDraw.Draw(circ).ellipse((0, 0, 117, 117), fill=ORANGE + (255,))
         circ.alpha_composite(icon, ((118 - icon.width) // 2, (118 - icon.height) // 2))
         self.circ = G.pil_to_spr(circ, shadow=False)
-        t1, _ = G.text_rgba('West Home Improvement', 'semi', 46)
-        t2, _ = G.text_rgba('Shower remodeling  ·  Tulsa, OK', 'light', 31)
+        t1, _ = G.text_rgba('West Home Improvement', 'semi', 46, tracking=-30)
+        t2, _ = G.text_rgba('Shower remodeling  ·  Tulsa, OK', 'light', 31, tracking=-15)
         self.t1 = G.pil_to_spr(t1, shadow=False); self.t2 = G.pil_to_spr(t2, shadow=False)
 
     def active(self, t):
@@ -219,7 +219,7 @@ class Label:
 
     def __init__(self, text, t_in, t_out, cy=1170, size=58):
         self.t_in, self.t_out, self.cy = t_in, t_out, cy
-        img, _ = G.text_rgba(text, 'bold', size, tracking=40)
+        img, _ = G.text_rgba(text, 'bold', size, tracking=-10)
         self.txt = G.pil_to_spr(img, shadow=False)
         self.w = img.width + 80; self.h = img.height + 44
 
@@ -257,7 +257,7 @@ class Price:
         self.cache = {}
         f = G.font('black', 235)
         self.final_w = f.getlength('$9,800')
-        img, _ = G.text_rgba('$9,800', 'black', 235, tracking=-10, grad=((255, 255, 255), (255, 228, 214)))
+        img, _ = G.text_rgba('$9,800', 'black', 235, tracking=-35, grad=((255, 255, 255), (255, 228, 214)))
         self.final = G.with_shadow(img, radius=22, offset=(0, 12), opacity=0.55, glow=(ORANGE, 26, 0.55))
         self.final_plain = G.with_shadow(img, radius=22, offset=(0, 12), opacity=0.55)
         self.mask_a = self.final[..., 3]
@@ -268,7 +268,7 @@ class Price:
     def spr_for(self, v):
         s = f'${v:,}'
         if s not in self.cache:
-            img, _ = G.text_rgba(s, 'black', 235, tracking=-10, grad=((255, 255, 255), (255, 228, 214)))
+            img, _ = G.text_rgba(s, 'black', 235, tracking=-35, grad=((255, 255, 255), (255, 228, 214)))
             self.cache[s] = G.with_shadow(img, radius=22, offset=(0, 12), opacity=0.55)
         return self.cache[s]
 

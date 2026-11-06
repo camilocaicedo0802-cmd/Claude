@@ -46,20 +46,17 @@ def text_rgba(text, fname, size, fill=(255, 255, 255), tracking=0.0, grad=None, 
     asc, desc = f.getmetrics()
     track = size * tracking / 1000.0
     # measure
-    widths = [f.getlength(c) for c in text]
-    total = sum(widths) + track * max(0, len(text) - 1)
+    total = f.getlength(text) + track * max(0, len(text) - 1)
     pad = int(size * 0.15)
     Wd = int(total + 2 * pad + (size * 1.2 if emoji else 0)); Hd = asc + desc + 2 * pad
     mask = Image.new('L', (Wd, Hd), 0)
     d = ImageDraw.Draw(mask)
     if tracking == 0:
         d.text((pad, pad), text, font=f, fill=255)
-        total = f.getlength(text)
     else:
-        x = pad
-        for c, w in zip(text, widths):
-            d.text((x, pad), c, font=f, fill=255)
-            x += w + track
+        # keep the font's kerning: each glyph sits at the kerned prefix width plus the extra tracking
+        for i, c in enumerate(text):
+            d.text((pad + f.getlength(text[:i]) + track * i, pad), c, font=f, fill=255)
     m = np.asarray(mask).astype(np.float32) / 255.0
     ys, xs = np.nonzero(m > 0.01)
     if texture is not None:
@@ -204,6 +201,7 @@ class El:
 
 def title(text, fname, size, **kw):
     sh = kw.pop('shadow', dict(radius=16, offset=(0, 8), opacity=0.5))
+    kw.setdefault('tracking', -40)
     img, _ = text_rgba(text, fname, size, **kw)
     return with_shadow(img, **sh)
 
@@ -218,13 +216,13 @@ class Caption:
         sprs = []
         for txt, st, ton in words:
             if st == 'l':
-                img, base = text_rgba(txt, 'reg', size)
+                img, base = text_rgba(txt, 'reg', size, tracking=-30)
             elif st == 'm':
-                img, base = text_rgba(txt, 'med', size)
+                img, base = text_rgba(txt, 'med', size, tracking=-35)
             elif st == 'b':
-                img, base = text_rgba(txt, 'bold', int(size * 1.08))
+                img, base = text_rgba(txt, 'bold', int(size * 1.08), tracking=-45)
             else:
-                img, base = text_rgba(txt, 'xbold', int(size * 1.08), grad=(ORANGE_L, ORANGE))
+                img, base = text_rgba(txt, 'xbold', int(size * 1.08), tracking=-45, grad=(ORANGE_L, ORANGE))
             sprs.append((img, base, ton, st))
         space = size * gap
         tot = sum(i.width for i, _, _, _ in sprs) + space * (len(sprs) - 1)
