@@ -37,7 +37,7 @@ const Hook: React.FC<{o: O; dur: number}> = ({o, dur}) => {
 		<Center y={1020} style={ex}>
 			<div style={{...texWhite(fit(o.line1, 60, 960, 0.64)), display: 'flex'}}>
 				{chars.map((c: string, i: number) => {
-					const t = frame - i * per;
+					const t = frame + 4 - i * per;
 					const a = interpolate(t, [0, 3], [0, 1], clamp);
 					return (
 						<span key={i} style={{opacity: a, display: 'inline-block', transform: `scale(${interpolate(t, [0, 3], [1.6, 1], clamp)})`, filter: `blur(${(1 - a) * 8}px)`, whiteSpace: 'pre'}}>
@@ -168,11 +168,11 @@ const Codes: React.FC<{o: O; dur: number}> = ({o, dur}) => {
 				return (
 					<div key={code} style={{position: 'absolute', left: 0, top: y, width: '100%', height: 300}}>
 						<div style={{position: 'absolute', left: '50%', top: '50%', width: 900, height: 600, marginLeft: -450, marginTop: -300, background: 'radial-gradient(closest-side, rgba(255,25,10,0.55), rgba(255,25,10,0))'}} />
-						<BigX size={300} style={{left: 390 - 150 + 150, top: 0, transform: `scale(${xs})`, opacity: Math.min(1, (frame - t) / 3)}} />
+						<BigX size={470} style={{left: 540 - 235, top: 150 - 235, transform: `scale(${xs})`, opacity: Math.min(1, (frame - t) / 3)}} />
 						<div style={{position: 'absolute', left: '50%', top: '50%', transform: `translate(-50%,-50%) translate(${g.dx}px, ${g.dy}px) scale(${p})`}}>
 							<LabelBox style={{padding: '10px 40px 14px', flexDirection: 'row', gap: 18}}>
-								<span style={{...labelText(40), opacity: 0.85}}>CÓDIGO</span>
-								<span style={labelText(92)}>{code}</span>
+								<span style={{...labelText(32), opacity: 0.85}}>CÓDIGO</span>
+								<span style={labelText(74)}>{code}</span>
 							</LabelBox>
 						</div>
 					</div>
@@ -353,7 +353,7 @@ export const Subtitle: React.FC<{s: any}> = ({s}) => {
 									color: c < 1 ? (w.red ? '#ff8a80' : '#bdbdbd') : col,
 									fontStyle: w.red ? 'italic' : 'normal',
 									fontWeight: w.red ? 900 : 800,
-									textShadow: w.red ? `0 0 18px rgba(255,31,18,0.65), 0 4px 14px rgba(0,0,0,0.7)` : subStyle().textShadow,
+									textShadow: w.red ? `0 3px 0 rgba(0,0,0,0.55), 0 0 3px rgba(0,0,0,0.9), 0 0 18px rgba(255,31,18,0.6), 0 4px 14px rgba(0,0,0,0.75)` : subStyle().textShadow,
 								}}
 							>
 								{w.t}

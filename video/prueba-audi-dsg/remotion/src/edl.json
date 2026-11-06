@@ -70,7 +70,7 @@
     50,
     30
    ],
-   "enter": "zoomblur"
+   "enter": "cut"
   },
   {
    "kind": "speaker",
@@ -484,7 +484,7 @@
   {
    "kind": "bigword",
    "from": 3.34,
-   "to": 5.21,
+   "to": 5.25,
    "small": "ESTE",
    "big": "AUDI A3",
    "pill": "DSG",
@@ -612,113 +612,6 @@
    ]
   },
   {
-   "from": 3.94,
-   "to": 4.54,
-   "lines": [
-    [
-     {
-      "t": "NOS",
-      "red": false
-     },
-     {
-      "t": "LO",
-      "red": false
-     }
-    ],
-    [
-     {
-      "t": "TRAEN",
-      "red": false
-     },
-     {
-      "t": "DESDE",
-      "red": false
-     }
-    ]
-   ],
-   "at": [
-    3.94,
-    4.1,
-    4.22,
-    4.38
-   ]
-  },
-  {
-   "from": 4.54,
-   "to": 5.34,
-   "lines": [
-    [
-     {
-      "t": "EL",
-      "red": false
-     },
-     {
-      "t": "ESTADO",
-      "red": false
-     },
-     {
-      "t": "DE",
-      "red": false
-     }
-    ]
-   ],
-   "at": [
-    4.54,
-    4.66,
-    4.9
-   ]
-  },
-  {
-   "from": 5.34,
-   "to": 5.84,
-   "lines": [
-    [
-     {
-      "t": "HIDALGO,",
-      "red": false
-     }
-    ]
-   ],
-   "at": [
-    5.34
-   ]
-  },
-  {
-   "from": 5.84,
-   "to": 6.54,
-   "lines": [
-    [
-     {
-      "t": "ESPECÍFICAMENTE",
-      "red": false
-     },
-     {
-      "t": "DE",
-      "red": false
-     }
-    ]
-   ],
-   "at": [
-    5.84,
-    6.38
-   ]
-  },
-  {
-   "from": 6.54,
-   "to": 7.24,
-   "lines": [
-    [
-     {
-      "t": "TIZAYUCA,",
-      "red": false
-     }
-    ]
-   ],
-   "at": [
-    6.54
-   ]
-  },
-  {
    "from": 7.24,
    "to": 8.16,
    "lines": [
@@ -747,7 +640,7 @@
   },
   {
    "from": 8.16,
-   "to": 8.86,
+   "to": 8.979999999999999,
    "lines": [
     [
      {
@@ -773,21 +666,6 @@
     8.38,
     8.56,
     8.72
-   ]
-  },
-  {
-   "from": 8.86,
-   "to": 9.219999999999999,
-   "lines": [
-    [
-     {
-      "t": "SU",
-      "red": false
-     }
-    ]
-   ],
-   "at": [
-    8.86
    ]
   },
   {

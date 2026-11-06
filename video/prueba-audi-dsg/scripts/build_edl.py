@@ -1,7 +1,7 @@
 """Edit decision list for the Audi DSG test video.
 
 All times tied to the speech are written in SOURCE seconds of the Lienzo and
-mapped to the output timeline with o(). Output: rm/src/edl.json
+mapped to the output timeline with o(). Output: ../remotion/src/edl.json
 """
 import json, re, sys, os
 
@@ -50,7 +50,7 @@ for seg in words_raw:
         words.append({"t": t.upper(), "src": w["s"], "s": s, "e": e})
 
 # Spans (src) where a title replaces the subtitles.
-NO_SUBS = [(0.0, 1.80), (5.0, 5.66), (10.80, 14.60), (20.25, 23.90), (25.85, 27.43),
+NO_SUBS = [(0.0, 1.80), (5.0, 8.95), (10.55, 14.60), (20.25, 23.90), (25.85, 27.43),
            (30.15, 32.0), (40.95, 45.70), (50.20, 55.45), (75.25, 76.30)]
 
 
@@ -113,7 +113,7 @@ def vis_(kind, f, t, **kw):
 L = "LienzoAudi.mp4"
 FACE = [50, 30]
 # 1 HOOK
-vis_("speaker", o(0.0), o(1.96), src=L, srcStart=0.0, zoom=[1.16, 1.24], origin=FACE, enter="zoomblur")
+vis_("speaker", o(0.0), o(1.96), src=L, srcStart=0.0, zoom=[1.16, 1.24], origin=FACE, enter="cut")
 vis_("speaker", o(1.96), o(3.165), src=L, srcStart=1.96, zoom=[1.42, 1.48], origin=FACE, enter="zoomblur")
 # 2
 vis_("speaker", o(4.905), o(7.0), src=L, srcStart=4.905, zoom=[1.04, 1.10], origin=FACE, enter="zoomblur")
@@ -164,7 +164,7 @@ def ov(kind, f, t, **kw):
 
 
 ov("hook", o(0.0), o(1.92), line1="¿LA TRANSMISIÓN DE TU AUDI", line2="ESTÁ FALLANDO?", tLine2=round(o(0.98), 3))
-ov("bigword", o(5.08), o(6.95), small="ESTE", big="AUDI A3", pill="DSG", y=1180)
+ov("bigword", o(5.08), o(6.99), small="ESTE", big="AUDI A3", pill="DSG", y=1180)
 ov("location", o(7.08), o(8.95), a="HIDALGO", b="TIZAYUCA", tB=round(o(8.28) - o(7.08), 3))
 ov("label", o(10.84) + 0.08, o(14.585), line1="TRANSMISIÓN DSG", line2="MECATRÓNICA", tLine2=round(o(13.74) - o(10.84) - 0.08, 3), y=1420)
 ov("codes", o(20.30), o(23.86), title="CÓDIGOS DE FALLA", codes=[["P17BF", round(o(21.40) - o(20.30), 3)], ["P189C", round(o(22.58) - o(20.30), 3)]])
