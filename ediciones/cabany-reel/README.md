@@ -14,11 +14,11 @@ Video vertical (1080×1920, 30 fps, 44 s) editado a partir del video en crudo.
 | Tiempo | Escena | Efectos |
 | --- | --- | --- |
 | 0:00–0:02 | Gancho: "En todo grupo de amigos o familia" | Título apilado sobre la cabeza ("grupo" en itálica pesada con degradado lima), aro de luz que pasa detrás de ella, palabra "FAMILIA" en mayúsculas |
-| 0:02–0:05 | Teléfono 3D con un chat de grupo ("¿Y quién reserva la cabaña?") | Transición de empuje, burbujas con pop |
+| 0:02–0:05 | Teléfono 3D con un chat de grupo ("¿Y quién reserva la cabaña?") | Destello desenfocado, burbujas con pop |
 | 0:05–0:07 | Vuelta a cámara | Destello desenfocado, íconos 3D en rombo (calendario, lupa, casa, cama) y subtítulos de una palabra |
 | 0:07–0:12 | Toma de pie, con dos encuadres en corte | Títulos apilados "y hoy te voy a / ahorrar / horas y horas" y "para que esa / tarea / sea mucho", ícono de reloj de arena, "BÚSQUEDA" |
 | 0:12–0:13 | Pared de cabañas reales del sitio | Alejamiento hasta la cuadrícula con "sencilla" en lima, riser hacia el cambio de ritmo |
-| 0:12–0:38 | Tour 3D de la página | El teléfono entra volando y gira en perspectiva, con acercamientos y resaltados sobre cada paso (ver abajo) |
+| 0:13–0:38 | Tour 3D de la página | El teléfono entra volando y gira en perspectiva, con acercamientos y resaltados sobre cada paso (ver abajo) |
 | 0:38–0:42 | Selfie final | Flash blanco, título "En cuestión de / minutos", aro de luz, "RESERVA / LISTA" con ícono de check y cierre "sin / complicaciones" |
 | 0:42–0:44 | Cierre de marca | Barrido circular lima → verde, logo, lema y URL |
 
