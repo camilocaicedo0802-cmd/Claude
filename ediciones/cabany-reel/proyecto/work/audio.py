@@ -253,27 +253,53 @@ def chime():
         d = ding(mtof(m), 1.0); i = T(k * 0.07); out[i:i + len(d)] += d[:len(out) - i] * 0.6
     return out
 
+def blip(f0=2430):
+    """bright UI pop-up 'ting' (reference: partials near 9.7 kHz / 14.6 kHz)"""
+    n = T(0.22); tt = np.arange(n) / SR
+    fr = f0 * (1 + 0.06 * (1 - np.exp(-tt / 0.02)))
+    ph = 2 * np.pi * np.cumsum(fr) / SR
+    x = (0.6 * np.sin(ph) * env_exp(n, 0.05) + 0.5 * np.sin(2 * ph) * env_exp(n, 0.06)
+         + 0.35 * np.sin(4 * ph) * env_exp(n, 0.07) + 0.25 * np.sin(6 * ph) * env_exp(n, 0.07))
+    x[:40] *= np.linspace(0, 1, 40)
+    return x
+
+def twinkle(dur=0.4, lo=2600, hi=7600):
+    n = T(dur); x = np.zeros(n)
+    k = 9
+    for i in range(k):
+        f = lo * (hi / lo) ** (i / (k - 1)); t0 = dur * 0.75 * i / k; m = T(0.14)
+        g = np.sin(2 * np.pi * f * np.arange(m) / SR) * env_exp(m, 0.035)
+        j = T(t0); x[j:j + m] += g[:max(0, min(m, n - j))] * (0.5 + 0.5 * i / k)
+    return x
+
+def ring_swoosh():
+    w = whoosh(0.7, 500, 6000, peak=0.35)
+    s = shimmer(0.8)[:len(w)]
+    return w * 0.7 + np.pad(s, (0, len(w) - len(s))) * 0.6
+
 def sfx():
     S = np.zeros((2, N))
     W = lambda t, d=0.45, g=0.35, pan=0.0, **kw: add(S, whoosh(d, **kw), t - d * 0.55, g, pan)
-    # opening + brand tag
-    W(0.25, 0.4, 0.18, -0.4, f0=500, f1=5000)
-    # push to chat
-    W(2.48, 0.42, 0.42, 0.5)
+    # --- talking shots (reference style): blip when a headline starts, twinkle on gradient words,
+    #     shimmer swoosh on the light ring, soft pops on icon tiles, flash whooshes
+    for t in (0.02, 7.63, 10.10):
+        add(S, blip(), t, 0.30)
+    add(S, twinkle(), 1.14, 0.26, 0.2)               # "grupo"
+    add(S, ring_swoosh(), 0.92, 0.30, -0.2)          # light ring
+    W(2.48, 0.42, 0.42, 0.3, f0=600, f1=8000, peak=0.6)
+    add(S, impact(0.5), 2.48, 0.12)
     for k, (t, f) in enumerate([(2.62, 620), (3.20, 700), (3.66, 780), (4.20, 860), (4.86, 1040)]):
         add(S, bubble(f), t, 0.42, -0.2 + 0.1 * k)
-    # zoom-blur back to A-roll
-    W(5.34, 0.5, 0.45, 0, f0=200, f1=2600, peak=0.7)
-    add(S, pop(880), 5.40, 0.38, -0.4); add(S, ding(1568, .5), 5.42, 0.07, -0.4)
-    add(S, pop(990), 6.02, 0.38, 0.3); add(S, ding(1760, .5), 6.04, 0.07, 0.3)
-    # cut to cutout + label flip + strike
-    add(S, impact(0.6), 7.63, 0.30)
-    W(7.63, 0.3, 0.25, 0, f0=800, f1=6000)
-    W(8.70, 0.32, 0.30, 0, f0=600, f1=5000); add(S, pop(700), 8.86, 0.35)
-    W(9.74, 0.25, 0.25, 0.3, f0=2000, f1=7000, peak=0.3)
-    # grid zoom-out + build riser + drop
-    W(10.45, 0.75, 0.40, 0, f0=3000, f1=250, peak=0.25)
-    add(S, riser(2.0), 10.58, 0.30)
+    W(5.34, 0.42, 0.42, -0.3, f0=600, f1=8000, peak=0.6)
+    add(S, twinkle(), 5.44, 0.24, 0.0)               # "reservar"
+    for k, t in enumerate([5.34, 6.00, 6.46, 6.90]):
+        add(S, bubble(560 + 90 * k), t + 0.02, 0.36, -0.3 + 0.2 * k)
+    add(S, twinkle(), 8.42, 0.24, 0.1)               # "ahorrar"
+    add(S, bubble(820), 8.70, 0.34, 0.5)             # hourglass tile
+    add(S, twinkle(), 10.76, 0.22, -0.1)             # "tarea"
+    W(11.84, 0.6, 0.40, 0, f0=3000, f1=250, peak=0.25)  # grid zoom-out
+    add(S, twinkle(0.45, 3000, 9000), 12.18, 0.24)   # "sencilla"
+    add(S, riser(1.5), 11.06, 0.30)
     W(12.56, 0.4, 0.45, 0, f0=300, f1=4000)
     add(S, impact(1.4), 12.60, 0.55)
     add(S, pop(300, 0.14), 12.98, 0.30)
@@ -315,6 +341,12 @@ def sfx():
     W(37.98, 0.3, 0.3, 0, f0=400, f1=5000); add(S, pop(600, 0.14), 38.0, 0.4)
     add(S, chime(), 38.12, 0.32); add(S, shimmer(1.0), 38.10, 0.18)
     W(38.57, 0.4, 0.45, 0, f0=800, f1=9000, peak=0.5)
+    add(S, blip(), 38.70, 0.30)
+    add(S, ring_swoosh(), 39.30, 0.28, 0.2)
+    add(S, twinkle(), 39.48, 0.24)                   # "minutos"
+    add(S, bubble(900), 40.72, 0.36, 0.4)            # check tile
+    add(S, blip(2600), 40.94, 0.26)
+    add(S, twinkle(0.45, 3000, 9000), 41.44, 0.26)   # "complicaciones"
     # end card
     W(42.10, 0.45, 0.45, 0, f0=250, f1=4000)
     add(S, impact(1.6), 42.35, 0.45); add(S, shimmer(1.4), 42.35, 0.20)
@@ -348,9 +380,9 @@ def envelope(x, win=0.05):
 if __name__ == '__main__':
     if os.path.exists(f'{ROOT}/work/music.wav') and '--fresh' not in sys.argv:
         m = wf.read(f'{ROOT}/work/music.wav')[1].T.astype(np.float64)
-        s = wf.read(f'{ROOT}/work/sfx.wav')[1].T.astype(np.float64)
     else:
-        m = music(); s = sfx()
+        m = music()
+    s = sfx()
     v = voice()
     ev = envelope(v); ev = ev / (ev.max() + 1e-9)
     act = np.clip((ev - 0.04) / 0.10, 0, 1)

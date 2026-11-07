@@ -3,6 +3,7 @@ import json, math, functools
 import numpy as np, cv2
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
 from lib import *
+from typo import tfont
 
 SITE = f'{ROOT}/site'
 STATUS_H = 136
@@ -118,7 +119,7 @@ def overlay_tap(scr, x, y, p):
 # ---------- chips ----------
 @functools.lru_cache(maxsize=64)
 def chip(emo, text, style='white', size=44):
-    fnt = font(700, size)
+    fnt = tfont(700, False, size * 1.06)
     tw, bb = text_size(text, fnt)
     h = int(size * 2.15); ic = int(h * 0.72) if emo else 0
     padl = int(h * 0.16) if emo else int(h * 0.42); padr = int(h * 0.42)

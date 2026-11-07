@@ -4,6 +4,7 @@ import numpy as np, cv2
 from PIL import Image
 from lib import *
 from assets import *
+from typo import *
 
 DUR = 44.0
 LIMEf = tuple(v / 255 for v in LIME_B)
@@ -59,39 +60,34 @@ def cap_y(t):
     if t < 38.57: return 1450
     return 1370
 
+AROLL_WINDOWS = [(0, 2.48), (5.34, 12.78), (38.57, 99)]
 def draw_captions(c, t):
+    if any(a <= t < b for a, b in AROLL_WINDOWS): return
     cap = next((x for x in CAPS if x['start'] <= t < x['end']), None)
     if not cap: return
     y = cap_y(t)
     rows = []
     for st, items in cap['lines']:
-        size = 104 if st == 'b' else 54
-        style = 'big' if st == 'b' else 'small'
+        style = 'tbig' if st == 'b' else 'tsmall'
+        size = STY[style]['size']
         while True:
-            imgs = [word_img(w, style, size) for w, _ in items]
-            gap = size * 0.27
+            imgs = [get(w, style, size) for w, _ in items]
+            gap = size * 0.24
             tw = sum(i[3] for i in imgs) + gap * (len(imgs) - 1)
             if tw <= 960 or size < 40: break
             size = int(size * 0.92)
-        rows.append((size, imgs, items, tw, gap))
-    th = sum(r[0] * 1.16 for r in rows)
-    yy = y - th / 2
-    for size, imgs, items, tw, gap in rows:
-        base = yy + size * 0.95
+        rows.append((style, size, imgs, items, tw, gap))
+    hts = [r[1] * 0.84 for r in rows]
+    yy = y - sum(hts) / 2
+    for (style, size, imgs, items, tw, gap), h in zip(rows, hts):
+        base = yy + h
         x = 540 - tw / 2
-        for (im, pad, by, ww), (w, tw0) in zip(imgs, items):
-            if t >= tw0 - 0.02:
-                p = prog(t, tw0 - 0.02, tw0 + 0.14)
-                s = 0.55 + 0.45 * e_back(p, 2.4)
-                op = clamp(p * 2.2)
-                ih, iw = im.shape[:2]
-                cx = x - pad + iw / 2; cy = base - by + ih / 2
-                # scale around word center
-                paste(c, im, x + ww / 2 + (cx - (x + ww / 2)), cy + (1 - s) * size * 0.25, s, 0, op)
-            x += ww + gap
-        yy += size * 1.16
+        for img, (w, t0) in zip(imgs, items):
+            op, s, bl = flicker(t - t0 + 0.02, style == 'tbig')
+            draw_word(c, img, x, base, op, s, bl)
+            x += img[3] + gap
+        yy += h
 
-# ---------------------------------------------------------------- watermark
 def watermark(c):
     reg = c[120:230, 800:1060]
     lum = float((reg * np.array([0.3, 0.59, 0.11], np.float32)).sum(-1).mean())
@@ -165,10 +161,20 @@ def brand_tag_img():
     im, _ = add_shadow(im, blur=18, off=(0, 10), alpha=0.35, pad=40)
     return pil_premul(im)
 
+def person_layer(i, zoom, anchor, src_t=None):
+    f = grade(raw(i).astype(np.float32) / 255)
+    m = mask(i)[..., None]
+    M = np.array([[zoom, 0, anchor[0] * (1 - zoom)], [0, zoom, anchor[1] * (1 - zoom)]], np.float32)
+    fw = cv2.warpAffine(f * m, M, (W, H), flags=cv2.INTER_LINEAR)
+    mw = cv2.warpAffine(m[..., 0], M, (W, H), flags=cv2.INTER_LINEAR)[..., None]
+    return np.concatenate([fw, mw], -1)
+
 def sc1(t):
     z = 1.10 - 0.05 * e_out(prog(t, 0, 1.04)) if t < 1.04 else 1.30 - 0.03 * prog(t, 1.04, 2.48)
     c = aroll(t, t, z, (640, 980))
-    brand_tag(c, t)
+    if 0.98 <= t <= 1.95:
+        i = int(round(t * FPS))
+        light_ring(c, t, 1.0, 1.9, 653, 1010, 300, 560, person_layer(i, z, (640, 980)))
     return c
 
 def sc2(t):
@@ -179,42 +185,23 @@ def sc2(t):
 
 CH_RES = chip('📅', 'Reservar', 'white', 46)
 CH_BUS = chip('🔎', 'Buscar dónde quedarse', 'white', 46)
+TILES_A = [('calendar', 'lime', 5.34, 470, 440), ('search', 'mint', 6.00, 610, 330), ('home', 'green', 6.46, 750, 440), ('bed', 'gold', 6.90, 610, 550)]
 def sc3(t):
     z = 1.17 if t < 6.46 else 1.36 - 0.03 * prog(t, 6.46, 7.63)
     c = aroll(t, t, z, (640, 980))
-    chip_anim(c, t, 5.40, CH_RES, 290, 700, t1=7.45)
-    chip_anim(c, t, 6.02, CH_BUS, 600, 520, t1=7.50)
+    for emo, g, t0, x, y in TILES_A:
+        tile_anim(c, t, t0, icon_tile(emo, g, 150), x, y, t1=7.52 + (t0 - 5.34) * 0.03, s=1.0)
     return c
 
-CH_HORAS = chip('⏳', 'Horas y horas de búsqueda', 'lime', 46)
 def sc4(t):
-    c = bg_dark(t)
-    i = int(round(t * FPS))
-    f = raw(i).astype(np.float32) / 255
-    m = mask(i)[..., None]
-    z = 1.13 + 0.07 * (1 - e_out(prog(t, 7.63, 7.9)))
-    M = np.array([[z, 0, 540 * (1 - z)], [0, z, 1920 * (1 - z) + 30]], np.float32)
-    fw = cv2.warpAffine(f * m, M, (W, H), flags=cv2.INTER_LINEAR)
-    mw = cv2.warpAffine(m[..., 0], M, (W, H), flags=cv2.INTER_LINEAR)[..., None]
-    # soft drop shadow
-    sh = cv2.GaussianBlur(cv2.warpAffine(mw[..., 0], np.float32([[1, 0, 26], [0, 1, 14]]), (W, H)), (0, 0), 22)[..., None] * 0.45
-    c *= (1 - sh)
-    c *= (1 - mw); c += grade(fw / np.maximum(mw, 1e-4)) * mw
-    # 3D flip label
-    if t >= 8.62:
-        p = prog(t, 8.62, 9.0)
-        rx = 90 * (1 - e_back(p, 1.6))
-        h, w = CH_HORAS.shape[:2]
-        q = quad3d(w, h, 540, 1300, 1.0, rx, 0, -3)
-        warp(c, CH_HORAS, q, clamp(p * 4))
-        if t >= 9.62:
-            s = e_io(prog(t, 9.62, 9.9))
-            x0, x1 = 540 - (w - 72) / 2 + 30, 540 + (w - 72) / 2 - 30
-            xe = x0 + (x1 - x0) * s
-            ov = (np.ascontiguousarray(c * 255)).astype(np.uint8)
-            cv2.line(ov, (int(x0), 1300 + 18), (int(xe), 1300 - 18), (2, 59, 40), 9, cv2.LINE_AA)
-            c[:] = ov.astype(np.float32) / 255
+    z = 1.32 + 0.10 * (1 - e_out(prog(t, 7.63, 7.85)))
+    c = aroll(t, t, z, (540, 1000))
+    tile_anim(c, t, 8.68, icon_tile('hourglass', 'gold', 150), 868, 640, t1=10.0)
     return c
+
+def sc4b(t):
+    z = 1.62 + 0.04 * prog(t, 10.10, 12.4)
+    return aroll(t, min(t, 12.6), z, (540, 1000))
 
 TILES = [('caba_a_mariposa.webp', 'Cabaña Mariposa', '$120 / noche'), ('villa_diana.webp', 'Villa Diana', 'desde $30'),
          ('harmony_gates.webp', 'Harmony Gates', '$25 / persona'), ('casa_vacacional_bocas_del_toro.webp', 'Bocas del Toro', '$350 / noche'),
@@ -230,15 +217,15 @@ TILES = [('caba_a_mariposa.webp', 'Cabaña Mariposa', '$120 / noche'), ('villa_d
          ('caba_a_colibri.webp', 'Cabaña Colibrí', '$25 / persona'), ('casa_billar.webp', 'Casa Billar', '$30 / persona')]
 
 def sc5(t):
-    inner = sc4(t)
-    z = kf(t, [(10.10, 1.0, lin), (10.85, 0.37, e_io5), (12.6, 0.33, lin)])
-    rz = kf(t, [(10.10, 0.0, lin), (10.85, -4.0, e_io), (12.6, -2.0, lin)])
+    inner = sc4b(t)
+    z = kf(t, [(11.82, 1.0, lin), (12.36, 0.37, e_io5), (12.7, 0.35, lin)])
+    rz = kf(t, [(11.82, 0.0, lin), (12.36, -4.0, e_io), (12.7, -3.0, lin)])
     c = bg_dark(t)
     g = 80
     R = rotm(0, 0, rz)[:2, :2]
     k = 0
     for col in range(-2, 3):
-        drift = (t - 10.1) * 140 * (1 if col % 2 else -1) if col else 0
+        drift = (t - 11.82) * 220 * (1 if col % 2 else -1) if col else 0
         for row in range(-2, 3):
             X = col * (1080 + g); Y = row * (1920 + g) + drift
             if col == 0 and row == 0: continue
@@ -514,7 +501,7 @@ def success(c, t):
 def success_text():
     from PIL import ImageDraw
     im = Image.new('RGBA', (900, 140), (0, 0, 0, 0))
-    ImageDraw.Draw(im).text((450, 70), '¡Reserva lista!', font=font(900, 86), fill=(255, 255, 255, 255), anchor='mm')
+    ImageDraw.Draw(im).text((450, 70), '¡Reserva lista!', font=tfont(900, True, 96), fill=(255, 255, 255, 255), anchor='mm')
     im, _ = add_shadow(im, blur=12, off=(0, 6), alpha=0.4, pad=30)
     return pil_premul(im)
 
@@ -523,13 +510,18 @@ def sc17(t):
     elif t < 40.20: z = 1.24
     elif t < 40.94: z = 1.08
     else: z = 1.27 + 0.03 * prog(t, 40.94, 42.4)
-    return aroll(t, min(t, 42.4), z, (540, 1050))
+    c = aroll(t, min(t, 42.4), z, (540, 1050))
+    if 39.36 <= t <= 40.18:
+        i = int(round(t * FPS))
+        light_ring(c, t, 39.38, 40.18, 540, 820, 470, 720, person_layer(i, z, (540, 1050)))
+    tile_anim(c, t, 40.70, icon_tile('check', 'lime', 140), 830, 1380, t1=40.94)
+    return c
 
 @functools.lru_cache(maxsize=1)
 def tagline():
     from PIL import ImageDraw
     im = Image.new('RGBA', (1000, 80), (0, 0, 0, 0))
-    ImageDraw.Draw(im).text((500, 40), 'Descubre, reserva y vive Tierras Altas', font=font(600, 42), fill=(255, 255, 255, 255), anchor='mm')
+    ImageDraw.Draw(im).text((500, 40), 'Descubre, reserva y vive Tierras Altas', font=tfont(600, False, 46), fill=(255, 255, 255, 255), anchor='mm')
     return pil_premul(im)
 
 def sc18(t, under):
@@ -556,12 +548,32 @@ def circle_mask(r):
     cv2.circle(m, (int(540 * sc), int(960 * sc)), int(r * sc), 1.0, -1, cv2.LINE_AA)
     return cv2.resize(m, (W, H))[..., None]
 
+
+STACKS = [
+    dict(y=450, start=0.0, end=2.40, lines=[('reg', [('En', 0.0), ('todo', 0.78)], -30), ('big', [('grupo', 1.04)], 10), ('ital', [('de', 1.34), ('amigos', 1.54)], 40)]),
+    dict(y=440, start=7.63, end=10.04, lines=[('reg', [('y', 7.63), ('hoy', 7.78), ('te', 7.90), ('voy', 8.10), ('a', 8.24)], -20), ('big', [('ahorrar', 8.32)], 0), ('ital', [('horas', 8.68), ('y', 9.04), ('horas', 9.24)], 30)]),
+    dict(y=430, start=10.10, end=11.80, lines=[('reg', [('para', 10.10), ('que', 10.36), ('esa', 10.52)], -25), ('big', [('tarea', 10.66)], 10), ('ital', [('sea', 11.04), ('mucho', 11.32)], 35)]),
+    dict(y=430, start=38.70, end=40.15, lines=[('reg', [('En', 38.70), ('cuestión', 38.84), ('de', 39.14)], -20), ('big', [('minutos', 39.38)], 10)]),
+    dict(y=1390, start=40.94, end=42.12, lines=[('ital', [('sin', 40.94)], -60), ('big', [('complicaciones', 41.34)], 0, 124)]),
+]
+CHUNKS = [
+    (1300, [('o', 'caps', 1.82, 2.08), ('familia', 'caps', 2.08, 2.50)]),
+    (1300, [('reservar', 'key', 5.34, 5.86), ('y buscar', 'word', 5.86, 6.46), ('dónde', 'word', 6.46, 6.90), ('quedarse', 'word', 6.90, 7.50), ('y hoy', 'word', 7.50, 7.63)]),
+    (1330, [('de', 'word', 9.44, 9.66), ('búsqueda', 'caps', 9.66, 10.10)]),
+    (1230, [('más', 'word', 11.82, 12.10), ('sencilla', 'key', 12.10, 12.62)]),
+    (1430, [('tienes tu', 'word', 39.64, 40.20), ('reserva', 'caps', 40.20, 40.70), ('lista', 'caps', 40.70, 40.94)]),
+]
+def aroll_text(c, t):
+    for st in STACKS: draw_stack(c, t, st)
+    for y, ch in CHUNKS: draw_chunks(c, t, y, ch)
+
 # ---------------------------------------------------------------- master
 def scene(t):
     if t < 2.48: return sc1(t)
     if t < 5.34: return sc2(t)
     if t < 7.63: return sc3(t)
     if t < 10.10: return sc4(t)
+    if t < 11.82: return sc4b(t)
     if t < 12.60: return sc5(t)
     if t < 14.40: return sc6(t)
     if t < 16.50: return sc7(t)
@@ -601,11 +613,15 @@ def zoomblur_tr(t, a_fn, b_fn, tc, half=0.12, amt=0.32):
     img = b_fn(t)
     return zoom_blur(shift_img(img, 0, 0, 1 + 0.18 * p), amt * p)
 
+def flash_tr(t, a_fn, b_fn, tc, half=0.13):
+    if t < tc: return flash_mix(a_fn(t), e_in(prog(t, tc - half, tc)))
+    return flash_mix(b_fn(t), 1 - e_out(prog(t, tc, tc + half * 1.2)))
+
 def frame(t):
-    if 2.37 <= t <= 2.59:
-        c = whip(t, sc1, sc2, 2.48)
-    elif 5.22 <= t <= 5.46:
-        c = zoomblur_tr(t, sc2, sc3, 5.34)
+    if 2.35 <= t <= 2.64:
+        c = flash_tr(t, sc1, sc2, 2.48)
+    elif 5.21 <= t <= 5.50:
+        c = flash_tr(t, sc2, sc3, 5.34)
     elif 12.46 <= t <= 12.66:
         c = whip(t, sc5, sc6, 12.56, half=0.10, axis='y')
     elif 24.92 <= t <= 25.34:
@@ -625,9 +641,11 @@ def frame(t):
         a = 1 - abs(t - 38.57) / 0.16
         c = c * (1 - clamp(a)) + clamp(a)
     if t >= 42.08:
+        aroll_text(c, t)
         c = sc18(t, c)
     else:
         draw_captions(c, t)
+        aroll_text(c, t)
     if t < 42.30:
         watermark(c)
     return np.clip(c, 0, 1)
