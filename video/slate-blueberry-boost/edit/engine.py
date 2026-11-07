@@ -23,7 +23,7 @@ def font(name, size, wght=None):
 
 COND = ("Oswald[wght].ttf", 500)                 # condensed bold uppercase titles
 SERIF = ("EBGaramond-Italic[wght].ttf", 600)     # serif italic accents
-CAPF = ("Nunito[wght].ttf", 700)                 # captions
+CAPF = ("Poppins-Bold.ttf", None)                # captions: Poppins Bold, tight tracking + glow
 SANSB = ("Inter[opsz,wght].ttf", 700)            # bold sans (fade-up line)
 MONT = ("Montserrat[wght].ttf", 400)             # end card text
 MONT_L = ("Montserrat[wght].ttf", 300)
@@ -42,13 +42,19 @@ def clamp01(u): return min(max(u, 0.0), 1.0)
 def hex2rgb(h):
     h = h.lstrip("#"); return tuple(int(h[i:i + 2], 16) for i in (0, 2, 4))
 
-def text_mask(text, f, tracking_px=0.0, pad=20, sx=1.0):
+def tracked_x(text, f, tracking_px, track_spaces=True):
+    """x position of each char; with track_spaces=False the tracking only tightens letters inside words."""
+    xs = []; k = 0
+    for i, ch in enumerate(text):
+        if i > 0 and (track_spaces or (text[i - 1] != " " and ch != " ")): k += 1
+        xs.append(f.getlength(text[:i]) + tracking_px * k)
+    return xs, k
+
+def text_mask(text, f, tracking_px=0.0, pad=20, sx=1.0, track_spaces=True):
     """Render text alpha mask (float32 0..1) with per-char tracking. Returns (mask, baseline_y, char_xs)."""
     asc, desc = f.getmetrics()
-    xs = []; x = 0.0
-    for i, ch in enumerate(text):
-        xs.append(f.getlength(text[:i]) + tracking_px * i)
-    total = (f.getlength(text) + tracking_px * max(0, len(text) - 1))
+    xs, k = tracked_x(text, f, tracking_px, track_spaces)
+    total = (f.getlength(text) + tracking_px * k)
     w = int(math.ceil(total)) + 2 * pad; h = asc + desc + 2 * pad
     im = Image.new("L", (w, h), 0); d = ImageDraw.Draw(im)
     if tracking_px == 0:
@@ -75,6 +81,19 @@ def solid_layer(mask, color, x, y):
     c = np.array(hex2rgb(color), np.float32) / 255.0
     rgb = np.empty(mask.shape + (3,), np.float32); rgb[:] = c
     return Layer(rgb, mask, x, y)
+
+def glow_text(mask, color, x, y, glow_sigma=48, glow_gain=2.3, glow_op=1.0, sh_sigma=4, sh_dy=3, sh_op=0.95):
+    """Reference caption look: wide white halo (bloom) behind, fine dark shadow just under the letters, white text.
+    Parameters fitted to the luminance profile measured around the reference captions."""
+    pad = int(glow_sigma * 2.6)
+    m = np.pad(mask, pad)
+    small = cv2.resize(m, (m.shape[1] // 4, m.shape[0] // 4), interpolation=cv2.INTER_AREA)
+    g = cv2.resize(blur(small, glow_sigma / 4), (m.shape[1], m.shape[0]), interpolation=cv2.INTER_LINEAR)
+    g = np.clip(g * glow_gain, 0, 1) * glow_op
+    sh = np.roll(blur(m, sh_sigma), sh_dy, 0) * sh_op
+    return [solid_layer(g, "#FFFFFF", x - pad, y - pad),
+            solid_layer(sh, "#000000", x - pad, y - pad),
+            solid_layer(mask, color, x, y)]
 
 def with_shadow(mask, color, x, y, sh_r=7, sh_dy=3, sh_op=0.5, glow=None):
     """Text layer + soft drop shadow (+ optional white glow). Returns list of layers (back to front)."""
@@ -267,8 +286,8 @@ class FadeUp:
 
 class Captions:
     """Word-by-word captions: each word fades in (slight blur) at its spoken time, in short chunks."""
-    def __init__(self, words, size, ypos_fn, hide_fn, color="#FFFFFF", max_words=3, max_chars=17, lead=0.04):
-        self.f = font(CAPF[0], size, CAPF[1]); self.size = size
+    def __init__(self, words, size, ypos_fn, hide_fn, color="#FFFFFF", max_words=3, max_chars=17, lead=0.04, tracking=-0.04):
+        self.f = font(CAPF[0], size, CAPF[1]); self.size = size; self.tr = tracking * size
         self.ypos_fn, self.hide_fn, self.color, self.lead = ypos_fn, hide_fn, color, lead
         # chunking
         chunks = []; cur = []
@@ -292,12 +311,13 @@ class Captions:
     def chunk_masks(self, k):
         if k in self.cache: return self.cache[k]
         c = self.chunks[k]; txt = " ".join(w["w"] for w in c["words"])
-        full, base, xs = text_mask(txt, self.f, pad=24)
+        full, base, xs = text_mask(txt, self.f, tracking_px=self.tr, pad=24, track_spaces=False)
         # word spans (x ranges) within the full mask
         spans = []; pos = 0
         for w in c["words"]:
             i0 = txt.index(w["w"], pos); i1 = i0 + len(w["w"]); pos = i1
-            x0 = 24 + self.f.getlength(txt[:i0]) - 2; x1 = 24 + self.f.getlength(txt[:i1]) + 4
+            x0 = 24 + xs[i0] - 3
+            x1 = 24 + xs[i1 - 1] + self.f.getlength(txt[i1 - 1]) + 5
             spans.append((int(x0), int(math.ceil(x1))))
         self.cache[k] = (full, spans); return self.cache[k]
 
@@ -315,7 +335,7 @@ class Captions:
                     if a < 1: seg = blur(seg, 2.5 * (1 - a)) * a
                     M[:, x0:x1] = np.maximum(M[:, x0:x1], seg)
                 cy = self.ypos_fn(t)
-                return with_shadow(M, self.color, W / 2 - full.shape[1] / 2, cy - full.shape[0] / 2, sh_r=5, sh_dy=2, sh_op=0.6)
+                return glow_text(M, self.color, W / 2 - full.shape[1] / 2, cy - full.shape[0] / 2)
         return []
 
 class EndCard:

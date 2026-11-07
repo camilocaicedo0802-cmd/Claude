@@ -68,7 +68,7 @@ def load_words(path):
     return merged
 
 def build_overlays(words):
-    sz_cap = fit_size(CAPF, "Feeling stuffy,", 405)
+    sz_cap = 61.0                                   # Poppins Bold, tight tracking: same width as the reference
     sz_cond = fit_size(COND, "DEALING WITH", 472 / 0.94)
     sz_serif = fit_size(SERIF, "sinus pressure?", 690)
     sz_big = fit_size(SERIF, "techniques,", 480)

@@ -21,7 +21,9 @@ y los efectos de sonido extraídos (`sfx/`).
 - **Tipografías** (equivalentes libres, OFL):
   - Títulos en mayúsculas condensadas → **Oswald 500** (“A FACIAL MADE OF”, “THE RADIANT BLUEBERRY BOOST”, “SCULPT”).
   - Acentos en serif itálica → **EB Garamond Italic 600** (“blueberries?”, “firmer,” “& depuff”, “and refreshed.”).
-  - Subtítulos → **Nunito 700** (blancos con sombra suave, palabra por palabra).
+  - Subtítulos → **Poppins Bold** 61 px, letras juntas (−4 % de tracking, espacios entre palabras normales),
+    con el brillo de la referencia: halo blanco amplio (σ≈48 px) + sombra oscura fina 3 px abajo. Parámetros
+    ajustados midiendo la luminancia alrededor de los subtítulos originales.
   - Línea en negrita sans → **Inter 700** (“calm”). Tarjeta final → **Montserrat**.
 - **Efectos de texto**: revelado con destello y partículas (sparkle), máquina de escribir letra a letra,
   palabra serif que entra con zoom y tracking (“Steam,” en la referencia), línea que sube desde desenfocado,
@@ -65,7 +67,8 @@ Pista original instrumental generada con ElevenLabs Music v2.5 (vía Higgsfield)
 
 Se descargan del repositorio público de Google Fonts (`github.com/google/fonts`, licencia OFL):
 `ofl/oswald/Oswald[wght].ttf`, `ofl/ebgaramond/EBGaramond-Italic[wght].ttf`, `ofl/nunito/Nunito[wght].ttf`,
-`ofl/inter/Inter[opsz,wght].ttf`, `ofl/montserrat/Montserrat[wght].ttf` → carpeta indicada en `FONT_DIR`.
+`ofl/inter/Inter[opsz,wght].ttf`, `ofl/montserrat/Montserrat[wght].ttf`, `ofl/poppins/Poppins-Bold.ttf`
+→ carpeta indicada en `FONT_DIR`.
 
 ## Verificación de la entrega
 
