@@ -644,8 +644,7 @@ def frame(t):
         aroll_text(c, t)
         c = sc18(t, c)
     else:
-        draw_captions(c, t)
-        aroll_text(c, t)
+        aroll_text(c, t)   # no subtitles over the phone sections (client request)
     if t < 42.30:
         watermark(c)
     return np.clip(c, 0, 1)

@@ -27,6 +27,7 @@ Pasos del tour: resultado de Google, inicio con categorías (Cabañas, Casas, Pr
 - **Colores:** verde #023B28 (theme-color del sitio), lima #A9E93A, lima del logo #86CB2C y crema #F8F5F2. Los logos son los oficiales de `cabanypanama.com/brand/`.
 - **Tipografía:** Inter Tight, la grotesca apretada más parecida a la de la segunda referencia. Va en negrita, itálica pesada con degradado y mayúsculas. Se usa en títulos, subtítulos, chips y cierre. Montserrat queda solo en las tarjetas que imitan el sitio.
 - **Efectos de texto:** las palabras entran con parpadeo, y las de color aparecen primero como fantasma. Los títulos apilados van sobre la cabeza y los subtítulos de una palabra a la altura del pecho. Al salir, los títulos se desenfocan.
+- **Subtítulos solo en las tomas de ella:** en las partes del celular (chat y recorrido de la página) no hay subtítulos, para que la pantalla se vea limpia. Ahí solo quedan los chips y los resaltados.
 - Marcas de agua sutiles: logo pequeño y `cabanypanama.com` arriba a la derecha, al 55–62 % de opacidad. El logo cambia entre la versión blanca y la verde según el fondo para que siempre se lea sin estorbar.
 - Audio:
   - Voz original nivelada para que se oiga pareja.
