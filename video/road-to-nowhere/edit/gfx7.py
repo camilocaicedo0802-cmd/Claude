@@ -396,7 +396,7 @@ def agreement(t, dur, mode="parties", times=None, hl_t=1.9, red_t=3.2, term_t=No
     if mode == "void":
         k = ease_back(prog(t, 0.5, 0.4))
         if k > 0:
-            st = text_sprite("ANULADO · 2010", "bebas", int(150 * k), RED, False, tracking=6)
+            st = text_sprite("ANULADO · 2010", "bebas", max(8, int(150 * k)), RED, False, tracking=6)
             M = cv2.getRotationMatrix2D((W / 2, H / 2), 14, 1.0)
             layer = np.zeros_like(img)
             over_center(layer, st, W / 2, H / 2, 1.0)
@@ -456,10 +456,12 @@ def _rock_section(img, t, cut_k):
     aa_poly(img, np.stack([xs, surf], 1), GRASS, 12)
     for x in np.arange(30, W, 70):
         _tree(img, x, float(np.interp(x, xs, surf)) + 4, 22)
-    if cut_k > 0:
+    cx0, cx1 = 760, 1180
+    y0 = float(np.interp(cx0, xs, surf))
+    if cut_k <= 0:
+        return (cx0 + 80, y0, cx1)
+    if True:
         # a notch cut into the slope for the road
-        cx0, cx1 = 760, 1180
-        y0 = float(np.interp(cx0, xs, surf))
         depth = 330 * cut_k
         notch = [[cx0 - 40, y0 - 10], [cx1, float(np.interp(cx1, xs, surf)) - 10], [cx1, y0 + depth], [cx0 + 80, y0 + depth]]
         fill_poly(img, notch, (30, 36, 44))
@@ -702,6 +704,8 @@ def year_q(t, dur, start="1943", q_t=1.0):
     k = ease_back(prog(t, q_t, 0.5))
     if k > 0:
         pulse = 1.0 + 0.06 * math.sin(t * 5)
-        sp = text_sprite("?", "bebas", int(300 * k * pulse), YELLOW, True)
-        over_center(img, sp, W / 2 + 280, H / 2, 1.0)
+        size = int(300 * k * pulse)
+        if size >= 6:
+            sp = text_sprite("?", "bebas", size, YELLOW, True)
+            over_center(img, sp, W / 2 + 280, H / 2, 1.0)
     return img
