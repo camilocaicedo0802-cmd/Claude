@@ -1,4 +1,4 @@
-"""Remove burned-in text from the raw Cabany clip:
+"""Remove burned-in text from the raw Cabany clip (corrected raw: only the two URL overlays remain):
  - cut-off yellow/white subtitle letters on the right edge (all shots)
  - 'WWWcabanypanama.com' typing overlay on the home page (8.3-10.9 s)
  - 'www.cabanypanama.com.' typing overlay above the head in the last shot (26.4-29.3 s)
@@ -66,6 +66,7 @@ def clean_talking(i, rgb):
     blk = ((r < 60) & (g < 60) & (b < 60)).astype(np.uint8)
     wtxt = wht & cv2.dilate(blk, np.ones((9, 9), np.uint8))
     txt = yel | wtxt
+    txt[:] = 0          # corrected raw: no stray subtitle letters on the edge any more
     txt[:, :960] = 0; txt[:900] = 0; txt[1700:] = 0
     tm = cv2.dilate(txt, np.ones((33, 33), np.uint8)).astype(np.float32)
     if name == 'selfie' and 788 <= i <= 884:   # typed URL + leader line above the head

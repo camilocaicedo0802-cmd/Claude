@@ -6,7 +6,11 @@ Video vertical (1080×1920, 30 fps, 33 s) editado desde `Video_crudo_Cabany.MOV`
 - `portada.jpg`: cuadro de muestra.
 - `proyecto/work/`: el código que genera el video cuadro por cuadro.
 
-## Limpieza del video en crudo
+## Versión actual: crudo corregido
+
+El cliente envió un crudo corregido: misma toma y mismo audio, sin las letras de subtítulos cortadas en el borde. El video actual es la misma edición renderizada sobre ese crudo. La limpieza de letras del borde está desactivada en `clean.py` (`txt[:] = 0`). Se mantiene el borrado de los dos textos de URL que el crudo sigue trayendo: el de la página de inicio y el que aparece sobre la cabeza en la última toma.
+
+## Limpieza del video en crudo (primera versión)
 
 El crudo traía texto quemado que se eliminó así:
 
