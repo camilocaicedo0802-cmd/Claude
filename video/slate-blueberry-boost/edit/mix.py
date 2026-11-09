@@ -39,6 +39,9 @@ voice = load(f"{E}/voice_proc.wav") * 10 ** ((-15.0 - vl) / 20)
 
 N = int(TL.END * SR)
 mix = np.zeros((N, 2), np.float32)
+if TL.VOICE_END is not None:                       # no-CTA variant: stop the voice before the CTA line
+    ve = int(TL.VOICE_END * SR); voice = voice[:ve].copy()
+    f = int(0.03 * SR); voice[-f:] *= np.linspace(1, 0, f)[:, None]
 mix[: min(N, len(voice))] += voice[:N]
 
 # 2) music bed: reference sits ~12 LU under the voice
@@ -46,7 +49,7 @@ m = load(MUSIC)
 ml = lufs(MUSIC)
 m = m * 10 ** ((-27.5 - ml) / 20)
 m = m[:N]
-fo = int(0.35 * SR); m[-fo:] *= np.linspace(1, 0, fo)[:, None]
+fo = int(TL.MUSIC_FADE * SR); m[-fo:] *= (np.linspace(1, 0, fo) ** 1.5)[:, None]
 mix[: len(m)] += m
 
 # 3) SFX (levels relative to the reference mix, +1.5 dB to make up for the tonal-only extraction)

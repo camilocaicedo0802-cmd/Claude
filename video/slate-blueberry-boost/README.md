@@ -58,6 +58,22 @@ ffmpeg -i out/video_noaudio.mp4 -i out/mix_master.wav -map 0:v -map 1:a -c:v cop
 
 `python3 edit/render.py --stills 1.5,6,24.8 carpeta/` genera fotogramas sueltos para revisar.
 
+## Variaciones
+
+`VARIANT` elige el final (por defecto `cta`):
+
+| Variante | Duración | Final |
+| --- | --- | --- |
+| `cta` | 43,4 s | “If you're in Tulsa… come try the Radiant Blueberry Boost at Slate” + tarjeta SLATE con “Book your… / Tulsa, OK” |
+| `nocta` | 38,8 s | Termina en “…to help calm and refresh the skin.” sobre el plano del spray con “calm / and refreshed.”; la música se desvanece |
+
+```bash
+VARIANT=nocta python3 edit/render.py out/video_noaudio_nocta.mp4
+VARIANT=nocta python3 edit/mix.py sfx /ruta/musica.wav out/mix_nocta.wav
+```
+
+En el título del gua sha va “SCULPT / depuff”, sin el signo “&”.
+
 ## Música
 
 Pista original instrumental generada con ElevenLabs Music v2.5 (vía Higgsfield): chill R&B/pop,
@@ -72,7 +88,7 @@ Se descargan del repositorio público de Google Fonts (`github.com/google/fonts`
 
 ## Verificación de la entrega
 
-- `ffprobe`: 43,4 s, H.264 1080×1920 a 30 fps, AAC 48 kHz estéreo.
+- `ffprobe`: 43,4 s (con CTA) y 38,8 s (sin CTA), H.264 1080×1920 a 30 fps, AAC 48 kHz estéreo.
 - Loudness integrado −13,9 LUFS, pico −1,6 dBFS; decodificación completa sin errores.
 - Transcripción del archivo final: el guion completo se entiende sobre la música.
 - `tools/qa.sh` saca el fotograma central de cada plano para revisar encuadres y textos.
