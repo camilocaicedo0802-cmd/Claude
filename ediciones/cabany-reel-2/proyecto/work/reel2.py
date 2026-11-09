@@ -59,7 +59,7 @@ def talking(t, shot, cuts, heads=(), chests=(), extras=None, src_t=None):
     st = t if src_t is None else src_t
     img, pm, (x0, y0) = aroll(st, cx, S['cy'], z)
     c = img.copy()
-    ht_src = max(mask_top(int(round(max(tc, st - 0.4) * FPS)), S['ht']), S['ht'] - 90)
+    ht_src = S['ht'] if shot == 'selfie' else max(mask_top(int(round(max(tc, st - 0.4) * FPS)), S['ht']), S['ht'] - 90)
     head_top = (ht_src - y0) * z
     hs = []
     for h in heads:
@@ -92,7 +92,7 @@ def scB(t):  # balcony
     def ex(c, t, ht, cy):
         line_icon_anim(c, t, 4.04, 4.42, 'mountain', 200, ht + 170, 220)
         banner(c, t, 6.50, 7.34, 'Viaje a Chiriquí', 'Organízalo en cabanypanama.com', y=300)
-    return talking(t, 'balcony', [(2.62, 1.26, 700), (4.46, 1.48, 705), (4.98, 1.26, 700), (5.94, 1.40, 700)], heads, chests, ex)
+    return talking(t, 'balcony', [(2.62, 1.26, 700), (4.46, 1.48, 705), (4.98, 1.26, 700), (5.94, 1.40, 700)], heads, chests, ex, src_t=max(t, 2.92))
 
 def scC(t):  # "paso 1" title moment
     f, _, _ = aroll(min(t, 7.6), 700, 1060, 1.5 + 0.2 * prog(t, 7.36, 8.1))
@@ -130,7 +130,7 @@ CARDS = [(('caba_a_mariposa.webp', 'Cabaña Mariposa', 'Volcán', '$120', '/ noc
 def scD(t):  # home + listings (8.06 - 12.33)
     c = bg_tour(t)
     if t < 10.90:
-        st = 8.30 + (t - 8.06) * (10.85 - 8.30) / (10.90 - 8.06)
+        st = 8.62 + (t - 8.06) * (10.85 - 8.62) / (10.90 - 8.06)
         cam = kf(t, [(8.00, (540, 1750, 0.50, 55, -22, 9, .5, .5), lin), (8.45, (540, 920, 0.60, 10, -12, -2, .5, .5), e_out5),
                      (9.20, (540, 900, 0.62, 6, -6, -1, .5, .5), lin), (9.70, (540, 860, 1.05, 3, -2, 0, axs(540), ays(330)), e_io5),
                      (10.90, (540, 860, 1.10, 2, 2, 0, axs(540), ays(330)), lin)])

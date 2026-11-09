@@ -113,7 +113,7 @@ def put(c, img, x_left, base_y, op=1.0, s=1.0, blur=(0, 0), extra_blur=0):
 
 def enter(t, t0, t1, kind='rise', life_drift=0.06):
     """returns (opacity, scale, dx, dy, motion blur) for an element alive in [t0, t1)."""
-    if t < t0 or t >= t1 + 0.12: return None
+    if t < t0 or t >= t1 + 0.04: return None
     p = prog(t, t0, t0 + 0.17); e = e_out(p)
     op = clamp((t - t0) / 0.06)
     s = 1 + life_drift * prog(t, t0, max(t1, t0 + 0.5))
@@ -126,8 +126,8 @@ def enter(t, t0, t1, kind='rise', life_drift=0.06):
         s *= 0.6 + 0.4 * e_back(p, 2.2)
     elif kind == 'fade':
         pass
-    if t >= t1:  # exit
-        q = prog(t, t1, t1 + 0.08); op *= 1 - q; s *= 1 + 0.06 * q; bl = (0, 30 * q)
+    if t >= t1:  # exit (fast, so a replacing word never doubles up)
+        q = prog(t, t1, t1 + 0.04); op *= 1 - q; s *= 1 + 0.06 * q; bl = (0, 30 * q)
     return op, s, dx, dy, bl
 
 # ------------------------------------------------------------------ layouts
