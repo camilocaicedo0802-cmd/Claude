@@ -54,7 +54,7 @@ PAIRS = [  # (q seg, top clip, problem rows, bottom cards [(clip, label, t_in or
  (10, clip(B("st3_desp/IMG_2209.MOV"), 2.4, TOP, 0.5, 0.38, 0.85), [[("Going on", "s")], [("vacation", "S")]],
      [(clip(B("st2_lleg/IMG_1942.MOV"), 0.6, BOT, 0.5, 0.45, 1.0), "Book 1-2 Days\nBefore")]),
  (12, clip(B("st2_trans/IMG_1987.MOV"), 4.2, TOP, 0.5, 0.33, 0.85), [[("Wedding", "S"), ("or", "s")], [("special event", "S")]],
-     [(clip(B("st2_lleg/IMG_1944.MOV"), 1.0, BOT, 0.5, 0.50, 1.0), "Proper Prep", None, s13d),
+     [(clip(B("st2_lleg/IMG_1943.MOV"), 0.4, BOT, 0.5, 0.42, 1.0), "Proper Prep", None, s13d),
       (clip(B("st2_cons/IMG_1948.MOV"), 12.5, BOT, 0.45, 0.32, 0.95), "Custom Shade", s13d, None)]),
  (14, clip(B("st2_cons/IMG_1949.MOV"), 9.0, TOP, 0.35, 0.40, 0.90), [[("Not sure which", "s")], [("shade", "S"), ("or", "s"), ("solution", "S")], [("is right for you?", "s", "right")]],
      [(clip(B("st2_cons/IMG_1948.MOV"), 31.0, BOT, 0.5, 0.36, 1.0), "Personalized\nConsultation")]),
