@@ -110,7 +110,7 @@ def build():
     logo = G.load_logo(ROOT + 'raw/brand/WEST HOME/PNG/Recurso 7@4x.png', 720)
     els.append(El(G.pil_to_spr(logo, radius=20, offset=(0, 10), opacity=0.5), 540, 760, tL, 32.15, 'pop', 'blurout',
                   d_in=0.42, d_out=0.4))
-    els.append(Label('DM US TO GET STARTED', tL + 0.6, 32.15, cy=1170))
+    els.append(Label('SEND US A MESSAGE', tL + 0.6, 32.15, cy=1170))
     els.append(El(title('@felixwesthome', 'light', 50), 540, 1290, tL + 1.2, 32.15, 'rise', 'blurout', dy=40, d_in=0.25,
                   d_out=0.4))
     els.append(Fade(32.12, T.DUR))
