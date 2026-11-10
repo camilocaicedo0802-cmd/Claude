@@ -105,11 +105,20 @@ class Rotulo:
         fn, fr = font('Roboto-Black', 40), font('Roboto-Light', 31)
         if fn.getlength(name.upper()) > 760:
             fn = font('Roboto-Black', 34)
-        im = Image.new('RGBA', (900, 240), (0, 0, 0, 0))
+        im = Image.new('RGBA', (W, 240), (0, 0, 0, 0))
         d = ImageDraw.Draw(im)
-        d.text((72, 58), name.upper(), font=fn, fill=NAVY + (255,))
-        d.text((73, 112), role, font=fr, fill=NAVY + (255,))
+        d.text((162, 58), name.upper(), font=fn, fill=NAVY + (255,))
+        d.text((163, 112), role, font=fr, fill=NAVY + (255,))
         self.text = np.array(im)
+
+    def _left(self, idx):
+        if not hasattr(self, '_lc'):
+            self._lc = {}
+        if idx not in self._lc:
+            b = self.seq.get(idx)
+            col = np.nonzero((b[100, :, 3] > 128) & (b[100, :, 0] > 200) & (b[100, :, 2] > 200))[0]
+            self._lc[idx] = int(col[-1]) if len(col) else None  # borde derecho de la parte blanca
+        return self._lc[idx]
 
     def draw(self, frame, t):
         u = t - self.t0
@@ -117,12 +126,20 @@ class Rotulo:
             return
         k = int(u * FPS)
         out_start = self.dur - 0.9
-        if u < out_start:
-            idx = min(k, 30)
+        idx = min(k, 30) if u < out_start else 290 + int((u - out_start) * FPS)
+        box = self.seq.get(idx)
+        blend(frame, box, 0, 1385)
+        a = clamp((u - 0.95) / 0.2)
+        L, L0 = self._left(idx), self._left(30)
+        if a <= 0 or L is None:
+            return
+        dx = L - L0
+        txt = np.zeros_like(self.text)
+        if dx >= 0:
+            txt[:, dx:] = self.text[:, :self.text.shape[1] - dx]
         else:
-            idx = 290 + int((u - out_start) * FPS)
-        blend(frame, self.seq.get(idx), 90, 1385)
-        a = clamp((u - 1.0) / 0.25) * (1 - clamp((u - out_start) / 0.15))
-        if a > 0:
-            dx = -20 * (1 - ease_out((u - 1.0) / 0.35))
-            blend(frame, self.text, 90 + dx, 1385, a)
+            txt[:, :dx] = self.text[:, -dx:]
+        # el texto solo existe dentro de la parte blanca de la caja
+        white = (box[:, :, 0] > 200) & (box[:, :, 2] > 200)
+        txt[:, :, 3] = (txt[:, :, 3].astype(np.float32) * white * box[:, :, 3] / 255.0).astype(np.uint8)
+        blend(frame, txt, 0, 1385, a)
