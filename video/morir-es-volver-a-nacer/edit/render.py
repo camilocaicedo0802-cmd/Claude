@@ -134,7 +134,7 @@ def main():
     n = max(1, a.workers)
     step = math.ceil((f1 - f0) / n)
     parts, procs = [], []
-    tmpdir = os.path.join(os.path.dirname(os.path.abspath(a.out)), "chunks")
+    tmpdir = os.path.join(os.path.dirname(os.path.abspath(a.out)), os.environ.get("CHUNKS", "chunks"))
     os.makedirs(tmpdir, exist_ok=True)
     for k in range(n):
         s, e = f0 + k * step, min(f1, f0 + (k + 1) * step)

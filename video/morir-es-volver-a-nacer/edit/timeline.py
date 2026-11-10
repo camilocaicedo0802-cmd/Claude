@@ -311,7 +311,7 @@ def _build(a, add):
     add(a("Esa persona"), vid("mk_4225", 0, 0.8, "mist"), [Dim(0.15)])
     add(a("qué perderá"), vid("mk_4225", 3, 0.8, "mist"), [K("¿CUÁNTO TIEMPO|w", "tendrá que vivir?|s", t0=0.9, size=110, y=0.8)])
     add(a("Y pregúntate"), black(), [TypeLine("Y pregúntate:", t0=0.1, y=0.5, size=76, cps=18)], tr="black", td=0.5)
-    add(a("Estás viendo"), kb("wm_baby-kruipend", "in", "sepia"), [K("¿EL COMIENZO|w", "de tu vida...|s", t0=0.4, size=120)])
+    add(a("Estás viendo"), kb("wm_baby-kruipend", "in", "sepia"), [K("¿EL COMIENZO|w", "de tu vida...|s", t0=0.4, size=120, dim=0.3)])
     add(a("o el momento"), kb("wm_portraits-of-an", "in", "sepia"), [K("¿O EL MOMENTO EN QUE|w", "OLVIDASTE TODAS|r", "LAS ANTERIORES?|r",
                                                                    t0=0.4, size=110)], tr="flash", td=0.3)
     add(a("Porque quizá"), kb("us_gYC68k9trV8", "in", "mist_cold"), [K("LA MUERTE|w", "no sea el final|s", t0=0.8, size=120)],
