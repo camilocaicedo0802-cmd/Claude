@@ -212,3 +212,21 @@ class LightLeak:
         f = frame + a * warm * 1.1                      # additive warm burn
         f = f * (1 - (a * u) * 0.85) + hot * (a * u) * 0.85
         return np.clip(f, 0, 1)
+
+class ImageCardClip:
+    """Still photo as a card source with a slow pan (cy0 -> cy1) and push-in, so it never feels frozen."""
+    def __init__(self, path, cw, ch, cx=0.5, cy0=0.40, cy1=0.48, wf=0.95, zoom=0.08):
+        im = cv2.cvtColor(cv2.imread(path), cv2.COLOR_BGR2RGB).astype(np.float32) / 255
+        s = 1400 / im.shape[1]; self.im = cv2.resize(im, (1400, int(im.shape[0] * s)), interpolation=cv2.INTER_AREA)
+        self.cw, self.ch, self.cx, self.cy0, self.cy1, self.wf, self.zoom = cw, ch, cx, cy0, cy1, wf, zoom
+
+    def prepare(self, dur): pass
+
+    def frame(self, lt, dur):
+        u = ease_inout(clamp01(lt / max(dur, 0.1)))
+        ih, iw = self.im.shape[:2]
+        w = iw * self.wf / (1 + self.zoom * u); h = w * self.ch / self.cw
+        cx = iw * self.cx; cy = ih * (self.cy0 + (self.cy1 - self.cy0) * u)
+        x0 = min(max(cx - w / 2, 0), iw - w); y0 = min(max(cy - h / 2, 0), ih - h)
+        M = np.array([[self.cw / w, 0, -x0 * self.cw / w], [0, self.ch / h, -y0 * self.ch / h]], np.float32)
+        return cv2.warpAffine(self.im, M, (self.cw, self.ch), flags=cv2.INTER_AREA)

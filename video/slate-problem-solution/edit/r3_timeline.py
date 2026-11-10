@@ -40,6 +40,14 @@ def times_for(k, rows, lead=0.08):
             out.append(ws[min(i, len(ws) - 1)]["s"] - lead); i += len(tok[0].split())
     return out
 
+ST = P.ST
+_w13 = [w for w in WB[13]]
+def _w(tok, after=0.0):
+    for w in _w13:
+        if w["w"].lower().strip(".,") == tok and w["s"] >= after: return w["s"]
+    raise KeyError(tok)
+A7 = [C[13], _w("1-2") - 0.12, _w("follow") - 0.16, _w("and", _w("send")) - 0.12]   # card switch times in answer 7
+
 PAIRS = [  # (q seg, top clip, problem rows, bottom cards [(clip, label, t_in or None, t_out or None)])
  (0, clip(B("st1_antes/IMG_4082.MOV"), 1.5, TOP, 0.5, 0.42, 0.78, GRADE_Q), [[("Pale or", "s")], [("dull skin", "S")]],
      [(clip(B("st3_proc/MVI_4552.MP4"), 1.0, BOT, 0.5, 0.38, 0.95), "Custom\nSpray Tan")]),
@@ -52,10 +60,13 @@ PAIRS = [  # (q seg, top clip, problem rows, bottom cards [(clip, label, t_in or
  (8, clip(B("st3_proc/MVI_4541.MP4"), 26.8, TOP, 0.42, 0.62, 0.95, GRADE_Q), [[("Tan sticking to", "s")], [("hands", "S"), ("and", "s"), ("feet", "S")]],
      [(clip(B("st2_cons/IMG_1949.MOV"), 20.5, BOT, 0.35, 0.42, 0.95), "Barrier Cream")]),
  (10, clip(B("st3_desp/IMG_2209.MOV"), 2.4, TOP, 0.5, 0.38, 0.85), [[("Going on", "s")], [("vacation", "S")]],
-     [(clip(B("st2_lleg/IMG_1942.MOV"), 0.6, BOT, 0.5, 0.45, 1.0), "Book 1-2 Days\nBefore")]),
- (12, clip(B("st2_trans/IMG_1987.MOV"), 4.2, TOP, 0.5, 0.33, 0.85), [[("Wedding", "S"), ("or", "s")], [("special event", "S")]],
-     [(clip(B("st2_lleg/IMG_1943.MOV"), 0.4, BOT, 0.5, 0.42, 1.0), "Proper Prep", None, s13d),
-      (clip(B("st2_cons/IMG_1948.MOV"), 12.5, BOT, 0.45, 0.32, 0.95), "Custom Shade", s13d, None)]),
+     [(clip(B("st2_lleg/IMG_1942.MOV"), 0.6, BOT, 0.5, 0.63, 1.0), "Book 1-2 Days\nBefore")]),
+ (12, ImageCardClip(f"{ST}/dress/d/IMG_1992.jpg", TOP[2], TOP[3], 0.5, 0.40, 0.53, 0.56), [[("Wedding", "S"), ("or", "s")], [("special event", "S")]],
+     # answer split like the reference (one card per idea, synced to the words)
+     [(clip(B("st2_lleg/IMG_1943.MOV"), 1.6, BOT, 0.5, 0.63, 1.0), "Book Your\nAppointment", None, A7[1], True),
+      ("CAL", None, A7[1] + 0.05, A7[2]),
+      (clip(B("st2_cons/IMG_1949.MOV"), 23.5, BOT, 0.36, 0.40, 0.92), "Prep Instructions", A7[2], A7[3], True),
+      (clip(B("st2_proc/IMG_1966.MOV"), 0.3, BOT, 0.5, 0.52, 1.0), "Custom Shade", A7[3], None, True)]),
  (14, clip(B("st2_cons/IMG_1949.MOV"), 9.0, TOP, 0.35, 0.40, 0.90), [[("Not sure which", "s")], [("shade", "S"), ("or", "s"), ("solution", "S")], [("is right for you?", "s", "right")]],
      [(clip(B("st2_cons/IMG_1948.MOV"), 31.0, BOT, 0.5, 0.36, 1.0), "Personalized\nConsultation")]),
 ]
@@ -89,7 +100,12 @@ def build_overlays(words):
             t_in = bc[2] if len(bc) > 2 and bc[2] is not None else C[a]
             t_out = bc[3] if len(bc) > 3 and bc[3] is not None else t_end - 0.26
             last = (j == len(bots) - 1)
-            ov.append(BottomCard(cl, t_in, t_out + (0.0 if last else 0.30), BOT, label, exit=last))
+            if cl == "CAL":
+                ov.append(LabeledCalendar(t_in, t_out, W / 2, BOT[1] + BOT[3] / 2 + 10, w=760, h=440, month="DECEMBER", start_day=15,
+                                          event_idx=5, book_idx=3, ev_label="WEDDING", bk_label="BOOK", arrow_label="1-2 DAYS"))
+                continue
+            ex = bc[4] if len(bc) > 4 else last
+            ov.append(BottomCard(cl, t_in, t_out + (0.0 if ex else 0.30), BOT, label, exit=ex))
     # CLOSING: closer shot, mixed-type captions chunk by chunk
     cw = [w for k in range(16, NSEG) for w in WB[k]]
     starts = []; i = 0
@@ -110,4 +126,6 @@ SFX = [("thump", 0.05, -22.0)]
 for q, *_ in PAIRS:
     t_end = C[q + 2] if q + 2 < len(C) else CLOSE
     SFX += [("thump", C[q] + 0.04, -22.0), ("whoosh", t_end - 0.36, -31.0), ("whoosh", C[q + 1] - 0.08, -33.0)]
+SFX += [("whoosh", A7[1] - 0.20, -31.0), ("pop", A7[1] + 0.05 + 0.95, -27.0), ("pop", A7[1] + 0.05 + 1.20, -28.0),
+        ("whoosh", A7[2] - 0.08, -32.0), ("whoosh", A7[3] - 0.08, -32.0)]
 SFX += [("riser", CLOSE - 0.72, -29.0), ("whoosh", CLOSE - 0.24, -24.0)]
