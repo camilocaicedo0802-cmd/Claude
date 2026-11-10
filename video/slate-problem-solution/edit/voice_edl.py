@@ -9,7 +9,7 @@ EDL = [
  ("a", 18.03, 21.25, "Exfoliate 24 hours before your appointment."),        # A3
  ("a", 33.96, 35.74, "Tan fading unevenly."),                               # Q4
  ("a", 35.76, 37.30, "Moisturize daily."),                                  # A4
- ("a", 40.70, 43.12, "Tan sticking to hands, feet."),                       # Q5
+ ("a", 40.70, 43.12, "Tan sticking to hands and feet."),                       # Q5
  ("a", 57.40, 60.82, "We have barrier cream in the room for that before your appointment."),  # A5
  ("b", 2.20, 4.06, "Going on vacation."),                                   # Q6
  ("b", 4.80, 7.86, "Book your spray tan one to two days before your trip."),  # A6

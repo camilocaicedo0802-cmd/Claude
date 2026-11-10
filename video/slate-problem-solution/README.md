@@ -1,5 +1,23 @@
 # SLATE · Spray Tan Problems? We've Got Solutions! (reel 9:16)
 
+> **Versión 2 (vigente): `edit/r3_*.py`.** Rehecha con la estructura de `Referencia_Reel_3_Slate`:
+> la presentadora queda en pantalla todo el video; en cada problema entra **arriba a la derecha una tarjeta con
+> la imagen del problema** (desde la derecha, con desenfoque de movimiento, y sale hacia arriba) y el texto del
+> problema aparece **en el pecho, palabra por palabra**, en tipografía mixta (Poppins SemiBold pequeña +
+> Playfair Display Italic grande y condensada, crema con sombra). En la respuesta entra **abajo una tarjeta con
+> la solución** (desde la izquierda, con su nombre dentro: "Custom Spray Tan", "Rapid Tan", "Exfoliate 24h
+> Before", "Moisturize Daily", "Barrier Cream", "Book 1-2 Days Before", "Proper Prep" → "Custom Shade",
+> "Personalized Consultation"). Tarjetas con esquinas redondeadas, borde crema luminoso y sombra. Para el cierre,
+> **destello de luz cálida (light leak)** a un plano más cerrado con subtítulos en la misma tipografía mixta.
+> Los clips de las tarjetas se ralentizan solos si son más cortos que su tiempo en pantalla.
+>
+> ```bash
+> python3 edit/r3_render.py out/video_noaudio.mp4
+> python3 edit/r3_mix.py sfx /ruta/music.wav out/mix.wav
+> ```
+>
+> La versión 1 (`ps_*.py`, descrita abajo) queda como referencia; la v2 reutiliza su voz y sus tiempos.
+
 Reel vertical 1080×1920, 30 fps, ~59 s. Estilo "Problem vs. Solution" con la línea gráfica SLATE de los
 reels anteriores (Oswald + EB Garamond Italic + subtítulos Poppins Bold con brillo, títulos con destello,
 tarjeta final blanca). Sin emojis en pantalla.
