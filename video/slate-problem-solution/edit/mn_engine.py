@@ -68,10 +68,13 @@ class Block:
             scale *= max(0.75, max_w / mw * 0.99)
         self.scale = scale
         # stack rows bottom-up with leading proportional to the larger cap height of adjacent rows
+        ul_row = underline[0] if underline is not None else -1
         ys = []; yb = y_bottom
         for i in range(len(info) - 1, -1, -1):
             ys.insert(0, yb)
-            if i > 0: yb -= info[i][2] + 0.32 * info[i - 1][2] + 16      # tight baseline-to-baseline leading
+            if i > 0:
+                yb -= info[i][2] + 0.32 * info[i - 1][2] + 16          # tight baseline-to-baseline leading
+                if i - 1 == ul_row: yb -= 30                          # room for the underline below row i-1
         maxw = max(r[1] for r in info)
         self.bounds = (x, ys[0] - info[0][2], x + maxw, y_bottom)
         for ri, ((toks, w, cap, gap), yb) in enumerate(zip(info, ys)):

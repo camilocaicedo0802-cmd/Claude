@@ -1,6 +1,36 @@
 # SLATE · Spray Tan Problems? We've Got Solutions! (reel 9:16)
 
-> **Versión 4 (vigente): nueva línea visual minimalista, `edit/mn_*.py`.** Rehecha desde cero con el brief nuevo
+> **Versión 5 (vigente): línea minimalista + presets y sonidos de la librería de la clienta, `edit/mn2_*.py`.**
+> Mismo corte, voces y tiempos que la v4 (`mn2_timeline.py` importa `mn_timeline.py`); cambian los textos, el
+> sonido y dos elementos visuales. Los presets de texto de la librería (archivos de CapCut / DaVinci / After
+> Effects) se leyeron y se **replicaron con sus valores numéricos** (curvas bezier, duraciones, desplazamientos,
+> desenfoques, escalonado entre palabras):
+> - **Gancho:** *Texto Elegancia Real* (línea pequeña palabra por palabra + cursiva grande que se revela de izquierda
+>   a derecha con parpadeo y desenfoque).
+> - **Problemas:** número grande + líneas Light / SemiBold con las curvas *Minimal slide / bounce* de CapCut.
+> - **Soluciones:** *Dúo Cinemático* (palabra sans + cursiva rosada metida debajo; la sans queda encima para que se
+>   lean las dos) y *Texto Elegante* (trazo de marcador detrás de los números grandes "24h" y "1-2 days").
+> - **Cierre:** *Three Aesthetic Words* (filas que suben con desenfoque, contraste Light / Bold / cursiva).
+> - **Fachada:** *SB Fade blanco elegante* ("COME SEE US AT" espaciado + "Slate" escrito a máquina + línea final).
+> - **Subtítulos de la presentadora:** *Apple Texto Deslizante 2* (palabra que se desliza hacia arriba); las palabras
+>   clave pasan a la cursiva del preset.
+> - **Fuentes:** Poppins (la sans de la marca, en lugar de la Inter de los presets) + la cursiva de los presets
+>   (Ocean Delight, de Blankids Studio; licencia por confirmar, alternativa libre: Great Vibes, OFL).
+> - **Visual de la librería:** LUT "Calor Desvanecido" al 55 %, PNG "Degradado a negro subtítulos" bajo los textos de
+>   los b-roll, film burn cálido en la entrada del cierre (alineado a su cuadro más brillante).
+> - **Sonido de la librería** (`mn/sfx2`, wav 48 kHz): chasquido en el gancho, gota de agua en cada problema,
+>   swoosh en cada solución, trazo de marcador, pop en los números, whoosh de título al cierre, obturador en el
+>   sticker, teclas en la máquina de escribir y un brillo suave al final. Voz −15 LUFS, música −28.5 LUFS,
+>   master −14 LUFS / −1.7 dBFS.
+>
+> ```bash
+> python3 edit/mn2_render.py out/video_noaudio.mp4
+> python3 edit/mn2_mix.py /ruta/mn/sfx2 /ruta/music.wav out/mix.wav
+> ```
+>
+> El material de la clienta (presets, SFX, LUT, PNG, film burn, fuentes) no se incluye en el repo.
+
+> **Versión 4: nueva línea visual minimalista, `edit/mn_*.py`.** Rehecha desde cero con el brief nuevo
 > de la clienta y las tres referencias nuevas (Reel_referencia_slate_1/2/3):
 > - **Tipografía:** las mismas fuentes (Poppins + Playfair Display Italic), planas, sin brillo; solo una sombra
 >   casi invisible para legibilidad. Tamaños que juegan entre sí (palabra clave grande + línea pequeña, números
