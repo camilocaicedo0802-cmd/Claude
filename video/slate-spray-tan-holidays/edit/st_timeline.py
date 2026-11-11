@@ -72,7 +72,8 @@ def build_overlays(words):
     ov.append(FadeUp("BOOK", 9.50, 12.30, W / 2, 0.124 * H, 50, COND, dy=14))
     ov.append(SparkleTitle(["2 DAYS BEFORE"], 10.26, 12.30, cy=0.180 * H, size=sz_cond * 1.30, dur=0.40, seed=14))
     ov.append(TypeLine("your event", 11.80, 12.30, cx=W / 2, cy=0.180 * H + sz_cond * 1.52, size=sz_serif * 0.95, instant=True))
-    ov.append(CalendarCard(10.55, 12.30, W / 2, 0.555 * H, w=820, h=470, month="DECEMBER", start_day=15, event_idx=5, book_idx=3))
+    ov.append(CalendarCard(10.55, 12.30, W / 2, 0.555 * H, w=820, h=470, month="DECEMBER", start_day=21, event_idx=4, book_idx=2,
+                           ev_label="CHRISTMAS", bk_label="BOOK", arrow_label="2 DAYS"))   # Mon 21 .. Sun 27 Dec 2026: book Wed 23, Christmas Fri 25)
     ov.append(FadeUp("fully", 13.30, 14.55, W / 2, 0.135 * H, fit_size(SANSB, "refreshed", 342), SANSB))
     ov.append(FadeUp("developed.", 13.62, 14.55, W / 2, 0.135 * H + 108, sz_serif * 1.02, SERIF))
     # ESCENA 4

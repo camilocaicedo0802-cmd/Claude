@@ -76,7 +76,9 @@ class GlassPill:
 class CalendarCard:
     """Glass calendar: a week row pops in, the event day gets a ring, then two days before it gets
     filled 'BOOK' and an arc arrow draws from BOOK to EVENT."""
-    def __init__(self, t0, t1, cx, cy, w=820, h=470, month="DECEMBER", start_day=18, event_idx=5, book_idx=3):
+    def __init__(self, t0, t1, cx, cy, w=820, h=470, month="DECEMBER", start_day=18, event_idx=5, book_idx=3,
+                 ev_label="EVENT", bk_label="BOOK", arrow_label="2 DAYS"):
+        self.labels = (ev_label, bk_label, arrow_label)
         self.t0, self.t1, self.cx, self.cy, self.w, self.h = t0, t1, cx, cy, w, h
         self.month, self.d0, self.ev, self.bk = month, start_day, event_idx, book_idx
 
@@ -110,7 +112,7 @@ class CalendarCard:
             R = np.zeros((self.h, self.w), np.float32)
             cv2.ellipse(R, (int(ev_x - x), int(cy - y)), (44, 44), -90, 0, 360 * ease_out(ue), 1.0, 3, cv2.LINE_AA)
             composite(frame, solid_layer(R * a, "#FFFFFF", x, y))
-            for l in text_layers_at("EVENT", COND, 28, ev_x, y + 318, "#FFFFFF", 0.16, a * ease_out(ue), shadow=False):
+            for l in text_layers_at(self.labels[0], COND, 28, ev_x, y + 318, "#FFFFFF", 0.16, a * ease_out(ue), shadow=False):
                 composite(frame, l)
         # book day: filled disc pops, label BOOK
         ub = clamp01((lt - 0.95) / 0.25)
@@ -121,7 +123,7 @@ class CalendarCard:
             composite(frame, solid_layer(D * a * 0.95, "#FFF8EE", x, y))
             for l in text_layers_at(str(self.d0 + self.bk), CAPF, 46, bk_x, cy, "#2A2420", -0.02, a * ease_out(ub), shadow=False):
                 composite(frame, l)
-            for l in text_layers_at("BOOK", COND, 28, bk_x, y + 318, "#FFFFFF", 0.16, a * ease_out(ub), shadow=False):
+            for l in text_layers_at(self.labels[1], COND, 28, bk_x, y + 318, "#FFFFFF", 0.16, a * ease_out(ub), shadow=False):
                 composite(frame, l)
         # arc arrow BOOK -> EVENT
         ua = clamp01((lt - 1.20) / 0.40)
@@ -139,7 +141,7 @@ class CalendarCard:
                     q = tip - d * 16 + nrm * 9 * sgn
                     cv2.line(A, tuple(int(v) for v in tip), tuple(int(v) for v in q), 0.9, 3, cv2.LINE_AA)
             composite(frame, solid_layer(A * a, "#FFFFFF", x, y))
-            for l in text_layers_at("2 DAYS", COND, 30, (bk_x + ev_x) / 2, y + 415, "#FFFFFF", 0.18, a * ease_out(ua), shadow=False):
+            for l in text_layers_at(self.labels[2], COND, 30, (bk_x + ev_x) / 2, y + 415, "#FFFFFF", 0.18, a * ease_out(ua), shadow=False):
                 composite(frame, l)
 
 class Particles:
