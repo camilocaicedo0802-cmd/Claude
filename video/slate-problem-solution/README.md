@@ -1,5 +1,22 @@
 # SLATE · Spray Tan Problems? We've Got Solutions! (reel 9:16)
 
+> **Versión 4 (vigente): nueva línea visual minimalista, `edit/mn_*.py`.** Rehecha desde cero con el brief nuevo
+> de la clienta y las tres referencias nuevas (Reel_referencia_slate_1/2/3):
+> - **Tipografía:** las mismas fuentes (Poppins + Playfair Display Italic), planas, sin brillo; solo una sombra
+>   casi invisible para legibilidad. Tamaños que juegan entre sí (palabra clave grande + línea pequeña, números
+>   grandes "24h", "1-2"), como la referencia 2.
+> - **Estructura:** cada problema numerado ("1." + texto palabra por palabra con la voz que pregunta + fila de
+>   progreso de 8 puntos, como el ranking de la referencia 1) sobre un b-roll del problema; la solución con la
+>   presentadora y subtítulos de **una palabra** (referencias 1 y 3; las palabras clave pasan a Playfair cursiva),
+>   y después un b-roll con la palabra clave entrando con un deslizamiento corto y un **subrayado** que se dibuja.
+> - **Cierre:** frase que se construye sobre cuatro clientas, un momento **"sticker"** (la presentadora recortada
+>   con borde blanco, referencia 3; recorte con rembg/u2net_human_seg), fachada SLATE y **fundido a negro**.
+> - **Material de la clienta (Drive "material de edición", no incluido en el repo):** LUT "Calor Desvanecido" al
+>   55 % (`lib/lut/`), sonidos de su librería (`lib/sfx` recortados en `mn/sfx`: swoosh, tecla, pop, subrayado de
+>   marcador, sub-bass suave, obturador), degradado negro suave en la parte baja de los b-roll y la **zona
+>   segura** (`Margen seguro.png`: x 50–1027, y 212–1547, x ≤ 920 bajo y 1117).
+> - Transiciones: cortes limpios; solo dos zoom-blur muy suaves (al primer problema y al cierre).
+
 > **Versión 2 (vigente): `edit/r3_*.py`.** Rehecha con la estructura de `Referencia_Reel_3_Slate`:
 > la presentadora queda en pantalla todo el video; en cada problema entra **arriba a la derecha una tarjeta con
 > la imagen del problema** (desde la derecha, con desenfoque de movimiento, y sale hacia arriba) y el texto del
