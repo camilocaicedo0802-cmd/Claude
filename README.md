@@ -11,7 +11,7 @@ El monorepo incluye además **LIFE OS** (`apps/life-os`, puerto 3003): una aplic
 
 Las dos comparten la misma identidad visual ("Corte final": negro, blanco y rojo; Poppins + Playfair Display Italic), los mismos componentes y un único archivo de contenido.
 
-El contenido sigue las carpetas numeradas de Drive *Videos y Piezas para portafolio*: cada carpeta es un **capítulo** y su número es su importancia (01 Motion Graphics, 02 María Elena Badillo, 03 Ryhar… 15 Otros proyectos). El video principal de las dos webs es `promo_editor_motion.mp4`.
+El contenido sigue las carpetas numeradas de Drive *Videos y Piezas para portafolio*: cada carpeta es un **capítulo** y su número es su importancia (01 Motion Graphics, 02 María Elena Badillo, 03 Ryhar… 16 Otros proyectos). El capítulo 04, *Videos generados con IA*, reúne anuncios de ecommerce con avatares y creadores UGC que vienen de otras carpetas de Drive y va justo después de Ryhar. El video principal de las dos webs es `promo_editor_motion.mp4`.
 
 - Auditoría de fuentes, inventario y material faltante: [`docs/AUDITORIA.md`](docs/AUDITORIA.md)
 - Producto, público y evidencia disponible: [`PRODUCT.md`](PRODUCT.md)
@@ -51,7 +51,7 @@ apps/
   disenador/         Next.js: web de diseñador digital y audiovisual
 packages/core/src/
   content/
-    chapters.ts      los 15 capítulos (carpetas) con sus videos y piezas, en orden
+    chapters.ts      los 16 capítulos (carpetas) con sus videos y piezas, en orden
     profile.ts       nombre, WhatsApp, correo, redes, textos "Sobre mí"
     site-content.ts  hero, filtros, habilidades, herramientas, proceso, métricas
     media.ts         rutas de video/poster y lectura del manifest
@@ -72,7 +72,7 @@ docs/AUDITORIA.md
 
 ## Cómo agregar o editar contenido
 
-Todo el contenido está en `packages/core/src/content/chapters.ts`. Cada capítulo es una carpeta de Drive y su campo `number` define el orden (1 = lo más importante). La web de editor muestra solo los videos de cada capítulo; la de diseñador muestra videos y piezas.
+Todo el contenido está en `packages/core/src/content/chapters.ts`. Cada capítulo es una carpeta de Drive y su campo `number` define el orden en que aparece (1 = lo más importante). La web de editor muestra solo los videos de cada capítulo; la de diseñador muestra videos y piezas.
 
 1. **Archivo nuevo:** súbelo a la carpeta de Drive y agrégalo en `media/selection.json`:
    ```json
@@ -90,7 +90,7 @@ Todo el contenido está en `packages/core/src/content/chapters.ts`. Cada capítu
    piece("mi-pieza", "Título visible", "Texto alternativo que describe la imagen"),
    ```
    Para un video horizontal de formato largo (por ejemplo un episodio completo de YouTube) pasa la plataforma como cuarto argumento: `video("mi-episodio", "Título", "Descripción", { platform: "YouTube" })`. Aparece en un bloque propio debajo del carrusel del capítulo, con la etiqueta de la plataforma y la duración.
-   Para un capítulo nuevo copia uno existente y dale el `number` de su carpeta.
+   Para un capítulo nuevo copia uno existente y dale el `number` de su posición; si va entre dos capítulos, suma 1 al `number` de los que quedan después.
 
 **Métricas:** edita `reelMetrics` y `campaignMetrics` en `site-content.ts`.
 
@@ -146,9 +146,10 @@ Con Playwright (Chromium) sobre el build de producción de las dos webs (segunda
 
 | Prueba | Resultado |
 | --- | --- |
-| Móvil 360 y 390, tablet 820 y desktop 1440 | Sin scroll horizontal (medido sin emulación móvil, que lo esconde al alejar la página), sin errores de consola, sin peticiones fallidas, ningún título oculto (home y las 10 + 15 páginas de proyecto) |
+| Móvil 360 y 390, tablet 820 y desktop 1440 | Sin scroll horizontal (medido sin emulación móvil, que lo esconde al alejar la página), sin errores de consola, sin peticiones fallidas, ningún título oculto (home y las 11 + 16 páginas de proyecto) |
 | Portada | `promo_editor_motion.mp4` en las dos webs; en móvil y tablet el video va centrado y el título y los botones caben en la primera pantalla |
-| Contenido | Editor: 40 videos y 0 piezas en 10 capítulos. Diseñador: 40 videos y 83 piezas en 15 capítulos, en el orden de las carpetas y con los videos antes que las piezas |
+| Contenido | Editor: 56 videos y 0 piezas en 11 capítulos. Diseñador: 56 videos y 83 piezas en 16 capítulos, en el orden de las carpetas y con los videos antes que las piezas |
+| Videos con IA | Los 16 anuncios del capítulo 04 abren en el visor y la duración de cada archivo web coincide con su original |
 | YouTube | El episodio de 38 min de María Elena Badillo aparece en su capítulo y en su página de proyecto, abre en el visor y su archivo web se decodificó completo sin errores (37:56, igual al original) |
 | Trabajos | Índice fijo de capítulos, carrusel horizontal por capítulo (deslizable en móvil, flechas en desktop) |
 | Visor | Abre videos con sonido y piezas a 1600 px; flechas, teclado (← → Esc) y swipe en móvil; enlace al proyecto completo |

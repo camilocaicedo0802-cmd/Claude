@@ -20,6 +20,9 @@ export type Tool =
   | "Midjourney"
   | "ChatGPT"
   | "Claude"
+  | "Veo 3"
+  | "Google Flow"
+  | "Google AI Studio"
   | "Google Ads"
   | "TikTok Ads"
   | "Hootsuite"
@@ -75,8 +78,8 @@ export interface ImageItem {
 export type MediaItem = VideoItem | ImageItem;
 
 /**
- * A chapter is one numbered folder of the portfolio (a client or a body of work).
- * The folder number is the priority: 1 is the most important.
+ * A chapter is one folder of the portfolio (a client or a body of work).
+ * Its number is the display order and the priority: 1 is the most important.
  */
 export interface Chapter {
   slug: string;

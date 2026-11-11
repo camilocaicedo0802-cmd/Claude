@@ -71,6 +71,26 @@ export interface SiteSections {
   process: ProcessStep[];
 }
 
+const aiTools: ToolGroup[] = [
+  {
+    title: "Generación con IA",
+    tools: [
+      { name: "Veo 3", mark: "V3" },
+      { name: "Google Flow", mark: "Fl" },
+      { name: "Google AI Studio", mark: "As" },
+      { name: "Midjourney", mark: "Mj" },
+    ],
+  },
+  {
+    title: "Voz y texto con IA",
+    tools: [
+      { name: "ElevenLabs", mark: "11" },
+      { name: "ChatGPT", mark: "Gp" },
+      { name: "Claude", mark: "Cl" },
+    ],
+  },
+];
+
 const toolkitEditor: ToolGroup[] = [
   {
     title: "Edición y motion",
@@ -88,19 +108,22 @@ const toolkitEditor: ToolGroup[] = [
       { name: "Canva", mark: "Ca" },
     ],
   },
-  {
-    title: "Audio e IA",
-    tools: [
-      { name: "ElevenLabs", mark: "11" },
-      { name: "Midjourney", mark: "Mj" },
-      { name: "ChatGPT", mark: "Gp" },
-      { name: "Claude", mark: "Cl" },
-    ],
-  },
+  ...aiTools,
 ];
 
 const toolkitDesigner: ToolGroup[] = [
-  ...toolkitEditor,
+  {
+    title: "Diseño y edición",
+    tools: [
+      { name: "Photoshop", mark: "Ps" },
+      { name: "Illustrator", mark: "Ai" },
+      { name: "After Effects", mark: "Ae" },
+      { name: "Premiere Pro", mark: "Pr" },
+      { name: "Canva", mark: "Ca" },
+      { name: "CapCut", mark: "Cc" },
+    ],
+  },
+  ...aiTools,
   {
     title: "Pauta y gestión",
     tools: [
@@ -160,7 +183,7 @@ export const sections: Record<SiteId, SiteSections> = {
         title: "Workflow &",
         emphasis: "IA",
         summary: "Procesos ordenados y herramientas de IA para entregar más rápido sin perder calidad.",
-        items: ["Organización de material", "Adaptación multiplataforma", "Optimización de formatos", "Consistencia visual entre piezas", "Exportación profesional", "Generación y edición con IA"],
+        items: ["Organización de material", "Adaptación multiplataforma", "Optimización de formatos", "Consistencia visual entre piezas", "Exportación profesional", "Generación y edición con IA", "Anuncios con avatares y creadores UGC con IA"],
         example: "beleza-dia-01",
       },
     ],
@@ -197,8 +220,17 @@ export const sections: Record<SiteId, SiteSections> = {
       {
         title: "Contenido con",
         emphasis: "IA",
-        summary: "Imágenes, audio y contenido generados con IA bajo una dirección de arte clara.",
-        items: ["Generación y edición de imágenes con IA", "Creación de contenido con IA", "Edición de audios con IA", "Campañas conceptuales 100 % IA"],
+        summary: "Videos, avatares e imágenes generados con IA, con dirección de arte y pensados para vender.",
+        items: [
+          "Videos con IA para ecommerce",
+          "Avatares y creadores UGC con IA",
+          "Anuncios para cada etapa del embudo",
+          "Versiones de un anuncio con distintos hooks",
+          "Generación y edición de imágenes con IA",
+          "Edición de audios con IA",
+          "Campañas conceptuales 100 % IA",
+        ],
+        example: "ia-matcha-ugc",
       },
       {
         title: "Redes y",
