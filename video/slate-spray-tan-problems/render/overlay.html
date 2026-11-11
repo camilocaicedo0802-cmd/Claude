@@ -1,0 +1,304 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+@font-face { font-family: "SFD"; src: url("fonts/SFPRODISPLAYBOLD.OTF"); font-weight: 700; }
+@font-face { font-family: "SFD"; src: url("fonts/SFPRODISPLAYMEDIUM.OTF"); font-weight: 500; }
+@font-face { font-family: "Nyght"; src: url("fonts/NyghtSerif-MediumItalic.ttf"); font-style: italic; font-weight: 500; }
+@font-face { font-family: "Hand"; src: url("fonts/ShadowsIntoLight-Regular.ttf"); }
+:root {
+  --gold-1: #FFF3B8;
+  --gold-2: #FFD25E;
+  --gold-3: #F6AE38;
+  --coral: #FF8A7A;
+  --white: #FFFFFF;
+}
+html, body { margin: 0; padding: 0; background: transparent; }
+#stage { position: relative; width: 1080px; height: 1920px; overflow: hidden; }
+.abs { position: absolute; left: 0; top: 0; }
+.block { position: absolute; left: 70px; width: 940px; text-align: center; will-change: transform, opacity; }
+.head { font-family: "SFD"; font-weight: 700; color: var(--white); letter-spacing: -0.028em; line-height: 0.98;
+        text-shadow: 0 3px 14px rgba(0,0,0,.30), 0 1px 3px rgba(0,0,0,.25); }
+.w { display: inline-block; white-space: pre; will-change: transform, opacity, filter; }
+.acc { font-family: "Nyght"; font-style: italic; font-weight: 500; letter-spacing: -0.01em; color: #FFD571;
+       text-shadow: 0 2px 4px rgba(70,35,0,.55), 0 0 18px rgba(40,20,0,.35); padding: 0 0.06em 0.1em 0.03em; }
+.label { font-family: "Hand"; font-size: 60px; -webkit-text-stroke: 0.8px currentColor; line-height: 1; color: var(--white); display: inline-flex; align-items: center; gap: 12px;
+         text-shadow: 0 2px 10px rgba(0,0,0,.35); transform-origin: 50% 60%; }
+.label.gold { color: #FFE39A; }
+.label svg { overflow: visible; }
+.scrim { position: absolute; left: 0; width: 1080px; pointer-events: none; }
+.line { position: absolute; left: 0; top: 958px; height: 4px; width: 1080px; background: rgba(255,255,255,.92);
+        box-shadow: 0 0 12px rgba(0,0,0,.25); transform-origin: 50% 50%; }
+.star { position: absolute; width: 40px; height: 40px; margin: -20px 0 0 -20px; }
+.cap { position: absolute; left: 60px; width: 960px; text-align: center; }
+</style>
+</head>
+<body>
+<div id="stage"></div>
+<script>
+const STAR = 'M12 0 C12.9 7.4 16.6 11.1 24 12 C16.6 12.9 12.9 16.6 12 24 C11.1 16.6 7.4 12.9 0 12 C7.4 11.1 11.1 7.4 12 0 Z';
+function starSVG(fill) {
+  return `<svg viewBox="0 0 24 24" width="100%" height="100%"><path d="${STAR}" fill="${fill}"/></svg>`;
+}
+const CHECK = `<svg width="46" height="40" viewBox="0 0 46 40"><path class="draw" d="M4 22 C9 26 13 31 17 35 C24 22 32 12 43 4" fill="none" stroke="#FFE7B0" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+const CROSS = `<svg width="38" height="38" viewBox="0 0 38 38"><path class="draw" d="M6 6 C14 14 22 23 32 33" fill="none" stroke="#FF8A7A" stroke-width="5.5" stroke-linecap="round"/><path class="draw2" d="M32 5 C23 14 14 23 6 32" fill="none" stroke="#FF8A7A" stroke-width="5.5" stroke-linecap="round"/></svg>`;
+
+// ---------- easing
+const clamp = (x, a=0, b=1) => Math.max(a, Math.min(b, x));
+const lerp = (a, b, e) => a + (b - a) * e;
+const eOutCubic = x => 1 - Math.pow(1 - clamp(x), 3);
+const eOutQuint = x => 1 - Math.pow(1 - clamp(x), 5);
+const eInOutCubic = x => { x = clamp(x); return x < .5 ? 4*x*x*x : 1 - Math.pow(-2*x + 2, 3) / 2; };
+const eOutBack = (x, s=1.7) => { x = clamp(x); const c3 = s + 1; return 1 + c3*Math.pow(x-1,3) + s*Math.pow(x-1,2); };
+
+let T = null;        // timeline
+const stage = document.getElementById('stage');
+const pairEls = [];
+let hookEls = null, outroEls = null;
+
+// rich text: "*word*" -> accent; returns array of {text, acc}
+function parseRich(s) {
+  const parts = []; const re = /\*([^*]+)\*/g; let last = 0, m;
+  while ((m = re.exec(s))) { if (m.index > last) parts.push({text: s.slice(last, m.index), acc: false}); parts.push({text: m[1], acc: true}); last = re.lastIndex; }
+  if (last < s.length) parts.push({text: s.slice(last), acc: false});
+  return parts;
+}
+function wordSpan(text, cls='') { const s = document.createElement('span'); s.className = 'w ' + cls; s.textContent = text; return s; }
+
+// word reveal: blur-in + rise; returns visibility so callers can chain
+function revealWord(el, t, t0, opt={}) {
+  const d = opt.dur || 0.24;
+  const p = clamp((t - t0) / d);
+  const e = eOutCubic(p);
+  const b = opt.back ? eOutBack(p, 2.2) : e;
+  const rise = opt.rise ?? 22, blur = opt.blur ?? 12, sc0 = opt.scale ?? 0.9;
+  el.style.opacity = p <= 0 ? 0 : clamp(p * 1.6);
+  el.style.filter = `blur(${(1 - e) * blur}px)` + '';
+  el.style.transform = `translateY(${(1 - e) * rise}px) scale(${lerp(sc0, 1, b)})`;
+}
+function exitStyle(el, t, t1, d=0.16) {
+  // blur + fade out ending at t1
+  const p = clamp((t - (t1 - d)) / d);
+  if (p <= 0) return 1;
+  const e = eInOutCubic(p);
+  el.style.opacity = (parseFloat(el.style.opacity || 1)) * (1 - e);
+  el.style.filter = `blur(${e * 10}px)`;
+  return 1 - e;
+}
+
+function build() {
+  // ---------------- hook
+  const hk = document.createElement('div'); hk.className = 'abs'; stage.appendChild(hk);
+  const scH = document.createElement('div'); scH.className = 'scrim';
+  scH.style.top = '520px'; scH.style.height = '900px';
+  scH.style.background = 'radial-gradient(ellipse 70% 50% at 50% 50%, rgba(0,0,0,.40), rgba(0,0,0,0) 74%)';
+  hk.appendChild(scH);
+  const l1 = document.createElement('div'); l1.className = 'block head'; l1.style.top = '700px'; l1.style.fontSize = '132px';
+  const w1 = wordSpan('SPRAY TAN'); l1.appendChild(w1); hk.appendChild(l1);
+  const l2 = document.createElement('div'); l2.className = 'block head'; l2.style.top = '826px'; l2.style.fontSize = '152px';
+  const w2 = wordSpan('PROBLEMS?'); l2.appendChild(w2); hk.appendChild(l2);
+  const l3 = document.createElement('div'); l3.className = 'block'; l3.style.top = '1020px';
+  const w3 = document.createElement('span'); w3.className = 'w label'; w3.style.fontSize = '76px'; w3.textContent = "we've got"; l3.appendChild(w3); hk.appendChild(l3);
+  const l4 = document.createElement('div'); l4.className = 'block head'; l4.style.top = '1090px'; l4.style.fontSize = '178px';
+  const w4 = wordSpan('solutions!', 'acc'); l4.appendChild(w4); hk.appendChild(l4);
+  const hs = [];
+  [[205, 1120, 64], [910, 1100, 46], [860, 1300, 34], [250, 1330, 30]].forEach(([x, y, s]) => {
+    const st = document.createElement('div'); st.className = 'star'; st.style.left = x + 'px'; st.style.top = y + 'px';
+    st.style.width = st.style.height = s + 'px'; st.style.margin = `${-s/2}px 0 0 ${-s/2}px`; st.innerHTML = starSVG('#FFE7B0'); hk.appendChild(st); hs.push(st);
+  });
+  hookEls = {root: hk, scH, w1, w2, w3, w4, hs};
+
+  // ---------------- pairs
+  T.pairs.forEach((p, i) => {
+    const root = document.createElement('div'); root.className = 'abs'; stage.appendChild(root);
+    // scrims
+    const scFull = document.createElement('div'); scFull.className = 'scrim';
+    scFull.style.top = '600px'; scFull.style.height = '760px';
+    scFull.style.background = 'radial-gradient(ellipse 75% 50% at 50% 50%, rgba(0,0,0,.56), rgba(0,0,0,0) 78%)';
+    root.appendChild(scFull);
+    const scTop = document.createElement('div'); scTop.className = 'scrim';
+    scTop.style.top = '520px'; scTop.style.height = '440px';
+    scTop.style.background = 'linear-gradient(180deg, rgba(0,0,0,0), rgba(0,0,0,.42))';
+    root.appendChild(scTop);
+    const scBot = document.createElement('div'); scBot.className = 'scrim';
+    scBot.style.top = '960px'; scBot.style.height = '440px';
+    scBot.style.background = 'linear-gradient(180deg, rgba(0,0,0,.42), rgba(0,0,0,0))';
+    root.appendChild(scBot);
+    // problem block
+    const pb = document.createElement('div'); pb.className = 'block'; root.appendChild(pb);
+    const pl = document.createElement('div'); pl.style.marginBottom = '18px';
+    const plab = document.createElement('span'); plab.className = 'w label';
+    plab.innerHTML = `${CROSS}<span>problem #${p.n}</span>`; pl.appendChild(plab); pb.appendChild(pl);
+    const ph = document.createElement('div'); ph.className = 'head';
+    const nWords = p.problem.length;
+    const fs = nWords > 6 ? 78 : 92;
+    ph.style.fontSize = fs + 'px';
+    const pws = p.problem.map(([txt, tt], k) => {
+      const br = txt.endsWith('|'); const clean = br ? txt.slice(0, -1) : txt;
+      const s = wordSpan(clean + (k < nWords - 1 && !br ? ' ' : '')); ph.appendChild(s);
+      if (br) ph.appendChild(document.createElement('br'));
+      return [s, tt]; });
+    pb.appendChild(ph);
+    // divider
+    const line = document.createElement('div'); line.className = 'line'; root.appendChild(line);
+    const cst = document.createElement('div'); cst.className = 'star'; cst.style.left = '540px'; cst.style.top = '960px';
+    cst.style.width = cst.style.height = '54px'; cst.style.margin = '-27px 0 0 -27px'; cst.innerHTML = starSVG('#FFE7B0'); root.appendChild(cst);
+    // solution block
+    const sb = document.createElement('div'); sb.className = 'block'; sb.style.top = '1004px'; root.appendChild(sb);
+    const sl = document.createElement('div'); sl.style.marginBottom = '14px';
+    const slab = document.createElement('span'); slab.className = 'w label gold';
+    slab.innerHTML = `<span>solution</span>${CHECK}`; sl.appendChild(slab); sb.appendChild(sl);
+    const sh = document.createElement('div'); sh.className = 'head'; sh.style.fontSize = '86px';
+    const sws = [];
+    p.sol.forEach(([txt, kind], k) => {
+      const tt = p.sol_times[Math.min(k, p.sol_times.length - 1)];
+      const s = wordSpan(txt + (k < p.sol.length - 1 ? ' ' : ''), kind === 'accent' ? 'acc' : '');
+      if (kind === 'accent') s.style.fontSize = '1.2em';
+      sh.appendChild(s); sws.push([s, tt, kind === 'accent']);
+    });
+    sb.appendChild(sh);
+    const sst = [];
+    [[-1, 0.18, 44], [1, 0.62, 30], [1, -0.05, 24]].forEach(([side, yy, s]) => {
+      const st = document.createElement('div'); st.className = 'star';
+      st.style.width = st.style.height = s + 'px'; st.style.margin = `${-s/2}px 0 0 ${-s/2}px`;
+      st.innerHTML = starSVG(side < 0 ? '#FFE7B0' : '#FFFFFF'); root.appendChild(st); sst.push({el: st, side, yy, s});
+    });
+    pairEls.push({p, root, scFull, scTop, scBot, pb, plab, ph, pws, line, cst, sb, slab, sh, sws, sst});
+  });
+
+  // ---------------- outro captions
+  const oroot = document.createElement('div'); oroot.className = 'abs'; stage.appendChild(oroot);
+  const scO = document.createElement('div'); scO.className = 'scrim'; scO.style.top = '900px'; scO.style.height = '420px';
+  scO.style.background = 'radial-gradient(ellipse 70% 45% at 50% 50%, rgba(0,0,0,.34), rgba(0,0,0,0) 72%)';
+  oroot.appendChild(scO);
+  const caps = T.outro.captions.map(([txt, t0, t1]) => {
+    const c = document.createElement('div'); c.className = 'cap head'; c.style.fontSize = '74px'; c.style.top = '1050px';
+    const ws = [];
+    parseRich(txt).forEach(part => {
+      if (part.acc) { const s = wordSpan(part.text, 'acc'); s.style.fontSize = '1.22em'; c.appendChild(s); ws.push(s); }
+      else part.text.split(/(\s+)/).forEach(tok => { if (!tok) return; const s = wordSpan(tok); c.appendChild(s); ws.push(s); });
+    });
+    oroot.appendChild(c);
+    return {c, ws, t0, t1};
+  });
+  outroEls = {root: oroot, scO, caps};
+}
+
+function hide(el) { el.style.display = 'none'; }
+function show(el) { el.style.display = ''; }
+
+function renderHook(t) {
+  const h = hookEls, end = T.hook.end;
+  if (t >= end + 0.02) { hide(h.root); return; }
+  show(h.root);
+  h.scH.style.opacity = clamp(t / 0.25) * (1 - clamp((t - (end - 0.2)) / 0.2));
+  revealWord(h.w1, t, 0.00, {dur: 0.26, rise: 0, blur: 16, scale: 1.35, back: true});
+  revealWord(h.w2, t, 0.14, {dur: 0.28, rise: 0, blur: 18, scale: 1.4, back: true});
+  revealWord(h.w3, t, 0.95, {dur: 0.26, rise: 18, blur: 8, scale: 0.9});
+  revealWord(h.w4, t, 1.12, {dur: 0.32, rise: 26, blur: 14, scale: 0.82, back: true});
+  h.w3.style.transform += ' rotate(-4deg)';
+  h.hs.forEach((st, k) => {
+    const t0 = 1.22 + k * 0.07; const p = clamp((t - t0) / 0.3);
+    const tw = 0.85 + 0.15 * Math.sin((t - t0) * 9 + k);
+    st.style.opacity = p > 0 ? clamp(p * 2) : 0;
+    st.style.transform = `scale(${eOutBack(p, 3) * tw}) rotate(${(1 - p) * 90 + (t - t0) * 25}deg)`;
+  });
+  [h.w1, h.w2, h.w3, h.w4, ...h.hs].forEach(el => exitStyle(el, t, end, 0.16));
+}
+
+function renderPair(pe, t) {
+  const p = pe.p;
+  const vis = t >= p.start - 0.05 && t < p.end + 0.02;
+  if (!vis) { hide(pe.root); return; }
+  show(pe.root);
+  const split = eOutQuint((t - p.split) / 0.42);          // must match compositor
+  const tIn = p.start;
+  // scrims
+  pe.scFull.style.opacity = clamp((t - tIn) / 0.2) * (1 - split);
+  pe.scTop.style.opacity = split; pe.scBot.style.opacity = split;
+  // problem block: anchored by its bottom edge
+  const h = pe.pb.offsetHeight;
+  const bottom = lerp(1050, 918, split);
+  const ps = lerp(1, 0.86, split);
+  pe.pb.style.top = (bottom - h) + 'px';
+  pe.pb.style.transformOrigin = '50% 100%';
+  pe.pb.style.transform = `scale(${ps})`;
+  revealWord(pe.plab, t, Math.max(p.q_first - 0.16, p.start + 0.12), {dur: 0.26, rise: 10, blur: 8, scale: 0.7, back: true});
+  pe.plab.style.transform += ' rotate(-3deg)';
+  // draw cross strokes
+  const cx = pe.plab.querySelectorAll('path');
+  const dp = clamp((t - (p.q_first - 0.05)) / 0.18), dp2 = clamp((t - (p.q_first + 0.08)) / 0.18);
+  cx[0].style.strokeDasharray = 40; cx[0].style.strokeDashoffset = 40 * (1 - dp);
+  cx[1].style.strokeDasharray = 40; cx[1].style.strokeDashoffset = 40 * (1 - dp2);
+  pe.pws.forEach(([el, tt]) => revealWord(el, t, Math.max(tt - 0.06, p.start + 0.14), {dur: 0.22, rise: 24, blur: 12, scale: 0.88}));
+  // divider + center star
+  const lp = eOutCubic((t - p.split - 0.06) / 0.34);
+  pe.line.style.opacity = split > 0.02 ? 1 : 0;
+  const panelTop = 1920 - 960 * split;
+  pe.line.style.top = (panelTop - 2) + 'px';
+  pe.line.style.transform = `scaleX(${Math.max(lp, 0.0)})`;
+  pe.cst.style.top = panelTop + 'px';
+  const sp = clamp((t - p.split - 0.16) / 0.34);
+  pe.cst.style.opacity = sp > 0 ? 1 : 0;
+  pe.cst.style.transform = `scale(${eOutBack(sp, 3.2)}) rotate(${(1 - eOutCubic(sp)) * -120 + (t - p.split) * 30}deg)`;
+  // solution block
+  revealWord(pe.slab, t, p.split + 0.10, {dur: 0.26, rise: 10, blur: 8, scale: 0.7, back: true});
+  pe.slab.style.transform += ' rotate(-3deg)';
+  const ck = pe.slab.querySelector('path'); const ckp = clamp((t - (p.split + 0.22)) / 0.22);
+  ck.style.strokeDasharray = 60; ck.style.strokeDashoffset = 60 * (1 - eOutCubic(ckp));
+  pe.sws.forEach(([el, tt, acc]) => {
+    const t0 = Math.max(tt - 0.08, p.split + 0.16);
+    revealWord(el, t, t0, acc ? {dur: 0.30, rise: 20, blur: 14, scale: 0.75, back: true} : {dur: 0.22, rise: 22, blur: 12, scale: 0.88});
+  });
+  // sparkles around the solution headline
+  const shRect = {top: 1004 + pe.slab.parentNode.offsetHeight + 14, h: pe.sh.offsetHeight};
+  const shW = Math.min(940, Math.max(...Array.from(pe.sh.querySelectorAll('.w')).map(e => e.offsetLeft + e.offsetWidth)) - Math.min(...Array.from(pe.sh.querySelectorAll('.w')).map(e => e.offsetLeft)));
+  const accT = Math.max(...pe.sws.filter(x => x[2]).map(x => x[1]), p.split + 0.2);
+  pe.sst.forEach((s, k) => {
+    const x = 540 + s.side * (Math.min(shW, 880) / 2 + 48 + k * 10);
+    const y = 1004 + 84 + shRect.h * s.yy + 30;
+    s.el.style.left = x + 'px'; s.el.style.top = y + 'px';
+    const t0 = accT + 0.05 + k * 0.08, q = clamp((t - t0) / 0.32);
+    const tw = 0.8 + 0.2 * Math.sin((t - t0) * 8 + k * 2);
+    s.el.style.opacity = q > 0 ? clamp(q * 2) : 0;
+    s.el.style.transform = `scale(${eOutBack(q, 3) * tw}) rotate(${(1 - q) * 120 + (t - t0) * 30}deg)`;
+  });
+  // exit everything just before the cut
+  [pe.plab, ...pe.pws.map(x => x[0]), pe.slab, ...pe.sws.map(x => x[0]), ...pe.sst.map(s => s.el), pe.cst].forEach(el => exitStyle(el, t, p.end - 0.13, 0.12));
+  const fo = 1 - clamp((t - (p.end - 0.25)) / 0.12);
+  pe.line.style.opacity = parseFloat(pe.line.style.opacity) * fo;
+  pe.scTop.style.opacity = split * fo; pe.scBot.style.opacity = split * fo; pe.scFull.style.opacity *= fo;
+}
+
+function renderOutro(t) {
+  const o = outroEls;
+  if (t < T.outro.start) { hide(o.root); return; }
+  show(o.root);
+  let any = 0;
+  o.caps.forEach(c => {
+    const on = t >= c.t0 - 0.12 && t < c.t1 + 0.02;
+    c.c.style.display = on ? '' : 'none';
+    if (!on) return;
+    any = 1;
+    c.ws.forEach((el, k) => revealWord(el, t, c.t0 - 0.08 + k * 0.045, {dur: 0.2, rise: 18, blur: 10, scale: 0.9, back: el.classList.contains('acc')}));
+    const last = c === o.caps[o.caps.length - 1];
+    c.ws.forEach(el => exitStyle(el, t, last ? T.outro.end - 0.15 : c.t1 + 0.02, last ? 0.35 : 0.08));
+  });
+  o.scO.style.opacity = any * clamp((t - T.outro.start) / 0.3) * (1 - clamp((t - (T.outro.end - 0.4)) / 0.3));
+}
+
+window.setup = async (timeline) => {
+  T = timeline; build();
+  await document.fonts.ready;
+  return true;
+};
+window.renderAt = (t) => {
+  renderHook(t);
+  pairEls.forEach(pe => renderPair(pe, t));
+  renderOutro(t);
+  return true;
+};
+</script>
+</body>
+</html>
