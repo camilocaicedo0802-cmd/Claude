@@ -54,7 +54,7 @@ def call(model, voice, text, tries=6):
                                  "speechConfig": {"voiceConfig": {"prebuiltVoiceConfig": {"voiceName": voice}}}}}
     for k in range(tries):
         req = urllib.request.Request(url, data=json.dumps(body).encode(),
-                                     headers={"Content-Type": "application/json", "x-goog-api-key": "proxy-injected"})
+                                     headers={"Content-Type": "application/json", "x-goog-api-key": os.environ.get("GEMINI_API_KEY", "proxy-injected")})
         try:
             r = json.load(urllib.request.urlopen(req, timeout=600))
             part = r["candidates"][0]["content"]["parts"][0]["inlineData"]

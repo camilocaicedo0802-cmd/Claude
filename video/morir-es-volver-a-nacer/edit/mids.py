@@ -3,7 +3,7 @@ sys.path.insert(0, '.')
 from PIL import Image, ImageDraw, ImageFont
 import render
 shots = render.build(float(sys.argv[2]) if len(sys.argv)>2 else 408.5)
-font = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf', 14)
+font = ImageFont.truetype(__import__('os').path.join(__import__('os').path.dirname(__import__('os').path.dirname(__import__('os').path.abspath(__file__))), 'assets', 'fonts', 'Poppins-Bold.ttf'), 14)
 tiles = []
 errs = 0
 for i, s in enumerate(shots):

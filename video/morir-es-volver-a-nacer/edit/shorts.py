@@ -97,13 +97,13 @@ def main():
         dur = ass(W, i0, i1, t0, hook, sub)
         fc = ("[0:v]split[a][b];[a]scale=-2:1920,crop=1080:1920,boxblur=28:2,eq=brightness=-0.22:saturation=0.8[bg];"
               "[b]scale=1242:-2,crop=1080:ih[fg];[bg][fg]overlay=0:(H-h)/2-40,"
-              f"subtitles={sub}:fontsdir={FONTS},fade=t=out:st={dur - 0.6:.2f}:d=0.6[v];"
+              f"subtitles={name}.ass:fontsdir={os.path.relpath(FONTS, out).replace(os.sep, '/')},fade=t=out:st={dur - 0.6:.2f}:d=0.6[v];"
               f"[1:a]afade=t=in:d=0.15,afade=t=out:st={dur - 0.8:.2f}:d=0.8[au]")
         dst = os.path.join(out, name + ".mp4")
-        subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", f"{t0:.3f}", "-t", f"{dur:.3f}", "-i", video,
-                        "-ss", f"{t0:.3f}", "-t", f"{dur:.3f}", "-i", mix, "-filter_complex", fc, "-map", "[v]", "-map", "[au]",
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", f"{t0:.3f}", "-t", f"{dur:.3f}", "-i", os.path.abspath(video),
+                        "-ss", f"{t0:.3f}", "-t", f"{dur:.3f}", "-i", os.path.abspath(mix), "-filter_complex", fc, "-map", "[v]", "-map", "[au]",
                         "-c:v", "libx264", "-preset", "medium", "-crf", "18", "-pix_fmt", "yuv420p", "-r", "30",
-                        "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", dst], check=True)
+                        "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", os.path.abspath(dst)], check=True, cwd=out)
         print(dst, round(dur, 1), "s, desde", round(t0, 1))
 
 

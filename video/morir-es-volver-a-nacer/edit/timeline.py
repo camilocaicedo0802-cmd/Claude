@@ -13,8 +13,9 @@ from mist import (BLK, RED, WHT, YEL, BigNumber, Blur, Corridor, Cycle, Dim, ECG
 from render import Shot
 from words import WORDS
 
-STOCK = "/home/user/proj/stock"
-_FILES = [p for p in glob.glob(STOCK + "/*/*") if p.lower().endswith((".mp4", ".jpg", ".jpeg", ".png", ".webp"))]
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+STOCK = os.environ.get("STOCK_DIR", os.path.join(ROOT, "stock"))
+_FILES = [p for p in glob.glob(os.path.join(STOCK, "*", "*")) if p.lower().endswith((".mp4", ".jpg", ".jpeg", ".png", ".webp"))]
 
 
 def S(key):

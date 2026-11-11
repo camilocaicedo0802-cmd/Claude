@@ -19,7 +19,7 @@ def gen(model, prompt, aspect="16:9"):
             "generationConfig": {"responseModalities": ["IMAGE", "TEXT"], "imageConfig": {"aspectRatio": aspect}}}
     for k in range(6):
         try:
-            req = urllib.request.Request(url, data=json.dumps(body).encode(), headers={"Content-Type": "application/json"})
+            req = urllib.request.Request(url, data=json.dumps(body).encode(), headers={"Content-Type": "application/json", "x-goog-api-key": os.environ.get("GEMINI_API_KEY", "proxy-injected")})
             r = json.load(urllib.request.urlopen(req, timeout=600))
             for p in r["candidates"][0]["content"]["parts"]:
                 d = p.get("inlineData") or p.get("inline_data")

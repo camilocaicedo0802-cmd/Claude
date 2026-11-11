@@ -90,6 +90,8 @@ def build_music(N, total):
         if s >= total:
             break
         p = os.path.join(ROOT, "assets", "score", f"cue_{k + 1}.wav")
+        if not os.path.exists(p):
+            p = p[:-4] + ".flac"
         g = -27.5 - lufs(p)
         clip = load(p, 0, e - s + 0.2)
         clip = clip[: int((e - s) * SR)]

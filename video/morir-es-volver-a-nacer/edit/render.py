@@ -126,7 +126,7 @@ def main():
     ap.add_argument("--workers", type=int, default=4)
     ap.add_argument("--from", dest="t_from", type=float, default=0.0)
     ap.add_argument("--to", dest="t_to", type=float, default=None)
-    ap.add_argument("--total", type=float, default=1145.23)
+    ap.add_argument("--total", type=float, default=446.25)
     ap.add_argument("--preview", action="store_true")
     a = ap.parse_args()
     t_to = a.t_to if a.t_to is not None else a.total
