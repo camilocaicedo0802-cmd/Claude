@@ -5,6 +5,10 @@ fiestas de Navidad y Año Nuevo. Mantiene la línea gráfica de `slate-blueberry
 referencia (reel inmobiliario de 40 s) su dinamismo: cortes cada ~1 s, transiciones con zoom-blur,
 tarjetas de vidrio esmerilado y tipografía grande cinética. **Sin emojis en pantalla** (pedido de la clienta).
 
+> **Versión 2 (vigente, 20,6 s) — correcciones de la clienta:** abre con la presentadora frente a la tienda
+> SLATE (sin b-roll al inicio) y "TULSA, OK" centrado sobre ella; sin animación de hojas, de nieve/puntos ni de
+> confeti; sin tarjeta CTA final: cierra con "BOOK YOUR / *holiday glow*" sobre un resultado.
+
 Depende de `../slate-blueberry-boost/edit/engine.py` (copiarlo junto a `st_engine.py`).
 
 ## Guion → escenas
