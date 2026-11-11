@@ -10,7 +10,7 @@ import type {
   SavingsGoal,
   Transaction,
 } from "@/db/types";
-import { nowISO, type DateStr } from "@/lib/dates";
+import { nowISO, todayIn, type DateStr } from "@/lib/dates";
 import type { Minor } from "@/lib/money";
 import { uid } from "@/lib/utils";
 import { DomainError, logActivity } from "./common";
@@ -321,10 +321,11 @@ export async function createGoal(input: Omit<SavingsGoal, "id" | "createdAt" | "
   const now = nowISO();
   const goal: SavingsGoal = { ...input, name: input.name.trim(), id: uid(), archived: false, createdAt: now, updatedAt: now };
   const d = db();
+  const tz = (await d.settings.get("app"))?.timeZone;
   await d.transaction("rw", [d.goals, d.goalContributions], async () => {
     await d.goals.add(goal);
     if (initial && initial > 0) {
-      await d.goalContributions.add({ id: uid(), goalId: goal.id, amount: initial, date: now.slice(0, 10), note: "Saldo inicial", createdAt: now, updatedAt: now });
+      await d.goalContributions.add({ id: uid(), goalId: goal.id, amount: initial, date: todayIn(tz), note: "Saldo inicial", createdAt: now, updatedAt: now });
     }
   });
   return goal.id;

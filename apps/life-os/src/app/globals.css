@@ -243,6 +243,10 @@
     -webkit-tap-highlight-color: transparent;
     font-feature-settings: "ss01", "cv11";
   }
+  /* Grid items may shrink below their content: long single-line text truncates instead of widening the page. */
+  :where(.grid) > * {
+    min-width: 0;
+  }
   ::selection {
     background: var(--brand-soft);
     color: var(--foreground);

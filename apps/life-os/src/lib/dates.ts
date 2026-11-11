@@ -45,6 +45,13 @@ export function zonedNow(timeZone: string = DEFAULT_TIME_ZONE, at: Date = new Da
   };
 }
 
+/** Calendar date (in the given zone) of an ISO instant such as createdAt/completedAt. */
+export function instantToDate(iso: string, timeZone?: string): DateStr {
+  const d = new Date(iso);
+  if (Number.isNaN(d.getTime())) return iso.slice(0, 10);
+  return zonedNow(timeZone, d).date;
+}
+
 export function todayIn(timeZone?: string): DateStr {
   return zonedNow(timeZone).date;
 }

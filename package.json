@@ -14,7 +14,10 @@
     "build:disenador": "npm run build -w @jcc/disenador",
     "build:relative": "NEXT_PUBLIC_RELATIVE_EXPORT=1 npm run build && node scripts/relative-export.mjs editor && node scripts/relative-export.mjs disenador",
     "typecheck": "npm run typecheck --workspaces --if-present",
-    "lint": "npm run lint --workspaces --if-present"
+    "lint": "npm run lint --workspaces --if-present",
+    "dev:life-os": "npm run dev -w @jcc/life-os",
+    "build:life-os": "npm run build -w @jcc/life-os",
+    "test:life-os": "npm run test -w @jcc/life-os"
   },
   "engines": {
     "node": ">=20.9"

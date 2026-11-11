@@ -27,7 +27,7 @@ import { runSave } from "@/components/forms/form-kit";
 import { addClientNote, setJobStatus, updateClient, updateJob } from "@/services/clients-service";
 import { setTaskDone } from "@/services/life-service";
 import { CLIENT_STATUS_LABEL, PAYMENT_KIND_LABEL, summarizeClients } from "@/domain/clients";
-import { formatDateNumeric, formatDateShort, formatRelativeDay } from "@/lib/dates";
+import { formatDateNumeric, formatDateShort, formatRelativeDay, instantToDate } from "@/lib/dates";
 import { cn, whatsappLink } from "@/lib/utils";
 import { DueLabel, JobCard, PaymentBadge, PriorityFlag, StatusBadge } from "./bits";
 import { FOLLOWUP_LABEL } from "@/components/forms/life-forms";
@@ -57,6 +57,7 @@ export function DetailHost() {
 }
 
 function ActivityList({ items }: { items: Array<{ id: string; at: string; message: string; type: string }> }) {
+  const tz = useData().settings.timeZone;
   if (items.length === 0) return <p className="text-[13px] text-muted-foreground">Sin actividad todavía.</p>;
   return (
     <ol className="relative space-y-3 border-l border-border pl-4">
@@ -64,7 +65,7 @@ function ActivityList({ items }: { items: Array<{ id: string; at: string; messag
         <li key={a.id} className="relative">
           <span className={cn("absolute top-1.5 -left-[21px] size-2 rounded-full border-2 border-popover", a.type === "payment" ? "bg-income" : a.type === "note" ? "bg-brand" : "bg-border-strong")} aria-hidden />
           <p className={cn("text-[13px]", a.type === "note" && "whitespace-pre-wrap")}>{a.message}</p>
-          <p className="text-xs text-subtle tabular">{formatDateNumeric(a.at.slice(0, 10))}</p>
+          <p className="text-xs text-subtle tabular">{formatDateNumeric(instantToDate(a.at, tz))}</p>
         </li>
       ))}
     </ol>

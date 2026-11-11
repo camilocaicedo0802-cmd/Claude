@@ -7,6 +7,8 @@ Dos webs de portafolio construidas con el material real de Juan Camilo Caicedo (
 | **Editor de video** | `apps/editor` | Solo los videos de cada carpeta | 3001 |
 | **Diseñador digital y audiovisual** | `apps/disenador` | Todas las piezas y todos los videos | 3002 |
 
+El monorepo incluye además **LIFE OS** (`apps/life-os`, puerto 3003): una aplicación personal de finanzas, clientes y agenda con datos locales en el navegador. Instrucciones y modelo de datos en [`apps/life-os/README.md`](apps/life-os/README.md).
+
 Las dos comparten la misma identidad visual ("Corte final": negro, blanco y rojo; Poppins + Playfair Display Italic), los mismos componentes y un único archivo de contenido.
 
 El contenido sigue las carpetas numeradas de Drive *Videos y Piezas para portafolio*: cada carpeta es un **capítulo** y su número es su importancia (01 Motion Graphics, 02 María Elena Badillo, 03 Ryhar… 15 Otros proyectos). El video principal de las dos webs es `promo_editor_motion.mp4`.
