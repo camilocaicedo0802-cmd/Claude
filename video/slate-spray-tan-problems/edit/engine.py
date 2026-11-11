@@ -60,7 +60,7 @@ def grade(img, lut, sat=1.0):
         out = np.clip(l + (f - l) * sat, 0, 255).astype(np.uint8)
     return out
 
-LUT_AROLL = make_grade_lut(warm=0.035, contrast=0.16, lift=0.012, gamma=0.97, gain=1.02)
+LUT_AROLL = make_grade_lut(warm=0.018, contrast=0.14, lift=0.015, gamma=0.97, gain=1.02)
 LUT_BROLL = make_grade_lut(warm=0.025, contrast=0.12, lift=0.0, gamma=0.98, gain=1.0)
 
 # ---------------------------------------------------------------- lectores
@@ -227,33 +227,38 @@ def word_sprite(txt, style, size=None):
     return _wcache[k]
 
 class TextBlock:
-    """Bloque de líneas centrado en (cx, cy). Cada línea: lista de Word. Las palabras aparecen con un
-    'pop' (escala con rebote + subida) en su tiempo t; el bloque sale entero en t_out."""
-    def __init__(self, lines, cx, cy, t_out, line_gap=-0.12, anim="pop", exit="fade", fit_w=960):
+    """Bloque de líneas centrado en (cx, cy) (o con su borde inferior en cy si anchor='bottom').
+    Cada línea: lista de Word. Las palabras aparecen con un 'pop' (escala con rebote + subida) en su
+    tiempo t; el bloque sale entero en t_out. El interlineado usa el ascenso de la línea siguiente y
+    parte del descenso de la anterior, para que una línea pequeña bajo una grande no se pise."""
+    def __init__(self, lines, cx, cy, t_out, line_gap=-0.12, anim="pop", exit="fade", fit_w=960, anchor="center"):
         self.cx, self.cy, self.t_out, self.anim, self.exit = cx, cy, t_out, anim, exit
         self.items = []
         rows = []
         for line in lines:
             sps = [word_sprite(w.txt, w.style, w.size) for w in line]
-            # separación entre palabras proporcional al tamaño de la fuente más grande de la línea
+            fonts_ = [font(STYLES[w.style][0], w.size or STYLES[w.style][1]) for w in line]
             asc_max = max(s[1] for s in sps)
-            space = [font(STYLES[w.style][0], w.size or STYLES[w.style][1]).getlength(" ") * 0.9 for w in line]
+            desc_max = max(f.getmetrics()[1] for f in fonts_)
+            space = [f.getlength(" ") * 0.9 for f in fonts_]
             width = sum(s[0].w - 2 * s[2] for s in sps) + sum(space[:-1])
-            rows.append((line, sps, asc_max, space, width))
-        heights = [r[2] for r in rows]
-        total = sum(heights) * (1 + line_gap) - heights[-1] * line_gap
-        y = cy - total / 2
-        for line, sps, asc_max, space, width in rows:
+            rows.append((line, sps, asc_max, desc_max, space, width))
+        bases = []
+        b = rows[0][2]
+        for i, r in enumerate(rows):
+            if i > 0:
+                b += r[2] * (1 + line_gap) + 0.7 * rows[i - 1][3]
+            bases.append(b)
+        total = bases[-1] + 0.55 * rows[-1][3]
+        top = cy - total / 2 if anchor == "center" else cy - total
+        self.total = total
+        for (line, sps, asc_max, desc_max, space, width), base in zip(rows, bases):
             x = cx - width / 2
-            base = y + asc_max  # línea base
+            base = top + base
             for w, (sp, asc, pad), spc in zip(line, sps, space):
                 ww = sp.w - 2 * pad
-                # centro del sprite
-                scx = x + ww / 2
-                scy = base - asc + (sp.h - 2 * pad) / 2 - 0  # aproximación: caja de texto
-                self.items.append((w, sp, scx, base - asc - pad + sp.h / 2))
+                self.items.append((w, sp, x + ww / 2, base - asc - pad + sp.h / 2))
                 x += ww + spc
-            y += asc_max * (1 + line_gap)
 
     def draw(self, dst, t):
         if t >= self.t_out + 0.35: return

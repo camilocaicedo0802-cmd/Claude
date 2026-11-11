@@ -93,7 +93,7 @@ def main(out):
     write_wav(os.path.join(WORK, "sfx_stem.wav"), sfx)
     mix = voice + sfx
     m = os.path.join(WORK, "mix_pre.wav"); write_wav(m, mix)
-    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", m, "-af", "alimiter=limit=0.89:attack=3:release=60:level=false",
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", m, "-af", f"alimiter=limit=0.89:attack=3:release=60:level=false,afade=t=out:st={TL.TOTAL - 0.35:.3f}:d=0.35",
                     "-t", f"{TL.TOTAL:.3f}", out], check=True)
     print("ok", out)
 

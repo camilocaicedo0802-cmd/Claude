@@ -13,7 +13,7 @@ SALON = os.path.join(DL, "broll2")
 STOCK = os.path.join(SCR, "stock")
 
 HOOK = 2.25           # duración del gancho inicial
-TAIL = 0.9            # cierre después de la última palabra
+TAIL = 0.7            # cierre después de la última palabra
 CW, CH = 520, 325     # tamaño de las tarjetas
 TOP = (540, 282)      # centro tarjeta problema
 BOT = (540, 1528)     # centro tarjeta solución
@@ -186,7 +186,7 @@ class Card:
 class Label:
     """TextBlock pegado a una tarjeta (se mueve con ella al salir)."""
     def __init__(self, lines, cx, cy, t_out, line_gap=-0.06):
-        self.tb = TextBlock(lines, cx, cy, t_out, line_gap=line_gap)
+        self.tb = TextBlock(lines, cx, cy, t_out, line_gap=line_gap, anchor="bottom")
         self.t_out = t_out
 
     def draw(self, dst, t, dx=0, dy=0, al=1.0):
@@ -247,7 +247,7 @@ def problem_solution(bid, qsrc, q_words, top_srcs, a_srcs, a_labels, star_pts=No
     for j, (lab_until, rows) in enumerate(a_labels):
         rows_t = [[(txt, sty, wt(asrc, anc, near)) for (txt, sty, anc, near) in row] for row in rows]
         until = out if lab_until is None else wt(asrc, *lab_until) - 0.12
-        labs.append(Label(label_lines(*rows_t), BOT[0], BOT[1] + 80, until, line_gap=0.1))
+        labs.append(Label(label_lines(*rows_t), BOT[0], BOT[1] + CH / 2 - 24, until, line_gap=-0.02))
     layers.append(Card("bot", t_bot, out, asr, label=labs, pill_txt="solution"))
     sfx.append((t_bot + 0.02, "swish", -17))
     # brillo en la palabra grande de la primera etiqueta
@@ -344,7 +344,7 @@ problem_solution("P7", "IMG_7106",
      (("custom", 36.34), V(bank("st2_097_Videos_Proceso.mov"), 1.0, 0.36, 1.0))],
     [(("follow", 33.02), [[("Book", AS, "book", 30.12)], [("1–2 days before", AB, "one", 30.86)]]),
      (None, [[("Proper prep", AB, "prep", 33.58)], [("+ custom shade", AS, "custom", 36.34)]])],
-    q_gap=0.04)
+    )
 
 # --- P8 Not sure which shade → personalized consultation ------------------------------------------
 problem_solution("P8", "IMG_7108",
@@ -386,7 +386,7 @@ t_and = wt("IMG_7110", "and", 24.04)
 cap([[("come see us at", CS, "Come", 22.98)], [("Slate", CB, "Slate", 23.92)]], t_and - 0.1)
 cap([[("& we'll find the", CS, "and", 24.04)], [("perfect tan", CT, "perfect", 24.84)], [("for you", CS, "for", 25.44)]], TOTAL - 0.05)
 layers.append(Card("top", t_c4[0] + 0.02, TOTAL + 1,
-    [(t_c4[0], V(salon("IMG_0822.MOV"), 0.6, 0.30, 1.0)),
+    [(t_c4[0], V(salon("IMG_0822.MOV"), 0.5, 0.15, 1.0)),
      (t_and, V(salon("IMG_0816.MOV"), 0.0, 0.40, 1.0, speed=0.62))]))
 sfx += [(t_c4[0] + 0.03, "pop", -15), (wt("IMG_7110", "Slate", 23.92), "sparkle", -18), (wt("IMG_7110", "perfect", 24.84), "chime", -21), (SPEECH_END + 0.15, "ding", -19)]
 layers.append(Stars([(TOP[0] + 240, TOP[1] + 135, 0.75, 20), (TOP[0] - 245, TOP[1] - 125, 0.55, -15), (790, MID_Y + 120, 0.5, 25)], wt("IMG_7110", "Slate", 23.92)))
