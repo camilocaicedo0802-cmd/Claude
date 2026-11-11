@@ -27,7 +27,15 @@ npm run build:life-os       # exporta un sitio estático en apps/life-os/out
 npm run typecheck -w @jcc/life-os
 ```
 
-`apps/life-os/out` es HTML/JS estático: se puede publicar en cualquier hosting estático (GitHub Pages, Netlify, Vercel, un servidor propio). Para servirla bajo una subruta, construye con `NEXT_PUBLIC_BASE_PATH=/life-os`. Se puede instalar en el celular desde el navegador («Agregar a pantalla de inicio»).
+`apps/life-os/out` es HTML/JS estático: se puede publicar en cualquier hosting estático (GitHub Pages, Netlify, Vercel, un servidor propio). Para servirla bajo una subruta, construye con `NEXT_PUBLIC_BASE_PATH=/ruta`. El build termina generando `out/sw.js` (script `scripts/build-sw.mjs`).
+
+## En el celular
+
+- Publicada por el workflow de GitHub Pages en `https://<usuario>.github.io/<repo>/life-os/` (se construye con `NEXT_PUBLIC_BASE_PATH=/<repo>/life-os`).
+- **Se instala como app**: Android/Chrome muestra el botón «Instalar» en Mi día y en Ajustes; en iPhone, Safari › Compartir › «Agregar a pantalla de inicio».
+- **Funciona sin conexión**: un service worker guarda toda la app en caché en la primera visita. Cuando hay una versión nueva aparece el aviso «Actualizar».
+- **Importante en iPhone**: la app instalada guarda sus datos aparte de Safari. Instálala primero y úsala siempre desde su ícono.
+- La app instalada pide almacenamiento persistente para que el sistema no borre los datos, y recuerda descargar un respaldo cada dos semanas (en el celular el respaldo se comparte a Drive, Archivos, WhatsApp o correo).
 
 La primera vez aparece un onboarding opcional (moneda, zona horaria, cuentas, gastos fijos, primer cliente o tarea). También puedes explorar con el **modo demo**.
 
@@ -73,13 +81,12 @@ La primera vez aparece un onboarding opcional (moneda, zona horaria, cuentas, ga
 
 ## Estado de las funcionalidades
 
-**Completo y funcional:** las tres pestañas con creación, edición, eliminación o archivo; vínculos entre pestañas (pagos ↔ ingresos, entregas y pagos en agenda, recordatorios); búsqueda global (⌘K o /); botón «+» universal y atajos (N, G+F/C/V/A); notificaciones dentro de la app; modo claro y oscuro; onboarding; modo demo; respaldo JSON; exportación CSV; diseño responsivo de 320 px a escritorio.
+**Completo y funcional:** las tres pestañas con creación, edición, eliminación o archivo; vínculos entre pestañas (pagos ↔ ingresos, entregas y pagos en agenda, recordatorios); app instalable y sin conexión (PWA); búsqueda global (⌘K o /); botón «+» universal y atajos (N, G+F/C/V/A); notificaciones dentro de la app; modo claro y oscuro; onboarding; modo demo; respaldo JSON; exportación CSV; diseño responsivo de 320 px a escritorio.
 
 **Requiere configuración adicional (no implementado):**
 
 - Sincronización entre dispositivos, cuentas de usuario y respaldo en la nube (necesita un backend como Supabase con autenticación y Row Level Security).
 - Notificaciones push en segundo plano (las alertas se muestran mientras la app está abierta).
-- Funcionamiento sin conexión con service worker (la app ya carga sus datos localmente, pero la página no se guarda en caché para abrirla sin red).
 
 ## Pruebas
 

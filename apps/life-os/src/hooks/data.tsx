@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { useLiveQuery } from "dexie-react-hooks";
-import { db } from "@/db/db";
+import { db, readMode } from "@/db/db";
 import { defaultSettings, ensureDefaults } from "@/db/defaults";
 import type {
   Account,
@@ -293,6 +293,25 @@ export function useAlerts() {
       capacity,
       format: money,
     });
+    // Data lives only on this device: remind to download a backup every two weeks once there is data.
+    let lastBackup: string | null = null;
+    try {
+      lastBackup = localStorage.getItem("lifeos:last-backup");
+    } catch {
+      /* storage unavailable */
+    }
+    const hasData = data.transactions.length + data.tasks.length + data.clients.length > 10;
+    const stale = !lastBackup || Date.now() - Date.parse(lastBackup) > 14 * 86_400_000;
+    if (hasData && stale && readMode() === "real") {
+      all.push({
+        key: `backup:${today.slice(0, 7)}:${Number(today.slice(8)) > 15 ? 2 : 1}`,
+        severity: "info",
+        area: "vida",
+        title: lastBackup ? "Hace más de dos semanas que no respaldas" : "Descarga tu primer respaldo",
+        description: "Tus datos solo están en este dispositivo",
+        href: "/ajustes/#datos",
+      });
+    }
     const dismissed = new Set(data.alertState.map((a) => a.key));
     return { all, unread: all.filter((a) => !dismissed.has(a.key)) };
   }, [data, today, views, capacity, money]);

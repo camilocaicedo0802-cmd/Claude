@@ -22,6 +22,7 @@ import { runSave } from "@/components/forms/form-kit";
 import { createTask, rescheduleTask, setDayPriorities } from "@/services/life-service";
 import { AgendaRow, CheckCircle, HabitCheckRow, TaskItem, usePriorityToggle } from "./bits";
 import { setTaskDone } from "@/services/life-service";
+import { InstallBanner } from "@/components/shell/pwa";
 
 export function QuickCapture({ defaultDate, placeholder = "Anota algo pendiente y pulsa Enter" }: { defaultDate: DateStr | null; placeholder?: string }) {
   const now = useNow();
@@ -153,6 +154,7 @@ export function TodayPage() {
         </>
       }
     >
+      <InstallBanner />
       <Card className="p-4 sm:p-5">
         <div className="flex flex-wrap items-start justify-between gap-x-6 gap-y-3">
           <div className="min-w-0 flex-1">

@@ -25,6 +25,7 @@ import { QuickAdd } from "./quick-add";
 import { SearchCommand } from "./search-command";
 import { UIProvider, useUI } from "./ui-context";
 import { useIsDesktop } from "@/hooks/use-media";
+import { ServiceWorkerRegistrar } from "./pwa";
 
 export function AppProviders({ children }: { children: React.ReactNode }) {
   return (
@@ -392,6 +393,7 @@ function AppShell({ children }: { children: React.ReactNode }) {
   }
   return (
     <>
+      <ServiceWorkerRegistrar />
       {status === "ready" ? (
         <ReadyShell>{children}</ReadyShell>
       ) : (

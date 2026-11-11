@@ -2,14 +2,14 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { CloudOff, Database, Download, FlaskConical, HardDrive, Keyboard, Moon, Plus, RotateCcw, Sun, SunMoon, Upload } from "lucide-react";
+import { CircleCheck, CloudOff, Database, Download, FlaskConical, HardDrive, Keyboard, Moon, Plus, RotateCcw, Smartphone, Sun, SunMoon, Upload } from "lucide-react";
 import { toast } from "sonner";
 import { useData, useMoney } from "@/hooks/data";
 import { readMode } from "@/db/db";
 import type { HorizonMode, Settings, ThemePref } from "@/db/types";
 import { CURRENCIES, parseMoney } from "@/lib/money";
 import { downloadFile, cn } from "@/lib/utils";
-import { todayIn } from "@/lib/dates";
+import { formatDateLong, instantToDate, todayIn } from "@/lib/dates";
 import { Button } from "@/components/ui/button";
 import { Field, Input, NativeSelect, SwitchRow } from "@/components/ui/form-controls";
 import { Kbd, Segmented } from "@/components/ui/misc";
@@ -17,6 +17,7 @@ import { Card, CardHeader, IconBadge, PageHeader } from "@/components/shared/pri
 import { AmountInput, amountToText } from "@/components/shared/inputs";
 import { useUI } from "@/components/shell/ui-context";
 import { runSave } from "@/components/forms/form-kit";
+import { InstallInstructions, lastBackupAt, markBackupDone, useInstall } from "@/components/shell/pwa";
 import { NATURE_LABEL } from "@/components/forms/finance-forms";
 import { errorMessage } from "@/services/common";
 import { discardDemo, exportBackup, parseBackup, requestPersistentStorage, resetAllData, restoreBackup, switchMode, updateSettings } from "@/services/settings-service";
@@ -38,6 +39,9 @@ export function SettingsPage() {
   const [usage, setUsage] = React.useState<string | null>(null);
   const fileRef = React.useRef<HTMLInputElement>(null);
   const demo = readMode() === "demo";
+  const install = useInstall();
+  const [lastBackup, setLastBackup] = React.useState<string | null>(null);
+  React.useEffect(() => setLastBackup(lastBackupAt()), []);
 
   React.useEffect(() => {
     navigator.storage?.persisted?.().then(setPersisted).catch(() => setPersisted(null));
@@ -47,8 +51,23 @@ export function SettingsPage() {
   const exportJSON = async () => {
     try {
       const backup = await exportBackup();
-      downloadFile(`lifeos-respaldo-${todayIn(s.timeZone)}.json`, JSON.stringify(backup, null, 2), "application/json");
-      toast.success("Respaldo descargado");
+      const filename = `lifeos-respaldo-${todayIn(s.timeZone)}.json`;
+      const json = JSON.stringify(backup, null, 2);
+      // On phones, the share sheet saves the file to Drive/Files or sends it by WhatsApp or email.
+      const file = typeof File !== "undefined" ? new File([json], filename, { type: "application/json" }) : null;
+      if (file && window.matchMedia("(pointer: coarse)").matches && navigator.canShare?.({ files: [file] })) {
+        try {
+          await navigator.share({ files: [file], title: "Respaldo de LIFE OS" });
+        } catch (e) {
+          if (e instanceof DOMException && e.name === "AbortError") return;
+          downloadFile(filename, json, "application/json");
+        }
+      } else {
+        downloadFile(filename, json, "application/json");
+      }
+      markBackupDone();
+      setLastBackup(lastBackupAt());
+      toast.success("Respaldo descargado. Guárdalo en Drive o envíatelo por correo.");
     } catch (e) {
       toast.error(errorMessage(e));
     }
@@ -248,7 +267,27 @@ export function SettingsPage() {
         </div>
       </Card>
 
-      <Card id="datos">
+      <Card>
+        <CardHeader title="App en tu celular" icon={<Smartphone />} />
+        <div className="space-y-3 px-4 pb-5 sm:px-5">
+          {install.standalone ? (
+            <p className="flex items-center gap-2 text-[13px]">
+              <CircleCheck className="size-4 text-income" /> Estás usando la app instalada. Funciona sin conexión.
+            </p>
+          ) : install.canPrompt ? (
+            <>
+              <p className="text-[13px] text-muted-foreground">Instálala para abrirla desde tu pantalla de inicio, sin barra del navegador y sin conexión.</p>
+              <Button variant="brand" onClick={() => install.prompt()}>
+                <Download /> Instalar LIFE OS
+              </Button>
+            </>
+          ) : (
+            <InstallInstructions ios={install.ios} />
+          )}
+        </div>
+      </Card>
+
+      <Card id="datos" className="scroll-mt-20">
         <CardHeader title="Tus datos" icon={<Database />} />
         <div className="space-y-4 px-4 pb-5 sm:px-5">
           <div className="rounded-lg bg-muted/70 p-3 text-[13px]">
@@ -281,6 +320,9 @@ export function SettingsPage() {
               Tu celular y tu computador tienen bases separadas. Para llevar tus datos de uno a otro, descarga un respaldo y restáuralo en el otro dispositivo. La sincronización requiere un backend (por ejemplo, Supabase con autenticación y RLS) que aún no está configurado.
             </p>
           </div>
+          <p className="text-[13px] text-muted-foreground">
+            {lastBackup ? `Último respaldo descargado: ${formatDateLong(instantToDate(lastBackup, s.timeZone))}.` : "Aún no has descargado un respaldo en este dispositivo."} Si pierdes el celular o borras los datos del navegador, solo podrás recuperar lo que esté en un respaldo.
+          </p>
           <div className="flex flex-wrap gap-2">
             <Button variant="outline" onClick={exportJSON}>
               <Download /> Descargar respaldo

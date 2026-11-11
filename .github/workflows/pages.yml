@@ -1,6 +1,7 @@
-# Publishes both portfolios on GitHub Pages:
+# Publishes both portfolios and LIFE OS on GitHub Pages:
 #   https://<owner>.github.io/<repo>/            editor de video
 #   https://<owner>.github.io/<repo>/disenador/  diseñador digital y audiovisual
+#   https://<owner>.github.io/<repo>/life-os/    LIFE OS (app personal; los datos viven en el navegador de cada dispositivo)
 # One-time setup: Settings > Pages > Source: "GitHub Actions".
 name: Publicar en GitHub Pages
 
@@ -31,7 +32,7 @@ jobs:
 
       - run: npm ci
 
-      - name: Build both sites with relative URLs
+      - name: Build the sites
         env:
           BASE: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}
         run: |
@@ -42,6 +43,9 @@ jobs:
           mkdir -p _site
           cp -a apps/editor/out/. _site/
           cp -a apps/disenador/out _site/disenador
+          # LIFE OS uses a real base path (its service worker and manifest need absolute, stable URLs).
+          NEXT_PUBLIC_BASE_PATH="/${{ github.event.repository.name }}/life-os" npm run build:life-os
+          cp -a apps/life-os/out _site/life-os
           # GitHub serves the root 404.html for any missing path, so pin its relative URLs to the site root.
           sed -i "s#<head>#<head><base href=\"$BASE/\">#" _site/404.html
           touch _site/.nojekyll
