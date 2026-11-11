@@ -8,6 +8,16 @@ Todo se monta por código: `edit/render.py` compone cada fotograma con Python (P
 codifica con ffmpeg; `edit/audio.py` hace la mezcla. Aquí está solo el código y las listas de tomas: los
 medios (crudo, B-roll, fotos de stock, fuentes) no se suben al repositorio.
 
+## Versión 2 (cambios pedidos)
+
+- **Nada encima de la cara:** la tarjeta del problema es más compacta (448×280, de y=75 a y=355) y se quitó el
+  acercamiento de las respuestas, que subía la cabeza. En las tomas donde ella queda más alta, el A-roll baja
+  lo justo (0–45 px, `HEAD_TOP` en `timeline.py`). Se comprobó en todos los fotogramas: con tarjeta visible,
+  queda un margen mínimo de 21 px entre el halo de la tarjeta y lo más alto de su cabeza.
+- **Música suave de fondo:** pista instrumental original generada con ElevenLabs Music (vía Higgsfield),
+  pop suave con guitarra, piano eléctrico y glockenspiel, ~100 BPM. Va a unos −27 LUFS bajo la voz (≈12 dB por
+  debajo), con ducking automático, y algo más presente en el gancho y el final.
+
 ## Estructura del video
 
 | Bloque | Pregunta (voz fuera de cámara) | Respuesta (presentadora) | Tarjeta problema | Tarjeta solución |

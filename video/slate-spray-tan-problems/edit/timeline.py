@@ -15,12 +15,13 @@ STOCK = os.path.join(SCR, "stock")
 HOOK = 2.25           # duración del gancho inicial
 TAIL = 0.7            # cierre después de la última palabra
 CW, CH = 520, 325     # tamaño de las tarjetas
-TOP = (540, 282)      # centro tarjeta problema
+TW, TH = 448, 280     # tarjeta problema: más compacta para no tocar la cabeza
+TOP = (540, 215)      # centro tarjeta problema (de y=75 a y=355)
 BOT = (540, 1528)     # centro tarjeta solución
 MID_Y = 1236          # centro del texto central (debajo del logo de la camiseta)
 
 # ------------------------------------------------------------------ A-roll
-ANCHOR = {"IMG_7103": (575, 1085), "IMG_7106": (560, 1075), "IMG_7108": (560, 1085), "IMG_7110": (560, 1075)}
+ANCHOR = {"IMG_7103": (575, 400), "IMG_7106": (560, 380), "IMG_7108": (560, 400), "IMG_7110": (560, 390)}
 spans = []      # dict(src, a, b, t0, t1)
 phases = {}     # fase -> (t_inicio, t_fin, src)
 t = HOOK
@@ -56,19 +57,25 @@ def wt(src, word, near):
             return s["t0"] + max(best, s["a"]) - s["a"]
     raise KeyError(f"{word} @ {best} fuera de los tramos de {src}")
 
+# Borde superior de la cabeza (mínimo medido por tramo, y en px a zoom 1). Si queda por encima de
+# HEAD_MIN, el A-roll se baja lo justo para que la tarjeta de arriba nunca toque la cabeza ni la cara.
+HEAD_TOP = {("IMG_7103", 1.62): 440, ("IMG_7103", 5.66): 452, ("IMG_7103", 11.36): 444, ("IMG_7103", 18.00): 420,
+            ("IMG_7103", 34.02): 380, ("IMG_7103", 40.66): 342, ("IMG_7103", 57.04): 358, ("IMG_7106", 2.34): 354,
+            ("IMG_7106", 4.76): 364, ("IMG_7106", 10.46): 370, ("IMG_7106", 29.25): 442, ("IMG_7108", 3.74): 442,
+            ("IMG_7108", 7.74): 454, ("IMG_7110", 7.18): 388, ("IMG_7110", 13.84): 388, ("IMG_7110", 19.24): 378,
+            ("IMG_7110", 22.93): 400}
+HEAD_MIN = TOP[1] + TH / 2 + 32   # margen libre bajo la tarjeta
+
+def shift_of(s):
+    return max(0.0, HEAD_MIN - HEAD_TOP.get((s["src"], s["a"]), 999))
+
 def zoom_at(tt):
-    """Zoom del A-roll: preguntas en plano abierto, respuestas más cerradas (corte con punch-in)."""
+    """Sin acercamientos que suban la cara: solo un 'pop' corto al entrar cada bloque, anclado arriba de la
+    cabeza para que esta no se desplace hacia la tarjeta."""
     for s in spans:
         if s["t0"] <= tt < s["t1"] + 1e-6:
-            cur = None
-            for (ts, pid) in s["ph"]:
-                if tt >= ts: cur = pid
-            z = 1.0 if cur and cur[0] == "Q" else 1.085
-            if cur and cur[0] == "C":
-                z = [1.0, 1.085, 1.0, 1.07][int(cur[1]) - 1]
-            # pop de entrada al inicio de cada bloque
             b0, _ = block_range(s["block"])
-            z *= 1 + 0.07 * (1 - ease_out(prog(tt, b0, 0.32)))
+            z = 1 + 0.06 * (1 - ease_out(prog(tt, b0, 0.32)))
             return s, z
     return spans[-1], 1.0
 
@@ -87,10 +94,10 @@ def salon(n): return os.path.join(SALON, n)
 class Card:
     """Tarjeta B-roll. srcs: [(t_desde, fuente)], role 'top'|'bot'. Entra deslizando con rebote,
     sale encogiendo hacia fuera. Si lleva etiqueta, se oscurece la parte baja del contenido."""
-    def __init__(self, role, t_in, t_out, srcs, label=None, pill_txt=None, pos=None, size=(CW, CH), scrim=False):
+    def __init__(self, role, t_in, t_out, srcs, label=None, pill_txt=None, pos=None, size=None, scrim=False):
         self.role, self.t_in, self.t_out, self.srcs = role, t_in, t_out, srcs
         self.pos = pos or (TOP if role == "top" else BOT)
-        self.w, self.h = size
+        self.w, self.h = size or ((TW, TH) if role == "top" else (CW, CH))
         self.frame = CardFrame(self.w, self.h)
         self.label = label
         self.scrim = scrim or (label is not None)
@@ -361,16 +368,16 @@ def cap(rows, t_out, cy=MID_Y):
 # Every skin tone, undertone, and glow goal is different.
 t_u = wt("IMG_7110", "undertone", 8.28); t_g = wt("IMG_7110", "and", 9.22); t_d = wt("IMG_7110", "is", 9.88)
 t_c1end = phases["C1"][1]
-cap([[("Every", CS, "Every", 7.24)], [("skin tone", CB, "skin", 7.52)]], t_u - 0.1)
-cap([[("undertone", CB, "undertone", 8.28)]], t_g - 0.1)
-cap([[("& glow goal", CT, "glow", 9.26)]], t_d - 0.08)
+cap([[("Every", CS, "Every", 7.24)], [("skin tone", CB, "skin", 7.52)]], t_u - 0.24)
+cap([[("undertone", CB, "undertone", 8.28)]], t_g - 0.24)
+cap([[("& glow goal", CT, "glow", 9.26)]], t_d - 0.22)
 cap([[("is", CS, "is", 9.88)], [("different", CB, "different", 10.12)]], t_c1end - 0.15)
 layers.append(Card("top", c0 + 0.02, t_c1end - 0.05,
     [(c0 + 0.02, F(stock("glow_3_VrW_EgqwOUo.jpg"), 0.5, 0.45, 1.0)),
      (t_u, V(bank("st3_207_Videos_Después.mov"), 0.6, 0.33, 1.0)),
      (t_g, V(bank("st1_007_spraytan1-Brol.mov"), 1.0, 0.36, 1.0))]))
 sfx += [(c0 + 0.04, "pop", -15), (t_g + 0.05, "sparkle", -20)]
-layers.append(Stars([(TOP[0] + 235, TOP[1] + 140, 0.7, 20), (TOP[0] - 240, TOP[1] - 130, 0.5, -10)], t_g))
+layers.append(Stars([(TOP[0] + TW / 2 + 2, TOP[1] - TH / 2 + 22, 0.7, 20), (TOP[0] - TW / 2 - 2, TOP[1] + 30, 0.5, -10)], t_g))
 # Your spray tan should be too.
 t_c2 = phases["C2"]
 cap([[("Your spray tan", CS, "Your", 13.88)], [("should be too", CT, "should", 14.54)]], t_c2[1] - 0.12)
@@ -383,13 +390,13 @@ sfx += [(wt("IMG_7110", "relate", 19.98), "pop_hi", -20)]
 # come see us at Slate and we'll find the perfect tan for you.
 t_c4 = phases["C4"]
 t_and = wt("IMG_7110", "and", 24.04)
-cap([[("come see us at", CS, "Come", 22.98)], [("Slate", CB, "Slate", 23.92)]], t_and - 0.1)
+cap([[("come see us at", CS, "Come", 22.98)], [("Slate", CB, "Slate", 23.92)]], t_and - 0.24)
 cap([[("& we'll find the", CS, "and", 24.04)], [("perfect tan", CT, "perfect", 24.84)], [("for you", CS, "for", 25.44)]], TOTAL - 0.05)
 layers.append(Card("top", t_c4[0] + 0.02, TOTAL + 1,
     [(t_c4[0], V(salon("IMG_0822.MOV"), 0.5, 0.15, 1.0)),
      (t_and, V(salon("IMG_0816.MOV"), 0.0, 0.40, 1.0, speed=0.62))]))
 sfx += [(t_c4[0] + 0.03, "pop", -15), (wt("IMG_7110", "Slate", 23.92), "sparkle", -18), (wt("IMG_7110", "perfect", 24.84), "chime", -21), (SPEECH_END + 0.15, "ding", -19)]
-layers.append(Stars([(TOP[0] + 240, TOP[1] + 135, 0.75, 20), (TOP[0] - 245, TOP[1] - 125, 0.55, -15), (790, MID_Y + 120, 0.5, 25)], wt("IMG_7110", "Slate", 23.92)))
+layers.append(Stars([(TOP[0] + TW / 2 + 2, TOP[1] - TH / 2 + 22, 0.75, 20), (TOP[0] - TW / 2 - 2, TOP[1] + 30, 0.55, -15), (790, MID_Y + 120, 0.5, 25)], wt("IMG_7110", "Slate", 23.92)))
 layers.append(Stars([(270, MID_Y - 40, 0.6, -20), (820, MID_Y + 60, 0.7, 25), (540, MID_Y - 150, 0.45, 10)], SPEECH_END + 0.1, 0.1, 1.1))
 
 if __name__ == "__main__":

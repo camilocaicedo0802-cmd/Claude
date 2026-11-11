@@ -20,8 +20,9 @@ class ARoll:
         self.frame_t = t
         img = grade(self.reader.next(), LUT_AROLL, 1.03)
         ax, ay = TL.ANCHOR[s["src"]]
-        if abs(z - 1) > 1e-3:
-            M = np.array([[z, 0, ax * (1 - z)], [0, z, ay * (1 - z)]], np.float32)
+        dy = TL.shift_of(s)
+        if abs(z - 1) > 1e-3 or dy > 0:
+            M = np.array([[z, 0, ax * (1 - z)], [0, z, ay * (1 - z) + dy]], np.float32)
             img = cv2.warpAffine(img, M, (W, H), flags=cv2.INTER_LINEAR, borderMode=cv2.BORDER_REFLECT)
         return img
 

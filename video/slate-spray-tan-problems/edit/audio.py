@@ -63,6 +63,37 @@ def build_voice():
         v[o:o + len(seg)] += seg[:n - o]
     return v
 
+MUSIC = os.path.join(PROJ, "music", "bed.wav")     # pista instrumental original (ElevenLabs Music vía Higgsfield), normalizada a -16 LUFS
+MUSIC_UNDER_VOICE = -12.0   # dB bajo la voz (queda ~-28 LUFS)
+MUSIC_OPEN = -5.5           # dB en el gancho y en el cierre sin voz
+
+def build_music(voice):
+    """Cama musical con ducking: más presente donde no hay voz (gancho, final) y baja bajo la voz."""
+    m = read_wav(MUSIC)
+    n = len(voice)
+    if len(m) < n: m = np.concatenate([m, np.zeros((n - len(m), 2), np.float32)])
+    m = m[:n].copy()
+    # actividad de voz: RMS en ventanas de 20 ms > -42 dBFS, dilatada 450 ms (las pausas cortas quedan bajas)
+    hop = int(0.02 * SR); k = n // hop
+    rms = np.sqrt((voice[:k * hop, 0].reshape(k, hop) ** 2).mean(1) + 1e-12)
+    act = (20 * np.log10(rms) > -42).astype(np.float32)
+    d = int(0.45 / 0.02)
+    act = np.convolve(act, np.ones(2 * d + 1), mode="same") > 0
+    g_db = np.where(act, MUSIC_UNDER_VOICE, MUSIC_OPEN).astype(np.float32)
+    # rampas suaves (ataque ~120 ms, liberación ~350 ms)
+    out = np.empty_like(g_db); cur = g_db[0]
+    for i, v in enumerate(g_db):
+        a = 0.17 if v < cur else 0.055
+        cur += (v - cur) * a; out[i] = cur
+    g = np.repeat(10 ** (out / 20), hop)
+    g = np.concatenate([g, np.full(n - len(g), g[-1] if len(g) else 1.0)])[:n]
+    m *= g[:, None]
+    # entrada suave y salida con fundido
+    fi = int(0.25 * SR); m[:fi] *= np.linspace(0, 1, fi)[:, None]
+    fo = int(0.9 * SR); end = int(TL.TOTAL * SR)
+    m[end - fo:end] *= np.linspace(1, 0, fo)[:, None]; m[end:] = 0
+    return m
+
 def loudnorm(inp, out, I=-14.0, TP=-1.5, pre=""):
     chain = (pre + "," if pre else "")
     r = subprocess.run(["ffmpeg", "-i", inp, "-af", chain + f"loudnorm=I={I}:TP={TP}:LRA=7:print_format=json", "-f", "null", "-"],
@@ -91,7 +122,9 @@ def main(out):
         e = min(len(sfx), o + len(x))
         sfx[o:e] += x[:e - o]
     write_wav(os.path.join(WORK, "sfx_stem.wav"), sfx)
-    mix = voice + sfx
+    music = build_music(voice)
+    write_wav(os.path.join(WORK, "music_stem.wav"), music)
+    mix = voice + sfx + music
     m = os.path.join(WORK, "mix_pre.wav"); write_wav(m, mix)
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", m, "-af", f"alimiter=limit=0.89:attack=3:release=60:level=false,afade=t=out:st={TL.TOTAL - 0.35:.3f}:d=0.35",
                     "-t", f"{TL.TOTAL:.3f}", out], check=True)
