@@ -371,7 +371,7 @@ t_c1end = phases["C1"][1]
 cap([[("Every", CS, "Every", 7.24)], [("skin tone", CB, "skin", 7.52)]], t_u - 0.24)
 cap([[("undertone", CB, "undertone", 8.28)]], t_g - 0.24)
 cap([[("& glow goal", CT, "glow", 9.26)]], t_d - 0.22)
-cap([[("is", CS, "is", 9.88)], [("different", CB, "different", 10.12)]], t_c1end - 0.15)
+cap([[("is", CS, "is", 9.88)], [("different", CB, "different", 10.12)]], t_c1end - 0.22)
 layers.append(Card("top", c0 + 0.02, t_c1end - 0.05,
     [(c0 + 0.02, F(stock("glow_3_VrW_EgqwOUo.jpg"), 0.5, 0.45, 1.0)),
      (t_u, V(bank("st3_207_Videos_Después.mov"), 0.6, 0.33, 1.0)),
@@ -380,12 +380,12 @@ sfx += [(c0 + 0.04, "pop", -15), (t_g + 0.05, "sparkle", -20)]
 layers.append(Stars([(TOP[0] + TW / 2 + 2, TOP[1] - TH / 2 + 22, 0.7, 20), (TOP[0] - TW / 2 - 2, TOP[1] + 30, 0.5, -10)], t_g))
 # Your spray tan should be too.
 t_c2 = phases["C2"]
-cap([[("Your spray tan", CS, "Your", 13.88)], [("should be too", CT, "should", 14.54)]], t_c2[1] - 0.12)
+cap([[("Your spray tan", CS, "Your", 13.88)], [("should be too", CT, "should", 14.54)]], t_c2[1] - 0.2)
 layers.append(Card("top", t_c2[0] + 0.02, t_c2[1] - 0.1, [(t_c2[0], V(bank("st3_206_Videos_Después.mov"), 1.6, 0.30, 1.0))]))
 sfx += [(t_c2[0] + 0.03, "swish", -18), (wt("IMG_7110", "should", 14.54), "chime", -22)]
 # If you relate to any of this,
 t_c3 = phases["C3"]
-cap([[("If you", CS, "If", 19.32)], [("relate", CB, "relate", 19.98)], [("to any of this", CS, "to", 20.32)]], t_c3[1] - 0.1)
+cap([[("If you", CS, "If", 19.32)], [("relate", CB, "relate", 19.98)], [("to any of this", CS, "to", 20.32)]], t_c3[1] - 0.26)
 sfx += [(wt("IMG_7110", "relate", 19.98), "pop_hi", -20)]
 # come see us at Slate and we'll find the perfect tan for you.
 t_c4 = phases["C4"]
