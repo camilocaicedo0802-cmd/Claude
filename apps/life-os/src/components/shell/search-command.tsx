@@ -7,6 +7,7 @@ import { Dialog as DialogPrimitive } from "radix-ui";
 import { ArrowRight, BriefcaseBusiness, CalendarDays, CalendarClock, ListTodo, Receipt, Search, Settings, User } from "lucide-react";
 import { useData, useMoney } from "@/hooks/data";
 import { formatDateShort } from "@/lib/dates";
+import { normalize } from "@/lib/utils";
 import { NAV } from "./nav";
 import { QUICK_ACTIONS } from "./quick-add";
 import { useUI } from "./ui-context";
@@ -60,7 +61,15 @@ export function SearchCommand() {
         <DialogPrimitive.Content className="fixed top-3 left-1/2 z-50 w-[calc(100%-1.5rem)] max-w-[600px] -translate-x-1/2 overflow-hidden rounded-xl border border-border bg-popover shadow-pop data-[state=open]:animate-in data-[state=open]:fade-in data-[state=open]:slide-in-from-top-2 data-[state=closed]:animate-out data-[state=closed]:fade-out sm:top-[12vh]">
           <DialogPrimitive.Title className="sr-only">Buscar</DialogPrimitive.Title>
           <DialogPrimitive.Description className="sr-only">Busca clientes, trabajos, tareas y movimientos, o ejecuta una acción.</DialogPrimitive.Description>
-          <Command label="Búsqueda global" loop>
+          <Command
+            label="Búsqueda global"
+            loop
+            filter={(value, search, keywords) => {
+              const terms = normalize(search).split(/\s+/).filter(Boolean);
+              const hay = normalize(`${value} ${(keywords ?? []).join(" ")}`);
+              return terms.every((t) => hay.includes(t)) ? 1 : 0;
+            }}
+          >
             <div className="flex items-center gap-2 border-b border-border px-3">
               <Search className="size-4 shrink-0 text-muted-foreground" />
               <Command.Input
