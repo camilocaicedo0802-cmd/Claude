@@ -22,9 +22,9 @@ const AE_PR = ["After Effects", "Premiere Pro"] as const;
 const DRIVE = "Drive: Videos y Piezas para portafolio";
 
 /**
- * Every chapter of the portfolio, in the order of the numbered Drive folders.
- * Lower number = more important. The editor site shows only the videos of each chapter;
- * the designer site shows videos and pieces.
+ * Every chapter of the portfolio, in the order of the numbered Drive folders; "Videos generados con IA",
+ * added later, goes right after Ryhar. Lower number = more important. The editor site shows only the
+ * videos of each chapter; the designer site shows videos and pieces.
  */
 export const chapters: Chapter[] = [
   {
@@ -124,8 +124,38 @@ export const chapters: Chapter[] = [
     ],
   },
   {
-    slug: "beleza",
+    slug: "videos-con-ia",
     number: 4,
+    title: "Videos generados con IA",
+    context: "Anuncios de ecommerce con avatares y creadores UGC",
+    categories: ["Campañas con IA", "Commercial Ads", "Reels & Short Form"],
+    description:
+      "Anuncios para productos de ecommerce hechos de principio a fin con inteligencia artificial: dos marcas de té matcha y Spicy Cubes, unas gomitas para adultos. Para cada producto creo a la persona que mejor lo vende, ya sea una creadora UGC que lo prueba en su cocina, una doctora que explica sus beneficios, el presentador de un podcast o los personajes de una novela animada. Los videos cubren cada etapa del embudo, del primer contacto a la compra, y cada anuncio tiene varias versiones con hooks y estilos distintos para probar cuál convierte mejor.",
+    role: "Creación de avatares, creadores UGC y escenas con IA, edición, subtítulos y motion graphics",
+    tools: ["Veo 3", "Google Flow", "Google AI Studio"],
+    source: "Drive: carpetas Videos Matcha, Videos matca iniciales y Prueba Pinara, y cuatro videos sueltos de Spicy Cubes",
+    items: [
+      video("ia-matcha-ugc", "Creadora UGC · Té matcha", "Una creadora generada con IA prepara el matcha en su cocina y cuenta por qué lo toma, con subtítulos que resaltan las palabras clave y un cierre de producto con llamado a la compra."),
+      video("ia-matcha-doctora", "Doctora · Té matcha", "Una doctora generada con IA recomienda el té matcha desde su consultorio, apoyada en escenas de la vida diaria de sus pacientes."),
+      video("ia-spicy-ugc", "Testimonio UGC · Spicy Cubes", "Una creadora cuenta su experiencia con las gomitas en primera persona, intercalada con los ingredientes de la fórmula y escenas de pareja."),
+      video("ia-matcha-animado", "Animación 3D · Té matcha", "Versión animada en 3D: una doctora y personajes que explican cómo el matcha da energía estable, con una gráfica animada de la energía durante la tarde."),
+      video("ia-matcha-podcast", "Podcast · Té matcha", "Formato de podcast: un presentador generado con IA habla de enfoque y cafeína, con escenas de apoyo sobre el origen del matcha."),
+      video("ia-spicy-presentadora", "Presentadora en pantalla verde · Spicy Cubes", "Una presentadora generada con IA habla sobre fondos de producto y escenas de apoyo, con la comparación frente a otras gomitas y la oferta 2x1 al cierre."),
+      video("ia-matcha-novela", "Novela animada · Té matcha", "Una historia de tres minutos en formato de novela animada, con personajes, conflicto y el producto como parte de la trama."),
+      video("ia-spicy-animado", "Animación 3D · Spicy Cubes", "La misma estructura de anuncio contada con personajes animados en 3D y un hook distinto."),
+      video("ia-matcha-recetas", "Recetas ASMR · Té matcha", "Tres formas de tomar matcha, latte frío, limonada y fresa, en planos cerrados de preparación con sonido ASMR."),
+      video("ia-matcha-ugc-casa", "Creadora UGC en casa · Té matcha", "Otra creadora UGC cuenta cómo cambió el azúcar por el matcha en su rutina, con escenas de apoyo de su día."),
+      video("ia-spicy-broll", "Anuncio con escenas de apoyo · Spicy Cubes", "Versión narrada solo con escenas de apoyo: el hook «No compren Spicy Cubes», la comparación con otras gomitas y la oferta 2x1."),
+      video("ia-matcha-doctor", "Doctor · Té matcha", "Un doctor generado con IA presenta el matcha como alternativa al café, con un antes y después en pantalla dividida."),
+      video("ia-spicy-historia", "Historia en primera persona · Spicy Cubes", "Un relato cinematográfico de dos minutos contado en primera persona, con cada escena generada plano a plano."),
+      video("ia-matcha-doctora-estudio", "Doctora: concentración · Té matcha", "Una doctora generada con IA compara un matcha culinario con el del producto y explica cómo ayuda a concentrarse."),
+      video("ia-matcha-recetas-asmr", "Tres recetas · Té matcha", "Latte frío, limonada y batido de banano preparados en planos de producto, para la segunda marca de matcha."),
+      video("ia-spicy-producto", "Reel de producto · Spicy Cubes", "Reel corto sin presentador: ingredientes, fórmula y empaque animados."),
+    ],
+  },
+  {
+    slug: "beleza",
+    number: 5,
     title: "Beleza",
     client: "Beleza",
     context: "Reto 21 días: guía de uso de producto",
@@ -144,7 +174,7 @@ export const chapters: Chapter[] = [
   },
   {
     slug: "konexion-academica",
-    number: 5,
+    number: 6,
     title: "Konexión Académica",
     client: "Konexión Académica",
     context: "Carruseles y reels con apoyo de IA",
@@ -178,7 +208,7 @@ export const chapters: Chapter[] = [
   },
   {
     slug: "mente-nueva-marketing",
-    number: 6,
+    number: 7,
     title: "Mente Nueva Marketing",
     client: "Mente Nueva Marketing",
     context: "Agencia, de 12 a 15 clientes en paralelo",
@@ -215,7 +245,7 @@ export const chapters: Chapter[] = [
   },
   {
     slug: "gmedia",
-    number: 7,
+    number: 8,
     title: "gmedia",
     client: "gmedia",
     context: "Carrusel para redes",
@@ -235,7 +265,7 @@ export const chapters: Chapter[] = [
   },
   {
     slug: "cmi",
-    number: 8,
+    number: 9,
     title: "CMI",
     client: "CMI Equipamiento Equino",
     context: "Anuncios para un jaquimón personalizado",
@@ -257,7 +287,7 @@ export const chapters: Chapter[] = [
   },
   {
     slug: "poolex",
-    number: 9,
+    number: 10,
     title: "Poolex",
     client: "Poolex",
     context: "Comunidad de educación financiera",
@@ -285,7 +315,7 @@ export const chapters: Chapter[] = [
   },
   {
     slug: "common-room",
-    number: 10,
+    number: 11,
     title: "Common Room",
     client: "Common Room",
     context: "Moda y joyería: Alanna y Luisa López",
@@ -304,7 +334,7 @@ export const chapters: Chapter[] = [
   },
   {
     slug: "extrarome",
-    number: 11,
+    number: 12,
     title: "Extrarome",
     client: "Extrarome",
     context: "Marca de aromas para espacios",
@@ -331,7 +361,7 @@ export const chapters: Chapter[] = [
   },
   {
     slug: "bellatriz",
-    number: 12,
+    number: 13,
     title: "Bellatriz",
     client: "Bellatriz Beauty Club",
     context: "Piezas para redes de un club de belleza",
@@ -350,7 +380,7 @@ export const chapters: Chapter[] = [
   },
   {
     slug: "coca-cola-freeze",
-    number: 13,
+    number: 14,
     title: "Coca-Cola Freeze",
     context: "Proyecto universitario, 100 % generado con IA",
     categories: ["Campañas con IA", "Visual Design"],
@@ -376,7 +406,7 @@ export const chapters: Chapter[] = [
   },
   {
     slug: "costena-bacana",
-    number: 14,
+    number: 15,
     title: "Costeña Bacana",
     context: "Proyecto conceptual, 100 % generado con IA",
     categories: ["Campañas con IA", "Visual Design"],
@@ -394,7 +424,7 @@ export const chapters: Chapter[] = [
   },
   {
     slug: "otros-proyectos",
-    number: 15,
+    number: 16,
     title: "Otros proyectos",
     context: "Producto y proyectos universitarios",
     categories: ["Visual Design", "Motion Graphics", "Commercial Ads"],
