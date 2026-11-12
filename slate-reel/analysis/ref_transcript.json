@@ -1,0 +1,1392 @@
+{
+ "text": " Dog, ranking de Red Flags en una primera cita. Uno, mal aliento. Diez, definitivamente con eso sí. No, no, no, no puedo, no puedo, no puedo. Dientes visiblemente sucios. Diez. Que le falte un diente. No, yo creo que un siete. Es más, yo le puedo dar la solución. Eso no es tan grave. Tener comida entre los dientes. Uy, diez. No puedo, en serio que no puedo. Encías que sangran al sonreír. Diez. No, no, no, todo mal. Dientes muy amarillos. No, también lo puedo solucionar con un aclaramiento. Un cinco puede ser. Que te hable demasiado cerca. Depende. No, para mí no estaría mal un cinco. Que escup al hablar. No, yo creo que un ocho. Un ocho. Que se haga sentir.",
+ "segments": [
+  {
+   "id": 0,
+   "seek": 0,
+   "start": 0.0,
+   "end": 2.44,
+   "text": " Dog, ranking de Red Flags en una primera cita.",
+   "tokens": [
+    50365,
+    13472,
+    11,
+    17833,
+    368,
+    4477,
+    3235,
+    12109,
+    465,
+    2002,
+    17382,
+    269,
+    2786,
+    13,
+    50488
+   ],
+   "temperature": 0.0,
+   "avg_logprob": -0.23525038219633557,
+   "compression_ratio": 1.6147540983606556,
+   "no_speech_prob": 4.244509691636589e-12,
+   "words": [
+    {
+     "word": " Dog,",
+     "start": 0.0,
+     "end": 0.22,
+     "probability": 0.7435446977615356
+    },
+    {
+     "word": " ranking",
+     "start": 0.44,
+     "end": 0.82,
+     "probability": 0.9687603116035461
+    },
+    {
+     "word": " de",
+     "start": 0.82,
+     "end": 0.98,
+     "probability": 0.9990861415863037
+    },
+    {
+     "word": " Red",
+     "start": 0.98,
+     "end": 1.2,
+     "probability": 0.6152271032333374
+    },
+    {
+     "word": " Flags",
+     "start": 1.2,
+     "end": 1.46,
+     "probability": 0.7711813151836395
+    },
+    {
+     "word": " en",
+     "start": 1.46,
+     "end": 1.72,
+     "probability": 0.999078631401062
+    },
+    {
+     "word": " una",
+     "start": 1.72,
+     "end": 1.86,
+     "probability": 0.9997473359107971
+    },
+    {
+     "word": " primera",
+     "start": 1.86,
+     "end": 2.14,
+     "probability": 0.999836802482605
+    },
+    {
+     "word": " cita.",
+     "start": 2.14,
+     "end": 2.44,
+     "probability": 0.9998624920845032
+    }
+   ]
+  },
+  {
+   "id": 1,
+   "seek": 0,
+   "start": 2.68,
+   "end": 3.86,
+   "text": " Uno, mal aliento.",
+   "tokens": [
+    50510,
+    37468,
+    11,
+    2806,
+    419,
+    7814,
+    13,
+    50559
+   ],
+   "temperature": 0.0,
+   "avg_logprob": -0.23525038219633557,
+   "compression_ratio": 1.6147540983606556,
+   "no_speech_prob": 4.244509691636589e-12,
+   "words": [
+    {
+     "word": " Uno,",
+     "start": 2.68,
+     "end": 3.06,
+     "probability": 0.5728104114532471
+    },
+    {
+     "word": " mal",
+     "start": 3.32,
+     "end": 3.54,
+     "probability": 0.7720826268196106
+    },
+    {
+     "word": " aliento.",
+     "start": 3.54,
+     "end": 3.86,
+     "probability": 0.8558193445205688
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "seek": 0,
+   "start": 5.979999999999994,
+   "end": 7.6,
+   "text": " Diez, definitivamente con eso sí.",
+   "tokens": [
+    50642,
+    3229,
+    89,
+    11,
+    28781,
+    23957,
+    416,
+    7287,
+    8600,
+    13,
+    50746
+   ],
+   "temperature": 0.0,
+   "avg_logprob": -0.23525038219633557,
+   "compression_ratio": 1.6147540983606556,
+   "no_speech_prob": 4.244509691636589e-12,
+   "words": [
+    {
+     "word": " Diez,",
+     "start": 5.979999999999994,
+     "end": 6.419999999999997,
+     "probability": 0.820190966129303
+    },
+    {
+     "word": " definitivamente",
+     "start": 6.419999999999997,
+     "end": 6.86,
+     "probability": 0.9999130368232727
+    },
+    {
+     "word": " con",
+     "start": 6.86,
+     "end": 7.14,
+     "probability": 0.9842398166656494
+    },
+    {
+     "word": " eso",
+     "start": 7.14,
+     "end": 7.32,
+     "probability": 0.9984922409057617
+    },
+    {
+     "word": " sí.",
+     "start": 7.32,
+     "end": 7.6,
+     "probability": 0.9993797540664673
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "seek": 0,
+   "start": 8.0,
+   "end": 10.04,
+   "text": " No, no, no, no puedo, no puedo, no puedo.",
+   "tokens": [
+    50765,
+    883,
+    11,
+    572,
+    11,
+    572,
+    11,
+    572,
+    21612,
+    11,
+    572,
+    21612,
+    11,
+    572,
+    21612,
+    13,
+    50868
+   ],
+   "temperature": 0.0,
+   "avg_logprob": -0.23525038219633557,
+   "compression_ratio": 1.6147540983606556,
+   "no_speech_prob": 4.244509691636589e-12,
+   "words": [
+    {
+     "word": " No,",
+     "start": 8.0,
+     "end": 8.44,
+     "probability": 0.9997050166130066
+    },
+    {
+     "word": " no,",
+     "start": 8.5,
+     "end": 8.58,
+     "probability": 0.9999765157699585
+    },
+    {
+     "word": " no,",
+     "start": 8.6,
+     "end": 8.72,
+     "probability": 0.9999899864196777
+    },
+    {
+     "word": " no",
+     "start": 8.72,
+     "end": 8.82,
+     "probability": 0.9998576641082764
+    },
+    {
+     "word": " puedo,",
+     "start": 8.82,
+     "end": 9.04,
+     "probability": 0.9929308891296387
+    },
+    {
+     "word": " no",
+     "start": 9.14,
+     "end": 9.24,
+     "probability": 0.9999964237213135
+    },
+    {
+     "word": " puedo,",
+     "start": 9.24,
+     "end": 9.52,
+     "probability": 0.9998946189880371
+    },
+    {
+     "word": " no",
+     "start": 9.6,
+     "end": 9.72,
+     "probability": 0.9999921321868896
+    },
+    {
+     "word": " puedo.",
+     "start": 9.72,
+     "end": 10.04,
+     "probability": 0.9999167919158936
+    }
+   ]
+  },
+  {
+   "id": 4,
+   "seek": 0,
+   "start": 10.719999999999994,
+   "end": 12.02,
+   "text": " Dientes visiblemente sucios.",
+   "tokens": [
+    50894,
+    413,
+    20135,
+    8974,
+    4082,
+    459,
+    23132,
+    13,
+    50966
+   ],
+   "temperature": 0.0,
+   "avg_logprob": -0.23525038219633557,
+   "compression_ratio": 1.6147540983606556,
+   "no_speech_prob": 4.244509691636589e-12,
+   "words": [
+    {
+     "word": " Dientes",
+     "start": 10.719999999999994,
+     "end": 11.159999999999997,
+     "probability": 0.9566943645477295
+    },
+    {
+     "word": " visiblemente",
+     "start": 11.159999999999997,
+     "end": 11.6,
+     "probability": 0.9995816946029663
+    },
+    {
+     "word": " sucios.",
+     "start": 11.6,
+     "end": 12.02,
+     "probability": 0.99891197681427
+    }
+   ]
+  },
+  {
+   "id": 5,
+   "seek": 0,
+   "start": 13.06,
+   "end": 13.5,
+   "text": " Diez.",
+   "tokens": [
+    51017,
+    3229,
+    89,
+    13,
+    51041
+   ],
+   "temperature": 0.0,
+   "avg_logprob": -0.23525038219633557,
+   "compression_ratio": 1.6147540983606556,
+   "no_speech_prob": 4.244509691636589e-12,
+   "words": [
+    {
+     "word": " Diez.",
+     "start": 13.06,
+     "end": 13.5,
+     "probability": 0.9996518790721893
+    }
+   ]
+  },
+  {
+   "id": 6,
+   "seek": 0,
+   "start": 14.24,
+   "end": 15.28,
+   "text": " Que le falte un diente.",
+   "tokens": [
+    51080,
+    4493,
+    476,
+    3704,
+    975,
+    517,
+    1026,
+    1576,
+    13,
+    51130
+   ],
+   "temperature": 0.0,
+   "avg_logprob": -0.23525038219633557,
+   "compression_ratio": 1.6147540983606556,
+   "no_speech_prob": 4.244509691636589e-12,
+   "words": [
+    {
+     "word": " Que",
+     "start": 14.24,
+     "end": 14.46,
+     "probability": 0.9177842736244202
+    },
+    {
+     "word": " le",
+     "start": 14.46,
+     "end": 14.58,
+     "probability": 0.9999525547027588
+    },
+    {
+     "word": " falte",
+     "start": 14.58,
+     "end": 14.86,
+     "probability": 0.9944676756858826
+    },
+    {
+     "word": " un",
+     "start": 14.86,
+     "end": 14.98,
+     "probability": 0.999985933303833
+    },
+    {
+     "word": " diente.",
+     "start": 14.98,
+     "end": 15.28,
+     "probability": 0.9995305836200714
+    }
+   ]
+  },
+  {
+   "id": 7,
+   "seek": 0,
+   "start": 16.62,
+   "end": 18.32,
+   "text": " No, yo creo que un siete.",
+   "tokens": [
+    51200,
+    883,
+    11,
+    5290,
+    14336,
+    631,
+    517,
+    40719,
+    13,
+    51282
+   ],
+   "temperature": 0.0,
+   "avg_logprob": -0.23525038219633557,
+   "compression_ratio": 1.6147540983606556,
+   "no_speech_prob": 4.244509691636589e-12,
+   "words": [
+    {
+     "word": " No,",
+     "start": 16.62,
+     "end": 16.92,
+     "probability": 0.9996675252914429
+    },
+    {
+     "word": " yo",
+     "start": 17.06,
+     "end": 17.18,
+     "probability": 0.9999345541000366
+    },
+    {
+     "word": " creo",
+     "start": 17.18,
+     "end": 17.34,
+     "probability": 0.9992181062698364
+    },
+    {
+     "word": " que",
+     "start": 17.34,
+     "end": 17.46,
+     "probability": 0.99998939037323
+    },
+    {
+     "word": " un",
+     "start": 17.46,
+     "end": 17.64,
+     "probability": 0.9997733235359192
+    },
+    {
+     "word": " siete.",
+     "start": 17.64,
+     "end": 18.32,
+     "probability": 0.9884405136108398
+    }
+   ]
+  },
+  {
+   "id": 8,
+   "seek": 0,
+   "start": 18.8,
+   "end": 20.48,
+   "text": " Es más, yo le puedo dar la solución.",
+   "tokens": [
+    51309,
+    2313,
+    3573,
+    11,
+    5290,
+    476,
+    21612,
+    4072,
+    635,
+    24807,
+    5687,
+    13,
+    51389
+   ],
+   "temperature": 0.0,
+   "avg_logprob": -0.23525038219633557,
+   "compression_ratio": 1.6147540983606556,
+   "no_speech_prob": 4.244509691636589e-12,
+   "words": [
+    {
+     "word": " Es",
+     "start": 18.8,
+     "end": 19.0,
+     "probability": 0.9998915195465088
+    },
+    {
+     "word": " más,",
+     "start": 19.0,
+     "end": 19.14,
+     "probability": 0.9999336004257202
+    },
+    {
+     "word": " yo",
+     "start": 19.22,
+     "end": 19.28,
+     "probability": 0.9999803304672241
+    },
+    {
+     "word": " le",
+     "start": 19.28,
+     "end": 19.38,
+     "probability": 0.9998681545257568
+    },
+    {
+     "word": " puedo",
+     "start": 19.38,
+     "end": 19.54,
+     "probability": 0.9996848106384277
+    },
+    {
+     "word": " dar",
+     "start": 19.54,
+     "end": 19.66,
+     "probability": 0.9996678829193115
+    },
+    {
+     "word": " la",
+     "start": 19.66,
+     "end": 19.8,
+     "probability": 0.9999735355377197
+    },
+    {
+     "word": " solución.",
+     "start": 19.8,
+     "end": 20.48,
+     "probability": 0.999946117401123
+    }
+   ]
+  },
+  {
+   "id": 9,
+   "seek": 0,
+   "start": 20.74,
+   "end": 21.78,
+   "text": " Eso no es tan grave.",
+   "tokens": [
+    51411,
+    27795,
+    572,
+    785,
+    7603,
+    12525,
+    13,
+    51455
+   ],
+   "temperature": 0.0,
+   "avg_logprob": -0.23525038219633557,
+   "compression_ratio": 1.6147540983606556,
+   "no_speech_prob": 4.244509691636589e-12,
+   "words": [
+    {
+     "word": " Eso",
+     "start": 20.74,
+     "end": 21.1,
+     "probability": 0.9988866448402405
+    },
+    {
+     "word": " no",
+     "start": 21.1,
+     "end": 21.26,
+     "probability": 0.999975323677063
+    },
+    {
+     "word": " es",
+     "start": 21.26,
+     "end": 21.4,
+     "probability": 0.9999542236328125
+    },
+    {
+     "word": " tan",
+     "start": 21.4,
+     "end": 21.5,
+     "probability": 0.9999219179153442
+    },
+    {
+     "word": " grave.",
+     "start": 21.5,
+     "end": 21.78,
+     "probability": 0.9998418092727661
+    }
+   ]
+  },
+  {
+   "id": 10,
+   "seek": 0,
+   "start": 22.34,
+   "end": 23.8,
+   "text": " Tener comida entre los dientes.",
+   "tokens": [
+    51486,
+    314,
+    7971,
+    30779,
+    3962,
+    1750,
+    1026,
+    9240,
+    13,
+    51556
+   ],
+   "temperature": 0.0,
+   "avg_logprob": -0.23525038219633557,
+   "compression_ratio": 1.6147540983606556,
+   "no_speech_prob": 4.244509691636589e-12,
+   "words": [
+    {
+     "word": " Tener",
+     "start": 22.34,
+     "end": 22.72,
+     "probability": 0.9988003671169281
+    },
+    {
+     "word": " comida",
+     "start": 22.72,
+     "end": 23.06,
+     "probability": 0.9998549222946167
+    },
+    {
+     "word": " entre",
+     "start": 23.06,
+     "end": 23.24,
+     "probability": 0.9999490976333618
+    },
+    {
+     "word": " los",
+     "start": 23.24,
+     "end": 23.42,
+     "probability": 0.9999817609786987
+    },
+    {
+     "word": " dientes.",
+     "start": 23.42,
+     "end": 23.8,
+     "probability": 0.9999608397483826
+    }
+   ]
+  },
+  {
+   "id": 11,
+   "seek": 0,
+   "start": 24.16,
+   "end": 24.62,
+   "text": " Uy, diez.",
+   "tokens": [
+    51573,
+    624,
+    88,
+    11,
+    48165,
+    13,
+    51601
+   ],
+   "temperature": 0.0,
+   "avg_logprob": -0.23525038219633557,
+   "compression_ratio": 1.6147540983606556,
+   "no_speech_prob": 4.244509691636589e-12,
+   "words": [
+    {
+     "word": " Uy,",
+     "start": 24.16,
+     "end": 24.36,
+     "probability": 0.67941914498806
+    },
+    {
+     "word": " diez.",
+     "start": 24.44,
+     "end": 24.62,
+     "probability": 0.9491519927978516
+    }
+   ]
+  },
+  {
+   "id": 12,
+   "seek": 0,
+   "start": 25.18,
+   "end": 27.04,
+   "text": " No puedo, en serio que no puedo.",
+   "tokens": [
+    51632,
+    883,
+    21612,
+    11,
+    465,
+    49531,
+    631,
+    572,
+    21612,
+    13,
+    51722
+   ],
+   "temperature": 0.0,
+   "avg_logprob": -0.23525038219633557,
+   "compression_ratio": 1.6147540983606556,
+   "no_speech_prob": 4.244509691636589e-12,
+   "words": [
+    {
+     "word": " No",
+     "start": 25.18,
+     "end": 25.48,
+     "probability": 0.9992269277572632
+    },
+    {
+     "word": " puedo,",
+     "start": 25.48,
+     "end": 25.84,
+     "probability": 0.9998306035995483
+    },
+    {
+     "word": " en",
+     "start": 25.94,
+     "end": 26.06,
+     "probability": 0.9907124638557434
+    },
+    {
+     "word": " serio",
+     "start": 26.06,
+     "end": 26.28,
+     "probability": 0.999976634979248
+    },
+    {
+     "word": " que",
+     "start": 26.28,
+     "end": 26.44,
+     "probability": 0.9878969192504883
+    },
+    {
+     "word": " no",
+     "start": 26.44,
+     "end": 26.62,
+     "probability": 0.9999955892562866
+    },
+    {
+     "word": " puedo.",
+     "start": 26.62,
+     "end": 27.04,
+     "probability": 0.9999698400497437
+    }
+   ]
+  },
+  {
+   "id": 13,
+   "seek": 0,
+   "start": 28.02,
+   "end": 29.6,
+   "text": " Encías que sangran al sonreír.",
+   "tokens": [
+    51764,
+    29584,
+    10025,
+    631,
+    9980,
+    4257,
+    419,
+    1872,
+    265,
+    31338,
+    13,
+    51845
+   ],
+   "temperature": 0.0,
+   "avg_logprob": -0.23525038219633557,
+   "compression_ratio": 1.6147540983606556,
+   "no_speech_prob": 4.244509691636589e-12,
+   "words": [
+    {
+     "word": " Encías",
+     "start": 28.02,
+     "end": 28.46,
+     "probability": 0.9925397634506226
+    },
+    {
+     "word": " que",
+     "start": 28.46,
+     "end": 28.64,
+     "probability": 0.9998811483383179
+    },
+    {
+     "word": " sangran",
+     "start": 28.64,
+     "end": 28.98,
+     "probability": 0.9992914199829102
+    },
+    {
+     "word": " al",
+     "start": 28.98,
+     "end": 29.14,
+     "probability": 0.9999698400497437
+    },
+    {
+     "word": " sonreír.",
+     "start": 29.14,
+     "end": 29.6,
+     "probability": 0.9991625746091207
+    }
+   ]
+  },
+  {
+   "id": 14,
+   "seek": 3000,
+   "start": 30.0,
+   "end": 30.42,
+   "text": " Diez.",
+   "tokens": [
+    50365,
+    3229,
+    89,
+    13,
+    50387
+   ],
+   "temperature": 0.0,
+   "avg_logprob": -0.32257386679961303,
+   "compression_ratio": 1.5054347826086956,
+   "no_speech_prob": 5.764721599382794e-12,
+   "words": [
+    {
+     "word": " Diez.",
+     "start": 30.0,
+     "end": 30.42,
+     "probability": 0.5146074518561363
+    }
+   ]
+  },
+  {
+   "id": 15,
+   "seek": 3000,
+   "start": 30.8,
+   "end": 32.42,
+   "text": " No, no, no, todo mal.",
+   "tokens": [
+    50416,
+    883,
+    11,
+    572,
+    11,
+    572,
+    11,
+    5149,
+    2806,
+    13,
+    50490
+   ],
+   "temperature": 0.0,
+   "avg_logprob": -0.32257386679961303,
+   "compression_ratio": 1.5054347826086956,
+   "no_speech_prob": 5.764721599382794e-12,
+   "words": [
+    {
+     "word": " No,",
+     "start": 30.8,
+     "end": 31.2,
+     "probability": 0.9971442818641663
+    },
+    {
+     "word": " no,",
+     "start": 31.4,
+     "end": 31.58,
+     "probability": 0.9978291392326355
+    },
+    {
+     "word": " no,",
+     "start": 31.66,
+     "end": 31.82,
+     "probability": 0.9727182984352112
+    },
+    {
+     "word": " todo",
+     "start": 32.0,
+     "end": 32.12,
+     "probability": 0.99334716796875
+    },
+    {
+     "word": " mal.",
+     "start": 32.12,
+     "end": 32.42,
+     "probability": 0.9996905326843262
+    }
+   ]
+  },
+  {
+   "id": 16,
+   "seek": 3000,
+   "start": 32.84,
+   "end": 34.24,
+   "text": " Dientes muy amarillos.",
+   "tokens": [
+    50515,
+    413,
+    20135,
+    5323,
+    42171,
+    47476,
+    13,
+    50578
+   ],
+   "temperature": 0.0,
+   "avg_logprob": -0.32257386679961303,
+   "compression_ratio": 1.5054347826086956,
+   "no_speech_prob": 5.764721599382794e-12,
+   "words": [
+    {
+     "word": " Dientes",
+     "start": 32.84,
+     "end": 33.36,
+     "probability": 0.7675862908363342
+    },
+    {
+     "word": " muy",
+     "start": 33.36,
+     "end": 33.8,
+     "probability": 0.998798131942749
+    },
+    {
+     "word": " amarillos.",
+     "start": 33.8,
+     "end": 34.24,
+     "probability": 0.9988944232463837
+    }
+   ]
+  },
+  {
+   "id": 17,
+   "seek": 3000,
+   "start": 34.52,
+   "end": 37.78,
+   "text": " No, también lo puedo solucionar con un aclaramiento.",
+   "tokens": [
+    50604,
+    883,
+    11,
+    6407,
+    450,
+    21612,
+    1404,
+    1311,
+    33639,
+    416,
+    517,
+    696,
+    2200,
+    16971,
+    13,
+    50753
+   ],
+   "temperature": 0.0,
+   "avg_logprob": -0.32257386679961303,
+   "compression_ratio": 1.5054347826086956,
+   "no_speech_prob": 5.764721599382794e-12,
+   "words": [
+    {
+     "word": " No,",
+     "start": 34.52,
+     "end": 34.98,
+     "probability": 0.9974598288536072
+    },
+    {
+     "word": " también",
+     "start": 35.24,
+     "end": 35.56,
+     "probability": 0.9989956021308899
+    },
+    {
+     "word": " lo",
+     "start": 35.56,
+     "end": 35.72,
+     "probability": 0.9983697533607483
+    },
+    {
+     "word": " puedo",
+     "start": 35.72,
+     "end": 35.94,
+     "probability": 0.9996999502182007
+    },
+    {
+     "word": " solucionar",
+     "start": 35.94,
+     "end": 36.52,
+     "probability": 0.9997908274332682
+    },
+    {
+     "word": " con",
+     "start": 36.52,
+     "end": 36.7,
+     "probability": 0.9994555115699768
+    },
+    {
+     "word": " un",
+     "start": 36.7,
+     "end": 36.84,
+     "probability": 0.9995889067649841
+    },
+    {
+     "word": " aclaramiento.",
+     "start": 36.84,
+     "end": 37.78,
+     "probability": 0.9998423258463541
+    }
+   ]
+  },
+  {
+   "id": 18,
+   "seek": 3000,
+   "start": 38.18,
+   "end": 39.62,
+   "text": " Un cinco puede ser.",
+   "tokens": [
+    50781,
+    1156,
+    21350,
+    8919,
+    816,
+    13,
+    50847
+   ],
+   "temperature": 0.0,
+   "avg_logprob": -0.32257386679961303,
+   "compression_ratio": 1.5054347826086956,
+   "no_speech_prob": 5.764721599382794e-12,
+   "words": [
+    {
+     "word": " Un",
+     "start": 38.18,
+     "end": 38.66,
+     "probability": 0.9805203080177307
+    },
+    {
+     "word": " cinco",
+     "start": 38.66,
+     "end": 39.08,
+     "probability": 0.8716272115707397
+    },
+    {
+     "word": " puede",
+     "start": 39.08,
+     "end": 39.32,
+     "probability": 0.9480673670768738
+    },
+    {
+     "word": " ser.",
+     "start": 39.32,
+     "end": 39.62,
+     "probability": 0.9995641112327576
+    }
+   ]
+  },
+  {
+   "id": 19,
+   "seek": 3000,
+   "start": 40.0,
+   "end": 41.78,
+   "text": " Que te hable demasiado cerca.",
+   "tokens": [
+    50872,
+    4493,
+    535,
+    324,
+    638,
+    39820,
+    26770,
+    13,
+    50954
+   ],
+   "temperature": 0.0,
+   "avg_logprob": -0.32257386679961303,
+   "compression_ratio": 1.5054347826086956,
+   "no_speech_prob": 5.764721599382794e-12,
+   "words": [
+    {
+     "word": " Que",
+     "start": 40.0,
+     "end": 40.3,
+     "probability": 0.9455122351646423
+    },
+    {
+     "word": " te",
+     "start": 40.3,
+     "end": 40.46,
+     "probability": 0.9997634291648865
+    },
+    {
+     "word": " hable",
+     "start": 40.46,
+     "end": 40.8,
+     "probability": 0.9992643296718597
+    },
+    {
+     "word": " demasiado",
+     "start": 40.8,
+     "end": 41.36,
+     "probability": 0.9999005794525146
+    },
+    {
+     "word": " cerca.",
+     "start": 41.36,
+     "end": 41.78,
+     "probability": 0.9992738366127014
+    }
+   ]
+  },
+  {
+   "id": 20,
+   "seek": 3000,
+   "start": 42.4,
+   "end": 43.08,
+   "text": " Depende.",
+   "tokens": [
+    50995,
+    4056,
+    5445,
+    13,
+    51019
+   ],
+   "temperature": 0.0,
+   "avg_logprob": -0.32257386679961303,
+   "compression_ratio": 1.5054347826086956,
+   "no_speech_prob": 5.764721599382794e-12,
+   "words": [
+    {
+     "word": " Depende.",
+     "start": 42.4,
+     "end": 43.08,
+     "probability": 0.9989932477474213
+    }
+   ]
+  },
+  {
+   "id": 21,
+   "seek": 3000,
+   "start": 44.1,
+   "end": 46.58,
+   "text": " No, para mí no estaría mal un cinco.",
+   "tokens": [
+    51087,
+    883,
+    11,
+    1690,
+    14692,
+    572,
+    8755,
+    2686,
+    2806,
+    517,
+    21350,
+    13,
+    51195
+   ],
+   "temperature": 0.0,
+   "avg_logprob": -0.32257386679961303,
+   "compression_ratio": 1.5054347826086956,
+   "no_speech_prob": 5.764721599382794e-12,
+   "words": [
+    {
+     "word": " No,",
+     "start": 44.1,
+     "end": 44.66,
+     "probability": 0.6872599720954895
+    },
+    {
+     "word": " para",
+     "start": 45.0,
+     "end": 45.28,
+     "probability": 0.9961413741111755
+    },
+    {
+     "word": " mí",
+     "start": 45.28,
+     "end": 45.44,
+     "probability": 0.9982166886329651
+    },
+    {
+     "word": " no",
+     "start": 45.44,
+     "end": 45.54,
+     "probability": 0.9995836615562439
+    },
+    {
+     "word": " estaría",
+     "start": 45.54,
+     "end": 45.9,
+     "probability": 0.9998760223388672
+    },
+    {
+     "word": " mal",
+     "start": 45.9,
+     "end": 46.14,
+     "probability": 0.9998130202293396
+    },
+    {
+     "word": " un",
+     "start": 46.14,
+     "end": 46.32,
+     "probability": 0.8389636278152466
+    },
+    {
+     "word": " cinco.",
+     "start": 46.32,
+     "end": 46.58,
+     "probability": 0.9992223978042603
+    }
+   ]
+  },
+  {
+   "id": 22,
+   "seek": 3000,
+   "start": 47.02,
+   "end": 48.12,
+   "text": " Que escup al hablar.",
+   "tokens": [
+    51221,
+    4493,
+    4721,
+    1010,
+    419,
+    21014,
+    13,
+    51272
+   ],
+   "temperature": 0.0,
+   "avg_logprob": -0.32257386679961303,
+   "compression_ratio": 1.5054347826086956,
+   "no_speech_prob": 5.764721599382794e-12,
+   "words": [
+    {
+     "word": " Que",
+     "start": 47.02,
+     "end": 47.32,
+     "probability": 0.7759738564491272
+    },
+    {
+     "word": " escup",
+     "start": 47.32,
+     "end": 47.74,
+     "probability": 0.598477691411972
+    },
+    {
+     "word": " al",
+     "start": 47.74,
+     "end": 47.86,
+     "probability": 0.16631445288658142
+    },
+    {
+     "word": " hablar.",
+     "start": 47.86,
+     "end": 48.12,
+     "probability": 0.9997878670692444
+    }
+   ]
+  },
+  {
+   "id": 23,
+   "seek": 3000,
+   "start": 48.78,
+   "end": 51.5,
+   "text": " No, yo creo que un ocho.",
+   "tokens": [
+    51312,
+    883,
+    11,
+    5290,
+    14336,
+    631,
+    517,
+    3795,
+    78,
+    13,
+    51441
+   ],
+   "temperature": 0.0,
+   "avg_logprob": -0.32257386679961303,
+   "compression_ratio": 1.5054347826086956,
+   "no_speech_prob": 5.764721599382794e-12,
+   "words": [
+    {
+     "word": " No,",
+     "start": 48.78,
+     "end": 49.46,
+     "probability": 0.9931433200836182
+    },
+    {
+     "word": " yo",
+     "start": 49.54,
+     "end": 49.62,
+     "probability": 0.9992688298225403
+    },
+    {
+     "word": " creo",
+     "start": 49.62,
+     "end": 49.8,
+     "probability": 0.9423895478248596
+    },
+    {
+     "word": " que",
+     "start": 49.8,
+     "end": 50.0,
+     "probability": 0.9999040365219116
+    },
+    {
+     "word": " un",
+     "start": 50.0,
+     "end": 50.38,
+     "probability": 0.9913593530654907
+    },
+    {
+     "word": " ocho.",
+     "start": 50.38,
+     "end": 51.5,
+     "probability": 0.9974710941314697
+    }
+   ]
+  },
+  {
+   "id": 24,
+   "seek": 3000,
+   "start": 51.72,
+   "end": 52.48,
+   "text": " Un ocho.",
+   "tokens": [
+    51441,
+    1156,
+    3795,
+    78,
+    13,
+    51491
+   ],
+   "temperature": 0.0,
+   "avg_logprob": -0.32257386679961303,
+   "compression_ratio": 1.5054347826086956,
+   "no_speech_prob": 5.764721599382794e-12,
+   "words": [
+    {
+     "word": " Un",
+     "start": 51.72,
+     "end": 52.14,
+     "probability": 0.7604509592056274
+    },
+    {
+     "word": " ocho.",
+     "start": 52.14,
+     "end": 52.48,
+     "probability": 0.9998897612094879
+    }
+   ]
+  },
+  {
+   "id": 25,
+   "seek": 3000,
+   "start": 53.18,
+   "end": 54.82,
+   "text": " Que se haga sentir.",
+   "tokens": [
+    51541,
+    4493,
+    369,
+    46726,
+    23963,
+    13,
+    51607
+   ],
+   "temperature": 0.0,
+   "avg_logprob": -0.32257386679961303,
+   "compression_ratio": 1.5054347826086956,
+   "no_speech_prob": 5.764721599382794e-12,
+   "words": [
+    {
+     "word": " Que",
+     "start": 53.18,
+     "end": 53.86,
+     "probability": 0.9973479509353638
+    },
+    {
+     "word": " se",
+     "start": 53.86,
+     "end": 54.32,
+     "probability": 0.9986515641212463
+    },
+    {
+     "word": " haga",
+     "start": 54.32,
+     "end": 54.5,
+     "probability": 0.9986245632171631
+    },
+    {
+     "word": " sentir.",
+     "start": 54.5,
+     "end": 54.82,
+     "probability": 0.8445798754692078
+    }
+   ]
+  }
+ ],
+ "language": "es"
+}

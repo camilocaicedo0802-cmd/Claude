@@ -1,0 +1,692 @@
+{
+ "IMG_7055.wav": {
+  "text": " Hey you! If you live in Tulsa and love a good spray tan, this one's for you.",
+  "segments": [
+   {
+    "id": 0,
+    "seek": 0,
+    "start": 2.0800000000000005,
+    "end": 5.84,
+    "text": " Hey you! If you live in Tulsa and love a good spray tan, this one's for you.",
+    "tokens": [
+     50365,
+     1911,
+     291,
+     0,
+     759,
+     291,
+     1621,
+     294,
+     33585,
+     5790,
+     293,
+     959,
+     257,
+     665,
+     8519,
+     7603,
+     11,
+     341,
+     472,
+     311,
+     337,
+     291,
+     13,
+     50661
+    ],
+    "temperature": 0.0,
+    "avg_logprob": -0.21770193099975585,
+    "compression_ratio": 0.987012987012987,
+    "no_speech_prob": 1.1803687367806237e-12,
+    "words": [
+     {
+      "word": " Hey",
+      "start": 2.0800000000000005,
+      "end": 2.44,
+      "probability": 0.7857248187065125
+     },
+     {
+      "word": " you!",
+      "start": 2.44,
+      "end": 2.72,
+      "probability": 0.8169779777526855
+     },
+     {
+      "word": " If",
+      "start": 2.92,
+      "end": 3.24,
+      "probability": 0.9830053448677063
+     },
+     {
+      "word": " you",
+      "start": 3.24,
+      "end": 3.34,
+      "probability": 0.9991421699523926
+     },
+     {
+      "word": " live",
+      "start": 3.34,
+      "end": 3.52,
+      "probability": 0.9974324107170105
+     },
+     {
+      "word": " in",
+      "start": 3.52,
+      "end": 3.62,
+      "probability": 0.998171329498291
+     },
+     {
+      "word": " Tulsa",
+      "start": 3.62,
+      "end": 4.0,
+      "probability": 0.9963760077953339
+     },
+     {
+      "word": " and",
+      "start": 4.0,
+      "end": 4.18,
+      "probability": 0.9656684994697571
+     },
+     {
+      "word": " love",
+      "start": 4.18,
+      "end": 4.34,
+      "probability": 0.9834517240524292
+     },
+     {
+      "word": " a",
+      "start": 4.34,
+      "end": 4.44,
+      "probability": 0.9982500672340393
+     },
+     {
+      "word": " good",
+      "start": 4.44,
+      "end": 4.52,
+      "probability": 0.990790843963623
+     },
+     {
+      "word": " spray",
+      "start": 4.52,
+      "end": 4.76,
+      "probability": 0.9905098080635071
+     },
+     {
+      "word": " tan,",
+      "start": 4.76,
+      "end": 5.04,
+      "probability": 0.9958980679512024
+     },
+     {
+      "word": " this",
+      "start": 5.22,
+      "end": 5.38,
+      "probability": 0.9929261207580566
+     },
+     {
+      "word": " one's",
+      "start": 5.38,
+      "end": 5.58,
+      "probability": 0.9465629756450653
+     },
+     {
+      "word": " for",
+      "start": 5.58,
+      "end": 5.7,
+      "probability": 0.9988982677459717
+     },
+     {
+      "word": " you.",
+      "start": 5.7,
+      "end": 5.84,
+      "probability": 0.9979608058929443
+     }
+    ]
+   }
+  ],
+  "language": "en"
+ },
+ "IMG_7058.wav": {
+  "text": " Thanksgiving is only a week away.",
+  "segments": [
+   {
+    "id": 0,
+    "seek": 0,
+    "start": 0.8200000000000001,
+    "end": 2.22,
+    "text": " Thanksgiving is only a week away.",
+    "tokens": [
+     50365,
+     21230,
+     307,
+     787,
+     257,
+     1243,
+     1314,
+     13,
+     50482
+    ],
+    "temperature": 0.0,
+    "avg_logprob": -0.43514347076416016,
+    "compression_ratio": 0.8048780487804879,
+    "no_speech_prob": 1.2199630411782736e-12,
+    "words": [
+     {
+      "word": " Thanksgiving",
+      "start": 0.8200000000000001,
+      "end": 1.26,
+      "probability": 0.7712302207946777
+     },
+     {
+      "word": " is",
+      "start": 1.26,
+      "end": 1.5,
+      "probability": 0.4874943196773529
+     },
+     {
+      "word": " only",
+      "start": 1.5,
+      "end": 1.66,
+      "probability": 0.9872713685035706
+     },
+     {
+      "word": " a",
+      "start": 1.66,
+      "end": 1.78,
+      "probability": 0.9878944754600525
+     },
+     {
+      "word": " week",
+      "start": 1.78,
+      "end": 2.0,
+      "probability": 0.9987012147903442
+     },
+     {
+      "word": " away.",
+      "start": 2.0,
+      "end": 2.22,
+      "probability": 0.9943087697029114
+     }
+    ]
+   }
+  ],
+  "language": "en"
+ },
+ "IMG_7059.wav": {
+  "text": " And then we're heading straight into Christmas parties and New Year's.",
+  "segments": [
+   {
+    "id": 0,
+    "seek": 0,
+    "start": 2.0200000000000005,
+    "end": 5.44,
+    "text": " And then we're heading straight into Christmas parties and New Year's.",
+    "tokens": [
+     50365,
+     400,
+     550,
+     321,
+     434,
+     9864,
+     2997,
+     666,
+     5272,
+     8265,
+     293,
+     1873,
+     10289,
+     311,
+     13,
+     50640
+    ],
+    "temperature": 0.0,
+    "avg_logprob": -0.2888614991131951,
+    "compression_ratio": 0.9722222222222222,
+    "no_speech_prob": 8.155107990813482e-13,
+    "words": [
+     {
+      "word": " And",
+      "start": 2.0200000000000005,
+      "end": 2.66,
+      "probability": 0.6231563687324524
+     },
+     {
+      "word": " then",
+      "start": 2.66,
+      "end": 3.02,
+      "probability": 0.9902186989784241
+     },
+     {
+      "word": " we're",
+      "start": 3.02,
+      "end": 3.34,
+      "probability": 0.9332050085067749
+     },
+     {
+      "word": " heading",
+      "start": 3.34,
+      "end": 3.44,
+      "probability": 0.9833020567893982
+     },
+     {
+      "word": " straight",
+      "start": 3.44,
+      "end": 3.66,
+      "probability": 0.3131921887397766
+     },
+     {
+      "word": " into",
+      "start": 3.66,
+      "end": 3.98,
+      "probability": 0.967815101146698
+     },
+     {
+      "word": " Christmas",
+      "start": 3.98,
+      "end": 4.26,
+      "probability": 0.9840303659439087
+     },
+     {
+      "word": " parties",
+      "start": 4.26,
+      "end": 4.64,
+      "probability": 0.9478027820587158
+     },
+     {
+      "word": " and",
+      "start": 4.64,
+      "end": 4.94,
+      "probability": 0.9850301146507263
+     },
+     {
+      "word": " New",
+      "start": 4.94,
+      "end": 5.08,
+      "probability": 0.9180123805999756
+     },
+     {
+      "word": " Year's.",
+      "start": 5.08,
+      "end": 5.44,
+      "probability": 0.7559096813201904
+     }
+    ]
+   }
+  ],
+  "language": "en"
+ },
+ "IMG_7061.wav": {
+  "text": " And remember to make sure you book your spray tan two days in advance before your event.",
+  "segments": [
+   {
+    "id": 0,
+    "seek": 0,
+    "start": 1.7800000000000002,
+    "end": 6.6,
+    "text": " And remember to make sure you book your spray tan two days in advance before your event.",
+    "tokens": [
+     50365,
+     400,
+     1604,
+     281,
+     652,
+     988,
+     291,
+     1446,
+     428,
+     8519,
+     7603,
+     732,
+     1708,
+     294,
+     7295,
+     949,
+     428,
+     2280,
+     13,
+     50697
+    ],
+    "temperature": 0.0,
+    "avg_logprob": -0.18741516839890254,
+    "compression_ratio": 1.1139240506329113,
+    "no_speech_prob": 9.838921127477973e-13,
+    "words": [
+     {
+      "word": " And",
+      "start": 1.7800000000000002,
+      "end": 2.3,
+      "probability": 0.7005371451377869
+     },
+     {
+      "word": " remember",
+      "start": 2.3,
+      "end": 2.7,
+      "probability": 0.9802737236022949
+     },
+     {
+      "word": " to",
+      "start": 2.7,
+      "end": 3.22,
+      "probability": 0.9230051040649414
+     },
+     {
+      "word": " make",
+      "start": 3.22,
+      "end": 3.4,
+      "probability": 0.9788070321083069
+     },
+     {
+      "word": " sure",
+      "start": 3.4,
+      "end": 3.56,
+      "probability": 0.9973376393318176
+     },
+     {
+      "word": " you",
+      "start": 3.56,
+      "end": 3.68,
+      "probability": 0.9868941307067871
+     },
+     {
+      "word": " book",
+      "start": 3.68,
+      "end": 3.86,
+      "probability": 0.9788222908973694
+     },
+     {
+      "word": " your",
+      "start": 3.86,
+      "end": 4.0,
+      "probability": 0.9959293007850647
+     },
+     {
+      "word": " spray",
+      "start": 4.0,
+      "end": 4.22,
+      "probability": 0.9740650057792664
+     },
+     {
+      "word": " tan",
+      "start": 4.22,
+      "end": 4.46,
+      "probability": 0.9557836055755615
+     },
+     {
+      "word": " two",
+      "start": 4.46,
+      "end": 4.76,
+      "probability": 0.9421135187149048
+     },
+     {
+      "word": " days",
+      "start": 4.76,
+      "end": 5.04,
+      "probability": 0.9994009733200073
+     },
+     {
+      "word": " in",
+      "start": 5.04,
+      "end": 5.32,
+      "probability": 0.9978452920913696
+     },
+     {
+      "word": " advance",
+      "start": 5.32,
+      "end": 5.62,
+      "probability": 0.9980389475822449
+     },
+     {
+      "word": " before",
+      "start": 5.62,
+      "end": 6.08,
+      "probability": 0.9819331765174866
+     },
+     {
+      "word": " your",
+      "start": 6.08,
+      "end": 6.32,
+      "probability": 0.987419068813324
+     },
+     {
+      "word": " event.",
+      "start": 6.32,
+      "end": 6.6,
+      "probability": 0.9916638135910034
+     }
+    ]
+   }
+  ],
+  "language": "en"
+ },
+ "IMG_7062.wav": {
+  "text": " So your tan has time to fully develop.",
+  "segments": [
+   {
+    "id": 0,
+    "seek": 0,
+    "start": 0.0,
+    "end": 2.52,
+    "text": " So your tan has time to fully develop.",
+    "tokens": [
+     50365,
+     407,
+     428,
+     7603,
+     575,
+     565,
+     281,
+     4498,
+     1499,
+     13,
+     50501
+    ],
+    "temperature": 0.0,
+    "avg_logprob": -0.371524175008138,
+    "compression_ratio": 0.8260869565217391,
+    "no_speech_prob": 1.4830500109225264e-12,
+    "words": [
+     {
+      "word": " So",
+      "start": 0.0,
+      "end": 0.8,
+      "probability": 0.658313512802124
+     },
+     {
+      "word": " your",
+      "start": 0.8,
+      "end": 0.96,
+      "probability": 0.8318241238594055
+     },
+     {
+      "word": " tan",
+      "start": 0.96,
+      "end": 1.22,
+      "probability": 0.8026807904243469
+     },
+     {
+      "word": " has",
+      "start": 1.22,
+      "end": 1.56,
+      "probability": 0.9946349859237671
+     },
+     {
+      "word": " time",
+      "start": 1.56,
+      "end": 1.78,
+      "probability": 0.9931240677833557
+     },
+     {
+      "word": " to",
+      "start": 1.78,
+      "end": 1.96,
+      "probability": 0.9975466132164001
+     },
+     {
+      "word": " fully",
+      "start": 1.96,
+      "end": 2.2,
+      "probability": 0.9932640790939331
+     },
+     {
+      "word": " develop.",
+      "start": 2.2,
+      "end": 2.52,
+      "probability": 0.996826171875
+     }
+    ]
+   }
+  ],
+  "language": "en"
+ },
+ "IMG_7063.wav": {
+  "text": " Holiday appointments are booking up fast, so make sure to book your appointment to get your holiday glow.",
+  "segments": [
+   {
+    "id": 0,
+    "seek": 0,
+    "start": 0.8999999999999997,
+    "end": 5.84,
+    "text": " Holiday appointments are booking up fast, so make sure to book your appointment to get your holiday glow.",
+    "tokens": [
+     50365,
+     40898,
+     25084,
+     366,
+     34424,
+     493,
+     2370,
+     11,
+     370,
+     652,
+     988,
+     281,
+     1446,
+     428,
+     13653,
+     281,
+     483,
+     428,
+     9960,
+     17513,
+     13,
+     50665
+    ],
+    "temperature": 0.0,
+    "avg_logprob": -0.23595766399217688,
+    "compression_ratio": 1.25,
+    "no_speech_prob": 8.324637637210919e-13,
+    "words": [
+     {
+      "word": " Holiday",
+      "start": 0.8999999999999997,
+      "end": 1.38,
+      "probability": 0.8688613772392273
+     },
+     {
+      "word": " appointments",
+      "start": 1.38,
+      "end": 1.84,
+      "probability": 0.9872209429740906
+     },
+     {
+      "word": " are",
+      "start": 1.84,
+      "end": 2.08,
+      "probability": 0.9970677495002747
+     },
+     {
+      "word": " booking",
+      "start": 2.08,
+      "end": 2.46,
+      "probability": 0.9917572140693665
+     },
+     {
+      "word": " up",
+      "start": 2.46,
+      "end": 2.68,
+      "probability": 0.9902153015136719
+     },
+     {
+      "word": " fast,",
+      "start": 2.68,
+      "end": 3.0,
+      "probability": 0.9981750249862671
+     },
+     {
+      "word": " so",
+      "start": 3.2,
+      "end": 3.26,
+      "probability": 0.9920724034309387
+     },
+     {
+      "word": " make",
+      "start": 3.26,
+      "end": 3.5,
+      "probability": 0.995672345161438
+     },
+     {
+      "word": " sure",
+      "start": 3.5,
+      "end": 3.76,
+      "probability": 0.9991884827613831
+     },
+     {
+      "word": " to",
+      "start": 3.76,
+      "end": 4.0,
+      "probability": 0.9869762063026428
+     },
+     {
+      "word": " book",
+      "start": 4.0,
+      "end": 4.22,
+      "probability": 0.995587944984436
+     },
+     {
+      "word": " your",
+      "start": 4.22,
+      "end": 4.4,
+      "probability": 0.9939298629760742
+     },
+     {
+      "word": " appointment",
+      "start": 4.4,
+      "end": 4.74,
+      "probability": 0.99470055103302
+     },
+     {
+      "word": " to",
+      "start": 4.74,
+      "end": 4.94,
+      "probability": 0.992387056350708
+     },
+     {
+      "word": " get",
+      "start": 4.94,
+      "end": 5.08,
+      "probability": 0.9980859756469727
+     },
+     {
+      "word": " your",
+      "start": 5.08,
+      "end": 5.22,
+      "probability": 0.9963449835777283
+     },
+     {
+      "word": " holiday",
+      "start": 5.22,
+      "end": 5.56,
+      "probability": 0.9569452404975891
+     },
+     {
+      "word": " glow.",
+      "start": 5.56,
+      "end": 5.84,
+      "probability": 0.9914236664772034
+     }
+    ]
+   }
+  ],
+  "language": "en"
+ }
+}
