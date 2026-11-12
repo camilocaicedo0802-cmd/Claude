@@ -15,13 +15,17 @@ beats_all = json.load(open(os.path.join(W, "beats.json")))["beats"]
 BEATS = [b - MUSIC_OFFSET for b in beats_all if b >= MUSIC_OFFSET]
 
 
+ORIG_IN = {}
+
+
 def words(src, a, b):
-    """Transcribed words (abs source time) inside [a, b]."""
+    """Transcribed words (abs source time) inside [a, b] (a trimmed head keeps its first word, clamped to a)."""
+    a0 = ORIG_IN.get((src, a), a)
     out = []
     for s in tr[src + ".wav"]:
         for ws, we, w in s["words"]:
-            if ws >= a - 0.02 and ws < b:
-                out.append([ws, we, w.strip()])
+            if ws >= a0 - 0.02 and ws < b:
+                out.append([max(ws, a), we, w.strip()])
     return out
 
 
@@ -41,7 +45,7 @@ PAIRS = [
          P="p1_pale", S="s1_after"),
     dict(q="Q2", a=["A2"], problem=["Need", "color", "ASAP?"],
          sol=[["Rapid", "accent"], ["tan formula", None]], sol_sync=["rapid", "formula"],
-         P="p2_asap", S="s2_spray"),
+         P="p2_walkin", S="s2_spray"),
     dict(q="Q3", a=["A3"], problem=["Dry", "or", "patchy", "skin?"],
          sol=[["Exfoliate", "accent"], ["24 hours before", None]], sol_sync=["Exfoliate", "24"],
          P="p3_dry", S="s3_exfoliate", S2="s3_exfoliate2", S2_key="24"),
@@ -80,6 +84,16 @@ def tighten(seg):
 for k in list(voice):
     if k not in ("A7a", "A7b", "C3a"):
         voice[k] = tighten(voice[k])
+
+# dead air at the head/tail of a few takes (measured on the waveform): start right where she speaks
+TRIM = {"Q6": ("in", 2.59), "C1": ("in", 7.14), "C3a": ("in", 19.56), "A2": ("out", 9.55), "A7b": ("in", 35.62)}
+ORIG_IN = {}
+for k, (side, val) in TRIM.items():
+    if side == "in":
+        ORIG_IN[(voice[k][0], val)] = voice[k][1]
+        voice[k] = [voice[k][0], val, voice[k][2]]
+    else:
+        voice[k] = [voice[k][0], voice[k][1], val]
 
 timeline = {"fps": FPS, "w": 1080, "h": 1920, "music_offset": MUSIC_OFFSET,
             "beats": BEATS[:120], "voice": [], "pairs": [], "sfx": []}

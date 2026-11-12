@@ -102,7 +102,9 @@ for k, (aid, tin) in enumerate([("o_res1", r1), ("o_res2", r2), ("o_res3", r3)])
     cards.append(dict(slot="bot", role="outro", pair=0, asset=aid, t_in=tin, t_out=cap_t("Your spray") - 0.22,
                       bx=BOT["x"] + k * (tw + 21), bw=tw))
 cards.append(dict(slot="bot", role="outro", pair=0, asset="o_slate", t_in=cap_t("come see") - 0.10,
-                  t_out=END + 1.0, seq=[["o_desk", cap_t("& we'll") - 0.06]]))
+                  t_out=END + 1.0, bx=SQ_X[0], bw=SQ))
+cards.append(dict(slot="bot", role="outro", pair=0, asset="o_desk", t_in=cap_t("& we'll") - 0.06,
+                  t_out=END + 1.0, bx=SQ_X[1], bw=SQ))
 
 
 def card_state(c, t):

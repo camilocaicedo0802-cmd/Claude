@@ -17,12 +17,12 @@ retrato) para quitar el texto impreso y el ruido visual.
 | Hook (0–2.6 s) | Ella a cámara; arriba "SPRAY TAN PROBLEMS?", sobre la camiseta *we've got* **solutions!** |
 | Pregunta | Arriba, sobre la pared desenfocada: etiqueta "problem #n" + el problema, palabra por palabra con la voz. Abajo, bajo el mentón, entra el cuadro izquierdo: **el antes** (visual del problema) |
 | Respuesta | Entra el cuadro derecho: **el después** (visual de la solución); el texto de la solución va debajo de los dos cuadros |
-| Cierre (~12 s) | Ella a cámara con subtítulos arriba; tres miniaturas de resultados que entran con "every skin tone / undertone / glow goal"; fachada de Slate y recepción en la tarjeta |
+| Cierre (~12 s) | Ella a cámara con subtítulos arriba; tres miniaturas de resultados que entran con "every skin tone / undertone / glow goal"; después dos cuadros: fachada de Slate ("come see us at Slate") y recepción ("we'll find the perfect tan") |
 
 | # | Problema (texto arriba) | Solución (texto abajo) | Cuadros antes → después |
 | --- | --- | --- | --- |
 | 1 | Pale or dull skin? | A custom *spray tan* | Misma clienta: antes → después |
-| 2 | Need color ASAP? | *Rapid* tan formula | Reloj → aplicación con la pistola Slate |
+| 2 | Need color ASAP? | *Rapid* tan formula | Clienta entrando a Slate → aplicación con la pistola Slate |
 | 3 | Dry or patchy skin? | *Exfoliate* 24 hours before | Piel seca → exfoliación (cepillo, luego exfoliante) |
 | 4 | Tan fading unevenly? | *Moisturize* daily | Bronceado desigual → crema en la pierna |
 | 5 | Tan sticking to hands & feet? | *Barrier cream* in the room | Manos abiertas durante el spray → técnica con la barrier cream |
@@ -30,7 +30,7 @@ retrato) para quitar el texto impreso y el ruido visual.
 | 7 | Wedding or special event? | Proper prep + *custom shade* | Novia → clienta en vestido, luego aplicación |
 | 8 | Not sure which shade or solution is right for you? | *Personalized* consultation | Clienta dudando → consulta real en cabina |
 
-Se mantienen **las dos voces originales**. En el par 7 se usó lo que ella dijo realmente ("book your appointment
+Se mantienen **las dos voces originales**. Se recortó el aire muerto al inicio/final de algunas frases (medido en la forma de onda) para que cada toma empiece con ella ya hablando. En el par 7 se usó lo que ella dijo realmente ("book your appointment
 one to two days before your wedding… and we'll do a custom shade for you").
 
 ## Estilo
@@ -77,7 +77,6 @@ en ese caso conviene publicar la versión sin música y elegir el audio dentro d
 
 | Uso | Foto |
 | --- | --- |
-| Need color ASAP? | Raghavendra Mithare — https://unsplash.com/photos/a-pink-alarm-clock-with-a-daisy-face-5nHU_OUi2Z0 |
 | Dry or patchy skin? | Alexander Grey — https://unsplash.com/photos/persons-palm-in-close-up-photography-tWTFjznQlBA |
 | Exfoliate | Megan Dujardin — https://unsplash.com/photos/a-woman-with-a-ring-on-her-finger-LB_OWger9XE |
 | Exfoliate (2) | Anita Austvika — https://unsplash.com/photos/a-person-making-a-dough-Z75dEgdKCS0 |

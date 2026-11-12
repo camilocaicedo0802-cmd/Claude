@@ -22,6 +22,7 @@ ASSETS = {
     # problem cards (top) / solution cards (bottom): wide 2.23:1 support visuals
     "p1_pale": dict(type="video", src=f"{B}/Spray_Tan_1_spray_tan_1_-_B_roll_antes_IMG_4082.MOV", t_in=2.3, dur=4.2, crop=[0.5, 0.36, 1.25], out="sq", kb=[1.0, 1.06]),
     "s1_after": dict(type="video", src=f"{B}/Spray_Tan_1_spray_tan_1_-_B_roll_despues_IMG_4149.MOV", t_in=0.0, dur=2.8, crop=[0.5, 0.33, 1.25], out="sq", kb=[1.0, 1.06]),
+    "p2_walkin": dict(type="video", src=f"{B}/Spray_tan_2_Videos_Llegada_al_sal_n_IMG_1941.MOV", t_in=0.4, dur=4.6, crop=[0.55, 0.60, 1.0], out="sq", kb=[1.0, 1.05]),
     "p2_asap": dict(type="photo", src=f"{ST}/H_asap_1.jpg", crop=[0.5, 0.52, 1.0], out="sq", kb=[1.0, 1.10]),
     "s2_spray": dict(type="video", src=f"{B}/Spray_Tan_1_spray_tan_1_-_B_roll_proceso_IMG_4102.MOV", t_in=0.10, dur=3.8, crop=[0.45, 0.45, 1.0], out="sq", kb=[1.0, 1.06]),
     "p3_dry": dict(type="photo", src=f"{ST}/B_dryskin_2.jpg", crop=[0.5, 0.5, 1.0], out="sq", kb=[1.0, 1.10]),
@@ -42,8 +43,8 @@ ASSETS = {
     "o_res1": dict(type="photo", src=PH(70), crop=[0.40, 0.22, 2.0], out="tile", kb=[1.0, 1.05]),
     "o_res2": dict(type="photo", src=PH(92), crop=[0.49, 0.47, 2.0], out="tile", kb=[1.0, 1.05]),
     "o_res3": dict(type="photo", src=PH(200), crop=[0.55, 0.28, 1.6], out="tile", kb=[1.0, 1.05]),
-    "o_slate": dict(type="video", src=f"{B2}/IMG_0822.MOV", t_in=0.4, dur=2.6, crop=[0.5, 0.235, 1.0], out="card", kb=[1.0, 1.05]),
-    "o_desk": dict(type="video", src=f"{B2}/IMG_0816.MOV", t_in=0.0, dur=1.85, crop=[0.5, 0.55, 1.0], out="card", kb=[1.0, 1.05]),
+    "o_slate": dict(type="video", src=f"{B2}/IMG_0822.MOV", t_in=0.4, dur=2.6, crop=[0.5, 0.35, 1.0], out="sq", kb=[1.0, 1.04], slow=1.8),
+    "o_desk": dict(type="video", src=f"{B2}/IMG_0816.MOV", t_in=0.0, dur=1.85, crop=[0.5, 0.55, 1.0], out="sq", kb=[1.0, 1.04], slow=1.75),
 }
 
 SIZE = {"full": (1188, 2112), "half": (1188, 1056), "card": (1092, 490), "pol": (317, 363), "tile": (330, 336), "sq": (390, 390)}
@@ -83,6 +84,8 @@ def prep(aid, a, outdir, force=False):
         sw, sh = probe(a["src"])
         x, y, ww, wh = window(sw, sh, tw / th, *a["crop"])
         vf = f"crop={ww}:{wh}:{x}:{y},scale={tw}:{th}:flags=lanczos,fps=30,setsar=1,format=yuv420p"
+        if a.get("slow"):
+            vf = f"setpts={a['slow']}*PTS,framerate=fps=30," + vf
         subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", str(a["t_in"]), "-t", str(a["dur"]), "-i", a["src"],
                         "-an", "-vf", vf, "-c:v", "libx264", "-crf", "9", "-preset", "fast", dst], check=True)
         return dst
