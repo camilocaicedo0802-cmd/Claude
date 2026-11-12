@@ -107,41 +107,38 @@ def ev(t, name, gdb, peak=0.0, ss=None, to=None):
     events.append((t - peak, name, gdb, ss, to))
 
 # hook
-ev(0.00, "Swoosh 01 - 04.wav", -8, peak=0.09)
-ev(0.16, "Pop up SFX.mp3", -5, peak=0.19)
-ev(0.95, "Swoosh 01 - 05.wav", -12, peak=0.07)
-ev(1.16, "disappear.wav", -12, peak=0.45)
+ev(0.02, "Pop up SFX.mp3", -9, peak=0.19)
+ev(1.10, "Swoosh 01 - 05.wav", -14, peak=0.07)
+ev(1.20, "disappear.wav", -18, peak=0.45)
 # boundaries
 ends = [T["hook"]["end"]] + [p["end"] for p in T["pairs"]]
 whoosh = ["VS_Short Whoosh 1.mp3", "VS_Short Whoosh 3.mp3", "VS_Short Whoosh 6.mp3", "VS_Short Whoosh 2.mp3"]
 for k, B in enumerate(ends):
     if k == 0:
-        ev(B, "Woosh Effect 5.wav", -9, peak=0.45)
+        ev(B - 0.04, "VS_Short Whoosh 1.mp3", -15, peak=0.55)
     elif k == len(ends) - 1:
-        ev(B, "Woosh Effect 2.wav", -10, peak=1.11)
+        ev(B - 0.04, "VS_Short Whoosh 3.mp3", -15, peak=0.55)
     else:
-        ev(B - 0.06, whoosh[k % len(whoosh)], -11, peak=0.55)
+        ev(B - 0.04, whoosh[k % len(whoosh)], -15, peak=0.55)
 # pairs
 for p in T["pairs"]:
     lab = max(p["q_first"] - 0.16, p["start"] + 0.12)
-    ev(lab + 0.06, "Pop up SFX.mp3", -11, peak=0.19)
-    ev(p["split"] + 0.04, "Swoosh 01 - 03.wav", -10, peak=0.08)
+    ev(lab + 0.04, "Pop up SFX.mp3", -14, peak=0.19)
+    ev(p["split"] + 0.04, "Swoosh 01 - 03.wav", -14, peak=0.08)
     ct = min(p["split"] + 0.20, p["a_first"] - 0.34)
     if ct > p["split"] + 0.02:
-        ev(ct, "Acierto y error.mp3", -16, peak=0.08, ss=2.78, to=3.16)
+        ev(ct, "Acierto y error.mp3", -19, peak=0.08, ss=2.78, to=3.16)
     if p.get("S2"):
-        ev(p["s2_at"] + 0.10, "Swoosh 01 - 07.wav", -13, peak=0.07)
+        ev(p["s2_at"] + 0.10, "Swoosh 01 - 07.wav", -16, peak=0.07)
 # outro (support polaroids + Slate card over the talking head)
 def cap_t(prefix):
     return next(c[1] for c in T["outro"]["captions"] if c[0].startswith(prefix))
 for tt in [cap_t("Every skin") + 0.30, cap_t("undertone") - 0.02, cap_t("& glow") + 0.08]:
-    ev(tt + 0.02, "Camera Shutter Click 01.wav", -9, peak=0.07)
-    ev(tt + 0.02, "Camera Flash.wav", -17, peak=0.12)
-ev(cap_t("Your spray") - 0.20, "Swoosh 01 - 05.wav", -13, peak=0.07)
-ev(cap_t("come see") - 0.05, "Swoosh 01 - 03.wav", -11, peak=0.08)
-ev(cap_t("& we'll") + 0.04, "Swoosh 01 - 07.wav", -13, peak=0.07)
+    ev(tt + 0.02, "Swoosh 01 - 06.wav", -16, peak=0.07)
+ev(cap_t("come see") - 0.05, "Swoosh 01 - 03.wav", -14, peak=0.08)
+ev(cap_t("& we'll") + 0.04, "Swoosh 01 - 07.wav", -16, peak=0.07)
 last_cap = T["outro"]["captions"][-1]
-ev(last_cap[1] + 0.05, "disappear.wav", -12, peak=0.45)
+ev(last_cap[1] + 0.05, "disappear.wav", -17, peak=0.45)
 
 for t, name, gdb, ss, to in events:
     x = S(name, ss, to)

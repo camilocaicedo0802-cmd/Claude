@@ -4,21 +4,22 @@ Reel vertical (1080×1920, 30 fps, ~59 s) en formato **Problema vs. Solución** 
 Esta carpeta guarda el proyecto de edición reproducible: decisiones, línea de tiempo y scripts. Los videos en
 bruto, el b-roll y los recursos se descargan de Drive y no se suben al repositorio.
 
-## Estructura (v2: la persona hablando es la toma principal)
+## Estructura (v3: minimalista, la persona hablando es la toma principal)
 
-El talking head (video en bruto) está en pantalla de principio a fin, con lip-sync exacto: mientras la voz fuera
-de cámara pregunta se la ve escuchando, y cuando responde se la ve hablando (con punch-in). Las imágenes de apoyo
-viven en tarjetas, nunca reemplazan a la persona:
+El talking head (video en bruto) está en pantalla del primer al último cuadro, también en el hook, con lip-sync
+exacto: mientras la voz fuera de cámara pregunta se la ve escuchando, y cuando responde se la ve hablando. **Nada se
+pone encima de su cara ni de su cabeza**: el encuadre (por detección de cara) deja libres una banda arriba para el
+texto y un espacio bajo el mentón para la tarjeta. La pared de fondo va desenfocada (segmentación de persona, efecto
+retrato) para quitar el texto impreso y el ruido visual.
 
 | Momento | Pantalla |
 | --- | --- |
-| Hook (0–2.6 s) | Toma de aplicación del spray + "SPRAY TAN PROBLEMS?" / *we've got* **solutions!** |
-| Pregunta | Baja la **tarjeta superior** con el visual del problema y el texto del problema, sincronizado palabra a palabra |
-| Respuesta | Sube la **tarjeta inferior** con el visual de la solución y el texto de la solución; ella queda al centro hablando |
-| Cambio de problema | Las tarjetas salen, punch-in sobre ella + whoosh, entra el siguiente problema |
-| Cierre (~12 s) | Ella a cámara con subtítulos; tres polaroids de resultados ("every skin tone…"), tarjeta con la fachada de Slate y la recepción |
+| Hook (0–2.6 s) | Ella a cámara; arriba "SPRAY TAN PROBLEMS?", sobre la camiseta *we've got* **solutions!** |
+| Pregunta | Arriba, sobre la pared desenfocada: etiqueta "problem #n" + el problema, palabra por palabra con la voz |
+| Respuesta | Abajo, bajo el mentón: una sola tarjeta con el visual de la solución; el texto de la solución va debajo de la tarjeta para no tapar la imagen |
+| Cierre (~12 s) | Ella a cámara con subtítulos arriba; tres miniaturas de resultados que entran con "every skin tone / undertone / glow goal"; fachada de Slate y recepción en la tarjeta |
 
-| # | Problema (tarjeta superior) | Solución (tarjeta inferior) | Visual de solución |
+| # | Problema (texto arriba) | Solución (texto abajo) | Visual de la tarjeta |
 | --- | --- | --- | --- |
 | 1 | Pale or dull skin? | A custom *spray tan* | Misma clienta: antes / después |
 | 2 | Need color ASAP? | *Rapid* tan formula | Aplicación con la pistola Slate |
@@ -34,34 +35,35 @@ one to two days before your wedding… and we'll do a custom shade for you").
 
 ## Estilo
 
-- Tipografías de las referencias de Slate: **SF Pro Display Bold** (titulares), **Nyght Serif Medium Italic** en
-  dorado para la palabra clave de cada solución, **Shadows Into Light** para "✕ problem #n" / "solution ✓".
-- Encuadre del talking head por detección de cara (misma posición en todas las tomas), zoom más abierto en las
-  preguntas y punch-in en las respuestas; cortes de una sola vez por pausa.
-- Tarjetas con esquinas redondeadas, borde blanco fino y sombra suave; texto animado palabra por palabra,
-  ✕/✓ dibujados a mano y destellos; polaroids con flash en el cierre.
-- Sonido: whoosh por cambio de problema, pop al aparecer cada problema, swoosh al subir la solución, campanita
-  al dibujarse el ✓ (sin pisar la primera palabra de la respuesta), obturador en las polaroids. Los SFX y la
-  música bajan automáticamente bajo la voz. Loudness -14 LUFS / -1 dBTP.
+- Tipografías de las referencias de Slate: **SF Pro Display Bold** (titulares), **Nyght Serif Medium Italic** para la
+  palabra clave (dorado sobre oscuro, bronce sobre la pared clara), **Shadows Into Light** para "problem #n" /
+  "solution".
+- Minimalista: un solo bloque de texto por zona, sin estrellas, sin bordes, sin destellos ni light leaks; textos que
+  entran con un fade + desenfoque suave, tarjeta de esquinas redondeadas con sombra muy ligera.
+- Encuadre del talking head igual en todas las tomas; un corte por pausa, con un punch-in suave al cambiar de problema.
+- Sonido discreto: pop suave al aparecer el problema, swoosh corto al entrar la solución, campanita baja al terminar
+  la pregunta, whoosh leve entre problemas. Música y efectos bajan solos bajo la voz. -14 LUFS / -1 dBTP.
 - Música: "Million Dollar Baby" (instrumental), arrancando en un golpe fuerte; cortes en el pulso (92 BPM).
-- Color: una sola corrección para todas las tomas de ella (consistencia), y balance/exposición por clip hacia un
-  neutro cálido común para el apoyo; viñeta y grano finos.
+- Color: una sola corrección para todas las tomas de ella (algo menos saturada, natural), y balance/exposición por
+  clip hacia un neutro cálido común para el apoyo; grano muy fino.
 
 ## Archivos
 
 ```
 scripts/edl.py           línea de tiempo: voces, textos sincronizados por palabra, pulso de la música
-scripts/talk_prep.py     tomas del crudo por frase (con pre/post-roll) + seguimiento de cara
+scripts/talk_prep.py     tomas del crudo por frase (con pre/post-roll) + seguimiento de cara (incluye la toma del hook)
+scripts/talk_masks.py    máscaras de persona (MediaPipe) para desenfocar solo la pared
 scripts/assets.py        visuales de apoyo: clip/foto, punto de entrada y encuadre para cada tarjeta
-scripts/layout.py        cuadro a cuadro: qué toma y tiempo de origen (lip-sync), zoom, tarjetas y animación
-scripts/compose2.py      compositor (talking head + tarjetas + polaroids + transición del hook, color, grano)
+scripts/layout3.py       cuadro a cuadro: qué toma y tiempo de origen (lip-sync), zoom y tarjetas
+scripts/compose3.py      compositor (talking head + fondo desenfocado + tarjetas, color, grano)
 scripts/mix.py           limpieza de voz, ducking de música, SFX, loudness
-render/overlay2.html     tipografía animada (Chromium → PNG transparentes), anclada a las tarjetas
-render/render_overlay2.cjs, render/render_all2.sh
+render/overlay3.html     tipografía animada (Chromium → PNG transparentes)
+render/render_overlay3.cjs, render/render_all3.sh
 ```
 
-Orden de render: `edl.py` → `talk_prep.py` → `assets.py` → `layout.py` → `render_all2.sh` → `compose2.py` →
-`mix.py` → mux con ffmpeg. `talk_prep.py` usa OpenCV 4 (el detector Haar ya no viene en OpenCV 5).
+Orden de render: `edl.py` → `talk_prep.py` → `talk_masks.py` → `assets.py` → `layout3.py` → `render_all3.sh` →
+`compose3.py` → `mix.py` → mux con ffmpeg. `talk_prep.py` usa OpenCV 4 (el detector Haar ya no viene en OpenCV 5);
+`talk_masks.py` usa MediaPipe con el modelo `selfie_multiclass_256x256.tflite`.
 
 Las fuentes no se incluyen en el repositorio (licencias): vienen de la carpeta de Drive *FUENTES PRO ELEGANTES* y
 van en `render/fonts/` (`SFPRODISPLAYBOLD.OTF`, `SFPRODISPLAYMEDIUM.OTF`, `NyghtSerif-MediumItalic.ttf`,

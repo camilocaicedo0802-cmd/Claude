@@ -54,7 +54,8 @@ def faces(path):
     return res
 
 
-segs = [v for v in T["voice"] if not only or v["id"] in only]
+EXTRA = [{"id": "H", "src": "IMG_7108", "in": 0.20, "out": 2.80, "kind": "h"}]   # silent hook shot of her
+segs = [v for v in T["voice"] + EXTRA if not only or v["id"] in only]
 with ThreadPoolExecutor(3) as ex:
     done = list(ex.map(prep, segs))
 meta_path = os.path.join(W, "talk_faces.json")

@@ -39,14 +39,14 @@ ASSETS = {
     "p8_unsure": dict(type="video", src=f"{B}/Spray_tan_2_Videos_Llegada_al_sal_n_IMG_1944.MOV", t_in=0.8, dur=7.2, crop=[0.45, 0.66, 1.25], out="card", kb=[1.0, 1.05]),
     "s8_consult": dict(type="video", src=f"{B}/Spray_tan_2_Videos_Consulta_antes_de_bronceado_IMG_1948.MOV", t_in=0.3, dur=4.6, crop=[0.42, 0.355, 1.0], out="card", kb=[1.0, 1.04]),
     # outro support: polaroids of results + Slate cards
-    "o_res1": dict(type="photo", src=PH(70), crop=[0.5, 0.34, 1.35], out="pol", kb=[1.0, 1.06]),
-    "o_res2": dict(type="photo", src=PH(92), crop=[0.5, 0.38, 1.25], out="pol", kb=[1.0, 1.06]),
-    "o_res3": dict(type="photo", src=PH(200), crop=[0.5, 0.36, 1.2], out="pol", kb=[1.0, 1.06]),
-    "o_slate": dict(type="video", src=f"{B2}/IMG_0822.MOV", t_in=0.4, dur=2.6, crop=[0.5, 0.29, 1.0], out="card", kb=[1.0, 1.05]),
+    "o_res1": dict(type="photo", src=PH(70), crop=[0.40, 0.22, 2.0], out="tile", kb=[1.0, 1.05]),
+    "o_res2": dict(type="photo", src=PH(92), crop=[0.49, 0.47, 2.0], out="tile", kb=[1.0, 1.05]),
+    "o_res3": dict(type="photo", src=PH(200), crop=[0.55, 0.28, 1.6], out="tile", kb=[1.0, 1.05]),
+    "o_slate": dict(type="video", src=f"{B2}/IMG_0822.MOV", t_in=0.4, dur=2.6, crop=[0.5, 0.235, 1.0], out="card", kb=[1.0, 1.05]),
     "o_desk": dict(type="video", src=f"{B2}/IMG_0816.MOV", t_in=0.0, dur=1.85, crop=[0.5, 0.55, 1.0], out="card", kb=[1.0, 1.05]),
 }
 
-SIZE = {"full": (1188, 2112), "half": (1188, 1056), "card": (1092, 490), "pol": (317, 363)}
+SIZE = {"full": (1188, 2112), "half": (1188, 1056), "card": (1092, 490), "pol": (317, 363), "tile": (330, 336)}
 
 
 def probe(path):

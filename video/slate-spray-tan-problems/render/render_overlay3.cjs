@@ -8,7 +8,7 @@ const T = JSON.parse(fs.readFileSync(tlPath, 'utf8'));
 const L = JSON.parse(fs.readFileSync(path.join(path.dirname(tlPath), 'layout.json'), 'utf8'));
 const browser = await chromium.launch();
 const page = await browser.newPage({ viewport: { width: 1080, height: 1920 }, deviceScaleFactor: 1 });
-await page.goto('file://' + path.resolve(__dirname, 'overlay2.html'));
+await page.goto('file://' + path.resolve(__dirname, 'overlay3.html'));
 await page.evaluate(async (t) => await window.setup(t), T);
 const stage = await page.$('#stage');
 fs.mkdirSync(outDir, { recursive: true });

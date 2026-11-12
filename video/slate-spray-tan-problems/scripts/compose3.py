@@ -18,7 +18,7 @@ N = L["n"]
 F0, F1 = (int(args[0]), int(args[1])) if len(args) >= 2 else (0, N)
 OVL = os.path.join(R, "ovl")
 FX = os.path.join(W, "res", "fx")
-FACE_Y = 870          # where the face centre sits on screen (between the cards)
+FACE_Y = 840          # where the face centre sits on screen (clear of the text band and the card)
 
 clamp = lambda x, a=0.0, b=1.0: max(a, min(b, x))
 lerp = lambda a, b, e: a + (b - a) * e
@@ -32,7 +32,7 @@ def e_in_out_cubic(x):
 def smoothstep(a, b, x):
     t = np.clip((x - a) / (b - a), 0, 1); return t * t * (3 - 2 * t)
 
-GRADE = {"hook": (0.36, 0.35, 1.04), "talk": (0.50, 0.55, 1.03),
+GRADE = {"hook": (0.36, 0.35, 1.04), "talk": (0.50, 0.55, 0.97),
          "s2_spray": (0.42, 0.35, 1.03), "s5_barrier": (0.42, 0.35, 1.02), "s8_consult": (0.42, 0.35, 1.02),
          "p5_hands": (0.42, 0.35, 1.02), "p3_dry": (0.40, 0.0, 1.0), "p2_asap": (0.55, 0.0, 0.96),
          "p6_vacation": (0.55, 0.0, 0.98), "p7_event": (0.55, 0.2, 1.0), "s4_moisturize": (0.48, 0.2, 1.0),
@@ -40,7 +40,7 @@ GRADE = {"hook": (0.36, 0.35, 1.04), "talk": (0.50, 0.55, 1.03),
          "s7_spray": (0.42, 0.35, 1.03)}
 
 def make_grade(aid, img):
-    tl, wbs, sat = GRADE.get(aid, (0.48, 0.5, 1.05))
+    tl, wbs, sat = GRADE.get(aid, (0.48, 0.5, 1.0))
     f = img.astype(np.float32) / 255.0
     b, g, r = f[..., 0], f[..., 1], f[..., 2]
     luma = 0.0722 * b + 0.7152 * g + 0.2126 * r
@@ -56,7 +56,7 @@ def make_grade(aid, img):
     luts = []
     for c in range(3):
         y = np.clip(x * gains[c], 0, 1) ** gamma
-        y = y + 0.16 * (smoothstep(0, 1, y) - y)
+        y = y + 0.12 * (smoothstep(0, 1, y) - y)
         y = 0.016 + y * (0.985 - 0.016)
         hl = smoothstep(0.55, 1.0, y)
         if c == 2: y = y + 0.010 * hl
@@ -107,7 +107,7 @@ class Video:
             self.proc.kill(); self.proc.wait(); self.proc = None
 
 
-SIZE = {"full": (1188, 2112), "half": (1188, 1056), "card": (1092, 490), "pol": (317, 363)}
+SIZE = {"full": (1188, 2112), "half": (1188, 1056), "card": (1092, 490), "pol": (317, 363), "tile": (330, 336)}
 _cache = {}
 TALK_GRADE = None
 
@@ -153,6 +153,36 @@ def talk_frame(seg, src_rel):
     return memo["img"]
 
 
+_masks = {}
+def talk_mask(seg, src_rel):
+    if seg not in _masks:
+        p = os.path.join(W, "talk", seg + "_mask.npy")
+        _masks.clear()
+        _masks[seg] = np.load(p, mmap_mode="r") if os.path.exists(p) else None
+    m = _masks[seg]
+    if m is None:
+        return None
+    i = int(clamp(round(src_rel * FPS), 0, len(m) - 1))
+    return m[i]
+
+
+def defocus_bg(img, mask_small):
+    """Portrait-mode style: blur only the wall behind her (normalised so her hair doesn't bleed into it)."""
+    h, w = img.shape[:2]
+    m = cv2.resize(mask_small.astype(np.float32) / 255.0, (w, h), interpolation=cv2.INTER_LINEAR)
+    m = np.clip((m - 0.35) / 0.4, 0, 1)                       # firm up the edge a little
+    m = cv2.GaussianBlur(m, (0, 0), 2.0)
+    q = (w // 6, h // 6)
+    bg = 1.0 - cv2.resize(m, q, interpolation=cv2.INTER_AREA)
+    sm = cv2.resize(img, q, interpolation=cv2.INTER_AREA).astype(np.float32)
+    num = cv2.GaussianBlur(sm * bg[..., None], (0, 0), 7.0)
+    den = cv2.GaussianBlur(bg, (0, 0), 7.0)[..., None] + 1e-4
+    blur = cv2.resize(num / den, (w, h), interpolation=cv2.INTER_CUBIC)
+    blur = blur * 0.94 + 255 * 0.06                            # a touch lighter / airier
+    out = img.astype(np.float32) * m[..., None] + blur * (1 - m[..., None])
+    return np.clip(out, 0, 255).astype(np.uint8)
+
+
 def view(img, ow, oh, z, cx=0.5, cy=0.5):
     h, w = img.shape[:2]
     ww, wh = w / z, h / z
@@ -183,6 +213,7 @@ def render_hook(t):
 
 def render_talk(b):
     img = talk_frame(b["seg"], b["src"])
+    mk = talk_mask(b["seg"], b["src"])
     z = b["zoom"] * b["punch"]
     fx, fy, fw = b["face"]
     h, w = img.shape[:2]
@@ -190,6 +221,11 @@ def render_talk(b):
     x0 = clamp(fx * w - (WD / 2) * (ww / WD), 0, w - ww)
     y0 = clamp(fy * h - FACE_Y * (wh / HT), 0, h - wh)
     out = crop_resize(img, x0, y0, ww, wh, WD, HT)
+    if mk is not None:
+        mh, mw = mk.shape
+        sx_, sy_ = mw / w, mh / h
+        msub = crop_resize(np.ascontiguousarray(mk)[..., None].repeat(3, axis=2), x0 * sx_, y0 * sy_, ww * sx_, wh * sy_, WD // 4, HT // 4)[..., 0]
+        out = defocus_bg(out, msub)
     if b["punch"] > 1.02:
         k = int((b["punch"] - 1) * 60) | 1
         out = cv2.GaussianBlur(out, (k, k), 0)
@@ -206,18 +242,15 @@ def rounded_mask(w, h, r):
     return cv2.resize(m, (w, h), interpolation=cv2.INTER_AREA).astype(np.float32) / 255.0
 
 _chrome = {}
-def card_chrome(w, h, r=30, border=4):
+def card_chrome(w, h, r=26, border=0):
     key = (w, h, r, border)
     if key not in _chrome:
         mask = rounded_mask(w, h, r)
-        inner = rounded_mask(w - 2 * border, h - 2 * border, max(r - border, 2))
-        ring = mask.copy()
-        ring[border:h - border, border:w - border] -= inner
-        ring = np.clip(ring, 0, 1)
+        ring = None
         pad = 70
         sh = np.zeros((h + 2 * pad, w + 2 * pad), np.float32)
-        sh[pad + 16:pad + 16 + h, pad:pad + w] = mask
-        sh = cv2.GaussianBlur(sh, (0, 0), 22) * 0.42
+        sh[pad + 12:pad + 12 + h, pad:pad + w] = mask
+        sh = cv2.GaussianBlur(sh, (0, 0), 24) * 0.28
         _chrome[key] = (mask, ring, sh, pad)
     return _chrome[key]
 
@@ -264,8 +297,7 @@ def draw_card(canvas, c):
     blend_layer(canvas, None, sh, x - pad, y - pad)
     img = card_content(c, w, h)
     blend_layer(canvas, img, mask, x, y)
-    white = np.full((h, w, 3), 250, np.uint8)
-    blend_layer(canvas, white, ring * 0.95, x, y)
+
 
 POL_W, POL_H, POL_IN = 316, 400, (14, 14, 288, 330)
 def draw_polaroid(canvas, c):
@@ -303,11 +335,24 @@ def draw_polaroid(canvas, c):
     canvas[y0:y1, x0:x1] = np.clip(roi, 0, 255).astype(np.uint8)
 
 
+_yy = np.arange(560, dtype=np.float32)
+TOP_MASK = np.clip((480 - _yy) / 90.0, 0, 1)[:, None, None]   # 1 above y=390, 0 below y=480 (never on her hair)
+
+def soften_top(img):
+    """Defocus the wall behind the top text band so the printed wall text doesn't compete."""
+    band = img[:560]
+    sm = cv2.resize(band, (WD // 4, 140), interpolation=cv2.INTER_AREA)
+    sm = cv2.GaussianBlur(sm, (0, 0), 4.5)
+    bl = cv2.resize(sm, (WD, 560), interpolation=cv2.INTER_LINEAR).astype(np.float32)
+    img[:560] = (band.astype(np.float32) * (1 - TOP_MASK) + bl * TOP_MASK).astype(np.uint8)
+    return img
+
+
 def render_scene(f):
     fr = L["frames"][min(f, N - 1)]
     b = fr["base"]
-    img = render_hook(fr["t"]) if b["kind"] == "hook" else render_talk(b)
-    img = np.ascontiguousarray(img)
+    img = np.ascontiguousarray(render_talk(b))
+    pass
     for c in fr["cards"]:
         if c["slot"] == "pol":
             draw_polaroid(img, c)
@@ -319,24 +364,6 @@ def render_scene(f):
 # ------------------------------------------------------------------ hook -> talk transition, finishing
 HOOK_END = T["hook"]["end"]
 def render(f):
-    t = f / FPS
-    pre, post = 0.16, 0.24
-    if HOOK_END - pre <= t < HOOK_END + post:
-        if t < HOOK_END:
-            q = (t - (HOOK_END - pre)) / pre
-            out = view(render_scene(f), WD, HT, 1 + 0.28 * e_in_cubic(q))
-            bl = int(1 + 24 * e_in_cubic(q)) | 1
-            fl = 0.55 * e_in_cubic(q)
-        else:
-            q = (t - HOOK_END) / post
-            out = view(render_scene(f), WD, HT, 1 + 0.22 * (1 - e_out_cubic(q)))
-            bl = int(1 + 20 * (1 - e_out_cubic(q))) | 1
-            fl = 0.55 * (1 - e_out_cubic(q * 1.2))
-        if bl > 2:
-            out = cv2.GaussianBlur(out, (bl, bl), 0)
-        if fl > 0.01:
-            out = cv2.addWeighted(out, 1 - fl, np.full_like(out, (235, 245, 255)), fl, 0)
-        return out
     return render_scene(f)
 
 
@@ -344,8 +371,8 @@ yy, xx = np.mgrid[0:HT, 0:WD].astype(np.float32)
 vig = 1 - 0.10 * np.clip(((xx - WD / 2) / (WD * 0.62)) ** 2 + ((yy - HT / 2) / (HT * 0.60)) ** 2 - 0.35, 0, 1) ** 1.2
 VIG = np.dstack([vig] * 3).astype(np.float32)
 rng = np.random.default_rng(7)
-GRAIN = [rng.normal(0, 2.0, (HT // 2, WD // 2)).astype(np.float32) for _ in range(6)]
-LEAK = Video(os.path.join(FX, "film burns(2).mp4"), 1080, 1920) if os.path.exists(os.path.join(FX, "film burns(2).mp4")) else None
+GRAIN = [rng.normal(0, 1.5, (HT // 2, WD // 2)).astype(np.float32) for _ in range(6)]
+LEAK = None
 
 def finish(img, f):
     t = f / FPS

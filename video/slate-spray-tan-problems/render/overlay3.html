@@ -1,0 +1,190 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+@font-face { font-family: "SFD"; src: url("fonts/SFPRODISPLAYBOLD.OTF"); font-weight: 700; }
+@font-face { font-family: "Nyght"; src: url("fonts/NyghtSerif-MediumItalic.ttf"); font-style: italic; font-weight: 500; }
+@font-face { font-family: "Hand"; src: url("fonts/ShadowsIntoLight-Regular.ttf"); }
+:root {
+  --ink: #2A1A10;          /* espresso, for text over the light wall */
+  --bronze: #8A4A1C;       /* accent over the light wall */
+  --gold: #FFD571;         /* accent over dark */
+  --label-dark: #8C5B3B;
+}
+html, body { margin: 0; padding: 0; background: transparent; }
+#stage { position: relative; width: 1080px; height: 1920px; overflow: hidden; }
+.abs { position: absolute; left: 0; top: 0; width: 1080px; }
+.band { position: absolute; left: 90px; width: 900px; text-align: center; }
+.head { font-family: "SFD"; font-weight: 700; letter-spacing: -0.028em; line-height: 1.0; }
+.ink { color: var(--ink); }
+.white { color: #fff; text-shadow: 0 2px 10px rgba(0,0,0,.30); }
+.w { display: inline-block; white-space: pre; will-change: transform, opacity, filter; }
+.acc { font-family: "Nyght"; font-style: italic; font-weight: 500; letter-spacing: -0.01em; padding: 0 0.05em 0.08em 0.02em; }
+.acc.onlight { color: var(--bronze); }
+.acc.ondark { color: var(--gold); text-shadow: 0 2px 6px rgba(60,30,0,.45); }
+.label { font-family: "Hand"; line-height: 1; display: inline-block; transform-origin: 50% 60%; }
+.wash { position: absolute; left: 0; top: 0; width: 1080px; height: 520px;
+        background: linear-gradient(180deg, rgba(247,241,232,.70) 0%, rgba(247,241,232,.52) 52%, rgba(247,241,232,0) 92%); }
+.cardtext { position: absolute; overflow: hidden; border-radius: 26px; }
+.cardtext .scrim2 { position: absolute; left: 0; top: 0; width: 100%; height: 100%;
+                    background: linear-gradient(180deg, rgba(0,0,0,.52) 0%, rgba(0,0,0,.18) 45%, rgba(0,0,0,0) 70%); }
+.cardtext .inner { position: absolute; left: 0; top: 22px; width: 100%; box-sizing: border-box; padding: 0 40px; text-align: center; }
+</style>
+</head>
+<body>
+<div id="stage"></div>
+<script>
+const clamp = (x, a=0, b=1) => Math.max(a, Math.min(b, x));
+const lerp = (a, b, e) => a + (b - a) * e;
+const eOutCubic = x => 1 - Math.pow(1 - clamp(x), 3);
+const eInOutCubic = x => { x = clamp(x); return x < .5 ? 4*x*x*x : 1 - Math.pow(-2*x + 2, 3) / 2; };
+
+let T = null;
+const stage = document.getElementById('stage');
+let wash, hook, pairs = [], outro;
+
+function span(text, cls='') { const s = document.createElement('span'); s.className = 'w ' + cls; s.textContent = text; return s; }
+function parseRich(s) {
+  const parts = []; const re = /\*([^*]+)\*/g; let last = 0, m;
+  while ((m = re.exec(s))) { if (m.index > last) parts.push({text: s.slice(last, m.index), acc: false}); parts.push({text: m[1], acc: true}); last = re.lastIndex; }
+  if (last < s.length) parts.push({text: s.slice(last), acc: false});
+  return parts;
+}
+// calm reveal: fade + soft blur + small rise (no bounce)
+function reveal(el, t, t0, d=0.26, rise=16, blur=8) {
+  const p = clamp((t - t0) / d), e = eOutCubic(p);
+  el.style.opacity = p <= 0 ? 0 : clamp(p * 1.4);
+  el.style.filter = `blur(${(1 - e) * blur}px)`;
+  el.style.transform = `translateY(${(1 - e) * rise}px)`;
+}
+function fadeOut(el, t, t1, d=0.14) {
+  const p = clamp((t - (t1 - d)) / d);
+  if (p <= 0) return;
+  el.style.opacity = parseFloat(el.style.opacity || 1) * (1 - eInOutCubic(p));
+}
+
+function build() {
+  wash = document.createElement('div'); wash.className = 'wash'; stage.appendChild(wash);
+
+  // hook: problem on top (over the wall), solution at the bottom (over her shirt)
+  const h = document.createElement('div'); h.className = 'abs'; stage.appendChild(h);
+  const top = document.createElement('div'); top.className = 'band head ink'; top.style.top = '226px'; top.style.fontSize = '94px';
+  const a1 = span('SPRAY TAN'); const a2 = span('PROBLEMS?');
+  top.appendChild(a1); top.appendChild(document.createElement('br')); top.appendChild(a2); h.appendChild(top);
+  const bot = document.createElement('div'); bot.className = 'band'; bot.style.top = '1392px';
+  const b1 = span("we've got", 'label white'); b1.style.fontSize = '62px';
+  const b2 = span('solutions!', 'acc ondark'); b2.style.fontSize = '150px'; b2.style.display = 'inline-block';
+  bot.appendChild(b1); bot.appendChild(document.createElement('br')); bot.appendChild(b2); h.appendChild(bot);
+  hook = {root: h, a1, a2, b1, b2};
+
+  T.pairs.forEach(p => {
+    const root = document.createElement('div'); root.className = 'abs'; stage.appendChild(root);
+    const blk = document.createElement('div'); blk.className = 'band'; root.appendChild(blk);
+    const lab = span(`problem #${p.n}`, 'label'); lab.style.fontSize = '46px'; lab.style.color = 'var(--label-dark)';
+    const ld = document.createElement('div'); ld.style.marginBottom = '10px'; ld.appendChild(lab); blk.appendChild(ld);
+    const hd = document.createElement('div'); hd.className = 'head ink';
+    const n = p.problem.length; hd.style.fontSize = (n > 6 ? 52 : 62) + 'px';
+    const ws = p.problem.map(([txt, tt], k) => {
+      const br = txt.endsWith('|'); const clean = br ? txt.slice(0, -1) : txt;
+      const s = span(clean + (k < n - 1 && !br ? ' ' : '')); hd.appendChild(s);
+      if (br) hd.appendChild(document.createElement('br'));
+      return [s, tt];
+    });
+    blk.appendChild(hd);
+    // solution text lives inside the bottom card
+    const card = document.createElement('div'); card.className = 'band'; stage.appendChild(card);
+    const inner = card;
+    const sl = span('solution', 'label'); sl.style.fontSize = '48px'; sl.style.color = '#FFE7A8'; sl.style.textShadow = '0 2px 8px rgba(0,0,0,.45)';
+    const sld = document.createElement('div'); sld.style.marginBottom = '2px'; sld.appendChild(sl); inner.appendChild(sld);
+    const sh = document.createElement('div'); sh.className = 'head white'; sh.style.fontSize = '56px'; sh.style.textShadow = '0 2px 12px rgba(0,0,0,.55)';
+    const sws = p.sol.map(([txt, kind], k) => {
+      const tt = p.sol_times[Math.min(k, p.sol_times.length - 1)];
+      const s = span(txt + (k < p.sol.length - 1 ? ' ' : ''), kind === 'accent' ? 'acc ondark' : '');
+      if (kind === 'accent') s.style.fontSize = '1.18em';
+      sh.appendChild(s); return [s, tt];
+    });
+    inner.appendChild(sh);
+    pairs.push({p, root, blk, lab, ws, card, sl, sws});
+  });
+
+  // outro captions: same calm band on top
+  const o = document.createElement('div'); o.className = 'abs'; stage.appendChild(o);
+  const caps = T.outro.captions.map(([txt, t0, t1]) => {
+    const c = document.createElement('div'); c.className = 'band head ink'; c.style.fontSize = '70px';
+    const ws = [];
+    parseRich(txt).forEach(part => {
+      if (part.acc) { const s = span(part.text, 'acc onlight'); s.style.fontSize = '1.2em'; c.appendChild(s); ws.push(s); }
+      else part.text.split(/(\s+)/).forEach(tok => { if (!tok) return; const s = span(tok); c.appendChild(s); ws.push(s); });
+    });
+    o.appendChild(c);
+    return {c, ws, t0, t1};
+  });
+  outro = {root: o, caps};
+}
+
+const BAND_BOTTOM = 418;   // text never goes below this line (her hair starts well under it)
+
+function renderAt(t, cards) {
+  let washOn = 0;
+  // hook
+  const H = hook, he = T.hook.end;
+  if (t < he + 0.05) {
+    H.root.style.display = '';
+    reveal(H.a1, t, 0.00, 0.22, 18, 10); reveal(H.a2, t, 0.12, 0.22, 18, 10);
+    reveal(H.b1, t, 0.90, 0.24, 12, 6);  reveal(H.b2, t, 1.08, 0.30, 18, 10);
+    H.b1.style.transform += ' rotate(-3deg)';
+    [H.a1, H.a2, H.b1, H.b2].forEach(el => fadeOut(el, t, he, 0.16));
+    washOn = Math.max(washOn, clamp(t / 0.15) * (1 - clamp((t - (he - 0.16)) / 0.16)));
+  } else H.root.style.display = 'none';
+
+  // pairs
+  pairs.forEach(pe => {
+    const p = pe.p;
+    const on = t >= p.start && t < p.end;
+    pe.root.style.display = on ? '' : 'none';
+    if (on) {
+      pe.blk.style.top = (BAND_BOTTOM - pe.blk.offsetHeight) + 'px';
+      const l0 = Math.max(p.q_first - 0.14, p.start + 0.10);
+      reveal(pe.lab, t, l0, 0.24, 10, 6);
+      pe.lab.style.transform += ' rotate(-2deg)';
+      pe.ws.forEach(([el, tt]) => reveal(el, t, Math.max(tt - 0.05, p.start + 0.14), 0.22, 16, 8));
+      [pe.lab, ...pe.ws.map(x => x[0])].forEach(el => fadeOut(el, t, p.end - 0.06, 0.14));
+      washOn = Math.max(washOn, clamp((t - p.start) / 0.2) * (1 - clamp((t - (p.end - 0.20)) / 0.16)));
+    }
+    const cb = (cards || []).find(c => c.role === 'solution' && c.pair === p.n);
+    if (!cb) { pe.card.style.display = 'none'; return; }
+    pe.card.style.display = '';
+    pe.card.style.top = (cb.y + cb.h + 10) + 'px';
+    reveal(pe.sl, t, p.split + 0.12, 0.24, 8, 6);
+    pe.sl.style.transform += ' rotate(-2deg)';
+    pe.sws.forEach(([el, tt]) => reveal(el, t, Math.max(tt - 0.08, p.split + 0.18), 0.24, 14, 8));
+  });
+
+  // outro captions
+  const O = outro;
+  if (t >= T.outro.start) {
+    O.root.style.display = '';
+    let any = 0;
+    O.caps.forEach((c, k) => {
+      const on = t >= c.t0 - 0.02 && t < c.t1;
+      c.c.style.display = on ? '' : 'none';
+      if (!on) return;
+      any = 1;
+      c.c.style.top = (BAND_BOTTOM - c.c.offsetHeight) + 'px';
+      c.ws.forEach((el, j) => reveal(el, t, c.t0 - 0.02 + j * 0.04, 0.2, 12, 6));
+      const last = k === O.caps.length - 1;
+      c.ws.forEach(el => fadeOut(el, t, last ? T.outro.end - 0.15 : c.t1 - 0.01, last ? 0.35 : 0.07));
+    });
+    washOn = Math.max(washOn, any * clamp((t - T.outro.start) / 0.3) * (1 - clamp((t - (T.outro.end - 0.45)) / 0.35)));
+  } else O.root.style.display = 'none';
+
+  wash.style.opacity = washOn;
+  return true;
+}
+
+window.setup = async (timeline) => { T = timeline; build(); await document.fonts.ready; return true; };
+window.renderAt = renderAt;
+</script>
+</body>
+</html>

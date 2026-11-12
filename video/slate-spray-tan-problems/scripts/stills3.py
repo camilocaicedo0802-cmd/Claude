@@ -1,8 +1,8 @@
 import sys, os, importlib.util, cv2, numpy as np
 W, R, out = sys.argv[1], sys.argv[2], sys.argv[3]
 times = [float(x) for x in sys.argv[4:]]
-sys.argv = ["compose2.py", W, R, "/dev/null"]
-spec = importlib.util.spec_from_file_location("compose", os.path.join(os.path.dirname(__file__), "compose2.py"))
+sys.argv = ["compose3.py", W, R, "/dev/null"]
+spec = importlib.util.spec_from_file_location("compose", os.path.join(os.path.dirname(__file__), "compose3.py"))
 C = importlib.util.module_from_spec(spec); spec.loader.exec_module(C)
 tiles = []
 for t in times:
