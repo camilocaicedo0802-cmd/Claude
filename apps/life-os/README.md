@@ -6,7 +6,7 @@ Aplicación web para organizar tres dimensiones en un solo sistema conectado:
 | --- | --- |
 | **Finanzas** | Saldo real, ingresos y gastos, cuentas y tarjetas, obligaciones, presupuestos, análisis y **¿Cuánto puedo gastar?** |
 | **Clientes** | CRM personal: clientes, trabajos (tablero Kanban y lista), cobros, abonos, seguimientos |
-| **Mi Vida** | Mi día (prioridades, agenda, hábitos), tareas, calendario, hábitos y planificación semanal |
+| **Mi Vida** | Mi día (prioridades, agenda, hábitos), tracker de tareas estilo Notion, calendario, hábitos y planificación semanal |
 
 Ajustes se abre desde el encabezado (no es una cuarta sección).
 
@@ -38,6 +38,15 @@ npm run typecheck -w @jcc/life-os
 - La app instalada pide almacenamiento persistente para que el sistema no borre los datos, y recuerda descargar un respaldo cada dos semanas (en el celular el respaldo se comparte a Drive, Archivos, WhatsApp o correo).
 
 La primera vez aparece un onboarding opcional (moneda, zona horaria, cuentas, gastos fijos, primer cliente o tarea). También puedes explorar con el **modo demo**.
+
+## Tracker de tareas
+
+`Mi Vida › Tareas` funciona como una base de datos tipo Notion:
+
+- Columnas **Estado** (Sin empezar, En curso, Completada), **Tarea** (con icono), **Prioridad**, **Categoría** (editables: Trabajo, Proyecto personal, Casa…), **Puntos** y **Fecha**. Cada celda se edita en el lugar.
+- Vistas: Pendientes, Esta semana, Tablero (arrastrar entre estados), Completadas y Todas. Filtros, búsqueda, orden y agrupación (categoría, estado, prioridad, día). Totales de tareas y puntos.
+- En el celular la tabla se convierte en tarjetas con las mismas propiedades editables.
+- **Importar**: pega filas copiadas de Notion, Excel o Google Sheets (o una tarea por línea). También acepta un enlace `…/vida/tareas/#importar=<texto>`: abre el importador con la vista previa. Importar dos veces la misma lista no duplica tareas.
 
 ## Cómo se guardan los datos
 

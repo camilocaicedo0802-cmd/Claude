@@ -88,6 +88,23 @@ const ICONS: Record<string, LucideIcon> = {
   flame: Icons.Flame,
   mountain: Icons.Mountain,
   rocket: Icons.Rocket,
+  clapperboard: Icons.Clapperboard,
+  video: Icons.Video,
+  film: Icons.Film,
+  laptop: Icons.Laptop,
+  monitor: Icons.Monitor,
+  brush: Icons.Brush,
+  image: Icons.Image,
+  files: Icons.Files,
+  "file-text": Icons.FileText,
+  folder: Icons.Folder,
+  globe: Icons.Globe,
+  send: Icons.Send,
+  mic: Icons.Mic,
+  scissors: Icons.Scissors,
+  lightbulb: Icons.Lightbulb,
+  wrench: Icons.Wrench,
+  "shopping-cart": Icons.ShoppingCart,
 };
 
 export const ICON_CHOICES = Object.keys(ICONS);

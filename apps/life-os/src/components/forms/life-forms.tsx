@@ -6,7 +6,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Copy, Plus, Trash2, X } from "lucide-react";
 import { useData, useToday } from "@/hooks/data";
-import { createEvent, createHabit, createTask, deleteEvent, deleteHabit, deleteTask, duplicateTask, updateEvent, updateHabit, updateTask } from "@/services/life-service";
+import { createEvent, createHabit, createTask, deleteEvent, deleteHabit, deleteTask, duplicateTask, setTaskStage, updateEvent, updateHabit, updateTask } from "@/services/life-service";
+import { STAGE_LABEL, STAGES, taskStage, type TaskStage } from "@/domain/tasks";
 import type { EventCategory, FollowUpType, LifeArea, Subtask, TaskPriority } from "@/db/types";
 import { EVENT_CATEGORY_LABEL } from "@/domain/agenda";
 import { formatDateLong } from "@/lib/dates";
@@ -20,20 +21,12 @@ import { PALETTE } from "@/components/shared/primitives";
 import { useUI } from "@/components/shell/ui-context";
 import { Disclosure, FormSheet, runSave, useBusy } from "./form-kit";
 
+const TASK_ICONS = ["clapperboard", "video", "film", "camera", "brush", "image", "laptop", "monitor", "files", "file-text", "folder", "globe", "briefcase", "send", "banknote", "book-open", "lightbulb", "home", "shopping-cart", "dumbbell", "heart", "star", "target", "wrench"];
+
 function useClosable(onDone: () => void) {
   const [open, setOpen] = React.useState(true);
   return { open, close: () => (setOpen(false), setTimeout(onDone, 180)) };
 }
-
-export const AREA_LABEL: Record<LifeArea, string> = {
-  personal: "Personal",
-  trabajo: "Trabajo",
-  clientes: "Clientes",
-  salud: "Salud",
-  hogar: "Hogar",
-  estudio: "Estudio",
-  finanzas: "Finanzas",
-};
 
 export const FOLLOWUP_LABEL: Record<FollowUpType, string> = {
   collect: "Cobrar saldo pendiente",
@@ -56,6 +49,9 @@ const taskSchema = z.object({
   time: z.string().optional(),
   durationMin: z.string().optional(),
   priority: z.number(),
+  stage: z.enum(["not_started", "in_progress", "done"]),
+  points: z.string().refine((v) => v.trim() === "" || (Number.isFinite(Number(v)) && Number(v) >= 0), "Usa un número"),
+  icon: z.string(),
   area: z.string().optional(),
   preset: z.string(),
   days: z.array(z.number()),
@@ -85,6 +81,9 @@ export function TaskForm({ id, defaults, onDone }: { id?: string; defaults?: Par
       durationMin: src?.durationMin ? String(src.durationMin) : "",
       priority: src?.priority ?? 0,
       area: src?.area ?? (src?.clientId ? "clientes" : ""),
+      stage: src?.status ? taskStage({ status: src.status, inProgress: src.inProgress }) : "not_started",
+      points: src?.points != null ? String(src.points) : "",
+      icon: src?.icon ?? "",
       preset: recurrenceToPreset(src?.recurrence),
       days: src?.recurrence?.byWeekday ?? [1, 2, 3, 4, 5],
       clientId: src?.clientId ?? "",
@@ -112,6 +111,8 @@ export function TaskForm({ id, defaults, onDone }: { id?: string; defaults?: Par
         durationMin: v.durationMin ? Number(v.durationMin) : null,
         priority: v.priority as TaskPriority,
         area: (v.area || null) as LifeArea | null,
+        points: v.points.trim() === "" ? null : Math.round(Number(v.points)),
+        icon: v.icon || null,
         recurrence,
         clientId: v.clientId || null,
         jobId: v.jobId || null,
@@ -120,9 +121,26 @@ export function TaskForm({ id, defaults, onDone }: { id?: string; defaults?: Par
         notes: v.notes?.trim() || undefined,
         subtasks,
       };
+      const stage = v.stage as TaskStage;
       if (existing) {
-        if (await runSave(() => updateTask(existing.id, payload), "Tarea actualizada")) close();
-      } else if (await runSave(() => createTask(payload), "Tarea creada")) close();
+        const ok = await runSave(async () => {
+          await updateTask(existing.id, payload);
+          if (stage !== taskStage(existing)) await setTaskStage(existing.id, stage);
+        }, "Tarea actualizada");
+        if (ok) close();
+      } else if (
+        await runSave(
+          () =>
+            createTask({
+              ...payload,
+              inProgress: stage === "in_progress",
+              status: stage === "done" ? "done" : "todo",
+              completedAt: stage === "done" ? new Date().toISOString() : null,
+            }),
+          "Tarea creada",
+        )
+      )
+        close();
     }),
   );
 
@@ -161,6 +179,15 @@ export function TaskForm({ id, defaults, onDone }: { id?: string; defaults?: Par
         <Field label="Tarea" htmlFor="task-title" error={formState.errors.title?.message}>
           <Input id="task-title" autoFocus={!existing} autoComplete="off" placeholder="¿Qué tienes que hacer?" {...register("title")} />
         </Field>
+        <Field label="Estado">
+          <Segmented
+            className="w-full"
+            size="sm"
+            value={watch("stage")}
+            onChange={(st) => setValue("stage", st)}
+            options={STAGES.map((st) => ({ value: st, label: STAGE_LABEL[st] }))}
+          />
+        </Field>
         <Field label="Fecha" error={formState.errors.date?.message}>
           <DateField value={watch("date")} onChange={(v) => setValue("date", v)} quick={["today", "tomorrow", "weekend", "nextweek"]} allowEmpty emptyLabel="Algún día" />
         </Field>
@@ -173,6 +200,22 @@ export function TaskForm({ id, defaults, onDone }: { id?: string; defaults?: Par
             options={[0, 1, 2, 3].map((p) => ({ value: String(p), label: p === 0 ? "Ninguna" : TASK_PRIORITY_LABEL[p as TaskPriority] }))}
           />
         </Field>
+        <div className="grid grid-cols-[1fr_6.5rem] gap-4">
+          <Field label="Categoría" htmlFor="task-area">
+            <NativeSelect id="task-area" {...register("area")}>
+              <option value="">Sin categoría</option>
+              {data.settings.taskCategories.map((c) => (
+                <option key={c.key} value={c.key}>
+                  {c.name}
+                </option>
+              ))}
+              {src?.area && !data.settings.taskCategories.some((c) => c.key === src.area) && <option value={src.area}>{src.area}</option>}
+            </NativeSelect>
+          </Field>
+          <Field label="Puntos" htmlFor="task-points" error={formState.errors.points?.message}>
+            <Input id="task-points" type="number" min={0} inputMode="numeric" placeholder="—" {...register("points")} />
+          </Field>
+        </div>
         <div className="grid grid-cols-2 gap-4">
           <Field label="Hora" htmlFor="task-time" optional hint={watch("time") ? "Aparecerá en el calendario." : undefined}>
             <Input id="task-time" type="time" {...register("time")} />
@@ -188,7 +231,7 @@ export function TaskForm({ id, defaults, onDone }: { id?: string; defaults?: Par
             </NativeSelect>
           </Field>
         </div>
-        <Disclosure label="Repetición, cliente y subtareas" defaultOpen={!!(existing?.recurrence || existing?.clientId || existing?.subtasks.length || defaults?.clientId)}>
+        <Disclosure label="Repetición, icono, cliente y subtareas" defaultOpen={!!(existing?.recurrence || existing?.clientId || existing?.subtasks.length || defaults?.clientId)}>
           <div className="grid gap-4 sm:grid-cols-2">
             <Field label="Repetir" htmlFor="task-rep">
               <NativeSelect id="task-rep" {...register("preset")}>
@@ -199,17 +242,10 @@ export function TaskForm({ id, defaults, onDone }: { id?: string; defaults?: Par
                 ))}
               </NativeSelect>
             </Field>
-            <Field label="Área" htmlFor="task-area">
-              <NativeSelect id="task-area" {...register("area")}>
-                <option value="">Sin área</option>
-                {Object.entries(AREA_LABEL).map(([k, l]) => (
-                  <option key={k} value={k}>
-                    {l}
-                  </option>
-                ))}
-              </NativeSelect>
-            </Field>
           </div>
+          <Field label="Icono" optional>
+            <IconPicker icons={TASK_ICONS} value={watch("icon")} onChange={(i) => setValue("icon", watch("icon") === i ? "" : i)} color={data.settings.taskCategories.find((c) => c.key === watch("area"))?.color ?? "slate"} />
+          </Field>
           {preset === "custom-days" && <WeekdayPicker value={watch("days")} onChange={(d) => setValue("days", d)} weekStartsOn={data.settings.weekStartsOn} />}
           <div className="grid gap-4 sm:grid-cols-2">
             <Field label="Cliente" htmlFor="task-client" optional>

@@ -1,7 +1,18 @@
 import { nowISO, DEFAULT_TIME_ZONE } from "@/lib/dates";
 import { uid } from "@/lib/utils";
 import type { LifeOSDB } from "./db";
-import type { Category, ExpenseNature, JobStatus, Settings } from "./types";
+import type { Category, ExpenseNature, JobStatus, Settings, TaskCategory } from "./types";
+
+export const DEFAULT_TASK_CATEGORIES: TaskCategory[] = [
+  { key: "trabajo", name: "Trabajo", color: "orange" },
+  { key: "proyecto", name: "Proyecto personal", color: "amber" },
+  { key: "hogar", name: "Casa", color: "emerald" },
+  { key: "clientes", name: "Clientes", color: "violet" },
+  { key: "personal", name: "Personal", color: "iris" },
+  { key: "salud", name: "Salud", color: "pink" },
+  { key: "estudio", name: "Estudio", color: "teal" },
+  { key: "finanzas", name: "Finanzas", color: "sky" },
+];
 
 export function defaultSettings(): Settings {
   return {
@@ -28,6 +39,7 @@ export function defaultSettings(): Settings {
       tasks: true,
       obligationLeadDays: 3,
     },
+    taskCategories: DEFAULT_TASK_CATEGORIES,
     updatedAt: nowISO(),
   };
 }

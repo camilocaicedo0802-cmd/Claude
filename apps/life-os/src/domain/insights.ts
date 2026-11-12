@@ -29,11 +29,13 @@ export function dailyBrief({ today, tasks, jobViews, obligations }: BriefInput):
   const soon = addDays(today, 3);
   const deliveries = jobViews.filter((v) => v.isOpen && !v.job.archived && v.job.dueDate && v.job.dueDate <= soon).length;
   const payments = obligations.filter((o) => o.remaining > 0 && o.dueDate <= soon).length;
-  const tasksToday = tasks.filter((t) => t.status === "todo" && t.date && t.date <= today).length;
+  const tasksToday = tasks.filter((t) => t.status === "todo" && t.date === today).length;
+  const tasksLate = tasks.filter((t) => t.status === "todo" && t.date && t.date < today).length;
   const parts: string[] = [];
   if (deliveries) parts.push(`${countWords(deliveries, "trabajo", "trabajos")} por entregar`);
   if (payments) parts.push(`${countWords(payments, "pago próximo", "pagos próximos")}`);
   if (tasksToday) parts.push(`${countWords(tasksToday, "tarea pendiente", "tareas pendientes", true)} hoy`);
+  if (tasksLate) parts.push(`${countWords(tasksLate, "tarea atrasada", "tareas atrasadas", true)}`);
   if (parts.length === 0) return null;
   const joined = parts.length > 1 ? `${parts.slice(0, -1).join(", ")} y ${parts[parts.length - 1]}` : parts[0];
   return `Tienes ${joined}.`;
