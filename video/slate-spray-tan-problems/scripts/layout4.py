@@ -22,7 +22,9 @@ def e_out_back(x, s=1.3):
     x = clamp(x); c3 = s + 1; return 1 + c3 * (x - 1) ** 3 + s * (x - 1) ** 2
 
 TOP = dict(x=90, y=230, w=900, h=230)          # text-only band (no card) – kept for the overlay
-BOT = dict(x=90, y=1206, w=900, h=292)
+BOT = dict(x=90, y=1206, w=900, h=300)
+SQ, GAP = 300, 28
+SQ_X = (540 - SQ - GAP // 2, 540 + GAP // 2)          # before (left) / after (right)
 OFF_TOP, OFF_BOT = -500, 1960
 ENTER, EXIT = 0.36, 0.20
 
@@ -78,7 +80,10 @@ def talk_at(t):
 cards = []
 for p in T["pairs"]:
     end = p["end"]
-    c = dict(slot="bot", role="solution", pair=p["n"], asset=p["S"], t_in=p["split"], t_out=end - EXIT)
+    cards.append(dict(slot="bot", role="problem", pair=p["n"], asset=p["P"], t_in=p["start"] + 0.06,
+                      t_out=end - EXIT, bx=SQ_X[0], bw=SQ, dim_at=p["split"]))
+    c = dict(slot="bot", role="solution", pair=p["n"], asset=p["S"], t_in=p["split"], t_out=end - EXIT,
+             bx=SQ_X[1], bw=SQ)
     if p.get("S2"):
         c.update(asset2=p["S2"], t2=p["s2_at"])
     cards.append(c)
@@ -128,7 +133,7 @@ def card_state(c, t):
     if pout > 0:
         y = lerp(rest["y"], off, e_in_cubic(pout))
     st.update(x=c.get("bx", rest["x"]), y=round(y, 2), w=c.get("bw", rest["w"]), h=rest["h"],
-              dim=round(0.12 * e_out_cubic((t - c["dim_at"]) / 0.3), 4) if c.get("dim_at") else 0.0)
+              dim=round(0.10 * e_out_cubic((t - c["dim_at"]) / 0.3), 4) if c.get("dim_at") else 0.0)
     return st
 
 

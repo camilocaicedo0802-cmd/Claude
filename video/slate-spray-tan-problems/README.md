@@ -4,7 +4,7 @@ Reel vertical (1080×1920, 30 fps, ~59 s) en formato **Problema vs. Solución** 
 Esta carpeta guarda el proyecto de edición reproducible: decisiones, línea de tiempo y scripts. Los videos en
 bruto, el b-roll y los recursos se descargan de Drive y no se suben al repositorio.
 
-## Estructura (v3: minimalista, la persona hablando es la toma principal)
+## Estructura (v4: minimalista, la persona hablando es la toma principal)
 
 El talking head (video en bruto) está en pantalla del primer al último cuadro, también en el hook, con lip-sync
 exacto: mientras la voz fuera de cámara pregunta se la ve escuchando, y cuando responde se la ve hablando. **Nada se
@@ -15,20 +15,20 @@ retrato) para quitar el texto impreso y el ruido visual.
 | Momento | Pantalla |
 | --- | --- |
 | Hook (0–2.6 s) | Ella a cámara; arriba "SPRAY TAN PROBLEMS?", sobre la camiseta *we've got* **solutions!** |
-| Pregunta | Arriba, sobre la pared desenfocada: etiqueta "problem #n" + el problema, palabra por palabra con la voz |
-| Respuesta | Abajo, bajo el mentón: una sola tarjeta con el visual de la solución; el texto de la solución va debajo de la tarjeta para no tapar la imagen |
+| Pregunta | Arriba, sobre la pared desenfocada: etiqueta "problem #n" + el problema, palabra por palabra con la voz. Abajo, bajo el mentón, entra el cuadro izquierdo: **el antes** (visual del problema) |
+| Respuesta | Entra el cuadro derecho: **el después** (visual de la solución); el texto de la solución va debajo de los dos cuadros |
 | Cierre (~12 s) | Ella a cámara con subtítulos arriba; tres miniaturas de resultados que entran con "every skin tone / undertone / glow goal"; fachada de Slate y recepción en la tarjeta |
 
-| # | Problema (texto arriba) | Solución (texto abajo) | Visual de la tarjeta |
+| # | Problema (texto arriba) | Solución (texto abajo) | Cuadros antes → después |
 | --- | --- | --- | --- |
-| 1 | Pale or dull skin? | A custom *spray tan* | Misma clienta: antes / después |
-| 2 | Need color ASAP? | *Rapid* tan formula | Aplicación con la pistola Slate |
-| 3 | Dry or patchy skin? | *Exfoliate* 24 hours before | Exfoliación (cepillo, luego exfoliante en la mano) |
-| 4 | Tan fading unevenly? | *Moisturize* daily | Crema en la pierna |
-| 5 | Tan sticking to hands & feet? | *Barrier cream* in the room | Técnica de Slate mostrando el producto |
-| 6 | Going on vacation? | Book *1–2 days* before your trip | Clienta con el bronceado terminado |
-| 7 | Wedding or special event? | Proper prep + *custom shade* | Clienta en vestido, luego aplicación |
-| 8 | Not sure which shade or solution is right for you? | *Personalized* consultation | Consulta real en cabina |
+| 1 | Pale or dull skin? | A custom *spray tan* | Misma clienta: antes → después |
+| 2 | Need color ASAP? | *Rapid* tan formula | Reloj → aplicación con la pistola Slate |
+| 3 | Dry or patchy skin? | *Exfoliate* 24 hours before | Piel seca → exfoliación (cepillo, luego exfoliante) |
+| 4 | Tan fading unevenly? | *Moisturize* daily | Bronceado desigual → crema en la pierna |
+| 5 | Tan sticking to hands & feet? | *Barrier cream* in the room | Manos abiertas durante el spray → técnica con la barrier cream |
+| 6 | Going on vacation? | Book *1–2 days* before your trip | Maleta → clienta con el bronceado terminado |
+| 7 | Wedding or special event? | Proper prep + *custom shade* | Novia → clienta en vestido, luego aplicación |
+| 8 | Not sure which shade or solution is right for you? | *Personalized* consultation | Clienta dudando → consulta real en cabina |
 
 Se mantienen **las dos voces originales**. En el par 7 se usó lo que ella dijo realmente ("book your appointment
 one to two days before your wedding… and we'll do a custom shade for you").
@@ -54,14 +54,14 @@ scripts/edl.py           línea de tiempo: voces, textos sincronizados por palab
 scripts/talk_prep.py     tomas del crudo por frase (con pre/post-roll) + seguimiento de cara (incluye la toma del hook)
 scripts/talk_masks.py    máscaras de persona (MediaPipe) para desenfocar solo la pared
 scripts/assets.py        visuales de apoyo: clip/foto, punto de entrada y encuadre para cada tarjeta
-scripts/layout3.py       cuadro a cuadro: qué toma y tiempo de origen (lip-sync), zoom y tarjetas
+scripts/layout4.py       cuadro a cuadro: qué toma y tiempo de origen (lip-sync), zoom y cuadros antes/después
 scripts/compose3.py      compositor (talking head + fondo desenfocado + tarjetas, color, grano)
 scripts/mix.py           limpieza de voz, ducking de música, SFX, loudness
 render/overlay3.html     tipografía animada (Chromium → PNG transparentes)
 render/render_overlay3.cjs, render/render_all3.sh
 ```
 
-Orden de render: `edl.py` → `talk_prep.py` → `talk_masks.py` → `assets.py` → `layout3.py` → `render_all3.sh` →
+Orden de render: `edl.py` → `talk_prep.py` → `talk_masks.py` → `assets.py` → `layout4.py` → `render_all3.sh` →
 `compose3.py` → `mix.py` → mux con ffmpeg. `talk_prep.py` usa OpenCV 4 (el detector Haar ya no viene en OpenCV 5);
 `talk_masks.py` usa MediaPipe con el modelo `selfie_multiclass_256x256.tflite`.
 

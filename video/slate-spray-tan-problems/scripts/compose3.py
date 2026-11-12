@@ -107,7 +107,7 @@ class Video:
             self.proc.kill(); self.proc.wait(); self.proc = None
 
 
-SIZE = {"full": (1188, 2112), "half": (1188, 1056), "card": (1092, 490), "pol": (317, 363), "tile": (330, 336)}
+SIZE = {"full": (1188, 2112), "half": (1188, 1056), "card": (1092, 490), "pol": (317, 363), "tile": (330, 336), "sq": (390, 390)}
 _cache = {}
 TALK_GRADE = None
 
