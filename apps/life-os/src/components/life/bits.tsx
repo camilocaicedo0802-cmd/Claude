@@ -99,6 +99,13 @@ export function TaskItem({ task, showDate = true, onPriorityToggle, isPriority, 
               {subDone}/{task.subtasks.length} subtareas
             </span>
           )}
+          {!done && task.inProgress && <span className="font-medium text-info">En curso</span>}
+          {task.area && (
+            <span style={toneStyle(data.settings.taskCategories.find((c) => c.key === task.area)?.color ?? "slate")} className="tone-text">
+              {data.settings.taskCategories.find((c) => c.key === task.area)?.name ?? task.area}
+            </span>
+          )}
+          {task.points != null && <span className="tabular">{task.points} pts</span>}
           {task.priority === 3 && !done && (
             <span className="inline-flex items-center gap-0.5 text-expense">
               <Flag className="size-3" /> Alta

@@ -4,6 +4,9 @@ import { addDays, nowISO, type DateStr } from "@/lib/dates";
 import { occurrenceAfter } from "@/lib/recurrence";
 import { uid } from "@/lib/utils";
 import { logKey } from "@/domain/habits";
+import type { ImportRow, TaskStage } from "@/domain/tasks";
+import type { TaskCategory } from "@/db/types";
+import { normalize } from "@/lib/utils";
 import { DomainError, logActivity } from "./common";
 
 // ── Tasks ────────────────────────────────────────────────────────────────────
@@ -73,7 +76,7 @@ export async function setTaskDone(id: string, done: boolean): Promise<string | n
     const task = await d.tasks.get(id);
     if (!task) return null;
     const now = nowISO();
-    await d.tasks.update(id, { status: done ? "done" : "todo", completedAt: done ? now : null, updatedAt: now });
+    await d.tasks.update(id, { status: done ? "done" : "todo", completedAt: done ? now : null, inProgress: done ? false : task.inProgress ?? false, updatedAt: now });
     if (!done || !task.recurrence || !task.date) return null;
     // The next date is computed from the series anchor, so monthly rules on the 31st do not drift.
     const anchor = task.seriesStart ?? task.date;
@@ -91,12 +94,79 @@ export async function setTaskDone(id: string, done: boolean): Promise<string | n
       date: next,
       status: "todo",
       completedAt: null,
+      inProgress: false,
       postponed: 0,
       subtasks: task.subtasks.map((s) => ({ ...s, id: uid(), done: false })),
       createdAt: now,
       updatedAt: now,
     });
     return nextId;
+  });
+}
+
+/** Moves a task between "Sin empezar", "En curso" and "Completada". */
+export async function setTaskStage(id: string, stage: TaskStage): Promise<string | null> {
+  const task = await db().tasks.get(id);
+  if (!task) return null;
+  if (stage === "done") return task.status === "done" ? null : setTaskDone(id, true);
+  if (task.status === "done") await setTaskDone(id, false);
+  await db().tasks.update(id, { inProgress: stage === "in_progress", updatedAt: nowISO() });
+  return null;
+}
+
+/**
+ * Creates tasks from imported rows in one transaction. Rows whose title and date already
+ * exist are skipped, so pasting the same list twice never duplicates tasks.
+ */
+export async function importTasks(rows: ImportRow[], newCategories: TaskCategory[] = []): Promise<{ created: number; skipped: number }> {
+  const d = db();
+  return d.transaction("rw", [d.tasks, d.settings], async () => {
+    if (newCategories.length) {
+      const settings = await d.settings.get("app");
+      const current = settings?.taskCategories ?? [];
+      const merged = [...current, ...newCategories.filter((c) => !current.some((x) => x.key === c.key))];
+      await d.settings.update("app", { taskCategories: merged, updatedAt: nowISO() });
+    }
+    const existing = await d.tasks.toArray();
+    const seen = new Set(existing.map((t) => `${normalize(t.title)}|${t.date ?? ""}`));
+    const now = nowISO();
+    let created = 0;
+    let skipped = 0;
+    for (const [i, r] of rows.entries()) {
+      const key = `${normalize(r.title)}|${r.date ?? ""}`;
+      if (seen.has(key)) {
+        skipped++;
+        continue;
+      }
+      seen.add(key);
+      const done = r.stage === "done";
+      await d.tasks.add({
+        id: uid(),
+        title: r.title.trim(),
+        date: r.date,
+        time: null,
+        durationMin: null,
+        priority: r.priority,
+        status: done ? "done" : "todo",
+        completedAt: done ? now : null,
+        inProgress: r.stage === "in_progress",
+        points: r.points,
+        icon: r.icon,
+        area: r.category,
+        recurrence: null,
+        seriesId: null,
+        clientId: null,
+        jobId: null,
+        followUp: null,
+        subtasks: [],
+        postponed: 0,
+        order: Date.now() + i,
+        createdAt: now,
+        updatedAt: now,
+      });
+      created++;
+    }
+    return { created, skipped };
   });
 }
 

@@ -46,6 +46,8 @@ export interface Settings {
   /** Hours per day the user considers available for planned work. */
   availableHoursPerDay: number;
   notifications: NotificationPrefs;
+  /** Categories for the task tracker; editable by the user. */
+  taskCategories: TaskCategory[];
   updatedAt: string;
 }
 
@@ -273,7 +275,14 @@ export interface Activity {
 
 export type TaskPriority = 0 | 1 | 2 | 3; // none, low, medium, high
 export type TaskStatus = "todo" | "done";
-export type LifeArea = "personal" | "trabajo" | "clientes" | "salud" | "hogar" | "estudio" | "finanzas";
+/** Key of a task category defined in Settings.taskCategories (e.g. "trabajo", "proyecto", "hogar"). */
+export type LifeArea = string;
+
+export interface TaskCategory {
+  key: string;
+  name: string;
+  color: string;
+}
 export type FollowUpType = "collect" | "proposal" | "info" | "deliver" | "contact" | "review";
 
 export interface Subtask {
@@ -307,6 +316,12 @@ export interface Task extends Timestamps {
   notes?: string;
   /** Times it was postponed (signals procrastination). */
   postponed: number;
+  /** Pending tasks: started ("En curso") vs not started ("Sin empezar"). */
+  inProgress?: boolean;
+  /** Effort points, like a tracker's story points. */
+  points?: number | null;
+  /** Icon key shown next to the title (coloured with the category colour). */
+  icon?: string | null;
   order: number;
 }
 
