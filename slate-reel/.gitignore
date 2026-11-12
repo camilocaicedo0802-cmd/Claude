@@ -11,7 +11,6 @@ public/raw/
 public/broll/
 public/sfx/
 public/music/
-public/fonts/*.otf
 analysis/*.mp4
 analysis/*.wav
 analysis/*.m4a
@@ -19,3 +18,5 @@ analysis/frames_2fps/
 analysis/frames_scene/
 analysis/full/
 analysis/scores.txt
+public/brand/
+analysis/voice_timeline_16k.wav

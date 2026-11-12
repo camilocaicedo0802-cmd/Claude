@@ -1,54 +1,38 @@
-# Remotion video
+# SLATE · Reel "Holiday spray tan" (Remotion)
 
-<p align="center">
-  <a href="https://github.com/remotion-dev/logo">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://github.com/remotion-dev/logo/raw/main/animated-logo-banner-dark.apng">
-      <img alt="Animated Remotion Logo" src="https://github.com/remotion-dev/logo/raw/main/animated-logo-banner-light.gif">
-    </picture>
-  </a>
-</p>
+Reel vertical 1080×1920 a 30 fps (21.9 s) editado con Remotion siguiendo el
+estilo del reel de referencia. La guía de estilo con valores medidos está en
+[`estilo.md`](estilo.md).
 
-Welcome to your Remotion project!
+## Estructura
 
-## Commands
+| Ruta | Qué es |
+| --- | --- |
+| `estilo.md` | Guía de estilo del referente + correcciones aprobadas |
+| `src/SlateReel.tsx` | Línea de tiempo completa (tomas, b-roll, títulos, subtítulos, SFX, música) con todos los tiempos en fotogramas |
+| `src/components/Shots.tsx` | Reencuadre de tomas 4K (zoom/punch-in sobre la cara) y b-roll |
+| `src/components/Graphics.tsx` | Títulos en cascada, ítems numerados, barra 1–10, calendario, halo, subtítulos, iconos, cierre |
+| `src/theme.ts` | Fuentes (Inter Display + Instrument Serif Italic) y colores del referente |
+| `analysis/` | Análisis del referente: hojas de fotogramas, tiras de animación, espectrogramas, transcripciones Whisper |
+| `scripts/` | Preparación de material y utilidades de análisis |
 
-**Install Dependencies**
+## Material (no está en git)
 
-```console
-npm i --loglevel=error
+El vídeo en crudo, el b-roll, los SFX y la música pesan demasiado para git.
+Se descargan de las carpetas de Drive del cliente y se preparan con:
+
+```bash
+scripts/prep_talking.sh   # tomas a cámara: 30 fps, etalonaje cálido, voz a -16 LUFS → public/raw
+scripts/prep_broll.sh     # b-roll elegido, recortado y etalonado → public/broll
 ```
 
-**Start Preview**
+`public/sfx` contiene los 6 SFX del pack 1 que usa el referente (normalizados a −3 dBFS) y
+`public/music/music_v1.mp3` la base generada con IA (Higgsfield · ElevenLabs Music v2).
 
-```console
-npm run dev
+## Comandos
+
+```bash
+npm run dev                                          # Remotion Studio
+npx remotion render SlateReel out/slate_reel.mp4     # exportar
+node scripts/stills.mjs 120 330 495                  # fotogramas sueltos para revisar
 ```
-
-**Render video**
-
-```console
-npx remotion render
-```
-
-**Upgrade Remotion**
-
-```console
-npx remotion upgrade
-```
-
-## Docs
-
-Get started with Remotion by reading the [fundamentals page](https://www.remotion.dev/docs/the-fundamentals).
-
-## Help
-
-We provide help on our [Discord server](https://discord.gg/6VzzNDwUwV).
-
-## Issues
-
-Found an issue with Remotion? [File an issue here](https://github.com/remotion-dev/remotion/issues/new).
-
-## License
-
-Note that for some entities a company license is needed. [Read the terms here](https://github.com/remotion-dev/remotion/blob/main/LICENSE.md).
