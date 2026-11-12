@@ -13,7 +13,7 @@
 > - **Cierre:** *Three Aesthetic Words* (filas que suben con desenfoque, contraste Light / Bold / cursiva).
 > - **Fachada:** *SB Fade blanco elegante* ("COME SEE US AT" espaciado + "Slate" escrito a máquina). Por pedido de la
 >   clienta se quitó la última línea del CTA ("we'll find the perfect tan for you."); con `CTA=short` sale la variante
->   que además termina el video en "come see us at Slate" (voz silenciada desde el "and", ~55.3 s).
+>   que además termina el video en "come see us at Slate" (voz silenciada desde el "and", ~56.2 s).
 > - **Subtítulos de la presentadora:** *Apple Texto Deslizante 2* (palabra que se desliza hacia arriba); las palabras
 >   clave pasan a la cursiva del preset.
 > - **Fuentes:** Poppins (la sans de la marca, en lugar de la Inter de los presets) + la cursiva de los presets

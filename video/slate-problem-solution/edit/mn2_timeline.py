@@ -14,7 +14,7 @@ _shot = M._shot
 # CTA=short -> alternative cut that ends on "come see us at Slate" (voice muted from the measured onset of "and").
 CTA_SHORT = os.environ.get("CTA") == "short"
 if CTA_SHORT:
-    END = 55.30                                    # "Slate" ends 54.26, + ~1 s hold on the storefront
+    END = 56.20                                    # "Slate" ends 54.26; CTA fully written at ~54.6, held ~0.9 s, 0.7 s fade
     VOICE_MUTE = [(54.28 - OFF, 54.85)]            # voice-track time; "and we'll find the perfect tan for you."
 load_words = M.load_words
 
