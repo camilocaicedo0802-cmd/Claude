@@ -32,6 +32,10 @@ html, body { margin: 0; padding: 0; background: transparent; }
         box-shadow: 0 0 12px rgba(0,0,0,.25); transform-origin: 50% 50%; }
 .star { position: absolute; width: 40px; height: 40px; margin: -20px 0 0 -20px; }
 .cap { position: absolute; left: 60px; width: 960px; text-align: center; }
+
+.cardtext { position: absolute; overflow: hidden; border-radius: 30px; }
+.cardtext .scrim2 { position: absolute; left: 0; top: 0; width: 100%; height: 100%; }
+.cardtext .inner { position: absolute; left: 0; width: 100%; box-sizing: border-box; padding: 0 44px; text-align: center; }
 </style>
 </head>
 <body>
@@ -109,47 +113,33 @@ function build() {
   });
   hookEls = {root: hk, scH, w1, w2, w3, w4, hs};
 
-  // ---------------- pairs
-  T.pairs.forEach((p, i) => {
-    const root = document.createElement('div'); root.className = 'abs'; stage.appendChild(root);
-    // scrims
-    const scFull = document.createElement('div'); scFull.className = 'scrim';
-    scFull.style.top = '600px'; scFull.style.height = '760px';
-    scFull.style.background = 'radial-gradient(ellipse 75% 50% at 50% 50%, rgba(0,0,0,.56), rgba(0,0,0,0) 78%)';
-    root.appendChild(scFull);
-    const scTop = document.createElement('div'); scTop.className = 'scrim';
-    scTop.style.top = '520px'; scTop.style.height = '440px';
-    scTop.style.background = 'linear-gradient(180deg, rgba(0,0,0,0), rgba(0,0,0,.42))';
-    root.appendChild(scTop);
-    const scBot = document.createElement('div'); scBot.className = 'scrim';
-    scBot.style.top = '960px'; scBot.style.height = '440px';
-    scBot.style.background = 'linear-gradient(180deg, rgba(0,0,0,.42), rgba(0,0,0,0))';
-    root.appendChild(scBot);
-    // problem block
-    const pb = document.createElement('div'); pb.className = 'block'; root.appendChild(pb);
-    const pl = document.createElement('div'); pl.style.marginBottom = '18px';
-    const plab = document.createElement('span'); plab.className = 'w label';
-    plab.innerHTML = `${CROSS}<span>problem #${p.n}</span>`; pl.appendChild(plab); pb.appendChild(pl);
+  // ---------------- pairs (text lives inside the support cards)
+  T.pairs.forEach((p) => {
+    const top = document.createElement('div'); top.className = 'cardtext'; stage.appendChild(top);
+    const tsc = document.createElement('div'); tsc.className = 'scrim2';
+    tsc.style.background = 'linear-gradient(180deg, rgba(0,0,0,0) 42%, rgba(0,0,0,.58) 100%)'; top.appendChild(tsc);
+    const tin = document.createElement('div'); tin.className = 'inner'; tin.style.bottom = '30px'; top.appendChild(tin);
+    const pl = document.createElement('div'); pl.style.marginBottom = '10px';
+    const plab = document.createElement('span'); plab.className = 'w label'; plab.style.fontSize = '52px';
+    plab.innerHTML = `${CROSS}<span>problem #${p.n}</span>`; pl.appendChild(plab); tin.appendChild(pl);
     const ph = document.createElement('div'); ph.className = 'head';
     const nWords = p.problem.length;
-    const fs = nWords > 6 ? 78 : 92;
-    ph.style.fontSize = fs + 'px';
+    ph.style.fontSize = (nWords > 6 ? 56 : 68) + 'px';
     const pws = p.problem.map(([txt, tt], k) => {
       const br = txt.endsWith('|'); const clean = br ? txt.slice(0, -1) : txt;
       const s = wordSpan(clean + (k < nWords - 1 && !br ? ' ' : '')); ph.appendChild(s);
       if (br) ph.appendChild(document.createElement('br'));
       return [s, tt]; });
-    pb.appendChild(ph);
-    // divider
-    const line = document.createElement('div'); line.className = 'line'; root.appendChild(line);
-    const cst = document.createElement('div'); cst.className = 'star'; cst.style.left = '540px'; cst.style.top = '960px';
-    cst.style.width = cst.style.height = '54px'; cst.style.margin = '-27px 0 0 -27px'; cst.innerHTML = starSVG('#FFE7B0'); root.appendChild(cst);
-    // solution block
-    const sb = document.createElement('div'); sb.className = 'block'; sb.style.top = '1004px'; root.appendChild(sb);
-    const sl = document.createElement('div'); sl.style.marginBottom = '14px';
-    const slab = document.createElement('span'); slab.className = 'w label gold';
-    slab.innerHTML = `<span>solution</span>${CHECK}`; sl.appendChild(slab); sb.appendChild(sl);
-    const sh = document.createElement('div'); sh.className = 'head'; sh.style.fontSize = '86px';
+    tin.appendChild(ph);
+
+    const bot = document.createElement('div'); bot.className = 'cardtext'; stage.appendChild(bot);
+    const bsc = document.createElement('div'); bsc.className = 'scrim2';
+    bsc.style.background = 'linear-gradient(180deg, rgba(0,0,0,.58) 0%, rgba(0,0,0,0) 62%)'; bot.appendChild(bsc);
+    const bin = document.createElement('div'); bin.className = 'inner'; bin.style.top = '26px'; bot.appendChild(bin);
+    const sl = document.createElement('div'); sl.style.marginBottom = '8px';
+    const slab = document.createElement('span'); slab.className = 'w label gold'; slab.style.fontSize = '52px';
+    slab.innerHTML = `<span>solution</span>${CHECK}`; sl.appendChild(slab); bin.appendChild(sl);
+    const sh = document.createElement('div'); sh.className = 'head'; sh.style.fontSize = '66px';
     const sws = [];
     p.sol.forEach(([txt, kind], k) => {
       const tt = p.sol_times[Math.min(k, p.sol_times.length - 1)];
@@ -157,23 +147,23 @@ function build() {
       if (kind === 'accent') s.style.fontSize = '1.2em';
       sh.appendChild(s); sws.push([s, tt, kind === 'accent']);
     });
-    sb.appendChild(sh);
+    bin.appendChild(sh);
     const sst = [];
-    [[-1, 0.18, 44], [1, 0.62, 30], [1, -0.05, 24]].forEach(([side, yy, s]) => {
+    [[-1, 0.35, 36], [1, 0.75, 26], [1, 0.05, 22]].forEach(([side, yy, sz]) => {
       const st = document.createElement('div'); st.className = 'star';
-      st.style.width = st.style.height = s + 'px'; st.style.margin = `${-s/2}px 0 0 ${-s/2}px`;
-      st.innerHTML = starSVG(side < 0 ? '#FFE7B0' : '#FFFFFF'); root.appendChild(st); sst.push({el: st, side, yy, s});
+      st.style.width = st.style.height = sz + 'px'; st.style.margin = `${-sz/2}px 0 0 ${-sz/2}px`;
+      st.innerHTML = starSVG(side < 0 ? '#FFE39A' : '#FFFFFF'); bot.appendChild(st); sst.push({el: st, side, yy});
     });
-    pairEls.push({p, root, scFull, scTop, scBot, pb, plab, ph, pws, line, cst, sb, slab, sh, sws, sst});
+    pairEls.push({p, top, bot, plab, pws, slab, sh, sws, sst});
   });
 
-  // ---------------- outro captions
+  // ---------------- outro captions (over her shirt)
   const oroot = document.createElement('div'); oroot.className = 'abs'; stage.appendChild(oroot);
-  const scO = document.createElement('div'); scO.className = 'scrim'; scO.style.top = '900px'; scO.style.height = '420px';
-  scO.style.background = 'radial-gradient(ellipse 70% 45% at 50% 50%, rgba(0,0,0,.34), rgba(0,0,0,0) 72%)';
+  const scO = document.createElement('div'); scO.className = 'scrim'; scO.style.top = '1080px'; scO.style.height = '380px';
+  scO.style.background = 'radial-gradient(ellipse 70% 45% at 50% 50%, rgba(0,0,0,.30), rgba(0,0,0,0) 72%)';
   oroot.appendChild(scO);
   const caps = T.outro.captions.map(([txt, t0, t1]) => {
-    const c = document.createElement('div'); c.className = 'cap head'; c.style.fontSize = '74px'; c.style.top = '1050px';
+    const c = document.createElement('div'); c.className = 'cap head'; c.style.fontSize = '72px'; c.style.top = '1222px';
     const ws = [];
     parseRich(txt).forEach(part => {
       if (part.acc) { const s = wordSpan(part.text, 'acc'); s.style.fontSize = '1.22em'; c.appendChild(s); ws.push(s); }
@@ -187,6 +177,7 @@ function build() {
 
 function hide(el) { el.style.display = 'none'; }
 function show(el) { el.style.display = ''; }
+function place(el, c) { el.style.left = c.x + 'px'; el.style.top = c.y + 'px'; el.style.width = c.w + 'px'; el.style.height = c.h + 'px'; }
 
 function renderHook(t) {
   const h = hookEls, end = T.hook.end;
@@ -207,68 +198,45 @@ function renderHook(t) {
   [h.w1, h.w2, h.w3, h.w4, ...h.hs].forEach(el => exitStyle(el, t, end, 0.16));
 }
 
-function renderPair(pe, t) {
+function renderPair(pe, t, cards) {
   const p = pe.p;
-  const vis = t >= p.start - 0.05 && t < p.end + 0.02;
-  if (!vis) { hide(pe.root); return; }
-  show(pe.root);
-  const split = eOutQuint((t - p.split) / 0.42);          // must match compositor
-  const tIn = p.start;
-  // scrims
-  pe.scFull.style.opacity = clamp((t - tIn) / 0.2) * (1 - split);
-  pe.scTop.style.opacity = split; pe.scBot.style.opacity = split;
-  // problem block: anchored by its bottom edge
-  const h = pe.pb.offsetHeight;
-  const bottom = lerp(1050, 918, split);
-  const ps = lerp(1, 0.86, split);
-  pe.pb.style.top = (bottom - h) + 'px';
-  pe.pb.style.transformOrigin = '50% 100%';
-  pe.pb.style.transform = `scale(${ps})`;
-  revealWord(pe.plab, t, Math.max(p.q_first - 0.16, p.start + 0.12), {dur: 0.26, rise: 10, blur: 8, scale: 0.7, back: true});
-  pe.plab.style.transform += ' rotate(-3deg)';
-  // draw cross strokes
-  const cx = pe.plab.querySelectorAll('path');
-  const dp = clamp((t - (p.q_first - 0.05)) / 0.18), dp2 = clamp((t - (p.q_first + 0.08)) / 0.18);
-  cx[0].style.strokeDasharray = 40; cx[0].style.strokeDashoffset = 40 * (1 - dp);
-  cx[1].style.strokeDasharray = 40; cx[1].style.strokeDashoffset = 40 * (1 - dp2);
-  pe.pws.forEach(([el, tt]) => revealWord(el, t, Math.max(tt - 0.06, p.start + 0.14), {dur: 0.22, rise: 24, blur: 12, scale: 0.88}));
-  // divider + center star
-  const lp = eOutCubic((t - p.split - 0.06) / 0.34);
-  pe.line.style.opacity = split > 0.02 ? 1 : 0;
-  const panelTop = 1920 - 960 * split;
-  pe.line.style.top = (panelTop - 2) + 'px';
-  pe.line.style.transform = `scaleX(${Math.max(lp, 0.0)})`;
-  pe.cst.style.top = panelTop + 'px';
-  const sp = clamp((t - p.split - 0.16) / 0.34);
-  pe.cst.style.opacity = sp > 0 ? 1 : 0;
-  pe.cst.style.transform = `scale(${eOutBack(sp, 3.2)}) rotate(${(1 - eOutCubic(sp)) * -120 + (t - p.split) * 30}deg)`;
-  // solution block
-  revealWord(pe.slab, t, p.split + 0.10, {dur: 0.26, rise: 10, blur: 8, scale: 0.7, back: true});
-  pe.slab.style.transform += ' rotate(-3deg)';
-  const ck = pe.slab.querySelector('path'); const ckp = clamp((t - (p.split + 0.22)) / 0.22);
-  ck.style.strokeDasharray = 60; ck.style.strokeDashoffset = 60 * (1 - eOutCubic(ckp));
-  pe.sws.forEach(([el, tt, acc]) => {
-    const t0 = Math.max(tt - 0.08, p.split + 0.16);
-    revealWord(el, t, t0, acc ? {dur: 0.30, rise: 20, blur: 14, scale: 0.75, back: true} : {dur: 0.22, rise: 22, blur: 12, scale: 0.88});
-  });
-  // sparkles around the solution headline
-  const shRect = {top: 1004 + pe.slab.parentNode.offsetHeight + 14, h: pe.sh.offsetHeight};
-  const shW = Math.min(940, Math.max(...Array.from(pe.sh.querySelectorAll('.w')).map(e => e.offsetLeft + e.offsetWidth)) - Math.min(...Array.from(pe.sh.querySelectorAll('.w')).map(e => e.offsetLeft)));
-  const accT = Math.max(...pe.sws.filter(x => x[2]).map(x => x[1]), p.split + 0.2);
-  pe.sst.forEach((s, k) => {
-    const x = 540 + s.side * (Math.min(shW, 880) / 2 + 48 + k * 10);
-    const y = 1004 + 84 + shRect.h * s.yy + 30;
-    s.el.style.left = x + 'px'; s.el.style.top = y + 'px';
-    const t0 = accT + 0.05 + k * 0.08, q = clamp((t - t0) / 0.32);
-    const tw = 0.8 + 0.2 * Math.sin((t - t0) * 8 + k * 2);
-    s.el.style.opacity = q > 0 ? clamp(q * 2) : 0;
-    s.el.style.transform = `scale(${eOutBack(q, 3) * tw}) rotate(${(1 - q) * 120 + (t - t0) * 30}deg)`;
-  });
-  // exit everything just before the cut
-  [pe.plab, ...pe.pws.map(x => x[0]), pe.slab, ...pe.sws.map(x => x[0]), ...pe.sst.map(s => s.el), pe.cst].forEach(el => exitStyle(el, t, p.end - 0.13, 0.12));
-  const fo = 1 - clamp((t - (p.end - 0.25)) / 0.12);
-  pe.line.style.opacity = parseFloat(pe.line.style.opacity) * fo;
-  pe.scTop.style.opacity = split * fo; pe.scBot.style.opacity = split * fo; pe.scFull.style.opacity *= fo;
+  const ct = cards.find(c => c.role === 'problem' && c.pair === p.n);
+  const cb = cards.find(c => c.role === 'solution' && c.pair === p.n);
+  if (!ct) hide(pe.top); else {
+    show(pe.top); place(pe.top, ct);
+    const l0 = Math.max(p.q_first - 0.16, p.start + 0.16);
+    revealWord(pe.plab, t, l0, {dur: 0.26, rise: 10, blur: 8, scale: 0.7, back: true});
+    pe.plab.style.transform += ' rotate(-3deg)';
+    const cx = pe.plab.querySelectorAll('path');
+    const dp = clamp((t - (l0 + 0.10)) / 0.18), dp2 = clamp((t - (l0 + 0.22)) / 0.18);
+    cx[0].style.strokeDasharray = 40; cx[0].style.strokeDashoffset = 40 * (1 - dp);
+    cx[1].style.strokeDasharray = 40; cx[1].style.strokeDashoffset = 40 * (1 - dp2);
+    pe.pws.forEach(([el, tt]) => revealWord(el, t, Math.max(tt - 0.06, p.start + 0.20), {dur: 0.22, rise: 22, blur: 12, scale: 0.88}));
+  }
+  if (!cb) hide(pe.bot); else {
+    show(pe.bot); place(pe.bot, cb);
+    revealWord(pe.slab, t, p.split + 0.12, {dur: 0.26, rise: 10, blur: 8, scale: 0.7, back: true});
+    pe.slab.style.transform += ' rotate(-3deg)';
+    const ck = pe.slab.querySelector('path'); const ckp = clamp((t - (p.split + 0.24)) / 0.22);
+    ck.style.strokeDasharray = 60; ck.style.strokeDashoffset = 60 * (1 - eOutCubic(ckp));
+    pe.sws.forEach(([el, tt, acc]) => {
+      const t0 = Math.max(tt - 0.08, p.split + 0.18);
+      revealWord(el, t, t0, acc ? {dur: 0.30, rise: 20, blur: 14, scale: 0.75, back: true} : {dur: 0.22, rise: 22, blur: 12, scale: 0.88});
+    });
+    const ws = Array.from(pe.sh.querySelectorAll('.w'));
+    const shW = Math.min(cb.w - 60, Math.max(...ws.map(e => e.offsetLeft + e.offsetWidth)) - Math.min(...ws.map(e => e.offsetLeft)));
+    const accT = Math.max(...pe.sws.filter(x => x[2]).map(x => x[1]), p.split + 0.2);
+    const headTop = 26 + pe.slab.parentNode.offsetHeight + 8;
+    pe.sst.forEach((s, k) => {
+      const x = cb.w / 2 + s.side * (shW / 2 + 34 + k * 8);
+      const y = headTop + pe.sh.offsetHeight * s.yy;
+      s.el.style.left = x + 'px'; s.el.style.top = y + 'px';
+      const t0 = accT + 0.05 + k * 0.08, q = clamp((t - t0) / 0.32);
+      const tw = 0.8 + 0.2 * Math.sin((t - t0) * 8 + k * 2);
+      s.el.style.opacity = q > 0 ? clamp(q * 2) : 0;
+      s.el.style.transform = `scale(${eOutBack(q, 3) * tw}) rotate(${(1 - q) * 120 + (t - t0) * 30}deg)`;
+    });
+  }
 }
 
 function renderOutro(t) {
@@ -293,9 +261,9 @@ window.setup = async (timeline) => {
   await document.fonts.ready;
   return true;
 };
-window.renderAt = (t) => {
+window.renderAt = (t, cards) => {
   renderHook(t);
-  pairEls.forEach(pe => renderPair(pe, t));
+  pairEls.forEach(pe => renderPair(pe, t, cards || []));
   renderOutro(t);
   return true;
 };

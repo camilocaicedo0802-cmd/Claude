@@ -131,13 +131,15 @@ for p in T["pairs"]:
         ev(ct, "Acierto y error.mp3", -16, peak=0.08, ss=2.78, to=3.16)
     if p.get("S2"):
         ev(p["s2_at"] + 0.10, "Swoosh 01 - 07.wav", -13, peak=0.07)
-# outro
-for c in T["outro"]["clips"]:
-    if c.get("flash"):
-        ev(c["start"], "Camera Shutter Click 01.wav", -8, peak=0.07)
-        ev(c["start"], "Camera Flash.wav", -16, peak=0.12)
-    if c.get("punch"):
-        ev(c["start"], "Swoosh 01 - 06.wav", -12, peak=0.07)
+# outro (support polaroids + Slate card over the talking head)
+def cap_t(prefix):
+    return next(c[1] for c in T["outro"]["captions"] if c[0].startswith(prefix))
+for tt in [cap_t("Every skin") + 0.30, cap_t("undertone") - 0.02, cap_t("& glow") + 0.08]:
+    ev(tt + 0.02, "Camera Shutter Click 01.wav", -9, peak=0.07)
+    ev(tt + 0.02, "Camera Flash.wav", -17, peak=0.12)
+ev(cap_t("Your spray") - 0.20, "Swoosh 01 - 05.wav", -13, peak=0.07)
+ev(cap_t("come see") - 0.05, "Swoosh 01 - 03.wav", -11, peak=0.08)
+ev(cap_t("& we'll") + 0.04, "Swoosh 01 - 07.wav", -13, peak=0.07)
 last_cap = T["outro"]["captions"][-1]
 ev(last_cap[1] + 0.05, "disappear.wav", -12, peak=0.45)
 
