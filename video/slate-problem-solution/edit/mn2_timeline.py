@@ -10,6 +10,12 @@ SHOTS, GRADE_T, GRADE_B, load_still, ws = M.SHOTS, M.GRADE_T, M.GRADE_B, M.load_
 a2, a3, a5, a6, a7a, a7b, a7c, a8, c4 = M.a2, M.a3, M.a5, M.a6, M.a7a, M.a7b, M.a7c, M.a8, M.c4
 LIB2 = os.environ.get("LIBDIR", os.path.join(os.path.dirname(M.ST), "libscan", "dl2"))   # client library (not in repo)
 _shot = M._shot
+# Client note: CTA without its last line ("we'll find the perfect tan for you." no longer on screen).
+# CTA=short -> alternative cut that ends on "come see us at Slate" (voice muted from the measured onset of "and").
+CTA_SHORT = os.environ.get("CTA") == "short"
+if CTA_SHORT:
+    END = 55.30                                    # "Slate" ends 54.26, + ~1 s hold on the storefront
+    VOICE_MUTE = [(54.28 - OFF, 54.85)]            # voice-track time; "and we'll find the perfect tan for you."
 load_words = M.load_words
 
 def build_overlays(words):
@@ -54,7 +60,7 @@ def build_overlays(words):
     # STOREFRONT — SB Fade blanco elegante
     global STORE_T
     STORE_T = (c4 + 0.02, c4 + 0.14, ws(19, "we'll") - 0.05)
-    ov.append(FadeBlancoElegante("COME SEE US AT", "Slate", "we'll find the perfect tan for you.", *STORE_T, END + 1, y_script=1250))
+    ov.append(FadeBlancoElegante("COME SEE US AT", "Slate", None, *STORE_T, END + 1, y_script=1250))
     # CAPTIONS — Apple Texto Deslizante 2 (+ Dúo script for key words), presenter only
     def ypos(t):
         s = _shot(t)

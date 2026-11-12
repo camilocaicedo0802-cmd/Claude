@@ -300,8 +300,10 @@ class FadeBlancoElegante:
         self.S = (S, cx - S.shape[1] / 2, y_script - sb); self.nchar = len(script)
         # per-letter x cut positions for the typewriter
         self.cuts = [30 + sft.getlength(script[:i + 1]) for i in range(len(script))]
-        Cm, cb, _ = tm(line_c, "L", 50, tracking=0.0)
-        self.Cm = (Cm, cx - Cm.shape[1] / 2, y_script + 175 - cb)
+        self.Cm = None
+        if line_c:                                                 # optional closing line
+            Cm, cb, _ = tm(line_c, "L", 50, tracking=0.0)
+            self.Cm = (Cm, cx - Cm.shape[1] / 2, y_script + 175 - cb)
 
     def layers(self, t):
         if t < self.t_a: return []
@@ -316,7 +318,7 @@ class FadeBlancoElegante:
             M = S.copy(); M[:, cut:] = 0
             prog = clamp01(lt / T * self.nchar - (i - 1))
             out += put(blurm(M, 5 * (1 - prog) if lt < T else 0), WHITE, x, y, 1.0)
-        if t >= self.t_c:
+        if self.Cm is not None and t >= self.t_c:
             Cm, x, y = self.Cm; u = clamp01((t - self.t_c) / 0.5)
             out += put(Cm, WHITE, x, y + 30 * (1 - SLIDE(u)), clamp01((t - self.t_c) / 0.3))
         return out

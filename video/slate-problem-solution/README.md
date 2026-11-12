@@ -11,7 +11,9 @@
 > - **Soluciones:** *Dúo Cinemático* (palabra sans + cursiva rosada metida debajo; la sans queda encima para que se
 >   lean las dos) y *Texto Elegante* (trazo de marcador detrás de los números grandes "24h" y "1-2 days").
 > - **Cierre:** *Three Aesthetic Words* (filas que suben con desenfoque, contraste Light / Bold / cursiva).
-> - **Fachada:** *SB Fade blanco elegante* ("COME SEE US AT" espaciado + "Slate" escrito a máquina + línea final).
+> - **Fachada:** *SB Fade blanco elegante* ("COME SEE US AT" espaciado + "Slate" escrito a máquina). Por pedido de la
+>   clienta se quitó la última línea del CTA ("we'll find the perfect tan for you."); con `CTA=short` sale la variante
+>   que además termina el video en "come see us at Slate" (voz silenciada desde el "and", ~55.3 s).
 > - **Subtítulos de la presentadora:** *Apple Texto Deslizante 2* (palabra que se desliza hacia arriba); las palabras
 >   clave pasan a la cursiva del preset.
 > - **Fuentes:** Poppins (la sans de la marca, en lugar de la Inter de los presets) + la cursiva de los presets
@@ -26,6 +28,8 @@
 > ```bash
 > python3 edit/mn2_render.py out/video_noaudio.mp4
 > python3 edit/mn2_mix.py /ruta/mn/sfx2 /ruta/music.wav out/mix.wav
+> CTA=short python3 edit/mn2_render.py out/video_noaudio_corto.mp4   # variante: termina en "come see us at Slate"
+> CTA=short python3 edit/mn2_mix.py /ruta/mn/sfx2 /ruta/music.wav out/mix_corto.wav
 > ```
 >
 > El material de la clienta (presets, SFX, LUT, PNG, film burn, fuentes) no se incluye en el repo.
