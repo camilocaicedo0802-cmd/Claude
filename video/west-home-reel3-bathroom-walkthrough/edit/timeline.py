@@ -85,10 +85,12 @@ def sync(k, t0, t1, **kw):
 
 BR = lambda n: F(f'IMG_{n}.MOV')
 SHOTS = [
-    # HOOK — the finished shower, then Félix: "initially the customers... only remodel the shower area"
-    dict(src=BR(9005), t0=0.0, t1=vs(2), src_in=0.0, speed=[(0, 1.6), (1, 1.1)], grade='white',
-         zoom=[(0, 1.18), (1, 1.04)]),
-    sync(2, vs(2), vs(3), grade='talk', zoom=[(0, 1.14), (1, 1.18)], cy=-0.02, tin=('whip', 'left', 0.2)),
+    # HOOK — Félix on camera from the first frame: "Initially the customers, they had the idea only..."
+    sync(0, 0.0, vs(1), grade='talk', zoom=[(0, 1.04), (0.12, 1.12), (1, 1.16)], cy=-0.02),
+    sync(1, vs(1), vs(2), grade='talk', zoom=[(0, 1.26), (1, 1.30)], cy=-0.04),
+    # "...remodel the shower area," — the finished shower
+    dict(src=BR(9005), t0=vs(2), t1=vs(3), src_in=0.0, speed=[(0, 1.5), (1, 1.1)], grade='white',
+         zoom=[(0, 1.18), (1, 1.06)]),
     sync(3, vs(3), vs(4), grade='talk', zoom=[(0, 1.30), (1, 1.32)], cy=-0.04),
     sync(4, vs(4), vt(4, 8.40), grade='talk', zoom=[(0, 1.12), (1, 1.16)], cy=-0.02),
     sync(4, vt(4, 8.40), vt(4, 10.10), grade='talk', zoom=[(0, 1.26), (1, 1.30)], cy=-0.04),

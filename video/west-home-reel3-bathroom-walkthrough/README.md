@@ -5,7 +5,7 @@ explicaciones (transcritas palabra por palabra y cortadas en los silencios; `chu
 
 | Tiempo | Voz | Imagen | Texto |
 | --- | --- | --- | --- |
-| 0–4,7 | Initially the customers had the idea only remodel the shower area, but… | Ducha terminada → Félix | Hook: THEY ONLY WANTED A NEW SHOWER… |
+| 0–4,7 | Initially the customers had the idea only remodel the shower area, but… | Félix a cámara desde el primer cuadro → ducha terminada en "the shower area" → Félix | Hook: THEY ONLY WANTED A NEW SHOWER… (en los primeros 2,3 s el hook reemplaza a los subtítulos: Félix camina hacia la cámara y no hay espacio libre) |
 | 4,7–9,8 | I mean this space needs a lot of work, so I gave them some suggestions and we ended up doing | Félix (cortes con punch-in) → baño | |
 | 9,8–11,5 | the whole thing | Montaje de 3 planos al ritmo (drop de la música) | THE WHOLE THING |
 | 11,5–14,3 | Are you ready to see something nice? | Félix y Peter → entran por la puerta (speed ramp) | |
