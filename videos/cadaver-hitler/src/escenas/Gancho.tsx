@@ -2,7 +2,7 @@ import React from 'react';
 import {Easing, interpolate, useCurrentFrame} from 'remotion';
 import {Bombilla, Calendario, Destello, Etiqueta, Explosion, Flecha, Moscas} from '../componentes/Efectos';
 import {CHOLMONDELEY, ESPIA_MUERTO, HITLER, MONTAGU, Personaje, SOLDADO} from '../componentes/Personaje';
-import {EnMundo, Toma} from '../componentes/Toma';
+import {EnMundo, Toma, Transicion} from '../componentes/Toma';
 import {finFrase, inicioFrase, palabra} from '../tiempos';
 
 const clamp = {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'} as const;
@@ -169,8 +169,8 @@ const TomaCalendario: React.FC = () => {
 };
 
 /** 7. "...y los aliados querían invadir Sicilia." — vista aérea, flechas de invasión hacia la isla. */
-const TomaMapa: React.FC = () => (
-	<Toma fondo="mediterraneo.jpg" desde={CORTES.mapa} hasta={CORTES.fin + 1} entrada="latigoIzq" cam={{s: [1.04, 1.28], y: [10, 60], r: [0, 2.5]}}>
+const TomaMapa: React.FC<{hasta: number; salida: Transicion}> = ({hasta, salida}) => (
+	<Toma fondo="mediterraneo.jpg" desde={CORTES.mapa} hasta={hasta} entrada="latigoIzq" salida={salida} cam={{s: [1.04, 1.28], y: [10, 60], r: [0, 2.5]}}>
 		<Flecha d="M 90 1880 Q 160 1450 430 1170" desde={M.aliados - 4} />
 		<Flecha d="M 1000 1900 Q 980 1480 760 1190" desde={M.aliados + 2} />
 		<Flecha d="M 560 1960 Q 540 1600 600 1260" desde={M.aliados + 8} />
@@ -178,7 +178,8 @@ const TomaMapa: React.FC = () => (
 	</Toma>
 );
 
-export const Gancho: React.FC = () => (
+/** En la muestra el mapa cierra el video; en el completo sale con un latigazo hacia el desarrollo. */
+export const Gancho: React.FC<{finMapa?: number; salidaMapa?: Transicion}> = ({finMapa = CORTES.fin + 1, salidaMapa = 'corte'}) => (
 	<>
 		<TomaBunker />
 		<TomaBatalla />
@@ -186,7 +187,7 @@ export const Gancho: React.FC = () => (
 		<TomaOficina />
 		<TomaMorgue />
 		<TomaCalendario />
-		<TomaMapa />
+		<TomaMapa hasta={finMapa} salida={salidaMapa} />
 	</>
 );
 

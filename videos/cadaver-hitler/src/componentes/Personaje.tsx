@@ -7,7 +7,7 @@ import {useCurrentFrame} from 'remotion';
  * Lienzo interno: 400 x 760, con los pies en (200, 730).
  */
 
-export type Ojos = 'normal' | 'cerrados' | 'feliz' | 'x' | 'grandes' | 'entrecerrados' | 'mirandoLado';
+export type Ojos = 'normal' | 'cerrados' | 'feliz' | 'x' | 'grandes' | 'entrecerrados' | 'mirandoLado' | 'guinoX';
 export type Cejas = 'ninguna' | 'neutral' | 'enojado' | 'sorprendido' | 'preocupado' | 'arrogante';
 export type Boca =
 	| 'sonrisa'
@@ -24,7 +24,7 @@ export type Diseno = {
 	piel: string;
 	pelo?: 'hitler' | 'raya' | 'corto' | 'ninguno';
 	colorPelo?: string;
-	gorra?: 'militar' | 'naval' | 'raf' | 'casco' | 'ninguna';
+	gorra?: 'militar' | 'naval' | 'raf' | 'casco' | 'stahlhelm' | 'ninguna';
 	colorGorra?: string;
 	colorBanda?: string;
 	bigote?: 'cepillo' | 'manubrio' | 'ninguno';
@@ -37,6 +37,15 @@ export type Diseno = {
 	galones?: boolean; // rayas doradas en las mangas (marina)
 	maletin?: boolean;
 	ojeras?: boolean;
+	monoculo?: boolean;
+};
+
+/** Accesorios que se ponen y se quitan durante la escena */
+export type Accesorios = {
+	gafas?: boolean;
+	aureola?: boolean;
+	medalla?: boolean;
+	salvavidas?: boolean;
 };
 
 export type PersonajeProps = {
@@ -60,6 +69,9 @@ export type PersonajeProps = {
 	/** semilla para desfasar respiración/parpadeo entre personajes */
 	semilla?: number;
 	sombra?: boolean;
+	acc?: Accesorios;
+	/** sustituye el color de la chaqueta (p. ej. camiseta antes del uniforme) */
+	chaqueta?: string;
 };
 
 const TINTA = '#1b1b1f';
@@ -69,9 +81,10 @@ const ojosSVG = (tipo: Ojos, parpadeo: boolean) => {
 		[158, 205],
 		[242, 205],
 	];
-	const t = parpadeo && (tipo === 'normal' || tipo === 'grandes' || tipo === 'mirandoLado') ? 'cerrados' : tipo;
+	const base = parpadeo && (tipo === 'normal' || tipo === 'grandes' || tipo === 'mirandoLado') ? 'cerrados' : tipo;
 	return pos.map(([x, y], i) => {
 		const k = `ojo${i}`;
+		const t: Ojos = base === 'guinoX' ? (i === 0 ? 'x' : 'feliz') : base;
 		switch (t) {
 			case 'cerrados':
 				return <path key={k} d={`M ${x - 15} ${y} Q ${x} ${y + 8} ${x + 15} ${y}`} stroke={TINTA} strokeWidth={8} fill="none" strokeLinecap="round" />;
@@ -240,6 +253,14 @@ const gorraSVG = (d: Diseno) => {
 					<path d="M 176 90 L 200 80 L 224 90 L 200 98 Z" fill="#e7b93b" stroke={TINTA} strokeWidth={3} />
 				</g>
 			);
+		case 'stahlhelm':
+			return (
+				<g>
+					<path d="M 66 120 Q 60 6 200 2 Q 340 6 334 120 L 352 150 Q 300 132 290 112 L 110 112 Q 100 132 48 150 Z" fill={c} stroke={TINTA} strokeWidth={9} strokeLinejoin="round" />
+					<path d="M 110 112 L 290 112" stroke={TINTA} strokeWidth={6} />
+					<circle cx={300} cy={70} r={7} fill={TINTA} opacity={0.5} />
+				</g>
+			);
 		case 'casco':
 			return (
 				<g>
@@ -253,7 +274,7 @@ const gorraSVG = (d: Diseno) => {
 };
 
 export const Personaje: React.FC<PersonajeProps> = ({
-	diseno: d,
+	diseno: dBase,
 	ojos = 'normal',
 	cejas = 'neutral',
 	boca = 'seria',
@@ -269,7 +290,10 @@ export const Personaje: React.FC<PersonajeProps> = ({
 	parpadea = true,
 	semilla = 0,
 	sombra = true,
+	acc = {},
+	chaqueta,
 }) => {
+	const d: Diseno = chaqueta ? {...dBase, chaqueta, chaquetaSombra: '#d8d8d8', botones: '#ffffff', corbata: undefined, cinturon: undefined} : dBase;
 	const clipId = `cabeza-${React.useId().replace(/:/g, "")}`;
 	const f = useCurrentFrame() + semilla * 17;
 	const resp = respira ? Math.sin(f / 7) : 0;
@@ -326,6 +350,21 @@ export const Personaje: React.FC<PersonajeProps> = ({
 					)}
 					{/* bolsillos */}
 					<path d="M 146 400 L 182 400 L 182 430 L 146 430 Z" fill="none" stroke={TINTA} strokeWidth={4} opacity={0.6} />
+					{acc.medalla && (
+						<g transform={`rotate(${Math.sin(f / 5) * 8} 165 392)`}>
+							<path d="M 152 372 L 165 420 L 178 372 Z" fill="#c3342b" stroke={TINTA} strokeWidth={4} />
+							<path d="M 158 372 L 165 404 L 172 372" fill="#2a4fa8" />
+							<circle cx={165} cy={432} r={19} fill="#f2c53d" stroke={TINTA} strokeWidth={5} />
+							<path d="M 165 420 L 169 429 L 178 430 L 171 436 L 173 445 L 165 440 L 157 445 L 159 436 L 152 430 L 161 429 Z" fill="#fff3b0" />
+						</g>
+					)}
+					{acc.salvavidas && (
+						<g>
+							<ellipse cx={200} cy={455} rx={92} ry={44} fill="none" stroke={TINTA} strokeWidth={46} />
+							<ellipse cx={200} cy={455} rx={92} ry={44} fill="none" stroke="#f26b2a" strokeWidth={32} />
+							<ellipse cx={200} cy={455} rx={92} ry={44} fill="none" stroke="#fff" strokeWidth={32} strokeDasharray="40 62" />
+						</g>
+					)}
 					{/* brazo de adelante */}
 					{bDer.el}
 					{d.galones && (
@@ -390,7 +429,28 @@ export const Personaje: React.FC<PersonajeProps> = ({
 							strokeLinejoin="round"
 						/>
 					)}
+					{d.monoculo && (
+						<g>
+							<circle cx={242} cy={205} r={30} fill="rgba(255,255,255,0.25)" stroke="#c9a43a" strokeWidth={7} />
+							<path d="M 268 222 Q 290 290 262 340" stroke="#c9a43a" strokeWidth={3} fill="none" />
+						</g>
+					)}
+					{acc.gafas && (
+						<g>
+							<path d="M 118 192 Q 120 238 160 238 Q 192 236 192 196 Z" fill="#111" stroke={TINTA} strokeWidth={6} />
+							<path d="M 208 196 Q 208 236 240 238 Q 280 238 282 192 Z" fill="#111" stroke={TINTA} strokeWidth={6} />
+							<path d="M 112 190 L 288 190" stroke={TINTA} strokeWidth={9} strokeLinecap="round" />
+							<path d="M 130 200 L 150 214" stroke="#fff" strokeWidth={5} strokeLinecap="round" opacity={0.7} />
+							<path d="M 220 200 L 240 214" stroke="#fff" strokeWidth={5} strokeLinecap="round" opacity={0.7} />
+						</g>
+					)}
 					{gorraSVG(d)}
+					{acc.aureola && (
+						<g transform={`translate(0 ${Math.sin(f / 8) * 6})`}>
+							<ellipse cx={200} cy={20} rx={110} ry={26} fill="none" stroke="#fff3a0" strokeWidth={26} opacity={0.5} />
+							<ellipse cx={200} cy={20} rx={110} ry={26} fill="none" stroke="#ffd84a" strokeWidth={14} />
+						</g>
+					)}
 				</g>
 			</g>
 		</svg>
@@ -465,4 +525,46 @@ export const SOLDADO: Diseno = {
 	chaquetaSombra: '#57523a',
 	botones: '#5a5236',
 	cinturon: '#4a3c22',
+};
+
+/** Oficial alemán genérico (sin insignias), con monóculo */
+export const OFICIAL_ALEMAN: Diseno = {
+	piel: '#ffffff',
+	pelo: 'raya',
+	colorPelo: '#c9b27a',
+	gorra: 'militar',
+	colorGorra: '#5f6848',
+	colorBanda: '#3a3f2c',
+	chaqueta: '#6a7352',
+	chaquetaSombra: '#454b33',
+	botones: '#c9c9c9',
+	cinturon: '#2b2016',
+	monoculo: true,
+};
+
+/** Segundo oficial alemán, de bigotito y gorra gris */
+export const OFICIAL_ALEMAN_2: Diseno = {
+	piel: '#ffffff',
+	pelo: 'raya',
+	colorPelo: '#4a3426',
+	gorra: 'militar',
+	colorGorra: '#7b8068',
+	colorBanda: '#2f3324',
+	bigote: 'cepillo',
+	colorBigote: '#4a3426',
+	chaqueta: '#7b8068',
+	chaquetaSombra: '#555946',
+	botones: '#c9c9c9',
+	cinturon: '#2b2016',
+};
+
+/** Soldado alemán con casco */
+export const SOLDADO_ALEMAN: Diseno = {
+	piel: '#ffffff',
+	gorra: 'stahlhelm',
+	colorGorra: '#5c6150',
+	chaqueta: '#6a7352',
+	chaquetaSombra: '#454b33',
+	botones: '#9a9a9a',
+	cinturon: '#2b2016',
 };

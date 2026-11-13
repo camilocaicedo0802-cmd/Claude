@@ -1,17 +1,8 @@
 import React from 'react';
-import {AbsoluteFill, Audio, interpolate, Sequence, staticFile, useVideoConfig} from 'remotion';
+import {AbsoluteFill, Audio, interpolate, staticFile, useVideoConfig} from 'remotion';
 import {Subtitulos} from './componentes/Subtitulos';
+import {Sonidos} from './Completo';
 import {Gancho, SONIDOS_GANCHO} from './escenas/Gancho';
-
-const Sonidos: React.FC<{lista: [string, number, number][]}> = ({lista}) => (
-	<>
-		{lista.map(([archivo, desde, volumen], i) => (
-			<Sequence key={i} from={Math.max(0, desde)} durationInFrames={90} layout="none">
-				<Audio src={staticFile(`sfx/${archivo}.wav`)} volume={volumen} />
-			</Sequence>
-		))}
-	</>
-);
 
 /** Muestra: el gancho + "Era 1943, y los aliados querían invadir Sicilia." (~11,5 s) */
 export const Muestra: React.FC = () => {
