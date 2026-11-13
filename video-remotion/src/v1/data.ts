@@ -61,8 +61,9 @@ export const TITLES: TitleDef[] = [
   {
     id: 'gancho', start: ws(0), end: ws(7) - 0.03, y: 'head', overlap: 70, scene: true,
     lines: [
-      {words: [tw(0, 'nadie,'), tw(1), tw(2)], color: 'purple', size: 72, dx: -20},
-      {words: [tw(3), tw(4), tw(5), tw(6)], color: 'white', size: 80, dx: 40},
+      {words: [tw(0, 'nadie,')], color: 'purple', size: 118, dx: -60},
+      {words: [tw(1), tw(2)], color: 'white', size: 62, dx: 30},
+      {words: [tw(3), tw(4), tw(5), tw(6)], color: 'purple', size: 70, dx: -10},
     ],
     covers: [0, 1, 2, 3, 4, 5, 6],
   },
@@ -140,7 +141,7 @@ export const TITLES: TitleDef[] = [
     covers: [104, 105, 106, 107, 108],
   },
   {
-    id: 'nocompra', start: ws(109), end: ws(113) - 0.03, y: 'head', overlap: 90, scene: true,
+    id: 'nocompra', start: ws(109), end: ws(113) - 0.03, y: 'head', overlap: 70, scene: true,
     lines: [
       {words: [tw(109), tw(110), tw(111)], color: 'white', size: 104},
       {words: [tw(112)], color: 'purple', size: 156},
@@ -176,6 +177,7 @@ export const TITLES: TitleDef[] = [
 // Rangos donde se ocultan los subtítulos pequeños (escenas con texto propio)
 export const NO_SUBS: [number, number][] = [
   [ws(24), ws(28) - 0.02], // palabras tachadas en pantalla
+  [ws(50) - 0.1, ws(55)], // escena del móvil
   [ws(68), ws(78) - 0.02], // nota escribiéndose en la escena CONFIANZA
   [ws(138), 999], // tarjeta final
 ];
