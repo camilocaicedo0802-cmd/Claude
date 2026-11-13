@@ -76,4 +76,5 @@ sfx 1VdFtzbpDejih-WtJFveWbXv9E2z9QLeF typing_digital 6
 echo "SFX listos en public/sfx."
 
 # 5. Persona recortada del clip c301 (texto "Proyectos" detrás de ella): BiRefNet vía rembg, CPU (~5 min)
+python3 -c "from rembg import new_session; new_session('birefnet-general')"  # descarga el modelo una vez
 python3 -I scripts/matte_clip.py public/media/c301.mp4 public/media/c301_matte 30 83
