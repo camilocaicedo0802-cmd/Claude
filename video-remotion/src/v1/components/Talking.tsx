@@ -42,7 +42,7 @@ const SegmentFrame: React.FC<{seg: Segment; masked?: boolean}> = ({seg, masked})
           : {}),
       }}
     >
-      <Video src={staticFile(`clips/v1g_${seg.take}.mp4`)} trimBefore={seg.srcIn} muted={masked} objectFit="cover" style={{width: '100%', height: '100%'}} />
+      <Video src={staticFile(`clips/v1_${seg.take}.mp4`)} trimBefore={seg.srcIn} muted={masked} objectFit="cover" style={{width: '100%', height: '100%'}} />
     </AbsoluteFill>
   );
 };

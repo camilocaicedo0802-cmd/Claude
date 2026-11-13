@@ -251,3 +251,7 @@ Estudiado a 24 fps en la referencia (`scratchpad/ref24/`):
 - **Vida en pantalla**: deriva de escala 1→1,05 y flotación de ±5 px.
 - **Salida con destello**: 4 fotogramas de brillo ×2,4, desenfoque 12 px y escala +6 %.
 - Más títulos: uno cada ~3 s de voz (14 en 48 s).
+
+### 10.4 Sin ajuste de color (13/11/2026)
+- **No se etaloniza** ni el material hablado ni el B-roll: se usa el color original de cámara (incluida la luz violeta del set, que además combina con el morado del logo).
+- Se mantienen los efectos de estilo de la referencia que no son corrección de color: blanco y negro en ventanas/collage y fondos de cuadrícula.

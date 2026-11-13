@@ -60,7 +60,7 @@ export const Collage: React.FC = () => {
       >
         <Sequence from={startF} durationInFrames={endF - startF} layout="none">
           <Video
-            src={staticFile(`clips/v1g_${seg.take}.mp4`)}
+            src={staticFile(`clips/v1_${seg.take}.mp4`)}
             muted
             trimBefore={seg.srcIn + (startF - seg.start)}
             objectFit="cover"
