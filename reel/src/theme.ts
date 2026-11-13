@@ -20,6 +20,8 @@ const loadLocalFont = (family: string, file: string, weight: string) => {
 export const OUTFIT = loadLocalFont("Outfit", "fonts/Outfit-400.woff2", "100 900");
 export const BEBAS = loadLocalFont("Bebas Neue", "fonts/BebasNeue-400.woff2", "400");
 export const OSWALD = loadLocalFont("Oswald", "fonts/Oswald-500.woff2", "200 700");
+// Lema del logotipo de Macizo ("Madera en el Diseño"): DIN condensada -> Barlow Condensed.
+export const BARLOW = loadLocalFont("Barlow Condensed", "fonts/BarlowCondensed-400.woff2", "400");
 
 export const W = 1080;
 export const H = 1920;

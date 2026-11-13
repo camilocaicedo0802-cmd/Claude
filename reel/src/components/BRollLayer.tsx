@@ -9,6 +9,8 @@ const Clip: React.FC<{ b: BRoll }> = ({ b }) => {
   const { fps } = useVideoConfig();
   const dur = (b.t1 - b.t0) * fps;
   const [z0, z1] = b.zoom ?? [1, 1.08];
+  // Entrada opcional con desenfoque + zoom que se asienta en 8 fotogramas (estilo.md §5).
+  const k = b.blurIn ? Math.max(0, 1 - frame / 8) : 0;
   return (
     <div
       style={{
@@ -17,13 +19,15 @@ const Clip: React.FC<{ b: BRoll }> = ({ b }) => {
         height: H,
         overflow: "hidden",
         transformOrigin: b.origin ?? "50% 45%",
-        scale: String(interpolate(frame, [0, dur], [z0, z1], { extrapolateRight: "clamp" })),
+        scale: String(interpolate(frame, [0, dur], [z0, z1], { extrapolateRight: "clamp" }) * (1 + 0.12 * k * k)),
+        filter: k > 0 ? `blur(${24 * k * k}px)` : undefined,
       }}
     >
       {b.kind === "video" ? (
         <Video
           src={staticFile(b.src)}
           trimBefore={Math.round((b.trim ?? 0) * fps)}
+          playbackRate={b.rate ?? 1}
           muted
           objectFit="cover"
           style={{ width: W, height: H }}

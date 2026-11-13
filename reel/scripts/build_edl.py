@@ -48,6 +48,8 @@ speech = [r for r in merged if r[1] - r[0] > 0.08]
 
 # --- 2. Cortes de contenido (tiempos de origen) -----------------------------------------
 CONTENT_CUTS = [
+    (0.0, 4.50),  # gag inicial "Esta es una de nuestras sillas... no, no es una de nuestras sillas" (corrección del usuario: empezar en 0:05)
+    (21.63, 22.05),  # muletilla "eh" entre "realmente una" y "de estas piezas" (corrección del usuario)
     (33.29, 38.45),  # "Es más, algo que tal vez tú no sabes, tenemos metalmecánica" (repetido)
     (48.40, 49.75),  # "te quiero decir,"
     (59.33, 61.27),  # "es decir, de nuestra experiencia es"

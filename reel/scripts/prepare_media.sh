@@ -27,14 +27,13 @@ ffmpeg -v error -y -i "$TMP/raw/video_base.mov" -vf "fps=30,scale=1080:1920:flag
 for b in 1 2; do ffmpeg -v error -y -i "$TMP/raw/broll_$b.mp4" -vf "fps=30,scale=1080:1920:flags=lanczos,$G1,format=yuv420p" -an -c:v libx264 -crf 16 -g 15 "public/media/broll$b.mp4"; done
 for i in 1 2 3 4 5 6 7; do ffmpeg -v error -y -i "$TMP/raw/foto_macizo_$i.jpg" -vf "$G1" -q:v 2 "public/media/foto$i.jpg"; done
 for c in c187 c271; do ffmpeg -v error -y -i "$TMP/raw/$c.mp4" -t 12 -vf "fps=30,scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,$G1,format=yuv420p" -an -c:v libx264 -crf 17 -g 15 "public/media/$c.mp4"; done
-# Recortes de la silla (plano en que él sale de cuadro) y avatar para el gráfico de barra
+# Recortes de la silla (plano en que él sale de cuadro) para las fotos tipo polaroid
 ffmpeg -v error -y -ss 7.0 -i public/media/base.mp4 -frames:v 1 "$TMP/chair.png"
 ffmpeg -v error -y -i "$TMP/chair.png" -vf "crop=820:900:20:1020,scale=600:-1" -q:v 2 public/media/silla_completa.jpg
 ffmpeg -v error -y -i "$TMP/chair.png" -vf "crop=480:600:380:1300,scale=600:-1" -q:v 2 public/media/silla_cuero.jpg
 ffmpeg -v error -y -i "$TMP/chair.png" -vf "crop=420:540:520:1380,scale=600:-1" -q:v 2 public/media/silla_madera.jpg
-ffmpeg -v error -y -ss 20 -i public/media/base.mp4 -frames:v 1 -vf "crop=300:300:575:830,scale=200:200" -q:v 2 public/media/avatar.jpg
-# Música: ANBR - Quantum desde 24,4 s (inicio de sección), 70 s
-ffmpeg -v error -y -ss 24.4 -t 70 -i "$TMP/raw/anbr_quantum.wav" -af "afade=t=in:d=0.3,aresample=48000" -ac 2 public/audio/musica.wav
+# Música: ANBR - Quantum desde 28.83 s (su subida de energía cae en "Somos líderes"), 70 s
+ffmpeg -v error -y -ss 28.83 -t 70 -i "$TMP/raw/anbr_quantum.wav" -af "afade=t=in:d=0.3,aresample=48000" -ac 2 public/audio/musica.wav
 
 # 3. Transcripción Whisper (tiempos por palabra) -> EDL -> voz editada
 ffmpeg -v error -y -i "$TMP/raw/video_base.mov" -vn -ac 1 -ar 16000 "$TMP/base16k.wav"

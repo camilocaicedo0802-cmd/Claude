@@ -21,6 +21,19 @@ export type Segment = {
 };
 export const EDL = edlJson as { fps: number; duration: number; segments: Segment[] };
 
+/**
+ * Convierte un tiempo del VIDEO BASE original (segundos) al timeline final según el EDL.
+ * Si ese instante se eliminó en el montaje, devuelve el inicio del siguiente segmento conservado.
+ * Anclar los tiempos al original evita que gráficos, b-rolls y SFX se descuadren al cambiar cortes.
+ */
+export const at = (src: number): number => {
+  for (const s of EDL.segments) {
+    if (src < s.srcIn) return s.outIn;
+    if (src <= s.srcOut) return s.outIn + (src - s.srcIn);
+  }
+  return EDL.duration;
+};
+
 export const clamp01 = (x: number) => Math.max(0, Math.min(1, x));
 export const easeOut = Easing.bezier(0.16, 1, 0.3, 1);
 export const easeInOut = Easing.bezier(0.65, 0, 0.35, 1);

@@ -165,4 +165,21 @@ _(Aquí se añaden las correcciones que el usuario confirme que le gustan, para 
 - **Tipografía/colores:** usar las fuentes y colores del vídeo de referencia (no la identidad del portafolio).
 - **Textos escritos:** usar SFX de tecleo ("typing") en los textos en pantalla.
 - **Efectos de sonido:** usar los SFX de las carpetas del usuario en cada palabra/elemento destacado, b-roll y motion graphic, buscando un resultado dinámico pero premium y sin saturar.
-- **Logo:** no es necesario usar el logo de la marca (tarjeta final solo con texto y botón "Contáctanos").
+- **Logo de la marca (actualizado en la ronda 2):** extraerlo del propio material y usarlo: el isotipo dentro de los
+  elementos circulares de los gráficos (en lugar de fotos de personas) y el logotipo completo en el cierre. Si el
+  material lo trae en baja resolución, vectorizarlo o reconstruirlo para que se vea nítido.
+
+### Ronda 2 (correcciones sobre la versión 1)
+
+- **Arranque directo:** el vídeo empieza en la frase de valor del producto, sin gags ni introducciones previas
+  (aquí: "Esta es una silla de diseño único" sobre la silla sola). Si el corte pedido cae a mitad de palabra, se
+  ajusta al inicio de frase más cercano y se compensa el volumen si la toma está más lejos del micro.
+- **Muletillas fuera:** eliminar toda muletilla ("e", "eh", "este"…), aunque dure menos de 0,3 s. Verificarlo
+  transcribiendo el fragmento con Whisper y un prompt que fuerce a escribir muletillas.
+- **B-roll con criterio:** si no hay un b-roll que aporte, dejar al presentador hablando; no repetir el mismo plano
+  de apoyo sin necesidad.
+- **B-roll coherente con la marca:** solo planos del universo del cliente (fábrica, proyectos terminados,
+  interiores, renders); nunca lifestyle ajeno al concepto (p. ej. un DJ con equipos de música).
+- **Marcas mencionadas = logos flotando:** cuando se nombran clientes o marcas, mostrar sus logos oficiales en
+  tarjetas blancas (radio 30 px, sombra suave) que salen desde detrás de la persona al nombrarlas y flotan a su
+  alrededor (balanceo ±14 px y giro ±2,6°), con un rótulo "NUESTROS CLIENTES" y SFX pop + whoosh suave por logo.

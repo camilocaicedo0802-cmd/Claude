@@ -1,8 +1,8 @@
 import React from "react";
 import { AbsoluteFill, Img, interpolate, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
-import { BEBAS, C, GLOW, GRADIENT, H, OUTFIT, W } from "../theme";
-import { FLASHES, FLICKERS, STREAKS, VOICE_END } from "../timeline";
-import { clamp01, easeInOut, easeOut, inOut, prog, word } from "../util";
+import { BARLOW, BEBAS, C, GLOW, GRADIENT, H, OUTFIT, W } from "../theme";
+import { FLASHES, FLICKERS, SEATED_AT, STREAKS, VOICE_END } from "../timeline";
+import { at, clamp01, easeInOut, easeOut, inOut, prog, word } from "../util";
 
 type T = { t: number };
 const W0 = (i: number) => word(i).start;
@@ -45,7 +45,7 @@ export const GradeOverlays: React.FC = () => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   // En el gancho la silla (producto) está en la parte baja: degradado más suave para no taparla.
-  const k = interpolate(frame / fps, [5.6, 5.73], [0.45, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+  const k = interpolate(frame / fps, [SEATED_AT - 0.13, SEATED_AT], [0.45, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   return (
   <AbsoluteFill style={{ pointerEvents: "none" }}>
     <AbsoluteFill
@@ -60,45 +60,6 @@ export const GradeOverlays: React.FC = () => {
       }}
     />
   </AbsoluteFill>
-  );
-};
-
-// ------------------------------------------------------------------------------------------
-// Insignia de 5 estrellas ("ganadora de premios")
-// ------------------------------------------------------------------------------------------
-const StarIcon: React.FC<{ fill: number }> = ({ fill }) => (
-  <svg width={64} height={64} viewBox="0 0 24 24">
-    <path
-      d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"
-      fill={fill > 0.5 ? C.yellow : "rgba(255,255,255,0.18)"}
-      style={{ filter: fill > 0.5 ? "drop-shadow(0 0 8px rgba(252,229,0,0.8))" : undefined }}
-      transform={`translate(12 12) scale(${0.7 + 0.3 * fill}) translate(-12 -12)`}
-    />
-  </svg>
-);
-export const StarsBadge: React.FC<T & { t0: number; t1: number }> = ({ t, t0, t1 }) => {
-  if (t < t0 || t > t1) return null;
-  const v = inOut(t, t0, t1);
-  return (
-    <div
-      style={{
-        position: "absolute",
-        left: W / 2,
-        top: 0.7 * H,
-        translate: "-50% -50%",
-        ...glass,
-        borderRadius: 999,
-        padding: "14px 34px",
-        display: "flex",
-        gap: 10,
-        opacity: v,
-        scale: String(popScale(t, t0)),
-      }}
-    >
-      {[0, 1, 2, 3, 4].map((i) => (
-        <StarIcon key={i} fill={clamp01((t - (t0 + 0.08 + i * 0.07)) / 0.08)} />
-      ))}
-    </div>
   );
 };
 
@@ -284,62 +245,69 @@ export const TagGrid: React.FC<T & { tags: { text: string; t: number; full?: boo
 };
 
 // ------------------------------------------------------------------------------------------
-// Panel de clientes (inspirado en el panel calendario, con checks amarillos en vez de rojos)
+// Logos de clientes flotando alrededor de la persona (corrección del usuario)
 // ------------------------------------------------------------------------------------------
-export const ClientPanel: React.FC<T & { rows: { name: string; t: number }[]; t0: number; t1: number; y: number }> = ({ t, rows, t0, t1, y }) => {
-  if (t < t0 || t > t1) return null;
-  const v = inOut(t, t0, t1, 0.2, 0.12);
-  const enter = prog(t, t0, 0.3);
+type ClientLogo = { src: string; t: number; x: number; y: number; h: number; label?: string; phase: number };
+export const FloatingLogos: React.FC<T & { logos: ClientLogo[]; t1: number }> = ({ t, logos, t1 }) => {
+  if (t < logos[0].t - 0.15 || t > t1) return null;
+  const out = 1 - prog(t, t1 - 0.15, 0.15);
+  const head = prog(t, logos[0].t - 0.12, 0.25);
   return (
-    <div style={{ position: "absolute", left: W / 2, top: y * H, translate: `-50% calc(-50% + ${60 * (1 - enter)}px)`, opacity: v, filter: enter < 1 ? `blur(${8 * (1 - enter)}px)` : undefined }}>
-      <div style={{ ...glass, width: 900, padding: "34px 44px 26px" }}>
-        <div style={{ fontFamily: OUTFIT, fontWeight: 600, fontSize: 26, letterSpacing: "0.18em", color: "rgba(255,255,255,0.55)", marginBottom: 14 }}>
-          NUESTROS CLIENTES
-        </div>
-        {rows.map((r, i) => {
-          const pr = prog(t, r.t, 0.18);
-          const nameDur = Math.min(0.55, Math.max(0.22, r.name.length * 0.03));
-          const check = popScale(t, r.t + nameDur);
-          return (
+    <>
+      {logos.map((l) => {
+        if (t < l.t) return null;
+        const pin = clamp01((t - l.t) / (9 / 30));
+        const sc = interpolate(pin, [0, 0.65, 1], [0.4, 1.08, 1], { easing: easeOut });
+        const fly = 1 - easeOut(pin);
+        const k = t - l.t;
+        const bob = Math.sin(k * 2.6 + l.phase) * 14;
+        const sway = Math.cos(k * 1.9 + l.phase) * 9;
+        const rot = Math.sin(k * 2.1 + l.phase) * 2.6;
+        // sale desde detrás de él (centro) hacia su posición
+        const dx = (0.5 - l.x) * W * 0.4 * fly;
+        const dy = (0.38 - l.y) * H * 0.2 * fly;
+        return (
+          <div
+            key={l.src}
+            style={{
+              position: "absolute",
+              left: l.x * W,
+              top: l.y * H,
+              translate: `calc(-50% + ${dx + sway}px) calc(-50% + ${dy + bob}px)`,
+              rotate: `${rot}deg`,
+              scale: String(sc * (0.9 + 0.1 * out)),
+              opacity: Math.min(1, pin * 1.6) * out,
+              filter: fly > 0.04 ? `blur(${10 * fly}px)` : undefined,
+            }}
+          >
             <div
-              key={r.name}
               style={{
+                background: "rgba(255,255,255,0.97)",
+                borderRadius: 30,
+                padding: "24px 34px",
+                boxShadow: "0 24px 60px rgba(0,0,0,0.45), 0 0 34px rgba(252,229,0,0.18)",
                 display: "flex",
+                flexDirection: "column",
                 alignItems: "center",
-                gap: 24,
-                padding: "16px 0",
-                borderTop: i ? "1px solid rgba(255,255,255,0.08)" : undefined,
-                opacity: 0.25 + 0.75 * pr,
+                gap: 10,
               }}
             >
-              <div
-                style={{
-                  width: 58,
-                  height: 58,
-                  borderRadius: 99,
-                  background: check > 0 ? GRADIENT.yellow : "rgba(255,255,255,0.1)",
-                  boxShadow: check > 0 ? "0 0 24px rgba(252,229,0,0.65)" : undefined,
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  scale: String(check > 0 ? check : 1),
-                }}
-              >
-                {check > 0 && (
-                  <svg width="30" height="30" viewBox="0 0 24 24">
-                    <path d="M4 12.5l5 5L20 6.5" stroke="#1A1600" strokeWidth="3.4" fill="none" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                )}
-              </div>
-              <div style={{ fontFamily: OUTFIT, fontWeight: 600, fontSize: 48, color: "#fff", letterSpacing: "-0.01em" }}>
-                <Typed text={r.name} t={t} t0={r.t} dur={nameDur} />
-              </div>
+              <Img src={staticFile(l.src)} style={{ height: l.h, width: "auto", display: "block" }} />
+              {l.label && (
+                <div style={{ fontFamily: OUTFIT, fontWeight: 600, fontSize: 25, color: "#0B2A66", textAlign: "center", lineHeight: 1.1, whiteSpace: "pre" }}>
+                  {l.label}
+                </div>
+              )}
             </div>
-          );
-        })}
+          </div>
+        );
+      })}
+      <div style={{ position: "absolute", left: W / 2, top: 0.8 * H, translate: "-50% -50%", opacity: head * out }}>
+        <div style={{ ...glass, borderRadius: 999, padding: "16px 40px", fontFamily: OUTFIT, fontWeight: 600, fontSize: 32, letterSpacing: "0.16em", color: "rgba(255,255,255,0.9)", whiteSpace: "nowrap" }}>
+          <Typed text="NUESTROS CLIENTES" t={t} t0={logos[0].t - 0.1} dur={0.45} />
+        </div>
       </div>
-      <GlowLine t={t} t0={t0 + 0.15} width={860} />
-    </div>
+    </>
   );
 };
 
@@ -485,9 +453,9 @@ export const BarScene: React.FC<T & { t0: number; t1: number }> = ({ t, t0, t1 }
         <div style={{ position: "absolute", left: 540 - 160, top: barTop, width: 320, height: barH, background: "#F2EEE6", borderRadius: 6, overflow: "hidden", boxShadow: "0 0 90px rgba(252,229,0,0.45)" }}>
           <div style={{ position: "absolute", left: 0, bottom: 0, width: "100%", height: fillH, background: `linear-gradient(180deg, ${C.yellow} 0%, #F6D000 100%)`, boxShadow: "0 -6px 40px rgba(252,229,0,0.9)" }} />
         </div>
-        {/* Avatar (cara del presentador) que sube con la barra */}
-        <div style={{ position: "absolute", left: 540 - 160 - 120, top: avatarY, width: 92, height: 92, borderRadius: 99, overflow: "hidden", border: "4px solid #fff", boxShadow: "0 0 30px rgba(252,229,0,0.6)" }}>
-          <Img src={staticFile("media/avatar.jpg")} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+              {/* Isotipo de Macizo (extraído del sello del B ROL 2) dentro del círculo, subiendo con la barra */}
+        <div style={{ position: "absolute", left: 540 - 160 - 136, top: avatarY - 12, width: 118, height: 118, filter: "drop-shadow(0 0 24px rgba(252,229,0,0.7))" }}>
+          <Img src={staticFile("logos/macizo_isotipo.svg")} style={{ width: "100%", height: "100%" }} />
         </div>
         {/* Título */}
         <div style={{ position: "absolute", left: 540, top: 330, translate: "-50% -50%", display: "flex", flexDirection: "column", alignItems: "center", opacity: titleIn }}>
@@ -540,12 +508,22 @@ export const EndCard: React.FC<T> = ({ t }) => {
   return (
     <AbsoluteFill style={{ background: `radial-gradient(ellipse 80% 60% at 50% 45%, #2A2312 0%, ${C.graphBg} 70%)`, opacity: p }}>
       <Orb t={t} t0={t0} t1={t0 + 30} x={0.5 + 0.06 * Math.sin((t - t0) * 1.6)} y={0.42} size={620} />
-      <div style={{ position: "absolute", left: W / 2, top: H * 0.43, translate: "-50% -50%", display: "flex", flexDirection: "column", alignItems: "center", scale: String(1 + 0.025 * (t - t0)) }}>
-        <div style={{ fontFamily: OUTFIT, fontWeight: 500, fontSize: 48, color: "rgba(255,255,255,0.85)" }}>Remodela con</div>
-        <div style={{ fontFamily: BEBAS, fontSize: 250, color: "#F5F5F5", lineHeight: 0.95, letterSpacing: "0.02em", textShadow: "0 0 40px rgba(252,229,0,0.35)" }}>
-          <Typed text="MACIZO" t={t} t0={t0 + 0.25} dur={0.45} />
+      <div style={{ position: "absolute", left: W / 2, top: H * 0.42, translate: "-50% -50%", display: "flex", flexDirection: "column", alignItems: "center", scale: String(1 + 0.025 * (t - t0)) }}>
+        <div style={{ fontFamily: OUTFIT, fontWeight: 500, fontSize: 46, color: "rgba(255,255,255,0.85)", marginBottom: 26 }}>Remodela con</div>
+        {/* Logotipo de Macizo vectorizado a partir del camión (foto 5); se revela de izquierda a derecha */}
+        <div
+          style={{
+            width: 780,
+            clipPath: `inset(0 ${100 * (1 - prog(t, t0 + 0.22, 0.45, easeInOut))}% 0 0)`,
+            filter: "drop-shadow(0 0 30px rgba(252,229,0,0.25))",
+          }}
+        >
+          <Img src={staticFile("logos/macizo_logotipo_blanco.svg")} style={{ width: 780, display: "block" }} />
+          <div style={{ textAlign: "right", fontFamily: BARLOW, fontWeight: 400, fontSize: 58, color: "#EDEDED", marginTop: 8, paddingRight: 4 }}>
+            <Typed text="Madera en el Diseño" t={t} t0={t0 + 0.7} dur={0.45} />
+          </div>
         </div>
-        <div style={{ display: "flex", gap: 16, marginTop: 24, opacity: prog(t, t0 + 0.5, 0.25) }}>
+        <div style={{ display: "flex", gap: 16, marginTop: 40, opacity: prog(t, t0 + 0.8, 0.25) }}>
           {["Diseño gratuito", "Visitamos tu hogar"].map((x) => (
             <div key={x} style={{ background: "rgba(255,255,255,0.95)", color: C.ink, fontFamily: OUTFIT, fontWeight: 600, fontSize: 36, padding: "14px 30px", borderRadius: 16, whiteSpace: "nowrap" }}>
               {x}
@@ -553,7 +531,7 @@ export const EndCard: React.FC<T> = ({ t }) => {
           ))}
         </div>
       </div>
-      <CtaButton t={t} t0={t0 + 0.75} t1={t0 + 10} clickAt={t0 + 0.95 + 0.1} y={0.66} />
+      <CtaButton t={t} t0={t0 + 0.9} t1={t0 + 10} clickAt={t0 + 1.25} y={0.7} />
     </AbsoluteFill>
   );
 };
@@ -565,24 +543,23 @@ export const Graphics: React.FC = () => {
   const t = frame / fps;
   return (
     <>
-      <Orb t={t} t0={4.53} t1={5.73} x={0.5} y={0.26} size={520} />
-      <Orb t={t} t0={7.3} t1={8.3} x={0.5} y={0.29} />
-      <Orb t={t} t0={16.95} t1={17.85} x={0.5} y={0.29} />
-      <Orb t={t} t0={23.55} t1={25.95} x={0.5} y={0.31} />
+      <Orb t={t} t0={0} t1={SEATED_AT} x={0.5} y={0.26} size={520} />
+      <Orb t={t} t0={at(11.47)} t1={at(12.53)} x={0.5} y={0.29} />
+      <Orb t={t} t0={at(22.85)} t1={at(23.88)} x={0.5} y={0.29} />
+      <Orb t={t} t0={at(30.52)} t1={at(33.25)} x={0.5} y={0.31} />
       <LightStreaks t={t} />
-      <StarsBadge t={t} t0={W0(8) + 0.04} t1={2.95} />
       <PhotoCards
         t={t}
         cards={[
-          { src: "media/silla_completa.jpg", t: 10.12 },
-          { src: "media/silla_cuero.jpg", t: 10.34 },
-          { src: "media/silla_madera.jpg", t: 10.56 },
+          { src: "media/silla_completa.jpg", t: at(14.72) },
+          { src: "media/silla_cuero.jpg", t: at(14.94) },
+          { src: "media/silla_madera.jpg", t: at(15.16) },
         ]}
-        t1={11.15}
+        t1={at(15.75)}
         dimAt={W0(42)}
         y={0.6}
       />
-      <IconCard t={t} t0={12.93} t1={15.25} a={W0(50) - 0.05} b={W0(53) - 0.1} y={0.62} />
+      <IconCard t={t} t0={at(18.00)} t1={at(20.82)} a={W0(50) - 0.05} b={W0(53) - 0.1} y={0.62} />
       <TagGrid
         t={t}
         header={{ text: "Tenemos", t: W0(72) }}
@@ -591,21 +568,19 @@ export const Graphics: React.FC = () => {
           { text: "Ebanistería", t: W0(74) },
           { text: "Metalmecánica", t: W0(75), full: true },
         ]}
-        t1={23.55}
+        t1={at(30.52)}
         y={0.62}
       />
-      <PillCallout t={t} text="Sin costo" t0={W0(130) + 0.12} t1={36.27} y={0.64} />
-      <LocationPill t={t} text="Visita a tu hogar" t0={W0(133)} t1={38.0} y={0.6} />
-      <ClientPanel
+      <PillCallout t={t} text="Sin costo" t0={W0(130) + 0.12} t1={at(51.10)} y={0.64} />
+      <LocationPill t={t} text="Visita a tu hogar" t0={W0(133)} t1={at(52.83)} y={0.6} />
+      <FloatingLogos
         t={t}
-        t0={43.07}
-        t1={47.4}
-        y={0.62}
-        rows={[
-          { name: "Ford Motors", t: W0(155) },
-          { name: "Calvin Klein", t: W0(157) },
-          { name: "Universidad de La Sabana", t: W0(160) },
-          { name: "Crepes & Waffles", t: W0(164) },
+        t1={at(66.63)}
+        logos={[
+          { src: "logos/clientes/ford.svg", t: W0(155), x: 0.2, y: 0.19, h: 96, phase: 0 },
+          { src: "logos/clientes/calvin_klein.svg", t: W0(157), x: 0.8, y: 0.3, h: 50, phase: 1.7 },
+          { src: "logos/clientes/unisabana_escudo.png", t: W0(160), x: 0.2, y: 0.47, h: 120, label: "Universidad\nde La Sabana", phase: 3.1 },
+          { src: "logos/clientes/crepes_waffles.svg", t: W0(164), x: 0.78, y: 0.57, h: 30, phase: 4.4 },
         ]}
       />
       <TagGrid
@@ -614,10 +589,10 @@ export const Graphics: React.FC = () => {
           { text: "Diseñadores", t: W0(171) },
           { text: "Arquitectos", t: W0(173) },
         ]}
-        t1={49.75}
+        t1={at(69.45)}
         y={0.6}
       />
-      <CtaButton t={t} t0={59.35} t1={60.2} clickAt={59.78} y={0.6} small="Solo" />
+      <CtaButton t={t} t0={at(80.15)} t1={at(81.37)} clickAt={at(80.95)} y={0.6} small="Solo" />
     </>
   );
 };
@@ -629,8 +604,8 @@ export const FullScreenScenes: React.FC = () => {
   const t = frame / fps;
   return (
     <>
-      <BarScene t={t} t0={27.0} t1={30.9} />
-      <RemodelaScene t={t} t0={55.8} t1={56.4} />
+      <BarScene t={t} t0={at(39.50)} t1={at(43.93)} />
+      <RemodelaScene t={t} t0={at(76.37)} t1={at(77.07)} />
     </>
   );
 };
