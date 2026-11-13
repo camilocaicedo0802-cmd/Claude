@@ -37,7 +37,7 @@ export const BLOCKS: Block[] = [
   { id: "eames", w: [39, 42], hl: [42], y: 0.64, end: 11.15 },
   { id: "construida", w: [43, 48], hl: [46], y: 0.6, end: 12.9 },
   { id: "piezas", w: [55, 59], hl: [59], y: 0.62, end: 16.95 },
-  { id: "construimos", w: [60, 64], hl: [63], style: "title", y: 0.3, end: 17.9 },
+  { id: "construimos", w: [60, 64], hl: [63], style: "title", y: 0.3, end: 17.85 },
   { id: "macizo", w: [65, 66], hl: [66], y: 0.3, end: 18.6 },
   { id: "muchas-cosas", w: [67, 71], hl: [69, 70, 71], y: 0.62, end: 19.93 },
   { id: "poliuretanos", w: [76, 81], hl: [78], style: "title", y: 0.32, end: 25.95 },
@@ -76,10 +76,11 @@ export type BRoll = {
 
 export const BROLL: BRoll[] = [
   { t0: 7.3, t1: 8.3, src: "media/broll1.mp4", kind: "video", trim: 0.2, zoom: [1.06, 1.14] },
-  { t0: 16.95, t1: 17.9, src: "media/broll2.mp4", kind: "video", trim: 2.05, zoom: [1.0, 1.08] },
-  { t0: 17.9, t1: 18.6, src: "media/broll2.mp4", kind: "video", trim: 3.75, zoom: [1.02, 1.1] },
-  { t0: 23.55, t1: 24.75, src: "media/broll2.mp4", kind: "video", trim: 4.95, zoom: [1.0, 1.08] },
-  { t0: 24.75, t1: 25.95, src: "media/foto7.jpg", kind: "image", zoom: [1.35, 1.5], origin: "30% 25%", pos: "50% 50%" },
+  { t0: 16.95, t1: 17.85, src: "media/broll2.mp4", kind: "video", trim: 2.2, zoom: [1.0, 1.08] },
+  { t0: 17.85, t1: 18.6, src: "media/broll2.mp4", kind: "video", trim: 3.75, zoom: [1.02, 1.1] },
+  { t0: 23.55, t1: 24.25, src: "media/broll2.mp4", kind: "video", trim: 5.33, zoom: [1.0, 1.06] },
+  { t0: 24.25, t1: 24.95, src: "media/broll2.mp4", kind: "video", trim: 7.6, zoom: [1.04, 1.1] },
+  { t0: 24.95, t1: 25.95, src: "media/foto7.jpg", kind: "image", zoom: [1.35, 1.5], origin: "30% 25%", pos: "50% 50%" },
   { t0: 25.95, t1: 27.0, src: "media/foto5.jpg", kind: "image", zoom: [1.12, 1.22], origin: "55% 40%", pos: "50% 30%" },
   { t0: 30.9, t1: 31.9, src: "media/broll2.mp4", kind: "video", trim: 8.65, zoom: [1.0, 1.06] },
   { t0: 31.9, t1: 33.2, src: "media/c301.mp4", kind: "video", trim: 1.0, zoom: [1.04, 1.12] },
@@ -116,7 +117,7 @@ export const BLUR_INS = [8.3, 18.6, 34.9, 40.5, 49.75, 53.95, 56.4, 59.35, 63.1]
 /** Flash de exposición de 3 fotogramas. */
 export const FLASHES = [5.73, 27.0, 55.8, VOICE_END];
 /** Parpadeo oscuro de 1 fotograma antes de cambiar de b-roll. */
-export const FLICKERS = [17.87, 24.72, 31.87, 39.02, 61.72];
+export const FLICKERS = [17.82, 24.92, 31.87, 39.02, 61.72];
 /** Estelas de luz amarilla. */
 export const STREAKS = [4.56, 7.33, 16.98, 52.25];
 
@@ -159,7 +160,7 @@ export const SFX: Sfx[] = [
   s(W0(59), "pop", 0.3),
   s(16.95, "whoosh1", 0.42),
   typing(W0(63), 0.45),
-  s(17.9, "swoosh1", 0.35),
+  s(17.85, "swoosh1", 0.35),
   s(W0(66), "subhit", 0.5),
   s(18.6, "whoosh2", 0.38),
   s(18.62, "riser", 0.32),
@@ -174,7 +175,8 @@ export const SFX: Sfx[] = [
   typing(W0(75) + 0.03, 0.45),
   s(23.55, "whoosh3", 0.42),
   typing(W0(78), 0.5),
-  s(24.75, "swoosh1", 0.35),
+  s(24.25, "swoosh2", 0.28),
+  s(24.95, "swoosh1", 0.35),
   typing(W0(80), 0.45, 0.26),
   // Empresa / gráfico
   s(25.95, "whoosh1", 0.4),
