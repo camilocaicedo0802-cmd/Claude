@@ -255,3 +255,27 @@ Estudiado a 24 fps en la referencia (`scratchpad/ref24/`):
 ### 10.4 Sin ajuste de color (13/11/2026)
 - **No se etaloniza** ni el material hablado ni el B-roll: se usa el color original de cámara (incluida la luz violeta del set, que además combina con el morado del logo).
 - Se mantienen los efectos de estilo de la referencia que no son corrección de color: blanco y negro en ventanas/collage y fondos de cuadrícula.
+
+### 10.5 Cada ganador es una propuesta de edición distinta · B-roll sin repetir (13/11/2026)
+- Los 4 ganadores se presentan como **propuestas de estilo diferentes**: no se reutiliza la misma fórmula (títulos sobre la cabeza + subtítulo pequeño + B-roll a pantalla completa) en dos videos.
+- **Ningún B-roll se repite entre videos.** Antes de usar un clip se comprueba con `grep -r "broll/" src/` que no aparezca en otro video. Los clips nuevos se nombran con el prefijo del video (`b9_*`).
+- Más dinamismo que la v1: un cambio de modo de pantalla o recurso cada 1,5–3 s.
+- Se mantienen siempre: colores del logo, sin ajuste de color, nada sobre la cara, labios sincronizados, efectos de sonido del banco de la referencia.
+
+## 11. Propuestas de estilo
+
+| Propuesta | Video | Idea |
+|---|---|---|
+| A · Referencia | Video 1 (Grow) | Títulos grandes con brillo detrás/encima de la cabeza, subtítulo pequeño abajo, B-roll a pantalla completa y tarjetas |
+| B · Pop cinético | Ganador 1 (2 tipos de redes) | Subtítulos grandes palabra a palabra, fondo sustituido, pantalla dividida, burbuja con la cara y gráficos a pantalla completa |
+
+### 11.B Pop cinético (valores)
+- **Subtítulo cinético** (sustituye a títulos y subtítulo pequeño): Outfit 900 en mayúsculas, 84 px (clave 96 px), 1–3 palabras por bloque (máx. ~17 letras), corte en puntuación, pausa > 0,3 s o cambio de toma. Cada palabra entra al pronunciarla: escala 0,5→1,14→1 en 6 fotogramas y sube 26 px. La palabra clave lleva un **recuadro morado** (degradado del logo, sombra #3D0080, inclinación −2°) que se despliega de izquierda a derecha en 4 fotogramas. Bloques alternan inclinación ±1,5°. Posición: y = 1450 (plano normal), 960 (en la unión de la pantalla dividida), 1290 (con burbuja).
+- **Fondo sustituido**: persona recortada (u2net ∩ MediaPipe multiclase: sin TV ni silla) con **contorno blanco de 5 px tipo pegatina** y halo morado. Fondos: degradado morado con filas de texto gigante en movimiento (250 px, contorno/relleno alternos, 7 px/fotograma), calendario con días tachados + contador, foco morado con «?» flotando.
+- **Número gigante** detrás de la persona (1150 px, extrusión de 12 px #3D0080) con golpe de entrada 2,4→1 en 5 fotogramas + sacudida.
+- **Pantalla dividida**: B-roll arriba (0–960) con etiqueta-pegatina blanca (texto morado 60 px, −3°), la persona abajo encuadrada de la frente al pecho; unión con línea morada brillante.
+- **Burbuja con la cara**: círculo de 340–380 px, aro blanco de 8 px y halo morado, sobre gráficos a pantalla completa (versus, chat, embudo, anuncio). Al salir **se expande** hasta convertirse en el plano completo.
+- **Zoom de golpe** en palabras clave (×1,07–1,14 en 2 fotogramas, se mantiene hasta el corte). **Sacudida** de 18 px que se apaga en 9 fotogramas en los golpes.
+- **Transiciones**: barrido de 3 barras diagonales (blanco, morado, degradado), glitch de 5 fotogramas (copias morado/blanco desplazadas 14 px + franjas), empuje lateral con desenfoque, zoom a través (×1,35 + desenfoque), flash de obturador.
+- **Barra de progreso** morada de 12 px arriba.
+- **Cierre**: fondo morado oscuro con «COMENTA · VENDE» en movimiento, logo arriba, caja de comentario que escribe «VENDE 🔥» y se envía; persona recortada congelada abajo.
