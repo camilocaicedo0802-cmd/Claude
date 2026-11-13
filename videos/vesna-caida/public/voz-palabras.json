@@ -1,0 +1,1610 @@
+{
+ "voz": "es-US-AlonsoNeural",
+ "duracion": 69.41,
+ "frases": [
+  {
+   "i": 0,
+   "texto": "Esta mujer cayó desde más de diez mil metros de altura…",
+   "seccion": "gancho",
+   "inicio": 0.0,
+   "fin": 2.93
+  },
+  {
+   "i": 1,
+   "texto": "¡sin paracaídas!",
+   "seccion": "gancho",
+   "inicio": 3.15,
+   "fin": 4.44
+  },
+  {
+   "i": 2,
+   "texto": "Y sobrevivió.",
+   "seccion": "gancho",
+   "inicio": 4.96,
+   "fin": 6.01
+  },
+  {
+   "i": 3,
+   "texto": "Básicamente, tuvo el peor vuelo de su vida,",
+   "seccion": "gancho",
+   "inicio": 6.63,
+   "fin": 9.19
+  },
+  {
+   "i": 4,
+   "texto": "pero también el mejor aterrizaje de la historia.",
+   "seccion": "gancho",
+   "inicio": 9.31,
+   "fin": 11.79
+  },
+  {
+   "i": 5,
+   "texto": "Se llamaba Vesna.",
+   "seccion": "contexto",
+   "inicio": 12.31,
+   "fin": 13.48
+  },
+  {
+   "i": 6,
+   "texto": "Tenía 23 años, y era azafata.",
+   "seccion": "contexto",
+   "inicio": 13.68,
+   "fin": 16.21
+  },
+  {
+   "i": 7,
+   "texto": "Terminó en ese avión por una confusión con otra compañera.",
+   "seccion": "contexto",
+   "inicio": 16.63,
+   "fin": 19.71
+  },
+  {
+   "i": 8,
+   "texto": "Sí, un error de oficina.",
+   "seccion": "contexto",
+   "inicio": 19.97,
+   "fin": 21.9
+  },
+  {
+   "i": 9,
+   "texto": "Pero 46 minutos después…",
+   "seccion": "giro",
+   "inicio": 22.42,
+   "fin": 24.9
+  },
+  {
+   "i": 10,
+   "texto": "¡Bum!",
+   "seccion": "giro",
+   "inicio": 25.32,
+   "fin": 25.81
+  },
+  {
+   "i": 11,
+   "texto": "Una explosión destrozó el avión en pleno cielo.",
+   "seccion": "giro",
+   "inicio": 26.23,
+   "fin": 28.64
+  },
+  {
+   "i": 12,
+   "texto": "La aeronave se partió en tres.",
+   "seccion": "giro",
+   "inicio": 28.92,
+   "fin": 30.79
+  },
+  {
+   "i": 13,
+   "texto": "Y Vesna cayó junto a los restos.",
+   "seccion": "giro",
+   "inicio": 30.97,
+   "fin": 33.16
+  },
+  {
+   "i": 14,
+   "texto": "¿Su secreto para sobrevivir?",
+   "seccion": "secreto",
+   "inicio": 33.68,
+   "fin": 35.47
+  },
+  {
+   "i": 15,
+   "texto": "Quedó atrapada en la parte trasera del fuselaje,",
+   "seccion": "secreto",
+   "inicio": 35.97,
+   "fin": 38.39
+  },
+  {
+   "i": 16,
+   "texto": "junto a un carrito de comida.",
+   "seccion": "secreto",
+   "inicio": 38.51,
+   "fin": 40.22
+  },
+  {
+   "i": 17,
+   "texto": "Sí, el carrito de los refrigerios terminó siendo parte de su equipo de supervivencia.",
+   "seccion": "secreto",
+   "inicio": 40.64,
+   "fin": 45.24
+  },
+  {
+   "i": 18,
+   "texto": "¡Empleado del mes!",
+   "seccion": "secreto",
+   "inicio": 45.48,
+   "fin": 46.71
+  },
+  {
+   "i": 19,
+   "texto": "Los restos cayeron sobre un bosque nevado.",
+   "seccion": "rescate",
+   "inicio": 47.27,
+   "fin": 49.65
+  },
+  {
+   "i": 20,
+   "texto": "Un médico la encontró, y consiguió auxiliarla.",
+   "seccion": "rescate",
+   "inicio": 49.87,
+   "fin": 52.73
+  },
+  {
+   "i": 21,
+   "texto": "Vesna estuvo 27 días en coma.",
+   "seccion": "recuperacion",
+   "inicio": 53.19,
+   "fin": 55.83
+  },
+  {
+   "i": 22,
+   "texto": "Sufrió heridas gravísimas…",
+   "seccion": "recuperacion",
+   "inicio": 56.09,
+   "fin": 57.95
+  },
+  {
+   "i": 23,
+   "texto": "¡pero volvió a caminar!",
+   "seccion": "recuperacion",
+   "inicio": 58.27,
+   "fin": 59.46
+  },
+  {
+   "i": 24,
+   "texto": "Y hasta consiguió un récord Guinness.",
+   "seccion": "recuperacion",
+   "inicio": 59.9,
+   "fin": 61.91
+  },
+  {
+   "i": 25,
+   "texto": "Veredicto: ¡verdad!",
+   "seccion": "veredicto",
+   "inicio": 62.43,
+   "fin": 64.19
+  },
+  {
+   "i": 26,
+   "texto": "Después de eso, hasta las turbulencias debían parecerle un masaje.",
+   "seccion": "cierre",
+   "inicio": 64.67,
+   "fin": 68.71
+  }
+ ],
+ "palabras": [
+  {
+   "texto": "Esta",
+   "inicio": 0.0,
+   "duracion": 0.285,
+   "visible": "Esta",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "mujer",
+   "inicio": 0.238,
+   "duracion": 0.348,
+   "visible": "mujer",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "cayó",
+   "inicio": 0.598,
+   "duracion": 0.298,
+   "visible": "cayó",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "desde",
+   "inicio": 0.908,
+   "duracion": 0.261,
+   "visible": "desde",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "más",
+   "inicio": 1.181,
+   "duracion": 0.236,
+   "visible": "más",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "de",
+   "inicio": 1.429,
+   "duracion": 0.062,
+   "visible": "de",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "diez",
+   "inicio": 1.504,
+   "duracion": 0.447,
+   "visible": "10.000",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "metros",
+   "inicio": 1.963,
+   "duracion": 0.372,
+   "visible": "metros",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "de",
+   "inicio": 2.348,
+   "duracion": 0.062,
+   "visible": "de",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "altura",
+   "inicio": 2.422,
+   "duracion": 0.447,
+   "visible": "altura…",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "sin",
+   "inicio": 3.15,
+   "duracion": 0.343,
+   "visible": "¡SIN",
+   "enfasis": true,
+   "frase": 1,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "paracaídas",
+   "inicio": 3.415,
+   "duracion": 0.987,
+   "visible": "PARACAÍDAS!",
+   "enfasis": true,
+   "frase": 1,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "Y",
+   "inicio": 4.96,
+   "duracion": 0.128,
+   "visible": "Y",
+   "enfasis": true,
+   "frase": 2,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "sobrevivió",
+   "inicio": 5.029,
+   "duracion": 0.963,
+   "visible": "SOBREVIVIÓ.",
+   "enfasis": true,
+   "frase": 2,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "Básicamente",
+   "inicio": 6.63,
+   "duracion": 0.837,
+   "visible": "Básicamente,",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "tuvo",
+   "inicio": 7.676,
+   "duracion": 0.215,
+   "visible": "tuvo",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "el",
+   "inicio": 7.904,
+   "duracion": 0.084,
+   "visible": "el",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "peor",
+   "inicio": 7.999,
+   "duracion": 0.251,
+   "visible": "peor",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "vuelo",
+   "inicio": 8.262,
+   "duracion": 0.263,
+   "visible": "vuelo",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "de",
+   "inicio": 8.538,
+   "duracion": 0.096,
+   "visible": "de",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "su",
+   "inicio": 8.645,
+   "duracion": 0.132,
+   "visible": "su",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "vida",
+   "inicio": 8.789,
+   "duracion": 0.347,
+   "visible": "vida,",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "pero",
+   "inicio": 9.31,
+   "duracion": 0.215,
+   "visible": "pero",
+   "enfasis": false,
+   "frase": 4,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "también",
+   "inicio": 9.468,
+   "duracion": 0.38,
+   "visible": "también",
+   "enfasis": false,
+   "frase": 4,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "el",
+   "inicio": 9.861,
+   "duracion": 0.101,
+   "visible": "el",
+   "enfasis": false,
+   "frase": 4,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "mejor",
+   "inicio": 9.974,
+   "duracion": 0.304,
+   "visible": "mejor",
+   "enfasis": false,
+   "frase": 4,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "aterrizaje",
+   "inicio": 10.291,
+   "duracion": 0.645,
+   "visible": "aterrizaje",
+   "enfasis": false,
+   "frase": 4,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "de",
+   "inicio": 10.949,
+   "duracion": 0.114,
+   "visible": "de",
+   "enfasis": false,
+   "frase": 4,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "la",
+   "inicio": 11.075,
+   "duracion": 0.089,
+   "visible": "la",
+   "enfasis": false,
+   "frase": 4,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "historia",
+   "inicio": 11.176,
+   "duracion": 0.544,
+   "visible": "historia.",
+   "enfasis": false,
+   "frase": 4,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "Se",
+   "inicio": 12.31,
+   "duracion": 0.252,
+   "visible": "Se",
+   "enfasis": false,
+   "frase": 5,
+   "seccion": "contexto"
+  },
+  {
+   "texto": "llamaba",
+   "inicio": 12.492,
+   "duracion": 0.434,
+   "visible": "llamaba",
+   "enfasis": false,
+   "frase": 5,
+   "seccion": "contexto"
+  },
+  {
+   "texto": "Vesna",
+   "inicio": 12.94,
+   "duracion": 0.476,
+   "visible": "Vesna.",
+   "enfasis": false,
+   "frase": 5,
+   "seccion": "contexto"
+  },
+  {
+   "texto": "Tenía",
+   "inicio": 13.68,
+   "duracion": 0.329,
+   "visible": "Tenía",
+   "enfasis": false,
+   "frase": 6,
+   "seccion": "contexto"
+  },
+  {
+   "texto": "23 años",
+   "inicio": 13.96,
+   "duracion": 0.975,
+   "visible": "23 años",
+   "enfasis": false,
+   "frase": 6,
+   "seccion": "contexto"
+  },
+  {
+   "texto": "y",
+   "inicio": 15.178,
+   "duracion": 0.171,
+   "visible": "y",
+   "enfasis": false,
+   "frase": 6,
+   "seccion": "contexto"
+  },
+  {
+   "texto": "era",
+   "inicio": 15.361,
+   "duracion": 0.195,
+   "visible": "era",
+   "enfasis": false,
+   "frase": 6,
+   "seccion": "contexto"
+  },
+  {
+   "texto": "azafata",
+   "inicio": 15.568,
+   "duracion": 0.585,
+   "visible": "azafata.",
+   "enfasis": false,
+   "frase": 6,
+   "seccion": "contexto"
+  },
+  {
+   "texto": "Terminó",
+   "inicio": 16.63,
+   "duracion": 0.455,
+   "visible": "Terminó",
+   "enfasis": false,
+   "frase": 7,
+   "seccion": "contexto"
+  },
+  {
+   "texto": "en",
+   "inicio": 17.034,
+   "duracion": 0.108,
+   "visible": "en",
+   "enfasis": false,
+   "frase": 7,
+   "seccion": "contexto"
+  },
+  {
+   "texto": "ese",
+   "inicio": 17.154,
+   "duracion": 0.179,
+   "visible": "ese",
+   "enfasis": false,
+   "frase": 7,
+   "seccion": "contexto"
+  },
+  {
+   "texto": "avión",
+   "inicio": 17.345,
+   "duracion": 0.311,
+   "visible": "avión",
+   "enfasis": false,
+   "frase": 7,
+   "seccion": "contexto"
+  },
+  {
+   "texto": "por",
+   "inicio": 17.668,
+   "duracion": 0.167,
+   "visible": "por",
+   "enfasis": false,
+   "frase": 7,
+   "seccion": "contexto"
+  },
+  {
+   "texto": "una",
+   "inicio": 17.848,
+   "duracion": 0.167,
+   "visible": "una",
+   "enfasis": false,
+   "frase": 7,
+   "seccion": "contexto"
+  },
+  {
+   "texto": "confusión",
+   "inicio": 18.027,
+   "duracion": 0.562,
+   "visible": "confusión",
+   "enfasis": false,
+   "frase": 7,
+   "seccion": "contexto"
+  },
+  {
+   "texto": "con",
+   "inicio": 18.601,
+   "duracion": 0.203,
+   "visible": "con",
+   "enfasis": false,
+   "frase": 7,
+   "seccion": "contexto"
+  },
+  {
+   "texto": "otra",
+   "inicio": 18.817,
+   "duracion": 0.215,
+   "visible": "otra",
+   "enfasis": false,
+   "frase": 7,
+   "seccion": "contexto"
+  },
+  {
+   "texto": "compañera",
+   "inicio": 19.044,
+   "duracion": 0.634,
+   "visible": "compañera.",
+   "enfasis": false,
+   "frase": 7,
+   "seccion": "contexto"
+  },
+  {
+   "texto": "Sí",
+   "inicio": 19.97,
+   "duracion": 0.415,
+   "visible": "Sí,",
+   "enfasis": false,
+   "frase": 8,
+   "seccion": "contexto"
+  },
+  {
+   "texto": "un",
+   "inicio": 20.611,
+   "duracion": 0.114,
+   "visible": "un",
+   "enfasis": false,
+   "frase": 8,
+   "seccion": "contexto"
+  },
+  {
+   "texto": "error",
+   "inicio": 20.74,
+   "duracion": 0.329,
+   "visible": "error",
+   "enfasis": false,
+   "frase": 8,
+   "seccion": "contexto"
+  },
+  {
+   "texto": "de",
+   "inicio": 21.083,
+   "duracion": 0.086,
+   "visible": "de",
+   "enfasis": false,
+   "frase": 8,
+   "seccion": "contexto"
+  },
+  {
+   "texto": "oficina",
+   "inicio": 21.183,
+   "duracion": 0.658,
+   "visible": "oficina.",
+   "enfasis": false,
+   "frase": 8,
+   "seccion": "contexto"
+  },
+  {
+   "texto": "Pero",
+   "inicio": 22.42,
+   "duracion": 0.266,
+   "visible": "Pero",
+   "enfasis": false,
+   "frase": 9,
+   "seccion": "giro"
+  },
+  {
+   "texto": "46 minutos",
+   "inicio": 22.605,
+   "duracion": 1.519,
+   "visible": "46 minutos",
+   "enfasis": false,
+   "frase": 9,
+   "seccion": "giro"
+  },
+  {
+   "texto": "después",
+   "inicio": 24.14,
+   "duracion": 0.721,
+   "visible": "después…",
+   "enfasis": false,
+   "frase": 9,
+   "seccion": "giro"
+  },
+  {
+   "texto": "Bum",
+   "inicio": 25.32,
+   "duracion": 0.429,
+   "visible": "¡BOOM!",
+   "enfasis": true,
+   "frase": 10,
+   "seccion": "giro"
+  },
+  {
+   "texto": "Una",
+   "inicio": 26.23,
+   "duracion": 0.153,
+   "visible": "Una",
+   "enfasis": false,
+   "frase": 11,
+   "seccion": "giro"
+  },
+  {
+   "texto": "explosión",
+   "inicio": 26.361,
+   "duracion": 0.493,
+   "visible": "explosión",
+   "enfasis": false,
+   "frase": 11,
+   "seccion": "giro"
+  },
+  {
+   "texto": "destrozó",
+   "inicio": 26.867,
+   "duracion": 0.47,
+   "visible": "destrozó",
+   "enfasis": false,
+   "frase": 11,
+   "seccion": "giro"
+  },
+  {
+   "texto": "el",
+   "inicio": 27.348,
+   "duracion": 0.106,
+   "visible": "el",
+   "enfasis": false,
+   "frase": 11,
+   "seccion": "giro"
+  },
+  {
+   "texto": "avión",
+   "inicio": 27.466,
+   "duracion": 0.258,
+   "visible": "avión",
+   "enfasis": false,
+   "frase": 11,
+   "seccion": "giro"
+  },
+  {
+   "texto": "en",
+   "inicio": 27.736,
+   "duracion": 0.129,
+   "visible": "en",
+   "enfasis": false,
+   "frase": 11,
+   "seccion": "giro"
+  },
+  {
+   "texto": "pleno",
+   "inicio": 27.877,
+   "duracion": 0.282,
+   "visible": "pleno",
+   "enfasis": false,
+   "frase": 11,
+   "seccion": "giro"
+  },
+  {
+   "texto": "cielo",
+   "inicio": 28.171,
+   "duracion": 0.411,
+   "visible": "cielo.",
+   "enfasis": false,
+   "frase": 11,
+   "seccion": "giro"
+  },
+  {
+   "texto": "La",
+   "inicio": 28.92,
+   "duracion": 0.19,
+   "visible": "La",
+   "enfasis": false,
+   "frase": 12,
+   "seccion": "giro"
+  },
+  {
+   "texto": "aeronave",
+   "inicio": 29.053,
+   "duracion": 0.557,
+   "visible": "aeronave",
+   "enfasis": false,
+   "frase": 12,
+   "seccion": "giro"
+  },
+  {
+   "texto": "se",
+   "inicio": 29.622,
+   "duracion": 0.139,
+   "visible": "se",
+   "enfasis": false,
+   "frase": 12,
+   "seccion": "giro"
+  },
+  {
+   "texto": "partió",
+   "inicio": 29.774,
+   "duracion": 0.367,
+   "visible": "partió",
+   "enfasis": false,
+   "frase": 12,
+   "seccion": "giro"
+  },
+  {
+   "texto": "en",
+   "inicio": 30.154,
+   "duracion": 0.114,
+   "visible": "en",
+   "enfasis": false,
+   "frase": 12,
+   "seccion": "giro"
+  },
+  {
+   "texto": "tres",
+   "inicio": 30.28,
+   "duracion": 0.455,
+   "visible": "tres.",
+   "enfasis": false,
+   "frase": 12,
+   "seccion": "giro"
+  },
+  {
+   "texto": "Y",
+   "inicio": 30.97,
+   "duracion": 0.161,
+   "visible": "Y",
+   "enfasis": false,
+   "frase": 13,
+   "seccion": "giro"
+  },
+  {
+   "texto": "Vesna",
+   "inicio": 31.064,
+   "duracion": 0.409,
+   "visible": "Vesna",
+   "enfasis": false,
+   "frase": 13,
+   "seccion": "giro"
+  },
+  {
+   "texto": "cayó",
+   "inicio": 31.488,
+   "duracion": 0.38,
+   "visible": "cayó",
+   "enfasis": false,
+   "frase": 13,
+   "seccion": "giro"
+  },
+  {
+   "texto": "junto",
+   "inicio": 31.883,
+   "duracion": 0.336,
+   "visible": "junto",
+   "enfasis": false,
+   "frase": 13,
+   "seccion": "giro"
+  },
+  {
+   "texto": "a",
+   "inicio": 32.234,
+   "duracion": 0.029,
+   "visible": "a",
+   "enfasis": false,
+   "frase": 13,
+   "seccion": "giro"
+  },
+  {
+   "texto": "los",
+   "inicio": 32.277,
+   "duracion": 0.205,
+   "visible": "los",
+   "enfasis": false,
+   "frase": 13,
+   "seccion": "giro"
+  },
+  {
+   "texto": "restos",
+   "inicio": 32.497,
+   "duracion": 0.629,
+   "visible": "restos.",
+   "enfasis": false,
+   "frase": 13,
+   "seccion": "giro"
+  },
+  {
+   "texto": "Su",
+   "inicio": 33.68,
+   "duracion": 0.243,
+   "visible": "¿Su",
+   "enfasis": false,
+   "frase": 14,
+   "seccion": "secreto"
+  },
+  {
+   "texto": "secreto",
+   "inicio": 33.855,
+   "duracion": 0.543,
+   "visible": "secreto",
+   "enfasis": false,
+   "frase": 14,
+   "seccion": "secreto"
+  },
+  {
+   "texto": "para",
+   "inicio": 34.412,
+   "duracion": 0.229,
+   "visible": "para",
+   "enfasis": false,
+   "frase": 14,
+   "seccion": "secreto"
+  },
+  {
+   "texto": "sobrevivir",
+   "inicio": 34.656,
+   "duracion": 0.83,
+   "visible": "sobrevivir?",
+   "enfasis": false,
+   "frase": 14,
+   "seccion": "secreto"
+  },
+  {
+   "texto": "Quedó",
+   "inicio": 35.97,
+   "duracion": 0.256,
+   "visible": "Quedó",
+   "enfasis": false,
+   "frase": 15,
+   "seccion": "secreto"
+  },
+  {
+   "texto": "atrapada",
+   "inicio": 36.177,
+   "duracion": 0.439,
+   "visible": "atrapada",
+   "enfasis": false,
+   "frase": 15,
+   "seccion": "secreto"
+  },
+  {
+   "texto": "en",
+   "inicio": 36.628,
+   "duracion": 0.061,
+   "visible": "en",
+   "enfasis": false,
+   "frase": 15,
+   "seccion": "secreto"
+  },
+  {
+   "texto": "la",
+   "inicio": 36.701,
+   "duracion": 0.085,
+   "visible": "la",
+   "enfasis": false,
+   "frase": 15,
+   "seccion": "secreto"
+  },
+  {
+   "texto": "parte",
+   "inicio": 36.798,
+   "duracion": 0.329,
+   "visible": "parte",
+   "enfasis": false,
+   "frase": 15,
+   "seccion": "secreto"
+  },
+  {
+   "texto": "trasera",
+   "inicio": 37.139,
+   "duracion": 0.402,
+   "visible": "trasera",
+   "enfasis": false,
+   "frase": 15,
+   "seccion": "secreto"
+  },
+  {
+   "texto": "del",
+   "inicio": 37.553,
+   "duracion": 0.158,
+   "visible": "del",
+   "enfasis": false,
+   "frase": 15,
+   "seccion": "secreto"
+  },
+  {
+   "texto": "fuselaje",
+   "inicio": 37.724,
+   "duracion": 0.609,
+   "visible": "fuselaje,",
+   "enfasis": false,
+   "frase": 15,
+   "seccion": "secreto"
+  },
+  {
+   "texto": "junto",
+   "inicio": 38.51,
+   "duracion": 0.35,
+   "visible": "junto",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": "secreto"
+  },
+  {
+   "texto": "a",
+   "inicio": 38.8,
+   "duracion": 0.028,
+   "visible": "a",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": "secreto"
+  },
+  {
+   "texto": "un",
+   "inicio": 38.842,
+   "duracion": 0.14,
+   "visible": "un",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": "secreto"
+  },
+  {
+   "texto": "carrito",
+   "inicio": 38.996,
+   "duracion": 0.49,
+   "visible": "carrito",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": "secreto"
+  },
+  {
+   "texto": "de",
+   "inicio": 39.5,
+   "duracion": 0.112,
+   "visible": "de",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": "secreto"
+  },
+  {
+   "texto": "comida",
+   "inicio": 39.626,
+   "duracion": 0.546,
+   "visible": "comida.",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": "secreto"
+  },
+  {
+   "texto": "Sí",
+   "inicio": 40.64,
+   "duracion": 0.341,
+   "visible": "Sí,",
+   "enfasis": false,
+   "frase": 17,
+   "seccion": "secreto"
+  },
+  {
+   "texto": "el",
+   "inicio": 41.211,
+   "duracion": 0.117,
+   "visible": "el",
+   "enfasis": false,
+   "frase": 17,
+   "seccion": "secreto"
+  },
+  {
+   "texto": "carrito",
+   "inicio": 41.341,
+   "duracion": 0.399,
+   "visible": "carrito",
+   "enfasis": false,
+   "frase": 17,
+   "seccion": "secreto"
+  },
+  {
+   "texto": "de",
+   "inicio": 41.752,
+   "duracion": 0.094,
+   "visible": "de",
+   "enfasis": false,
+   "frase": 17,
+   "seccion": "secreto"
+  },
+  {
+   "texto": "los",
+   "inicio": 41.858,
+   "duracion": 0.153,
+   "visible": "los",
+   "enfasis": false,
+   "frase": 17,
+   "seccion": "secreto"
+  },
+  {
+   "texto": "refrigerios",
+   "inicio": 42.022,
+   "duracion": 0.599,
+   "visible": "refrigerios",
+   "enfasis": false,
+   "frase": 17,
+   "seccion": "secreto"
+  },
+  {
+   "texto": "terminó",
+   "inicio": 42.633,
+   "duracion": 0.388,
+   "visible": "terminó",
+   "enfasis": false,
+   "frase": 17,
+   "seccion": "secreto"
+  },
+  {
+   "texto": "siendo",
+   "inicio": 43.032,
+   "duracion": 0.341,
+   "visible": "siendo",
+   "enfasis": false,
+   "frase": 17,
+   "seccion": "secreto"
+  },
+  {
+   "texto": "parte",
+   "inicio": 43.385,
+   "duracion": 0.317,
+   "visible": "parte",
+   "enfasis": false,
+   "frase": 17,
+   "seccion": "secreto"
+  },
+  {
+   "texto": "de",
+   "inicio": 43.714,
+   "duracion": 0.094,
+   "visible": "de",
+   "enfasis": false,
+   "frase": 17,
+   "seccion": "secreto"
+  },
+  {
+   "texto": "su",
+   "inicio": 43.819,
+   "duracion": 0.106,
+   "visible": "su",
+   "enfasis": false,
+   "frase": 17,
+   "seccion": "secreto"
+  },
+  {
+   "texto": "equipo",
+   "inicio": 43.937,
+   "duracion": 0.317,
+   "visible": "equipo",
+   "enfasis": false,
+   "frase": 17,
+   "seccion": "secreto"
+  },
+  {
+   "texto": "de",
+   "inicio": 44.266,
+   "duracion": 0.094,
+   "visible": "de",
+   "enfasis": false,
+   "frase": 17,
+   "seccion": "secreto"
+  },
+  {
+   "texto": "supervivencia",
+   "inicio": 44.372,
+   "duracion": 0.811,
+   "visible": "supervivencia.",
+   "enfasis": false,
+   "frase": 17,
+   "seccion": "secreto"
+  },
+  {
+   "texto": "Empleado",
+   "inicio": 45.48,
+   "duracion": 0.574,
+   "visible": "¡EMPLEADO",
+   "enfasis": true,
+   "frase": 18,
+   "seccion": "secreto"
+  },
+  {
+   "texto": "del",
+   "inicio": 45.984,
+   "duracion": 0.182,
+   "visible": "DEL",
+   "enfasis": true,
+   "frase": 18,
+   "seccion": "secreto"
+  },
+  {
+   "texto": "mes",
+   "inicio": 46.18,
+   "duracion": 0.49,
+   "visible": "MES!",
+   "enfasis": true,
+   "frase": 18,
+   "seccion": "secreto"
+  },
+  {
+   "texto": "Los",
+   "inicio": 47.27,
+   "duracion": 0.253,
+   "visible": "Los",
+   "enfasis": false,
+   "frase": 19,
+   "seccion": "rescate"
+  },
+  {
+   "texto": "restos",
+   "inicio": 47.476,
+   "duracion": 0.367,
+   "visible": "restos",
+   "enfasis": false,
+   "frase": 19,
+   "seccion": "rescate"
+  },
+  {
+   "texto": "cayeron",
+   "inicio": 47.856,
+   "duracion": 0.43,
+   "visible": "cayeron",
+   "enfasis": false,
+   "frase": 19,
+   "seccion": "rescate"
+  },
+  {
+   "texto": "sobre",
+   "inicio": 48.299,
+   "duracion": 0.304,
+   "visible": "sobre",
+   "enfasis": false,
+   "frase": 19,
+   "seccion": "rescate"
+  },
+  {
+   "texto": "un",
+   "inicio": 48.615,
+   "duracion": 0.152,
+   "visible": "un",
+   "enfasis": false,
+   "frase": 19,
+   "seccion": "rescate"
+  },
+  {
+   "texto": "bosque",
+   "inicio": 48.779,
+   "duracion": 0.342,
+   "visible": "bosque",
+   "enfasis": false,
+   "frase": 19,
+   "seccion": "rescate"
+  },
+  {
+   "texto": "nevado",
+   "inicio": 49.134,
+   "duracion": 0.481,
+   "visible": "nevado.",
+   "enfasis": false,
+   "frase": 19,
+   "seccion": "rescate"
+  },
+  {
+   "texto": "Un",
+   "inicio": 49.87,
+   "duracion": 0.146,
+   "visible": "Un",
+   "enfasis": false,
+   "frase": 20,
+   "seccion": "rescate"
+  },
+  {
+   "texto": "médico",
+   "inicio": 49.997,
+   "duracion": 0.378,
+   "visible": "médico",
+   "enfasis": false,
+   "frase": 20,
+   "seccion": "rescate"
+  },
+  {
+   "texto": "la",
+   "inicio": 50.387,
+   "duracion": 0.073,
+   "visible": "la",
+   "enfasis": false,
+   "frase": 20,
+   "seccion": "rescate"
+  },
+  {
+   "texto": "encontró",
+   "inicio": 50.472,
+   "duracion": 0.548,
+   "visible": "encontró,",
+   "enfasis": false,
+   "frase": 20,
+   "seccion": "rescate"
+  },
+  {
+   "texto": "y",
+   "inicio": 51.252,
+   "duracion": 0.097,
+   "visible": "y",
+   "enfasis": false,
+   "frase": 20,
+   "seccion": "rescate"
+  },
+  {
+   "texto": "consiguió",
+   "inicio": 51.362,
+   "duracion": 0.56,
+   "visible": "consiguió",
+   "enfasis": false,
+   "frase": 20,
+   "seccion": "rescate"
+  },
+  {
+   "texto": "auxiliarla",
+   "inicio": 51.934,
+   "duracion": 0.743,
+   "visible": "auxiliarla.",
+   "enfasis": false,
+   "frase": 20,
+   "seccion": "rescate"
+  },
+  {
+   "texto": "Vesna",
+   "inicio": 53.19,
+   "duracion": 0.439,
+   "visible": "Vesna",
+   "enfasis": false,
+   "frase": 21,
+   "seccion": "recuperacion"
+  },
+  {
+   "texto": "estuvo",
+   "inicio": 53.592,
+   "duracion": 0.409,
+   "visible": "estuvo",
+   "enfasis": false,
+   "frase": 21,
+   "seccion": "recuperacion"
+  },
+  {
+   "texto": "27 días",
+   "inicio": 54.016,
+   "duracion": 1.14,
+   "visible": "27 días",
+   "enfasis": false,
+   "frase": 21,
+   "seccion": "recuperacion"
+  },
+  {
+   "texto": "en",
+   "inicio": 55.171,
+   "duracion": 0.132,
+   "visible": "en",
+   "enfasis": false,
+   "frase": 21,
+   "seccion": "recuperacion"
+  },
+  {
+   "texto": "coma",
+   "inicio": 55.317,
+   "duracion": 0.453,
+   "visible": "coma.",
+   "enfasis": false,
+   "frase": 21,
+   "seccion": "recuperacion"
+  },
+  {
+   "texto": "Sufrió",
+   "inicio": 56.09,
+   "duracion": 0.543,
+   "visible": "Sufrió",
+   "enfasis": false,
+   "frase": 22,
+   "seccion": "recuperacion"
+  },
+  {
+   "texto": "heridas",
+   "inicio": 56.555,
+   "duracion": 0.443,
+   "visible": "heridas",
+   "enfasis": false,
+   "frase": 22,
+   "seccion": "recuperacion"
+  },
+  {
+   "texto": "gravísimas",
+   "inicio": 57.013,
+   "duracion": 0.887,
+   "visible": "gravísimas…",
+   "enfasis": false,
+   "frase": 22,
+   "seccion": "recuperacion"
+  },
+  {
+   "texto": "pero",
+   "inicio": 58.27,
+   "duracion": 0.202,
+   "visible": "¡pero",
+   "enfasis": false,
+   "frase": 23,
+   "seccion": "recuperacion"
+  },
+  {
+   "texto": "volvió",
+   "inicio": 58.416,
+   "duracion": 0.38,
+   "visible": "volvió",
+   "enfasis": false,
+   "frase": 23,
+   "seccion": "recuperacion"
+  },
+  {
+   "texto": "a",
+   "inicio": 58.808,
+   "duracion": 0.051,
+   "visible": "a",
+   "enfasis": false,
+   "frase": 23,
+   "seccion": "recuperacion"
+  },
+  {
+   "texto": "caminar",
+   "inicio": 58.871,
+   "duracion": 0.595,
+   "visible": "caminar!",
+   "enfasis": false,
+   "frase": 23,
+   "seccion": "recuperacion"
+  },
+  {
+   "texto": "Y",
+   "inicio": 59.9,
+   "duracion": 0.149,
+   "visible": "Y",
+   "enfasis": false,
+   "frase": 24,
+   "seccion": "recuperacion"
+  },
+  {
+   "texto": "hasta",
+   "inicio": 60.001,
+   "duracion": 0.248,
+   "visible": "hasta",
+   "enfasis": false,
+   "frase": 24,
+   "seccion": "recuperacion"
+  },
+  {
+   "texto": "consiguió",
+   "inicio": 60.262,
+   "duracion": 0.484,
+   "visible": "consiguió",
+   "enfasis": false,
+   "frase": 24,
+   "seccion": "recuperacion"
+  },
+  {
+   "texto": "un",
+   "inicio": 60.758,
+   "duracion": 0.149,
+   "visible": "un",
+   "enfasis": false,
+   "frase": 24,
+   "seccion": "recuperacion"
+  },
+  {
+   "texto": "récord",
+   "inicio": 60.92,
+   "duracion": 0.397,
+   "visible": "récord",
+   "enfasis": false,
+   "frase": 24,
+   "seccion": "recuperacion"
+  },
+  {
+   "texto": "Guinness",
+   "inicio": 61.329,
+   "duracion": 0.521,
+   "visible": "Guinness.",
+   "enfasis": false,
+   "frase": 24,
+   "seccion": "recuperacion"
+  },
+  {
+   "texto": "Veredicto",
+   "inicio": 62.43,
+   "duracion": 0.792,
+   "visible": "VEREDICTO:",
+   "enfasis": true,
+   "frase": 25,
+   "seccion": "veredicto"
+  },
+  {
+   "texto": "verdad",
+   "inicio": 63.506,
+   "duracion": 0.643,
+   "visible": "¡VERDAD!",
+   "enfasis": true,
+   "frase": 25,
+   "seccion": "veredicto"
+  },
+  {
+   "texto": "Después",
+   "inicio": 64.67,
+   "duracion": 0.443,
+   "visible": "Después",
+   "enfasis": false,
+   "frase": 26,
+   "seccion": "cierre"
+  },
+  {
+   "texto": "de",
+   "inicio": 65.056,
+   "duracion": 0.139,
+   "visible": "de",
+   "enfasis": false,
+   "frase": 26,
+   "seccion": "cierre"
+  },
+  {
+   "texto": "eso",
+   "inicio": 65.208,
+   "duracion": 0.316,
+   "visible": "eso,",
+   "enfasis": false,
+   "frase": 26,
+   "seccion": "cierre"
+  },
+  {
+   "texto": "hasta",
+   "inicio": 65.777,
+   "duracion": 0.291,
+   "visible": "hasta",
+   "enfasis": false,
+   "frase": 26,
+   "seccion": "cierre"
+  },
+  {
+   "texto": "las",
+   "inicio": 66.081,
+   "duracion": 0.177,
+   "visible": "las",
+   "enfasis": false,
+   "frase": 26,
+   "seccion": "cierre"
+  },
+  {
+   "texto": "turbulencias",
+   "inicio": 66.271,
+   "duracion": 0.683,
+   "visible": "turbulencias",
+   "enfasis": false,
+   "frase": 26,
+   "seccion": "cierre"
+  },
+  {
+   "texto": "debían",
+   "inicio": 66.966,
+   "duracion": 0.367,
+   "visible": "debían",
+   "enfasis": false,
+   "frase": 26,
+   "seccion": "cierre"
+  },
+  {
+   "texto": "parecerle",
+   "inicio": 67.346,
+   "duracion": 0.607,
+   "visible": "parecerle",
+   "enfasis": false,
+   "frase": 26,
+   "seccion": "cierre"
+  },
+  {
+   "texto": "un",
+   "inicio": 67.966,
+   "duracion": 0.139,
+   "visible": "un",
+   "enfasis": false,
+   "frase": 26,
+   "seccion": "cierre"
+  },
+  {
+   "texto": "masaje",
+   "inicio": 68.118,
+   "duracion": 0.531,
+   "visible": "masaje.",
+   "enfasis": false,
+   "frase": 26,
+   "seccion": "cierre"
+  }
+ ]
+}
