@@ -197,8 +197,8 @@ export const BROLL: BrollDef[] = [
 export type CardDef = {src: string; start: number; end: number; trim?: number; y: number; width: number; aspect: number; bw?: boolean; rotate?: number};
 export const CARDS: CardDef[] = [
   {src: 'broll/precio.mp4', start: ws(23), end: ws(28), trim: 4, y: 560, width: 860, aspect: 16 / 9, rotate: -3},
-  {src: 'broll/pago_tarjeta.mp4', start: ws(104), end: ws(109), trim: 3, y: 1300, width: 900, aspect: 16 / 9, rotate: 2},
-  {src: 'broll/sin_ventas.mp4', start: ws(118), end: ws(127), trim: 1, y: 1400, width: 780, aspect: 1, bw: true, rotate: -2},
+  {src: 'broll/pago_tarjeta.mp4', start: ws(104), end: ws(109), trim: 3, y: 1000, width: 900, aspect: 16 / 9, rotate: 2},
+  {src: 'broll/sin_ventas.mp4', start: ws(118), end: ws(127), trim: 1, y: 1010, width: 780, aspect: 1, bw: true, rotate: -2},
 ];
 
 // ---------- Escenas de motion graphics ----------
