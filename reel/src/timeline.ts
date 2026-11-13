@@ -42,7 +42,7 @@ export const BLOCKS: Block[] = [
   { id: "poliuretanos", w: [76, 81], hl: [78], style: "title", y: 0.32, end: at(33.25) },
   { id: "empresa", w: [93, 98], hl: [94], y: 0.3, end: at(39.50) },
   // Corrección ronda 3: "Proyectos" detrás de la persona (recorte por IA del clip c301) y "Colombia" legible.
-  { id: "proyectos", w: [111, 118], hl: [115], y: 0.3, from: at(44.55), end: at(46.67), behind: true },
+  { id: "proyectos", w: [111, 118], hl: [115], y: 0.33, from: at(44.55), end: at(46.67), behind: true },
   { id: "lideres", w: [119, 123], hl: [120], style: "lime", y: 0.6, end: at(48.35) },
   { id: "gratuito", w: [124, 130], hl: [129, 130], y: 0.56, end: at(51.10), skip: [124] },
   { id: "hogar", w: [131, 134], hl: [133, 134], y: 0.32, end: at(52.83) },
@@ -88,7 +88,7 @@ export const BROLL: BRoll[] = [
   { t0: at(31.55), t1: at(32.25), src: "media/broll2.mp4", kind: "video", trim: 7.6, zoom: [1.04, 1.1] },
   { t0: at(32.25), t1: at(33.25), src: "media/foto7.jpg", kind: "image", zoom: [1.35, 1.5], origin: "30% 25%", pos: "50% 50%" },
   { t0: at(33.25), t1: at(39.50), src: "media/foto5.jpg", kind: "image", zoom: [1.12, 1.22], origin: "55% 40%", pos: "50% 30%" },
-  { t0: at(44.55), t1: at(46.67), src: "media/c301.mp4", kind: "video", trim: 1.0, zoom: [1.04, 1.12], matte: "media/c301_matte" },
+  { t0: at(44.55), t1: at(46.67), src: "media/c301.mp4", kind: "video", trim: 1.0, zoom: [1.22, 1.3], origin: "60% 38%", matte: "media/c301_matte" },
   { t0: at(51.10), t1: at(52.83), src: "media/c271.mp4", kind: "video", trim: 1.0, zoom: [1.0, 1.08] },
   { t0: at(52.83), t1: at(54.15), src: "media/broll2.mp4", kind: "video", trim: 10.35, zoom: [1.0, 1.07] },
   { t0: at(54.15), t1: at(55.83), src: "media/broll2.mp4", kind: "video", trim: 11.6, zoom: [1.02, 1.08] },
