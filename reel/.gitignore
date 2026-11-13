@@ -1,0 +1,13 @@
+node_modules
+dist
+.DS_Store
+.env
+
+# Ignore the output video from Git but not videos you import into src/.
+out
+
+# Medios pesados (se regeneran con scripts/; ver README.md)
+public/media/
+public/audio/
+build/
+public/sfx/
