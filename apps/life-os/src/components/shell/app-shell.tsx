@@ -26,6 +26,7 @@ import { SearchCommand } from "./search-command";
 import { UIProvider, useUI } from "./ui-context";
 import { useIsDesktop } from "@/hooks/use-media";
 import { ServiceWorkerRegistrar } from "./pwa";
+import { FocusBar, FocusProvider, FocusView } from "@/components/life/focus";
 
 export function AppProviders({ children }: { children: React.ReactNode }) {
   return (
@@ -348,7 +349,7 @@ function DemoBanner() {
 
 function ReadyShell({ children }: { children: React.ReactNode }) {
   return (
-    <>
+    <FocusProvider>
       <ThemeSync />
       <Shortcuts />
       <DeepLinks />
@@ -365,7 +366,9 @@ function ReadyShell({ children }: { children: React.ReactNode }) {
       <DetailHost />
       <SearchCommand />
       <Onboarding />
-    </>
+      <FocusBar />
+      <FocusView />
+    </FocusProvider>
   );
 }
 

@@ -43,6 +43,7 @@ export const NAV: NavSection[] = [
     icon: Sunrise,
     items: [
       { href: "/vida/", label: "Mi día", exact: true },
+      { href: "/vida/planificar/", label: "Planificador" },
       { href: "/vida/tareas/", label: "Tareas" },
       { href: "/vida/calendario/", label: "Calendario" },
       { href: "/vida/semana/", label: "Semana" },

@@ -6,7 +6,7 @@ Aplicación web para organizar tres dimensiones en un solo sistema conectado:
 | --- | --- |
 | **Finanzas** | Saldo real, ingresos y gastos, cuentas y tarjetas, obligaciones, presupuestos, análisis y **¿Cuánto puedo gastar?** |
 | **Clientes** | CRM personal: clientes, trabajos (tablero Kanban y lista), cobros, abonos, seguimientos |
-| **Mi Vida** | Mi día (prioridades, agenda, hábitos), tracker de tareas estilo Notion, calendario, hábitos y planificación semanal |
+| **Mi Vida** | Mi día, planificador del día (cronograma por bloques y modo enfoque), tracker de tareas estilo Notion, calendario, hábitos y planificación semanal |
 
 Ajustes se abre desde el encabezado (no es una cuarta sección).
 
@@ -38,6 +38,18 @@ npm run typecheck -w @jcc/life-os
 - La app instalada pide almacenamiento persistente para que el sistema no borre los datos, y recuerda descargar un respaldo cada dos semanas (en el celular el respaldo se comparte a Drive, Archivos, WhatsApp o correo).
 
 La primera vez aparece un onboarding opcional (moneda, zona horaria, cuentas, gastos fijos, primer cliente o tarea). También puedes explorar con el **modo demo**.
+
+## Planificador del día
+
+`Mi Vida › Planificador` arma el cronograma del día:
+
+- **Cronograma**: tareas con hora, eventos y **bloques de tiempo** (trabajo profundo, correos, almuerzo, ejercicio…). En computador se arrastran tareas desde «Por planificar» a la línea de tiempo y se mueven los bloques; en el celular, cada hueco libre tiene «Usar» para llenarlo.
+- **Auto-planificar**: ubica las tareas pendientes del día (y las atrasadas) en los huecos libres: prioridad alta primero y en tus **horas de máxima energía**, respetando eventos y dejando una pausa entre bloques. Muestra el plan antes de aplicarlo y se puede deshacer.
+- **Ahora / Siguiente**, capacidad del día (planificado vs. disponible) y sugerencias verificables: cruces de horario, más de 3 h sin pausa, horas de energía libres, más tareas que tiempo.
+- **Plantillas de día**: guarda tu rutina ideal y aplícala a cualquier día (sin duplicar bloques). Incluye una plantilla sugerida.
+- **Modo enfoque** (Pomodoro): temporizador con barra flotante y vista a pantalla completa; sigue contando aunque cierres la app, avisa con sonido, vibración y notificación, y suma el tiempo real a cada tarea.
+- **Cerrar el día**: resumen (completadas, puntos, minutos de enfoque) y mover lo pendiente a mañana en un toque.
+- Ajustes › Planificador y enfoque: horario del día, horas de máxima energía, pausa entre bloques, duración por defecto y duración de enfoque/descanso.
 
 ## Tracker de tareas
 

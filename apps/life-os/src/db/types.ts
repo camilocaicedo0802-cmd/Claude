@@ -48,6 +48,8 @@ export interface Settings {
   notifications: NotificationPrefs;
   /** Categories for the task tracker; editable by the user. */
   taskCategories: TaskCategory[];
+  planner: PlannerSettings;
+  dayTemplates: DayTemplate[];
   updatedAt: string;
 }
 
@@ -322,6 +324,8 @@ export interface Task extends Timestamps {
   points?: number | null;
   /** Icon key shown next to the title (coloured with the category colour). */
   icon?: string | null;
+  /** Minutes actually spent, accumulated from focus sessions. */
+  actualMin?: number;
   order: number;
 }
 
@@ -348,6 +352,49 @@ export interface CalendarEvent extends Timestamps {
   jobId?: ID | null;
   /** Occurrence dates removed from a recurring series. */
   exceptions: DateStr[];
+  /** "block" = a planned time block from the day planner (focus, lunch, emails…). */
+  kind?: "event" | "block";
+}
+
+/** A focus (pomodoro) session recorded by the focus timer. */
+export interface FocusSession {
+  id: ID;
+  date: DateStr;
+  startedAt: string;
+  endedAt: string;
+  minutes: number;
+  title: string;
+  taskId?: ID | null;
+  /** Finished the planned time (vs stopped early). */
+  completed: boolean;
+}
+
+export interface DayTemplateBlock {
+  title: string;
+  start: TimeStr;
+  end: TimeStr;
+  category: EventCategory;
+}
+
+export interface DayTemplate {
+  id: ID;
+  name: string;
+  blocks: DayTemplateBlock[];
+}
+
+export interface PlannerSettings {
+  /** Planned working window of the day. */
+  dayStart: TimeStr;
+  dayEnd: TimeStr;
+  /** Hours of highest energy: auto-plan puts high-priority tasks here first. */
+  focusStart: TimeStr;
+  focusEnd: TimeStr;
+  /** Break left between planned items. */
+  bufferMin: number;
+  /** Duration used for tasks without an estimate. */
+  defaultTaskMin: number;
+  pomodoroMin: number;
+  breakMin: number;
 }
 
 export type HabitSchedule = { type: "daily" } | { type: "days"; days: number[] };

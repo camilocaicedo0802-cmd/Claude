@@ -15,6 +15,7 @@ import {
   ListTodo,
   MoreHorizontal,
   Pencil,
+  Play,
   Plus,
   Repeat,
   Search,
@@ -42,6 +43,7 @@ import { useUI } from "@/components/shell/ui-context";
 import { runSave } from "@/components/forms/form-kit";
 import { createTask, deleteTask, duplicateTask, postponeTask, setTaskStage, updateTask } from "@/services/life-service";
 import { ImportSheet } from "./task-import";
+import { useFocus } from "./focus";
 import { CategoriesSheet } from "./task-categories";
 
 type View = "pending" | "week" | "board" | "done" | "all";
@@ -212,6 +214,7 @@ function DateInput({ task, today, className, short }: { task: Task; today: DateS
 function RowMenu({ task }: { task: Task }) {
   const { openForm, confirm } = useUI();
   const today = useToday();
+  const focus = useFocus();
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -223,6 +226,11 @@ function RowMenu({ task }: { task: Task }) {
         <DropdownMenuItem onSelect={() => openForm({ kind: "task", id: task.id })}>
           <Pencil /> Abrir y editar
         </DropdownMenuItem>
+        {task.status === "todo" && !focus.state && (
+          <DropdownMenuItem onSelect={() => focus.start({ title: task.title, taskId: task.id })}>
+            <Play /> Iniciar enfoque
+          </DropdownMenuItem>
+        )}
         {task.status === "todo" && (
           <DropdownMenuItem onSelect={() => runSave(() => postponeTask(task.id, 1, today), "Pospuesta para mañana")}>
             <CalendarClock /> Posponer a mañana
