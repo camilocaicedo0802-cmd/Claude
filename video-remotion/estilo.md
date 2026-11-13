@@ -189,6 +189,8 @@ Reglas de SFX:
 ---
 
 ## 9. Color
+> ⚠️ **Sustituido por §10.1**: los acentos van en el blanco y los morados del logo, no en rojo. Lo de abajo describe la referencia original.
+
 | Elemento | Valor |
 |---|---|
 | Rojo principal (títulos, acentos) | **#D32425** |
@@ -210,6 +212,22 @@ Reglas de SFX:
 ---
 
 ## 10. Registro de correcciones del usuario
-*(Cada corrección que apruebes se añade aquí y se aplica a los siguientes videos.)*
+*(Cada corrección que apruebes se añade aquí y se aplica a los siguientes videos. **Estas reglas mandan sobre las secciones anteriores.**)*
 
-- —
+### 10.1 Color: se usan los colores del logo, no el rojo de la referencia (13/11/2026)
+- **Nada en rojo.** Los acentos (palabra destacada, tachados, HUD, cursor, botones) usan **el blanco y los morados de la "W" del logo GROW**.
+- Valores medidos sobre el PNG del logo:
+
+| Uso | Valor |
+|---|---|
+| Blanco | **#FFFFFF** (subtítulos #FFF5F4) |
+| Morado claro (parte alta de la W) | **#B701FC** |
+| Morado medio | **#9601FD** |
+| Morado profundo (parte baja de la W) | **#7600FC** |
+| Degradado de acento (como la W) | `linear-gradient(180deg, #B701FC 0%, #9601FD 50%, #7600FC 100%)` |
+| Sombra de texto morado | #3D0080 (desplazada 3 px hacia abajo) |
+| Halo morado | rgba(150, 1, 253, 0.5), desenfoque 16–22 px |
+
+- La palabra destacada de cada título va con **el degradado vertical de la W** (relleno con `background-clip: text`), no en color plano.
+- Se mantienen de la referencia: negro #0B0B0B y grises de cuadrícula para motion graphics, y el cromado, que pasa a ser blanco plateado (#FFFFFF → #ECECEC → #BDBDBD → #F4F4F4).
+- Las escenas en blanco y negro siguen igual; ahora lo único con color en ellas es el morado.
