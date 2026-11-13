@@ -3,6 +3,8 @@ import React from "react";
 import { AbsoluteFill, interpolate, Sequence, useCurrentFrame } from "remotion";
 import { clamp, easeOut, keyframes } from "../anim";
 
+const linear = (t: number) => t;
+
 const W = 1080;
 const H = 1920;
 
@@ -27,6 +29,8 @@ type TalkingShotProps = {
   readonly durationInFrames: number;
   readonly trimBefore: number;
   readonly focus: readonly [number, number];
+  /** Seguimiento opcional de la cara: [fotograma, x, y] relativos al plano. */
+  readonly focusTrack?: ReadonlyArray<readonly [number, number, number]>;
   readonly target: readonly [number, number];
   /** Zoom por fotogramas clave relativos al inicio del plano. */
   readonly zoom: ReadonlyArray<readonly [number, number]>;
@@ -36,11 +40,18 @@ const TalkingFrame: React.FC<Omit<TalkingShotProps, "name" | "from" | "durationI
   src,
   trimBefore,
   focus,
+  focusTrack,
   target,
   zoom,
 }) => {
   const frame = useCurrentFrame();
-  const r = frameRect(keyframes(frame, zoom), focus, target);
+  const f: readonly [number, number] = focusTrack
+    ? [
+        keyframes(frame, focusTrack.map(([t, x]) => [t, x] as const), linear),
+        keyframes(frame, focusTrack.map(([t, , y]) => [t, y] as const), linear),
+      ]
+    : focus;
+  const r = frameRect(keyframes(frame, zoom), f, target);
   return (
     <AbsoluteFill style={{ overflow: "hidden", backgroundColor: "black" }}>
       <Video

@@ -1,43 +1,43 @@
 import { loadFont } from "@remotion/fonts";
 import { staticFile } from "remotion";
 
-// Tipografías del referente (ver estilo.md §3–4).
-// Grotesca: Inter Display (equivalente abierto de la del referente).
-// Palabra destacada: Instrument Serif Italic.
+// Tipografía base del referente (subtítulos, etiquetas, números): Inter Display.
 export const SANS = "Inter Display";
-export const SERIF = "Instrument Serif";
+// Palabras importantes: tipografías del manual de marca SLATE.
+export const BRAND_SERIF = "Black Mango"; // titulares / palabra destacada
+export const BRAND_SCRIPT = "Jimmy Script"; // acento caligráfico ("glow", como "Feel Your glow up")
+export const BRAND_SANS = "Tenor Sans"; // ubicación / cierre
 
 loadFont({ family: SANS, url: staticFile("fonts/InterDisplay-Medium.otf"), weight: "500" });
 loadFont({ family: SANS, url: staticFile("fonts/InterDisplay-SemiBold.otf"), weight: "600" });
 loadFont({ family: SANS, url: staticFile("fonts/InterDisplay-Bold.otf"), weight: "700" });
 loadFont({ family: SANS, url: staticFile("fonts/InterDisplay-Black.otf"), weight: "900" });
-loadFont({
-  family: SERIF,
-  url: staticFile("fonts/InstrumentSerif-Italic.ttf"),
-  style: "italic",
-  weight: "400",
-});
+// Black Mango y Jimmy Script: extraídas del PDF del manual (subconjunto A–W, a–y, 0–9).
+loadFont({ family: BRAND_SERIF, url: staticFile("brand/fonts/BlackMango-Regular.ttf"), weight: "400" });
+loadFont({ family: BRAND_SCRIPT, url: staticFile("brand/fonts/JimmyScript-Light.ttf"), weight: "400" });
+loadFont({ family: BRAND_SANS, url: staticFile("fonts/TenorSans-Regular.ttf"), weight: "400" });
 
-// Colores medidos en el referente.
-export const C = {
+// Paleta del manual de marca (muestreada del PDF).
+export const BRAND = {
+  sage: "#809368",
+  sageLight: "#A3B988",
+  brown: "#683A22",
+  beige: "#E4C6A8",
+  navy: "#132B39",
   white: "#FFFFFF",
-  yellow: "#FCF210",
-  // Escala de la barra de valoración 1 → 10.
-  scale: [
-    "#54A949",
-    "#54A949",
-    "#BAD54F",
-    "#BAD54F",
-    "#F2E041",
-    "#F2E041",
-    "#F79A2D",
-    "#F79A2D",
-    "#ED7417",
-    "#F73734",
-  ],
-  glowRed: "247, 55, 52",
-  glowYellow: "242, 224, 65",
-  glowGold: "252, 214, 120",
+} as const;
+
+export const C = {
+  white: BRAND.white,
+  // Color de las palabras destacadas.
+  highlight: BRAND.sageLight,
+  accentWarm: BRAND.beige,
+  // Escala de la barra 1 → 10: del beige al marrón de la marca (tonos de bronceado).
+  scale: ["#E4C6A8", "#DBB898", "#D1A988", "#C49674", "#B68361", "#A6704F", "#966141", "#855235", "#76452B", "#683A22"],
+  scaleText: ["#132B39", "#132B39", "#132B39", "#132B39", "#FFFFFF", "#FFFFFF", "#FFFFFF", "#FFFFFF", "#FFFFFF", "#FFFFFF"],
+  glowSage: "163, 185, 136",
+  glowBeige: "228, 198, 168",
+  glowBrown: "104, 58, 34",
 } as const;
 
 // Posiciones en el lienzo 1080×1920.

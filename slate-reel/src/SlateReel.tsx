@@ -1,26 +1,15 @@
 import { Audio } from "@remotion/media";
 import React from "react";
 import { AbsoluteFill, interpolate, Sequence, staticFile, Track } from "remotion";
-import {
-  CalendarBar,
-  Cascade,
-  EndCardOverlay,
-  GlowEdges,
-  LineIcon,
-  NumberedItem,
-  PlacedIcon,
-  RatingBar,
-  Subtitles,
-  Word,
-} from "./components/Graphics";
+import { CalendarBar, Cascade, EndCard, GlowEdges, NumberedItem, RatingBar, Subtitles, Word } from "./components/Graphics";
 import { BRoll, TalkingShot } from "./components/Shots";
-import { C, SANS, TEXT_SHADOW } from "./theme";
+import { BRAND, C } from "./theme";
 
 /**
  * SLATE · Holiday spray tan (Tulsa) — 1080×1920 @ 30 fps, 657 fotogramas (21.9 s).
  * Todos los tiempos están en fotogramas de la composición y salen de la
- * transcripción Whisper de la voz montada (analysis/voice_words.json).
- * Reglas de estilo: estilo.md.
+ * transcripción Whisper de la voz montada (analysis/voice_words.json),
+ * afinados con la energía de la voz. Reglas de estilo: estilo.md.
  */
 export const SLATE_REEL_DURATION = 657;
 
@@ -40,12 +29,31 @@ export const SlateReel: React.FC = () => {
           durationInFrames={112}
           trimBefore={68}
           focus={[0.45, 0.46]}
-          target={[0.5, 0.36]}
+          focusTrack={[
+            [0, 0.325, 0.545],
+            [4, 0.348, 0.54],
+            [10, 0.376, 0.532],
+            [16, 0.391, 0.525],
+            [22, 0.402, 0.509],
+            [34, 0.406, 0.498],
+            [40, 0.411, 0.488],
+            [52, 0.433, 0.475],
+            [64, 0.433, 0.462],
+            [76, 0.448, 0.458],
+            [88, 0.469, 0.444],
+            [100, 0.491, 0.441],
+            [112, 0.489, 0.432],
+          ]}
+          target={[0.5, 0.3]}
           zoom={[
-            [0, 1.55],
-            [88, 1.58],
-            [89, 1.75],
-            [112, 1.78],
+            [0, 2.3],
+            [18, 1.85],
+            [43, 1.9],
+            [44, 2.1],
+            [58, 2.12],
+            [88, 1.72],
+            [89, 1.85],
+            [112, 1.88],
           ]}
         />
         <TalkingShot
@@ -71,7 +79,7 @@ export const SlateReel: React.FC = () => {
           target={[0.5, 0.32]}
           zoom={[
             [0, 1.65],
-            [41, 1.7],
+            [45, 1.7],
           ]}
         />
         <TalkingShot
@@ -118,29 +126,14 @@ export const SlateReel: React.FC = () => {
             [65, 1.3],
             [116, 1.31],
             [117, 1.42],
-            [150, 1.46],
+            [156, 1.47],
           ]}
         />
       </Track>
 
       {/* ───────────── B-roll (sin sonido) ───────────── */}
       <Track name="B-roll">
-        <BRoll
-          name="Gancho · aplicación en cabina"
-          src={broll("hook_spray_face")}
-          from={0}
-          durationInFrames={44}
-          trimBefore={9}
-          fadeIn={0}
-          scale={[1, 1.03]}
-          zoom={[
-            [0, 1.25],
-            [18, 1.0],
-            [19, 1.1],
-            [44, 1.12],
-          ]}
-        />
-        <BRoll name="love a good spray tan" src={broll("spray_abs")} from={59} durationInFrames={30} trimBefore={22} />
+        <BRoll name="love a good spray tan" src={broll("hook_spray_face")} from={59} durationInFrames={30} trimBefore={9} />
         <BRoll name="Christmas parties" src={broll("xmas_arms_up")} from={204} durationInFrames={29} trimBefore={26} />
         <BRoll name="New Year's" src={broll("newyear_result")} from={230} durationInFrames={32} trimBefore={18} fadeIn={3} />
         <BRoll name="book your spray tan" src={broll("book_slate_gun")} from={293} durationInFrames={27} trimBefore={9} />
@@ -148,41 +141,30 @@ export const SlateReel: React.FC = () => {
         <BRoll name="Resultado 1" src={broll("result_strap")} from={506} durationInFrames={17} trimBefore={9} fadeIn={3} />
         <BRoll name="Resultado 2" src={broll("result_smile_tanline")} from={523} durationInFrames={17} trimBefore={9} fadeIn={0} />
         <BRoll name="Resultado 3" src={broll("result_glow_face")} from={540} durationInFrames={18} trimBefore={9} fadeIn={0} />
-        <BRoll
-          name="Cierre · recepción"
-          src={broll("endcard_reception")}
-          from={591}
-          durationInFrames={66}
-          trimBefore={0}
-          fadeIn={6}
-          blurPx={16}
-          scale={[1.12, 1.18]}
-        />
       </Track>
 
-      {/* ───────────── Halo de color en bordes ───────────── */}
+      {/* ───────────── Halo en bordes (colores de marca) ───────────── */}
       <Track name="Halo">
-        <GlowEdges name="Halo · 2 days" from={331} durationInFrames={26} rgb={C.glowYellow} peak={0.42} />
-        <GlowEdges name="Halo · fast" from={491} durationInFrames={15} rgb={C.glowRed} peak={0.48} />
-        <GlowEdges name="Halo · glow" from={577} durationInFrames={18} rgb={C.glowGold} peak={0.4} />
+        <GlowEdges name="Halo salvia · 2 days" from={331} durationInFrames={26} rgb={C.glowSage} peak={0.5} />
+        <GlowEdges name="Halo marrón · fast" from={491} durationInFrames={15} rgb={C.glowBrown} peak={0.42} blend="normal" />
+        <GlowEdges name="Halo beige · glow" from={577} durationInFrames={18} rgb={C.glowBeige} peak={0.45} />
       </Track>
 
-      {/* ───────────── Títulos y gráficos ───────────── */}
+      {/* ───────────── Títulos (base Inter Display · palabras clave con fuentes de marca) ───────────── */}
       <Track name="Títulos">
         <Cascade name="Hook · Tulsa, OK" from={0} durationInFrames={58}>
-          <Word at={2} x={110} y={900} size={150}>
+          <Word at={2} x={110} y={900} size={150} typing={2}>
             Tulsa,
           </Word>
-          <Word at={8} x={470} y={1010} size={250} serif color={C.yellow}>
+          <Word at={16} x={520} y={990} size={230} font="brand" color={C.highlight}>
             OK
           </Word>
-          <PlacedIcon kind="pin" size={120} at={1} drawFrames={8} strokeWidth={5} color={C.yellow} x={800} y={1060} />
         </Cascade>
         <Cascade name="Hook · Spray tan lovers" from={66} durationInFrames={23}>
           <Word at={0} x={110} y={930} size={120}>
             Spray tan
           </Word>
-          <Word at={6} x={380} y={1040} size={210} serif>
+          <Word at={6} x={390} y={1045} size={175} font="brand">
             lovers,
           </Word>
         </Cascade>
@@ -190,78 +172,64 @@ export const SlateReel: React.FC = () => {
           <Word at={0} x={170} y={930} size={120}>
             this is
           </Word>
-          <Word at={10} x={300} y={1040} size={220} serif color={C.yellow}>
+          <Word at={10} x={300} y={1045} size={190} font="brand" color={C.highlight}>
             for you
           </Word>
-          <PlacedIcon kind="sparkle" size={96} at={9} fill strokeWidth={3} color={C.yellow} x={860} y={1020} />
         </Cascade>
         <NumberedItem
           name="1. Thanksgiving"
           from={114}
           durationInFrames={45}
           num="1."
-          left={110}
+          left={150}
           lines={[
             { text: "Thanksgiving", at: 2 },
             { text: "is only a week away", at: 9 },
           ]}
-          icon={{ kind: "leaf", at: 6 }}
         />
         <NumberedItem
           name="2. Christmas parties"
           from={204}
           durationInFrames={26}
           num="2."
-          left={170}
+          left={200}
           lines={[
             { text: "Christmas", at: 2 },
             { text: "parties", at: 7 },
           ]}
-          icon={{ kind: "ornament", at: 4 }}
         />
-        <NumberedItem
-          name="3. New Year's"
-          from={230}
-          durationInFrames={18}
-          num="3."
-          left={170}
-          lines={[{ text: "New Year's", at: 2 }]}
-          icon={{ kind: "champagne", at: 5 }}
-        />
-        <Cascade name="Tip · etiqueta" from={250} durationInFrames={128}>
-          <PlacedIcon kind="sparkle" size={46} at={0} fill strokeWidth={3} color={C.yellow} x={366} y={842} />
-          <Word at={1} x={0} y={850} size={50} weight={600} align="center">
+        <NumberedItem name="3. New Year's" from={230} durationInFrames={18} num="3." left={200} lines={[{ text: "New Year's", at: 2 }]} />
+        <Cascade name="Tip · etiqueta (tecleada)" from={250} durationInFrames={128}>
+          <Word at={0} x={0} y={850} size={50} weight={600} align="center" typing={1.5}>
             Spray tan tip
           </Word>
         </Cascade>
         <Cascade name="Tip · 2 days before your event" from={320} durationInFrames={58}>
-          <Word at={0} x={0} y={940} size={172} serif color={C.yellow} align="center">
+          <Word at={0} x={0} y={955} size={124} font="brand" color={C.highlight} align="center">
             2 days before
           </Word>
           <Word at={42} x={0} y={1112} size={64} weight={500} align="center">
             your event
           </Word>
         </Cascade>
-        <NumberedItem
-          name="Holiday spots are filling up"
-          from={443}
-          durationInFrames={63}
-          num={null}
-          leadIcon="calendar"
-          left={130}
-          lines={[
-            { text: "Holiday spots", at: 1 },
-            { text: "are filling up!", at: 23 },
-          ]}
-        />
-        <Cascade name="CTA · Book your holiday glow" from={558} durationInFrames={33}>
-          <Word at={0} x={0} y={950} size={64} weight={500} align="center">
+        <Cascade name="Holiday spots are filling up (tecleado)" from={443} durationInFrames={63}>
+          <Word at={0} x={0} y={960} size={64} weight={500} align="center" typing={1.4}>
+            Holiday spots
+          </Word>
+          <Word at={23} x={0} y={1030} size={64} weight={500} align="center" typing={1.4}>
+            are filling up!
+          </Word>
+        </Cascade>
+        <Cascade name="CTA · Book your holiday glow" from={558} durationInFrames={39}>
+          <Word at={0} x={0} y={950} size={64} weight={500} align="center" typing={2}>
             Book your
           </Word>
-          <Word at={8} x={0} y={1030} size={176} serif color={C.yellow} align="center">
-            holiday glow
+          <Word at={8} x={95} y={1035} size={140} font="brand" color={C.highlight}>
+            holiday
           </Word>
-          <PlacedIcon kind="sparkle" size={84} at={20} fill strokeWidth={3} color={C.yellow} x={905} y={1000} />
+          <Word at={20} x={690} y={1005} size={190} font="script" color={BRAND.beige}>
+            glow
+          </Word>
         </Cascade>
       </Track>
 
@@ -286,6 +254,7 @@ export const SlateReel: React.FC = () => {
           name="Disponibilidad · se llena"
           from={452}
           durationInFrames={54}
+          y={1180}
           pointer={[
             [0, 2],
             [19, 2],
@@ -338,9 +307,9 @@ export const SlateReel: React.FC = () => {
         ]}
       />
 
-      {/* ───────────── Cierre ───────────── */}
+      {/* ───────────── Cierre: panel salvia + logotipo del manual ───────────── */}
       <Sequence name="Cierre · logo SLATE" from={591} durationInFrames={66}>
-        <EndCardOverlay durationInFrames={66} />
+        <EndCard durationInFrames={66} />
       </Sequence>
 
       {/* ───────────── Música (Higgsfield · ElevenLabs Music v2) ───────────── */}
@@ -351,26 +320,29 @@ export const SlateReel: React.FC = () => {
         volume={(f) => interpolate(f, [0, 585, 600], [0.13, 0.13, 0.32], { extrapolateRight: "clamp" })}
       />
 
-      {/* ───────────── SFX del referente (pack 1, ver estilo.md §8) ───────────── */}
+      {/* ───────────── SFX (pack 1, ver estilo.md §8 y §10) ───────────── */}
+      <Track name="SFX · typing (textos tecleados)">
+        <Audio name="Typing · Tulsa," src={sfx("typing_short")} from={2} volume={0.35} />
+        <Audio name="Typing · Spray tan tip" src={sfx("typing_long")} from={250} volume={0.3} />
+        <Audio name="Typing · Holiday spots" src={sfx("typing_long")} from={443} volume={0.3} />
+        <Audio name="Typing · are filling up!" src={sfx("typing_long")} from={466} volume={0.3} />
+        <Audio name="Typing · Book your" src={sfx("typing_short")} from={558} volume={0.3} />
+      </Track>
       <Track name="SFX · pop (entrada de textos)">
         <Audio name="Pop · for you" src={sfx("pop")} from={98} volume={0.2} />
         <Audio name="Pop · 1. Thanksgiving" src={sfx("pop")} from={114} volume={0.22} />
         <Audio name="Pop · 2. Christmas" src={sfx("pop")} from={204} volume={0.22} />
         <Audio name="Pop · 3. New Year's" src={sfx("pop")} from={230} volume={0.22} />
         <Audio name="Pop · 2 days before" src={sfx("pop")} from={320} volume={0.16} />
-        <Audio name="Pop · Holiday spots" src={sfx("pop")} from={443} volume={0.18} />
         <Audio name="Pop · 10" src={sfx("pop")} from={492} volume={0.22} />
-        <Audio name="Pop · logo" src={sfx("pop")} from={593} volume={0.16} />
+        <Audio name="Pop · logo" src={sfx("pop")} from={595} volume={0.14} />
       </Track>
-      <Track name="SFX · tecla (pasos del puntero)">
+      <Track name="SFX · tecla (puntero del calendario)">
         <Audio name="Tecla · paso 1" src={sfx("tecla")} from={329} volume={0.2} />
         <Audio name="Tecla · paso 2" src={sfx("tecla")} from={333} volume={0.2} />
-        <Audio name="Tecla · barra 1" src={sfx("tecla")} from={477} volume={0.12} />
-        <Audio name="Tecla · barra 2" src={sfx("tecla")} from={483} volume={0.12} />
-        <Audio name="Tecla · barra 3" src={sfx("tecla")} from={489} volume={0.12} />
       </Track>
       <Track name="SFX · swoosh / sub drop (halo y hook)">
-        <Audio name="Sub drop · Tulsa" src={sfx("sub_drop")} from={1} volume={0.32} />
+        <Audio name="Sub drop · OK" src={sfx("sub_drop")} from={16} volume={0.28} />
         <Audio name="Swoosh · halo 2 days" src={sfx("swoosh_05")} from={331} volume={0.3} />
         <Audio name="Swoosh · halo fast" src={sfx("swoosh_04")} from={490} volume={0.36} />
         <Audio name="Swoosh · glow" src={sfx("swoosh_03")} from={576} volume={0.28} />
@@ -378,6 +350,3 @@ export const SlateReel: React.FC = () => {
     </AbsoluteFill>
   );
 };
-
-// Iconos y estilos exportados para reutilizar en otras piezas.
-export { LineIcon, SANS, TEXT_SHADOW };

@@ -2,104 +2,26 @@ import type { Caption } from "@remotion/captions";
 import React from "react";
 import { AbsoluteFill, Img, interpolate, Sequence, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
 import { blurIn, blurOut, clamp, easeInOut, easeOut, keyframes } from "../anim";
-import { C, LAYOUT, SANS, SERIF, TEXT_SHADOW } from "../theme";
+import { BRAND, BRAND_SANS, BRAND_SCRIPT, BRAND_SERIF, C, LAYOUT, SANS, TEXT_SHADOW } from "../theme";
 
 /* ------------------------------------------------------------------------ */
-/* Iconos de línea (sustituyen a los emojis: el cliente no quiere emojis).   */
+/* Texto tecleado: las letras aparecen una a una (acompaña al SFX de typing). */
+/* El texto que falta se reserva invisible para que el bloque no se mueva.    */
 /* ------------------------------------------------------------------------ */
 
-export type IconKind = "pin" | "sparkle" | "leaf" | "ornament" | "champagne" | "calendar";
-
-const ICONS: Record<IconKind, { paths: string[]; circles?: Array<[number, number, number]> }> = {
-  pin: {
-    paths: ["M50 94 C38 78 20 60 20 40 A30 30 0 0 1 80 40 C80 60 62 78 50 94 Z"],
-    circles: [[50, 40, 11]],
-  },
-  sparkle: {
-    paths: [
-      "M46 10 C49 38 57 46 86 50 C57 54 49 62 46 90 C43 62 35 54 6 50 C35 46 43 38 46 10 Z",
-      "M82 8 C83 17 86 20 95 21 C86 22 83 25 82 34 C81 25 78 22 69 21 C78 20 81 17 82 8 Z",
-    ],
-  },
-  leaf: {
-    paths: [
-      "M50 88 C26 76 14 52 22 22 C36 30 46 22 50 8 C54 22 64 30 78 22 C86 52 74 76 50 88 Z",
-      "M50 96 L50 30",
-      "M50 66 L34 50",
-      "M50 54 L66 40",
-    ],
-  },
-  ornament: {
-    paths: ["M42 24 L58 24 L58 32 L42 32 Z", "M50 24 C46 14 56 10 56 18", "M23 56 C40 66 60 66 77 56", "M25 70 C40 78 60 78 75 70"],
-    circles: [[50, 60, 28]],
-  },
-  champagne: {
-    paths: [
-      "M18 22 L40 18 L42 50 C42 58 33 60 31 53 Z",
-      "M36 57 L40 82",
-      "M30 84 L48 81",
-      "M82 22 L60 18 L58 50 C58 58 67 60 69 53 Z",
-      "M64 57 L60 82",
-      "M70 84 L52 81",
-      "M50 4 L50 11",
-      "M42 8 L39 4",
-      "M58 8 L61 4",
-    ],
-  },
-  calendar: {
-    paths: ["M16 22 L84 22 L84 86 L16 86 Z", "M16 40 L84 40", "M33 12 L33 30", "M67 12 L67 30", "M30 56 L36 56", "M47 56 L53 56", "M64 56 L70 56", "M30 70 L36 70", "M47 70 L53 70"],
-  },
-};
-
-type LineIconProps = {
-  readonly kind: IconKind;
-  readonly size: number;
-  readonly color?: string;
-  /** Fotograma (relativo al padre) en que empieza a dibujarse. */
-  readonly at: number;
-  readonly drawFrames?: number;
-  readonly strokeWidth?: number;
-  readonly fill?: boolean;
-  readonly style?: React.CSSProperties;
-};
-
-export const LineIcon: React.FC<LineIconProps> = ({
-  kind,
-  size,
-  color = C.white,
+export const Typed: React.FC<{ readonly text: string; readonly at: number; readonly framesPerChar: number }> = ({
+  text,
   at,
-  drawFrames = 12,
-  strokeWidth = 4,
-  fill = false,
-  style,
+  framesPerChar,
 }) => {
   const frame = useCurrentFrame();
-  const p = interpolate(frame, [at, at + drawFrames], [0, 1], { ...clamp, easing: easeOut });
-  const pop = interpolate(frame, [at, at + 3, at + 6], [0, 1.12, 1], clamp);
-  const icon = ICONS[kind];
-  const common = {
-    pathLength: 1,
-    fill: fill ? color : "none",
-    fillOpacity: fill ? p : 0,
-    stroke: color,
-    strokeWidth,
-    strokeLinecap: "round" as const,
-    strokeLinejoin: "round" as const,
-    strokeDasharray: 1,
-    strokeDashoffset: 1 - p,
-  };
+  const n = Math.max(0, Math.min(text.length, Math.floor((frame - at) / framesPerChar) + 1));
+  if (frame < at) return <span style={{ opacity: 0 }}>{text}</span>;
   return (
-    <svg
-      viewBox="0 0 100 100"
-      width={size}
-      height={size}
-      style={{ overflow: "visible", scale: String(fill ? pop : 1), filter: "drop-shadow(0 2px 8px rgba(0,0,0,0.25))", ...style }}
-    >
-      {icon.paths.map((d) => (
-        <path key={d} d={d} {...common} />
-      ))}
-      {icon.circles?.map(([cx, cy, r]) => <circle key={`${cx}-${cy}`} cx={cx} cy={cy} r={r} {...common} fill="none" />)}
-    </svg>
+    <>
+      <span>{text.slice(0, n)}</span>
+      <span style={{ opacity: 0 }}>{text.slice(n)}</span>
+    </>
   );
 };
 
@@ -130,24 +52,43 @@ const CascadeExit: React.FC<{ readonly durationInFrames: number; readonly childr
   return <AbsoluteFill style={{ opacity: out.opacity, filter: `blur(${out.blur}px)` }}>{children}</AbsoluteFill>;
 };
 
+type WordFont = "sans" | "brand" | "script";
+
 type WordProps = {
   readonly at: number;
   readonly x: number;
   readonly y: number;
   readonly size: number;
-  readonly children: React.ReactNode;
-  readonly serif?: boolean;
+  readonly children: string;
+  /** sans = Inter Display (base); brand = Black Mango; script = Jimmy Script. */
+  readonly font?: WordFont;
   readonly weight?: number;
   readonly color?: string;
   readonly align?: "left" | "center";
+  /** Si se indica, la palabra se teclea a este ritmo (fotogramas por letra). */
+  readonly typing?: number;
 };
 
-/** Palabra que entra con fundido + desenfoque en 4 fotogramas y se queda. */
-export const Word: React.FC<WordProps> = ({ at, x, y, size, children, serif = false, weight = 700, color = C.white, align = "left" }) => {
+const FAMILY: Record<WordFont, string> = { sans: SANS, brand: BRAND_SERIF, script: BRAND_SCRIPT };
+
+/** Palabra que entra con fundido + desenfoque en 4 fotogramas (o tecleada) y se queda. */
+export const Word: React.FC<WordProps> = ({
+  at,
+  x,
+  y,
+  size,
+  children,
+  font = "sans",
+  weight = 700,
+  color = C.white,
+  align = "left",
+  typing,
+}) => {
   const frame = useCurrentFrame();
-  const a = blurIn(frame, at, 4, 12);
-  const rise = interpolate(frame, [at, at + 4], [serif ? 24 : 12, 0], { ...clamp, easing: easeOut });
-  const sc = serif ? interpolate(frame, [at, at + 4], [0.9, 1], { ...clamp, easing: easeOut }) : 1;
+  const accent = font !== "sans";
+  const a = typing ? { opacity: frame >= at ? 1 : 0, filter: "none" } : blurIn(frame, at, 4, 12);
+  const rise = typing ? 0 : interpolate(frame, [at, at + 4], [accent ? 24 : 12, 0], { ...clamp, easing: easeOut });
+  const sc = accent && !typing ? interpolate(frame, [at, at + 4], [0.9, 1], { ...clamp, easing: easeOut }) : 1;
   return (
     <div
       style={{
@@ -156,33 +97,26 @@ export const Word: React.FC<WordProps> = ({ at, x, y, size, children, serif = fa
         width: align === "center" ? 1080 : undefined,
         textAlign: align,
         top: y,
-        fontFamily: serif ? SERIF : SANS,
-        fontStyle: serif ? "italic" : "normal",
-        fontWeight: serif ? 400 : weight,
+        fontFamily: FAMILY[font],
+        fontWeight: accent ? 400 : weight,
         fontSize: size,
         lineHeight: 1,
-        letterSpacing: serif ? "-0.01em" : "-0.04em",
+        letterSpacing: font === "sans" ? "-0.04em" : font === "brand" ? "-0.01em" : "0em",
         color,
         whiteSpace: "nowrap",
-        textShadow: TEXT_SHADOW,
+        textShadow: accent ? "0 2px 4px rgba(0,0,0,0.28), 0 0 26px rgba(0,0,0,0.42)" : TEXT_SHADOW,
+        WebkitTextStroke: font === "brand" ? `1.5px ${color}` : undefined,
         opacity: a.opacity,
         filter: a.filter,
         translate: `0px ${rise}px`,
         scale: String(sc),
-        transformOrigin: "left center",
+        transformOrigin: align === "center" ? "center center" : "left center",
       }}
     >
-      {children}
+      {typing ? <Typed text={children} at={at} framesPerChar={typing} /> : children}
     </div>
   );
 };
-
-/** Icono suelto colocado en coordenadas absolutas dentro de una cascada. */
-export const PlacedIcon: React.FC<LineIconProps & { readonly x: number; readonly y: number }> = ({ x, y, ...icon }) => (
-  <div style={{ position: "absolute", left: x, top: y }}>
-    <LineIcon {...icon} />
-  </div>
-);
 
 /* ------------------------------------------------------------------------ */
 /* Ítem numerado (referente "1. Mal aliento").                               */
@@ -194,11 +128,8 @@ type NumberedItemProps = {
   readonly name: string;
   readonly from: number;
   readonly durationInFrames: number;
-  /** "1." … o null para usar un icono en lugar del número. */
-  readonly num: string | null;
+  readonly num: string;
   readonly lines: ReadonlyArray<ItemLine>;
-  readonly icon?: { readonly kind: IconKind; readonly at: number };
-  readonly leadIcon?: IconKind;
   /** Borde izquierdo final del bloque. */
   readonly left: number;
   readonly top?: number;
@@ -214,8 +145,6 @@ const NumberedItemInner: React.FC<Omit<NumberedItemProps, "name" | "from">> = ({
   durationInFrames,
   num,
   lines,
-  icon,
-  leadIcon,
   left,
   top = LAYOUT.blockTop,
 }) => {
@@ -228,32 +157,20 @@ const NumberedItemInner: React.FC<Omit<NumberedItemProps, "name" | "from">> = ({
   return (
     <AbsoluteFill style={{ opacity: out.opacity, filter: `blur(${out.blur}px)` }}>
       <div style={{ position: "absolute", left, top, display: "flex", alignItems: "center", gap: 22 }}>
-        <div
-          style={{
-            width: numW,
-            display: "flex",
-            justifyContent: "flex-end",
-            translate: `${slide}px 0px`,
-            scale: String(pop),
-          }}
-        >
-          {num ? (
-            <span
-              style={{
-                fontFamily: SANS,
-                fontWeight: 900,
-                fontSize: 104,
-                lineHeight: 1,
-                letterSpacing: "-0.04em",
-                color: C.white,
-                textShadow: TEXT_SHADOW,
-              }}
-            >
-              {num}
-            </span>
-          ) : leadIcon ? (
-            <LineIcon kind={leadIcon} size={96} at={0} drawFrames={10} strokeWidth={5} />
-          ) : null}
+        <div style={{ width: numW, display: "flex", justifyContent: "flex-end", translate: `${slide}px 0px`, scale: String(pop) }}>
+          <span
+            style={{
+              fontFamily: SANS,
+              fontWeight: 900,
+              fontSize: 104,
+              lineHeight: 1,
+              letterSpacing: "-0.04em",
+              color: C.white,
+              textShadow: TEXT_SHADOW,
+            }}
+          >
+            {num}
+          </span>
         </div>
         <div style={{ display: "flex", flexDirection: "column" }}>
           {lines.map((l) => {
@@ -281,7 +198,6 @@ const NumberedItemInner: React.FC<Omit<NumberedItemProps, "name" | "from">> = ({
             );
           })}
         </div>
-        {icon ? <LineIcon kind={icon.kind} size={92} at={icon.at} strokeWidth={4.5} style={{ marginLeft: 8 }} /> : null}
       </div>
     </AbsoluteFill>
   );
@@ -331,7 +247,7 @@ export const Subtitles: React.FC<{ readonly name: string; readonly captions: Cap
 };
 
 /* ------------------------------------------------------------------------ */
-/* Barra de valoración 1–10 (objeto recurrente del referente).               */
+/* Barra 1–10 (objeto del referente) con la escala beige → marrón de marca.   */
 /* ------------------------------------------------------------------------ */
 
 type BarProps = {
@@ -343,12 +259,7 @@ type BarProps = {
   readonly y?: number;
 };
 
-const Pill: React.FC<{ readonly width: number; readonly height: number; readonly y: number; readonly children: React.ReactNode }> = ({
-  width,
-  height,
-  y,
-  children,
-}) => (
+const Pill: React.FC<{ readonly width: number; readonly height: number; readonly y: number }> = ({ width, height, y }) => (
   <div
     style={{
       position: "absolute",
@@ -362,13 +273,16 @@ const Pill: React.FC<{ readonly width: number; readonly height: number; readonly
       backdropFilter: "blur(12px)",
       boxShadow: "0 6px 24px rgba(0,0,0,0.12)",
     }}
-  >
-    {children}
-  </div>
+  />
 );
 
 const Pointer: React.FC<{ readonly x: number; readonly y: number }> = ({ x, y }) => (
-  <svg width={26} height={20} viewBox="0 0 26 20" style={{ position: "absolute", left: x - 13, top: y, overflow: "visible", filter: "drop-shadow(0 2px 6px rgba(0,0,0,0.3))" }}>
+  <svg
+    width={26}
+    height={20}
+    viewBox="0 0 26 20"
+    style={{ position: "absolute", left: x - 13, top: y, overflow: "visible", filter: "drop-shadow(0 2px 6px rgba(0,0,0,0.3))" }}
+  >
     <path d="M2 2 L24 2 L13 18 Z" fill="white" stroke="white" strokeWidth={3} strokeLinejoin="round" />
   </svg>
 );
@@ -383,16 +297,13 @@ const RatingBarInner: React.FC<Omit<BarProps, "name" | "from">> = ({ durationInF
   const frame = useCurrentFrame();
   const a = blurIn(frame, 0, 6, 8);
   const out = blurOut(frame, durationInFrames);
-  const pillW = 795;
   const pitch = 77;
   const d = 56;
   const x0 = 540 - (9 * pitch) / 2;
   const idx = keyframes(frame, pointer, easeInOut);
   return (
     <AbsoluteFill style={{ opacity: a.opacity * out.opacity, filter: `${a.filter} blur(${out.blur}px)` }}>
-      <Pill width={pillW} height={74} y={y}>
-        <></>
-      </Pill>
+      <Pill width={795} height={74} y={y} />
       {C.scale.map((col, i) => (
         <div
           key={i}
@@ -410,7 +321,7 @@ const RatingBarInner: React.FC<Omit<BarProps, "name" | "from">> = ({ durationInF
             fontFamily: SANS,
             fontWeight: 600,
             fontSize: 24,
-            color: "white",
+            color: C.scaleText[i],
             letterSpacing: "-0.02em",
             boxShadow: "inset 0 -2px 0 rgba(0,0,0,0.08)",
           }}
@@ -461,9 +372,7 @@ const CalendarInner: React.FC<Omit<CalendarProps, "name" | "from">> = ({
   const fillP = interpolate(frame, [arriveAt, arriveAt + 3], [0, 1], clamp);
   return (
     <AbsoluteFill style={{ opacity: a.opacity * out.opacity, filter: `${a.filter} blur(${out.blur}px)` }}>
-      <Pill width={790} height={100} y={y}>
-        <></>
-      </Pill>
+      <Pill width={790} height={100} y={y} />
       {DAYS.map((day, i) => {
         const isTarget = i === targetIndex;
         const isEvent = i === eventIndex;
@@ -477,8 +386,8 @@ const CalendarInner: React.FC<Omit<CalendarProps, "name" | "from">> = ({
               width: d,
               height: d,
               borderRadius: d / 2,
-              backgroundColor: isTarget ? `rgba(252,242,16,${fillP})` : "rgba(255,255,255,0.18)",
-              border: isEvent ? "3px solid rgba(255,255,255,0.95)" : "2px solid rgba(255,255,255,0.35)",
+              backgroundColor: isTarget ? `rgba(163,185,136,${fillP})` : isEvent ? "rgba(228,198,168,0.9)" : "rgba(255,255,255,0.18)",
+              border: isEvent ? `3px solid ${BRAND.beige}` : "2px solid rgba(255,255,255,0.35)",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -486,7 +395,7 @@ const CalendarInner: React.FC<Omit<CalendarProps, "name" | "from">> = ({
               fontWeight: 600,
               fontSize: 34,
               letterSpacing: "-0.02em",
-              color: isTarget && fillP > 0.5 ? "#1C1A14" : "white",
+              color: (isTarget && fillP > 0.5) || isEvent ? BRAND.navy : "white",
               scale: String(isTarget ? hit : 1),
             }}
           >
@@ -494,15 +403,12 @@ const CalendarInner: React.FC<Omit<CalendarProps, "name" | "from">> = ({
           </div>
         );
       })}
-      <div style={{ position: "absolute", left: x0 + eventIndex * pitch - 20, top: y + 58 }}>
-        <LineIcon kind="sparkle" size={40} color={C.yellow} at={8} fill strokeWidth={3} />
-      </div>
       <div
         style={{
           position: "absolute",
-          left: x0 + eventIndex * pitch - 60,
-          width: 120,
-          top: y + 100,
+          left: x0 + eventIndex * pitch - 70,
+          width: 140,
+          top: y + 62,
           textAlign: "center",
           fontFamily: SANS,
           fontWeight: 500,
@@ -521,7 +427,7 @@ const CalendarInner: React.FC<Omit<CalendarProps, "name" | "from">> = ({
 };
 
 /* ------------------------------------------------------------------------ */
-/* Halo de color en los bordes + punch-in (referente: nota 10 → rojo).       */
+/* Halo de color en los bordes (referente) con colores de marca.             */
 /* ------------------------------------------------------------------------ */
 
 type GlowProps = {
@@ -530,6 +436,8 @@ type GlowProps = {
   readonly durationInFrames: number;
   readonly rgb: string;
   readonly peak?: number;
+  /** screen = halo luminoso; normal = viñeta de color (para tonos oscuros). */
+  readonly blend?: "screen" | "normal";
 };
 
 export const GlowEdges: React.FC<GlowProps> = ({ name, from, durationInFrames, ...rest }) => (
@@ -538,11 +446,7 @@ export const GlowEdges: React.FC<GlowProps> = ({ name, from, durationInFrames, .
   </Sequence>
 );
 
-const GlowInner: React.FC<{ readonly durationInFrames: number; readonly rgb: string; readonly peak?: number }> = ({
-  durationInFrames,
-  rgb,
-  peak = 0.55,
-}) => {
+const GlowInner: React.FC<Omit<GlowProps, "name" | "from">> = ({ durationInFrames, rgb, peak = 0.55, blend = "screen" }) => {
   const frame = useCurrentFrame();
   const o = interpolate(frame, [0, 4, durationInFrames - 10, durationInFrames], [0, peak, peak, 0], clamp);
   return (
@@ -551,58 +455,60 @@ const GlowInner: React.FC<{ readonly durationInFrames: number; readonly rgb: str
         opacity: o,
         boxShadow: `inset 0 0 260px 70px rgba(${rgb},0.95)`,
         background: `radial-gradient(ellipse 75% 60% at 50% 45%, rgba(${rgb},0) 55%, rgba(${rgb},0.35) 100%)`,
-        mixBlendMode: "screen",
+        mixBlendMode: blend,
       }}
     />
   );
 };
 
 /* ------------------------------------------------------------------------ */
-/* Cierre con logotipo (manual de marca).                                     */
+/* Cierre con la identidad del manual: panel salvia + logotipo blanco.       */
 /* ------------------------------------------------------------------------ */
 
-export const EndCardOverlay: React.FC<{ readonly durationInFrames: number }> = ({ durationInFrames }) => {
+export const EndCard: React.FC<{ readonly durationInFrames: number }> = ({ durationInFrames }) => {
   const frame = useCurrentFrame();
-  const logoIn = interpolate(frame, [2, 16], [0, 1], { ...clamp, easing: easeOut });
+  const panelIn = interpolate(frame, [0, 8], [0, 1], { ...clamp, easing: easeOut });
+  const logoIn = interpolate(frame, [4, 18], [0, 1], { ...clamp, easing: easeOut });
+  const line = blurIn(frame, 12, 6, 10);
   const fadeToBlack = interpolate(frame, [durationInFrames - 21, durationInFrames], [0, 1], clamp);
-  const line = blurIn(frame, 10, 6, 10);
   return (
-    <AbsoluteFill>
-      <AbsoluteFill style={{ backgroundColor: "rgba(28,24,18,0.34)" }} />
+    <AbsoluteFill style={{ opacity: panelIn }}>
+      <AbsoluteFill
+        style={{
+          backgroundColor: BRAND.sage,
+          backgroundImage: "radial-gradient(ellipse 80% 55% at 50% 45%, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0) 70%)",
+        }}
+      />
       <Img
         src={staticFile("brand/slate_logo_white.svg")}
         style={{
           position: "absolute",
           width: 560,
           left: 260,
-          top: 760,
+          top: 790,
           opacity: logoIn,
           scale: String(interpolate(logoIn, [0, 1], [0.94, 1])),
-          filter: `blur(${interpolate(logoIn, [0, 1], [10, 0])}px) drop-shadow(0 4px 18px rgba(0,0,0,0.25))`,
+          filter: `blur(${interpolate(logoIn, [0, 1], [10, 0])}px)`,
         }}
       />
       <div
         style={{
           position: "absolute",
-          top: 1010,
+          top: 1030,
           left: 0,
           width: 1080,
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          gap: 14,
+          textAlign: "center",
+          fontFamily: BRAND_SANS,
+          fontSize: 40,
+          letterSpacing: "0.32em",
+          color: "white",
           opacity: line.opacity,
           filter: line.filter,
         }}
       >
-        <LineIcon kind="pin" size={50} at={10} strokeWidth={6} />
-        <span style={{ fontFamily: SANS, fontWeight: 500, fontSize: 50, letterSpacing: "-0.03em", color: "white", textShadow: TEXT_SHADOW }}>
-          Tulsa, OK
-        </span>
+        TULSA, OK
       </div>
       <AbsoluteFill style={{ backgroundColor: "black", opacity: fadeToBlack }} />
     </AbsoluteFill>
   );
 };
-
-export { easeInOut };

@@ -177,11 +177,10 @@ espectrogramas y correlación cruzada de cada SFX del pack contra el audio.
 
 ## 9. Adaptación a la marca SLATE (manual de branding + guía del cliente)
 
-- **Tipografías y colores del grafismo = los del referente** (indicación explícita del
-  cliente). Del manual se usa: el **logotipo SLATE** (recuadro + letras) en el cierre y la
-  sensación general clean / premium.
-- Paleta del manual (referencia, no se usa en textos): salvia `#7F9369`, salvia claro
-  `#9DB37F`, marrón `#6B3E22`, beige `#E7C9A8`, blanco, azul noche `#152A36`.
+- ~~Tipografías y colores del grafismo = los del referente~~ → **sustituido por §10
+  (ronda 1)**: colores del manual y fuentes del manual en las palabras importantes; la
+  tipografía base del referente se mantiene.
+- Del manual se usa además el **logotipo SLATE** (recuadro + letras, vectorizado del PDF).
 - **Nada tapa la cara** de quien habla: todo texto/gráfico se coloca por debajo de la
   barbilla o en zonas sin rostro, calculado con detección de cara por toma.
 - **Sin emojis** en pantalla (se sustituyen por iconos vectoriales finos).
@@ -192,4 +191,35 @@ espectrogramas y correlación cruzada de cada SFX del pack contra el audio.
 ## 10. Correcciones aprobadas por el cliente
 
 > Aquí se añaden, con fecha, las correcciones que el cliente apruebe, para que se queden
-> como regla en las próximas ediciones.
+> como regla en las próximas ediciones. **Estas reglas mandan sobre las secciones 1–9.**
+
+### 2026-11-13 · Ronda 1 (sobre la v1 del reel "Holiday spray tan")
+
+1. **Colores = manual de marca SLATE, no los del referente.** Muestreados del PDF:
+   salvia `#809368` · salvia claro `#A3B988` · beige `#E4C6A8` · marrón `#683A22` ·
+   azul noche `#132B39` · blanco `#FFFFFF`.
+   - Texto base y subtítulos: blanco.
+   - Palabra destacada: salvia claro `#A3B988`; acento cálido (p. ej. "glow"): beige `#E4C6A8`.
+   - Barra 1–10: escala de 10 pasos del beige `#E4C6A8` al marrón `#683A22` (números en
+     azul noche sobre los tonos claros y en blanco sobre los oscuros).
+   - Calendario: día objetivo en salvia claro con texto azul noche; día del evento en beige.
+   - Halo de bordes: salvia (`screen`, 0.50), beige (`screen`, 0.45) o marrón (`normal`, 0.42).
+   - Cierre: panel salvia `#809368` a pantalla completa con el logotipo blanco del manual
+     (560 px de ancho) y la ubicación debajo.
+   - Prohibido el amarillo `#FCF210` y la escala verde→rojo del referente.
+2. **Tipografía.** La base del referente (Inter Display) se mantiene: el cliente la aprobó.
+   Las **palabras importantes** van con las fuentes del manual:
+   - **Black Mango** (Regular): palabra o frase destacada ("OK", "lovers,", "for you",
+     "2 days before", "holiday"). Contorno de 1.5 px del mismo color y sombra suave
+     `0 2px 4px rgba(0,0,0,.28), 0 0 26px rgba(0,0,0,.42)` para que se lea en fondos claros.
+   - **Jimmy Script** (Light): una sola palabra caligráfica como acento ("glow", igual que
+     "Feel Your glow up" del manual).
+   - **Tenor Sans**: ubicación y datos del cierre, en mayúsculas con tracking 0.32 em.
+3. **Sin emojis ni iconos decorativos** junto a los textos (ni chinchetas, ni destellos, ni
+   iconos de festividades). La información la llevan el texto y el b-roll.
+4. **El vídeo empieza con la persona hablando a cámara**, nunca con un b-roll. Zoom de
+   arranque 2.3× → 1.85× en 18 fotogramas siguiendo la cara; el primer b-roll entra después.
+5. **SFX de typing en algunos textos** (3–5 por vídeo, no en todos): el texto se escribe
+   letra a letra (1.4–2 fotogramas por letra, el hueco que falta se reserva para que no se
+   mueva) con el tecleo suave de `Escribir teclado.mp3` (fragmentos de 0.5 s y 0.75 s,
+   volumen 0.30). Usado en: ubicación del hook, etiqueta del tip, aviso de plazas y CTA.

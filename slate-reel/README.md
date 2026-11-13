@@ -26,7 +26,8 @@ scripts/prep_talking.sh   # tomas a cámara: 30 fps, etalonaje cálido, voz a -1
 scripts/prep_broll.sh     # b-roll elegido, recortado y etalonado → public/broll
 ```
 
-`public/sfx` contiene los 6 SFX del pack 1 que usa el referente (normalizados a −3 dBFS) y
+`public/sfx` contiene los SFX del pack 1 que usa el referente y el tecleo para los textos (normalizados a −3 dBFS);
+`public/brand` el logo vectorizado y las fuentes Black Mango / Jimmy Script extraídas del manual; y
 `public/music/music_v1.mp3` la base generada con IA (Higgsfield · ElevenLabs Music v2).
 
 ## Comandos
