@@ -1,7 +1,7 @@
 import { nowISO, DEFAULT_TIME_ZONE } from "@/lib/dates";
 import { uid } from "@/lib/utils";
 import type { LifeOSDB } from "./db";
-import type { Category, ExpenseNature, JobStatus, Settings, TaskCategory } from "./types";
+import type { Category, DayTemplate, ExpenseNature, JobStatus, PlannerSettings, Settings, TaskCategory } from "./types";
 
 export const DEFAULT_TASK_CATEGORIES: TaskCategory[] = [
   { key: "trabajo", name: "Trabajo", color: "orange" },
@@ -13,6 +13,34 @@ export const DEFAULT_TASK_CATEGORIES: TaskCategory[] = [
   { key: "estudio", name: "Estudio", color: "teal" },
   { key: "finanzas", name: "Finanzas", color: "sky" },
 ];
+
+export const DEFAULT_PLANNER: PlannerSettings = {
+  dayStart: "07:00",
+  dayEnd: "21:00",
+  focusStart: "08:00",
+  focusEnd: "12:00",
+  bufferMin: 10,
+  defaultTaskMin: 45,
+  pomodoroMin: 25,
+  breakMin: 5,
+};
+
+/** Suggested starting template; the user edits or replaces it. */
+export const SUGGESTED_TEMPLATE: DayTemplate = {
+  id: "sugerida",
+  name: "Día de trabajo",
+  blocks: [
+    { title: "Planificar el día", start: "07:30", end: "07:45", category: "personal" },
+    { title: "Trabajo profundo", start: "08:00", end: "10:00", category: "trabajo" },
+    { title: "Descanso", start: "10:00", end: "10:15", category: "personal" },
+    { title: "Correos y mensajes", start: "10:15", end: "10:45", category: "trabajo" },
+    { title: "Trabajo profundo", start: "10:45", end: "12:30", category: "trabajo" },
+    { title: "Almuerzo", start: "12:30", end: "13:30", category: "personal" },
+    { title: "Clientes y reuniones", start: "14:00", end: "16:00", category: "clientes" },
+    { title: "Tareas cortas", start: "16:00", end: "17:00", category: "trabajo" },
+    { title: "Ejercicio", start: "18:00", end: "19:00", category: "salud" },
+  ],
+};
 
 export function defaultSettings(): Settings {
   return {
@@ -40,6 +68,8 @@ export function defaultSettings(): Settings {
       obligationLeadDays: 3,
     },
     taskCategories: DEFAULT_TASK_CATEGORIES,
+    planner: DEFAULT_PLANNER,
+    dayTemplates: [],
     updatedAt: nowISO(),
   };
 }

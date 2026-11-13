@@ -14,6 +14,7 @@ import type {
   Client,
   ClientPayment,
   DayPlan,
+  FocusSession,
   GoalContribution,
   Habit,
   HabitLog,
@@ -57,6 +58,7 @@ export interface AppData {
   habitLogs: HabitLog[];
   weekPlans: WeekPlan[];
   alertState: AlertState[];
+  focusSessions: FocusSession[];
 }
 
 const DataContext = React.createContext<AppData | null>(null);
@@ -109,6 +111,7 @@ export function DataProvider({ children }: { children: React.ReactNode }) {
         habitLogs,
         weekPlans,
         alertState,
+        focusSessions,
       ] = await Promise.all([
         d.settings.get("app"),
         d.accounts.orderBy("order").toArray(),
@@ -131,9 +134,15 @@ export function DataProvider({ children }: { children: React.ReactNode }) {
         d.habitLogs.toArray(),
         d.weekPlans.toArray(),
         d.alertState.toArray(),
+        d.focusSessions.orderBy("date").reverse().limit(2000).toArray(),
       ]);
       return {
-        settings: { ...defaultSettings(), ...settings, notifications: { ...defaultSettings().notifications, ...settings?.notifications } },
+        settings: {
+          ...defaultSettings(),
+          ...settings,
+          notifications: { ...defaultSettings().notifications, ...settings?.notifications },
+          planner: { ...defaultSettings().planner, ...settings?.planner },
+        },
         accounts,
         categories,
         budgets,
@@ -154,6 +163,7 @@ export function DataProvider({ children }: { children: React.ReactNode }) {
         habitLogs,
         weekPlans,
         alertState,
+        focusSessions,
       };
     },
     [status],

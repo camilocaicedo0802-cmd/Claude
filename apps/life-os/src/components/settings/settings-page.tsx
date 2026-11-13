@@ -202,6 +202,60 @@ export function SettingsPage() {
         </div>
       </Card>
 
+      <Card id="planificador" className="scroll-mt-20">
+        <CardHeader title="Planificador y enfoque" description="Así arma el planificador tu día y así funciona el modo enfoque." />
+        <div className="grid gap-4 px-4 pb-5 sm:grid-cols-2 sm:px-5">
+          <Field label="Mi día empieza" htmlFor="pl-start">
+            <Input id="pl-start" type="time" defaultValue={s.planner.dayStart} onBlur={(e) => e.target.value && save({ planner: { ...s.planner, dayStart: e.target.value } })} />
+          </Field>
+          <Field label="Mi día termina" htmlFor="pl-end">
+            <Input id="pl-end" type="time" defaultValue={s.planner.dayEnd} onBlur={(e) => e.target.value && save({ planner: { ...s.planner, dayEnd: e.target.value } })} />
+          </Field>
+          <Field label="Máxima energía desde" htmlFor="pl-fs" hint="Auto-planificar pone aquí las tareas de prioridad alta.">
+            <Input id="pl-fs" type="time" defaultValue={s.planner.focusStart} onBlur={(e) => e.target.value && save({ planner: { ...s.planner, focusStart: e.target.value } })} />
+          </Field>
+          <Field label="Máxima energía hasta" htmlFor="pl-fe">
+            <Input id="pl-fe" type="time" defaultValue={s.planner.focusEnd} onBlur={(e) => e.target.value && save({ planner: { ...s.planner, focusEnd: e.target.value } })} />
+          </Field>
+          <Field label="Pausa entre bloques" htmlFor="pl-buffer">
+            <NativeSelect id="pl-buffer" value={String(s.planner.bufferMin)} onChange={(e) => save({ planner: { ...s.planner, bufferMin: Number(e.target.value) } })}>
+              {[0, 5, 10, 15, 20, 30].map((m) => (
+                <option key={m} value={m}>
+                  {m === 0 ? "Sin pausa" : `${m} min`}
+                </option>
+              ))}
+            </NativeSelect>
+          </Field>
+          <Field label="Duración por defecto de una tarea" htmlFor="pl-default" hint="Para tareas sin duración estimada.">
+            <NativeSelect id="pl-default" value={String(s.planner.defaultTaskMin)} onChange={(e) => save({ planner: { ...s.planner, defaultTaskMin: Number(e.target.value) } })}>
+              {[15, 30, 45, 60, 90, 120].map((m) => (
+                <option key={m} value={m}>
+                  {m < 60 ? `${m} min` : `${m / 60} h`}
+                </option>
+              ))}
+            </NativeSelect>
+          </Field>
+          <Field label="Sesión de enfoque" htmlFor="pl-pomo">
+            <NativeSelect id="pl-pomo" value={String(s.planner.pomodoroMin)} onChange={(e) => save({ planner: { ...s.planner, pomodoroMin: Number(e.target.value) } })}>
+              {[15, 20, 25, 30, 45, 50, 60, 90].map((m) => (
+                <option key={m} value={m}>
+                  {m} min
+                </option>
+              ))}
+            </NativeSelect>
+          </Field>
+          <Field label="Descanso" htmlFor="pl-break">
+            <NativeSelect id="pl-break" value={String(s.planner.breakMin)} onChange={(e) => save({ planner: { ...s.planner, breakMin: Number(e.target.value) } })}>
+              {[3, 5, 10, 15, 20].map((m) => (
+                <option key={m} value={m}>
+                  {m} min
+                </option>
+              ))}
+            </NativeSelect>
+          </Field>
+        </div>
+      </Card>
+
       <Card>
         <CardHeader title="Notificaciones" description="Se muestran en la campana mientras usas la app. Los avisos push en segundo plano aún no están disponibles." />
         <div className="space-y-3 px-4 pb-5 sm:px-5">

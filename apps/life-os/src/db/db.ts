@@ -6,6 +6,7 @@ import type {
   Budget,
   CalendarEvent,
   Category,
+  FocusSession,
   Client,
   ClientPayment,
   DayPlan,
@@ -52,6 +53,7 @@ export class LifeOSDB extends Dexie {
   habitLogs!: Table<HabitLog, string>;
   weekPlans!: Table<WeekPlan, string>;
   alertState!: Table<AlertState, string>;
+  focusSessions!: Table<FocusSession, string>;
 
   constructor(name: string) {
     super(name);
@@ -80,6 +82,10 @@ export class LifeOSDB extends Dexie {
       weekPlans: "weekStart",
       alertState: "key",
     });
+    // v2: focus sessions from the day planner's focus timer. Existing data is kept as is.
+    this.version(2).stores({
+      focusSessions: "id, date, taskId",
+    });
   }
 }
 
@@ -106,6 +112,7 @@ export const TABLE_NAMES = [
   "habitLogs",
   "weekPlans",
   "alertState",
+  "focusSessions",
 ] as const;
 
 export type TableName = (typeof TABLE_NAMES)[number];

@@ -23,6 +23,56 @@ import { createTask, rescheduleTask, setDayPriorities } from "@/services/life-se
 import { AgendaRow, CheckCircle, HabitCheckRow, TaskItem, usePriorityToggle } from "./bits";
 import { setTaskDone } from "@/services/life-service";
 import { InstallBanner } from "@/components/shell/pwa";
+import { dayCapacity, dayItems, nowAndNext, planCandidates, toTime } from "@/domain/planner";
+import { categoryFor } from "@/domain/tasks";
+import { formatTime, timeToMinutes } from "@/lib/dates";
+import { CalendarClock, Play, Wand2 } from "lucide-react";
+import { useFocus } from "./focus";
+
+/** Compact "Ahora / Siguiente" with a shortcut to the day planner. */
+function PlanMyDayCard() {
+  const data = useData();
+  const now = useNow();
+  const focus = useFocus();
+  const planner = data.settings.planner;
+  const items = React.useMemo(
+    () => dayItems(now.date, data.tasks, data.events, planner, (k) => categoryFor(k, data.settings.taskCategories)?.color ?? "slate"),
+    [now.date, data.tasks, data.events, planner, data.settings.taskCategories],
+  );
+  const nowMin = timeToMinutes(now.time);
+  const { now: current, next } = nowAndNext(items, nowMin);
+  const unplanned = planCandidates(data.tasks, now.date, now.date).length;
+  const cap = dayCapacity(items, planner);
+  return (
+    <Card className="flex flex-wrap items-center gap-3 p-4">
+      <span className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-brand-soft text-brand">
+        <CalendarClock className="size-4" />
+      </span>
+      <div className="min-w-0 flex-1 basis-[calc(100%-3rem)] sm:basis-0">
+        <p className="truncate text-[15px] font-semibold">
+          {current ? `Ahora: ${current.title}` : next ? `Siguiente: ${next.title} a las ${formatTime(toTime(next.start))}` : items.length ? "Lo programado de hoy ya pasó" : "Tu día aún no tiene cronograma"}
+        </p>
+        <p className="truncate text-[13px] text-muted-foreground">
+          {current && next ? `Luego: ${next.title} a las ${formatTime(toTime(next.start))} · ` : ""}
+          {unplanned ? `${unplanned} ${unplanned === 1 ? "tarea" : "tareas"} sin hora · ` : ""}
+          {Math.round(cap.free / 60)} h libres
+        </p>
+      </div>
+      <div className="flex w-full gap-2 pl-12 sm:w-auto sm:pl-0">
+        {current && !focus.state && (
+          <Button size="sm" variant="outline" onClick={() => focus.start({ title: current.title, taskId: current.kind === "task" ? current.id : null })}>
+            <Play /> Enfoque
+          </Button>
+        )}
+        <Button size="sm" asChild>
+          <Link href="/vida/planificar/">
+            <Wand2 /> Planificar mi día
+          </Link>
+        </Button>
+      </div>
+    </Card>
+  );
+}
 
 export function QuickCapture({ defaultDate, placeholder = "Anota algo pendiente y pulsa Enter" }: { defaultDate: DateStr | null; placeholder?: string }) {
   const now = useNow();
@@ -155,6 +205,7 @@ export function TodayPage() {
       }
     >
       <InstallBanner />
+      <PlanMyDayCard />
       <Card className="p-4 sm:p-5">
         <div className="flex flex-wrap items-start justify-between gap-x-6 gap-y-3">
           <div className="min-w-0 flex-1">
