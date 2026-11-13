@@ -51,7 +51,7 @@ const KineticBlock: React.FC<{ b: Block; t: number; next?: Block }> = ({ b, t, n
   const before = all.filter((w) => w.i < firstHl);
   const after = all.filter((w) => w.i > lastHl);
 
-  const start = all[0].start - 0.05;
+  const start = Math.max(all[0].start - 0.05, b.from ?? -1);
   const naturalEnd = Math.max(...all.map((w) => w.end)) + 0.5;
   const end = b.end ?? Math.min(naturalEnd, next ? next.w && word(next.w[0]).start - 0.02 : naturalEnd);
   if (t < start || t > end) return null;
@@ -219,15 +219,16 @@ const Strike: React.FC<{ t: number; t0: number; width: number; hlSize: number }>
   );
 };
 
-export const Captions: React.FC = () => {
+/** Subtítulos normales (encima de todo) o, con behind, los que van detrás de la persona recortada. */
+export const Captions: React.FC<{ behind?: boolean }> = ({ behind = false }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const t = frame / fps;
   return (
     <>
-      {BLOCKS.map((b, i) => (
-        <KineticBlock key={b.id} b={b} t={t} next={BLOCKS[i + 1]} />
-      ))}
+      {BLOCKS.map((b, i) =>
+        Boolean(b.behind) === behind ? <KineticBlock key={b.id} b={b} t={t} next={BLOCKS[i + 1]} /> : null,
+      )}
     </>
   );
 };

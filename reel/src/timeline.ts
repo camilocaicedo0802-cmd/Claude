@@ -24,10 +24,11 @@ export type Block = {
   maxHl?: number; // tamaño máximo de la destacada (px)
   hlWidth?: number; // ancho objetivo de la destacada (px)
   strikeAt?: number; // tachado rojo a mano alzada sobre la destacada
+  from?: number; // no aparece antes de este instante (p. ej. hasta que entra su b-roll)
+  behind?: boolean; // se dibuja detrás de la persona del b-roll recortado (matte)
 };
 
 export const BLOCKS: Block[] = [
-  { id: "diseno-unico", w: [16, 22], hl: [21, 22], style: "title", y: 0.27, end: at(6.70) },
   { id: "silla-sentando", w: [24, 30], hl: [24], y: 0.62, end: at(11.47) },
   { id: "fabricamos", w: [31, 33], hl: [32], style: "title", y: 0.3, end: at(12.53) },
   { id: "danes", w: [34, 37], hl: [37], y: 0.62, end: at(13.73) },
@@ -40,7 +41,8 @@ export const BLOCKS: Block[] = [
   { id: "muchas-cosas", w: [67, 71], hl: [69, 70, 71], y: 0.62, end: at(26.30) },
   { id: "poliuretanos", w: [76, 81], hl: [78], style: "title", y: 0.32, end: at(33.25) },
   { id: "empresa", w: [93, 98], hl: [94], y: 0.3, end: at(39.50) },
-  { id: "proyectos", w: [111, 118], hl: [115], y: 0.3, end: at(46.67) },
+  // Corrección ronda 3: "Proyectos" detrás de la persona (recorte por IA del clip c301) y "Colombia" legible.
+  { id: "proyectos", w: [111, 118], hl: [115], y: 0.3, from: at(44.55), end: at(46.67), behind: true },
   { id: "lideres", w: [119, 123], hl: [120], style: "lime", y: 0.6, end: at(48.35) },
   { id: "gratuito", w: [124, 130], hl: [129, 130], y: 0.56, end: at(51.10), skip: [124] },
   { id: "hogar", w: [131, 134], hl: [133, 134], y: 0.32, end: at(52.83) },
@@ -53,6 +55,7 @@ export const BLOCKS: Block[] = [
   { id: "por-fuera", w: [187, 192], hl: [191, 192], y: 0.58, end: at(76.37) },
   { id: "nada", w: [194, 199], hl: [199], y: 0.58, end: at(78.86) },
   { id: "ayudamos", w: [200, 203], hl: [202, 203], y: 0.3, end: at(80.15) },
+  { id: "contactanos", w: [204, 205], hl: [205], y: 0.58, end: at(81.37) },
   { id: "gusto", w: [206, 210], hl: [209], y: 0.6, end: at(82.65) },
   { id: "mejor", w: [211, 218], hl: [216, 217, 218], y: 0.3, end: at(84.53) },
   { id: "conjunto", w: [219, 225], hl: [224, 225], style: "lime", y: 0.58, end: VOICE_END },
@@ -72,23 +75,20 @@ export type BRoll = {
   pos?: string; // object-position para imágenes
   blurIn?: boolean; // entra con desenfoque + zoom que se asienta
   rate?: number; // velocidad de reproducción (renders casi estáticos a 0,75x)
+  matte?: string; // carpeta con la persona recortada (PNG con alfa por fotograma) para poner texto detrás
 };
 
-/** Instante en que él reaparece sentado en la silla (tras "esta es una silla de diseño único"). */
-export const SEATED_AT = at(9.7);
+/** Fin del gancho "la silla en la que me estoy sentando" (plano abierto con la silla visible). */
+export const HOOK_END = at(11.47);
 
 export const BROLL: BRoll[] = [
-  // Apertura: la silla sola (él está fuera de cuadro en el original de 5,9 s a 8,9 s) mientras dice
-  // "esta es una silla de diseño único".
-  { t0: 0, t1: SEATED_AT, src: "media/base.mp4", kind: "video", trim: 5.9, zoom: [1.0, 1.12], origin: "40% 78%", blurIn: true },
   { t0: at(11.47), t1: at(12.53), src: "media/broll1.mp4", kind: "video", trim: 0.2, zoom: [1.06, 1.14] },
   { t0: at(22.85), t1: at(23.88), src: "media/broll2.mp4", kind: "video", trim: 2.2, zoom: [1.0, 1.08] },
   { t0: at(30.52), t1: at(31.55), src: "media/broll2.mp4", kind: "video", trim: 5.33, zoom: [1.0, 1.06] },
   { t0: at(31.55), t1: at(32.25), src: "media/broll2.mp4", kind: "video", trim: 7.6, zoom: [1.04, 1.1] },
   { t0: at(32.25), t1: at(33.25), src: "media/foto7.jpg", kind: "image", zoom: [1.35, 1.5], origin: "30% 25%", pos: "50% 50%" },
   { t0: at(33.25), t1: at(39.50), src: "media/foto5.jpg", kind: "image", zoom: [1.12, 1.22], origin: "55% 40%", pos: "50% 30%" },
-  { t0: at(43.93), t1: at(44.93), src: "media/broll2.mp4", kind: "video", trim: 8.65, zoom: [1.0, 1.06] },
-  { t0: at(44.93), t1: at(46.67), src: "media/c301.mp4", kind: "video", trim: 1.0, zoom: [1.04, 1.12] },
+  { t0: at(44.55), t1: at(46.67), src: "media/c301.mp4", kind: "video", trim: 1.0, zoom: [1.04, 1.12], matte: "media/c301_matte" },
   { t0: at(51.10), t1: at(52.83), src: "media/c271.mp4", kind: "video", trim: 1.0, zoom: [1.0, 1.08] },
   { t0: at(52.83), t1: at(54.15), src: "media/broll2.mp4", kind: "video", trim: 10.35, zoom: [1.0, 1.07] },
   { t0: at(54.15), t1: at(55.83), src: "media/broll2.mp4", kind: "video", trim: 11.6, zoom: [1.02, 1.08] },
@@ -118,13 +118,13 @@ export const PUNCH_INS: { t0: number; t1: number; s: number }[] = [
 ];
 
 /** Vuelta a cabeza parlante con desenfoque + zoom que se asienta en 8 fotogramas. */
-export const BLUR_INS = [at(12.53), at(23.88), at(49.73), at(55.83), at(69.45), at(74.15), at(77.07), at(80.15), at(84.53)];
+export const BLUR_INS = [0, at(12.53), at(23.88), at(49.73), at(55.83), at(69.45), at(74.15), at(77.07), at(80.15), at(84.53)];
 /** Flash de exposición de 3 fotogramas. */
-export const FLASHES = [at(6.70), at(39.50), at(76.37), VOICE_END];
+export const FLASHES = [at(39.50), at(76.37), VOICE_END];
 /** Parpadeo oscuro de 1 fotograma antes de cambiar de b-roll. */
-export const FLICKERS = [at(32.22), at(44.90), at(54.12), at(83.15)];
+export const FLICKERS = [at(32.22), at(54.12), at(83.15)];
 /** Estelas de luz amarilla. */
-export const STREAKS = [0.05, at(11.50), at(22.88), at(72.08)];
+export const STREAKS = [at(11.50), at(22.88), at(72.08)];
 
 // ---------------------------------------------------------------------------------------------
 // 4. Efectos de sonido (estilo.md §8 + correcciones del usuario: typing en los textos).
@@ -138,7 +138,6 @@ export const SFX: Sfx[] = [
   // Gancho
   s(0, "whoosh1", 0.45),
   s(0.02, "subhit", 0.4),
-  typing(W0(21), 0.55),
   s(at(6.70), "flash", 0.4),
   s(at(6.70), "subhit", 0.45),
   s(W0(24), "pop", 0.28),
@@ -183,8 +182,7 @@ export const SFX: Sfx[] = [
   s(at(41.33), "riser_long", 0.3, 1.7),
   s(at(43.28), "whoosh2", 0.4),
   typing(W0(110), 0.45),
-  s(at(43.93), "whoosh3", 0.4),
-  s(at(44.93), "swoosh2", 0.28),
+  s(at(44.55), "whoosh3", 0.4),
   s(W0(115), "pop", 0.3),
   // Líderes / gratuito / hogar / ideas
   s(W0(120), "boom", 0.55),
@@ -235,8 +233,6 @@ export const SFX: Sfx[] = [
   s(at(79.55), "swoosh1", 0.28),
   s(W0(202), "subhit", 0.45),
   s(at(80.15), "swoosh1", 0.35),
-  typing(at(80.57), 0.4),
-  s(at(80.95), "click", 0.55),
   s(at(81.37), "whoosh2", 0.38),
   s(W0(209), "pop", 0.3),
   s(at(83.18), "swoosh1", 0.33),
@@ -248,5 +244,4 @@ export const SFX: Sfx[] = [
   s(VOICE_END + 0.25, "swoosh1", 0.35),
   s(VOICE_END + 0.3, "subhit", 0.4),
   typing(VOICE_END + 0.7, 0.45),
-  s(VOICE_END + 1.25, "click", 0.5),
 ];

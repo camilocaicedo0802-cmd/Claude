@@ -19,8 +19,7 @@ for k, s in enumerate(edl):
         f"afade=t=in:d={F},afade=t=out:st={max(0, d - F):.4f}:d={F}[s{k}]"
     )
     labels.append(f"[s{k}]")
-# La frase de apertura ("esta es una silla de diseño único") se grabó alejándose de la cámara: +11 dB.
-pre = ("[0:a]aresample=48000,pan=mono|c0=0.5*c0+0.5*c1,highpass=f=80,volume=enable='between(t,4.2,6.9)':volume=11dB,afftdn=nf=-28,"
+pre = ("[0:a]aresample=48000,pan=mono|c0=0.5*c0+0.5*c1,highpass=f=80,afftdn=nf=-28,"
        "equalizer=f=250:t=q:w=1:g=-2,equalizer=f=3200:t=q:w=1.2:g=2.5,"
        "acompressor=threshold=-22dB:ratio=3:attack=8:release=120:makeup=4,asplit=1[a]")
 graph = ";".join([pre] + parts + ["".join(labels) + f"concat=n={len(edl)}:v=0:a=1,loudnorm=I=-16:TP=-1.5:LRA=7[out]"])

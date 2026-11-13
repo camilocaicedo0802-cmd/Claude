@@ -32,8 +32,8 @@ ffmpeg -v error -y -ss 7.0 -i public/media/base.mp4 -frames:v 1 "$TMP/chair.png"
 ffmpeg -v error -y -i "$TMP/chair.png" -vf "crop=820:900:20:1020,scale=600:-1" -q:v 2 public/media/silla_completa.jpg
 ffmpeg -v error -y -i "$TMP/chair.png" -vf "crop=480:600:380:1300,scale=600:-1" -q:v 2 public/media/silla_cuero.jpg
 ffmpeg -v error -y -i "$TMP/chair.png" -vf "crop=420:540:520:1380,scale=600:-1" -q:v 2 public/media/silla_madera.jpg
-# Música: ANBR - Quantum desde 28.83 s (su subida de energía cae en "Somos líderes"), 70 s
-ffmpeg -v error -y -ss 28.83 -t 70 -i "$TMP/raw/anbr_quantum.wav" -af "afade=t=in:d=0.3,aresample=48000" -ac 2 public/audio/musica.wav
+# Música: ANBR - Quantum desde 30.60 s (su subida de energía cae en "Somos líderes"), 70 s
+ffmpeg -v error -y -ss 30.60 -t 70 -i "$TMP/raw/anbr_quantum.wav" -af "afade=t=in:d=0.3,aresample=48000" -ac 2 public/audio/musica.wav
 
 # 3. Transcripción Whisper (tiempos por palabra) -> EDL -> voz editada
 ffmpeg -v error -y -i "$TMP/raw/video_base.mov" -vn -ac 1 -ar 16000 "$TMP/base16k.wav"
@@ -74,3 +74,6 @@ sfx 1JXlbYd53TZESJMHsJ713i8D4C5VKEf5M marker 1.2
 sfx 1tZpn0uOEYexY-NHEaJqbW7LiKlPiJSWj typing 10 2.4
 sfx 1VdFtzbpDejih-WtJFveWbXv9E2z9QLeF typing_digital 6
 echo "SFX listos en public/sfx."
+
+# 5. Persona recortada del clip c301 (texto "Proyectos" detrás de ella): BiRefNet vía rembg, CPU (~5 min)
+python3 -I scripts/matte_clip.py public/media/c301.mp4 public/media/c301_matte 30 83

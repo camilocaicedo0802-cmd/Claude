@@ -1,7 +1,7 @@
 import { Video } from "@remotion/media";
 import React from "react";
 import { Sequence, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
-import { BLUR_INS, PUNCH_INS, SEATED_AT } from "../timeline";
+import { BLUR_INS, PUNCH_INS } from "../timeline";
 import { H, W } from "../theme";
 import { EDL, Segment } from "../util";
 
@@ -10,8 +10,8 @@ const TRANS = 8 / 30; // duración del blur-in (8 fotogramas)
 /** Encuadre de un segmento: escala base y posición objetivo de la cara (estilo.md §6). */
 const baseFraming = (seg: Segment, idx: number) => {
   const standing = seg.faceY < 0.4;
-  // Antes de que él vuelva a sentarse (apertura con la silla sola, cubierta por b-roll): plano abierto.
-  if (seg.srcIn < 9.0) return { s: 1.0, tx: 0.5, ty: 0.36, fx: seg.faceX, fy: seg.faceY };
+  // Gancho "la silla en la que me estoy sentando": plano abierto para que se vea la silla (producto).
+  if (seg.srcIn < 11.0) return { s: 1.0, tx: 0.5, ty: 0.36, fx: seg.faceX, fy: seg.faceY };
   const base = standing ? 1.1 : 1.16;
   // Alterna un 5 % de escala entre segmentos para disimular los jump cuts.
   const alt = idx % 2 === 1 ? 1.05 : 1.0;
@@ -35,15 +35,12 @@ const Shot: React.FC<{ seg: Segment; idx: number; fromFrame: number }> = ({ seg,
 
   // Blur-in con zoom que se asienta (vuelta del b-roll).
   let blur = 0;
-  let bright = 1;
   const b = BLUR_INS.find((x) => t >= x && t < x + TRANS);
   if (b !== undefined) {
     const k = 1 - (t - b) / TRANS;
     blur = 26 * k * k;
     s *= 1 + 0.12 * k * k;
   }
-  // Flash de exposición al reaparecer en la silla.
-  if (t >= SEATED_AT && t < SEATED_AT + 0.1) bright = 1 + 0.9 * (1 - (t - SEATED_AT) / 0.1);
 
   const ox = Math.min(0, Math.max(W - s * W, tx * W - s * fx * W)) ;
   const oy = Math.min(0, Math.max(H - s * H, ty * H - s * fy * H));
@@ -57,7 +54,7 @@ const Shot: React.FC<{ seg: Segment; idx: number; fromFrame: number }> = ({ seg,
         transformOrigin: "0 0",
         translate: `${ox}px ${oy}px`,
         scale: String(s),
-        filter: blur > 0.2 || bright !== 1 ? `blur(${blur}px) brightness(${bright})` : undefined,
+        filter: blur > 0.2 ? `blur(${blur}px)` : undefined,
       }}
     >
       <Video

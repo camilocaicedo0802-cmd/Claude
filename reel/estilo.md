@@ -180,6 +180,21 @@ _(Aquí se añaden las correcciones que el usuario confirme que le gustan, para 
   de apoyo sin necesidad.
 - **B-roll coherente con la marca:** solo planos del universo del cliente (fábrica, proyectos terminados,
   interiores, renders); nunca lifestyle ajeno al concepto (p. ej. un DJ con equipos de música).
+- **Marcas mencionadas = logos flotando (ver detalle abajo).**
+
+### Ronda 3 (correcciones sobre la versión 2)
+
+- **Arranque aún más directo:** el vídeo empieza en la primera frase en primera persona sobre el producto
+  ("la silla en la que me estoy sentando… la fabricamos nosotros"), en plano abierto donde se ve la silla.
+- **Sin CTA en pantalla:** nada de botones "Contáctanos" ni cursores; la llamada a la acción queda solo en la voz
+  (con su subtítulo normal) y el cierre es el logotipo de la marca.
+- **Legibilidad mínima:** toda palabra en pantalla debe quedar completa y quieta al menos ~0,8 s antes de un corte
+  (si no da tiempo, adelantar su aparición o alargar la escena).
+- **Texto detrás de la persona:** en b-rolls con una persona bien definida, la palabra destacada va detrás de ella
+  (recorte por IA de la persona fotograma a fotograma; orden: b-roll → texto → persona → etalonaje).
+
+### Detalle: logos flotando (ronda 2)
+
 - **Marcas mencionadas = logos flotando:** cuando se nombran clientes o marcas, mostrar sus logos oficiales en
   tarjetas blancas (radio 30 px, sombra suave) que salen desde detrás de la persona al nombrarlas y flotan a su
   alrededor (balanceo ±14 px y giro ±2,6°), con un rótulo "NUESTROS CLIENTES" y SFX pop + whoosh suave por logo.

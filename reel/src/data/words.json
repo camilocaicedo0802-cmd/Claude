@@ -1,1332 +1,1283 @@
 [
 {
-"i": 16,
-"text": "esta",
-"start": 0.03,
-"end": 0.15,
-"src": 4.53
-},
-{
-"i": 17,
-"text": "es",
-"start": 0.15,
-"end": 0.23,
-"src": 4.65
-},
-{
-"i": 18,
-"text": "una",
-"start": 0.23,
-"end": 0.39,
-"src": 4.73
-},
-{
-"i": 19,
-"text": "silla",
-"start": 0.39,
-"end": 0.567,
-"src": 4.89
-},
-{
-"i": 20,
-"text": "de",
-"start": 0.657,
-"end": 0.877,
-"src": 5.59
-},
-{
-"i": 21,
-"text": "diseño",
-"start": 0.877,
-"end": 1.317,
-"src": 5.81
-},
-{
-"i": 22,
-"text": "único,",
-"start": 1.317,
-"end": 1.677,
-"src": 6.25
-},
-{
 "i": 24,
 "text": "silla",
-"start": 1.827,
-"end": 2.087,
+"start": 0.06,
+"end": 0.32,
 "src": 9.76
 },
 {
 "i": 25,
 "text": "en",
-"start": 2.087,
-"end": 2.267,
+"start": 0.32,
+"end": 0.5,
 "src": 10.02
 },
 {
 "i": 26,
 "text": "la",
-"start": 2.267,
-"end": 2.267,
+"start": 0.5,
+"end": 0.5,
 "src": 10.2
 },
 {
 "i": 27,
 "text": "que",
-"start": 2.267,
-"end": 2.347,
+"start": 0.5,
+"end": 0.58,
 "src": 10.2
 },
 {
 "i": 28,
 "text": "me",
-"start": 2.347,
-"end": 2.447,
+"start": 0.58,
+"end": 0.68,
 "src": 10.28
 },
 {
 "i": 29,
 "text": "estoy",
-"start": 2.447,
-"end": 2.607,
+"start": 0.68,
+"end": 0.84,
 "src": 10.38
 },
 {
 "i": 30,
 "text": "sentando",
-"start": 2.607,
-"end": 3.107,
+"start": 0.84,
+"end": 1.34,
 "src": 10.54
 },
 {
 "i": 31,
 "text": "la",
-"start": 3.107,
-"end": 3.333,
+"start": 1.34,
+"end": 1.567,
 "src": 11.04
 },
 {
 "i": 32,
 "text": "fabricamos",
-"start": 3.347,
-"end": 3.767,
+"start": 1.58,
+"end": 2.0,
 "src": 11.48
 },
 {
 "i": 33,
 "text": "nosotros,",
-"start": 3.767,
-"end": 4.047,
+"start": 2.0,
+"end": 2.28,
 "src": 11.9
 },
 {
 "i": 34,
 "text": "es",
-"start": 4.333,
-"end": 4.4,
+"start": 2.567,
+"end": 2.633,
 "src": 12.46
 },
 {
 "i": 35,
 "text": "un",
-"start": 4.4,
-"end": 4.52,
+"start": 2.633,
+"end": 2.753,
 "src": 12.6
 },
 {
 "i": 36,
 "text": "diseño",
-"start": 4.52,
-"end": 4.98,
+"start": 2.753,
+"end": 3.213,
 "src": 12.72
 },
 {
 "i": 37,
 "text": "danés",
-"start": 4.98,
-"end": 5.46,
+"start": 3.213,
+"end": 3.693,
 "src": 13.18
 },
 {
 "i": 38,
 "text": "espectacular,",
-"start": 5.567,
-"end": 6.093,
+"start": 3.8,
+"end": 4.327,
 "src": 13.66
 },
 {
 "i": 39,
 "text": "es",
-"start": 6.153,
-"end": 6.253,
+"start": 4.387,
+"end": 4.487,
 "src": 14.72
 },
 {
 "i": 40,
 "text": "una",
-"start": 6.253,
-"end": 6.373,
+"start": 4.487,
+"end": 4.607,
 "src": 14.82
 },
 {
 "i": 41,
 "text": "silla",
-"start": 6.373,
-"end": 6.713,
+"start": 4.607,
+"end": 4.947,
 "src": 14.94
 },
 {
 "i": 42,
 "text": "Eames,",
-"start": 6.713,
-"end": 7.133,
+"start": 4.947,
+"end": 5.367,
 "src": 15.28
 },
 {
 "i": 43,
 "text": "esta",
-"start": 7.2,
-"end": 7.34,
+"start": 5.433,
+"end": 5.573,
 "src": 15.78
 },
 {
 "i": 44,
 "text": "silla",
-"start": 7.34,
-"end": 7.6,
+"start": 5.573,
+"end": 5.833,
 "src": 16.24
 },
 {
 "i": 45,
 "text": "es",
-"start": 7.6,
-"end": 8.0,
+"start": 5.833,
+"end": 6.233,
 "src": 16.5
 },
 {
 "i": 46,
 "text": "construida",
-"start": 8.2,
-"end": 8.587,
+"start": 6.433,
+"end": 6.82,
 "src": 16.9
 },
 {
 "i": 47,
 "text": "por",
-"start": 8.587,
-"end": 8.727,
+"start": 6.82,
+"end": 6.96,
 "src": 17.62
 },
 {
 "i": 48,
 "text": "nosotros",
-"start": 8.727,
-"end": 8.967,
+"start": 6.96,
+"end": 7.2,
 "src": 17.76
 },
 {
 "i": 49,
 "text": "en",
-"start": 8.967,
-"end": 9.233,
+"start": 7.2,
+"end": 7.467,
 "src": 18.0
 },
 {
 "i": 50,
 "text": "madera",
-"start": 9.32,
-"end": 9.82,
+"start": 7.553,
+"end": 8.053,
 "src": 18.42
 },
 {
 "i": 51,
 "text": "y",
-"start": 9.82,
-"end": 9.967,
+"start": 8.053,
+"end": 8.2,
 "src": 18.92
 },
 {
 "i": 52,
 "text": "con",
-"start": 10.047,
-"end": 10.287,
+"start": 8.28,
+"end": 8.52,
 "src": 19.58
 },
 {
 "i": 53,
 "text": "cuero",
-"start": 10.287,
-"end": 10.607,
+"start": 8.52,
+"end": 8.84,
 "src": 19.82
 },
 {
 "i": 54,
 "text": "auténtico,",
-"start": 10.607,
-"end": 11.147,
+"start": 8.84,
+"end": 9.38,
 "src": 20.14
 },
 {
 "i": 55,
 "text": "realmente",
-"start": 11.3,
-"end": 11.593,
+"start": 9.533,
+"end": 9.827,
 "src": 20.8
 },
 {
 "i": 56,
 "text": "una",
-"start": 11.593,
-"end": 11.733,
+"start": 9.827,
+"end": 9.967,
 "src": 21.46
 },
 {
 "i": 57,
 "text": "de",
-"start": 11.747,
-"end": 11.947,
+"start": 9.98,
+"end": 10.18,
 "src": 22.08
 },
 {
 "i": 58,
 "text": "estas",
-"start": 11.947,
-"end": 12.147,
+"start": 10.18,
+"end": 10.38,
 "src": 22.28
 },
 {
 "i": 59,
 "text": "piezas",
-"start": 12.147,
-"end": 12.567,
+"start": 10.38,
+"end": 10.8,
 "src": 22.48
 },
 {
 "i": 60,
 "text": "son",
-"start": 12.567,
-"end": 12.707,
+"start": 10.8,
+"end": 10.94,
 "src": 22.9
 },
 {
 "i": 61,
 "text": "las",
-"start": 12.707,
-"end": 12.807,
+"start": 10.94,
+"end": 11.04,
 "src": 23.04
 },
 {
 "i": 62,
 "text": "que",
-"start": 12.807,
-"end": 12.9,
+"start": 11.04,
+"end": 11.133,
 "src": 23.14
 },
 {
 "i": 63,
 "text": "construimos",
-"start": 12.9,
-"end": 13.233,
+"start": 11.133,
+"end": 11.467,
 "src": 23.26
 },
 {
 "i": 64,
 "text": "nosotros",
-"start": 13.233,
-"end": 13.493,
+"start": 11.467,
+"end": 11.727,
 "src": 23.7
 },
 {
 "i": 65,
 "text": "en",
-"start": 13.493,
-"end": 13.793,
+"start": 11.727,
+"end": 12.027,
 "src": 23.96
 },
 {
 "i": 66,
 "text": "Macizo,",
-"start": 13.793,
-"end": 14.073,
+"start": 12.027,
+"end": 12.307,
 "src": 24.26
 },
 {
 "i": 67,
 "text": "pero",
-"start": 14.167,
-"end": 14.24,
+"start": 12.4,
+"end": 12.473,
 "src": 24.68
 },
 {
 "i": 68,
 "text": "construimos",
-"start": 14.24,
-"end": 14.68,
+"start": 12.473,
+"end": 12.913,
 "src": 25.04
 },
 {
 "i": 69,
 "text": "muchas",
-"start": 14.68,
-"end": 14.94,
+"start": 12.913,
+"end": 13.173,
 "src": 25.48
 },
 {
 "i": 70,
 "text": "cosas",
-"start": 14.94,
-"end": 15.24,
+"start": 13.173,
+"end": 13.473,
 "src": 25.74
 },
 {
 "i": 71,
 "text": "más,",
-"start": 15.24,
-"end": 15.5,
+"start": 13.473,
+"end": 13.733,
 "src": 26.04
 },
 {
 "i": 72,
 "text": "Tenemos",
-"start": 15.5,
-"end": 15.633,
+"start": 13.733,
+"end": 13.867,
 "src": 26.3
 },
 {
 "i": 73,
 "text": "tapicería,",
-"start": 15.647,
-"end": 16.727,
+"start": 13.88,
+"end": 14.96,
 "src": 26.78
 },
 {
 "i": 74,
 "text": "ebanistería,",
-"start": 16.867,
-"end": 17.68,
+"start": 15.1,
+"end": 15.913,
 "src": 27.94
 },
 {
 "i": 75,
 "text": "metalmecánica,",
-"start": 17.78,
-"end": 19.02,
+"start": 16.013,
+"end": 17.253,
 "src": 29.18
 },
 {
 "i": 76,
 "text": "pintamos",
-"start": 19.167,
-"end": 19.587,
+"start": 17.4,
+"end": 17.82,
 "src": 30.42
 },
 {
 "i": 77,
 "text": "en",
-"start": 19.587,
-"end": 19.767,
+"start": 17.82,
+"end": 18.0,
 "src": 31.32
 },
 {
 "i": 78,
 "text": "poliuretanos",
-"start": 19.767,
-"end": 20.467,
+"start": 18.0,
+"end": 18.7,
 "src": 31.5
 },
 {
 "i": 79,
 "text": "y",
-"start": 20.467,
-"end": 20.547,
+"start": 18.7,
+"end": 18.78,
 "src": 32.2
 },
 {
 "i": 80,
 "text": "lacas",
-"start": 20.547,
-"end": 20.807,
+"start": 18.78,
+"end": 19.04,
 "src": 32.28
 },
 {
 "i": 81,
 "text": "catalizadas.",
-"start": 20.807,
-"end": 21.407,
+"start": 19.04,
+"end": 19.64,
 "src": 32.54
 },
 {
 "i": 93,
 "text": "La",
-"start": 21.567,
-"end": 21.767,
+"start": 19.8,
+"end": 20.0,
 "src": 37.98
 },
 {
 "i": 94,
 "text": "empresa",
-"start": 21.547,
-"end": 21.927,
+"start": 19.78,
+"end": 20.16,
 "src": 38.48
 },
 {
 "i": 95,
 "text": "es",
-"start": 21.927,
-"end": 22.287,
+"start": 20.16,
+"end": 20.52,
 "src": 38.86
 },
 {
 "i": 96,
 "text": "una",
-"start": 22.287,
-"end": 22.447,
+"start": 20.52,
+"end": 20.68,
 "src": 39.22
 },
 {
 "i": 97,
 "text": "de",
-"start": 22.447,
-"end": 22.547,
+"start": 20.68,
+"end": 20.78,
 "src": 39.38
 },
 {
 "i": 98,
 "text": "las",
-"start": 22.547,
-"end": 22.647,
+"start": 20.78,
+"end": 20.88,
 "src": 39.48
 },
 {
 "i": 99,
 "text": "mayores",
-"start": 22.647,
-"end": 23.087,
+"start": 20.88,
+"end": 21.32,
 "src": 39.58
 },
 {
 "i": 100,
 "text": "empresas",
-"start": 23.087,
-"end": 23.527,
+"start": 21.32,
+"end": 21.76,
 "src": 40.02
 },
 {
 "i": 101,
 "text": "que",
-"start": 23.527,
-"end": 23.867,
+"start": 21.76,
+"end": 22.1,
 "src": 40.46
 },
 {
 "i": 102,
 "text": "se",
-"start": 23.893,
-"end": 23.993,
+"start": 22.127,
+"end": 22.227,
 "src": 41.36
 },
 {
 "i": 103,
 "text": "han",
-"start": 23.993,
-"end": 24.133,
+"start": 22.227,
+"end": 22.367,
 "src": 41.46
 },
 {
 "i": 104,
 "text": "constituido",
-"start": 24.133,
-"end": 24.833,
+"start": 22.367,
+"end": 23.067,
 "src": 41.6
 },
 {
 "i": 105,
 "text": "a",
-"start": 24.833,
-"end": 25.033,
+"start": 23.067,
+"end": 23.267,
 "src": 42.3
 },
 {
 "i": 106,
 "text": "través",
-"start": 25.033,
-"end": 25.253,
+"start": 23.267,
+"end": 23.487,
 "src": 42.5
 },
 {
 "i": 107,
 "text": "del",
-"start": 25.253,
-"end": 25.453,
+"start": 23.487,
+"end": 23.687,
 "src": 42.72
 },
 {
 "i": 108,
 "text": "tiempo",
-"start": 25.453,
-"end": 25.853,
+"start": 23.687,
+"end": 24.087,
 "src": 42.92
 },
 {
 "i": 109,
 "text": "en",
-"start": 25.853,
-"end": 26.213,
+"start": 24.087,
+"end": 24.447,
 "src": 43.32
 },
 {
 "i": 110,
 "text": "Colombia",
-"start": 26.213,
-"end": 26.533,
+"start": 24.447,
+"end": 24.767,
 "src": 43.68
 },
 {
 "i": 111,
 "text": "para",
-"start": 26.533,
-"end": 26.813,
+"start": 24.767,
+"end": 25.047,
 "src": 44.0
 },
 {
 "i": 112,
 "text": "poder",
-"start": 26.813,
-"end": 27.013,
+"start": 25.047,
+"end": 25.247,
 "src": 44.28
 },
 {
 "i": 113,
 "text": "desarrollar",
-"start": 27.013,
-"end": 27.673,
+"start": 25.247,
+"end": 25.907,
 "src": 44.48
 },
 {
 "i": 114,
 "text": "esos",
-"start": 27.7,
-"end": 27.86,
+"start": 25.933,
+"end": 26.093,
 "src": 45.14
 },
 {
 "i": 115,
 "text": "proyectos",
-"start": 27.86,
-"end": 28.34,
+"start": 26.093,
+"end": 26.573,
 "src": 45.76
 },
 {
 "i": 116,
 "text": "que",
-"start": 28.34,
-"end": 28.46,
+"start": 26.573,
+"end": 26.693,
 "src": 46.24
 },
 {
 "i": 117,
 "text": "tú",
-"start": 28.46,
-"end": 28.54,
+"start": 26.693,
+"end": 26.773,
 "src": 46.36
 },
 {
 "i": 118,
 "text": "quieres.",
-"start": 28.54,
-"end": 28.8,
+"start": 26.773,
+"end": 27.033,
 "src": 46.44
 },
 {
 "i": 119,
 "text": "Somos",
-"start": 28.8,
-"end": 29.2,
+"start": 27.033,
+"end": 27.433,
 "src": 46.7
 },
 {
 "i": 120,
 "text": "líderes",
-"start": 29.2,
-"end": 29.66,
+"start": 27.433,
+"end": 27.893,
 "src": 47.1
 },
 {
 "i": 121,
 "text": "en",
-"start": 29.66,
-"end": 29.74,
+"start": 27.893,
+"end": 27.973,
 "src": 47.56
 },
 {
 "i": 122,
 "text": "el",
-"start": 29.74,
-"end": 29.84,
+"start": 27.973,
+"end": 28.073,
 "src": 47.64
 },
 {
 "i": 123,
 "text": "mercado",
-"start": 29.84,
-"end": 30.2,
+"start": 28.073,
+"end": 28.433,
 "src": 47.74
 },
 {
 "i": 124,
 "text": "y",
-"start": 30.2,
-"end": 30.467,
+"start": 28.433,
+"end": 28.7,
 "src": 48.1
 },
 {
 "i": 128,
 "text": "tenemos",
-"start": 30.467,
-"end": 30.633,
+"start": 28.7,
+"end": 28.867,
 "src": 49.46
 },
 {
 "i": 129,
 "text": "diseño",
-"start": 30.633,
-"end": 31.253,
+"start": 28.867,
+"end": 29.487,
 "src": 49.9
 },
 {
 "i": 130,
 "text": "gratuito,",
-"start": 31.253,
-"end": 31.773,
+"start": 29.487,
+"end": 30.007,
 "src": 50.52
 },
 {
 "i": 131,
 "text": "podemos",
-"start": 31.833,
-"end": 32.193,
+"start": 30.067,
+"end": 30.427,
 "src": 51.1
 },
 {
 "i": 132,
 "text": "visitar",
-"start": 32.193,
-"end": 32.933,
+"start": 30.427,
+"end": 31.167,
 "src": 51.46
 },
 {
 "i": 133,
 "text": "tu",
-"start": 32.933,
-"end": 33.073,
+"start": 31.167,
+"end": 31.307,
 "src": 52.2
 },
 {
 "i": 134,
 "text": "hogar,",
-"start": 33.073,
-"end": 33.513,
+"start": 31.307,
+"end": 31.747,
 "src": 52.34
 },
 {
 "i": 135,
 "text": "podemos",
-"start": 33.6,
-"end": 33.727,
+"start": 31.833,
+"end": 31.96,
 "src": 52.82
 },
 {
 "i": 136,
 "text": "darte",
-"start": 33.727,
-"end": 34.207,
+"start": 31.96,
+"end": 32.44,
 "src": 53.26
 },
 {
 "i": 137,
 "text": "muchas",
-"start": 34.207,
-"end": 34.427,
+"start": 32.44,
+"end": 32.66,
 "src": 53.74
 },
 {
 "i": 138,
 "text": "ideas",
-"start": 34.427,
-"end": 34.847,
+"start": 32.66,
+"end": 33.08,
 "src": 53.96
 },
 {
 "i": 139,
 "text": "de",
-"start": 34.847,
-"end": 35.1,
+"start": 33.08,
+"end": 33.333,
 "src": 54.38
 },
 {
 "i": 140,
 "text": "cómo",
-"start": 35.133,
-"end": 35.313,
+"start": 33.367,
+"end": 33.547,
 "src": 54.9
 },
 {
 "i": 141,
 "text": "desarrollar",
-"start": 35.313,
-"end": 35.993,
+"start": 33.547,
+"end": 34.227,
 "src": 55.08
 },
 {
 "i": 142,
 "text": "algo",
-"start": 36.1,
-"end": 36.3,
+"start": 34.333,
+"end": 34.533,
 "src": 55.76
 },
 {
 "i": 143,
 "text": "fantástico.",
-"start": 36.3,
-"end": 36.88,
+"start": 34.533,
+"end": 35.113,
 "src": 56.3
 },
 {
 "i": 144,
 "text": "Algunos",
-"start": 36.933,
-"end": 37.36,
+"start": 35.167,
+"end": 35.593,
 "src": 57.14
 },
 {
 "i": 145,
 "text": "de",
-"start": 37.36,
-"end": 37.567,
+"start": 35.593,
+"end": 35.8,
 "src": 57.86
 },
 {
 "i": 146,
 "text": "nuestros",
-"start": 37.673,
-"end": 37.973,
+"start": 35.907,
+"end": 36.207,
 "src": 58.34
 },
 {
 "i": 147,
 "text": "clientes,",
-"start": 37.973,
-"end": 38.633,
+"start": 36.207,
+"end": 36.867,
 "src": 58.64
 },
 {
 "i": 153,
 "text": "es",
-"start": 38.633,
-"end": 38.687,
+"start": 36.867,
+"end": 36.92,
 "src": 60.5
 },
 {
 "i": 154,
 "text": "la",
-"start": 38.687,
-"end": 38.827,
+"start": 36.92,
+"end": 37.06,
 "src": 61.32
 },
 {
 "i": 155,
 "text": "Ford",
-"start": 38.827,
-"end": 39.067,
+"start": 37.06,
+"end": 37.3,
 "src": 61.46
 },
 {
 "i": 156,
 "text": "Motors,",
-"start": 39.067,
-"end": 39.467,
+"start": 37.3,
+"end": 37.7,
 "src": 61.7
 },
 {
 "i": 157,
 "text": "Calvin",
-"start": 39.633,
-"end": 39.847,
+"start": 37.867,
+"end": 38.08,
 "src": 62.8
 },
 {
 "i": 158,
 "text": "Klein,",
-"start": 39.847,
-"end": 40.187,
+"start": 38.08,
+"end": 38.42,
 "src": 63.18
 },
 {
 "i": 159,
 "text": "la",
-"start": 40.567,
-"end": 40.667,
+"start": 38.8,
+"end": 38.9,
 "src": 63.9
 },
 {
 "i": 160,
 "text": "Universidad",
-"start": 40.713,
-"end": 41.273,
+"start": 38.947,
+"end": 39.507,
 "src": 64.18
 },
 {
 "i": 161,
 "text": "de",
-"start": 41.273,
-"end": 41.393,
+"start": 39.507,
+"end": 39.627,
 "src": 64.74
 },
 {
 "i": 162,
 "text": "La",
-"start": 41.393,
-"end": 41.453,
+"start": 39.627,
+"end": 39.687,
 "src": 64.86
 },
 {
 "i": 163,
 "text": "Sabana,",
-"start": 41.453,
-"end": 42.073,
+"start": 39.687,
+"end": 40.307,
 "src": 64.92
 },
 {
 "i": 164,
 "text": "Crepes",
-"start": 42.267,
-"end": 42.493,
+"start": 40.5,
+"end": 40.727,
 "src": 65.7
 },
 {
 "i": 165,
 "text": "&",
-"start": 42.493,
-"end": 42.613,
+"start": 40.727,
+"end": 40.847,
 "src": 66.16
 },
 {
 "i": 166,
 "text": "Waffles",
-"start": 42.613,
-"end": 42.973,
+"start": 40.847,
+"end": 41.207,
 "src": 66.28
 },
 {
 "i": 167,
 "text": "y",
-"start": 42.973,
-"end": 43.167,
+"start": 41.207,
+"end": 41.4,
 "src": 66.64
 },
 {
 "i": 168,
 "text": "un",
-"start": 43.167,
-"end": 43.367,
+"start": 41.4,
+"end": 41.6,
 "src": 67.18
 },
 {
 "i": 169,
 "text": "montón",
-"start": 43.367,
-"end": 43.767,
+"start": 41.6,
+"end": 42.0,
 "src": 67.5
 },
 {
 "i": 170,
 "text": "de",
-"start": 43.767,
-"end": 43.987,
+"start": 42.0,
+"end": 42.22,
 "src": 67.9
 },
 {
 "i": 171,
 "text": "diseñadores",
-"start": 43.987,
-"end": 44.447,
+"start": 42.22,
+"end": 42.68,
 "src": 68.12
 },
 {
 "i": 172,
 "text": "y",
-"start": 44.447,
-"end": 44.667,
+"start": 42.68,
+"end": 42.9,
 "src": 68.58
 },
 {
 "i": 173,
 "text": "arquitectos",
-"start": 44.667,
-"end": 45.347,
+"start": 42.9,
+"end": 43.58,
 "src": 68.8
 },
 {
 "i": 174,
 "text": "que",
-"start": 45.347,
-"end": 45.5,
+"start": 43.58,
+"end": 43.733,
 "src": 69.48
 },
 {
 "i": 175,
 "text": "vienen",
-"start": 45.533,
-"end": 45.913,
+"start": 43.767,
+"end": 44.147,
 "src": 69.8
 },
 {
 "i": 176,
 "text": "y",
-"start": 45.913,
-"end": 46.233,
+"start": 44.147,
+"end": 44.467,
 "src": 70.18
 },
 {
 "i": 177,
 "text": "confían",
-"start": 46.233,
-"end": 46.653,
+"start": 44.467,
+"end": 44.887,
 "src": 70.5
 },
 {
 "i": 178,
 "text": "en",
-"start": 46.653,
-"end": 46.773,
+"start": 44.887,
+"end": 45.007,
 "src": 70.92
 },
 {
 "i": 179,
 "text": "nosotros",
-"start": 46.773,
-"end": 46.953,
+"start": 45.007,
+"end": 45.187,
 "src": 71.04
 },
 {
 "i": 180,
 "text": "para",
-"start": 46.953,
-"end": 47.433,
+"start": 45.187,
+"end": 45.667,
 "src": 71.22
 },
 {
 "i": 181,
 "text": "hacer",
-"start": 47.433,
-"end": 47.913,
+"start": 45.667,
+"end": 46.147,
 "src": 71.7
 },
 {
 "i": 182,
 "text": "de",
-"start": 47.913,
-"end": 48.153,
+"start": 46.147,
+"end": 46.387,
 "src": 72.18
 },
 {
 "i": 183,
 "text": "sus",
-"start": 48.153,
-"end": 48.367,
+"start": 46.387,
+"end": 46.6,
 "src": 72.42
 },
 {
 "i": 184,
 "text": "proyectos",
-"start": 48.407,
-"end": 48.967,
+"start": 46.64,
+"end": 47.2,
 "src": 73.04
 },
 {
 "i": 185,
 "text": "algo",
-"start": 48.967,
-"end": 49.147,
+"start": 47.2,
+"end": 47.38,
 "src": 73.6
 },
 {
 "i": 186,
 "text": "maravilloso.",
-"start": 49.147,
-"end": 49.747,
+"start": 47.38,
+"end": 47.98,
 "src": 73.78
 },
 {
 "i": 187,
 "text": "Entonces,",
-"start": 49.833,
-"end": 50.12,
+"start": 48.067,
+"end": 48.353,
 "src": 74.38
 },
 {
 "i": 188,
 "text": "no",
-"start": 50.14,
-"end": 50.333,
+"start": 48.373,
+"end": 48.567,
 "src": 74.94
 },
 {
 "i": 189,
 "text": "te",
-"start": 50.38,
-"end": 50.52,
+"start": 48.613,
+"end": 48.753,
 "src": 75.38
 },
 {
 "i": 190,
 "text": "quedes",
-"start": 50.52,
-"end": 50.84,
+"start": 48.753,
+"end": 49.073,
 "src": 75.52
 },
 {
 "i": 191,
 "text": "por",
-"start": 50.84,
-"end": 50.94,
+"start": 49.073,
+"end": 49.173,
 "src": 75.84
 },
 {
 "i": 192,
 "text": "fuera,",
-"start": 50.94,
-"end": 51.24,
+"start": 49.173,
+"end": 49.473,
 "src": 75.94
 },
 {
 "i": 193,
 "text": "remodela.",
-"start": 51.4,
-"end": 51.86,
+"start": 49.633,
+"end": 50.093,
 "src": 76.36
 },
 {
 "i": 194,
 "text": "No",
-"start": 51.96,
-"end": 52.033,
+"start": 50.193,
+"end": 50.267,
 "src": 77.06
 },
 {
 "i": 195,
 "text": "tienes",
-"start": 52.107,
-"end": 52.367,
+"start": 50.34,
+"end": 50.6,
 "src": 77.34
 },
 {
 "i": 196,
 "text": "que",
-"start": 52.367,
-"end": 52.587,
+"start": 50.6,
+"end": 50.82,
 "src": 77.6
 },
 {
 "i": 197,
 "text": "saber",
-"start": 52.587,
-"end": 52.827,
+"start": 50.82,
+"end": 51.06,
 "src": 77.82
 },
 {
 "i": 198,
 "text": "tampoco",
-"start": 52.827,
-"end": 53.167,
+"start": 51.06,
+"end": 51.4,
 "src": 78.06
 },
 {
 "i": 199,
 "text": "nada,",
-"start": 53.167,
-"end": 53.487,
+"start": 51.4,
+"end": 51.72,
 "src": 78.4
 },
 {
 "i": 200,
 "text": "aquí",
-"start": 53.627,
-"end": 53.907,
+"start": 51.86,
+"end": 52.14,
 "src": 78.86
 },
 {
 "i": 201,
 "text": "nosotros",
-"start": 53.907,
-"end": 54.107,
+"start": 52.14,
+"end": 52.34,
 "src": 79.14
 },
 {
 "i": 202,
 "text": "te",
-"start": 54.107,
-"end": 54.427,
+"start": 52.34,
+"end": 52.66,
 "src": 79.34
 },
 {
 "i": 203,
 "text": "ayudamos.",
-"start": 54.427,
-"end": 54.847,
+"start": 52.66,
+"end": 53.08,
 "src": 79.66
 },
 {
 "i": 204,
 "text": "Solo",
-"start": 54.933,
-"end": 55.02,
+"start": 53.167,
+"end": 53.253,
 "src": 80.2
 },
 {
 "i": 205,
 "text": "contáctanos",
-"start": 55.02,
-"end": 55.74,
+"start": 53.253,
+"end": 53.973,
 "src": 80.62
 },
 {
 "i": 206,
 "text": "y",
-"start": 55.74,
-"end": 55.933,
+"start": 53.973,
+"end": 54.167,
 "src": 81.34
 },
 {
 "i": 207,
 "text": "con",
-"start": 55.953,
-"end": 56.093,
+"start": 54.187,
+"end": 54.327,
 "src": 81.82
 },
 {
 "i": 208,
 "text": "mucho",
-"start": 56.093,
-"end": 56.333,
+"start": 54.327,
+"end": 54.567,
 "src": 81.96
 },
 {
 "i": 209,
 "text": "gusto",
-"start": 56.333,
-"end": 56.633,
+"start": 54.567,
+"end": 54.867,
 "src": 82.2
 },
 {
 "i": 210,
 "text": "nosotros",
-"start": 56.633,
-"end": 56.813,
+"start": 54.867,
+"end": 55.047,
 "src": 82.5
 },
 {
 "i": 211,
 "text": "vamos",
-"start": 56.813,
-"end": 57.113,
+"start": 55.047,
+"end": 55.347,
 "src": 82.68
 },
 {
 "i": 212,
 "text": "a",
-"start": 57.113,
-"end": 57.313,
+"start": 55.347,
+"end": 55.547,
 "src": 82.98
 },
 {
 "i": 213,
 "text": "hacer",
-"start": 57.313,
-"end": 57.493,
+"start": 55.547,
+"end": 55.727,
 "src": 83.18
 },
 {
 "i": 214,
 "text": "eso",
-"start": 57.493,
-"end": 57.693,
+"start": 55.727,
+"end": 55.927,
 "src": 83.36
 },
 {
 "i": 215,
 "text": "que",
-"start": 57.693,
-"end": 57.853,
+"start": 55.927,
+"end": 56.087,
 "src": 83.56
 },
 {
 "i": 216,
 "text": "mejor",
-"start": 57.853,
-"end": 58.073,
+"start": 56.087,
+"end": 56.307,
 "src": 83.72
 },
 {
 "i": 217,
 "text": "sabemos",
-"start": 58.073,
-"end": 58.273,
+"start": 56.307,
+"end": 56.507,
 "src": 83.94
 },
 {
 "i": 218,
 "text": "hacer,",
-"start": 58.273,
-"end": 58.613,
+"start": 56.507,
+"end": 56.847,
 "src": 84.14
 },
 {
 "i": 219,
 "text": "querer",
-"start": 58.8,
-"end": 58.953,
+"start": 57.033,
+"end": 57.187,
 "src": 84.7
 },
 {
 "i": 220,
 "text": "tu",
-"start": 58.953,
-"end": 59.193,
+"start": 57.187,
+"end": 57.427,
 "src": 85.22
 },
 {
 "i": 221,
 "text": "proyecto",
-"start": 59.193,
-"end": 59.593,
+"start": 57.427,
+"end": 57.827,
 "src": 85.46
 },
 {
 "i": 222,
 "text": "y",
-"start": 59.593,
-"end": 59.967,
+"start": 57.827,
+"end": 58.2,
 "src": 85.86
 },
 {
 "i": 223,
 "text": "desarrollarlo",
-"start": 60.027,
-"end": 60.627,
+"start": 58.26,
+"end": 58.86,
 "src": 86.46
 },
 {
 "i": 224,
 "text": "en",
-"start": 60.627,
-"end": 60.707,
+"start": 58.86,
+"end": 58.94,
 "src": 87.06
 },
 {
 "i": 225,
 "text": "conjunto.",
-"start": 60.707,
-"end": 60.967,
+"start": 58.94,
+"end": 59.2,
 "src": 87.14
 }
 ]

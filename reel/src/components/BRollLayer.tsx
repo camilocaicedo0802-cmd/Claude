@@ -42,6 +42,45 @@ const Clip: React.FC<{ b: BRoll }> = ({ b }) => {
   );
 };
 
+/** Persona recortada (PNG con alfa por fotograma) con la misma transformación que su b-roll. */
+const MatteClip: React.FC<{ b: BRoll }> = ({ b }) => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  const dur = (b.t1 - b.t0) * fps;
+  const [z0, z1] = b.zoom ?? [1, 1.08];
+  const srcFrame = Math.round((b.trim ?? 0) * fps + frame * (b.rate ?? 1));
+  return (
+    <div
+      style={{
+        position: "absolute",
+        width: W,
+        height: H,
+        overflow: "hidden",
+        transformOrigin: b.origin ?? "50% 45%",
+        scale: String(interpolate(frame, [0, dur], [z0, z1], { extrapolateRight: "clamp" })),
+      }}
+    >
+      <Img src={staticFile(`${b.matte}/${String(srcFrame).padStart(4, "0")}.png`)} style={{ width: W, height: H }} />
+    </div>
+  );
+};
+
+export const MatteLayer: React.FC = () => {
+  const { fps } = useVideoConfig();
+  return (
+    <>
+      {BROLL.filter((b) => b.matte).map((b, i) => {
+        const from = Math.round(b.t0 * fps);
+        return (
+          <Sequence key={i} name={`Persona recortada ${b.src.replace("media/", "")}`} from={from} durationInFrames={Math.round(b.t1 * fps) - from} layout="none">
+            <MatteClip b={b} />
+          </Sequence>
+        );
+      })}
+    </>
+  );
+};
+
 export const BRollLayer: React.FC = () => {
   const { fps } = useVideoConfig();
   return (

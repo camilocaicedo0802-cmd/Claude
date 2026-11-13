@@ -1,7 +1,7 @@
 import React from "react";
 import { AbsoluteFill, Img, interpolate, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
 import { BARLOW, BEBAS, C, GLOW, GRADIENT, H, OUTFIT, W } from "../theme";
-import { FLASHES, FLICKERS, SEATED_AT, STREAKS, VOICE_END } from "../timeline";
+import { FLASHES, FLICKERS, HOOK_END, STREAKS, VOICE_END } from "../timeline";
 import { at, clamp01, easeInOut, easeOut, inOut, prog, word } from "../util";
 
 type T = { t: number };
@@ -45,7 +45,7 @@ export const GradeOverlays: React.FC = () => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   // En el gancho la silla (producto) está en la parte baja: degradado más suave para no taparla.
-  const k = interpolate(frame / fps, [SEATED_AT - 0.13, SEATED_AT], [0.45, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+  const k = interpolate(frame / fps, [HOOK_END - 0.13, HOOK_END], [0.45, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   return (
   <AbsoluteFill style={{ pointerEvents: "none" }}>
     <AbsoluteFill
@@ -440,7 +440,8 @@ export const BarScene: React.FC<T & { t0: number; t1: number }> = ({ t, t0, t1 }
   // La barra crece durante toda la escena (sin tramos estáticos) y acelera en "se han constituido ... tiempo".
   const fill = 0.35 * prog(t, t0 + 0.2, W0(102) - t0 - 0.2, easeInOut) + 0.65 * prog(t, W0(102), W0(108) + 0.3 - W0(102), easeInOut);
   const drift = prog(t, t0, t1 - t0, (x) => x);
-  const pan = prog(t, W0(109) - 0.1, 0.45, easeInOut); // "en Colombia"
+  // El paneo empieza en "tiempo" para que "EN COLOMBIA" quede escrito y legible casi 1 s (corrección ronda 3).
+  const pan = prog(t, W0(108) - 0.05, 0.4, easeInOut);
   const titleIn = prog(t, t0, 0.3);
   const barTop = 560;
   const barH = H - barTop + 40;
@@ -468,12 +469,13 @@ export const BarScene: React.FC<T & { t0: number; t1: number }> = ({ t, t0, t1 }
           </div>
         </div>
         {/* Texto condensado tras el paneo */}
-        <div style={{ position: "absolute", left: 1010, top: 900, opacity: pan > 0.6 ? 1 : 0 }}>
-          <div style={{ fontFamily: BEBAS, fontSize: 70, color: "#fff", letterSpacing: "0.01em", lineHeight: 1 }}>
-            <Typed text="EN" t={t} t0={W0(109)} dur={0.12} />
+        {/* 185 px y x=890: tras el paneo (-430 px) "COLOMBIA" termina a ~50 px del borde derecho (antes se salía) */}
+        <div style={{ position: "absolute", left: 890, top: 880, opacity: pan > 0.6 ? 1 : 0 }}>
+          <div style={{ fontFamily: BEBAS, fontSize: 62, color: "#fff", letterSpacing: "0.01em", lineHeight: 1 }}>
+            <Typed text="EN" t={t} t0={W0(108) + 0.3} dur={0.1} />
           </div>
-          <div style={{ fontFamily: BEBAS, fontSize: 210, color: "#F5F5F5", lineHeight: 0.9, textShadow: "0 0 30px rgba(255,255,255,0.25)" }}>
-            <Typed text="COLOMBIA" t={t} t0={W0(110) - 0.05} dur={0.4} />
+          <div style={{ fontFamily: BEBAS, fontSize: 185, color: "#F5F5F5", lineHeight: 0.9, textShadow: "0 0 30px rgba(255,255,255,0.25)" }}>
+            <Typed text="COLOMBIA" t={t} t0={W0(108) + 0.4} dur={0.3} />
           </div>
         </div>
       </div>
@@ -508,7 +510,7 @@ export const EndCard: React.FC<T> = ({ t }) => {
   return (
     <AbsoluteFill style={{ background: `radial-gradient(ellipse 80% 60% at 50% 45%, #2A2312 0%, ${C.graphBg} 70%)`, opacity: p }}>
       <Orb t={t} t0={t0} t1={t0 + 30} x={0.5 + 0.06 * Math.sin((t - t0) * 1.6)} y={0.42} size={620} />
-      <div style={{ position: "absolute", left: W / 2, top: H * 0.42, translate: "-50% -50%", display: "flex", flexDirection: "column", alignItems: "center", scale: String(1 + 0.025 * (t - t0)) }}>
+      <div style={{ position: "absolute", left: W / 2, top: H * 0.46, translate: "-50% -50%", display: "flex", flexDirection: "column", alignItems: "center", scale: String(1 + 0.025 * (t - t0)) }}>
         <div style={{ fontFamily: OUTFIT, fontWeight: 500, fontSize: 46, color: "rgba(255,255,255,0.85)", marginBottom: 26 }}>Remodela con</div>
         {/* Logotipo de Macizo vectorizado a partir del camión (foto 5); se revela de izquierda a derecha */}
         <div
@@ -531,7 +533,6 @@ export const EndCard: React.FC<T> = ({ t }) => {
           ))}
         </div>
       </div>
-      <CtaButton t={t} t0={t0 + 0.9} t1={t0 + 10} clickAt={t0 + 1.25} y={0.7} />
     </AbsoluteFill>
   );
 };
@@ -543,7 +544,6 @@ export const Graphics: React.FC = () => {
   const t = frame / fps;
   return (
     <>
-      <Orb t={t} t0={0} t1={SEATED_AT} x={0.5} y={0.26} size={520} />
       <Orb t={t} t0={at(11.47)} t1={at(12.53)} x={0.5} y={0.29} />
       <Orb t={t} t0={at(22.85)} t1={at(23.88)} x={0.5} y={0.29} />
       <Orb t={t} t0={at(30.52)} t1={at(33.25)} x={0.5} y={0.31} />
@@ -592,7 +592,6 @@ export const Graphics: React.FC = () => {
         t1={at(69.45)}
         y={0.6}
       />
-      <CtaButton t={t} t0={at(80.15)} t1={at(81.37)} clickAt={at(80.95)} y={0.6} small="Solo" />
     </>
   );
 };
@@ -604,7 +603,7 @@ export const FullScreenScenes: React.FC = () => {
   const t = frame / fps;
   return (
     <>
-      <BarScene t={t} t0={at(39.50)} t1={at(43.93)} />
+      <BarScene t={t} t0={at(39.50)} t1={at(44.55)} />
       <RemodelaScene t={t} t0={at(76.37)} t1={at(77.07)} />
     </>
   );
