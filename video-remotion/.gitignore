@@ -1,0 +1,21 @@
+node_modules
+dist
+.DS_Store
+.env
+
+# Ignore the output video from Git but not videos you import into src/.
+out
+
+# Material pesado (no se sube a git)
+public/clips/
+public/sfx/
+public/broll/
+recursos/drive/
+referencia/*.mp4
+referencia/*.wav
+referencia/sep/
+referencia/frames_2fps/
+referencia/frames_cortes/
+referencia/hi/
+referencia/strip/
+out/
