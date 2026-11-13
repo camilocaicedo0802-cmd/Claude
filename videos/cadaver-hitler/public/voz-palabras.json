@@ -1,0 +1,1359 @@
+{
+ "voz": "es-MX-JorgeNeural",
+ "duracion": 61.97,
+ "frases": [
+  {
+   "i": 0,
+   "texto": "¿Cómo engañas a Hitler durante una guerra?",
+   "seccion": "gancho",
+   "inicio": 0.0,
+   "fin": 2.18
+  },
+  {
+   "i": 1,
+   "texto": "Pues los británicos tuvieron una idea bastante peculiar:",
+   "seccion": "gancho",
+   "inicio": 2.5,
+   "fin": 5.17
+  },
+  {
+   "i": 2,
+   "texto": "¡enviarle un espía muerto!",
+   "seccion": "gancho",
+   "inicio": 5.31,
+   "fin": 6.96
+  },
+  {
+   "i": 3,
+   "texto": "Era 1943, y los aliados querían invadir Sicilia.",
+   "seccion": "contexto",
+   "inicio": 7.44,
+   "fin": 11.46
+  },
+  {
+   "i": 4,
+   "texto": "El problema era que los alemanes ya sospechaban del plan.",
+   "seccion": "contexto",
+   "inicio": 11.58,
+   "fin": 14.54
+  },
+  {
+   "i": 5,
+   "texto": "Así que necesitaban distraerlos.",
+   "seccion": "contexto",
+   "inicio": 14.8,
+   "fin": 16.72
+  },
+  {
+   "i": 6,
+   "texto": "Y mucho.",
+   "seccion": "contexto",
+   "inicio": 16.88,
+   "fin": 17.57
+  },
+  {
+   "i": 7,
+   "texto": "Su solución fue conseguir un cadáver, ponerle uniforme militar, inventarle una identidad y entregarle documentos secretos falsos.",
+   "seccion": "desarrollo",
+   "inicio": 17.99,
+   "fin": 25.01
+  },
+  {
+   "i": 8,
+   "texto": "Básicamente, crearon un espía que no podía hablar, no podía traicionar a nadie…",
+   "seccion": "desarrollo",
+   "inicio": 25.31,
+   "fin": 29.99
+  },
+  {
+   "i": 9,
+   "texto": "y tenía una misión muy importante.",
+   "seccion": "desarrollo",
+   "inicio": 30.25,
+   "fin": 32.42
+  },
+  {
+   "i": 10,
+   "texto": "Lo llamaron William Martin, y dejaron su cuerpo cerca de las costas de España, con un maletín lleno de información falsa.",
+   "seccion": "giro",
+   "inicio": 32.88,
+   "fin": 39.44
+  },
+  {
+   "i": 11,
+   "texto": "Los alemanes encontraron los documentos…",
+   "seccion": "giro",
+   "inicio": 39.76,
+   "fin": 42.05
+  },
+  {
+   "i": 12,
+   "texto": "¡y se tragaron el cuento!",
+   "seccion": "giro",
+   "inicio": 42.47,
+   "fin": 43.75
+  },
+  {
+   "i": 13,
+   "texto": "Hitler reforzó Grecia y Cerdeña, mientras los aliados desembarcaban en Sicilia.",
+   "seccion": "desenlace",
+   "inicio": 44.23,
+   "fin": 48.69
+  },
+  {
+   "i": 14,
+   "texto": "Sí. Un hombre muerto ayudó a engañar a uno de los ejércitos más poderosos del mundo.",
+   "seccion": "desenlace",
+   "inicio": 49.01,
+   "fin": 54.4
+  },
+  {
+   "i": 15,
+   "texto": "Veredicto: ¡verdad!",
+   "seccion": "veredicto",
+   "inicio": 54.92,
+   "fin": 56.42
+  },
+  {
+   "i": 16,
+   "texto": "Y probablemente fue el único espía que cumplió su misión sin decir una sola palabra.",
+   "seccion": "cierre",
+   "inicio": 56.84,
+   "fin": 61.37
+  }
+ ],
+ "palabras": [
+  {
+   "texto": "Cómo",
+   "inicio": 0.0,
+   "duracion": 0.208,
+   "visible": "¿Cómo",
+   "frase": 0,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "engañas",
+   "inicio": 0.16,
+   "duracion": 0.441,
+   "visible": "engañas",
+   "frase": 0,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "a",
+   "inicio": 0.613,
+   "duracion": 0.061,
+   "visible": "a",
+   "frase": 0,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "Hitler",
+   "inicio": 0.687,
+   "duracion": 0.441,
+   "visible": "Hitler",
+   "frase": 0,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "durante",
+   "inicio": 1.14,
+   "duracion": 0.38,
+   "visible": "durante",
+   "frase": 0,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "una",
+   "inicio": 1.532,
+   "duracion": 0.196,
+   "visible": "una",
+   "frase": 0,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "guerra",
+   "inicio": 1.741,
+   "duracion": 0.38,
+   "visible": "guerra?",
+   "frase": 0,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "Pues",
+   "inicio": 2.5,
+   "duracion": 0.205,
+   "visible": "Pues",
+   "frase": 1,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "los",
+   "inicio": 2.661,
+   "duracion": 0.125,
+   "visible": "los",
+   "frase": 1,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "británicos",
+   "inicio": 2.798,
+   "duracion": 0.568,
+   "visible": "británicos",
+   "frase": 1,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "tuvieron",
+   "inicio": 3.377,
+   "duracion": 0.386,
+   "visible": "tuvieron",
+   "frase": 1,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "una",
+   "inicio": 3.775,
+   "duracion": 0.148,
+   "visible": "una",
+   "frase": 1,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "idea",
+   "inicio": 3.934,
+   "duracion": 0.239,
+   "visible": "idea",
+   "frase": 1,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "bastante",
+   "inicio": 4.184,
+   "duracion": 0.466,
+   "visible": "bastante",
+   "frase": 1,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "peculiar",
+   "inicio": 4.661,
+   "duracion": 0.523,
+   "visible": "peculiar:",
+   "frase": 1,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "enviarle",
+   "inicio": 5.31,
+   "duracion": 0.585,
+   "visible": "¡enviarle",
+   "frase": 2,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "un",
+   "inicio": 5.832,
+   "duracion": 0.133,
+   "visible": "un",
+   "frase": 2,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "espía",
+   "inicio": 5.978,
+   "duracion": 0.399,
+   "visible": "espía",
+   "frase": 2,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "muerto",
+   "inicio": 6.39,
+   "duracion": 0.492,
+   "visible": "muerto!",
+   "frase": 2,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "Era",
+   "inicio": 7.44,
+   "duracion": 0.212,
+   "visible": "Era",
+   "frase": 3,
+   "seccion": "contexto"
+  },
+  {
+   "texto": "1943",
+   "inicio": 7.601,
+   "duracion": 1.521,
+   "visible": "1943,",
+   "frase": 3,
+   "seccion": "contexto"
+  },
+  {
+   "texto": "y",
+   "inicio": 9.346,
+   "duracion": 0.083,
+   "visible": "y",
+   "frase": 3,
+   "seccion": "contexto"
+  },
+  {
+   "texto": "los",
+   "inicio": 9.441,
+   "duracion": 0.177,
+   "visible": "los",
+   "frase": 3,
+   "seccion": "contexto"
+  },
+  {
+   "texto": "aliados",
+   "inicio": 9.63,
+   "duracion": 0.413,
+   "visible": "aliados",
+   "frase": 3,
+   "seccion": "contexto"
+  },
+  {
+   "texto": "querían",
+   "inicio": 10.054,
+   "duracion": 0.354,
+   "visible": "querían",
+   "frase": 3,
+   "seccion": "contexto"
+  },
+  {
+   "texto": "invadir",
+   "inicio": 10.42,
+   "duracion": 0.389,
+   "visible": "invadir",
+   "frase": 3,
+   "seccion": "contexto"
+  },
+  {
+   "texto": "Sicilia",
+   "inicio": 10.821,
+   "duracion": 0.578,
+   "visible": "Sicilia.",
+   "frase": 3,
+   "seccion": "contexto"
+  },
+  {
+   "texto": "El",
+   "inicio": 11.58,
+   "duracion": 0.177,
+   "visible": "El",
+   "frase": 4,
+   "seccion": "contexto"
+  },
+  {
+   "texto": "problema",
+   "inicio": 11.716,
+   "duracion": 0.483,
+   "visible": "problema",
+   "frase": 4,
+   "seccion": "contexto"
+  },
+  {
+   "texto": "era",
+   "inicio": 12.211,
+   "duracion": 0.165,
+   "visible": "era",
+   "frase": 4,
+   "seccion": "contexto"
+  },
+  {
+   "texto": "que",
+   "inicio": 12.388,
+   "duracion": 0.13,
+   "visible": "que",
+   "frase": 4,
+   "seccion": "contexto"
+  },
+  {
+   "texto": "los",
+   "inicio": 12.53,
+   "duracion": 0.153,
+   "visible": "los",
+   "frase": 4,
+   "seccion": "contexto"
+  },
+  {
+   "texto": "alemanes",
+   "inicio": 12.695,
+   "duracion": 0.507,
+   "visible": "alemanes",
+   "frase": 4,
+   "seccion": "contexto"
+  },
+  {
+   "texto": "ya",
+   "inicio": 13.214,
+   "duracion": 0.13,
+   "visible": "ya",
+   "frase": 4,
+   "seccion": "contexto"
+  },
+  {
+   "texto": "sospechaban",
+   "inicio": 13.355,
+   "duracion": 0.649,
+   "visible": "sospechaban",
+   "frase": 4,
+   "seccion": "contexto"
+  },
+  {
+   "texto": "del",
+   "inicio": 14.015,
+   "duracion": 0.153,
+   "visible": "del",
+   "frase": 4,
+   "seccion": "contexto"
+  },
+  {
+   "texto": "plan",
+   "inicio": 14.18,
+   "duracion": 0.342,
+   "visible": "plan.",
+   "frase": 4,
+   "seccion": "contexto"
+  },
+  {
+   "texto": "Así",
+   "inicio": 14.8,
+   "duracion": 0.312,
+   "visible": "Así",
+   "frase": 5,
+   "seccion": "contexto"
+  },
+  {
+   "texto": "que",
+   "inicio": 15.073,
+   "duracion": 0.108,
+   "visible": "que",
+   "frase": 5,
+   "seccion": "contexto"
+  },
+  {
+   "texto": "necesitaban",
+   "inicio": 15.193,
+   "duracion": 0.661,
+   "visible": "necesitaban",
+   "frase": 5,
+   "seccion": "contexto"
+  },
+  {
+   "texto": "distraerlos",
+   "inicio": 15.866,
+   "duracion": 0.817,
+   "visible": "distraerlos.",
+   "frase": 5,
+   "seccion": "contexto"
+  },
+  {
+   "texto": "Y",
+   "inicio": 16.88,
+   "duracion": 0.139,
+   "visible": "Y",
+   "frase": 6,
+   "seccion": "contexto"
+  },
+  {
+   "texto": "mucho",
+   "inicio": 16.968,
+   "duracion": 0.542,
+   "visible": "mucho.",
+   "frase": 6,
+   "seccion": "contexto"
+  },
+  {
+   "texto": "Su",
+   "inicio": 17.99,
+   "duracion": 0.193,
+   "visible": "Su",
+   "frase": 7,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "solución",
+   "inicio": 18.13,
+   "duracion": 0.489,
+   "visible": "solución",
+   "frase": 7,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "fue",
+   "inicio": 18.63,
+   "duracion": 0.136,
+   "visible": "fue",
+   "frase": 7,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "conseguir",
+   "inicio": 18.778,
+   "duracion": 0.443,
+   "visible": "conseguir",
+   "frase": 7,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "un",
+   "inicio": 19.232,
+   "duracion": 0.091,
+   "visible": "un",
+   "frase": 7,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "cadáver",
+   "inicio": 19.335,
+   "duracion": 0.42,
+   "visible": "cadáver,",
+   "frase": 7,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "ponerle",
+   "inicio": 20.005,
+   "duracion": 0.409,
+   "visible": "ponerle",
+   "frase": 7,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "uniforme",
+   "inicio": 20.425,
+   "duracion": 0.42,
+   "visible": "uniforme",
+   "frase": 7,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "militar",
+   "inicio": 20.857,
+   "duracion": 0.409,
+   "visible": "militar,",
+   "frase": 7,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "inventarle",
+   "inicio": 21.528,
+   "duracion": 0.545,
+   "visible": "inventarle",
+   "frase": 7,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "una",
+   "inicio": 22.085,
+   "duracion": 0.159,
+   "visible": "una",
+   "frase": 7,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "identidad",
+   "inicio": 22.255,
+   "duracion": 0.545,
+   "visible": "identidad",
+   "frase": 7,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "y",
+   "inicio": 22.812,
+   "duracion": 0.08,
+   "visible": "y",
+   "frase": 7,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "entregarle",
+   "inicio": 22.903,
+   "duracion": 0.511,
+   "visible": "entregarle",
+   "frase": 7,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "documentos",
+   "inicio": 23.425,
+   "duracion": 0.545,
+   "visible": "documentos",
+   "frase": 7,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "secretos",
+   "inicio": 23.982,
+   "duracion": 0.455,
+   "visible": "secretos",
+   "frase": 7,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "falsos",
+   "inicio": 24.448,
+   "duracion": 0.523,
+   "visible": "falsos.",
+   "frase": 7,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "Básicamente",
+   "inicio": 25.31,
+   "duracion": 0.814,
+   "visible": "Básicamente,",
+   "frase": 8,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "crearon",
+   "inicio": 26.35,
+   "duracion": 0.401,
+   "visible": "crearon",
+   "frase": 8,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "un",
+   "inicio": 26.763,
+   "duracion": 0.094,
+   "visible": "un",
+   "frase": 8,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "espía",
+   "inicio": 26.869,
+   "duracion": 0.389,
+   "visible": "espía",
+   "frase": 8,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "que",
+   "inicio": 27.27,
+   "duracion": 0.13,
+   "visible": "que",
+   "frase": 8,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "no",
+   "inicio": 27.412,
+   "duracion": 0.153,
+   "visible": "no",
+   "frase": 8,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "podía",
+   "inicio": 27.577,
+   "duracion": 0.318,
+   "visible": "podía",
+   "frase": 8,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "hablar",
+   "inicio": 27.907,
+   "duracion": 0.283,
+   "visible": "hablar,",
+   "frase": 8,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "no",
+   "inicio": 28.461,
+   "duracion": 0.13,
+   "visible": "no",
+   "frase": 8,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "podía",
+   "inicio": 28.603,
+   "duracion": 0.354,
+   "visible": "podía",
+   "frase": 8,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "traicionar",
+   "inicio": 28.968,
+   "duracion": 0.531,
+   "visible": "traicionar",
+   "frase": 8,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "a",
+   "inicio": 29.511,
+   "duracion": 0.035,
+   "visible": "a",
+   "frase": 8,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "nadie",
+   "inicio": 29.558,
+   "duracion": 0.389,
+   "visible": "nadie…",
+   "frase": 8,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "y",
+   "inicio": 30.25,
+   "duracion": 0.143,
+   "visible": "y",
+   "frase": 9,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "tenía",
+   "inicio": 30.338,
+   "duracion": 0.365,
+   "visible": "tenía",
+   "frase": 9,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "una",
+   "inicio": 30.716,
+   "duracion": 0.195,
+   "visible": "una",
+   "frase": 9,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "misión",
+   "inicio": 30.924,
+   "duracion": 0.404,
+   "visible": "misión",
+   "frase": 9,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "muy",
+   "inicio": 31.341,
+   "duracion": 0.26,
+   "visible": "muy",
+   "frase": 9,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "importante",
+   "inicio": 31.614,
+   "duracion": 0.755,
+   "visible": "importante.",
+   "frase": 9,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "Lo",
+   "inicio": 32.88,
+   "duracion": 0.153,
+   "visible": "Lo",
+   "frase": 10,
+   "seccion": "giro"
+  },
+  {
+   "texto": "llamaron",
+   "inicio": 32.982,
+   "duracion": 0.425,
+   "visible": "llamaron",
+   "frase": 10,
+   "seccion": "giro"
+  },
+  {
+   "texto": "William",
+   "inicio": 33.419,
+   "duracion": 0.342,
+   "visible": "William",
+   "frase": 10,
+   "seccion": "giro"
+  },
+  {
+   "texto": "Martin",
+   "inicio": 33.772,
+   "duracion": 0.377,
+   "visible": "Martin,",
+   "frase": 10,
+   "seccion": "giro"
+  },
+  {
+   "texto": "y",
+   "inicio": 34.433,
+   "duracion": 0.047,
+   "visible": "y",
+   "frase": 10,
+   "seccion": "giro"
+  },
+  {
+   "texto": "dejaron",
+   "inicio": 34.492,
+   "duracion": 0.389,
+   "visible": "dejaron",
+   "frase": 10,
+   "seccion": "giro"
+  },
+  {
+   "texto": "su",
+   "inicio": 34.893,
+   "duracion": 0.13,
+   "visible": "su",
+   "frase": 10,
+   "seccion": "giro"
+  },
+  {
+   "texto": "cuerpo",
+   "inicio": 35.034,
+   "duracion": 0.342,
+   "visible": "cuerpo",
+   "frase": 10,
+   "seccion": "giro"
+  },
+  {
+   "texto": "cerca",
+   "inicio": 35.388,
+   "duracion": 0.33,
+   "visible": "cerca",
+   "frase": 10,
+   "seccion": "giro"
+  },
+  {
+   "texto": "de",
+   "inicio": 35.73,
+   "duracion": 0.106,
+   "visible": "de",
+   "frase": 10,
+   "seccion": "giro"
+  },
+  {
+   "texto": "las",
+   "inicio": 35.848,
+   "duracion": 0.141,
+   "visible": "las",
+   "frase": 10,
+   "seccion": "giro"
+  },
+  {
+   "texto": "costas",
+   "inicio": 36.001,
+   "duracion": 0.366,
+   "visible": "costas",
+   "frase": 10,
+   "seccion": "giro"
+  },
+  {
+   "texto": "de",
+   "inicio": 36.378,
+   "duracion": 0.071,
+   "visible": "de",
+   "frase": 10,
+   "seccion": "giro"
+  },
+  {
+   "texto": "España",
+   "inicio": 36.461,
+   "duracion": 0.472,
+   "visible": "España,",
+   "frase": 10,
+   "seccion": "giro"
+  },
+  {
+   "texto": "con",
+   "inicio": 37.169,
+   "duracion": 0.165,
+   "visible": "con",
+   "frase": 10,
+   "seccion": "giro"
+  },
+  {
+   "texto": "un",
+   "inicio": 37.345,
+   "duracion": 0.106,
+   "visible": "un",
+   "frase": 10,
+   "seccion": "giro"
+  },
+  {
+   "texto": "maletín",
+   "inicio": 37.463,
+   "duracion": 0.448,
+   "visible": "maletín",
+   "frase": 10,
+   "seccion": "giro"
+  },
+  {
+   "texto": "lleno",
+   "inicio": 37.923,
+   "duracion": 0.259,
+   "visible": "lleno",
+   "frase": 10,
+   "seccion": "giro"
+  },
+  {
+   "texto": "de",
+   "inicio": 38.195,
+   "duracion": 0.094,
+   "visible": "de",
+   "frase": 10,
+   "seccion": "giro"
+  },
+  {
+   "texto": "información",
+   "inicio": 38.301,
+   "duracion": 0.637,
+   "visible": "información",
+   "frase": 10,
+   "seccion": "giro"
+  },
+  {
+   "texto": "falsa",
+   "inicio": 38.949,
+   "duracion": 0.436,
+   "visible": "falsa.",
+   "frase": 10,
+   "seccion": "giro"
+  },
+  {
+   "texto": "Los",
+   "inicio": 39.76,
+   "duracion": 0.212,
+   "visible": "Los",
+   "frase": 11,
+   "seccion": "giro"
+  },
+  {
+   "texto": "alemanes",
+   "inicio": 39.925,
+   "duracion": 0.5,
+   "visible": "alemanes",
+   "frase": 11,
+   "seccion": "giro"
+  },
+  {
+   "texto": "encontraron",
+   "inicio": 40.438,
+   "duracion": 0.625,
+   "visible": "encontraron",
+   "frase": 11,
+   "seccion": "giro"
+  },
+  {
+   "texto": "los",
+   "inicio": 41.075,
+   "duracion": 0.15,
+   "visible": "los",
+   "frase": 11,
+   "seccion": "giro"
+  },
+  {
+   "texto": "documentos",
+   "inicio": 41.238,
+   "duracion": 0.775,
+   "visible": "documentos…",
+   "frase": 11,
+   "seccion": "giro"
+  },
+  {
+   "texto": "y",
+   "inicio": 42.47,
+   "duracion": 0.11,
+   "visible": "¡y",
+   "frase": 12,
+   "seccion": "giro"
+  },
+  {
+   "texto": "se",
+   "inicio": 42.532,
+   "duracion": 0.172,
+   "visible": "se",
+   "frase": 12,
+   "seccion": "giro"
+  },
+  {
+   "texto": "tragaron",
+   "inicio": 42.715,
+   "duracion": 0.441,
+   "visible": "tragaron",
+   "frase": 12,
+   "seccion": "giro"
+  },
+  {
+   "texto": "el",
+   "inicio": 43.169,
+   "duracion": 0.098,
+   "visible": "el",
+   "frase": 12,
+   "seccion": "giro"
+  },
+  {
+   "texto": "cuento",
+   "inicio": 43.279,
+   "duracion": 0.404,
+   "visible": "cuento!",
+   "frase": 12,
+   "seccion": "giro"
+  },
+  {
+   "texto": "Hitler",
+   "inicio": 44.23,
+   "duracion": 0.401,
+   "visible": "Hitler",
+   "frase": 13,
+   "seccion": "desenlace"
+  },
+  {
+   "texto": "reforzó",
+   "inicio": 44.6,
+   "duracion": 0.46,
+   "visible": "reforzó",
+   "frase": 13,
+   "seccion": "desenlace"
+  },
+  {
+   "texto": "Grecia",
+   "inicio": 45.072,
+   "duracion": 0.354,
+   "visible": "Grecia",
+   "frase": 13,
+   "seccion": "desenlace"
+  },
+  {
+   "texto": "y",
+   "inicio": 45.437,
+   "duracion": 0.047,
+   "visible": "y",
+   "frase": 13,
+   "seccion": "desenlace"
+  },
+  {
+   "texto": "Cerdeña",
+   "inicio": 45.496,
+   "duracion": 0.507,
+   "visible": "Cerdeña,",
+   "frase": 13,
+   "seccion": "desenlace"
+  },
+  {
+   "texto": "mientras",
+   "inicio": 46.31,
+   "duracion": 0.366,
+   "visible": "mientras",
+   "frase": 13,
+   "seccion": "desenlace"
+  },
+  {
+   "texto": "los",
+   "inicio": 46.687,
+   "duracion": 0.141,
+   "visible": "los",
+   "frase": 13,
+   "seccion": "desenlace"
+  },
+  {
+   "texto": "aliados",
+   "inicio": 46.84,
+   "duracion": 0.377,
+   "visible": "aliados",
+   "frase": 13,
+   "seccion": "desenlace"
+  },
+  {
+   "texto": "desembarcaban",
+   "inicio": 47.23,
+   "duracion": 0.731,
+   "visible": "desembarcaban",
+   "frase": 13,
+   "seccion": "desenlace"
+  },
+  {
+   "texto": "en",
+   "inicio": 47.973,
+   "duracion": 0.094,
+   "visible": "en",
+   "frase": 13,
+   "seccion": "desenlace"
+  },
+  {
+   "texto": "Sicilia",
+   "inicio": 48.079,
+   "duracion": 0.554,
+   "visible": "Sicilia.",
+   "frase": 13,
+   "seccion": "desenlace"
+  },
+  {
+   "texto": "Sí",
+   "inicio": 49.01,
+   "duracion": 0.429,
+   "visible": "Sí.",
+   "frase": 14,
+   "seccion": "desenlace"
+  },
+  {
+   "texto": "Un",
+   "inicio": 50.213,
+   "duracion": 0.159,
+   "visible": "Un",
+   "frase": 14,
+   "seccion": "desenlace"
+  },
+  {
+   "texto": "hombre",
+   "inicio": 50.384,
+   "duracion": 0.233,
+   "visible": "hombre",
+   "frase": 14,
+   "seccion": "desenlace"
+  },
+  {
+   "texto": "muerto",
+   "inicio": 50.629,
+   "duracion": 0.343,
+   "visible": "muerto",
+   "frase": 14,
+   "seccion": "desenlace"
+  },
+  {
+   "texto": "ayudó",
+   "inicio": 50.985,
+   "duracion": 0.306,
+   "visible": "ayudó",
+   "frase": 14,
+   "seccion": "desenlace"
+  },
+  {
+   "texto": "a",
+   "inicio": 51.303,
+   "duracion": 0.037,
+   "visible": "a",
+   "frase": 14,
+   "seccion": "desenlace"
+  },
+  {
+   "texto": "engañar",
+   "inicio": 51.352,
+   "duracion": 0.429,
+   "visible": "engañar",
+   "frase": 14,
+   "seccion": "desenlace"
+  },
+  {
+   "texto": "a",
+   "inicio": 51.793,
+   "duracion": 0.049,
+   "visible": "a",
+   "frase": 14,
+   "seccion": "desenlace"
+  },
+  {
+   "texto": "uno",
+   "inicio": 51.855,
+   "duracion": 0.245,
+   "visible": "uno",
+   "frase": 14,
+   "seccion": "desenlace"
+  },
+  {
+   "texto": "de",
+   "inicio": 52.112,
+   "duracion": 0.098,
+   "visible": "de",
+   "frase": 14,
+   "seccion": "desenlace"
+  },
+  {
+   "texto": "los",
+   "inicio": 52.222,
+   "duracion": 0.147,
+   "visible": "los",
+   "frase": 14,
+   "seccion": "desenlace"
+  },
+  {
+   "texto": "ejércitos",
+   "inicio": 52.382,
+   "duracion": 0.613,
+   "visible": "ejércitos",
+   "frase": 14,
+   "seccion": "desenlace"
+  },
+  {
+   "texto": "más",
+   "inicio": 53.007,
+   "duracion": 0.221,
+   "visible": "más",
+   "frase": 14,
+   "seccion": "desenlace"
+  },
+  {
+   "texto": "poderosos",
+   "inicio": 53.239,
+   "duracion": 0.551,
+   "visible": "poderosos",
+   "frase": 14,
+   "seccion": "desenlace"
+  },
+  {
+   "texto": "del",
+   "inicio": 53.803,
+   "duracion": 0.123,
+   "visible": "del",
+   "frase": 14,
+   "seccion": "desenlace"
+  },
+  {
+   "texto": "mundo",
+   "inicio": 53.938,
+   "duracion": 0.404,
+   "visible": "mundo.",
+   "frase": 14,
+   "seccion": "desenlace"
+  },
+  {
+   "texto": "Veredicto",
+   "inicio": 54.92,
+   "duracion": 0.72,
+   "visible": "Veredicto:",
+   "frase": 15,
+   "seccion": "veredicto"
+  },
+  {
+   "texto": "verdad",
+   "inicio": 55.897,
+   "duracion": 0.584,
+   "visible": "¡verdad!",
+   "frase": 15,
+   "seccion": "veredicto"
+  },
+  {
+   "texto": "Y",
+   "inicio": 56.84,
+   "duracion": 0.125,
+   "visible": "Y",
+   "frase": 16,
+   "seccion": "cierre"
+  },
+  {
+   "texto": "probablemente",
+   "inicio": 56.918,
+   "duracion": 0.688,
+   "visible": "probablemente",
+   "frase": 16,
+   "seccion": "cierre"
+  },
+  {
+   "texto": "fue",
+   "inicio": 57.618,
+   "duracion": 0.2,
+   "visible": "fue",
+   "frase": 16,
+   "seccion": "cierre"
+  },
+  {
+   "texto": "el",
+   "inicio": 57.83,
+   "duracion": 0.1,
+   "visible": "el",
+   "frase": 16,
+   "seccion": "cierre"
+  },
+  {
+   "texto": "único",
+   "inicio": 57.943,
+   "duracion": 0.275,
+   "visible": "único",
+   "frase": 16,
+   "seccion": "cierre"
+  },
+  {
+   "texto": "espía",
+   "inicio": 58.23,
+   "duracion": 0.362,
+   "visible": "espía",
+   "frase": 16,
+   "seccion": "cierre"
+  },
+  {
+   "texto": "que",
+   "inicio": 58.605,
+   "duracion": 0.125,
+   "visible": "que",
+   "frase": 16,
+   "seccion": "cierre"
+  },
+  {
+   "texto": "cumplió",
+   "inicio": 58.743,
+   "duracion": 0.362,
+   "visible": "cumplió",
+   "frase": 16,
+   "seccion": "cierre"
+  },
+  {
+   "texto": "su",
+   "inicio": 59.118,
+   "duracion": 0.138,
+   "visible": "su",
+   "frase": 16,
+   "seccion": "cierre"
+  },
+  {
+   "texto": "misión",
+   "inicio": 59.268,
+   "duracion": 0.412,
+   "visible": "misión",
+   "frase": 16,
+   "seccion": "cierre"
+  },
+  {
+   "texto": "sin",
+   "inicio": 59.693,
+   "duracion": 0.212,
+   "visible": "sin",
+   "frase": 16,
+   "seccion": "cierre"
+  },
+  {
+   "texto": "decir",
+   "inicio": 59.918,
+   "duracion": 0.35,
+   "visible": "decir",
+   "frase": 16,
+   "seccion": "cierre"
+  },
+  {
+   "texto": "una",
+   "inicio": 60.28,
+   "duracion": 0.175,
+   "visible": "una",
+   "frase": 16,
+   "seccion": "cierre"
+  },
+  {
+   "texto": "sola",
+   "inicio": 60.468,
+   "duracion": 0.325,
+   "visible": "sola",
+   "frase": 16,
+   "seccion": "cierre"
+  },
+  {
+   "texto": "palabra",
+   "inicio": 60.805,
+   "duracion": 0.512,
+   "visible": "palabra.",
+   "frase": 16,
+   "seccion": "cierre"
+  }
+ ]
+}
