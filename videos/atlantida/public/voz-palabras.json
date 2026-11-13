@@ -1,0 +1,1588 @@
+{
+ "voz": "es-MX-JorgeNeural",
+ "duracion": 71.57,
+ "frases": [
+  {
+   "i": 0,
+   "texto": "Nací en una ciudad donde el oro decoraba los templos, los canales atravesaban las calles, y el océano parecía obedecernos.",
+   "seccion": "gancho",
+   "inicio": 0.0,
+   "fin": 7.57
+  },
+  {
+   "i": 1,
+   "texto": "Créeme…",
+   "seccion": "gancho",
+   "inicio": 8.17,
+   "fin": 8.76
+  },
+  {
+   "i": 2,
+   "texto": "vivíamos en el paraíso.",
+   "seccion": "gancho",
+   "inicio": 9.18,
+   "fin": 10.68
+  },
+  {
+   "i": 3,
+   "texto": "Nuestros palacios eran gigantescos, nuestras riquezas parecían infinitas, y nuestra ciudad estaba construida en enormes círculos de tierra y agua.",
+   "seccion": "maravilla",
+   "inicio": 11.43,
+   "fin": 19.96
+  },
+  {
+   "i": 4,
+   "texto": "Éramos tan poderosos que empezamos a creer que nada podía detenernos.",
+   "seccion": "maravilla",
+   "inicio": 20.46,
+   "fin": 24.4
+  },
+  {
+   "i": 5,
+   "texto": "Y ese fue nuestro primer error.",
+   "seccion": "maravilla",
+   "inicio": 25.05,
+   "fin": 26.82
+  },
+  {
+   "i": 6,
+   "texto": "Los dioses dejaron de mirarnos con admiración…",
+   "seccion": "domino",
+   "inicio": 27.72,
+   "fin": 30.35
+  },
+  {
+   "i": 7,
+   "texto": "y comenzaron a castigarnos.",
+   "seccion": "domino",
+   "inicio": 30.77,
+   "fin": 32.61
+  },
+  {
+   "i": 8,
+   "texto": "Primero tembló la tierra.",
+   "seccion": "domino",
+   "inicio": 33.26,
+   "fin": 34.63
+  },
+  {
+   "i": 9,
+   "texto": "Después llegaron las olas.",
+   "seccion": "domino",
+   "inicio": 35.05,
+   "fin": 36.58
+  },
+  {
+   "i": 10,
+   "texto": "Intenté correr, pero las calles ya estaban desapareciendo bajo el agua.",
+   "seccion": "domino",
+   "inicio": 37.13,
+   "fin": 40.94
+  },
+  {
+   "i": 11,
+   "texto": "En una sola noche, nuestro mundo dejó de existir.",
+   "seccion": "domino",
+   "inicio": 41.54,
+   "fin": 44.88
+  },
+  {
+   "i": 12,
+   "texto": "Quizás nunca hayas escuchado mi nombre,",
+   "seccion": "revelacion",
+   "inicio": 45.88,
+   "fin": 48.17
+  },
+  {
+   "i": 13,
+   "texto": "pero nuestra ciudad se llamaba Atlántida.",
+   "seccion": "revelacion",
+   "inicio": 48.47,
+   "fin": 50.81
+  },
+  {
+   "i": 14,
+   "texto": "Y lo más extraño es que toda esta historia viene de unos escritos de Platón, hace más de dos mil años.",
+   "seccion": "revelacion",
+   "inicio": 51.61,
+   "fin": 57.57
+  },
+  {
+   "i": 15,
+   "texto": "Nunca encontraron pruebas concluyentes de que existiéramos.",
+   "seccion": "cierre",
+   "inicio": 58.27,
+   "fin": 61.56
+  },
+  {
+   "i": 16,
+   "texto": "Así que tal vez no fui testigo de una civilización perdida…",
+   "seccion": "cierre",
+   "inicio": 62.11,
+   "fin": 65.74
+  },
+  {
+   "i": 17,
+   "texto": "Tal vez fui parte de una leyenda.",
+   "seccion": "cierre",
+   "inicio": 66.24,
+   "fin": 68.33
+  },
+  {
+   "i": 18,
+   "texto": "Veredicto:",
+   "seccion": "veredicto",
+   "inicio": 69.33,
+   "fin": 70.09
+  },
+  {
+   "i": 19,
+   "texto": "¡Mito!",
+   "seccion": "veredicto",
+   "inicio": 70.35,
+   "fin": 70.87
+  }
+ ],
+ "palabras": [
+  {
+   "texto": "Nací",
+   "inicio": 0.0,
+   "duracion": 0.391,
+   "visible": "Nací",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "en",
+   "inicio": 0.336,
+   "duracion": 0.104,
+   "visible": "en",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "una",
+   "inicio": 0.453,
+   "duracion": 0.156,
+   "visible": "una",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "ciudad",
+   "inicio": 0.622,
+   "duracion": 0.378,
+   "visible": "ciudad",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "donde",
+   "inicio": 1.013,
+   "duracion": 0.273,
+   "visible": "donde",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "el",
+   "inicio": 1.299,
+   "duracion": 0.117,
+   "visible": "el",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "oro",
+   "inicio": 1.43,
+   "duracion": 0.195,
+   "visible": "oro",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "decoraba",
+   "inicio": 1.638,
+   "duracion": 0.482,
+   "visible": "decoraba",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "los",
+   "inicio": 2.133,
+   "duracion": 0.195,
+   "visible": "los",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "templos",
+   "inicio": 2.341,
+   "duracion": 0.495,
+   "visible": "templos,",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "los",
+   "inicio": 3.109,
+   "duracion": 0.143,
+   "visible": "los",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "canales",
+   "inicio": 3.265,
+   "duracion": 0.482,
+   "visible": "canales",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "atravesaban",
+   "inicio": 3.76,
+   "duracion": 0.651,
+   "visible": "atravesaban",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "las",
+   "inicio": 4.424,
+   "duracion": 0.143,
+   "visible": "las",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "calles",
+   "inicio": 4.581,
+   "duracion": 0.482,
+   "visible": "calles,",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "y",
+   "inicio": 5.336,
+   "duracion": 0.104,
+   "visible": "y",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "el",
+   "inicio": 5.453,
+   "duracion": 0.117,
+   "visible": "el",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "océano",
+   "inicio": 5.583,
+   "duracion": 0.456,
+   "visible": "océano",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "parecía",
+   "inicio": 6.052,
+   "duracion": 0.547,
+   "visible": "parecía",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "obedecernos",
+   "inicio": 6.612,
+   "duracion": 0.898,
+   "visible": "obedecernos.",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "Créeme",
+   "inicio": 8.17,
+   "duracion": 0.639,
+   "visible": "Créeme…",
+   "enfasis": false,
+   "frase": 1,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "vivíamos",
+   "inicio": 9.18,
+   "duracion": 0.625,
+   "visible": "vivíamos",
+   "enfasis": false,
+   "frase": 2,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "en",
+   "inicio": 9.753,
+   "duracion": 0.095,
+   "visible": "en",
+   "enfasis": false,
+   "frase": 2,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "el",
+   "inicio": 9.862,
+   "duracion": 0.109,
+   "visible": "el",
+   "enfasis": false,
+   "frase": 2,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "paraíso",
+   "inicio": 9.984,
+   "duracion": 0.625,
+   "visible": "paraíso.",
+   "enfasis": false,
+   "frase": 2,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "Nuestros",
+   "inicio": 11.43,
+   "duracion": 0.434,
+   "visible": "Nuestros",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": "maravilla"
+  },
+  {
+   "texto": "palacios",
+   "inicio": 11.827,
+   "duracion": 0.51,
+   "visible": "palacios",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": "maravilla"
+  },
+  {
+   "texto": "eran",
+   "inicio": 12.35,
+   "duracion": 0.204,
+   "visible": "eran",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": "maravilla"
+  },
+  {
+   "texto": "gigantescos",
+   "inicio": 12.567,
+   "duracion": 0.816,
+   "visible": "gigantescos,",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": "maravilla"
+  },
+  {
+   "texto": "nuestras",
+   "inicio": 13.626,
+   "duracion": 0.434,
+   "visible": "nuestras",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": "maravilla"
+  },
+  {
+   "texto": "riquezas",
+   "inicio": 14.072,
+   "duracion": 0.485,
+   "visible": "riquezas",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": "maravilla"
+  },
+  {
+   "texto": "parecían",
+   "inicio": 14.57,
+   "duracion": 0.485,
+   "visible": "parecían",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": "maravilla"
+  },
+  {
+   "texto": "infinitas",
+   "inicio": 15.067,
+   "duracion": 0.676,
+   "visible": "infinitas,",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": "maravilla"
+  },
+  {
+   "texto": "y",
+   "inicio": 15.986,
+   "duracion": 0.064,
+   "visible": "y",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": "maravilla"
+  },
+  {
+   "texto": "nuestra",
+   "inicio": 16.062,
+   "duracion": 0.332,
+   "visible": "nuestra",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": "maravilla"
+  },
+  {
+   "texto": "ciudad",
+   "inicio": 16.407,
+   "duracion": 0.37,
+   "visible": "ciudad",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": "maravilla"
+  },
+  {
+   "texto": "estaba",
+   "inicio": 16.789,
+   "duracion": 0.357,
+   "visible": "estaba",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": "maravilla"
+  },
+  {
+   "texto": "construida",
+   "inicio": 17.159,
+   "duracion": 0.625,
+   "visible": "construida",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": "maravilla"
+  },
+  {
+   "texto": "en",
+   "inicio": 17.797,
+   "duracion": 0.089,
+   "visible": "en",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": "maravilla"
+  },
+  {
+   "texto": "enormes",
+   "inicio": 17.899,
+   "duracion": 0.446,
+   "visible": "enormes",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": "maravilla"
+  },
+  {
+   "texto": "círculos",
+   "inicio": 18.358,
+   "duracion": 0.485,
+   "visible": "círculos",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": "maravilla"
+  },
+  {
+   "texto": "de",
+   "inicio": 18.856,
+   "duracion": 0.102,
+   "visible": "de",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": "maravilla"
+  },
+  {
+   "texto": "tierra",
+   "inicio": 18.97,
+   "duracion": 0.408,
+   "visible": "tierra",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": "maravilla"
+  },
+  {
+   "texto": "y",
+   "inicio": 19.391,
+   "duracion": 0.14,
+   "visible": "y",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": "maravilla"
+  },
+  {
+   "texto": "agua",
+   "inicio": 19.544,
+   "duracion": 0.357,
+   "visible": "agua.",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": "maravilla"
+  },
+  {
+   "texto": "Éramos",
+   "inicio": 20.46,
+   "duracion": 0.395,
+   "visible": "Éramos",
+   "enfasis": false,
+   "frase": 4,
+   "seccion": "maravilla"
+  },
+  {
+   "texto": "tan",
+   "inicio": 20.789,
+   "duracion": 0.166,
+   "visible": "tan",
+   "enfasis": false,
+   "frase": 4,
+   "seccion": "maravilla"
+  },
+  {
+   "texto": "poderosos",
+   "inicio": 20.968,
+   "duracion": 0.561,
+   "visible": "poderosos",
+   "enfasis": false,
+   "frase": 4,
+   "seccion": "maravilla"
+  },
+  {
+   "texto": "que",
+   "inicio": 21.542,
+   "duracion": 0.102,
+   "visible": "que",
+   "enfasis": false,
+   "frase": 4,
+   "seccion": "maravilla"
+  },
+  {
+   "texto": "empezamos",
+   "inicio": 21.657,
+   "duracion": 0.574,
+   "visible": "empezamos",
+   "enfasis": false,
+   "frase": 4,
+   "seccion": "maravilla"
+  },
+  {
+   "texto": "a",
+   "inicio": 22.243,
+   "duracion": 0.064,
+   "visible": "a",
+   "enfasis": false,
+   "frase": 4,
+   "seccion": "maravilla"
+  },
+  {
+   "texto": "creer",
+   "inicio": 22.32,
+   "duracion": 0.344,
+   "visible": "creer",
+   "enfasis": false,
+   "frase": 4,
+   "seccion": "maravilla"
+  },
+  {
+   "texto": "que",
+   "inicio": 22.677,
+   "duracion": 0.128,
+   "visible": "que",
+   "enfasis": false,
+   "frase": 4,
+   "seccion": "maravilla"
+  },
+  {
+   "texto": "nada",
+   "inicio": 22.817,
+   "duracion": 0.319,
+   "visible": "nada",
+   "enfasis": false,
+   "frase": 4,
+   "seccion": "maravilla"
+  },
+  {
+   "texto": "podía",
+   "inicio": 23.149,
+   "duracion": 0.37,
+   "visible": "podía",
+   "enfasis": false,
+   "frase": 4,
+   "seccion": "maravilla"
+  },
+  {
+   "texto": "detenernos",
+   "inicio": 23.532,
+   "duracion": 0.804,
+   "visible": "detenernos.",
+   "enfasis": false,
+   "frase": 4,
+   "seccion": "maravilla"
+  },
+  {
+   "texto": "Y",
+   "inicio": 25.05,
+   "duracion": 0.227,
+   "visible": "Y",
+   "enfasis": false,
+   "frase": 5,
+   "seccion": "maravilla"
+  },
+  {
+   "texto": "ese",
+   "inicio": 25.208,
+   "duracion": 0.241,
+   "visible": "ese",
+   "enfasis": false,
+   "frase": 5,
+   "seccion": "maravilla"
+  },
+  {
+   "texto": "fue",
+   "inicio": 25.464,
+   "duracion": 0.156,
+   "visible": "fue",
+   "enfasis": false,
+   "frase": 5,
+   "seccion": "maravilla"
+  },
+  {
+   "texto": "nuestro",
+   "inicio": 25.634,
+   "duracion": 0.369,
+   "visible": "nuestro",
+   "enfasis": false,
+   "frase": 5,
+   "seccion": "maravilla"
+  },
+  {
+   "texto": "primer",
+   "inicio": 26.018,
+   "duracion": 0.369,
+   "visible": "primer",
+   "enfasis": false,
+   "frase": 5,
+   "seccion": "maravilla"
+  },
+  {
+   "texto": "error",
+   "inicio": 26.401,
+   "duracion": 0.455,
+   "visible": "error.",
+   "enfasis": false,
+   "frase": 5,
+   "seccion": "maravilla"
+  },
+  {
+   "texto": "Los",
+   "inicio": 27.72,
+   "duracion": 0.239,
+   "visible": "Los",
+   "enfasis": false,
+   "frase": 6,
+   "seccion": "domino"
+  },
+  {
+   "texto": "dioses",
+   "inicio": 27.906,
+   "duracion": 0.359,
+   "visible": "dioses",
+   "enfasis": false,
+   "frase": 6,
+   "seccion": "domino"
+  },
+  {
+   "texto": "dejaron",
+   "inicio": 28.278,
+   "duracion": 0.412,
+   "visible": "dejaron",
+   "enfasis": false,
+   "frase": 6,
+   "seccion": "domino"
+  },
+  {
+   "texto": "de",
+   "inicio": 28.704,
+   "duracion": 0.093,
+   "visible": "de",
+   "enfasis": false,
+   "frase": 6,
+   "seccion": "domino"
+  },
+  {
+   "texto": "mirarnos",
+   "inicio": 28.81,
+   "duracion": 0.545,
+   "visible": "mirarnos",
+   "enfasis": false,
+   "frase": 6,
+   "seccion": "domino"
+  },
+  {
+   "texto": "con",
+   "inicio": 29.369,
+   "duracion": 0.186,
+   "visible": "con",
+   "enfasis": false,
+   "frase": 6,
+   "seccion": "domino"
+  },
+  {
+   "texto": "admiración",
+   "inicio": 29.568,
+   "duracion": 0.731,
+   "visible": "admiración…",
+   "enfasis": false,
+   "frase": 6,
+   "seccion": "domino"
+  },
+  {
+   "texto": "y",
+   "inicio": 30.77,
+   "duracion": 0.136,
+   "visible": "y",
+   "enfasis": false,
+   "frase": 7,
+   "seccion": "domino"
+  },
+  {
+   "texto": "comenzaron",
+   "inicio": 30.854,
+   "duracion": 0.679,
+   "visible": "comenzaron",
+   "enfasis": false,
+   "frase": 7,
+   "seccion": "domino"
+  },
+  {
+   "texto": "a",
+   "inicio": 31.547,
+   "duracion": 0.054,
+   "visible": "a",
+   "enfasis": false,
+   "frase": 7,
+   "seccion": "domino"
+  },
+  {
+   "texto": "castigarnos",
+   "inicio": 31.615,
+   "duracion": 0.951,
+   "visible": "castigarnos.",
+   "enfasis": false,
+   "frase": 7,
+   "seccion": "domino"
+  },
+  {
+   "texto": "Primero",
+   "inicio": 33.26,
+   "duracion": 0.425,
+   "visible": "Primero",
+   "enfasis": false,
+   "frase": 8,
+   "seccion": "domino"
+  },
+  {
+   "texto": "tembló",
+   "inicio": 33.628,
+   "duracion": 0.375,
+   "visible": "tembló",
+   "enfasis": false,
+   "frase": 8,
+   "seccion": "domino"
+  },
+  {
+   "texto": "la",
+   "inicio": 34.015,
+   "duracion": 0.113,
+   "visible": "la",
+   "enfasis": false,
+   "frase": 8,
+   "seccion": "domino"
+  },
+  {
+   "texto": "tierra",
+   "inicio": 34.14,
+   "duracion": 0.438,
+   "visible": "tierra.",
+   "enfasis": false,
+   "frase": 8,
+   "seccion": "domino"
+  },
+  {
+   "texto": "Después",
+   "inicio": 35.05,
+   "duracion": 0.475,
+   "visible": "Después",
+   "enfasis": false,
+   "frase": 9,
+   "seccion": "domino"
+  },
+  {
+   "texto": "llegaron",
+   "inicio": 35.478,
+   "duracion": 0.4,
+   "visible": "llegaron",
+   "enfasis": false,
+   "frase": 9,
+   "seccion": "domino"
+  },
+  {
+   "texto": "las",
+   "inicio": 35.89,
+   "duracion": 0.163,
+   "visible": "las",
+   "enfasis": false,
+   "frase": 9,
+   "seccion": "domino"
+  },
+  {
+   "texto": "olas",
+   "inicio": 36.065,
+   "duracion": 0.463,
+   "visible": "olas.",
+   "enfasis": false,
+   "frase": 9,
+   "seccion": "domino"
+  },
+  {
+   "texto": "Intenté",
+   "inicio": 37.13,
+   "duracion": 0.483,
+   "visible": "Intenté",
+   "enfasis": false,
+   "frase": 10,
+   "seccion": "domino"
+  },
+  {
+   "texto": "correr",
+   "inicio": 37.572,
+   "duracion": 0.377,
+   "visible": "correr,",
+   "enfasis": false,
+   "frase": 10,
+   "seccion": "domino"
+  },
+  {
+   "texto": "pero",
+   "inicio": 38.245,
+   "duracion": 0.189,
+   "visible": "pero",
+   "enfasis": false,
+   "frase": 10,
+   "seccion": "domino"
+  },
+  {
+   "texto": "las",
+   "inicio": 38.445,
+   "duracion": 0.153,
+   "visible": "las",
+   "enfasis": false,
+   "frase": 10,
+   "seccion": "domino"
+  },
+  {
+   "texto": "calles",
+   "inicio": 38.61,
+   "duracion": 0.366,
+   "visible": "calles",
+   "enfasis": false,
+   "frase": 10,
+   "seccion": "domino"
+  },
+  {
+   "texto": "ya",
+   "inicio": 38.988,
+   "duracion": 0.13,
+   "visible": "ya",
+   "enfasis": false,
+   "frase": 10,
+   "seccion": "domino"
+  },
+  {
+   "texto": "estaban",
+   "inicio": 39.129,
+   "duracion": 0.377,
+   "visible": "estaban",
+   "enfasis": false,
+   "frase": 10,
+   "seccion": "domino"
+  },
+  {
+   "texto": "desapareciendo",
+   "inicio": 39.518,
+   "duracion": 0.755,
+   "visible": "desapareciendo",
+   "enfasis": false,
+   "frase": 10,
+   "seccion": "domino"
+  },
+  {
+   "texto": "bajo",
+   "inicio": 40.285,
+   "duracion": 0.2,
+   "visible": "bajo",
+   "enfasis": false,
+   "frase": 10,
+   "seccion": "domino"
+  },
+  {
+   "texto": "el",
+   "inicio": 40.497,
+   "duracion": 0.083,
+   "visible": "el",
+   "enfasis": false,
+   "frase": 10,
+   "seccion": "domino"
+  },
+  {
+   "texto": "agua",
+   "inicio": 40.591,
+   "duracion": 0.307,
+   "visible": "agua.",
+   "enfasis": false,
+   "frase": 10,
+   "seccion": "domino"
+  },
+  {
+   "texto": "En",
+   "inicio": 41.54,
+   "duracion": 0.199,
+   "visible": "En",
+   "enfasis": false,
+   "frase": 11,
+   "seccion": "domino"
+  },
+  {
+   "texto": "una",
+   "inicio": 41.66,
+   "duracion": 0.185,
+   "visible": "una",
+   "enfasis": false,
+   "frase": 11,
+   "seccion": "domino"
+  },
+  {
+   "texto": "sola",
+   "inicio": 41.859,
+   "duracion": 0.312,
+   "visible": "sola",
+   "enfasis": false,
+   "frase": 11,
+   "seccion": "domino"
+  },
+  {
+   "texto": "noche",
+   "inicio": 42.185,
+   "duracion": 0.44,
+   "visible": "noche,",
+   "enfasis": false,
+   "frase": 11,
+   "seccion": "domino"
+  },
+  {
+   "texto": "nuestro",
+   "inicio": 42.967,
+   "duracion": 0.369,
+   "visible": "nuestro",
+   "enfasis": false,
+   "frase": 11,
+   "seccion": "domino"
+  },
+  {
+   "texto": "mundo",
+   "inicio": 43.35,
+   "duracion": 0.355,
+   "visible": "mundo",
+   "enfasis": false,
+   "frase": 11,
+   "seccion": "domino"
+  },
+  {
+   "texto": "dejó",
+   "inicio": 43.72,
+   "duracion": 0.341,
+   "visible": "dejó",
+   "enfasis": false,
+   "frase": 11,
+   "seccion": "domino"
+  },
+  {
+   "texto": "de",
+   "inicio": 44.075,
+   "duracion": 0.114,
+   "visible": "de",
+   "enfasis": false,
+   "frase": 11,
+   "seccion": "domino"
+  },
+  {
+   "texto": "existir",
+   "inicio": 44.202,
+   "duracion": 0.696,
+   "visible": "existir.",
+   "enfasis": false,
+   "frase": 11,
+   "seccion": "domino"
+  },
+  {
+   "texto": "Quizás",
+   "inicio": 45.88,
+   "duracion": 0.426,
+   "visible": "Quizás",
+   "enfasis": false,
+   "frase": 12,
+   "seccion": "revelacion"
+  },
+  {
+   "texto": "nunca",
+   "inicio": 46.242,
+   "duracion": 0.399,
+   "visible": "nunca",
+   "enfasis": false,
+   "frase": 12,
+   "seccion": "revelacion"
+  },
+  {
+   "texto": "hayas",
+   "inicio": 46.654,
+   "duracion": 0.293,
+   "visible": "hayas",
+   "enfasis": false,
+   "frase": 12,
+   "seccion": "revelacion"
+  },
+  {
+   "texto": "escuchado",
+   "inicio": 46.96,
+   "duracion": 0.572,
+   "visible": "escuchado",
+   "enfasis": false,
+   "frase": 12,
+   "seccion": "revelacion"
+  },
+  {
+   "texto": "mi",
+   "inicio": 47.545,
+   "duracion": 0.106,
+   "visible": "mi",
+   "enfasis": false,
+   "frase": 12,
+   "seccion": "revelacion"
+  },
+  {
+   "texto": "nombre",
+   "inicio": 47.665,
+   "duracion": 0.452,
+   "visible": "nombre,",
+   "enfasis": false,
+   "frase": 12,
+   "seccion": "revelacion"
+  },
+  {
+   "texto": "pero",
+   "inicio": 48.47,
+   "duracion": 0.217,
+   "visible": "pero",
+   "enfasis": false,
+   "frase": 13,
+   "seccion": "revelacion"
+  },
+  {
+   "texto": "nuestra",
+   "inicio": 48.625,
+   "duracion": 0.353,
+   "visible": "nuestra",
+   "enfasis": false,
+   "frase": 13,
+   "seccion": "revelacion"
+  },
+  {
+   "texto": "ciudad",
+   "inicio": 48.992,
+   "duracion": 0.408,
+   "visible": "ciudad",
+   "enfasis": false,
+   "frase": 13,
+   "seccion": "revelacion"
+  },
+  {
+   "texto": "se",
+   "inicio": 49.413,
+   "duracion": 0.149,
+   "visible": "se",
+   "enfasis": false,
+   "frase": 13,
+   "seccion": "revelacion"
+  },
+  {
+   "texto": "llamaba",
+   "inicio": 49.576,
+   "duracion": 0.435,
+   "visible": "llamaba",
+   "enfasis": false,
+   "frase": 13,
+   "seccion": "revelacion"
+  },
+  {
+   "texto": "Atlántida",
+   "inicio": 50.025,
+   "duracion": 0.707,
+   "visible": "Atlántida.",
+   "enfasis": true,
+   "frase": 13,
+   "seccion": "revelacion"
+  },
+  {
+   "texto": "Y",
+   "inicio": 51.61,
+   "duracion": 0.14,
+   "visible": "Y",
+   "enfasis": false,
+   "frase": 14,
+   "seccion": "revelacion"
+  },
+  {
+   "texto": "lo",
+   "inicio": 51.684,
+   "duracion": 0.128,
+   "visible": "lo",
+   "enfasis": false,
+   "frase": 14,
+   "seccion": "revelacion"
+  },
+  {
+   "texto": "más",
+   "inicio": 51.824,
+   "duracion": 0.242,
+   "visible": "más",
+   "enfasis": false,
+   "frase": 14,
+   "seccion": "revelacion"
+  },
+  {
+   "texto": "extraño",
+   "inicio": 52.08,
+   "duracion": 0.561,
+   "visible": "extraño",
+   "enfasis": false,
+   "frase": 14,
+   "seccion": "revelacion"
+  },
+  {
+   "texto": "es",
+   "inicio": 52.653,
+   "duracion": 0.128,
+   "visible": "es",
+   "enfasis": false,
+   "frase": 14,
+   "seccion": "revelacion"
+  },
+  {
+   "texto": "que",
+   "inicio": 52.794,
+   "duracion": 0.14,
+   "visible": "que",
+   "enfasis": false,
+   "frase": 14,
+   "seccion": "revelacion"
+  },
+  {
+   "texto": "toda",
+   "inicio": 52.947,
+   "duracion": 0.319,
+   "visible": "toda",
+   "enfasis": false,
+   "frase": 14,
+   "seccion": "revelacion"
+  },
+  {
+   "texto": "esta",
+   "inicio": 53.278,
+   "duracion": 0.204,
+   "visible": "esta",
+   "enfasis": false,
+   "frase": 14,
+   "seccion": "revelacion"
+  },
+  {
+   "texto": "historia",
+   "inicio": 53.495,
+   "duracion": 0.434,
+   "visible": "historia",
+   "enfasis": false,
+   "frase": 14,
+   "seccion": "revelacion"
+  },
+  {
+   "texto": "viene",
+   "inicio": 53.942,
+   "duracion": 0.281,
+   "visible": "viene",
+   "enfasis": false,
+   "frase": 14,
+   "seccion": "revelacion"
+  },
+  {
+   "texto": "de",
+   "inicio": 54.235,
+   "duracion": 0.128,
+   "visible": "de",
+   "enfasis": false,
+   "frase": 14,
+   "seccion": "revelacion"
+  },
+  {
+   "texto": "unos",
+   "inicio": 54.375,
+   "duracion": 0.293,
+   "visible": "unos",
+   "enfasis": false,
+   "frase": 14,
+   "seccion": "revelacion"
+  },
+  {
+   "texto": "escritos",
+   "inicio": 54.682,
+   "duracion": 0.51,
+   "visible": "escritos",
+   "enfasis": false,
+   "frase": 14,
+   "seccion": "revelacion"
+  },
+  {
+   "texto": "de",
+   "inicio": 55.204,
+   "duracion": 0.089,
+   "visible": "de",
+   "enfasis": false,
+   "frase": 14,
+   "seccion": "revelacion"
+  },
+  {
+   "texto": "Platón",
+   "inicio": 55.307,
+   "duracion": 0.459,
+   "visible": "Platón,",
+   "enfasis": true,
+   "frase": 14,
+   "seccion": "revelacion"
+  },
+  {
+   "texto": "hace",
+   "inicio": 56.008,
+   "duracion": 0.242,
+   "visible": "hace",
+   "enfasis": false,
+   "frase": 14,
+   "seccion": "revelacion"
+  },
+  {
+   "texto": "más",
+   "inicio": 56.263,
+   "duracion": 0.268,
+   "visible": "más",
+   "enfasis": false,
+   "frase": 14,
+   "seccion": "revelacion"
+  },
+  {
+   "texto": "de",
+   "inicio": 56.544,
+   "duracion": 0.064,
+   "visible": "de",
+   "enfasis": false,
+   "frase": 14,
+   "seccion": "revelacion"
+  },
+  {
+   "texto": "dos",
+   "inicio": 56.62,
+   "duracion": 0.409,
+   "visible": "2.000",
+   "enfasis": false,
+   "frase": 14,
+   "seccion": "revelacion"
+  },
+  {
+   "texto": "años",
+   "inicio": 57.041,
+   "duracion": 0.472,
+   "visible": "años.",
+   "enfasis": false,
+   "frase": 14,
+   "seccion": "revelacion"
+  },
+  {
+   "texto": "Nunca",
+   "inicio": 58.27,
+   "duracion": 0.339,
+   "visible": "Nunca",
+   "enfasis": false,
+   "frase": 15,
+   "seccion": "cierre"
+  },
+  {
+   "texto": "encontraron",
+   "inicio": 58.554,
+   "duracion": 0.651,
+   "visible": "encontraron",
+   "enfasis": false,
+   "frase": 15,
+   "seccion": "cierre"
+  },
+  {
+   "texto": "pruebas",
+   "inicio": 59.218,
+   "duracion": 0.352,
+   "visible": "pruebas",
+   "enfasis": false,
+   "frase": 15,
+   "seccion": "cierre"
+  },
+  {
+   "texto": "concluyentes",
+   "inicio": 59.582,
+   "duracion": 0.729,
+   "visible": "concluyentes",
+   "enfasis": false,
+   "frase": 15,
+   "seccion": "cierre"
+  },
+  {
+   "texto": "de",
+   "inicio": 60.324,
+   "duracion": 0.091,
+   "visible": "de",
+   "enfasis": false,
+   "frase": 15,
+   "seccion": "cierre"
+  },
+  {
+   "texto": "que",
+   "inicio": 60.429,
+   "duracion": 0.117,
+   "visible": "que",
+   "enfasis": false,
+   "frase": 15,
+   "seccion": "cierre"
+  },
+  {
+   "texto": "existiéramos",
+   "inicio": 60.559,
+   "duracion": 0.938,
+   "visible": "existiéramos.",
+   "enfasis": false,
+   "frase": 15,
+   "seccion": "cierre"
+  },
+  {
+   "texto": "Así",
+   "inicio": 62.11,
+   "duracion": 0.326,
+   "visible": "Así",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": "cierre"
+  },
+  {
+   "texto": "que",
+   "inicio": 62.364,
+   "duracion": 0.149,
+   "visible": "que",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": "cierre"
+  },
+  {
+   "texto": "tal",
+   "inicio": 62.527,
+   "duracion": 0.217,
+   "visible": "tal",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": "cierre"
+  },
+  {
+   "texto": "vez",
+   "inicio": 62.758,
+   "duracion": 0.258,
+   "visible": "vez",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": "cierre"
+  },
+  {
+   "texto": "no",
+   "inicio": 63.03,
+   "duracion": 0.163,
+   "visible": "no",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": "cierre"
+  },
+  {
+   "texto": "fui",
+   "inicio": 63.206,
+   "duracion": 0.204,
+   "visible": "fui",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": "cierre"
+  },
+  {
+   "texto": "testigo",
+   "inicio": 63.424,
+   "duracion": 0.503,
+   "visible": "testigo",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": "cierre"
+  },
+  {
+   "texto": "de",
+   "inicio": 63.94,
+   "duracion": 0.122,
+   "visible": "de",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": "cierre"
+  },
+  {
+   "texto": "una",
+   "inicio": 64.076,
+   "duracion": 0.204,
+   "visible": "una",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": "cierre"
+  },
+  {
+   "texto": "civilización",
+   "inicio": 64.293,
+   "duracion": 0.802,
+   "visible": "civilización",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": "cierre"
+  },
+  {
+   "texto": "perdida",
+   "inicio": 65.109,
+   "duracion": 0.584,
+   "visible": "perdida…",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": "cierre"
+  },
+  {
+   "texto": "Tal",
+   "inicio": 66.24,
+   "duracion": 0.227,
+   "visible": "Tal",
+   "enfasis": false,
+   "frase": 17,
+   "seccion": "cierre"
+  },
+  {
+   "texto": "vez",
+   "inicio": 66.398,
+   "duracion": 0.213,
+   "visible": "vez",
+   "enfasis": false,
+   "frase": 17,
+   "seccion": "cierre"
+  },
+  {
+   "texto": "fui",
+   "inicio": 66.626,
+   "duracion": 0.199,
+   "visible": "fui",
+   "enfasis": false,
+   "frase": 17,
+   "seccion": "cierre"
+  },
+  {
+   "texto": "parte",
+   "inicio": 66.839,
+   "duracion": 0.384,
+   "visible": "parte",
+   "enfasis": false,
+   "frase": 17,
+   "seccion": "cierre"
+  },
+  {
+   "texto": "de",
+   "inicio": 67.236,
+   "duracion": 0.142,
+   "visible": "de",
+   "enfasis": false,
+   "frase": 17,
+   "seccion": "cierre"
+  },
+  {
+   "texto": "una",
+   "inicio": 67.393,
+   "duracion": 0.241,
+   "visible": "una",
+   "enfasis": false,
+   "frase": 17,
+   "seccion": "cierre"
+  },
+  {
+   "texto": "leyenda",
+   "inicio": 67.648,
+   "duracion": 0.625,
+   "visible": "leyenda.",
+   "enfasis": false,
+   "frase": 17,
+   "seccion": "cierre"
+  },
+  {
+   "texto": "Veredicto",
+   "inicio": 69.33,
+   "duracion": 0.731,
+   "visible": "VEREDICTO:",
+   "enfasis": true,
+   "frase": 18,
+   "seccion": "veredicto"
+  },
+  {
+   "texto": "Mito",
+   "inicio": 70.35,
+   "duracion": 0.542,
+   "visible": "¡MITO!",
+   "enfasis": true,
+   "frase": 19,
+   "seccion": "veredicto"
+  }
+ ]
+}
