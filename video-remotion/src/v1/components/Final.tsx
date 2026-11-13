@@ -5,10 +5,11 @@ import {OUTFIT} from '../theme';
 import {GridBg} from './GridBg';
 import {matteIndex, matteSrc} from './Silueta';
 
+// corrección §10.2: entre el logo y la cabeza (la cabeza empieza en y≈870), nunca encima de la cara
 const POS = [
-  {x: 90, y: 760},
-  {x: 600, y: 860},
-  {x: 300, y: 960},
+  {x: 80, y: 640},
+  {x: 640, y: 690},
+  {x: 250, y: 750},
 ];
 
 /** Tarjeta de cierre: logo GROW MARKETING + silueta + palabras sueltas (estilo.md §4). */

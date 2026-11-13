@@ -2,6 +2,7 @@ import {AbsoluteFill, interpolate, useCurrentFrame, useVideoConfig} from 'remoti
 import {SCENES} from '../data';
 import {clamp, easeInOut, easeOut} from '../helpers';
 import {C, OUTFIT} from '../theme';
+import {GridBg} from './GridBg';
 
 const Word: React.FC<{text: string; at: number; strike: number; y: number; end: number}> = ({text, at, strike, y, end}) => {
   const frame = useCurrentFrame();
@@ -46,6 +47,22 @@ const Word: React.FC<{text: string; at: number; strike: number; y: number; end: 
         />
       </div>
     </div>
+  );
+};
+
+/** Fondo de cuadrícula para la escena del tachado (así no queda texto sobre su cara). */
+export const TachadoBg: React.FC = () => {
+  const frame = useCurrentFrame();
+  const {fps} = useVideoConfig();
+  const sc = SCENES.tachado;
+  const s = sc.start * fps;
+  const e = sc.end * fps;
+  if (frame < s || frame >= e) return null;
+  const k = interpolate(frame, [s, s + 4, e - 4, e], [0, 1, 1, 0], clamp);
+  return (
+    <AbsoluteFill style={{opacity: k}}>
+      <GridBg />
+    </AbsoluteFill>
   );
 };
 

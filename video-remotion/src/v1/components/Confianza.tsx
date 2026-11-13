@@ -5,12 +5,13 @@ import {C, OUTFIT} from '../theme';
 import {GridBg} from './GridBg';
 
 type Win = {src: string; x: number; y: number; w: number; at: number; par: number};
+// corrección §10.2: aquí NO va la cara del protagonista; son clientes y escenas ajenas
 const WINS: Win[] = [
-  {src: 'img/ojos2.jpg', x: 70, y: 560, w: 400, at: 0.1, par: 1},
-  {src: 'img/ojos1.jpg', x: 640, y: 470, w: 380, at: 0.25, par: -1.4},
-  {src: 'img/cara1.jpg', x: 250, y: 720, w: 580, at: 0.0, par: 0.6},
-  {src: 'img/boca1.jpg', x: 90, y: 1230, w: 330, at: 0.4, par: -0.8},
-  {src: 'img/cara2.jpg', x: 690, y: 1120, w: 330, at: 0.55, par: 1.2},
+  {src: 'img/otros_ojos1.jpg', x: 60, y: 520, w: 430, at: 0.1, par: 1},
+  {src: 'img/otros_movil.jpg', x: 660, y: 450, w: 360, at: 0.25, par: -1.4},
+  {src: 'img/otros_cara1.jpg', x: 270, y: 700, w: 540, at: 0.0, par: 0.6},
+  {src: 'img/otros_sinventas.jpg', x: 70, y: 1180, w: 300, at: 0.4, par: -0.8},
+  {src: 'img/otros_cara2.jpg', x: 720, y: 1040, w: 300, at: 0.55, par: 1.2},
 ];
 
 const Window: React.FC<{w: Win; start: number; end: number}> = ({w, start, end}) => {

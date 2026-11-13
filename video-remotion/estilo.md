@@ -231,3 +231,23 @@ Reglas de SFX:
 - La palabra destacada de cada título va con **el degradado vertical de la W** (relleno con `background-clip: text`), no en color plano.
 - Se mantienen de la referencia: negro #0B0B0B y grises de cuadrícula para motion graphics, y el cromado, que pasa a ser blanco plateado (#FFFFFF → #ECECEC → #BDBDBD → #F4F4F4).
 - Las escenas en blanco y negro siguen igual; ahora lo único con color en ellas es el morado.
+
+### 10.2 Nada tapa la cara de la persona · sincronía de labios (13/11/2026)
+- **Títulos grandes**: nunca encima de la cara. Van **por encima de la cabeza** o **detrás de la persona** (recorte de silueta por fotograma); solo la parte baja del bloque pasa detrás de la cabeza (solape de 70–110 px).
+- La posición de cada título "en escena" se calcula con la caja de la cabeza del plano (MediaPipe): `centro = arriba_de_la_cabeza + solape − alto_del_bloque / 2`.
+- **Subtítulos pequeños**: debajo de la barbilla, centro en **y = 1490 px** (nunca sobre la cara). Tamaño 38 px.
+- **Punch-in máximo 1,3×**: con más zoom la barbilla baja de y≈1410 y choca con los subtítulos.
+- **Labios siempre sincronizados**: no dejar en pantalla planos donde se tape la boca mientras habla (p. ej. el dedo en los labios en "¿sabes qué?"); se cubren con el siguiente recurso. Se verifica con MediaPipe midiendo el cierre de labios en las palabras con p/b/m (±1 fotograma).
+- **Fotos de apoyo** en escenas de "desconfianza / mal perfil": **no usar la cara del protagonista**; usar clientes y escenas ajenas (B/N).
+- **Cierre**: las palabras sueltas van entre el logo y la cabeza (y < 820 px), nunca sobre la cabeza o la cara.
+
+### 10.3 Títulos más dinámicos, como la referencia fotograma a fotograma (13/11/2026)
+Estudiado a 24 fps en la referencia (`scratchpad/ref24/`):
+- **En escena**: el título se mueve con el zoom de la cámara (misma escala y origen que el plano) y queda **detrás** de la persona/objetos.
+- **Entrada fantasma por palabra**: 5 fotogramas de opacidad 0→1, desenfoque 16→0 px, escala 1,08→1 y desplazamiento lateral 26 px, más **2 copias-estela** desenfocadas (6 y 10 px) que se quedan atrás y se apagan.
+- **Brillo (bloom)** en el blanco: `0 0 4px #fff, 0 0 18px rgba(255,255,255,.6), 0 0 42px rgba(183,1,252,.45)`.
+- **Volumen 3D** en morado y cromado: 5 sombras apiladas de 1 px (#3D0080 / #7D7D86) + halo.
+- **Líneas escalonadas**: la segunda línea desplazada 40–60 px respecto a la primera (no centradas una sobre otra).
+- **Vida en pantalla**: deriva de escala 1→1,05 y flotación de ±5 px.
+- **Salida con destello**: 4 fotogramas de brillo ×2,4, desenfoque 12 px y escala +6 %.
+- Más títulos: uno cada ~3 s de voz (14 en 48 s).

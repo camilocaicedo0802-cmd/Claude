@@ -11,43 +11,47 @@ export const TOTAL_SECONDS = SPEECH_FRAMES / 30 + TAIL;
 // scale: [inicio, fin] del segmento. zoom: zoom animado (gancho).
 export type Framing = {scale: [number, number]; y?: number; zoom?: {from: number; to: number; s: number; e: number}};
 export const FRAMING: Record<number, Framing> = {
-  0: {scale: [1, 1], zoom: {from: 1.0, to: 1.32, s: 0.35, e: 1.55}},
-  1: {scale: [1.32, 1.38]},
+  // corrección §10.2: máximo 1,3× para que la barbilla quede por encima de los subtítulos
+  0: {scale: [1, 1], zoom: {from: 1.0, to: 1.28, s: 0.35, e: 1.55}},
+  1: {scale: [1.28, 1.3]},
   2: {scale: [1.0, 1.04]},
-  3: {scale: [1.26, 1.3]},
-  4: {scale: [1.45, 1.5]},
+  3: {scale: [1.2, 1.24]},
+  4: {scale: [1.3, 1.3]},
   5: {scale: [1, 1.03]},
   6: {scale: [1, 1.03]},
   7: {scale: [1, 1.03]},
-  8: {scale: [1.42, 1.46]},
+  8: {scale: [1.26, 1.3]},
   9: {scale: [1.05, 1.1]},
-  10: {scale: [1.25, 1.29]},
+  10: {scale: [1.2, 1.24]},
   11: {scale: [1, 1.03]},
   12: {scale: [1, 1.03]},
   13: {scale: [1, 1.03]},
   14: {scale: [1, 1.03]},
-  15: {scale: [1.34, 1.4]},
+  15: {scale: [1.24, 1.28]},
   16: {scale: [1.0, 1.03]},
-  17: {scale: [1.22, 1.26]},
-  18: {scale: [1.3, 1.34]},
+  17: {scale: [1.16, 1.2]},
+  18: {scale: [1.24, 1.28]},
   19: {scale: [1.05, 1.08]},
-  20: {scale: [1.42, 1.46]},
+  20: {scale: [1.26, 1.3]},
   21: {scale: [1.0, 1.04]},
   22: {scale: [1.0, 1.03]},
-  23: {scale: [1, 1]}, // sin escala: aquí va el texto detrás de la silueta
+  23: {scale: [1, 1.02]},
   24: {scale: [1, 1]},
 };
 
-// ---------- Títulos grandes (estilo.md §3) ----------
+// ---------- Títulos grandes (estilo.md §3 + §10) ----------
 export type TitleWord = {text: string; at: number};
-export type TitleLine = {words: TitleWord[]; color: 'white' | 'purple' | 'chrome'; size: number; upper?: boolean};
+export type TitleLine = {words: TitleWord[]; color: 'white' | 'purple' | 'chrome'; size: number; upper?: boolean; dx?: number};
 export type TitleDef = {
   id: string;
   start: number;
   end: number;
-  y: number; // centro vertical en px
+  /** centro vertical en px; 'head' = se ancla a la cabeza del plano (el bloque queda encima y solapa `overlap` px detrás de él) */
+  y: number | 'head';
+  overlap?: number;
   lines: TitleLine[];
-  behind?: boolean; // detrás de la silueta
+  /** en escena: sigue el zoom de cámara y va DETRÁS de la persona (máscara) */
+  scene?: boolean;
   tilt?: number; // rotateX en grados
   covers: number[]; // índices de palabras que NO llevan subtítulo pequeño
 };
@@ -55,28 +59,36 @@ const tw = (i: number, text?: string): TitleWord => ({text: text ?? WORDS[i].tex
 
 export const TITLES: TitleDef[] = [
   {
-    id: 'gancho', start: ws(0), end: ws(7) - 0.03, y: 560,
+    id: 'gancho', start: ws(0), end: ws(7) - 0.03, y: 'head', overlap: 70, scene: true,
     lines: [
-      {words: [tw(0, 'nadie,'), tw(1), tw(2)], color: 'purple', size: 76},
-      {words: [tw(3), tw(4), tw(5), tw(6)], color: 'white', size: 76},
+      {words: [tw(0, 'nadie,'), tw(1), tw(2)], color: 'purple', size: 72, dx: -20},
+      {words: [tw(3), tw(4), tw(5), tw(6)], color: 'white', size: 80, dx: 40},
     ],
     covers: [0, 1, 2, 3, 4, 5, 6],
   },
   {
-    id: 'producto', start: ws(11), end: ws(16) - 0.03, y: 640,
+    id: 'producto', start: ws(11), end: ws(16) - 0.03, y: 600,
     lines: [
-      {words: [tw(11), tw(12), tw(13)], color: 'white', size: 118},
-      {words: [tw(14), tw(15)], color: 'purple', size: 132},
+      {words: [tw(11), tw(12), tw(13)], color: 'white', size: 112},
+      {words: [tw(14), tw(15)], color: 'purple', size: 136},
     ],
     covers: [11, 12, 13, 14, 15],
   },
   {
-    id: 'otro', start: ws(33), end: ws(37) - 0.03, y: 520,
+    id: 'otro', start: ws(33), end: ws(37) - 0.03, y: 'head', overlap: 90, scene: true,
     lines: [
-      {words: [tw(33), tw(34)], color: 'white', size: 112},
+      {words: [tw(33), tw(34)], color: 'white', size: 104},
       {words: [tw(35), tw(36)], color: 'purple', size: 150},
     ],
     covers: [33, 34, 35, 36],
+  },
+  {
+    id: 'personas', start: ws(38), end: ws(43) - 0.03, y: 400,
+    lines: [
+      {words: [tw(38), tw(39)], color: 'white', size: 100},
+      {words: [tw(40), tw(41), tw(42)], color: 'purple', size: 118},
+    ],
+    covers: [38, 39, 40, 41, 42],
   },
   {
     id: 'comprar', start: ws(46), end: ws(49) - 0.03, y: 560,
@@ -95,13 +107,21 @@ export const TITLES: TitleDef[] = [
     covers: [51, 52, 53, 54],
   },
   {
-    id: 'venta', start: ws(79), end: ws(82) - 0.03, y: 600,
+    id: 'venta', start: ws(79), end: ws(82) - 0.03, y: 'head', overlap: 80, scene: true,
     lines: [
       {words: [tw(79)], color: 'purple', size: 150},
-      {words: [tw(80), tw(81)], color: 'white', size: 118},
+      {words: [tw(80), tw(81)], color: 'white', size: 112},
     ],
-    tilt: 18,
+    tilt: 16,
     covers: [79, 80, 81],
+  },
+  {
+    id: 'importante', start: ws(88), end: ws(90) - 0.12, y: 'head', overlap: 80, scene: true,
+    lines: [
+      {words: [tw(88)], color: 'chrome', size: 100},
+      {words: [tw(89)], color: 'purple', size: 140},
+    ],
+    covers: [88, 89],
   },
   {
     id: 'perciben', start: ws(90), end: ws(99) - 0.03, y: 300,
@@ -112,10 +132,18 @@ export const TITLES: TitleDef[] = [
     covers: [90, 91, 92],
   },
   {
-    id: 'nocompra', start: ws(109), end: ws(113) - 0.03, y: 560,
+    id: 'tecompra', start: ws(104), end: ws(109) - 0.03, y: 330,
     lines: [
-      {words: [tw(109), tw(110), tw(111)], color: 'white', size: 112},
-      {words: [tw(112)], color: 'purple', size: 160},
+      {words: [tw(104), tw(105), tw(106)], color: 'white', size: 96},
+      {words: [tw(107), tw(108)], color: 'purple', size: 140},
+    ],
+    covers: [104, 105, 106, 107, 108],
+  },
+  {
+    id: 'nocompra', start: ws(109), end: ws(113) - 0.03, y: 'head', overlap: 90, scene: true,
+    lines: [
+      {words: [tw(109), tw(110), tw(111)], color: 'white', size: 104},
+      {words: [tw(112)], color: 'purple', size: 156},
     ],
     covers: [109, 110, 111, 112],
   },
@@ -128,21 +156,20 @@ export const TITLES: TitleDef[] = [
     covers: [121, 125, 126],
   },
   {
-    id: 'ayudemos', start: ws(132), end: ws(134) - 0.03, y: 760,
+    id: 'ayudemos', start: ws(132), end: ws(134) - 0.03, y: 400,
     lines: [
-      {words: [tw(132)], color: 'white', size: 120},
+      {words: [tw(132)], color: 'white', size: 110},
       {words: [tw(133)], color: 'purple', size: 150},
     ],
     covers: [132, 133],
   },
   {
-    id: 'ayuda', start: ws(135) - 0.05, end: ws(138) - 0.03, y: 545,
+    id: 'ayuda', start: ws(134) + 0.2, end: ws(138) - 0.03, y: 'head', overlap: 110, scene: true,
     lines: [
-      {words: [{text: 'escribe', at: ws(134) + 0.25}], color: 'chrome', size: 96},
-      {words: [{text: 'AYUDA', at: ws(137)}], color: 'purple', size: 250, upper: true},
+      {words: [{text: 'escribe', at: ws(134) + 0.25}], color: 'chrome', size: 96, dx: -60},
+      {words: [{text: 'AYUDA', at: ws(137)}], color: 'purple', size: 240, upper: true, dx: 20},
     ],
-    behind: true,
-    covers: [137],
+    covers: [134, 135, 136, 137],
   },
 ];
 
@@ -175,7 +202,8 @@ export const CARDS: CardDef[] = [
 // ---------- Escenas de motion graphics ----------
 export const SCENES = {
   tachado: {start: ws(23) + 0.02, end: ws(28), precios: ws(24), producto: ws(27), strike1: ws(25), strike2: ws(27) + 0.4},
-  movil: {start: ws(51) - 0.1, end: ws(55)},
+  // corrección §10.2: entra cuando se tapa la boca con el dedo (17,1 s) para que no parezca desincronizado
+  movil: {start: ws(50) - 0.08, end: ws(55)},
   hud: {start: ws(57), end: ws(68), confiar: ws(62), noConfiar: ws(66)},
   confianza: {start: ws(68), end: ws(78), t1: ws(74), t2: ws(77), noteStart: ws(68) + 0.1, noteText: 'Tu perfil no transmite confianza… ni profesionalismo'},
   collage: {start: ws(90) - 0.08, end: ws(99)},
@@ -185,14 +213,13 @@ export const SCENES = {
 
 // Fondo desenfocado y oscurecido (defocus) sobre el video hablado, para tarjetas y MG
 export const DEFOCUS: [number, number][] = [
-  [SCENES.tachado.start, SCENES.tachado.end],
   [SCENES.movil.start, SCENES.movil.end],
   [ws(104), ws(109)],
   [ws(118), ws(127)],
 ];
 
 // ---------- Transiciones ----------
-export const FLASHES = [ws(51) - 0.1, ws(68), ws(127), ws(138)];
+export const FLASHES = [ws(50) - 0.08, ws(68), ws(127), ws(138)];
 export const WHIPS = [ws(43), ws(57), ws(90) - 0.08];
 export const BLUR_PULSES = [ws(16), ws(37), ws(82), ws(104)];
 
