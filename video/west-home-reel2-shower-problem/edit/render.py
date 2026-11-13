@@ -12,6 +12,7 @@ ap.add_argument('out')
 ap.add_argument('--from', dest='t_from', type=float, default=0.0)
 ap.add_argument('--to', dest='t_to', type=float, default=T.DUR)
 ap.add_argument('--stills', default='')
+ap.add_argument('--masks', action='store_true', help='only compute person mattes')
 args = ap.parse_args()
 
 PLAN = json.load(open(C.ROOT + 'edit/int_plan.json'))
@@ -195,23 +196,49 @@ _seg = None
 
 
 def segment(img):
+    """person matte: U2-Net human segmentation + guided-filter edge refinement."""
     global _seg
     import onnxruntime as ort
     if _seg is None:
-        _seg = ort.InferenceSession(C.WEST + 'models/u2net_human_seg.onnx', providers=['CPUExecutionProvider'])
+        so = ort.SessionOptions(); so.intra_op_num_threads = 1; so.inter_op_num_threads = 1
+        _seg = ort.InferenceSession(C.WEST + 'models/u2net_human_seg.onnx', so, providers=['CPUExecutionProvider'])
     x = cv2.resize(img, (320, 320), interpolation=cv2.INTER_AREA)[:, :, ::-1].astype(np.float32) / 255
     x = (x - [0.485, 0.456, 0.406]) / [0.229, 0.224, 0.225]
     o = _seg.run(None, {_seg.get_inputs()[0].name: x.transpose(2, 0, 1)[None].astype(np.float32)})[0][0, 0]
     o = (o - o.min()) / (o.max() - o.min() + 1e-6)
-    o = cv2.resize(o, (img.shape[1], img.shape[0]), interpolation=cv2.INTER_CUBIC)
-    return cv2.GaussianBlur(np.clip((o - 0.35) / 0.4, 0, 1), (0, 0), 1.5)
+    o = np.clip((o - 0.3) / 0.4, 0, 1)
+    # guided filter at half resolution, guide = luminance
+    h2, w2 = img.shape[0] // 2, img.shape[1] // 2
+    I = cv2.cvtColor(cv2.resize(img, (w2, h2), interpolation=cv2.INTER_AREA), cv2.COLOR_BGR2GRAY).astype(np.float32) / 255
+    p_ = cv2.resize(o, (w2, h2), interpolation=cv2.INTER_CUBIC)
+    r, eps = 8, 1e-3
+    bf = lambda a: cv2.boxFilter(a, -1, (2 * r + 1, 2 * r + 1))
+    mI, mp = bf(I), bf(p_)
+    a = (bf(I * p_) - mI * mp) / (bf(I * I) - mI * mI + eps); b = mp - a * mI
+    q = bf(a) * I + bf(b)
+    q = np.clip(cv2.resize(q, (img.shape[1], img.shape[0]), interpolation=cv2.INTER_LINEAR), 0, 1)
+    return q
+
+
+def person_near(t):
+    return bool(T.SHOTS[shot_at(t)].get('person'))
+
+
+def person_mask(n, base):
+    """cached raw matte per frame, lightly smoothed with the previous frame of the same shot."""
+    mp = MASK_DIR + f'{n:05d}.png'
+    if os.path.exists(mp):
+        m = cv2.imread(mp, cv2.IMREAD_GRAYSCALE).astype(np.float32) / 255.0
+    else:
+        m = segment(np.clip(base, 0, 255).astype(np.uint8))
+        cv2.imwrite(mp, (m * 255).astype(np.uint8))
+    prev = MASK_DIR + f'{n - 1:05d}.png'
+    if os.path.exists(prev) and shot_at((n - 1) / T.FPS) == shot_at(n / T.FPS):
+        m = 0.7 * m + 0.3 * cv2.imread(prev, cv2.IMREAD_GRAYSCALE).astype(np.float32) / 255.0
+    return m
 
 
 ELS = O.build()
-
-
-def behind_needed(t):
-    return any(getattr(e, 'behind', False) and e.active(t) for e in ELS)
 
 
 def flash_overlay(canvas, amt):
@@ -226,17 +253,17 @@ def render_frame(n):
     if not T.SHOTS[shot_at(t)].get('retro'):
         base *= VIG
     canvas = base.copy()
-    mask = None
-    if behind_needed(t):
-        mp = MASK_DIR + f'{n:05d}.png'
-        if os.path.exists(mp):
-            mask = cv2.imread(mp, cv2.IMREAD_GRAYSCALE).astype(np.float32) / 255.0
-        else:
-            mask = segment(np.clip(base, 0, 255).astype(np.uint8))
-            cv2.imwrite(mp, (mask * 255).astype(np.uint8))
+    post = [e for e in ELS if getattr(e, 'post', False)]
     for e in ELS:
+        if e.active(t) and e not in post:
+            e.draw(canvas, t, base=base)
+    # every text and graphic sits BEHIND people: put the person back on top
+    if person_near(t):
+        m = person_mask(n, base)[..., None]
+        canvas = canvas * (1 - m) + base * m
+    for e in post:
         if e.active(t):
-            e.draw(canvas, t, base=base, mask=mask)
+            e.draw(canvas, t, base=base)
     flash_overlay(canvas, fl)
     return np.clip(canvas, 0, 255).astype(np.uint8)
 
@@ -248,6 +275,14 @@ if __name__ == '__main__':
             cv2.imwrite(args.out.replace('.mp4', '') + f'_{float(ts):06.2f}.jpg', render_frame(n), [cv2.IMWRITE_JPEG_QUALITY, 90])
         sys.exit()
     n0, n1 = int(round(args.t_from * T.FPS)), int(round(args.t_to * T.FPS))
+    if args.masks:
+        for n in range(n0, n1):
+            if person_near(n / T.FPS) and not os.path.exists(MASK_DIR + f'{n:05d}.png'):
+                b, _ = base_frame(n / T.FPS)
+                if not T.SHOTS[shot_at(n / T.FPS)].get('retro'):
+                    b *= VIG
+                cv2.imwrite(MASK_DIR + f'{n:05d}.png', (segment(np.clip(b, 0, 255).astype(np.uint8)) * 255).astype(np.uint8))
+        print('masks done'); sys.exit()
     p = subprocess.Popen(['ffmpeg', '-v', 'error', '-y', '-f', 'rawvideo', '-pix_fmt', 'bgr24', '-s', f'{T.W}x{T.H}',
                           '-r', str(T.FPS), '-i', '-', '-c:v', 'libx264', '-preset', 'medium', '-crf', '10',
                           '-pix_fmt', 'yuv420p', '-color_primaries', 'bt709', '-color_trc', 'bt709', '-colorspace', 'bt709',

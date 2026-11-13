@@ -1,6 +1,14 @@
 # West Home Improvement · Reel 2 — "Your bathroom isn't the problem"
 
-Reel vertical de 36,4 s (1080×1920, 30 fps) para Instagram, con Félix y B-roll de proyectos reales.
+Reel vertical de 35,8 s (1080×1920, 30 fps) para Instagram, con Félix y B-roll de proyectos reales.
+
+**v2 (ajustes del cliente):**
+- Sin silencios: se cortó la pausa de 0,8 s al inicio de la toma IMG_7832 (antes de "But your shower") y todas las tomas
+  van seguidas con 80 ms entre una y otra. El bloque del catálogo (sin voz) bajó a 1,6 s. Los tiempos de la tabla de abajo
+  son de la v1; la línea de tiempo ahora se calcula sola en `timeline.py` a partir de las tomas.
+- **Ningún texto tapa a una persona**: `render.py` recorta a la persona en cada cuadro (U2-Net + guided filter) y la vuelve
+  a poner encima de todos los textos y gráficos. Además, cada subtítulo se coloca solo en una zona libre: abajo si ahí no hay
+  nadie, y si no, en el espacio sobre la cabeza (`free_y` en `overlays.py`).
 
 ## Estructura
 

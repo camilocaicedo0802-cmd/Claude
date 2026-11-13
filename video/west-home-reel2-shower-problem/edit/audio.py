@@ -72,7 +72,7 @@ def place(dst_t0, dst_t1, src_t0, fin=True, fout=True):
     music[a:a + len(seg)] += seg
 
 
-TAPE0 = 11.76
+TAPE0 = T.FREEZE0
 place(0.0, TAPE0, 0.0, fin=False, fout=False)
 # tape stop: playback rate falls 1 -> 0 over 0.45 s
 dur = 0.45; n = int(dur * SR)
@@ -82,7 +82,7 @@ ts = np.stack([np.interp(pos, np.arange(len(mus)), mus[:, c]) for c in range(2)]
 ts *= np.linspace(1, 0, n)[:, None] ** 0.6
 music[int(TAPE0 * SR):int(TAPE0 * SR) + n] = ts
 # segment B (intro section, then the drop on the reveal) and the outro splice
-B0 = 12.85; OUTRO_V = T.bb(44); OUTRO_T = T.B0 + T.P * 64
+B0 = T.SEGB; OUTRO_V = T.OUTRO; OUTRO_T = T.B0 + T.P * 64
 place(B0, OUTRO_V + 0.012, B0 - T.DB)
 place(OUTRO_V - 0.012, T.DUR, OUTRO_T)
 # segment B fades in over 1 s, low-passed until the reveal
