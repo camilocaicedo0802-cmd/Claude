@@ -1,0 +1,1290 @@
+[
+ {
+  "file": "audio/camera/camera_shutter_hard_click_1430.wav",
+  "name": "-camera-shutter-hard-click-1430",
+  "cat": "camera",
+  "dur": 0.627,
+  "peak_t": 0.143
+ },
+ {
+  "file": "audio/camera/camera_shutter_2.wav",
+  "name": "CAMERA SHUTTER",
+  "cat": "camera",
+  "dur": 0.984,
+  "peak_t": 0.591
+ },
+ {
+  "file": "audio/camera/cam_shutter.wav",
+  "name": "Cam shutter",
+  "cat": "camera",
+  "dur": 1.568,
+  "peak_t": 0.242
+ },
+ {
+  "file": "audio/camera/camara_presionada.wav",
+  "name": "Camara Presionada",
+  "cat": "camera",
+  "dur": 0.648,
+  "peak_t": 0.199
+ },
+ {
+  "file": "audio/camera/camera_flash.wav",
+  "name": "Camera Flash",
+  "cat": "camera",
+  "dur": 0.901,
+  "peak_t": 0.146
+ },
+ {
+  "file": "audio/camera/camera_flash_2.wav",
+  "name": "Camera Flash",
+  "cat": "camera",
+  "dur": 1.632,
+  "peak_t": 0.13
+ },
+ {
+  "file": "audio/camera/camera_flash_double.wav",
+  "name": "Camera Flash (Double)",
+  "cat": "camera",
+  "dur": 0.829,
+  "peak_t": 0.146
+ },
+ {
+  "file": "audio/camera/camera_flash_multiple.wav",
+  "name": "Camera Flash (Multiple)",
+  "cat": "camera",
+  "dur": 1.285,
+  "peak_t": 0.33
+ },
+ {
+  "file": "audio/camera/camera_flash_triple.wav",
+  "name": "Camera Flash (Triple)",
+  "cat": "camera",
+  "dur": 1.025,
+  "peak_t": 0.33
+ },
+ {
+  "file": "audio/camera/camera_shutter.wav",
+  "name": "Camera Shutter",
+  "cat": "camera",
+  "dur": 1.474,
+  "peak_t": 0.248
+ },
+ {
+  "file": "audio/camera/camera_shutter_1.wav",
+  "name": "Camera Shutter 1",
+  "cat": "camera",
+  "dur": 0.72,
+  "peak_t": 0.183
+ },
+ {
+  "file": "audio/camera/camerashuttermotorized35mmshutters.wav",
+  "name": "CameraShutterMotorized35mmShutters",
+  "cat": "camera",
+  "dur": 0.373,
+  "peak_t": 0.278
+ },
+ {
+  "file": "audio/camera/camera_focusing_sound_effect_non_getmp3_pro.wav",
+  "name": "Camera_Focusing_sound_effect_non_(getmp3.pro)",
+  "cat": "camera",
+  "dur": 1.173,
+  "peak_t": 0.176
+ },
+ {
+  "file": "audio/camera/shutter_sound.wav",
+  "name": "SHUTTER SOUND",
+  "cat": "camera",
+  "dur": 0.813,
+  "peak_t": 0.63
+ },
+ {
+  "file": "audio/camera/shutter_1.wav",
+  "name": "Shutter 1",
+  "cat": "camera",
+  "dur": 2.848,
+  "peak_t": 0.531
+ },
+ {
+  "file": "audio/camera/sony_camera_shutter.wav",
+  "name": "Sony Camera Shutter",
+  "cat": "camera",
+  "dur": 2.127,
+  "peak_t": 1.317
+ },
+ {
+  "file": "audio/camera/camera_shutter_sfx_1.wav",
+  "name": "camera shutter sfx (1)",
+  "cat": "camera",
+  "dur": 2.805,
+  "peak_t": 0.274
+ },
+ {
+  "file": "audio/camera/camera_long_shutter_1431.wav",
+  "name": "camera-long-shutter-1431",
+  "cat": "camera",
+  "dur": 0.825,
+  "peak_t": 0.493
+ },
+ {
+  "file": "audio/camera/camera_shutter_18399.wav",
+  "name": "camera-shutter-18399",
+  "cat": "camera",
+  "dur": 1.512,
+  "peak_t": 0.743
+ },
+ {
+  "file": "audio/camera/camera_shutter_sound_effect.wav",
+  "name": "camera-shutter-sound-effect",
+  "cat": "camera",
+  "dur": 0.859,
+  "peak_t": 0.666
+ },
+ {
+  "file": "audio/camera/camera_shutter_sound_effect_1.wav",
+  "name": "camera-shutter-sound-effect (1)",
+  "cat": "camera",
+  "dur": 0.859,
+  "peak_t": 0.666
+ },
+ {
+  "file": "audio/click/camera_roll_click_01.wav",
+  "name": "Camera Roll Click 01",
+  "cat": "click",
+  "dur": 0.172,
+  "peak_t": 0.061
+ },
+ {
+  "file": "audio/click/camera_shutter_click_01.wav",
+  "name": "Camera Shutter Click 01",
+  "cat": "click",
+  "dur": 0.214,
+  "peak_t": 0.1
+ },
+ {
+  "file": "audio/click/lighter_double_click_01.wav",
+  "name": "Lighter Double Click 01",
+  "cat": "click",
+  "dur": 0.269,
+  "peak_t": 0.011
+ },
+ {
+  "file": "audio/click/lighter_double_click_02.wav",
+  "name": "Lighter Double Click 02",
+  "cat": "click",
+  "dur": 0.276,
+  "peak_t": 0.1
+ },
+ {
+  "file": "audio/click/mouse_click_01.wav",
+  "name": "Mouse Click 01",
+  "cat": "click",
+  "dur": 0.139,
+  "peak_t": 0.005
+ },
+ {
+  "file": "audio/click/mouse_click_02.wav",
+  "name": "Mouse Click 02",
+  "cat": "click",
+  "dur": 0.104,
+  "peak_t": 0.005
+ },
+ {
+  "file": "audio/click/mouse_click_03.wav",
+  "name": "Mouse Click 03",
+  "cat": "click",
+  "dur": 0.176,
+  "peak_t": 0.17
+ },
+ {
+  "file": "audio/click/mouse_click_04.wav",
+  "name": "Mouse Click 04",
+  "cat": "click",
+  "dur": 0.154,
+  "peak_t": 0.008
+ },
+ {
+  "file": "audio/click/camera_shutter_click_1133.wav",
+  "name": "camera-shutter-click-1133",
+  "cat": "click",
+  "dur": 0.351,
+  "peak_t": 0.194
+ },
+ {
+  "file": "audio/click/classic_camera_click_1440.wav",
+  "name": "classic-camera-click-1440",
+  "cat": "click",
+  "dur": 1.008,
+  "peak_t": 0.169
+ },
+ {
+  "file": "audio/drone/24_wind.wav",
+  "name": "24 Wind",
+  "cat": "drone",
+  "dur": 8.0,
+  "peak_t": 0.999
+ },
+ {
+  "file": "audio/drone/decelerating_sci_fi_drone_01.wav",
+  "name": "Copia de Decelerating Sci-fi Drone 01",
+  "cat": "drone",
+  "dur": 9.374,
+  "peak_t": 2.788
+ },
+ {
+  "file": "audio/drone/etheral_drone_43.wav",
+  "name": "Copia de ETHERAL DRONE (43)",
+  "cat": "drone",
+  "dur": 19.541,
+  "peak_t": 8.248
+ },
+ {
+  "file": "audio/drone/evolving_sci_fi_drone_01.wav",
+  "name": "Copia de Evolving Sci-fi Drone 01",
+  "cat": "drone",
+  "dur": 8.283,
+  "peak_t": 0.281
+ },
+ {
+  "file": "audio/drone/sci_fi_drone_decelerating_01.wav",
+  "name": "Copia de Sci-fi Drone Decelerating 01",
+  "cat": "drone",
+  "dur": 3.732,
+  "peak_t": 2.418
+ },
+ {
+  "file": "audio/drone/wind_ambient_4.wav",
+  "name": "Copia de WIND AMBIENT (4)",
+  "cat": "drone",
+  "dur": 6.0,
+  "peak_t": 3.919
+ },
+ {
+  "file": "audio/drone/warhorn_1.wav",
+  "name": "Copia de Warhorn 1",
+  "cat": "drone",
+  "dur": 11.0,
+  "peak_t": 0.146
+ },
+ {
+  "file": "audio/drone/thunder_2_sound_effect_no_copyright.wav",
+  "name": "Thunder #2 - Sound Effect   No Copyright",
+  "cat": "drone",
+  "dur": 100.821,
+  "peak_t": 69.817
+ },
+ {
+  "file": "audio/drone/deep_throbbing_slow_energy_pulse.wav",
+  "name": "deep throbbing slow energy pulse",
+  "cat": "drone",
+  "dur": 1.923,
+  "peak_t": 0.748
+ },
+ {
+  "file": "audio/glass/crash_with_glass.wav",
+  "name": "Crash with glass",
+  "cat": "glass",
+  "dur": 3.428,
+  "peak_t": 0.125
+ },
+ {
+  "file": "audio/glass/efecto_de_sonido_foco_luz_rota.wav",
+  "name": "Efecto de Sonido - Foco Luz Rota",
+  "cat": "glass",
+  "dur": 5.991,
+  "peak_t": 2.571
+ },
+ {
+  "file": "audio/glass/vidrio.wav",
+  "name": "Vidrio",
+  "cat": "glass",
+  "dur": 0.932,
+  "peak_t": 0.017
+ },
+ {
+  "file": "audio/impact/04_grand_hit_b_wav.wav",
+  "name": "04 Grand Hit B.wav",
+  "cat": "impact",
+  "dur": 6.0,
+  "peak_t": 0.599
+ },
+ {
+  "file": "audio/impact/bass_drop_10.wav",
+  "name": "BASS DROP (10)",
+  "cat": "impact",
+  "dur": 7.0,
+  "peak_t": 0.161
+ },
+ {
+  "file": "audio/impact/bass_drop_16.wav",
+  "name": "BASS DROP (16)",
+  "cat": "impact",
+  "dur": 15.297,
+  "peak_t": 1.475
+ },
+ {
+  "file": "audio/impact/boom_impact_23.wav",
+  "name": "BOOM IMPACT (23)",
+  "cat": "impact",
+  "dur": 10.996,
+  "peak_t": 0.066
+ },
+ {
+  "file": "audio/impact/boom_cavernous_b.wav",
+  "name": "Boom - Cavernous B",
+  "cat": "impact",
+  "dur": 8.906,
+  "peak_t": 0.018
+ },
+ {
+  "file": "audio/impact/boom_earth_core_ripper.wav",
+  "name": "Boom - Earth Core Ripper",
+  "cat": "impact",
+  "dur": 4.306,
+  "peak_t": 1.168
+ },
+ {
+  "file": "audio/impact/boom_2.wav",
+  "name": "Boom 2",
+  "cat": "impact",
+  "dur": 2.568,
+  "peak_t": 0.089
+ },
+ {
+  "file": "audio/impact/boom_2_2.wav",
+  "name": "Boom 2",
+  "cat": "impact",
+  "dur": 11.0,
+  "peak_t": 0.06
+ },
+ {
+  "file": "audio/impact/boom_3.wav",
+  "name": "Boom 3",
+  "cat": "impact",
+  "dur": 9.0,
+  "peak_t": 0.125
+ },
+ {
+  "file": "audio/impact/cinematic_bass_1.wav",
+  "name": "Cinematic Bass 1",
+  "cat": "impact",
+  "dur": 10.0,
+  "peak_t": 0.207
+ },
+ {
+  "file": "audio/impact/cinematic_bass_2.wav",
+  "name": "Cinematic Bass 2",
+  "cat": "impact",
+  "dur": 10.0,
+  "peak_t": 0.795
+ },
+ {
+  "file": "audio/impact/cinematic_bass_3.wav",
+  "name": "Cinematic Bass 3",
+  "cat": "impact",
+  "dur": 10.0,
+  "peak_t": 0.183
+ },
+ {
+  "file": "audio/impact/cinematic_bass_4.wav",
+  "name": "Cinematic Bass 4",
+  "cat": "impact",
+  "dur": 10.0,
+  "peak_t": 2.635
+ },
+ {
+  "file": "audio/impact/cinematic_bass_5.wav",
+  "name": "Cinematic Bass 5",
+  "cat": "impact",
+  "dur": 10.0,
+  "peak_t": 0.175
+ },
+ {
+  "file": "audio/impact/downer_2.wav",
+  "name": "Copia de Downer 2",
+  "cat": "impact",
+  "dur": 4.5,
+  "peak_t": 3.989
+ },
+ {
+  "file": "audio/impact/impact_normal.wav",
+  "name": "Copia de Impact Normal",
+  "cat": "impact",
+  "dur": 6.24,
+  "peak_t": 0.112
+ },
+ {
+  "file": "audio/impact/deep_bass_hit_1.wav",
+  "name": "Deep Bass Hit 1",
+  "cat": "impact",
+  "dur": 2.7,
+  "peak_t": 0.258
+ },
+ {
+  "file": "audio/impact/deep_bass_hit_2.wav",
+  "name": "Deep Bass Hit 2",
+  "cat": "impact",
+  "dur": 5.255,
+  "peak_t": 1.594
+ },
+ {
+  "file": "audio/impact/sub_bass_drop_1.wav",
+  "name": "Sub Bass Drop 1",
+  "cat": "impact",
+  "dur": 2.5,
+  "peak_t": 0.113
+ },
+ {
+  "file": "audio/impact/sub_bass_drop_10.wav",
+  "name": "Sub Bass Drop 10",
+  "cat": "impact",
+  "dur": 9.0,
+  "peak_t": 0.028
+ },
+ {
+  "file": "audio/impact/sub_bass_drop_2.wav",
+  "name": "Sub Bass Drop 2",
+  "cat": "impact",
+  "dur": 2.5,
+  "peak_t": 0.007
+ },
+ {
+  "file": "audio/impact/sub_bass_drop_3.wav",
+  "name": "Sub Bass Drop 3",
+  "cat": "impact",
+  "dur": 2.269,
+  "peak_t": 0.009
+ },
+ {
+  "file": "audio/impact/sub_bass_drop_4.wav",
+  "name": "Sub Bass Drop 4",
+  "cat": "impact",
+  "dur": 3.5,
+  "peak_t": 0.032
+ },
+ {
+  "file": "audio/impact/sub_bass_drop_5.wav",
+  "name": "Sub Bass Drop 5",
+  "cat": "impact",
+  "dur": 4.5,
+  "peak_t": 0.019
+ },
+ {
+  "file": "audio/impact/sub_bass_drop_6.wav",
+  "name": "Sub Bass Drop 6",
+  "cat": "impact",
+  "dur": 3.5,
+  "peak_t": 0.112
+ },
+ {
+  "file": "audio/impact/sub_bass_drop_7.wav",
+  "name": "Sub Bass Drop 7",
+  "cat": "impact",
+  "dur": 5.0,
+  "peak_t": 0.188
+ },
+ {
+  "file": "audio/impact/sub_bass_drop_8.wav",
+  "name": "Sub Bass Drop 8",
+  "cat": "impact",
+  "dur": 4.5,
+  "peak_t": 0.008
+ },
+ {
+  "file": "audio/impact/sub_bass_drop_9.wav",
+  "name": "Sub Bass Drop 9",
+  "cat": "impact",
+  "dur": 6.0,
+  "peak_t": 0.03
+ },
+ {
+  "file": "audio/impact/sub_bass_hit.wav",
+  "name": "Sub Bass Hit",
+  "cat": "impact",
+  "dur": 1.53,
+  "peak_t": 0.026
+ },
+ {
+  "file": "audio/marker/06572_marker_drawing_on_paper_full.wav",
+  "name": "06572 marker drawing on paper-full",
+  "cat": "marker",
+  "dur": 20.0,
+  "peak_t": 13.386
+ },
+ {
+  "file": "audio/marker/boligrafo.wav",
+  "name": "Bolígrafo",
+  "cat": "marker",
+  "dur": 10.124,
+  "peak_t": 5.799
+ },
+ {
+  "file": "audio/marker/resaltador_highlighter_sound_effect.wav",
+  "name": "Resaltador highlighter Sound Effect",
+  "cat": "marker",
+  "dur": 45.929,
+  "peak_t": 4.184
+ },
+ {
+  "file": "audio/marker/subrayado_rotulador.wav",
+  "name": "Subrayado rotulador",
+  "cat": "marker",
+  "dur": 4.127,
+  "peak_t": 3.68
+ },
+ {
+  "file": "audio/misc/106_counter_9.wav",
+  "name": "106 Counter_9",
+  "cat": "misc",
+  "dur": 6.032,
+  "peak_t": 0.018
+ },
+ {
+  "file": "audio/misc/laser_gun.wav",
+  "name": "Laser Gun",
+  "cat": "misc",
+  "dur": 1.268,
+  "peak_t": 0.246
+ },
+ {
+  "file": "audio/misc/reloj.wav",
+  "name": "RELOJ",
+  "cat": "misc",
+  "dur": 5.512,
+  "peak_t": 3.622
+ },
+ {
+  "file": "audio/misc/waterdrip_ps04_68_1.wav",
+  "name": "WaterDrip PS04_68_1",
+  "cat": "misc",
+  "dur": 1.904,
+  "peak_t": 0.074
+ },
+ {
+  "file": "audio/pop/acierto_y_error.wav",
+  "name": "Acierto y error",
+  "cat": "pop",
+  "dur": 9.915,
+  "peak_t": 3.162
+ },
+ {
+  "file": "audio/pop/censored_sound_effect.wav",
+  "name": "CENSORED SOUND EFFECT",
+  "cat": "pop",
+  "dur": 4.528,
+  "peak_t": 4.021
+ },
+ {
+  "file": "audio/pop/cash_machine_sound_effect.wav",
+  "name": "Cash Machine sound effect",
+  "cat": "pop",
+  "dur": 2.09,
+  "peak_t": 1.162
+ },
+ {
+  "file": "audio/pop/chasquido_epico.wav",
+  "name": "Chasquido épico",
+  "cat": "pop",
+  "dur": 1.541,
+  "peak_t": 0.459
+ },
+ {
+  "file": "audio/pop/pop_up_sfx.wav",
+  "name": "Pop up SFX",
+  "cat": "pop",
+  "dur": 0.882,
+  "peak_t": 0.163
+ },
+ {
+  "file": "audio/pop/windows_error.wav",
+  "name": "Windows_error",
+  "cat": "pop",
+  "dur": 1.332,
+  "peak_t": 0.327
+ },
+ {
+  "file": "audio/pop/among_us.wav",
+  "name": "among us",
+  "cat": "pop",
+  "dur": 4.551,
+  "peak_t": 1.129
+ },
+ {
+  "file": "audio/pop/disappear.wav",
+  "name": "disappear",
+  "cat": "pop",
+  "dur": 3.021,
+  "peak_t": 0.843
+ },
+ {
+  "file": "audio/pop/snapchat_notification_sound.wav",
+  "name": "snapchat-notification-sound",
+  "cat": "pop",
+  "dur": 0.24,
+  "peak_t": 0.123
+ },
+ {
+  "file": "audio/retro/film_burns_sfx.wav",
+  "name": "Film Burns SFX",
+  "cat": "retro",
+  "dur": 30.093,
+  "peak_t": 8.074
+ },
+ {
+  "file": "audio/riser/01_riser.wav",
+  "name": "01 Riser",
+  "cat": "riser",
+  "dur": 6.0,
+  "peak_t": 5.624
+ },
+ {
+  "file": "audio/riser/02_riser.wav",
+  "name": "02 Riser",
+  "cat": "riser",
+  "dur": 4.0,
+  "peak_t": 3.284
+ },
+ {
+  "file": "audio/riser/riser_2.wav",
+  "name": "Copia de Riser",
+  "cat": "riser",
+  "dur": 5.016,
+  "peak_t": 3.943
+ },
+ {
+  "file": "audio/riser/riser_1.wav",
+  "name": "Copia de Riser 1",
+  "cat": "riser",
+  "dur": 3.181,
+  "peak_t": 2.938
+ },
+ {
+  "file": "audio/riser/riser_intense.wav",
+  "name": "Copia de Riser Intense",
+  "cat": "riser",
+  "dur": 14.64,
+  "peak_t": 9.853
+ },
+ {
+  "file": "audio/riser/sharp_riser.wav",
+  "name": "Copia de Sharp Riser",
+  "cat": "riser",
+  "dur": 2.308,
+  "peak_t": 1.744
+ },
+ {
+  "file": "audio/riser/riseer_1.wav",
+  "name": "Copia de riseer 1",
+  "cat": "riser",
+  "dur": 1.933,
+  "peak_t": 1.807
+ },
+ {
+  "file": "audio/riser/riser.wav",
+  "name": "RISER",
+  "cat": "riser",
+  "dur": 5.201,
+  "peak_t": 2.982
+ },
+ {
+  "file": "audio/typing/8_bit_game_digital_typing.wav",
+  "name": "8-bit Game digital typing",
+  "cat": "typing",
+  "dur": 10.0,
+  "peak_t": 4.573
+ },
+ {
+  "file": "audio/typing/efecto_type_de_letras.wav",
+  "name": "Efecto type de letras",
+  "cat": "typing",
+  "dur": 1.65,
+  "peak_t": 1.252
+ },
+ {
+  "file": "audio/typing/escribir_teclado.wav",
+  "name": "Escribir teclado",
+  "cat": "typing",
+  "dur": 19.017,
+  "peak_t": 8.821
+ },
+ {
+  "file": "audio/typing/mechanical_keyboard_click_01.wav",
+  "name": "Mechanical Keyboard Click 01",
+  "cat": "typing",
+  "dur": 0.192,
+  "peak_t": 0.024
+ },
+ {
+  "file": "audio/typing/mechanical_keyboard_click_02.wav",
+  "name": "Mechanical Keyboard Click 02",
+  "cat": "typing",
+  "dur": 0.114,
+  "peak_t": 0.018
+ },
+ {
+  "file": "audio/typing/mechanical_keyboard_click_03.wav",
+  "name": "Mechanical Keyboard Click 03",
+  "cat": "typing",
+  "dur": 0.151,
+  "peak_t": 0.007
+ },
+ {
+  "file": "audio/typing/mechanical_keyboard_click_04.wav",
+  "name": "Mechanical Keyboard Click 04",
+  "cat": "typing",
+  "dur": 0.271,
+  "peak_t": 0.007
+ },
+ {
+  "file": "audio/typing/mechanical_keyboard_click_05.wav",
+  "name": "Mechanical Keyboard Click 05",
+  "cat": "typing",
+  "dur": 0.131,
+  "peak_t": 0.009
+ },
+ {
+  "file": "audio/typing/mechanical_keyboard_click_06.wav",
+  "name": "Mechanical Keyboard Click 06",
+  "cat": "typing",
+  "dur": 0.384,
+  "peak_t": 0.154
+ },
+ {
+  "file": "audio/typing/mechanical_keyboard_click_07.wav",
+  "name": "Mechanical Keyboard Click 07",
+  "cat": "typing",
+  "dur": 0.409,
+  "peak_t": 0.035
+ },
+ {
+  "file": "audio/typing/mechanical_keyboard_click_08.wav",
+  "name": "Mechanical Keyboard Click 08",
+  "cat": "typing",
+  "dur": 0.144,
+  "peak_t": 0.111
+ },
+ {
+  "file": "audio/typing/mechanical_keyboard_click_09.wav",
+  "name": "Mechanical Keyboard Click 09",
+  "cat": "typing",
+  "dur": 0.064,
+  "peak_t": 0.018
+ },
+ {
+  "file": "audio/typing/mechanical_keyboard_click_10.wav",
+  "name": "Mechanical Keyboard Click 10",
+  "cat": "typing",
+  "dur": 0.048,
+  "peak_t": 0.013
+ },
+ {
+  "file": "audio/typing/mechanical_keyboard_click_11.wav",
+  "name": "Mechanical Keyboard Click 11",
+  "cat": "typing",
+  "dur": 0.054,
+  "peak_t": 0.014
+ },
+ {
+  "file": "audio/typing/mechanical_keyboard_click_12.wav",
+  "name": "Mechanical Keyboard Click 12",
+  "cat": "typing",
+  "dur": 0.056,
+  "peak_t": 0.019
+ },
+ {
+  "file": "audio/typing/mechanical_keyboard_click_13.wav",
+  "name": "Mechanical Keyboard Click 13",
+  "cat": "typing",
+  "dur": 0.284,
+  "peak_t": 0.017
+ },
+ {
+  "file": "audio/typing/mechanical_keyboard_click_14.wav",
+  "name": "Mechanical Keyboard Click 14",
+  "cat": "typing",
+  "dur": 0.048,
+  "peak_t": 0.016
+ },
+ {
+  "file": "audio/typing/mechanical_keyboard_click_15.wav",
+  "name": "Mechanical Keyboard Click 15",
+  "cat": "typing",
+  "dur": 0.046,
+  "peak_t": 0.02
+ },
+ {
+  "file": "audio/typing/mechanical_keyboard_click_16.wav",
+  "name": "Mechanical Keyboard Click 16",
+  "cat": "typing",
+  "dur": 0.037,
+  "peak_t": 0.02
+ },
+ {
+  "file": "audio/typing/mechanical_keyboard_click_17.wav",
+  "name": "Mechanical Keyboard Click 17",
+  "cat": "typing",
+  "dur": 0.131,
+  "peak_t": 0.006
+ },
+ {
+  "file": "audio/typing/mechanical_keyboard_click_18.wav",
+  "name": "Mechanical Keyboard Click 18",
+  "cat": "typing",
+  "dur": 0.089,
+  "peak_t": 0.007
+ },
+ {
+  "file": "audio/typing/mechanical_keyboard_click_19.wav",
+  "name": "Mechanical Keyboard Click 19",
+  "cat": "typing",
+  "dur": 0.118,
+  "peak_t": 0.019
+ },
+ {
+  "file": "audio/typing/mechanical_keyboard_multiple_clicks_01.wav",
+  "name": "Mechanical Keyboard Multiple Clicks 01",
+  "cat": "typing",
+  "dur": 0.444,
+  "peak_t": 0.307
+ },
+ {
+  "file": "audio/typing/tecla.wav",
+  "name": "Tecla",
+  "cat": "typing",
+  "dur": 0.209,
+  "peak_t": 0.061
+ },
+ {
+  "file": "audio/typing/type_digital_sfx.wav",
+  "name": "Type Digital SFX",
+  "cat": "typing",
+  "dur": 17.458,
+  "peak_t": 11.196
+ },
+ {
+  "file": "audio/whoosh/hit_whoosh_1.wav",
+  "name": "HIT WHOOSH (1)",
+  "cat": "whoosh",
+  "dur": 5.083,
+  "peak_t": 0.965
+ },
+ {
+  "file": "audio/whoosh/long_woosh.wav",
+  "name": "Long Woosh",
+  "cat": "whoosh",
+  "dur": 5.557,
+  "peak_t": 1.086
+ },
+ {
+  "file": "audio/whoosh/loud_whip.wav",
+  "name": "Loud Whip",
+  "cat": "whoosh",
+  "dur": 1.248,
+  "peak_t": 0.402
+ },
+ {
+  "file": "audio/whoosh/ma_cinetransitions_tumblingrockswhoosh2_004.wav",
+  "name": "MA_CineTransitions_TumblingRocksWhoosh2_004",
+  "cat": "whoosh",
+  "dur": 3.14,
+  "peak_t": 1.168
+ },
+ {
+  "file": "audio/whoosh/swhoosh.wav",
+  "name": "SWHOOSH",
+  "cat": "whoosh",
+  "dur": 0.864,
+  "peak_t": 0.414
+ },
+ {
+  "file": "audio/whoosh/standard_swoosh.wav",
+  "name": "Standard Swoosh",
+  "cat": "whoosh",
+  "dur": 1.335,
+  "peak_t": 0.419
+ },
+ {
+  "file": "audio/whoosh/standard_whip.wav",
+  "name": "Standard Whip",
+  "cat": "whoosh",
+  "dur": 1.56,
+  "peak_t": 0.574
+ },
+ {
+  "file": "audio/whoosh/swoosh_01_03.wav",
+  "name": "Swoosh 01 - 03",
+  "cat": "whoosh",
+  "dur": 0.243,
+  "peak_t": 0.07
+ },
+ {
+  "file": "audio/whoosh/swoosh_01_04.wav",
+  "name": "Swoosh 01 - 04",
+  "cat": "whoosh",
+  "dur": 0.333,
+  "peak_t": 0.067
+ },
+ {
+  "file": "audio/whoosh/swoosh_01_05.wav",
+  "name": "Swoosh 01 - 05",
+  "cat": "whoosh",
+  "dur": 0.282,
+  "peak_t": 0.058
+ },
+ {
+  "file": "audio/whoosh/swoosh_01_06.wav",
+  "name": "Swoosh 01 - 06",
+  "cat": "whoosh",
+  "dur": 0.212,
+  "peak_t": 0.055
+ },
+ {
+  "file": "audio/whoosh/swoosh_01_07.wav",
+  "name": "Swoosh 01 - 07",
+  "cat": "whoosh",
+  "dur": 0.182,
+  "peak_t": 0.044
+ },
+ {
+  "file": "audio/whoosh/transicion_01.wav",
+  "name": "Transicion 01",
+  "cat": "whoosh",
+  "dur": 18.4,
+  "peak_t": 0.646
+ },
+ {
+  "file": "audio/whoosh/transicion_02.wav",
+  "name": "Transicion 02",
+  "cat": "whoosh",
+  "dur": 0.813,
+  "peak_t": 0.273
+ },
+ {
+  "file": "audio/whoosh/transicion_03.wav",
+  "name": "Transicion 03",
+  "cat": "whoosh",
+  "dur": 2.931,
+  "peak_t": 0.418
+ },
+ {
+  "file": "audio/whoosh/transicion_04.wav",
+  "name": "Transicion 04",
+  "cat": "whoosh",
+  "dur": 1.047,
+  "peak_t": 0.329
+ },
+ {
+  "file": "audio/whoosh/transicion_05.wav",
+  "name": "Transicion 05",
+  "cat": "whoosh",
+  "dur": 0.768,
+  "peak_t": 0.399
+ },
+ {
+  "file": "audio/whoosh/transicion_06.wav",
+  "name": "Transicion 06",
+  "cat": "whoosh",
+  "dur": 0.539,
+  "peak_t": 0.292
+ },
+ {
+  "file": "audio/whoosh/transicion_07.wav",
+  "name": "Transicion 07",
+  "cat": "whoosh",
+  "dur": 1.342,
+  "peak_t": 0.219
+ },
+ {
+  "file": "audio/whoosh/transicion_08.wav",
+  "name": "Transicion 08",
+  "cat": "whoosh",
+  "dur": 2.667,
+  "peak_t": 0.689
+ },
+ {
+  "file": "audio/whoosh/transicion_09.wav",
+  "name": "Transicion 09",
+  "cat": "whoosh",
+  "dur": 0.999,
+  "peak_t": 0.265
+ },
+ {
+  "file": "audio/whoosh/transicion_10.wav",
+  "name": "Transicion 10",
+  "cat": "whoosh",
+  "dur": 0.502,
+  "peak_t": 0.188
+ },
+ {
+  "file": "audio/whoosh/transicion_11.wav",
+  "name": "Transicion 11",
+  "cat": "whoosh",
+  "dur": 1.444,
+  "peak_t": 0.465
+ },
+ {
+  "file": "audio/whoosh/transicion_12.wav",
+  "name": "Transicion 12",
+  "cat": "whoosh",
+  "dur": 0.53,
+  "peak_t": 0.282
+ },
+ {
+  "file": "audio/whoosh/transicion_13.wav",
+  "name": "Transicion 13",
+  "cat": "whoosh",
+  "dur": 1.515,
+  "peak_t": 0.441
+ },
+ {
+  "file": "audio/whoosh/transicion_14.wav",
+  "name": "Transicion 14",
+  "cat": "whoosh",
+  "dur": 1.516,
+  "peak_t": 0.441
+ },
+ {
+  "file": "audio/whoosh/transicion_15.wav",
+  "name": "Transicion 15",
+  "cat": "whoosh",
+  "dur": 2.525,
+  "peak_t": 0.811
+ },
+ {
+  "file": "audio/whoosh/transicion_16.wav",
+  "name": "Transicion 16",
+  "cat": "whoosh",
+  "dur": 2.096,
+  "peak_t": 0.293
+ },
+ {
+  "file": "audio/whoosh/transicion_17.wav",
+  "name": "Transicion 17",
+  "cat": "whoosh",
+  "dur": 0.53,
+  "peak_t": 0.282
+ },
+ {
+  "file": "audio/whoosh/transicion_18.wav",
+  "name": "Transicion 18",
+  "cat": "whoosh",
+  "dur": 0.732,
+  "peak_t": 0.333
+ },
+ {
+  "file": "audio/whoosh/transicion_19.wav",
+  "name": "Transicion 19",
+  "cat": "whoosh",
+  "dur": 0.244,
+  "peak_t": 0.091
+ },
+ {
+  "file": "audio/whoosh/transicion_20.wav",
+  "name": "Transicion 20",
+  "cat": "whoosh",
+  "dur": 0.733,
+  "peak_t": 0.273
+ },
+ {
+  "file": "audio/whoosh/transicion_21.wav",
+  "name": "Transicion 21",
+  "cat": "whoosh",
+  "dur": 0.877,
+  "peak_t": 0.528
+ },
+ {
+  "file": "audio/whoosh/transicion_22.wav",
+  "name": "Transicion 22",
+  "cat": "whoosh",
+  "dur": 0.68,
+  "peak_t": 0.275
+ },
+ {
+  "file": "audio/whoosh/transicion_23.wav",
+  "name": "Transicion 23",
+  "cat": "whoosh",
+  "dur": 0.83,
+  "peak_t": 0.292
+ },
+ {
+  "file": "audio/whoosh/transicion_24.wav",
+  "name": "Transicion 24",
+  "cat": "whoosh",
+  "dur": 0.591,
+  "peak_t": 0.266
+ },
+ {
+  "file": "audio/whoosh/transicion_25.wav",
+  "name": "Transicion 25",
+  "cat": "whoosh",
+  "dur": 1.518,
+  "peak_t": 0.205
+ },
+ {
+  "file": "audio/whoosh/transicion_26.wav",
+  "name": "Transicion 26",
+  "cat": "whoosh",
+  "dur": 1.563,
+  "peak_t": 0.379
+ },
+ {
+  "file": "audio/whoosh/transicion_27.wav",
+  "name": "Transicion 27",
+  "cat": "whoosh",
+  "dur": 1.709,
+  "peak_t": 0.396
+ },
+ {
+  "file": "audio/whoosh/vs_short_whoosh_1.wav",
+  "name": "VS_Short Whoosh 1",
+  "cat": "whoosh",
+  "dur": 1.228,
+  "peak_t": 0.532
+ },
+ {
+  "file": "audio/whoosh/vs_short_whoosh_2.wav",
+  "name": "VS_Short Whoosh 2",
+  "cat": "whoosh",
+  "dur": 1.228,
+  "peak_t": 0.567
+ },
+ {
+  "file": "audio/whoosh/vs_short_whoosh_3.wav",
+  "name": "VS_Short Whoosh 3",
+  "cat": "whoosh",
+  "dur": 1.228,
+  "peak_t": 0.568
+ },
+ {
+  "file": "audio/whoosh/vs_short_whoosh_4.wav",
+  "name": "VS_Short Whoosh 4",
+  "cat": "whoosh",
+  "dur": 1.228,
+  "peak_t": 0.553
+ },
+ {
+  "file": "audio/whoosh/vs_short_whoosh_5.wav",
+  "name": "VS_Short Whoosh 5",
+  "cat": "whoosh",
+  "dur": 1.228,
+  "peak_t": 0.557
+ },
+ {
+  "file": "audio/whoosh/vs_short_whoosh_6.wav",
+  "name": "VS_Short Whoosh 6",
+  "cat": "whoosh",
+  "dur": 1.228,
+  "peak_t": 0.538
+ },
+ {
+  "file": "audio/whoosh/vs_short_whoosh_7.wav",
+  "name": "VS_Short Whoosh 7",
+  "cat": "whoosh",
+  "dur": 1.228,
+  "peak_t": 0.536
+ },
+ {
+  "file": "audio/whoosh/vs_short_whoosh_8.wav",
+  "name": "VS_Short Whoosh 8",
+  "cat": "whoosh",
+  "dur": 1.228,
+  "peak_t": 0.548
+ },
+ {
+  "file": "audio/whoosh/whoosh.wav",
+  "name": "WHOOSH",
+  "cat": "whoosh",
+  "dur": 3.768,
+  "peak_t": 0.871
+ },
+ {
+  "file": "audio/whoosh/woosh_effect_10.wav",
+  "name": "Woosh Effect 10",
+  "cat": "whoosh",
+  "dur": 1.735,
+  "peak_t": 0.11
+ },
+ {
+  "file": "audio/whoosh/woosh_effect_11.wav",
+  "name": "Woosh Effect 11",
+  "cat": "whoosh",
+  "dur": 4.0,
+  "peak_t": 0.655
+ },
+ {
+  "file": "audio/whoosh/woosh_effect_12.wav",
+  "name": "Woosh Effect 12",
+  "cat": "whoosh",
+  "dur": 4.0,
+  "peak_t": 0.372
+ },
+ {
+  "file": "audio/whoosh/woosh_effect_13.wav",
+  "name": "Woosh Effect 13",
+  "cat": "whoosh",
+  "dur": 4.0,
+  "peak_t": 1.073
+ },
+ {
+  "file": "audio/whoosh/woosh_effect_14.wav",
+  "name": "Woosh Effect 14",
+  "cat": "whoosh",
+  "dur": 1.468,
+  "peak_t": 0.569
+ },
+ {
+  "file": "audio/whoosh/woosh_effect_2.wav",
+  "name": "Woosh Effect 2",
+  "cat": "whoosh",
+  "dur": 1.602,
+  "peak_t": 1.089
+ },
+ {
+  "file": "audio/whoosh/woosh_effect_3.wav",
+  "name": "Woosh Effect 3",
+  "cat": "whoosh",
+  "dur": 3.103,
+  "peak_t": 1.379
+ },
+ {
+  "file": "audio/whoosh/woosh_effect_4.wav",
+  "name": "Woosh Effect 4",
+  "cat": "whoosh",
+  "dur": 1.324,
+  "peak_t": 0.704
+ },
+ {
+  "file": "audio/whoosh/woosh_effect_5.wav",
+  "name": "Woosh Effect 5",
+  "cat": "whoosh",
+  "dur": 1.602,
+  "peak_t": 0.457
+ },
+ {
+  "file": "audio/whoosh/woosh_effect_6.wav",
+  "name": "Woosh Effect 6",
+  "cat": "whoosh",
+  "dur": 1.502,
+  "peak_t": 0.441
+ },
+ {
+  "file": "audio/whoosh/woosh_effect_7.wav",
+  "name": "Woosh Effect 7",
+  "cat": "whoosh",
+  "dur": 3.103,
+  "peak_t": 1.244
+ },
+ {
+  "file": "audio/whoosh/woosh_effect_8.wav",
+  "name": "Woosh Effect 8",
+  "cat": "whoosh",
+  "dur": 0.312,
+  "peak_t": 0.075
+ },
+ {
+  "file": "audio/whoosh/woosh_effect_9.wav",
+  "name": "Woosh Effect 9",
+  "cat": "whoosh",
+  "dur": 4.0,
+  "peak_t": 1.168
+ }
+]
