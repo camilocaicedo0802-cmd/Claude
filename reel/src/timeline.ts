@@ -77,19 +77,21 @@ export type BRoll = {
 export const BROLL: BRoll[] = [
   { t0: 7.3, t1: 8.3, src: "media/broll1.mp4", kind: "video", trim: 0.2, zoom: [1.06, 1.14] },
   { t0: 16.95, t1: 17.9, src: "media/broll2.mp4", kind: "video", trim: 2.05, zoom: [1.0, 1.08] },
-  { t0: 17.9, t1: 18.6, src: "media/broll2.mp4", kind: "video", trim: 3.45, zoom: [1.02, 1.1] },
+  { t0: 17.9, t1: 18.6, src: "media/broll2.mp4", kind: "video", trim: 3.75, zoom: [1.02, 1.1] },
   { t0: 23.55, t1: 24.75, src: "media/broll2.mp4", kind: "video", trim: 4.95, zoom: [1.0, 1.08] },
   { t0: 24.75, t1: 25.95, src: "media/foto7.jpg", kind: "image", zoom: [1.35, 1.5], origin: "30% 25%", pos: "50% 50%" },
   { t0: 25.95, t1: 27.0, src: "media/foto5.jpg", kind: "image", zoom: [1.12, 1.22], origin: "55% 40%", pos: "50% 30%" },
-  { t0: 30.9, t1: 33.2, src: "media/broll2.mp4", kind: "video", trim: 8.65, zoom: [1.0, 1.06] },
+  { t0: 30.9, t1: 31.9, src: "media/broll2.mp4", kind: "video", trim: 8.65, zoom: [1.0, 1.06] },
+  { t0: 31.9, t1: 33.2, src: "media/c301.mp4", kind: "video", trim: 1.0, zoom: [1.04, 1.12] },
   { t0: 36.27, t1: 38.0, src: "media/c271.mp4", kind: "video", trim: 1.0, zoom: [1.0, 1.08] },
-  { t0: 38.0, t1: 39.55, src: "media/broll2.mp4", kind: "video", trim: 10.05, zoom: [1.0, 1.07] },
-  { t0: 39.55, t1: 40.5, src: "media/broll2.mp4", kind: "video", trim: 11.6, zoom: [1.02, 1.08] },
+  { t0: 38.0, t1: 39.05, src: "media/broll2.mp4", kind: "video", trim: 10.35, zoom: [1.0, 1.07] },
+  { t0: 39.05, t1: 40.5, src: "media/broll2.mp4", kind: "video", trim: 11.6, zoom: [1.02, 1.08] },
   { t0: 47.4, t1: 49.75, src: "media/foto4.jpg", kind: "image", zoom: [1.05, 1.16], origin: "50% 40%", pos: "50% 50%" },
   { t0: 52.2, t1: 53.95, src: "media/c187.mp4", kind: "video", trim: 2.0, zoom: [1.0, 1.08] },
-  { t0: 58.06, t1: 59.35, src: "media/broll2.mp4", kind: "video", trim: 15.9, zoom: [1.0, 1.06] },
-  { t0: 60.2, t1: 61.6, src: "media/broll1.mp4", kind: "video", trim: 2.7, zoom: [1.02, 1.1] },
-  { t0: 61.6, t1: 63.1, src: "media/broll2.mp4", kind: "video", trim: 0.05, zoom: [1.0, 1.08] },
+  { t0: 58.06, t1: 58.75, src: "media/broll2.mp4", kind: "video", trim: 16.12, zoom: [1.0, 1.06] },
+  { t0: 58.75, t1: 59.35, src: "media/foto6.jpg", kind: "image", zoom: [1.22, 1.3], origin: "50% 22%", pos: "50% 50%" },
+  { t0: 60.2, t1: 61.75, src: "media/broll1.mp4", kind: "video", trim: 2.7, zoom: [1.02, 1.1] },
+  { t0: 61.75, t1: 63.1, src: "media/broll2.mp4", kind: "video", trim: 0.0, zoom: [1.0, 1.08] },
 ];
 
 // ---------------------------------------------------------------------------------------------
@@ -114,7 +116,7 @@ export const BLUR_INS = [8.3, 18.6, 34.9, 40.5, 49.75, 53.95, 56.4, 59.35, 63.1]
 /** Flash de exposición de 3 fotogramas. */
 export const FLASHES = [5.73, 27.0, 55.8, VOICE_END];
 /** Parpadeo oscuro de 1 fotograma antes de cambiar de b-roll. */
-export const FLICKERS = [17.87, 24.72, 39.52, 61.57];
+export const FLICKERS = [17.87, 24.72, 31.87, 39.02, 61.72];
 /** Estelas de luz amarilla. */
 export const STREAKS = [4.56, 7.33, 16.98, 52.25];
 
@@ -182,6 +184,7 @@ export const SFX: Sfx[] = [
   s(30.25, "whoosh2", 0.4),
   typing(W0(110), 0.45),
   s(30.9, "whoosh3", 0.4),
+  s(31.9, "swoosh2", 0.28),
   s(W0(115), "pop", 0.3),
   // Líderes / gratuito / hogar / ideas
   s(W0(120), "boom", 0.55),
@@ -195,7 +198,7 @@ export const SFX: Sfx[] = [
   typing(W0(133) + 0.05, 0.4),
   s(38.0, "swoosh1", 0.35),
   s(W0(138), "pop", 0.3),
-  s(39.55, "swoosh2", 0.3),
+  s(39.05, "swoosh2", 0.3),
   s(40.5, "whoosh2", 0.35),
   s(W0(143), "subhit", 0.45),
   // Clientes
@@ -227,13 +230,14 @@ export const SFX: Sfx[] = [
   s(56.4, "swoosh2", 0.35),
   s(W0(199), "pop", 0.32),
   s(58.06, "whoosh1", 0.4),
+  s(58.75, "swoosh1", 0.28),
   s(W0(202), "subhit", 0.45),
   s(59.35, "swoosh1", 0.35),
   typing(59.4, 0.4),
   s(59.78, "click", 0.55),
   s(60.2, "whoosh2", 0.38),
   s(W0(209), "pop", 0.3),
-  s(61.6, "swoosh1", 0.33),
+  s(61.75, "swoosh1", 0.33),
   s(W0(216), "pop", 0.32),
   s(63.1, "whoosh3", 0.38),
   s(W0(224), "cinebass", 0.5),

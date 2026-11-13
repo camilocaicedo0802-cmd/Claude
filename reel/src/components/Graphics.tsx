@@ -469,7 +469,9 @@ export const FlashLayer: React.FC<T> = ({ t }) => {
 // ------------------------------------------------------------------------------------------
 export const BarScene: React.FC<T & { t0: number; t1: number }> = ({ t, t0, t1 }) => {
   if (t < t0 || t >= t1) return null;
-  const fill = prog(t, W0(102), W0(108) + 0.3 - W0(102), easeInOut); // "se han constituido ... tiempo"
+  // La barra crece durante toda la escena (sin tramos estáticos) y acelera en "se han constituido ... tiempo".
+  const fill = 0.35 * prog(t, t0 + 0.2, W0(102) - t0 - 0.2, easeInOut) + 0.65 * prog(t, W0(102), W0(108) + 0.3 - W0(102), easeInOut);
+  const drift = prog(t, t0, t1 - t0, (x) => x);
   const pan = prog(t, W0(109) - 0.1, 0.45, easeInOut); // "en Colombia"
   const titleIn = prog(t, t0, 0.3);
   const barTop = 560;
@@ -478,7 +480,7 @@ export const BarScene: React.FC<T & { t0: number; t1: number }> = ({ t, t0, t1 }
   const avatarY = H - fillH + 10;
   return (
     <AbsoluteFill style={{ background: `radial-gradient(ellipse 80% 60% at 40% 70%, ${C.graphBg2} 0%, ${C.graphBg} 70%)`, overflow: "hidden" }}>
-      <div style={{ position: "absolute", left: 0, top: 0, width: 1800, height: H, translate: `${-430 * pan}px 0px` }}>
+      <div style={{ position: "absolute", left: 0, top: 0, width: 1800, height: H, transformOrigin: "540px 960px", translate: `${-430 * pan}px 0px`, scale: String(1 + 0.05 * drift) }}>
         {/* Barra */}
         <div style={{ position: "absolute", left: 540 - 160, top: barTop, width: 320, height: barH, background: "#F2EEE6", borderRadius: 6, overflow: "hidden", boxShadow: "0 0 90px rgba(252,229,0,0.45)" }}>
           <div style={{ position: "absolute", left: 0, bottom: 0, width: "100%", height: fillH, background: `linear-gradient(180deg, ${C.yellow} 0%, #F6D000 100%)`, boxShadow: "0 -6px 40px rgba(252,229,0,0.9)" }} />
@@ -537,7 +539,8 @@ export const EndCard: React.FC<T> = ({ t }) => {
   const p = prog(t, t0, 0.35);
   return (
     <AbsoluteFill style={{ background: `radial-gradient(ellipse 80% 60% at 50% 45%, #2A2312 0%, ${C.graphBg} 70%)`, opacity: p }}>
-      <div style={{ position: "absolute", left: W / 2, top: H * 0.43, translate: "-50% -50%", display: "flex", flexDirection: "column", alignItems: "center" }}>
+      <Orb t={t} t0={t0} t1={t0 + 30} x={0.5 + 0.06 * Math.sin((t - t0) * 1.6)} y={0.42} size={620} />
+      <div style={{ position: "absolute", left: W / 2, top: H * 0.43, translate: "-50% -50%", display: "flex", flexDirection: "column", alignItems: "center", scale: String(1 + 0.025 * (t - t0)) }}>
         <div style={{ fontFamily: OUTFIT, fontWeight: 500, fontSize: 48, color: "rgba(255,255,255,0.85)" }}>Remodela con</div>
         <div style={{ fontFamily: BEBAS, fontSize: 250, color: "#F5F5F5", lineHeight: 0.95, letterSpacing: "0.02em", textShadow: "0 0 40px rgba(252,229,0,0.35)" }}>
           <Typed text="MACIZO" t={t} t0={t0 + 0.25} dur={0.45} />

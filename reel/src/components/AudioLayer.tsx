@@ -3,7 +3,7 @@ import React from "react";
 import { Sequence, interpolate, staticFile, useVideoConfig } from "remotion";
 import { SFX, TOTAL, VOICE_END } from "../timeline";
 
-/** Voz editada + música (ANBR - Quantum desde 24,4 s) ~11 dB por debajo de la voz + SFX. */
+/** Voz editada + música (ANBR - Quantum desde 24,4 s) ~10 dB por debajo de la voz + SFX. */
 export const AudioLayer: React.FC = () => {
   const { fps } = useVideoConfig();
   return (
@@ -16,7 +16,7 @@ export const AudioLayer: React.FC = () => {
           interpolate(
             f / fps,
             [0, 0.4, VOICE_END - 0.2, VOICE_END + 0.3, TOTAL - 0.9, TOTAL],
-            [0.2, 0.3, 0.3, 0.6, 0.55, 0],
+            [0.12, 0.16, 0.16, 0.5, 0.45, 0],
             { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
           )
         }
