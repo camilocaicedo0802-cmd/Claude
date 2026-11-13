@@ -13,7 +13,7 @@ const wordStyle = (color: TitleLine['color']): React.CSSProperties => {
         backgroundClip: 'text',
         WebkitTextFillColor: 'transparent',
         color: 'transparent',
-        filter: `drop-shadow(0 3px 0 ${C.purpleShadow}) drop-shadow(0 0 16px ${C.purpleGlow})`,
+        filter: `drop-shadow(0 0 18px rgba(0,0,0,0.55)) drop-shadow(0 3px 0 ${C.purpleShadow}) drop-shadow(0 0 16px ${C.purpleGlow})`,
       };
     case 'chrome':
       return {

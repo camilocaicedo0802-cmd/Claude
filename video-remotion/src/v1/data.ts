@@ -136,10 +136,10 @@ export const TITLES: TitleDef[] = [
     covers: [132, 133],
   },
   {
-    id: 'ayuda', start: ws(136) - 0.05, end: ws(138) - 0.03, y: 520,
+    id: 'ayuda', start: ws(135) - 0.05, end: ws(138) - 0.03, y: 545,
     lines: [
-      {words: [{text: 'AYU', at: ws(137)}], color: 'purple', size: 330, upper: true},
-      {words: [{text: 'DA', at: ws(137) + 0.12}], color: 'chrome', size: 330, upper: true},
+      {words: [{text: 'escribe', at: ws(134) + 0.25}], color: 'chrome', size: 96},
+      {words: [{text: 'AYUDA', at: ws(137)}], color: 'purple', size: 250, upper: true},
     ],
     behind: true,
     covers: [137],
@@ -197,7 +197,7 @@ export const WHIPS = [ws(43), ws(57), ws(90) - 0.08];
 export const BLUR_PULSES = [ws(16), ws(37), ws(82), ws(104)];
 
 // ---------- Música (estilo.md §8: corte en seco tras el remate del gancho) ----------
-export const MUSIC = {volume: 0.095, stopFrom: we(6) + 0.04, stopTo: ws(7), duckEnd: TOTAL_SECONDS - 0.9};
+export const MUSIC = {volume: 0.078, stopFrom: we(6) + 0.04, stopTo: ws(7), duckEnd: TOTAL_SECONDS - 0.9};
 
 // ---------- Efectos de sonido ----------
 export type Sfx = {src: string; at: number; vol: number; dur?: number; trim?: number};
