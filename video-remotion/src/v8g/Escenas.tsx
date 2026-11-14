@@ -47,7 +47,7 @@ export const Fondo3D: React.FC = () => (
 );
 
 // ---------------------------------------------------------------- la persona
-const maskUrl = (take: string, f: number) => staticFile(`mascaras/${take}/c_${String(f).padStart(5, '0')}.png`);
+const maskUrl = (take: string, f: number) => staticFile(`mascaras/${take}/p_${String(f).padStart(5, '0')}.png`);
 
 /** Recorte de la persona en un escenario (escala anclada abajo al centro). */
 export const Recorte: React.FC<{scene: Scene}> = ({scene}) => {
@@ -56,10 +56,8 @@ export const Recorte: React.FC<{scene: Scene}> = ({scene}) => {
   const push = interpolate(frame, [scene.from * F, scene.to * F], [1, 1.04], clamp);
   return (
     <AbsoluteFill style={{scale: String(s * push), transformOrigin: '50% 100%'}}>
-      {/* la parte baja (mesa, portátil, restos de pared) se funde con el escenario */}
-      <AbsoluteFill style={{maskImage: 'linear-gradient(180deg, #000 0%, #000 72%, transparent 90%)', WebkitMaskImage: 'linear-gradient(180deg, #000 0%, #000 72%, transparent 90%)'}}>
-        <Live from={scene.from} to={scene.to} mask="c" />
-      </AbsoluteFill>
+      {/* solo la persona (y el portátil que sostiene delante): sin silla, sin degradado */}
+      <Live from={scene.from} to={scene.to} mask="p" />
     </AbsoluteFill>
   );
 };

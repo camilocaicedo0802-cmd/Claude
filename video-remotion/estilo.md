@@ -294,6 +294,14 @@ Estudiado a 4 fps en la referencia. El dinamismo no viene de una sola animación
 - Animación de cada palabra: entrada fantasma con 2 estelas al pronunciarla; deriva 1→1,05, flotación ±5 px y salida con destello. **Whoosh** en cada línea que entra (sin pisar otros efectos a < 0,35 s).
 - **Textura propia** (no la de la referencia): **blanco liso #FFFFFF y morado liso #B701FC**, solo con sombra suave para leerse. Sin brillo, cromado ni volumen.
 
+### 10.10 Recorte de la persona: solo la persona, silueta limpia, sin silla (14/11/2026)
+El cliente vio el recorte con silla, bordes dentados, halo, huecos en la cara y la cabeza cortada («se chocan los fondos, se ve horrible»). Regla para todo recorte sobre fondo nuevo:
+- **Se recorta solo a la persona** (y lo que sostiene delante, como el portátil, para que el torso no quede con un mordisco). **Nunca la silla** ni restos de pared/TV.
+- **La silueta tiene que estar completa**: cabeza, orejas, pelo, manos y dedos enteros; **cero huecos** en la cara o la ropa oscura; **cero islas** sueltas.
+- **Borde fino y limpio**, sin escalones ni halo del fondo viejo; sin degradados que dejen ver el fondo a través del cuerpo.
+- Método (máscaras `p_` a 1080×1920): **SAM2.1** (puntos en la cara y el pecho, detectados por fotograma) separa persona/silla; lo que RVM ve como primer plano y SAM no es la silla → se usa como **puntos negativos** en una segunda pasada. **Robust Video Matting** da el borde fino (pelo, orejas); el **interior** lo manda SAM (ropa negra que RVM duda). Suavizado temporal de 3 fotogramas y limpieza de islas. Se descartan las máscaras `c_`/`m_` (u2net / MediaPipe).
+- **Revisión obligatoria** antes de entregar: hoja de fotogramas del recorte sobre fondo morado y blanco en todas las tomas recortadas.
+
 ## 11. Propuestas de estilo
 
 | Propuesta | Video | Idea |

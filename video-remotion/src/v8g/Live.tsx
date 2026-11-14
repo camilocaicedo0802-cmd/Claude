@@ -18,9 +18,9 @@ export const snapAt = (seg: Segment, f: number) => {
   return k;
 };
 
-const maskOf = (kind: 'a' | 'c', take: string, srcFrame: number) => staticFile(`mascaras/${take}/${kind}_${String(srcFrame).padStart(5, '0')}.png`);
+const maskOf = (kind: 'a' | 'c' | 'p', take: string, srcFrame: number) => staticFile(`mascaras/${take}/${kind}_${String(srcFrame).padStart(5, '0')}.png`);
 
-const Frame: React.FC<{seg: Segment; mask?: 'a' | 'c'; framing: boolean; audio: boolean}> = ({seg, mask, framing, audio}) => {
+const Frame: React.FC<{seg: Segment; mask?: 'a' | 'c' | 'p'; framing: boolean; audio: boolean}> = ({seg, mask, framing, audio}) => {
   const spec = useSpec();
   const local = useCurrentFrame();
   const scale = framing ? scaleFor(spec, seg, local) * snapAt(seg, seg.start + local) : 1;
@@ -40,9 +40,9 @@ const Frame: React.FC<{seg: Segment; mask?: 'a' | 'c'; framing: boolean; audio: 
 
 /**
  * La persona hablando entre `from` y `to` (s), con los mismos cortes que la voz.
- * mask 'c' = recorte limpio (sin TV ni silla) para cambiar el fondo.
+ * mask 'p' = solo la persona (SAM2 + RVM: sin silla, sin huecos, borde fino) para cambiar el fondo.
  */
-export const Live: React.FC<{from: number; to: number; mask?: 'a' | 'c'; framing?: boolean; audio?: boolean}> = ({from, to, mask, framing = true, audio = false}) => {
+export const Live: React.FC<{from: number; to: number; mask?: 'a' | 'c' | 'p'; framing?: boolean; audio?: boolean}> = ({from, to, mask, framing = true, audio = false}) => {
   const spec = useSpec();
   const a = Math.round(from * FPS);
   const b = Math.round(to * FPS);
@@ -63,7 +63,7 @@ export const Live: React.FC<{from: number; to: number; mask?: 'a' | 'c'; framing
 };
 
 /** Último fotograma de la voz congelado (para el cierre). */
-export const LastFrame: React.FC<{mask?: 'a' | 'c'; local?: number}> = ({mask, local}) => {
+export const LastFrame: React.FC<{mask?: 'a' | 'c' | 'p'; local?: number}> = ({mask, local}) => {
   const spec = useSpec();
   const last = spec.segments[spec.segments.length - 1];
   return (
