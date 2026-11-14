@@ -27,3 +27,8 @@ recursos/mixkit/
 recursos/*.mp3
 public/mascaras/
 recursos/broll_src/
+referencia_grow/sep/
+referencia_grow/*.mp4
+referencia_grow/*.wav
+referencia_grow/frames2fps/
+referencia_grow/cortes/

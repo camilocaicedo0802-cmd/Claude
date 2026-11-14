@@ -335,3 +335,9 @@ Estudiado a 4 fps en la referencia. El dinamismo no viene de una sola animación
 - **Textos**: bloques dinámicos de §10.9 con letras lisas; en pantalla completa algunos detrás de la cabeza.
 - **Música**: «Billy the Kid» (Mixkit 399) a −9 dB bajo la voz.
 - **Cierre**: logo en marco rasgado con cinta, nota «tu equipo de marketing 💜», recorte de la persona congelado (mirando a cámara) sobre tira de papel.
+
+## 12. Referente Grow (nuevo referente del cliente · 14/11/2026)
+- El análisis completo del nuevo referente está en **`estilo_referente_grow.md`** (ritmo de cortes, tres familias de subtítulos, títulos condensados, palabras 3D, buscador curvado, grabación de pantalla, SFX identificados con su archivo del paquete).
+- **El ganador 3 se rehace igual que este referente** (la propuesta D «Collage» queda descartada: no gustó).
+- En los textos: **sonido de tecleo** (`Escribir teclado`, `Type Digital SFX`, `Tecla`).
+- Se mantienen: colores del logo en lugar del rojo, sin etalonar, nada sobre la cara, labios sincronizados.
