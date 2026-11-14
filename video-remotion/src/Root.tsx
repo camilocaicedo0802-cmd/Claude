@@ -10,6 +10,8 @@ import {TOTAL as TOTAL3} from './v3/data';
 import {Video3} from './v3/Video3';
 import {TOTAL as TOTAL8} from './v8/data';
 import {Video8} from './v8/Video8';
+import {TOTAL as TOTAL8G} from './v8g/data';
+import {Video8G} from './v8g/Video8G';
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -19,6 +21,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition id="Video9Pop" component={Video9B} durationInFrames={Math.round(TOTAL9B * 30)} fps={30} width={1080} height={1920} />
       <Composition id="Video3Escritorio" component={Video3} durationInFrames={Math.round(TOTAL3 * 30)} fps={30} width={1080} height={1920} />
       <Composition id="Video8Collage" component={Video8} durationInFrames={Math.round(TOTAL8 * 30)} fps={30} width={1080} height={1920} />
+      <Composition id="Video8Grow" component={Video8G} durationInFrames={Math.round(TOTAL8G * 30)} fps={30} width={1080} height={1920} />
       <Composition id="DebugTalking" component={TalkingOnly} durationInFrames={Math.round(TOTAL_SECONDS * 30)} fps={30} width={1080} height={1920} />
     </>
   );
