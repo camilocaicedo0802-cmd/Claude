@@ -19,7 +19,15 @@ import {segmentScaleAt} from './Talking';
 const extrude = (base: string, depth: number) =>
   Array.from({length: depth}, (_, i) => `drop-shadow(0 ${i < 1 ? 1 : 1}px 0 ${base})`).join(' ');
 
-export const wordStyle = (color: TitleLine['color']): React.CSSProperties => {
+// Texturas lisas (estilo.md §10.7/§10.9): blanco liso y morado liso, solo sombra suave para leerse.
+export const PLAIN_PURPLE = '#B701FC';
+const plainStyle = (color: TitleLine['color']): React.CSSProperties => ({
+  color: color === 'purple' ? PLAIN_PURPLE : '#FFFFFF',
+  textShadow: '0 6px 22px rgba(0,0,0,0.5), 0 2px 4px rgba(0,0,0,0.35)',
+});
+
+export const wordStyle = (color: TitleLine['color'], plain = false): React.CSSProperties => {
+  if (plain) return plainStyle(color);
   switch (color) {
     case 'purple':
       return {
@@ -48,12 +56,12 @@ export const wordStyle = (color: TitleLine['color']): React.CSSProperties => {
   }
 };
 
-export const Word: React.FC<{text: string; at: number; color: TitleLine['color']; dir: number}> = ({text, at, color, dir}) => {
+export const Word: React.FC<{text: string; at: number; color: TitleLine['color']; dir: number; plain?: boolean}> = ({text, at, color, dir, plain = false}) => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const local = frame - at * fps;
   const p = interpolate(local, [0, 5], [0, 1], {...clamp, easing: easeOut});
-  const st = wordStyle(color);
+  const st = wordStyle(color, plain);
   const ghost = (k: number, op: number) => {
     const q = interpolate(local, [0, 5 + k * 2], [0, 1], {...clamp, easing: easeOut});
     if (q >= 1 || local < 0) return null;
@@ -151,7 +159,7 @@ export const Title: React.FC<{t: TitleDef}> = ({t}) => {
             }}
           >
             {line.words.map((w, wi) => (
-              <Word key={wi} text={w.text} at={w.at} color={line.color} dir={li % 2 ? 1 : -1} />
+              <Word key={wi} text={w.text} at={w.at} color={line.color} dir={li % 2 ? 1 : -1} plain={t.plain} />
             ))}
           </div>
         ))}

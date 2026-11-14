@@ -3,9 +3,8 @@
 // se abren ventanas de apps (publicar, nota, saldo, estadísticas, perfil, monitor de ventas…),
 // un cursor hace clic y los subtítulos son de tipo karaoke en una píldora.
 import {wordTimes} from '../engine/helpers';
-import {Sfx, Spec} from '../engine/types';
+import {Sfx, Spec, TitleDef, TitleLine, TitleWord} from '../engine/types';
 import {FACES} from './faces';
-import {CHUNKS} from './chunks';
 import {SEGMENTS, SPEECH_FRAMES, WORDS} from './timeline';
 
 export const {ws, we} = wordTimes(WORDS);
@@ -188,20 +187,74 @@ SPEC_C.sfx = [
   ...typing(T.end + 0.8, T.end + 1.5, 0.26),
   {src: 'sfx/hit.wav', at: T.end + 1.6, vol: 0.22, dur: 1.0},
 ];
-// Subtítulos (referencia §8): whoosh corto en cada palabra clave que entra (−12 dB respecto a la voz),
-// nunca a menos de 0,35 s de otro efecto ni a menos de 0,5 s del whoosh de subtítulo anterior.
-const capSfx: Sfx[] = [];
-const WH = ['sfx/whoosh_a.wav', 'sfx/whoosh_b.wav', 'sfx/whoosh_c.wav'];
-for (const c of CHUNKS) {
-  for (const i of c.idx.filter((x) => KEY.has(x))) {
-    const at = ws(i) - 0.04;
-    if (at >= T.end) continue;
-    if (SPEC_C.sfx.some((x) => Math.abs(x.at - at) < 0.35)) continue;
-    if (capSfx.length && at - capSfx[capSfx.length - 1].at < 0.5) continue;
-    capSfx.push({src: WH[capSfx.length % 3], at, vol: 0.18, dur: 0.7});
-  }
-}
-SPEC_C.sfx = [...SPEC_C.sfx, ...capSfx];
-export const CAP_SFX = capSfx.map((x) => x.at);
+
+// ---------- textos (estilo.md §10.9): bloques como los de la referencia, con letras lisas ----------
+const tw = (i: number, text?: string): TitleWord => ({text: text ?? WORDS[i].text.replace(/[,.]/g, '').toLowerCase(), at: ws(i)});
+const L = (idx: number[], color: TitleLine['color'], size: number, extra: Partial<TitleLine> = {}): TitleLine => ({words: idx.map((i) => tw(i)), color, size, ...extra});
+const P = {plain: true} as const;
+
+export const TITLES: TitleDef[] = [
+  // gancho: detrás de la cabeza
+  {...P, id: 'hey', start: ws(0) - 0.02, end: T.win1 - 0.04, y: 'head', overlap: 70, scene: true, covers: [0, 1, 2],
+    lines: [L([0], 'white', 96, {dx: -40}), L([1, 2], 'purple', 124, {dx: 40})]},
+  // en ventana: abajo, sobre el pecho
+  {...P, id: 'publicar', start: ws(3) - 0.02, end: ws(8) - 0.04, y: 1700, covers: [3, 4, 5, 6, 7],
+    lines: [L([3], 'purple', 124, {dx: -40}), L([4, 5, 6, 7], 'white', 70, {dx: 40})]},
+  {...P, id: 'marketing', start: ws(8) - 0.02, end: T.full1 - 0.03, y: 1700, covers: [8, 9, 10, 11],
+    lines: [L([8, 9, 10], 'white', 80, {dx: -30}), L([11], 'purple', 140, {dx: 40})]},
+  // 3 líneas detrás de la cabeza (como «creamos / videos / publicitarios»)
+  {...P, id: 'triste', start: T.full1 + 0.14, end: ws(20) - 0.04, y: 'head', overlap: 90, scene: true, covers: [12, 13, 14, 15, 16, 17, 18, 19],
+    lines: [L([12, 13, 14], 'white', 84, {dx: -40}), L([15], 'purple', 170, {dx: 30}), L([16, 17, 18, 19], 'white', 64, {dx: 60})]},
+  // pecho
+  {...P, id: 'perdida', start: ws(24) - 0.03, end: T.win2 - 0.03, y: 1600, covers: [24, 25, 26],
+    lines: [L([24], 'purple', 160, {dx: -30}), L([25, 26], 'white', 90, {dx: 50})]},
+  {...P, id: 'redes', start: ws(27) - 0.02, end: ws(31) - 0.04, y: 1700, covers: [27, 28, 29, 30],
+    lines: [L([27, 28], 'white', 80, {dx: -30}), L([29, 30], 'purple', 112, {dx: 40})]},
+  // golpe en MAYÚSCULAS
+  {...P, id: 'real', start: ws(36) - 0.02, end: T.full2 - 0.03, y: 1700, covers: [36, 37, 38],
+    lines: [L([36, 37], 'white', 90, {dx: -50}), L([38], 'purple', 190, {upper: true, dx: 30})]},
+  {...P, id: 'significa', start: T.full2 + 0.14, end: T.win3 - 0.17, y: 'head', overlap: 90, scene: true, covers: [39, 40, 41, 42, 43],
+    lines: [L([39, 40, 41], 'white', 84, {dx: -40}), L([42], 'purple', 160, {dx: 30}), L([43], 'white', 90, {dx: 70})]},
+  {...P, id: 'contenido', start: ws(44) - 0.02, end: ws(47) - 0.04, y: 1700, covers: [44, 45, 46],
+    lines: [L([44, 45], 'white', 80, {dx: -30}), L([46], 'purple', 130, {dx: 40})]},
+  {...P, id: 'nada', start: ws(47) - 0.02, end: T.full3 - 0.03, y: 1700, covers: [47, 48, 49, 50],
+    lines: [L([47, 48, 49], 'white', 70, {dx: -40}), L([50], 'purple', 190, {upper: true, dx: 30})]},
+  // detrás de la cabeza con perspectiva 3D (como «que la gente termina de ver»)
+  {...P, id: 'peor', start: T.full3 + 0.14, end: ws(58) - 0.04, y: 'head', overlap: 90, scene: true, tilt: 18, covers: [51, 52, 53, 54, 55, 56, 57],
+    lines: [L([51, 52], 'white', 84, {dx: -40}), L([53], 'purple', 180, {dx: 30}), L([54, 55, 56, 57], 'white', 64, {dx: 60})]},
+  {...P, id: 'bien', start: ws(58) - 0.02, end: ws(64) - 0.04, y: 1600, covers: [58, 59, 60, 61, 62, 63],
+    lines: [L([58, 59, 60, 61], 'white', 72, {dx: -30}), L([62, 63], 'purple', 120, {dx: 40})]},
+  {...P, id: 'nivel', start: ws(69) - 0.02, end: ws(72) - 0.04, y: 1600, covers: [69, 70, 71],
+    lines: [L([69, 70], 'white', 90, {dx: -40}), L([71], 'purple', 190, {upper: true, dx: 30})]},
+  {...P, id: 'decirte', start: ws(72) - 0.02, end: ws(76) - 0.04, y: 1600, covers: [72, 73, 74, 75],
+    lines: [L([72, 73], 'white', 80, {dx: -30}), L([74, 75], 'purple', 120, {dx: 40})]},
+  // palabra partida en dos líneas (como «CONTA / CTANOS»), detrás de la cabeza
+  {...P, id: 'enmarketing', start: ws(76) - 0.02, end: T.win4 - 0.17, y: 'head', overlap: 80, scene: true, covers: [76, 77],
+    lines: [L([76], 'white', 90, {dx: -80}), {words: [tw(77, 'marke')], color: 'purple', size: 200, upper: true, dx: -20}, {words: [{text: 'ting', at: ws(77) + 0.12}], color: 'white', size: 200, upper: true, dx: 60}]},
+  {...P, id: 'venta', start: ws(78) - 0.02, end: ws(83) - 0.04, y: 1700, covers: [78, 79, 80, 81, 82],
+    lines: [L([78, 79, 80], 'white', 80, {dx: -30}), L([81, 82], 'purple', 120, {dx: 40})]},
+  {...P, id: 'muerto', start: ws(83) - 0.02, end: ws(87) - 0.04, y: 1700, covers: [83, 84, 85, 86],
+    lines: [L([83, 84, 85], 'white', 76, {dx: -40}), L([86], 'purple', 200, {upper: true, dx: 30})]},
+  {...P, id: 'reviva', start: ws(93) - 0.02, end: ws(95) - 0.04, y: 1650, covers: [93, 94],
+    lines: [L([93], 'white', 90, {dx: -40}), L([94], 'purple', 200, {upper: true, dx: 30})]},
+  {...P, id: 'escribenos', start: ws(95) - 0.02, end: ws(98) - 0.04, y: 1600, covers: [95, 96, 97],
+    lines: [L([95], 'purple', 120, {dx: -30}), L([96, 97], 'white', 84, {dx: 40})]},
+  {...P, id: 'revivir', start: ws(98) - 0.02, end: T.end, y: 1620, covers: [98],
+    lines: [{words: [tw(98, 'revi')], color: 'purple', size: 210, upper: true, dx: -40}, {words: [{text: 'vir', at: ws(98) + 0.12}], color: 'white', size: 210, upper: true, dx: 50}]},
+];
+SPEC_C.titles = TITLES;
+
+// whoosh corto en cada línea que entra (referencia §8), sin pisar otros efectos
+const titleSfx: Sfx[] = [];
+TITLES.forEach((t, ti) =>
+  t.lines.forEach((l, li) => {
+    const at = l.words[0].at - 0.06;
+    if (SPEC_C.sfx.some((x) => Math.abs(x.at - at) < 0.35)) return;
+    if (titleSfx.some((x) => Math.abs(x.at - at) < 0.35)) return;
+    titleSfx.push({src: ['sfx/whoosh_a.wav', 'sfx/whoosh_b.wav', 'sfx/whoosh_c.wav'][(ti + li) % 3], at, vol: l.color === 'purple' ? 0.26 : 0.2, dur: 0.7});
+  }),
+);
+SPEC_C.sfx = [...SPEC_C.sfx, ...titleSfx];
+
 void we;
 void segStart;

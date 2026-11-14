@@ -283,6 +283,17 @@ Estudiado a 24 fps en la referencia (`scratchpad/ref24/`):
 - El hueco de cada palabra se ve en gris muy tenue (18 %) hasta que se dice.
 - **Whoosh** corto en cada palabra clave que entra (misma regla de separación que §10.6).
 
+### 10.9 Los textos deben ser igual de dinámicos y variados que la referencia; solo cambia la textura (14/11/2026)
+Estudiado a 4 fps en la referencia. El dinamismo no viene de una sola animación sino de la **variedad entre bloques**:
+- **Bloques de 2–3 líneas con jerarquía**: una palabra protagonista enorme (160–210 px) y el resto pequeño (64–90 px), p. ej. «y lo más / **triste** / de todo es que» (como «creamos / **videos** / publicitarios»).
+- **Dos tonos alternos por línea** (blanco / morado), **líneas escalonadas** (−30…−80 / +30…+70 px).
+- **Posición que cambia** de bloque a bloque: detrás de la cabeza (recorte limpio de la persona por encima), sobre el pecho (y ≈ 1600), abajo sobre la ventana (y ≈ 1700); nunca sobre la cara ni sobre las ventanas de apps.
+- **Golpes en MAYÚSCULAS** gigantes (REAL, NADA, NIVEL, MUERTO, REVIVA) y **palabras partidas** en dos líneas (MARKE / TING, REVI / VIR, como CONTA / CTANOS).
+- **Perspectiva 3D** ocasional (inclinación 18°).
+- **Subtítulo pequeño** (Outfit 700, 50 px, blanco) solo en los tramos de enlace sin bloque grande.
+- Animación de cada palabra: entrada fantasma con 2 estelas al pronunciarla; deriva 1→1,05, flotación ±5 px y salida con destello. **Whoosh** en cada línea que entra (sin pisar otros efectos a < 0,35 s).
+- **Textura propia** (no la de la referencia): **blanco liso #FFFFFF y morado liso #B701FC**, solo con sombra suave para leerse. Sin brillo, cromado ni volumen.
+
 ## 11. Propuestas de estilo
 
 | Propuesta | Video | Idea |
@@ -307,7 +318,7 @@ Estudiado a 24 fps en la referencia (`scratchpad/ref24/`):
 - **Pantalla de la persona**: alterna **completa** y **ventana** abajo a la derecha (escala 0,6: x 400, y 740; radio 44 px, barra «● En vivo» con 3 puntos morados #B701FC/#9601FD/#7600FC). Cambio de modo en 8 fotogramas justo sobre el corte de toma. Cara siempre libre: en ventana nada entra en x ≥ 630 por debajo de y 1080.
 - **Ventanas de app** (oscuras rgba(24,20,32,.94) o claras #F7F5FA, radio 30 px, barra 56 px con 3 puntos morados, sombra + halo morado): entran con rebote 0,86→1,025→1 en 9 fotogramas o deslizándose con desenfoque; salen en 5 fotogramas. Una por idea: publicar, nota «publicar ≠ marketing», saldo que cae a $0, estadísticas (seguidores ↑, ventas $0), perfil con «💰 0» en cada post, valoración 5★, medidor «a otro nivel», monitor de ventas, comentario.
 - **Cursor** blanco de macOS con sombra; clic = encoge a 0,82 + onda morada; suena `mouse.wav`.
-- **Subtítulo karaoke** (animación según §10.8): píldora oscura rgba(12,10,16,.74) con borde blanco 12 % (radio 30 px) centrada en y = 1640; Outfit 800 54 px MAYÚSCULAS; la frase entera aparece en gris 32 % y cada palabra se pone **blanca lisa** al decirla (palabra clave en **morado liso #C46BFF**), con un salto de 5 px. Bloques de hasta 5 palabras / 24 letras.
+- ~~Subtítulo karaoke~~ (sustituido por los bloques de §10.9): píldora oscura rgba(12,10,16,.74) con borde blanco 12 % (radio 30 px) centrada en y = 1640; Outfit 800 54 px MAYÚSCULAS; la frase entera aparece en gris 32 % y cada palabra se pone **blanca lisa** al decirla (palabra clave en **morado liso #C46BFF**), con un salto de 5 px. Bloques de hasta 5 palabras / 24 letras.
 - **Momentos fuertes**: el «=» de la nota se tacha y queda «≠» (sonido de error); la tarjeta «Ventas $0» se ilumina en «ni un real» con sacudida; **corte en seco de la música** en «Pero quiero decirte algo» hasta el monitor; el monitor de ventas pierde pulso (pitidos más débiles → línea plana) y **la pantalla se apaga como una TV vieja** (se aplasta a una línea y a un punto) en «negocio muerto»; en «reviva» **desfibrilador**: flash blanco + golpe + latidos fuertes y la pantalla se vuelve a encender.
 - **Arranque**: la imagen se abre desde una rendija con línea brillante (TV encendiéndose).
 - **Sonido**: banco de la referencia (whooshes, pop, golpe, riser, flash) + paquete del cliente (clic de ratón, teclado mecánico, notificación, error de Windows, contador) + pitidos de monitor generados.

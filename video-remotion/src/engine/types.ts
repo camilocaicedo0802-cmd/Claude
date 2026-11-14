@@ -17,6 +17,8 @@ export type TitleDef = {
   scene?: boolean;
   tilt?: number;
   covers: number[];
+  /** letras lisas (blanco / morado sin brillo, cromado ni volumen) */
+  plain?: boolean;
 };
 
 export type BrollDef = {src: string; start: number; end: number; trim?: number; bw?: boolean; zoom?: [number, number]};

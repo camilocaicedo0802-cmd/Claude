@@ -3,8 +3,9 @@ import {clamp, rand} from '../engine/helpers';
 import {Sonido} from '../engine/Sonido';
 import {SpecContext} from '../engine/spec';
 import {Comentario, CierreC, Monitor, Nivel, Nota, Perdida, Perfil, Publicar, Stats} from './Apps';
-import {Caps} from './Caps';
-import {SHAKES, SPEC_C, T} from './data';
+import {Title} from '../engine/Title';
+import {PersonCut, SmallSubs} from './Subs';
+import {SHAKES, SPEC_C, T, TITLES} from './data';
 import {Cursor, Escritorio, MenuBar, Pantalla, PuntoApagado, screenAt} from './Desktop';
 
 const F = 30;
@@ -54,6 +55,10 @@ export const Video3: React.FC = () => {
           <Escritorio />
           <MenuBar opacity={desk} />
           <Pantalla />
+          {TITLES.filter((t) => t.scene).map((t) => (
+            <Title key={t.id} t={t} />
+          ))}
+          <PersonCut />
           <PuntoApagado />
           <Publicar />
           <Nota />
@@ -64,7 +69,10 @@ export const Video3: React.FC = () => {
           <Monitor />
           <Comentario />
           <CierreC />
-          <Caps />
+          {TITLES.filter((t) => !t.scene).map((t) => (
+            <Title key={t.id} t={t} />
+          ))}
+          <SmallSubs />
           <Cursor />
         </AbsoluteFill>
         <PowerOn />
