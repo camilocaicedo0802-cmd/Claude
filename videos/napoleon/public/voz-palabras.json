@@ -1,0 +1,1304 @@
+{
+ "voz": "es-US-PalomaNeural",
+ "duracion": 45.12,
+ "frases": [
+  {
+   "i": 0,
+   "texto": "¡Napoleón era más alto que el francés promedio!",
+   "seccion": "gancho",
+   "inicio": 0.0,
+   "fin": 2.03,
+   "tono_objetivo": 283,
+   "tono_medido": 282
+  },
+  {
+   "i": 1,
+   "texto": "Y lo recordamos enano por culpa de un dibujante inglés.",
+   "seccion": "gancho",
+   "inicio": 2.19,
+   "fin": 4.93,
+   "tono_objetivo": 283,
+   "tono_medido": 273
+  },
+  {
+   "i": 2,
+   "texto": "En 1802, Napoleón es el hombre más poderoso de Francia.",
+   "seccion": "desarrollo",
+   "inicio": 5.25,
+   "fin": 8.54,
+   "tono_objetivo": 186,
+   "tono_medido": 185
+  },
+  {
+   "i": 3,
+   "texto": "Pero en Londres, un caricaturista lo odia.",
+   "seccion": "conflicto",
+   "inicio": 8.72,
+   "fin": 10.71,
+   "tono_objetivo": 248,
+   "tono_medido": 245
+  },
+  {
+   "i": 4,
+   "texto": "Lo dibuja diminuto, con berrinches de niño, y le pone un apodo:",
+   "seccion": "desarrollo",
+   "inicio": 10.97,
+   "fin": 14.26,
+   "tono_objetivo": 186,
+   "tono_medido": 185
+  },
+  {
+   "i": 5,
+   "texto": "¡Lítel Bóni!",
+   "seccion": "conflicto",
+   "inicio": 14.38,
+   "fin": 15.09,
+   "tono_objetivo": 248,
+   "tono_medido": 240
+  },
+  {
+   "i": 6,
+   "texto": "Los periódicos lo copian por toda Europa.",
+   "seccion": "desarrollo",
+   "inicio": 15.33,
+   "fin": 17.29,
+   "tono_objetivo": 186,
+   "tono_medido": 185
+  },
+  {
+   "i": 7,
+   "texto": "Cuando muere, en 1821, la autopsia dice: cinco pies y dos pulgadas.",
+   "seccion": "desarrollo",
+   "inicio": 17.59,
+   "fin": 22.16,
+   "tono_objetivo": 186,
+   "tono_medido": 188
+  },
+  {
+   "i": 8,
+   "texto": "En Inglaterra eso es…",
+   "seccion": "conflicto",
+   "inicio": 22.36,
+   "fin": 23.62,
+   "tono_objetivo": 248,
+   "tono_medido": 247
+  },
+  {
+   "i": 9,
+   "texto": "¡uno cincuenta y siete!",
+   "seccion": "conflicto",
+   "inicio": 23.78,
+   "fin": 24.82,
+   "tono_objetivo": 248,
+   "tono_medido": 240
+  },
+  {
+   "i": 10,
+   "texto": "Pero eran pulgadas francesas, más largas.",
+   "seccion": "desarrollo",
+   "inicio": 25.1,
+   "fin": 27.26,
+   "tono_objetivo": 186,
+   "tono_medido": 188
+  },
+  {
+   "i": 11,
+   "texto": "¿Cuánto medía de verdad?",
+   "seccion": "conflicto",
+   "inicio": 27.42,
+   "fin": 28.51,
+   "tono_objetivo": 248,
+   "tono_medido": 247
+  },
+  {
+   "i": 12,
+   "texto": "¡Casi uno sesenta y nueve!",
+   "seccion": "conflicto",
+   "inicio": 28.67,
+   "fin": 29.83,
+   "tono_objetivo": 248,
+   "tono_medido": 250
+  },
+  {
+   "i": 13,
+   "texto": "¿Y el francés promedio?",
+   "seccion": "conflicto",
+   "inicio": 30.05,
+   "fin": 31.16,
+   "tono_objetivo": 248,
+   "tono_medido": 247
+  },
+  {
+   "i": 14,
+   "texto": "Unos uno sesenta y cinco.",
+   "seccion": "desarrollo",
+   "inicio": 31.3,
+   "fin": 32.57,
+   "tono_objetivo": 186,
+   "tono_medido": 185
+  },
+  {
+   "i": 15,
+   "texto": "Para colmo, siempre aparecía rodeado de su guardia, soldados elegidos por altos.",
+   "seccion": "desarrollo",
+   "inicio": 32.89,
+   "fin": 36.92,
+   "tono_objetivo": 186,
+   "tono_medido": 188
+  },
+  {
+   "i": 16,
+   "texto": "Y el pequeño cabo era un apodo cariñoso, no una medida.",
+   "seccion": "desarrollo",
+   "inicio": 37.08,
+   "fin": 39.9,
+   "tono_objetivo": 186,
+   "tono_medido": 188
+  },
+  {
+   "i": 17,
+   "texto": "Veredicto: ¡mito!",
+   "seccion": "veredicto",
+   "inicio": 40.22,
+   "fin": 41.28,
+   "tono_objetivo": 248,
+   "tono_medido": 247
+  },
+  {
+   "i": 18,
+   "texto": "¿Emperador bajito… o víctima del primer meme de la historia?",
+   "seccion": "pregunta",
+   "inicio": 41.58,
+   "fin": 44.42,
+   "tono_objetivo": 248,
+   "tono_medido": 250
+  }
+ ],
+ "palabras": [
+  {
+   "texto": "Napoleón",
+   "inicio": 0.0,
+   "duracion": 0.44,
+   "visible": "¡Napoleón",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "era",
+   "inicio": 0.42,
+   "duracion": 0.12,
+   "visible": "era",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "más",
+   "inicio": 0.55,
+   "duracion": 0.2,
+   "visible": "más",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "alto",
+   "inicio": 0.76,
+   "duracion": 0.23,
+   "visible": "alto",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "que",
+   "inicio": 1.0,
+   "duracion": 0.07,
+   "visible": "que",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "el",
+   "inicio": 1.08,
+   "duracion": 0.06,
+   "visible": "el",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "francés",
+   "inicio": 1.15,
+   "duracion": 0.38,
+   "visible": "francés",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "promedio",
+   "inicio": 1.541,
+   "duracion": 0.43,
+   "visible": "promedio!",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "Y",
+   "inicio": 2.19,
+   "duracion": 0.074,
+   "visible": "Y",
+   "enfasis": false,
+   "frase": 1,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "lo",
+   "inicio": 2.226,
+   "duracion": 0.095,
+   "visible": "lo",
+   "enfasis": false,
+   "frase": 1,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "recordamos",
+   "inicio": 2.332,
+   "duracion": 0.485,
+   "visible": "recordamos",
+   "enfasis": false,
+   "frase": 1,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "enano",
+   "inicio": 2.827,
+   "duracion": 0.305,
+   "visible": "enano",
+   "enfasis": false,
+   "frase": 1,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "por",
+   "inicio": 3.143,
+   "duracion": 0.179,
+   "visible": "por",
+   "enfasis": false,
+   "frase": 1,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "culpa",
+   "inicio": 3.333,
+   "duracion": 0.295,
+   "visible": "culpa",
+   "enfasis": false,
+   "frase": 1,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "de",
+   "inicio": 3.638,
+   "duracion": 0.105,
+   "visible": "de",
+   "enfasis": false,
+   "frase": 1,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "un",
+   "inicio": 3.754,
+   "duracion": 0.147,
+   "visible": "un",
+   "enfasis": false,
+   "frase": 1,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "dibujante",
+   "inicio": 3.912,
+   "duracion": 0.485,
+   "visible": "dibujante",
+   "enfasis": false,
+   "frase": 1,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "inglés",
+   "inicio": 4.407,
+   "duracion": 0.453,
+   "visible": "inglés.",
+   "enfasis": false,
+   "frase": 1,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "En",
+   "inicio": 5.25,
+   "duracion": 0.13,
+   "visible": "En",
+   "enfasis": false,
+   "frase": 2,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "1802",
+   "inicio": 5.36,
+   "duracion": 0.91,
+   "visible": "1802,",
+   "enfasis": false,
+   "frase": 2,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "Napoleón",
+   "inicio": 6.491,
+   "duracion": 0.41,
+   "visible": "Napoleón",
+   "enfasis": false,
+   "frase": 2,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "es",
+   "inicio": 6.911,
+   "duracion": 0.11,
+   "visible": "es",
+   "enfasis": false,
+   "frase": 2,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "el",
+   "inicio": 7.031,
+   "duracion": 0.1,
+   "visible": "el",
+   "enfasis": false,
+   "frase": 2,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "hombre",
+   "inicio": 7.141,
+   "duracion": 0.17,
+   "visible": "hombre",
+   "enfasis": false,
+   "frase": 2,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "más",
+   "inicio": 7.321,
+   "duracion": 0.24,
+   "visible": "más",
+   "enfasis": false,
+   "frase": 2,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "poderoso",
+   "inicio": 7.571,
+   "duracion": 0.41,
+   "visible": "poderoso",
+   "enfasis": false,
+   "frase": 2,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "de",
+   "inicio": 7.991,
+   "duracion": 0.08,
+   "visible": "de",
+   "enfasis": false,
+   "frase": 2,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "Francia",
+   "inicio": 8.081,
+   "duracion": 0.4,
+   "visible": "Francia.",
+   "enfasis": false,
+   "frase": 2,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "Pero",
+   "inicio": 8.72,
+   "duracion": 0.13,
+   "visible": "Pero",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": "conflicto"
+  },
+  {
+   "texto": "en",
+   "inicio": 8.82,
+   "duracion": 0.07,
+   "visible": "en",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": "conflicto"
+  },
+  {
+   "texto": "Londres",
+   "inicio": 8.9,
+   "duracion": 0.34,
+   "visible": "Londres,",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": "conflicto"
+  },
+  {
+   "texto": "un",
+   "inicio": 9.47,
+   "duracion": 0.08,
+   "visible": "un",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": "conflicto"
+  },
+  {
+   "texto": "caricaturista",
+   "inicio": 9.56,
+   "duracion": 0.66,
+   "visible": "caricaturista",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": "conflicto"
+  },
+  {
+   "texto": "lo",
+   "inicio": 10.231,
+   "duracion": 0.11,
+   "visible": "lo",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": "conflicto"
+  },
+  {
+   "texto": "odia",
+   "inicio": 10.351,
+   "duracion": 0.3,
+   "visible": "odia.",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": "conflicto"
+  },
+  {
+   "texto": "Lo",
+   "inicio": 10.97,
+   "duracion": 0.105,
+   "visible": "Lo",
+   "enfasis": false,
+   "frase": 4,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "dibuja",
+   "inicio": 11.048,
+   "duracion": 0.295,
+   "visible": "dibuja",
+   "enfasis": false,
+   "frase": 4,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "diminuto",
+   "inicio": 11.354,
+   "duracion": 0.506,
+   "visible": "diminuto,",
+   "enfasis": false,
+   "frase": 4,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "con",
+   "inicio": 12.091,
+   "duracion": 0.126,
+   "visible": "con",
+   "enfasis": false,
+   "frase": 4,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "berrinches",
+   "inicio": 12.228,
+   "duracion": 0.4,
+   "visible": "berrinches",
+   "enfasis": false,
+   "frase": 4,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "de",
+   "inicio": 12.639,
+   "duracion": 0.063,
+   "visible": "de",
+   "enfasis": false,
+   "frase": 4,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "niño",
+   "inicio": 12.713,
+   "duracion": 0.305,
+   "visible": "niño,",
+   "enfasis": false,
+   "frase": 4,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "y",
+   "inicio": 13.208,
+   "duracion": 0.074,
+   "visible": "y",
+   "enfasis": false,
+   "frase": 4,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "le",
+   "inicio": 13.292,
+   "duracion": 0.105,
+   "visible": "le",
+   "enfasis": false,
+   "frase": 4,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "pone",
+   "inicio": 13.408,
+   "duracion": 0.274,
+   "visible": "pone",
+   "enfasis": false,
+   "frase": 4,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "un",
+   "inicio": 13.692,
+   "duracion": 0.126,
+   "visible": "un",
+   "enfasis": false,
+   "frase": 4,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "apodo",
+   "inicio": 13.829,
+   "duracion": 0.369,
+   "visible": "apodo:",
+   "enfasis": false,
+   "frase": 4,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "Lítel",
+   "inicio": 14.38,
+   "duracion": 0.63,
+   "visible": "¡LITTLE BONEY!",
+   "enfasis": true,
+   "frase": 5,
+   "seccion": "conflicto"
+  },
+  {
+   "texto": "Los",
+   "inicio": 15.33,
+   "duracion": 0.14,
+   "visible": "Los",
+   "enfasis": false,
+   "frase": 6,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "periódicos",
+   "inicio": 15.44,
+   "duracion": 0.49,
+   "visible": "periódicos",
+   "enfasis": false,
+   "frase": 6,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "lo",
+   "inicio": 15.94,
+   "duracion": 0.09,
+   "visible": "lo",
+   "enfasis": false,
+   "frase": 6,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "copian",
+   "inicio": 16.04,
+   "duracion": 0.32,
+   "visible": "copian",
+   "enfasis": false,
+   "frase": 6,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "por",
+   "inicio": 16.37,
+   "duracion": 0.18,
+   "visible": "por",
+   "enfasis": false,
+   "frase": 6,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "toda",
+   "inicio": 16.561,
+   "duracion": 0.24,
+   "visible": "toda",
+   "enfasis": false,
+   "frase": 6,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "Europa",
+   "inicio": 16.811,
+   "duracion": 0.4,
+   "visible": "Europa.",
+   "enfasis": false,
+   "frase": 6,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "Cuando",
+   "inicio": 17.59,
+   "duracion": 0.19,
+   "visible": "Cuando",
+   "enfasis": false,
+   "frase": 7,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "muere",
+   "inicio": 17.74,
+   "duracion": 0.24,
+   "visible": "muere,",
+   "enfasis": false,
+   "frase": 7,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "en",
+   "inicio": 18.25,
+   "duracion": 0.13,
+   "visible": "en",
+   "enfasis": false,
+   "frase": 7,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "1821",
+   "inicio": 18.39,
+   "duracion": 1.02,
+   "visible": "1821,",
+   "enfasis": false,
+   "frase": 7,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "la",
+   "inicio": 19.651,
+   "duracion": 0.04,
+   "visible": "la",
+   "enfasis": false,
+   "frase": 7,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "autopsia",
+   "inicio": 19.701,
+   "duracion": 0.4,
+   "visible": "autopsia",
+   "enfasis": false,
+   "frase": 7,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "dice",
+   "inicio": 20.111,
+   "duracion": 0.27,
+   "visible": "dice:",
+   "enfasis": false,
+   "frase": 7,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "cinco",
+   "inicio": 20.641,
+   "duracion": 0.28,
+   "visible": "cinco",
+   "enfasis": false,
+   "frase": 7,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "pies",
+   "inicio": 20.931,
+   "duracion": 0.33,
+   "visible": "pies",
+   "enfasis": false,
+   "frase": 7,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "y",
+   "inicio": 21.272,
+   "duracion": 0.06,
+   "visible": "y",
+   "enfasis": false,
+   "frase": 7,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "dos",
+   "inicio": 21.342,
+   "duracion": 0.19,
+   "visible": "dos",
+   "enfasis": false,
+   "frase": 7,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "pulgadas",
+   "inicio": 21.542,
+   "duracion": 0.56,
+   "visible": "pulgadas.",
+   "enfasis": false,
+   "frase": 7,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "En",
+   "inicio": 22.36,
+   "duracion": 0.12,
+   "visible": "En",
+   "enfasis": false,
+   "frase": 8,
+   "seccion": "conflicto"
+  },
+  {
+   "texto": "Inglaterra",
+   "inicio": 22.46,
+   "duracion": 0.53,
+   "visible": "Inglaterra",
+   "enfasis": false,
+   "frase": 8,
+   "seccion": "conflicto"
+  },
+  {
+   "texto": "eso",
+   "inicio": 23.0,
+   "duracion": 0.25,
+   "visible": "eso",
+   "enfasis": false,
+   "frase": 8,
+   "seccion": "conflicto"
+  },
+  {
+   "texto": "es",
+   "inicio": 23.26,
+   "duracion": 0.3,
+   "visible": "es…",
+   "enfasis": false,
+   "frase": 8,
+   "seccion": "conflicto"
+  },
+  {
+   "texto": "uno",
+   "inicio": 23.78,
+   "duracion": 0.99,
+   "visible": "¡1,57!",
+   "enfasis": true,
+   "frase": 9,
+   "seccion": "conflicto"
+  },
+  {
+   "texto": "Pero",
+   "inicio": 25.1,
+   "duracion": 0.15,
+   "visible": "Pero",
+   "enfasis": false,
+   "frase": 10,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "eran",
+   "inicio": 25.22,
+   "duracion": 0.17,
+   "visible": "eran",
+   "enfasis": false,
+   "frase": 10,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "pulgadas",
+   "inicio": 25.4,
+   "duracion": 0.37,
+   "visible": "pulgadas",
+   "enfasis": false,
+   "frase": 10,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "francesas",
+   "inicio": 25.78,
+   "duracion": 0.56,
+   "visible": "francesas,",
+   "enfasis": false,
+   "frase": 10,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "más",
+   "inicio": 26.491,
+   "duracion": 0.19,
+   "visible": "más",
+   "enfasis": false,
+   "frase": 10,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "largas",
+   "inicio": 26.691,
+   "duracion": 0.51,
+   "visible": "largas.",
+   "enfasis": false,
+   "frase": 10,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "Cuánto",
+   "inicio": 27.42,
+   "duracion": 0.295,
+   "visible": "¿Cuánto",
+   "enfasis": false,
+   "frase": 11,
+   "seccion": "conflicto"
+  },
+  {
+   "texto": "medía",
+   "inicio": 27.658,
+   "duracion": 0.316,
+   "visible": "medía",
+   "enfasis": false,
+   "frase": 11,
+   "seccion": "conflicto"
+  },
+  {
+   "texto": "de",
+   "inicio": 27.984,
+   "duracion": 0.084,
+   "visible": "de",
+   "enfasis": false,
+   "frase": 11,
+   "seccion": "conflicto"
+  },
+  {
+   "texto": "verdad",
+   "inicio": 28.079,
+   "duracion": 0.379,
+   "visible": "verdad?",
+   "enfasis": false,
+   "frase": 11,
+   "seccion": "conflicto"
+  },
+  {
+   "texto": "Casi",
+   "inicio": 28.67,
+   "duracion": 0.23,
+   "visible": "¡CASI",
+   "enfasis": true,
+   "frase": 12,
+   "seccion": "conflicto"
+  },
+  {
+   "texto": "uno",
+   "inicio": 28.87,
+   "duracion": 0.87,
+   "visible": "1,69!",
+   "enfasis": true,
+   "frase": 12,
+   "seccion": "conflicto"
+  },
+  {
+   "texto": "Y",
+   "inicio": 30.05,
+   "duracion": 0.084,
+   "visible": "¿Y",
+   "enfasis": false,
+   "frase": 13,
+   "seccion": "conflicto"
+  },
+  {
+   "texto": "el",
+   "inicio": 30.117,
+   "duracion": 0.084,
+   "visible": "el",
+   "enfasis": false,
+   "frase": 13,
+   "seccion": "conflicto"
+  },
+  {
+   "texto": "francés",
+   "inicio": 30.212,
+   "duracion": 0.39,
+   "visible": "francés",
+   "enfasis": false,
+   "frase": 13,
+   "seccion": "conflicto"
+  },
+  {
+   "texto": "promedio",
+   "inicio": 30.612,
+   "duracion": 0.464,
+   "visible": "promedio?",
+   "enfasis": false,
+   "frase": 13,
+   "seccion": "conflicto"
+  },
+  {
+   "texto": "Unos",
+   "inicio": 31.3,
+   "duracion": 0.3,
+   "visible": "Unos",
+   "enfasis": false,
+   "frase": 14,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "uno",
+   "inicio": 31.59,
+   "duracion": 0.93,
+   "visible": "1,65.",
+   "enfasis": true,
+   "frase": 14,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "Para",
+   "inicio": 32.89,
+   "duracion": 0.15,
+   "visible": "Para",
+   "enfasis": false,
+   "frase": 15,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "colmo",
+   "inicio": 33.01,
+   "duracion": 0.29,
+   "visible": "colmo,",
+   "enfasis": false,
+   "frase": 15,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "siempre",
+   "inicio": 33.56,
+   "duracion": 0.26,
+   "visible": "siempre",
+   "enfasis": false,
+   "frase": 15,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "aparecía",
+   "inicio": 33.83,
+   "duracion": 0.42,
+   "visible": "aparecía",
+   "enfasis": false,
+   "frase": 15,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "rodeado",
+   "inicio": 34.261,
+   "duracion": 0.34,
+   "visible": "rodeado",
+   "enfasis": false,
+   "frase": 15,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "de",
+   "inicio": 34.611,
+   "duracion": 0.08,
+   "visible": "de",
+   "enfasis": false,
+   "frase": 15,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "su",
+   "inicio": 34.701,
+   "duracion": 0.1,
+   "visible": "su",
+   "enfasis": false,
+   "frase": 15,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "guardia",
+   "inicio": 34.811,
+   "duracion": 0.31,
+   "visible": "guardia,",
+   "enfasis": false,
+   "frase": 15,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "soldados",
+   "inicio": 35.381,
+   "duracion": 0.48,
+   "visible": "soldados",
+   "enfasis": false,
+   "frase": 15,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "elegidos",
+   "inicio": 35.871,
+   "duracion": 0.45,
+   "visible": "elegidos",
+   "enfasis": false,
+   "frase": 15,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "por",
+   "inicio": 36.331,
+   "duracion": 0.12,
+   "visible": "por",
+   "enfasis": false,
+   "frase": 15,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "altos",
+   "inicio": 36.461,
+   "duracion": 0.39,
+   "visible": "altos.",
+   "enfasis": false,
+   "frase": 15,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "Y",
+   "inicio": 37.08,
+   "duracion": 0.08,
+   "visible": "Y",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "el",
+   "inicio": 37.14,
+   "duracion": 0.09,
+   "visible": "el",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "pequeño",
+   "inicio": 37.24,
+   "duracion": 0.33,
+   "visible": "pequeño",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "cabo",
+   "inicio": 37.58,
+   "duracion": 0.23,
+   "visible": "cabo",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "era",
+   "inicio": 37.82,
+   "duracion": 0.14,
+   "visible": "era",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "un",
+   "inicio": 37.97,
+   "duracion": 0.12,
+   "visible": "un",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "apodo",
+   "inicio": 38.1,
+   "duracion": 0.28,
+   "visible": "apodo",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "cariñoso",
+   "inicio": 38.391,
+   "duracion": 0.51,
+   "visible": "cariñoso,",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "no",
+   "inicio": 39.071,
+   "duracion": 0.16,
+   "visible": "no",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "una",
+   "inicio": 39.241,
+   "duracion": 0.21,
+   "visible": "una",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "medida",
+   "inicio": 39.461,
+   "duracion": 0.39,
+   "visible": "medida.",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": "desarrollo"
+  },
+  {
+   "texto": "Veredicto",
+   "inicio": 40.22,
+   "duracion": 0.54,
+   "visible": "VEREDICTO:",
+   "enfasis": true,
+   "frase": 17,
+   "seccion": "veredicto"
+  },
+  {
+   "texto": "mito",
+   "inicio": 40.89,
+   "duracion": 0.31,
+   "visible": "¡MITO!",
+   "enfasis": true,
+   "frase": 17,
+   "seccion": "veredicto"
+  },
+  {
+   "texto": "Emperador",
+   "inicio": 41.58,
+   "duracion": 0.421,
+   "visible": "¿Emperador",
+   "enfasis": false,
+   "frase": 18,
+   "seccion": "pregunta"
+  },
+  {
+   "texto": "bajito",
+   "inicio": 41.964,
+   "duracion": 0.453,
+   "visible": "bajito…",
+   "enfasis": false,
+   "frase": 18,
+   "seccion": "pregunta"
+  },
+  {
+   "texto": "o",
+   "inicio": 42.638,
+   "duracion": 0.063,
+   "visible": "o",
+   "enfasis": false,
+   "frase": 18,
+   "seccion": "pregunta"
+  },
+  {
+   "texto": "víctima",
+   "inicio": 42.712,
+   "duracion": 0.379,
+   "visible": "víctima",
+   "enfasis": false,
+   "frase": 18,
+   "seccion": "pregunta"
+  },
+  {
+   "texto": "del",
+   "inicio": 43.102,
+   "duracion": 0.126,
+   "visible": "del",
+   "enfasis": false,
+   "frase": 18,
+   "seccion": "pregunta"
+  },
+  {
+   "texto": "primer",
+   "inicio": 43.239,
+   "duracion": 0.263,
+   "visible": "primer",
+   "enfasis": false,
+   "frase": 18,
+   "seccion": "pregunta"
+  },
+  {
+   "texto": "meme",
+   "inicio": 43.513,
+   "duracion": 0.211,
+   "visible": "meme",
+   "enfasis": true,
+   "frase": 18,
+   "seccion": "pregunta"
+  },
+  {
+   "texto": "de",
+   "inicio": 43.734,
+   "duracion": 0.084,
+   "visible": "de",
+   "enfasis": false,
+   "frase": 18,
+   "seccion": "pregunta"
+  },
+  {
+   "texto": "la",
+   "inicio": 43.829,
+   "duracion": 0.074,
+   "visible": "la",
+   "enfasis": false,
+   "frase": 18,
+   "seccion": "pregunta"
+  },
+  {
+   "texto": "historia",
+   "inicio": 43.913,
+   "duracion": 0.432,
+   "visible": "historia?",
+   "enfasis": false,
+   "frase": 18,
+   "seccion": "pregunta"
+  }
+ ]
+}
