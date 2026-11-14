@@ -50,7 +50,8 @@ export const SCENES: Scene[] = [
 export const sceneAt = (t: number) => SCENES.find((s) => t >= s.from && t < s.to) ?? SCENES[SCENES.length - 1];
 
 /** Encuadre del recorte en cada escenario (escala anclada abajo al centro). */
-export const CUT_SCALE: Partial<Record<Kind, number>> = {estudio: 0.92, blanco: 0.9, escenario: 0.62, palabras3d: 0.7};
+// estudio/blanco a 1: los hombros (cortados por el borde de la toma) salen del cuadro, sin cortes rectos a la vista.
+export const CUT_SCALE: Partial<Record<Kind, number>> = {estudio: 1, blanco: 1, escenario: 0.62, palabras3d: 0.7};
 
 // ---------- textos ----------
 /** Palabra suelta alrededor de la cabeza (gancho). behind = detrás de la persona. */

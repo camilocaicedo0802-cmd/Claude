@@ -1,6 +1,6 @@
 # Máscara "solo persona" (sin silla) = SAM2 (separa persona/silla) x RVM (borde fino de pelo y ropa).
 # uso: person_masks.py <sam2_dir> <rvm.torchscript> <face_landmarker.task> <jobs.json> [VID]
-# Escribe public/mascaras/<toma>/p_XXXXX.png (alfa 0-255, 1080x1920).
+# Escribe public/mascaras/<toma>/p_XXXXX.png (blanco con alfa 0-255, 1080x1920).
 import sys, os, json, re, subprocess, time
 import numpy as np, torch, cv2
 import torch.nn.functional as TF
@@ -14,7 +14,7 @@ SAM_DIR, RVM_PATH, LM_PATH, JOBS = sys.argv[1:5]
 VID = sys.argv[5] if len(sys.argv) > 5 else 'v8'
 root = '/home/user/Claude/video-remotion'
 W, H = 1080, 1920
-WARM = 12
+WARM = 30
 torch.set_num_threads(4)
 sam = Sam2Model.from_pretrained(SAM_DIR).eval()
 rvm = torch.jit.load(RVM_PATH).eval()
@@ -68,11 +68,11 @@ def face_pts(fr, seg, prev):
         L = r.face_landmarks[0]
         xs = np.array([p.x for p in L]) * W; ys = np.array([p.y for p in L]) * H
         cx, cy, chin, fh = xs.mean(), ys.mean(), ys.max(), ys.max() - ys.min()
-        return (cx, cy, chin, fh)
+        return (cx, cy, chin, fh, ys.min())
     if prev is not None:
         return prev
     x0, y0, x1, y1 = faces[str(seg)]
-    return ((x0 + x1) / 2, (y0 + y1) / 2 + 40, y1, (y1 - y0) * 0.7)
+    return ((x0 + x1) / 2, (y0 + y1) / 2 + 40, y1, (y1 - y0) * 0.7, y0 + (y1 - y0) * 0.25)
 
 
 jobs = json.load(open(JOBS))
@@ -97,8 +97,9 @@ for job in jobs:
             continue
         alphas[f] = pha[0, 0].numpy()
         prev = face_pts(fr, seg, prev)
-        cx, cy, chin, fh = prev
-        pts = [(cx, cy), (cx, min(H - 20, chin + 220)), (cx, min(H - 20, chin + 520))]
+        cx, cy, chin, fh, top = prev
+        # puntos: pelo (sobre la frente), cara, pecho y abdomen
+        pts = [(cx, max(5, top - 0.1 * fh)), (cx, cy), (cx, min(H - 20, chin + 220)), (cx, min(H - 20, chin + 520))]
         emb = embed(fr)
         m1 = clean(sam_mask(emb, pts))
         # lo que RVM ve como primer plano y SAM no = silla -> puntos negativos y segunda pasada
@@ -106,14 +107,22 @@ for job in jobs:
         chair[int(min(H, chin + 700)):] = 0
         n, lab, st, _ = cv2.connectedComponentsWithStats(chair, 8)
         neg = []
-        for j in sorted(range(1, n), key=lambda j: -st[j, cv2.CC_STAT_AREA])[:3]:
+        for j in sorted(range(1, n), key=lambda j: -st[j, cv2.CC_STAT_AREA])[:4]:
             if st[j, cv2.CC_STAT_AREA] < 2500: break
             dt = cv2.distanceTransform((lab == j).astype(np.uint8), cv2.DIST_L2, 5)
             yy, xx = np.unravel_index(dt.argmax(), dt.shape)
+            # nunca un punto negativo en la zona de la cabeza (pelo que SAM no cogió a la primera)
+            if abs(xx - cx) < 0.65 * fh and top - 0.6 * fh < yy < chin:
+                continue
             neg.append((float(xx), float(yy)))
         if neg:
             m2 = clean(sam_mask(emb, pts, neg))
-            m1 = m2 if m2.sum() > 0.8 * m1.sum() else m1
+            if m2.sum() > 0.8 * m1.sum():
+                # la segunda pasada solo puede quitar silla, nunca pelo: la cabeza se queda como en la primera
+                head = np.zeros_like(m1)
+                y0h = top - 0.5 * fh
+                cv2.ellipse(head, (int(cx), int((y0h + chin) / 2)), (int(0.5 * fh), int((chin - y0h) / 2)), 0, 0, 360, 1, -1)
+                m1 = np.where(head == 1, m1, m2).astype(np.uint8)
         # agujeros cerrados que RVM ve como cuerpo (micrófono de solapa, reflejos): se rellenan
         inv = (1 - m1).astype(np.uint8)
         n, lab, st, _ = cv2.connectedComponentsWithStats(inv, 4)
@@ -131,16 +140,17 @@ for job in jobs:
             lap[:int(H * 0.62)] = 0
             laps[f] = lap
     ker = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (7, 7))
-    kin = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (31, 31))
+    kin = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (15, 15))
     kisl = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (11, 11))
     uni = {f: np.maximum(m, laps[f]) if f in laps else m for f, m in sams.items()}
     gate = {f: cv2.GaussianBlur(cv2.dilate(u, ker).astype(np.float32), (0, 0), 2.0) for f, u in uni.items()}
-    inter = {f: cv2.GaussianBlur(cv2.erode(u, kin).astype(np.float32), (0, 0), 4.0) for f, u in uni.items()}
+    inter = {f: cv2.GaussianBlur(cv2.erode(u, kin).astype(np.float32), (0, 0), 2.5) for f, u in uni.items()}
     lapb = {f: cv2.GaussianBlur(l.astype(np.float32), (0, 0), 1.2) for f, l in laps.items()}
     fs = sorted(sams)
     def avg(d, i):
         nb = [d[g] for g in fs[max(0, i - 1):i + 2] if g in d]
-        return np.mean(nb, axis=0) if nb else None
+        # mediana de 3 fotogramas: un fallo aislado de SAM (pelo que desaparece, resto de silla) no se ve
+        return (np.median(nb, axis=0) if len(nb) == 3 else np.mean(nb, axis=0)) if nb else None
     for i, f in enumerate(fs):
         if f < a or f > b:
             continue
@@ -156,6 +166,7 @@ for job in jobs:
             big = st[1:, cv2.CC_STAT_AREA].max()
             keep = np.isin(lab, [j for j in range(1, n) if st[j, cv2.CC_STAT_AREA] >= 0.03 * big]).astype(np.uint8)
             al = al * cv2.GaussianBlur(cv2.dilate(keep, kisl).astype(np.float32), (0, 0), 2.0)
-        Image.fromarray((al * 255).astype(np.uint8)).save(f'{out}/p_{f:05d}.png', optimize=True)
+        la = Image.new('LA', (W, H), (255, 0)); la.putalpha(Image.fromarray((al * 255).astype(np.uint8)))
+        la.save(f'{out}/p_{f:05d}.png', optimize=True)  # blanco con alfa: lo que lee mask-image
     print(take, a, b, f'{len(fs)} fotogramas en {time.time()-t0:.0f}s', flush=True)
 print('PERSON_DONE')
