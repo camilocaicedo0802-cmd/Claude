@@ -1,146 +1,146 @@
 {
- "voz": "ElevenLabs v3 · Laura",
- "duracion": 49.782,
+ "voz": "Gemini 2.5 Flash TTS · Charon",
+ "duracion": 55.927,
  "frases": [
   {
    "i": 0,
    "texto": "¡Napoleón era más alto que el francés promedio!",
    "seccion": "gancho",
    "inicio": 0.0,
-   "fin": 2.636
+   "fin": 2.746
   },
   {
    "i": 1,
    "texto": "Y lo recordamos enano... por culpa de un dibujante inglés.",
    "seccion": "gancho",
-   "inicio": 2.818,
-   "fin": 6.054
+   "inicio": 3.018,
+   "fin": 7.145
   },
   {
    "i": 2,
    "texto": "En mil ochocientos dos, Napoleón es el hombre más poderoso de Francia.",
    "seccion": "desarrollo",
-   "inicio": 6.436,
-   "fin": 10.145
+   "inicio": 7.691,
+   "fin": 11.727
   },
   {
    "i": 3,
    "texto": "Pero en Londres... un caricaturista lo odia.",
    "seccion": "conflicto",
-   "inicio": 10.382,
-   "fin": 12.764
+   "inicio": 12.018,
+   "fin": 15.327
   },
   {
    "i": 4,
    "texto": "Lo dibuja diminuto, con berrinches de niño, y le pone un apodo:",
    "seccion": "desarrollo",
-   "inicio": 13.0,
-   "fin": 16.564
+   "inicio": 15.782,
+   "fin": 19.818
   },
   {
    "i": 5,
    "texto": "¡Little Boney!",
    "seccion": "conflicto",
-   "inicio": 16.8,
-   "fin": 17.491
+   "inicio": 20.227,
+   "fin": 21.045
   },
   {
    "i": 6,
    "texto": "Los periódicos lo copian por toda Europa.",
    "seccion": "desarrollo",
-   "inicio": 17.727,
-   "fin": 19.746
+   "inicio": 21.455,
+   "fin": 23.636
   },
   {
    "i": 7,
    "texto": "Cuando muere, en mil ochocientos veintiuno, la autopsia dice: cinco pies y dos pulgadas.",
    "seccion": "desarrollo",
-   "inicio": 19.745,
-   "fin": 25.128
+   "inicio": 24.091,
+   "fin": 29.273
   },
   {
    "i": 8,
    "texto": "En Inglaterra eso es...",
    "seccion": "conflicto",
-   "inicio": 25.364,
-   "fin": 26.764
+   "inicio": 29.682,
+   "fin": 31.154
   },
   {
    "i": 9,
    "texto": "¡uno cincuenta y siete!",
    "seccion": "conflicto",
-   "inicio": 26.764,
-   "fin": 28.2
+   "inicio": 31.655,
+   "fin": 32.382
   },
   {
    "i": 10,
    "texto": "Pero eran pulgadas francesas, más largas.",
    "seccion": "desarrollo",
-   "inicio": 28.509,
-   "fin": 30.8
+   "inicio": 32.836,
+   "fin": 35.51
   },
   {
    "i": 11,
    "texto": "¿Cuánto medía de verdad?",
    "seccion": "conflicto",
-   "inicio": 31.036,
-   "fin": 32.036
+   "inicio": 35.918,
+   "fin": 36.955
   },
   {
    "i": 12,
    "texto": "¡Casi uno sesenta y nueve!",
    "seccion": "conflicto",
-   "inicio": 32.309,
-   "fin": 33.691
+   "inicio": 37.455,
+   "fin": 38.781
   },
   {
    "i": 13,
    "texto": "¿Y el francés promedio?",
    "seccion": "conflicto",
-   "inicio": 33.927,
-   "fin": 35.128
+   "inicio": 39.236,
+   "fin": 40.309
   },
   {
    "i": 14,
    "texto": "Unos uno sesenta y cinco.",
    "seccion": "desarrollo",
-   "inicio": 35.4,
-   "fin": 36.673
+   "inicio": 40.309,
+   "fin": 41.764
   },
   {
    "i": 15,
    "texto": "Para colmo, siempre aparecía rodeado de su guardia: soldados elegidos por altos.",
    "seccion": "desarrollo",
-   "inicio": 37.018,
-   "fin": 41.109
+   "inicio": 42.309,
+   "fin": 46.564
   },
   {
    "i": 16,
    "texto": "Y el pequeño cabo era un apodo cariñoso, no una medida.",
    "seccion": "desarrollo",
-   "inicio": 41.109,
-   "fin": 44.691
+   "inicio": 46.891,
+   "fin": 49.8
   },
   {
    "i": 17,
    "texto": "Veredicto: ¡mito!",
    "seccion": "veredicto",
-   "inicio": 45.073,
-   "fin": 46.273
+   "inicio": 50.391,
+   "fin": 52.045
   },
   {
    "i": 18,
    "texto": "¿Emperador bajito... o víctima del primer meme de la historia?",
    "seccion": "pregunta",
-   "inicio": 46.636,
-   "fin": 49.546
+   "inicio": 52.591,
+   "fin": 55.609
   }
  ],
  "palabras": [
   {
    "texto": "napoleon",
    "inicio": 0.0,
-   "duracion": 0.655,
+   "duracion": 0.727,
    "visible": "¡Napoleón",
    "enfasis": false,
    "frase": 0,
@@ -148,8 +148,8 @@
   },
   {
    "texto": "era",
-   "inicio": 0.655,
-   "duracion": 0.182,
+   "inicio": 0.727,
+   "duracion": 0.291,
    "visible": "era",
    "enfasis": false,
    "frase": 0,
@@ -157,8 +157,8 @@
   },
   {
    "texto": "mas",
-   "inicio": 0.836,
-   "duracion": 0.236,
+   "inicio": 1.018,
+   "duracion": 0.309,
    "visible": "más",
    "enfasis": false,
    "frase": 0,
@@ -166,8 +166,8 @@
   },
   {
    "texto": "alto",
-   "inicio": 1.073,
-   "duracion": 0.327,
+   "inicio": 1.327,
+   "duracion": 0.382,
    "visible": "alto",
    "enfasis": false,
    "frase": 0,
@@ -175,7 +175,7 @@
   },
   {
    "texto": "que",
-   "inicio": 1.4,
+   "inicio": 1.709,
    "duracion": 0.164,
    "visible": "que",
    "enfasis": false,
@@ -184,8 +184,8 @@
   },
   {
    "texto": "el",
-   "inicio": 1.564,
-   "duracion": 0.109,
+   "inicio": 1.873,
+   "duracion": 0.091,
    "visible": "el",
    "enfasis": false,
    "frase": 0,
@@ -193,8 +193,8 @@
   },
   {
    "texto": "frances",
-   "inicio": 1.673,
-   "duracion": 0.364,
+   "inicio": 1.964,
+   "duracion": 0.327,
    "visible": "francés",
    "enfasis": false,
    "frase": 0,
@@ -202,8 +202,8 @@
   },
   {
    "texto": "promedio",
-   "inicio": 2.036,
-   "duracion": 0.6,
+   "inicio": 2.291,
+   "duracion": 0.455,
    "visible": "promedio!",
    "enfasis": false,
    "frase": 0,
@@ -211,7 +211,7 @@
   },
   {
    "texto": "y",
-   "inicio": 2.818,
+   "inicio": 3.018,
    "duracion": 0.364,
    "visible": "Y",
    "enfasis": false,
@@ -220,7 +220,7 @@
   },
   {
    "texto": "lo",
-   "inicio": 3.182,
+   "inicio": 3.382,
    "duracion": 0.109,
    "visible": "lo",
    "enfasis": false,
@@ -229,8 +229,8 @@
   },
   {
    "texto": "recordamos",
-   "inicio": 3.291,
-   "duracion": 0.545,
+   "inicio": 3.491,
+   "duracion": 0.582,
    "visible": "recordamos",
    "enfasis": false,
    "frase": 1,
@@ -238,8 +238,8 @@
   },
   {
    "texto": "enano",
-   "inicio": 3.836,
-   "duracion": 0.527,
+   "inicio": 4.073,
+   "duracion": 0.673,
    "visible": "enano...",
    "enfasis": false,
    "frase": 1,
@@ -247,8 +247,8 @@
   },
   {
    "texto": "por",
-   "inicio": 4.636,
-   "duracion": 0.2,
+   "inicio": 4.745,
+   "duracion": 0.473,
    "visible": "por",
    "enfasis": false,
    "frase": 1,
@@ -256,8 +256,8 @@
   },
   {
    "texto": "culpa",
-   "inicio": 4.836,
-   "duracion": 0.218,
+   "inicio": 5.218,
+   "duracion": 0.345,
    "visible": "culpa",
    "enfasis": false,
    "frase": 1,
@@ -265,8 +265,8 @@
   },
   {
    "texto": "de",
-   "inicio": 5.055,
-   "duracion": 0.2,
+   "inicio": 5.564,
+   "duracion": 0.218,
    "visible": "de",
    "enfasis": false,
    "frase": 1,
@@ -274,8 +274,8 @@
   },
   {
    "texto": "un",
-   "inicio": 5.255,
-   "duracion": 0.073,
+   "inicio": 5.782,
+   "duracion": 0.255,
    "visible": "un",
    "enfasis": false,
    "frase": 1,
@@ -283,8 +283,8 @@
   },
   {
    "texto": "dibujante",
-   "inicio": 5.327,
-   "duracion": 0.418,
+   "inicio": 6.036,
+   "duracion": 0.6,
    "visible": "dibujante",
    "enfasis": false,
    "frase": 1,
@@ -292,8 +292,8 @@
   },
   {
    "texto": "ingles",
-   "inicio": 5.745,
-   "duracion": 0.309,
+   "inicio": 6.636,
+   "duracion": 0.509,
    "visible": "inglés.",
    "enfasis": false,
    "frase": 1,
@@ -301,8 +301,8 @@
   },
   {
    "texto": "en",
-   "inicio": 6.436,
-   "duracion": 0.164,
+   "inicio": 7.691,
+   "duracion": 0.218,
    "visible": "En",
    "enfasis": false,
    "frase": 2,
@@ -310,7 +310,7 @@
   },
   {
    "texto": "mil",
-   "inicio": 6.6,
+   "inicio": 7.909,
    "duracion": 0.964,
    "visible": "1802,",
    "enfasis": true,
@@ -319,8 +319,8 @@
   },
   {
    "texto": "napoleon",
-   "inicio": 7.8,
-   "duracion": 0.455,
+   "inicio": 8.873,
+   "duracion": 0.764,
    "visible": "Napoleón",
    "enfasis": false,
    "frase": 2,
@@ -328,7 +328,7 @@
   },
   {
    "texto": "es",
-   "inicio": 8.255,
+   "inicio": 9.636,
    "duracion": 0.164,
    "visible": "es",
    "enfasis": false,
@@ -337,8 +337,8 @@
   },
   {
    "texto": "el",
-   "inicio": 8.418,
-   "duracion": 0.091,
+   "inicio": 9.8,
+   "duracion": 0.109,
    "visible": "el",
    "enfasis": false,
    "frase": 2,
@@ -346,7 +346,7 @@
   },
   {
    "texto": "hombre",
-   "inicio": 8.509,
+   "inicio": 9.909,
    "duracion": 0.182,
    "visible": "hombre",
    "enfasis": false,
@@ -355,8 +355,8 @@
   },
   {
    "texto": "mas",
-   "inicio": 8.691,
-   "duracion": 0.364,
+   "inicio": 10.091,
+   "duracion": 0.491,
    "visible": "más",
    "enfasis": false,
    "frase": 2,
@@ -364,8 +364,8 @@
   },
   {
    "texto": "poderoso",
-   "inicio": 9.055,
-   "duracion": 0.491,
+   "inicio": 10.582,
+   "duracion": 0.564,
    "visible": "poderoso",
    "enfasis": false,
    "frase": 2,
@@ -373,7 +373,7 @@
   },
   {
    "texto": "de",
-   "inicio": 9.545,
+   "inicio": 11.145,
    "duracion": 0.164,
    "visible": "de",
    "enfasis": false,
@@ -382,8 +382,8 @@
   },
   {
    "texto": "francia",
-   "inicio": 9.709,
-   "duracion": 0.436,
+   "inicio": 11.309,
+   "duracion": 0.418,
    "visible": "Francia.",
    "enfasis": false,
    "frase": 2,
@@ -391,8 +391,8 @@
   },
   {
    "texto": "pero",
-   "inicio": 10.382,
-   "duracion": 0.2,
+   "inicio": 12.018,
+   "duracion": 0.309,
    "visible": "Pero",
    "enfasis": false,
    "frase": 3,
@@ -400,8 +400,8 @@
   },
   {
    "texto": "en",
-   "inicio": 10.582,
-   "duracion": 0.145,
+   "inicio": 12.327,
+   "duracion": 0.164,
    "visible": "en",
    "enfasis": false,
    "frase": 3,
@@ -409,8 +409,8 @@
   },
   {
    "texto": "londres",
-   "inicio": 10.727,
-   "duracion": 0.4,
+   "inicio": 12.491,
+   "duracion": 0.455,
    "visible": "Londres...",
    "enfasis": false,
    "frase": 3,
@@ -418,8 +418,8 @@
   },
   {
    "texto": "un",
-   "inicio": 11.4,
-   "duracion": 0.127,
+   "inicio": 12.945,
+   "duracion": 0.727,
    "visible": "un",
    "enfasis": false,
    "frase": 3,
@@ -427,8 +427,8 @@
   },
   {
    "texto": "caricaturista",
-   "inicio": 11.527,
-   "duracion": 0.745,
+   "inicio": 13.673,
+   "duracion": 0.855,
    "visible": "caricaturista",
    "enfasis": false,
    "frase": 3,
@@ -436,8 +436,8 @@
   },
   {
    "texto": "lo",
-   "inicio": 12.273,
-   "duracion": 0.2,
+   "inicio": 14.527,
+   "duracion": 0.418,
    "visible": "lo",
    "enfasis": false,
    "frase": 3,
@@ -445,8 +445,8 @@
   },
   {
    "texto": "odia",
-   "inicio": 12.473,
-   "duracion": 0.291,
+   "inicio": 14.945,
+   "duracion": 0.382,
    "visible": "odia.",
    "enfasis": false,
    "frase": 3,
@@ -454,8 +454,8 @@
   },
   {
    "texto": "lo",
-   "inicio": 13.0,
-   "duracion": 0.127,
+   "inicio": 15.782,
+   "duracion": 0.164,
    "visible": "Lo",
    "enfasis": false,
    "frase": 4,
@@ -463,8 +463,8 @@
   },
   {
    "texto": "dibuja",
-   "inicio": 13.127,
-   "duracion": 0.364,
+   "inicio": 15.945,
+   "duracion": 0.345,
    "visible": "dibuja",
    "enfasis": false,
    "frase": 4,
@@ -472,8 +472,8 @@
   },
   {
    "texto": "diminuto",
-   "inicio": 13.491,
-   "duracion": 0.6,
+   "inicio": 16.291,
+   "duracion": 0.636,
    "visible": "diminuto,",
    "enfasis": false,
    "frase": 4,
@@ -481,8 +481,8 @@
   },
   {
    "texto": "con",
-   "inicio": 14.273,
-   "duracion": 0.164,
+   "inicio": 17.236,
+   "duracion": 0.182,
    "visible": "con",
    "enfasis": false,
    "frase": 4,
@@ -490,7 +490,7 @@
   },
   {
    "texto": "berrinches",
-   "inicio": 14.436,
+   "inicio": 17.418,
    "duracion": 0.436,
    "visible": "berrinches",
    "enfasis": false,
@@ -499,8 +499,8 @@
   },
   {
    "texto": "de",
-   "inicio": 14.873,
-   "duracion": 0.182,
+   "inicio": 17.855,
+   "duracion": 0.218,
    "visible": "de",
    "enfasis": false,
    "frase": 4,
@@ -508,8 +508,8 @@
   },
   {
    "texto": "nino",
-   "inicio": 15.055,
-   "duracion": 0.255,
+   "inicio": 18.073,
+   "duracion": 0.273,
    "visible": "niño,",
    "enfasis": false,
    "frase": 4,
@@ -517,8 +517,8 @@
   },
   {
    "texto": "y",
-   "inicio": 15.309,
-   "duracion": 0.455,
+   "inicio": 18.345,
+   "duracion": 0.6,
    "visible": "y",
    "enfasis": false,
    "frase": 4,
@@ -526,8 +526,8 @@
   },
   {
    "texto": "le",
-   "inicio": 15.764,
-   "duracion": 0.109,
+   "inicio": 18.945,
+   "duracion": 0.127,
    "visible": "le",
    "enfasis": false,
    "frase": 4,
@@ -535,7 +535,7 @@
   },
   {
    "texto": "pone",
-   "inicio": 15.873,
+   "inicio": 19.073,
    "duracion": 0.236,
    "visible": "pone",
    "enfasis": false,
@@ -544,8 +544,8 @@
   },
   {
    "texto": "un",
-   "inicio": 16.109,
-   "duracion": 0.145,
+   "inicio": 19.309,
+   "duracion": 0.218,
    "visible": "un",
    "enfasis": false,
    "frase": 4,
@@ -553,8 +553,8 @@
   },
   {
    "texto": "apodo",
-   "inicio": 16.255,
-   "duracion": 0.309,
+   "inicio": 19.527,
+   "duracion": 0.291,
    "visible": "apodo:",
    "enfasis": false,
    "frase": 4,
@@ -562,8 +562,8 @@
   },
   {
    "texto": "little",
-   "inicio": 16.8,
-   "duracion": 0.218,
+   "inicio": 20.227,
+   "duracion": 0.418,
    "visible": "¡LITTLE",
    "enfasis": true,
    "frase": 5,
@@ -571,8 +571,8 @@
   },
   {
    "texto": "boney",
-   "inicio": 17.018,
-   "duracion": 0.473,
+   "inicio": 20.645,
+   "duracion": 0.4,
    "visible": "BONEY!",
    "enfasis": true,
    "frase": 5,
@@ -580,8 +580,8 @@
   },
   {
    "texto": "los",
-   "inicio": 17.727,
-   "duracion": 0.273,
+   "inicio": 21.455,
+   "duracion": 0.473,
    "visible": "Los",
    "enfasis": false,
    "frase": 6,
@@ -589,7 +589,7 @@
   },
   {
    "texto": "periodicos",
-   "inicio": 18.0,
+   "inicio": 21.927,
    "duracion": 0.455,
    "visible": "periódicos",
    "enfasis": false,
@@ -598,7 +598,7 @@
   },
   {
    "texto": "lo",
-   "inicio": 18.455,
+   "inicio": 22.382,
    "duracion": 0.2,
    "visible": "lo",
    "enfasis": false,
@@ -607,8 +607,8 @@
   },
   {
    "texto": "copian",
-   "inicio": 18.655,
-   "duracion": 0.291,
+   "inicio": 22.582,
+   "duracion": 0.364,
    "visible": "copian",
    "enfasis": false,
    "frase": 6,
@@ -616,7 +616,7 @@
   },
   {
    "texto": "por",
-   "inicio": 18.945,
+   "inicio": 22.945,
    "duracion": 0.2,
    "visible": "por",
    "enfasis": false,
@@ -625,8 +625,8 @@
   },
   {
    "texto": "toda",
-   "inicio": 19.145,
-   "duracion": 0.236,
+   "inicio": 23.145,
+   "duracion": 0.164,
    "visible": "toda",
    "enfasis": false,
    "frase": 6,
@@ -634,8 +634,8 @@
   },
   {
    "texto": "europa",
-   "inicio": 19.382,
-   "duracion": 0.364,
+   "inicio": 23.309,
+   "duracion": 0.327,
    "visible": "Europa.",
    "enfasis": false,
    "frase": 6,
@@ -643,8 +643,8 @@
   },
   {
    "texto": "cuando",
-   "inicio": 19.745,
-   "duracion": 0.8,
+   "inicio": 24.091,
+   "duracion": 0.218,
    "visible": "Cuando",
    "enfasis": false,
    "frase": 7,
@@ -652,8 +652,8 @@
   },
   {
    "texto": "muere",
-   "inicio": 20.545,
-   "duracion": 0.473,
+   "inicio": 24.309,
+   "duracion": 0.345,
    "visible": "muere,",
    "enfasis": false,
    "frase": 7,
@@ -661,8 +661,8 @@
   },
   {
    "texto": "en",
-   "inicio": 21.236,
-   "duracion": 0.06,
+   "inicio": 24.927,
+   "duracion": 0.073,
    "visible": "en",
    "enfasis": false,
    "frase": 7,
@@ -670,8 +670,8 @@
   },
   {
    "texto": "mil",
-   "inicio": 21.291,
-   "duracion": 0.891,
+   "inicio": 25.0,
+   "duracion": 0.945,
    "visible": "1821,",
    "enfasis": true,
    "frase": 7,
@@ -679,8 +679,8 @@
   },
   {
    "texto": "la",
-   "inicio": 22.455,
-   "duracion": 0.091,
+   "inicio": 26.327,
+   "duracion": 0.182,
    "visible": "la",
    "enfasis": false,
    "frase": 7,
@@ -688,8 +688,8 @@
   },
   {
    "texto": "autopsia",
-   "inicio": 22.545,
-   "duracion": 0.4,
+   "inicio": 26.509,
+   "duracion": 0.418,
    "visible": "autopsia",
    "enfasis": false,
    "frase": 7,
@@ -697,8 +697,8 @@
   },
   {
    "texto": "dice",
-   "inicio": 22.945,
-   "duracion": 0.291,
+   "inicio": 26.927,
+   "duracion": 0.273,
    "visible": "dice:",
    "enfasis": false,
    "frase": 7,
@@ -706,8 +706,8 @@
   },
   {
    "texto": "cinco",
-   "inicio": 23.236,
-   "duracion": 0.618,
+   "inicio": 27.2,
+   "duracion": 0.818,
    "visible": "cinco",
    "enfasis": false,
    "frase": 7,
@@ -715,8 +715,8 @@
   },
   {
    "texto": "pies",
-   "inicio": 23.855,
-   "duracion": 0.327,
+   "inicio": 28.018,
+   "duracion": 0.382,
    "visible": "pies",
    "enfasis": false,
    "frase": 7,
@@ -724,8 +724,8 @@
   },
   {
    "texto": "y",
-   "inicio": 24.182,
-   "duracion": 0.327,
+   "inicio": 28.4,
+   "duracion": 0.291,
    "visible": "y",
    "enfasis": false,
    "frase": 7,
@@ -733,7 +733,7 @@
   },
   {
    "texto": "dos",
-   "inicio": 24.509,
+   "inicio": 28.691,
    "duracion": 0.164,
    "visible": "dos",
    "enfasis": false,
@@ -742,8 +742,8 @@
   },
   {
    "texto": "pulgadas",
-   "inicio": 24.673,
-   "duracion": 0.455,
+   "inicio": 28.855,
+   "duracion": 0.418,
    "visible": "pulgadas.",
    "enfasis": false,
    "frase": 7,
@@ -751,8 +751,8 @@
   },
   {
    "texto": "en",
-   "inicio": 25.364,
-   "duracion": 0.255,
+   "inicio": 29.682,
+   "duracion": 0.382,
    "visible": "En",
    "enfasis": false,
    "frase": 8,
@@ -760,8 +760,8 @@
   },
   {
    "texto": "inglaterra",
-   "inicio": 25.618,
-   "duracion": 0.509,
+   "inicio": 30.064,
+   "duracion": 0.545,
    "visible": "Inglaterra",
    "enfasis": false,
    "frase": 8,
@@ -769,8 +769,8 @@
   },
   {
    "texto": "eso",
-   "inicio": 26.127,
-   "duracion": 0.255,
+   "inicio": 30.609,
+   "duracion": 0.236,
    "visible": "eso",
    "enfasis": false,
    "frase": 8,
@@ -778,8 +778,8 @@
   },
   {
    "texto": "es",
-   "inicio": 26.382,
-   "duracion": 0.382,
+   "inicio": 30.845,
+   "duracion": 0.309,
    "visible": "es...",
    "enfasis": false,
    "frase": 8,
@@ -787,8 +787,8 @@
   },
   {
    "texto": "uno",
-   "inicio": 26.764,
-   "duracion": 1.436,
+   "inicio": 31.655,
+   "duracion": 0.727,
    "visible": "¡1,57!",
    "enfasis": true,
    "frase": 9,
@@ -796,8 +796,8 @@
   },
   {
    "texto": "pero",
-   "inicio": 28.509,
-   "duracion": 0.309,
+   "inicio": 32.836,
+   "duracion": 0.327,
    "visible": "Pero",
    "enfasis": false,
    "frase": 10,
@@ -805,8 +805,8 @@
   },
   {
    "texto": "eran",
-   "inicio": 28.818,
-   "duracion": 0.182,
+   "inicio": 33.164,
+   "duracion": 0.218,
    "visible": "eran",
    "enfasis": false,
    "frase": 10,
@@ -814,8 +814,8 @@
   },
   {
    "texto": "pulgadas",
-   "inicio": 29.0,
-   "duracion": 0.345,
+   "inicio": 33.382,
+   "duracion": 0.418,
    "visible": "pulgadas",
    "enfasis": false,
    "frase": 10,
@@ -823,8 +823,8 @@
   },
   {
    "texto": "francesas",
-   "inicio": 29.345,
-   "duracion": 0.691,
+   "inicio": 33.8,
+   "duracion": 0.673,
    "visible": "francesas,",
    "enfasis": false,
    "frase": 10,
@@ -832,8 +832,8 @@
   },
   {
    "texto": "mas",
-   "inicio": 30.036,
-   "duracion": 0.4,
+   "inicio": 34.473,
+   "duracion": 0.582,
    "visible": "más",
    "enfasis": false,
    "frase": 10,
@@ -841,8 +841,8 @@
   },
   {
    "texto": "largas",
-   "inicio": 30.436,
-   "duracion": 0.364,
+   "inicio": 35.055,
+   "duracion": 0.455,
    "visible": "largas.",
    "enfasis": false,
    "frase": 10,
@@ -850,8 +850,8 @@
   },
   {
    "texto": "cuanto",
-   "inicio": 31.036,
-   "duracion": 0.345,
+   "inicio": 35.918,
+   "duracion": 0.4,
    "visible": "¿Cuánto",
    "enfasis": false,
    "frase": 11,
@@ -859,7 +859,7 @@
   },
   {
    "texto": "media",
-   "inicio": 31.382,
+   "inicio": 36.318,
    "duracion": 0.309,
    "visible": "medía",
    "enfasis": false,
@@ -868,8 +868,8 @@
   },
   {
    "texto": "de",
-   "inicio": 31.691,
-   "duracion": 0.109,
+   "inicio": 36.627,
+   "duracion": 0.127,
    "visible": "de",
    "enfasis": false,
    "frase": 11,
@@ -877,8 +877,8 @@
   },
   {
    "texto": "verdad",
-   "inicio": 31.8,
-   "duracion": 0.236,
+   "inicio": 36.755,
+   "duracion": 0.2,
    "visible": "verdad?",
    "enfasis": false,
    "frase": 11,
@@ -886,8 +886,8 @@
   },
   {
    "texto": "casi",
-   "inicio": 32.309,
-   "duracion": 0.291,
+   "inicio": 37.455,
+   "duracion": 0.436,
    "visible": "¡CASI",
    "enfasis": true,
    "frase": 12,
@@ -895,8 +895,8 @@
   },
   {
    "texto": "uno",
-   "inicio": 32.6,
-   "duracion": 1.091,
+   "inicio": 37.891,
+   "duracion": 0.89,
    "visible": "1,69!",
    "enfasis": true,
    "frase": 12,
@@ -904,8 +904,8 @@
   },
   {
    "texto": "y",
-   "inicio": 33.927,
-   "duracion": 0.291,
+   "inicio": 39.236,
+   "duracion": 0.255,
    "visible": "¿Y",
    "enfasis": false,
    "frase": 13,
@@ -913,8 +913,8 @@
   },
   {
    "texto": "el",
-   "inicio": 34.218,
-   "duracion": 0.127,
+   "inicio": 39.491,
+   "duracion": 0.109,
    "visible": "el",
    "enfasis": false,
    "frase": 13,
@@ -922,7 +922,7 @@
   },
   {
    "texto": "frances",
-   "inicio": 34.345,
+   "inicio": 39.6,
    "duracion": 0.327,
    "visible": "francés",
    "enfasis": false,
@@ -931,8 +931,8 @@
   },
   {
    "texto": "promedio",
-   "inicio": 34.673,
-   "duracion": 0.455,
+   "inicio": 39.927,
+   "duracion": 0.382,
    "visible": "promedio?",
    "enfasis": false,
    "frase": 13,
@@ -940,8 +940,8 @@
   },
   {
    "texto": "unos",
-   "inicio": 35.4,
-   "duracion": 0.309,
+   "inicio": 40.309,
+   "duracion": 0.291,
    "visible": "Unos",
    "enfasis": false,
    "frase": 14,
@@ -949,8 +949,8 @@
   },
   {
    "texto": "uno",
-   "inicio": 35.709,
-   "duracion": 0.964,
+   "inicio": 40.6,
+   "duracion": 1.164,
    "visible": "1,65.",
    "enfasis": true,
    "frase": 14,
@@ -958,8 +958,8 @@
   },
   {
    "texto": "para",
-   "inicio": 37.018,
-   "duracion": 0.234,
+   "inicio": 42.309,
+   "duracion": 0.291,
    "visible": "Para",
    "enfasis": false,
    "frase": 15,
@@ -967,8 +967,8 @@
   },
   {
    "texto": "colmo",
-   "inicio": 37.253,
-   "duracion": 0.293,
+   "inicio": 42.6,
+   "duracion": 0.327,
    "visible": "colmo,",
    "enfasis": false,
    "frase": 15,
@@ -976,8 +976,8 @@
   },
   {
    "texto": "siempre",
-   "inicio": 37.545,
-   "duracion": 0.345,
+   "inicio": 42.927,
+   "duracion": 0.418,
    "visible": "siempre",
    "enfasis": false,
    "frase": 15,
@@ -985,8 +985,8 @@
   },
   {
    "texto": "aparecia",
-   "inicio": 37.891,
-   "duracion": 0.473,
+   "inicio": 43.345,
+   "duracion": 0.509,
    "visible": "aparecía",
    "enfasis": false,
    "frase": 15,
@@ -994,7 +994,7 @@
   },
   {
    "texto": "rodeado",
-   "inicio": 38.364,
+   "inicio": 43.855,
    "duracion": 0.364,
    "visible": "rodeado",
    "enfasis": false,
@@ -1003,8 +1003,8 @@
   },
   {
    "texto": "de",
-   "inicio": 38.727,
-   "duracion": 0.182,
+   "inicio": 44.218,
+   "duracion": 0.127,
    "visible": "de",
    "enfasis": false,
    "frase": 15,
@@ -1012,8 +1012,8 @@
   },
   {
    "texto": "su",
-   "inicio": 38.909,
-   "duracion": 0.145,
+   "inicio": 44.345,
+   "duracion": 0.109,
    "visible": "su",
    "enfasis": false,
    "frase": 15,
@@ -1021,8 +1021,8 @@
   },
   {
    "texto": "guardia",
-   "inicio": 39.055,
-   "duracion": 0.364,
+   "inicio": 44.455,
+   "duracion": 0.327,
    "visible": "guardia:",
    "enfasis": false,
    "frase": 15,
@@ -1030,8 +1030,8 @@
   },
   {
    "texto": "soldados",
-   "inicio": 39.691,
-   "duracion": 0.309,
+   "inicio": 45.127,
+   "duracion": 0.382,
    "visible": "soldados",
    "enfasis": false,
    "frase": 15,
@@ -1039,7 +1039,7 @@
   },
   {
    "texto": "elegidos",
-   "inicio": 40.0,
+   "inicio": 45.509,
    "duracion": 0.455,
    "visible": "elegidos",
    "enfasis": false,
@@ -1048,8 +1048,8 @@
   },
   {
    "texto": "por",
-   "inicio": 40.455,
-   "duracion": 0.255,
+   "inicio": 45.964,
+   "duracion": 0.2,
    "visible": "por",
    "enfasis": false,
    "frase": 15,
@@ -1057,7 +1057,7 @@
   },
   {
    "texto": "altos",
-   "inicio": 40.709,
+   "inicio": 46.164,
    "duracion": 0.4,
    "visible": "altos.",
    "enfasis": false,
@@ -1066,8 +1066,8 @@
   },
   {
    "texto": "y",
-   "inicio": 41.109,
-   "duracion": 0.764,
+   "inicio": 46.891,
+   "duracion": 0.091,
    "visible": "Y",
    "enfasis": false,
    "frase": 16,
@@ -1075,7 +1075,7 @@
   },
   {
    "texto": "el",
-   "inicio": 41.873,
+   "inicio": 46.982,
    "duracion": 0.091,
    "visible": "el",
    "enfasis": false,
@@ -1084,8 +1084,8 @@
   },
   {
    "texto": "pequeno",
-   "inicio": 41.964,
-   "duracion": 0.255,
+   "inicio": 47.073,
+   "duracion": 0.236,
    "visible": "pequeño",
    "enfasis": false,
    "frase": 16,
@@ -1093,8 +1093,8 @@
   },
   {
    "texto": "cabo",
-   "inicio": 42.218,
-   "duracion": 0.345,
+   "inicio": 47.309,
+   "duracion": 0.309,
    "visible": "cabo",
    "enfasis": false,
    "frase": 16,
@@ -1102,8 +1102,8 @@
   },
   {
    "texto": "era",
-   "inicio": 42.564,
-   "duracion": 0.255,
+   "inicio": 47.618,
+   "duracion": 0.2,
    "visible": "era",
    "enfasis": false,
    "frase": 16,
@@ -1111,8 +1111,8 @@
   },
   {
    "texto": "un",
-   "inicio": 42.818,
-   "duracion": 0.127,
+   "inicio": 47.818,
+   "duracion": 0.164,
    "visible": "un",
    "enfasis": false,
    "frase": 16,
@@ -1120,8 +1120,8 @@
   },
   {
    "texto": "apodo",
-   "inicio": 42.945,
-   "duracion": 0.236,
+   "inicio": 47.982,
+   "duracion": 0.255,
    "visible": "apodo",
    "enfasis": false,
    "frase": 16,
@@ -1129,8 +1129,8 @@
   },
   {
    "texto": "carinoso",
-   "inicio": 43.182,
-   "duracion": 0.727,
+   "inicio": 48.236,
+   "duracion": 0.582,
    "visible": "cariñoso,",
    "enfasis": false,
    "frase": 16,
@@ -1138,8 +1138,8 @@
   },
   {
    "texto": "no",
-   "inicio": 44.127,
-   "duracion": 0.091,
+   "inicio": 49.145,
+   "duracion": 0.182,
    "visible": "no",
    "enfasis": false,
    "frase": 16,
@@ -1147,8 +1147,8 @@
   },
   {
    "texto": "una",
-   "inicio": 44.218,
-   "duracion": 0.164,
+   "inicio": 49.327,
+   "duracion": 0.182,
    "visible": "una",
    "enfasis": false,
    "frase": 16,
@@ -1156,8 +1156,8 @@
   },
   {
    "texto": "medida",
-   "inicio": 44.382,
-   "duracion": 0.309,
+   "inicio": 49.509,
+   "duracion": 0.291,
    "visible": "medida.",
    "enfasis": false,
    "frase": 16,
@@ -1165,8 +1165,8 @@
   },
   {
    "texto": "veredicto",
-   "inicio": 45.073,
-   "duracion": 0.509,
+   "inicio": 50.391,
+   "duracion": 0.655,
    "visible": "VEREDICTO:",
    "enfasis": true,
    "frase": 17,
@@ -1174,8 +1174,8 @@
   },
   {
    "texto": "mito",
-   "inicio": 45.855,
-   "duracion": 0.418,
+   "inicio": 51.445,
+   "duracion": 0.6,
    "visible": "¡MITO!",
    "enfasis": true,
    "frase": 17,
@@ -1183,8 +1183,8 @@
   },
   {
    "texto": "emperador",
-   "inicio": 46.636,
-   "duracion": 0.382,
+   "inicio": 52.591,
+   "duracion": 0.455,
    "visible": "¿Emperador",
    "enfasis": false,
    "frase": 18,
@@ -1192,8 +1192,8 @@
   },
   {
    "texto": "bajito",
-   "inicio": 47.018,
-   "duracion": 0.491,
+   "inicio": 53.045,
+   "duracion": 0.418,
    "visible": "bajito...",
    "enfasis": false,
    "frase": 18,
@@ -1201,8 +1201,8 @@
   },
   {
    "texto": "o",
-   "inicio": 47.509,
-   "duracion": 0.473,
+   "inicio": 53.464,
+   "duracion": 0.527,
    "visible": "o",
    "enfasis": false,
    "frase": 18,
@@ -1210,7 +1210,7 @@
   },
   {
    "texto": "victima",
-   "inicio": 47.982,
+   "inicio": 53.991,
    "duracion": 0.418,
    "visible": "víctima",
    "enfasis": false,
@@ -1219,8 +1219,8 @@
   },
   {
    "texto": "del",
-   "inicio": 48.4,
-   "duracion": 0.145,
+   "inicio": 54.409,
+   "duracion": 0.164,
    "visible": "del",
    "enfasis": false,
    "frase": 18,
@@ -1228,8 +1228,8 @@
   },
   {
    "texto": "primer",
-   "inicio": 48.545,
-   "duracion": 0.255,
+   "inicio": 54.573,
+   "duracion": 0.273,
    "visible": "primer",
    "enfasis": false,
    "frase": 18,
@@ -1237,8 +1237,8 @@
   },
   {
    "texto": "meme",
-   "inicio": 48.8,
-   "duracion": 0.236,
+   "inicio": 54.845,
+   "duracion": 0.291,
    "visible": "meme",
    "enfasis": true,
    "frase": 18,
@@ -1246,7 +1246,7 @@
   },
   {
    "texto": "de",
-   "inicio": 49.036,
+   "inicio": 55.136,
    "duracion": 0.164,
    "visible": "de",
    "enfasis": false,
@@ -1255,7 +1255,7 @@
   },
   {
    "texto": "la",
-   "inicio": 49.2,
+   "inicio": 55.3,
    "duracion": 0.091,
    "visible": "la",
    "enfasis": false,
@@ -1264,8 +1264,8 @@
   },
   {
    "texto": "historia",
-   "inicio": 49.291,
-   "duracion": 0.255,
+   "inicio": 55.391,
+   "duracion": 0.218,
    "visible": "historia?",
    "enfasis": false,
    "frase": 18,
