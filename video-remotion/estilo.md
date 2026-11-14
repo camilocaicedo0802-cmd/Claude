@@ -283,6 +283,7 @@ Estudiado a 24 fps en la referencia (`scratchpad/ref24/`):
 |---|---|---|
 | A · Referencia | Video 1 (Grow) | Títulos grandes con brillo detrás/encima de la cabeza, subtítulo pequeño abajo, B-roll a pantalla completa y tarjetas |
 | B · Pop cinético | Ganador 1 (2 tipos de redes) | Subtítulos grandes palabra a palabra, fondo sustituido, pantalla dividida, burbuja con la cara y gráficos a pantalla completa |
+| C · Escritorio digital | Ganador 2 (Publicar no es hacer marketing) | La persona alterna pantalla completa / ventana sobre un escritorio; ventanas de apps, cursor, subtítulo karaoke en píldora, pantalla que se apaga como TV vieja |
 
 ### 11.B Pop cinético (valores)
 - **Subtítulo cinético** (sustituye a títulos y subtítulo pequeño): 1–3 palabras por bloque (máx. ~17 letras), corte en puntuación, pausa > 0,3 s o cambio de toma; tipografía y color según §10.7, animación y SFX según §10.6. Posición: y = 1450 (plano normal), 960 (en la unión de la pantalla dividida), 1290 (con burbuja).
@@ -294,3 +295,14 @@ Estudiado a 24 fps en la referencia (`scratchpad/ref24/`):
 - **Transiciones**: barrido de 3 barras diagonales (blanco, morado, degradado), glitch de 5 fotogramas (copias morado/blanco desplazadas 14 px + franjas), empuje lateral con desenfoque, zoom a través (×1,35 + desenfoque), flash de obturador.
 - **Barra de progreso** morada de 12 px arriba.
 - **Cierre**: fondo morado oscuro con «COMENTA · VENDE» en movimiento, logo arriba, caja de comentario que escribe «VENDE 🔥» y se envía; persona recortada congelada abajo.
+
+### 11.C Escritorio digital (valores)
+- **Escritorio**: fondo #07050B con 3 auroras moradas en movimiento lento y rejilla de puntos (1,6 px cada 36 px, blanco 9 %); barra de menú arriba (54 px, «Grow Marketing · Archivo · Editar · Ver · 9:41») solo cuando la persona está en ventana.
+- **Pantalla de la persona**: alterna **completa** y **ventana** abajo a la derecha (escala 0,6: x 400, y 740; radio 44 px, barra «● En vivo» con 3 puntos morados #B701FC/#9601FD/#7600FC). Cambio de modo en 8 fotogramas justo sobre el corte de toma. Cara siempre libre: en ventana nada entra en x ≥ 630 por debajo de y 1080.
+- **Ventanas de app** (oscuras rgba(24,20,32,.94) o claras #F7F5FA, radio 30 px, barra 56 px con 3 puntos morados, sombra + halo morado): entran con rebote 0,86→1,025→1 en 9 fotogramas o deslizándose con desenfoque; salen en 5 fotogramas. Una por idea: publicar, nota «publicar ≠ marketing», saldo que cae a $0, estadísticas (seguidores ↑, ventas $0), perfil con «💰 0» en cada post, valoración 5★, medidor «a otro nivel», monitor de ventas, comentario.
+- **Cursor** blanco de macOS con sombra; clic = encoge a 0,82 + onda morada; suena `mouse.wav`.
+- **Subtítulo karaoke**: píldora oscura rgba(12,10,16,.74) con borde blanco 12 % (radio 30 px) centrada en y = 1640; Outfit 800 54 px MAYÚSCULAS; la frase entera aparece en gris 32 % y cada palabra se pone **blanca lisa** al decirla (palabra clave en **morado liso #C46BFF**), con un salto de 5 px. Bloques de hasta 5 palabras / 24 letras.
+- **Momentos fuertes**: el «=» de la nota se tacha y queda «≠» (sonido de error); la tarjeta «Ventas $0» se ilumina en «ni un real» con sacudida; **corte en seco de la música** en «Pero quiero decirte algo» hasta el monitor; el monitor de ventas pierde pulso (pitidos más débiles → línea plana) y **la pantalla se apaga como una TV vieja** (se aplasta a una línea y a un punto) en «negocio muerto»; en «reviva» **desfibrilador**: flash blanco + golpe + latidos fuertes y la pantalla se vuelve a encender.
+- **Arranque**: la imagen se abre desde una rendija con línea brillante (TV encendiéndose).
+- **Sonido**: banco de la referencia (whooshes, pop, golpe, riser, flash) + paquete del cliente (clic de ratón, teclado mecánico, notificación, error de Windows, contador) + pitidos de monitor generados.
+- **Cierre**: escritorio con logo arriba, nota adhesiva que escribe «REVIVIR» y la persona congelada en una ventana debajo.
