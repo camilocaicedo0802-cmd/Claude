@@ -1,59 +1,88 @@
 import {AbsoluteFill, interpolate, useCurrentFrame} from 'remotion';
-import {clamp, easeOut} from '../engine/helpers';
-import {Word} from '../engine/types';
+import {clamp, easeInOut, easeOut} from '../engine/helpers';
 import {OUTFIT} from '../v1/theme';
+import {CHUNKS} from './chunks';
 import {KEY, T} from './data';
 import {WORDS} from './timeline';
 
 // ------------------------------------------------------------------
-// Subtítulo karaoke (propuesta C): la frase entera aparece en una píldora oscura;
-// cada palabra pasa de gris a BLANCO LISO al pronunciarla y las palabras clave
-// se encienden en MORADO LISO (sin texturas, estilo.md §10.7).
+// Subtítulo de la propuesta C (estilo.md §10.8):
+// - se mantienen la píldora oscura, el BLANCO LISO y el MORADO LISO de las palabras clave;
+// - animaciones de la referencia: cada palabra entra «fantasma» al pronunciarla
+//   (5 fotogramas: desenfoque 16→0, escala 1,08→1, desplazamiento lateral 26 px)
+//   con 2 copias-estela; la frase flota (±5 px) y crece 1→1,04; sale con destello;
+// - el hueco de cada palabra queda marcado en gris muy tenue hasta que se dice (karaoke);
+// - whoosh corto en cada palabra clave que entra (data.ts).
 // ------------------------------------------------------------------
 
-type Chunk = {idx: number[]; s: number; e: number};
-
-const makeChunks = (words: Word[]): Chunk[] => {
-  const out: number[][] = [];
-  let cur: number[] = [];
-  const len = (c: number[]) => c.reduce((n, i) => n + words[i].text.length + 1, 0);
-  words.forEach((w, i) => {
-    const prev = cur.length ? words[cur[cur.length - 1]] : null;
-    if (prev && (w.s - prev.e > 0.35 || cur.length >= 5 || len(cur) + w.text.length > 24)) {
-      out.push(cur);
-      cur = [];
-    }
-    cur.push(i);
-    if (/[,.?]$/.test(w.text)) {
-      out.push(cur);
-      cur = [];
-    }
-  });
-  if (cur.length) out.push(cur);
-  return out.map((idx, k) => {
-    const s = words[idx[0]].s - 0.08;
-    const natural = words[idx[idx.length - 1]].e + 0.35;
-    const next = out[k + 1] ? words[out[k + 1][0]].s - 0.08 : natural;
-    return {idx, s, e: Math.min(natural, next)};
-  });
-};
-
-const CHUNKS = makeChunks(WORDS);
 const clean = (i: number) => WORDS[i].text.replace(/[,.]/g, '').toUpperCase();
+
+const CapWord: React.FC<{i: number; dir: number}> = ({i, dir}) => {
+  const frame = useCurrentFrame();
+  const local = frame - WORDS[i].s * 30;
+  const color = KEY.has(i) ? '#C46BFF' : '#FFFFFF';
+  const text = clean(i);
+  const p = interpolate(local, [0, 5], [0, 1], {...clamp, easing: easeOut});
+  const ghost = (k: number, op: number) => {
+    const q = interpolate(local, [0, 5 + k * 2], [0, 1], {...clamp, easing: easeOut});
+    if (q >= 1 || local < 0) return null;
+    return (
+      <span
+        aria-hidden
+        style={{
+          position: 'absolute',
+          left: 0,
+          top: 0,
+          color,
+          opacity: op * q * (1 - q) * 4,
+          translate: `${dir * (1 - q) * (40 + k * 30)}px ${(1 - q) * 10}px`,
+          filter: `blur(${6 + k * 4}px)`,
+        }}
+      >
+        {text}
+      </span>
+    );
+  };
+  return (
+    <span style={{position: 'relative', display: 'inline-block'}}>
+      {/* hueco tenue (karaoke) que se apaga cuando entra la palabra */}
+      <span style={{color: 'rgba(255,255,255,0.18)', opacity: 1 - p}}>{text}</span>
+      {ghost(1, 0.45)}
+      {ghost(2, 0.25)}
+      <span
+        style={{
+          position: 'absolute',
+          left: 0,
+          top: 0,
+          color,
+          opacity: p,
+          scale: String(interpolate(p, [0, 1], [1.08, 1])),
+          translate: `${dir * (1 - p) * 26}px ${(1 - p) * 14}px`,
+          filter: p < 1 ? `blur(${16 * (1 - p)}px)` : undefined,
+        }}
+      >
+        {text}
+      </span>
+    </span>
+  );
+};
 
 export const Caps: React.FC = () => {
   const frame = useCurrentFrame();
   const t = frame / 30;
   if (t >= T.end) return null;
-  const c = CHUNKS.find((x) => t >= x.s && t < x.e);
-  if (!c) return null;
-  const l = frame - c.s * 30;
-  const p = interpolate(l, [0, 4], [0, 1], {...clamp, easing: easeOut});
-  const gap = CHUNKS[CHUNKS.indexOf(c) + 1]?.s ?? 999;
-  const out = gap - c.e > 0.05 ? interpolate(frame, [c.e * 30 - 3, c.e * 30], [1, 0], clamp) : 1;
+  const k = CHUNKS.findIndex((x) => t >= x.s && t < x.e);
+  if (k < 0) return null;
+  const c = CHUNKS[k];
+  const startF = c.s * 30;
+  const endF = c.e * 30;
+  const p = interpolate(frame - startF, [0, 4], [0, 1], {...clamp, easing: easeOut});
+  const exit = interpolate(frame, [endF - 4, endF], [0, 1], {...clamp, easing: easeInOut});
+  const drift = interpolate(frame, [startF, endF], [1, 1.04], clamp);
+  const float = Math.sin((frame - startF) / 14) * 5;
   return (
     <AbsoluteFill style={{pointerEvents: 'none'}}>
-      <div style={{position: 'absolute', left: 0, right: 0, top: 1640, display: 'flex', justifyContent: 'center', translate: '0 -50%'}}>
+      <div style={{position: 'absolute', left: 0, right: 0, top: 1640 + float, display: 'flex', justifyContent: 'center', translate: '0 -50%'}}>
         <div
           style={{
             maxWidth: 980,
@@ -72,28 +101,15 @@ export const Caps: React.FC = () => {
             fontSize: 54,
             letterSpacing: '-0.01em',
             lineHeight: 1.12,
-            opacity: p * out,
-            scale: String(interpolate(p, [0, 1], [0.92, 1])),
+            opacity: p * (1 - exit),
+            scale: String(interpolate(p, [0, 1], [0.92, 1]) * drift * (1 + exit * 0.06)),
             translate: `0 ${(1 - p) * 18}px`,
+            filter: exit > 0 ? `blur(${12 * exit}px) brightness(${1 + 1.4 * exit})` : undefined,
           }}
         >
-          {c.idx.map((i) => {
-            const on = interpolate(frame - WORDS[i].s * 30, [0, 3], [0, 1], clamp);
-            const lift = interpolate(frame - WORDS[i].s * 30, [0, 2, 5], [0, -5, 0], clamp);
-            const key = KEY.has(i);
-            return (
-              <span
-                key={i}
-                style={{
-                  color: on > 0.5 ? (key ? '#C46BFF' : '#FFFFFF') : 'rgba(255,255,255,0.32)',
-                  translate: `0 ${lift}px`,
-                  display: 'inline-block',
-                }}
-              >
-                {clean(i)}
-              </span>
-            );
-          })}
+          {c.idx.map((i, j) => (
+            <CapWord key={i} i={i} dir={j % 2 ? 1 : -1} />
+          ))}
         </div>
       </div>
     </AbsoluteFill>

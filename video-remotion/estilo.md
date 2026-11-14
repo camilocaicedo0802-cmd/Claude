@@ -277,6 +277,12 @@ Estudiado a 24 fps en la referencia (`scratchpad/ref24/`):
 - La palabra clave va en **blanco dentro del recuadro morado** del logo (degradado, sombra #3D0080, −2°), que se despliega de izquierda a derecha en 4 fotogramas.
 - **Se mantienen de §10.6** la animación de la referencia (entrada fantasma con 2 estelas, deriva, flotación, salida con destello) y el whoosh en cada palabra clave.
 
+### 10.8 Propuesta C: subtítulo karaoke más dinámico con las animaciones de la referencia (14/11/2026)
+- Se **mantienen** la píldora oscura, el blanco liso y el morado liso de las palabras clave (sin texturas).
+- Se **añaden** las animaciones de la referencia: entrada fantasma por palabra al pronunciarla (5 fotogramas, desenfoque 16→0, escala 1,08→1, desplazamiento lateral 26 px, 2 copias-estela), flotación ±5 px y deriva 1→1,04 de la frase, salida con destello (brillo ×2,4, desenfoque 12 px, +6 %) en 4 fotogramas.
+- El hueco de cada palabra se ve en gris muy tenue (18 %) hasta que se dice.
+- **Whoosh** corto en cada palabra clave que entra (misma regla de separación que §10.6).
+
 ## 11. Propuestas de estilo
 
 | Propuesta | Video | Idea |
@@ -301,7 +307,7 @@ Estudiado a 24 fps en la referencia (`scratchpad/ref24/`):
 - **Pantalla de la persona**: alterna **completa** y **ventana** abajo a la derecha (escala 0,6: x 400, y 740; radio 44 px, barra «● En vivo» con 3 puntos morados #B701FC/#9601FD/#7600FC). Cambio de modo en 8 fotogramas justo sobre el corte de toma. Cara siempre libre: en ventana nada entra en x ≥ 630 por debajo de y 1080.
 - **Ventanas de app** (oscuras rgba(24,20,32,.94) o claras #F7F5FA, radio 30 px, barra 56 px con 3 puntos morados, sombra + halo morado): entran con rebote 0,86→1,025→1 en 9 fotogramas o deslizándose con desenfoque; salen en 5 fotogramas. Una por idea: publicar, nota «publicar ≠ marketing», saldo que cae a $0, estadísticas (seguidores ↑, ventas $0), perfil con «💰 0» en cada post, valoración 5★, medidor «a otro nivel», monitor de ventas, comentario.
 - **Cursor** blanco de macOS con sombra; clic = encoge a 0,82 + onda morada; suena `mouse.wav`.
-- **Subtítulo karaoke**: píldora oscura rgba(12,10,16,.74) con borde blanco 12 % (radio 30 px) centrada en y = 1640; Outfit 800 54 px MAYÚSCULAS; la frase entera aparece en gris 32 % y cada palabra se pone **blanca lisa** al decirla (palabra clave en **morado liso #C46BFF**), con un salto de 5 px. Bloques de hasta 5 palabras / 24 letras.
+- **Subtítulo karaoke** (animación según §10.8): píldora oscura rgba(12,10,16,.74) con borde blanco 12 % (radio 30 px) centrada en y = 1640; Outfit 800 54 px MAYÚSCULAS; la frase entera aparece en gris 32 % y cada palabra se pone **blanca lisa** al decirla (palabra clave en **morado liso #C46BFF**), con un salto de 5 px. Bloques de hasta 5 palabras / 24 letras.
 - **Momentos fuertes**: el «=» de la nota se tacha y queda «≠» (sonido de error); la tarjeta «Ventas $0» se ilumina en «ni un real» con sacudida; **corte en seco de la música** en «Pero quiero decirte algo» hasta el monitor; el monitor de ventas pierde pulso (pitidos más débiles → línea plana) y **la pantalla se apaga como una TV vieja** (se aplasta a una línea y a un punto) en «negocio muerto»; en «reviva» **desfibrilador**: flash blanco + golpe + latidos fuertes y la pantalla se vuelve a encender.
 - **Arranque**: la imagen se abre desde una rendija con línea brillante (TV encendiéndose).
 - **Sonido**: banco de la referencia (whooshes, pop, golpe, riser, flash) + paquete del cliente (clic de ratón, teclado mecánico, notificación, error de Windows, contador) + pitidos de monitor generados.

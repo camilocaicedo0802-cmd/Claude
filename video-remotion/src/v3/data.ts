@@ -5,6 +5,7 @@
 import {wordTimes} from '../engine/helpers';
 import {Sfx, Spec} from '../engine/types';
 import {FACES} from './faces';
+import {CHUNKS} from './chunks';
 import {SEGMENTS, SPEECH_FRAMES, WORDS} from './timeline';
 
 export const {ws, we} = wordTimes(WORDS);
@@ -187,5 +188,20 @@ SPEC_C.sfx = [
   ...typing(T.end + 0.8, T.end + 1.5, 0.26),
   {src: 'sfx/hit.wav', at: T.end + 1.6, vol: 0.22, dur: 1.0},
 ];
+// Subtítulos (referencia §8): whoosh corto en cada palabra clave que entra (−12 dB respecto a la voz),
+// nunca a menos de 0,35 s de otro efecto ni a menos de 0,5 s del whoosh de subtítulo anterior.
+const capSfx: Sfx[] = [];
+const WH = ['sfx/whoosh_a.wav', 'sfx/whoosh_b.wav', 'sfx/whoosh_c.wav'];
+for (const c of CHUNKS) {
+  for (const i of c.idx.filter((x) => KEY.has(x))) {
+    const at = ws(i) - 0.04;
+    if (at >= T.end) continue;
+    if (SPEC_C.sfx.some((x) => Math.abs(x.at - at) < 0.35)) continue;
+    if (capSfx.length && at - capSfx[capSfx.length - 1].at < 0.5) continue;
+    capSfx.push({src: WH[capSfx.length % 3], at, vol: 0.18, dur: 0.7});
+  }
+}
+SPEC_C.sfx = [...SPEC_C.sfx, ...capSfx];
+export const CAP_SFX = capSfx.map((x) => x.at);
 void we;
 void segStart;
