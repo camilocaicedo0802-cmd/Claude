@@ -23,6 +23,12 @@ segments, words = [], []
 t = 0.0
 for take in TAKES:
     ws = json.load(open(os.path.join(root, "transcripciones", f"{VID}_{take}_alineado.json")))
+    # DROP="toma:segundo,..." quita muletillas sueltas a mitad de frase (palabra que empieza en ese segundo ±0,05)
+    drops = [d.split(":") for d in os.environ.get("DROP", "").split(",") if d]
+    dropped = [w for w in ws if any(tk == take and abs(w["s"] - float(sec)) < 0.05 for tk, sec in drops)]
+    ws = [w for w in ws if w not in dropped]
+    # si la palabra siguiente va pegada a una muletilla quitada, se entra sin margen para no arrastrar su cola
+    tight = {id(w) for w in ws if any(0 <= w["s"] - d["e"] < 0.03 for d in dropped)}
     groups, cur = [], [ws[0]]
     for a, b in zip(ws, ws[1:]):
         gap = b["s"] - a["e"]
@@ -36,7 +42,7 @@ for take in TAKES:
     FILLER = {"y", "o", "pues", "eh", "este"}
     groups = [g for g in groups if not (g[-1]["e"] - g[0]["s"] < 0.3 and all(w["text"].lower().strip(",.") in FILLER for w in g))]
     for gi, g in enumerate(groups):
-        src_in = max(0.0, g[0]["s"] - PAD_IN)
+        src_in = max(0.0, g[0]["s"] - PAD_IN) if id(g[0]) not in tight else g[0]["s"] + 0.02
         src_out = g[-1]["e"] + PAD_OUT
         if VID == "v1" and g[0]["text"] in ("Nadie,",):
             src_in = g[0]["s"] - 0.03
