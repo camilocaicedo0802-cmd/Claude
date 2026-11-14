@@ -29,7 +29,7 @@ def save(img, name):
 
 
 # 1: a train buried in snow + the claim
-img = kb_frame(load_image(res("f_6089079572.jpg"), "archival"), 0.5, 0.5, 1.05)
+img = kb_frame(load_image(res("u_8ugL4UBc8qM.jpg"), "archival"), 0.6, 0.5, 1.1)
 img = (img.astype(np.float32) * 0.8).astype(np.uint8)
 img = vignette(img, 0.6)
 sp = text_sprite("PARA 3 AÑOS", "bebas", 210, WHITE, True, stroke=6, tracking=4)
