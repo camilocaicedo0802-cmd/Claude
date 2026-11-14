@@ -271,6 +271,12 @@ Estudiado a 24 fps en la referencia (`scratchpad/ref24/`):
   - Vida: deriva 1→1,04 y flotación ±5 px. Salida con **destello** (brillo ×2,4, desenfoque 12 px, +6 %) en 4 fotogramas.
   - **SFX**: whoosh corto (a/b/c alternos, −12 dB respecto a la voz) en cada palabra clave que entra; nunca a menos de 0,35 s de otro efecto ni a menos de 0,5 s del whoosh anterior.
 
+### 10.7 Subtítulos: tipografía de la primera versión, letras blancas lisas (14/11/2026)
+- **Sustituye la tipografía de §10.6**: se vuelve a **Outfit Black 900 en MAYÚSCULAS** (84 px; palabra clave 96 px), una sola línea que se parte sola si no cabe, bloques inclinados ±1,5° alternos.
+- **Letras blancas normales, sin texturas**: relleno #FFFFFF liso. Nada de cromado, degradado, contorno interior ni brillo en las letras; solo una sombra suave detrás (`0 4px 14px rgba(0,0,0,.5)`) para que se lean.
+- La palabra clave va en **blanco dentro del recuadro morado** del logo (degradado, sombra #3D0080, −2°), que se despliega de izquierda a derecha en 4 fotogramas.
+- **Se mantienen de §10.6** la animación de la referencia (entrada fantasma con 2 estelas, deriva, flotación, salida con destello) y el whoosh en cada palabra clave.
+
 ## 11. Propuestas de estilo
 
 | Propuesta | Video | Idea |
@@ -279,7 +285,7 @@ Estudiado a 24 fps en la referencia (`scratchpad/ref24/`):
 | B · Pop cinético | Ganador 1 (2 tipos de redes) | Subtítulos grandes palabra a palabra, fondo sustituido, pantalla dividida, burbuja con la cara y gráficos a pantalla completa |
 
 ### 11.B Pop cinético (valores)
-- **Subtítulo cinético** (sustituye a títulos y subtítulo pequeño): 1–3 palabras por bloque (máx. ~17 letras), corte en puntuación, pausa > 0,3 s o cambio de toma; tratamiento de texto de la referencia según §10.6. Posición: y = 1450 (plano normal), 960 (en la unión de la pantalla dividida), 1290 (con burbuja).
+- **Subtítulo cinético** (sustituye a títulos y subtítulo pequeño): 1–3 palabras por bloque (máx. ~17 letras), corte en puntuación, pausa > 0,3 s o cambio de toma; tipografía y color según §10.7, animación y SFX según §10.6. Posición: y = 1450 (plano normal), 960 (en la unión de la pantalla dividida), 1290 (con burbuja).
 - **Fondo sustituido**: persona recortada (u2net ∩ MediaPipe multiclase: sin TV ni silla) con **contorno blanco de 5 px tipo pegatina** y halo morado. Fondos: degradado morado con filas de texto gigante en movimiento (250 px, contorno/relleno alternos, 7 px/fotograma), calendario con días tachados + contador, foco morado con «?» flotando.
 - **Número gigante** detrás de la persona (1150 px, extrusión de 12 px #3D0080) con golpe de entrada 2,4→1 en 5 fotogramas + sacudida.
 - **Pantalla dividida**: B-roll arriba (0–960) con etiqueta-pegatina blanca (texto morado 60 px, −3°), la persona abajo encuadrada de la frente al pecho; unión con línea morada brillante.

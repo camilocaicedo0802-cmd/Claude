@@ -1,41 +1,86 @@
 import {AbsoluteFill, interpolate, useCurrentFrame} from 'remotion';
-import {clamp, easeInOut} from '../engine/helpers';
-import {Word as RefWord} from '../engine/Title';
-import {OUTFIT} from '../v1/theme';
+import {clamp, easeInOut, easeOut} from '../engine/helpers';
+import {C, OUTFIT} from '../v1/theme';
 import {WORDS} from '../v9/timeline';
 import {CHUNKS} from './chunks';
 import {DISPLAY, KEY, NO_CAPS, capY} from './data';
 
 // ------------------------------------------------------------------
-// Subtítulo cinético con el tratamiento de texto de la referencia (estilo.md §3 y §10.3):
-// - Outfit ExtraBold 800 en minúsculas, interletrado −0,05 em, interlineado 0,9;
-// - dos tonos alternos por bloque: blanco con brillo + morado, o cromado + morado;
-//   la palabra clave va en morado degradado con volumen 3D y más grande;
-// - cada palabra entra «fantasma» al pronunciarla (5 fotogramas: desenfoque 16→0,
-//   escala 1,08→1, desplazamiento lateral) con 2 copias-estela;
-// - líneas escalonadas, deriva lenta 1→1,04 y flotación ±5 px;
-// - salida con destello (brillo + desenfoque) en 4 fotogramas;
-// - whoosh corto en cada palabra clave que entra (ver data.ts).
+// Subtítulo cinético (estilo.md §10.7):
+// - tipografía de la primera versión: Outfit Black 900 en MAYÚSCULAS, 84 px (clave 96 px);
+// - letras BLANCAS LISAS: sin cromado, sin degradado, sin contorno interior ni brillo;
+//   solo una sombra suave detrás para que se lea sobre cualquier fondo;
+// - la palabra clave va dentro del recuadro morado del logo (que se despliega al entrar);
+// - animación de la referencia: cada palabra entra «fantasma» al pronunciarla
+//   (5 fotogramas, desenfoque 16→0, escala 1,08→1, desplazamiento lateral) con 2 estelas;
+//   deriva 1→1,04, flotación ±5 px y salida con destello en 4 fotogramas;
+// - whoosh corto en cada palabra clave que entra (data.ts).
 // ------------------------------------------------------------------
 
-const clean = (i: number) => (DISPLAY[i] ?? WORDS[i].text.replace(/[,.]/g, '')).toLowerCase();
+const clean = (i: number) => (DISPLAY[i] ?? WORDS[i].text.replace(/[,.]/g, '')).toUpperCase();
 
-/** Reparte el bloque en líneas: la palabra clave abre línea propia (como los títulos de la referencia). */
-const toLines = (idx: number[]) => {
-  const p = idx.findIndex((i) => KEY.has(i));
-  if (p <= 0) {
-    if (p === 0) {
-      let q = 0;
-      while (q < idx.length && KEY.has(idx[q])) q++;
-      return q < idx.length ? [idx.slice(0, q), idx.slice(q)] : [idx];
-    }
-    return [idx];
-  }
-  return [idx.slice(0, p), idx.slice(p)];
+const TEXT: React.CSSProperties = {color: '#FFFFFF', textShadow: '0 4px 14px rgba(0,0,0,0.5)'};
+
+const CapWord: React.FC<{i: number; dir: number}> = ({i, dir}) => {
+  const frame = useCurrentFrame();
+  const local = frame - WORDS[i].s * 30;
+  const key = KEY.has(i);
+  const text = clean(i);
+  const p = interpolate(local, [0, 5], [0, 1], {...clamp, easing: easeOut});
+  const ghost = (k: number, op: number) => {
+    const q = interpolate(local, [0, 5 + k * 2], [0, 1], {...clamp, easing: easeOut});
+    if (q >= 1 || local < 0) return null;
+    return (
+      <span
+        aria-hidden
+        style={{
+          ...TEXT,
+          position: 'absolute',
+          left: key ? 18 : 0,
+          top: 0,
+          opacity: op * q * (1 - q) * 4,
+          translate: `${dir * (1 - q) * (40 + k * 30)}px ${(1 - q) * 10}px`,
+          filter: `blur(${6 + k * 4}px)`,
+        }}
+      >
+        {text}
+      </span>
+    );
+  };
+  return (
+    <span style={{position: 'relative', display: 'inline-block', fontSize: key ? 96 : 84, padding: key ? '0 18px 6px' : 0}}>
+      {key ? (
+        <span
+          style={{
+            position: 'absolute',
+            inset: '4px 0 0',
+            borderRadius: 16,
+            background: C.purpleGrad,
+            boxShadow: `0 6px 0 ${C.purpleShadow}, 0 0 30px ${C.purpleGlow}`,
+            scale: `${interpolate(local, [0, 4], [0, 1], {...clamp, easing: easeOut})} 1`,
+            transformOrigin: '0 50%',
+            rotate: '-2deg',
+          }}
+        />
+      ) : null}
+      {ghost(1, 0.45)}
+      {ghost(2, 0.25)}
+      <span
+        style={{
+          ...TEXT,
+          position: 'relative',
+          display: 'inline-block',
+          opacity: p,
+          scale: String(interpolate(p, [0, 1], [1.08, 1])),
+          translate: `${dir * (1 - p) * 26}px ${(1 - p) * 14}px`,
+          filter: p < 1 ? `blur(${16 * (1 - p)}px)` : undefined,
+        }}
+      >
+        {text}
+      </span>
+    </span>
+  );
 };
-
-const SMALL = 86;
-const BIG = 124;
 
 export const Captions: React.FC = () => {
   const frame = useCurrentFrame();
@@ -44,59 +89,38 @@ export const Captions: React.FC = () => {
   const k = CHUNKS.findIndex((x) => t >= x.s && t < x.e);
   if (k < 0) return null;
   const c = CHUNKS[k];
-  const tone = k % 2 ? 'chrome' : 'white';
   const startF = c.s * 30;
   const endF = c.e * 30;
   const exit = interpolate(frame, [endF - 4, endF], [0, 1], {...clamp, easing: easeInOut});
   const drift = interpolate(frame, [startF, endF], [1, 1.04], clamp);
   const float = Math.sin((frame - startF) / 14) * 5;
-  const lines = toLines(c.idx);
   return (
     <AbsoluteFill style={{pointerEvents: 'none'}}>
       <div
         style={{
           position: 'absolute',
-          left: 0,
-          right: 0,
+          left: 50,
+          right: 50,
           top: capY(t) + float,
           translate: '0 -50%',
           display: 'flex',
-          flexDirection: 'column',
+          flexWrap: 'wrap',
+          justifyContent: 'center',
           alignItems: 'center',
+          gap: '0 22px',
+          rotate: `${k % 2 ? 1.5 : -1.5}deg`,
+          fontFamily: OUTFIT,
+          fontWeight: 900,
+          letterSpacing: '-0.03em',
+          lineHeight: 1.05,
           scale: String(drift * (1 + exit * 0.06)),
           opacity: 1 - exit,
           filter: exit > 0 ? `blur(${12 * exit}px) brightness(${1 + 1.4 * exit})` : undefined,
         }}
       >
-        {lines.map((line, li) => {
-          const sizes = line.map((i) => (KEY.has(i) ? BIG : SMALL));
-          // ancho estimado de Outfit 800 ≈ 0,56 em por letra; se reduce si no cabe en 960 px
-          const est = line.reduce((w, i, j) => w + clean(i).length * sizes[j] * 0.56 + sizes[j] * 0.18, 0);
-          const fit = Math.min(1, 960 / est);
-          const dx = lines.length > 1 ? (li % 2 ? 40 : -30) : 0;
-          return (
-            <div
-              key={li}
-              style={{
-                display: 'flex',
-                alignItems: 'baseline',
-                fontFamily: OUTFIT,
-                fontWeight: 800,
-                lineHeight: 0.9,
-                letterSpacing: '-0.05em',
-                whiteSpace: 'nowrap',
-                marginTop: li === 0 ? 0 : -6,
-                translate: `${dx}px 0`,
-              }}
-            >
-              {line.map((i, j) => (
-                <span key={i} style={{fontSize: sizes[j] * fit, marginRight: j < line.length - 1 ? sizes[j] * fit * 0.18 : 0}}>
-                  <RefWord text={clean(i)} at={WORDS[i].s} color={KEY.has(i) ? 'purple' : tone} dir={li % 2 ? 1 : -1} />
-                </span>
-              ))}
-            </div>
-          );
-        })}
+        {c.idx.map((i, j) => (
+          <CapWord key={i} i={i} dir={j % 2 ? 1 : -1} />
+        ))}
       </div>
     </AbsoluteFill>
   );
