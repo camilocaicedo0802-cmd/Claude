@@ -145,6 +145,22 @@ export const SHAPES = {
   bang: () => 'M30 8 L 30 62 M30 80 L 30 84 M70 8 L 70 62 M70 80 L 70 84',
 };
 
+/** Pasa un trazo en coordenadas 0-100 a píxeles (w × h). */
+const toPx = (d: string, w: number, h: number) => {
+  let xNext = true;
+  return (d.match(/[A-Za-z]|-?\d*\.?\d+/g) ?? [])
+    .map((tk) => {
+      if (/[A-Za-z]/.test(tk)) {
+        xNext = true;
+        return tk;
+      }
+      const v = parseFloat(tk) * (xNext ? w : h) / 100;
+      xNext = !xNext;
+      return v.toFixed(1);
+    })
+    .join(' ');
+};
+
 /** Garabato que se dibuja solo (trazo de rotulador) y «hierve» un poco cada 3 fotogramas. */
 export const Garabato: React.FC<{
   at: number;
@@ -168,11 +184,11 @@ export const Garabato: React.FC<{
   const out = interpolate(frame, [until * F - 4, until * F], [1, 0], clamp);
   return (
     <svg
-      viewBox="0 0 100 100"
-      preserveAspectRatio="none"
-      style={{position: 'absolute', left: x, top: y, width: w, height: h, overflow: 'visible', rotate: `${rot + jt.r}deg`, translate: `${jt.x}px ${jt.y}px`, opacity: out, filter: 'drop-shadow(0 3px 4px rgba(0,0,0,0.4))'}}
+      width={w}
+      height={h}
+      style={{position: 'absolute', left: x, top: y, overflow: 'visible', rotate: `${rot + jt.r}deg`, translate: `${jt.x}px ${jt.y}px`, opacity: out, filter: 'drop-shadow(0 3px 4px rgba(0,0,0,0.4))'}}
     >
-      <path d={SHAPES[shape](seed)} fill="none" stroke={color} strokeWidth={width} strokeLinecap="round" strokeLinejoin="round" pathLength={1} strokeDasharray="1" strokeDashoffset={1 - p} vectorEffect="non-scaling-stroke" />
+      <path d={toPx(SHAPES[shape](seed), w, h)} fill="none" stroke={color} strokeWidth={width} strokeLinecap="round" strokeLinejoin="round" pathLength={1} strokeDasharray="1 1" strokeDashoffset={1 - p} />
     </svg>
   );
 };
@@ -240,3 +256,13 @@ export const Destello: React.FC<{times: number[]}> = ({times}) => {
   for (const t of times) v = Math.max(v, interpolate(frame - t * F, [-1, 0, 3], [0, 0.85, 0], clamp));
   return v > 0.01 ? <AbsoluteFill style={{background: '#fff', opacity: v}} /> : null;
 };
+
+/** Tira de papel rasgado que tapa la parte baja (mesa / portátil) en los recortes. */
+export const TiraPapel: React.FC<{top?: number}> = ({top = 1540}) => (
+  <div style={{position: 'absolute', left: -20, top, width: 1120, height: 1920 - top + 40, filter: 'drop-shadow(0 -10px 22px rgba(0,0,0,0.55))'}}>
+    <div style={{position: 'absolute', inset: 0, background: '#F4F1EC', clipPath: torn(1120, 1920 - top + 40, 51, 14, 22)}} />
+    <div style={{position: 'absolute', left: 0, top: 16, right: 0, bottom: 0, clipPath: torn(1120, 1920 - top + 24, 53, 10, 26), overflow: 'hidden'}}>
+      <Papel />
+    </div>
+  </div>
+);

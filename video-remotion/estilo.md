@@ -301,6 +301,7 @@ Estudiado a 4 fps en la referencia. El dinamismo no viene de una sola animación
 | A · Referencia | Video 1 (Grow) | Títulos grandes con brillo detrás/encima de la cabeza, subtítulo pequeño abajo, B-roll a pantalla completa y tarjetas |
 | B · Pop cinético | Ganador 1 (2 tipos de redes) | Subtítulos grandes palabra a palabra, fondo sustituido, pantalla dividida, burbuja con la cara y gráficos a pantalla completa |
 | C · Escritorio digital | Ganador 2 (Publicar no es hacer marketing) | La persona alterna pantalla completa / ventana sobre un escritorio; ventanas de apps, cursor, subtítulo karaoke en píldora, pantalla que se apaga como TV vieja |
+| D · Collage | Ganador 3 (Buena noticia + Grow Marketing) | Papel con grano, persona a pantalla completa / foto rasgada / recorte de papel, B-roll en marcos rasgados con cinta, garabatos de rotulador, sellos, stop-motion y hojas de papel como transición |
 
 ### 11.B Pop cinético (valores)
 - **Subtítulo cinético** (sustituye a títulos y subtítulo pequeño): 1–3 palabras por bloque (máx. ~17 letras), corte en puntuación, pausa > 0,3 s o cambio de toma; tipografía y color según §10.7, animación y SFX según §10.6. Posición: y = 1450 (plano normal), 960 (en la unión de la pantalla dividida), 1290 (con burbuja).
@@ -323,3 +324,14 @@ Estudiado a 4 fps en la referencia. El dinamismo no viene de una sola animación
 - **Arranque**: la imagen se abre desde una rendija con línea brillante (TV encendiéndose).
 - **Sonido**: banco de la referencia (whooshes, pop, golpe, riser, flash) + paquete del cliente (clic de ratón, teclado mecánico, notificación, error de Windows, contador) + pitidos de monitor generados.
 - **Cierre**: escritorio con logo arriba, nota adhesiva que escribe «REVIVIR» y la persona congelada en una ventana debajo.
+
+### 11.D Collage (valores)
+- **Papel**: fondo #1A1222 con fibras (feTurbulence 0,012 × 0,09) y grano (0,85) en pantalla, halo morado central y viñeta.
+- **La persona** cambia de modo en cada corte de toma: **pantalla completa**, **foto rasgada** (escala 0,46–0,58, borde de papel #F4F1EC de 14 px con canto irregular, cinta arriba, inclinación −3…+3°, vibración stop-motion) o **recorte de papel** (máscara limpia, contorno de 7 px color papel + sombra, −1,5°) con una **tira de papel rasgado** abajo que tapa mesa y portátil.
+- **Piezas de collage** (B-roll en marcos rasgados, tickets, notas, burbujas, perfil): entran a saltos de 2 fotogramas (escala 1,35→1 + giro 9°→0 en 6 fotogramas), vibran cada 3 fotogramas (±1,5 px, ±0,7°) y llevan cinta semitransparente.
+- **Garabatos de rotulador** (morado #B701FC o blanco papel, 8–18 px, punta redonda) que se dibujan en 7–9 fotogramas: círculo, tachado, subrayado, flecha, ✓, ✗, estrella, destello, «!!». Suenan con *marker drawing* / *subrayado rotulador* del paquete del cliente.
+- **Sellos** que golpean (escala 2,4→0,94→1 en 5 fotogramas, borde 10 % del tamaño, letras moradas lisas): DESCONOCE, SIN RESPUESTA. Golpe de bajo + sacudida.
+- **Transiciones**: hoja de papel rasgado que cruza la pantalla (hacia arriba o hacia la izquierda, 14 fotogramas, sonido de papel) o destello blanco + caída stop-motion de la foto.
+- **Textos**: bloques dinámicos de §10.9 con letras lisas; en pantalla completa algunos detrás de la cabeza.
+- **Música**: «Billy the Kid» (Mixkit 399) a −9 dB bajo la voz.
+- **Cierre**: logo en marco rasgado con cinta, nota «tu equipo de marketing 💜», recorte de la persona congelado (mirando a cámara) sobre tira de papel.

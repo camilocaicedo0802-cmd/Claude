@@ -63,11 +63,11 @@ export const Live: React.FC<{from: number; to: number; mask?: 'a' | 'c'; framing
 };
 
 /** Último fotograma de la voz congelado (para el cierre). */
-export const LastFrame: React.FC<{mask?: 'a' | 'c'}> = ({mask}) => {
+export const LastFrame: React.FC<{mask?: 'a' | 'c'; local?: number}> = ({mask, local}) => {
   const spec = useSpec();
   const last = spec.segments[spec.segments.length - 1];
   return (
-    <Freeze frame={segLen(last) - 1}>
+    <Freeze frame={local ?? segLen(last) - 1}>
       <Frame seg={last} mask={mask} framing={false} audio={false} />
     </Freeze>
   );

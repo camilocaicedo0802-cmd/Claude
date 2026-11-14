@@ -2,7 +2,7 @@ import {Video} from '@remotion/media';
 import {AbsoluteFill, Img, Sequence, interpolate, staticFile, useCurrentFrame} from 'remotion';
 import {clamp, easeOut} from '../engine/helpers';
 import {OUTFIT} from '../v1/theme';
-import {Cinta, Garabato, INK, PURPLE, Papelito, Pieza, Rasgado, Sello, jitter, stepped, torn} from './Collage';
+import {Cinta, Garabato, INK, PURPLE, Papelito, Pieza, Rasgado, Sello, TiraPapel, jitter, stepped, torn} from './Collage';
 import {MODOS, SPEECH, T, TITLES, TOTAL, modoAt, ws} from './data';
 import {LastFrame, Live} from './Live';
 
@@ -31,9 +31,12 @@ export const Persona: React.FC = () => {
   if (m.mode === 'recorte') {
     const jt = jitter(frame, 4, 0.5);
     return (
-      <AbsoluteFill style={{filter: OUTLINE, rotate: `${-1.5 + jt.r}deg`, scale: '0.97'}}>
-        <Live from={0} to={SPEECH} audio mask="c" />
-      </AbsoluteFill>
+      <>
+        <AbsoluteFill style={{filter: OUTLINE, rotate: `${-1.5 + jt.r}deg`, scale: '0.97'}}>
+          <Live from={0} to={SPEECH} audio mask="c" />
+        </AbsoluteFill>
+        <TiraPapel />
+      </>
     );
   }
   // foto rasgada con cinta
@@ -95,7 +98,7 @@ export const Escenas: React.FC = () => (
     <Garabato at={ws(21)} until={T.c2} shape="bang" x={900} y={600} w={110} h={170} width={16} />
 
     {/* S3 · no es que no funcionen / mala manera */}
-    <Garabato at={ws(29) + 0.25} until={T.c3} shape="strike" x={150} y={420} w={860} h={80} color="#F4F1EC" width={13} draw={7} />
+    <Garabato at={ws(29) + 0.25} until={ws(30) - 0.04} shape="strike" x={150} y={420} w={860} h={80} color="#F4F1EC" width={13} draw={7} />
     <Garabato at={ws(38)} until={T.c3} shape="circle" x={150} y={1610} w={900} h={170} width={11} seed={7} />
 
     {/* S4 · realidad que todo el mundo desconoce */}
@@ -147,21 +150,21 @@ export const Escenas: React.FC = () => (
     <Sello at={ws(89)} until={T.c6} x={390} y={320} text="SIN RESPUESTA" size={62} rot={8} />
 
     {/* S7 · ocupados en el día a día · todólogo */}
-    <Pieza at={ws(99)} until={T.c7} x={30} y={110} w={500} h={310} rot={-4} seed={17}>
+    <Pieza at={T.c6 + 0.3} until={T.c7} x={30} y={110} w={500} h={310} rot={-4} seed={17}>
       <Rasgado w={500} h={310} seed={18}>
-        <BVid src="broll/b8_tendero.mp4" from={ws(99)} />
+        <BVid src="broll/b8_tendero.mp4" from={T.c6 + 0.3} />
       </Rasgado>
       <Cinta x={170} y={-22} />
     </Pieza>
-    <Pieza at={ws(102)} until={T.c7} x={570} y={90} w={300} h={470} rot={5} seed={19}>
+    <Pieza at={ws(99)} until={T.c7} x={570} y={90} w={300} h={470} rot={5} seed={19}>
       <Rasgado w={300} h={470} seed={20}>
-        <BVid src="broll/b8_barbero.mp4" from={ws(102)} />
+        <BVid src="broll/b8_barbero.mp4" from={ws(99)} />
       </Rasgado>
       <Cinta x={70} y={-22} rot={6} />
     </Pieza>
-    <Pieza at={ws(109)} until={T.c7} x={130} y={450} w={300} h={460} rot={-6} seed={21}>
+    <Pieza at={ws(105)} until={T.c7} x={130} y={450} w={300} h={460} rot={-6} seed={21}>
       <Rasgado w={300} h={460} seed={22}>
-        <BVid src="broll/b8_empaque.mp4" from={ws(109)} />
+        <BVid src="broll/b8_empaque.mp4" from={ws(105)} />
       </Rasgado>
       <Cinta x={60} y={-22} rot={-10} />
     </Pieza>
@@ -238,9 +241,10 @@ export const Cierre: React.FC = () => {
   const jt = jitter(frame, 2, 0.5);
   return (
     <>
-      <AbsoluteFill style={{filter: OUTLINE, translate: `0 ${interpolate(l, [0, 8], [200, 330], {...clamp, easing: easeOut})}px`, scale: '0.8', transformOrigin: '50% 100%', rotate: `${-2 + jt.r}deg`}}>
-        <LastFrame mask="c" />
+      <AbsoluteFill style={{filter: OUTLINE, translate: `0 ${interpolate(l, [0, 8], [40, 130], {...clamp, easing: easeOut})}px`, scale: '0.8', transformOrigin: '50% 100%', rotate: `${-2 + jt.r}deg`}}>
+        <LastFrame mask="c" local={8} />
       </AbsoluteFill>
+      <TiraPapel top={1660} />
       <Pieza at={T.end + 0.1} until={TOTAL + 1} x={190} y={220} w={700} h={300} rot={-2} seed={41}>
         <Rasgado w={700} h={300} seed={42}>
           <AbsoluteFill style={{background: '#120A1A', display: 'grid', placeItems: 'center'}}>
@@ -250,8 +254,8 @@ export const Cierre: React.FC = () => {
         <Cinta x={-30} y={30} rot={-40} />
         <Cinta x={580} y={20} rot={36} />
       </Pieza>
-      <Pieza at={T.end + 0.5} until={TOTAL + 1} x={240} y={590} w={600} h={140} rot={3} seed={43}>
-        <Papelito w={600} h={140} seed={44} tint="#EADCFF">
+      <Pieza at={T.end + 0.5} until={TOTAL + 1} x={200} y={590} w={680} h={130} rot={3} seed={43}>
+        <Papelito w={680} h={130} seed={44} tint="#EADCFF">
           <div style={{fontFamily: OUTFIT, fontSize: 46, fontWeight: 900, color: INK}}>tu equipo de marketing 💜</div>
         </Papelito>
       </Pieza>
