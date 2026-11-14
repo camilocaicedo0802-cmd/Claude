@@ -86,7 +86,7 @@ for job in jobs:
     os.makedirs(out, exist_ok=True)
     t0 = time.time()
     rec = [None] * 4
-    alphas, sams, laps = {}, {}, {}
+    alphas, sams, laps, domes = {}, {}, {}, {}
     prev = None
     for k, fr in enumerate(frames):
         f = s + k
@@ -102,6 +102,7 @@ for job in jobs:
         pts = [(cx, max(5, top - 0.1 * fh)), (cx, cy), (cx, min(H - 20, chin + 220)), (cx, min(H - 20, chin + 520))]
         emb = embed(fr)
         m1 = clean(sam_mask(emb, pts))
+        m1first = m1.copy(); m2 = None; neg = []
         # lo que RVM ve como primer plano y SAM no = silla -> puntos negativos y segunda pasada
         chair = ((alphas[f] > 0.5) & (cv2.dilate(m1, KCH) == 0)).astype(np.uint8)
         chair[int(min(H, chin + 700)):] = 0
@@ -134,6 +135,17 @@ for job in jobs:
             if alphas[f][hole].mean() > 0.5:
                 m1[hole] = 1
         sams[f] = m1
+        # cúpula del pelo (de la frente hacia arriba): ahí no hay silla y SAM deja el pelo dentado -> manda RVM
+        dome = np.zeros((H, W), np.uint8)
+        cv2.ellipse(dome, (int(cx), int(top - 0.15 * fh)), (int(0.5 * fh), int(0.45 * fh)), 0, 0, 360, 1, -1)
+        domes[f] = dome
+        if os.environ.get('PMDBG'):
+            d = os.environ['PMDBG']; os.makedirs(d, exist_ok=True)
+            Image.fromarray((alphas[f] * 255).astype(np.uint8)).save(f'{d}/{take}_{f}_rvm.png')
+            Image.fromarray(m1first * 255).save(f'{d}/{take}_{f}_m1.png')
+            if m2 is not None: Image.fromarray(m2 * 255).save(f'{d}/{take}_{f}_m2.png')
+            Image.fromarray(m1 * 255).save(f'{d}/{take}_{f}_fin.png')
+            print('DBG', take, f, 'pts', [(int(x), int(y)) for x, y in pts], 'neg', [(int(x), int(y)) for x, y in neg], 'top', int(top), 'fh', int(fh), flush=True)
         if take in LAPTOP:
             # el portátil va delante de la persona: se recorta como objeto aparte y se suma (sin mordisco rectangular)
             lap = sam_mask(emb, [LAPTOP[take]])
@@ -145,6 +157,7 @@ for job in jobs:
     uni = {f: np.maximum(m, laps[f]) if f in laps else m for f, m in sams.items()}
     gate = {f: cv2.GaussianBlur(cv2.dilate(u, ker).astype(np.float32), (0, 0), 2.0) for f, u in uni.items()}
     inter = {f: cv2.GaussianBlur(cv2.erode(u, kin).astype(np.float32), (0, 0), 2.5) for f, u in uni.items()}
+    domeb = {f: cv2.GaussianBlur(d.astype(np.float32), (0, 0), 10.0) for f, d in domes.items()}
     lapb = {f: cv2.GaussianBlur(l.astype(np.float32), (0, 0), 1.2) for f, l in laps.items()}
     fs = sorted(sams)
     def avg(d, i):
@@ -156,7 +169,7 @@ for job in jobs:
             continue
         ar = np.clip((alphas[f] - 0.12) / 0.88, 0, 1)
         # interior: manda SAM (ropa oscura que RVM duda); borde: manda RVM (pelo, orejas); fuera de SAM: nada (silla)
-        al = np.maximum(ar, avg(inter, i)) * np.clip(avg(gate, i) * 1.15, 0, 1)
+        al = np.maximum(ar, avg(inter, i)) * np.clip(np.maximum(avg(gate, i) * 1.15, avg(domeb, i)), 0, 1)
         al = np.clip((al - 0.03) / 0.97, 0, 1)
         if laps:
             al = np.maximum(al, avg(lapb, i))

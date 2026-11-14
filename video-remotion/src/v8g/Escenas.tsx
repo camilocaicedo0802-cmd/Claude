@@ -49,6 +49,8 @@ export const Fondo3D: React.FC = () => (
 // ---------------------------------------------------------------- la persona
 const maskUrl = (take: string, f: number) => staticFile(`mascaras/${take}/p_${String(f).padStart(5, '0')}.png`);
 
+// a pantalla completa solo se funde la base (mesa / bajo de la chaqueta)
+const BASE = 'linear-gradient(180deg, #000 0%, #000 90%, transparent 100%)';
 const EDGE = 'linear-gradient(90deg, transparent 0%, #000 9%, #000 91%, transparent 100%), linear-gradient(180deg, #000 0%, #000 84%, transparent 100%)';
 
 /** Recorte de la persona en un escenario (escala anclada abajo al centro). */
@@ -60,7 +62,7 @@ export const Recorte: React.FC<{scene: Scene}> = ({scene}) => {
     <AbsoluteFill style={{scale: String(s * push), transformOrigin: '50% 100%'}}>
       {/* solo la persona (y el portátil que sostiene delante), sin silla. En plano pequeño, los hombros cortados por
           el borde de la toma se funden con el escenario en vez de quedar como una línea recta. */}
-      <AbsoluteFill style={s < 0.95 ? {maskImage: EDGE, WebkitMaskImage: EDGE, maskComposite: 'intersect', WebkitMaskComposite: 'source-in'} : undefined}>
+      <AbsoluteFill style={s < 0.95 ? {maskImage: EDGE, WebkitMaskImage: EDGE, maskComposite: 'intersect', WebkitMaskComposite: 'source-in'} : {maskImage: BASE, WebkitMaskImage: BASE}}>
         <Live from={scene.from} to={scene.to} mask="p" />
       </AbsoluteFill>
     </AbsoluteFill>
