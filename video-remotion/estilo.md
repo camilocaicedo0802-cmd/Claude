@@ -262,6 +262,15 @@ Estudiado a 24 fps en la referencia (`scratchpad/ref24/`):
 - Más dinamismo que la v1: un cambio de modo de pantalla o recurso cada 1,5–3 s.
 - Se mantienen siempre: colores del logo, sin ajuste de color, nada sobre la cara, labios sincronizados, efectos de sonido del banco de la referencia.
 
+### 10.6 Subtítulos de la propuesta B con el tratamiento de texto de la referencia (14/11/2026)
+- Los subtítulos cinéticos usan **los mismos efectos, texturas, animaciones y SFX que los textos de la referencia**, cambiando el rojo por el morado del logo:
+  - Outfit ExtraBold 800 en **minúsculas**, interletrado −0,05 em, interlineado 0,9 (nada de mayúsculas ni recuadros de color).
+  - **Dos tonos alternos** por bloque: blanco con brillo (bloom) + morado, o **cromado** + morado. La palabra clave en morado degradado con **volumen 3D** (5 × 1 px #3D0080) y halo, 124 px; el resto 86 px.
+  - La palabra clave abre línea propia; **líneas escalonadas** (−30 / +40 px).
+  - Entrada **fantasma** palabra a palabra al pronunciarla: 5 fotogramas, desenfoque 16→0 px, escala 1,08→1, desplazamiento lateral 26 px y **2 copias-estela**.
+  - Vida: deriva 1→1,04 y flotación ±5 px. Salida con **destello** (brillo ×2,4, desenfoque 12 px, +6 %) en 4 fotogramas.
+  - **SFX**: whoosh corto (a/b/c alternos, −12 dB respecto a la voz) en cada palabra clave que entra; nunca a menos de 0,35 s de otro efecto ni a menos de 0,5 s del whoosh anterior.
+
 ## 11. Propuestas de estilo
 
 | Propuesta | Video | Idea |
@@ -270,7 +279,7 @@ Estudiado a 24 fps en la referencia (`scratchpad/ref24/`):
 | B · Pop cinético | Ganador 1 (2 tipos de redes) | Subtítulos grandes palabra a palabra, fondo sustituido, pantalla dividida, burbuja con la cara y gráficos a pantalla completa |
 
 ### 11.B Pop cinético (valores)
-- **Subtítulo cinético** (sustituye a títulos y subtítulo pequeño): Outfit 900 en mayúsculas, 84 px (clave 96 px), 1–3 palabras por bloque (máx. ~17 letras), corte en puntuación, pausa > 0,3 s o cambio de toma. Cada palabra entra al pronunciarla: escala 0,5→1,14→1 en 6 fotogramas y sube 26 px. La palabra clave lleva un **recuadro morado** (degradado del logo, sombra #3D0080, inclinación −2°) que se despliega de izquierda a derecha en 4 fotogramas. Bloques alternan inclinación ±1,5°. Posición: y = 1450 (plano normal), 960 (en la unión de la pantalla dividida), 1290 (con burbuja).
+- **Subtítulo cinético** (sustituye a títulos y subtítulo pequeño): 1–3 palabras por bloque (máx. ~17 letras), corte en puntuación, pausa > 0,3 s o cambio de toma; tratamiento de texto de la referencia según §10.6. Posición: y = 1450 (plano normal), 960 (en la unión de la pantalla dividida), 1290 (con burbuja).
 - **Fondo sustituido**: persona recortada (u2net ∩ MediaPipe multiclase: sin TV ni silla) con **contorno blanco de 5 px tipo pegatina** y halo morado. Fondos: degradado morado con filas de texto gigante en movimiento (250 px, contorno/relleno alternos, 7 px/fotograma), calendario con días tachados + contador, foco morado con «?» flotando.
 - **Número gigante** detrás de la persona (1150 px, extrusión de 12 px #3D0080) con golpe de entrada 2,4→1 en 5 fotogramas + sacudida.
 - **Pantalla dividida**: B-roll arriba (0–960) con etiqueta-pegatina blanca (texto morado 60 px, −3°), la persona abajo encuadrada de la frente al pecho; unión con línea morada brillante.

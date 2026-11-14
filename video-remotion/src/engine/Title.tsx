@@ -19,7 +19,7 @@ import {segmentScaleAt} from './Talking';
 const extrude = (base: string, depth: number) =>
   Array.from({length: depth}, (_, i) => `drop-shadow(0 ${i < 1 ? 1 : 1}px 0 ${base})`).join(' ');
 
-const wordStyle = (color: TitleLine['color']): React.CSSProperties => {
+export const wordStyle = (color: TitleLine['color']): React.CSSProperties => {
   switch (color) {
     case 'purple':
       return {
@@ -48,7 +48,7 @@ const wordStyle = (color: TitleLine['color']): React.CSSProperties => {
   }
 };
 
-const Word: React.FC<{text: string; at: number; color: TitleLine['color']; dir: number}> = ({text, at, color, dir}) => {
+export const Word: React.FC<{text: string; at: number; color: TitleLine['color']; dir: number}> = ({text, at, color, dir}) => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const local = frame - at * fps;

@@ -5,6 +5,7 @@ import {wordTimes} from '../engine/helpers';
 import {Sfx, Spec} from '../engine/types';
 import {FACES} from '../v9/faces';
 import {SEGMENTS, SPEECH_FRAMES, WORDS} from '../v9/timeline';
+import {CHUNKS} from './chunks';
 
 export const {ws, we} = wordTimes(WORDS);
 export const SPEECH = SPEECH_FRAMES / 30;
@@ -110,7 +111,6 @@ const sfx: Sfx[] = [
   {src: 'sfx/strike.wav', at: ws(16), vol: 0.26, dur: 1.0},
   {src: 'sfx/whoosh_long.wav', at: T.s3 - 0.22, vol: 0.28, dur: 1.2},
   // diferencia
-  {src: 'sfx/pop.wav', at: ws(23), vol: 0.3},
   // calendario
   {src: 'sfx/digital.wav', at: T.s4 - 0.03, vol: 0.3, dur: 0.6},
   {src: 'sfx/reloj.wav', at: ws(29), vol: 0.22, dur: 2.2},
@@ -129,7 +129,6 @@ const sfx: Sfx[] = [
   {src: 'sfx/whoosh_trans.wav', at: T.s7 - 0.14, vol: 0.32},
   {src: 'sfx/hit.wav', at: T.s7, vol: 0.3, dur: 1.2},
   {src: 'sfx/cash.wav', at: ws(64), vol: 0.42},
-  {src: 'sfx/pop.wav', at: ws(69), vol: 0.24},
   // pantalla dividida
   {src: 'sfx/whoosh_d.wav', at: T.s9 - 0.1, vol: 0.3, dur: 0.9},
   {src: 'sfx/whoosh_a.wav', at: ws(81) - 0.12, vol: 0.22, dur: 0.7},
@@ -160,5 +159,19 @@ const sfx: Sfx[] = [
   {src: 'sfx/typing.wav', at: T.end + 0.45, vol: 0.3, dur: 0.6},
   {src: 'sfx/pop.wav', at: T.end + 1.05, vol: 0.3},
 ];
-SPEC_B.sfx = sfx;
+// Subtítulos (referencia §8): cada palabra clave que entra = whoosh corto (−12 dB respecto a la voz),
+// nunca dos efectos en menos de 0,35 s ni dos whooshes de subtítulo en menos de 0,5 s.
+const capSfx: Sfx[] = [];
+const WH = ['sfx/whoosh_a.wav', 'sfx/whoosh_b.wav', 'sfx/whoosh_c.wav'];
+for (const c of CHUNKS) {
+  const i = c.idx.find((x) => KEY.has(x));
+  if (i === undefined) continue;
+  const at = ws(i) - 0.04;
+  if (NO_CAPS.some(([a, b]) => at >= a && at < b)) continue;
+  if (sfx.some((s) => Math.abs(s.at - at) < 0.35)) continue;
+  if (capSfx.length && at - capSfx[capSfx.length - 1].at < 0.5) continue;
+  capSfx.push({src: WH[capSfx.length % 3], at, vol: 0.2, dur: 0.7});
+}
+SPEC_B.sfx = [...sfx, ...capSfx];
+export const CAP_SFX = capSfx.length;
 void we;

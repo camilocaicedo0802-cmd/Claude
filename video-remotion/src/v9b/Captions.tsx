@@ -1,112 +1,100 @@
-import {useMemo} from 'react';
 import {AbsoluteFill, interpolate, useCurrentFrame} from 'remotion';
-import {clamp, easeOut} from '../engine/helpers';
-import {Word} from '../engine/types';
-import {C, OUTFIT} from '../v1/theme';
+import {clamp, easeInOut} from '../engine/helpers';
+import {Word as RefWord} from '../engine/Title';
+import {OUTFIT} from '../v1/theme';
 import {WORDS} from '../v9/timeline';
+import {CHUNKS} from './chunks';
 import {DISPLAY, KEY, NO_CAPS, capY} from './data';
 
-type Chunk = {idx: number[]; s: number; e: number};
+// ------------------------------------------------------------------
+// Subtítulo cinético con el tratamiento de texto de la referencia (estilo.md §3 y §10.3):
+// - Outfit ExtraBold 800 en minúsculas, interletrado −0,05 em, interlineado 0,9;
+// - dos tonos alternos por bloque: blanco con brillo + morado, o cromado + morado;
+//   la palabra clave va en morado degradado con volumen 3D y más grande;
+// - cada palabra entra «fantasma» al pronunciarla (5 fotogramas: desenfoque 16→0,
+//   escala 1,08→1, desplazamiento lateral) con 2 copias-estela;
+// - líneas escalonadas, deriva lenta 1→1,04 y flotación ±5 px;
+// - salida con destello (brillo + desenfoque) en 4 fotogramas;
+// - whoosh corto en cada palabra clave que entra (ver data.ts).
+// ------------------------------------------------------------------
 
-// Bloques de 1-3 palabras (máx. ~16 letras): se cortan en puntuación, pausas y cambios de toma.
-const makeChunks = (words: Word[]): Chunk[] => {
-  const out: number[][] = [];
-  let cur: number[] = [];
-  const len = (c: number[]) => c.reduce((n, i) => n + words[i].text.length + 1, 0);
-  words.forEach((w, i) => {
-    const prev = cur.length ? words[cur[cur.length - 1]] : null;
-    if (prev && (w.s - prev.e > 0.3 || cur.length >= 3 || w.seg !== prev.seg || len(cur) + w.text.length > 17)) {
-      out.push(cur);
-      cur = [];
+const clean = (i: number) => (DISPLAY[i] ?? WORDS[i].text.replace(/[,.]/g, '')).toLowerCase();
+
+/** Reparte el bloque en líneas: la palabra clave abre línea propia (como los títulos de la referencia). */
+const toLines = (idx: number[]) => {
+  const p = idx.findIndex((i) => KEY.has(i));
+  if (p <= 0) {
+    if (p === 0) {
+      let q = 0;
+      while (q < idx.length && KEY.has(idx[q])) q++;
+      return q < idx.length ? [idx.slice(0, q), idx.slice(q)] : [idx];
     }
-    cur.push(i);
-    if (/[,.?]$/.test(w.text)) {
-      out.push(cur);
-      cur = [];
-    }
-  });
-  if (cur.length) out.push(cur);
-  return out.map((idx, k) => {
-    const s = words[idx[0]].s;
-    const natural = words[idx[idx.length - 1]].e + 0.25;
-    const next = out[k + 1] ? words[out[k + 1][0]].s : natural;
-    return {idx, s, e: Math.min(natural, next)};
-  });
+    return [idx];
+  }
+  return [idx.slice(0, p), idx.slice(p)];
 };
 
-const clean = (i: number) => (DISPLAY[i] ?? WORDS[i].text.replace(/[,.]/g, '')).toUpperCase();
+const SMALL = 86;
+const BIG = 124;
 
-/** Subtítulo cinético: palabra a palabra, la palabra clave dentro de un recuadro morado. */
 export const Captions: React.FC = () => {
   const frame = useCurrentFrame();
-  const chunks = useMemo(() => makeChunks(WORDS), []);
   const t = frame / 30;
   if (NO_CAPS.some(([a, b]) => t >= a && t < b)) return null;
-  const c = chunks.find((x) => t >= x.s && t < x.e);
-  if (!c) return null;
-  const k = chunks.indexOf(c);
-  const tilt = k % 2 ? 1.5 : -1.5;
-  const out = interpolate(frame, [c.e * 30 - 2, c.e * 30], [1, 0], clamp);
+  const k = CHUNKS.findIndex((x) => t >= x.s && t < x.e);
+  if (k < 0) return null;
+  const c = CHUNKS[k];
+  const tone = k % 2 ? 'chrome' : 'white';
+  const startF = c.s * 30;
+  const endF = c.e * 30;
+  const exit = interpolate(frame, [endF - 4, endF], [0, 1], {...clamp, easing: easeInOut});
+  const drift = interpolate(frame, [startF, endF], [1, 1.04], clamp);
+  const float = Math.sin((frame - startF) / 14) * 5;
+  const lines = toLines(c.idx);
   return (
     <AbsoluteFill style={{pointerEvents: 'none'}}>
       <div
         style={{
           position: 'absolute',
-          left: 50,
-          right: 50,
-          top: capY(t),
+          left: 0,
+          right: 0,
+          top: capY(t) + float,
           translate: '0 -50%',
           display: 'flex',
-          flexWrap: 'wrap',
-          justifyContent: 'center',
+          flexDirection: 'column',
           alignItems: 'center',
-          gap: '0 22px',
-          rotate: `${tilt}deg`,
-          opacity: out,
-          fontFamily: OUTFIT,
-          fontWeight: 900,
-          letterSpacing: '-0.03em',
-          lineHeight: 1.05,
+          scale: String(drift * (1 + exit * 0.06)),
+          opacity: 1 - exit,
+          filter: exit > 0 ? `blur(${12 * exit}px) brightness(${1 + 1.4 * exit})` : undefined,
         }}
       >
-        {c.idx.map((i) => {
-          const at = WORDS[i].s * 30;
-          const p = interpolate(frame - at, [0, 5], [0, 1], {...clamp, easing: easeOut});
-          const pop = interpolate(frame - at, [0, 3, 6], [0.5, 1.14, 1], clamp);
-          const key = KEY.has(i);
-          if (frame < at - 1) return <span key={i} style={{opacity: 0, fontSize: key ? 96 : 84}}>{clean(i)}</span>;
+        {lines.map((line, li) => {
+          const sizes = line.map((i) => (KEY.has(i) ? BIG : SMALL));
+          // ancho estimado de Outfit 800 ≈ 0,56 em por letra; se reduce si no cabe en 960 px
+          const est = line.reduce((w, i, j) => w + clean(i).length * sizes[j] * 0.56 + sizes[j] * 0.18, 0);
+          const fit = Math.min(1, 960 / est);
+          const dx = lines.length > 1 ? (li % 2 ? 40 : -30) : 0;
           return (
-            <span
-              key={i}
+            <div
+              key={li}
               style={{
-                position: 'relative',
-                fontSize: key ? 96 : 84,
-                color: '#FFFFFF',
-                padding: key ? '0 18px 6px' : 0,
-                scale: String(pop),
-                translate: `0 ${(1 - p) * 26}px`,
-                opacity: interpolate(frame - at, [0, 2], [0, 1], clamp),
-                textShadow: key ? `0 4px 0 ${C.purpleShadow}` : '0 5px 0 rgba(0,0,0,0.55), 0 0 22px rgba(0,0,0,0.55)',
-                WebkitTextStroke: key ? undefined : '2px rgba(0,0,0,0.35)',
+                display: 'flex',
+                alignItems: 'baseline',
+                fontFamily: OUTFIT,
+                fontWeight: 800,
+                lineHeight: 0.9,
+                letterSpacing: '-0.05em',
+                whiteSpace: 'nowrap',
+                marginTop: li === 0 ? 0 : -6,
+                translate: `${dx}px 0`,
               }}
             >
-              {key ? (
-                <span
-                  style={{
-                    position: 'absolute',
-                    inset: '4px 0 0',
-                    borderRadius: 16,
-                    background: C.purpleGrad,
-                    boxShadow: `0 6px 0 ${C.purpleShadow}, 0 0 30px ${C.purpleGlow}`,
-                    scale: `${interpolate(frame - at, [0, 4], [0, 1], {...clamp, easing: easeOut})} 1`,
-                    transformOrigin: '0 50%',
-                    rotate: '-2deg',
-                    zIndex: -1,
-                  }}
-                />
-              ) : null}
-              <span style={{position: 'relative'}}>{clean(i)}</span>
-            </span>
+              {line.map((i, j) => (
+                <span key={i} style={{fontSize: sizes[j] * fit, marginRight: j < line.length - 1 ? sizes[j] * fit * 0.18 : 0}}>
+                  <RefWord text={clean(i)} at={WORDS[i].s} color={KEY.has(i) ? 'purple' : tone} dir={li % 2 ? 1 : -1} />
+                </span>
+              ))}
+            </div>
           );
         })}
       </div>
