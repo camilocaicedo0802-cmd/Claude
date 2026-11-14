@@ -1,7 +1,7 @@
 import React from 'react';
 import {Easing, interpolate, useCurrentFrame} from 'remotion';
 import {Destello} from '../componentes/Efectos';
-import {Actor, Muneco, POSES, Pose, ROPA_DOCTOR, ROPA_FRANCES, ROPA_GILLRAY, ROPA_GRANADERO, ROPA_INGLES, ROPA_NAPOLEON, animarPose, apuntar, manosEn} from '../componentes/Muneco';
+import {Actor, Muneco, POSES, Pose, ROPA_DOCTOR, ROPA_FRANCES, ROPA_GILLRAY, ROPA_GRANADERO, ROPA_INGLES, ROPA_NAPOLEON, animarPose, apuntar, manosEn, senalar} from '../componentes/Muneco';
 import {Corazones, MarcaAltura, PeriodicosVolando, Pulgadas} from '../componentes/Napoleon';
 import {Atril, CajaCinta, Caricatura, CintaEntre, DardoMano, DardoVolando, Espada, Mosquete, Nota, Papel, Pedestal, PeriodicoPecho, Pluma, Puntero, Retrato, Tiza as TizaMano} from '../componentes/Objetos';
 import {Rotulo, TituloArriba} from '../componentes/Rotulos';
@@ -125,7 +125,7 @@ const Gancho: React.FC<P> = ({d, h, e, s}) => {
 		[0, {}],
 		[24, {...POSES.jarras, cuerpo: -3, cabeza: -5}],
 		[W.promedio - 2, {...POSES.jarras, cuerpo: -3, cabeza: 4}],
-		[W.promedio + 6, {...manosEn([150, 548], [372, 412]), mi: 'puno', md: 'senala', wd: -20, cabeza: 8, cuerpo: 3}],
+		[W.promedio + 6, {...manosEn([150, 548]), ...((r) => ({bd: r.a, cd: r.c}))(senalar(1, 613, 154, 0.74)), mi: 'puno', md: 'senala', cabeza: 8, cuerpo: 2}],
 	]);
 	const frances = animarPose(f, [
 		[0, {}],
@@ -152,20 +152,20 @@ const Enano: React.FC<P> = ({d, h, e, s}) => {
 	const cm = interpolate(f, [encoge - 1, encoge + 6], [169, 104], {...clamp, easing: Easing.out(Easing.back(1.8))});
 	const chico = f >= encoge;
 	const napo: Partial<Pose> = chico
-		? {...POSES.brazosArriba, bi: 150 + Math.sin(f * 0.9) * 18, bd: 150 + Math.cos(f * 0.9) * 18, salto: Math.abs(Math.sin(f * 0.5)) * 40, li: Math.max(0, Math.sin(f * 0.5)) * 0.4, ld: Math.max(0, -Math.sin(f * 0.5)) * 0.4}
+		? {...POSES.brazosArriba, bi: 150 + Math.sin(f * 0.3) * 14, bd: 150 + Math.cos(f * 0.3) * 14, salto: Math.abs(Math.sin(f * 0.3)) * 36, li: Math.max(0, Math.sin(f * 0.3)) * 0.35, ld: Math.max(0, -Math.sin(f * 0.3)) * 0.35}
 		: {...POSES.jarras, cuerpo: -3};
 	const frances = animarPose(f, [
 		[d, {...POSES.cruzados}],
 		[encoge + 4, {...POSES.cruzados}],
-		[encoge + 11, {...manosEn([236, 470], [330, 610], {}, true), mi: 'abierta', md: 'senala', wd: 25, cuerpo: -8, cabeza: -10}],
+		[encoge + 11, {...manosEn([206, 478], undefined, {}, true), ...((r) => ({bd: r.a, cd: r.c}))(senalar(1, 624, 391, 0.7)), mi: 'abierta', md: 'senala', cuerpo: -4, cabeza: -8}],
 	]);
 	return (
 		<Toma escena={<EscMedidas />} desde={d} hasta={h} entrada={e} salida={s} cam={{s: [1.1, 1.16], y: [-60, -80], x: [60, 40]}} golpes={[[encoge, 0.08]]}>
 			<EnTabla x={320} cm={cm}>
-				<Muneco ropa={ROPA_NAPOLEON} pose={napo} ojos={chico ? 'grandes' : 'entrecerrados'} cejas={chico ? 'preocupado' : 'arrogante'} boca={chico ? 'grito' : 'picara'} tiembla={chico ? 1.5 : 0} />
+				<Muneco ropa={ROPA_NAPOLEON} pose={napo} ojos={chico ? 'grandes' : 'entrecerrados'} cejas={chico ? 'preocupado' : 'arrogante'} boca={chico ? 'grito' : 'picara'} />
 			</EnTabla>
 			<EnTabla x={770} cm={165} voltear>
-				<Muneco ropa={ROPA_FRANCES} pose={frances} semilla={3} ojos={f >= encoge + 6 ? 'feliz' : 'entrecerrados'} cejas="arrogante" boca={f >= encoge + 6 ? 'sonrisaGrande' : 'mueca'} tiembla={f >= encoge + 8 ? 1.4 : 0} />
+				<Muneco ropa={ROPA_FRANCES} pose={frances} semilla={3} ojos={f >= encoge + 6 ? 'feliz' : 'entrecerrados'} cejas="arrogante" boca={f >= encoge + 6 ? 'sonrisaGrande' : 'mueca'} tiembla={f >= encoge + 8 ? 1 : 0} />
 			</EnTabla>
 			<Puf x={320} y={1300} desde={encoge - 1} tam={620} />
 			<Icono tipo="exclamacion" x={330} y={1020} desde={encoge + 6} tam={150} />
@@ -182,7 +182,7 @@ const Dibujante: React.FC<P> = ({d, h, e, s}) => {
 	return (
 		<Toma escena={<EscEstudio />} desde={d} hasta={h} entrada={e} salida={s} cam={{s: [1.06, 1.14], y: [-40, -60]}} encima={<><Rotulo texto="JAMES GILLRAY · CARICATURISTA" desde={d + 2} /></>}>
 			<Actor x={540} y={1900} alto={1340}>
-				<Muneco ropa={ROPA_GILLRAY} pose={{...pose, wd: Math.sin(f / 2.5) * 25}} objDer={<Pluma rot={-20} />} ojos="entrecerrados" cejas="arrogante" boca="picara" />
+				<Muneco ropa={ROPA_GILLRAY} pose={{...pose, wd: Math.sin(f / 6) * 12}} objDer={<Pluma rot={-20} />} ojos="entrecerrados" cejas="arrogante" boca="picara" />
 			</Actor>
 		</Toma>
 	);
@@ -201,7 +201,7 @@ const Poderoso: React.FC<P> = ({d, h, e, s}) => {
 	const saludo = animarPose(f, [
 		[d, {...manosEn([118, 548]), mi: 'agarra'}],
 		[W.napoleon2, {...manosEn([118, 548]), mi: 'agarra'}],
-		[W.napoleon2 + 6, {...manosEn([118, 548], [262, 142]), mi: 'agarra', md: 'abierta', wd: 160}],
+		[W.napoleon2 + 6, {...manosEn([118, 548], [284, 116]), mi: 'agarra', md: 'abierta'}],
 	]);
 	const conEspada = f >= desenvaina;
 	const vitorea = f >= W.poderoso;
@@ -258,13 +258,13 @@ const Diminuto: React.FC<P> = ({d, h, e, s}) => {
 	const f = useCurrentFrame();
 	const actor = {x: 250, y: 1920, alto: 1300};
 	const dibujando = f < W.berrinches + 4 || f >= W.apodo - 4;
-	const [px, py] = aLienzo(actor, ATRIL.x - 150 + Math.sin(f / 1.8) * 60, ATRIL.y + 40 + Math.cos(f / 2.6) * 50);
+	const [px, py] = aLienzo(actor, ATRIL.x - 150 + Math.sin(f / 4) * 40, ATRIL.y + 40 + Math.cos(f / 5.5) * 30);
 	const [tx, ty] = aLienzo(actor, ATRIL.x - 120 + (f - (W.apodo - 4)) * 6, ATRIL.y - 250);
 	const pose = animarPose(f, [
 		[d, {...manosEn([150, 548], [px, py]), mi: 'puno', md: 'agarra', cuerpo: 6, cabeza: 6}],
 		[W.berrinches + 4, {...manosEn([150, 548], [px, py]), mi: 'puno', md: 'agarra', cuerpo: 6, cabeza: 6}],
-		[W.berrinches + 10, {...manosEn([226, 486], [330, 300], {}, true), mi: 'abierta', md: 'agarra', cuerpo: -8, cabeza: -10}],
-		[W.apodo - 6, {...manosEn([226, 486], [330, 300], {}, true), mi: 'abierta', md: 'agarra', cuerpo: -8, cabeza: -10}],
+		[W.berrinches + 10, {...manosEn([210, 476], [292, 520], {}, true), mi: 'abierta', md: 'agarra', cuerpo: -5, cabeza: -10}],
+		[W.apodo - 6, {...manosEn([210, 476], [292, 520], {}, true), mi: 'abierta', md: 'agarra', cuerpo: -5, cabeza: -10}],
 		[W.apodo, {...manosEn([150, 548], [tx, ty]), mi: 'puno', md: 'agarra', cuerpo: 8, cabeza: 4}],
 	]);
 	const poseFinal = f < W.berrinches + 4 ? {...pose, ...manosEn(undefined, [px, py])} : f >= W.apodo ? {...pose, ...manosEn(undefined, [tx, ty])} : pose;
@@ -275,7 +275,7 @@ const Diminuto: React.FC<P> = ({d, h, e, s}) => {
 				<Caricatura ancho={ATRIL.ancho - 52} alto={ATRIL.alto - 52} desde={W.diminuto - 2} berrinche={W.berrinches} titulo={1e9} />
 			</Atril>
 			<Actor {...actor}>
-				<Muneco ropa={ROPA_GILLRAY} pose={poseFinal} objDer={<Pluma rot={-30} />} ojos={riendo ? 'feliz' : 'entrecerrados'} cejas="arrogante" boca={riendo ? 'sonrisaGrande' : 'picara'} tiembla={riendo ? 1.3 : 0} />
+				<Muneco ropa={ROPA_GILLRAY} pose={poseFinal} objDer={<Pluma rot={-30} />} ojos={riendo ? 'feliz' : 'entrecerrados'} cejas="arrogante" boca={riendo ? 'sonrisaGrande' : 'picara'} tiembla={riendo ? 1 : 0} />
 			</Actor>
 		</Toma>
 	);
@@ -287,7 +287,7 @@ const LittleBoney: React.FC<P> = ({d, h, e, s}) => {
 	const ancho = 780;
 	const alto = 990;
 	const px = 540 - 300 + letras * 600;
-	const py = 1000 - alto / 2 + 80 + Math.sin(f * 1.3) * 16;
+	const py = 1000 - alto / 2 + 80 + Math.sin(f * 0.5) * 10;
 	return (
 		<Toma escena={<EscEstudio />} desde={d} hasta={h} entrada={e} salida={s} cam={{s: [1.0, 1.04]}} golpes={[[W.boney, 0.08]]}>
 			<Papel x={540} y={1000} ancho={ancho} alto={alto} rot={-2}>
@@ -318,7 +318,7 @@ const Periodicos: React.FC<P> = ({d, h, e, s}) => {
 		<Toma escena={<EscMapa />} desde={d} hasta={h} entrada={e} salida={s} cam={{s: [1.04, 1.1], y: [0, -10]}} golpes={[[W.europa, 0.05]]} encima={<><TituloArriba texto="EN TODA *EUROPA*" desde={W.copian} tam={120} /></>}>
 			<PeriodicosVolando desde={W.los6 - 2} />
 			<Actor x={540} y={2010} alto={1120}>
-				<Muneco ropa={ROPA_INGLES} pose={pose} objPecho={<PeriodicoPecho x={200} y={440} ancho={300} alto={290} />} ojos={risa ? 'cerrados' : 'grandes'} cejas={risa ? 'arrogante' : 'sorprendido'} boca={risa ? 'sonrisaGrande' : 'o'} tiembla={risa ? 1.6 : 0} semilla={2} />
+				<Muneco ropa={ROPA_INGLES} pose={pose} objPecho={<PeriodicoPecho x={200} y={440} ancho={300} alto={290} />} ojos={risa ? 'cerrados' : 'grandes'} cejas={risa ? 'arrogante' : 'sorprendido'} boca={risa ? 'sonrisaGrande' : 'o'} tiembla={risa ? 1 : 0} semilla={2} />
 			</Actor>
 		</Toma>
 	);
@@ -338,7 +338,7 @@ const Autopsia: React.FC<P> = ({d, h, e, s}) => {
 		[tira - 4, {...manosEn([170, 520], [230, 520], {}, true), mi: 'relajada', md: 'relajada', cabeza: 8}],
 		[tira, {...manosEn([cx, cy]), mi: 'agarra', md: 'relajada', cabeza: 4}],
 		[W.cinco - 2, {...manosEn([cx, cy]), mi: 'agarra', md: 'relajada', cabeza: -4}],
-		[W.cinco + 6, {...manosEn([cx, cy], [300, 250]), mi: 'agarra', md: 'senala', wd: 160, cabeza: -6}],
+		[W.cinco + 6, {...manosEn([cx, cy]), ...((r) => ({bd: r.a, cd: r.c}))(senalar(1, 300, 40, 0.8)), mi: 'agarra', md: 'senala', cabeza: -6}],
 	]);
 	return (
 		<Toma escena={<EscSantaHelena />} desde={d} hasta={h} entrada={e} salida={s} cam={{s: [1.03, 1.09], y: [-20, -40]}} golpes={[[W.cinco, 0.05]]} encima={<><TituloArriba texto="*1821*" desde={W.anio1821} tam={150} /><Rotulo texto="ISLA DE SANTA HELENA" desde={d + 3} /></>}>
@@ -355,11 +355,11 @@ const Inglaterra: React.FC<P> = ({d, h, e, s}) => {
 	const f = useCurrentFrame();
 	const actor = {x: 890, y: 1960, alto: 1200};
 	const avance = interpolate(f, [d + 2, W.es8], [0, 1], clamp);
-	const [ex, ey] = aLienzo(actor, 260 + avance * 340, 790 + Math.sin(f * 1.2) * 14);
+	const [ex, ey] = aLienzo(actor, 260 + avance * 340, 790 + Math.sin(f * 0.45) * 8);
 	const pose = animarPose(f, [
 		[d, {...manosEn([ex, ey], [250, 548]), mi: 'agarra', md: 'puno', cuerpo: -6, cabeza: -6}],
 		[W.es8 - 2, {...manosEn([ex, ey], [250, 548]), mi: 'agarra', md: 'puno', cuerpo: -6, cabeza: -6}],
-		[W.es8 + 6, {...manosEn([150, 548], [318, 130]), mi: 'puno', md: 'abierta', frenteD: 1, wd: 170, cabeza: 8, cuerpo: 0}],
+		[W.es8 + 6, {...manosEn([150, 548], [318, 120]), mi: 'puno', md: 'abierta', frenteD: 1, cabeza: 8, cuerpo: 0}],
 	]);
 	const poseF = f < W.es8 - 2 ? {...pose, ...manosEn([ex, ey])} : pose;
 	return (
@@ -380,7 +380,7 @@ const Mide157: React.FC<P> = ({d, h, e, s}) => {
 	const ingles = animarPose(f, [
 		[d, {...POSES.jarras}],
 		[W.m157 + 2, {...POSES.jarras}],
-		[W.m157 + 9, {...manosEn([118, 640], [224, 470], {}, true), mi: 'senala', md: 'abierta', wi: -10, cuerpo: 6, cabeza: -8}],
+		[W.m157 + 9, {...manosEn([200, 480], undefined, {}, true), ...((r) => ({bd: r.a, cd: r.c}))(senalar(1, 593, 226, 0.7)), mi: 'abierta', md: 'senala', cuerpo: 3, cabeza: -6}],
 	]);
 	const napo = animarPose(f, [
 		[d, {...POSES.firme}],
@@ -390,10 +390,10 @@ const Mide157: React.FC<P> = ({d, h, e, s}) => {
 	return (
 		<Toma escena={<EscMedidas />} desde={d} hasta={h} entrada={e} salida={s} cam={CAM_TABLA} golpes={[[W.m157, 0.07]]} encima={<><TituloArriba texto="*1,57 M|#ff5a4f*" desde={W.m157} tam={160} /></>}>
 			<EnTabla x={320} cm={cm}>
-				<Muneco ropa={ROPA_NAPOLEON} pose={napo} ojos={f >= W.m157 ? 'grandes' : 'normal'} cejas={f >= W.m157 + 10 ? 'enojado' : 'sorprendido'} boca={f >= W.m157 + 10 ? 'mueca' : 'o'} tiembla={f >= W.m157 + 10 ? 0.8 : 0} />
+				<Muneco ropa={ROPA_NAPOLEON} pose={napo} ojos={f >= W.m157 ? 'grandes' : 'normal'} cejas={f >= W.m157 + 10 ? 'enojado' : 'sorprendido'} boca={f >= W.m157 + 10 ? 'mueca' : 'o'} />
 			</EnTabla>
 			<EnTabla x={770} cm={178} voltear>
-				<Muneco ropa={ROPA_INGLES} pose={ingles} semilla={2} ojos={risa ? 'feliz' : 'entrecerrados'} cejas="arrogante" boca={risa ? 'sonrisaGrande' : 'picara'} tiembla={risa ? 1.4 : 0} />
+				<Muneco ropa={ROPA_INGLES} pose={ingles} semilla={2} ojos={risa ? 'feliz' : 'entrecerrados'} cejas="arrogante" boca={risa ? 'sonrisaGrande' : 'picara'} tiembla={risa ? 1 : 0} />
 			</EnTabla>
 			<MarcaAltura cm={157} desde={W.m157} color="#e3262e" lado="izq" x1={130} x2={560} />
 		</Toma>
@@ -447,12 +447,12 @@ const Cuanto: React.FC<P> = ({d, h, e, s}) => {
 				[llega + 22, {...POSES.victoria, bi: 130, bd: 130, salto: 40, li: 0.25, ld: 0.25}],
 				[llega + 30, {...POSES.victoria, salto: 0}],
 			])
-		: {...POSES.firme, cabeza: Math.sin(f / 3) * 2};
+		: {...POSES.firme};
 	return (
 		<Toma escena={<EscMedidas />} desde={d} hasta={h} entrada={e} salida={s} cam={{s: [1.04, 1.1], y: [-10, -30]}} golpes={[[llega, 0.08]]} encima={<><TituloArriba texto="¿CUÁNTO *MEDÍA*?" desde={d + 2} hasta={llega} tam={130} /><TituloArriba texto="¡CASI *1,69 M|#3fe07a*!" desde={llega} tam={150} /></>}>
 			<Medidor cm={cabezal} x1={330} x2={760} />
 			<EnTabla x={540} cm={cmNap}>
-				<Muneco ropa={ROPA_NAPOLEON} pose={napo} ojos={feliz ? 'feliz' : f >= d + 6 ? 'grandes' : 'normal'} cejas={feliz ? 'arrogante' : 'preocupado'} boca={feliz ? 'sonrisaGrande' : 'o'} tiembla={!feliz && f > d + 10 ? 0.5 : 0} />
+				<Muneco ropa={ROPA_NAPOLEON} pose={napo} ojos={feliz ? 'feliz' : f >= d + 6 ? 'grandes' : 'normal'} cejas={feliz ? 'arrogante' : 'preocupado'} boca={feliz ? 'sonrisaGrande' : 'o'} />
 			</EnTabla>
 			{feliz && <MarcaAltura cm={169} desde={llega + 2} color="#22a84f" lado="izq" x1={130} x2={430} />}
 			<Confeti desde={llega + 2} n={50} />
@@ -549,7 +549,7 @@ const PequenoCabo: React.FC<P> = ({d, h, e, s}) => {
 	const [lx, ly] = aLienzo(izq, 470, pieY - 10);
 	const [rx, ry] = aLienzo(der, 610, pieY - 10);
 	const alza = (manoX: number, manoY: number): Partial<Pose> => ({...manosEn([120, 540], [manoX, manoY]), mi: 'puno', md: 'abierta', wd: 150});
-	const saludo = Math.sin(f / 2.2) * 25;
+	const saludo = Math.sin(f / 3.2) * 18;
 	return (
 		<Toma escena={<EscDesfile />} desde={d} hasta={h} entrada={e} salida={s} cam={{s: [1.0, 1.06], y: [0, -10]}} golpes={[[W.cabo, 0.06]]} encima={<><TituloArriba texto="«EL PEQUEÑO *CABO*»" desde={W.cabo} tam={104} /></>}>
 			<Actor {...izq}>

@@ -124,6 +124,16 @@ export const apuntar = (lado: -1 | 1, tx: number, ty: number, largo: number): {a
 	return {a: mejor.a, c: mejor.c};
 };
 
+/** Brazo casi estirado apuntando hacia (tx, ty) del lienzo: el dedo índice sigue la línea del antebrazo. */
+export const senalar = (lado: -1 | 1, tx: number, ty: number, alcance = 0.93): {a: number; c: number} => {
+	const s = lado < 0 ? HOMBRO.i : HOMBRO.d;
+	const dx = tx - s[0];
+	const dy = ty - s[1];
+	const d = Math.hypot(dx, dy) || 1;
+	const r = (L1 + L2) * alcance;
+	return ik(lado, s[0] + (dx / d) * r, s[1] + (dy / d) * r);
+};
+
 /** Pose con las manos en puntos concretos del lienzo. */
 export const manosEn = (izq?: [number, number], der?: [number, number], extra: Partial<Pose> = {}, codoAdentro = false): Partial<Pose> => {
 	const p: Partial<Pose> = {...extra};
@@ -148,9 +158,9 @@ export const POSES = {
 	jarras: {...manosEn([150, 548], [250, 548]), mi: 'puno', md: 'puno'} as Partial<Pose>,
 	brazosArriba: {bi: 160, ci: 10, bd: 160, cd: 10, mi: 'abierta', md: 'abierta'} as Partial<Pose>,
 	victoria: {bi: 150, ci: 20, bd: 150, cd: 20, mi: 'puno', md: 'puno'} as Partial<Pose>,
-	encogeHombros: {...manosEn([40, 420], [360, 420]), mi: 'abierta', md: 'abierta', wi: -70, wd: -70, cabeza: -6} as Partial<Pose>,
-	cruzados: {...manosEn([248, 452], [152, 452], {}, true), mi: 'puno', md: 'puno'} as Partial<Pose>,
-	pulgarArriba: {bd: 38, cd: 118, md: 'pulgar', wd: 0} as Partial<Pose>,
+	encogeHombros: {...manosEn([34, 438], [366, 438], {}, true), mi: 'abierta', md: 'abierta', wi: 18, wd: 18, cabeza: -6} as Partial<Pose>,
+	cruzados: {...manosEn([256, 446], [146, 432]), mi: 'oculta', md: 'puno'} as Partial<Pose>,
+	pulgarArriba: {...manosEn(undefined, [236, 392]), md: 'pulgar'} as Partial<Pose>,
 	manoEnChaleco: {...manosEn(undefined, [212, 420], {}, true), md: 'oculta'} as Partial<Pose>,
 };
 
@@ -163,7 +173,7 @@ const NUMERICAS: (keyof Pose)[] = ['bi', 'ci', 'bd', 'cd', 'wi', 'wd', 'pi', 'pd
  * Interpola poses entre claves [cuadro, pose]. Cada clave hereda lo que no define de la anterior.
  * Las transiciones duran `transicion` cuadros (con anticipación suave) y terminan en el cuadro de la clave.
  */
-export const animarPose = (f: number, claves: Clave[], transicion = 7): Partial<Pose> => {
+export const animarPose = (f: number, claves: Clave[], transicion = 9): Partial<Pose> => {
 	if (claves.length === 0) return {};
 	const completas: [number, Pose][] = [];
 	let acumulada: Pose = {...POSE_BASE};
@@ -239,7 +249,7 @@ const FORMAS: Record<Exclude<Mano, 'oculta'>, Forma> = {
 	},
 	pulgar: {
 		c: [[0, 36, 30]],
-		k: [[-19, 56, 19, 56, 24], [16, 44, 18, 94, 18]],
+		k: [[-19, 56, 19, 56, 24], [18, 30, 58, 24, 18]],
 		lineas: ['M -8 46 L -8 66', 'M 4 46 L 4 67'],
 	},
 	senala: {
@@ -289,7 +299,7 @@ export type MunecoProps = {
 	hablando?: boolean;
 	/** ciclo de caminar (velocidad: 1 = normal) */
 	camina?: number;
-	/** temblor en grados (berrinche, miedo, risa) */
+	/** intensidad del vaivén de risa / enojo (0 = quieto) */
 	tiembla?: number;
 	respira?: boolean;
 	parpadea?: boolean;
@@ -345,7 +355,10 @@ export const Muneco: React.FC<MunecoProps> = ({
 		p.salto += Math.abs(Math.sin(fase)) * 10;
 		p.cuerpo += Math.sin(fase) * 2;
 	}
-	const temblor = tiembla ? tiembla * (Math.sin(f0 * 2.7) + 0.6 * Math.sin(f0 * 6.1)) : 0;
+	// vaivén suave (risa, enojo, nervios): una oscilación lenta, nunca un temblor
+	const vaiven = tiembla ? Math.sin(f0 * 0.5) : 0;
+	const temblor = tiembla * 1.1 * vaiven;
+	if (tiembla) p.salto += Math.abs(vaiven) * 5 * tiembla;
 	const resp = respira ? Math.sin(f / 7) : 0;
 	const parpadeo = parpadea && f % 97 > 93;
 	let bocaFinal = boca;
@@ -416,22 +429,24 @@ export const Muneco: React.FC<MunecoProps> = ({
 
 	// --- brazos ---
 	const brazo = (lado: -1 | 1) => {
-		const a = (lado < 0 ? p.bi : p.bd) + (lado < 0 ? -temblor : temblor) * 2;
+		const a = lado < 0 ? p.bi : p.bd;
 		const c = lado < 0 ? p.ci : p.cd;
 		const w = lado < 0 ? p.wi : p.wd;
 		const mano = lado < 0 ? p.mi : p.md;
 		const {s, e, m, ang} = brazoFK(lado, a, c);
-		const tramo = `M ${s[0]} ${s[1]} L ${e[0]} ${e[1]} L ${m[0]} ${m[1]}`;
+		// manga curva: sale en la dirección del brazo y llega en la del antebrazo (codo redondeado, sin quiebres)
+		const k = 0.58;
+		const c1 = [s[0] + (e[0] - s[0]) * k, s[1] + (e[1] - s[1]) * k];
+		const c2 = [m[0] + (e[0] - m[0]) * k, m[1] + (e[1] - m[1]) * k];
+		const tramo = `M ${s[0]} ${s[1]} C ${c1[0]} ${c1[1]} ${c2[0]} ${c2[1]} ${m[0]} ${m[1]}`;
 		const [fx, fy] = dir(lado, ang);
 		const giro = -lado * (ang + w);
 		const espejo = lado < 0 ? 1 : -1;
 		const obj = lado < 0 ? objIzq : objDer;
 		return (
 			<g key={lado}>
-				<path d={tramo} stroke={TINTA} strokeWidth={60} fill="none" strokeLinecap="round" strokeLinejoin="round" />
-				<path d={tramo} stroke={ropa.casaca} strokeWidth={46} fill="none" strokeLinecap="round" strokeLinejoin="round" />
-				{/* pliegue del codo */}
-				<path d={`M ${e[0] - fx * 8 - fy * 12} ${e[1] - fy * 8 + fx * 12} L ${e[0] + fy * 10} ${e[1] - fx * 10}`} stroke={TINTA} strokeWidth={4} opacity={0.35} strokeLinecap="round" />
+				<path d={tramo} stroke={TINTA} strokeWidth={60} fill="none" strokeLinecap="round" />
+				<path d={tramo} stroke={ropa.casaca} strokeWidth={46} fill="none" strokeLinecap="round" />
 				{ropa.punos && mano !== 'oculta' && (
 					<path d={`M ${m[0] - fx * 26} ${m[1] - fy * 26} L ${m[0] - fx * 4} ${m[1] - fy * 4}`} stroke={TINTA} strokeWidth={62} strokeLinecap="butt" />
 				)}

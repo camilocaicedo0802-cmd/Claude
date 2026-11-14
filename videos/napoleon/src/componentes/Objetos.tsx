@@ -160,15 +160,15 @@ export const Caricatura: React.FC<{ancho: number; alto: number; desde?: number; 
 	const l = f - berrinche;
 	const pose: Partial<Pose> = enBerrinche
 		? {
-				bi: 150 + Math.sin(l * 0.9) * 22,
+				bi: 150 + Math.sin(l * 0.42) * 18,
 				ci: 20,
-				bd: 150 + Math.cos(l * 0.9) * 22,
+				bd: 150 + Math.cos(l * 0.42) * 18,
 				cd: 20,
 				mi: 'puno',
 				md: 'puno',
-				li: Math.max(0, Math.sin(l * 0.75)) * 0.55,
-				ld: Math.max(0, -Math.sin(l * 0.75)) * 0.55,
-				salto: Math.abs(Math.sin(l * 0.75)) * 16,
+				li: Math.max(0, Math.sin(l * 0.42)) * 0.5,
+				ld: Math.max(0, -Math.sin(l * 0.42)) * 0.5,
+				salto: Math.abs(Math.sin(l * 0.42)) * 16,
 			}
 		: animarPose(f, [[desde, {...POSE_BASE}]]);
 	const letras = 'LITTLE BONEY';
@@ -177,7 +177,7 @@ export const Caricatura: React.FC<{ancho: number; alto: number; desde?: number; 
 		<div style={{position: 'absolute', inset: 0, width: ancho, height: alto}}>
 			<div style={{position: 'absolute', left: 0, top: 0, width: ancho, height: alto, clipPath: `inset(0 0 ${100 - revela}% 0)`}}>
 				<div style={{position: 'absolute', left: ancho * 0.5 - alto * 0.25, top: alto * 0.33, width: alto * 0.5, height: alto * 0.62}}>
-					<Muneco ropa={ROPA_NAPOLEON} pose={pose} escalaCabeza={1.5} ojos={enBerrinche ? 'cerrados' : 'grandes'} cejas={enBerrinche ? 'enojado' : 'sorprendido'} boca={enBerrinche ? 'grito' : 'o'} tiembla={enBerrinche ? 2.5 : 0} sombra={false} />
+					<Muneco ropa={ROPA_NAPOLEON} pose={pose} escalaCabeza={1.5} ojos={enBerrinche ? 'cerrados' : 'grandes'} cejas={enBerrinche ? 'enojado' : 'sorprendido'} boca={enBerrinche ? 'grito' : 'o'} tiembla={0} sombra={false} />
 				</div>
 				{enBerrinche &&
 					[0, 1].map((k) => {

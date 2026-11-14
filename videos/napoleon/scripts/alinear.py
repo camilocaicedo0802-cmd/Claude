@@ -26,9 +26,11 @@ from guion import ENFASIS_PALABRAS, GUION, VISIBLE  # noqa: E402
 SR = 24000
 
 # pausa (s) que queda DESPUÉS de cada frase; las de suspenso más largas
-PAUSA_NORMAL = 0.26
-PAUSA_DESPUES = {1: 0.42, 8: 0.36, 9: 0.34, 11: 0.30, 13: 0.30, 14: 0.38, 16: 0.42, 17: 0.40}
-PAUSA_INTERNA_MAX = 0.30  # pausas dentro de una frase
+# narración pausada: las pausas de los momentos clave se respetan (suspenso antes de cada revelación)
+PAUSA_NORMAL = 0.32
+PAUSA_DESPUES = {0: 0.36, 1: 0.6, 3: 0.5, 4: 0.45, 5: 0.45, 6: 0.5, 7: 0.45, 8: 0.55, 9: 0.5, 10: 0.45,
+                 11: 0.55, 12: 0.5, 13: 0.45, 14: 0.6, 15: 0.36, 16: 0.65, 17: 0.6}
+PAUSA_INTERNA_MAX = 0.42  # pausas dentro de una frase (puntos suspensivos)
 
 
 def norm(s):
