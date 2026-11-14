@@ -114,6 +114,16 @@ for job in jobs:
         if neg:
             m2 = clean(sam_mask(emb, pts, neg))
             m1 = m2 if m2.sum() > 0.8 * m1.sum() else m1
+        # agujeros cerrados que RVM ve como cuerpo (micrófono de solapa, reflejos): se rellenan
+        inv = (1 - m1).astype(np.uint8)
+        n, lab, st, _ = cv2.connectedComponentsWithStats(inv, 4)
+        for j in range(1, n):
+            x, y, w, h, area = st[j]
+            if x == 0 or y == 0 or x + w >= W or y + h >= H or area > 40000:
+                continue
+            hole = lab == j
+            if alphas[f][hole].mean() > 0.5:
+                m1[hole] = 1
         sams[f] = m1
         if take in LAPTOP:
             # el portátil va delante de la persona: se recorta como objeto aparte y se suma (sin mordisco rectangular)
