@@ -8,3 +8,6 @@ next-env.d.ts
 .playwright-mcp/
 .DS_Store
 _site/
+
+# Proyecto de vídeo con material confidencial de cliente: no versionar (repo público)
+video/
