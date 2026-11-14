@@ -341,3 +341,14 @@ Estudiado a 4 fps en la referencia. El dinamismo no viene de una sola animación
 - **El ganador 3 se rehace igual que este referente** (la propuesta D «Collage» queda descartada: no gustó).
 - En los textos: **sonido de tecleo** (`Escribir teclado`, `Type Digital SFX`, `Tecla`).
 - Se mantienen: colores del logo en lugar del rojo, sin etalonar, nada sobre la cara, labios sincronizados.
+
+### 12.1 Adaptación del referente Grow al ganador 3 (decisiones · 14/11/2026)
+- **Sin avatar 3D** (indicación del cliente): ese plano se hace con el recorte real sobre fondo blanco.
+- **Morados en lugar del rojo**: estudio liso morado (#A43BFF→#16002E), láminas moradas (#B01CFF→#5600B0), títulos condensados morados con resplandor; acento secundario **lavanda #C7A6FF** en lugar del azul claro.
+- **Escenarios = recorte limpio de la persona** (escala 0,62–0,92 anclada abajo) con la parte baja fundida (72 → 90 % de alto) para que mesa y portátil no ensucien el fondo.
+- **Demostración = grabación de pantalla real del Instagram del cliente** (perfil con 10,4 mil seguidores, cuadrícula, «Creamos tus campañas pagas por ti» a ½ velocidad, «Creamos tu web en solo 3 días», cámara grabando) con zooms 1,15–1,9× hacia el punto de interés.
+- **Maquetas curvadas** (sobre #343434) para el perfil flojo de «tu negocio», Google buscando la competencia / «grow marketing» y el chat sin respuesta.
+- **Subtítulos** de una palabra **abajo-centro (y 1460)** en vez de al centro: en nuestro encuadre la cara ocupa el centro.
+- **Tecleo** (`Escribir teclado`, ráfagas de 0,26 s) en cada palabra/título que entra; whooshes y golpes con los archivos identificados en el referente.
+- **Música**: «Wilee – Night Drive» (140 BPM, carpeta del cliente) desde el segundo 14, con corte en seco en «Escucha» y vuelta con *Deep Bass Hit 2*.
+- Cierre corto con el logo y @growmarketingpro_ (el referente no tiene cierre de marca).

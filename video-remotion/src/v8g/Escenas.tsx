@@ -56,7 +56,10 @@ export const Recorte: React.FC<{scene: Scene}> = ({scene}) => {
   const push = interpolate(frame, [scene.from * F, scene.to * F], [1, 1.04], clamp);
   return (
     <AbsoluteFill style={{scale: String(s * push), transformOrigin: '50% 100%'}}>
-      <Live from={scene.from} to={scene.to} mask="c" />
+      {/* la parte baja (mesa, portátil, restos de pared) se funde con el escenario */}
+      <AbsoluteFill style={{maskImage: 'linear-gradient(180deg, #000 0%, #000 72%, transparent 90%)', WebkitMaskImage: 'linear-gradient(180deg, #000 0%, #000 72%, transparent 90%)'}}>
+        <Live from={scene.from} to={scene.to} mask="c" />
+      </AbsoluteFill>
     </AbsoluteFill>
   );
 };
