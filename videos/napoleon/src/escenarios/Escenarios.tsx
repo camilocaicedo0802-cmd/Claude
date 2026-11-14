@@ -36,11 +36,11 @@ const Nube: React.FC<{x: number; y: number; s?: number; color?: string}> = ({x, 
 /* ---------- Tabla de estaturas (como una rueda de reconocimiento) ---------- */
 
 /** Suelo de la tabla y escala: 1 cm = 4,6 px. La coronilla de alguien de h cm queda en PISO - h*7. */
-export const PISO = 1700;
-export const PX_CM = 4.6;
+export const PISO = 1760;
+export const PX_CM = 5.6;
 export const yDeCm = (cm: number) => PISO - cm * PX_CM;
-/** Alto que hay que darle a un Personaje (EnMundo) para que su coronilla marque `cm`. */
-export const altoParaCm = (cm: number) => (cm * PX_CM) / 0.934;
+/** Alto del lienzo de un Muñeco (Actor) para que su coronilla marque `cm`. */
+export const altoParaCm = (cm: number) => (cm * PX_CM) / (870 / 900);
 
 export const EscMedidas: React.FC<{color?: string}> = ({color = '#2f4f74'}) => {
 	const id = useId('pared');
@@ -72,6 +72,7 @@ export const EscMedidas: React.FC<{color?: string}> = ({color = '#2f4f74'}) => {
 				);
 			})}
 			<rect x={0} y={PISO} width={1080} height={200} fill="#8a6a4a" />
+			<rect x={0} y={PISO + 60} width={1080} height={4} fill="#6e5236" opacity={0.6} />
 			<rect x={0} y={PISO} width={1080} height={14} fill="#5e452c" />
 		</Lienzo>
 	);
@@ -371,6 +372,47 @@ export const EscCelular: React.FC<{reacciones?: number}> = ({reacciones = 0}) =>
 			<text x={220} y={1482} fontFamily={TITULAR} fontWeight={700} fontSize={30} fill="#3a3a44">
 				pero mides 1,57 😂😂 #LittleBoney
 			</text>
+		</Lienzo>
+	);
+};
+
+/* ---------- Escenario con foco (veredicto), como el pedestal del video de referencia ---------- */
+
+export const EscEscenario: React.FC = () => {
+	const f = useCurrentFrame();
+	const id = useId('esc');
+	const foco = useId('foco');
+	return (
+		<Lienzo>
+			<defs>
+				<Degradado id={id} colores={[['#1a2550', 0], ['#0d1430', 1]]} />
+				<linearGradient id={foco} x1={0} y1={0} x2={0} y2={1}>
+					<stop offset={0} stopColor="#fff6c8" stopOpacity={0.85} />
+					<stop offset={1} stopColor="#fff6c8" stopOpacity={0.12} />
+				</linearGradient>
+			</defs>
+			<rect x={0} y={0} width={1080} height={1920} fill={`url(#${id})`} />
+			{Array.from({length: 40}).map((_, i) => (
+				<circle key={i} cx={random(`e${i}`) * 1080} cy={random(`ey${i}`) * 1300} r={2 + random(`er${i}`) * 4} fill="#ffffff" opacity={0.25 + 0.25 * Math.sin(f / 6 + i)} />
+			))}
+			{/* telones */}
+			{[-1, 1].map((l) => (
+				<g key={l}>
+					<path d={l < 0 ? 'M 0 0 L 230 0 Q 170 600 210 1500 L 0 1500 Z' : 'M 1080 0 L 850 0 Q 910 600 870 1500 L 1080 1500 Z'} fill="#8a1424" stroke={LINEA} strokeWidth={6} />
+					{[0, 1, 2, 3].map((k) => (
+						<path key={k} d={l < 0 ? `M ${40 + k * 48} 0 Q ${20 + k * 44} 700 ${40 + k * 46} 1500` : `M ${1040 - k * 48} 0 Q ${1060 - k * 44} 700 ${1040 - k * 46} 1500`} stroke="#5e0c18" strokeWidth={10} fill="none" />
+					))}
+				</g>
+			))}
+			<path d="M 0 0 L 1080 0 L 1080 120 Q 540 190 0 120 Z" fill="#a51c2e" stroke={LINEA} strokeWidth={6} />
+			{/* foco */}
+			<path d="M 470 0 L 610 0 L 900 1560 L 180 1560 Z" fill={`url(#${foco})`} />
+			{/* suelo */}
+			<rect x={0} y={1500} width={1080} height={420} fill="#3a2414" />
+			<ellipse cx={540} cy={1560} rx={380} ry={60} fill="#fff6c8" opacity={0.35} />
+			{Array.from({length: 5}).map((_, i) => (
+				<line key={i} x1={0} y1={1520 + i * i * 22} x2={1080} y2={1520 + i * i * 22} stroke="#2a1a0e" strokeWidth={5} />
+			))}
 		</Lienzo>
 	);
 };

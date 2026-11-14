@@ -1,6 +1,6 @@
 import React from 'react';
 import {Easing, interpolate, random, spring, useCurrentFrame, useVideoConfig} from 'remotion';
-import {SERIF, TITULAR} from '../fuentes';
+import {CONDENSADA, SERIF} from '../fuentes';
 import {CIUDADES, yDeCm} from '../escenarios/Escenarios';
 
 /* Utilería del short de Napoleón (coordenadas del mundo 1080x1920). */
@@ -48,11 +48,10 @@ export const MarcaAltura: React.FC<{cm: number; desde: number; color?: string; t
 					border: `8px solid ${TINTA}`,
 					borderRadius: 18,
 					padding: '4px 22px 8px',
-					fontFamily: TITULAR,
-					fontWeight: 900,
-					fontSize: 58,
+					fontFamily: CONDENSADA,
+					fontSize: 64,
+					letterSpacing: 1,
 					color: '#ffffff',
-					WebkitTextStroke: `2px ${TINTA}`,
 					whiteSpace: 'nowrap',
 					boxShadow: '0 8px 0 rgba(0,0,0,0.35)',
 				}}
@@ -128,22 +127,24 @@ export const PeriodicosVolando: React.FC<{desde: number}> = ({desde}) => {
 };
 
 /** Comparación de pulgadas en la pizarra (inglesa 2,54 cm vs francesa 2,71 cm). */
-export const Pulgadas: React.FC<{desde: number}> = ({desde}) => {
+export const Pulgadas: React.FC<{desde: number; y0?: number; paso?: number}> = ({desde, y0 = 490, paso = 340}) => {
 	const f = useCurrentFrame();
 	const a = interpolate(f, [desde, desde + 12], [0, 1], {...clamp, easing: Easing.out(Easing.cubic)});
 	const b = interpolate(f, [desde + 12, desde + 26], [0, 1], {...clamp, easing: Easing.out(Easing.cubic)});
-	const escala = 300; // px por cm
+	const escala = 240; // px por cm
 	const fila = (y: number, cm: number, p: number, etiqueta: string, color: string) => (
 		<div style={{position: 'absolute', left: 130, top: y}}>
-			<div style={{fontFamily: TITULAR, fontWeight: 900, fontSize: 64, color: 'rgba(250,250,245,0.95)', marginBottom: 14}}>{etiqueta}</div>
-			<div style={{width: cm * escala * p, height: 110, background: color, border: '6px solid rgba(250,250,245,0.95)', borderRadius: 10}} />
-			<div style={{fontFamily: TITULAR, fontWeight: 900, fontSize: 84, color: color, marginTop: 10, opacity: p}}>{`${cm.toFixed(2).replace('.', ',')} cm`}</div>
+			<div style={{fontFamily: CONDENSADA, fontSize: 70, lineHeight: 1, letterSpacing: 1, textTransform: 'uppercase', color: 'rgba(250,250,245,0.95)', marginBottom: 14}}>{etiqueta}</div>
+			<div style={{display: 'flex', alignItems: 'center', gap: 18}}>
+				<div style={{width: cm * escala * p, height: 110, background: color, border: '6px solid rgba(250,250,245,0.95)', borderRadius: 10, boxSizing: 'border-box'}} />
+				<div style={{fontFamily: CONDENSADA, fontSize: 80, color: color, opacity: p, whiteSpace: 'nowrap'}}>{`${cm.toFixed(2).replace('.', ',')} cm`}</div>
+			</div>
 		</div>
 	);
 	return (
 		<>
-			{fila(320, 2.54, a, '1 pulgada inglesa', '#9fd3ff')}
-			{fila(760, 2.71, b, '1 pulgada francesa', '#ffd84a')}
+			{fila(y0, 2.54, a, '1 pulgada inglesa', '#9fd3ff')}
+			{fila(y0 + paso, 2.71, b, '1 pulgada francesa', '#ffd84a')}
 		</>
 	);
 };

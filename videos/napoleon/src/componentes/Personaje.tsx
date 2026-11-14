@@ -413,6 +413,181 @@ const gorraSVG = (d: Diseno) => {
 	}
 };
 
+/** Cabeza completa (pelo, cara, sombrero, accesorios) en el lienzo de 400 de ancho, centro (200, 200), radio 150. */
+export const CabezaSVG: React.FC<{d: Diseno; ojos: Ojos; cejas: Cejas; boca: Boca; acc?: Accesorios; parpadeo?: boolean; f?: number}> = ({d, ojos, cejas, boca: bocaFinal, acc = {}, parpadeo = false, f = 0}) => {
+	const clipId = `cabeza-${React.useId().replace(/:/g, '')}`;
+	return (
+		<>
+			{d.pelo === 'raya' && (
+				<path d="M 58 210 Q 40 90 150 52 Q 250 30 330 110 Q 352 150 345 210 Q 320 130 260 112 Q 180 100 120 150 Q 80 180 58 210 Z" fill={d.colorPelo ?? '#6b4a2b'} stroke={TINTA} strokeWidth={8} strokeLinejoin="round" />
+			)}
+			{d.pelo === 'mono' && <circle cx={200} cy={46} r={58} fill={d.colorPelo ?? '#4a2c1a'} stroke={TINTA} strokeWidth={9} />}
+			{d.pelo === 'rizado' &&
+				[
+					[70, 120],
+					[110, 70],
+					[165, 46],
+					[235, 46],
+					[290, 70],
+					[330, 120],
+					[56, 180],
+					[344, 180],
+				].map(([cx, cy], i) => <circle key={i} cx={cx} cy={cy} r={48} fill={d.colorPelo ?? '#2b1a10'} stroke={TINTA} strokeWidth={9} />)}
+			{d.pelo === 'melena' && (
+				<path d="M 42 214 Q 26 52 200 40 Q 374 52 358 214 L 364 322 Q 332 340 298 320 L 298 210 L 102 210 L 102 320 Q 68 340 36 322 Z" fill={d.colorPelo ?? '#e8c25a'} stroke={TINTA} strokeWidth={9} strokeLinejoin="round" />
+			)}
+			<circle cx={200} cy={200} r={150} fill={d.piel} stroke={TINTA} strokeWidth={11} />
+			{d.mejillas && (
+				<g fill="#ff8fa3" opacity={0.45}>
+					<ellipse cx={122} cy={256} rx={26} ry={14} />
+					<ellipse cx={278} cy={256} rx={26} ry={14} />
+				</g>
+			)}
+			{d.ojeras && (
+				<g fill="#9fb59a" opacity={0.7}>
+					<ellipse cx={158} cy={232} rx={22} ry={8} />
+					<ellipse cx={242} cy={232} rx={22} ry={8} />
+				</g>
+			)}
+			<clipPath id={clipId}>
+				<circle cx={200} cy={200} r={146} />
+			</clipPath>
+			{d.pelo === 'rizado' && (
+				<g clipPath={`url(#${clipId})`}>
+					{[90, 140, 190, 240, 290].map((cx, i) => (
+						<circle key={cx} cx={cx} cy={78 + (i % 2) * 18} r={44} fill={d.colorPelo ?? '#2b1a10'} stroke={TINTA} strokeWidth={6} />
+					))}
+				</g>
+			)}
+			{d.pelo === 'mono' && (
+				<g>
+					<g clipPath={`url(#${clipId})`}>
+						<path d="M 30 30 L 370 30 L 370 190 Q 336 118 250 102 Q 170 92 116 128 Q 76 158 54 212 L 30 212 Z" fill={d.colorPelo ?? '#4a2c1a'} />
+					</g>
+					<path d="M 54 212 Q 76 158 116 128 Q 170 92 250 102 Q 336 118 360 196" stroke={TINTA} strokeWidth={6} fill="none" strokeLinejoin="round" />
+				</g>
+			)}
+			{d.pelo === 'melena' && (
+				<g>
+					<g clipPath={`url(#${clipId})`}>
+						<path d="M 30 30 L 370 30 L 370 160 Q 330 124 280 132 Q 240 112 200 134 Q 150 112 110 134 Q 70 126 30 160 Z" fill={d.colorPelo ?? '#e8c25a'} />
+					</g>
+					<path d="M 52 150 Q 70 126 110 134 Q 150 112 200 134 Q 240 112 280 132 Q 330 124 350 150" stroke={TINTA} strokeWidth={6} fill="none" strokeLinejoin="round" />
+				</g>
+			)}
+			{d.pelo === 'mechon' && (
+				<g>
+					<g clipPath={`url(#${clipId})`}>
+						<path d="M 30 30 L 370 30 L 370 150 Q 330 104 260 100 Q 230 88 210 100 Q 140 96 30 160 Z" fill={d.colorPelo ?? '#2a1c12'} />
+					</g>
+					<path d="M 180 96 Q 150 150 170 176 Q 190 140 214 118 Z" fill={d.colorPelo ?? '#2a1c12'} stroke={TINTA} strokeWidth={5} strokeLinejoin="round" />
+				</g>
+			)}
+			{d.pelo === 'corto' && (
+				<g>
+					<g clipPath={`url(#${clipId})`}>
+						<path d="M 30 30 L 370 30 L 370 150 Q 330 108 250 104 Q 236 86 222 104 Q 140 100 30 168 Z" fill={d.colorPelo ?? '#2f2a24'} />
+					</g>
+					<path d="M 62 146 Q 140 100 222 104 Q 236 86 250 104 Q 312 108 346 140" stroke={TINTA} strokeWidth={6} fill="none" strokeLinejoin="round" />
+				</g>
+			)}
+			{d.pelo === 'hitler' && (
+				<g>
+					<g clipPath={`url(#${clipId})`}>
+						<path d="M 40 40 L 300 40 L 300 100 Q 230 118 150 178 Q 120 196 96 214 L 40 200 Z" fill={d.colorPelo ?? '#141414'} />
+					</g>
+					<path d="M 300 100 Q 230 118 150 178 Q 120 196 96 214" stroke={TINTA} strokeWidth={6} fill="none" />
+				</g>
+			)}
+			{d.pelo === 'raya' && (
+				<path d="M 62 150 Q 110 92 200 80 Q 160 100 130 140 Z" fill={d.colorPelo ?? '#6b4a2b'} stroke={TINTA} strokeWidth={6} strokeLinejoin="round" />
+			)}
+			{ojosSVG(ojos, parpadeo)}
+			{d.pestanas && !acc.pepinos && ojos !== 'x' && pestanasSVG()}
+			{acc.pepinos && (
+				<g>
+					{[158, 242].map((x) => (
+						<g key={x}>
+							<circle cx={x} cy={205} r={34} fill="#5f9e3a" stroke={TINTA} strokeWidth={6} />
+							<circle cx={x} cy={205} r={25} fill="#c9ec9a" />
+							{[0, 72, 144, 216, 288].map((a) => (
+								<ellipse key={a} cx={x + Math.cos((a * Math.PI) / 180) * 12} cy={205 + Math.sin((a * Math.PI) / 180) * 12} rx={3} ry={5} fill="#f4ffe6" />
+							))}
+						</g>
+					))}
+				</g>
+			)}
+			{cejasSVG(cejas)}
+			{d.barba && (
+				<path
+					d="M 80 236 Q 96 368 200 380 Q 304 368 320 236 Q 300 292 262 300 Q 232 262 200 270 Q 168 262 138 300 Q 100 292 80 236 Z"
+					fill={d.barba}
+					stroke={TINTA}
+					strokeWidth={6}
+					strokeLinejoin="round"
+				/>
+			)}
+			{d.bigote === 'cepillo' && <rect x={184} y={246} width={32} height={20} rx={4} fill={d.colorBigote ?? '#141414'} />}
+			{bocaSVG(bocaFinal)}
+			{d.bigote === 'manubrio' && (
+				<path
+					d="M 200 252 Q 170 240 150 256 Q 128 272 118 250 Q 124 280 150 274 Q 176 268 200 262 Q 224 268 250 274 Q 276 280 282 250 Q 272 272 250 256 Q 230 240 200 252 Z"
+					fill={d.colorBigote ?? '#6b4a2b'}
+					stroke={TINTA}
+					strokeWidth={5}
+					strokeLinejoin="round"
+				/>
+			)}
+			{d.monoculo && (
+				<g>
+					<circle cx={242} cy={205} r={30} fill="rgba(255,255,255,0.25)" stroke="#c9a43a" strokeWidth={7} />
+					<path d="M 268 222 Q 290 290 262 340" stroke="#c9a43a" strokeWidth={3} fill="none" />
+				</g>
+			)}
+			{d.lentes && (
+				<g fill="rgba(255,255,255,0.18)" stroke={TINTA} strokeWidth={7}>
+					<circle cx={158} cy={205} r={34} />
+					<circle cx={242} cy={205} r={34} />
+					<path d="M 192 200 Q 200 192 208 200" fill="none" />
+				</g>
+			)}
+			{acc.vendas && (
+				<g>
+					<path d="M 54 140 Q 200 100 346 140 L 346 176 Q 200 136 54 176 Z" fill="#f6f6f2" stroke={TINTA} strokeWidth={6} strokeLinejoin="round" />
+					<path d="M 336 150 L 372 132 L 378 164 Z" fill="#f6f6f2" stroke={TINTA} strokeWidth={5} strokeLinejoin="round" />
+					<g transform="rotate(25 278 262)">
+						<rect x={252} y={252} width={52} height={20} rx={8} fill="#f2c7a0" stroke={TINTA} strokeWidth={4} />
+						<rect x={268} y={236} width={20} height={52} rx={8} fill="#f2c7a0" stroke={TINTA} strokeWidth={4} />
+					</g>
+				</g>
+			)}
+			{acc.gafas && (
+				<g>
+					<path d="M 118 192 Q 120 238 160 238 Q 192 236 192 196 Z" fill="#111" stroke={TINTA} strokeWidth={6} />
+					<path d="M 208 196 Q 208 236 240 238 Q 280 238 282 192 Z" fill="#111" stroke={TINTA} strokeWidth={6} />
+					<path d="M 112 190 L 288 190" stroke={TINTA} strokeWidth={9} strokeLinecap="round" />
+					<path d="M 130 200 L 150 214" stroke="#fff" strokeWidth={5} strokeLinecap="round" opacity={0.7} />
+					<path d="M 220 200 L 240 214" stroke="#fff" strokeWidth={5} strokeLinecap="round" opacity={0.7} />
+				</g>
+			)}
+			{acc.toalla ? (
+				<g>
+					<path d="M 46 160 Q 30 10 200 -6 Q 370 10 354 160 Q 300 112 200 116 Q 100 112 46 160 Z" fill="#ffd3e2" stroke={TINTA} strokeWidth={9} strokeLinejoin="round" />
+					<path d="M 120 120 Q 200 40 300 70 M 100 80 Q 190 20 280 30" stroke="#f0a9c2" strokeWidth={8} fill="none" strokeLinecap="round" />
+				</g>
+			) : (
+				gorraSVG(d)
+			)}
+			{acc.aureola && (
+				<g transform={`translate(0 ${Math.sin(f / 8) * 6})`}>
+					<ellipse cx={200} cy={20} rx={110} ry={26} fill="none" stroke="#fff3a0" strokeWidth={26} opacity={0.5} />
+					<ellipse cx={200} cy={20} rx={110} ry={26} fill="none" stroke="#ffd84a" strokeWidth={14} />
+				</g>
+			)}
+		</>
+	);
+};
+
 export const Personaje: React.FC<PersonajeProps> = ({
 	diseno: dBase,
 	ojos = 'normal',
@@ -437,7 +612,6 @@ export const Personaje: React.FC<PersonajeProps> = ({
 	const d: Diseno = acc.momia
 		? {...conChaqueta, chaqueta: '#f4f4f0', chaquetaSombra: '#d9d9d2', botones: '#f4f4f0', corbata: undefined, cinturon: undefined, panuelo: undefined, falda: '#f4f4f0', brazalete: false}
 		: conChaqueta;
-	const clipId = `cabeza-${React.useId().replace(/:/g, "")}`;
 	const f = useCurrentFrame() + semilla * 17;
 	const resp = respira ? Math.sin(f / 7) : 0;
 	const parpadeo = parpadea && f % 97 > 93;
@@ -584,172 +758,7 @@ export const Personaje: React.FC<PersonajeProps> = ({
 				</g>
 				{/* cabeza */}
 				<g transform={`translate(0 ${resp * 2.5}) rotate(${cabeza} 200 330)`}>
-					{d.pelo === 'raya' && (
-						<path d="M 58 210 Q 40 90 150 52 Q 250 30 330 110 Q 352 150 345 210 Q 320 130 260 112 Q 180 100 120 150 Q 80 180 58 210 Z" fill={d.colorPelo ?? '#6b4a2b'} stroke={TINTA} strokeWidth={8} strokeLinejoin="round" />
-					)}
-					{d.pelo === 'mono' && <circle cx={200} cy={46} r={58} fill={d.colorPelo ?? '#4a2c1a'} stroke={TINTA} strokeWidth={9} />}
-					{d.pelo === 'rizado' &&
-						[
-							[70, 120],
-							[110, 70],
-							[165, 46],
-							[235, 46],
-							[290, 70],
-							[330, 120],
-							[56, 180],
-							[344, 180],
-						].map(([cx, cy], i) => <circle key={i} cx={cx} cy={cy} r={48} fill={d.colorPelo ?? '#2b1a10'} stroke={TINTA} strokeWidth={9} />)}
-					{d.pelo === 'melena' && (
-						<path d="M 42 214 Q 26 52 200 40 Q 374 52 358 214 L 364 322 Q 332 340 298 320 L 298 210 L 102 210 L 102 320 Q 68 340 36 322 Z" fill={d.colorPelo ?? '#e8c25a'} stroke={TINTA} strokeWidth={9} strokeLinejoin="round" />
-					)}
-					<circle cx={200} cy={200} r={150} fill={d.piel} stroke={TINTA} strokeWidth={11} />
-					{d.mejillas && (
-						<g fill="#ff8fa3" opacity={0.45}>
-							<ellipse cx={122} cy={256} rx={26} ry={14} />
-							<ellipse cx={278} cy={256} rx={26} ry={14} />
-						</g>
-					)}
-					{d.ojeras && (
-						<g fill="#9fb59a" opacity={0.7}>
-							<ellipse cx={158} cy={232} rx={22} ry={8} />
-							<ellipse cx={242} cy={232} rx={22} ry={8} />
-						</g>
-					)}
-					<clipPath id={clipId}>
-						<circle cx={200} cy={200} r={146} />
-					</clipPath>
-					{d.pelo === 'rizado' && (
-						<g clipPath={`url(#${clipId})`}>
-							{[90, 140, 190, 240, 290].map((cx, i) => (
-								<circle key={cx} cx={cx} cy={78 + (i % 2) * 18} r={44} fill={d.colorPelo ?? '#2b1a10'} stroke={TINTA} strokeWidth={6} />
-							))}
-						</g>
-					)}
-					{d.pelo === 'mono' && (
-						<g>
-							<g clipPath={`url(#${clipId})`}>
-								<path d="M 30 30 L 370 30 L 370 190 Q 336 118 250 102 Q 170 92 116 128 Q 76 158 54 212 L 30 212 Z" fill={d.colorPelo ?? '#4a2c1a'} />
-							</g>
-							<path d="M 54 212 Q 76 158 116 128 Q 170 92 250 102 Q 336 118 360 196" stroke={TINTA} strokeWidth={6} fill="none" strokeLinejoin="round" />
-						</g>
-					)}
-					{d.pelo === 'melena' && (
-						<g>
-							<g clipPath={`url(#${clipId})`}>
-								<path d="M 30 30 L 370 30 L 370 160 Q 330 124 280 132 Q 240 112 200 134 Q 150 112 110 134 Q 70 126 30 160 Z" fill={d.colorPelo ?? '#e8c25a'} />
-							</g>
-							<path d="M 52 150 Q 70 126 110 134 Q 150 112 200 134 Q 240 112 280 132 Q 330 124 350 150" stroke={TINTA} strokeWidth={6} fill="none" strokeLinejoin="round" />
-						</g>
-					)}
-					{d.pelo === 'mechon' && (
-						<g>
-							<g clipPath={`url(#${clipId})`}>
-								<path d="M 30 30 L 370 30 L 370 150 Q 330 104 260 100 Q 230 88 210 100 Q 140 96 30 160 Z" fill={d.colorPelo ?? '#2a1c12'} />
-							</g>
-							<path d="M 180 96 Q 150 150 170 176 Q 190 140 214 118 Z" fill={d.colorPelo ?? '#2a1c12'} stroke={TINTA} strokeWidth={5} strokeLinejoin="round" />
-						</g>
-					)}
-					{d.pelo === 'corto' && (
-						<g>
-							<g clipPath={`url(#${clipId})`}>
-								<path d="M 30 30 L 370 30 L 370 150 Q 330 108 250 104 Q 236 86 222 104 Q 140 100 30 168 Z" fill={d.colorPelo ?? '#2f2a24'} />
-							</g>
-							<path d="M 62 146 Q 140 100 222 104 Q 236 86 250 104 Q 312 108 346 140" stroke={TINTA} strokeWidth={6} fill="none" strokeLinejoin="round" />
-						</g>
-					)}
-					{d.pelo === 'hitler' && (
-						<g>
-							<g clipPath={`url(#${clipId})`}>
-								<path d="M 40 40 L 300 40 L 300 100 Q 230 118 150 178 Q 120 196 96 214 L 40 200 Z" fill={d.colorPelo ?? '#141414'} />
-							</g>
-							<path d="M 300 100 Q 230 118 150 178 Q 120 196 96 214" stroke={TINTA} strokeWidth={6} fill="none" />
-						</g>
-					)}
-					{d.pelo === 'raya' && (
-						<path d="M 62 150 Q 110 92 200 80 Q 160 100 130 140 Z" fill={d.colorPelo ?? '#6b4a2b'} stroke={TINTA} strokeWidth={6} strokeLinejoin="round" />
-					)}
-					{ojosSVG(ojos, parpadeo)}
-					{d.pestanas && !acc.pepinos && ojos !== 'x' && pestanasSVG()}
-					{acc.pepinos && (
-						<g>
-							{[158, 242].map((x) => (
-								<g key={x}>
-									<circle cx={x} cy={205} r={34} fill="#5f9e3a" stroke={TINTA} strokeWidth={6} />
-									<circle cx={x} cy={205} r={25} fill="#c9ec9a" />
-									{[0, 72, 144, 216, 288].map((a) => (
-										<ellipse key={a} cx={x + Math.cos((a * Math.PI) / 180) * 12} cy={205 + Math.sin((a * Math.PI) / 180) * 12} rx={3} ry={5} fill="#f4ffe6" />
-									))}
-								</g>
-							))}
-						</g>
-					)}
-					{cejasSVG(cejas)}
-					{d.barba && (
-						<path
-							d="M 80 236 Q 96 368 200 380 Q 304 368 320 236 Q 300 292 262 300 Q 232 262 200 270 Q 168 262 138 300 Q 100 292 80 236 Z"
-							fill={d.barba}
-							stroke={TINTA}
-							strokeWidth={6}
-							strokeLinejoin="round"
-						/>
-					)}
-					{d.bigote === 'cepillo' && <rect x={184} y={246} width={32} height={20} rx={4} fill={d.colorBigote ?? '#141414'} />}
-					{bocaSVG(bocaFinal)}
-					{d.bigote === 'manubrio' && (
-						<path
-							d="M 200 252 Q 170 240 150 256 Q 128 272 118 250 Q 124 280 150 274 Q 176 268 200 262 Q 224 268 250 274 Q 276 280 282 250 Q 272 272 250 256 Q 230 240 200 252 Z"
-							fill={d.colorBigote ?? '#6b4a2b'}
-							stroke={TINTA}
-							strokeWidth={5}
-							strokeLinejoin="round"
-						/>
-					)}
-					{d.monoculo && (
-						<g>
-							<circle cx={242} cy={205} r={30} fill="rgba(255,255,255,0.25)" stroke="#c9a43a" strokeWidth={7} />
-							<path d="M 268 222 Q 290 290 262 340" stroke="#c9a43a" strokeWidth={3} fill="none" />
-						</g>
-					)}
-					{d.lentes && (
-						<g fill="rgba(255,255,255,0.18)" stroke={TINTA} strokeWidth={7}>
-							<circle cx={158} cy={205} r={34} />
-							<circle cx={242} cy={205} r={34} />
-							<path d="M 192 200 Q 200 192 208 200" fill="none" />
-						</g>
-					)}
-					{acc.vendas && (
-						<g>
-							<path d="M 54 140 Q 200 100 346 140 L 346 176 Q 200 136 54 176 Z" fill="#f6f6f2" stroke={TINTA} strokeWidth={6} strokeLinejoin="round" />
-							<path d="M 336 150 L 372 132 L 378 164 Z" fill="#f6f6f2" stroke={TINTA} strokeWidth={5} strokeLinejoin="round" />
-							<g transform="rotate(25 278 262)">
-								<rect x={252} y={252} width={52} height={20} rx={8} fill="#f2c7a0" stroke={TINTA} strokeWidth={4} />
-								<rect x={268} y={236} width={20} height={52} rx={8} fill="#f2c7a0" stroke={TINTA} strokeWidth={4} />
-							</g>
-						</g>
-					)}
-					{acc.gafas && (
-						<g>
-							<path d="M 118 192 Q 120 238 160 238 Q 192 236 192 196 Z" fill="#111" stroke={TINTA} strokeWidth={6} />
-							<path d="M 208 196 Q 208 236 240 238 Q 280 238 282 192 Z" fill="#111" stroke={TINTA} strokeWidth={6} />
-							<path d="M 112 190 L 288 190" stroke={TINTA} strokeWidth={9} strokeLinecap="round" />
-							<path d="M 130 200 L 150 214" stroke="#fff" strokeWidth={5} strokeLinecap="round" opacity={0.7} />
-							<path d="M 220 200 L 240 214" stroke="#fff" strokeWidth={5} strokeLinecap="round" opacity={0.7} />
-						</g>
-					)}
-					{acc.toalla ? (
-						<g>
-							<path d="M 46 160 Q 30 10 200 -6 Q 370 10 354 160 Q 300 112 200 116 Q 100 112 46 160 Z" fill="#ffd3e2" stroke={TINTA} strokeWidth={9} strokeLinejoin="round" />
-							<path d="M 120 120 Q 200 40 300 70 M 100 80 Q 190 20 280 30" stroke="#f0a9c2" strokeWidth={8} fill="none" strokeLinecap="round" />
-						</g>
-					) : (
-						gorraSVG(d)
-					)}
-					{acc.aureola && (
-						<g transform={`translate(0 ${Math.sin(f / 8) * 6})`}>
-							<ellipse cx={200} cy={20} rx={110} ry={26} fill="none" stroke="#fff3a0" strokeWidth={26} opacity={0.5} />
-							<ellipse cx={200} cy={20} rx={110} ry={26} fill="none" stroke="#ffd84a" strokeWidth={14} />
-						</g>
-					)}
+					<CabezaSVG d={d} ojos={ojos} cejas={cejas} boca={bocaFinal} acc={acc} parpadeo={parpadeo} f={f} />
 				</g>
 			</g>
 		</svg>

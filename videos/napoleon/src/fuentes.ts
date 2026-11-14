@@ -3,10 +3,13 @@ import {continueRender, delayRender, staticFile} from 'remotion';
 /* Fuentes guardadas en public/fuentes (el subconjunto "latin" ya trae á é í ó ú ñ ¿ ¡). */
 export const TITULAR = 'Montserrat';
 export const SERIF = 'Playfair Display';
+/** condensada y gruesa, como los textos del video de referencia */
+export const CONDENSADA = 'Anton';
 
 const fuentes: [string, string][] = [
 	[TITULAR, 'fuentes/montserrat-latin.woff2'],
 	[SERIF, 'fuentes/playfair-latin.woff2'],
+	[CONDENSADA, 'fuentes/anton-latin.woff2'],
 ];
 
 if (typeof document !== 'undefined') {

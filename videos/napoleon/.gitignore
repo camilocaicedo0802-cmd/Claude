@@ -3,3 +3,4 @@ out/
 # se regeneran con: python3 scripts/sonidos.py
 public/musica.wav
 public/sfx/
+__pycache__/
