@@ -149,7 +149,20 @@ Para activarlo, una sola vez: *Settings → Pages → Build and deployment → S
 
 ## Pruebas realizadas
 
-PRUEBAS_PENDIENTES
+Con Playwright (Chromium) sobre el build relativo, montado como en GitHub Pages:
+
+| Prueba | Resultado |
+| --- | --- |
+| Móvil 360 y 390, tablet 820 y desktop 1440 | Sin scroll horizontal (medido sin emulación móvil, que lo esconde al alejar la página), sin errores de consola ni peticiones fallidas en las 22 páginas: inicio, 20 proyectos y la landing |
+| Orden y textos | Índice 01–20 en el orden pedido; todos los títulos de sección en español; "Editor de video y diseñador digital" en el título, el menú, la portada y Sobre mí |
+| Contenido | Los 115 videos y 102 piezas tienen su tarjeta en el inicio, más las 11 pantallas de la landing |
+| YouTube | Grupos Shorts (17) y Formato horizontal (10, con la intro del jet primero); 9 fragmentos de 90 s marcados como tales y con la duración completa en el visor; marca de agua "Juan Caicedo" en videos, previews y portadas |
+| Medios | La duración de los 60 archivos web nuevos coincide con su original; todos tienen audio salvo el cierre animado del retiro, que no lo tiene en el original |
+| Landing | Vista previa con scroll dentro del celular, botón a `landing-almohadilla-termica.html` y botón de WhatsApp con mensaje |
+| Redirecciones | La raíz y una antigua página de proyecto de la web de editor (`trabajo-ryhar.html`) llevan al portafolio |
+| Peso | 665 MB publicados, por debajo del límite de 1 GB de GitHub Pages |
+
+Nota: el Chromium de pruebas no incluye el códec H.264, así que no se probó la reproducción con sonido. Los navegadores reales usan el MP4.
 
 ## Limitaciones pendientes
 
