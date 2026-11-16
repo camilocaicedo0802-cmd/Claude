@@ -1,30 +1,8 @@
-import {AbsoluteFill, CalculateMetadataFunction, Composition} from 'remotion';
+import {Composition} from 'remotion';
+import {FPS, H, TOTAL, W} from './base';
+import {Ganador4} from './Ganador4';
 
 // Ganador 4 · «Los 3 problemas de las redes» — vertical 1080x1920 a 60 fps.
-export const FPS = 60;
-export const W = 1080;
-export const H = 1920;
-
-type Props = Record<string, unknown>;
-
-const calculateMetadata: CalculateMetadataFunction<Props> = () => {
-  return {};
-};
-
 export const MyComposition = () => {
-  return (
-    <Composition
-      id="Ganador4"
-      component={MyComponent}
-      durationInFrames={FPS * 45}
-      fps={FPS}
-      width={W}
-      height={H}
-      calculateMetadata={calculateMetadata}
-    />
-  );
-};
-
-export const MyComponent: React.FC<Props> = () => {
-  return <AbsoluteFill style={{background: '#000'}} />;
+  return <Composition id="Ganador4" component={Ganador4} durationInFrames={Math.round(TOTAL * FPS)} fps={FPS} width={W} height={H} />;
 };

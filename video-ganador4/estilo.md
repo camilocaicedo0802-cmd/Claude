@@ -155,4 +155,10 @@ Estas correcciones del cliente mandan sobre el referente:
 
 ## 10. Registro de correcciones del usuario (este vídeo)
 
-(vacío — se irá llenando con cada corrección aprobada)
+### 10.1 Decisiones del cliente antes de editar (16/11/2026)
+- **Perfiles desordenados**: con **maqueta** (no hay grabaciones reales).
+- **Perfil bien hecho**: se usa la grabación de **@growmarketingpro_** (`ig_grow.mp4`); para este caso el cliente autoriza repetirla.
+- **B-roll de cliente mirando el móvil**: el que envió el cliente (`Cliente_mirando_celular.mp4`).
+- **Música**: **ANBR – Quantum** (PACK MÚSICA V2 de su carpeta).
+- **Guion**: fuera «porque eso es lo que está realizando» y «Déjalo ahí» (toma 4863).
+- **Objetos 3D**: en lugar del lingote de oro, la **animación del móvil 3D** y los **logos 3D de Instagram, Facebook y TikTok** que envió el cliente, **sin fondo** y con los logos **animados**.
