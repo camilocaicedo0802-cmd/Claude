@@ -6,11 +6,10 @@ import type { NavLink } from "../components/Nav";
 
 interface Props {
   links: NavLink[];
-  otherSite?: { href: string; label: string };
   role: string;
 }
 
-export function Contact({ links, otherSite, role }: Props) {
+export function Contact({ links, role }: Props) {
   const year = new Date().getFullYear();
   return (
     <>
@@ -19,12 +18,12 @@ export function Contact({ links, otherSite, role }: Props) {
           <RevealText
             as="h2"
             id="contacto-title"
-            className="display max-w-[14ch]"
+            className="display max-w-[18ch]"
             lines={[
-              <span key="a">Let&apos;s Create</span>,
-              <span key="b">Something Worth</span>,
+              <span key="a">Creemos algo</span>,
+              <span key="b">que valga la pena</span>,
               <span key="c" className="em text-signal">
-                Watching.
+                ver.
               </span>,
             ]}
           />
@@ -69,11 +68,6 @@ export function Contact({ links, otherSite, role }: Props) {
                 {s.label}
               </a>
             ))}
-            {otherSite && (
-              <a href={otherSite.href} className="inline-flex items-center gap-1.5 text-paper underline decoration-signal underline-offset-[6px]">
-                {otherSite.label} <ArrowUpRight aria-hidden size={14} />
-              </a>
-            )}
           </div>
         </div>
         <div className="shell flex flex-col gap-2 border-t border-line py-6 text-xs text-smoke sm:flex-row sm:justify-between">

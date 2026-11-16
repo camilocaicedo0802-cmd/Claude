@@ -23,9 +23,9 @@ export function About({ copy }: { copy: SiteCopy }) {
             <SectionHeading
               id="sobre-mi-title"
               lines={[
-                <span key="a">Behind the</span>,
+                <span key="a">La mirada detrás de</span>,
                 <span key="b" className="em text-signal">
-                  Frames.
+                  cada corte.
                 </span>,
               ]}
             />

@@ -1,5 +1,7 @@
 # Design
 
+> **Actualización (noviembre de 2026):** la web de editor de video (`apps/editor`) se unió al portafolio de `apps/disenador`, que ahora pone la edición de video como trabajo principal. Lo que sigue describe la fase de diseño original con dos webs.
+
 Fase 2 · Concepto visual. Shared by both sites (`apps/editor`, `apps/disenador`).
 
 ## Direction: "Corte final"

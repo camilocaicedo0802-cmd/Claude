@@ -14,7 +14,7 @@ export function Toolkit({ groups }: { groups: ToolGroup[] }) {
           id="herramientas-title"
           lines={[
             <span key="a">
-              My Creative <span className="em text-signal">Toolkit.</span>
+              Mis herramientas <span className="em text-signal">creativas.</span>
             </span>,
           ]}
         />

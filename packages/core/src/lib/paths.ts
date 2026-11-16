@@ -10,3 +10,6 @@ export const homeHref = (hash = "") => (RELATIVE_EXPORT ? `index.html${hash}` : 
 
 /** Case study page of a project. */
 export const caseHref = (slug: string) => (RELATIVE_EXPORT ? `trabajo-${slug}.html` : `/trabajos/${slug}/`);
+
+/** Full-length view of a landing page. */
+export const landingHref = (slug: string) => (RELATIVE_EXPORT ? `landing-${slug}.html` : `/landings/${slug}/`);

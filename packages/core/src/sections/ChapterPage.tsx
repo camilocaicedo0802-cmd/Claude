@@ -1,6 +1,5 @@
 "use client";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import { useMemo } from "react";
 import { LongForm, isLongForm } from "../components/LongForm";
 import { MediaCard } from "../components/MediaCard";
 import { useOpenViewer } from "../components/MediaViewer";
@@ -13,7 +12,7 @@ import type { Chapter, Entry, MediaItem } from "../content/types";
 import { pad2 } from "../lib/format";
 import { useMediaQuery } from "../lib/media-query";
 import { caseHref, homeHref } from "../lib/paths";
-import { countLabel } from "./Chapters";
+import { countLabel, groupsOf } from "./Chapters";
 
 interface Props {
   chapter: Chapter;
@@ -35,6 +34,14 @@ function Block({ title, children }: { title: string; children: React.ReactNode }
     </Reveal>
   );
 }
+
+const ratioOf = (e: Entry) => {
+  if (e.item.kind === "video") {
+    const m = videoMeta(e.item.video);
+    return m.width / m.height;
+  }
+  return e.item.image.width / e.item.image.height;
+};
 
 const heightOf = (e: Entry) => {
   if (e.item.kind === "video") {
@@ -64,8 +71,12 @@ export function ChapterPage({ chapter, prev, next }: Props) {
   const long = entries.filter(isLongForm);
   const xl = useMediaQuery("(min-width: 1280px)");
   const md = useMediaQuery("(min-width: 768px)");
-  const count = Math.min(grid.length, xl ? 4 : md ? 3 : 2);
-  const columns = useMemo(() => toColumns(grid, count), [grid, count]);
+  // Each named group (e.g. Shorts / Formato horizontal) gets its own heading and grid; landscape groups use wider columns.
+  const groups = groupsOf(grid).map((g) => {
+    const landscape = g.entries.every((e) => ratioOf(e) > 1);
+    const count = Math.min(g.entries.length, landscape ? (md ? 2 : 1) : xl ? 4 : md ? 3 : 2);
+    return { ...g, count, columns: toColumns(g.entries, count) };
+  });
   const cs = chapter.caseStudy ?? {};
 
   return (
@@ -116,22 +127,32 @@ export function ChapterPage({ chapter, prev, next }: Props) {
         </Reveal>
       </div>
 
-      <div className="shell">
-        <div className="grid items-start gap-3 md:gap-5" style={{ gridTemplateColumns: `repeat(${count}, minmax(0, 1fr))` }}>
-          {columns.map((col, c) => (
-            <div key={c} className="flex flex-col gap-7 md:gap-10">
-              {col.map(({ entry, at }) => (
-                <MediaCard
-                  key={at}
-                  entry={entry}
-                  sizes="(min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw"
-                  onOpen={() => openViewer(entries, at)}
-                />
-              ))}
-            </div>
-          ))}
+      {groups.map((g, gi) => (
+        <div key={g.name ?? "_"} className={`shell ${gi > 0 ? "mt-16 md:mt-24" : ""}`}>
+          {g.name && (
+            <h2 className="mb-6 flex items-baseline gap-3 border-t border-line pt-8 text-xl font-semibold tracking-[-0.02em] md:mb-8 md:text-2xl">
+              {g.name}
+              <span className="text-sm font-normal text-smoke tabular">
+                {g.entries.length} {g.entries.length === 1 ? "video" : "videos"}
+              </span>
+            </h2>
+          )}
+          <div className="grid items-start gap-3 md:gap-5" style={{ gridTemplateColumns: `repeat(${g.count}, minmax(0, 1fr))` }}>
+            {g.columns.map((col, c) => (
+              <div key={c} className="flex flex-col gap-7 md:gap-10">
+                {col.map(({ entry, at }) => (
+                  <MediaCard
+                    key={at}
+                    entry={entry}
+                    sizes={g.count <= 2 ? "(min-width: 768px) 50vw, 100vw" : "(min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw"}
+                    onOpen={() => openViewer(entries, at)}
+                  />
+                ))}
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
+      ))}
 
       {long.map((e) => (
         <LongForm key={e.index} entry={e} onOpen={() => openViewer(entries, e.index)} className="mt-14 md:mt-20" />

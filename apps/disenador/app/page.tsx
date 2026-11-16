@@ -4,11 +4,13 @@ import { Chapters } from "@jcc/core/sections/Chapters";
 import { Contact } from "@jcc/core/sections/Contact";
 import { Hero } from "@jcc/core/sections/Hero";
 import { Impact } from "@jcc/core/sections/Impact";
+import { LandingShowcase } from "@jcc/core/sections/LandingShowcase";
 import { MotionShowcase } from "@jcc/core/sections/MotionShowcase";
 import { Process } from "@jcc/core/sections/Process";
 import { Skills } from "@jcc/core/sections/Skills";
 import { Toolkit } from "@jcc/core/sections/Toolkit";
-import { chapters, content, copy, links, motionChapter, otherSite, workChapters } from "./site";
+import { landings } from "@jcc/core/content/landings";
+import { chapters, content, copy, links, motionChapter, workChapters } from "./site";
 
 export default function Home() {
   return (
@@ -17,8 +19,9 @@ export default function Home() {
       <MotionShowcase
         chapter={motionChapter}
         heading={[
-          <span key="a">
-            Made to <span className="em text-signal">Move.</span>
+          <span key="a">Cuando el diseño</span>,
+          <span key="b" className="em text-signal">
+            cobra vida.
           </span>,
         ]}
         intro="Mis piezas de motion graphics, hechas en After Effects y Premiere Pro. Cuando una pieza necesita movimiento, la llevo a video."
@@ -33,7 +36,8 @@ export default function Home() {
       <Toolkit groups={content.toolkit} />
       <Impact chapters={chapters} showCampaigns />
       <Process steps={content.process} />
-      <Contact links={links} otherSite={otherSite} role={copy.role} />
+      <LandingShowcase landings={landings} />
+      <Contact links={links} role={copy.role} />
     </SiteShell>
   );
 }

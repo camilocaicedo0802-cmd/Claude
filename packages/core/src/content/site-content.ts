@@ -71,7 +71,18 @@ export interface SiteSections {
   process: ProcessStep[];
 }
 
-const aiTools: ToolGroup[] = [
+const toolkit: ToolGroup[] = [
+  {
+    title: "Edición y diseño",
+    tools: [
+      { name: "Premiere Pro", mark: "Pr" },
+      { name: "After Effects", mark: "Ae" },
+      { name: "CapCut", mark: "Cc" },
+      { name: "Photoshop", mark: "Ps" },
+      { name: "Illustrator", mark: "Ai" },
+      { name: "Canva", mark: "Ca" },
+    ],
+  },
   {
     title: "Generación con IA",
     tools: [
@@ -89,41 +100,6 @@ const aiTools: ToolGroup[] = [
       { name: "Claude", mark: "Cl" },
     ],
   },
-];
-
-const toolkitEditor: ToolGroup[] = [
-  {
-    title: "Edición y motion",
-    tools: [
-      { name: "After Effects", mark: "Ae" },
-      { name: "Premiere Pro", mark: "Pr" },
-      { name: "CapCut", mark: "Cc" },
-    ],
-  },
-  {
-    title: "Diseño",
-    tools: [
-      { name: "Photoshop", mark: "Ps" },
-      { name: "Illustrator", mark: "Ai" },
-      { name: "Canva", mark: "Ca" },
-    ],
-  },
-  ...aiTools,
-];
-
-const toolkitDesigner: ToolGroup[] = [
-  {
-    title: "Diseño y edición",
-    tools: [
-      { name: "Photoshop", mark: "Ps" },
-      { name: "Illustrator", mark: "Ai" },
-      { name: "After Effects", mark: "Ae" },
-      { name: "Premiere Pro", mark: "Pr" },
-      { name: "Canva", mark: "Ca" },
-      { name: "CapCut", mark: "Cc" },
-    ],
-  },
-  ...aiTools,
   {
     title: "Pauta y gestión",
     tools: [
@@ -135,102 +111,77 @@ const toolkitDesigner: ToolGroup[] = [
   },
 ];
 
-const process: ProcessStep[] = [
-  { title: "Discovery", text: "Entiendo la marca, la audiencia y la plataforma donde va a vivir el video. Defino qué tiene que pasar cuando alguien lo vea." },
-  { title: "Creative Direction", text: "Propongo el enfoque: ritmo, tipografía, referencias y estructura del guion visual o del montaje." },
-  { title: "Editing & Motion", text: "Selecciono tomas, corto, animo tipografía y gráficos, limpio el audio y diseño el sonido." },
-  { title: "Refinement", text: "Corrección de color, ajustes de ritmo y rondas de revisión con tus comentarios." },
-  { title: "Final Delivery", text: "Exporto en los formatos que necesitas: vertical u horizontal, versiones por plataforma y archivos listos para pautar." },
-];
-
 export const sections: Record<SiteId, SiteSections> = {
-  editor: {
+  disenador: {
     hero: {
-      eyebrow: { highlight: "4 años", text: "de experiencia en edición y motion" },
+      eyebrow: { highlight: "4 años", text: "de experiencia como editor de video y diseñador" },
       lines: [
         [{ text: "Transformo ideas en" }],
         [{ text: "experiencias", em: true }, { text: " visuales" }],
         [{ text: "que se " }, { text: "sienten.", em: true, red: true }],
       ],
-      subtitle: "Video Editing · Motion Graphics · Visual Storytelling",
+      subtitle: "Edición de video · Motion graphics · Diseño digital · Contenido con IA",
       video: "editor-promo",
       videoLabel: "Video de motion graphics ¿Necesitas editor?, de Juan Camilo Caicedo",
       videoTag: "Motion graphics",
     },
     skills: [
       {
-        title: "Video",
-        emphasis: "Editing",
+        title: "Edición de",
+        emphasis: "video",
         summary: "Montaje con ritmo para contenido corto y largo, de la toma en bruto al video final.",
-        items: ["Edición profesional", "Storytelling audiovisual", "Contenido corto y largo", "Ritmo narrativo", "Transiciones", "Corrección de color", "Diseño sonoro y limpieza de audio"],
+        items: [
+          "Edición de reels y anuncios",
+          "Videos de formato largo",
+          "Storytelling audiovisual",
+          "Ritmo narrativo y transiciones",
+          "Subtítulos dinámicos",
+          "Corrección de color",
+          "Diseño sonoro y limpieza de audio",
+        ],
         example: "meb-podcast",
       },
       {
+        title: "YouTube y",
+        emphasis: "Shorts",
+        summary: "Videos completos para YouTube, del guion a la edición, y Shorts recortados de cada episodio.",
+        items: [
+          "Guiones para YouTube",
+          "Voces con IA",
+          "Edición de videos largos",
+          "Clipping: Shorts a partir de episodios largos",
+          "Hooks y retención",
+          "Intros, textos animados e imágenes de apoyo",
+        ],
+        example: "yt-short-01",
+      },
+      {
         title: "Motion",
-        emphasis: "Graphics",
+        emphasis: "graphics",
         summary: "Tipografía cinética y animación de elementos gráficos con criterio de diseño.",
-        items: ["Kinetic typography", "Motion design 2D", "Animación de elementos gráficos", "Transiciones animadas", "Animación para contenido comercial", "Composición audiovisual"],
+        items: ["Tipografía cinética", "Motion design 2D", "Animación de elementos gráficos", "Infografías animadas", "Transiciones animadas", "Animación para contenido comercial"],
         example: "tiempo-motion",
-      },
-      {
-        title: "Content",
-        emphasis: "Creation",
-        summary: "Piezas pensadas para cada plataforma y para el comportamiento de su audiencia.",
-        items: ["Reels", "TikTok", "YouTube (intro, outro, infografías)", "Video ads", "Contenido corporativo", "Formatos verticales y horizontales"],
-        example: "alanna-coming-soon",
-      },
-      {
-        title: "Workflow &",
-        emphasis: "IA",
-        summary: "Procesos ordenados y herramientas de IA para entregar más rápido sin perder calidad.",
-        items: ["Organización de material", "Adaptación multiplataforma", "Optimización de formatos", "Consistencia visual entre piezas", "Exportación profesional", "Generación y edición con IA", "Anuncios con avatares y creadores UGC con IA"],
-        example: "beleza-dia-01",
-      },
-    ],
-    toolkit: toolkitEditor,
-    process,
-  },
-  disenador: {
-    hero: {
-      eyebrow: { highlight: "4 años", text: "de experiencia como diseñador y editor" },
-      lines: [
-        [{ text: "Transformo ideas en" }],
-        [{ text: "experiencias", em: true }, { text: " visuales" }],
-        [{ text: "que se " }, { text: "sienten.", em: true, red: true }],
-      ],
-      subtitle: "Diseño digital · Motion Graphics · Contenido con IA",
-      video: "editor-promo",
-      videoLabel: "Video de motion graphics ¿Necesitas editor?, de Juan Camilo Caicedo",
-      videoTag: "Motion graphics",
-    },
-    skills: [
-      {
-        title: "Diseño",
-        emphasis: "visual",
-        summary: "Piezas, campañas e identidades para redes con dirección visual coherente.",
-        items: ["Branding e identidad para redes", "Carruseles y posts", "Flyers y banners", "Diseño de camisetas", "Mockups", "Dirección de arte"],
-      },
-      {
-        title: "Motion &",
-        emphasis: "video",
-        summary: "La pieza estática pasa a movimiento: edición, tipografía cinética y reels.",
-        items: ["Motion graphics", "Edición de reels", "Subtítulos dinámicos", "Diseño sonoro", "Corrección de color"],
-        example: "cr7-legado",
       },
       {
         title: "Contenido con",
         emphasis: "IA",
-        summary: "Videos, avatares e imágenes generados con IA, con dirección de arte y pensados para vender.",
+        summary: "Videos, voces, avatares e imágenes generados con IA, con dirección de arte y pensados para vender.",
         items: [
           "Videos con IA para ecommerce",
           "Avatares y creadores UGC con IA",
+          "Voces con IA para narración",
           "Anuncios para cada etapa del embudo",
           "Versiones de un anuncio con distintos hooks",
           "Generación y edición de imágenes con IA",
-          "Edición de audios con IA",
           "Campañas conceptuales 100 % IA",
         ],
         example: "ia-matcha-ugc",
+      },
+      {
+        title: "Diseño",
+        emphasis: "visual",
+        summary: "Piezas, campañas, landing pages e identidades para redes con dirección visual coherente.",
+        items: ["Branding e identidad para redes", "Carruseles y posts", "Flyers y banners", "Landing pages", "Workbooks y material descargable", "Diseño de camisetas", "Mockups y dirección de arte"],
       },
       {
         title: "Redes y",
@@ -239,13 +190,13 @@ export const sections: Record<SiteId, SiteSections> = {
         items: ["Manejo de comunidades", "Manejo de campañas", "Análisis de métricas", "Optimización de perfiles", "Gestión de 12 a 15 clientes en agencia"],
       },
     ],
-    toolkit: toolkitDesigner,
+    toolkit,
     process: [
-      { title: "Discovery", text: "Entiendo la marca, su audiencia y el objetivo de la pieza o campaña: vender, educar, invitar o posicionar." },
-      { title: "Creative Direction", text: "Defino la línea visual: paleta, tipografía, referencias y el sistema de piezas que necesita la campaña." },
-      { title: "Design & Motion", text: "Diseño las piezas, genero imágenes con IA cuando aporta y las llevo a video o motion si el formato lo pide." },
-      { title: "Refinement", text: "Ajustes con tus comentarios y adaptación a cada formato y plataforma." },
-      { title: "Final Delivery", text: "Entrego archivos listos para publicar o pautar, y si lo necesitas, acompaño la medición de resultados." },
+      { title: "Descubrimiento", text: "Entiendo la marca, la audiencia y la plataforma donde va a vivir el video o la pieza. Defino qué tiene que pasar cuando alguien la vea." },
+      { title: "Dirección creativa", text: "Propongo el enfoque: guion, ritmo, tipografía, referencias y la estructura del montaje o del sistema de piezas." },
+      { title: "Edición y motion", text: "Selecciono tomas, corto, animo tipografía y gráficos, limpio el audio y diseño el sonido. Cuando el proyecto lo pide, genero voces, imágenes o escenas con IA." },
+      { title: "Ajustes", text: "Corrección de color, ajustes de ritmo y rondas de revisión con tus comentarios." },
+      { title: "Entrega final", text: "Exporto en los formatos que necesitas: vertical u horizontal, versiones por plataforma, Shorts y archivos listos para publicar o pautar." },
     ],
   },
 };

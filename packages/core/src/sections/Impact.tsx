@@ -28,9 +28,9 @@ export function Impact({ chapters, showCampaigns = false }: Props) {
         <SectionHeading
           id="impacto-title"
           lines={[
-            <span key="a">Creative Work.</span>,
+            <span key="a">Trabajo creativo,</span>,
             <span key="b">
-              Real <span className="em text-signal">Impact.</span>
+              resultados <span className="em text-signal">reales.</span>
             </span>,
           ]}
         />

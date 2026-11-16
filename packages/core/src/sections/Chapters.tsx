@@ -9,7 +9,7 @@ import { RedRule, Reveal } from "../components/Reveal";
 import { SectionHeading } from "../components/SectionHeading";
 import { SiteLink } from "../components/SiteLink";
 import { counts, entriesOf } from "../content/chapters";
-import type { Chapter } from "../content/types";
+import type { Chapter, Entry } from "../content/types";
 import { pad2 } from "../lib/format";
 import { caseHref } from "../lib/paths";
 
@@ -65,7 +65,7 @@ export function Chapters({ chapters, heading, intro, id = "trabajos", leading = 
         <div className="grid gap-6 md:grid-cols-12">
           <SectionHeading
             id={`${id}-title`}
-            lines={heading ?? [<span key="h">Selected <span className="em text-signal">Works.</span></span>]}
+            lines={heading ?? [<span key="h">Trabajos <span className="em text-signal">destacados.</span></span>]}
             className="md:col-span-7"
           />
           <Reveal className="md:col-span-4 md:col-start-9 md:self-end">
@@ -105,26 +105,94 @@ export function Chapters({ chapters, heading, intro, id = "trabajos", leading = 
   );
 }
 
-function ChapterReel({ chapter }: { chapter: Chapter }) {
-  const rail = useRef<HTMLDivElement>(null);
+/** Splits a chapter's entries by their `group`, keeping first-appearance order. Ungrouped entries form one unnamed group. */
+export function groupsOf(entries: Entry[]) {
+  const groups: { name?: string; entries: Entry[] }[] = [];
+  for (const e of entries) {
+    const name = e.item.kind === "video" ? e.item.group : undefined;
+    const g = groups.find((x) => x.name === name);
+    if (g) g.entries.push(e);
+    else groups.push({ name, entries: [e] });
+  }
+  return groups;
+}
+
+/** Scroll state and paging for one horizontal rail. */
+function useRail() {
+  const ref = useRef<HTMLDivElement>(null);
   const [edges, setEdges] = useState({ start: true, end: false });
+  const update = () => {
+    const el = ref.current;
+    if (!el) return;
+    setEdges({ start: el.scrollLeft < 8, end: el.scrollLeft + el.clientWidth > el.scrollWidth - 8 });
+  };
+  useEffect(update, []);
+  const scrollBy = (dir: 1 | -1) => {
+    const el = ref.current;
+    if (el) el.scrollBy({ left: dir * el.clientWidth * 0.8, behavior: "smooth" });
+  };
+  return { ref, edges, update, scrollBy };
+}
+
+function RailArrows({ rail, label }: { rail: ReturnType<typeof useRail>; label: string }) {
+  return (
+    <div className="ml-auto hidden gap-2 md:flex">
+      <button type="button" onClick={() => rail.scrollBy(-1)} disabled={rail.edges.start} className="press grid size-11 place-items-center bg-panel hover:bg-panel-2 disabled:opacity-30" aria-label={`Anteriores de ${label}`}>
+        <ArrowLeft size={18} />
+      </button>
+      <button type="button" onClick={() => rail.scrollBy(1)} disabled={rail.edges.end} className="press grid size-11 place-items-center bg-panel hover:bg-panel-2 disabled:opacity-30" aria-label={`Siguientes de ${label}`}>
+        <ArrowRight size={18} />
+      </button>
+    </div>
+  );
+}
+
+function Rail({ rail, entries, all, label, className = "" }: { rail: ReturnType<typeof useRail>; entries: Entry[]; all: Entry[]; label: string; className?: string }) {
+  const openViewer = useOpenViewer();
+  return (
+    <div
+      ref={rail.ref}
+      onScroll={rail.update}
+      className={`rail flex snap-x snap-mandatory items-start gap-3 overflow-x-auto pb-2 [scrollbar-width:none] md:gap-4 [&::-webkit-scrollbar]:hidden ${className}`}
+      aria-label={`${label}. Desliza para ver más.`}
+      role="region"
+    >
+      {entries.map((e) => (
+        <MediaCard key={e.index} entry={e} layout="rail" sizes="(min-width: 768px) 360px, 60vw" onOpen={() => openViewer(all, e.index)} />
+      ))}
+    </div>
+  );
+}
+
+/** A named group of a chapter (e.g. "Shorts"): its own heading, arrows and rail. */
+function GroupRail({ chapter, name, entries, all }: { chapter: Chapter; name: string; entries: Entry[]; all: Entry[] }) {
+  const rail = useRail();
+  const label = `${chapter.title}, ${name}`;
+  return (
+    <div className="mt-10 md:mt-14">
+      <div className="shell flex items-end gap-4">
+        <h4 className="flex items-baseline gap-3 text-lg font-semibold tracking-[-0.01em] md:text-xl">
+          {name}
+          <span className="text-sm font-normal text-smoke tabular">
+            {entries.length} {entries.length === 1 ? "video" : "videos"}
+          </span>
+        </h4>
+        {entries.length > 2 && <RailArrows rail={rail} label={label} />}
+      </div>
+      <Rail rail={rail} entries={entries} all={all} label={label} className="mt-5" />
+    </div>
+  );
+}
+
+function ChapterReel({ chapter }: { chapter: Chapter }) {
+  const rail = useRail();
   const openViewer = useOpenViewer();
   const entries = entriesOf(chapter);
   // Long-form videos get their own block under the reel; the viewer still steps through the whole chapter.
   const reel = entries.filter((e) => !isLongForm(e));
   const long = entries.filter(isLongForm);
-
-  const update = () => {
-    const el = rail.current;
-    if (!el) return;
-    setEdges({ start: el.scrollLeft < 8, end: el.scrollLeft + el.clientWidth > el.scrollWidth - 8 });
-  };
-  useEffect(update, []);
-
-  const scrollBy = (dir: 1 | -1) => {
-    const el = rail.current;
-    if (el) el.scrollBy({ left: dir * el.clientWidth * 0.8, behavior: "smooth" });
-  };
+  const groups = groupsOf(reel);
+  const grouped = groups.some((g) => g.name);
 
   return (
     <article id={anchor(chapter.slug)} aria-labelledby={`${anchor(chapter.slug)}-title`} className="scroll-mt-[calc(var(--nav-h)+4rem)] border-b border-line py-12 md:py-16">
@@ -148,31 +216,16 @@ function ChapterReel({ chapter }: { chapter: Chapter }) {
             >
               Ver proyecto completo <ArrowUpRight aria-hidden size={15} />
             </SiteLink>
-            {reel.length > 2 && (
-              <div className="ml-auto hidden gap-2 md:flex">
-                <button type="button" onClick={() => scrollBy(-1)} disabled={edges.start} className="press grid size-11 place-items-center bg-panel hover:bg-panel-2 disabled:opacity-30" aria-label={`Anteriores de ${chapter.title}`}>
-                  <ArrowLeft size={18} />
-                </button>
-                <button type="button" onClick={() => scrollBy(1)} disabled={edges.end} className="press grid size-11 place-items-center bg-panel hover:bg-panel-2 disabled:opacity-30" aria-label={`Siguientes de ${chapter.title}`}>
-                  <ArrowRight size={18} />
-                </button>
-              </div>
-            )}
+            {!grouped && reel.length > 2 && <RailArrows rail={rail} label={chapter.title} />}
           </div>
         </div>
       </div>
 
-      <div
-        ref={rail}
-        onScroll={update}
-        className="rail mt-8 flex snap-x snap-mandatory items-start gap-3 overflow-x-auto pb-2 [scrollbar-width:none] md:mt-10 md:gap-4 [&::-webkit-scrollbar]:hidden"
-        aria-label={`${chapter.title}: ${countLabel(chapter)}. Desliza para ver más.`}
-        role="region"
-      >
-        {reel.map((e) => (
-          <MediaCard key={e.index} entry={e} layout="rail" sizes="(min-width: 768px) 360px, 60vw" onOpen={() => openViewer(entries, e.index)} />
-        ))}
-      </div>
+      {grouped ? (
+        groups.map((g) => <GroupRail key={g.name ?? "_"} chapter={chapter} name={g.name ?? "Más videos"} entries={g.entries} all={entries} />)
+      ) : (
+        <Rail rail={rail} entries={reel} all={entries} label={`${chapter.title}: ${countLabel(chapter)}`} className="mt-8 md:mt-10" />
+      )}
 
       {long.map((e) => (
         <LongForm key={e.index} entry={e} onOpen={() => openViewer(entries, e.index)} className="mt-10 md:mt-14" />

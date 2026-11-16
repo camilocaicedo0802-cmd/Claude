@@ -70,7 +70,9 @@ export function MediaCard({ entry, onOpen, layout = "grid", sizes = "(min-width:
             <span className="absolute left-3 top-3 grid size-9 place-items-center rounded-full bg-ink/70 text-paper transition-colors group-hover:bg-signal">
               <Play aria-hidden size={14} fill="currentColor" />
             </span>
-            <span className="absolute bottom-3 right-3 bg-ink/75 px-2 py-1 text-[0.6875rem] tabular text-paper/90">{formatDuration(meta!.duration)}</span>
+            <span className="absolute bottom-3 right-3 bg-ink/75 px-2 py-1 text-[0.6875rem] tabular text-paper/90">
+              {item.excerptOf ? `Fragmento · ${formatDuration(meta!.duration)}` : formatDuration(meta!.duration)}
+            </span>
           </>
         ) : (
           <span className="absolute right-3 top-3 grid size-9 place-items-center rounded-full bg-ink/70 text-paper opacity-0 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100">
