@@ -5,7 +5,7 @@ import { pieceSrc, posterSrc } from "@jcc/core/content/media";
 import { caseHref, homeHref } from "@jcc/core/lib/paths";
 import { ChapterPage } from "@jcc/core/sections/ChapterPage";
 import { Contact } from "@jcc/core/sections/Contact";
-import { chapters, copy, links, otherSite } from "../../site";
+import { chapters, copy, links } from "../../site";
 
 export const dynamicParams = false;
 
@@ -40,7 +40,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         prev={chapters[(index - 1 + chapters.length) % chapters.length]}
         next={chapters[(index + 1) % chapters.length]}
       />
-      <Contact links={homeLinks} otherSite={otherSite} role={copy.role} />
+      <Contact links={homeLinks} role={copy.role} />
     </SiteShell>
   );
 }

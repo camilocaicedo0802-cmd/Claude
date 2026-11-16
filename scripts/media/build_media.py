@@ -10,8 +10,9 @@ For every video in media/selection.json it writes, under media/out/:
     videos/<slug>.webm   VP9 + Opus fallback, only with --webm-full (doubles the size)
     previews/<slug>.mp4  6 s muted loop for hover / autoplay previews (+ .webm)
     posters/<slug>.webp  poster frame
+An entry's "watermark" ("br" or "tr": bottom or top right) burns "Juan Caicedo" into all three.
 For every piece it writes pieces/<file>.webp (max 1600 px) and pieces/sm/<file>.webp (max 720 px),
-and records the full-size dimensions in pieces.json.
+and records the full-size dimensions in pieces.json. A piece with "page" is that page of a PDF.
 A media/out/manifest.json with the final video dimensions, duration and sizes is written
 at the end; the websites read both JSON files at build time.
 
@@ -34,6 +35,8 @@ PREVIEW_SECONDS = 6
 MAX_VIDEO_BYTES = 11.5e6
 # Files in media/out/pieces that do not come from selection.json (portrait for "Sobre mí").
 KEEP_PIECES = {"retrato"}
+WATERMARK_TEXT = "Juan Caicedo"
+WATERMARK_FONT = os.path.join(ROOT, "node_modules", "@fontsource", "poppins", "files", "poppins-latin-600-normal.woff")
 
 
 def run(cmd):
@@ -83,6 +86,16 @@ def fit_filter(w, h, long_side):
     return f"scale='min({long_side},iw)':-2"
 
 
+def watermark_filter(corner):
+    """White text at 60 %, sized and inset from the frame's short side; corner is "br" or "tr"."""
+    if not corner:
+        return ""
+    unit = "min(w\\,h)*0.045"
+    y = f"h-th-{unit}" if corner == "br" else unit
+    return (f",drawtext=fontfile='{WATERMARK_FONT}':text='{WATERMARK_TEXT}':fontcolor=white@0.6:fontsize={unit}"
+            f":x=w-tw-{unit}:y={y}:shadowcolor=black@0.35:shadowx=1:shadowy=1")
+
+
 def encode_settings(duration, high=False):
     """Videos over 40 s (talks, tutorials) get a smaller frame; every file stays under MAX_VIDEO_BYTES."""
     long_form = duration > 40 and not high
@@ -114,7 +127,8 @@ def build_video(item, raw_dir, webm_full=False):
     cfg = encode_settings(dur, item.get("quality") == "high")
     # Per-video overrides, e.g. full-length YouTube episodes that cannot fit the per-file budget.
     cfg.update(item.get("encode", {}))
-    vf = fit_filter(info["w"], info["h"], cfg["long_side"]) + ",fps='min(30,source_fps)',format=yuv420p"
+    mark = watermark_filter(item.get("watermark"))
+    vf = fit_filter(info["w"], info["h"], cfg["long_side"]) + mark + ",fps='min(30,source_fps)',format=yuv420p"
 
     if not os.path.exists(video_out):
         cmd = ["ffmpeg", "-v", "error", "-y", "-i", src, "-vf", vf,
@@ -128,14 +142,14 @@ def build_video(item, raw_dir, webm_full=False):
         length = min(PREVIEW_SECONDS, dur)
         start = max(0.0, min(item.get("previewAt", 0) * dur, dur - length))
         run(["ffmpeg", "-v", "error", "-y", "-ss", f"{start:.2f}", "-t", f"{length:.2f}", "-i", src,
-             "-vf", fit_filter(info["w"], info["h"], 640) + ",fps='min(30,source_fps)',format=yuv420p",
+             "-vf", fit_filter(info["w"], info["h"], 640) + mark + ",fps='min(30,source_fps)',format=yuv420p",
              "-c:v", "libx264", "-preset", "slow", "-crf", "30", "-an", "-movflags", "+faststart",
              preview_out])
 
     if not os.path.exists(poster_out):
         at = min(item.get("posterAt", 0.1) * dur, max(dur - 0.1, 0))
         run(["ffmpeg", "-v", "error", "-y", "-ss", f"{at:.2f}", "-i", src, "-frames:v", "1",
-             "-vf", fit_filter(info["w"], info["h"], 1280), "-c:v", "libwebp", "-quality", "78",
+             "-vf", fit_filter(info["w"], info["h"], 1280) + mark, "-c:v", "libwebp", "-quality", "78",
              poster_out])
 
     final = probe(video_out)
@@ -162,6 +176,10 @@ def build_piece(item, raw_dir):
     small = os.path.join(OUT, "pieces", "sm", name + ".webp")
     if not (os.path.exists(full) and os.path.exists(small)):
         src = source_path(raw_dir, item["driveId"])
+        if "page" in item:  # one page of a PDF, rendered at 2x its point size
+            page = os.path.join(raw_dir, f"{item['driveId']}-p{item['page']}")
+            run(["pdftoppm", "-f", str(item["page"]), "-l", str(item["page"]), "-r", "144", "-png", "-singlefile", src, page])
+            src = page + ".png"
         info = probe(src)
         for path, side, quality in ((full, 1600, 82), (small, 720, 78)):
             run(["ffmpeg", "-v", "error", "-y", "-i", src, "-frames:v", "1",

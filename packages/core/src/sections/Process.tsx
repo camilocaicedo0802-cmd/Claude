@@ -20,9 +20,9 @@ export function Process({ steps }: { steps: ProcessStep[] }) {
             <SectionHeading
               id="proceso-title"
               lines={[
-                <span key="a">From Idea</span>,
+                <span key="a">De la idea</span>,
                 <span key="b">
-                  to <span className="em text-signal">Impact.</span>
+                  al <span className="em text-signal">resultado.</span>
                 </span>,
               ]}
             />

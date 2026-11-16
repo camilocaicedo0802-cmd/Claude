@@ -198,7 +198,11 @@ function ViewerDialog({ state, onClose, onMove }: { state: ViewerState; onClose:
             {meta && (
               <div>
                 <dt className="text-smoke">Duración</dt>
-                <dd className="mt-1 tabular">{formatDuration(meta.duration)}</dd>
+                <dd className="mt-1 tabular">
+                  {item.kind === "video" && item.excerptOf
+                    ? `Fragmento de ${formatDuration(meta.duration)} (video completo: ${formatDuration(item.excerptOf)})`
+                    : formatDuration(meta.duration)}
+                </dd>
               </div>
             )}
             <div>

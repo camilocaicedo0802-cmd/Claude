@@ -18,9 +18,6 @@ export const links: NavLink[] = [
   { href: "#trabajos", label: "Trabajos" },
   { href: "#sobre-mi", label: "Sobre mí" },
   { href: "#proceso", label: "Proceso" },
+  { href: "#landing", label: "Landing" },
   { href: "#contacto", label: "Contacto" },
 ];
-
-export const otherSite = process.env.NEXT_PUBLIC_OTHER_SITE_URL
-  ? { href: process.env.NEXT_PUBLIC_OTHER_SITE_URL, label: "Ver mi portafolio de edición de video" }
-  : undefined;

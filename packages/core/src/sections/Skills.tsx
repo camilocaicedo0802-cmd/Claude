@@ -19,7 +19,7 @@ export function Skills({ groups }: { groups: SkillGroup[] }) {
           id="habilidades-title"
           lines={[
             <span key="a">
-              What I Do <span className="em text-signal">Best.</span>
+              Lo que mejor <span className="em text-signal">hago.</span>
             </span>,
           ]}
         />

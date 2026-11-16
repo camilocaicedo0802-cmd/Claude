@@ -3,28 +3,30 @@ import type { Chapter, Entry, ImageAsset, ImageItem, MediaItem, SiteId, VideoIte
 
 const dims = pieces as Record<string, number[]>;
 
-function img(file: string, alt: string): ImageAsset {
+export function img(file: string, alt: string): ImageAsset {
   const size = dims[file];
   if (!size) throw new Error(`Unknown image "${file}" in media/out/pieces. Add it to media/selection.json and run npm run media:build.`);
   return { file, alt, width: size[0], height: size[1] };
 }
 
-const video = (slug: string, title: string, description?: string, longForm?: VideoItem["longForm"]): VideoItem => ({
+const video = (slug: string, title: string, description?: string, options?: Pick<VideoItem, "longForm" | "group" | "excerptOf">): VideoItem => ({
   kind: "video",
   video: slug,
   title,
   description,
-  longForm,
+  ...options,
 });
 const piece = (file: string, title: string, alt: string): ImageItem => ({ kind: "image", image: img(file, alt), title });
 
 const AE_PR = ["After Effects", "Premiere Pro"] as const;
+/** Groups of the YouTube chapter. */
+const S = { group: "Shorts" } as const;
+const H = { group: "Formato horizontal" } as const;
 const DRIVE = "Drive: Videos y Piezas para portafolio";
 
 /**
- * Every chapter of the portfolio, in the order of the numbered Drive folders; "Videos generados con IA",
- * added later, goes right after Ryhar. Lower number = more important. The editor site shows only the
- * videos of each chapter; the designer site shows videos and pieces.
+ * Every chapter of the portfolio, in display order (number = position, 1 is the most important).
+ * Most follow the numbered Drive folders; the site shows videos first, then pieces.
  */
 export const chapters: Chapter[] = [
   {
@@ -64,15 +66,85 @@ export const chapters: Chapter[] = [
     },
   },
   {
-    slug: "maria-elena-badillo",
+    slug: "ediciones-destacadas",
     number: 2,
+    title: "Ediciones destacadas",
+    context: "Trabajos y propuestas para clientes muy distintos",
+    categories: ["Edición de video", "Reels y formato corto", "Anuncios comerciales"],
+    description:
+      "Una selección que muestra cómo me adapto a cada cliente y a cada tipo de contenido: una marca de té matcha, una marca de muebles, un taller automotriz, una app de reservas, una masterclass y un medio de noticias. Cada pieza pide un lenguaje propio, del reel UGC con razones numeradas en pantalla a la nota periodística con datos y testimonios, y en todas cuido el ritmo, los subtítulos y la claridad del mensaje.",
+    role: "Edición de video, subtítulos y motion graphics",
+    tools: [],
+    source: "Drive: Subir contenido a Portafolio / Ediciones destacadas",
+    items: [
+      video("ed-matcha-ugc", "Reel UGC · Té matcha", "Una creadora presenta el té matcha con razones numeradas en pantalla, subtítulos que resaltan cada idea y el producto en primer plano al cierre."),
+      video("ed-macizo", "Propuesta creativa · Macizo", "Reel para una marca de muebles: un presentador recorre el showroom con títulos grandes en las palabras clave (Eames, tapicería, ebanistería) y escenas del espacio."),
+      video("ed-taller-audi", "Propuesta creativa · Taller automotriz", "Video para un taller: el presentador explica, paso a paso, la reparación de la transmisión DSG de un Audi A3, con títulos animados y tomas de detalle del motor."),
+      video("ed-kanto", "Reel animado · Kanto", "Reel de producto para una app de reservas: la interfaz animada muestra cómo se agenda por WhatsApp o por una página propia, cómo se centralizan las reservas y cómo se cobran señas, con cierre de prueba gratis."),
+      video("ed-masterclass", "Propuesta creativa · Masterclass", "Promo de una masterclass: la presentadora a cámara, frases en pantalla, gráficos de apoyo y la fecha del evento al cierre."),
+      video("ed-nota-seguridad", "Nota periodística · Seguridad en Colombia", "Nota informativa con datos de Indepaz, gráficas animadas y titulares en pantalla, cerrada con una pregunta para la audiencia."),
+      video("ed-nota-obras", "Nota periodística · Obras en el Cauca", "Reportería en terreno: entrevistas con rótulos, la entrega de vehículos compactadores y el seguimiento a las obras de un hospital, con subtítulos sincronizados."),
+    ],
+  },
+  {
+    slug: "grow-marketing",
+    number: 3,
+    title: "Grow Marketing",
+    client: "Grow Marketing",
+    context: "Agencia de marketing",
+    categories: ["Edición de video", "Reels y formato corto", "Motion Graphics"],
+    description:
+      "Edito los reels de la agencia y de sus clientes. Para su propia marca, el presentador habla a cámara y la edición lo acompaña con subtítulos dinámicos, gráficos en neón violeta y pantallas de apoyo que aterrizan cada idea. Para Cabany, una plataforma de reservas de cabañas en Panamá, combino anfitriones a cámara con recorridos animados por la app y mensajes de temporada.",
+    role: "Edición de video, subtítulos y motion graphics",
+    tools: [],
+    source: "Drive: Subir contenido a Portafolio / Grow Marketing",
+    items: [
+      video("grow-reel-1", "Reel de marca · El problema es otro"),
+      video("grow-reel-2", "Reel de marca · Hace 238 días"),
+      video("grow-reel-3", "Reel de marca · Tu contenido"),
+      video("grow-reel-4", "Reel de marca · El mundo desconoce"),
+      video("grow-reel-5", "Reel de marca · ¿Por qué confiar en ti?"),
+      video("grow-cabany-1", "Cabany · ¿Quién reserva la cabaña?"),
+      video("grow-cabany-2", "Cabany · Reserva desde la app"),
+      video("grow-cabany-3", "Cabany · Temporada alta"),
+    ],
+  },
+  {
+    slug: "bitacora-house",
+    number: 4,
+    title: "Bitácora House",
+    client: "Bitácora House",
+    context: "Agencia de marketing",
+    categories: ["Edición de video", "Reels y formato corto", "Anuncios comerciales"],
+    description:
+      "Edito, en inglés, los reels de tres clientes de la agencia: Slate, un estudio de spray tan y faciales en Tulsa; Félix Ramírez, de remodelación de baños y cocinas; y SpaceSet, de organización profesional de clósets. Presentadores a cámara, antes y después de cada obra, títulos que marcan el problema y la solución, y cierres que invitan a reservar o a escribir.",
+    role: "Edición de video y subtítulos",
+    tools: [],
+    source: "Drive: Subir contenido a Portafolio / Bitacora House",
+    items: [
+      video("bit-slate-facial", "Slate · Anuncio de facial"),
+      video("bit-slate-temporada", "Slate · Spray tan de temporada"),
+      video("bit-slate-consejos", "Slate · Consejos de spray tan"),
+      video("bit-slate-soluciones", "Slate · Problema y solución"),
+      video("bit-felix-ducha", "Félix Ramírez · Transformación de ducha"),
+      video("bit-felix-bano", "Félix Ramírez · Remodelación de baño"),
+      video("bit-felix-jacuzzi", "Félix Ramírez · De jacuzzi a ducha"),
+      video("bit-felix-cocina", "Félix Ramírez · Encimeras de cocina"),
+      video("bit-felix-propuesta", "Propuesta creativa · Félix Ramírez"),
+      video("bit-spaceset-fundadoras", "SpaceSet · Las fundadoras"),
+      video("bit-spaceset-closet", "SpaceSet · Transformación de clóset"),
+    ],
+  },
+  {
+    slug: "maria-elena-badillo",
+    number: 5,
     title: "María Elena Badillo",
     client: "María Elena Badillo",
     context: "Psicóloga, autora, empresaria y guía",
-    categories: ["Video Editing", "Reels & Short Form", "Motion Graphics"],
+    categories: ["Edición de video", "Reels y formato corto", "Motion Graphics", "Diseño visual"],
     description:
-      "María Elena Badillo es psicóloga, autora y empresaria, y su canal de YouTube reúne 1,3 millones de suscriptores. Para su marca personal edito reels a partir de conversaciones a cámara, clips de su podcast y momentos de su día a día, con subtítulos que resaltan cada idea clave, tipografía que acompaña su voz y un ritmo pensado para que el mensaje llegue completo. Su canal también me contactó para editar uno de sus episodios: corte y mezcla de tomas, limpieza de audio, animaciones de texto e infografías, intro y outro.",
-    role: "Edición de reels y de un episodio para YouTube, subtítulos y motion graphics",
+      "María Elena Badillo es psicóloga, autora y empresaria, y su canal de YouTube reúne 1,3 millones de suscriptores. Para su marca personal edito reels a partir de conversaciones a cámara, clips de su podcast y momentos de su día a día, con subtítulos que resaltan cada idea clave, tipografía que acompaña su voz y un ritmo pensado para que el mensaje llegue completo. Su canal también me contactó para editar uno de sus episodios: corte y mezcla de tomas, limpieza de audio, animaciones de texto e infografías, intro y outro. También diseño piezas para su marca: promociones, banners y workbooks descargables para sus programas.",
+    role: "Edición de reels y de un episodio para YouTube, subtítulos, motion graphics y diseño de piezas",
     tools: [],
     source: `${DRIVE} / 2. Maria Elena Badillo`,
     items: [
@@ -86,17 +158,106 @@ export const chapters: Chapter[] = [
         "meb-youtube",
         "Cómo volver a levantarte cuando sientes que todo se derrumbó",
         "Episodio completo de 38 minutos para su canal: adelanto de apertura, título animado, rótulo de presentación, cortes entre dos planos de cámara, palabras clave en pantalla, imágenes de apoyo y pantalla final de suscripción.",
-        { platform: "YouTube" },
+        { longForm: { platform: "YouTube" } },
       ),
+      video("meb-cierre-retiro", "Cierre animado · Retiro Volviendo al Ser", "Cierre animado de 5 segundos para la promoción del retiro: la pieza gráfica se arma en pantalla con la fecha, el lugar y los datos de contacto."),
+      piece("meb-promo-4x3", "Promo 4x3", "Pieza Este mes regala bienestar emocional, Promo 4x3 en sesiones de terapia, con María Elena frente a un portátil"),
+      piece("meb-unidos-venezuela", "Unidos por Venezuela", "Pieza de la jornada virtual gratuita Unidos por Venezuela: primeros auxilios emocionales, con el equipo de profesionales"),
+      piece("meb-retiro-oferta", "Retiro Volviendo al Ser: precios", "Pieza horizontal del retiro Volviendo al Ser con María Elena y los precios de acomodación individual y compartida"),
+      piece("meb-banner-1", "Banner de marca 1", "Banner horizontal María Elena Badillo, Centro de Bienestar Emocional, sobre fondo claro con ondas lilas"),
+      piece("meb-banner-2", "Banner de marca 2", "Banner horizontal María Elena Badillo, Centro de Bienestar Emocional, sobre ondas turquesa claras"),
+      piece("meb-banner-3", "Banner de marca 3", "Banner horizontal María Elena Badillo, Centro de Bienestar Emocional, en blanco sobre fondo turquesa oscuro"),
+      piece("meb-banner-4", "Banner de marca 4", "Banner horizontal María Elena Badillo, Centro de Bienestar Emocional, sobre fondo violeta con luces"),
+      piece("meb-wb-abundancia-1", "Workbook Corazón Abundante: portada", "Portada del Workbook 3 Corazón Abundante, Vida Abundante, Lo que he descubierto sobre mi abundancia, con María Elena"),
+      piece("meb-wb-abundancia-2", "Workbook Corazón Abundante: ejercicio", "Página del workbook con el ejercicio Lo que he descubierto sobre mi abundancia y casillas para marcar"),
+      piece("meb-wb-abundancia-3", "Workbook Corazón Abundante: semáforo", "Página del workbook Mi semáforo de abundancia, con una tabla por áreas en verde, amarillo y rojo"),
+      piece("meb-wb-cava-1", "Workbook semana 1: portada", "Portada del workbook Corazón Abundante, Vida Abundante: evaluación de conceptos del entrenamiento"),
+      piece("meb-wb-cava-2", "Workbook semana 1: sanando tu relación con el dinero", "Página Semana 1, Sanando tu relación con el dinero, con los acuerdos de trabajo interior"),
+      piece("meb-wb-cava-3", "Workbook semana 1: autoevaluación", "Página de autoevaluación de progreso con una tabla de calificación por áreas y una declaración final"),
+      piece("meb-wb-nino-1", "Workbook Niño interior: portada", "Portada del workbook Lo que mi historia aún intenta decirme, un primer encuentro con tu niño interior"),
+      piece("meb-wb-nino-2", "Workbook Niño interior: introducción", "Página de introducción del workbook Lo que mi historia aún intenta decirme, en tonos violeta"),
+      piece("meb-wb-nino-3", "Workbook Niño interior: cierre", "Página final Y para finalizar del workbook del niño interior, con espacios para escribir"),
+    ],
+  },
+  {
+    slug: "videos-con-ia",
+    number: 6,
+    title: "Videos generados con IA",
+    context: "Anuncios de ecommerce con avatares y creadores UGC",
+    categories: ["Campañas con IA", "Anuncios comerciales", "Reels y formato corto"],
+    description:
+      "Anuncios para productos de ecommerce hechos de principio a fin con inteligencia artificial: dos marcas de té matcha y Spicy Cubes, unas gomitas para adultos. Para cada producto creo a la persona que mejor lo vende, ya sea una creadora UGC que lo prueba en su cocina, una doctora que explica sus beneficios, el presentador de un podcast o los personajes de una novela animada. Los videos cubren cada etapa del embudo, del primer contacto a la compra, y cada anuncio tiene varias versiones con hooks y estilos distintos para probar cuál convierte mejor.",
+    role: "Creación de avatares, creadores UGC y escenas con IA, edición, subtítulos y motion graphics",
+    tools: ["Veo 3", "Google Flow", "Google AI Studio"],
+    source: "Drive: carpetas Videos Matcha, Videos matca iniciales y Prueba Pinara, y cuatro videos sueltos de Spicy Cubes",
+    items: [
+      video("ia-matcha-ugc", "Creadora UGC · Té matcha", "Una creadora generada con IA prepara el matcha en su cocina y cuenta por qué lo toma, con subtítulos que resaltan las palabras clave y un cierre de producto con llamado a la compra."),
+      video("ia-matcha-doctora", "Doctora · Té matcha", "Una doctora generada con IA recomienda el té matcha desde su consultorio, apoyada en escenas de la vida diaria de sus pacientes."),
+      video("ia-spicy-ugc", "Testimonio UGC · Spicy Cubes", "Una creadora cuenta su experiencia con las gomitas en primera persona, intercalada con los ingredientes de la fórmula y escenas de pareja."),
+      video("ia-matcha-animado", "Animación 3D · Té matcha", "Versión animada en 3D: una doctora y personajes que explican cómo el matcha da energía estable, con una gráfica animada de la energía durante la tarde."),
+      video("ia-matcha-podcast", "Podcast · Té matcha", "Formato de podcast: un presentador generado con IA habla de enfoque y cafeína, con escenas de apoyo sobre el origen del matcha."),
+      video("ia-spicy-presentadora", "Presentadora en pantalla verde · Spicy Cubes", "Una presentadora generada con IA habla sobre fondos de producto y escenas de apoyo, con la comparación frente a otras gomitas y la oferta 2x1 al cierre."),
+      video("ia-matcha-novela", "Novela animada · Té matcha", "Una historia de tres minutos en formato de novela animada, con personajes, conflicto y el producto como parte de la trama."),
+      video("ia-spicy-animado", "Animación 3D · Spicy Cubes", "La misma estructura de anuncio contada con personajes animados en 3D y un hook distinto."),
+      video("ia-matcha-recetas", "Recetas ASMR · Té matcha", "Tres formas de tomar matcha, latte frío, limonada y fresa, en planos cerrados de preparación con sonido ASMR."),
+      video("ia-matcha-ugc-casa", "Creadora UGC en casa · Té matcha", "Otra creadora UGC cuenta cómo cambió el azúcar por el matcha en su rutina, con escenas de apoyo de su día."),
+      video("ia-spicy-broll", "Anuncio con escenas de apoyo · Spicy Cubes", "Versión narrada solo con escenas de apoyo: el hook «No compren Spicy Cubes», la comparación con otras gomitas y la oferta 2x1."),
+      video("ia-matcha-doctor", "Doctor · Té matcha", "Un doctor generado con IA presenta el matcha como alternativa al café, con un antes y después en pantalla dividida."),
+      video("ia-spicy-historia", "Historia en primera persona · Spicy Cubes", "Un relato cinematográfico de dos minutos contado en primera persona, con cada escena generada plano a plano."),
+      video("ia-matcha-doctora-estudio", "Doctora: concentración · Té matcha", "Una doctora generada con IA compara un matcha culinario con el del producto y explica cómo ayuda a concentrarse."),
+      video("ia-matcha-recetas-asmr", "Tres recetas · Té matcha", "Latte frío, limonada y batido de banano preparados en planos de producto, para la segunda marca de matcha."),
+      video("ia-spicy-producto", "Reel de producto · Spicy Cubes", "Reel corto sin presentador: ingredientes, fórmula y empaque animados."),
+      video("ia-geoda", "Animación 3D · GEODA", "Anuncio animado en 3D para un desodorante de piedra de alumbre: un personaje cuenta el problema y la solución, con la oferta paga 2 lleva 3 al cierre."),
+    ],
+  },
+  {
+    slug: "youtube",
+    number: 7,
+    title: "YouTube",
+    context: "Videos largos y Shorts para canales de YouTube",
+    categories: ["YouTube", "Edición de video", "Guion y voces con IA"],
+    description:
+      "Videos para canales de YouTube que hago de principio a fin: escribo el guion, genero las voces con IA y edito el video. Hay historias animadas, documentales sobre rutas, túneles y pasos de montaña, relatos de misterio y la intro de un vlog. De cada episodio largo saco Shorts verticales listos para publicar, con su propio hook y subtítulos. Aquí, los videos horizontales se muestran en fragmentos de 90 segundos.",
+    role: "Guion, voces con IA, edición y clipping de Shorts",
+    tools: [],
+    source: "Drive: Subir contenido a Portafolio / Shorts Youtube y Youtube",
+    items: [
+      video("yt-short-01", "La pierna de Santa Anna · Short 1 de 3", "Short vertical recortado del episodio «La pierna de Santa Anna», con su propio hook y subtítulos palabra por palabra.", S),
+      video("yt-short-02", "La pierna de Santa Anna · Short 2 de 3", "Short vertical recortado del episodio «La pierna de Santa Anna», con su propio hook y subtítulos palabra por palabra.", S),
+      video("yt-short-03", "La pierna de Santa Anna · Short 3 de 3", "Short vertical recortado del episodio «La pierna de Santa Anna», con su propio hook y subtítulos palabra por palabra.", S),
+      video("yt-short-04", "El hombre que sobrevivió a dos bombas atómicas · Short 1 de 3", "Short vertical recortado del episodio «El hombre que sobrevivió a dos bombas atómicas», con su propio hook y subtítulos palabra por palabra.", S),
+      video("yt-short-05", "El hombre que sobrevivió a dos bombas atómicas · Short 2 de 3", "Short vertical recortado del episodio «El hombre que sobrevivió a dos bombas atómicas», con su propio hook y subtítulos palabra por palabra.", S),
+      video("yt-short-06", "El hombre que sobrevivió a dos bombas atómicas · Short 3 de 3", "Short vertical recortado del episodio «El hombre que sobrevivió a dos bombas atómicas», con su propio hook y subtítulos palabra por palabra.", S),
+      video("yt-short-07", "El mecanismo de Anticitera · Short 1 de 3", "Short vertical recortado del episodio «El mecanismo de Anticitera», con su propio hook y subtítulos palabra por palabra.", S),
+      video("yt-short-08", "El mecanismo de Anticitera · Short 2 de 3", "Short vertical recortado del episodio «El mecanismo de Anticitera», con su propio hook y subtítulos palabra por palabra.", S),
+      video("yt-short-09", "El mecanismo de Anticitera · Short 3 de 3", "Short vertical recortado del episodio «El mecanismo de Anticitera», con su propio hook y subtítulos palabra por palabra.", S),
+      video("yt-short-10", "El hombre que recibió 7 rayos", "Short animado de historia con guion, voz con IA y subtítulos palabra por palabra.", S),
+      video("yt-short-11", "La azafata que sobrevivió a la caída", "Short animado de historia con guion, voz con IA y subtítulos palabra por palabra.", S),
+      video("yt-short-12", "Atlántida", "Short animado de historia con guion, voz con IA y subtítulos palabra por palabra.", S),
+      video("yt-short-13", "Un plan para engañar al enemigo", "Short animado de historia con guion, voz con IA y subtítulos palabra por palabra.", S),
+      video("yt-short-14", "¿Napoleón era bajito?", "Short animado de historia con guion, voz con IA y subtítulos palabra por palabra.", S),
+      video("yt-short-15", "¿Y si esa luz no es el cielo?", "Short de misterio con imágenes cinematográficas, voz con IA y subtítulos.", S),
+      video("yt-short-16", "¿Por qué no recuerdas tus vidas anteriores?", "Short de misterio con imágenes cinematográficas, voz con IA y subtítulos.", S),
+      video("yt-short-17", "¿Y si no es la primera vez que lo vives?", "Short de misterio con imágenes cinematográficas, voz con IA y subtítulos.", S),
+      video("yt-largo-jet", "Intro de vlog: vuelo en jet privado", "Intro de 29 segundos: tomas del creador en el carro y en el avión, cortes al ritmo de la voz y el título del episodio al cierre.", H),
+      video("yt-largo-e001", "La pierna de Santa Anna", "Episodio animado de historia de 16 minutos: guion, voz con IA y edición con escenas ilustradas, fechas y titulares en pantalla.", { ...H, excerptOf: 943.5 }),
+      video("yt-largo-e002", "El hombre que sobrevivió a dos bombas atómicas", "Episodio animado de 11 minutos sobre Tsutomu Yamaguchi, el ingeniero que sobrevivió a las bombas de Hiroshima y Nagasaki.", { ...H, excerptOf: 683.4 }),
+      video("yt-largo-e003", "El mecanismo de Anticitera", "Episodio animado de 17 minutos sobre el mecanismo griego que muchos llaman la primera computadora de la historia.", { ...H, excerptOf: 1003.5 }),
+      video("yt-largo-cumberland", "Cumberland Gap", "Documental de 19 minutos sobre el paso de los Apalaches y el viejo camino que lo cruzaba, con mapas animados, grabados de archivo y preguntas en pantalla.", { ...H, excerptOf: 1130.4 }),
+      video("yt-largo-donner", "Donner Pass", "Documental de 19 minutos sobre el paso de montaña y los hombres que abrieron su camino, con mapas animados, archivo y datos en pantalla.", { ...H, excerptOf: 1130.1 }),
+      video("yt-largo-i80", "La I-80 en Wyoming", "Documental de 19 minutos sobre la autopista y su tramo más duro, con mapas animados, archivo y preguntas en pantalla.", { ...H, excerptOf: 1126.4 }),
+      video("yt-largo-laurel", "Laurel Hill: el túnel que nadie puede ver", "Documental de 18 minutos sobre un túnel abandonado en las montañas Allegheny, con tomas de carretera, titulación y textos en pantalla.", { ...H, excerptOf: 1093.3 }),
+      video("yt-largo-gta6", "Propuesta creativa · El hackeo de GTA 6", "Video de casi 4 minutos sobre el joven que filtró GTA 6: hook de apertura, textos en pantalla, imágenes de apoyo y voz con IA.", { ...H, excerptOf: 226.5 }),
+      video("yt-largo-final", "¿Y si esa luz no es el cielo?", "Video de misterio de 7 minutos con imágenes cinematográficas, voz con IA y textos en pantalla.", { ...H, excerptOf: 446.3 }),
     ],
   },
   {
     slug: "ryhar",
-    number: 3,
+    number: 8,
     title: "Ryhar",
     client: "Ryhar",
     context: "Marca de ropa con diseños personalizados",
-    categories: ["Visual Design", "Social Media", "Commercial Ads"],
+    categories: ["Diseño visual", "Redes sociales", "Anuncios comerciales"],
     description:
       "Camisetas pensadas como piezas de colección, inspiradas en artistas como Feid, Ryan Castro, Mac Miller, Rels B, Travis Scott y Héctor Lavoe, posts e historias de lanzamiento, y videos cortos de producto y nuevos drops.",
     role: "Diseño de camisetas y piezas, edición de video",
@@ -121,45 +282,18 @@ export const chapters: Chapter[] = [
       video("ryhar-outfit", "Outfit BTS"),
       video("ryhar-coleccion", "Nueva colección"),
       video("ryhar-volvemos", "Volvemos"),
-    ],
-  },
-  {
-    slug: "videos-con-ia",
-    number: 4,
-    title: "Videos generados con IA",
-    context: "Anuncios de ecommerce con avatares y creadores UGC",
-    categories: ["Campañas con IA", "Commercial Ads", "Reels & Short Form"],
-    description:
-      "Anuncios para productos de ecommerce hechos de principio a fin con inteligencia artificial: dos marcas de té matcha y Spicy Cubes, unas gomitas para adultos. Para cada producto creo a la persona que mejor lo vende, ya sea una creadora UGC que lo prueba en su cocina, una doctora que explica sus beneficios, el presentador de un podcast o los personajes de una novela animada. Los videos cubren cada etapa del embudo, del primer contacto a la compra, y cada anuncio tiene varias versiones con hooks y estilos distintos para probar cuál convierte mejor.",
-    role: "Creación de avatares, creadores UGC y escenas con IA, edición, subtítulos y motion graphics",
-    tools: ["Veo 3", "Google Flow", "Google AI Studio"],
-    source: "Drive: carpetas Videos Matcha, Videos matca iniciales y Prueba Pinara, y cuatro videos sueltos de Spicy Cubes",
-    items: [
-      video("ia-matcha-ugc", "Creadora UGC · Té matcha", "Una creadora generada con IA prepara el matcha en su cocina y cuenta por qué lo toma, con subtítulos que resaltan las palabras clave y un cierre de producto con llamado a la compra."),
-      video("ia-matcha-doctora", "Doctora · Té matcha", "Una doctora generada con IA recomienda el té matcha desde su consultorio, apoyada en escenas de la vida diaria de sus pacientes."),
-      video("ia-spicy-ugc", "Testimonio UGC · Spicy Cubes", "Una creadora cuenta su experiencia con las gomitas en primera persona, intercalada con los ingredientes de la fórmula y escenas de pareja."),
-      video("ia-matcha-animado", "Animación 3D · Té matcha", "Versión animada en 3D: una doctora y personajes que explican cómo el matcha da energía estable, con una gráfica animada de la energía durante la tarde."),
-      video("ia-matcha-podcast", "Podcast · Té matcha", "Formato de podcast: un presentador generado con IA habla de enfoque y cafeína, con escenas de apoyo sobre el origen del matcha."),
-      video("ia-spicy-presentadora", "Presentadora en pantalla verde · Spicy Cubes", "Una presentadora generada con IA habla sobre fondos de producto y escenas de apoyo, con la comparación frente a otras gomitas y la oferta 2x1 al cierre."),
-      video("ia-matcha-novela", "Novela animada · Té matcha", "Una historia de tres minutos en formato de novela animada, con personajes, conflicto y el producto como parte de la trama."),
-      video("ia-spicy-animado", "Animación 3D · Spicy Cubes", "La misma estructura de anuncio contada con personajes animados en 3D y un hook distinto."),
-      video("ia-matcha-recetas", "Recetas ASMR · Té matcha", "Tres formas de tomar matcha, latte frío, limonada y fresa, en planos cerrados de preparación con sonido ASMR."),
-      video("ia-matcha-ugc-casa", "Creadora UGC en casa · Té matcha", "Otra creadora UGC cuenta cómo cambió el azúcar por el matcha en su rutina, con escenas de apoyo de su día."),
-      video("ia-spicy-broll", "Anuncio con escenas de apoyo · Spicy Cubes", "Versión narrada solo con escenas de apoyo: el hook «No compren Spicy Cubes», la comparación con otras gomitas y la oferta 2x1."),
-      video("ia-matcha-doctor", "Doctor · Té matcha", "Un doctor generado con IA presenta el matcha como alternativa al café, con un antes y después en pantalla dividida."),
-      video("ia-spicy-historia", "Historia en primera persona · Spicy Cubes", "Un relato cinematográfico de dos minutos contado en primera persona, con cada escena generada plano a plano."),
-      video("ia-matcha-doctora-estudio", "Doctora: concentración · Té matcha", "Una doctora generada con IA compara un matcha culinario con el del producto y explica cómo ayuda a concentrarse."),
-      video("ia-matcha-recetas-asmr", "Tres recetas · Té matcha", "Latte frío, limonada y batido de banano preparados en planos de producto, para la segunda marca de matcha."),
-      video("ia-spicy-producto", "Reel de producto · Spicy Cubes", "Reel corto sin presentador: ingredientes, fórmula y empaque animados."),
+      piece("ryhar-bts", "Colección BTS Arirang", "Post Colección BTS Arirang ya disponible, con el grupo sobre fondo rojo y negro"),
+      piece("ryhar-kris-r", "El Trap de Kolombia: Kris R", "Diseño de camiseta El Trap de Kolombia con Kris R fumando sobre fondo negro con ilustración de diablo"),
+      piece("ryhar-etdk2", "ETDK2: Kris R", "Diseño de camiseta ETDK2 Kris R con tipografía condensada, fotos en blanco y negro y la lista de canciones"),
     ],
   },
   {
     slug: "beleza",
-    number: 5,
+    number: 9,
     title: "Beleza",
     client: "Beleza",
     context: "Reto 21 días: guía de uso de producto",
-    categories: ["Video Editing", "Motion Graphics", "Commercial Ads"],
+    categories: ["Edición de video", "Motion Graphics", "Anuncios comerciales"],
     description:
       "Serie de videos para el Reto 21 días: una guía diaria de uso del producto con tarjetas animadas, cronómetros, pasos numerados, siluetas que marcan la zona de trabajo y títulos tipográficos, más tres videos complementarios de funcionamiento y preparación.",
     role: "Edición y motion graphics",
@@ -170,15 +304,18 @@ export const chapters: Chapter[] = [
       video("beleza-funciona", "Cómo funciona el producto"),
       video("beleza-abdomen", "Preparación: abdomen"),
       video("beleza-piernas", "Preparación: piernas"),
+      video("beleza-redes-1", "Unboxing del kit", "Contenido para redes: apertura del kit en planos cerrados con frases en pantalla que lo presentan como un ritual propio."),
+      video("beleza-redes-2", "Rutina corporal en casa", "Contenido para redes: la rutina con el dispositivo y el aceite, con subtítulos que resaltan cada sensación."),
+      video("beleza-redes-3", "El kit del Reto 21 días", "Contenido para redes: del problema al kit completo, con etiquetas animadas de cada producto y su uso correcto."),
     ],
   },
   {
     slug: "konexion-academica",
-    number: 6,
+    number: 10,
     title: "Konexión Académica",
     client: "Konexión Académica",
     context: "Carruseles y reels con apoyo de IA",
-    categories: ["Social Media", "Campañas con IA", "Video Editing"],
+    categories: ["Redes sociales", "Campañas con IA", "Edición de video"],
     description:
       "Tres carruseles educativos: la dopamina digital, el síndrome del impostor académico y la rutina que nos estanca. Combinan diseño estratégico e inteligencia artificial para el contenido, las imágenes y los gráficos de apoyo. Se suma un reel hablado con subtítulos dinámicos.",
     role: "Diseño de carruseles, contenido con IA y edición",
@@ -208,11 +345,11 @@ export const chapters: Chapter[] = [
   },
   {
     slug: "mente-nueva-marketing",
-    number: 7,
+    number: 11,
     title: "Mente Nueva Marketing",
     client: "Mente Nueva Marketing",
     context: "Agencia, de 12 a 15 clientes en paralelo",
-    categories: ["Social Media", "Visual Design", "Video Editing"],
+    categories: ["Redes sociales", "Diseño visual", "Edición de video"],
     description:
       "Desde la agencia diseñé flyers, banners y piezas para redes de iglesias y organizaciones como Príncipe de Paz, Iglesia Palabra Viva, Amor y Fe y Visión de Fe, y edité reels de eventos e invitaciones para Evangel Chapel, Global University of Theology y C.C.V.E, cumpliendo los objetivos y tiempos de entrega de cada cliente.",
     role: "Diseño de piezas, edición y motion graphics",
@@ -245,11 +382,11 @@ export const chapters: Chapter[] = [
   },
   {
     slug: "gmedia",
-    number: 8,
+    number: 12,
     title: "gmedia",
     client: "gmedia",
     context: "Carrusel para redes",
-    categories: ["Social Media", "Visual Design"],
+    categories: ["Redes sociales", "Diseño visual"],
     description:
       "Carrusel de cinco slides sobre coherencia de marca: azul saturado, recortes de papel, objetos retro y una jerarquía tipográfica que guía la lectura slide por slide.",
     role: "Diseño del carrusel",
@@ -265,11 +402,11 @@ export const chapters: Chapter[] = [
   },
   {
     slug: "cmi",
-    number: 9,
+    number: 13,
     title: "CMI",
     client: "CMI Equipamiento Equino",
     context: "Anuncios para un jaquimón personalizado",
-    categories: ["Commercial Ads", "Social Media", "Visual Design"],
+    categories: ["Anuncios comerciales", "Redes sociales", "Diseño visual"],
     description:
       "Siete anuncios verticales para vender un jaquimón ajustable y personalizado con el nombre de cada caballo: titulares de impacto, beneficios, reseñas de clientes y llamados a pedirlo por WhatsApp.",
     role: "Diseño de anuncios",
@@ -287,11 +424,11 @@ export const chapters: Chapter[] = [
   },
   {
     slug: "poolex",
-    number: 10,
+    number: 14,
     title: "Poolex",
     client: "Poolex",
     context: "Comunidad de educación financiera",
-    categories: ["Social Media", "Visual Design", "Video Editing"],
+    categories: ["Redes sociales", "Diseño visual", "Edición de video"],
     description:
       "Gestión de marca con enfoque en coherencia comunicativa y fidelización: piezas para cursos, eventos y contenido educativo de mercados, una agenda diaria animada y la pieza horizontal de dos minutos que abre sus llamadas corporativas.",
     role: "Community management, diseño y edición",
@@ -315,11 +452,11 @@ export const chapters: Chapter[] = [
   },
   {
     slug: "common-room",
-    number: 11,
+    number: 15,
     title: "Common Room",
     client: "Common Room",
     context: "Moda y joyería: Alanna y Luisa López",
-    categories: ["Motion Graphics", "Commercial Ads", "Reels & Short Form"],
+    categories: ["Motion Graphics", "Anuncios comerciales", "Reels y formato corto"],
     description:
       "Reels animados para marcas de moda y joyería: el teaser de la colección Highline FW/2024 de Alanna con las fotos dentro de las letras, un lookbook en grilla que se recompone y un carrusel de joyería para Luisa López.",
     role: "Edición y motion graphics",
@@ -334,11 +471,11 @@ export const chapters: Chapter[] = [
   },
   {
     slug: "extrarome",
-    number: 12,
+    number: 16,
     title: "Extrarome",
     client: "Extrarome",
     context: "Marca de aromas para espacios",
-    categories: ["Visual Design", "Social Media", "Commercial Ads"],
+    categories: ["Diseño visual", "Redes sociales", "Anuncios comerciales"],
     description:
       "Línea visual de una marca de aromas: fotografía de interiores, tipografía ligera, banners de scent marketing y aromaterapia, y videos de producto para el difusor Boxarome 1 y el aroma Granada de la colección Icónicas.",
     role: "Diseño de piezas y edición de video",
@@ -361,11 +498,11 @@ export const chapters: Chapter[] = [
   },
   {
     slug: "bellatriz",
-    number: 13,
+    number: 17,
     title: "Bellatriz",
     client: "Bellatriz Beauty Club",
     context: "Piezas para redes de un club de belleza",
-    categories: ["Social Media", "Visual Design"],
+    categories: ["Redes sociales", "Diseño visual"],
     description:
       "Cuatro posts para servicios de botox y limpieza facial: verde salvia, flores de línea y tipografía serif en mayúsculas, con jerarquía clara entre servicio, beneficio y llamado a reservar.",
     role: "Diseño de piezas",
@@ -380,10 +517,10 @@ export const chapters: Chapter[] = [
   },
   {
     slug: "coca-cola-freeze",
-    number: 14,
+    number: 18,
     title: "Coca-Cola Freeze",
     context: "Proyecto universitario, 100 % generado con IA",
-    categories: ["Campañas con IA", "Visual Design"],
+    categories: ["Campañas con IA", "Diseño visual"],
     description:
       "Campaña conceptual para un helado Coca-Cola Freeze: banner con QR, post para feed, empaque, registro y la activación del Laboratorio Freeze. Piezas y mockups generados con IA a partir de prompts.",
     role: "Dirección de arte, prompts y diseño",
@@ -406,10 +543,10 @@ export const chapters: Chapter[] = [
   },
   {
     slug: "costena-bacana",
-    number: 15,
+    number: 19,
     title: "Costeña Bacana",
     context: "Proyecto conceptual, 100 % generado con IA",
-    categories: ["Campañas con IA", "Visual Design"],
+    categories: ["Campañas con IA", "Diseño visual"],
     description:
       "\"Hasta lo más bacano tiene su límite\": campaña conceptual con escenas de rumba, concierto y producto en verde, adaptada a post, banner, flyer con registro y pantalla de concierto. Contenido generado con IA a través de prompts.",
     role: "Dirección de arte, prompts y diseño",
@@ -424,10 +561,10 @@ export const chapters: Chapter[] = [
   },
   {
     slug: "otros-proyectos",
-    number: 16,
+    number: 20,
     title: "Otros proyectos",
     context: "Producto y proyectos universitarios",
-    categories: ["Visual Design", "Motion Graphics", "Commercial Ads"],
+    categories: ["Diseño visual", "Motion Graphics", "Anuncios comerciales"],
     description:
       "Una pieza y un reel de producto para las Vitagomis de Multicentrum, y piezas académicas para dos lanzamientos de tecnología: la realidad virtual de Amazon y el Galaxy Ring de Samsung.",
     role: "Diseño, edición y motion graphics",
@@ -442,21 +579,14 @@ export const chapters: Chapter[] = [
       ),
       piece("amazon-vr", "Amazon: realidad virtual", "Banner Ha llegado la realidad virtual a nuestro servicio con una mujer usando visor VR"),
       piece("samsung-ring", "Samsung Galaxy Ring", "Pieza Samsung Galaxy Ring sobre fondo negro con luz azul"),
+      video("otros-pinktober", "Pinktober · Promo de evento", "Promo de 15 segundos para una noche de baile latino a beneficio, con textos en neón al ritmo de la música."),
     ],
   },
 ];
 
-/**
- * Chapters as each site shows them. The designer site shows every item, videos first;
- * the editor site keeps only chapters with video, and only their videos.
- */
-export function chaptersFor(site: SiteId): Chapter[] {
-  if (site === "disenador") {
-    return chapters.map((c) => ({ ...c, items: [...c.items.filter((i) => i.kind === "video"), ...c.items.filter((i) => i.kind === "image")] }));
-  }
-  return chapters
-    .map((c) => ({ ...c, items: c.items.filter((i) => i.kind === "video") }))
-    .filter((c) => c.items.length > 0);
+/** Chapters as the site shows them: every item, videos first. */
+export function chaptersFor(_site: SiteId): Chapter[] {
+  return chapters.map((c) => ({ ...c, items: [...c.items.filter((i) => i.kind === "video"), ...c.items.filter((i) => i.kind === "image")] }));
 }
 
 export function chapterBySlug(list: Chapter[], slug: string) {

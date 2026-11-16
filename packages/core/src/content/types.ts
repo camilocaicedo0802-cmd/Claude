@@ -1,13 +1,16 @@
-export type SiteId = "editor" | "disenador";
+/** The portfolio site. A single site since the video editor site was merged into it. */
+export type SiteId = "disenador";
 
 export type Category =
   | "Motion Graphics"
-  | "Video Editing"
-  | "Reels & Short Form"
-  | "Commercial Ads"
-  | "Social Media"
-  | "Visual Design"
-  | "Campañas con IA";
+  | "Edición de video"
+  | "Reels y formato corto"
+  | "Anuncios comerciales"
+  | "Redes sociales"
+  | "Diseño visual"
+  | "Campañas con IA"
+  | "YouTube"
+  | "Guion y voces con IA";
 
 export type Tool =
   | "After Effects"
@@ -65,6 +68,10 @@ export interface VideoItem {
   description?: string;
   /** Long-form piece (e.g. a full YouTube episode), shown in its own block instead of the reel. */
   longForm?: { platform: string };
+  /** Sub-group inside the chapter (e.g. "Shorts"), shown as its own reel with this heading. */
+  group?: string;
+  /** The file is an excerpt: length in seconds of the full video it comes from. */
+  excerptOf?: number;
 }
 
 /** One graphic piece inside a chapter. */

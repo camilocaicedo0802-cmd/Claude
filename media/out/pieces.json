@@ -334,5 +334,125 @@
  "samsung-ring": [
   1600,
   1600
+ ],
+ "meb-promo-4x3": [
+  1080,
+  1350
+ ],
+ "meb-unidos-venezuela": [
+  1080,
+  1350
+ ],
+ "meb-retiro-oferta": [
+  1600,
+  900
+ ],
+ "meb-banner-1": [
+  1600,
+  480
+ ],
+ "meb-banner-2": [
+  1600,
+  480
+ ],
+ "meb-banner-3": [
+  1600,
+  480
+ ],
+ "meb-banner-4": [
+  1600,
+  480
+ ],
+ "meb-wb-abundancia-1": [
+  1130,
+  1600
+ ],
+ "meb-wb-abundancia-2": [
+  1130,
+  1600
+ ],
+ "meb-wb-abundancia-3": [
+  1130,
+  1600
+ ],
+ "meb-wb-cava-1": [
+  1130,
+  1600
+ ],
+ "meb-wb-cava-2": [
+  1130,
+  1600
+ ],
+ "meb-wb-cava-3": [
+  1130,
+  1600
+ ],
+ "meb-wb-nino-1": [
+  768,
+  1200
+ ],
+ "meb-wb-nino-2": [
+  768,
+  1200
+ ],
+ "meb-wb-nino-3": [
+  768,
+  1200
+ ],
+ "ryhar-bts": [
+  1080,
+  1350
+ ],
+ "ryhar-kris-r": [
+  1280,
+  1600
+ ],
+ "ryhar-etdk2": [
+  1280,
+  1600
+ ],
+ "landing-thermobelt-01": [
+  900,
+  1600
+ ],
+ "landing-thermobelt-02": [
+  900,
+  1600
+ ],
+ "landing-thermobelt-03": [
+  900,
+  1600
+ ],
+ "landing-thermobelt-04": [
+  900,
+  1600
+ ],
+ "landing-thermobelt-05": [
+  900,
+  1600
+ ],
+ "landing-thermobelt-06": [
+  900,
+  1600
+ ],
+ "landing-thermobelt-07": [
+  900,
+  1600
+ ],
+ "landing-thermobelt-08": [
+  900,
+  1600
+ ],
+ "landing-thermobelt-09": [
+  900,
+  1600
+ ],
+ "landing-thermobelt-10": [
+  900,
+  1600
+ ],
+ "landing-thermobelt-11": [
+  900,
+  1600
  ]
 }
