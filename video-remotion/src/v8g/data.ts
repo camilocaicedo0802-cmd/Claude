@@ -151,7 +151,7 @@ export const SPEC_G: Spec = {
   whips: [],
   pulses: [],
   // corte en seco de la música en «Escucha» (como el corte de 13,7 s del referente)
-  music: {src: 'music/v8g_nightdrive.wav', volume: 0.09, stopFrom: 32.08, stopTo: ws(117) - 0.02, fadeOutAt: TOTAL - 0.9},
+  music: {src: 'music/v8g_nightdrive.wav', volume: 0.06, stopFrom: 32.08, stopTo: ws(117) - 0.02, fadeOutAt: TOTAL - 0.9},
   sfx: [],
   total: TOTAL,
 };

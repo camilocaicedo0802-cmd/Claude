@@ -303,6 +303,9 @@ El cliente vio el recorte con silla, bordes dentados, halo, huecos en la cara y 
 - **Encuadre del recorte**: a pantalla completa (estudio, blanco) la escala es 1, para que los hombros cortados por el borde de la toma salgan del cuadro; a pantalla completa solo se funde el 10 % de la base (mesa / bajo de la chaqueta); en planos pequeños (escenario 0,62, palabras 3D 0,70) los laterales (9 %) y la base (16 %) se funden con el fondo, nunca una línea recta de corte a la vista.
 - **Revisión obligatoria** antes de entregar: hoja de fotogramas del recorte sobre fondo morado y blanco en todas las tomas recortadas.
 
+### 10.11 Música de fondo un poco más baja (16/11/2026)
+En el ganador 3 el cliente pidió bajar «un poco» la música. Se bajó ≈ 3,5 dB (volumen 0,09 → 0,06): con la mezcla final a −14 LUFS, la música sola queda en ≈ −25,7 LUFS, unos **12 LU por debajo de la voz** (antes ≈ 9 LU, como en la referencia). Regla: la música es una cama discreta; la voz y los efectos mandan.
+
 ## 11. Propuestas de estilo
 
 | Propuesta | Video | Idea |
