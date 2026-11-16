@@ -191,6 +191,7 @@ export const chapters: Chapter[] = [
     tools: ["Veo 3", "Google Flow", "Google AI Studio"],
     source: "Drive: carpetas Videos Matcha, Videos matca iniciales y Prueba Pinara, y cuatro videos sueltos de Spicy Cubes",
     items: [
+      video("ia-matcha-ugc-casa", "Creadora UGC en casa · Té matcha", "Una creadora UGC cuenta cómo cambió el azúcar por el matcha en su rutina, con escenas de apoyo de su día."),
       video("ia-matcha-ugc", "Creadora UGC · Té matcha", "Una creadora generada con IA prepara el matcha en su cocina y cuenta por qué lo toma, con subtítulos que resaltan las palabras clave y un cierre de producto con llamado a la compra."),
       video("ia-matcha-doctora", "Doctora · Té matcha", "Una doctora generada con IA recomienda el té matcha desde su consultorio, apoyada en escenas de la vida diaria de sus pacientes."),
       video("ia-spicy-ugc", "Testimonio UGC · Spicy Cubes", "Una creadora cuenta su experiencia con las gomitas en primera persona, intercalada con los ingredientes de la fórmula y escenas de pareja."),
@@ -200,7 +201,6 @@ export const chapters: Chapter[] = [
       video("ia-matcha-novela", "Novela animada · Té matcha", "Una historia de tres minutos en formato de novela animada, con personajes, conflicto y el producto como parte de la trama."),
       video("ia-spicy-animado", "Animación 3D · Spicy Cubes", "La misma estructura de anuncio contada con personajes animados en 3D y un hook distinto."),
       video("ia-matcha-recetas", "Recetas ASMR · Té matcha", "Tres formas de tomar matcha, latte frío, limonada y fresa, en planos cerrados de preparación con sonido ASMR."),
-      video("ia-matcha-ugc-casa", "Creadora UGC en casa · Té matcha", "Otra creadora UGC cuenta cómo cambió el azúcar por el matcha en su rutina, con escenas de apoyo de su día."),
       video("ia-spicy-broll", "Anuncio con escenas de apoyo · Spicy Cubes", "Versión narrada solo con escenas de apoyo: el hook «No compren Spicy Cubes», la comparación con otras gomitas y la oferta 2x1."),
       video("ia-matcha-doctor", "Doctor · Té matcha", "Un doctor generado con IA presenta el matcha como alternativa al café, con un antes y después en pantalla dividida."),
       video("ia-spicy-historia", "Historia en primera persona · Spicy Cubes", "Un relato cinematográfico de dos minutos contado en primera persona, con cada escena generada plano a plano."),
