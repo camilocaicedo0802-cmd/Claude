@@ -162,3 +162,10 @@ Estas correcciones del cliente mandan sobre el referente:
 - **Música**: **ANBR – Quantum** (PACK MÚSICA V2 de su carpeta).
 - **Guion**: fuera «porque eso es lo que está realizando» y «Déjalo ahí» (toma 4863).
 - **Objetos 3D**: en lugar del lingote de oro, la **animación del móvil 3D** y los **logos 3D de Instagram, Facebook y TikTok** que envió el cliente, **sin fondo** y con los logos **animados**.
+
+### 10.2 Las enumeraciones se cuentan completas y el vídeo no termina de golpe (16/11/2026)
+El cliente vio «el perfil debería responder 3 cosas» y que «solo enumera 1 y ahí se acaba el vídeo». Reglas:
+- **Si se anuncia un número de cosas, se ven todas numeradas**: cada punto tiene **su golpe** con el número grande (01 · 02 · 03, InterDisplay ExtraBold 150 px morado con halo) y la pregunta debajo, más un **contador** «3 COSAS ●●●» que se va llenando. Clic + swoosh en cada número.
+- **Lo que se dice tiene que cuadrar con lo que se cuenta**: si el orador dice «número uno» y luego no dice «dos» ni «tres», se quita «número uno» del audio y la numeración la hace el gráfico.
+- **Pausa de 0,4–0,55 s entre los puntos** (no se recortan esos silencios) para que cada número tenga su momento.
+- **El vídeo no acaba en la lista**: se cierra con una frase de remate/consecuencia (aquí la toma 4868 «cuando no comunicas bien tu cliente elige a otro comercio… tienes que mejorar tus redes sociales ahora»), con los logos 3D de vuelta como eco del gancho y la palabra final grande, y después el logo.

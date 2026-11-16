@@ -17,8 +17,13 @@ export const PLANOS: Plano[] = [
   {from: 22.03, to: 24.87, s0: 1.0, s1: 1.03},
   {from: 24.87, to: 26.07, s0: 1.0, s1: 1.0, push: {at: 25.25, dur: 0.6, to: 1.2}}, // empuje animado (ref. 20,92 s)
   {from: 26.07, to: 30.2, s0: 1.2, s1: 1.16}, // deriva hacia atrás
-  {from: 30.2, to: 33.33, s0: 1.12, s1: 1.12}, // (bajo la grabación de Grow)
-  {from: 33.33, to: TOTAL, s0: 1.23, s1: 1.26},
+  {from: 30.2, to: 33.4, s0: 1.12, s1: 1.12}, // (bajo la grabación de Grow)
+  {from: 33.4, to: 34.93, s0: 1.23, s1: 1.26}, // 03 · ¿por qué elegirte?
+  // cierre (toma 4868)
+  {from: 34.93, to: 37.23, s0: 1.0, s1: 1.03},
+  {from: 37.23, to: 39.33, s0: 1.23, s1: 1.25},
+  {from: 39.33, to: 40.3, s0: 1.4, s1: 1.42},
+  {from: 40.3, to: TOTAL, s0: 1.12, s1: 1.12, push: {at: 41.95, dur: 0.45, to: 1.12}}, // empuje en «ahora»
 ];
 
 export const segAt = (t: number) => SEGMENTS.find((s, i) => t >= s.start && (i === SEGMENTS.length - 1 || t < SEGMENTS[i + 1].start)) ?? SEGMENTS[SEGMENTS.length - 1];
@@ -75,13 +80,23 @@ export const BLOQUES: Bloque[] = [
   {lines: [sm(rango(80, 82)), bg([83])], y: 1270},
   {lines: [bg([84, 85], {purple: true, over: {84: '3'}, size: 150})], y: 1270},
   {lines: [sm(rango(86, 88)), sm(rango(89, 92), {dx: 90})], y: 1270, end: 30.17},
+  // cierre (toma 4868): «Y lamentablemente, cuando no comunicas bien, tu cliente elige a otro comercio,
+  // así que ya sabes, tienes que mejorar tus redes sociales ahora.»
+  {lines: [sm([105]), bg([106])], y: 1410},
+  {lines: [sm([107, 108]), bg([109, 110])], y: 1410, end: 37.2},
+  {lines: [sm(rango(111, 114)), bg([115, 116], {purple: true})], y: 1270, end: 39.3},
+  {lines: [sm([117, 118]), bg([119, 120])], y: 1120, end: 40.27},
+  {lines: [sm([121, 122]), bg([123])], y: 1330},
+  {lines: [sm([124]), bg([125, 126], {purple: true})], y: 1330},
+  {lines: [bg([127], {purple: true, size: 200})], y: 1330, end: SPEECH - 0.02},
 ];
 
-// Lista final dentro del marco (palabras 93-106): «Número uno, ¿por qué comprarte? ¿por qué confiar en ti? y ¿por qué elegirte?»
+// Las tres cosas que debe responder el perfil (palabras 93-104), una por golpe con su número grande 01 · 02 · 03.
+// («Número uno» se quitó del audio: nunca decía «dos» ni «tres» y parecía que solo enumeraba una.)
 export const LISTA = [
-  {n: '1', words: [95, 96, 97], clave: 97, pre: '¿', post: '?'},
-  {n: '2', words: [98, 99, 100, 101, 102], clave: 100, pre: '¿', post: '?'},
-  {n: '3', words: [104, 105, 106], clave: 106, pre: '¿', post: '?'},
+  {n: '01', words: [93, 94, 95], clave: 95, pre: '¿', post: '?'},
+  {n: '02', words: [96, 97, 98, 99, 100], clave: 98, pre: '¿', post: '?'},
+  {n: '03', words: [102, 103, 104], clave: 104, pre: '¿', post: '?'},
 ];
 
 // ------------------------------------------------------------------ escenas especiales
@@ -94,8 +109,11 @@ export const T = {
   maqueta: {from: 17.04, to: 18.5},
   parar: ws(66),
   escritorio: {from: 23.45, to: 24.87},
-  marco: {from: ws(84) - 0.04, to: SPEECH},
-  grow: {from: 30.2, to: 33.33},
+  marco: {from: ws(84) - 0.04, to: 34.93},
+  grow: {from: 30.2, to: 33.4, mitad: 31.55},
+  golpes: [ws(93) - 0.1, ws(96) - 0.1, ws(101) - 0.05],
+  logos2: {logos: [ws(125), ws(126), ws(126) + 0.16], fin: SPEECH - 0.05},
+  ahora: ws(127),
   cierre: {from: SPEECH, to: SPEECH + OUTRO},
 };
 
@@ -107,6 +125,8 @@ export const DESENFOQUES = [
   {at: T.maqueta.to, dur: 0.3},
   {at: T.escritorio.from, dur: 0.3},
   {at: 24.87, dur: 0.4},
+  {at: 34.93, dur: 0.36}, // del marco al cierre
+  {at: SPEECH, dur: 0.3}, // al logo
 ];
 
 // ------------------------------------------------------------------ sonido (estilo.md §8; solo SFX del pack del cliente)
@@ -138,7 +158,15 @@ export const SFX: Sfx[] = [
   s('g4_swoosh3', 25.27, 0.3, 0.4), // empuje
   s('g4_mechero', T.marco.from, 0.6, 0.4), // marco «caja central»
   s('g4_obturador', T.grow.from - 0.02, 0.45, 0.4),
-  ...LISTA.map((l) => s('g4_click', ws(l.words[0]) - 0.02, 0.55, 0.3)),
+  ...T.golpes.map((t) => s('g4_click', t, 0.6, 0.3)), // 01 · 02 · 03
+  ...T.golpes.map((t) => s('g4_swoosh3', t + 0.02, 0.32, 0.4)),
+  s('g4_obturador', T.grow.mitad - 0.02, 0.4, 0.4),
+  s('g4_woosh10', 34.86, 0.38, 1.7), // del marco al cierre
+  s('g4_subbass', 34.93, 0.4, 1.5),
+  s('g4_swoosh5', ws(115) - 0.05, 0.38, 0.4), // «otro comercio»
+  s('g4_whoosh_corto2', 39.3, 0.28, 1.2), // primer plano «así que ya sabes»
+  ...T.logos2.logos.map((t) => s('g4_pop', t - 0.02, 0.3, 0.9)), // logos de nuevo
+  s('g4_subbass', T.ahora - 0.02, 0.55, 1.5), // «ahora»
   s('g4_impacto', T.cierre.from + 0.05, 0.34, 1.8), // cierre
 ];
 

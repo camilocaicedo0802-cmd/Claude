@@ -37,6 +37,49 @@ const LOGOS = [
   {src: 'img/logo3d_tiktok.png', x: 108, y: 640, w: 165, rot: -10},
 ];
 
+
+/** Logos 3D de las redes (sin fondo): aparecen con rebote y ondas, flotan girando en 3D y salen hacia los lados. */
+export const LogosRedes: React.FC<{at: number[]; fin: number}> = ({at, fin}) => {
+  const frame = useCurrentFrame();
+  const t = frame / FPS;
+  if (t < at[0] - 0.1 || t > fin + 0.3) return null;
+  const logos = at;
+  const sale = interpolate(t, [fin, fin + 0.24], [0, 1], {...clamp, easing: easeOut});
+  return (
+    <AbsoluteFill style={{pointerEvents: 'none'}}>
+      {LOGOS.map((l, k) => {
+        const a = logos[k] - 0.06;
+        if (t < a) return null;
+        const q = interpolate(t, [a, a + 0.38], [0, 1], {...clamp, easing: backOut});
+        const life = t - a;
+        const dir = l.x > 540 ? 1 : -1;
+        return (
+          <div key={k} style={{position: 'absolute', left: l.x - l.w / 2, top: l.y - l.w / 2, width: l.w, height: l.w, perspective: 900}}>
+            <Ondas x={l.w / 2} y={l.w / 2} at={a + 0.05} t={t} n={2} r0={l.w * 0.35} r1={l.w * 0.95} />
+            <Img
+              src={staticFile(l.src)}
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'contain',
+                opacity: Math.min(1, q * 1.4) * (1 - sale),
+                filter: `drop-shadow(0 18px 26px rgba(0,0,0,0.5)) blur(${sale * 12}px)`,
+                transform: [
+                  `translate(${sale * dir * 220}px, ${Math.sin(life * 2.1 + k) * 12 - sale * 60}px)`,
+                  `scale(${q * (1 - sale * 0.4)})`,
+                  `rotateZ(${l.rot * (1 - q) * 2 + Math.sin(life * 1.6 + k * 2) * 6}deg)`,
+                  `rotateY(${Math.sin(life * 1.3 + k) * 22}deg)`,
+                  `rotateX(${Math.cos(life * 1.1 + k) * 10}deg)`,
+                ].join(' '),
+              }}
+            />
+          </div>
+        );
+      })}
+    </AbsoluteFill>
+  );
+};
+
 export const Gancho: React.FC = () => {
   const frame = useCurrentFrame();
   const t = frame / FPS;
@@ -73,35 +116,7 @@ export const Gancho: React.FC = () => {
           opacity: 1 - sale,
         }}
       />
-      {LOGOS.map((l, k) => {
-        const a = logos[k] - 0.06;
-        if (t < a) return null;
-        const q = interpolate(t, [a, a + 0.38], [0, 1], {...clamp, easing: backOut});
-        const life = t - a;
-        const dir = l.x > 540 ? 1 : -1;
-        return (
-          <div key={k} style={{position: 'absolute', left: l.x - l.w / 2, top: l.y - l.w / 2, width: l.w, height: l.w, perspective: 900}}>
-            <Ondas x={l.w / 2} y={l.w / 2} at={a + 0.05} t={t} n={2} r0={l.w * 0.35} r1={l.w * 0.95} />
-            <Img
-              src={staticFile(l.src)}
-              style={{
-                width: '100%',
-                height: '100%',
-                objectFit: 'contain',
-                opacity: Math.min(1, q * 1.4) * (1 - sale),
-                filter: `drop-shadow(0 18px 26px rgba(0,0,0,0.5)) blur(${sale * 12}px)`,
-                transform: [
-                  `translate(${sale * dir * 220}px, ${Math.sin(life * 2.1 + k) * 12 - sale * 60}px)`,
-                  `scale(${q * (1 - sale * 0.4)})`,
-                  `rotateZ(${l.rot * (1 - q) * 2 + Math.sin(life * 1.6 + k * 2) * 6}deg)`,
-                  `rotateY(${Math.sin(life * 1.3 + k) * 22}deg)`,
-                  `rotateX(${Math.cos(life * 1.1 + k) * 10}deg)`,
-                ].join(' '),
-              }}
-            />
-          </div>
-        );
-      })}
+      <LogosRedes at={logos} fin={fin} />
     </AbsoluteFill>
   );
 };

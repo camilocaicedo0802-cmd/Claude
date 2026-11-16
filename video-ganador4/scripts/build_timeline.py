@@ -8,14 +8,17 @@
 import json, os
 FPS_SRC = 30
 FPS = 60
-TAKES = ["4846", "4863", "4843"]
+TAKES = ["4846", "4863", "4843", "4868"]
 MAX_GAP = 0.22
 MIN_REMOVED = 0.15
 PAD_OUT = 0.07
 PAD_IN = 0.05
 # Tramos fuera (decisión editorial; ver estilo.md §10 / mensaje al cliente):
 #  4863 17.70–20.40 «porque eso es lo que está realizando» (frase confusa) · 4863 21.5– «Déjalo ahí» (fuera de guion)
-CUT = {"4863": [(17.70, 20.40), (21.40, 99)]}
+CUT = {"4863": [(17.70, 20.40), (21.40, 99)], "4843": [(9.80, 10.60)]}
+# 4843: fuera «Número uno,» (nunca dice «dos» ni «tres»: la enumeración la hace el gráfico 01·02·03).
+# Pausas que se conservan entre las tres preguntas para que cada número tenga su golpe:
+KEEP = {("4843", "comprarte,"): 0.6, ("4843", "ti"): 0.6}
 FIX = {("4863", "ordenado,"): "desordenado,", ("4863", "eso"): None}  # «como ve todo desordenado» (la alineación lo confirma)
 
 here = os.path.dirname(os.path.abspath(__file__))
@@ -38,7 +41,10 @@ for take in TAKES:
     groups, cur = [], [ws[0]]
     for a, b in zip(ws, ws[1:]):
         gap = b["s"] - a["e"]
-        if gap > MAX_GAP and gap - (PAD_OUT + PAD_IN) >= MIN_REMOVED:
+        keep = KEEP.get((take, a["text"]))
+        if keep and gap <= keep:
+            cur.append(b)
+        elif gap > MAX_GAP and gap - (PAD_OUT + PAD_IN) >= MIN_REMOVED:
             groups.append(cur); cur = [b]
         else:
             cur.append(b)

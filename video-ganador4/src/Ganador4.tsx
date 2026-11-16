@@ -2,7 +2,7 @@ import {AbsoluteFill, useCurrentFrame} from 'remotion';
 import {FPS} from './base';
 import {T} from './data';
 import {Cierre, Cliente, Escritorio, Grow, Maqueta, Marco} from './Escenas';
-import {Gancho} from './Gancho';
+import {Gancho, LogosRedes} from './Gancho';
 import {LienzoFondo, LienzoFrente, Rayas, Tarjeta} from './Lienzo';
 import {Persona, blurAt} from './Persona';
 import {Sonido} from './Sonido';
@@ -28,6 +28,8 @@ export const Ganador4: React.FC = () => {
         <Escritorio />
         <Grow />
         <Marco />
+        {/* cierre: los logos 3D vuelven en «tus redes sociales» (eco del gancho) */}
+        <LogosRedes at={T.logos2.logos} fin={T.logos2.fin} />
         <Rayas at={T.rayas} />
       </AbsoluteFill>
       <Textos />

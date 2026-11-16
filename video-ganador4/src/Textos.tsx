@@ -159,77 +159,108 @@ export const Textos: React.FC = () => {
   );
 };
 
-/** Lista final dentro del marco: 1 · 2 · 3, palabra a palabra. */
+/**
+ * Las tres cosas, una por golpe (como «PROBLEMA 01/02/03» del lienzo): número grande 01 · 02 · 03 y la pregunta
+ * palabra a palabra; arriba, en el marco, el contador «3 COSAS» con tres puntos que se encienden.
+ */
 export const Lista: React.FC = () => {
   const frame = useCurrentFrame();
   const t = frame / FPS;
-  if (t < ws(LISTA[0].words[0]) - 0.1 || t > T.cierre.from + 0.25) return null;
-  const sale = interpolate(t, [T.cierre.from, T.cierre.from + 0.2], [1, 0], clamp);
+  const g = T.golpes;
+  if (t < g[0] - 0.05 || t > T.marco.to + 0.1) return null;
+  const k = g.filter((a) => t >= a).length - 1; // golpe activo
+  const sale = interpolate(t, [T.marco.to - 0.08, T.marco.to + 0.05], [1, 0], clamp);
+  const l = LISTA[Math.max(0, k)];
+  const a = g[Math.max(0, k)];
+  const pn = interpolate(t, [a, a + 0.2], [0, 1], {...clamp, easing: easeOut});
+  const linea: Linea = {kind: 'small', words: l.words};
   return (
     <AbsoluteFill style={{opacity: sale}}>
+      {/* contador en la franja superior del marco */}
+      <div style={{position: 'absolute', left: 0, right: 0, top: 118, display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 22}}>
+        <div style={{fontFamily: SANS, fontWeight: 700, fontSize: 30, letterSpacing: '0.3em', color: P.white, marginRight: 10}}>3 COSAS</div>
+        {g.map((ag, j) => {
+          const on = interpolate(t, [ag, ag + 0.15], [0, 1], clamp);
+          return (
+            <div
+              key={j}
+              style={{
+                width: 46,
+                height: 46,
+                borderRadius: 23,
+                border: '3px solid rgba(255,255,255,0.9)',
+                background: on > 0 ? `rgba(255,255,255,${on})` : 'transparent',
+                color: P.deep,
+                fontFamily: SANS,
+                fontWeight: 800,
+                fontSize: 24,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                transform: `scale(${1 + 0.25 * Math.sin(on * Math.PI)})`,
+              }}
+            >
+              {on > 0.5 ? j + 1 : ''}
+            </div>
+          );
+        })}
+      </div>
+      {/* golpe: número + pregunta */}
       <div
         style={{
           position: 'absolute',
           left: 64,
-          top: 1118,
+          top: 1100,
           width: 952,
-          height: 440,
+          height: 470,
           borderRadius: 28,
-          background: 'linear-gradient(180deg, rgba(14,0,32,0.78) 0%, rgba(14,0,32,0.9) 100%)',
+          background: 'linear-gradient(180deg, rgba(14,0,32,0.72) 0%, rgba(14,0,32,0.9) 100%)',
           boxShadow: '0 0 0 2px rgba(183,1,252,0.45), 0 20px 50px rgba(0,0,0,0.45)',
-          opacity: interpolate(t, [ws(LISTA[0].words[0]) - 0.12, ws(LISTA[0].words[0]) + 0.08], [0, 1], clamp),
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          gap: 8,
         }}
-      />
-      <div style={{position: 'absolute', left: 102, top: 1162, display: 'flex', flexDirection: 'column', gap: 30}}>
-        {LISTA.map((l, k) => {
-          const a = ws(l.words[0]) - 0.1;
-          const p = interpolate(t, [a, a + 10 / FPS], [0, 1], {...clamp, easing: easeOut});
-          const linea: Linea = {kind: 'small', words: l.words};
-          return (
-            <div key={k} style={{display: 'flex', alignItems: 'center', gap: 26, opacity: p, transform: `translateX(${(1 - p) * -30}px)`}}>
-              <div
-                style={{
-                  width: 74,
-                  height: 74,
-                  borderRadius: 37,
-                  background: P.purple,
-                  boxShadow: '0 0 22px rgba(183,1,252,0.6)',
-                  color: P.white,
-                  fontFamily: SANS,
-                  fontWeight: 800,
-                  fontSize: 44,
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  transform: `scale(${0.6 + 0.4 * p})`,
-                }}
-              >
-                {l.n}
-              </div>
-              <div style={{display: 'flex', gap: 18, alignItems: 'baseline'}}>
-                {l.words.map((i, j) => {
-                  const clave = i === l.clave;
-                  const pre = j === 0 ? l.pre : '';
-                  const post = j === l.words.length - 1 ? l.post : '';
-                  const over = {[i]: `${pre}${limpio(WORDS[i].text).toLowerCase()}${post}`};
-                  return (
-                    <Palabra
-                      key={i}
-                      i={i}
-                      t={t}
-                      line={{...linea, over}}
-                      color={clave ? P.purple : P.white}
-                      shadow={clave ? halo : sombra}
-                      size={clave ? 70 : 58}
-                      weight={clave ? 800 : 400}
-                      spacing={clave ? '-0.02em' : '0.005em'}
-                    />
-                  );
-                })}
-              </div>
-            </div>
-          );
-        })}
+      >
+        <div
+          key={l.n}
+          style={{
+            fontFamily: SANS,
+            fontWeight: 800,
+            fontSize: 150,
+            lineHeight: 1,
+            letterSpacing: '-0.04em',
+            color: P.purple,
+            textShadow: '0 0 30px rgba(183,1,252,0.55)',
+            opacity: pn,
+            filter: `blur(${(1 - pn) * 12}px)`,
+            transform: `translateY(${(1 - pn) * 20}px) scale(${1.15 - 0.15 * pn})`,
+          }}
+        >
+          {l.n}
+        </div>
+        <div style={{display: 'flex', gap: 20, alignItems: 'baseline', flexWrap: 'wrap', justifyContent: 'center', maxWidth: 900}}>
+          {l.words.map((i, j) => {
+            const clave = i === l.clave;
+            const pre = j === 0 ? l.pre : '';
+            const post = j === l.words.length - 1 ? l.post : '';
+            const over = {[i]: `${pre}${limpio(WORDS[i].text).toLowerCase()}${post}`};
+            return (
+              <Palabra
+                key={i}
+                i={i}
+                t={t}
+                line={{...linea, over}}
+                color={clave ? P.purple : P.white}
+                shadow={clave ? halo : sombra}
+                size={clave ? 96 : 64}
+                weight={clave ? 800 : 400}
+                spacing={clave ? '-0.03em' : '0.005em'}
+              />
+            );
+          })}
+        </div>
       </div>
     </AbsoluteFill>
   );

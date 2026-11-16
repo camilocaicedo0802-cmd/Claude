@@ -180,17 +180,17 @@ const CAJA = {x0: 40, x1: 1040, y0: 290, y1: 1600};
 export const Marco: React.FC = () => {
   const t = useTiempo();
   const {from} = T.marco;
-  const fin = T.cierre.from;
-  if (t < from || t > T.cierre.to) return null;
+  const fin = T.marco.to; // tras «¿por qué elegirte?» el marco se enciende a tono pleno y se corta al cierre
+  if (t < from || t >= fin) return null;
   // parpadeo de entrada: encendido 2 f, apagado 2 f, encendido
   const k = Math.floor((t - from) * FPS);
   if (k >= 2 && k < 4) return null;
   // tono: oscuro al 78 % → pleno al final
-  const pleno = interpolate(t, [fin - 0.5, fin], [0, 1], clamp);
+  const pleno = interpolate(t, [fin - 0.42, fin - 0.12], [0, 1], clamp);
   const op = 0.78 + 0.22 * pleno;
   const color = pleno > 0.5 ? P.purple : P.deep;
-  // cierre: el hueco se cierra hasta tapar todo
-  const c = interpolate(t, [fin - 0.05, fin + 0.35], [0, 1], {...clamp, easing: easeInOut});
+  // justo antes del corte el hueco se estrecha un poco (golpe final del marco)
+  const c = interpolate(t, [fin - 0.14, fin], [0, 0.12], {...clamp, easing: easeInOut});
   const x0 = CAJA.x0 + (540 - CAJA.x0) * c;
   const x1 = CAJA.x1 - (CAJA.x1 - 540) * c;
   const y0 = CAJA.y0 + (945 - CAJA.y0) * c;
@@ -223,11 +223,12 @@ export const Grow: React.FC = () => {
   const t = useTiempo();
   const {from, to} = T.grow;
   if (t < from || t >= to) return null;
-  const mitad = 31.9;
+  const mitad = T.grow.mitad;
   const p = interpolate(t, [from, from + 0.3], [0, 1], {...clamp, easing: easeOut});
   // 1) cabecera con bio y seguidores · 2) cuadrícula coherente con la marca
   // (−90 px: fuera la barra de estado del móvil de la grabación)
-  const tramo = t < mitad ? {clip: 0.2, y: -90, z: 1.0} : {clip: 2.2, y: -300, z: 1.08};
+  // 01 ¿por qué comprarte? → cabecera (bio, oferta, 10,4 mil seguidores) · 02 ¿por qué confiar en ti? → detrás de cámaras (8 s)
+  const tramo = t < mitad ? {clip: 0.2, y: -90, z: 1.0} : {clip: 7.9, y: -125, z: 1.0};
   const z = tramo.z + interpolate(t, [t < mitad ? from : mitad, t < mitad ? mitad : to], [0, 0.04], clamp);
   return (
     <AbsoluteFill>
@@ -247,10 +248,10 @@ export const Grow: React.FC = () => {
 export const Cierre: React.FC = () => {
   const t = useTiempo();
   const {from} = T.cierre;
-  if (t < from + 0.2) return null;
+  if (t < from - 0.12) return null;
   const p = interpolate(t, [from + 0.25, from + 0.7], [0, 1], {...clamp, easing: easeOut});
   const vida = t - from;
-  const fondo = interpolate(t, [from + 0.2, from + 0.42], [0, 1], clamp);
+  const fondo = interpolate(t, [from - 0.12, from + 0.1], [0, 1], clamp);
   return (
     <AbsoluteFill style={{alignItems: 'center', justifyContent: 'center'}}>
       <AbsoluteFill style={{opacity: fondo, background: 'radial-gradient(ellipse 75% 45% at 50% 48%, #3A0080 0%, #18003A 45%, #07000F 100%)'}} />
