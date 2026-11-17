@@ -100,20 +100,23 @@ const BigWord: React.FC<{ h: H; seg: Segment; start: number }> = ({ h, seg, star
       ctx.globalCompositeOperation = "source-over";
       ctx.globalAlpha = 1;
       ctx.clearRect(0, 0, W, H_);
-      ctx.fillStyle = isWhite ? "#FFFFFF" : "#E10000";
-      ctx.fillRect(0, 0, W, H_);
-      ctx.globalAlpha = isWhite ? 0.9 : 0.88;
-      ctx.imageSmoothingQuality = "high";
-      ctx.drawImage(tex.current, 0, 0, W, H_);
-      // recorte con la forma de las letras
-      ctx.globalAlpha = 1;
-      ctx.globalCompositeOperation = "destination-in";
+      // 1) todas las letras (todas las líneas) como forma
       ctx.fillStyle = "#000";
       ctx.font = `900 ${size}px "${SF}"`;
       (ctx as unknown as { letterSpacing: string }).letterSpacing = `${(TRACK * size).toFixed(2)}px`;
       ctx.textAlign = h.layout.align;
       ctx.textBaseline = "alphabetic";
       lines.forEach((l, i) => ctx.fillText(l, h.layout.x, top + size * CAP + i * size * LINE));
+      // 2) color base solo dentro de las letras (conserva el suavizado del borde)
+      ctx.globalCompositeOperation = "source-in";
+      ctx.fillStyle = isWhite ? "#FFFFFF" : "#E10000";
+      ctx.fillRect(0, 0, W, H_);
+      // 3) textura del vídeo encima, también solo dentro de las letras
+      ctx.globalCompositeOperation = "source-atop";
+      ctx.globalAlpha = isWhite ? 0.9 : 0.88;
+      ctx.imageSmoothingQuality = "high";
+      ctx.drawImage(tex.current, 0, 0, W, H_);
+      ctx.globalAlpha = 1;
       ctx.globalCompositeOperation = "source-over";
     },
     [frame, h, isWhite, lines, offset, seg, size, top],
