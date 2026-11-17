@@ -30,7 +30,7 @@ _mk = {}
 
 def _mask(n):
     if n not in _mk:
-        im = cv2.imread(ROOT + f'masks/{n:05d}.png', cv2.IMREAD_GRAYSCALE)
+        im = cv2.imread(ROOT + f'masks_b/{n:05d}.png', cv2.IMREAD_GRAYSCALE)
         _mk[n] = None if im is None else cv2.resize(im, (270, 480), interpolation=cv2.INTER_AREA) > 100
     return _mk[n]
 
@@ -364,12 +364,12 @@ def build():
     E = []
     O = lambda s: (ORANGE_L, ORANGE)
     # ================================================================ HOOK
-    E.append(Scrim(0.0, T.VOICE[1][3], 100, 640, 0.35))
-    E.append(Pill('TULSA HOMEOWNERS', 0.05, 2.70, 170, size=46))
-    E.append(Typed('YOUR BATHROOM', 0.22, 2.74, 290, size=104))
-    E.append(Typed("ISN'T THE", 0.72, 2.74, 405, size=104))
+    E.append(Scrim(0.0, T.VOICE[1][3], 90, 600, 0.35))
+    E.append(Pill('TULSA HOMEOWNERS', 0.05, 2.70, 150, size=46))
+    E.append(Typed('YOUR BATHROOM', 0.22, 2.74, 262, size=104))
+    E.append(Typed("ISN'T THE", 0.72, 2.74, 372, size=104))
     t3 = 1.06
-    E.append(Typed('PROBLEM…', t3, 2.74, 525, size=124, grad=(ORANGE_L, ORANGE)))
+    E.append(Typed('PROBLEM…', t3, 2.74, 482, size=124, grad=(ORANGE_L, ORANGE)))
     sfx(t3 + 8 * 0.034, 'bass', -6)
     # ================================================================ Your shower might be the problem
     E.append(Scrim(2.82, 4.90, 120, 560, 0.35))
@@ -386,10 +386,10 @@ def build():
     E.append(Caption([('But', 'b', wt(3, 0)), ('your', 'b', wt(3, 1)), ('shower', 'o', wt(3, 2))], wt(3, 3)))
     E.append(Caption([('still', 'b', wt(3, 3)), ('might', 'b', wt(3, 4)), ('look', 'b', wt(3, 5))], wt(3, 6)))
     E.append(Caption([('like', 'b', wt(3, 6)), ("it's", 'b', wt(3, 7)), ('from', 'b', wt(3, 8)), ('the', 'b', wt(3, 9))], T.FREEZE0))
-    # retro freeze
-    E.append(Typed('1990s', T.FREEZE0 + 0.04, T.FREEZE1 - 0.05, 250, size=200, grad=((255, 214, 120), ORANGE), rate=0.05, rot=-4))
-    sfx(T.FREEZE0, 'shutter', 0); sfx(T.FREEZE0, 'film', -6); sfx(T.FREEZE0 + 0.04, 'flash', -6)
-    E.append(VHS(T.FREEZE0 + 0.04, T.FREEZE1))
+    # "1990s" over a dated bathroom (v3: no retro freeze / VHS effect)
+    E.append(Scrim(T.FREEZE0, T.FREEZE1, 120, 460, 0.30))
+    E.append(Typed('1990s', T.FREEZE0 + 0.04, T.FREEZE1 - 0.05, 280, size=200, grad=(ORANGE_L, ORANGE), pop=True, sound=False))
+    sfx(T.FREEZE0 + 0.04, 'key', 0); sfx(T.FREEZE0 + 0.04, 'bass', -5)
     # ================================================================ The whole bathroom might feel outdated
     E.append(Caption([('The', 'b', wt(4, 0) + 0.1), ('whole', 'b', wt(4, 1)), ('bathroom', 'b', wt(4, 2))], wt(4, 3)))
     E.append(Caption([('might', 'b', wt(4, 3)), ('feel', 'b', wt(4, 4))], wt(4, 5)))
@@ -420,13 +420,7 @@ def build():
     E.append(Scrim(wt(8, 2), T.CAT0, 640, 920, 0.38))
     E.append(Typed('FINISHES', wt(8, 2), T.CAT0 - 0.1, 780, size=150, grad=(ORANGE_L, ORANGE), rate=0.035))
     sfx(wt(8, 2) + 0.3, 'shine', -6)
-    # ================================================================ new shower catalog (no voice)
-    tc = T.CAT0; te9 = T.VOICE[9][3]
-    E.append(Scrim(tc, te9, 240, 760, 0.42))
-    E.append(Pill('NEW', tc + 0.05, te9 - 0.25, 300, size=44))
-    E.append(Typed('SHOWER', tc + 0.18, te9 - 0.2, 450, size=140, rate=0.03))
-    E.append(Typed('CATALOG', tc + 0.42, te9 - 0.2, 600, size=140, grad=(ORANGE_L, ORANGE), rate=0.03))
-    E.append(Caption([('find', 'b', tc + 0.8), ('your', 'b', tc + 0.96), ('style', 'o', tc + 1.12)], te9 - 0.05, cy=760))
+    # (v3: the catalog beat and its text are removed — the catalog is no longer available)
     # ================================================================ Before even think remodel the whole bathroom
     E.append(Caption([('Before', 'b', wt(9, 0)), ('you', 'b', wt(9, 1)), ('even', 'b', wt(9, 1) + 0.15)], wt(9, 2)))
     E.append(Caption([('think', 'b', wt(9, 2)), ('to', 'b', wt(9, 3)), ('remodel', 'b', wt(9, 4))], wt(9, 6)))
@@ -445,7 +439,7 @@ def build():
     E.append(Scrim(te, T.DUR, 440, 1000, 0.3))
     E.append(Typed("LET'S", te, tx, 560, size=112, rate=0.03, gain=-1))
     E.append(Typed('TRANSFORM', te + 0.15, tx, 690, size=124, rate=0.03, gain=-1))
-    E.append(Typed('YOUR SHOWER', T.OUTRO, tx, 840, size=140, grad=(ORANGE_L, ORANGE), pop=True, sound=False))
+    E.append(Typed('YOUR SHOWER', T.OUTRO, tx, 840, size=126, grad=(ORANGE_L, ORANGE), pop=True, sound=False))
     sfx(T.OUTRO, 'impact', -3); sfx(T.OUTRO, 'key', 0)
     logo = G.load_logo(WEST + 'raw/brand/WEST HOME/PNG/Recurso 7@4x.png', 560)
     E.append(El(G.pil_to_spr(logo, radius=20, offset=(0, 10), opacity=0.5), 540, 1220, T.OUTRO + 1.15, tx, 'pop', 'blurout',

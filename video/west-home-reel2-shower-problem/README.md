@@ -1,6 +1,30 @@
 # West Home Improvement · Reel 2 — "Your bathroom isn't the problem"
 
-Reel vertical de 35,8 s (1080×1920, 30 fps) para Instagram, con Félix y B-roll de proyectos reales.
+Reel vertical de 33,6 s (1080×1920, 30 fps) para Instagram, con Félix y B-roll de proyectos reales.
+
+**v3 (ajustes del cliente):**
+- **Música:**
+  - "Walking on a Dream" (Empire of the Sun, instrumental), sacada de la carpeta de música del cliente.
+  - La intro suave va bajo la parte del problema y el bombo entra justo en el reveal antes/después (16,84 s).
+  - Antes de eso hay un compás de pre-roll empalmado. Los cortes están en la rejilla de 127 BPM.
+- **Recortes:** el matte de persona ahora es BiRefNet-portrait (ONNX, 1024²) en lugar de U2-Net.
+  - Calculo un fotograma de cada dos con el modelo; el intermedio sale de los vecinos, deformados con flujo óptico.
+  - La gorra y el pelo quedan limpios y el camión ya no se confunde con la persona. Los textos quedan detrás de Félix sin halos.
+- **Antes:** donde Félix habla de duchas y baños viejos ahora salen baños antiguos de Unsplash, con licencia libre y créditos en
+  `credits_web.json`:
+  - "might be the problem": tina-ducha de los 90;
+  - "But your shower still… like it's from the": cortina de flores y tina con cortina de plástico;
+  - "1990s": lavamanos verde con papel tapiz de flores;
+  - "The whole bathroom might feel outdated": baño completo de constructor.
+  - Del material propio se quedaron la vanity antigua y el antes/después.
+- **Sin efecto retro:** se quitaron el congelado Super 8 / VHS y el *tape stop*. "1990s" queda como título limpio.
+- **Clips cambiados:**
+  - Félix dentro de la ducha → ducha terminada del proyecto 6 (IMG_9040).
+  - IMG_7125, sobreexpuesto → nicho de hexágonos (IMG_9079).
+  - IMG_0992 → recorrido de la ducha (IMG_9054).
+  - Cierre IMG_7127, sobreexpuesto → IMG_9041.
+- **Catálogo:** se quitó el bloque del catálogo (texto NEW SHOWER CATALOG y su 1,6 s sin voz) porque ya no estará disponible.
+  La tabla de abajo es de la v1.
 
 **v2 (ajustes del cliente):**
 - Sin silencios: se cortó la pausa de 0,8 s al inicio de la toma IMG_7832 (antes de "But your shower") y todas las tomas

@@ -1,4 +1,5 @@
-"""Reel 2 mix: Félix's voice + music (tape stop, bar splices, ducking) + SFX taken only from the client's library."""
+"""Reel 2 mix (v3): Félix's voice + "Walking on a Dream" (instrumental, client's music folder) with ducking + SFX
+taken only from the client's library."""
 import sys, os, subprocess, json, math
 import numpy as np
 import scipy.signal as sg
@@ -58,7 +59,7 @@ for path, a, b, tp in T.VOICE:
 wf.write(STEM + 'voice.wav', SR, voice)
 
 # ---------------------------------------------------------------- music
-mus = load(ROOT + 'music/track.mp3', ch=2)
+mus = load(ROOT + 'musiclib/walking_on_a_dream.mp3', ch=2)
 music = np.zeros((N, 2), np.float32)
 XF = int(0.012 * SR)
 
@@ -72,30 +73,12 @@ def place(dst_t0, dst_t1, src_t0, fin=True, fout=True):
     music[a:a + len(seg)] += seg
 
 
-TAPE0 = T.FREEZE0
-place(0.0, TAPE0, 0.0, fin=False, fout=False)
-# tape stop: playback rate falls 1 -> 0 over 0.45 s
-dur = 0.45; n = int(dur * SR)
-rate = np.linspace(1, 0, n) ** 1.3
-pos = TAPE0 * SR + np.cumsum(rate)
-ts = np.stack([np.interp(pos, np.arange(len(mus)), mus[:, c]) for c in range(2)], 1).astype(np.float32)
-ts *= np.linspace(1, 0, n)[:, None] ** 0.6
-music[int(TAPE0 * SR):int(TAPE0 * SR) + n] = ts
-# segment B (intro section, then the drop on the reveal) and the outro splice
-B0 = T.SEGB; OUTRO_V = T.OUTRO; OUTRO_T = T.B0 + T.P * 64
-place(B0, OUTRO_V + 0.012, B0 - T.DB)
-place(OUTRO_V - 0.012, T.DUR, OUTRO_T)
-# segment B fades in over 1 s, low-passed until the reveal
-i0 = int(B0 * SR); i1 = int((T.REVEAL - 0.02) * SR)
-music[i0:i0 + SR] *= np.linspace(0, 1, SR)[:, None] ** 1.5
-sos = sg.butter(2, 900, 'lp', fs=SR, output='sos')
-lp = sg.sosfiltfilt(sos, music[i0:i1], axis=0)
-mix_k = np.linspace(0, 1, i1 - i0)[:, None] ** 3              # filter opens towards the drop
-music[i0:i1] = (lp * (1 - mix_k) + music[i0:i1] * mix_k).astype(np.float32)
-fo = int(0.5 * SR); music[-fo:] *= np.linspace(1, 0, fo)[:, None]
-
-a8 = int(T.ba(16) * SR)
-music[:a8] *= db(4.0)                                      # thin intro section: lift it
+# one-bar pre-roll, then one continuous pass: the track's kick enters exactly on the before/after REVEAL
+place(0.0, T.SPLICE + 0.012, T.PRE - T.SPLICE, fin=False)
+place(T.SPLICE - 0.012, T.DUR, T.SPLICE - 0.012 + T.MOFF)
+fi = int(0.12 * SR); music[:fi] *= np.linspace(0, 1, fi)[:, None]
+fo = int(0.7 * SR); music[-fo:] *= np.linspace(1, 0, fo)[:, None] ** 1.3
+music[:int(T.REVEAL * SR)] *= db(3.0)                       # the intro is thinner than the groove: lift it a little
 ml = meter.integrated_loudness(music.astype(np.float64))
 music *= db(-22.0 - ml)
 # ducking under the voice (look-ahead 40 ms, attack 60 ms, release 300 ms)
@@ -179,7 +162,7 @@ for s in T.SHOTS:
     elif tin[0] == 'flash':
         put(s['t0'], 'audio/camera/camera_flash.wav', -17)
 # riser into the before/after reveal
-put(T.REVEAL, 'audio/riser/sharp_riser.wav', -15)
+put(T.REVEAL, 'audio/riser/sharp_riser.wav', -17)
 wf.write(STEM + 'sfx.wav', SR, sfx.astype(np.float32))
 json.dump(log, open(STEM + 'sfx_log.json', 'w'), indent=0)
 
