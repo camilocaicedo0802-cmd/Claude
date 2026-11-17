@@ -1,0 +1,15 @@
+pts_time:0.0333333	pts_time:1.96667
+pts_time:2.86667	pts_time:6.03333
+pts_time:10.6333	pts_time:12.1333
+pts_time:15.4667	pts_time:15.5
+pts_time:15.5333	pts_time:15.5667
+pts_time:15.6	pts_time:15.6333
+pts_time:17.0333	pts_time:19.0333
+pts_time:20.5333	pts_time:22
+pts_time:22.0333	pts_time:23
+pts_time:25.0333	pts_time:27
+pts_time:27.0333	pts_time:29
+pts_time:29.0667	pts_time:31.0333
+pts_time:32.5333	pts_time:34.0333
+pts_time:35.0333	pts_time:35.0667
+pts_time:36.5333	pts_time:38.0333

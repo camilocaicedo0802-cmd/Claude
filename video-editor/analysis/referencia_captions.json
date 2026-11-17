@@ -1,0 +1,415 @@
+[
+ {
+  "text": " Buenos",
+  "startMs": 0,
+  "endMs": 260,
+  "timestampMs": 130,
+  "confidence": 0.718
+ },
+ {
+  "text": " días,",
+  "startMs": 260,
+  "endMs": 760,
+  "timestampMs": 510,
+  "confidence": 0.972
+ },
+ {
+  "text": " estamos",
+  "startMs": 840,
+  "endMs": 1120,
+  "timestampMs": 980,
+  "confidence": 0.992
+ },
+ {
+  "text": " aquí",
+  "startMs": 1120,
+  "endMs": 1360,
+  "timestampMs": 1240,
+  "confidence": 0.978
+ },
+ {
+  "text": " listos",
+  "startMs": 1360,
+  "endMs": 1880,
+  "timestampMs": 1620,
+  "confidence": 0.998
+ },
+ {
+  "text": " para",
+  "startMs": 1880,
+  "endMs": 2100,
+  "timestampMs": 1990,
+  "confidence": 0.998
+ },
+ {
+  "text": " grabar",
+  "startMs": 2100,
+  "endMs": 2680,
+  "timestampMs": 2390,
+  "confidence": 1.0
+ },
+ {
+  "text": " en",
+  "startMs": 2680,
+  "endMs": 2920,
+  "timestampMs": 2800,
+  "confidence": 0.931
+ },
+ {
+  "text": " este",
+  "startMs": 2920,
+  "endMs": 3140,
+  "timestampMs": 3030,
+  "confidence": 0.998
+ },
+ {
+  "text": " nuevo",
+  "startMs": 3140,
+  "endMs": 3340,
+  "timestampMs": 3240,
+  "confidence": 0.996
+ },
+ {
+  "text": " lugar",
+  "startMs": 3340,
+  "endMs": 3660,
+  "timestampMs": 3500,
+  "confidence": 1.0
+ },
+ {
+  "text": " que",
+  "startMs": 3660,
+  "endMs": 3840,
+  "timestampMs": 3750,
+  "confidence": 0.997
+ },
+ {
+  "text": " tenemos",
+  "startMs": 3840,
+  "endMs": 4060,
+  "timestampMs": 3950,
+  "confidence": 1.0
+ },
+ {
+  "text": " para",
+  "startMs": 4060,
+  "endMs": 4380,
+  "timestampMs": 4220,
+  "confidence": 0.996
+ },
+ {
+  "text": " atender",
+  "startMs": 4380,
+  "endMs": 4700,
+  "timestampMs": 4540,
+  "confidence": 0.999
+ },
+ {
+  "text": " a",
+  "startMs": 4700,
+  "endMs": 4840,
+  "timestampMs": 4770,
+  "confidence": 0.996
+ },
+ {
+  "text": " nuestros",
+  "startMs": 4840,
+  "endMs": 4960,
+  "timestampMs": 4900,
+  "confidence": 0.998
+ },
+ {
+  "text": " clientes,",
+  "startMs": 4960,
+  "endMs": 5720,
+  "timestampMs": 5340,
+  "confidence": 1.0
+ },
+ {
+  "text": " cafecito",
+  "startMs": 5740,
+  "endMs": 6500,
+  "timestampMs": 6120,
+  "confidence": 0.942
+ },
+ {
+  "text": " en",
+  "startMs": 6500,
+  "endMs": 6680,
+  "timestampMs": 6590,
+  "confidence": 0.998
+ },
+ {
+  "text": " la",
+  "startMs": 6680,
+  "endMs": 6720,
+  "timestampMs": 6700,
+  "confidence": 1.0
+ },
+ {
+  "text": " mañana,",
+  "startMs": 6720,
+  "endMs": 7120,
+  "timestampMs": 6920,
+  "confidence": 0.999
+ },
+ {
+  "text": " estamos",
+  "startMs": 7280,
+  "endMs": 7740,
+  "timestampMs": 7510,
+  "confidence": 0.994
+ },
+ {
+  "text": " listos",
+  "startMs": 7740,
+  "endMs": 8260,
+  "timestampMs": 8000,
+  "confidence": 1.0
+ },
+ {
+  "text": " para",
+  "startMs": 8260,
+  "endMs": 8420,
+  "timestampMs": 8340,
+  "confidence": 0.999
+ },
+ {
+  "text": " empezar,",
+  "startMs": 8420,
+  "endMs": 8760,
+  "timestampMs": 8590,
+  "confidence": 0.999
+ },
+ {
+  "text": " viene",
+  "startMs": 8940,
+  "endMs": 9080,
+  "timestampMs": 9010,
+  "confidence": 0.996
+ },
+ {
+  "text": " un",
+  "startMs": 9080,
+  "endMs": 9240,
+  "timestampMs": 9160,
+  "confidence": 0.999
+ },
+ {
+  "text": " cliente",
+  "startMs": 9240,
+  "endMs": 9660,
+  "timestampMs": 9450,
+  "confidence": 1.0
+ },
+ {
+  "text": " desde",
+  "startMs": 9660,
+  "endMs": 9780,
+  "timestampMs": 9720,
+  "confidence": 0.964
+ },
+ {
+  "text": " West",
+  "startMs": 9780,
+  "endMs": 10000,
+  "timestampMs": 9890,
+  "confidence": 0.992
+ },
+ {
+  "text": " Palm",
+  "startMs": 10000,
+  "endMs": 10160,
+  "timestampMs": 10080,
+  "confidence": 0.991
+ },
+ {
+  "text": " Beach,",
+  "startMs": 10160,
+  "endMs": 10380,
+  "timestampMs": 10270,
+  "confidence": 0.997
+ },
+ {
+  "text": " el",
+  "startMs": 10520,
+  "endMs": 10700,
+  "timestampMs": 10610,
+  "confidence": 0.998
+ },
+ {
+  "text": " otro",
+  "startMs": 10700,
+  "endMs": 10880,
+  "timestampMs": 10790,
+  "confidence": 1.0
+ },
+ {
+  "text": " viene",
+  "startMs": 10880,
+  "endMs": 11120,
+  "timestampMs": 11000,
+  "confidence": 0.997
+ },
+ {
+  "text": " de",
+  "startMs": 11120,
+  "endMs": 11300,
+  "timestampMs": 11210,
+  "confidence": 0.982
+ },
+ {
+  "text": " Miami",
+  "startMs": 11300,
+  "endMs": 11520,
+  "timestampMs": 11410,
+  "confidence": 0.997
+ },
+ {
+  "text": " Beach,",
+  "startMs": 11520,
+  "endMs": 11800,
+  "timestampMs": 11660,
+  "confidence": 0.999
+ },
+ {
+  "text": " estamos",
+  "startMs": 12020,
+  "endMs": 12280,
+  "timestampMs": 12150,
+  "confidence": 0.997
+ },
+ {
+  "text": " listos",
+  "startMs": 12280,
+  "endMs": 12760,
+  "timestampMs": 12520,
+  "confidence": 1.0
+ },
+ {
+  "text": " para",
+  "startMs": 12760,
+  "endMs": 12900,
+  "timestampMs": 12830,
+  "confidence": 1.0
+ },
+ {
+  "text": " empezar",
+  "startMs": 12900,
+  "endMs": 13220,
+  "timestampMs": 13060,
+  "confidence": 0.999
+ },
+ {
+  "text": " y",
+  "startMs": 13220,
+  "endMs": 13400,
+  "timestampMs": 13310,
+  "confidence": 0.956
+ },
+ {
+  "text": " este",
+  "startMs": 13400,
+  "endMs": 13500,
+  "timestampMs": 13450,
+  "confidence": 0.637
+ },
+ {
+  "text": " es",
+  "startMs": 13500,
+  "endMs": 13560,
+  "timestampMs": 13530,
+  "confidence": 0.999
+ },
+ {
+  "text": " un",
+  "startMs": 13560,
+  "endMs": 13640,
+  "timestampMs": 13600,
+  "confidence": 0.999
+ },
+ {
+  "text": " pequeño",
+  "startMs": 13640,
+  "endMs": 13880,
+  "timestampMs": 13760,
+  "confidence": 0.999
+ },
+ {
+  "text": " resumen",
+  "startMs": 13880,
+  "endMs": 14360,
+  "timestampMs": 14120,
+  "confidence": 1.0
+ },
+ {
+  "text": " de",
+  "startMs": 14360,
+  "endMs": 14480,
+  "timestampMs": 14420,
+  "confidence": 0.999
+ },
+ {
+  "text": " lo",
+  "startMs": 14480,
+  "endMs": 14560,
+  "timestampMs": 14520,
+  "confidence": 0.999
+ },
+ {
+  "text": " que",
+  "startMs": 14560,
+  "endMs": 14600,
+  "timestampMs": 14580,
+  "confidence": 1.0
+ },
+ {
+  "text": " vamos",
+  "startMs": 14600,
+  "endMs": 14760,
+  "timestampMs": 14680,
+  "confidence": 0.999
+ },
+ {
+  "text": " a",
+  "startMs": 14760,
+  "endMs": 14860,
+  "timestampMs": 14810,
+  "confidence": 0.995
+ },
+ {
+  "text": " hacer",
+  "startMs": 14860,
+  "endMs": 15060,
+  "timestampMs": 14960,
+  "confidence": 1.0
+ },
+ {
+  "text": " hoy.",
+  "startMs": 15060,
+  "endMs": 15200,
+  "timestampMs": 15130,
+  "confidence": 0.998
+ },
+ {
+  "text": " ¡Suscríbete",
+  "startMs": 34520,
+  "endMs": 35920,
+  "timestampMs": 35220,
+  "confidence": 0.83
+ },
+ {
+  "text": " al",
+  "startMs": 35920,
+  "endMs": 36040,
+  "timestampMs": 35980,
+  "confidence": 0.971
+ },
+ {
+  "text": " canal!",
+  "startMs": 36040,
+  "endMs": 37420,
+  "timestampMs": 36730,
+  "confidence": 0.999
+ }
+]

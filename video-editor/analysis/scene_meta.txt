@@ -1,0 +1,60 @@
+frame:0    pts:1       pts_time:0.0333333
+lavfi.scene_score=0.271567
+frame:1    pts:59      pts_time:1.96667
+lavfi.scene_score=0.323340
+frame:2    pts:86      pts_time:2.86667
+lavfi.scene_score=0.515912
+frame:3    pts:181     pts_time:6.03333
+lavfi.scene_score=0.156599
+frame:4    pts:319     pts_time:10.6333
+lavfi.scene_score=0.158600
+frame:5    pts:364     pts_time:12.1333
+lavfi.scene_score=0.587802
+frame:6    pts:464     pts_time:15.4667
+lavfi.scene_score=0.837186
+frame:7    pts:465     pts_time:15.5
+lavfi.scene_score=0.226493
+frame:8    pts:466     pts_time:15.5333
+lavfi.scene_score=0.131061
+frame:9    pts:467     pts_time:15.5667
+lavfi.scene_score=0.148463
+frame:10   pts:468     pts_time:15.6
+lavfi.scene_score=0.137730
+frame:11   pts:469     pts_time:15.6333
+lavfi.scene_score=0.149943
+frame:12   pts:511     pts_time:17.0333
+lavfi.scene_score=0.759697
+frame:13   pts:571     pts_time:19.0333
+lavfi.scene_score=0.842467
+frame:14   pts:616     pts_time:20.5333
+lavfi.scene_score=0.831385
+frame:15   pts:660     pts_time:22
+lavfi.scene_score=0.644653
+frame:16   pts:661     pts_time:22.0333
+lavfi.scene_score=0.215571
+frame:17   pts:690     pts_time:23
+lavfi.scene_score=0.453311
+frame:18   pts:751     pts_time:25.0333
+lavfi.scene_score=0.494740
+frame:19   pts:810     pts_time:27
+lavfi.scene_score=0.506043
+frame:20   pts:811     pts_time:27.0333
+lavfi.scene_score=0.205378
+frame:21   pts:870     pts_time:29
+lavfi.scene_score=0.737193
+frame:22   pts:872     pts_time:29.0667
+lavfi.scene_score=0.167133
+frame:23   pts:931     pts_time:31.0333
+lavfi.scene_score=0.707446
+frame:24   pts:976     pts_time:32.5333
+lavfi.scene_score=0.443021
+frame:25   pts:1021    pts_time:34.0333
+lavfi.scene_score=0.684944
+frame:26   pts:1051    pts_time:35.0333
+lavfi.scene_score=0.547609
+frame:27   pts:1052    pts_time:35.0667
+lavfi.scene_score=0.187160
+frame:28   pts:1096    pts_time:36.5333
+lavfi.scene_score=0.689638
+frame:29   pts:1141    pts_time:38.0333
+lavfi.scene_score=0.754270

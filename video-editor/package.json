@@ -1,0 +1,31 @@
+{
+  "name": "video-editor",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Edición vertical 1080x1920 30fps con Remotion",
+  "scripts": {
+    "dev": "remotion studio",
+    "render": "remotion render Main out/final.mp4",
+    "still": "remotion still Main out/still.png",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@remotion/captions": "4.0.544",
+    "@remotion/cli": "4.0.544",
+    "@remotion/google-fonts": "4.0.544",
+    "@remotion/install-whisper-cpp": "4.0.544",
+    "@remotion/media": "4.0.544",
+    "@remotion/media-utils": "4.0.544",
+    "@remotion/transitions": "4.0.544",
+    "@remotion/noise": "4.0.544",
+    "@remotion/paths": "4.0.544",
+    "@remotion/shapes": "4.0.544",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "remotion": "4.0.544"
+  },
+  "devDependencies": {
+    "@types/react": "19.2.2",
+    "typescript": "5.9.3"
+  }
+}
