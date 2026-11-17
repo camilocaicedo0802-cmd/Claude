@@ -72,13 +72,14 @@ export const chapters: Chapter[] = [
     context: "Trabajos y propuestas para clientes muy distintos",
     categories: ["Edición de video", "Reels y formato corto", "Anuncios comerciales"],
     description:
-      "Una selección que muestra cómo me adapto a cada cliente y a cada tipo de contenido: una marca de té matcha, una marca de muebles, un taller automotriz, una app de reservas, una masterclass y un medio de noticias. Cada pieza pide un lenguaje propio, del reel UGC con razones numeradas en pantalla a la nota periodística con datos y testimonios, y en todas cuido el ritmo, los subtítulos y la claridad del mensaje.",
+      "Una selección que muestra cómo me adapto a cada cliente y a cada tipo de contenido: una marca de té matcha, una marca de muebles, una agencia de contenido, un taller automotriz, una app de reservas, una masterclass y un medio de noticias. Cada pieza pide un lenguaje propio, del reel UGC con razones numeradas en pantalla a la nota periodística con datos y testimonios, y en todas cuido el ritmo, los subtítulos y la claridad del mensaje.",
     role: "Edición de video, subtítulos y motion graphics",
     tools: [],
     source: "Drive: Subir contenido a Portafolio / Ediciones destacadas",
     items: [
       video("ed-matcha-ugc", "Reel UGC · Té matcha", "Una creadora presenta el té matcha con razones numeradas en pantalla, subtítulos que resaltan cada idea y el producto en primer plano al cierre."),
       video("ed-macizo", "Propuesta creativa · Macizo", "Reel para una marca de muebles: un presentador recorre el showroom con títulos grandes en las palabras clave (Eames, tapicería, ebanistería) y escenas del espacio."),
+      video("ed-305-media", "Propuesta creativa · 305 Media", "Reel para una agencia de contenido: dos presentadores plantean cuántas personas habría que contratar (un filmmaker, un creador de contenido…) y cuántos sueldos serían, con títulos grandes, íconos animados y tomas de apoyo."),
       video("ed-taller-audi", "Propuesta creativa · Taller automotriz", "Video para un taller: el presentador explica, paso a paso, la reparación de la transmisión DSG de un Audi A3, con títulos animados y tomas de detalle del motor."),
       video("ed-kanto", "Reel animado · Kanto", "Reel de producto para una app de reservas: la interfaz animada muestra cómo se agenda por WhatsApp o por una página propia, cómo se centralizan las reservas y cómo se cobran señas, con cierre de prueba gratis."),
       video("ed-masterclass", "Propuesta creativa · Masterclass", "Promo de una masterclass: la presentadora a cámara, frases en pantalla, gráficos de apoyo y la fecha del evento al cierre."),
