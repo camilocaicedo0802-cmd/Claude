@@ -1,0 +1,30 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:SFB;src:url(../../assets_in/fonts_zip/SFPRODISPLAYBOLD.OTF);font-weight:700}
+@font-face{font-family:SFD;src:url(../../public/fonts/SFProDisplay-BlackUpright.otf);font-weight:900}
+body{margin:0;background:#222;display:flex;gap:10px}
+</style></head><body>
+<canvas id=a width=1080 height=1920></canvas><canvas id=b width=1080 height=900></canvas>
+<script>
+window.go=async()=>{
+ await document.fonts.load('700 100px SFB'); await document.fonts.load('900 100px SFD');
+ const CAP=1443/2048, EMB=0.0552;
+ // 1) sobre el fotograma de la referencia: CLIENTES con altura de mayúscula 145 y ancho 920
+ const img=new Image(); img.src='ref540.jpg'; await img.decode();
+ const c=document.getElementById('a').getContext('2d'); c.drawImage(img,0,0,1080,1920);
+ const s=145/(CAP+EMB);
+ let lo=-0.1, hi=0.1, ls=0;
+ for(let k=0;k<30;k++){ ls=(lo+hi)/2; c.font=`700 ${s}px SFB`; c.letterSpacing=`${ls*s}px`; const w=c.measureText('CLIENTES').width - ls*s + EMB*s; if(w>920) hi=ls; else lo=ls; }
+ c.font=`700 ${s}px SFB`; c.letterSpacing=`${ls*s}px`; c.textAlign='left';
+ c.globalAlpha=0.6; c.fillStyle='cyan'; c.strokeStyle='cyan'; c.lineWidth=EMB*s; c.lineJoin='miter';
+ const base=510+145-EMB*s/2;
+ c.fillText('CLIENTES',80+EMB*s/2,base); c.strokeText('CLIENTES',80+EMB*s/2,base);
+ // 2) comparación limpia: arriba Black derivada (deformada), abajo Bold + engrosado
+ const d=document.getElementById('b').getContext('2d'); d.fillStyle='#fff'; d.fillRect(0,0,1080,900);
+ d.fillStyle='#E10000'; d.strokeStyle='#E10000';
+ d.font='900 180px SFD'; d.letterSpacing=`${-0.055*180}px`; d.fillText('PERSONAS?',30,220); d.fillText('ESPERANDO',30,420);
+ const s2=180*(CAP)/(CAP+EMB);
+ d.font=`700 ${s2}px SFB`; d.letterSpacing=`${ls*s2}px`; d.lineWidth=EMB*s2; d.lineJoin='miter';
+ for (const [t,y] of [['PERSONAS?',640],['ESPERANDO',840]]) { d.fillText(t,30+EMB*s2/2,y); d.strokeText(t,30+EMB*s2/2,y); }
+ return {size:s, tracking_em:ls};
+};
+</script></body></html>

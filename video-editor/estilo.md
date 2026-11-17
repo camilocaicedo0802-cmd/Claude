@@ -52,12 +52,12 @@ Siempre son una pareja: **línea pequeña (kicker)** + **palabra grande**. Durac
 | 4,85–5,75 s | "A NUESTROS" | "CLIENTES" rojo **detrás del presentador** | centrado; kicker y = 470–505; palabra y = 510–655 (a la altura de la cabeza) |
 
 ### Kicker
-- **SF Pro Display Light** (300). "BUENOS" recto a **60 px** (Light recta derivada enderezando la Light Italic −12°); "PARA" y "A NUESTROS" en **Light Italic** (archivo original) a **100–113 px**.
+- Kickers en cursiva: **SF Pro Display Light Italic** (archivo original) a **100–113 px** ("PARA", "A NUESTROS"). Kickers rectos ("BUENOS"): **SF Pro Display Regular** original (no hay Light recta en el paquete y no se derivan estilos rectos).
 - Mayúsculas, #FFFFFF, interletraje 0.
 - Entrada: **3 fotogramas**, desliza **+40 px desde la izquierda** con opacidad 0→1 y desenfoque de movimiento 8→0 px.
 
 ### Palabra grande
-- **SF Pro Display Black** (900), MAYÚSCULAS, interletraje **−0,055 em**, interlineado 0,9. La Black recta no venía en el paquete: se deriva enderezando la Black Italic (−12°); superpuesta sobre "CLIENTES" coincide letra a letra.
+- **Peso Black recto = SF Pro Display Bold original + contorno uniforme de 0,0552 em** (la diferencia medida entre el palo de la Black, 415 u, y el de la Bold, 302 u), MAYÚSCULAS, interletraje **+0,0217 em**, interlineado 0,92. Calibrado sobre "CLIENTES" de la referencia (920 px de ancho, 145 px de altura de mayúscula). **No se usa la Black Italic "enderezada"**: las cursivas de Apple llevan corrección óptica y al enderezarlas las curvas quedan asimétricas (la O tenía su punto más alto desplazado 333 u del centro).
 - Tamaño según ancho del bloque: **206 px** ("CLIENTES", 920 px de ancho), **341 px** ("DÍAS", 765 px), **~300 px** ("GRABAR", 1180 px, se sale del encuadre a propósito).
 - **Textura ROJA** ("DÍAS", "CLIENTES"):
   - Color base **#E10000** (medido sobre pared blanca: RGB 225,0,0).
@@ -160,7 +160,7 @@ Indicaciones del cliente que se mantienen en todas las ediciones:
 
 - **SFX: únicamente los de la carpeta del cliente**, nunca de otras fuentes.
 - **Textos de pantalla con SFX de tecleo**: los kickers y las etiquetas se escriben letra a letra (1 carácter por fotograma) con una pulsación por carácter (`Tecla.mp3`, `Mechanical Keyboard Click 01/02.wav`).
-- **Tipografía: SF Pro Display** (archivos del cliente). Los estilos que falten se derivan inclinando o enderezando 12° los existentes (`scripts/shear_font.py`).
+- **Tipografía: SF Pro Display** (archivos del cliente). Solo se permite derivar una cursiva inclinando 12° un estilo recto (así son las cursivas de Apple); nunca enderezar una cursiva.
 - **Colores**: los de la referencia (rojo #E10000 con texturas #D70000/#FD4040, blanco, neón #39FF14).
 - **Sin logo ni datos de contacto** en pantalla, salvo que el cliente los pida.
 - **B-roll**: si el cliente no lo aporta, se busca en bancos con licencia de uso comercial gratuito (Mixkit) y relacionado con el tema.
@@ -169,4 +169,5 @@ Correcciones sobre la primera entrega (17-11-2026):
 
 - **Palabras destacadas: mantener la textura, quitar el glitch.** Las franjas desplazadas "desencajaban" las letras y duplicaban bordes. Las palabras deben verse **precisas, nítidas y encajadas**, como en la referencia; la textura (vídeo posterizado a dos rojos o grises claros dentro de la letra) sí gusta y se mantiene.
 - **Las blancas deben leerse**: textura muy clara, nunca con aspecto transparente.
+- **Palabras destacadas rectas, simétricas y con sus proporciones** (segunda revisión): nunca usar estilos rectos obtenidos enderezando una cursiva. Si falta un peso, se engrosa uno recto original con un contorno uniforme. Cada palabra cabe con 40 px de margen a los bordes del encuadre.
 - **Máscaras precisas**: cuando un texto o una tarjeta va detrás de una persona, el recorte debe incluir pelo, orejas, manos y dedos sin huecos ni halos. MODNet perdía el pelo sobre fondos oscuros; se usa **BiRefNet** (`scripts/prepare_matte_hq.py`), con suavizado temporal ligero (70/30) para que el borde no tiemble.

@@ -1,18 +1,26 @@
 import React, { useCallback, useRef } from "react";
 import { AbsoluteFill, Easing, interpolate, OffthreadVideo, Sequence, staticFile, useCurrentFrame } from "remotion";
 import { CUTS, EDL, Highlight as H, Segment, segmentAt, zoomAt } from "../edl";
-import { CAP, SF } from "../fonts";
+import { BIG_TRACK, CAP, EMBOLDEN, SF } from "../fonts";
 
 const W = 1080;
 const H_ = 1920;
 const LINE = 0.92; // interlineado de la palabra grande (estilo.md)
-const TRACK = -0.055; // interletraje en em (medido sobre "CLIENTES")
 
-const fit = (lines: string[], size: number) => {
-  // ancho aproximado de SF Pro Display Black en mayúsculas (0,64 em por carácter con el tracking)
-  const longest = Math.max(...lines.map((l) => l.length));
-  const est = longest * size * 0.64;
-  return est > 1000 ? (size * 1000) / est : size;
+/** Mide el ancho real de la línea más larga y reduce el tamaño si pasa de 1000 px. */
+const measureCtx = typeof document !== "undefined" ? document.createElement("canvas").getContext("2d") : null;
+const bigFont = (size: number) => `700 ${size}px "${SF}"`;
+const lineWidth = (text: string, size: number) => {
+  if (!measureCtx || !document.fonts.check(bigFont(size))) return text.length * size * 0.69;
+  measureCtx.font = bigFont(size);
+  (measureCtx as unknown as { letterSpacing: string }).letterSpacing = `${(BIG_TRACK * size).toFixed(2)}px`;
+  return measureCtx.measureText(text).width - BIG_TRACK * size + EMBOLDEN * size;
+};
+/** Ancho disponible según la alineación, con 40 px de margen a cada borde del encuadre. */
+const fit = (lines: string[], size: number, align: "left" | "center" | "right", x: number) => {
+  const avail = align === "left" ? W - 40 - x : align === "right" ? x - 40 : W - 80;
+  const widest = Math.max(...lines.map((l) => lineWidth(l, size)));
+  return widest > avail ? (size * avail) / widest : size;
 };
 
 /** Colores de la textura (medidos en la referencia). */
@@ -68,9 +76,9 @@ const BigWord: React.FC<{ h: H; seg: Segment; start: number }> = ({ h, seg, star
   const tex = useRef<HTMLCanvasElement | null>(null);
   const g = start + frame; // fotograma global
   const lines = h.big.split("\n");
-  const size = fit(lines, h.layout.size);
+  const size = fit(lines, h.layout.size, h.layout.align, h.layout.x);
   const top = h.layout.bigY;
-  const bottom = top + size * (CAP + (lines.length - 1) * LINE) + size * 0.12;
+  const bottom = top + size * (CAP + EMBOLDEN + (lines.length - 1) * LINE) + size * 0.12;
   const since = g - h.bFrom;
   const isWhite = h.style === "white";
   const offset = start - seg.from_; // fotograma local de la toma en el que empieza esta secuencia
@@ -102,11 +110,22 @@ const BigWord: React.FC<{ h: H; seg: Segment; start: number }> = ({ h, seg, star
       ctx.clearRect(0, 0, W, H_);
       // 1) todas las letras (todas las líneas) como forma
       ctx.fillStyle = "#000";
-      ctx.font = `900 ${size}px "${SF}"`;
-      (ctx as unknown as { letterSpacing: string }).letterSpacing = `${(TRACK * size).toFixed(2)}px`;
+      ctx.strokeStyle = "#000";
+      ctx.font = bigFont(size);
+      (ctx as unknown as { letterSpacing: string }).letterSpacing = `${(BIG_TRACK * size).toFixed(2)}px`;
       ctx.textAlign = h.layout.align;
       ctx.textBaseline = "alphabetic";
-      lines.forEach((l, i) => ctx.fillText(l, h.layout.x, top + size * CAP + i * size * LINE));
+      // Bold original + contorno uniforme = peso Black sin deformar ninguna letra
+      ctx.lineWidth = EMBOLDEN * size;
+      ctx.lineJoin = "miter";
+      ctx.miterLimit = 4;
+      const half = (EMBOLDEN * size) / 2;
+      const dx = h.layout.align === "left" ? half : h.layout.align === "right" ? -half : 0;
+      lines.forEach((l, i) => {
+        const y = top + size * (CAP + EMBOLDEN / 2) + i * size * LINE;
+        ctx.fillText(l, h.layout.x + dx, y);
+        ctx.strokeText(l, h.layout.x + dx, y);
+      });
       // 2) color base solo dentro de las letras (conserva el suavizado del borde)
       ctx.globalCompositeOperation = "source-in";
       ctx.fillStyle = isWhite ? "#FFFFFF" : "#E10000";
@@ -180,7 +199,8 @@ const Kicker: React.FC<{ h: H; start: number }> = ({ h, start }) => {
         width: align === "center" ? W : undefined,
         textAlign: align,
         fontFamily: SF,
-        fontWeight: 300,
+        // cursiva: Light Italic original; recta: Regular original (sin estilos derivados)
+        fontWeight: h.kickerItalic ? 300 : 400,
         fontStyle: h.kickerItalic ? "italic" : "normal",
         fontSize: size,
         lineHeight: 1,
