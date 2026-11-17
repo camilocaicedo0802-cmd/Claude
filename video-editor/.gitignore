@@ -26,3 +26,4 @@ public/clips/
 analysis/tmp_clips/
 *.webm
 *.otf
+public/clips_old/

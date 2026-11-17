@@ -1,39 +1,12 @@
-import React from "react";
-import { AbsoluteFill, Easing, interpolate, Sequence, useCurrentFrame } from "remotion";
-import { CUTS, EDL, Highlight as H, rand, Segment, segmentAt } from "../edl";
+import React, { useCallback, useRef } from "react";
+import { AbsoluteFill, Easing, interpolate, OffthreadVideo, Sequence, staticFile, useCurrentFrame } from "remotion";
+import { CUTS, EDL, Highlight as H, Segment, segmentAt, zoomAt } from "../edl";
 import { CAP, SF } from "../fonts";
-import { SegmentFrame } from "./SegmentVideo";
 
 const W = 1080;
 const H_ = 1920;
 const LINE = 0.92; // interlineado de la palabra grande (estilo.md)
 const TRACK = -0.055; // interletraje en em (medido sobre "CLIENTES")
-
-/** Definiciones SVG compartidas: texturas duotono de la referencia. */
-export const TextureDefs: React.FC = () => (
-  <svg width={0} height={0} style={{ position: "absolute" }}>
-    <defs>
-      {/* Rojo: vídeo posterizado a dos rojos medidos en la referencia (#D70000 / #FD4040) */}
-      <filter id="duoRed" colorInterpolationFilters="sRGB">
-        <feColorMatrix type="matrix" values="0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0 0 0 1 0" />
-        <feComponentTransfer>
-          <feFuncR type="discrete" tableValues="0.843 0.843 0.992" />
-          <feFuncG type="discrete" tableValues="0 0 0.251" />
-          <feFuncB type="discrete" tableValues="0 0 0.251" />
-        </feComponentTransfer>
-      </filter>
-      {/* Blanco: vídeo en grises claros (como "GRABAR") */}
-      <filter id="duoWhite" colorInterpolationFilters="sRGB">
-        <feColorMatrix type="matrix" values="0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0 0 0 1 0" />
-        <feComponentTransfer>
-          <feFuncR type="linear" slope="0.62" intercept="0.4" />
-          <feFuncG type="linear" slope="0.62" intercept="0.4" />
-          <feFuncB type="linear" slope="0.62" intercept="0.4" />
-        </feComponentTransfer>
-      </filter>
-    </defs>
-  </svg>
-);
 
 const fit = (lines: string[], size: number) => {
   // ancho aproximado de SF Pro Display Black en mayúsculas (0,64 em por carácter con el tracking)
@@ -42,94 +15,145 @@ const fit = (lines: string[], size: number) => {
   return est > 1000 ? (size * 1000) / est : size;
 };
 
-/** Texto grande con textura de vídeo y glitch por franjas. */
-const BigWord: React.FC<{ h: H; seg: Segment; start: number; id: string }> = ({ h, seg, start, id }) => {
+/** Colores de la textura (medidos en la referencia). */
+const RED_DARK = [215, 0, 0];
+const RED_LIGHT = [253, 64, 64];
+
+/**
+ * Pinta en `out` la textura de un fotograma: el vídeo posterizado a dos rojos (rojo) o
+ * en grises muy claros (blanco). Se calcula a media resolución y se escala.
+ */
+const paintTexture = (out: HTMLCanvasElement, img: CanvasImageSource, isWhite: boolean, place: (ctx: CanvasRenderingContext2D, k: number) => void) => {
+  const k = 0.5;
+  const tw = W * k;
+  const th = H_ * k;
+  if (out.width !== tw) {
+    out.width = tw;
+    out.height = th;
+  }
+  const ctx = out.getContext("2d", { willReadFrequently: true })!;
+  ctx.setTransform(1, 0, 0, 1, 0, 0);
+  ctx.clearRect(0, 0, tw, th);
+  place(ctx, k);
+  ctx.drawImage(img, 0, 0, W, H_);
+  ctx.setTransform(1, 0, 0, 1, 0, 0);
+  const data = ctx.getImageData(0, 0, tw, th);
+  const d = data.data;
+  for (let i = 0; i < d.length; i += 4) {
+    const lum = (0.2126 * d[i] + 0.7152 * d[i + 1] + 0.0722 * d[i + 2]) / 255;
+    if (isWhite) {
+      const v = Math.round(255 * (0.8 + 0.2 * lum));
+      d[i] = v;
+      d[i + 1] = v;
+      d[i + 2] = v;
+    } else {
+      const c = lum < 0.62 ? RED_DARK : RED_LIGHT;
+      d[i] = c[0];
+      d[i + 1] = c[1];
+      d[i + 2] = c[2];
+    }
+    d[i + 3] = 255;
+  }
+  ctx.putImageData(data, 0, 0);
+};
+
+/**
+ * Palabra grande con la textura de la referencia, pintada en canvas (bordes suavizados y
+ * letras exactas): color base + vídeo de la toma convertido en textura + recorte con la
+ * forma de las letras (SF Pro Display Black). Sin franjas desplazadas.
+ */
+const BigWord: React.FC<{ h: H; seg: Segment; start: number }> = ({ h, seg, start }) => {
   const frame = useCurrentFrame();
+  const canvas = useRef<HTMLCanvasElement>(null);
+  const tex = useRef<HTMLCanvasElement | null>(null);
   const g = start + frame; // fotograma global
   const lines = h.big.split("\n");
   const size = fit(lines, h.layout.size);
-  const anchor = h.layout.align === "left" ? "start" : h.layout.align === "right" ? "end" : "middle";
   const top = h.layout.bigY;
   const bottom = top + size * (CAP + (lines.length - 1) * LINE) + size * 0.12;
   const since = g - h.bFrom;
-  if (since < 0) return null;
+  const isWhite = h.style === "white";
+  const offset = start - seg.from_; // fotograma local de la toma en el que empieza esta secuencia
+
+  const draw = useCallback(
+    (img: CanvasImageSource) => {
+      const c = canvas.current;
+      if (!c) return;
+      if (!tex.current) tex.current = document.createElement("canvas");
+      // misma transformación que la toma (reencuadre) + desplazamiento de la textura
+      const z = zoomAt(seg, offset + frame);
+      const ox = (z.ox / 100) * W;
+      const oy = (z.oy / 100) * H_;
+      const shift = isWhite ? [-10, 6] : [-28, 16];
+      const extra = isWhite ? 1.02 : 1.05;
+      paintTexture(tex.current, img, isWhite, (ctx, k) => {
+        ctx.setTransform(k, 0, 0, k, 0, 0);
+        ctx.translate(W / 2 + shift[0], H_ / 2 + shift[1]);
+        ctx.scale(extra, extra);
+        ctx.translate(-W / 2, -H_ / 2);
+        ctx.translate(ox, oy);
+        ctx.scale(z.s, z.s);
+        ctx.translate(-ox, -oy);
+      });
+      const ctx = c.getContext("2d")!;
+      ctx.setTransform(1, 0, 0, 1, 0, 0);
+      ctx.globalCompositeOperation = "source-over";
+      ctx.globalAlpha = 1;
+      ctx.clearRect(0, 0, W, H_);
+      ctx.fillStyle = isWhite ? "#FFFFFF" : "#E10000";
+      ctx.fillRect(0, 0, W, H_);
+      ctx.globalAlpha = isWhite ? 0.9 : 0.88;
+      ctx.imageSmoothingQuality = "high";
+      ctx.drawImage(tex.current, 0, 0, W, H_);
+      // recorte con la forma de las letras
+      ctx.globalAlpha = 1;
+      ctx.globalCompositeOperation = "destination-in";
+      ctx.fillStyle = "#000";
+      ctx.font = `900 ${size}px "${SF}"`;
+      (ctx as unknown as { letterSpacing: string }).letterSpacing = `${(TRACK * size).toFixed(2)}px`;
+      ctx.textAlign = h.layout.align;
+      ctx.textBaseline = "alphabetic";
+      lines.forEach((l, i) => ctx.fillText(l, h.layout.x, top + size * CAP + i * size * LINE));
+      ctx.globalCompositeOperation = "source-over";
+    },
+    [frame, h, isWhite, lines, offset, seg, size, top],
+  );
 
   // entrada: rojo = aparición seca con escala 1,10 -> 1; blanco = zoom-blur 1,25 -> 1 y desenfoque 20 -> 0
-  const isWhite = h.style === "white";
   const inDur = isWhite ? 4 : 3;
-  const scale = interpolate(since, [0, inDur], [isWhite ? 1.25 : 1.1, 1], {
+  const scale = interpolate(Math.max(0, since), [0, inDur], [isWhite ? 1.25 : 1.1, 1], {
     extrapolateRight: "clamp",
     easing: Easing.out(Easing.cubic),
   });
-  const blur = isWhite ? interpolate(since, [0, inDur], [20, 0], { extrapolateRight: "clamp" }) : 0;
+  const blur = isWhite ? interpolate(Math.max(0, since), [0, inDur], [20, 0], { extrapolateRight: "clamp" }) : 0;
   const fadeOut = CUTS.has(h.to) ? 1 : interpolate(g, [h.to - 6, h.to], [1, 0.3], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
-  const opacity = Math.min(interpolate(since, [0, 1], [0.4, 1], { extrapolateRight: "clamp" }), fadeOut);
-
-  // glitch: cada 3 fotogramas cambian los cortes y desplazamientos de 3 franjas
-  const epoch = Math.floor(since / 3);
-  const strong = since < 3;
-  const r1 = top + (bottom - top) * (0.2 + 0.25 * rand(epoch * 7 + h.bFrom));
-  const r2 = top + (bottom - top) * (0.55 + 0.3 * rand(epoch * 13 + h.bFrom));
-  const bands: [number, number][] = [
-    [0, r1],
-    [r1, r2],
-    [r2, H_],
-  ];
-  const dx = bands.map((_, i) => {
-    const on = rand(epoch * 31 + i * 5 + h.bFrom) < (strong ? 0.7 : 0.22);
-    const mag = (strong ? 8 : 3) + rand(epoch * 17 + i) * (strong ? 10 : 6);
-    return on ? (rand(epoch * 3 + i * 11) < 0.5 ? -mag : mag) : 0;
-  });
-
-  const texture = (
-    <AbsoluteFill style={{ clipPath: `url(#${id})` }}>
-      <AbsoluteFill style={{ backgroundColor: isWhite ? "#FFFFFF" : "#E10000" }} />
-      <AbsoluteFill
-        style={{
-          filter: `url(#${isWhite ? "duoWhite" : "duoRed"})`,
-          opacity: isWhite ? 0.92 : 0.88,
-          translate: "-28px 16px",
-          scale: "1.05",
-        }}
-      >
-        <SegmentFrame seg={seg} kind="base" offset={h.bFrom - seg.from_} />
-      </AbsoluteFill>
-    </AbsoluteFill>
-  );
+  const opacity = since < 0 ? 0 : Math.min(interpolate(since, [0, 1], [0.4, 1], { extrapolateRight: "clamp" }), fadeOut);
 
   return (
-    <AbsoluteFill
-      style={{
-        opacity,
-        scale: String(scale),
-        transformOrigin: `${h.layout.x}px ${(top + bottom) / 2}px`,
-        // las blancas llevan una sombra suave para leerse sobre paredes claras
-        filter:
-          [blur > 0.2 ? `blur(${blur}px)` : "", isWhite ? "drop-shadow(0 8px 26px rgba(0,0,0,0.38))" : ""].join(" ").trim() ||
-          undefined,
-      }}
-    >
-      <svg width={W} height={H_} style={{ position: "absolute", left: 0, top: 0 }}>
-        <defs>
-          <clipPath id={id} clipPathUnits="userSpaceOnUse">
-            <text
-              textAnchor={anchor}
-              style={{ fontFamily: SF, fontWeight: 900, fontSize: size, letterSpacing: `${TRACK}em` }}
-            >
-              {lines.map((l, i) => (
-                <tspan key={i} x={h.layout.x} y={top + size * CAP + i * size * LINE}>
-                  {l}
-                </tspan>
-              ))}
-            </text>
-          </clipPath>
-        </defs>
-      </svg>
-      {bands.map(([a, b], i) => (
-        <AbsoluteFill key={i} style={{ clipPath: `inset(${a}px 0px ${H_ - b}px 0px)`, translate: `${dx[i]}px 0px` }}>
-          {texture}
-        </AbsoluteFill>
-      ))}
+    <AbsoluteFill>
+      {/* vídeo de la toma solo como fuente de la textura (invisible) */}
+      <AbsoluteFill style={{ opacity: 0 }}>
+        <OffthreadVideo
+          src={staticFile(seg.file)}
+          trimBefore={offset}
+          muted
+          onVideoFrame={draw}
+          style={{ width: "100%", height: "100%" }}
+        />
+      </AbsoluteFill>
+      <AbsoluteFill
+        style={{
+          opacity,
+          scale: String(scale),
+          transformOrigin: `${h.layout.x}px ${(top + bottom) / 2}px`,
+          // las blancas llevan una sombra suave para leerse sobre paredes claras
+          filter:
+            [blur > 0.2 ? `blur(${blur}px)` : "", isWhite ? "drop-shadow(0 6px 22px rgba(0,0,0,0.32))" : ""].join(" ").trim() ||
+            undefined,
+        }}
+      >
+        <canvas ref={canvas} width={W} height={H_} style={{ width: W, height: H_ }} />
+      </AbsoluteFill>
     </AbsoluteFill>
   );
 };
@@ -177,7 +201,7 @@ export const HighlightItem: React.FC<{ h: H; index: number; part: "big" | "kicke
   if (!seg) return null;
   return (
     <Sequence from={start} durationInFrames={h.to - start} name={`${part === "big" ? "Palabra" : "Kicker"} ${h.big.replace("\n", " ")}`}>
-      {part === "big" ? <BigWord h={h} seg={seg} start={start} id={`hl-clip-${index}`} /> : <Kicker h={h} start={start} />}
+      {part === "big" ? <BigWord h={h} seg={seg} start={start} /> : <Kicker h={h} start={start} />}
     </Sequence>
   );
 };

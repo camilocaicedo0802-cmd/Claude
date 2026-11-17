@@ -62,8 +62,9 @@ Siempre son una pareja: **línea pequeña (kicker)** + **palabra grande**. Durac
 - **Textura ROJA** ("DÍAS", "CLIENTES"):
   - Color base **#E10000** (medido sobre pared blanca: RGB 225,0,0).
   - Dentro de las letras, el **vídeo del plano desplazado y posterizado a dos rojos**: claro **#FD4040** (253,64,64) y oscuro **#D70000** (215,0,0). Se ven siluetas del propio plano (camiseta, vaso) dentro de las letras.
-  - **Glitch por bandas**: 3–6 franjas horizontales de 12–40 px de alto desplazadas ±6–18 px en X, que cambian cada 2–3 fotogramas (bordes con muescas rectangulares en la "S").
-- **Textura BLANCA** ("GRABAR"): letras rellenas con el **vídeo en escala de grises aclarado** (blanco a gris claro #CFCFCF), con el mismo glitch por bandas.
+  - ~~Glitch por bandas~~ **descartado por el cliente** (ver §9): en la referencia hay franjas desplazadas, pero en esta línea de edición las letras van **nítidas y encajadas**, sin desplazamientos ni bordes duplicados.
+- **Textura BLANCA** ("GRABAR"): letras rellenas con el **vídeo en escala de grises muy claro** (gris = 0,8 + 0,2 × luminancia, al 90 % sobre blanco) para que la palabra se lea blanca y sólida; sombra suave `0 6px 22px rgba(0,0,0,0.32)`.
+- **Render del texto**: canvas (texto SF Pro Black suavizado) con la textura calculada fotograma a fotograma del propio vídeo de la toma (`src/components/Highlight.tsx`).
 - **Entrada**: aparición en 1–2 fotogramas con escala 1,08→1,00 (rojo) o **zoom-blur desde 1,25× con desenfoque 20→0 px en 4 fotogramas** (blanco).
 - **Salida**: fundido 1,0→0,35 en 6 fotogramas y desaparece (en 1,50 s "DÍAS" se ve rosa translúcido) o con la transición de desenfoque del plano.
 - **Detrás del sujeto**: "CLIENTES" queda tapado por la cabeza del presentador (recorte/matte del sujeto). Usarlo cuando la palabra coincide con la cabeza.
@@ -163,3 +164,9 @@ Indicaciones del cliente que se mantienen en todas las ediciones:
 - **Colores**: los de la referencia (rojo #E10000 con texturas #D70000/#FD4040, blanco, neón #39FF14).
 - **Sin logo ni datos de contacto** en pantalla, salvo que el cliente los pida.
 - **B-roll**: si el cliente no lo aporta, se busca en bancos con licencia de uso comercial gratuito (Mixkit) y relacionado con el tema.
+
+Correcciones sobre la primera entrega (17-11-2026):
+
+- **Palabras destacadas: mantener la textura, quitar el glitch.** Las franjas desplazadas "desencajaban" las letras y duplicaban bordes. Las palabras deben verse **precisas, nítidas y encajadas**, como en la referencia; la textura (vídeo posterizado a dos rojos o grises claros dentro de la letra) sí gusta y se mantiene.
+- **Las blancas deben leerse**: textura muy clara, nunca con aspecto transparente.
+- **Máscaras precisas**: cuando un texto o una tarjeta va detrás de una persona, el recorte debe incluir pelo, orejas, manos y dedos sin huecos ni halos. MODNet perdía el pelo sobre fondos oscuros; se usa **BiRefNet** (`scripts/prepare_matte_hq.py`), con suavizado temporal ligero (70/30) para que el borde no tiemble.
