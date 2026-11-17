@@ -96,9 +96,9 @@ def hl(kicker, big, k_word, b_word, until, style, behind, layout, covers, k_afte
 s1 = seg_by_id("s1_hook")
 # Gancho
 hl("DUEÑO DE", "NEGOCIOS", "dueño", "negocios", 39, "red", False,
-   dict(align="left", x=100, kickerY=850, bigY=900, size=230), (14, 39), kicker_italic=False)
+   dict(align="left", x=100, kickerY=975, bigY=1015, size=220), (14, 39), kicker_italic=False)
 hl("¿CUÁNTAS", "PERSONAS?", "¿cuántas", "personas", 76, "white", False,
-   dict(align="right", x=1000, kickerY=960, bigY=1005, size=200), (39, 60))
+   dict(align="right", x=1000, kickerY=975, bigY=1015, size=200), (39, 60))
 # Roles (cada uno con su tarjeta de b-roll y etiqueta "SUELDO #n")
 hl("UN", "FILMMAKER", "un", "filmmaker", 160, "red", True,
    dict(align="center", x=540, kickerY=500, bigY=545, size=200), (130, 160), k_after=130)
@@ -112,7 +112,7 @@ hl("LOS ANUNCIOS EN", "META", "los", "meta", 306, "white", False,
 hl("¿SERÍAN", "4 SUELDOS", "¿serían", "cuatro", 393, "white", False,
    dict(align="center", x=540, kickerY=960, bigY=1005, size=200), (306, 393), k_after=306)
 hl("¿O SOLO", "1", "o", "uno", 423, "red", False,
-   dict(align="center", x=540, kickerY=600, bigY=640, size=480), (393, 423), k_after=390, b_offset=-4)
+   dict(align="center", x=540, kickerY=560, bigY=600, size=600), (393, 423), k_after=390, b_offset=-4)
 # Marca
 hl("EN", "305 MEDIA CLUB", "en", "305", 460, "red", False,
    dict(align="center", x=540, kickerY=230, bigY=275, size=150), (424, 460), k_after=424)
@@ -168,6 +168,9 @@ for i, b in enumerate(blocks):
     end = math.ceil(last_word["f1"]) + 12
     if i + 1 < len(blocks):
         end = min(end, blocks[i + 1]["start"])
+    for h in H:
+        if h["layout"]["bigY"] > 850 and b["start"] < h["bFrom"] < end:
+            end = h["bFrom"]
     b["end"] = end
 
 # ---------------------------------------------------------------- tarjetas de b-roll (detrás de la persona)
@@ -176,7 +179,7 @@ CARDS = [
     dict(file="broll/card_editor.mp4", from_=160, to=190, x=690, y=660, w=340, h=425, rot=3, label="SUELDO #2"),
     dict(file="broll/card_cm.mp4", from_=191, to=233, x=600, y=830, w=400, h=500, rot=3, label="SUELDO #3"),
     dict(file="broll/card_meta.mp4", from_=240, to=306, x=50, y=680, w=340, h=425, rot=-3, label="SUELDO #4"),
-    dict(file="broll/card_dinero.mp4", from_=455, to=500, x=620, y=200, w=380, h=475, rot=3, label="1 SUELDO"),
+    dict(file="broll/card_dinero.mp4", from_=455, to=500, x=650, y=150, w=300, h=375, rot=3, label="1 SUELDO"),
 ]
 
 # ---------------------------------------------------------------- monedas de neón (4 sueldos -> 1)
@@ -267,7 +270,7 @@ S("swoosh_03", 711 + 44, -16)
 # ---------------------------------------------------------------- música (dB por tramos)
 MUSIC = dict(file="music/parisian_funk_7883.wav", keys=[
     dict(f=0, db=-17), dict(f=388, db=-17), dict(f=394, db=-9), dict(f=414, db=-10), dict(f=426, db=-17),
-    dict(f=536, db=-17), dict(f=539, db=-12), dict(f=578, db=-12), dict(f=590, db=-6), dict(f=700, db=-6),
+    dict(f=536, db=-17), dict(f=539, db=-12), dict(f=578, db=-12), dict(f=590, db=-2), dict(f=700, db=-2),
     dict(f=714, db=-17), dict(f=796, db=-17), dict(f=813, db=-40)])
 
 edl = dict(fps=FPS, total=TOTAL,

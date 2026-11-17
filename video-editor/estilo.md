@@ -155,4 +155,11 @@ Ningún archivo de la carpeta coincide bit a bit con los SFX de la referencia: s
 
 ## 9. Correcciones del cliente (se añaden aquí cuando me corrijas algo que te guste)
 
-_(vacío por ahora)_
+Indicaciones del cliente que se mantienen en todas las ediciones:
+
+- **SFX: únicamente los de la carpeta del cliente**, nunca de otras fuentes.
+- **Textos de pantalla con SFX de tecleo**: los kickers y las etiquetas se escriben letra a letra (1 carácter por fotograma) con una pulsación por carácter (`Tecla.mp3`, `Mechanical Keyboard Click 01/02.wav`).
+- **Tipografía: SF Pro Display** (archivos del cliente). Los estilos que falten se derivan inclinando o enderezando 12° los existentes (`scripts/shear_font.py`).
+- **Colores**: los de la referencia (rojo #E10000 con texturas #D70000/#FD4040, blanco, neón #39FF14).
+- **Sin logo ni datos de contacto** en pantalla, salvo que el cliente los pida.
+- **B-roll**: si el cliente no lo aporta, se busca en bancos con licencia de uso comercial gratuito (Mixkit) y relacionado con el tema.
