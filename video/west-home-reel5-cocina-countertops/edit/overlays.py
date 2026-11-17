@@ -408,7 +408,7 @@ class Shrink:
 class PriceBars:
     """cost card over the cabinets: GRANITO $ (short bar) vs CUARZO $$ (taller)."""
 
-    def __init__(self, t_in, t_bars, t_out, x0=30, y0=600, w=250, h=300):
+    def __init__(self, t_in, t_bars, t_out, x0=30, y0=590, w=250, h=370):
         self.t_in, self.tb, self.t_out = t_in, t_bars, t_out
         self.x0, self.y0, self.w, self.h = x0, y0, w, h
         tx = lambda s, f, z, **k: G.pil_to_spr(G.text_rgba(s, f, z, **k)[0], radius=6, opacity=0.5)
@@ -426,9 +426,9 @@ class PriceBars:
         a = clamp((t - self.t_in) / 0.22)
         x0, y0, w, h = self.x0, self.y0, self.w, self.h
         G.glass(canvas, x0, y0, w, h, 30, tint=0.0, blur=22, border=0.35 * a, shadow=True, dark=0.42 * a)
-        G.blit(canvas, self.title, x0 + w / 2, y0 + 42, opacity=a)
-        base_y = y0 + h - 62
-        for i, (hh, cx) in enumerate(((80, x0 + 68), (150, x0 + w - 68))):
+        G.blit(canvas, self.title, x0 + w / 2, y0 + 40, opacity=a)
+        base_y = y0 + h - 60          # bars + their $ labels stay below the title (max label top = title bottom + 40)
+        for i, (hh, cx) in enumerate(((72, x0 + 68), (140, x0 + w - 68))):
             p = ease_out_cubic(clamp((t - self.tb - i * 0.12) / 0.35))
             top = int(base_y - hh * p)
             col = BGR(ORANGE) if i == 0 else np.array([235, 235, 235], np.float32)
