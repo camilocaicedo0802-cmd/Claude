@@ -24,5 +24,5 @@ referencia.
 - **B-roll:** fotos de Unsplash con licencia libre (créditos en `credits.json`). Las pantallas divididas, franjas, cuadrícula y la muestra que se encoge están hechas en `overlays.py`.
 - **Audio:**
   - Sin cama musical, igual que la referencia.
-  - SFX sutiles solo de la librería del cliente (`video/sfx-library`): tecleo muy bajo en los subtítulos, pops en los iconos, whooshes al entrar al B-roll y golpe grave en los punch-ins.
+  - SFX sutiles solo de la librería del cliente (`video/sfx-library`), en los gráficos: pops en los iconos y en las palabras héroe cortas, whooshes al entrar al B-roll y en las pantallas divididas, y golpe grave en los punch-ins. Los subtítulos entran sin sonido (v3).
   - Mezcla final a −14,4 LUFS.

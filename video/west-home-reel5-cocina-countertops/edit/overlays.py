@@ -506,11 +506,7 @@ class CTA:
         img, _ = G.text_rgba('"COCINA"', 'cab_black', 186, tracking=-10, grad=OR)
         self.kw = G.with_shadow(img, radius=12, offset=(0, 6), opacity=0.55, glow=((0, 0, 0), 24, 0.3))
         self.y1, self.y2 = y1, y2
-        sfx(self.tk, 'pop', -4)
-        for i in range(6):
-            sfx(self.tk + 0.03 * i, 'key', -8)
-        for _, _, _, tt, _ in self.l1 + self.l2:
-            sfx(tt, 'key', -15)
+        sfx(self.tk, 'pop', -4)          # v3: no typing under the CTA words, just the pop on "COCINA" 
 
     def active(self, t):
         return self.l1[0][3] <= t < self.t_end
@@ -555,8 +551,10 @@ def build():
 
     def S(script, t_end, zone='a', **kw):
         s = Sub(script, t_end, zone, **kw); E.append(s)
-        for _, _, _, tt, sk in s.items:
-            sfx(tt, 'key', -15 if sk == 'b' else -11)
+        # v3: subtitles appear silently; only the short hero words (one per line) get a soft pop
+        for sk, ws in s.rows:
+            if sk == 'h':
+                sfx(ws[0][2], 'pop', -10)
         return s
 
     def badge(sub, name, t_in, side=False):
