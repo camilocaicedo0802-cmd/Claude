@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# Masteriza el render de Remotion: sonoridad a -10,5 LUFS (igual que la referencia),
+# YA NO SE USA (el cliente pidió la voz original sin procesar). Se conserva como referencia.
+# Masterizaba el render de Remotion: sonoridad a -10,5 LUFS (igual que la referencia),
 # picos verdaderos <= -1 dBTP (loudnorm en dos pasadas). El vídeo se copia sin recodificar.
 # Uso: scripts/master.sh <entrada.mp4> <salida.mp4>
 set -euo pipefail

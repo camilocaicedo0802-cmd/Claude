@@ -1423,7 +1423,7 @@
   {
    "file": "sfx/boom2.wav",
    "from_": 536,
-   "db": -12
+   "db": -15
   },
   {
    "file": "sfx/tecla.wav",
@@ -1778,7 +1778,7 @@
   {
    "file": "sfx/bass_sub.wav",
    "from_": 785,
-   "db": -9
+   "db": -13
   }
  ],
  "music": {

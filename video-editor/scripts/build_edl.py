@@ -243,7 +243,7 @@ for h in H:
 # graves en las palabras clave
 for word, after in (("cuatro", 306), ("305", 424), ("esperando", 711)):
     S("bass_deep1", math.floor(find(word, after)["f0"]), -11)
-S("bass_sub", math.floor(find("ya", 780)["f0"]), -9)
+S("bass_sub", math.floor(find("ya", 780)["f0"]), -13)
 # paneo rápido hacia él (fotograma ~114 de s1)
 S("whoosh_4", 114, -12)
 # obturador de cámara en "filmmaker"
@@ -260,7 +260,7 @@ S("bass_drop10", NEON["collapse"], -4)
 S("swoosh_05", NEON["collapse"] + 1, -14)
 # entrada al montaje con destello
 S("whoosh_2", MONTAGE["from_"], -12)
-S("boom2", MONTAGE["from_"], -12)
+S("boom2", MONTAGE["from_"], -15)
 # etiquetas tecleadas del montaje
 for m in montage:
     typing(m["label"], m["from_"] + 4, every=1, db=-19)

@@ -16,7 +16,7 @@ python3 -I scripts/prepare_clips.py                              # tomas: color,
 python3 -I scripts/prepare_broll.py                              # b-roll de Mixkit recortado a 4:5 y 9:16
 python3 -I scripts/build_edl.py                                  # genera src/data/edl.json (línea de tiempo en fotogramas)
 npx remotion studio                                              # vista previa
-npx remotion render Main out/final.mp4 --codec=h264 --crf=16 --audio-bitrate=320k
+npx remotion render Main out/final.mp4 --codec=h264 --crf=16 --audio-bitrate=320k   # sin masterización posterior: la voz va sin procesar
 ```
 
 ## Estructura

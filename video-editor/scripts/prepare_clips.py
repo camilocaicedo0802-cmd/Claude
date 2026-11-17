@@ -2,7 +2,7 @@
 
 Para cada segmento del guion:
   public/clips/<id>.mp4     1440x2560, 30 fps, gradación de color "E" (ver estilo.md),
-                            voz procesada (AAC 48 kHz) y fundidos de 8 ms en los bordes.
+                            voz ORIGINAL del bruto sin procesar (AAC 48 kHz) con fundidos de 5 ms.
   public/clips/<id>_fg.webm 1080x1920 VP9 con alfa: solo las personas (MODNet), para
                             poner textos/tarjetas detrás del sujeto.
 Además public/clips/<id>.wav con la voz sola (para pistas de audio independientes).
@@ -26,10 +26,10 @@ os.makedirs(TMP, exist_ok=True)
 
 GRADE = ("curves=all='0/0 0.17/0.0 0.5/0.42 0.9/0.88 1/0.96',eq=saturation=1.45,"
          "colorbalance=rs=0.035:bs=-0.065:rm=0.008:bm=-0.008:rh=0.01:bh=-0.006")
-VOICE = ("highpass=f=80,afftdn=nr=8:nf=-42,"
-         "equalizer=f=250:t=q:w=1:g=-2,equalizer=f=3500:t=q:w=1.2:g=2.5,"
-         "acompressor=threshold=-22dB:ratio=3:attack=5:release=90:makeup=3,"
-         "alimiter=limit=0.89")
+# La voz se usa TAL CUAL sale del bruto (indicación del cliente): sin reducción de ruido,
+# ecualizador, compresor, limitador ni normalización. Solo corte + fundido de 5 ms en cada
+# borde para evitar clics. (Antes había una cadena de procesado que hacía sonar "raro" el audio.)
+FADE = 0.005
 
 # id, inicio, fin (segundos del bruto), matte
 SEGMENTS = [
@@ -42,7 +42,6 @@ SEGMENTS = [
     ("s7_vo", 178.05, 179.45, False),  # solo voz, va bajo el montaje de b-roll
     ("s8_cta", 196.35, 199.75, True),
 ]
-VOICE_GAIN_DB = None  # se calcula para que la voz quede a -16 LUFS
 
 
 def run(cmd):
@@ -50,11 +49,10 @@ def run(cmd):
 
 
 def voice_master():
-    """Procesa todo el audio del bruto una vez (cadena de voz) y devuelve la ruta."""
-    path = f"{TMP}/voz_procesada.wav"
+    """Audio original del bruto (PCM 48 kHz, dos canales), sin ningún filtro."""
+    path = f"{TMP}/voz_original.wav"
     if not os.path.exists(path):
-        run(["ffmpeg", "-v", "error", "-y", "-i", SRC, "-map", "0:a:0", "-ac", "1", "-ar", "48000",
-             "-af", VOICE, path])
+        run(["ffmpeg", "-v", "error", "-y", "-i", SRC, "-map", "0:a:0", "-c:a", "pcm_s16le", path])
     return path
 
 
@@ -124,23 +122,31 @@ def matte_segment(seg_id, mp4):
 def main():
     only = set(sys.argv[1:])
     vpath = voice_master()
-    lufs = loudness_of_segments(vpath)
-    gain = -16.0 - lufs
-    print(f"voz tramos: {lufs:.1f} LUFS -> ganancia {gain:+.1f} dB", flush=True)
+    audio_only = "--audio-only" in sys.argv
+    only.discard("--audio-only")
+    print(f"voz original de los tramos: {loudness_of_segments(vpath):.1f} LUFS (sin cambios)", flush=True)
     meta = {}
     for seg_id, a, b, need_matte in SEGMENTS:
         if only and seg_id not in only:
             continue
         dur = b - a
         wav = f"{OUT}/{seg_id}.wav"
-        fade = f"volume={gain:.2f}dB,afade=t=in:d=0.008,afade=t=out:st={dur - 0.008:.3f}:d=0.008"
+        fade = f"afade=t=in:d={FADE},afade=t=out:st={dur - FADE:.3f}:d={FADE}"
         run(["ffmpeg", "-v", "error", "-y", "-ss", f"{a:.3f}", "-t", f"{dur:.3f}", "-i", vpath,
-             "-af", fade, "-ar", "48000", "-ac", "1", wav])
+             "-af", fade, "-c:a", "pcm_s16le", wav])
         if seg_id == "s7_vo":
             meta[seg_id] = {"src_start": a, "src_end": b, "dur": dur}
             print("ok", seg_id, flush=True)
             continue
         mp4 = f"{OUT}/{seg_id}.mp4"
+        if audio_only:
+            # solo sustituye el audio del mp4 ya preparado (el vídeo se copia sin recodificar)
+            tmp = f"{TMP}/{seg_id}_remux.mp4"
+            run(["ffmpeg", "-v", "error", "-y", "-i", mp4, "-i", wav, "-map", "0:v:0", "-map", "1:a:0",
+                 "-c:v", "copy", "-c:a", "aac", "-b:a", "320k", "-shortest", "-movflags", "+faststart", tmp])
+            os.replace(tmp, mp4)
+            print("ok audio", seg_id, flush=True)
+            continue
         run(["ffmpeg", "-v", "error", "-y", "-ss", f"{a:.3f}", "-i", SRC, "-i", wav, "-t", f"{dur:.3f}",
              "-map", "0:v:0", "-map", "1:a:0",
              "-vf", f"scale=1440:2560:flags=lanczos,fps=30,{GRADE}",
