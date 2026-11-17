@@ -130,7 +130,7 @@ Siempre son una pareja: **línea pequeña (kicker)** + **palabra grande**. Durac
 | SFX | ver tabla |
 
 ### Mapa de SFX de la referencia
-Ningún archivo de la carpeta coincide bit a bit con los SFX de la referencia (correlación de forma de onda < 0,31; una copia exacta da > 0,8). Por espectro, los eventos son de estos tipos y los archivos más parecidos de la carpeta son:
+Ningún archivo de la carpeta coincide bit a bit con los SFX de la referencia: se compararon los **147 SFX únicos** de la carpeta completa (442 archivos con duplicados) y la correlación de forma de onda con ventana ≥ 1 s es < 0,26 (una copia exacta da > 0,8). Por espectro, los eventos son de estos tipos y los archivos más parecidos de la carpeta son:
 
 | Tiempo ref. | Evento visual | Tipo de sonido | Archivo de la carpeta más parecido (por espectro) |
 |---|---|---|---|
@@ -138,7 +138,7 @@ Ningún archivo de la carpeta coincide bit a bit con los SFX de la referencia (c
 | 1,70–2,00 s | entra "PARA/GRABAR" | whoosh de aire | `SWHOOSH.mp3`, `Woosh Effect 2.wav` (z = 3,5) |
 | 2,60–2,87 s | transición de desenfoque | whoosh corto | `Woosh Effect 5.wav` / `VS_Short Whoosh 3.mp3` |
 | 4,45 s | entra "A NUESTROS/CLIENTES" | pop + swoosh corto | `Pop up SFX.mp3` (0,70), `Swoosh 01 - 05.wav` |
-| 5,70–6,20 s | sale "CLIENTES" / entra neón | whoosh + subgrave | `SWHOOSH.mp3` (z = 3,9), `Woosh Effect 4.wav` + `Deep Bass Hit 1.wav` |
+| 5,70–6,20 s | sale "CLIENTES" / entra neón | whoosh + golpe de grave (pico en 6,00 s) | `SWHOOSH.mp3` (z = 3,9) + `Cine SFX/BASS DROP (10).wav` (0,585 en ventana de 0,3 s) |
 | 9,50 / 11,30 s | tarjetas de foto | swoosh suave | `Swoosh 01 - 03.wav`, `Loud Whip.mp3` (bajo) |
 | 11,90–12,13 s | transición de desenfoque + punch-in | whoosh | `VS_Short Whoosh 4.mp3` |
 | 15,40 s | destello + montaje | subida/impacto (va con la música) | `Sharp Riser.wav` → `Boom 2.mp3` |
