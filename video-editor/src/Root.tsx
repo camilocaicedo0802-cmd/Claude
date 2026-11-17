@@ -1,4 +1,5 @@
 import { Composition } from "remotion";
+import { EDL } from "./edl";
 import { Main } from "./Main";
 
 export const FPS = 30;
@@ -10,7 +11,7 @@ export const RemotionRoot: React.FC = () => {
     <Composition
       id="Main"
       component={Main}
-      durationInFrames={FPS * 10}
+      durationInFrames={EDL.total}
       fps={FPS}
       width={WIDTH}
       height={HEIGHT}

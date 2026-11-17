@@ -28,8 +28,8 @@ Todas las coordenadas en píxeles sobre el lienzo de 1080×1920. Todo lo que no 
 
 | Parámetro | Valor |
 |---|---|
-| Fuente | **Inter Display Italic** (peso 400). Equivalente libre de la grotesca tipo SF Pro/Helvetica de la referencia: "a" de dos pisos, "S" con terminales horizontales [la familia exacta del editor es SUPOSICIÓN; Inter Display coincide en forma y proporción al superponerla] |
-| Tamaño | **54 px** (medido: "viene un cliente" = 365 px de ancho) |
+| Fuente | **SF Pro Display Italic** (peso 400), la familia de la referencia (archivos del cliente). La cursiva regular no venía en el paquete: se genera inclinando 12° la Regular (`scripts/shear_font.py`), que es exactamente como Apple construye sus cursivas (todas las del paquete son oblicuas de −12°). Superpuesta sobre "para empezar" coincide letra a letra con interletraje 0 |
+| Tamaño | **57 px** con SF Pro (medido: "para empezar" = 330 px de ancho) |
 | Caja | minúsculas, tal cual se dice; sin puntuación |
 | Color | **#FFFFFF**, 100 % opacidad |
 | Textura | ninguna; solo sombra suave `0 2px 6px rgba(0,0,0,0.35)` **[SUPOSICIÓN]** (se intuye un halo oscuro mínimo) |
@@ -52,13 +52,13 @@ Siempre son una pareja: **línea pequeña (kicker)** + **palabra grande**. Durac
 | 4,85–5,75 s | "A NUESTROS" | "CLIENTES" rojo **detrás del presentador** | centrado; kicker y = 470–505; palabra y = 510–655 (a la altura de la cabeza) |
 
 ### Kicker
-- **Inter Display Light** (300). "BUENOS" recto a **54 px**; "PARA" y "A NUESTROS" en **Light Italic** a **100–113 px**.
+- **SF Pro Display Light** (300). "BUENOS" recto a **60 px** (Light recta derivada enderezando la Light Italic −12°); "PARA" y "A NUESTROS" en **Light Italic** (archivo original) a **100–113 px**.
 - Mayúsculas, #FFFFFF, interletraje 0.
 - Entrada: **3 fotogramas**, desliza **+40 px desde la izquierda** con opacidad 0→1 y desenfoque de movimiento 8→0 px.
 
 ### Palabra grande
-- **Inter Display Black** (900), MAYÚSCULAS, interletraje **−0,035 em**, interlineado 0,9.
-- Tamaño según ancho del bloque: **198 px** ("CLIENTES", 920 px de ancho), **336 px** ("DÍAS", 765 px), **292 px** ("GRABAR", 1180 px, se sale del encuadre a propósito).
+- **SF Pro Display Black** (900), MAYÚSCULAS, interletraje **−0,055 em**, interlineado 0,9. La Black recta no venía en el paquete: se deriva enderezando la Black Italic (−12°); superpuesta sobre "CLIENTES" coincide letra a letra.
+- Tamaño según ancho del bloque: **206 px** ("CLIENTES", 920 px de ancho), **341 px** ("DÍAS", 765 px), **~300 px** ("GRABAR", 1180 px, se sale del encuadre a propósito).
 - **Textura ROJA** ("DÍAS", "CLIENTES"):
   - Color base **#E10000** (medido sobre pared blanca: RGB 225,0,0).
   - Dentro de las letras, el **vídeo del plano desplazado y posterizado a dos rojos**: claro **#FD4040** (253,64,64) y oscuro **#D70000** (215,0,0). Se ven siluetas del propio plano (camiseta, vaso) dentro de las letras.

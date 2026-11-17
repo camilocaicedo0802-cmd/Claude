@@ -1,0 +1,12 @@
+[
+ {"id":"hook","start":1.6,"end":5.7,"text":"Si eres dueño de negocios, ¿cuántas personas necesitas para tu equipo de marketing?"},
+ {"id":"filmmaker","start":5.9,"end":7.3,"text":"Un filmmaker,"},
+ {"id":"editor","start":9.9,"end":11.3,"text":"un editor,"},
+ {"id":"cm","start":16.6,"end":18.5,"text":"un community manager"},
+ {"id":"meta","start":22.9,"end":25.6,"text":"y alguien que te maneje los anuncios en Meta."},
+ {"id":"sueldosA","start":49.4,"end":54.8,"text":"Tendrías que pagar cuatro sueldos... o solo uno."},
+ {"id":"sueldosB","start":89.6,"end":95.2,"text":"¿Serían cuatro sueldos... o solo uno?"},
+ {"id":"marca","start":122.1,"end":126.3,"text":"En 305 Media Club, por el sueldo de una persona tienes todo tu equipo de marketing."},
+ {"id":"marcaAlt","start":174.5,"end":179.6,"text":"Por el sueldo de una persona tienes todo un equipo de marketing trabajando para tu negocio."},
+ {"id":"cta","start":195.9,"end":199.6,"text":"Así que, ¿qué estás esperando? Comunícate con nosotros ya mismo."}
+]

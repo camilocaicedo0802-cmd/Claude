@@ -1,0 +1,25 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:SFB;src:url(../../public/fonts/SFProDisplay-BlackUpright.otf)}
+@font-face{font-family:SFL;src:url(../../public/fonts/SFProDisplay-LightUpright.otf)}
+@font-face{font-family:SFLI;src:url(../../public/fonts/SFProDisplay-LightItalic.otf)}
+@font-face{font-family:SFI;src:url(../../public/fonts/SFProDisplay-ItalicDerived.otf)}
+body{margin:0;display:flex;gap:10px;background:#222}
+.f{position:relative;width:1080px;height:1920px;background-size:cover;flex:none}
+.t{position:absolute;white-space:nowrap;line-height:1;color:rgba(0,255,255,.55)}
+</style></head><body>
+<div class=f style="background-image:url(ref540.jpg)"><span id=a class=t style="font-family:SFB">CLIENTES</span><span id=e class=t style="font-family:SFLI">A NUESTROS</span></div>
+<div class=f style="background-image:url(ref080.jpg)"><span id=b class=t style="font-family:SFB">DÍAS</span><span id=c class=t style="font-family:SFL">BUENOS</span></div>
+<div class=f style="background-image:url(ref900.jpg)"><span id=d class=t style="font-family:SFI">para empezar</span></div>
+<script>
+// encaja por caja: misma anchura y misma altura de mayúscula que la referencia
+window.go=async()=>{await document.fonts.ready;
+ const capRatio=1443/2048, asc=1950/2048; const out=[];
+ for(const [id,left,capTop,capH,width] of [['a',80,510,145,920],['b',160,740,240,765],['c',160,690,42,212],['e',190,470,35,600],['d',375,1205,40,330]]){
+  const el=document.getElementById(id); const size=capH/capRatio; el.style.fontSize=size+'px';
+  const w=el.getBoundingClientRect().width; const ls=(width-w)/(el.textContent.length-1);
+  el.style.letterSpacing=ls+'px'; el.style.left=left+'px';
+  const r=el.getBoundingClientRect(); // ajusta top midiendo
+  el.style.top=(capTop-(r.height-size)/2-(size*0.0))+'px';
+  out.push([id,size.toFixed(1)+'px', 'tracking '+(ls/size).toFixed(3)+'em']);}
+ return out;};
+</script></body></html>

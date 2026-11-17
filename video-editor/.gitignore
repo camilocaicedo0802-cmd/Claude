@@ -21,3 +21,8 @@ analysis/takes/
 analysis/recursos/
 analysis/bruto_sheets/
 analysis/*.png
+public/fonts/
+public/clips/
+analysis/tmp_clips/
+*.webm
+*.otf

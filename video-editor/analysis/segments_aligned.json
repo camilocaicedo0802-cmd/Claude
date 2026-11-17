@@ -1,0 +1,592 @@
+[
+ {
+  "id": "hook",
+  "start": 1.6,
+  "end": 5.7,
+  "text": "Si eres dueño de negocios, ¿cuántas personas necesitas para tu equipo de marketing?",
+  "words": [
+   {
+    "text": "Si",
+    "start": 1.922,
+    "end": 2.002,
+    "score": 1.0
+   },
+   {
+    "text": "eres",
+    "start": 2.042,
+    "end": 2.203,
+    "score": 0.99
+   },
+   {
+    "text": "dueño",
+    "start": 2.223,
+    "end": 2.444,
+    "score": 0.95
+   },
+   {
+    "text": "de",
+    "start": 2.464,
+    "end": 2.525,
+    "score": 1.0
+   },
+   {
+    "text": "negocios,",
+    "start": 2.565,
+    "end": 2.967,
+    "score": 0.97
+   },
+   {
+    "text": "¿cuántas",
+    "start": 3.027,
+    "end": 3.308,
+    "score": 1.0
+   },
+   {
+    "text": "personas",
+    "start": 3.328,
+    "end": 3.71,
+    "score": 1.0
+   },
+   {
+    "text": "necesitas",
+    "start": 3.75,
+    "end": 4.193,
+    "score": 0.96
+   },
+   {
+    "text": "para",
+    "start": 4.233,
+    "end": 4.374,
+    "score": 1.0
+   },
+   {
+    "text": "tu",
+    "start": 4.414,
+    "end": 4.474,
+    "score": 0.73
+   },
+   {
+    "text": "equipo",
+    "start": 4.514,
+    "end": 4.735,
+    "score": 0.99
+   },
+   {
+    "text": "de",
+    "start": 4.775,
+    "end": 4.836,
+    "score": 0.99
+   },
+   {
+    "text": "marketing?",
+    "start": 4.876,
+    "end": 5.278,
+    "score": 0.76
+   }
+  ]
+ },
+ {
+  "id": "filmmaker",
+  "start": 5.9,
+  "end": 7.3,
+  "text": "Un filmmaker,",
+  "words": [
+   {
+    "text": "Un",
+    "start": 6.245,
+    "end": 6.346,
+    "score": 0.81
+   },
+   {
+    "text": "filmmaker,",
+    "start": 6.387,
+    "end": 6.914,
+    "score": 0.62
+   }
+  ]
+ },
+ {
+  "id": "editor",
+  "start": 9.9,
+  "end": 11.3,
+  "text": "un editor,",
+  "words": [
+   {
+    "text": "un",
+    "start": 10.225,
+    "end": 10.306,
+    "score": 1.0
+   },
+   {
+    "text": "editor,",
+    "start": 10.387,
+    "end": 10.833,
+    "score": 1.0
+   }
+  ]
+ },
+ {
+  "id": "cm",
+  "start": 16.6,
+  "end": 18.5,
+  "text": "un community manager",
+  "words": [
+   {
+    "text": "un",
+    "start": 17.146,
+    "end": 17.227,
+    "score": 0.89
+   },
+   {
+    "text": "community",
+    "start": 17.287,
+    "end": 17.732,
+    "score": 0.63
+   },
+   {
+    "text": "manager",
+    "start": 17.772,
+    "end": 18.156,
+    "score": 0.81
+   }
+  ]
+ },
+ {
+  "id": "meta",
+  "start": 22.9,
+  "end": 25.6,
+  "text": "y alguien que te maneje los anuncios en Meta.",
+  "words": [
+   {
+    "text": "y",
+    "start": 23.202,
+    "end": 23.222,
+    "score": 0.8
+   },
+   {
+    "text": "alguien",
+    "start": 23.343,
+    "end": 23.625,
+    "score": 0.62
+   },
+   {
+    "text": "que",
+    "start": 23.686,
+    "end": 23.746,
+    "score": 1.0
+   },
+   {
+    "text": "te",
+    "start": 23.807,
+    "end": 23.867,
+    "score": 1.0
+   },
+   {
+    "text": "maneje",
+    "start": 23.928,
+    "end": 24.27,
+    "score": 0.96
+   },
+   {
+    "text": "los",
+    "start": 24.31,
+    "end": 24.431,
+    "score": 1.0
+   },
+   {
+    "text": "anuncios",
+    "start": 24.472,
+    "end": 24.854,
+    "score": 0.98
+   },
+   {
+    "text": "en",
+    "start": 24.875,
+    "end": 24.955,
+    "score": 0.95
+   },
+   {
+    "text": "Meta.",
+    "start": 24.996,
+    "end": 25.237,
+    "score": 1.0
+   }
+  ]
+ },
+ {
+  "id": "sueldosA",
+  "start": 49.4,
+  "end": 54.8,
+  "text": "Tendrías que pagar cuatro sueldos... o solo uno.",
+  "words": [
+   {
+    "text": "Tendrías",
+    "start": 50.002,
+    "end": 50.384,
+    "score": 1.0
+   },
+   {
+    "text": "que",
+    "start": 50.404,
+    "end": 50.484,
+    "score": 0.98
+   },
+   {
+    "text": "pagar",
+    "start": 50.544,
+    "end": 50.785,
+    "score": 1.0
+   },
+   {
+    "text": "cuatro",
+    "start": 51.126,
+    "end": 51.628,
+    "score": 0.94
+   },
+   {
+    "text": "sueldos...",
+    "start": 51.729,
+    "end": 52.13,
+    "score": 1.0
+   },
+   {
+    "text": "o",
+    "start": 53.555,
+    "end": 53.575,
+    "score": 0.72
+   },
+   {
+    "text": "solo",
+    "start": 53.656,
+    "end": 53.917,
+    "score": 0.6
+   },
+   {
+    "text": "uno.",
+    "start": 54.017,
+    "end": 54.198,
+    "score": 0.53
+   }
+  ]
+ },
+ {
+  "id": "sueldosB",
+  "start": 89.6,
+  "end": 95.2,
+  "text": "¿Serían cuatro sueldos... o solo uno?",
+  "words": [
+   {
+    "text": "¿Serían",
+    "start": 90.443,
+    "end": 90.824,
+    "score": 0.97
+   },
+   {
+    "text": "cuatro",
+    "start": 91.166,
+    "end": 91.607,
+    "score": 0.97
+   },
+   {
+    "text": "sueldos...",
+    "start": 91.708,
+    "end": 92.149,
+    "score": 0.96
+   },
+   {
+    "text": "o",
+    "start": 93.153,
+    "end": 93.173,
+    "score": 0.96
+   },
+   {
+    "text": "solo",
+    "start": 93.253,
+    "end": 93.534,
+    "score": 0.92
+   },
+   {
+    "text": "uno?",
+    "start": 93.614,
+    "end": 93.815,
+    "score": 0.89
+   }
+  ]
+ },
+ {
+  "id": "marca",
+  "start": 122.1,
+  "end": 126.3,
+  "text": "En 305 Media Club, por el sueldo de una persona tienes todo tu equipo de marketing.",
+  "words": [
+   {
+    "text": "En",
+    "start": 122.723,
+    "end": 122.803,
+    "score": 0.99
+   },
+   {
+    "text": "305",
+    "start": 122.864,
+    "end": 123.286,
+    "score": 0.41
+   },
+   {
+    "text": "Media",
+    "start": 123.286,
+    "end": 123.446,
+    "score": 0.4
+   },
+   {
+    "text": "Club,",
+    "start": 123.547,
+    "end": 123.728,
+    "score": 0.82
+   },
+   {
+    "text": "por",
+    "start": 123.788,
+    "end": 123.909,
+    "score": 0.67
+   },
+   {
+    "text": "el",
+    "start": 123.949,
+    "end": 123.989,
+    "score": 0.47
+   },
+   {
+    "text": "sueldo",
+    "start": 124.029,
+    "end": 124.25,
+    "score": 0.98
+   },
+   {
+    "text": "de",
+    "start": 124.311,
+    "end": 124.371,
+    "score": 0.99
+   },
+   {
+    "text": "una",
+    "start": 124.491,
+    "end": 124.612,
+    "score": 1.0
+   },
+   {
+    "text": "persona",
+    "start": 124.652,
+    "end": 124.974,
+    "score": 1.0
+   },
+   {
+    "text": "tienes",
+    "start": 125.034,
+    "end": 125.255,
+    "score": 0.98
+   },
+   {
+    "text": "todo",
+    "start": 125.315,
+    "end": 125.456,
+    "score": 0.64
+   },
+   {
+    "text": "tu",
+    "start": 125.476,
+    "end": 125.536,
+    "score": 0.52
+   },
+   {
+    "text": "equipo",
+    "start": 125.556,
+    "end": 125.778,
+    "score": 0.94
+   },
+   {
+    "text": "de",
+    "start": 125.818,
+    "end": 125.858,
+    "score": 0.98
+   },
+   {
+    "text": "marketing.",
+    "start": 125.898,
+    "end": 126.26,
+    "score": 0.67
+   }
+  ]
+ },
+ {
+  "id": "marcaAlt",
+  "start": 174.5,
+  "end": 179.6,
+  "text": "Por el sueldo de una persona tienes todo un equipo de marketing trabajando para tu negocio.",
+  "words": [
+   {
+    "text": "Por",
+    "start": 175.323,
+    "end": 175.444,
+    "score": 0.88
+   },
+   {
+    "text": "el",
+    "start": 175.464,
+    "end": 175.544,
+    "score": 0.84
+   },
+   {
+    "text": "sueldo",
+    "start": 175.564,
+    "end": 175.805,
+    "score": 1.0
+   },
+   {
+    "text": "de",
+    "start": 175.845,
+    "end": 175.906,
+    "score": 1.0
+   },
+   {
+    "text": "una",
+    "start": 175.986,
+    "end": 176.126,
+    "score": 1.0
+   },
+   {
+    "text": "persona",
+    "start": 176.187,
+    "end": 176.528,
+    "score": 0.96
+   },
+   {
+    "text": "tienes",
+    "start": 176.588,
+    "end": 176.829,
+    "score": 0.97
+   },
+   {
+    "text": "todo",
+    "start": 176.95,
+    "end": 177.15,
+    "score": 0.98
+   },
+   {
+    "text": "un",
+    "start": 177.191,
+    "end": 177.251,
+    "score": 1.0
+   },
+   {
+    "text": "equipo",
+    "start": 177.291,
+    "end": 177.552,
+    "score": 0.97
+   },
+   {
+    "text": "de",
+    "start": 177.552,
+    "end": 177.612,
+    "score": 0.61
+   },
+   {
+    "text": "marketing",
+    "start": 177.672,
+    "end": 178.094,
+    "score": 0.76
+   },
+   {
+    "text": "trabajando",
+    "start": 178.134,
+    "end": 178.536,
+    "score": 0.99
+   },
+   {
+    "text": "para",
+    "start": 178.596,
+    "end": 178.777,
+    "score": 0.9
+   },
+   {
+    "text": "tu",
+    "start": 178.797,
+    "end": 178.857,
+    "score": 0.99
+   },
+   {
+    "text": "negocio.",
+    "start": 178.917,
+    "end": 179.279,
+    "score": 0.96
+   }
+  ]
+ },
+ {
+  "id": "cta",
+  "start": 195.9,
+  "end": 199.6,
+  "text": "Así que, ¿qué estás esperando? Comunícate con nosotros ya mismo.",
+  "words": [
+   {
+    "text": "Así",
+    "start": 196.543,
+    "end": 196.704,
+    "score": 1.0
+   },
+   {
+    "text": "que,",
+    "start": 196.785,
+    "end": 196.845,
+    "score": 1.0
+   },
+   {
+    "text": "¿qué",
+    "start": 196.966,
+    "end": 197.046,
+    "score": 0.99
+   },
+   {
+    "text": "estás",
+    "start": 197.086,
+    "end": 197.308,
+    "score": 0.96
+   },
+   {
+    "text": "esperando?",
+    "start": 197.368,
+    "end": 197.75,
+    "score": 0.99
+   },
+   {
+    "text": "Comunícate",
+    "start": 197.81,
+    "end": 198.273,
+    "score": 0.97
+   },
+   {
+    "text": "con",
+    "start": 198.313,
+    "end": 198.393,
+    "score": 0.97
+   },
+   {
+    "text": "nosotros",
+    "start": 198.414,
+    "end": 198.776,
+    "score": 0.99
+   },
+   {
+    "text": "ya",
+    "start": 198.876,
+    "end": 198.977,
+    "score": 1.0
+   },
+   {
+    "text": "mismo.",
+    "start": 199.057,
+    "end": 199.298,
+    "score": 0.99
+   }
+  ]
+ }
+]

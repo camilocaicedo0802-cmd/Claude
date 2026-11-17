@@ -1,0 +1,8 @@
+[
+ {"id":"editor_A","start":7.4,"end":9.4,"text":"un editor"},
+ {"id":"editor_B","start":9.9,"end":11.3,"text":"un editor"},
+ {"id":"cm_A","start":14.2,"end":16.6,"text":"un community manager"},
+ {"id":"cm_B","start":16.6,"end":18.5,"text":"un community manager"},
+ {"id":"meta_A","start":19.5,"end":22.9,"text":"y alguien que te maneje los anuncios en Meta"},
+ {"id":"meta_B","start":22.9,"end":25.6,"text":"y alguien que te maneje los anuncios en Meta"}
+]

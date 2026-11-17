@@ -1,0 +1,218 @@
+[
+ {
+  "id": "editor_A",
+  "start": 7.4,
+  "end": 9.4,
+  "text": "un editor",
+  "words": [
+   {
+    "text": "un",
+    "start": 8.046,
+    "end": 8.147,
+    "score": 0.37
+   },
+   {
+    "text": "editor",
+    "start": 8.208,
+    "end": 9.036,
+    "score": 0.19
+   }
+  ]
+ },
+ {
+  "id": "editor_B",
+  "start": 9.9,
+  "end": 11.3,
+  "text": "un editor",
+  "words": [
+   {
+    "text": "un",
+    "start": 10.225,
+    "end": 10.306,
+    "score": 1.0
+   },
+   {
+    "text": "editor",
+    "start": 10.387,
+    "end": 10.833,
+    "score": 1.0
+   }
+  ]
+ },
+ {
+  "id": "cm_A",
+  "start": 14.2,
+  "end": 16.6,
+  "text": "un community manager",
+  "words": [
+   {
+    "text": "un",
+    "start": 14.603,
+    "end": 14.644,
+    "score": 0.0
+   },
+   {
+    "text": "community",
+    "start": 14.644,
+    "end": 15.067,
+    "score": 0.4
+   },
+   {
+    "text": "manager",
+    "start": 15.087,
+    "end": 16.539,
+    "score": 0.31
+   }
+  ]
+ },
+ {
+  "id": "cm_B",
+  "start": 16.6,
+  "end": 18.5,
+  "text": "un community manager",
+  "words": [
+   {
+    "text": "un",
+    "start": 17.146,
+    "end": 17.227,
+    "score": 0.89
+   },
+   {
+    "text": "community",
+    "start": 17.287,
+    "end": 17.732,
+    "score": 0.63
+   },
+   {
+    "text": "manager",
+    "start": 17.772,
+    "end": 18.156,
+    "score": 0.81
+   }
+  ]
+ },
+ {
+  "id": "meta_A",
+  "start": 19.5,
+  "end": 22.9,
+  "text": "y alguien que te maneje los anuncios en Meta",
+  "words": [
+   {
+    "text": "y",
+    "start": 20.124,
+    "end": 20.144,
+    "score": 0.66
+   },
+   {
+    "text": "alguien",
+    "start": 20.285,
+    "end": 20.647,
+    "score": 0.57
+   },
+   {
+    "text": "que",
+    "start": 20.868,
+    "end": 20.949,
+    "score": 0.87
+   },
+   {
+    "text": "te",
+    "start": 21.009,
+    "end": 21.069,
+    "score": 0.96
+   },
+   {
+    "text": "maneje",
+    "start": 21.13,
+    "end": 21.472,
+    "score": 0.41
+   },
+   {
+    "text": "los",
+    "start": 21.512,
+    "end": 21.633,
+    "score": 0.82
+   },
+   {
+    "text": "anuncios",
+    "start": 21.673,
+    "end": 22.035,
+    "score": 0.98
+   },
+   {
+    "text": "en",
+    "start": 22.075,
+    "end": 22.156,
+    "score": 0.64
+   },
+   {
+    "text": "Meta",
+    "start": 22.196,
+    "end": 22.437,
+    "score": 0.62
+   }
+  ]
+ },
+ {
+  "id": "meta_B",
+  "start": 22.9,
+  "end": 25.6,
+  "text": "y alguien que te maneje los anuncios en Meta",
+  "words": [
+   {
+    "text": "y",
+    "start": 23.202,
+    "end": 23.222,
+    "score": 0.8
+   },
+   {
+    "text": "alguien",
+    "start": 23.343,
+    "end": 23.625,
+    "score": 0.62
+   },
+   {
+    "text": "que",
+    "start": 23.686,
+    "end": 23.746,
+    "score": 1.0
+   },
+   {
+    "text": "te",
+    "start": 23.807,
+    "end": 23.867,
+    "score": 1.0
+   },
+   {
+    "text": "maneje",
+    "start": 23.928,
+    "end": 24.27,
+    "score": 0.96
+   },
+   {
+    "text": "los",
+    "start": 24.31,
+    "end": 24.431,
+    "score": 1.0
+   },
+   {
+    "text": "anuncios",
+    "start": 24.472,
+    "end": 24.854,
+    "score": 0.98
+   },
+   {
+    "text": "en",
+    "start": 24.875,
+    "end": 24.955,
+    "score": 0.95
+   },
+   {
+    "text": "Meta",
+    "start": 24.996,
+    "end": 25.237,
+    "score": 1.0
+   }
+  ]
+ }
+]
