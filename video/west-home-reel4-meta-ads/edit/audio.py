@@ -60,7 +60,7 @@ for path, a, b, tp in T.VOICE:
 wf.write(STEM + 'voice.wav', SR, voice)
 
 # ---------------------------------------------------------------- music
-mus = load(ROOT + 'music/track.mp3', ch=2)
+mus = load(ROOT + 'music/class_act.mp3', ch=2)
 music = np.zeros((N, 2), np.float32)
 XF = int(0.012 * SR)
 
@@ -74,9 +74,15 @@ def place(dst_t0, dst_t1, src_t0, fin=True, fout=True):
     music[a:a + len(seg)] += seg
 
 
-# one continuous pass of the track: its drop (beat 32) lands on REVEAL, its break/drop (62/64) on the end card
-assert T.TS0 + T.DUR < len(mus) / SR
-place(0.0, T.DUR, T.TS0, fin=False)
+# v2: "Class Act" (Reprise / ANBR, 150 BPM, from the client's folder). Its first drop (51.80 s) lands on REVEAL; one
+# bar before the logo the track jumps 22 bars ahead so its second drop (106.20 s) hits the logo pop (T.beat(64)).
+OFF_A = 51.80 - T.REVEAL
+TLOGO = T.beat(64)
+OFF_B = 106.20 - TLOGO
+assert abs(((OFF_B - OFF_A) / 1.6) - round((OFF_B - OFF_A) / 1.6)) < 0.02, (OFF_A, OFF_B)
+SPL = TLOGO - 1.6
+place(0.0, SPL + 0.012, OFF_A, fin=False)
+place(SPL - 0.012, T.DUR, SPL - 0.012 + OFF_B)
 music[:int(0.02 * SR)] *= np.linspace(0, 1, int(0.02 * SR))[:, None]
 fo = int(0.6 * SR); music[-fo:] *= np.linspace(1, 0, fo)[:, None] ** 1.3
 ml = meter.integrated_loudness(music.astype(np.float64))

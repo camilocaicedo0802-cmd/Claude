@@ -78,27 +78,29 @@ PHOTO = lambda name: PH + name
 SHOTS = [
     # HOOK — Peter on camera: "This customer came at us..."
     sync(0, 0.0, vt(0, 6.62), grade='talk', zoom=[(0, 1.06), (0.15, 1.14), (1, 1.18)], cy=-0.02),
-    # "...with a couple of problems." — the dated bathroom
-    dict(src=PHOTO('old_vanity.png'), t0=vt(0, 6.62), t1=vs(1), src_in=0, speed=0, grade='old',
+    # v2: the old photos were from another project — dated stock bathrooms that match the words + this project's
+    # real in-progress photos (IMG_8311/8312, the new shower being tiled where the jacuzzi was)
+    # "...with a couple of problems." — dated master bath with a whirlpool tub and a framed shower
+    dict(src=PHOTO('web_tub_wide.png'), t0=vt(0, 6.62), t1=vs(1), src_in=0, speed=0, grade='before',
          zoom=[(0, 1.30), (0.2, 1.14), (1, 1.10)], tin=('zoom', 'in', 0.18)),
-    # "One, they needed to remodel an existing shower" — the old shower stall
-    dict(src=PHOTO('old_room.png'), t0=vs(1), t1=vt(1, 9.95), src_in=0, speed=0, grade='old',
+    # "One, they needed to remodel an existing shower" — an old framed shower stall, then a tired tile shower
+    dict(src=PHOTO('web_shower_stall.png'), t0=vs(1), t1=vt(1, 9.95), src_in=0, speed=0, grade='before',
          zoom=[(0, 1.10), (1, 1.18)], tin=('whip', 'left', 0.2)),
-    dict(src=PHOTO('old_room.png'), t0=vt(1, 9.95), t1=vs(2), src_in=0, speed=0, grade='old', cx=-0.11, cy=-0.01,
-         zoom=[(0, 1.95), (1, 2.15)]),          # punch-in on the old stall through the doorway
-    # "and two, they had a jacuzzi tub" — Peter; "that was not usable space anymore" — the old room
+    dict(src=PHOTO('web_shower_old.png'), t0=vt(1, 9.95), t1=vs(2), src_in=0, speed=0, grade='before',
+         zoom=[(0, 1.12), (1, 1.22)]),
+    # "and two, they had a jacuzzi tub" — Peter; "that was not usable space anymore" — the whirlpool tub
     sync(2, vs(2), vt(2, 13.80), grade='talk', zoom=[(0, 1.20), (1, 1.24)], cy=-0.04),
-    dict(src=PHOTO('old_shower.png'), t0=vt(2, 13.80), t1=vt(2, 15.25), src_in=0, speed=0, grade='old',
+    dict(src=PHOTO('web_tub_jets.png'), t0=vt(2, 13.80), t1=vt(2, 15.25), src_in=0, speed=0, grade='before',
          zoom=[(0, 1.12), (1, 1.22)], tin=('zoom', 'in', 0.18)),
-    dict(src=PHOTO('old_counter.png'), t0=vt(2, 15.25), t1=vs(3), src_in=0, speed=0, grade='old',
+    dict(src=PHOTO('web_tub_close.png'), t0=vt(2, 15.25), t1=vs(3), src_in=0, speed=0, grade='before',
          zoom=[(0, 1.22), (1, 1.10)]),
-    # "We suggested to turn the jacuzzi tub area into the new shower area," — the process
-    dict(src=PHOTO('demo.png'), t0=vs(3), t1=vt(3, 19.30), src_in=0, speed=0, grade='old',
+    # "We suggested to turn the jacuzzi tub area into the new shower area," — jacuzzi, then this project's real process
+    dict(src=PHOTO('web_jacuzzi.png'), t0=vs(3), t1=vt(3, 19.30), src_in=0, speed=0, grade='before',
          zoom=[(0, 1.10), (1, 1.20)], tin=('whip', 'up', 0.2)),
-    dict(src=PHOTO('gutted.png'), t0=vt(3, 19.30), t1=vt(3, 20.95), src_in=0, speed=0, grade='old',
+    dict(src=PHOTO('process_2.png'), t0=vt(3, 19.30), t1=vt(3, 20.95), src_in=0, speed=0, grade='talk',
          zoom=[(0, 1.18), (1, 1.08)]),
-    dict(src=PHOTO('build.png'), t0=vt(3, 20.95), t1=REVEAL, src_in=0, speed=0, grade='old',
-         zoom=[(0, 1.10), (1, 1.22)]),
+    dict(src=PHOTO('process_1.png'), t0=vt(3, 20.95), t1=REVEAL, src_in=0, speed=0, grade='talk', cx=0.06, cy=-0.04,
+         zoom=[(0, 1.35), (1, 1.50)]),
     # "creating this" — Félix slides the glass door open (drop); "massive, beautiful new shower" — the hero shot
     dict(src=F('IMG_9046.MOV'), t0=REVEAL, t1=MASSIVE, src_in=1.2, speed=[(0, 1.4), (1, 1.1)], grade='beige',
          person=True, zoom=[(0, 1.16), (0.3, 1.06), (1, 1.08)], tin=('flash', 'white', 0.3)),

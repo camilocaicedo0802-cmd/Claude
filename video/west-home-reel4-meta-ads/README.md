@@ -1,5 +1,22 @@
 # West Home Improvement · Reel 4 — Meta Ads: del jacuzzi a una ducha enorme (South Tulsa)
 
+**v2 (ajustes del cliente):**
+- Se quitó la píldora SOUTH TULSA · SHOWER REMODEL del inicio.
+- **Antes:** las fotos del "antes" de la v1 eran de otro proyecto, así que se quitaron. Ahora cada imagen corresponde a lo que
+  dice Peter. Las fotos de Unsplash tienen licencia libre (créditos en `credits_web.json`) y un color apagado de "antes":
+  - "a couple of problems": baño de los 2000 con tina de hidromasaje y ducha.
+  - "an existing shower": cancel de vidrio viejo y ducha de azulejo cansada.
+  - "a jacuzzi tub that was not usable space anymore": tina con jets.
+  - "turn the jacuzzi tub area": jacuzzi.
+  - "into the new shower area": las dos fotos reales del proceso de esta ducha (IMG_8311/8312: azulejo a medio poner, ventana,
+    banca y nicho).
+- **Música:** "Class Act" (Reprise / ANBR, 150 BPM), de la carpeta del cliente. Es música de producción con licencia, mejor
+  para anuncios pagados que una canción comercial.
+  - Su primer drop (51,8 s) cae en el reveal de la ducha (15,57 s).
+  - Un compás antes del logo la pista salta 22 compases hasta su segundo drop (106,2 s), que cae en el logo (34,77 s).
+- **Recortes:** BiRefNet-portrait (como los reels 2 y 3).
+- **Sonido:** los subtítulos entran sin sonido.
+
 Video vertical de 36,5 s (1080×1920, 30 fps) para pauta en Meta. No había guion: la historia se armó con los mejores
 fragmentos de Peter (transcritos palabra por palabra en `words.json` y `chunks.json`, pausas cortadas). El B-roll y las
 fotos reales del proyecto llevan el video, y Peter sale a cámara solo en el hook, a mitad de la historia y en el CTA.

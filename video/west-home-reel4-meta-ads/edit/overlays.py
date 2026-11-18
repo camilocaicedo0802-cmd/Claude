@@ -40,7 +40,7 @@ _mk = {}
 
 def _mask(n):
     if n not in _mk:
-        im = cv2.imread(ROOT + f'masks/{n:05d}.png', cv2.IMREAD_GRAYSCALE)
+        im = cv2.imread(ROOT + f'masks_b/{n:05d}.png', cv2.IMREAD_GRAYSCALE)
         _mk[n] = None if im is None else cv2.resize(im, (270, 480), interpolation=cv2.INTER_AREA) > 100
     return _mk[n]
 
@@ -155,9 +155,7 @@ class Caption:
             img, base = G.text_rgba(txt, 'black' if key else 'bold', sz, tracking=-40,
                                     grad=(ORANGE_L, ORANGE) if key else None)
             items.append((txt, img, base, ton, key, sz))
-            sfx(ton, 'key', -1.0)
-            if key:
-                sfx(ton, 'pop', -4.0)
+            # v2: subtitles appear silently (sound stays on titles, graphics and transitions)
         space = size * gap
         tot = sum(i[1].width for i in items) + space * (len(items) - 1)
         sc = min(1.0, max_w / tot)
@@ -383,7 +381,11 @@ def build():
     C = lambda words, t_end, **kw: E.append(Caption(words, t_end, **kw))
     # ================================================================ HOOK — Peter: "This customer came at us with a couple of problems."
     E.append(Scrim(0.0, T.vs(1), 90, 450, 0.32))
-    E.append(Pill('SOUTH TULSA · SHOWER REMODEL', 0.0, T.vs(1) - 0.1, 150, size=34, typing=False))
+    # v2: the bright "before" photos need a stronger shade behind the white titles
+    E.append(Scrim(T.SHOTS[1]['t0'], T.vs(1), 60, 520, 0.30))
+    E.append(Scrim(T.vs(1), T.vs(2) - 0.05, 180, 500, 0.45))
+    E.append(Scrim(T.SHOTS[5]['t0'], T.vs(3) - 0.05, 200, 620, 0.48))
+    # (v2: the SOUTH TULSA · SHOWER REMODEL pill is removed)
     E.append(Typed('THEY HAD', 0.05, T.vs(1) - 0.08, 255, size=100, rate=0.03))
     E.append(Typed('2 PROBLEMS…', 0.35, T.vs(1) - 0.08, 380, size=132, grad=OR, rate=0.04))
     sfx(0.35 + 4 * 0.04, 'bass', -6)
