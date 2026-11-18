@@ -1,0 +1,1582 @@
+{
+ "voz": "Gemini 2.5 Flash TTS · Charon",
+ "duracion": 58.446,
+ "frases": [
+  {
+   "i": 0,
+   "texto": "¡GTA existe por un bug!",
+   "seccion": "gancho",
+   "inicio": 0.0,
+   "fin": 2.273
+  },
+  {
+   "i": 1,
+   "texto": "Un error que volvía loca a la policía...",
+   "seccion": "gancho",
+   "inicio": 2.714,
+   "fin": 4.768
+  },
+  {
+   "i": 2,
+   "texto": "y eso ni siquiera es lo más loco de su historia.",
+   "seccion": "gancho",
+   "inicio": 5.0,
+   "fin": 7.145
+  },
+  {
+   "i": 3,
+   "texto": "Al principio no era un juego de criminales: era de carreras, policías contra ladrones.",
+   "seccion": "origen",
+   "inicio": 7.623,
+   "fin": 12.132
+  },
+  {
+   "i": 4,
+   "texto": "Y era... ¡aburridísimo!",
+   "seccion": "origen",
+   "inicio": 12.577,
+   "fin": 14.905
+  },
+  {
+   "i": 5,
+   "texto": "Tan aburrido que estuvo a punto de cancelarse.",
+   "seccion": "escalon",
+   "inicio": 15.382,
+   "fin": 17.527
+  },
+  {
+   "i": 6,
+   "texto": "Hasta que un error en el código vuelve locos a los policías:",
+   "seccion": "escalon2",
+   "inicio": 17.95,
+   "fin": 21.386
+  },
+  {
+   "i": 7,
+   "texto": "ya no te persiguen...",
+   "seccion": "escalon2",
+   "inicio": 21.386,
+   "fin": 23.095
+  },
+  {
+   "i": 8,
+   "texto": "¡te embisten, te encierran, te sacan de la calle!",
+   "seccion": "escalon2",
+   "inicio": 23.305,
+   "fin": 25.687
+  },
+  {
+   "i": 9,
+   "texto": "Y los que lo prueban no quieren soltarlo.",
+   "seccion": "climax",
+   "inicio": 26.232,
+   "fin": 28.214
+  },
+  {
+   "i": 10,
+   "texto": "¿Lo más divertido?",
+   "seccion": "climax",
+   "inicio": 28.659,
+   "fin": 29.404
+  },
+  {
+   "i": 11,
+   "texto": "¡Escaparse de esos policías locos!",
+   "seccion": "climax",
+   "inicio": 29.959,
+   "fin": 31.468
+  },
+  {
+   "i": 12,
+   "texto": "¿Y arreglaron el bug?",
+   "seccion": "climax",
+   "inicio": 31.814,
+   "fin": 32.868
+  },
+  {
+   "i": 13,
+   "texto": "¡Al contrario!",
+   "seccion": "climax",
+   "inicio": 33.15,
+   "fin": 33.786
+  },
+  {
+   "i": 14,
+   "texto": "Lo convirtieron en el juego...",
+   "seccion": "climax",
+   "inicio": 34.232,
+   "fin": 35.614
+  },
+  {
+   "i": 15,
+   "texto": "y le pusieron Grand Theft Auto: robo de autos.",
+   "seccion": "climax",
+   "inicio": 35.809,
+   "fin": 39.068
+  },
+  {
+   "i": 16,
+   "texto": "Pero lo más loco vino después.",
+   "seccion": "golpe",
+   "inicio": 39.564,
+   "fin": 41.454
+  },
+  {
+   "i": 17,
+   "texto": "Cuando en Inglaterra pidieron prohibirlo por violento...",
+   "seccion": "golpe",
+   "inicio": 41.927,
+   "fin": 44.473
+  },
+  {
+   "i": 18,
+   "texto": "esa polémica la había inventado su propia distribuidora.",
+   "seccion": "golpe",
+   "inicio": 44.473,
+   "fin": 48.127
+  },
+  {
+   "i": 19,
+   "texto": "Contrataron a un experto en escándalos para que todo el mundo hablara del juego.",
+   "seccion": "golpe",
+   "inicio": 48.509,
+   "fin": 52.019
+  },
+  {
+   "i": 20,
+   "texto": "Y vaya que hablaron.",
+   "seccion": "golpe",
+   "inicio": 52.382,
+   "fin": 53.4
+  },
+  {
+   "i": 21,
+   "texto": "Veredicto: ¡real!",
+   "seccion": "veredicto",
+   "inicio": 53.955,
+   "fin": 55.318
+  },
+  {
+   "i": 22,
+   "texto": "¿Genios del marketing... o pura suerte?",
+   "seccion": "pregunta",
+   "inicio": 55.764,
+   "fin": 58.146
+  }
+ ],
+ "palabras": [
+  {
+   "texto": "gta",
+   "inicio": 0.0,
+   "duracion": 0.673,
+   "visible": "¡GTA",
+   "enfasis": true,
+   "frase": 0,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "existe",
+   "inicio": 0.673,
+   "duracion": 0.745,
+   "visible": "EXISTE",
+   "enfasis": true,
+   "frase": 0,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "por",
+   "inicio": 1.418,
+   "duracion": 0.4,
+   "visible": "POR",
+   "enfasis": true,
+   "frase": 0,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "un",
+   "inicio": 1.818,
+   "duracion": 0.182,
+   "visible": "UN",
+   "enfasis": true,
+   "frase": 0,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "bug",
+   "inicio": 2.0,
+   "duracion": 0.273,
+   "visible": "BUG!",
+   "enfasis": true,
+   "frase": 0,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "un",
+   "inicio": 2.714,
+   "duracion": 0.273,
+   "visible": "Un",
+   "enfasis": false,
+   "frase": 1,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "error",
+   "inicio": 2.986,
+   "duracion": 0.218,
+   "visible": "error",
+   "enfasis": true,
+   "frase": 1,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "que",
+   "inicio": 3.205,
+   "duracion": 0.2,
+   "visible": "que",
+   "enfasis": false,
+   "frase": 1,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "volvia",
+   "inicio": 3.405,
+   "duracion": 0.309,
+   "visible": "volvía",
+   "enfasis": false,
+   "frase": 1,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "loca",
+   "inicio": 3.714,
+   "duracion": 0.291,
+   "visible": "loca",
+   "enfasis": false,
+   "frase": 1,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "a",
+   "inicio": 4.005,
+   "duracion": 0.073,
+   "visible": "a",
+   "enfasis": false,
+   "frase": 1,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "la",
+   "inicio": 4.077,
+   "duracion": 0.182,
+   "visible": "la",
+   "enfasis": false,
+   "frase": 1,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "policia",
+   "inicio": 4.259,
+   "duracion": 0.509,
+   "visible": "policía...",
+   "enfasis": true,
+   "frase": 1,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "y",
+   "inicio": 5.0,
+   "duracion": 0.273,
+   "visible": "y",
+   "enfasis": false,
+   "frase": 2,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "eso",
+   "inicio": 5.273,
+   "duracion": 0.218,
+   "visible": "eso",
+   "enfasis": false,
+   "frase": 2,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "ni",
+   "inicio": 5.491,
+   "duracion": 0.164,
+   "visible": "ni",
+   "enfasis": false,
+   "frase": 2,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "siquiera",
+   "inicio": 5.655,
+   "duracion": 0.364,
+   "visible": "siquiera",
+   "enfasis": false,
+   "frase": 2,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "es",
+   "inicio": 6.018,
+   "duracion": 0.109,
+   "visible": "es",
+   "enfasis": false,
+   "frase": 2,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "lo",
+   "inicio": 6.127,
+   "duracion": 0.091,
+   "visible": "lo",
+   "enfasis": false,
+   "frase": 2,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "mas",
+   "inicio": 6.218,
+   "duracion": 0.164,
+   "visible": "más",
+   "enfasis": false,
+   "frase": 2,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "loco",
+   "inicio": 6.382,
+   "duracion": 0.236,
+   "visible": "loco",
+   "enfasis": false,
+   "frase": 2,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "de",
+   "inicio": 6.618,
+   "duracion": 0.109,
+   "visible": "de",
+   "enfasis": false,
+   "frase": 2,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "su",
+   "inicio": 6.727,
+   "duracion": 0.109,
+   "visible": "su",
+   "enfasis": false,
+   "frase": 2,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "historia",
+   "inicio": 6.836,
+   "duracion": 0.309,
+   "visible": "historia.",
+   "enfasis": false,
+   "frase": 2,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "al",
+   "inicio": 7.623,
+   "duracion": 0.236,
+   "visible": "Al",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": "origen"
+  },
+  {
+   "texto": "principio",
+   "inicio": 7.859,
+   "duracion": 0.345,
+   "visible": "principio",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": "origen"
+  },
+  {
+   "texto": "no",
+   "inicio": 8.205,
+   "duracion": 0.4,
+   "visible": "no",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": "origen"
+  },
+  {
+   "texto": "era",
+   "inicio": 8.605,
+   "duracion": 0.127,
+   "visible": "era",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": "origen"
+  },
+  {
+   "texto": "un",
+   "inicio": 8.732,
+   "duracion": 0.091,
+   "visible": "un",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": "origen"
+  },
+  {
+   "texto": "juego",
+   "inicio": 8.823,
+   "duracion": 0.164,
+   "visible": "juego",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": "origen"
+  },
+  {
+   "texto": "de",
+   "inicio": 8.986,
+   "duracion": 0.182,
+   "visible": "de",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": "origen"
+  },
+  {
+   "texto": "criminales",
+   "inicio": 9.168,
+   "duracion": 0.618,
+   "visible": "criminales:",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": "origen"
+  },
+  {
+   "texto": "era",
+   "inicio": 10.114,
+   "duracion": 0.182,
+   "visible": "era",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": "origen"
+  },
+  {
+   "texto": "de",
+   "inicio": 10.295,
+   "duracion": 0.164,
+   "visible": "de",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": "origen"
+  },
+  {
+   "texto": "carreras",
+   "inicio": 10.459,
+   "duracion": 0.418,
+   "visible": "carreras,",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": "origen"
+  },
+  {
+   "texto": "policias",
+   "inicio": 11.132,
+   "duracion": 0.4,
+   "visible": "policías",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": "origen"
+  },
+  {
+   "texto": "contra",
+   "inicio": 11.532,
+   "duracion": 0.273,
+   "visible": "contra",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": "origen"
+  },
+  {
+   "texto": "ladrones",
+   "inicio": 11.805,
+   "duracion": 0.327,
+   "visible": "ladrones.",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": "origen"
+  },
+  {
+   "texto": "y",
+   "inicio": 12.577,
+   "duracion": 0.255,
+   "visible": "Y",
+   "enfasis": true,
+   "frase": 4,
+   "seccion": "origen"
+  },
+  {
+   "texto": "era",
+   "inicio": 12.832,
+   "duracion": 1.291,
+   "visible": "ERA...",
+   "enfasis": true,
+   "frase": 4,
+   "seccion": "origen"
+  },
+  {
+   "texto": "aburridisimo",
+   "inicio": 14.123,
+   "duracion": 0.782,
+   "visible": "¡ABURRIDÍSIMO!",
+   "enfasis": true,
+   "frase": 4,
+   "seccion": "origen"
+  },
+  {
+   "texto": "tan",
+   "inicio": 15.382,
+   "duracion": 0.236,
+   "visible": "Tan",
+   "enfasis": false,
+   "frase": 5,
+   "seccion": "escalon"
+  },
+  {
+   "texto": "aburrido",
+   "inicio": 15.618,
+   "duracion": 0.436,
+   "visible": "aburrido",
+   "enfasis": false,
+   "frase": 5,
+   "seccion": "escalon"
+  },
+  {
+   "texto": "que",
+   "inicio": 16.055,
+   "duracion": 0.182,
+   "visible": "que",
+   "enfasis": false,
+   "frase": 5,
+   "seccion": "escalon"
+  },
+  {
+   "texto": "estuvo",
+   "inicio": 16.236,
+   "duracion": 0.255,
+   "visible": "estuvo",
+   "enfasis": false,
+   "frase": 5,
+   "seccion": "escalon"
+  },
+  {
+   "texto": "a",
+   "inicio": 16.491,
+   "duracion": 0.145,
+   "visible": "a",
+   "enfasis": false,
+   "frase": 5,
+   "seccion": "escalon"
+  },
+  {
+   "texto": "punto",
+   "inicio": 16.636,
+   "duracion": 0.182,
+   "visible": "punto",
+   "enfasis": false,
+   "frase": 5,
+   "seccion": "escalon"
+  },
+  {
+   "texto": "de",
+   "inicio": 16.818,
+   "duracion": 0.2,
+   "visible": "de",
+   "enfasis": false,
+   "frase": 5,
+   "seccion": "escalon"
+  },
+  {
+   "texto": "cancelarse",
+   "inicio": 17.018,
+   "duracion": 0.509,
+   "visible": "cancelarse.",
+   "enfasis": true,
+   "frase": 5,
+   "seccion": "escalon"
+  },
+  {
+   "texto": "hasta",
+   "inicio": 17.95,
+   "duracion": 0.418,
+   "visible": "Hasta",
+   "enfasis": false,
+   "frase": 6,
+   "seccion": "escalon2"
+  },
+  {
+   "texto": "que",
+   "inicio": 18.368,
+   "duracion": 0.164,
+   "visible": "que",
+   "enfasis": false,
+   "frase": 6,
+   "seccion": "escalon2"
+  },
+  {
+   "texto": "un",
+   "inicio": 18.532,
+   "duracion": 0.182,
+   "visible": "un",
+   "enfasis": false,
+   "frase": 6,
+   "seccion": "escalon2"
+  },
+  {
+   "texto": "error",
+   "inicio": 18.714,
+   "duracion": 0.218,
+   "visible": "error",
+   "enfasis": true,
+   "frase": 6,
+   "seccion": "escalon2"
+  },
+  {
+   "texto": "en",
+   "inicio": 18.932,
+   "duracion": 0.164,
+   "visible": "en",
+   "enfasis": false,
+   "frase": 6,
+   "seccion": "escalon2"
+  },
+  {
+   "texto": "el",
+   "inicio": 19.095,
+   "duracion": 0.109,
+   "visible": "el",
+   "enfasis": false,
+   "frase": 6,
+   "seccion": "escalon2"
+  },
+  {
+   "texto": "codigo",
+   "inicio": 19.205,
+   "duracion": 0.309,
+   "visible": "código",
+   "enfasis": false,
+   "frase": 6,
+   "seccion": "escalon2"
+  },
+  {
+   "texto": "vuelve",
+   "inicio": 19.514,
+   "duracion": 0.782,
+   "visible": "vuelve",
+   "enfasis": false,
+   "frase": 6,
+   "seccion": "escalon2"
+  },
+  {
+   "texto": "locos",
+   "inicio": 20.295,
+   "duracion": 0.473,
+   "visible": "locos",
+   "enfasis": true,
+   "frase": 6,
+   "seccion": "escalon2"
+  },
+  {
+   "texto": "a",
+   "inicio": 20.768,
+   "duracion": 0.073,
+   "visible": "a",
+   "enfasis": false,
+   "frase": 6,
+   "seccion": "escalon2"
+  },
+  {
+   "texto": "los",
+   "inicio": 20.841,
+   "duracion": 0.109,
+   "visible": "los",
+   "enfasis": false,
+   "frase": 6,
+   "seccion": "escalon2"
+  },
+  {
+   "texto": "policias",
+   "inicio": 20.95,
+   "duracion": 0.436,
+   "visible": "policías:",
+   "enfasis": false,
+   "frase": 6,
+   "seccion": "escalon2"
+  },
+  {
+   "texto": "ya",
+   "inicio": 21.386,
+   "duracion": 0.873,
+   "visible": "ya",
+   "enfasis": false,
+   "frase": 7,
+   "seccion": "escalon2"
+  },
+  {
+   "texto": "no",
+   "inicio": 22.259,
+   "duracion": 0.218,
+   "visible": "no",
+   "enfasis": false,
+   "frase": 7,
+   "seccion": "escalon2"
+  },
+  {
+   "texto": "te",
+   "inicio": 22.477,
+   "duracion": 0.109,
+   "visible": "te",
+   "enfasis": false,
+   "frase": 7,
+   "seccion": "escalon2"
+  },
+  {
+   "texto": "persiguen",
+   "inicio": 22.586,
+   "duracion": 0.509,
+   "visible": "persiguen...",
+   "enfasis": false,
+   "frase": 7,
+   "seccion": "escalon2"
+  },
+  {
+   "texto": "te",
+   "inicio": 23.305,
+   "duracion": 0.236,
+   "visible": "¡TE",
+   "enfasis": true,
+   "frase": 8,
+   "seccion": "escalon2"
+  },
+  {
+   "texto": "embisten",
+   "inicio": 23.541,
+   "duracion": 0.473,
+   "visible": "EMBISTEN,",
+   "enfasis": true,
+   "frase": 8,
+   "seccion": "escalon2"
+  },
+  {
+   "texto": "te",
+   "inicio": 24.214,
+   "duracion": 0.06,
+   "visible": "TE",
+   "enfasis": true,
+   "frase": 8,
+   "seccion": "escalon2"
+  },
+  {
+   "texto": "encierran",
+   "inicio": 24.268,
+   "duracion": 0.491,
+   "visible": "ENCIERRAN,",
+   "enfasis": true,
+   "frase": 8,
+   "seccion": "escalon2"
+  },
+  {
+   "texto": "te",
+   "inicio": 24.886,
+   "duracion": 0.06,
+   "visible": "TE",
+   "enfasis": true,
+   "frase": 8,
+   "seccion": "escalon2"
+  },
+  {
+   "texto": "sacan",
+   "inicio": 24.941,
+   "duracion": 0.309,
+   "visible": "SACAN",
+   "enfasis": true,
+   "frase": 8,
+   "seccion": "escalon2"
+  },
+  {
+   "texto": "de",
+   "inicio": 25.25,
+   "duracion": 0.073,
+   "visible": "DE",
+   "enfasis": true,
+   "frase": 8,
+   "seccion": "escalon2"
+  },
+  {
+   "texto": "la",
+   "inicio": 25.323,
+   "duracion": 0.109,
+   "visible": "LA",
+   "enfasis": true,
+   "frase": 8,
+   "seccion": "escalon2"
+  },
+  {
+   "texto": "calle",
+   "inicio": 25.432,
+   "duracion": 0.255,
+   "visible": "CALLE!",
+   "enfasis": true,
+   "frase": 8,
+   "seccion": "escalon2"
+  },
+  {
+   "texto": "y",
+   "inicio": 26.232,
+   "duracion": 0.145,
+   "visible": "Y",
+   "enfasis": false,
+   "frase": 9,
+   "seccion": "climax"
+  },
+  {
+   "texto": "los",
+   "inicio": 26.377,
+   "duracion": 0.127,
+   "visible": "los",
+   "enfasis": false,
+   "frase": 9,
+   "seccion": "climax"
+  },
+  {
+   "texto": "que",
+   "inicio": 26.505,
+   "duracion": 0.091,
+   "visible": "que",
+   "enfasis": false,
+   "frase": 9,
+   "seccion": "climax"
+  },
+  {
+   "texto": "lo",
+   "inicio": 26.595,
+   "duracion": 0.109,
+   "visible": "lo",
+   "enfasis": false,
+   "frase": 9,
+   "seccion": "climax"
+  },
+  {
+   "texto": "prueban",
+   "inicio": 26.705,
+   "duracion": 0.327,
+   "visible": "prueban",
+   "enfasis": false,
+   "frase": 9,
+   "seccion": "climax"
+  },
+  {
+   "texto": "no",
+   "inicio": 27.032,
+   "duracion": 0.418,
+   "visible": "no",
+   "enfasis": false,
+   "frase": 9,
+   "seccion": "climax"
+  },
+  {
+   "texto": "quieren",
+   "inicio": 27.45,
+   "duracion": 0.309,
+   "visible": "quieren",
+   "enfasis": false,
+   "frase": 9,
+   "seccion": "climax"
+  },
+  {
+   "texto": "soltarlo",
+   "inicio": 27.759,
+   "duracion": 0.455,
+   "visible": "soltarlo.",
+   "enfasis": false,
+   "frase": 9,
+   "seccion": "climax"
+  },
+  {
+   "texto": "lo",
+   "inicio": 28.659,
+   "duracion": 0.164,
+   "visible": "¿Lo",
+   "enfasis": false,
+   "frase": 10,
+   "seccion": "climax"
+  },
+  {
+   "texto": "mas",
+   "inicio": 28.823,
+   "duracion": 0.145,
+   "visible": "más",
+   "enfasis": false,
+   "frase": 10,
+   "seccion": "climax"
+  },
+  {
+   "texto": "divertido",
+   "inicio": 28.968,
+   "duracion": 0.436,
+   "visible": "divertido?",
+   "enfasis": true,
+   "frase": 10,
+   "seccion": "climax"
+  },
+  {
+   "texto": "escaparse",
+   "inicio": 29.959,
+   "duracion": 0.4,
+   "visible": "¡ESCAPARSE",
+   "enfasis": true,
+   "frase": 11,
+   "seccion": "climax"
+  },
+  {
+   "texto": "de",
+   "inicio": 30.359,
+   "duracion": 0.164,
+   "visible": "DE",
+   "enfasis": true,
+   "frase": 11,
+   "seccion": "climax"
+  },
+  {
+   "texto": "esos",
+   "inicio": 30.523,
+   "duracion": 0.127,
+   "visible": "ESOS",
+   "enfasis": true,
+   "frase": 11,
+   "seccion": "climax"
+  },
+  {
+   "texto": "policias",
+   "inicio": 30.65,
+   "duracion": 0.418,
+   "visible": "POLICÍAS",
+   "enfasis": true,
+   "frase": 11,
+   "seccion": "climax"
+  },
+  {
+   "texto": "locos",
+   "inicio": 31.068,
+   "duracion": 0.4,
+   "visible": "LOCOS!",
+   "enfasis": true,
+   "frase": 11,
+   "seccion": "climax"
+  },
+  {
+   "texto": "y",
+   "inicio": 31.814,
+   "duracion": 0.255,
+   "visible": "¿Y",
+   "enfasis": false,
+   "frase": 12,
+   "seccion": "climax"
+  },
+  {
+   "texto": "arreglaron",
+   "inicio": 32.068,
+   "duracion": 0.455,
+   "visible": "arreglaron",
+   "enfasis": false,
+   "frase": 12,
+   "seccion": "climax"
+  },
+  {
+   "texto": "el",
+   "inicio": 32.523,
+   "duracion": 0.164,
+   "visible": "el",
+   "enfasis": false,
+   "frase": 12,
+   "seccion": "climax"
+  },
+  {
+   "texto": "bug",
+   "inicio": 32.686,
+   "duracion": 0.182,
+   "visible": "bug?",
+   "enfasis": true,
+   "frase": 12,
+   "seccion": "climax"
+  },
+  {
+   "texto": "al",
+   "inicio": 33.15,
+   "duracion": 0.218,
+   "visible": "¡AL",
+   "enfasis": true,
+   "frase": 13,
+   "seccion": "climax"
+  },
+  {
+   "texto": "contrario",
+   "inicio": 33.368,
+   "duracion": 0.418,
+   "visible": "CONTRARIO!",
+   "enfasis": true,
+   "frase": 13,
+   "seccion": "climax"
+  },
+  {
+   "texto": "lo",
+   "inicio": 34.232,
+   "duracion": 0.2,
+   "visible": "Lo",
+   "enfasis": false,
+   "frase": 14,
+   "seccion": "climax"
+  },
+  {
+   "texto": "convirtieron",
+   "inicio": 34.432,
+   "duracion": 0.655,
+   "visible": "convirtieron",
+   "enfasis": false,
+   "frase": 14,
+   "seccion": "climax"
+  },
+  {
+   "texto": "en",
+   "inicio": 35.086,
+   "duracion": 0.164,
+   "visible": "en",
+   "enfasis": false,
+   "frase": 14,
+   "seccion": "climax"
+  },
+  {
+   "texto": "el",
+   "inicio": 35.25,
+   "duracion": 0.109,
+   "visible": "el",
+   "enfasis": false,
+   "frase": 14,
+   "seccion": "climax"
+  },
+  {
+   "texto": "juego",
+   "inicio": 35.359,
+   "duracion": 0.255,
+   "visible": "juego...",
+   "enfasis": false,
+   "frase": 14,
+   "seccion": "climax"
+  },
+  {
+   "texto": "y",
+   "inicio": 35.809,
+   "duracion": 0.186,
+   "visible": "Y",
+   "enfasis": true,
+   "frase": 15,
+   "seccion": "climax"
+  },
+  {
+   "texto": "le",
+   "inicio": 35.995,
+   "duracion": 0.091,
+   "visible": "LE",
+   "enfasis": true,
+   "frase": 15,
+   "seccion": "climax"
+  },
+  {
+   "texto": "pusieron",
+   "inicio": 36.086,
+   "duracion": 0.382,
+   "visible": "PUSIERON",
+   "enfasis": true,
+   "frase": 15,
+   "seccion": "climax"
+  },
+  {
+   "texto": "grand",
+   "inicio": 36.468,
+   "duracion": 0.6,
+   "visible": "GRAND",
+   "enfasis": true,
+   "frase": 15,
+   "seccion": "climax"
+  },
+  {
+   "texto": "theft",
+   "inicio": 37.068,
+   "duracion": 0.418,
+   "visible": "THEFT",
+   "enfasis": true,
+   "frase": 15,
+   "seccion": "climax"
+  },
+  {
+   "texto": "auto",
+   "inicio": 37.486,
+   "duracion": 0.364,
+   "visible": "AUTO:",
+   "enfasis": true,
+   "frase": 15,
+   "seccion": "climax"
+  },
+  {
+   "texto": "robo",
+   "inicio": 38.177,
+   "duracion": 0.418,
+   "visible": "ROBO",
+   "enfasis": true,
+   "frase": 15,
+   "seccion": "climax"
+  },
+  {
+   "texto": "de",
+   "inicio": 38.595,
+   "duracion": 0.127,
+   "visible": "DE",
+   "enfasis": true,
+   "frase": 15,
+   "seccion": "climax"
+  },
+  {
+   "texto": "autos",
+   "inicio": 38.723,
+   "duracion": 0.345,
+   "visible": "AUTOS.",
+   "enfasis": true,
+   "frase": 15,
+   "seccion": "climax"
+  },
+  {
+   "texto": "pero",
+   "inicio": 39.564,
+   "duracion": 0.255,
+   "visible": "Pero",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "lo",
+   "inicio": 39.818,
+   "duracion": 0.127,
+   "visible": "lo",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "mas",
+   "inicio": 39.945,
+   "duracion": 0.182,
+   "visible": "más",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "loco",
+   "inicio": 40.127,
+   "duracion": 0.327,
+   "visible": "loco",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "vino",
+   "inicio": 40.455,
+   "duracion": 0.473,
+   "visible": "vino",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "despues",
+   "inicio": 40.927,
+   "duracion": 0.527,
+   "visible": "después.",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "cuando",
+   "inicio": 41.927,
+   "duracion": 0.273,
+   "visible": "Cuando",
+   "enfasis": false,
+   "frase": 17,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "en",
+   "inicio": 42.2,
+   "duracion": 0.145,
+   "visible": "en",
+   "enfasis": false,
+   "frase": 17,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "inglaterra",
+   "inicio": 42.345,
+   "duracion": 0.527,
+   "visible": "Inglaterra",
+   "enfasis": true,
+   "frase": 17,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "pidieron",
+   "inicio": 42.873,
+   "duracion": 0.4,
+   "visible": "pidieron",
+   "enfasis": false,
+   "frase": 17,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "prohibirlo",
+   "inicio": 43.273,
+   "duracion": 0.564,
+   "visible": "prohibirlo",
+   "enfasis": true,
+   "frase": 17,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "por",
+   "inicio": 43.836,
+   "duracion": 0.164,
+   "visible": "por",
+   "enfasis": false,
+   "frase": 17,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "violento",
+   "inicio": 44.0,
+   "duracion": 0.473,
+   "visible": "violento...",
+   "enfasis": false,
+   "frase": 17,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "esa",
+   "inicio": 44.473,
+   "duracion": 0.782,
+   "visible": "ESA",
+   "enfasis": true,
+   "frase": 18,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "polemica",
+   "inicio": 45.255,
+   "duracion": 0.473,
+   "visible": "POLÉMICA",
+   "enfasis": true,
+   "frase": 18,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "la",
+   "inicio": 45.727,
+   "duracion": 0.382,
+   "visible": "LA",
+   "enfasis": true,
+   "frase": 18,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "habia",
+   "inicio": 46.109,
+   "duracion": 0.182,
+   "visible": "HABÍA",
+   "enfasis": true,
+   "frase": 18,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "inventado",
+   "inicio": 46.291,
+   "duracion": 0.545,
+   "visible": "INVENTADO",
+   "enfasis": true,
+   "frase": 18,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "su",
+   "inicio": 46.836,
+   "duracion": 0.164,
+   "visible": "SU",
+   "enfasis": true,
+   "frase": 18,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "propia",
+   "inicio": 47.0,
+   "duracion": 0.345,
+   "visible": "PROPIA",
+   "enfasis": true,
+   "frase": 18,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "distribuidora",
+   "inicio": 47.345,
+   "duracion": 0.782,
+   "visible": "DISTRIBUIDORA.",
+   "enfasis": true,
+   "frase": 18,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "contrataron",
+   "inicio": 48.509,
+   "duracion": 0.655,
+   "visible": "Contrataron",
+   "enfasis": false,
+   "frase": 19,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "a",
+   "inicio": 49.164,
+   "duracion": 0.109,
+   "visible": "a",
+   "enfasis": false,
+   "frase": 19,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "un",
+   "inicio": 49.273,
+   "duracion": 0.073,
+   "visible": "un",
+   "enfasis": false,
+   "frase": 19,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "experto",
+   "inicio": 49.345,
+   "duracion": 0.418,
+   "visible": "experto",
+   "enfasis": false,
+   "frase": 19,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "en",
+   "inicio": 49.764,
+   "duracion": 0.073,
+   "visible": "en",
+   "enfasis": false,
+   "frase": 19,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "escandalos",
+   "inicio": 49.836,
+   "duracion": 0.527,
+   "visible": "escándalos",
+   "enfasis": true,
+   "frase": 19,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "para",
+   "inicio": 50.364,
+   "duracion": 0.2,
+   "visible": "para",
+   "enfasis": false,
+   "frase": 19,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "que",
+   "inicio": 50.564,
+   "duracion": 0.145,
+   "visible": "que",
+   "enfasis": false,
+   "frase": 19,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "todo",
+   "inicio": 50.709,
+   "duracion": 0.236,
+   "visible": "todo",
+   "enfasis": false,
+   "frase": 19,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "el",
+   "inicio": 50.945,
+   "duracion": 0.182,
+   "visible": "el",
+   "enfasis": false,
+   "frase": 19,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "mundo",
+   "inicio": 51.127,
+   "duracion": 0.145,
+   "visible": "mundo",
+   "enfasis": false,
+   "frase": 19,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "hablara",
+   "inicio": 51.273,
+   "duracion": 0.327,
+   "visible": "hablara",
+   "enfasis": false,
+   "frase": 19,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "del",
+   "inicio": 51.6,
+   "duracion": 0.164,
+   "visible": "del",
+   "enfasis": false,
+   "frase": 19,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "juego",
+   "inicio": 51.764,
+   "duracion": 0.255,
+   "visible": "juego.",
+   "enfasis": false,
+   "frase": 19,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "y",
+   "inicio": 52.382,
+   "duracion": 0.2,
+   "visible": "Y",
+   "enfasis": false,
+   "frase": 20,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "vaya",
+   "inicio": 52.582,
+   "duracion": 0.2,
+   "visible": "vaya",
+   "enfasis": false,
+   "frase": 20,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "que",
+   "inicio": 52.782,
+   "duracion": 0.236,
+   "visible": "que",
+   "enfasis": false,
+   "frase": 20,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "hablaron",
+   "inicio": 53.018,
+   "duracion": 0.382,
+   "visible": "hablaron.",
+   "enfasis": false,
+   "frase": 20,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "veredicto",
+   "inicio": 53.955,
+   "duracion": 0.582,
+   "visible": "VEREDICTO:",
+   "enfasis": true,
+   "frase": 21,
+   "seccion": "veredicto"
+  },
+  {
+   "texto": "real",
+   "inicio": 54.536,
+   "duracion": 0.782,
+   "visible": "¡REAL!",
+   "enfasis": true,
+   "frase": 21,
+   "seccion": "veredicto"
+  },
+  {
+   "texto": "genios",
+   "inicio": 55.764,
+   "duracion": 0.582,
+   "visible": "¿Genios",
+   "enfasis": false,
+   "frase": 22,
+   "seccion": "pregunta"
+  },
+  {
+   "texto": "del",
+   "inicio": 56.345,
+   "duracion": 0.109,
+   "visible": "del",
+   "enfasis": false,
+   "frase": 22,
+   "seccion": "pregunta"
+  },
+  {
+   "texto": "marketing",
+   "inicio": 56.455,
+   "duracion": 0.4,
+   "visible": "marketing...",
+   "enfasis": true,
+   "frase": 22,
+   "seccion": "pregunta"
+  },
+  {
+   "texto": "o",
+   "inicio": 56.855,
+   "duracion": 0.655,
+   "visible": "o",
+   "enfasis": false,
+   "frase": 22,
+   "seccion": "pregunta"
+  },
+  {
+   "texto": "pura",
+   "inicio": 57.509,
+   "duracion": 0.345,
+   "visible": "pura",
+   "enfasis": false,
+   "frase": 22,
+   "seccion": "pregunta"
+  },
+  {
+   "texto": "suerte",
+   "inicio": 57.855,
+   "duracion": 0.291,
+   "visible": "suerte?",
+   "enfasis": true,
+   "frase": 22,
+   "seccion": "pregunta"
+  }
+ ]
+}
