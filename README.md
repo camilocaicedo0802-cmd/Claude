@@ -155,7 +155,7 @@ Con Playwright (Chromium) sobre el build relativo, montado como en GitHub Pages:
 | --- | --- |
 | Móvil 360 y 390, tablet 820 y desktop 1440 | Sin scroll horizontal (medido sin emulación móvil, que lo esconde al alejar la página), sin errores de consola ni peticiones fallidas en las 22 páginas: inicio, 20 proyectos y la landing |
 | Orden y textos | Índice 01–20 en el orden pedido; todos los títulos de sección en español; "Editor de video y diseñador digital" en el título, el menú, la portada y Sobre mí |
-| Contenido | Los 116 videos y 102 piezas tienen su tarjeta en el inicio, más las 11 pantallas de la landing |
+| Contenido | Los 117 videos y 102 piezas tienen su tarjeta en el inicio, más las 11 pantallas de la landing |
 | YouTube | Grupos Shorts (17) y Formato horizontal (10, con la intro del jet primero); 9 fragmentos de 90 s marcados como tales y con la duración completa en el visor; marca de agua "Juan Caicedo" en videos, previews y portadas |
 | Medios | La duración de los 60 archivos web nuevos coincide con su original; todos tienen audio salvo el cierre animado del retiro, que no lo tiene en el original |
 | Landing | Vista previa con scroll dentro del celular, botón a `landing-almohadilla-termica.html` y botón de WhatsApp con mensaje |
