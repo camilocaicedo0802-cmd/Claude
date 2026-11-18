@@ -47,7 +47,7 @@ def _mask(n):
 
 def _person_frames(t0, t1):
     out = []
-    for n in range(int(t0 * T.FPS), int(math.ceil(t1 * T.FPS))):
+    for n in range(int(math.ceil(t0 * T.FPS - 1e-6)), int(math.ceil(t1 * T.FPS))):   # first frame actually shown
         tt = n / T.FPS
         if any(s.get('person') and s['t0'] <= tt < s['t1'] for s in T.SHOTS):
             m = _mask(n)
@@ -412,6 +412,8 @@ def build():
     E.append(Typed('THING', T.REVEAL + 0.22, T.vs(5) - 0.12, 870, size=190, grad=OR, pop=True, sound=False))
     sfx(T.REVEAL + 0.22, 'impact', -2); sfx(T.REVEAL + 0.22, 'key', 0)
     # (v3: "Are you ready to see something nice?" is removed)
+    # v4: a soft camera shutter when the real before photos of this bathroom come in
+    sfx(T.vs(2), 'shutter', -6); sfx(T.vs(4), 'shutter', -8); sfx(T.vs(7), 'shutter', -6)
     # ================================================================ big wall / narrow / demoed → open space
     tw = wk(6, 'big')
     C([('There', 'b', T.vs(6)), ('was', 'b', wk(6, 'was')), ('a', 'b', wk(6, 'a'))], tw)

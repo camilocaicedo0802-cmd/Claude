@@ -1,5 +1,30 @@
 # West Home Improvement · Reel 3 — recorrido del baño completo (Félix y Peter)
 
+**v4 (ajustes del cliente):** entran las fotos reales del antes y de la demolición de este baño, de la carpeta "b roll de
+esta ducha" (IMG_6528–7651). Van donde Félix habla de cada cosa:
+
+| Tiempo | Voz | Foto |
+| --- | --- | --- |
+| 7,85–9,31 | …remodel the shower area, | IMG_6529: la ducha vieja (puerta de vidrio esmerilado) vista por la puerta, con acercamiento lento |
+| 9,76–10,80 | I mean this space | IMG_7503: la vanity vieja con el espejo |
+| 10,80–11,78 | needs a lot of work. | IMG_7512: los gabinetes de roble viejos |
+| 18,20–19,44 | So it was really narrow | IMG_6528: la puerta angosta que llevaba a la ducha |
+| 19,44–20,68 | to get into the shower. | IMG_6528 con punch-in hacia la ducha vieja |
+| 20,68–21,44 | We demoed | IMG_7573: el nicho de la ducha ya demolido, con la estructura a la vista |
+| 21,44–22,27 | the whole thing out | IMG_7650: el techo abierto donde estaba la pared |
+| 22,27 | to make a really open space | Destello blanco y entra la ducha terminada (IMG_9023) con OPEN SPACE |
+
+- **Fotos:** se recortan a 9:16 en `extract_all.py` (con el centro elegido para que no se pierda la ducha vieja) y se
+  preparan a 1620×2880 para que los acercamientos no pierdan nitidez. Llevan el grade suave `old` y movimiento Ken Burns.
+- **Lo que salió:** Félix ya no aparece en "I mean this space needs a lot of work" ni en "so it was really narrow…". La
+  ducha terminada IMG_9005 de "remodel the shower area" y la toma IMG_9006 de "we demoed" se cambiaron por las fotos.
+- **Sonido:** un obturador de cámara suave cuando entran las fotos del antes; whoosh en la demolición y destello en el
+  regreso a la ducha terminada.
+- **Subtítulos:** el subtítulo que empieza justo en un corte ahora se coloca según el primer cuadro que de verdad se ve.
+  Por eso "so it was really" y "custom niche," bajan a la zona inferior.
+- No se usaron las selfies del equipo ni las fotos midiendo la puerta: las caras quedaban debajo del título BIG WALL y
+  de los subtítulos.
+
 **v3 (ajustes del cliente):**
 - **Inicio:** ahora abre afuera de la casa con Peter y Félix, en la toma IMG_9039: "Hey Tulsa, we have another beautiful West
   Home Improvement bathroom we just completed. Let's check it out."
@@ -33,4 +58,5 @@ explicaciones (transcritas palabra por palabra y cortadas en los silencios; `chu
   subtítulos se acomodan solos para no chocar con las personas ni con los títulos (`layout` en `overlays.py`).
 - SFX solo de la librería del cliente (`video/sfx-library`): teclado en cada texto, golpes y pops en palabras clave,
   whooshes en transiciones. Música original de 104 BPM (ElevenLabs Music v2.5 vía Higgsfield), extendida al compás.
-- No se usaron fotos del "antes": las dos de la carpeta (IMG_8311/8312) son de otro baño (ventana y azulejo distintos).
+- v1–v3: no se usaron fotos del "antes", porque las dos de la carpeta (IMG_8311/8312) son de otro baño (ventana y azulejo
+  distintos). Las fotos correctas llegaron para la v4.

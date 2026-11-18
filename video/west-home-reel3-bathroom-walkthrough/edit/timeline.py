@@ -4,6 +4,11 @@ v3 (client feedback): opens outside the house with Peter and Félix ("Hey Tulsa,
 Improvement bathroom we just completed. Let's check it out."); the purple-room clip ("Are you ready to see something
 nice?" + the walk through the door) is gone; hero B-roll in real slow motion (60 fps sources at half speed).
 
+v4 (client feedback): the real before / demo photos of THIS bathroom (Drive folder "b roll de esta ducha") go where
+Félix talks about it: the old stall on "remodel the shower area", the old vanity on "this space needs a lot of work",
+the narrow doorway to the stall on "so it was really narrow to get into the shower" and the gutted room on "we demoed
+the whole thing out" — then the finished shower on "to make a really open space".
+
 The voice is built from the best fragments of the raw takes (no script); pauses are cut, pieces follow each
 other with short gaps. Music: 104 BPM (beat 0.5769 s); its drop (track beat 32) lands on REVEAL.
 """
@@ -97,6 +102,13 @@ def sync(k, t0, t1, **kw):
 
 
 BR = lambda n: F(f'IMG_{n}.MOV')
+
+
+def photo(name, t0, t1, zoom, **kw):
+    """a before photo (HEIC from the client's folder, cropped 9:16 by extract_all.py) with a slow Ken Burns move."""
+    return dict(src=PH + name + '.png', t0=t0, t1=t1, src_in=0.0, speed=0.0, grade='old', zoom=zoom, **kw)
+
+
 SHOTS = [
     # INTRO — outside the house, Peter and Félix: "Hey Tulsa, we have another beautiful ... Let's check it out."
     sync(21, 0.0, vs(22), grade='talk', zoom=[(0, 1.02), (0.15, 1.08), (1, 1.12)], cy=0.02),
@@ -104,11 +116,12 @@ SHOTS = [
     # HOOK — Félix in the new bathroom: "Initially the customers, they had the idea only..."
     sync(0, vs(0), vs(1), grade='talk', zoom=[(0, 1.04), (0.12, 1.12), (1, 1.16)], cy=-0.02, tin=('whip', 'up', 0.2)),
     sync(1, vs(1), vs(2), grade='talk', zoom=[(0, 1.26), (1, 1.30)], cy=-0.04),
-    # "...remodel the shower area," — the finished shower
-    dict(src=BR(9005), t0=vs(2), t1=vs(3), src_in=0.0, speed=[(0, 1.5), (1, 1.1)], grade='white',
-         zoom=[(0, 1.18), (1, 1.06)]),
+    # "...remodel the shower area," — v4: the OLD shower stall of this bathroom, through its doorway (before photo)
+    photo('before_stall', vs(2), vs(3), zoom=[(0, 1.10), (1, 1.22)], cx=-0.04),
     sync(3, vs(3), vs(4), grade='talk', zoom=[(0, 1.30), (1, 1.32)], cy=-0.04),
-    sync(4, vs(4), vt(4, 8.40), grade='talk', zoom=[(0, 1.12), (1, 1.16)], cy=-0.02),
+    # "I mean this space / needs a lot of work." — v4: the old vanity and the old oak cabinets (before photos)
+    photo('before_vanity', vs(4), vt(4, 7.42), zoom=[(0, 1.16), (1, 1.04)]),
+    photo('before_cabinets', vt(4, 7.42), vt(4, 8.40), zoom=[(0, 1.04), (1, 1.14)]),
     sync(4, vt(4, 8.40), vt(4, 10.10), grade='talk', zoom=[(0, 1.26), (1, 1.30)], cy=-0.04),
     # "...and we ended up doing the whole thing" — quick reveal montage on the beat
     dict(src=BR(9023), t0=vt(4, 10.10), t1=REVEAL, src_in=0.2, speed=1.6, grade='white',
@@ -119,11 +132,15 @@ SHOTS = [
     # (v3: the purple-room clip — "Are you ready to see something nice?" + the door walk — is removed)
     # "There was a big wall here, so it was really narrow to get into the shower."
     sync(6, vs(6), vs(7), grade='talk', zoom=[(0, 1.10), (1, 1.14)], tin=('zoom', 'in', 0.18)),
-    sync(7, vs(7), vs(8), grade='talk', zoom=[(0, 1.24), (1, 1.28)], cy=-0.03),
-    # "We demoed the whole thing out to make a really open space."
-    dict(src=BR(9006), t0=vs(8), t1=vt(8, 22.10), src_in=0.0, speed=1.0, grade='white',
-         zoom=[(0, 1.06), (1, 1.14)], tin=('whip', 'right', 0.2)),
-    dict(src=BR(9023), t0=vt(8, 22.10), t1=vs(9), src_in=4.6, speed=1.0, grade='white', zoom=[(0, 1.10), (1, 1.04)]),
+    # "so it was really narrow / to get into the shower." — v4: the narrow doorway to the old stall, then a punch-in
+    photo('before_door', vs(7), vt(7, 19.14), zoom=[(0, 1.04), (1, 1.12)]),
+    photo('before_door', vt(7, 19.14), vs(8), zoom=[(0, 1.55), (1, 1.66)], cx=-0.02, cy=0.02, tin=('zoom', 'in', 0.18)),
+    # "We demoed / the whole thing out" — v4: the gutted room (demo photos), then the finished shower on
+    # "to make a really open space"
+    photo('demo_alcove', vs(8), vt(8, 21.27), zoom=[(0, 1.06), (1, 1.14)], tin=('whip', 'right', 0.2)),
+    photo('demo_wall', vt(8, 21.27), vt(8, 22.10), zoom=[(0, 1.14), (1, 1.06)]),
+    dict(src=BR(9023), t0=vt(8, 22.10), t1=vs(9), src_in=4.6, speed=1.0, grade='white', zoom=[(0, 1.10), (1, 1.04)],
+         tin=('flash', 'white', 0.3)),
     # "With a new custom vanity countertop to match the tile."
     dict(src=BR(8994), t0=vs(9), t1=vt(9, 25.75), src_in=0.0, speed=1.1, grade='white', zoom=[(0, 1.12), (1, 1.04)],
          tin=('whip', 'left', 0.2)),
@@ -150,7 +167,15 @@ SHOTS = [
     dict(src=BR(8987), t0=ve(20) + 0.04, t1=DUR, src_in=0.5, speed=0.5, grade='white',   # real slow motion (60 fps)
          zoom=[(0, 1.16), (0.1, 1.04), (1, 1.10)], dim_ramp=[(0, 0.0), (0.15, 0.32), (1, 0.4)], tin=('flash', 'white', 0.3)),
 ]
-PHOTOS = {}
+# v4: before / demo photos of this bathroom — out png: (HEIC, horizontal centre of the 9:16 crop)
+PHOTOS = {
+    'before_stall.png': ('IMG_6529.HEIC', 0.375),
+    'before_vanity.png': ('IMG_7503.HEIC', 0.5),
+    'before_cabinets.png': ('IMG_7512.HEIC', 0.5),
+    'before_door.png': ('IMG_6528.HEIC', 0.375),
+    'demo_alcove.png': ('IMG_7573.HEIC', 0.5),
+    'demo_wall.png': ('IMG_7650.HEIC', 0.5),
+}
 
 if __name__ == '__main__':
     for k, v in enumerate(VOICE):

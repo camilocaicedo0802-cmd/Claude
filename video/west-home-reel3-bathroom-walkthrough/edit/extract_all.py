@@ -5,17 +5,19 @@ from PIL import Image, ImageOps
 import pillow_heif; pillow_heif.register_heif_opener()
 import timeline as T, core as C
 # photos
-for out, name in T.PHOTOS.items():
+for out, spec in T.PHOTOS.items():
+    name, fx = spec if isinstance(spec, tuple) else (spec, 0.5)     # fx: horizontal centre of the 9:16 crop
     dst = T.PH + out
     if os.path.exists(dst):
         continue
     im = ImageOps.exif_transpose(Image.open(T.F(name))).convert('RGB')
     w, h = im.size; tw = int(h * 9 / 16)
     if tw <= w:
-        im = im.crop(((w - tw) // 2, 0, (w - tw) // 2 + tw, h))
+        x0 = int(round(min(max(fx * w - tw / 2, 0), w - tw)))
+        im = im.crop((x0, 0, x0 + tw, h))
     else:
         th = int(w * 16 / 9); im = im.crop((0, (h - th) // 2, w, (h - th) // 2 + th))
-    im.resize((C.IW, C.IH), Image.LANCZOS).save(dst)
+    im.resize((1620, 2880), Image.LANCZOS).save(dst)     # larger than IWxIH: room for the punch-ins on the photos
     print('photo', dst)
 jobs, plan = [], {}
 for i, s in enumerate(T.SHOTS):
