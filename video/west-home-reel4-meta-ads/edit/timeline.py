@@ -36,7 +36,7 @@ _PIECES = [
     ('IMG_9119.MOV', 31.66, 34.77, 0.06),  # 5 completely transforming their space, giving them
     ('IMG_9119.MOV', 35.03, 35.94, 0.06),  # 6 functionality
     ('IMG_9119.MOV', 36.42, 38.85, 0.14),  # 7 and features that they really wanted.
-    ('IMG_9121.MOV', 0.24, 3.40, 0.10),    # 8 Remember, our shower remodels start at $9,800.
+    ('IMG_9121.MOV', 0.24, 3.62, 0.06),    # 8 Remember, our shower remodels start at $9,800. (v4: ends after the whole word "dollars")
     ('IMG_9122.MOV', 1.53, 2.36, END),     # 9 Reach out today.
 ]
 VOICE = []
@@ -95,8 +95,8 @@ SHOTS = [
     dict(src=PHOTO('v3_tub_neglected.png'), t0=vt(2, 15.25), t1=vs(3), src_in=0, speed=0, grade='before',
          zoom=[(0, 1.22), (1, 1.10)]),
     # "We suggested to turn the jacuzzi tub area into the new shower area," — jacuzzi, then this project's real process
-    dict(src=PHOTO('v3_tub_area.png'), t0=vs(3), t1=vt(3, 19.30), src_in=0, speed=0, grade='before',
-         zoom=[(0, 1.10), (1, 1.20)], tin=('whip', 'up', 0.2)),
+    # v4 (client): the cluttered-bathroom photo is removed — Peter on camera for "We suggested to turn the jacuzzi tub area"
+    sync(3, vs(3), vt(3, 19.30), grade='talk', zoom=[(0, 1.10), (1, 1.14)], cy=-0.02, tin=('whip', 'up', 0.2)),
     dict(src=PHOTO('process_2.png'), t0=vt(3, 19.30), t1=vt(3, 20.95), src_in=0, speed=0, grade='talk',
          zoom=[(0, 1.18), (1, 1.08)]),
     dict(src=PHOTO('process_1.png'), t0=vt(3, 20.95), t1=REVEAL, src_in=0, speed=0, grade='talk', cx=0.06, cy=-0.04,
@@ -138,7 +138,7 @@ WEB_V3 = {
     'v3_shower_mixer.png': ('old_shower_detail.jpg', 0.5), # grimy chrome shower mixer, water spots, rust
     'v3_jacuzzi_corner.png': ('old_jacuzzi.jpg', 0.5),     # 90s corner garden tub, sage walls, seashell prints
     'v3_tub_neglected.png': ('old_tub_detail.jpg', 0.5),   # scuffed tub, cracked teal tile, sponges
-    'v3_tub_area.png': ('old_tub_area_alt.jpg', 0.75),    # cluttered, worn bathroom: tub + handheld shower, laundry
+    # v4: 'v3_tub_area.png' (old_tub_area_alt.jpg, cluttered bathroom) removed at the client's request
 }
 PHOTOS = {   # photo -> source (exif-rotated, center-cropped to 9:16)
     'old_vanity.png': 'IMG_7503(1).HEIC',

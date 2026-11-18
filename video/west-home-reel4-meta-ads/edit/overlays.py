@@ -449,10 +449,10 @@ def build():
     te = T.ve(9) + 0.05
     E.append(Typed('READY FOR YOUR', te + 0.08, T.DUR - 0.4, 540, size=84, rate=0.025))
     E.append(Typed('DREAM SHOWER?', te + 0.38, T.DUR - 0.4, 652, size=108, grad=OR, rate=0.03))
-    E.append(Label('SEND US A MESSAGE', te + 0.62, T.DUR - 0.4, cy=790, size=56))
-    sfx(te + 0.62, 'swoosh', -6); sfx(te + 0.62, 'click', -4)
+    E.append(Label('SEND US A MESSAGE', te + 0.5, T.DUR - 0.4, cy=790, size=56))
+    sfx(te + 0.5, 'swoosh', -6); sfx(te + 0.5, 'click', -4)
     logo = G.load_logo(WEST + 'raw/brand/WEST HOME/PNG/Recurso 7@4x.png', 520)
-    tl = max(te + 0.9, T.beat(64))
+    tl = max(te + 0.66, T.beat(64))      # v4: the logo pops on the music's second drop
     E.append(El(G.pil_to_spr(logo, radius=20, offset=(0, 10), opacity=0.5), 540, 1120, tl, T.DUR - 0.35, 'pop', 'blurout',
                 d_in=0.42, d_out=0.3))
     sfx(tl, 'pop', -2)

@@ -73,20 +73,5 @@
     "license": "Unsplash License (free)",
     "what_it_shows": "Top-down view into an old tub corner: dingy, scuffed white tub with drain and chain plug, dated chrome taps, cracked/stained dark-teal and blue tile surround with a recessed ledge, two natural sponges on the rim; looks worn and neglected; subject ~50% width (taps ~40-55%).",
     "plate": "v3_tub_neglected"
-  },
-  {
-    "file": "old_tub_area_alt.jpg",
-    "slot": "old_tub_area",
-    "id": "q-OivXChlLA",
-    "photographer": "Martin Jaroš",
-    "username": "devoonek",
-    "link": "https://unsplash.com/photos/q-OivXChlLA",
-    "width": 3600,
-    "height": 2400,
-    "original_width": 5184,
-    "original_height": 3456,
-    "license": "Unsplash License (free)",
-    "what_it_shows": "Messy lived-in bathroom at sunset: built-in tub with tiled side at bottom right (~80% width), small vanity sink and shower hose above it, towels and clothes drying on a radiator and line, lace curtain and dated beige tile; warm, cluttered and tired (European fittings). For 9:16 crop center ~75-80% width to keep the tub.",
-    "plate": "v3_tub_area"
   }
 ]

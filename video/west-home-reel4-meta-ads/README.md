@@ -1,5 +1,14 @@
 # West Home Improvement · Reel 4 — Meta Ads: del jacuzzi a una ducha enorme (South Tulsa)
 
+**v4 (ajustes del cliente):**
+- **11,0–12,6 s:** se quitó la foto del baño viejo y desordenado. En "We suggested to turn the jacuzzi tub area" ahora se
+  ve a Peter hablando a cámara, con su recorte BiRefNet, y el whip sigue igual.
+- **"$9,800 dollars":** el tramo terminaba en 3,40 s de IMG_9121 y cortaba "dollars" a la mitad. Ahora termina en 3,62 s, en
+  el silencio después de la palabra, con 0,06 s antes de "Reach out today".
+  - El video dura 0,18 s más (36,67 s).
+  - El final se reacomodó para que el logo siga cayendo en el segundo drop de la música (34,77 s). SEND US A MESSAGE entra
+    0,5 s después de la toma de Peter.
+
 **v3 (ajuste del cliente):** las fotos del "antes" de la v2 se veían limpias y ya remodeladas. Se cambiaron por baños feos,
 viejos y sin remodelar, todos de Unsplash con licencia libre (créditos en `credits_web.json`):
 
@@ -10,7 +19,7 @@ viejos y sin remodelar, todos de Unsplash con licencia libre (créditos en `cred
 | 4,20–5,93 | an existing shower | Mezcladora de ducha cromada, sucia y con sarro (Howard Lee) |
 | 7,89–9,34 | that was not usable | Tina de esquina tipo jacuzzi de los 90, paredes verde salvia y cuadros de conchas (Jake Johnson) |
 | 9,34–11,01 | space anymore | Tina rayada vista desde arriba, azulejo turquesa agrietado (Francesca Grima) |
-| 11,01–12,59 | We suggested to turn the jacuzzi tub area | Baño viejo y desordenado: tina con regadera de mano y ropa colgada (Martin Jaroš) |
+| 11,01–12,59 | We suggested to turn the jacuzzi tub area | (v4: se quitó; ahora sale Peter a cámara) |
 
 - Se mantiene el grade apagado `before` y las dos fotos reales del proceso de esta ducha (IMG_8311/8312) en "into the new
   shower area".
