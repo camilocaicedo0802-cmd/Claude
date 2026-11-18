@@ -13,11 +13,13 @@ ap.add_argument('--from', dest='t_from', type=float, default=0.0)
 ap.add_argument('--to', dest='t_to', type=float, default=T.DUR)
 ap.add_argument('--stills', default='')
 ap.add_argument('--masks', action='store_true', help='only compute person mattes')
+ap.add_argument('--parity', default='even', help='masks: even = BiRefNet keyframes, odd = flow-interpolated')
+ap.add_argument('--threads', type=int, default=1)
 args = ap.parse_args()
 
 PLAN = json.load(open(C.ROOT + 'edit/int_plan.json'))
 VIG = C.vignette(T.W, T.H, 0.18)[..., None]
-MASK_DIR = C.ROOT + 'masks/'
+MASK_DIR = C.ROOT + 'masks_b/'
 os.makedirs(MASK_DIR, exist_ok=True)
 SUPER8 = cv2.imread(C.ROOT + 'dl/sfx/SFX PACK 2/RECTANGULOS SUPER 8MM/super 8 frame.png', cv2.IMREAD_UNCHANGED)
 S8_HOLE = (132, 437, 947, 1503)          # x0, y0, x1, y1 of the transparent window
@@ -196,28 +198,37 @@ _seg = None
 
 
 def segment(img):
-    """person matte: U2-Net human segmentation + guided-filter edge refinement."""
+    """person matte: BiRefNet-portrait (1024x1024, ONNX) — clean edges on caps and hair, no false positives on the truck."""
     global _seg
     import onnxruntime as ort
     if _seg is None:
-        so = ort.SessionOptions(); so.intra_op_num_threads = 1; so.inter_op_num_threads = 1
-        _seg = ort.InferenceSession(C.WEST + 'models/u2net_human_seg.onnx', so, providers=['CPUExecutionProvider'])
-    x = cv2.resize(img, (320, 320), interpolation=cv2.INTER_AREA)[:, :, ::-1].astype(np.float32) / 255
+        so = ort.SessionOptions(); so.intra_op_num_threads = args.threads; so.inter_op_num_threads = 1; so.enable_cpu_mem_arena = False
+        _seg = ort.InferenceSession(C.ROOT + '../models/birefnet_portrait.onnx', so, providers=['CPUExecutionProvider'])
+    x = cv2.resize(img, (1024, 1024), interpolation=cv2.INTER_AREA)[:, :, ::-1].astype(np.float32) / 255
     x = (x - [0.485, 0.456, 0.406]) / [0.229, 0.224, 0.225]
-    o = _seg.run(None, {_seg.get_inputs()[0].name: x.transpose(2, 0, 1)[None].astype(np.float32)})[0][0, 0]
-    o = (o - o.min()) / (o.max() - o.min() + 1e-6)
-    o = np.clip((o - 0.3) / 0.4, 0, 1)
-    # guided filter at half resolution, guide = luminance
-    h2, w2 = img.shape[0] // 2, img.shape[1] // 2
-    I = cv2.cvtColor(cv2.resize(img, (w2, h2), interpolation=cv2.INTER_AREA), cv2.COLOR_BGR2GRAY).astype(np.float32) / 255
-    p_ = cv2.resize(o, (w2, h2), interpolation=cv2.INTER_CUBIC)
-    r, eps = 8, 1e-3
-    bf = lambda a: cv2.boxFilter(a, -1, (2 * r + 1, 2 * r + 1))
-    mI, mp = bf(I), bf(p_)
-    a = (bf(I * p_) - mI * mp) / (bf(I * I) - mI * mI + eps); b = mp - a * mI
-    q = bf(a) * I + bf(b)
-    q = np.clip(cv2.resize(q, (img.shape[1], img.shape[0]), interpolation=cv2.INTER_LINEAR), 0, 1)
-    return q
+    o = _seg.run(None, {_seg.get_inputs()[0].name: x.transpose(2, 0, 1)[None].astype(np.float32)})[-1][0, 0]
+    o = 1 / (1 + np.exp(-o.astype(np.float32)))
+    q = cv2.resize(o, (img.shape[1], img.shape[0]), interpolation=cv2.INTER_CUBIC)
+    return np.clip((q - 0.04) / 0.92, 0, 1)
+
+
+def flow_mask(n):
+    """odd frames: warp the BiRefNet mattes of n-1 and n+1 onto frame n with optical flow and average them."""
+    t = n / T.FPS
+    g = lambda k: cv2.cvtColor(cv2.resize(np.clip(base_frame(k / T.FPS)[0] * VIG, 0, 255).astype(np.uint8), (540, 960)),
+                               cv2.COLOR_BGR2GRAY)
+    gn = g(n); acc = None
+    for k in (n - 1, n + 1):
+        m = cv2.imread(MASK_DIR + f'{k:05d}.png', cv2.IMREAD_GRAYSCALE).astype(np.float32) / 255
+        fl = cv2.calcOpticalFlowFarneback(gn, g(k), None, 0.5, 4, 21, 3, 7, 1.5, 0)
+        fl = cv2.resize(fl, (T.W, T.H)) * 2.0
+        gx, gy = np.meshgrid(np.arange(T.W, dtype=np.float32), np.arange(T.H, dtype=np.float32))
+        w = cv2.remap(m, gx + fl[..., 0], gy + fl[..., 1], cv2.INTER_LINEAR, borderMode=cv2.BORDER_REPLICATE)
+        acc = w if acc is None else (acc + w) / 2
+    return acc
+
+
+_seg = None
 
 
 def person_near(t):
@@ -276,12 +287,21 @@ if __name__ == '__main__':
         sys.exit()
     n0, n1 = int(round(args.t_from * T.FPS)), int(round(args.t_to * T.FPS))
     if args.masks:
+        os.makedirs(MASK_DIR, exist_ok=True)
         for n in range(n0, n1):
-            if person_near(n / T.FPS) and not os.path.exists(MASK_DIR + f'{n:05d}.png'):
+            mp = MASK_DIR + f'{n:05d}.png'
+            if not person_near(n / T.FPS) or os.path.exists(mp):
+                continue
+            same = lambda k: 0 <= k and person_near(k / T.FPS) and shot_at(k / T.FPS) == shot_at(n / T.FPS)
+            key = n % 2 == 0 or not (same(n - 1) and same(n + 1))
+            if args.parity == 'even' and key:
                 b, _ = base_frame(n / T.FPS)
                 if not T.SHOTS[shot_at(n / T.FPS)].get('retro'):
                     b *= VIG
-                cv2.imwrite(MASK_DIR + f'{n:05d}.png', (segment(np.clip(b, 0, 255).astype(np.uint8)) * 255).astype(np.uint8))
+                cv2.imwrite(mp, (segment(np.clip(b, 0, 255).astype(np.uint8)) * 255).astype(np.uint8))
+            elif args.parity == 'odd' and not key:
+                cv2.imwrite(mp, (np.clip(flow_mask(n), 0, 1) * 255).astype(np.uint8))
+            print(n, flush=True)
         print('masks done'); sys.exit()
     p = subprocess.Popen(['ffmpeg', '-v', 'error', '-y', '-f', 'rawvideo', '-pix_fmt', 'bgr24', '-s', f'{T.W}x{T.H}',
                           '-r', str(T.FPS), '-i', '-', '-c:v', 'libx264', '-preset', 'medium', '-crf', '10',

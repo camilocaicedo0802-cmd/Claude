@@ -1,5 +1,17 @@
 # West Home Improvement · Reel 3 — recorrido del baño completo (Félix y Peter)
 
+**v3 (ajustes del cliente):**
+- **Inicio:** ahora abre afuera de la casa con Peter y Félix, en la toma IMG_9039: "Hey Tulsa, we have another beautiful West
+  Home Improvement bathroom we just completed. Let's check it out."
+  - Arriba van el título FULL BATHROOM TRANSFORMATION y la píldora TULSA, OK; los subtítulos son palabra a palabra.
+  - Después, con un whip, entra Félix en el baño con el hook THEY ONLY WANTED A NEW SHOWER….
+- **Clip quitado:** el del cuarto morado ("Are you ready to see something nice?" y la caminata por la puerta, IMG_9009).
+  Del montaje del reveal se pasa directo a "There was a big wall here".
+- **Cámara lenta real:** las tomas de 60 fps de "The shower is the masterpiece" y la ducha final van a media velocidad.
+- **Recortes:** BiRefNet-portrait en todos los planos con persona, igual que el reel 2 v3.
+- **Sonido:** los subtítulos entran sin sonido; los efectos quedan en títulos, gráficos y transiciones.
+- **Duración:** 45,7 s. La tabla de abajo es de la v1.
+
 Reel vertical de 43,5 s (1080×1920, 30 fps). Sin guion: la historia se armó con los mejores fragmentos de las
 explicaciones (transcritas palabra por palabra y cortadas en los silencios; `chunks.json` tiene cada frase con su tiempo).
 

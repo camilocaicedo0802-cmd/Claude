@@ -1,5 +1,9 @@
 """Reel 3 — full bathroom remodel walkthrough with Félix & Peter (1080x1920, 30 fps). Times are output seconds.
 
+v3 (client feedback): opens outside the house with Peter and Félix ("Hey Tulsa, we have another beautiful West Home
+Improvement bathroom we just completed. Let's check it out."); the purple-room clip ("Are you ready to see something
+nice?" + the walk through the door) is gone; hero B-roll in real slow motion (60 fps sources at half speed).
+
 The voice is built from the best fragments of the raw takes (no script); pauses are cut, pieces follow each
 other with short gaps. Music: 104 BPM (beat 0.5769 s); its drop (track beat 32) lands on REVEAL.
 """
@@ -49,13 +53,22 @@ _PIECES = [
     ('IMG_9014.MOV', 51.02, 52.24, 0.12),  # 18 glass custom door.
     ('IMG_9018.MOV', 0.14, 2.38, 0.08),    # 19 Alright Felix, we did it again. — Yes, sir.
     ('IMG_9020.MOV', 0.14, 2.10, TAIL),    # 20 You already know, call West Home Improvement.
+    ('IMG_9039.MOV', 16.80, 20.84, 0.06),  # 21 (v3 intro, outside) Hey Tulsa, we have another beautiful West Home Improvement bathroom we just completed.
+    ('IMG_9039.MOV', 22.88, 23.66, 0.10),  # 22 (v3 intro) Let's check it out.
 ]
-VOICE = []
+# v3 order: the outside intro first; piece 5 (purple room, "Are you ready to see something nice?") and the door walk
+# are dropped — piece 5 stays in the list with zero length at the start of piece 6 so the indices do not move.
+ORDER = [21, 22, 0, 1, 2, 3, 4, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+VOICE = [None] * len(_PIECES)
 t = 0.0
-for name, si, so, gap in _PIECES:
-    VOICE.append((F(name), si, so, round(t, 3)))
+for k in ORDER:
+    name, si, so, gap = _PIECES[k]
+    if k == 4:
+        gap = round(3 * P - (11.97 - 11.40), 3)       # the 3-beat reveal montage after "the whole thing"
+    VOICE[k] = (F(name), si, so, round(t, 3))
     t += so - si + gap
 DUR = round(t, 2)
+VOICE[5] = (F(_PIECES[5][0]), _PIECES[5][1], _PIECES[5][1], VOICE[6][3])
 
 
 def vs(k):
@@ -85,8 +98,11 @@ def sync(k, t0, t1, **kw):
 
 BR = lambda n: F(f'IMG_{n}.MOV')
 SHOTS = [
-    # HOOK — Félix on camera from the first frame: "Initially the customers, they had the idea only..."
-    sync(0, 0.0, vs(1), grade='talk', zoom=[(0, 1.04), (0.12, 1.12), (1, 1.16)], cy=-0.02),
+    # INTRO — outside the house, Peter and Félix: "Hey Tulsa, we have another beautiful ... Let's check it out."
+    sync(21, 0.0, vs(22), grade='talk', zoom=[(0, 1.02), (0.15, 1.08), (1, 1.12)], cy=0.02),
+    sync(22, vs(22), vs(0), grade='talk', zoom=[(0, 1.18), (1, 1.22)], cy=0.0),
+    # HOOK — Félix in the new bathroom: "Initially the customers, they had the idea only..."
+    sync(0, vs(0), vs(1), grade='talk', zoom=[(0, 1.04), (0.12, 1.12), (1, 1.16)], cy=-0.02, tin=('whip', 'up', 0.2)),
     sync(1, vs(1), vs(2), grade='talk', zoom=[(0, 1.26), (1, 1.30)], cy=-0.04),
     # "...remodel the shower area," — the finished shower
     dict(src=BR(9005), t0=vs(2), t1=vs(3), src_in=0.0, speed=[(0, 1.5), (1, 1.1)], grade='white',
@@ -100,10 +116,7 @@ SHOTS = [
     dict(src=BR(9006), t0=REVEAL, t1=beat(33), src_in=0.3, speed=1.2, grade='white', zoom=[(0, 1.16), (1, 1.06)]),
     dict(src=BR(8994), t0=beat(33), t1=beat(34), src_in=0.2, speed=1.4, grade='white', zoom=[(0, 1.12), (1, 1.04)]),
     dict(src=BR(8982), t0=beat(34), t1=vs(5), src_in=0.5, speed=1.2, grade='white', zoom=[(0, 1.14), (1, 1.06)]),
-    # "Are you ready to see something nice?" — both, then walking in through the door (speed ramp)
-    sync(5, vs(5), ve(5), grade='talk', zoom=[(0, 1.10), (1, 1.16)], tin=('whip', 'up', 0.2)),
-    dict(src=BR(9009), t0=ve(5), t1=vs(6), src_in=5.2, speed=[(0, 1.4), (0.35, 3.8), (1, 1.2)], grade='talk',
-         person=True, zoom=[(0, 1.10), (1, 1.18)]),
+    # (v3: the purple-room clip — "Are you ready to see something nice?" + the door walk — is removed)
     # "There was a big wall here, so it was really narrow to get into the shower."
     sync(6, vs(6), vs(7), grade='talk', zoom=[(0, 1.10), (1, 1.14)], tin=('zoom', 'in', 0.18)),
     sync(7, vs(7), vs(8), grade='talk', zoom=[(0, 1.24), (1, 1.28)], cy=-0.03),
@@ -120,7 +133,7 @@ SHOTS = [
     dict(src=BR(8997), t0=vs(11), t1=vt(11, 32.40), src_in=0.4, speed=0.7, grade='white', zoom=[(0, 1.14), (1, 1.06)]),
     dict(src=BR(8980), t0=vt(11, 32.40), t1=vs(12), src_in=0.4, speed=1.0, grade='white', zoom=[(0, 1.12), (1, 1.04)]),
     # "The shower is the masterpiece."
-    dict(src=BR(8985), t0=vs(12), t1=vs(13), src_in=0.5, speed=1.0, grade='white',
+    dict(src=BR(8985), t0=vs(12), t1=vs(13), src_in=0.5, speed=0.5, grade='white',      # real slow motion (60 fps)
          zoom=[(0, 1.28), (0.25, 1.08), (1, 1.12)], tin=('zoom', 'in', 0.2)),
     # "Classic subway tile, but"
     dict(src=BR(8981), t0=vs(13), t1=vs(15), src_in=4.6, speed=1.3, grade='white', zoom=[(0, 1.12), (1, 1.04)]),
@@ -134,7 +147,7 @@ SHOTS = [
     # "You already know, call West Home Improvement."
     sync(20, vs(20), ve(20) + 0.04, grade='talk', zoom=[(0, 1.10), (1, 1.16)]),
     # END — hero shower
-    dict(src=BR(8987), t0=ve(20) + 0.04, t1=DUR, src_in=0.5, speed=0.7, grade='white',
+    dict(src=BR(8987), t0=ve(20) + 0.04, t1=DUR, src_in=0.5, speed=0.5, grade='white',   # real slow motion (60 fps)
          zoom=[(0, 1.16), (0.1, 1.04), (1, 1.10)], dim_ramp=[(0, 0.0), (0.15, 0.32), (1, 0.4)], tin=('flash', 'white', 0.3)),
 ]
 PHOTOS = {}

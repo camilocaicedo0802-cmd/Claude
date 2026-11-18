@@ -49,11 +49,13 @@ VFILT = ('highpass=f=90,lowpass=f=15000,afftdn=nr=12:nf=-40,'
          'acompressor=threshold=-22dB:ratio=3:attack=8:release=120:makeup=3,deesser=i=0.35')
 voice = np.zeros(N, np.float32); vact = np.zeros(N, np.float32)
 _full = {}
-for path in sorted({v[0] for v in T.VOICE}):          # one filtered pass per take, one gain per take
+for path in sorted({v[0] for v in T.VOICE if v[2] - v[1] > 0.01}):          # one filtered pass per take, one gain per take
     x = load(path, None, None, 1, VFILT).astype(np.float64)
-    used = np.concatenate([x[int(a * SR):int(b * SR)] for p_, a, b, tp in T.VOICE if p_ == path])
+    used = np.concatenate([x[int(a * SR):int(b * SR)] for p_, a, b, tp in T.VOICE if p_ == path and b - a > 0.01])
     _full[path] = x * db(-17.0 - meter.integrated_loudness(used))
 for path, a, b, tp in T.VOICE:
+    if b - a < 0.01:
+        continue
     x = fade(_full[path][int(a * SR):int(b * SR)], 0.012, 0.03)
     i = int(tp * SR); n = min(len(x), N - i)
     voice[i:i + n] += x[:n]; vact[i:i + n] = 1
@@ -82,12 +84,6 @@ place(v1 - 0.012, v2 + 0.012, TRK(40))
 place(v2 - 0.012, T.DUR, TRK(40))
 music[:int(0.02 * SR)] *= np.linspace(0, 1, int(0.02 * SR))[:, None]
 fo = int(0.6 * SR); music[-fo:] *= np.linspace(1, 0, fo)[:, None] ** 1.3
-# the walk-in through the door: low-pass the music for a moment and open it on the first line inside
-d0, d1 = int(T.ve(5) * SR), int(T.vs(6) * SR)
-sos = sg.butter(2, 700, 'lp', fs=SR, output='sos')
-lp = sg.sosfiltfilt(sos, music[d0:d1], axis=0)
-k = np.linspace(0, 1, d1 - d0)[:, None] ** 2
-music[d0:d1] = (lp * (1 - k) + music[d0:d1] * k).astype(np.float32)
 ml = meter.integrated_loudness(music.astype(np.float64))
 music *= db(-22.0 - ml)
 # ducking under the voice (look-ahead 40 ms, attack 60 ms, release 300 ms)
@@ -172,7 +168,6 @@ for s in T.SHOTS:
         put(s['t0'], 'audio/camera/camera_flash.wav', -17)
 # riser into the before/after reveal
 put(T.REVEAL, 'audio/riser/sharp_riser.wav', -15)
-put(T.vs(6), 'audio/impact/sub_bass_hit.wav', -18)
 wf.write(STEM + 'sfx.wav', SR, sfx.astype(np.float32))
 json.dump(log, open(STEM + 'sfx_log.json', 'w'), indent=0)
 

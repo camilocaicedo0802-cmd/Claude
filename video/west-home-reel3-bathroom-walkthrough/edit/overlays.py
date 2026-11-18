@@ -40,7 +40,7 @@ _mk = {}
 
 def _mask(n):
     if n not in _mk:
-        im = cv2.imread(ROOT + f'masks/{n:05d}.png', cv2.IMREAD_GRAYSCALE)
+        im = cv2.imread(ROOT + f'masks_b/{n:05d}.png', cv2.IMREAD_GRAYSCALE)
         _mk[n] = None if im is None else cv2.resize(im, (270, 480), interpolation=cv2.INTER_AREA) > 100
     return _mk[n]
 
@@ -155,9 +155,7 @@ class Caption:
             img, base = G.text_rgba(txt, 'black' if key else 'bold', sz, tracking=-40,
                                     grad=(ORANGE_L, ORANGE) if key else None)
             items.append((txt, img, base, ton, key, sz))
-            sfx(ton, 'key', -1.0)
-            if key:
-                sfx(ton, 'pop', -4.0)
+            # v3: subtitles appear silently (sound stays on titles, graphics and transitions)
         space = size * gap
         tot = sum(i[1].width for i in items) + space * (len(items) - 1)
         sc = min(1.0, max_w / tot)
@@ -381,11 +379,24 @@ def build():
     E = []
     OR = (ORANGE_L, ORANGE)
     C = lambda words, t_end, **kw: E.append(Caption(words, t_end, **kw))
-    # ================================================================ HOOK
-    E.append(Scrim(0.0, T.vs(3) + 0.3, 80, 440, 0.35))
-    E.append(Typed('THEY ONLY WANTED', 0.0, T.ve(3), 222, size=88, rate=0.026))
-    E.append(Typed('A NEW SHOWER…', 0.48, T.ve(3), 330, size=118, grad=OR, rate=0.032))
-    sfx(0.48 + 6 * 0.032, 'bass', -6)
+    # ================================================================ INTRO (v3) — outside the house
+    ti = T.vs(0)
+    E.append(Scrim(0.0, ti, 80, 470, 0.32))
+    E.append(Pill('TULSA, OK', 0.05, ti - 0.08, 150, size=44))
+    E.append(Typed('FULL BATHROOM', 0.15, ti - 0.06, 262, size=100, rate=0.028))
+    E.append(Typed('TRANSFORMATION', 0.62, ti - 0.06, 372, size=108, grad=OR, rate=0.03))
+    sfx(0.62 + 13 * 0.03, 'bass', -6)
+    C([('Hey', 'b', T.vs(21)), ('Tulsa,', 'o', wk(21, 'tulsa'))], wk(21, 'we'))
+    C([('we', 'b', wk(21, 'we')), ('have', 'b', wk(21, 'have')), ('another', 'b', wk(21, 'another')), ('beautiful', 'b', wk(21, 'beautiful'))], wk(21, 'west'))
+    C([('West', 'b', wk(21, 'west')), ('Home', 'b', wk(21, 'home')), ('Improvement', 'b', wk(21, 'improvement')), ('bathroom', 'o', wk(21, 'bathroom'))], wk(21, 'we', 1))
+    C([('we', 'b', wk(21, 'we', 1)), ('just', 'b', wk(21, 'just')), ('completed.', 'o', wk(21, 'completed'))], T.vs(22))
+    C([("Let's", 'b', T.vs(22)), ('check', 'b', wk(22, 'check')), ('it', 'b', wk(22, 'it')), ('out.', 'o', wk(22, 'out'))], ti)
+    sfx(ti - 0.1, 'swoosh', -6)
+    # ================================================================ HOOK — Félix in the new bathroom
+    E.append(Scrim(ti, T.vs(3) + 0.3, 80, 440, 0.35))
+    E.append(Typed('THEY ONLY WANTED', ti, T.ve(3), 222, size=88, rate=0.026))
+    E.append(Typed('A NEW SHOWER…', ti + 0.48, T.ve(3), 330, size=118, grad=OR, rate=0.032))
+    sfx(ti + 0.48 + 6 * 0.032, 'bass', -6)
     # the hook title carries the first two lines (Félix walks toward the camera there: no room for subtitles)
     C([('only', 'o', wk(1, 'only')), ('remodel', 'b', wk(2, 'remodel'))], wk(2, 'the'))
     C([('the', 'b', wk(2, 'the')), ('shower', 'o', wk(2, 'shower')), ('area,', 'b', wk(2, 'area'))], T.vs(3))
@@ -400,10 +411,7 @@ def build():
     E.append(Typed('THE WHOLE', T.REVEAL - 0.04, T.vs(5) - 0.12, 720, size=120, rate=0.026, cursor=False))
     E.append(Typed('THING', T.REVEAL + 0.22, T.vs(5) - 0.12, 870, size=190, grad=OR, pop=True, sound=False))
     sfx(T.REVEAL + 0.22, 'impact', -2); sfx(T.REVEAL + 0.22, 'key', 0)
-    # ================================================================ Are you ready to see something nice?
-    C([('Are', 'b', T.vs(5)), ('you', 'b', wk(5, 'you')), ('ready?', 'o', wk(5, 'ready'))], wk(5, 'to'))
-    C([('to', 'b', wk(5, 'to')), ('see', 'b', wk(5, 'see')), ('something', 'b', wk(5, 'something')), ('nice?', 'o', wk(5, 'nice'))], T.ve(5) + 0.1)
-    sfx(T.ve(5) + 0.15, 'swoosh', -4)
+    # (v3: "Are you ready to see something nice?" is removed)
     # ================================================================ big wall / narrow / demoed → open space
     tw = wk(6, 'big')
     C([('There', 'b', T.vs(6)), ('was', 'b', wk(6, 'was')), ('a', 'b', wk(6, 'a'))], tw)
