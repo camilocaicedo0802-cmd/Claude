@@ -78,24 +78,24 @@ PHOTO = lambda name: PH + name
 SHOTS = [
     # HOOK — Peter on camera: "This customer came at us..."
     sync(0, 0.0, vt(0, 6.62), grade='talk', zoom=[(0, 1.06), (0.15, 1.14), (1, 1.18)], cy=-0.02),
-    # v2: the old photos were from another project — dated stock bathrooms that match the words + this project's
+    # v3: ugly, dated, unremodelled stock bathrooms (the v2 stock looked already remodelled) + this project's
     # real in-progress photos (IMG_8311/8312, the new shower being tiled where the jacuzzi was)
     # "...with a couple of problems." — dated master bath with a whirlpool tub and a framed shower
-    dict(src=PHOTO('web_tub_wide.png'), t0=vt(0, 6.62), t1=vs(1), src_in=0, speed=0, grade='before',
+    dict(src=PHOTO('v3_master.png'), t0=vt(0, 6.62), t1=vs(1), src_in=0, speed=0, grade='before',
          zoom=[(0, 1.30), (0.2, 1.14), (1, 1.10)], tin=('zoom', 'in', 0.18)),
     # "One, they needed to remodel an existing shower" — an old framed shower stall, then a tired tile shower
-    dict(src=PHOTO('web_shower_stall.png'), t0=vs(1), t1=vt(1, 9.95), src_in=0, speed=0, grade='before',
+    dict(src=PHOTO('v3_shower_stall.png'), t0=vs(1), t1=vt(1, 9.95), src_in=0, speed=0, grade='before',
          zoom=[(0, 1.10), (1, 1.18)], tin=('whip', 'left', 0.2)),
-    dict(src=PHOTO('web_shower_old.png'), t0=vt(1, 9.95), t1=vs(2), src_in=0, speed=0, grade='before',
+    dict(src=PHOTO('v3_shower_mixer.png'), t0=vt(1, 9.95), t1=vs(2), src_in=0, speed=0, grade='before',
          zoom=[(0, 1.12), (1, 1.22)]),
     # "and two, they had a jacuzzi tub" — Peter; "that was not usable space anymore" — the whirlpool tub
     sync(2, vs(2), vt(2, 13.80), grade='talk', zoom=[(0, 1.20), (1, 1.24)], cy=-0.04),
-    dict(src=PHOTO('web_tub_jets.png'), t0=vt(2, 13.80), t1=vt(2, 15.25), src_in=0, speed=0, grade='before',
+    dict(src=PHOTO('v3_jacuzzi_corner.png'), t0=vt(2, 13.80), t1=vt(2, 15.25), src_in=0, speed=0, grade='before',
          zoom=[(0, 1.12), (1, 1.22)], tin=('zoom', 'in', 0.18)),
-    dict(src=PHOTO('web_tub_close.png'), t0=vt(2, 15.25), t1=vs(3), src_in=0, speed=0, grade='before',
+    dict(src=PHOTO('v3_tub_neglected.png'), t0=vt(2, 15.25), t1=vs(3), src_in=0, speed=0, grade='before',
          zoom=[(0, 1.22), (1, 1.10)]),
     # "We suggested to turn the jacuzzi tub area into the new shower area," — jacuzzi, then this project's real process
-    dict(src=PHOTO('web_jacuzzi.png'), t0=vs(3), t1=vt(3, 19.30), src_in=0, speed=0, grade='before',
+    dict(src=PHOTO('v3_tub_area.png'), t0=vs(3), t1=vt(3, 19.30), src_in=0, speed=0, grade='before',
          zoom=[(0, 1.10), (1, 1.20)], tin=('whip', 'up', 0.2)),
     dict(src=PHOTO('process_2.png'), t0=vt(3, 19.30), t1=vt(3, 20.95), src_in=0, speed=0, grade='talk',
          zoom=[(0, 1.18), (1, 1.08)]),
@@ -130,6 +130,16 @@ SHOTS = [
     dict(src=BR(9041), t0=ve(9) + 0.05, t1=DUR, src_in=0.2, speed=0.7, grade='beige',
          zoom=[(0, 1.16), (0.1, 1.04), (1, 1.10)], dim_ramp=[(0, 0.0), (0.12, 0.38), (1, 0.44)], tin=('flash', 'white', 0.3)),
 ]
+# v3 (client: the before photos looked already remodelled): ugly, dated, unremodelled bathrooms from Unsplash
+# (free licence, credits in credits_web.json) — plate -> (stock file in stock_v3/, horizontal centre of the 9:16 crop)
+WEB_V3 = {
+    'v3_master.png': ('old_master_wide.jpg', 0.5),        # dim teal-tile bath, curtain over the tub, stained rug
+    'v3_shower_stall.png': ('old_shower_stall.jpg', 0.5),  # 90s terracotta/white tile corner shower
+    'v3_shower_mixer.png': ('old_shower_detail.jpg', 0.5), # grimy chrome shower mixer, water spots, rust
+    'v3_jacuzzi_corner.png': ('old_jacuzzi.jpg', 0.5),     # 90s corner garden tub, sage walls, seashell prints
+    'v3_tub_neglected.png': ('old_tub_detail.jpg', 0.5),   # scuffed tub, cracked teal tile, sponges
+    'v3_tub_area.png': ('old_tub_area_alt.jpg', 0.75),    # cluttered, worn bathroom: tub + handheld shower, laundry
+}
 PHOTOS = {   # photo -> source (exif-rotated, center-cropped to 9:16)
     'old_vanity.png': 'IMG_7503(1).HEIC',
     'old_shower.png': 'IMG_6529.HEIC',

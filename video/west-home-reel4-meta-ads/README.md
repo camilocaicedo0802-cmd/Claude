@@ -1,5 +1,22 @@
 # West Home Improvement · Reel 4 — Meta Ads: del jacuzzi a una ducha enorme (South Tulsa)
 
+**v3 (ajuste del cliente):** las fotos del "antes" de la v2 se veían limpias y ya remodeladas. Se cambiaron por baños feos,
+viejos y sin remodelar, todos de Unsplash con licencia libre (créditos en `credits_web.json`):
+
+| Tiempo | Voz | Foto |
+| --- | --- | --- |
+| 1,26–2,78 | …with a couple of problems. | Baño de azulejo verde azulado de los 70–80, oscuro, con cortina sobre la tina y tapete manchado (Devon Wilson) |
+| 2,78–4,20 | One, they needed to remodel | Ducha de esquina de los 90 con azulejo terracota y cenefa (Lisa Anna) |
+| 4,20–5,93 | an existing shower | Mezcladora de ducha cromada, sucia y con sarro (Howard Lee) |
+| 7,89–9,34 | that was not usable | Tina de esquina tipo jacuzzi de los 90, paredes verde salvia y cuadros de conchas (Jake Johnson) |
+| 9,34–11,01 | space anymore | Tina rayada vista desde arriba, azulejo turquesa agrietado (Francesca Grima) |
+| 11,01–12,59 | We suggested to turn the jacuzzi tub area | Baño viejo y desordenado: tina con regadera de mano y ropa colgada (Martin Jaroš) |
+
+- Se mantiene el grade apagado `before` y las dos fotos reales del proceso de esta ducha (IMG_8311/8312) en "into the new
+  shower area".
+- `edit/prep_web.py` recorta cada foto a 9:16 con su centro (`WEB_V3` en `timeline.py`) a 1620×2880.
+- Música, textos, tiempos y el resto del video no cambian. Solo se volvieron a renderizar los primeros 18,4 s.
+
 **v2 (ajustes del cliente):**
 - Se quitó la píldora SOUTH TULSA · SHOWER REMODEL del inicio.
 - **Antes:** las fotos del "antes" de la v1 eran de otro proyecto, así que se quitaron. Ahora cada imagen corresponde a lo que
