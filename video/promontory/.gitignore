@@ -1,0 +1,7 @@
+assets/
+work/
+out/
+venv/
+chunks/
+*.mp4
+*.wav
