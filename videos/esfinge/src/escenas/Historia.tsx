@@ -502,7 +502,7 @@ const Cincel: React.FC<P> = ({d, h, e, s}) => {
 				))}
 			</svg>
 			<Actor {...actor}>
-				<Muneco ropa={ROPA_FANATICO} pose={{...manosFrente(mano, [316, 470]), mi: 'agarra', md: 'agarra', cuerpo: -6 * fase}} objIzq={<Martillo rot={160} />} ojos="entrecerrados" cejas="enojado" boca="dientes" />
+				<Muneco ropa={ROPA_FANATICO} pose={{...manosFrente(mano, [316, 470]), mi: 'agarra', md: 'agarra', cuerpo: -6 * fase}} objIzq={<Martillo rot={-90} />} ojos="entrecerrados" cejas="enojado" boca="dientes" />
 			</Actor>
 		</Toma>
 	);
