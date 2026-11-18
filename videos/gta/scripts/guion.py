@@ -4,7 +4,7 @@ Cada frase: (texto hablado, sección, énfasis, etiqueta libre).
 """
 
 GUION = [
-    ("¡GTA existe por un bug!", "gancho", True, ""),
+    ("¡Ge te a existe por un bug!", "gancho", True, ""),
     ("Un error que volvía loca a la policía...", "gancho", False, ""),
     ("y eso ni siquiera es lo más loco de su historia.", "gancho", False, ""),
     ("Al principio no era un juego de criminales: era de carreras, policías contra ladrones.", "origen", False, ""),
@@ -63,7 +63,8 @@ ESTILO_EXTRA = (
 )
 
 PRONUNCIACION = (
-    "Pronuncia 'GTA' letra por letra en español: 'ge-te-a'. Pronuncia 'bug' en inglés ('bag'). "
+    "'Ge te a' es la sigla del videojuego: dila letra por letra EN ESPAÑOL, 'ge, te, a' (la ge suena como 'je'), "
+    "seguidas y con energía; nunca la digas en inglés. Pronuncia 'bug' en inglés ('bag'). "
     "Pronuncia 'Grand Theft Auto' en inglés."
 )
 

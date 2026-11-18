@@ -107,6 +107,10 @@ const W = {
 
 export const FIN_VIDEO = finFrase(22) + 30;
 
+/* La coreografía de las persecuciones se escribió en cuadros; se ancla a su palabra para seguirla si cambia la voz. */
+const tPer = (n: number) => n - 706 + W.embisten;
+const tEsc = (n: number) => n - 899 + W.escaparse;
+
 type P = {d: number; h: number; e: Transicion; s: Transicion};
 type Lugar = {x: number; y: number; alto: number};
 
@@ -329,10 +333,10 @@ const ErrorCodigo: React.FC<P> = ({d, h, e, s}) => {
 /** Persecución dentro del juego, a pantalla completa. */
 const Persecucion: React.FC<P> = ({d, h, e, s}) => {
 	const f = useCurrentFrame();
-	const jug = ruta(f, [[d, 40, 2600, 0], [716, 40, 1676, 0], [722, 70, 1630, 22], [736, 60, 1580, 18], [748, 60, 1576, 18], [766, 190, 1560, 70], [790, 196, 1558, 72]]);
-	const p1 = ruta(f, [[d, 40, 2950, 0], [690, 40, 2288, 0], [706, 40, 1930, 0], [716, 40, 1820, 0], [736, 40, 1720, 0], [790, 40, 1716, 0]]);
-	const p2 = ruta(f, [[d, -40, 700, 180], [712, -40, 1120, 180], [730, 20, 1440, 200], [790, 20, 1440, 200]]);
-	const p3 = ruta(f, [[d, -40, 3100, 0], [712, -40, 1960, 0], [730, -60, 1600, 10], [748, -60, 1590, 10], [766, 70, 1578, 60], [790, 76, 1576, 62]]);
+	const jug = ruta(f, [[d, 40, 2600, 0], [tPer(716), 40, 1676, 0], [tPer(722), 70, 1630, 22], [tPer(736), 60, 1580, 18], [tPer(748), 60, 1576, 18], [tPer(766), 190, 1560, 70], [tPer(790), 196, 1558, 72]]);
+	const p1 = ruta(f, [[d, 40, 2950, 0], [tPer(690), 40, 2288, 0], [tPer(706), 40, 1930, 0], [tPer(716), 40, 1820, 0], [tPer(736), 40, 1720, 0], [tPer(790), 40, 1716, 0]]);
+	const p2 = ruta(f, [[d, -40, 700, 180], [tPer(712), -40, 1120, 180], [tPer(730), 20, 1440, 200], [tPer(790), 20, 1440, 200]]);
+	const p3 = ruta(f, [[d, -40, 3100, 0], [tPer(712), -40, 1960, 0], [tPer(730), -60, 1600, 10], [tPer(748), -60, 1590, 10], [tPer(766), 70, 1578, 60], [tPer(790), 76, 1576, 62]]);
 	const autos: AutoA[] = [
 		{...p1, policia: true},
 		{...p2, policia: true},
@@ -397,15 +401,15 @@ const Probadores: React.FC<P> = ({d, h, e, s}) => {
 
 const Escape: React.FC<P> = ({d, h, e, s}) => {
 	const f = useCurrentFrame();
-	const jug = ruta(f, [[d, 40, 3300, 0], [895, 40, 2650, 0], [903, 90, 2602, 60], [909, 170, 2600, 90], [960, 900, 2600, 90]]);
+	const jug = ruta(f, [[d, 40, 3300, 0], [tEsc(895), 40, 2650, 0], [tEsc(903), 90, 2602, 60], [tEsc(909), 170, 2600, 90], [tEsc(960), 900, 2600, 90]]);
 	const pol: AutoA[] = [
-		{...ruta(f, [[d, 40, 3520, 0], [899, 40, 2860, 0], [911, 40, 2650, 0], [918, 60, 2570, 30]]), policia: true},
-		{...ruta(f, [[d, 40, 3740, 0], [905, 40, 2900, 0], [917, 40, 2720, 0], [922, 30, 2680, -20]]), policia: true},
-		{...ruta(f, [[d, -40, 3960, 0], [911, -40, 3000, 0], [924, -30, 2780, -10], [930, -80, 2720, -60]]), policia: true},
-		{...ruta(f, [[d, 40, 4180, 0], [917, 40, 3100, 0], [930, 40, 2880, 0], [936, 110, 2810, 40]]), policia: true},
+		{...ruta(f, [[d, 40, 3520, 0], [tEsc(899), 40, 2860, 0], [tEsc(911), 40, 2650, 0], [tEsc(918), 60, 2570, 30]]), policia: true},
+		{...ruta(f, [[d, 40, 3740, 0], [tEsc(905), 40, 2900, 0], [tEsc(917), 40, 2720, 0], [tEsc(922), 30, 2680, -20]]), policia: true},
+		{...ruta(f, [[d, -40, 3960, 0], [tEsc(911), -40, 3000, 0], [tEsc(924), -30, 2780, -10], [tEsc(930), -80, 2720, -60]]), policia: true},
+		{...ruta(f, [[d, 40, 4180, 0], [tEsc(917), 40, 3100, 0], [tEsc(930), 40, 2880, 0], [tEsc(936), 110, 2810, 40]]), policia: true},
 	];
-	const cx = interpolate(f, [d, 905, 960], [20, 150, 400], clamp);
-	const cy = f < 895 ? jug.y + 110 : interpolate(f, [895, 912], [2760, 2720], clamp);
+	const cx = interpolate(f, [d, tEsc(905), tEsc(960)], [20, 150, 400], clamp);
+	const cy = f < tEsc(895) ? jug.y + 110 : interpolate(f, [tEsc(895), tEsc(912)], [2760, 2720], clamp);
 	return (
 		<Toma
 			escena={<AbsoluteFill style={{background: '#5d6470'}} />}
@@ -414,7 +418,7 @@ const Escape: React.FC<P> = ({d, h, e, s}) => {
 			entrada={e}
 			salida={s}
 			cam={{s: [1.0, 1.03]}}
-			golpes={[[W.escaparse, 0.06], [918, 0.04], [930, 0.04]]}
+			golpes={[[W.escaparse, 0.06], [tEsc(918), 0.04], [tEsc(930), 0.04]]}
 			encima={
 				<>
 					<Barrido fuerza={0.6} />
@@ -425,10 +429,10 @@ const Escape: React.FC<P> = ({d, h, e, s}) => {
 			}
 		>
 			<MapaJuego cx={cx} cy={cy} zoom={1.0} ancho={1080} alto={1920} autos={[...pol, {...jug, color: '#e3262e', jugador: true}]}>
-				<ChoqueSVG x={60} y={2600} desde={918} />
-				<ChoqueSVG x={40} y={2700} desde={922} />
-				<ChoqueSVG x={-60} y={2740} desde={930} />
-				<ChoqueSVG x={90} y={2840} desde={936} />
+				<ChoqueSVG x={60} y={2600} desde={tEsc(918)} />
+				<ChoqueSVG x={40} y={2700} desde={tEsc(922)} />
+				<ChoqueSVG x={-60} y={2740} desde={tEsc(930)} />
+				<ChoqueSVG x={90} y={2840} desde={tEsc(936)} />
 			</MapaJuego>
 		</Toma>
 	);
@@ -705,8 +709,8 @@ export const SONIDOS: [string, number, number][] = [
 	['pop', W.soltarlo - 4, 0.3],
 	['sirena', W.lo10 - 4, 0.3],
 	['derrape', W.escaparse - 8, 0.4],
-	['choque', 918, 0.4],
-	['choque', 930, 0.4],
+	['choque', tEsc(918), 0.4],
+	['choque', tEsc(930), 0.4],
 	['burbujas', W.bug12 - 4, 0.3],
 	['objeto', W.contrario - 4, 0.4],
 	['garabato', W.convirtieron + 6, 0.3],

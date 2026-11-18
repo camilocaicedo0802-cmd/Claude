@@ -18,7 +18,11 @@ sys.path.insert(0, os.path.dirname(__file__))
 import guion as _g  # noqa: E402
 from guion import DIRECCION, GUION, INDICACIONES, PRONUNCIACION  # noqa: E402
 
-ESTILO = (
+def estilo(indices):
+    return ESTILO_BASE + "\n".join(f"{n + 1}. {DIRECCION[i]}" for n, i in enumerate(indices))
+
+
+ESTILO_BASE = (
     INDICACIONES
     + " Eres un narrador masculino latinoamericano (español neutro, con seseo) que cuenta historias en redes sociales: "
     "voz narrativa, cálida y envolvente, con muchas subidas y bajadas de entonación, pausas dramáticas antes de cada "
@@ -27,7 +31,6 @@ ESTILO = (
     + " " + getattr(_g, 'ESTILO_EXTRA', '')
     + "\n"
     "Dirección por frase (NO la leas en voz alta, solo úsala para interpretar):\n"
-    + "\n".join(f"{i + 1}. {d}" for i, d in enumerate(DIRECCION))
 )
 
 
@@ -36,10 +39,12 @@ def main():
     ap.add_argument("--modelo", default="gemini-2.5-flash-preview-tts")
     ap.add_argument("--voz", default="Charon")
     ap.add_argument("--salida", default="public/voz-cruda.wav")
+    ap.add_argument("--frases", default="", help="índices separados por coma: narra solo esas frases (para rehacer una parte)")
     args = ap.parse_args()
-    guion = "\n".join(t for t, *_ in GUION)
+    indices = [int(i) for i in args.frases.split(",") if i.strip()] or list(range(len(GUION)))
+    guion = "\n".join(GUION[i][0] for i in indices)
     cuerpo = {
-        "contents": [{"parts": [{"text": f"{ESTILO}\n\nTexto a narrar (lee solo esto):\n{guion}"}]}],
+        "contents": [{"parts": [{"text": f"{estilo(indices)}\n\nTexto a narrar (lee solo esto):\n{guion}"}]}],
         "generationConfig": {
             "responseModalities": ["AUDIO"],
             "speechConfig": {"voiceConfig": {"prebuiltVoiceConfig": {"voiceName": args.voz}}},

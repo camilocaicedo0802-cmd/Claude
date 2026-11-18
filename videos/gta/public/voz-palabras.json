@@ -1,183 +1,183 @@
 {
  "voz": "Gemini 2.5 Flash TTS · Charon",
- "duracion": 58.446,
+ "duracion": 58.269,
  "frases": [
   {
    "i": 0,
-   "texto": "¡GTA existe por un bug!",
+   "texto": "¡Ge te a existe por un bug!",
    "seccion": "gancho",
    "inicio": 0.0,
-   "fin": 2.273
+   "fin": 2.6
   },
   {
    "i": 1,
    "texto": "Un error que volvía loca a la policía...",
    "seccion": "gancho",
-   "inicio": 2.714,
-   "fin": 4.768
+   "inicio": 3.041,
+   "fin": 5.077
   },
   {
    "i": 2,
    "texto": "y eso ni siquiera es lo más loco de su historia.",
    "seccion": "gancho",
-   "inicio": 5.0,
-   "fin": 7.145
+   "inicio": 5.4,
+   "fin": 7.473
   },
   {
    "i": 3,
    "texto": "Al principio no era un juego de criminales: era de carreras, policías contra ladrones.",
    "seccion": "origen",
-   "inicio": 7.623,
-   "fin": 12.132
+   "inicio": 7.932,
+   "fin": 12.478
   },
   {
    "i": 4,
    "texto": "Y era... ¡aburridísimo!",
    "seccion": "origen",
-   "inicio": 12.577,
-   "fin": 14.905
+   "inicio": 12.868,
+   "fin": 15.232
   },
   {
    "i": 5,
    "texto": "Tan aburrido que estuvo a punto de cancelarse.",
    "seccion": "escalon",
-   "inicio": 15.382,
-   "fin": 17.527
+   "inicio": 15.673,
+   "fin": 17.836
   },
   {
    "i": 6,
    "texto": "Hasta que un error en el código vuelve locos a los policías:",
    "seccion": "escalon2",
-   "inicio": 17.95,
-   "fin": 21.386
+   "inicio": 18.25,
+   "fin": 21.741
   },
   {
    "i": 7,
    "texto": "ya no te persiguen...",
    "seccion": "escalon2",
-   "inicio": 21.386,
-   "fin": 23.095
+   "inicio": 22.027,
+   "fin": 23.082
   },
   {
    "i": 8,
    "texto": "¡te embisten, te encierran, te sacan de la calle!",
    "seccion": "escalon2",
-   "inicio": 23.305,
-   "fin": 25.687
+   "inicio": 23.082,
+   "fin": 25.882
   },
   {
    "i": 9,
    "texto": "Y los que lo prueban no quieren soltarlo.",
    "seccion": "climax",
-   "inicio": 26.232,
-   "fin": 28.214
+   "inicio": 26.318,
+   "fin": 28.391
   },
   {
    "i": 10,
    "texto": "¿Lo más divertido?",
    "seccion": "climax",
-   "inicio": 28.659,
-   "fin": 29.404
+   "inicio": 28.832,
+   "fin": 29.595
   },
   {
    "i": 11,
    "texto": "¡Escaparse de esos policías locos!",
    "seccion": "climax",
-   "inicio": 29.959,
-   "fin": 31.468
+   "inicio": 30.132,
+   "fin": 31.659
   },
   {
    "i": 12,
    "texto": "¿Y arreglaron el bug?",
    "seccion": "climax",
-   "inicio": 31.814,
-   "fin": 32.868
+   "inicio": 31.905,
+   "fin": 33.05
   },
   {
    "i": 13,
    "texto": "¡Al contrario!",
    "seccion": "climax",
-   "inicio": 33.15,
-   "fin": 33.786
+   "inicio": 33.364,
+   "fin": 34.019
   },
   {
    "i": 14,
    "texto": "Lo convirtieron en el juego...",
    "seccion": "climax",
-   "inicio": 34.232,
-   "fin": 35.614
+   "inicio": 34.482,
+   "fin": 35.809
   },
   {
    "i": 15,
    "texto": "y le pusieron Grand Theft Auto: robo de autos.",
    "seccion": "climax",
-   "inicio": 35.809,
-   "fin": 39.068
+   "inicio": 36.045,
+   "fin": 39.281
   },
   {
    "i": 16,
    "texto": "Pero lo más loco vino después.",
    "seccion": "golpe",
-   "inicio": 39.564,
-   "fin": 41.454
+   "inicio": 39.759,
+   "fin": 41.632
   },
   {
    "i": 17,
    "texto": "Cuando en Inglaterra pidieron prohibirlo por violento...",
    "seccion": "golpe",
-   "inicio": 41.927,
-   "fin": 44.473
+   "inicio": 42.086,
+   "fin": 44.669
   },
   {
    "i": 18,
    "texto": "esa polémica la había inventado su propia distribuidora.",
    "seccion": "golpe",
-   "inicio": 44.473,
-   "fin": 48.127
+   "inicio": 44.868,
+   "fin": 47.977
   },
   {
    "i": 19,
    "texto": "Contrataron a un experto en escándalos para que todo el mundo hablara del juego.",
    "seccion": "golpe",
-   "inicio": 48.509,
-   "fin": 52.019
+   "inicio": 48.523,
+   "fin": 51.887
   },
   {
    "i": 20,
    "texto": "Y vaya que hablaron.",
    "seccion": "golpe",
-   "inicio": 52.382,
-   "fin": 53.4
+   "inicio": 52.214,
+   "fin": 53.286
   },
   {
    "i": 21,
    "texto": "Veredicto: ¡real!",
    "seccion": "veredicto",
-   "inicio": 53.955,
-   "fin": 55.318
+   "inicio": 54.15,
+   "fin": 55.204
   },
   {
    "i": 22,
    "texto": "¿Genios del marketing... o pura suerte?",
    "seccion": "pregunta",
-   "inicio": 55.764,
-   "fin": 58.146
+   "inicio": 55.745,
+   "fin": 57.964
   }
  ],
  "palabras": [
   {
-   "texto": "gta",
+   "texto": "ge",
    "inicio": 0.0,
-   "duracion": 0.673,
-   "visible": "¡GTA",
+   "duracion": 0.649,
+   "visible": "GTA",
    "enfasis": true,
    "frase": 0,
    "seccion": "gancho"
   },
   {
    "texto": "existe",
-   "inicio": 0.673,
-   "duracion": 0.745,
+   "inicio": 0.649,
+   "duracion": 0.732,
    "visible": "EXISTE",
    "enfasis": true,
    "frase": 0,
@@ -185,8 +185,8 @@
   },
   {
    "texto": "por",
-   "inicio": 1.418,
-   "duracion": 0.4,
+   "inicio": 1.382,
+   "duracion": 0.618,
    "visible": "POR",
    "enfasis": true,
    "frase": 0,
@@ -194,8 +194,8 @@
   },
   {
    "texto": "un",
-   "inicio": 1.818,
-   "duracion": 0.182,
+   "inicio": 2.0,
+   "duracion": 0.2,
    "visible": "UN",
    "enfasis": true,
    "frase": 0,
@@ -203,8 +203,8 @@
   },
   {
    "texto": "bug",
-   "inicio": 2.0,
-   "duracion": 0.273,
+   "inicio": 2.2,
+   "duracion": 0.4,
    "visible": "BUG!",
    "enfasis": true,
    "frase": 0,
@@ -212,7 +212,7 @@
   },
   {
    "texto": "un",
-   "inicio": 2.714,
+   "inicio": 3.041,
    "duracion": 0.273,
    "visible": "Un",
    "enfasis": false,
@@ -221,8 +221,8 @@
   },
   {
    "texto": "error",
-   "inicio": 2.986,
-   "duracion": 0.218,
+   "inicio": 3.314,
+   "duracion": 0.2,
    "visible": "error",
    "enfasis": true,
    "frase": 1,
@@ -230,7 +230,7 @@
   },
   {
    "texto": "que",
-   "inicio": 3.205,
+   "inicio": 3.514,
    "duracion": 0.2,
    "visible": "que",
    "enfasis": false,
@@ -239,7 +239,7 @@
   },
   {
    "texto": "volvia",
-   "inicio": 3.405,
+   "inicio": 3.714,
    "duracion": 0.309,
    "visible": "volvía",
    "enfasis": false,
@@ -248,8 +248,8 @@
   },
   {
    "texto": "loca",
-   "inicio": 3.714,
-   "duracion": 0.291,
+   "inicio": 4.023,
+   "duracion": 0.364,
    "visible": "loca",
    "enfasis": false,
    "frase": 1,
@@ -257,8 +257,8 @@
   },
   {
    "texto": "a",
-   "inicio": 4.005,
-   "duracion": 0.073,
+   "inicio": 4.386,
+   "duracion": 0.164,
    "visible": "a",
    "enfasis": false,
    "frase": 1,
@@ -266,8 +266,8 @@
   },
   {
    "texto": "la",
-   "inicio": 4.077,
-   "duracion": 0.182,
+   "inicio": 4.55,
+   "duracion": 0.06,
    "visible": "la",
    "enfasis": false,
    "frase": 1,
@@ -275,8 +275,8 @@
   },
   {
    "texto": "policia",
-   "inicio": 4.259,
-   "duracion": 0.509,
+   "inicio": 4.586,
+   "duracion": 0.491,
    "visible": "policía...",
    "enfasis": true,
    "frase": 1,
@@ -284,8 +284,8 @@
   },
   {
    "texto": "y",
-   "inicio": 5.0,
-   "duracion": 0.273,
+   "inicio": 5.4,
+   "duracion": 0.2,
    "visible": "y",
    "enfasis": false,
    "frase": 2,
@@ -293,8 +293,8 @@
   },
   {
    "texto": "eso",
-   "inicio": 5.273,
-   "duracion": 0.218,
+   "inicio": 5.6,
+   "duracion": 0.2,
    "visible": "eso",
    "enfasis": false,
    "frase": 2,
@@ -302,7 +302,7 @@
   },
   {
    "texto": "ni",
-   "inicio": 5.491,
+   "inicio": 5.8,
    "duracion": 0.164,
    "visible": "ni",
    "enfasis": false,
@@ -311,7 +311,7 @@
   },
   {
    "texto": "siquiera",
-   "inicio": 5.655,
+   "inicio": 5.964,
    "duracion": 0.364,
    "visible": "siquiera",
    "enfasis": false,
@@ -320,7 +320,7 @@
   },
   {
    "texto": "es",
-   "inicio": 6.018,
+   "inicio": 6.327,
    "duracion": 0.109,
    "visible": "es",
    "enfasis": false,
@@ -329,7 +329,7 @@
   },
   {
    "texto": "lo",
-   "inicio": 6.127,
+   "inicio": 6.436,
    "duracion": 0.091,
    "visible": "lo",
    "enfasis": false,
@@ -338,7 +338,7 @@
   },
   {
    "texto": "mas",
-   "inicio": 6.218,
+   "inicio": 6.527,
    "duracion": 0.164,
    "visible": "más",
    "enfasis": false,
@@ -347,7 +347,7 @@
   },
   {
    "texto": "loco",
-   "inicio": 6.382,
+   "inicio": 6.691,
    "duracion": 0.236,
    "visible": "loco",
    "enfasis": false,
@@ -356,7 +356,7 @@
   },
   {
    "texto": "de",
-   "inicio": 6.618,
+   "inicio": 6.927,
    "duracion": 0.109,
    "visible": "de",
    "enfasis": false,
@@ -365,8 +365,8 @@
   },
   {
    "texto": "su",
-   "inicio": 6.727,
-   "duracion": 0.109,
+   "inicio": 7.036,
+   "duracion": 0.127,
    "visible": "su",
    "enfasis": false,
    "frase": 2,
@@ -374,7 +374,7 @@
   },
   {
    "texto": "historia",
-   "inicio": 6.836,
+   "inicio": 7.164,
    "duracion": 0.309,
    "visible": "historia.",
    "enfasis": false,
@@ -383,8 +383,8 @@
   },
   {
    "texto": "al",
-   "inicio": 7.623,
-   "duracion": 0.236,
+   "inicio": 7.932,
+   "duracion": 0.255,
    "visible": "Al",
    "enfasis": false,
    "frase": 3,
@@ -392,8 +392,8 @@
   },
   {
    "texto": "principio",
-   "inicio": 7.859,
-   "duracion": 0.345,
+   "inicio": 8.186,
+   "duracion": 0.327,
    "visible": "principio",
    "enfasis": false,
    "frase": 3,
@@ -401,8 +401,8 @@
   },
   {
    "texto": "no",
-   "inicio": 8.205,
-   "duracion": 0.4,
+   "inicio": 8.514,
+   "duracion": 0.418,
    "visible": "no",
    "enfasis": false,
    "frase": 3,
@@ -410,7 +410,7 @@
   },
   {
    "texto": "era",
-   "inicio": 8.605,
+   "inicio": 8.932,
    "duracion": 0.127,
    "visible": "era",
    "enfasis": false,
@@ -419,8 +419,8 @@
   },
   {
    "texto": "un",
-   "inicio": 8.732,
-   "duracion": 0.091,
+   "inicio": 9.059,
+   "duracion": 0.073,
    "visible": "un",
    "enfasis": false,
    "frase": 3,
@@ -428,7 +428,7 @@
   },
   {
    "texto": "juego",
-   "inicio": 8.823,
+   "inicio": 9.132,
    "duracion": 0.164,
    "visible": "juego",
    "enfasis": false,
@@ -437,7 +437,7 @@
   },
   {
    "texto": "de",
-   "inicio": 8.986,
+   "inicio": 9.295,
    "duracion": 0.182,
    "visible": "de",
    "enfasis": false,
@@ -446,8 +446,8 @@
   },
   {
    "texto": "criminales",
-   "inicio": 9.168,
-   "duracion": 0.618,
+   "inicio": 9.477,
+   "duracion": 0.6,
    "visible": "criminales:",
    "enfasis": false,
    "frase": 3,
@@ -455,8 +455,8 @@
   },
   {
    "texto": "era",
-   "inicio": 10.114,
-   "duracion": 0.182,
+   "inicio": 10.441,
+   "duracion": 0.164,
    "visible": "era",
    "enfasis": false,
    "frase": 3,
@@ -464,7 +464,7 @@
   },
   {
    "texto": "de",
-   "inicio": 10.295,
+   "inicio": 10.605,
    "duracion": 0.164,
    "visible": "de",
    "enfasis": false,
@@ -473,8 +473,8 @@
   },
   {
    "texto": "carreras",
-   "inicio": 10.459,
-   "duracion": 0.418,
+   "inicio": 10.768,
+   "duracion": 0.436,
    "visible": "carreras,",
    "enfasis": false,
    "frase": 3,
@@ -482,8 +482,8 @@
   },
   {
    "texto": "policias",
-   "inicio": 11.132,
-   "duracion": 0.4,
+   "inicio": 11.459,
+   "duracion": 0.382,
    "visible": "policías",
    "enfasis": false,
    "frase": 3,
@@ -491,7 +491,7 @@
   },
   {
    "texto": "contra",
-   "inicio": 11.532,
+   "inicio": 11.841,
    "duracion": 0.273,
    "visible": "contra",
    "enfasis": false,
@@ -500,8 +500,8 @@
   },
   {
    "texto": "ladrones",
-   "inicio": 11.805,
-   "duracion": 0.327,
+   "inicio": 12.114,
+   "duracion": 0.364,
    "visible": "ladrones.",
    "enfasis": false,
    "frase": 3,
@@ -509,8 +509,8 @@
   },
   {
    "texto": "y",
-   "inicio": 12.577,
-   "duracion": 0.255,
+   "inicio": 12.868,
+   "duracion": 0.291,
    "visible": "Y",
    "enfasis": true,
    "frase": 4,
@@ -518,8 +518,8 @@
   },
   {
    "texto": "era",
-   "inicio": 12.832,
-   "duracion": 1.291,
+   "inicio": 13.159,
+   "duracion": 1.2,
    "visible": "ERA...",
    "enfasis": true,
    "frase": 4,
@@ -527,8 +527,8 @@
   },
   {
    "texto": "aburridisimo",
-   "inicio": 14.123,
-   "duracion": 0.782,
+   "inicio": 14.359,
+   "duracion": 0.873,
    "visible": "¡ABURRIDÍSIMO!",
    "enfasis": true,
    "frase": 4,
@@ -536,8 +536,8 @@
   },
   {
    "texto": "tan",
-   "inicio": 15.382,
-   "duracion": 0.236,
+   "inicio": 15.673,
+   "duracion": 0.255,
    "visible": "Tan",
    "enfasis": false,
    "frase": 5,
@@ -545,7 +545,7 @@
   },
   {
    "texto": "aburrido",
-   "inicio": 15.618,
+   "inicio": 15.927,
    "duracion": 0.436,
    "visible": "aburrido",
    "enfasis": false,
@@ -554,8 +554,8 @@
   },
   {
    "texto": "que",
-   "inicio": 16.055,
-   "duracion": 0.182,
+   "inicio": 16.364,
+   "duracion": 0.2,
    "visible": "que",
    "enfasis": false,
    "frase": 5,
@@ -563,8 +563,8 @@
   },
   {
    "texto": "estuvo",
-   "inicio": 16.236,
-   "duracion": 0.255,
+   "inicio": 16.564,
+   "duracion": 0.236,
    "visible": "estuvo",
    "enfasis": false,
    "frase": 5,
@@ -572,8 +572,8 @@
   },
   {
    "texto": "a",
-   "inicio": 16.491,
-   "duracion": 0.145,
+   "inicio": 16.8,
+   "duracion": 0.164,
    "visible": "a",
    "enfasis": false,
    "frase": 5,
@@ -581,8 +581,8 @@
   },
   {
    "texto": "punto",
-   "inicio": 16.636,
-   "duracion": 0.182,
+   "inicio": 16.964,
+   "duracion": 0.164,
    "visible": "punto",
    "enfasis": false,
    "frase": 5,
@@ -590,7 +590,7 @@
   },
   {
    "texto": "de",
-   "inicio": 16.818,
+   "inicio": 17.127,
    "duracion": 0.2,
    "visible": "de",
    "enfasis": false,
@@ -599,7 +599,7 @@
   },
   {
    "texto": "cancelarse",
-   "inicio": 17.018,
+   "inicio": 17.327,
    "duracion": 0.509,
    "visible": "cancelarse.",
    "enfasis": true,
@@ -608,8 +608,8 @@
   },
   {
    "texto": "hasta",
-   "inicio": 17.95,
-   "duracion": 0.418,
+   "inicio": 18.25,
+   "duracion": 0.473,
    "visible": "Hasta",
    "enfasis": false,
    "frase": 6,
@@ -617,8 +617,8 @@
   },
   {
    "texto": "que",
-   "inicio": 18.368,
-   "duracion": 0.164,
+   "inicio": 18.723,
+   "duracion": 0.182,
    "visible": "que",
    "enfasis": false,
    "frase": 6,
@@ -626,8 +626,8 @@
   },
   {
    "texto": "un",
-   "inicio": 18.532,
-   "duracion": 0.182,
+   "inicio": 18.905,
+   "duracion": 0.164,
    "visible": "un",
    "enfasis": false,
    "frase": 6,
@@ -635,7 +635,7 @@
   },
   {
    "texto": "error",
-   "inicio": 18.714,
+   "inicio": 19.068,
    "duracion": 0.218,
    "visible": "error",
    "enfasis": true,
@@ -644,7 +644,7 @@
   },
   {
    "texto": "en",
-   "inicio": 18.932,
+   "inicio": 19.286,
    "duracion": 0.164,
    "visible": "en",
    "enfasis": false,
@@ -653,7 +653,7 @@
   },
   {
    "texto": "el",
-   "inicio": 19.095,
+   "inicio": 19.45,
    "duracion": 0.109,
    "visible": "el",
    "enfasis": false,
@@ -662,7 +662,7 @@
   },
   {
    "texto": "codigo",
-   "inicio": 19.205,
+   "inicio": 19.559,
    "duracion": 0.309,
    "visible": "código",
    "enfasis": false,
@@ -671,7 +671,7 @@
   },
   {
    "texto": "vuelve",
-   "inicio": 19.514,
+   "inicio": 19.868,
    "duracion": 0.782,
    "visible": "vuelve",
    "enfasis": false,
@@ -680,7 +680,7 @@
   },
   {
    "texto": "locos",
-   "inicio": 20.295,
+   "inicio": 20.65,
    "duracion": 0.473,
    "visible": "locos",
    "enfasis": true,
@@ -689,8 +689,8 @@
   },
   {
    "texto": "a",
-   "inicio": 20.768,
-   "duracion": 0.073,
+   "inicio": 21.123,
+   "duracion": 0.091,
    "visible": "a",
    "enfasis": false,
    "frase": 6,
@@ -698,8 +698,8 @@
   },
   {
    "texto": "los",
-   "inicio": 20.841,
-   "duracion": 0.109,
+   "inicio": 21.214,
+   "duracion": 0.091,
    "visible": "los",
    "enfasis": false,
    "frase": 6,
@@ -707,7 +707,7 @@
   },
   {
    "texto": "policias",
-   "inicio": 20.95,
+   "inicio": 21.305,
    "duracion": 0.436,
    "visible": "policías:",
    "enfasis": false,
@@ -716,8 +716,8 @@
   },
   {
    "texto": "ya",
-   "inicio": 21.386,
-   "duracion": 0.873,
+   "inicio": 22.027,
+   "duracion": 0.291,
    "visible": "ya",
    "enfasis": false,
    "frase": 7,
@@ -725,8 +725,8 @@
   },
   {
    "texto": "no",
-   "inicio": 22.259,
-   "duracion": 0.218,
+   "inicio": 22.318,
+   "duracion": 0.145,
    "visible": "no",
    "enfasis": false,
    "frase": 7,
@@ -734,7 +734,7 @@
   },
   {
    "texto": "te",
-   "inicio": 22.477,
+   "inicio": 22.464,
    "duracion": 0.109,
    "visible": "te",
    "enfasis": false,
@@ -743,7 +743,7 @@
   },
   {
    "texto": "persiguen",
-   "inicio": 22.586,
+   "inicio": 22.573,
    "duracion": 0.509,
    "visible": "persiguen...",
    "enfasis": false,
@@ -752,8 +752,8 @@
   },
   {
    "texto": "te",
-   "inicio": 23.305,
-   "duracion": 0.236,
+   "inicio": 23.082,
+   "duracion": 0.636,
    "visible": "¡TE",
    "enfasis": true,
    "frase": 8,
@@ -761,8 +761,8 @@
   },
   {
    "texto": "embisten",
-   "inicio": 23.541,
-   "duracion": 0.473,
+   "inicio": 23.718,
+   "duracion": 0.509,
    "visible": "EMBISTEN,",
    "enfasis": true,
    "frase": 8,
@@ -770,7 +770,7 @@
   },
   {
    "texto": "te",
-   "inicio": 24.214,
+   "inicio": 24.409,
    "duracion": 0.06,
    "visible": "TE",
    "enfasis": true,
@@ -779,7 +779,7 @@
   },
   {
    "texto": "encierran",
-   "inicio": 24.268,
+   "inicio": 24.464,
    "duracion": 0.491,
    "visible": "ENCIERRAN,",
    "enfasis": true,
@@ -788,7 +788,7 @@
   },
   {
    "texto": "te",
-   "inicio": 24.886,
+   "inicio": 25.1,
    "duracion": 0.06,
    "visible": "TE",
    "enfasis": true,
@@ -797,8 +797,8 @@
   },
   {
    "texto": "sacan",
-   "inicio": 24.941,
-   "duracion": 0.309,
+   "inicio": 25.155,
+   "duracion": 0.291,
    "visible": "SACAN",
    "enfasis": true,
    "frase": 8,
@@ -806,8 +806,8 @@
   },
   {
    "texto": "de",
-   "inicio": 25.25,
-   "duracion": 0.073,
+   "inicio": 25.445,
+   "duracion": 0.091,
    "visible": "DE",
    "enfasis": true,
    "frase": 8,
@@ -815,8 +815,8 @@
   },
   {
    "texto": "la",
-   "inicio": 25.323,
-   "duracion": 0.109,
+   "inicio": 25.536,
+   "duracion": 0.091,
    "visible": "LA",
    "enfasis": true,
    "frase": 8,
@@ -824,7 +824,7 @@
   },
   {
    "texto": "calle",
-   "inicio": 25.432,
+   "inicio": 25.627,
    "duracion": 0.255,
    "visible": "CALLE!",
    "enfasis": true,
@@ -833,8 +833,8 @@
   },
   {
    "texto": "y",
-   "inicio": 26.232,
-   "duracion": 0.145,
+   "inicio": 26.318,
+   "duracion": 0.255,
    "visible": "Y",
    "enfasis": false,
    "frase": 9,
@@ -842,7 +842,7 @@
   },
   {
    "texto": "los",
-   "inicio": 26.377,
+   "inicio": 26.573,
    "duracion": 0.127,
    "visible": "los",
    "enfasis": false,
@@ -851,7 +851,7 @@
   },
   {
    "texto": "que",
-   "inicio": 26.505,
+   "inicio": 26.7,
    "duracion": 0.091,
    "visible": "que",
    "enfasis": false,
@@ -860,7 +860,7 @@
   },
   {
    "texto": "lo",
-   "inicio": 26.595,
+   "inicio": 26.791,
    "duracion": 0.109,
    "visible": "lo",
    "enfasis": false,
@@ -869,7 +869,7 @@
   },
   {
    "texto": "prueban",
-   "inicio": 26.705,
+   "inicio": 26.9,
    "duracion": 0.327,
    "visible": "prueban",
    "enfasis": false,
@@ -878,8 +878,8 @@
   },
   {
    "texto": "no",
-   "inicio": 27.032,
-   "duracion": 0.418,
+   "inicio": 27.227,
+   "duracion": 0.436,
    "visible": "no",
    "enfasis": false,
    "frase": 9,
@@ -887,7 +887,7 @@
   },
   {
    "texto": "quieren",
-   "inicio": 27.45,
+   "inicio": 27.664,
    "duracion": 0.309,
    "visible": "quieren",
    "enfasis": false,
@@ -896,8 +896,8 @@
   },
   {
    "texto": "soltarlo",
-   "inicio": 27.759,
-   "duracion": 0.455,
+   "inicio": 27.973,
+   "duracion": 0.418,
    "visible": "soltarlo.",
    "enfasis": false,
    "frase": 9,
@@ -905,8 +905,8 @@
   },
   {
    "texto": "lo",
-   "inicio": 28.659,
-   "duracion": 0.164,
+   "inicio": 28.832,
+   "duracion": 0.182,
    "visible": "¿Lo",
    "enfasis": false,
    "frase": 10,
@@ -914,7 +914,7 @@
   },
   {
    "texto": "mas",
-   "inicio": 28.823,
+   "inicio": 29.014,
    "duracion": 0.145,
    "visible": "más",
    "enfasis": false,
@@ -923,7 +923,7 @@
   },
   {
    "texto": "divertido",
-   "inicio": 28.968,
+   "inicio": 29.159,
    "duracion": 0.436,
    "visible": "divertido?",
    "enfasis": true,
@@ -932,8 +932,8 @@
   },
   {
    "texto": "escaparse",
-   "inicio": 29.959,
-   "duracion": 0.4,
+   "inicio": 30.132,
+   "duracion": 0.491,
    "visible": "¡ESCAPARSE",
    "enfasis": true,
    "frase": 11,
@@ -941,8 +941,8 @@
   },
   {
    "texto": "de",
-   "inicio": 30.359,
-   "duracion": 0.164,
+   "inicio": 30.623,
+   "duracion": 0.091,
    "visible": "DE",
    "enfasis": true,
    "frase": 11,
@@ -950,8 +950,8 @@
   },
   {
    "texto": "esos",
-   "inicio": 30.523,
-   "duracion": 0.127,
+   "inicio": 30.714,
+   "duracion": 0.145,
    "visible": "ESOS",
    "enfasis": true,
    "frase": 11,
@@ -959,7 +959,7 @@
   },
   {
    "texto": "policias",
-   "inicio": 30.65,
+   "inicio": 30.859,
    "duracion": 0.418,
    "visible": "POLICÍAS",
    "enfasis": true,
@@ -968,8 +968,8 @@
   },
   {
    "texto": "locos",
-   "inicio": 31.068,
-   "duracion": 0.4,
+   "inicio": 31.277,
+   "duracion": 0.382,
    "visible": "LOCOS!",
    "enfasis": true,
    "frase": 11,
@@ -977,8 +977,8 @@
   },
   {
    "texto": "y",
-   "inicio": 31.814,
-   "duracion": 0.255,
+   "inicio": 31.905,
+   "duracion": 0.382,
    "visible": "¿Y",
    "enfasis": false,
    "frase": 12,
@@ -986,8 +986,8 @@
   },
   {
    "texto": "arreglaron",
-   "inicio": 32.068,
-   "duracion": 0.455,
+   "inicio": 32.286,
+   "duracion": 0.436,
    "visible": "arreglaron",
    "enfasis": false,
    "frase": 12,
@@ -995,7 +995,7 @@
   },
   {
    "texto": "el",
-   "inicio": 32.523,
+   "inicio": 32.723,
    "duracion": 0.164,
    "visible": "el",
    "enfasis": false,
@@ -1004,8 +1004,8 @@
   },
   {
    "texto": "bug",
-   "inicio": 32.686,
-   "duracion": 0.182,
+   "inicio": 32.886,
+   "duracion": 0.164,
    "visible": "bug?",
    "enfasis": true,
    "frase": 12,
@@ -1013,8 +1013,8 @@
   },
   {
    "texto": "al",
-   "inicio": 33.15,
-   "duracion": 0.218,
+   "inicio": 33.364,
+   "duracion": 0.2,
    "visible": "¡AL",
    "enfasis": true,
    "frase": 13,
@@ -1022,8 +1022,8 @@
   },
   {
    "texto": "contrario",
-   "inicio": 33.368,
-   "duracion": 0.418,
+   "inicio": 33.564,
+   "duracion": 0.455,
    "visible": "CONTRARIO!",
    "enfasis": true,
    "frase": 13,
@@ -1031,8 +1031,8 @@
   },
   {
    "texto": "lo",
-   "inicio": 34.232,
-   "duracion": 0.2,
+   "inicio": 34.482,
+   "duracion": 0.164,
    "visible": "Lo",
    "enfasis": false,
    "frase": 14,
@@ -1040,8 +1040,8 @@
   },
   {
    "texto": "convirtieron",
-   "inicio": 34.432,
-   "duracion": 0.655,
+   "inicio": 34.645,
+   "duracion": 0.636,
    "visible": "convirtieron",
    "enfasis": false,
    "frase": 14,
@@ -1049,7 +1049,7 @@
   },
   {
    "texto": "en",
-   "inicio": 35.086,
+   "inicio": 35.282,
    "duracion": 0.164,
    "visible": "en",
    "enfasis": false,
@@ -1058,8 +1058,8 @@
   },
   {
    "texto": "el",
-   "inicio": 35.25,
-   "duracion": 0.109,
+   "inicio": 35.445,
+   "duracion": 0.127,
    "visible": "el",
    "enfasis": false,
    "frase": 14,
@@ -1067,8 +1067,8 @@
   },
   {
    "texto": "juego",
-   "inicio": 35.359,
-   "duracion": 0.255,
+   "inicio": 35.573,
+   "duracion": 0.236,
    "visible": "juego...",
    "enfasis": false,
    "frase": 14,
@@ -1076,8 +1076,8 @@
   },
   {
    "texto": "y",
-   "inicio": 35.809,
-   "duracion": 0.186,
+   "inicio": 36.045,
+   "duracion": 0.145,
    "visible": "Y",
    "enfasis": true,
    "frase": 15,
@@ -1085,7 +1085,7 @@
   },
   {
    "texto": "le",
-   "inicio": 35.995,
+   "inicio": 36.191,
    "duracion": 0.091,
    "visible": "LE",
    "enfasis": true,
@@ -1094,7 +1094,7 @@
   },
   {
    "texto": "pusieron",
-   "inicio": 36.086,
+   "inicio": 36.282,
    "duracion": 0.382,
    "visible": "PUSIERON",
    "enfasis": true,
@@ -1103,7 +1103,7 @@
   },
   {
    "texto": "grand",
-   "inicio": 36.468,
+   "inicio": 36.664,
    "duracion": 0.6,
    "visible": "GRAND",
    "enfasis": true,
@@ -1112,8 +1112,8 @@
   },
   {
    "texto": "theft",
-   "inicio": 37.068,
-   "duracion": 0.418,
+   "inicio": 37.264,
+   "duracion": 0.436,
    "visible": "THEFT",
    "enfasis": true,
    "frase": 15,
@@ -1121,8 +1121,8 @@
   },
   {
    "texto": "auto",
-   "inicio": 37.486,
-   "duracion": 0.364,
+   "inicio": 37.7,
+   "duracion": 0.345,
    "visible": "AUTO:",
    "enfasis": true,
    "frase": 15,
@@ -1130,8 +1130,8 @@
   },
   {
    "texto": "robo",
-   "inicio": 38.177,
-   "duracion": 0.418,
+   "inicio": 38.373,
+   "duracion": 0.436,
    "visible": "ROBO",
    "enfasis": true,
    "frase": 15,
@@ -1139,7 +1139,7 @@
   },
   {
    "texto": "de",
-   "inicio": 38.595,
+   "inicio": 38.809,
    "duracion": 0.127,
    "visible": "DE",
    "enfasis": true,
@@ -1148,7 +1148,7 @@
   },
   {
    "texto": "autos",
-   "inicio": 38.723,
+   "inicio": 38.936,
    "duracion": 0.345,
    "visible": "AUTOS.",
    "enfasis": true,
@@ -1157,8 +1157,8 @@
   },
   {
    "texto": "pero",
-   "inicio": 39.564,
-   "duracion": 0.255,
+   "inicio": 39.759,
+   "duracion": 0.273,
    "visible": "Pero",
    "enfasis": false,
    "frase": 16,
@@ -1166,7 +1166,7 @@
   },
   {
    "texto": "lo",
-   "inicio": 39.818,
+   "inicio": 40.032,
    "duracion": 0.127,
    "visible": "lo",
    "enfasis": false,
@@ -1175,8 +1175,8 @@
   },
   {
    "texto": "mas",
-   "inicio": 39.945,
-   "duracion": 0.182,
+   "inicio": 40.159,
+   "duracion": 0.164,
    "visible": "más",
    "enfasis": false,
    "frase": 16,
@@ -1184,7 +1184,7 @@
   },
   {
    "texto": "loco",
-   "inicio": 40.127,
+   "inicio": 40.323,
    "duracion": 0.327,
    "visible": "loco",
    "enfasis": false,
@@ -1193,7 +1193,7 @@
   },
   {
    "texto": "vino",
-   "inicio": 40.455,
+   "inicio": 40.65,
    "duracion": 0.473,
    "visible": "vino",
    "enfasis": false,
@@ -1202,8 +1202,8 @@
   },
   {
    "texto": "despues",
-   "inicio": 40.927,
-   "duracion": 0.527,
+   "inicio": 41.123,
+   "duracion": 0.509,
    "visible": "después.",
    "enfasis": false,
    "frase": 16,
@@ -1211,8 +1211,8 @@
   },
   {
    "texto": "cuando",
-   "inicio": 41.927,
-   "duracion": 0.273,
+   "inicio": 42.086,
+   "duracion": 0.291,
    "visible": "Cuando",
    "enfasis": false,
    "frase": 17,
@@ -1220,8 +1220,8 @@
   },
   {
    "texto": "en",
-   "inicio": 42.2,
-   "duracion": 0.145,
+   "inicio": 42.377,
+   "duracion": 0.164,
    "visible": "en",
    "enfasis": false,
    "frase": 17,
@@ -1229,7 +1229,7 @@
   },
   {
    "texto": "inglaterra",
-   "inicio": 42.345,
+   "inicio": 42.541,
    "duracion": 0.527,
    "visible": "Inglaterra",
    "enfasis": true,
@@ -1238,7 +1238,7 @@
   },
   {
    "texto": "pidieron",
-   "inicio": 42.873,
+   "inicio": 43.068,
    "duracion": 0.4,
    "visible": "pidieron",
    "enfasis": false,
@@ -1247,7 +1247,7 @@
   },
   {
    "texto": "prohibirlo",
-   "inicio": 43.273,
+   "inicio": 43.468,
    "duracion": 0.564,
    "visible": "prohibirlo",
    "enfasis": true,
@@ -1256,8 +1256,8 @@
   },
   {
    "texto": "por",
-   "inicio": 43.836,
-   "duracion": 0.164,
+   "inicio": 44.032,
+   "duracion": 0.182,
    "visible": "por",
    "enfasis": false,
    "frase": 17,
@@ -1265,8 +1265,8 @@
   },
   {
    "texto": "violento",
-   "inicio": 44.0,
-   "duracion": 0.473,
+   "inicio": 44.214,
+   "duracion": 0.455,
    "visible": "violento...",
    "enfasis": false,
    "frase": 17,
@@ -1274,8 +1274,8 @@
   },
   {
    "texto": "esa",
-   "inicio": 44.473,
-   "duracion": 0.782,
+   "inicio": 44.868,
+   "duracion": 0.255,
    "visible": "ESA",
    "enfasis": true,
    "frase": 18,
@@ -1283,7 +1283,7 @@
   },
   {
    "texto": "polemica",
-   "inicio": 45.255,
+   "inicio": 45.123,
    "duracion": 0.473,
    "visible": "POLÉMICA",
    "enfasis": true,
@@ -1292,7 +1292,7 @@
   },
   {
    "texto": "la",
-   "inicio": 45.727,
+   "inicio": 45.595,
    "duracion": 0.382,
    "visible": "LA",
    "enfasis": true,
@@ -1301,7 +1301,7 @@
   },
   {
    "texto": "habia",
-   "inicio": 46.109,
+   "inicio": 45.977,
    "duracion": 0.182,
    "visible": "HABÍA",
    "enfasis": true,
@@ -1310,7 +1310,7 @@
   },
   {
    "texto": "inventado",
-   "inicio": 46.291,
+   "inicio": 46.159,
    "duracion": 0.545,
    "visible": "INVENTADO",
    "enfasis": true,
@@ -1319,7 +1319,7 @@
   },
   {
    "texto": "su",
-   "inicio": 46.836,
+   "inicio": 46.705,
    "duracion": 0.164,
    "visible": "SU",
    "enfasis": true,
@@ -1328,8 +1328,8 @@
   },
   {
    "texto": "propia",
-   "inicio": 47.0,
-   "duracion": 0.345,
+   "inicio": 46.868,
+   "duracion": 0.382,
    "visible": "PROPIA",
    "enfasis": true,
    "frase": 18,
@@ -1337,8 +1337,8 @@
   },
   {
    "texto": "distribuidora",
-   "inicio": 47.345,
-   "duracion": 0.782,
+   "inicio": 47.25,
+   "duracion": 0.727,
    "visible": "DISTRIBUIDORA.",
    "enfasis": true,
    "frase": 18,
@@ -1346,8 +1346,8 @@
   },
   {
    "texto": "contrataron",
-   "inicio": 48.509,
-   "duracion": 0.655,
+   "inicio": 48.523,
+   "duracion": 0.527,
    "visible": "Contrataron",
    "enfasis": false,
    "frase": 19,
@@ -1355,8 +1355,8 @@
   },
   {
    "texto": "a",
-   "inicio": 49.164,
-   "duracion": 0.109,
+   "inicio": 49.05,
+   "duracion": 0.091,
    "visible": "a",
    "enfasis": false,
    "frase": 19,
@@ -1364,8 +1364,8 @@
   },
   {
    "texto": "un",
-   "inicio": 49.273,
-   "duracion": 0.073,
+   "inicio": 49.141,
+   "duracion": 0.091,
    "visible": "un",
    "enfasis": false,
    "frase": 19,
@@ -1373,8 +1373,8 @@
   },
   {
    "texto": "experto",
-   "inicio": 49.345,
-   "duracion": 0.418,
+   "inicio": 49.232,
+   "duracion": 0.4,
    "visible": "experto",
    "enfasis": false,
    "frase": 19,
@@ -1382,7 +1382,7 @@
   },
   {
    "texto": "en",
-   "inicio": 49.764,
+   "inicio": 49.632,
    "duracion": 0.073,
    "visible": "en",
    "enfasis": false,
@@ -1391,8 +1391,8 @@
   },
   {
    "texto": "escandalos",
-   "inicio": 49.836,
-   "duracion": 0.527,
+   "inicio": 49.705,
+   "duracion": 0.509,
    "visible": "escándalos",
    "enfasis": true,
    "frase": 19,
@@ -1400,8 +1400,8 @@
   },
   {
    "texto": "para",
-   "inicio": 50.364,
-   "duracion": 0.2,
+   "inicio": 50.214,
+   "duracion": 0.218,
    "visible": "para",
    "enfasis": false,
    "frase": 19,
@@ -1409,7 +1409,7 @@
   },
   {
    "texto": "que",
-   "inicio": 50.564,
+   "inicio": 50.432,
    "duracion": 0.145,
    "visible": "que",
    "enfasis": false,
@@ -1418,7 +1418,7 @@
   },
   {
    "texto": "todo",
-   "inicio": 50.709,
+   "inicio": 50.577,
    "duracion": 0.236,
    "visible": "todo",
    "enfasis": false,
@@ -1427,7 +1427,7 @@
   },
   {
    "texto": "el",
-   "inicio": 50.945,
+   "inicio": 50.814,
    "duracion": 0.182,
    "visible": "el",
    "enfasis": false,
@@ -1436,8 +1436,8 @@
   },
   {
    "texto": "mundo",
-   "inicio": 51.127,
-   "duracion": 0.145,
+   "inicio": 50.995,
+   "duracion": 0.182,
    "visible": "mundo",
    "enfasis": false,
    "frase": 19,
@@ -1445,8 +1445,8 @@
   },
   {
    "texto": "hablara",
-   "inicio": 51.273,
-   "duracion": 0.327,
+   "inicio": 51.177,
+   "duracion": 0.309,
    "visible": "hablara",
    "enfasis": false,
    "frase": 19,
@@ -1454,8 +1454,8 @@
   },
   {
    "texto": "del",
-   "inicio": 51.6,
-   "duracion": 0.164,
+   "inicio": 51.486,
+   "duracion": 0.145,
    "visible": "del",
    "enfasis": false,
    "frase": 19,
@@ -1463,7 +1463,7 @@
   },
   {
    "texto": "juego",
-   "inicio": 51.764,
+   "inicio": 51.632,
    "duracion": 0.255,
    "visible": "juego.",
    "enfasis": false,
@@ -1472,8 +1472,8 @@
   },
   {
    "texto": "y",
-   "inicio": 52.382,
-   "duracion": 0.2,
+   "inicio": 52.214,
+   "duracion": 0.236,
    "visible": "Y",
    "enfasis": false,
    "frase": 20,
@@ -1481,7 +1481,7 @@
   },
   {
    "texto": "vaya",
-   "inicio": 52.582,
+   "inicio": 52.45,
    "duracion": 0.2,
    "visible": "vaya",
    "enfasis": false,
@@ -1490,7 +1490,7 @@
   },
   {
    "texto": "que",
-   "inicio": 52.782,
+   "inicio": 52.65,
    "duracion": 0.236,
    "visible": "que",
    "enfasis": false,
@@ -1499,8 +1499,8 @@
   },
   {
    "texto": "hablaron",
-   "inicio": 53.018,
-   "duracion": 0.382,
+   "inicio": 52.886,
+   "duracion": 0.4,
    "visible": "hablaron.",
    "enfasis": false,
    "frase": 20,
@@ -1508,8 +1508,8 @@
   },
   {
    "texto": "veredicto",
-   "inicio": 53.955,
-   "duracion": 0.582,
+   "inicio": 54.15,
+   "duracion": 0.527,
    "visible": "VEREDICTO:",
    "enfasis": true,
    "frase": 21,
@@ -1517,8 +1517,8 @@
   },
   {
    "texto": "real",
-   "inicio": 54.536,
-   "duracion": 0.782,
+   "inicio": 54.677,
+   "duracion": 0.527,
    "visible": "¡REAL!",
    "enfasis": true,
    "frase": 21,
@@ -1526,8 +1526,8 @@
   },
   {
    "texto": "genios",
-   "inicio": 55.764,
-   "duracion": 0.582,
+   "inicio": 55.745,
+   "duracion": 0.418,
    "visible": "¿Genios",
    "enfasis": false,
    "frase": 22,
@@ -1535,7 +1535,7 @@
   },
   {
    "texto": "del",
-   "inicio": 56.345,
+   "inicio": 56.164,
    "duracion": 0.109,
    "visible": "del",
    "enfasis": false,
@@ -1544,7 +1544,7 @@
   },
   {
    "texto": "marketing",
-   "inicio": 56.455,
+   "inicio": 56.273,
    "duracion": 0.4,
    "visible": "marketing...",
    "enfasis": true,
@@ -1553,7 +1553,7 @@
   },
   {
    "texto": "o",
-   "inicio": 56.855,
+   "inicio": 56.673,
    "duracion": 0.655,
    "visible": "o",
    "enfasis": false,
@@ -1562,8 +1562,8 @@
   },
   {
    "texto": "pura",
-   "inicio": 57.509,
-   "duracion": 0.345,
+   "inicio": 57.327,
+   "duracion": 0.364,
    "visible": "pura",
    "enfasis": false,
    "frase": 22,
@@ -1571,8 +1571,8 @@
   },
   {
    "texto": "suerte",
-   "inicio": 57.855,
-   "duracion": 0.291,
+   "inicio": 57.691,
+   "duracion": 0.273,
    "visible": "suerte?",
    "enfasis": true,
    "frase": 22,
