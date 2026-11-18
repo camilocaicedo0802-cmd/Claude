@@ -349,7 +349,7 @@ const p = (id: string, i: number, texto?: string): PalabraTL => ({
 const ps = (id: string, indices: number[]) => indices.map((i) => p(id, i));
 
 // Altura del texto según el plano: siempre sobre el pecho, nunca sobre la cara.
-const Y = { presentador: 1415, agronomo: 1120, beneficio2: 1150, beneficio3: 1190, broll: 1060 };
+const Y = { presentador: 1390, agronomo: 1120, beneficio2: 1150, beneficio3: 1190, broll: 1060 };
 
 const normal = (id: string, indices: number[], y: number, fin: number): Bloque => {
   const palabras = ps(id, indices);
@@ -587,7 +587,7 @@ for (const b of BLOQUES) {
 }
 
 // Zoom del primer fotograma
-sfx.push({ archivo: "swoosh_inicio.wav", t: 0.06, vol: 0.5, adelanto: 0.06 });
+sfx.push({ archivo: "swoosh_inicio.wav", t: 0.06, vol: MEZCLA.swooshInicio, adelanto: 0.06 });
 // Destello de la píldora del gancho (cierra el bloque de título, como en la referencia)
 sfx.push({ archivo: "brillo.wav", t: tw("gancho", 11) + 0.22, vol: MEZCLA.brillo, recorte: 0.55, adelanto: 0.2, dur: 1.2 });
 
@@ -606,7 +606,7 @@ sfx.push({ archivo: "riser.mp3", t: C.graficoBeneficios, vol: MEZCLA.riser, adel
 // Motion graphics: golpe de entrada, ticks de números y tramos, tecleo de rótulos, pops de checks
 for (const e of ESCENAS_BARRA) {
   sfx.push({ archivo: "golpe_grave.wav", t: e.desde, vol: MEZCLA.golpeGrave, adelanto: 0.01 });
-  sfx.push({ archivo: "golpe_whoosh.wav", t: e.desde, vol: 0.42, adelanto: 0.07 });
+  sfx.push({ archivo: "golpe_whoosh.wav", t: e.desde, vol: MEZCLA.golpeWhoosh, adelanto: 0.07 });
   if (e.construir) [0.13, 0.23, 0.43].forEach((d) => tick(e.desde + d, MEZCLA.tick * 0.8));
   e.encender.forEach((x) => {
     tick(e.desde + x.t);
@@ -626,6 +626,6 @@ for (const e of ESCENAS_BARRA) {
 }
 
 // Logo final
-sfx.push({ archivo: "boom_logo.mp3", t: T_CIERRE + 0.02, vol: 0.42, adelanto: 0.06 });
+sfx.push({ archivo: "boom_logo.mp3", t: T_CIERRE + 0.02, vol: MEZCLA.boomLogo, adelanto: 0.06 });
 
 export const EFECTOS: Sfx[] = sfx.sort((a, b) => a.t - b.t);

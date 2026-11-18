@@ -37,19 +37,19 @@ export const TransicionLuz: React.FC<{ semilla: number }> = ({ semilla }) => {
   return (
     <AbsoluteFill style={{ pointerEvents: "none" }}>
       {/* Tinte naranja que tapa el corte */}
-      <AbsoluteFill style={{ backgroundColor: "#F08A2A", opacity: fuerza * 0.7 }} />
+      <AbsoluteFill style={{ backgroundColor: "#EE7F22", opacity: fuerza * 0.82 }} />
       {/* Núcleo de luz */}
       <AbsoluteFill
         style={{
           mixBlendMode: "screen",
-          opacity: fuerza,
-          background: `radial-gradient(ellipse 95% 70% at ${cx}% ${cy}%, rgba(255,214,150,1) 0%, rgba(255,150,60,0.95) 22%, rgba(236,108,28,0.75) 52%, rgba(190,70,10,0) 88%)`,
+          opacity: fuerza * 0.6,
+          background: `radial-gradient(ellipse 80% 55% at ${cx}% ${cy}%, rgba(255,196,120,1) 0%, rgba(255,140,50,0.9) 24%, rgba(230,100,24,0.6) 54%, rgba(190,70,10,0) 86%)`,
         }}
       />
       <AbsoluteFill
         style={{
           mixBlendMode: "screen",
-          opacity: fuerza * 0.8,
+          opacity: fuerza * 0.45,
           background: `radial-gradient(ellipse 60% 110% at ${100 - cx}% ${92 - cy}%, rgba(255,150,60,0.9) 0%, rgba(230,100,30,0.5) 45%, rgba(160,50,0,0) 80%)`,
         }}
       />

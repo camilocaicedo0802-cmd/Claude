@@ -36,7 +36,7 @@
     "build": "remotion bundle",
     "upgrade": "remotion upgrade",
     "lint": "eslint src && tsc",
-    "render": "remotion render SemillaCertificada out/agrokrack_semilla_certificada.mp4"
+    "render": "./scripts/exportar.sh"
   },
   "allowScripts": {
     "esbuild": false

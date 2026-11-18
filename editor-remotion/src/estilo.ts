@@ -88,7 +88,7 @@ export const ZOOM = {
   golpeTransicion: 1.28,
   golpeAcercar: 0.84, // 1/1,19: el plano empieza abierto y se acerca
   dur: 0.65,
-  desenfoqueMax: 7, // px en el primer fotograma del golpe
+  desenfoqueMax: 4.5, // px de desenfoque de movimiento al empezar el golpe
 };
 
 export const TRANSICION_LUZ = {
@@ -99,18 +99,22 @@ export const TRANSICION_LUZ = {
 };
 
 // ── Sonido (§11) ─────────────────────────────────────────────────────────────
+// Volúmenes calibrados por pico (dBFS entre paréntesis). La voz está nivelada a -15 LUFS.
 export const MEZCLA = {
   voz: 1.0,
-  musica: 0.085, // ≈ 20 dB por debajo de la voz
-  musicaSinVoz: 0.3, // cierre
-  tecla: 0.16,
-  swooshDestacado: 0.3,
-  pop: 0.34,
-  tick: 0.3,
-  whooshZoom: 0.5,
-  whooshTransicion: 0.62,
-  golpeGrave: 0.38,
-  riser: 0.3,
-  brillo: 0.22,
-  tecleoRafaga: 0.3,
+  musica: 0.085, // ≈ 19 dB por debajo de la voz, como en la referencia
+  musicaSinVoz: 0.5, // resumen final y logo
+  tecla: 0.12, // (-19) tecleo de cada palabra
+  swooshDestacado: 0.225, // (-13) palabra destacada
+  swooshInicio: 0.36, // (-9) zoom del primer fotograma
+  pop: 0.24, // (-13) iconos, píldoras, checks
+  tick: 0.34, // (-14) números y tramos del gráfico
+  whooshZoom: 0.46, // (-11) golpe de zoom en los cortes
+  whooshTransicion: 1.0, // (-7) transición de fuga de luz
+  golpeGrave: 0.37, // (-9) entrada de motion graphic
+  golpeWhoosh: 0.37, // (-11)
+  riser: 0.29, // (-13)
+  brillo: 0.17, // (-16)
+  tecleoRafaga: 0.42, // (-15) rótulos que se escriben
+  boomLogo: 0.8, // (-7)
 };

@@ -23,7 +23,9 @@ export const Plano: React.FC<{ plano: PlanoT }> = ({ plano }) => {
 
   const z = golpe(t);
   const velocidad = Math.abs(z - golpe(t + 1 / fps)) * fps; // cambio de escala por segundo
-  const desenfoque = Math.min(ZOOM.desenfoqueMax, velocidad * 4);
+  // El primer fotograma del vídeo va nítido (es la portada); el resto de golpes, desenfocados.
+  const esPortada = plano.desde === 0 && frame === 0;
+  const desenfoque = esPortada ? 0 : Math.min(ZOOM.desenfoqueMax, velocidad * 2.6);
 
   const { fx, fy, dx, dy } = plano.encuadre;
   const escala = Math.max(1, plano.encuadre.escala * z * (1 + (plano.deriva ?? 0) * t));
