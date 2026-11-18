@@ -1,0 +1,1633 @@
+{
+ "voz": "Gemini 2.5 Flash TTS · Charon",
+ "duracion": 65.492,
+ "frases": [
+  {
+   "i": 0,
+   "texto": "Michael Jackson no se volvió blanco por gusto...",
+   "seccion": "gancho",
+   "inicio": 0.0,
+   "fin": 3.145
+  },
+  {
+   "i": 1,
+   "texto": "y lo creímos por culpa de un secreto que él mismo guardó.",
+   "seccion": "gancho",
+   "inicio": 3.541,
+   "fin": 7.305
+  },
+  {
+   "i": 2,
+   "texto": "En mil novecientos ochenta y dos, con Thriller, Michael es el artista más grande del planeta.",
+   "seccion": "origen",
+   "inicio": 7.759,
+   "fin": 13.959
+  },
+  {
+   "i": 3,
+   "texto": "Pero pronto le aparecen manchas blancas en la piel.",
+   "seccion": "origen",
+   "inicio": 14.377,
+   "fin": 17.396
+  },
+  {
+   "i": 4,
+   "texto": "Él las tapa con maquillaje... y calla.",
+   "seccion": "escalon",
+   "inicio": 17.886,
+   "fin": 20.241
+  },
+  {
+   "i": 5,
+   "texto": "Los tabloides lo apodan Wacko Jacko y publican que se blanquea a propósito.",
+   "seccion": "escalon",
+   "inicio": 20.859,
+   "fin": 25.404
+  },
+  {
+   "i": 6,
+   "texto": "Las revistas lo copian por todo el mundo.",
+   "seccion": "escalon",
+   "inicio": 25.914,
+   "fin": 28.277
+  },
+  {
+   "i": 7,
+   "texto": "Y las fotos parecen darles la razón:",
+   "seccion": "escalon2",
+   "inicio": 28.75,
+   "fin": 30.913
+  },
+  {
+   "i": 8,
+   "texto": "a los veinte, piel morena...",
+   "seccion": "escalon2",
+   "inicio": 31.35,
+   "fin": 32.877
+  },
+  {
+   "i": 9,
+   "texto": "a los treinta y tres, ¡casi blanca!",
+   "seccion": "escalon2",
+   "inicio": 33.25,
+   "fin": 35.45
+  },
+  {
+   "i": 10,
+   "texto": "Y encima, se opera la nariz.",
+   "seccion": "escalon2",
+   "inicio": 35.868,
+   "fin": 37.814
+  },
+  {
+   "i": 11,
+   "texto": "Pero tenía vitiligo, una enfermedad que borra el color de la piel.",
+   "seccion": "climax",
+   "inicio": 38.177,
+   "fin": 42.232
+  },
+  {
+   "i": 12,
+   "texto": "¿Quién lo confirmó?",
+   "seccion": "climax",
+   "inicio": 42.232,
+   "fin": 43.377
+  },
+  {
+   "i": 13,
+   "texto": "¡Su autopsia, en dos mil nueve!",
+   "seccion": "climax",
+   "inicio": 43.755,
+   "fin": 45.536
+  },
+  {
+   "i": 14,
+   "texto": "¿Y las cremas que usaba?",
+   "seccion": "climax",
+   "inicio": 46.009,
+   "fin": 47.228
+  },
+  {
+   "i": 15,
+   "texto": "Eran para igualar las manchas, no para blanquearse.",
+   "seccion": "climax",
+   "inicio": 47.227,
+   "fin": 50.372
+  },
+  {
+   "i": 16,
+   "texto": "Para colmo, cuando por fin lo contó en televisión, muchos ya no le creyeron.",
+   "seccion": "golpe",
+   "inicio": 50.791,
+   "fin": 55.191
+  },
+  {
+   "i": 17,
+   "texto": "Y eso que ya había cantado: «No importa si eres negro o blanco».",
+   "seccion": "golpe",
+   "inicio": 55.591,
+   "fin": 59.564
+  },
+  {
+   "i": 18,
+   "texto": "Veredicto: mito.",
+   "seccion": "veredicto",
+   "inicio": 59.927,
+   "fin": 61.336
+  },
+  {
+   "i": 19,
+   "texto": "¿Quiso ser blanco... o fue víctima del chisme más cruel del pop?",
+   "seccion": "pregunta",
+   "inicio": 61.7,
+   "fin": 65.282
+  }
+ ],
+ "palabras": [
+  {
+   "texto": "michael",
+   "inicio": 0.0,
+   "duracion": 0.582,
+   "visible": "Michael",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "jackson",
+   "inicio": 0.582,
+   "duracion": 0.509,
+   "visible": "Jackson",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "no",
+   "inicio": 1.091,
+   "duracion": 0.564,
+   "visible": "no",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "se",
+   "inicio": 1.655,
+   "duracion": 0.2,
+   "visible": "se",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "volvio",
+   "inicio": 1.855,
+   "duracion": 0.364,
+   "visible": "volvió",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "blanco",
+   "inicio": 2.218,
+   "duracion": 0.364,
+   "visible": "blanco",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "por",
+   "inicio": 2.582,
+   "duracion": 0.218,
+   "visible": "por",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "gusto",
+   "inicio": 2.8,
+   "duracion": 0.345,
+   "visible": "gusto...",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "y",
+   "inicio": 3.541,
+   "duracion": 0.218,
+   "visible": "y",
+   "enfasis": false,
+   "frase": 1,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "lo",
+   "inicio": 3.759,
+   "duracion": 0.164,
+   "visible": "lo",
+   "enfasis": false,
+   "frase": 1,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "creimos",
+   "inicio": 3.923,
+   "duracion": 0.6,
+   "visible": "creímos",
+   "enfasis": false,
+   "frase": 1,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "por",
+   "inicio": 4.523,
+   "duracion": 0.218,
+   "visible": "por",
+   "enfasis": false,
+   "frase": 1,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "culpa",
+   "inicio": 4.741,
+   "duracion": 0.309,
+   "visible": "culpa",
+   "enfasis": false,
+   "frase": 1,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "de",
+   "inicio": 5.05,
+   "duracion": 0.236,
+   "visible": "de",
+   "enfasis": false,
+   "frase": 1,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "un",
+   "inicio": 5.286,
+   "duracion": 0.164,
+   "visible": "un",
+   "enfasis": false,
+   "frase": 1,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "secreto",
+   "inicio": 5.45,
+   "duracion": 0.673,
+   "visible": "secreto",
+   "enfasis": false,
+   "frase": 1,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "que",
+   "inicio": 6.123,
+   "duracion": 0.182,
+   "visible": "que",
+   "enfasis": false,
+   "frase": 1,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "el",
+   "inicio": 6.305,
+   "duracion": 0.2,
+   "visible": "él",
+   "enfasis": false,
+   "frase": 1,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "mismo",
+   "inicio": 6.505,
+   "duracion": 0.345,
+   "visible": "mismo",
+   "enfasis": false,
+   "frase": 1,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "guardo",
+   "inicio": 6.85,
+   "duracion": 0.455,
+   "visible": "guardó.",
+   "enfasis": false,
+   "frase": 1,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "en",
+   "inicio": 7.759,
+   "duracion": 0.255,
+   "visible": "En",
+   "enfasis": false,
+   "frase": 2,
+   "seccion": "origen"
+  },
+  {
+   "texto": "mil",
+   "inicio": 8.014,
+   "duracion": 1.145,
+   "visible": "1982,",
+   "enfasis": true,
+   "frase": 2,
+   "seccion": "origen"
+  },
+  {
+   "texto": "con",
+   "inicio": 9.995,
+   "duracion": 0.291,
+   "visible": "con",
+   "enfasis": false,
+   "frase": 2,
+   "seccion": "origen"
+  },
+  {
+   "texto": "thriller",
+   "inicio": 10.286,
+   "duracion": 0.436,
+   "visible": "Thriller,",
+   "enfasis": true,
+   "frase": 2,
+   "seccion": "origen"
+  },
+  {
+   "texto": "michael",
+   "inicio": 11.305,
+   "duracion": 0.291,
+   "visible": "Michael",
+   "enfasis": false,
+   "frase": 2,
+   "seccion": "origen"
+  },
+  {
+   "texto": "es",
+   "inicio": 11.595,
+   "duracion": 0.291,
+   "visible": "es",
+   "enfasis": false,
+   "frase": 2,
+   "seccion": "origen"
+  },
+  {
+   "texto": "el",
+   "inicio": 11.886,
+   "duracion": 0.127,
+   "visible": "el",
+   "enfasis": false,
+   "frase": 2,
+   "seccion": "origen"
+  },
+  {
+   "texto": "artista",
+   "inicio": 12.014,
+   "duracion": 0.545,
+   "visible": "artista",
+   "enfasis": false,
+   "frase": 2,
+   "seccion": "origen"
+  },
+  {
+   "texto": "mas",
+   "inicio": 12.559,
+   "duracion": 0.382,
+   "visible": "más",
+   "enfasis": false,
+   "frase": 2,
+   "seccion": "origen"
+  },
+  {
+   "texto": "grande",
+   "inicio": 12.941,
+   "duracion": 0.4,
+   "visible": "grande",
+   "enfasis": false,
+   "frase": 2,
+   "seccion": "origen"
+  },
+  {
+   "texto": "del",
+   "inicio": 13.341,
+   "duracion": 0.2,
+   "visible": "del",
+   "enfasis": false,
+   "frase": 2,
+   "seccion": "origen"
+  },
+  {
+   "texto": "planeta",
+   "inicio": 13.541,
+   "duracion": 0.418,
+   "visible": "planeta.",
+   "enfasis": false,
+   "frase": 2,
+   "seccion": "origen"
+  },
+  {
+   "texto": "pero",
+   "inicio": 14.377,
+   "duracion": 0.255,
+   "visible": "Pero",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": "origen"
+  },
+  {
+   "texto": "pronto",
+   "inicio": 14.632,
+   "duracion": 0.418,
+   "visible": "pronto",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": "origen"
+  },
+  {
+   "texto": "le",
+   "inicio": 15.05,
+   "duracion": 0.255,
+   "visible": "le",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": "origen"
+  },
+  {
+   "texto": "aparecen",
+   "inicio": 15.305,
+   "duracion": 0.545,
+   "visible": "aparecen",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": "origen"
+  },
+  {
+   "texto": "manchas",
+   "inicio": 15.85,
+   "duracion": 0.455,
+   "visible": "manchas",
+   "enfasis": true,
+   "frase": 3,
+   "seccion": "origen"
+  },
+  {
+   "texto": "blancas",
+   "inicio": 16.305,
+   "duracion": 0.564,
+   "visible": "blancas",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": "origen"
+  },
+  {
+   "texto": "en",
+   "inicio": 16.868,
+   "duracion": 0.145,
+   "visible": "en",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": "origen"
+  },
+  {
+   "texto": "la",
+   "inicio": 17.014,
+   "duracion": 0.091,
+   "visible": "la",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": "origen"
+  },
+  {
+   "texto": "piel",
+   "inicio": 17.105,
+   "duracion": 0.291,
+   "visible": "piel.",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": "origen"
+  },
+  {
+   "texto": "el",
+   "inicio": 17.886,
+   "duracion": 0.164,
+   "visible": "Él",
+   "enfasis": false,
+   "frase": 4,
+   "seccion": "escalon"
+  },
+  {
+   "texto": "las",
+   "inicio": 18.05,
+   "duracion": 0.236,
+   "visible": "las",
+   "enfasis": false,
+   "frase": 4,
+   "seccion": "escalon"
+  },
+  {
+   "texto": "tapa",
+   "inicio": 18.286,
+   "duracion": 0.255,
+   "visible": "tapa",
+   "enfasis": false,
+   "frase": 4,
+   "seccion": "escalon"
+  },
+  {
+   "texto": "con",
+   "inicio": 18.541,
+   "duracion": 0.236,
+   "visible": "con",
+   "enfasis": false,
+   "frase": 4,
+   "seccion": "escalon"
+  },
+  {
+   "texto": "maquillaje",
+   "inicio": 18.777,
+   "duracion": 0.527,
+   "visible": "maquillaje...",
+   "enfasis": false,
+   "frase": 4,
+   "seccion": "escalon"
+  },
+  {
+   "texto": "y",
+   "inicio": 19.786,
+   "duracion": 0.164,
+   "visible": "y",
+   "enfasis": false,
+   "frase": 4,
+   "seccion": "escalon"
+  },
+  {
+   "texto": "calla",
+   "inicio": 19.95,
+   "duracion": 0.291,
+   "visible": "calla.",
+   "enfasis": false,
+   "frase": 4,
+   "seccion": "escalon"
+  },
+  {
+   "texto": "los",
+   "inicio": 20.859,
+   "duracion": 0.109,
+   "visible": "Los",
+   "enfasis": false,
+   "frase": 5,
+   "seccion": "escalon"
+  },
+  {
+   "texto": "tabloides",
+   "inicio": 20.968,
+   "duracion": 0.509,
+   "visible": "tabloides",
+   "enfasis": false,
+   "frase": 5,
+   "seccion": "escalon"
+  },
+  {
+   "texto": "lo",
+   "inicio": 21.477,
+   "duracion": 0.309,
+   "visible": "lo",
+   "enfasis": false,
+   "frase": 5,
+   "seccion": "escalon"
+  },
+  {
+   "texto": "apodan",
+   "inicio": 21.786,
+   "duracion": 0.436,
+   "visible": "apodan",
+   "enfasis": false,
+   "frase": 5,
+   "seccion": "escalon"
+  },
+  {
+   "texto": "wacko",
+   "inicio": 22.223,
+   "duracion": 0.336,
+   "visible": "Wacko",
+   "enfasis": true,
+   "frase": 5,
+   "seccion": "escalon"
+  },
+  {
+   "texto": "jacko",
+   "inicio": 22.559,
+   "duracion": 0.336,
+   "visible": "Jacko",
+   "enfasis": true,
+   "frase": 5,
+   "seccion": "escalon"
+  },
+  {
+   "texto": "y",
+   "inicio": 23.368,
+   "duracion": 0.073,
+   "visible": "y",
+   "enfasis": false,
+   "frase": 5,
+   "seccion": "escalon"
+  },
+  {
+   "texto": "publican",
+   "inicio": 23.441,
+   "duracion": 0.509,
+   "visible": "publican",
+   "enfasis": false,
+   "frase": 5,
+   "seccion": "escalon"
+  },
+  {
+   "texto": "que",
+   "inicio": 23.95,
+   "duracion": 0.127,
+   "visible": "que",
+   "enfasis": false,
+   "frase": 5,
+   "seccion": "escalon"
+  },
+  {
+   "texto": "se",
+   "inicio": 24.077,
+   "duracion": 0.145,
+   "visible": "se",
+   "enfasis": false,
+   "frase": 5,
+   "seccion": "escalon"
+  },
+  {
+   "texto": "blanquea",
+   "inicio": 24.223,
+   "duracion": 0.545,
+   "visible": "blanquea",
+   "enfasis": false,
+   "frase": 5,
+   "seccion": "escalon"
+  },
+  {
+   "texto": "a",
+   "inicio": 24.768,
+   "duracion": 0.109,
+   "visible": "a",
+   "enfasis": false,
+   "frase": 5,
+   "seccion": "escalon"
+  },
+  {
+   "texto": "proposito",
+   "inicio": 24.877,
+   "duracion": 0.527,
+   "visible": "propósito.",
+   "enfasis": false,
+   "frase": 5,
+   "seccion": "escalon"
+  },
+  {
+   "texto": "las",
+   "inicio": 25.914,
+   "duracion": 0.164,
+   "visible": "Las",
+   "enfasis": false,
+   "frase": 6,
+   "seccion": "escalon"
+  },
+  {
+   "texto": "revistas",
+   "inicio": 26.077,
+   "duracion": 0.509,
+   "visible": "revistas",
+   "enfasis": false,
+   "frase": 6,
+   "seccion": "escalon"
+  },
+  {
+   "texto": "lo",
+   "inicio": 26.586,
+   "duracion": 0.273,
+   "visible": "lo",
+   "enfasis": false,
+   "frase": 6,
+   "seccion": "escalon"
+  },
+  {
+   "texto": "copian",
+   "inicio": 26.859,
+   "duracion": 0.418,
+   "visible": "copian",
+   "enfasis": false,
+   "frase": 6,
+   "seccion": "escalon"
+  },
+  {
+   "texto": "por",
+   "inicio": 27.277,
+   "duracion": 0.273,
+   "visible": "por",
+   "enfasis": false,
+   "frase": 6,
+   "seccion": "escalon"
+  },
+  {
+   "texto": "todo",
+   "inicio": 27.55,
+   "duracion": 0.255,
+   "visible": "todo",
+   "enfasis": false,
+   "frase": 6,
+   "seccion": "escalon"
+  },
+  {
+   "texto": "el",
+   "inicio": 27.805,
+   "duracion": 0.236,
+   "visible": "el",
+   "enfasis": false,
+   "frase": 6,
+   "seccion": "escalon"
+  },
+  {
+   "texto": "mundo",
+   "inicio": 28.041,
+   "duracion": 0.236,
+   "visible": "mundo.",
+   "enfasis": false,
+   "frase": 6,
+   "seccion": "escalon"
+  },
+  {
+   "texto": "y",
+   "inicio": 28.75,
+   "duracion": 0.164,
+   "visible": "Y",
+   "enfasis": false,
+   "frase": 7,
+   "seccion": "escalon2"
+  },
+  {
+   "texto": "las",
+   "inicio": 28.914,
+   "duracion": 0.2,
+   "visible": "las",
+   "enfasis": false,
+   "frase": 7,
+   "seccion": "escalon2"
+  },
+  {
+   "texto": "fotos",
+   "inicio": 29.114,
+   "duracion": 0.327,
+   "visible": "fotos",
+   "enfasis": false,
+   "frase": 7,
+   "seccion": "escalon2"
+  },
+  {
+   "texto": "parecen",
+   "inicio": 29.441,
+   "duracion": 0.545,
+   "visible": "parecen",
+   "enfasis": false,
+   "frase": 7,
+   "seccion": "escalon2"
+  },
+  {
+   "texto": "darles",
+   "inicio": 29.986,
+   "duracion": 0.455,
+   "visible": "darles",
+   "enfasis": false,
+   "frase": 7,
+   "seccion": "escalon2"
+  },
+  {
+   "texto": "la",
+   "inicio": 30.441,
+   "duracion": 0.127,
+   "visible": "la",
+   "enfasis": false,
+   "frase": 7,
+   "seccion": "escalon2"
+  },
+  {
+   "texto": "razon",
+   "inicio": 30.568,
+   "duracion": 0.345,
+   "visible": "razón:",
+   "enfasis": false,
+   "frase": 7,
+   "seccion": "escalon2"
+  },
+  {
+   "texto": "a",
+   "inicio": 31.35,
+   "duracion": 0.145,
+   "visible": "a",
+   "enfasis": false,
+   "frase": 8,
+   "seccion": "escalon2"
+  },
+  {
+   "texto": "los",
+   "inicio": 31.495,
+   "duracion": 0.127,
+   "visible": "los",
+   "enfasis": false,
+   "frase": 8,
+   "seccion": "escalon2"
+  },
+  {
+   "texto": "veinte",
+   "inicio": 31.623,
+   "duracion": 0.364,
+   "visible": "20,",
+   "enfasis": true,
+   "frase": 8,
+   "seccion": "escalon2"
+  },
+  {
+   "texto": "piel",
+   "inicio": 32.314,
+   "duracion": 0.127,
+   "visible": "piel",
+   "enfasis": false,
+   "frase": 8,
+   "seccion": "escalon2"
+  },
+  {
+   "texto": "morena",
+   "inicio": 32.441,
+   "duracion": 0.436,
+   "visible": "morena...",
+   "enfasis": false,
+   "frase": 8,
+   "seccion": "escalon2"
+  },
+  {
+   "texto": "a",
+   "inicio": 33.25,
+   "duracion": 0.164,
+   "visible": "A",
+   "enfasis": true,
+   "frase": 9,
+   "seccion": "escalon2"
+  },
+  {
+   "texto": "los",
+   "inicio": 33.414,
+   "duracion": 0.164,
+   "visible": "LOS",
+   "enfasis": true,
+   "frase": 9,
+   "seccion": "escalon2"
+  },
+  {
+   "texto": "treinta",
+   "inicio": 33.577,
+   "duracion": 0.455,
+   "visible": "33,",
+   "enfasis": true,
+   "frase": 9,
+   "seccion": "escalon2"
+  },
+  {
+   "texto": "casi",
+   "inicio": 34.686,
+   "duracion": 0.309,
+   "visible": "¡CASI",
+   "enfasis": true,
+   "frase": 9,
+   "seccion": "escalon2"
+  },
+  {
+   "texto": "blanca",
+   "inicio": 34.995,
+   "duracion": 0.455,
+   "visible": "BLANCA!",
+   "enfasis": true,
+   "frase": 9,
+   "seccion": "escalon2"
+  },
+  {
+   "texto": "y",
+   "inicio": 35.868,
+   "duracion": 0.145,
+   "visible": "Y",
+   "enfasis": false,
+   "frase": 10,
+   "seccion": "escalon2"
+  },
+  {
+   "texto": "encima",
+   "inicio": 36.014,
+   "duracion": 0.473,
+   "visible": "encima,",
+   "enfasis": false,
+   "frase": 10,
+   "seccion": "escalon2"
+  },
+  {
+   "texto": "se",
+   "inicio": 36.486,
+   "duracion": 0.455,
+   "visible": "se",
+   "enfasis": false,
+   "frase": 10,
+   "seccion": "escalon2"
+  },
+  {
+   "texto": "opera",
+   "inicio": 36.941,
+   "duracion": 0.236,
+   "visible": "opera",
+   "enfasis": false,
+   "frase": 10,
+   "seccion": "escalon2"
+  },
+  {
+   "texto": "la",
+   "inicio": 37.177,
+   "duracion": 0.273,
+   "visible": "la",
+   "enfasis": false,
+   "frase": 10,
+   "seccion": "escalon2"
+  },
+  {
+   "texto": "nariz",
+   "inicio": 37.45,
+   "duracion": 0.364,
+   "visible": "nariz.",
+   "enfasis": false,
+   "frase": 10,
+   "seccion": "escalon2"
+  },
+  {
+   "texto": "pero",
+   "inicio": 38.177,
+   "duracion": 0.218,
+   "visible": "Pero",
+   "enfasis": false,
+   "frase": 11,
+   "seccion": "climax"
+  },
+  {
+   "texto": "tenia",
+   "inicio": 38.395,
+   "duracion": 0.455,
+   "visible": "tenía",
+   "enfasis": false,
+   "frase": 11,
+   "seccion": "climax"
+  },
+  {
+   "texto": "vitiligo",
+   "inicio": 38.85,
+   "duracion": 0.582,
+   "visible": "vitiligo,",
+   "enfasis": true,
+   "frase": 11,
+   "seccion": "climax"
+  },
+  {
+   "texto": "una",
+   "inicio": 39.886,
+   "duracion": 0.255,
+   "visible": "una",
+   "enfasis": false,
+   "frase": 11,
+   "seccion": "climax"
+  },
+  {
+   "texto": "enfermedad",
+   "inicio": 40.141,
+   "duracion": 0.727,
+   "visible": "enfermedad",
+   "enfasis": false,
+   "frase": 11,
+   "seccion": "climax"
+  },
+  {
+   "texto": "que",
+   "inicio": 40.868,
+   "duracion": 0.164,
+   "visible": "que",
+   "enfasis": false,
+   "frase": 11,
+   "seccion": "climax"
+  },
+  {
+   "texto": "borra",
+   "inicio": 41.032,
+   "duracion": 0.327,
+   "visible": "borra",
+   "enfasis": false,
+   "frase": 11,
+   "seccion": "climax"
+  },
+  {
+   "texto": "el",
+   "inicio": 41.359,
+   "duracion": 0.127,
+   "visible": "el",
+   "enfasis": false,
+   "frase": 11,
+   "seccion": "climax"
+  },
+  {
+   "texto": "color",
+   "inicio": 41.486,
+   "duracion": 0.236,
+   "visible": "color",
+   "enfasis": false,
+   "frase": 11,
+   "seccion": "climax"
+  },
+  {
+   "texto": "de",
+   "inicio": 41.723,
+   "duracion": 0.145,
+   "visible": "de",
+   "enfasis": false,
+   "frase": 11,
+   "seccion": "climax"
+  },
+  {
+   "texto": "la",
+   "inicio": 41.868,
+   "duracion": 0.109,
+   "visible": "la",
+   "enfasis": false,
+   "frase": 11,
+   "seccion": "climax"
+  },
+  {
+   "texto": "piel",
+   "inicio": 41.977,
+   "duracion": 0.255,
+   "visible": "piel.",
+   "enfasis": false,
+   "frase": 11,
+   "seccion": "climax"
+  },
+  {
+   "texto": "quien",
+   "inicio": 42.232,
+   "duracion": 0.527,
+   "visible": "¿Quién",
+   "enfasis": false,
+   "frase": 12,
+   "seccion": "climax"
+  },
+  {
+   "texto": "lo",
+   "inicio": 42.759,
+   "duracion": 0.127,
+   "visible": "lo",
+   "enfasis": false,
+   "frase": 12,
+   "seccion": "climax"
+  },
+  {
+   "texto": "confirmo",
+   "inicio": 42.886,
+   "duracion": 0.491,
+   "visible": "confirmó?",
+   "enfasis": false,
+   "frase": 12,
+   "seccion": "climax"
+  },
+  {
+   "texto": "su",
+   "inicio": 43.755,
+   "duracion": 0.236,
+   "visible": "¡SU",
+   "enfasis": true,
+   "frase": 13,
+   "seccion": "climax"
+  },
+  {
+   "texto": "autopsia",
+   "inicio": 43.991,
+   "duracion": 0.655,
+   "visible": "AUTOPSIA,",
+   "enfasis": true,
+   "frase": 13,
+   "seccion": "climax"
+  },
+  {
+   "texto": "en",
+   "inicio": 44.645,
+   "duracion": 0.309,
+   "visible": "EN",
+   "enfasis": true,
+   "frase": 13,
+   "seccion": "climax"
+  },
+  {
+   "texto": "dos",
+   "inicio": 44.955,
+   "duracion": 0.581,
+   "visible": "2009!",
+   "enfasis": true,
+   "frase": 13,
+   "seccion": "climax"
+  },
+  {
+   "texto": "y",
+   "inicio": 46.009,
+   "duracion": 0.218,
+   "visible": "¿Y",
+   "enfasis": false,
+   "frase": 14,
+   "seccion": "climax"
+  },
+  {
+   "texto": "las",
+   "inicio": 46.227,
+   "duracion": 0.182,
+   "visible": "las",
+   "enfasis": false,
+   "frase": 14,
+   "seccion": "climax"
+  },
+  {
+   "texto": "cremas",
+   "inicio": 46.409,
+   "duracion": 0.309,
+   "visible": "cremas",
+   "enfasis": true,
+   "frase": 14,
+   "seccion": "climax"
+  },
+  {
+   "texto": "que",
+   "inicio": 46.718,
+   "duracion": 0.145,
+   "visible": "que",
+   "enfasis": false,
+   "frase": 14,
+   "seccion": "climax"
+  },
+  {
+   "texto": "usaba",
+   "inicio": 46.864,
+   "duracion": 0.364,
+   "visible": "usaba?",
+   "enfasis": false,
+   "frase": 14,
+   "seccion": "climax"
+  },
+  {
+   "texto": "eran",
+   "inicio": 47.227,
+   "duracion": 0.673,
+   "visible": "Eran",
+   "enfasis": false,
+   "frase": 15,
+   "seccion": "climax"
+  },
+  {
+   "texto": "para",
+   "inicio": 47.9,
+   "duracion": 0.273,
+   "visible": "para",
+   "enfasis": false,
+   "frase": 15,
+   "seccion": "climax"
+  },
+  {
+   "texto": "igualar",
+   "inicio": 48.173,
+   "duracion": 0.455,
+   "visible": "igualar",
+   "enfasis": false,
+   "frase": 15,
+   "seccion": "climax"
+  },
+  {
+   "texto": "las",
+   "inicio": 48.627,
+   "duracion": 0.127,
+   "visible": "las",
+   "enfasis": false,
+   "frase": 15,
+   "seccion": "climax"
+  },
+  {
+   "texto": "manchas",
+   "inicio": 48.755,
+   "duracion": 0.382,
+   "visible": "manchas,",
+   "enfasis": true,
+   "frase": 15,
+   "seccion": "climax"
+  },
+  {
+   "texto": "no",
+   "inicio": 49.482,
+   "duracion": 0.182,
+   "visible": "no",
+   "enfasis": false,
+   "frase": 15,
+   "seccion": "climax"
+  },
+  {
+   "texto": "para",
+   "inicio": 49.664,
+   "duracion": 0.182,
+   "visible": "para",
+   "enfasis": false,
+   "frase": 15,
+   "seccion": "climax"
+  },
+  {
+   "texto": "blanquearse",
+   "inicio": 49.845,
+   "duracion": 0.527,
+   "visible": "blanquearse.",
+   "enfasis": false,
+   "frase": 15,
+   "seccion": "climax"
+  },
+  {
+   "texto": "para",
+   "inicio": 50.791,
+   "duracion": 0.182,
+   "visible": "Para",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "colmo",
+   "inicio": 50.973,
+   "duracion": 0.382,
+   "visible": "colmo,",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "cuando",
+   "inicio": 51.664,
+   "duracion": 0.2,
+   "visible": "cuando",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "por",
+   "inicio": 51.864,
+   "duracion": 0.2,
+   "visible": "por",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "fin",
+   "inicio": 52.064,
+   "duracion": 0.236,
+   "visible": "fin",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "lo",
+   "inicio": 52.3,
+   "duracion": 0.127,
+   "visible": "lo",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "conto",
+   "inicio": 52.427,
+   "duracion": 0.364,
+   "visible": "contó",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "en",
+   "inicio": 52.791,
+   "duracion": 0.073,
+   "visible": "en",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "television",
+   "inicio": 52.864,
+   "duracion": 0.6,
+   "visible": "televisión,",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "muchos",
+   "inicio": 53.918,
+   "duracion": 0.218,
+   "visible": "muchos",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "ya",
+   "inicio": 54.136,
+   "duracion": 0.291,
+   "visible": "ya",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "no",
+   "inicio": 54.427,
+   "duracion": 0.127,
+   "visible": "no",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "le",
+   "inicio": 54.555,
+   "duracion": 0.109,
+   "visible": "le",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "creyeron",
+   "inicio": 54.664,
+   "duracion": 0.527,
+   "visible": "creyeron.",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "y",
+   "inicio": 55.591,
+   "duracion": 0.145,
+   "visible": "Y",
+   "enfasis": false,
+   "frase": 17,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "eso",
+   "inicio": 55.736,
+   "duracion": 0.255,
+   "visible": "eso",
+   "enfasis": false,
+   "frase": 17,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "que",
+   "inicio": 55.991,
+   "duracion": 0.145,
+   "visible": "que",
+   "enfasis": false,
+   "frase": 17,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "ya",
+   "inicio": 56.136,
+   "duracion": 0.2,
+   "visible": "ya",
+   "enfasis": false,
+   "frase": 17,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "habia",
+   "inicio": 56.336,
+   "duracion": 0.218,
+   "visible": "había",
+   "enfasis": false,
+   "frase": 17,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "cantado",
+   "inicio": 56.555,
+   "duracion": 0.582,
+   "visible": "cantado:",
+   "enfasis": false,
+   "frase": 17,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "no",
+   "inicio": 57.491,
+   "duracion": 0.236,
+   "visible": "«No",
+   "enfasis": false,
+   "frase": 17,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "importa",
+   "inicio": 57.727,
+   "duracion": 0.418,
+   "visible": "importa",
+   "enfasis": false,
+   "frase": 17,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "si",
+   "inicio": 58.145,
+   "duracion": 0.273,
+   "visible": "si",
+   "enfasis": false,
+   "frase": 17,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "eres",
+   "inicio": 58.418,
+   "duracion": 0.2,
+   "visible": "eres",
+   "enfasis": false,
+   "frase": 17,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "negro",
+   "inicio": 58.618,
+   "duracion": 0.364,
+   "visible": "negro",
+   "enfasis": false,
+   "frase": 17,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "o",
+   "inicio": 58.982,
+   "duracion": 0.2,
+   "visible": "o",
+   "enfasis": false,
+   "frase": 17,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "blanco",
+   "inicio": 59.182,
+   "duracion": 0.382,
+   "visible": "blanco».",
+   "enfasis": false,
+   "frase": 17,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "veredicto",
+   "inicio": 59.927,
+   "duracion": 0.6,
+   "visible": "VEREDICTO:",
+   "enfasis": true,
+   "frase": 18,
+   "seccion": "veredicto"
+  },
+  {
+   "texto": "mito",
+   "inicio": 60.9,
+   "duracion": 0.436,
+   "visible": "MITO.",
+   "enfasis": true,
+   "frase": 18,
+   "seccion": "veredicto"
+  },
+  {
+   "texto": "quiso",
+   "inicio": 61.7,
+   "duracion": 0.2,
+   "visible": "¿Quiso",
+   "enfasis": false,
+   "frase": 19,
+   "seccion": "pregunta"
+  },
+  {
+   "texto": "ser",
+   "inicio": 61.9,
+   "duracion": 0.218,
+   "visible": "ser",
+   "enfasis": false,
+   "frase": 19,
+   "seccion": "pregunta"
+  },
+  {
+   "texto": "blanco",
+   "inicio": 62.118,
+   "duracion": 0.4,
+   "visible": "blanco...",
+   "enfasis": false,
+   "frase": 19,
+   "seccion": "pregunta"
+  },
+  {
+   "texto": "o",
+   "inicio": 63.064,
+   "duracion": 0.091,
+   "visible": "o",
+   "enfasis": false,
+   "frase": 19,
+   "seccion": "pregunta"
+  },
+  {
+   "texto": "fue",
+   "inicio": 63.155,
+   "duracion": 0.164,
+   "visible": "fue",
+   "enfasis": false,
+   "frase": 19,
+   "seccion": "pregunta"
+  },
+  {
+   "texto": "victima",
+   "inicio": 63.318,
+   "duracion": 0.436,
+   "visible": "víctima",
+   "enfasis": false,
+   "frase": 19,
+   "seccion": "pregunta"
+  },
+  {
+   "texto": "del",
+   "inicio": 63.755,
+   "duracion": 0.182,
+   "visible": "del",
+   "enfasis": false,
+   "frase": 19,
+   "seccion": "pregunta"
+  },
+  {
+   "texto": "chisme",
+   "inicio": 63.936,
+   "duracion": 0.4,
+   "visible": "chisme",
+   "enfasis": false,
+   "frase": 19,
+   "seccion": "pregunta"
+  },
+  {
+   "texto": "mas",
+   "inicio": 64.336,
+   "duracion": 0.291,
+   "visible": "más",
+   "enfasis": false,
+   "frase": 19,
+   "seccion": "pregunta"
+  },
+  {
+   "texto": "cruel",
+   "inicio": 64.627,
+   "duracion": 0.255,
+   "visible": "cruel",
+   "enfasis": false,
+   "frase": 19,
+   "seccion": "pregunta"
+  },
+  {
+   "texto": "del",
+   "inicio": 64.882,
+   "duracion": 0.2,
+   "visible": "del",
+   "enfasis": false,
+   "frase": 19,
+   "seccion": "pregunta"
+  },
+  {
+   "texto": "pop",
+   "inicio": 65.082,
+   "duracion": 0.2,
+   "visible": "pop?",
+   "enfasis": false,
+   "frase": 19,
+   "seccion": "pregunta"
+  }
+ ]
+}
