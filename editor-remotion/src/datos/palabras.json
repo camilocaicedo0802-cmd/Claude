@@ -1,0 +1,506 @@
+{
+ "toma1_agro": [
+  {
+   "text": "Hola",
+   "startMs": 1810,
+   "endMs": 1920
+  },
+  {
+   "text": "mis",
+   "startMs": 1920,
+   "endMs": 2040
+  },
+  {
+   "text": "Kracks,",
+   "startMs": 2040,
+   "endMs": 2260
+  },
+  {
+   "text": "¿ustedes",
+   "startMs": 2480,
+   "endMs": 2860
+  },
+  {
+   "text": "saben",
+   "startMs": 2860,
+   "endMs": 3020
+  },
+  {
+   "text": "qué",
+   "startMs": 3020,
+   "endMs": 3300
+  },
+  {
+   "text": "ventajas",
+   "startMs": 3300,
+   "endMs": 3840
+  },
+  {
+   "text": "hay",
+   "startMs": 3840,
+   "endMs": 4000
+  },
+  {
+   "text": "de",
+   "startMs": 4000,
+   "endMs": 4140
+  },
+  {
+   "text": "sembrar",
+   "startMs": 4140,
+   "endMs": 4520
+  },
+  {
+   "text": "semilla",
+   "startMs": 4810,
+   "endMs": 5120
+  },
+  {
+   "text": "certificada?",
+   "startMs": 5120,
+   "endMs": 5860
+  }
+ ],
+ "wa_105147_0": [
+  {
+   "text": "Estoy",
+   "startMs": 1540,
+   "endMs": 1700
+  },
+  {
+   "text": "acá",
+   "startMs": 1700,
+   "endMs": 1900
+  },
+  {
+   "text": "en",
+   "startMs": 1900,
+   "endMs": 2140
+  },
+  {
+   "text": "un",
+   "startMs": 2140,
+   "endMs": 2220
+  },
+  {
+   "text": "día",
+   "startMs": 2220,
+   "endMs": 2380
+  },
+  {
+   "text": "de",
+   "startMs": 2380,
+   "endMs": 2500
+  },
+  {
+   "text": "campo",
+   "startMs": 2500,
+   "endMs": 2800
+  },
+  {
+   "text": "de",
+   "startMs": 2800,
+   "endMs": 3020
+  },
+  {
+   "text": "Fedearroz,",
+   "startMs": 3020,
+   "endMs": 3580
+  },
+  {
+   "text": "el",
+   "startMs": 3660,
+   "endMs": 3740
+  },
+  {
+   "text": "gremio",
+   "startMs": 3920,
+   "endMs": 4430
+  },
+  {
+   "text": "de",
+   "startMs": 4430,
+   "endMs": 4490
+  },
+  {
+   "text": "arroceros",
+   "startMs": 4490,
+   "endMs": 5030
+  },
+  {
+   "text": "en",
+   "startMs": 5030,
+   "endMs": 5130
+  },
+  {
+   "text": "Colombia,",
+   "startMs": 5130,
+   "endMs": 5470
+  },
+  {
+   "text": "y",
+   "startMs": 5590,
+   "endMs": 5680
+  },
+  {
+   "text": "nos",
+   "startMs": 5940,
+   "endMs": 6070
+  },
+  {
+   "text": "van",
+   "startMs": 6070,
+   "endMs": 6230
+  },
+  {
+   "text": "a",
+   "startMs": 6230,
+   "endMs": 6370
+  },
+  {
+   "text": "contar",
+   "startMs": 6370,
+   "endMs": 6750
+  },
+  {
+   "text": "cuáles",
+   "startMs": 7260,
+   "endMs": 7490
+  },
+  {
+   "text": "son",
+   "startMs": 7490,
+   "endMs": 7630
+  },
+  {
+   "text": "las",
+   "startMs": 7630,
+   "endMs": 7790
+  },
+  {
+   "text": "principales",
+   "startMs": 7790,
+   "endMs": 8330
+  },
+  {
+   "text": "ventajas",
+   "startMs": 8330,
+   "endMs": 8850
+  },
+  {
+   "text": "de",
+   "startMs": 8850,
+   "endMs": 8930
+  },
+  {
+   "text": "sembrar",
+   "startMs": 8930,
+   "endMs": 9310
+  },
+  {
+   "text": "semilla",
+   "startMs": 9530,
+   "endMs": 9890
+  },
+  {
+   "text": "certificada.",
+   "startMs": 9890,
+   "endMs": 10630
+  }
+ ],
+ "wa_105147_1": [
+  {
+   "text": "Buenas",
+   "startMs": 2370,
+   "endMs": 2500
+  },
+  {
+   "text": "tardes,",
+   "startMs": 2500,
+   "endMs": 2860
+  },
+  {
+   "text": "mi",
+   "startMs": 2860,
+   "endMs": 2960
+  },
+  {
+   "text": "nombre",
+   "startMs": 2960,
+   "endMs": 3140
+  },
+  {
+   "text": "es",
+   "startMs": 3140,
+   "endMs": 3540
+  },
+  {
+   "text": "Luis",
+   "startMs": 3540,
+   "endMs": 3670
+  },
+  {
+   "text": "Bernal",
+   "startMs": 3790,
+   "endMs": 4100
+  },
+  {
+   "text": "Gutiérrez,",
+   "startMs": 4100,
+   "endMs": 4500
+  },
+  {
+   "text": "ingeniero",
+   "startMs": 4540,
+   "endMs": 4800
+  },
+  {
+   "text": "agrónomo",
+   "startMs": 4800,
+   "endMs": 5120
+  },
+  {
+   "text": "de",
+   "startMs": 5120,
+   "endMs": 5240
+  },
+  {
+   "text": "Fedearroz",
+   "startMs": 5240,
+   "endMs": 5640
+  },
+  {
+   "text": "y",
+   "startMs": 5640,
+   "endMs": 5840
+  },
+  {
+   "text": "hago",
+   "startMs": 5840,
+   "endMs": 5960
+  },
+  {
+   "text": "parte",
+   "startMs": 5960,
+   "endMs": 6240
+  },
+  {
+   "text": "del",
+   "startMs": 6240,
+   "endMs": 6440
+  },
+  {
+   "text": "proyecto",
+   "startMs": 6440,
+   "endMs": 6580
+  },
+  {
+   "text": "de",
+   "startMs": 6580,
+   "endMs": 6700
+  },
+  {
+   "text": "asistencia",
+   "startMs": 6700,
+   "endMs": 7280
+  },
+  {
+   "text": "AMTEC.",
+   "startMs": 7620,
+   "endMs": 7950
+  }
+ ],
+ "wa_105147_2": [
+  {
+   "text": "Beneficio",
+   "startMs": 2240,
+   "endMs": 2620
+  },
+  {
+   "text": "número",
+   "startMs": 2620,
+   "endMs": 2780
+  },
+  {
+   "text": "uno,",
+   "startMs": 2780,
+   "endMs": 3100
+  },
+  {
+   "text": "semilla",
+   "startMs": 3500,
+   "endMs": 3800
+  },
+  {
+   "text": "libre",
+   "startMs": 3800,
+   "endMs": 3980
+  },
+  {
+   "text": "de",
+   "startMs": 4220,
+   "endMs": 4510
+  },
+  {
+   "text": "malezas.",
+   "startMs": 4510,
+   "endMs": 5060
+  }
+ ],
+ "wa_105147_3": [
+  {
+   "text": "Beneficio",
+   "startMs": 2340,
+   "endMs": 2730
+  },
+  {
+   "text": "número",
+   "startMs": 2730,
+   "endMs": 2850
+  },
+  {
+   "text": "dos,",
+   "startMs": 2850,
+   "endMs": 3110
+  },
+  {
+   "text": "garantía",
+   "startMs": 3690,
+   "endMs": 4250
+  },
+  {
+   "text": "de",
+   "startMs": 4250,
+   "endMs": 4390
+  },
+  {
+   "text": "que",
+   "startMs": 4490,
+   "endMs": 4790
+  },
+  {
+   "text": "lo",
+   "startMs": 4790,
+   "endMs": 5010
+  },
+  {
+   "text": "que",
+   "startMs": 5010,
+   "endMs": 5170
+  },
+  {
+   "text": "usted",
+   "startMs": 5170,
+   "endMs": 5390
+  },
+  {
+   "text": "compra",
+   "startMs": 5390,
+   "endMs": 5810
+  },
+  {
+   "text": "es",
+   "startMs": 5810,
+   "endMs": 6150
+  },
+  {
+   "text": "lo",
+   "startMs": 6150,
+   "endMs": 6330
+  },
+  {
+   "text": "que",
+   "startMs": 6330,
+   "endMs": 6450
+  },
+  {
+   "text": "se",
+   "startMs": 6450,
+   "endMs": 6550
+  },
+  {
+   "text": "lleva.",
+   "startMs": 6550,
+   "endMs": 6960
+  }
+ ],
+ "wa_105147_4": [
+  {
+   "text": "Beneficio",
+   "startMs": 1550,
+   "endMs": 1600
+  },
+  {
+   "text": "número",
+   "startMs": 1970,
+   "endMs": 2090
+  },
+  {
+   "text": "tres,",
+   "startMs": 2090,
+   "endMs": 2410
+  },
+  {
+   "text": "excelente",
+   "startMs": 2880,
+   "endMs": 3350
+  },
+  {
+   "text": "sanidad",
+   "startMs": 3350,
+   "endMs": 3690
+  },
+  {
+   "text": "y",
+   "startMs": 3690,
+   "endMs": 3930
+  },
+  {
+   "text": "mayor",
+   "startMs": 4160,
+   "endMs": 4440
+  },
+  {
+   "text": "potencial",
+   "startMs": 4440,
+   "endMs": 4820
+  },
+  {
+   "text": "de",
+   "startMs": 4820,
+   "endMs": 5040
+  },
+  {
+   "text": "rendimiento.",
+   "startMs": 5040,
+   "endMs": 5510
+  }
+ ],
+ "wa_105147_5": [
+  {
+   "text": "AMTEC,",
+   "startMs": 1980,
+   "endMs": 2030
+  },
+  {
+   "text": "adopción",
+   "startMs": 2880,
+   "endMs": 3250
+  },
+  {
+   "text": "masiva",
+   "startMs": 3250,
+   "endMs": 3630
+  },
+  {
+   "text": "de",
+   "startMs": 3630,
+   "endMs": 3680
+  },
+  {
+   "text": "tecnología.",
+   "startMs": 3670,
+   "endMs": 4290
+  }
+ ]
+}

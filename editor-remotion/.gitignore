@@ -1,0 +1,22 @@
+node_modules
+dist
+.DS_Store
+.env
+
+# Renders y trabajo intermedio
+out
+.venv-whisper
+
+# Material descargado de Drive y derivados pesados (se regeneran con scripts/)
+material
+public/clips
+public/voz
+public/musica
+referencia/todos
+referencia/frames
+referencia/cortes
+referencia/audio
+referencia/final_derecha.mp4
+referencia/*.png
+referencia/diffs.npy
+referencia/hojas
