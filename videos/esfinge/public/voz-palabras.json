@@ -1,0 +1,1706 @@
+{
+ "voz": "Gemini 2.5 Flash TTS · Charon",
+ "duracion": 62.805,
+ "frases": [
+  {
+   "i": 0,
+   "texto": "¡Napoleón no le voló la nariz a la Esfinge!...",
+   "seccion": "gancho",
+   "inicio": 0.0,
+   "fin": 2.672
+  },
+  {
+   "i": 1,
+   "texto": "La pobre ya estaba chata... antes de que él naciera.",
+   "seccion": "gancho",
+   "inicio": 3.0,
+   "fin": 5.691
+  },
+  {
+   "i": 2,
+   "texto": "En mil setecientos noventa y ocho, Napoleón llega con sus cañones a las pirámides.",
+   "seccion": "origen",
+   "inicio": 6.109,
+   "fin": 10.291
+  },
+  {
+   "i": 3,
+   "texto": "Y claro: francés, con cañones y frente a una Esfinge sin nariz...",
+   "seccion": "origen",
+   "inicio": 10.764,
+   "fin": 14.782
+  },
+  {
+   "i": 4,
+   "texto": "¿quién más iba a ser?",
+   "seccion": "origen",
+   "inicio": 14.982,
+   "fin": 15.795
+  },
+  {
+   "i": 5,
+   "texto": "Y nace la leyenda: soldados aburridos usaron la nariz como tiro al blanco.",
+   "seccion": "escalon",
+   "inicio": 16.305,
+   "fin": 20.505
+  },
+  {
+   "i": 6,
+   "texto": "Una nariz de un metro... ¡imposible fallar!",
+   "seccion": "escalon",
+   "inicio": 20.85,
+   "fin": 23.378
+  },
+  {
+   "i": 7,
+   "texto": "Y la historia pasa de guía en guía.",
+   "seccion": "escalon",
+   "inicio": 23.705,
+   "fin": 25.595
+  },
+  {
+   "i": 8,
+   "texto": "El caso parece clarísimo: llega Napoleón... y la nariz desaparece.",
+   "seccion": "escalon2",
+   "inicio": 25.595,
+   "fin": 29.759
+  },
+  {
+   "i": 9,
+   "texto": "Total, ya era «el bajito»...",
+   "seccion": "escalon2",
+   "inicio": 30.068,
+   "fin": 31.269
+  },
+  {
+   "i": 10,
+   "texto": "¿qué le cuesta ser vándalo también?",
+   "seccion": "escalon2",
+   "inicio": 31.577,
+   "fin": 32.814
+  },
+  {
+   "i": 11,
+   "texto": "Pero en mil setecientos treinta y siete, un explorador danés dibuja la Esfinge...",
+   "seccion": "climax",
+   "inicio": 33.395,
+   "fin": 37.632
+  },
+  {
+   "i": 12,
+   "texto": "¡y ya está chata!",
+   "seccion": "climax",
+   "inicio": 37.632,
+   "fin": 38.777
+  },
+  {
+   "i": 13,
+   "texto": "¿Cuántos años tenía Napoleón?",
+   "seccion": "climax",
+   "inicio": 39.232,
+   "fin": 40.45
+  },
+  {
+   "i": 14,
+   "texto": "¡Ni había nacido!",
+   "seccion": "climax",
+   "inicio": 40.741,
+   "fin": 41.577
+  },
+  {
+   "i": 15,
+   "texto": "¿Y el verdadero culpable?",
+   "seccion": "climax",
+   "inicio": 42.032,
+   "fin": 43.087
+  },
+  {
+   "i": 16,
+   "texto": "Un fanático, en mil trescientos setenta y ocho, harto de que le llevaran ofrendas.",
+   "seccion": "climax",
+   "inicio": 43.427,
+   "fin": 47.864
+  },
+  {
+   "i": 17,
+   "texto": "Para colmo, al vándalo lo ahorcaron.",
+   "seccion": "golpe",
+   "inicio": 48.191,
+   "fin": 49.937
+  },
+  {
+   "i": 18,
+   "texto": "Y la expedición de Napoleón hasta encontró la piedra de Rosetta...",
+   "seccion": "golpe",
+   "inicio": 49.936,
+   "fin": 53.664
+  },
+  {
+   "i": 19,
+   "texto": "que hoy está en Londres.",
+   "seccion": "golpe",
+   "inicio": 53.995,
+   "fin": 54.85
+  },
+  {
+   "i": 20,
+   "texto": "Los ingleses, otra vez.",
+   "seccion": "golpe",
+   "inicio": 55.323,
+   "fin": 56.668
+  },
+  {
+   "i": 21,
+   "texto": "Veredicto: ¡mito!",
+   "seccion": "veredicto",
+   "inicio": 57.123,
+   "fin": 58.45
+  },
+  {
+   "i": 22,
+   "texto": "Primero bajito, ahora vándalo...",
+   "seccion": "pregunta",
+   "inicio": 58.814,
+   "fin": 60.704
+  },
+  {
+   "i": 23,
+   "texto": "¿qué más le van a inventar al pobre Napoleón?",
+   "seccion": "pregunta",
+   "inicio": 61.086,
+   "fin": 62.632
+  }
+ ],
+ "palabras": [
+  {
+   "texto": "napoleon",
+   "inicio": 0.0,
+   "duracion": 0.818,
+   "visible": "¡Napoleón",
+   "enfasis": true,
+   "frase": 0,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "no",
+   "inicio": 0.818,
+   "duracion": 0.182,
+   "visible": "no",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "le",
+   "inicio": 1.0,
+   "duracion": 0.164,
+   "visible": "le",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "volo",
+   "inicio": 1.164,
+   "duracion": 0.364,
+   "visible": "voló",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "la",
+   "inicio": 1.527,
+   "duracion": 0.182,
+   "visible": "la",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "nariz",
+   "inicio": 1.709,
+   "duracion": 0.291,
+   "visible": "nariz",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "a",
+   "inicio": 2.0,
+   "duracion": 0.06,
+   "visible": "a",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "la",
+   "inicio": 2.048,
+   "duracion": 0.097,
+   "visible": "la",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "esfinge",
+   "inicio": 2.145,
+   "duracion": 0.527,
+   "visible": "Esfinge!...",
+   "enfasis": true,
+   "frase": 0,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "la",
+   "inicio": 3.0,
+   "duracion": 0.2,
+   "visible": "La",
+   "enfasis": false,
+   "frase": 1,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "pobre",
+   "inicio": 3.2,
+   "duracion": 0.325,
+   "visible": "pobre",
+   "enfasis": false,
+   "frase": 1,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "ya",
+   "inicio": 3.525,
+   "duracion": 0.13,
+   "visible": "ya",
+   "enfasis": false,
+   "frase": 1,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "estaba",
+   "inicio": 3.655,
+   "duracion": 0.255,
+   "visible": "estaba",
+   "enfasis": false,
+   "frase": 1,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "chata",
+   "inicio": 3.909,
+   "duracion": 0.4,
+   "visible": "chata...",
+   "enfasis": true,
+   "frase": 1,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "antes",
+   "inicio": 4.564,
+   "duracion": 0.327,
+   "visible": "antes",
+   "enfasis": false,
+   "frase": 1,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "de",
+   "inicio": 4.891,
+   "duracion": 0.182,
+   "visible": "de",
+   "enfasis": false,
+   "frase": 1,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "que",
+   "inicio": 5.073,
+   "duracion": 0.091,
+   "visible": "que",
+   "enfasis": false,
+   "frase": 1,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "el",
+   "inicio": 5.164,
+   "duracion": 0.145,
+   "visible": "él",
+   "enfasis": false,
+   "frase": 1,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "naciera",
+   "inicio": 5.309,
+   "duracion": 0.382,
+   "visible": "naciera.",
+   "enfasis": false,
+   "frase": 1,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "en",
+   "inicio": 6.109,
+   "duracion": 0.182,
+   "visible": "En",
+   "enfasis": false,
+   "frase": 2,
+   "seccion": "origen"
+  },
+  {
+   "texto": "mil",
+   "inicio": 6.291,
+   "duracion": 1.897,
+   "visible": "1798,",
+   "enfasis": true,
+   "frase": 2,
+   "seccion": "origen"
+  },
+  {
+   "texto": "napoleon",
+   "inicio": 8.188,
+   "duracion": 0.303,
+   "visible": "Napoleón",
+   "enfasis": true,
+   "frase": 2,
+   "seccion": "origen"
+  },
+  {
+   "texto": "llega",
+   "inicio": 8.491,
+   "duracion": 0.182,
+   "visible": "llega",
+   "enfasis": false,
+   "frase": 2,
+   "seccion": "origen"
+  },
+  {
+   "texto": "con",
+   "inicio": 8.673,
+   "duracion": 0.273,
+   "visible": "con",
+   "enfasis": false,
+   "frase": 2,
+   "seccion": "origen"
+  },
+  {
+   "texto": "sus",
+   "inicio": 8.945,
+   "duracion": 0.236,
+   "visible": "sus",
+   "enfasis": false,
+   "frase": 2,
+   "seccion": "origen"
+  },
+  {
+   "texto": "canones",
+   "inicio": 9.182,
+   "duracion": 0.436,
+   "visible": "cañones",
+   "enfasis": false,
+   "frase": 2,
+   "seccion": "origen"
+  },
+  {
+   "texto": "a",
+   "inicio": 9.618,
+   "duracion": 0.164,
+   "visible": "a",
+   "enfasis": false,
+   "frase": 2,
+   "seccion": "origen"
+  },
+  {
+   "texto": "las",
+   "inicio": 9.782,
+   "duracion": 0.109,
+   "visible": "las",
+   "enfasis": false,
+   "frase": 2,
+   "seccion": "origen"
+  },
+  {
+   "texto": "piramides",
+   "inicio": 9.891,
+   "duracion": 0.4,
+   "visible": "pirámides.",
+   "enfasis": false,
+   "frase": 2,
+   "seccion": "origen"
+  },
+  {
+   "texto": "y",
+   "inicio": 10.764,
+   "duracion": 0.091,
+   "visible": "Y",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": "origen"
+  },
+  {
+   "texto": "claro",
+   "inicio": 10.855,
+   "duracion": 0.236,
+   "visible": "claro:",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": "origen"
+  },
+  {
+   "texto": "frances",
+   "inicio": 11.6,
+   "duracion": 0.436,
+   "visible": "francés,",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": "origen"
+  },
+  {
+   "texto": "con",
+   "inicio": 12.036,
+   "duracion": 0.291,
+   "visible": "con",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": "origen"
+  },
+  {
+   "texto": "canones",
+   "inicio": 12.327,
+   "duracion": 0.564,
+   "visible": "cañones",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": "origen"
+  },
+  {
+   "texto": "y",
+   "inicio": 12.891,
+   "duracion": 0.255,
+   "visible": "y",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": "origen"
+  },
+  {
+   "texto": "frente",
+   "inicio": 13.145,
+   "duracion": 0.218,
+   "visible": "frente",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": "origen"
+  },
+  {
+   "texto": "a",
+   "inicio": 13.364,
+   "duracion": 0.236,
+   "visible": "a",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": "origen"
+  },
+  {
+   "texto": "una",
+   "inicio": 13.6,
+   "duracion": 0.109,
+   "visible": "una",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": "origen"
+  },
+  {
+   "texto": "esfinge",
+   "inicio": 13.709,
+   "duracion": 0.491,
+   "visible": "Esfinge",
+   "enfasis": true,
+   "frase": 3,
+   "seccion": "origen"
+  },
+  {
+   "texto": "sin",
+   "inicio": 14.2,
+   "duracion": 0.218,
+   "visible": "sin",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": "origen"
+  },
+  {
+   "texto": "nariz",
+   "inicio": 14.418,
+   "duracion": 0.364,
+   "visible": "nariz...",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": "origen"
+  },
+  {
+   "texto": "quien",
+   "inicio": 14.982,
+   "duracion": 0.323,
+   "visible": "¿quién",
+   "enfasis": false,
+   "frase": 4,
+   "seccion": "origen"
+  },
+  {
+   "texto": "mas",
+   "inicio": 15.305,
+   "duracion": 0.145,
+   "visible": "más",
+   "enfasis": false,
+   "frase": 4,
+   "seccion": "origen"
+  },
+  {
+   "texto": "iba",
+   "inicio": 15.45,
+   "duracion": 0.145,
+   "visible": "iba",
+   "enfasis": false,
+   "frase": 4,
+   "seccion": "origen"
+  },
+  {
+   "texto": "a",
+   "inicio": 15.595,
+   "duracion": 0.091,
+   "visible": "a",
+   "enfasis": false,
+   "frase": 4,
+   "seccion": "origen"
+  },
+  {
+   "texto": "ser",
+   "inicio": 15.686,
+   "duracion": 0.109,
+   "visible": "ser?",
+   "enfasis": false,
+   "frase": 4,
+   "seccion": "origen"
+  },
+  {
+   "texto": "y",
+   "inicio": 16.305,
+   "duracion": 0.2,
+   "visible": "Y",
+   "enfasis": false,
+   "frase": 5,
+   "seccion": "escalon"
+  },
+  {
+   "texto": "nace",
+   "inicio": 16.505,
+   "duracion": 0.291,
+   "visible": "nace",
+   "enfasis": false,
+   "frase": 5,
+   "seccion": "escalon"
+  },
+  {
+   "texto": "la",
+   "inicio": 16.795,
+   "duracion": 0.164,
+   "visible": "la",
+   "enfasis": false,
+   "frase": 5,
+   "seccion": "escalon"
+  },
+  {
+   "texto": "leyenda",
+   "inicio": 16.959,
+   "duracion": 0.382,
+   "visible": "leyenda:",
+   "enfasis": true,
+   "frase": 5,
+   "seccion": "escalon"
+  },
+  {
+   "texto": "soldados",
+   "inicio": 17.759,
+   "duracion": 0.364,
+   "visible": "soldados",
+   "enfasis": false,
+   "frase": 5,
+   "seccion": "escalon"
+  },
+  {
+   "texto": "aburridos",
+   "inicio": 18.123,
+   "duracion": 0.564,
+   "visible": "aburridos",
+   "enfasis": false,
+   "frase": 5,
+   "seccion": "escalon"
+  },
+  {
+   "texto": "usaron",
+   "inicio": 18.686,
+   "duracion": 0.509,
+   "visible": "usaron",
+   "enfasis": false,
+   "frase": 5,
+   "seccion": "escalon"
+  },
+  {
+   "texto": "la",
+   "inicio": 19.195,
+   "duracion": 0.145,
+   "visible": "la",
+   "enfasis": false,
+   "frase": 5,
+   "seccion": "escalon"
+  },
+  {
+   "texto": "nariz",
+   "inicio": 19.341,
+   "duracion": 0.291,
+   "visible": "nariz",
+   "enfasis": false,
+   "frase": 5,
+   "seccion": "escalon"
+  },
+  {
+   "texto": "como",
+   "inicio": 19.632,
+   "duracion": 0.2,
+   "visible": "como",
+   "enfasis": false,
+   "frase": 5,
+   "seccion": "escalon"
+  },
+  {
+   "texto": "tiro",
+   "inicio": 19.832,
+   "duracion": 0.255,
+   "visible": "tiro",
+   "enfasis": false,
+   "frase": 5,
+   "seccion": "escalon"
+  },
+  {
+   "texto": "al",
+   "inicio": 20.086,
+   "duracion": 0.127,
+   "visible": "al",
+   "enfasis": false,
+   "frase": 5,
+   "seccion": "escalon"
+  },
+  {
+   "texto": "blanco",
+   "inicio": 20.214,
+   "duracion": 0.291,
+   "visible": "blanco.",
+   "enfasis": false,
+   "frase": 5,
+   "seccion": "escalon"
+  },
+  {
+   "texto": "una",
+   "inicio": 20.85,
+   "duracion": 0.218,
+   "visible": "Una",
+   "enfasis": false,
+   "frase": 6,
+   "seccion": "escalon"
+  },
+  {
+   "texto": "nariz",
+   "inicio": 21.068,
+   "duracion": 0.345,
+   "visible": "nariz",
+   "enfasis": false,
+   "frase": 6,
+   "seccion": "escalon"
+  },
+  {
+   "texto": "de",
+   "inicio": 21.414,
+   "duracion": 0.127,
+   "visible": "de",
+   "enfasis": false,
+   "frase": 6,
+   "seccion": "escalon"
+  },
+  {
+   "texto": "un",
+   "inicio": 21.541,
+   "duracion": 0.182,
+   "visible": "un",
+   "enfasis": false,
+   "frase": 6,
+   "seccion": "escalon"
+  },
+  {
+   "texto": "metro",
+   "inicio": 21.723,
+   "duracion": 0.327,
+   "visible": "metro...",
+   "enfasis": true,
+   "frase": 6,
+   "seccion": "escalon"
+  },
+  {
+   "texto": "imposible",
+   "inicio": 22.432,
+   "duracion": 0.582,
+   "visible": "¡imposible",
+   "enfasis": false,
+   "frase": 6,
+   "seccion": "escalon"
+  },
+  {
+   "texto": "fallar",
+   "inicio": 23.014,
+   "duracion": 0.364,
+   "visible": "fallar!",
+   "enfasis": false,
+   "frase": 6,
+   "seccion": "escalon"
+  },
+  {
+   "texto": "y",
+   "inicio": 23.705,
+   "duracion": 0.218,
+   "visible": "Y",
+   "enfasis": false,
+   "frase": 7,
+   "seccion": "escalon"
+  },
+  {
+   "texto": "la",
+   "inicio": 23.923,
+   "duracion": 0.091,
+   "visible": "la",
+   "enfasis": false,
+   "frase": 7,
+   "seccion": "escalon"
+  },
+  {
+   "texto": "historia",
+   "inicio": 24.014,
+   "duracion": 0.309,
+   "visible": "historia",
+   "enfasis": false,
+   "frase": 7,
+   "seccion": "escalon"
+  },
+  {
+   "texto": "pasa",
+   "inicio": 24.323,
+   "duracion": 0.364,
+   "visible": "pasa",
+   "enfasis": false,
+   "frase": 7,
+   "seccion": "escalon"
+  },
+  {
+   "texto": "de",
+   "inicio": 24.686,
+   "duracion": 0.218,
+   "visible": "de",
+   "enfasis": false,
+   "frase": 7,
+   "seccion": "escalon"
+  },
+  {
+   "texto": "guia",
+   "inicio": 24.905,
+   "duracion": 0.291,
+   "visible": "guía",
+   "enfasis": false,
+   "frase": 7,
+   "seccion": "escalon"
+  },
+  {
+   "texto": "en",
+   "inicio": 25.195,
+   "duracion": 0.164,
+   "visible": "en",
+   "enfasis": false,
+   "frase": 7,
+   "seccion": "escalon"
+  },
+  {
+   "texto": "guia",
+   "inicio": 25.359,
+   "duracion": 0.236,
+   "visible": "guía.",
+   "enfasis": false,
+   "frase": 7,
+   "seccion": "escalon"
+  },
+  {
+   "texto": "el",
+   "inicio": 25.595,
+   "duracion": 0.582,
+   "visible": "El",
+   "enfasis": false,
+   "frase": 8,
+   "seccion": "escalon2"
+  },
+  {
+   "texto": "caso",
+   "inicio": 26.177,
+   "duracion": 0.255,
+   "visible": "caso",
+   "enfasis": false,
+   "frase": 8,
+   "seccion": "escalon2"
+  },
+  {
+   "texto": "parece",
+   "inicio": 26.432,
+   "duracion": 0.273,
+   "visible": "parece",
+   "enfasis": false,
+   "frase": 8,
+   "seccion": "escalon2"
+  },
+  {
+   "texto": "clarisimo",
+   "inicio": 26.705,
+   "duracion": 0.564,
+   "visible": "clarísimo:",
+   "enfasis": false,
+   "frase": 8,
+   "seccion": "escalon2"
+  },
+  {
+   "texto": "llega",
+   "inicio": 27.577,
+   "duracion": 0.273,
+   "visible": "llega",
+   "enfasis": false,
+   "frase": 8,
+   "seccion": "escalon2"
+  },
+  {
+   "texto": "napoleon",
+   "inicio": 27.85,
+   "duracion": 0.545,
+   "visible": "Napoleón...",
+   "enfasis": true,
+   "frase": 8,
+   "seccion": "escalon2"
+  },
+  {
+   "texto": "y",
+   "inicio": 28.395,
+   "duracion": 0.364,
+   "visible": "y",
+   "enfasis": false,
+   "frase": 8,
+   "seccion": "escalon2"
+  },
+  {
+   "texto": "la",
+   "inicio": 28.759,
+   "duracion": 0.109,
+   "visible": "la",
+   "enfasis": false,
+   "frase": 8,
+   "seccion": "escalon2"
+  },
+  {
+   "texto": "nariz",
+   "inicio": 28.868,
+   "duracion": 0.309,
+   "visible": "nariz",
+   "enfasis": false,
+   "frase": 8,
+   "seccion": "escalon2"
+  },
+  {
+   "texto": "desaparece",
+   "inicio": 29.177,
+   "duracion": 0.582,
+   "visible": "desaparece.",
+   "enfasis": false,
+   "frase": 8,
+   "seccion": "escalon2"
+  },
+  {
+   "texto": "total",
+   "inicio": 30.068,
+   "duracion": 0.382,
+   "visible": "Total,",
+   "enfasis": false,
+   "frase": 9,
+   "seccion": "escalon2"
+  },
+  {
+   "texto": "ya",
+   "inicio": 30.45,
+   "duracion": 0.2,
+   "visible": "ya",
+   "enfasis": false,
+   "frase": 9,
+   "seccion": "escalon2"
+  },
+  {
+   "texto": "era",
+   "inicio": 30.65,
+   "duracion": 0.164,
+   "visible": "era",
+   "enfasis": false,
+   "frase": 9,
+   "seccion": "escalon2"
+  },
+  {
+   "texto": "el",
+   "inicio": 30.814,
+   "duracion": 0.091,
+   "visible": "«el",
+   "enfasis": false,
+   "frase": 9,
+   "seccion": "escalon2"
+  },
+  {
+   "texto": "bajito",
+   "inicio": 30.905,
+   "duracion": 0.364,
+   "visible": "bajito»...",
+   "enfasis": false,
+   "frase": 9,
+   "seccion": "escalon2"
+  },
+  {
+   "texto": "que",
+   "inicio": 31.577,
+   "duracion": 0.109,
+   "visible": "¿qué",
+   "enfasis": false,
+   "frase": 10,
+   "seccion": "escalon2"
+  },
+  {
+   "texto": "le",
+   "inicio": 31.686,
+   "duracion": 0.145,
+   "visible": "le",
+   "enfasis": false,
+   "frase": 10,
+   "seccion": "escalon2"
+  },
+  {
+   "texto": "cuesta",
+   "inicio": 31.832,
+   "duracion": 0.218,
+   "visible": "cuesta",
+   "enfasis": false,
+   "frase": 10,
+   "seccion": "escalon2"
+  },
+  {
+   "texto": "ser",
+   "inicio": 32.05,
+   "duracion": 0.2,
+   "visible": "ser",
+   "enfasis": false,
+   "frase": 10,
+   "seccion": "escalon2"
+  },
+  {
+   "texto": "vandalo",
+   "inicio": 32.25,
+   "duracion": 0.291,
+   "visible": "vándalo",
+   "enfasis": true,
+   "frase": 10,
+   "seccion": "escalon2"
+  },
+  {
+   "texto": "tambien",
+   "inicio": 32.541,
+   "duracion": 0.273,
+   "visible": "también?",
+   "enfasis": false,
+   "frase": 10,
+   "seccion": "escalon2"
+  },
+  {
+   "texto": "pero",
+   "inicio": 33.395,
+   "duracion": 0.2,
+   "visible": "Pero",
+   "enfasis": false,
+   "frase": 11,
+   "seccion": "climax"
+  },
+  {
+   "texto": "en",
+   "inicio": 33.595,
+   "duracion": 0.127,
+   "visible": "en",
+   "enfasis": false,
+   "frase": 11,
+   "seccion": "climax"
+  },
+  {
+   "texto": "mil",
+   "inicio": 33.723,
+   "duracion": 1.364,
+   "visible": "1737,",
+   "enfasis": true,
+   "frase": 11,
+   "seccion": "climax"
+  },
+  {
+   "texto": "un",
+   "inicio": 35.523,
+   "duracion": 0.145,
+   "visible": "un",
+   "enfasis": false,
+   "frase": 11,
+   "seccion": "climax"
+  },
+  {
+   "texto": "explorador",
+   "inicio": 35.668,
+   "duracion": 0.491,
+   "visible": "explorador",
+   "enfasis": false,
+   "frase": 11,
+   "seccion": "climax"
+  },
+  {
+   "texto": "danes",
+   "inicio": 36.159,
+   "duracion": 0.473,
+   "visible": "danés",
+   "enfasis": false,
+   "frase": 11,
+   "seccion": "climax"
+  },
+  {
+   "texto": "dibuja",
+   "inicio": 36.632,
+   "duracion": 0.4,
+   "visible": "dibuja",
+   "enfasis": false,
+   "frase": 11,
+   "seccion": "climax"
+  },
+  {
+   "texto": "la",
+   "inicio": 37.032,
+   "duracion": 0.109,
+   "visible": "la",
+   "enfasis": false,
+   "frase": 11,
+   "seccion": "climax"
+  },
+  {
+   "texto": "esfinge",
+   "inicio": 37.141,
+   "duracion": 0.491,
+   "visible": "Esfinge...",
+   "enfasis": true,
+   "frase": 11,
+   "seccion": "climax"
+  },
+  {
+   "texto": "y",
+   "inicio": 37.632,
+   "duracion": 0.436,
+   "visible": "¡Y",
+   "enfasis": true,
+   "frase": 12,
+   "seccion": "climax"
+  },
+  {
+   "texto": "ya",
+   "inicio": 38.068,
+   "duracion": 0.2,
+   "visible": "YA",
+   "enfasis": true,
+   "frase": 12,
+   "seccion": "climax"
+  },
+  {
+   "texto": "esta",
+   "inicio": 38.268,
+   "duracion": 0.218,
+   "visible": "ESTÁ",
+   "enfasis": true,
+   "frase": 12,
+   "seccion": "climax"
+  },
+  {
+   "texto": "chata",
+   "inicio": 38.486,
+   "duracion": 0.291,
+   "visible": "CHATA!",
+   "enfasis": true,
+   "frase": 12,
+   "seccion": "climax"
+  },
+  {
+   "texto": "cuantos",
+   "inicio": 39.232,
+   "duracion": 0.291,
+   "visible": "¿Cuántos",
+   "enfasis": false,
+   "frase": 13,
+   "seccion": "climax"
+  },
+  {
+   "texto": "anos",
+   "inicio": 39.523,
+   "duracion": 0.2,
+   "visible": "años",
+   "enfasis": false,
+   "frase": 13,
+   "seccion": "climax"
+  },
+  {
+   "texto": "tenia",
+   "inicio": 39.723,
+   "duracion": 0.255,
+   "visible": "tenía",
+   "enfasis": false,
+   "frase": 13,
+   "seccion": "climax"
+  },
+  {
+   "texto": "napoleon",
+   "inicio": 39.977,
+   "duracion": 0.473,
+   "visible": "Napoleón?",
+   "enfasis": true,
+   "frase": 13,
+   "seccion": "climax"
+  },
+  {
+   "texto": "ni",
+   "inicio": 40.741,
+   "duracion": 0.236,
+   "visible": "¡NI",
+   "enfasis": true,
+   "frase": 14,
+   "seccion": "climax"
+  },
+  {
+   "texto": "habia",
+   "inicio": 40.977,
+   "duracion": 0.218,
+   "visible": "HABÍA",
+   "enfasis": true,
+   "frase": 14,
+   "seccion": "climax"
+  },
+  {
+   "texto": "nacido",
+   "inicio": 41.195,
+   "duracion": 0.382,
+   "visible": "NACIDO!",
+   "enfasis": true,
+   "frase": 14,
+   "seccion": "climax"
+  },
+  {
+   "texto": "y",
+   "inicio": 42.032,
+   "duracion": 0.164,
+   "visible": "¿Y",
+   "enfasis": false,
+   "frase": 15,
+   "seccion": "climax"
+  },
+  {
+   "texto": "el",
+   "inicio": 42.195,
+   "duracion": 0.127,
+   "visible": "el",
+   "enfasis": false,
+   "frase": 15,
+   "seccion": "climax"
+  },
+  {
+   "texto": "verdadero",
+   "inicio": 42.323,
+   "duracion": 0.382,
+   "visible": "verdadero",
+   "enfasis": false,
+   "frase": 15,
+   "seccion": "climax"
+  },
+  {
+   "texto": "culpable",
+   "inicio": 42.705,
+   "duracion": 0.382,
+   "visible": "culpable?",
+   "enfasis": false,
+   "frase": 15,
+   "seccion": "climax"
+  },
+  {
+   "texto": "un",
+   "inicio": 43.427,
+   "duracion": 0.309,
+   "visible": "Un",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": "climax"
+  },
+  {
+   "texto": "fanatico",
+   "inicio": 43.736,
+   "duracion": 0.673,
+   "visible": "fanático,",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": "climax"
+  },
+  {
+   "texto": "en",
+   "inicio": 44.627,
+   "duracion": 0.145,
+   "visible": "en",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": "climax"
+  },
+  {
+   "texto": "mil",
+   "inicio": 44.773,
+   "duracion": 1.747,
+   "visible": "1378,",
+   "enfasis": true,
+   "frase": 16,
+   "seccion": "climax"
+  },
+  {
+   "texto": "harto",
+   "inicio": 46.52,
+   "duracion": 0.162,
+   "visible": "harto",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": "climax"
+  },
+  {
+   "texto": "de",
+   "inicio": 46.682,
+   "duracion": 0.164,
+   "visible": "de",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": "climax"
+  },
+  {
+   "texto": "que",
+   "inicio": 46.845,
+   "duracion": 0.091,
+   "visible": "que",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": "climax"
+  },
+  {
+   "texto": "le",
+   "inicio": 46.936,
+   "duracion": 0.091,
+   "visible": "le",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": "climax"
+  },
+  {
+   "texto": "llevaran",
+   "inicio": 47.027,
+   "duracion": 0.382,
+   "visible": "llevaran",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": "climax"
+  },
+  {
+   "texto": "ofrendas",
+   "inicio": 47.409,
+   "duracion": 0.455,
+   "visible": "ofrendas.",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": "climax"
+  },
+  {
+   "texto": "para",
+   "inicio": 48.191,
+   "duracion": 0.2,
+   "visible": "Para",
+   "enfasis": false,
+   "frase": 17,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "colmo",
+   "inicio": 48.391,
+   "duracion": 0.327,
+   "visible": "colmo,",
+   "enfasis": false,
+   "frase": 17,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "al",
+   "inicio": 48.973,
+   "duracion": 0.127,
+   "visible": "al",
+   "enfasis": false,
+   "frase": 17,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "vandalo",
+   "inicio": 49.1,
+   "duracion": 0.255,
+   "visible": "vándalo",
+   "enfasis": true,
+   "frase": 17,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "lo",
+   "inicio": 49.355,
+   "duracion": 0.127,
+   "visible": "lo",
+   "enfasis": false,
+   "frase": 17,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "ahorcaron",
+   "inicio": 49.482,
+   "duracion": 0.455,
+   "visible": "ahorcaron.",
+   "enfasis": false,
+   "frase": 17,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "y",
+   "inicio": 49.936,
+   "duracion": 0.509,
+   "visible": "Y",
+   "enfasis": false,
+   "frase": 18,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "la",
+   "inicio": 50.445,
+   "duracion": 0.127,
+   "visible": "la",
+   "enfasis": false,
+   "frase": 18,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "expedicion",
+   "inicio": 50.573,
+   "duracion": 0.6,
+   "visible": "expedición",
+   "enfasis": false,
+   "frase": 18,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "de",
+   "inicio": 51.173,
+   "duracion": 0.109,
+   "visible": "de",
+   "enfasis": false,
+   "frase": 18,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "napoleon",
+   "inicio": 51.282,
+   "duracion": 0.455,
+   "visible": "Napoleón",
+   "enfasis": true,
+   "frase": 18,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "hasta",
+   "inicio": 51.736,
+   "duracion": 0.418,
+   "visible": "hasta",
+   "enfasis": false,
+   "frase": 18,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "encontro",
+   "inicio": 52.155,
+   "duracion": 0.545,
+   "visible": "encontró",
+   "enfasis": false,
+   "frase": 18,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "la",
+   "inicio": 52.7,
+   "duracion": 0.127,
+   "visible": "la",
+   "enfasis": false,
+   "frase": 18,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "piedra",
+   "inicio": 52.827,
+   "duracion": 0.345,
+   "visible": "piedra",
+   "enfasis": false,
+   "frase": 18,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "de",
+   "inicio": 53.173,
+   "duracion": 0.091,
+   "visible": "de",
+   "enfasis": false,
+   "frase": 18,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "rosetta",
+   "inicio": 53.264,
+   "duracion": 0.4,
+   "visible": "Rosetta...",
+   "enfasis": true,
+   "frase": 18,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "que",
+   "inicio": 53.995,
+   "duracion": 0.06,
+   "visible": "que",
+   "enfasis": false,
+   "frase": 19,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "hoy",
+   "inicio": 54.05,
+   "duracion": 0.164,
+   "visible": "hoy",
+   "enfasis": false,
+   "frase": 19,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "esta",
+   "inicio": 54.214,
+   "duracion": 0.2,
+   "visible": "está",
+   "enfasis": false,
+   "frase": 19,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "en",
+   "inicio": 54.414,
+   "duracion": 0.091,
+   "visible": "en",
+   "enfasis": false,
+   "frase": 19,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "londres",
+   "inicio": 54.505,
+   "duracion": 0.345,
+   "visible": "Londres.",
+   "enfasis": true,
+   "frase": 19,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "los",
+   "inicio": 55.323,
+   "duracion": 0.127,
+   "visible": "Los",
+   "enfasis": false,
+   "frase": 20,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "ingleses",
+   "inicio": 55.45,
+   "duracion": 0.636,
+   "visible": "ingleses,",
+   "enfasis": false,
+   "frase": 20,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "otra",
+   "inicio": 56.086,
+   "duracion": 0.273,
+   "visible": "otra",
+   "enfasis": false,
+   "frase": 20,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "vez",
+   "inicio": 56.359,
+   "duracion": 0.309,
+   "visible": "vez.",
+   "enfasis": false,
+   "frase": 20,
+   "seccion": "golpe"
+  },
+  {
+   "texto": "veredicto",
+   "inicio": 57.123,
+   "duracion": 0.6,
+   "visible": "VEREDICTO:",
+   "enfasis": true,
+   "frase": 21,
+   "seccion": "veredicto"
+  },
+  {
+   "texto": "mito",
+   "inicio": 58.105,
+   "duracion": 0.345,
+   "visible": "¡MITO!",
+   "enfasis": true,
+   "frase": 21,
+   "seccion": "veredicto"
+  },
+  {
+   "texto": "primero",
+   "inicio": 58.814,
+   "duracion": 0.382,
+   "visible": "Primero",
+   "enfasis": false,
+   "frase": 22,
+   "seccion": "pregunta"
+  },
+  {
+   "texto": "bajito",
+   "inicio": 59.195,
+   "duracion": 0.491,
+   "visible": "bajito,",
+   "enfasis": false,
+   "frase": 22,
+   "seccion": "pregunta"
+  },
+  {
+   "texto": "ahora",
+   "inicio": 59.959,
+   "duracion": 0.2,
+   "visible": "ahora",
+   "enfasis": false,
+   "frase": 22,
+   "seccion": "pregunta"
+  },
+  {
+   "texto": "vandalo",
+   "inicio": 60.159,
+   "duracion": 0.545,
+   "visible": "vándalo...",
+   "enfasis": true,
+   "frase": 22,
+   "seccion": "pregunta"
+  },
+  {
+   "texto": "que",
+   "inicio": 61.086,
+   "duracion": 0.06,
+   "visible": "¿qué",
+   "enfasis": false,
+   "frase": 23,
+   "seccion": "pregunta"
+  },
+  {
+   "texto": "mas",
+   "inicio": 61.123,
+   "duracion": 0.164,
+   "visible": "más",
+   "enfasis": false,
+   "frase": 23,
+   "seccion": "pregunta"
+  },
+  {
+   "texto": "le",
+   "inicio": 61.286,
+   "duracion": 0.109,
+   "visible": "le",
+   "enfasis": false,
+   "frase": 23,
+   "seccion": "pregunta"
+  },
+  {
+   "texto": "van",
+   "inicio": 61.395,
+   "duracion": 0.091,
+   "visible": "van",
+   "enfasis": false,
+   "frase": 23,
+   "seccion": "pregunta"
+  },
+  {
+   "texto": "a",
+   "inicio": 61.486,
+   "duracion": 0.06,
+   "visible": "a",
+   "enfasis": false,
+   "frase": 23,
+   "seccion": "pregunta"
+  },
+  {
+   "texto": "inventar",
+   "inicio": 61.541,
+   "duracion": 0.364,
+   "visible": "inventar",
+   "enfasis": false,
+   "frase": 23,
+   "seccion": "pregunta"
+  },
+  {
+   "texto": "al",
+   "inicio": 61.905,
+   "duracion": 0.091,
+   "visible": "al",
+   "enfasis": false,
+   "frase": 23,
+   "seccion": "pregunta"
+  },
+  {
+   "texto": "pobre",
+   "inicio": 61.995,
+   "duracion": 0.164,
+   "visible": "pobre",
+   "enfasis": false,
+   "frase": 23,
+   "seccion": "pregunta"
+  },
+  {
+   "texto": "napoleon",
+   "inicio": 62.159,
+   "duracion": 0.473,
+   "visible": "Napoleón?",
+   "enfasis": true,
+   "frase": 23,
+   "seccion": "pregunta"
+  }
+ ]
+}
