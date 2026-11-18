@@ -464,7 +464,7 @@ export const SONIDOS: [string, number, number][] = [
 	['garabato', W.anio2009, 0.3],
 	['sello', W.anio2009 + 10, 0.45],
 	['burbujas', W.igualar - 4, 0.3],
-	['pop', W.no15 - 4, 0.35],
+	['pop', W.no15 - 9, 0.25],
 	['beep', W.para16 + 4, 0.25],
 	['pop', W.muchos - 4, 0.35],
 	['arpa', W.cantado - 6, 0.3],

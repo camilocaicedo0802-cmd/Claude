@@ -5,51 +5,58 @@ El texto se escribe como se pronuncia ("mil novecientos ochenta y dos"); VISIBLE
 """
 
 GUION = [
-    ("Michael Jackson no se volvió blanco por gusto...", "gancho", False, ""),
-    ("y lo creímos por culpa de un secreto que él mismo guardó.", "gancho", False, ""),
-    ("En mil novecientos ochenta y dos, con Thriller, Michael es el artista más grande del planeta.", "origen", False, ""),
-    ("Pero pronto le aparecen manchas blancas en la piel.", "origen", False, ""),
+    ("¡Michael Jackson no se volvió blanco por gusto!...", "gancho", False, ""),
+    ("Y lo creímos... por culpa de un secreto que él mismo guardó.", "gancho", False, ""),
+    ("En mil novecientos ochenta y dos, con Thriller, ¡Michael es el artista más grande del planeta!", "origen", False, ""),
+    ("Pero pronto... le aparecen manchas blancas en la piel.", "origen", False, ""),
     ("Él las tapa con maquillaje... y calla.", "escalon", False, ""),
-    ("Los tabloides lo apodan Wacko Jacko y publican que se blanquea a propósito.", "escalon", False, ""),
-    ("Las revistas lo copian por todo el mundo.", "escalon", False, ""),
+    ("Los tabloides lo apodan «Wacko Jacko» y publican que se blanquea a propósito.", "escalon", False, ""),
+    ("¡Las revistas lo copian por todo el mundo!", "escalon", False, ""),
     ("Y las fotos parecen darles la razón:", "escalon2", False, ""),
     ("a los veinte, piel morena...", "escalon2", False, ""),
     ("a los treinta y tres, ¡casi blanca!", "escalon2", True, ""),
-    ("Y encima, se opera la nariz.", "escalon2", False, ""),
-    ("Pero tenía vitiligo, una enfermedad que borra el color de la piel.", "climax", False, ""),
+    ("Y encima... ¡se opera la nariz!", "escalon2", False, ""),
+    ("Pero tenía... ¡vitiligo! Una enfermedad que borra el color de la piel.", "climax", False, ""),
     ("¿Quién lo confirmó?", "climax", False, ""),
     ("¡Su autopsia, en dos mil nueve!", "climax", True, ""),
     ("¿Y las cremas que usaba?", "climax", False, ""),
-    ("Eran para igualar las manchas, no para blanquearse.", "climax", False, ""),
-    ("Para colmo, cuando por fin lo contó en televisión, muchos ya no le creyeron.", "golpe", False, ""),
+    ("¡Eran para igualar las manchas, no para blanquearse!", "climax", False, ""),
+    ("Para colmo, cuando por fin lo contó en televisión... ¡muchos ya no le creyeron!", "golpe", False, ""),
     ("Y eso que ya había cantado: «No importa si eres negro o blanco».", "golpe", False, ""),
-    ("Veredicto: mito.", "veredicto", True, ""),
+    ("Veredicto: ¡mito!", "veredicto", True, ""),
     ("¿Quiso ser blanco... o fue víctima del chisme más cruel del pop?", "pregunta", False, ""),
 ]
 
+# Dirección con la energía del short de Napoleón: chisme histórico, sorpresa, pausas y golpes en los momentos clave
 DIRECCION = [
-    "arranque intrigante y contundente, desmintiendo un mito famoso; pausa tras 'por gusto'",
-    "baja la voz con complicidad, como quien revela un secreto",
-    "épico y emocionado, como presentando a una superestrella; 'Thriller' en inglés",
-    "giro preocupante, más lento",
-    "íntimo y triste; pausa antes de 'y calla'",
-    "tono sensacionalista de prensa amarilla, con ironía; 'Wacko Jacko' en inglés",
-    "rápido, como un rumor que se riega",
-    "suspenso, como mostrando una prueba",
-    "pausado",
-    "MOMENTO CLAVE: sorpresa fuerte en '¡casi blanca!'",
-    "ironía, remate",
-    "MOMENTO CLAVE: revelación seria y empática, pausa antes de 'vitiligo'",
-    "pregunta desafiante",
-    "MOMENTO CLAVE: respuesta firme y fuerte",
-    "pregunta con picardía",
-    "aclaración firme y clara",
-    "indignado y algo triste",
-    "emotivo y conmovedor; cita la frase con calidez",
-    "MOMENTO CLAVE: pausa tras 'Veredicto' y golpe fuerte en 'mito'",
-    "pregunta final con la mayor energía de todo el audio, dejándola abierta",
+    "arranque con mucha energía y sorpresa, como quien revela un secreto increíble; tono alto en 'no se volvió blanco'",
+    "baja la voz con picardía y complicidad; pausa después de 'creímos...'",
+    "épico y emocionado, subiendo el tono como quien presenta a una superestrella; 'Thriller' en inglés",
+    "giro de suspenso: 'Pero pronto...' lento y misterioso",
+    "casi en susurro, íntimo; pausa dramática antes de 'y calla'",
+    "tono de chisme sensacionalista, con burla e ironía; 'Wacko Jacko' en inglés y con énfasis",
+    "rápido y animado, como un rumor que se riega",
+    "suspenso, como un detective que muestra la prueba",
+    "lento y descriptivo",
+    "MOMENTO CLAVE: sorpresa fuerte, sube mucho el tono en '¡casi blanca!'",
+    "remate irónico: pausa en 'Y encima...' y golpe en '¡se opera la nariz!'",
+    "MOMENTO CLAVE: el gran giro; pausa antes de '¡vitiligo!' y dilo con fuerza; luego explica con calidez",
+    "pregunta desafiante, la entonación sube al final",
+    "MOMENTO CLAVE: respuesta triunfal y fuerte",
+    "pregunta curiosa, con picardía",
+    "firme y enérgico, desmintiendo el rumor",
+    "indignación que crece: '¡muchos ya no le creyeron!' con fuerza",
+    "emotivo; cita la frase con calidez y admiración",
+    "MOMENTO CLAVE: pausa tras 'Veredicto' y golpe fuerte en '¡mito!'",
+    "pregunta final con la mayor energía y volumen de todo el audio, dejándola abierta",
 ]
 assert len(DIRECCION) == len(GUION)
+
+# energía general (se suma a las indicaciones)
+ESTILO_EXTRA = (
+    "Energía alta de principio a fin: tono vivo y muy variado, que suba y baje mucho, como un creador de contenido "
+    "que cuenta un chisme histórico apasionante. Exclama en los momentos clave, susurra en los secretos y nunca suenes plano."
+)
 
 PRONUNCIACION = "Pronuncia 'Michael Jackson', 'Thriller' y 'Wacko Jacko' en inglés; 'pop' como en español."
 

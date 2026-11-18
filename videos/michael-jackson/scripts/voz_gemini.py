@@ -15,6 +15,7 @@ import sys
 import requests
 
 sys.path.insert(0, os.path.dirname(__file__))
+import guion as _g  # noqa: E402
 from guion import DIRECCION, GUION, INDICACIONES, PRONUNCIACION  # noqa: E402
 
 ESTILO = (
@@ -23,6 +24,7 @@ ESTILO = (
     "voz narrativa, cálida y envolvente, con muchas subidas y bajadas de entonación, pausas dramáticas antes de cada "
     "revelación y énfasis claro en los momentos clave. Ritmo ágil pero sin atropellarse. "
     + PRONUNCIACION
+    + " " + getattr(_g, 'ESTILO_EXTRA', '')
     + "\n"
     "Dirección por frase (NO la leas en voz alta, solo úsala para interpretar):\n"
     + "\n".join(f"{i + 1}. {d}" for i, d in enumerate(DIRECCION))
