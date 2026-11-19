@@ -1,0 +1,1764 @@
+{
+ "voz": "Gemini 2.5 Flash TTS · Charon",
+ "duracion": 55.739,
+ "frases": [
+  {
+   "i": 0,
+   "texto": "Un chico de diecisiete años hackeó Ge te a seis... desde la tele de un hotel.",
+   "seccion": "gancho",
+   "inicio": 0.0,
+   "fin": 4.62
+  },
+  {
+   "i": 1,
+   "texto": "Mira, la policía ya lo había atrapado por hackear otras empresas.",
+   "seccion": "mira",
+   "inicio": 4.82,
+   "fin": 7.42
+  },
+  {
+   "i": 2,
+   "texto": "Le quitaron la computadora y lo llevaron a un hotel, para protegerlo.",
+   "seccion": "mira",
+   "inicio": 7.64,
+   "fin": 10.74
+  },
+  {
+   "i": 3,
+   "texto": "Sin computadora... ¿qué podía hacer?",
+   "seccion": "mira",
+   "inicio": 10.82,
+   "fin": 12.3
+  },
+  {
+   "i": 4,
+   "texto": "Primero, se mete al chat interno de Rockstar.",
+   "seccion": "escalada",
+   "inicio": 12.38,
+   "fin": 14.48
+  },
+  {
+   "i": 5,
+   "texto": "Después, a sus archivos secretos.",
+   "seccion": "escalada",
+   "inicio": 14.6,
+   "fin": 15.94
+  },
+  {
+   "i": 6,
+   "texto": "Y un domingo... sube noventa videos de Ge te a seis a un foro.",
+   "seccion": "escalada",
+   "inicio": 16.06,
+   "fin": 18.32
+  },
+  {
+   "i": 7,
+   "texto": "Y en internet se ríen:",
+   "seccion": "burla",
+   "inicio": 18.32,
+   "fin": 19.3
+  },
+  {
+   "i": 8,
+   "texto": "¡Es falso!",
+   "seccion": "burla",
+   "inicio": 19.98,
+   "fin": 20.88
+  },
+  {
+   "i": 9,
+   "texto": "¡Eso parece de PlayStation dos!",
+   "seccion": "burla",
+   "inicio": 21.58,
+   "fin": 23.02
+  },
+  {
+   "i": 10,
+   "texto": "Hasta que él escribe en el chat de los empleados:",
+   "seccion": "amenaza",
+   "inicio": 23.92,
+   "fin": 26.08
+  },
+  {
+   "i": 11,
+   "texto": "Si no me contactan en veinticuatro horas... publico el código del juego.",
+   "seccion": "amenaza",
+   "inicio": 26.08,
+   "fin": 31.46
+  },
+  {
+   "i": 12,
+   "texto": "Y Rockstar lo confirma:",
+   "seccion": "giro",
+   "inicio": 31.68,
+   "fin": 32.78
+  },
+  {
+   "i": 13,
+   "texto": "los videos son reales.",
+   "seccion": "giro",
+   "inicio": 33.26,
+   "fin": 34.74
+  },
+  {
+   "i": 14,
+   "texto": "¿Y cómo lo hizo sin computadora?",
+   "seccion": "giro",
+   "inicio": 34.8,
+   "fin": 36.2
+  },
+  {
+   "i": 15,
+   "texto": "Con un Fire Stick: el aparatito para ver series en la tele.",
+   "seccion": "mecanismo",
+   "inicio": 36.34,
+   "fin": 38.72
+  },
+  {
+   "i": 16,
+   "texto": "Lo enchufa, usa su celular... y entra.",
+   "seccion": "mecanismo",
+   "inicio": 38.72,
+   "fin": 40.68
+  },
+  {
+   "i": 17,
+   "texto": "La policía lo había escondido ahí para protegerlo...",
+   "seccion": "mecanismo",
+   "inicio": 40.84,
+   "fin": 42.82
+  },
+  {
+   "i": 18,
+   "texto": "y le dio el cuarto perfecto para hackear.",
+   "seccion": "mecanismo",
+   "inicio": 42.82,
+   "fin": 44.68
+  },
+  {
+   "i": 19,
+   "texto": "A Rockstar le costó cinco millones de dólares.",
+   "seccion": "remate",
+   "inicio": 44.78,
+   "fin": 47.32
+  },
+  {
+   "i": 20,
+   "texto": "A él, un hospital de seguridad, sin fecha de salida.",
+   "seccion": "remate",
+   "inicio": 47.58,
+   "fin": 50.32
+  },
+  {
+   "i": 21,
+   "texto": "Todo por un aparatito de cuarenta dólares... enchufado a la tele de un hotel.",
+   "seccion": "remate",
+   "inicio": 50.82,
+   "fin": 55.5
+  }
+ ],
+ "palabras": [
+  {
+   "texto": "un",
+   "inicio": 0.0,
+   "duracion": 0.22,
+   "visible": "UN",
+   "enfasis": true,
+   "frase": 0,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "chico",
+   "inicio": 0.22,
+   "duracion": 0.26,
+   "visible": "CHICO",
+   "enfasis": true,
+   "frase": 0,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "de",
+   "inicio": 0.48,
+   "duracion": 0.14,
+   "visible": "DE",
+   "enfasis": true,
+   "frase": 0,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "diecisiete",
+   "inicio": 0.62,
+   "duracion": 0.48,
+   "visible": "17",
+   "enfasis": true,
+   "frase": 0,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "anos",
+   "inicio": 1.1,
+   "duracion": 0.4,
+   "visible": "AÑOS",
+   "enfasis": true,
+   "frase": 0,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "hackeo",
+   "inicio": 1.5,
+   "duracion": 0.495,
+   "visible": "HACKEÓ",
+   "enfasis": true,
+   "frase": 0,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "ge",
+   "inicio": 1.995,
+   "duracion": 1.281,
+   "visible": "GTA 6.",
+   "enfasis": true,
+   "frase": 0,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "desde",
+   "inicio": 3.276,
+   "duracion": 0.244,
+   "visible": "DESDE",
+   "enfasis": true,
+   "frase": 0,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "la",
+   "inicio": 3.52,
+   "duracion": 0.28,
+   "visible": "LA",
+   "enfasis": true,
+   "frase": 0,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "tele",
+   "inicio": 3.8,
+   "duracion": 0.28,
+   "visible": "TELE",
+   "enfasis": true,
+   "frase": 0,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "de",
+   "inicio": 4.08,
+   "duracion": 0.16,
+   "visible": "DE",
+   "enfasis": true,
+   "frase": 0,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "un",
+   "inicio": 4.24,
+   "duracion": 0.14,
+   "visible": "UN",
+   "enfasis": true,
+   "frase": 0,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "hotel",
+   "inicio": 4.38,
+   "duracion": 0.24,
+   "visible": "HOTEL.",
+   "enfasis": true,
+   "frase": 0,
+   "seccion": "gancho"
+  },
+  {
+   "texto": "mira",
+   "inicio": 4.82,
+   "duracion": 0.1,
+   "visible": "Mira,",
+   "enfasis": false,
+   "frase": 1,
+   "seccion": "mira"
+  },
+  {
+   "texto": "la",
+   "inicio": 5.1,
+   "duracion": 0.1,
+   "visible": "la",
+   "enfasis": false,
+   "frase": 1,
+   "seccion": "mira"
+  },
+  {
+   "texto": "policia",
+   "inicio": 5.2,
+   "duracion": 0.36,
+   "visible": "policía",
+   "enfasis": true,
+   "frase": 1,
+   "seccion": "mira"
+  },
+  {
+   "texto": "ya",
+   "inicio": 5.56,
+   "duracion": 0.2,
+   "visible": "ya",
+   "enfasis": false,
+   "frase": 1,
+   "seccion": "mira"
+  },
+  {
+   "texto": "lo",
+   "inicio": 5.76,
+   "duracion": 0.12,
+   "visible": "lo",
+   "enfasis": false,
+   "frase": 1,
+   "seccion": "mira"
+  },
+  {
+   "texto": "habia",
+   "inicio": 5.88,
+   "duracion": 0.16,
+   "visible": "había",
+   "enfasis": false,
+   "frase": 1,
+   "seccion": "mira"
+  },
+  {
+   "texto": "atrapado",
+   "inicio": 6.04,
+   "duracion": 0.38,
+   "visible": "atrapado",
+   "enfasis": false,
+   "frase": 1,
+   "seccion": "mira"
+  },
+  {
+   "texto": "por",
+   "inicio": 6.42,
+   "duracion": 0.18,
+   "visible": "por",
+   "enfasis": false,
+   "frase": 1,
+   "seccion": "mira"
+  },
+  {
+   "texto": "hackear",
+   "inicio": 6.6,
+   "duracion": 0.28,
+   "visible": "hackear",
+   "enfasis": true,
+   "frase": 1,
+   "seccion": "mira"
+  },
+  {
+   "texto": "otras",
+   "inicio": 6.88,
+   "duracion": 0.14,
+   "visible": "otras",
+   "enfasis": false,
+   "frase": 1,
+   "seccion": "mira"
+  },
+  {
+   "texto": "empresas",
+   "inicio": 7.02,
+   "duracion": 0.4,
+   "visible": "empresas.",
+   "enfasis": false,
+   "frase": 1,
+   "seccion": "mira"
+  },
+  {
+   "texto": "le",
+   "inicio": 7.64,
+   "duracion": 0.08,
+   "visible": "Le",
+   "enfasis": false,
+   "frase": 2,
+   "seccion": "mira"
+  },
+  {
+   "texto": "quitaron",
+   "inicio": 7.72,
+   "duracion": 0.36,
+   "visible": "quitaron",
+   "enfasis": false,
+   "frase": 2,
+   "seccion": "mira"
+  },
+  {
+   "texto": "la",
+   "inicio": 8.08,
+   "duracion": 0.12,
+   "visible": "la",
+   "enfasis": false,
+   "frase": 2,
+   "seccion": "mira"
+  },
+  {
+   "texto": "computadora",
+   "inicio": 8.2,
+   "duracion": 0.52,
+   "visible": "computadora",
+   "enfasis": false,
+   "frase": 2,
+   "seccion": "mira"
+  },
+  {
+   "texto": "y",
+   "inicio": 8.72,
+   "duracion": 0.2,
+   "visible": "y",
+   "enfasis": false,
+   "frase": 2,
+   "seccion": "mira"
+  },
+  {
+   "texto": "lo",
+   "inicio": 8.92,
+   "duracion": 0.1,
+   "visible": "lo",
+   "enfasis": false,
+   "frase": 2,
+   "seccion": "mira"
+  },
+  {
+   "texto": "llevaron",
+   "inicio": 9.02,
+   "duracion": 0.38,
+   "visible": "llevaron",
+   "enfasis": false,
+   "frase": 2,
+   "seccion": "mira"
+  },
+  {
+   "texto": "a",
+   "inicio": 9.4,
+   "duracion": 0.08,
+   "visible": "a",
+   "enfasis": false,
+   "frase": 2,
+   "seccion": "mira"
+  },
+  {
+   "texto": "un",
+   "inicio": 9.48,
+   "duracion": 0.12,
+   "visible": "un",
+   "enfasis": false,
+   "frase": 2,
+   "seccion": "mira"
+  },
+  {
+   "texto": "hotel",
+   "inicio": 9.6,
+   "duracion": 0.26,
+   "visible": "hotel,",
+   "enfasis": true,
+   "frase": 2,
+   "seccion": "mira"
+  },
+  {
+   "texto": "para",
+   "inicio": 9.86,
+   "duracion": 0.32,
+   "visible": "para",
+   "enfasis": false,
+   "frase": 2,
+   "seccion": "mira"
+  },
+  {
+   "texto": "protegerlo",
+   "inicio": 10.18,
+   "duracion": 0.56,
+   "visible": "protegerlo.",
+   "enfasis": false,
+   "frase": 2,
+   "seccion": "mira"
+  },
+  {
+   "texto": "sin",
+   "inicio": 10.82,
+   "duracion": 0.12,
+   "visible": "Sin",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": "mira"
+  },
+  {
+   "texto": "computadora",
+   "inicio": 10.94,
+   "duracion": 0.56,
+   "visible": "computadora...",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": "mira"
+  },
+  {
+   "texto": "que",
+   "inicio": 11.5,
+   "duracion": 0.24,
+   "visible": "¿qué",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": "mira"
+  },
+  {
+   "texto": "podia",
+   "inicio": 11.74,
+   "duracion": 0.26,
+   "visible": "podía",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": "mira"
+  },
+  {
+   "texto": "hacer",
+   "inicio": 12.0,
+   "duracion": 0.3,
+   "visible": "hacer?",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": "mira"
+  },
+  {
+   "texto": "primero",
+   "inicio": 12.38,
+   "duracion": 0.34,
+   "visible": "Primero,",
+   "enfasis": false,
+   "frase": 4,
+   "seccion": "escalada"
+  },
+  {
+   "texto": "se",
+   "inicio": 12.72,
+   "duracion": 0.26,
+   "visible": "se",
+   "enfasis": false,
+   "frase": 4,
+   "seccion": "escalada"
+  },
+  {
+   "texto": "mete",
+   "inicio": 12.98,
+   "duracion": 0.2,
+   "visible": "mete",
+   "enfasis": false,
+   "frase": 4,
+   "seccion": "escalada"
+  },
+  {
+   "texto": "al",
+   "inicio": 13.18,
+   "duracion": 0.14,
+   "visible": "al",
+   "enfasis": false,
+   "frase": 4,
+   "seccion": "escalada"
+  },
+  {
+   "texto": "chat",
+   "inicio": 13.32,
+   "duracion": 0.18,
+   "visible": "chat",
+   "enfasis": false,
+   "frase": 4,
+   "seccion": "escalada"
+  },
+  {
+   "texto": "interno",
+   "inicio": 13.5,
+   "duracion": 0.48,
+   "visible": "interno",
+   "enfasis": false,
+   "frase": 4,
+   "seccion": "escalada"
+  },
+  {
+   "texto": "de",
+   "inicio": 13.98,
+   "duracion": 0.12,
+   "visible": "de",
+   "enfasis": false,
+   "frase": 4,
+   "seccion": "escalada"
+  },
+  {
+   "texto": "rockstar",
+   "inicio": 14.1,
+   "duracion": 0.38,
+   "visible": "Rockstar.",
+   "enfasis": true,
+   "frase": 4,
+   "seccion": "escalada"
+  },
+  {
+   "texto": "despues",
+   "inicio": 14.6,
+   "duracion": 0.22,
+   "visible": "Después,",
+   "enfasis": false,
+   "frase": 5,
+   "seccion": "escalada"
+  },
+  {
+   "texto": "a",
+   "inicio": 14.82,
+   "duracion": 0.26,
+   "visible": "a",
+   "enfasis": false,
+   "frase": 5,
+   "seccion": "escalada"
+  },
+  {
+   "texto": "sus",
+   "inicio": 15.08,
+   "duracion": 0.1,
+   "visible": "sus",
+   "enfasis": false,
+   "frase": 5,
+   "seccion": "escalada"
+  },
+  {
+   "texto": "archivos",
+   "inicio": 15.18,
+   "duracion": 0.32,
+   "visible": "archivos",
+   "enfasis": false,
+   "frase": 5,
+   "seccion": "escalada"
+  },
+  {
+   "texto": "secretos",
+   "inicio": 15.5,
+   "duracion": 0.44,
+   "visible": "secretos.",
+   "enfasis": false,
+   "frase": 5,
+   "seccion": "escalada"
+  },
+  {
+   "texto": "y",
+   "inicio": 16.06,
+   "duracion": 0.06,
+   "visible": "Y",
+   "enfasis": true,
+   "frase": 6,
+   "seccion": "escalada"
+  },
+  {
+   "texto": "un",
+   "inicio": 16.08,
+   "duracion": 0.08,
+   "visible": "UN",
+   "enfasis": true,
+   "frase": 6,
+   "seccion": "escalada"
+  },
+  {
+   "texto": "domingo",
+   "inicio": 16.16,
+   "duracion": 0.2,
+   "visible": "DOMINGO...",
+   "enfasis": true,
+   "frase": 6,
+   "seccion": "escalada"
+  },
+  {
+   "texto": "sube",
+   "inicio": 16.36,
+   "duracion": 0.3,
+   "visible": "SUBE",
+   "enfasis": true,
+   "frase": 6,
+   "seccion": "escalada"
+  },
+  {
+   "texto": "noventa",
+   "inicio": 16.88,
+   "duracion": 0.162,
+   "visible": "90",
+   "enfasis": true,
+   "frase": 6,
+   "seccion": "escalada"
+  },
+  {
+   "texto": "videos",
+   "inicio": 17.042,
+   "duracion": 0.138,
+   "visible": "VIDEOS",
+   "enfasis": true,
+   "frase": 6,
+   "seccion": "escalada"
+  },
+  {
+   "texto": "de",
+   "inicio": 17.18,
+   "duracion": 0.12,
+   "visible": "DE",
+   "enfasis": true,
+   "frase": 6,
+   "seccion": "escalada"
+  },
+  {
+   "texto": "ge",
+   "inicio": 17.3,
+   "duracion": 0.52,
+   "visible": "GTA 6",
+   "enfasis": true,
+   "frase": 6,
+   "seccion": "escalada"
+  },
+  {
+   "texto": "a",
+   "inicio": 17.82,
+   "duracion": 0.18,
+   "visible": "A",
+   "enfasis": true,
+   "frase": 6,
+   "seccion": "escalada"
+  },
+  {
+   "texto": "un",
+   "inicio": 18.0,
+   "duracion": 0.12,
+   "visible": "UN",
+   "enfasis": true,
+   "frase": 6,
+   "seccion": "escalada"
+  },
+  {
+   "texto": "foro",
+   "inicio": 18.12,
+   "duracion": 0.2,
+   "visible": "FORO.",
+   "enfasis": true,
+   "frase": 6,
+   "seccion": "escalada"
+  },
+  {
+   "texto": "y",
+   "inicio": 18.32,
+   "duracion": 0.12,
+   "visible": "Y",
+   "enfasis": false,
+   "frase": 7,
+   "seccion": "burla"
+  },
+  {
+   "texto": "en",
+   "inicio": 18.44,
+   "duracion": 0.08,
+   "visible": "en",
+   "enfasis": false,
+   "frase": 7,
+   "seccion": "burla"
+  },
+  {
+   "texto": "internet",
+   "inicio": 18.52,
+   "duracion": 0.32,
+   "visible": "internet",
+   "enfasis": false,
+   "frase": 7,
+   "seccion": "burla"
+  },
+  {
+   "texto": "se",
+   "inicio": 18.84,
+   "duracion": 0.2,
+   "visible": "se",
+   "enfasis": false,
+   "frase": 7,
+   "seccion": "burla"
+  },
+  {
+   "texto": "rien",
+   "inicio": 19.04,
+   "duracion": 0.26,
+   "visible": "ríen:",
+   "enfasis": false,
+   "frase": 7,
+   "seccion": "burla"
+  },
+  {
+   "texto": "es",
+   "inicio": 19.98,
+   "duracion": 0.26,
+   "visible": "¡Es",
+   "enfasis": false,
+   "frase": 8,
+   "seccion": "burla"
+  },
+  {
+   "texto": "falso",
+   "inicio": 20.24,
+   "duracion": 0.64,
+   "visible": "falso!",
+   "enfasis": true,
+   "frase": 8,
+   "seccion": "burla"
+  },
+  {
+   "texto": "eso",
+   "inicio": 21.58,
+   "duracion": 0.46,
+   "visible": "¡Eso",
+   "enfasis": false,
+   "frase": 9,
+   "seccion": "burla"
+  },
+  {
+   "texto": "parece",
+   "inicio": 22.04,
+   "duracion": 0.26,
+   "visible": "parece",
+   "enfasis": false,
+   "frase": 9,
+   "seccion": "burla"
+  },
+  {
+   "texto": "de",
+   "inicio": 22.3,
+   "duracion": 0.34,
+   "visible": "de",
+   "enfasis": false,
+   "frase": 9,
+   "seccion": "burla"
+  },
+  {
+   "texto": "playstation",
+   "inicio": 22.64,
+   "duracion": 0.38,
+   "visible": "PLAYSTATION 2!",
+   "enfasis": true,
+   "frase": 9,
+   "seccion": "burla"
+  },
+  {
+   "texto": "hasta",
+   "inicio": 23.92,
+   "duracion": 0.24,
+   "visible": "Hasta",
+   "enfasis": false,
+   "frase": 10,
+   "seccion": "amenaza"
+  },
+  {
+   "texto": "que",
+   "inicio": 24.16,
+   "duracion": 0.24,
+   "visible": "que",
+   "enfasis": false,
+   "frase": 10,
+   "seccion": "amenaza"
+  },
+  {
+   "texto": "el",
+   "inicio": 24.4,
+   "duracion": 0.18,
+   "visible": "él",
+   "enfasis": false,
+   "frase": 10,
+   "seccion": "amenaza"
+  },
+  {
+   "texto": "escribe",
+   "inicio": 24.58,
+   "duracion": 0.34,
+   "visible": "escribe",
+   "enfasis": false,
+   "frase": 10,
+   "seccion": "amenaza"
+  },
+  {
+   "texto": "en",
+   "inicio": 24.92,
+   "duracion": 0.2,
+   "visible": "en",
+   "enfasis": false,
+   "frase": 10,
+   "seccion": "amenaza"
+  },
+  {
+   "texto": "el",
+   "inicio": 25.12,
+   "duracion": 0.1,
+   "visible": "el",
+   "enfasis": false,
+   "frase": 10,
+   "seccion": "amenaza"
+  },
+  {
+   "texto": "chat",
+   "inicio": 25.22,
+   "duracion": 0.2,
+   "visible": "chat",
+   "enfasis": false,
+   "frase": 10,
+   "seccion": "amenaza"
+  },
+  {
+   "texto": "de",
+   "inicio": 25.42,
+   "duracion": 0.14,
+   "visible": "de",
+   "enfasis": false,
+   "frase": 10,
+   "seccion": "amenaza"
+  },
+  {
+   "texto": "los",
+   "inicio": 25.56,
+   "duracion": 0.08,
+   "visible": "los",
+   "enfasis": false,
+   "frase": 10,
+   "seccion": "amenaza"
+  },
+  {
+   "texto": "empleados",
+   "inicio": 25.64,
+   "duracion": 0.44,
+   "visible": "empleados:",
+   "enfasis": false,
+   "frase": 10,
+   "seccion": "amenaza"
+  },
+  {
+   "texto": "si",
+   "inicio": 26.08,
+   "duracion": 0.4,
+   "visible": "Si",
+   "enfasis": false,
+   "frase": 11,
+   "seccion": "amenaza"
+  },
+  {
+   "texto": "no",
+   "inicio": 26.48,
+   "duracion": 0.24,
+   "visible": "no",
+   "enfasis": false,
+   "frase": 11,
+   "seccion": "amenaza"
+  },
+  {
+   "texto": "me",
+   "inicio": 26.72,
+   "duracion": 0.18,
+   "visible": "me",
+   "enfasis": false,
+   "frase": 11,
+   "seccion": "amenaza"
+  },
+  {
+   "texto": "contactan",
+   "inicio": 26.9,
+   "duracion": 0.78,
+   "visible": "contactan",
+   "enfasis": false,
+   "frase": 11,
+   "seccion": "amenaza"
+  },
+  {
+   "texto": "en",
+   "inicio": 27.68,
+   "duracion": 0.22,
+   "visible": "en",
+   "enfasis": false,
+   "frase": 11,
+   "seccion": "amenaza"
+  },
+  {
+   "texto": "veinticuatro",
+   "inicio": 27.9,
+   "duracion": 0.64,
+   "visible": "24",
+   "enfasis": true,
+   "frase": 11,
+   "seccion": "amenaza"
+  },
+  {
+   "texto": "horas",
+   "inicio": 28.54,
+   "duracion": 0.58,
+   "visible": "horas...",
+   "enfasis": false,
+   "frase": 11,
+   "seccion": "amenaza"
+  },
+  {
+   "texto": "publico",
+   "inicio": 29.48,
+   "duracion": 0.6,
+   "visible": "publico",
+   "enfasis": false,
+   "frase": 11,
+   "seccion": "amenaza"
+  },
+  {
+   "texto": "el",
+   "inicio": 30.08,
+   "duracion": 0.18,
+   "visible": "el",
+   "enfasis": false,
+   "frase": 11,
+   "seccion": "amenaza"
+  },
+  {
+   "texto": "codigo",
+   "inicio": 30.26,
+   "duracion": 0.46,
+   "visible": "código",
+   "enfasis": false,
+   "frase": 11,
+   "seccion": "amenaza"
+  },
+  {
+   "texto": "del",
+   "inicio": 30.72,
+   "duracion": 0.34,
+   "visible": "del",
+   "enfasis": false,
+   "frase": 11,
+   "seccion": "amenaza"
+  },
+  {
+   "texto": "juego",
+   "inicio": 31.06,
+   "duracion": 0.4,
+   "visible": "juego.",
+   "enfasis": false,
+   "frase": 11,
+   "seccion": "amenaza"
+  },
+  {
+   "texto": "y",
+   "inicio": 31.68,
+   "duracion": 0.1,
+   "visible": "Y",
+   "enfasis": false,
+   "frase": 12,
+   "seccion": "giro"
+  },
+  {
+   "texto": "rockstar",
+   "inicio": 31.78,
+   "duracion": 0.32,
+   "visible": "Rockstar",
+   "enfasis": true,
+   "frase": 12,
+   "seccion": "giro"
+  },
+  {
+   "texto": "lo",
+   "inicio": 32.1,
+   "duracion": 0.24,
+   "visible": "lo",
+   "enfasis": false,
+   "frase": 12,
+   "seccion": "giro"
+  },
+  {
+   "texto": "confirma",
+   "inicio": 32.34,
+   "duracion": 0.44,
+   "visible": "confirma:",
+   "enfasis": false,
+   "frase": 12,
+   "seccion": "giro"
+  },
+  {
+   "texto": "los",
+   "inicio": 33.26,
+   "duracion": 0.14,
+   "visible": "LOS",
+   "enfasis": true,
+   "frase": 13,
+   "seccion": "giro"
+  },
+  {
+   "texto": "videos",
+   "inicio": 33.4,
+   "duracion": 0.3,
+   "visible": "VIDEOS",
+   "enfasis": true,
+   "frase": 13,
+   "seccion": "giro"
+  },
+  {
+   "texto": "son",
+   "inicio": 33.7,
+   "duracion": 0.5,
+   "visible": "SON",
+   "enfasis": true,
+   "frase": 13,
+   "seccion": "giro"
+  },
+  {
+   "texto": "reales",
+   "inicio": 34.2,
+   "duracion": 0.54,
+   "visible": "REALES.",
+   "enfasis": true,
+   "frase": 13,
+   "seccion": "giro"
+  },
+  {
+   "texto": "y",
+   "inicio": 34.8,
+   "duracion": 0.08,
+   "visible": "¿Y",
+   "enfasis": false,
+   "frase": 14,
+   "seccion": "giro"
+  },
+  {
+   "texto": "como",
+   "inicio": 34.88,
+   "duracion": 0.22,
+   "visible": "cómo",
+   "enfasis": false,
+   "frase": 14,
+   "seccion": "giro"
+  },
+  {
+   "texto": "lo",
+   "inicio": 35.1,
+   "duracion": 0.14,
+   "visible": "lo",
+   "enfasis": false,
+   "frase": 14,
+   "seccion": "giro"
+  },
+  {
+   "texto": "hizo",
+   "inicio": 35.24,
+   "duracion": 0.22,
+   "visible": "hizo",
+   "enfasis": false,
+   "frase": 14,
+   "seccion": "giro"
+  },
+  {
+   "texto": "sin",
+   "inicio": 35.46,
+   "duracion": 0.24,
+   "visible": "sin",
+   "enfasis": false,
+   "frase": 14,
+   "seccion": "giro"
+  },
+  {
+   "texto": "computadora",
+   "inicio": 35.7,
+   "duracion": 0.5,
+   "visible": "computadora?",
+   "enfasis": false,
+   "frase": 14,
+   "seccion": "giro"
+  },
+  {
+   "texto": "con",
+   "inicio": 36.34,
+   "duracion": 0.1,
+   "visible": "Con",
+   "enfasis": false,
+   "frase": 15,
+   "seccion": "mecanismo"
+  },
+  {
+   "texto": "un",
+   "inicio": 36.44,
+   "duracion": 0.18,
+   "visible": "un",
+   "enfasis": false,
+   "frase": 15,
+   "seccion": "mecanismo"
+  },
+  {
+   "texto": "fire",
+   "inicio": 36.62,
+   "duracion": 0.231,
+   "visible": "Fire",
+   "enfasis": true,
+   "frase": 15,
+   "seccion": "mecanismo"
+  },
+  {
+   "texto": "stick",
+   "inicio": 36.851,
+   "duracion": 0.289,
+   "visible": "Stick:",
+   "enfasis": true,
+   "frase": 15,
+   "seccion": "mecanismo"
+  },
+  {
+   "texto": "el",
+   "inicio": 37.32,
+   "duracion": 0.06,
+   "visible": "el",
+   "enfasis": false,
+   "frase": 15,
+   "seccion": "mecanismo"
+  },
+  {
+   "texto": "aparatito",
+   "inicio": 37.36,
+   "duracion": 0.4,
+   "visible": "aparatito",
+   "enfasis": false,
+   "frase": 15,
+   "seccion": "mecanismo"
+  },
+  {
+   "texto": "para",
+   "inicio": 37.76,
+   "duracion": 0.2,
+   "visible": "para",
+   "enfasis": false,
+   "frase": 15,
+   "seccion": "mecanismo"
+  },
+  {
+   "texto": "ver",
+   "inicio": 37.96,
+   "duracion": 0.16,
+   "visible": "ver",
+   "enfasis": false,
+   "frase": 15,
+   "seccion": "mecanismo"
+  },
+  {
+   "texto": "series",
+   "inicio": 38.12,
+   "duracion": 0.2,
+   "visible": "series",
+   "enfasis": false,
+   "frase": 15,
+   "seccion": "mecanismo"
+  },
+  {
+   "texto": "en",
+   "inicio": 38.32,
+   "duracion": 0.18,
+   "visible": "en",
+   "enfasis": false,
+   "frase": 15,
+   "seccion": "mecanismo"
+  },
+  {
+   "texto": "la",
+   "inicio": 38.5,
+   "duracion": 0.1,
+   "visible": "la",
+   "enfasis": false,
+   "frase": 15,
+   "seccion": "mecanismo"
+  },
+  {
+   "texto": "tele",
+   "inicio": 38.6,
+   "duracion": 0.12,
+   "visible": "tele.",
+   "enfasis": true,
+   "frase": 15,
+   "seccion": "mecanismo"
+  },
+  {
+   "texto": "lo",
+   "inicio": 38.72,
+   "duracion": 0.24,
+   "visible": "Lo",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": "mecanismo"
+  },
+  {
+   "texto": "enchufa",
+   "inicio": 38.96,
+   "duracion": 0.38,
+   "visible": "enchufa,",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": "mecanismo"
+  },
+  {
+   "texto": "usa",
+   "inicio": 39.46,
+   "duracion": 0.16,
+   "visible": "usa",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": "mecanismo"
+  },
+  {
+   "texto": "su",
+   "inicio": 39.62,
+   "duracion": 0.16,
+   "visible": "su",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": "mecanismo"
+  },
+  {
+   "texto": "celular",
+   "inicio": 39.78,
+   "duracion": 0.28,
+   "visible": "celular...",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": "mecanismo"
+  },
+  {
+   "texto": "y",
+   "inicio": 40.06,
+   "duracion": 0.4,
+   "visible": "y",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": "mecanismo"
+  },
+  {
+   "texto": "entra",
+   "inicio": 40.46,
+   "duracion": 0.22,
+   "visible": "entra.",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": "mecanismo"
+  },
+  {
+   "texto": "la",
+   "inicio": 40.84,
+   "duracion": 0.08,
+   "visible": "La",
+   "enfasis": false,
+   "frase": 17,
+   "seccion": "mecanismo"
+  },
+  {
+   "texto": "policia",
+   "inicio": 40.92,
+   "duracion": 0.36,
+   "visible": "policía",
+   "enfasis": true,
+   "frase": 17,
+   "seccion": "mecanismo"
+  },
+  {
+   "texto": "lo",
+   "inicio": 41.28,
+   "duracion": 0.12,
+   "visible": "lo",
+   "enfasis": false,
+   "frase": 17,
+   "seccion": "mecanismo"
+  },
+  {
+   "texto": "habia",
+   "inicio": 41.4,
+   "duracion": 0.14,
+   "visible": "había",
+   "enfasis": false,
+   "frase": 17,
+   "seccion": "mecanismo"
+  },
+  {
+   "texto": "escondido",
+   "inicio": 41.54,
+   "duracion": 0.36,
+   "visible": "escondido",
+   "enfasis": false,
+   "frase": 17,
+   "seccion": "mecanismo"
+  },
+  {
+   "texto": "ahi",
+   "inicio": 41.9,
+   "duracion": 0.18,
+   "visible": "ahí",
+   "enfasis": false,
+   "frase": 17,
+   "seccion": "mecanismo"
+  },
+  {
+   "texto": "para",
+   "inicio": 42.08,
+   "duracion": 0.18,
+   "visible": "para",
+   "enfasis": false,
+   "frase": 17,
+   "seccion": "mecanismo"
+  },
+  {
+   "texto": "protegerlo",
+   "inicio": 42.26,
+   "duracion": 0.56,
+   "visible": "protegerlo...",
+   "enfasis": false,
+   "frase": 17,
+   "seccion": "mecanismo"
+  },
+  {
+   "texto": "y",
+   "inicio": 42.82,
+   "duracion": 0.18,
+   "visible": "Y",
+   "enfasis": true,
+   "frase": 18,
+   "seccion": "mecanismo"
+  },
+  {
+   "texto": "le",
+   "inicio": 43.0,
+   "duracion": 0.08,
+   "visible": "LE",
+   "enfasis": true,
+   "frase": 18,
+   "seccion": "mecanismo"
+  },
+  {
+   "texto": "dio",
+   "inicio": 43.08,
+   "duracion": 0.12,
+   "visible": "DIO",
+   "enfasis": true,
+   "frase": 18,
+   "seccion": "mecanismo"
+  },
+  {
+   "texto": "el",
+   "inicio": 43.2,
+   "duracion": 0.1,
+   "visible": "EL",
+   "enfasis": true,
+   "frase": 18,
+   "seccion": "mecanismo"
+  },
+  {
+   "texto": "cuarto",
+   "inicio": 43.3,
+   "duracion": 0.16,
+   "visible": "CUARTO",
+   "enfasis": true,
+   "frase": 18,
+   "seccion": "mecanismo"
+  },
+  {
+   "texto": "perfecto",
+   "inicio": 43.46,
+   "duracion": 0.66,
+   "visible": "PERFECTO",
+   "enfasis": true,
+   "frase": 18,
+   "seccion": "mecanismo"
+  },
+  {
+   "texto": "para",
+   "inicio": 44.12,
+   "duracion": 0.2,
+   "visible": "PARA",
+   "enfasis": true,
+   "frase": 18,
+   "seccion": "mecanismo"
+  },
+  {
+   "texto": "hackear",
+   "inicio": 44.32,
+   "duracion": 0.36,
+   "visible": "HACKEAR.",
+   "enfasis": true,
+   "frase": 18,
+   "seccion": "mecanismo"
+  },
+  {
+   "texto": "a",
+   "inicio": 44.78,
+   "duracion": 0.1,
+   "visible": "A",
+   "enfasis": false,
+   "frase": 19,
+   "seccion": "remate"
+  },
+  {
+   "texto": "rockstar",
+   "inicio": 44.88,
+   "duracion": 0.44,
+   "visible": "Rockstar",
+   "enfasis": true,
+   "frase": 19,
+   "seccion": "remate"
+  },
+  {
+   "texto": "le",
+   "inicio": 45.32,
+   "duracion": 0.28,
+   "visible": "le",
+   "enfasis": false,
+   "frase": 19,
+   "seccion": "remate"
+  },
+  {
+   "texto": "costo",
+   "inicio": 45.6,
+   "duracion": 0.36,
+   "visible": "costó",
+   "enfasis": false,
+   "frase": 19,
+   "seccion": "remate"
+  },
+  {
+   "texto": "cinco",
+   "inicio": 46.38,
+   "duracion": 0.42,
+   "visible": "5 MILLONES",
+   "enfasis": true,
+   "frase": 19,
+   "seccion": "remate"
+  },
+  {
+   "texto": "de",
+   "inicio": 46.8,
+   "duracion": 0.24,
+   "visible": "de",
+   "enfasis": false,
+   "frase": 19,
+   "seccion": "remate"
+  },
+  {
+   "texto": "dolares",
+   "inicio": 47.04,
+   "duracion": 0.28,
+   "visible": "dólares.",
+   "enfasis": false,
+   "frase": 19,
+   "seccion": "remate"
+  },
+  {
+   "texto": "a",
+   "inicio": 47.58,
+   "duracion": 0.12,
+   "visible": "A",
+   "enfasis": false,
+   "frase": 20,
+   "seccion": "remate"
+  },
+  {
+   "texto": "el",
+   "inicio": 47.7,
+   "duracion": 0.22,
+   "visible": "él,",
+   "enfasis": false,
+   "frase": 20,
+   "seccion": "remate"
+  },
+  {
+   "texto": "un",
+   "inicio": 47.92,
+   "duracion": 0.24,
+   "visible": "un",
+   "enfasis": false,
+   "frase": 20,
+   "seccion": "remate"
+  },
+  {
+   "texto": "hospital",
+   "inicio": 48.16,
+   "duracion": 0.32,
+   "visible": "hospital",
+   "enfasis": false,
+   "frase": 20,
+   "seccion": "remate"
+  },
+  {
+   "texto": "de",
+   "inicio": 48.48,
+   "duracion": 0.16,
+   "visible": "de",
+   "enfasis": false,
+   "frase": 20,
+   "seccion": "remate"
+  },
+  {
+   "texto": "seguridad",
+   "inicio": 48.64,
+   "duracion": 0.44,
+   "visible": "seguridad,",
+   "enfasis": false,
+   "frase": 20,
+   "seccion": "remate"
+  },
+  {
+   "texto": "sin",
+   "inicio": 49.08,
+   "duracion": 0.32,
+   "visible": "sin",
+   "enfasis": false,
+   "frase": 20,
+   "seccion": "remate"
+  },
+  {
+   "texto": "fecha",
+   "inicio": 49.4,
+   "duracion": 0.42,
+   "visible": "fecha",
+   "enfasis": false,
+   "frase": 20,
+   "seccion": "remate"
+  },
+  {
+   "texto": "de",
+   "inicio": 49.82,
+   "duracion": 0.1,
+   "visible": "de",
+   "enfasis": false,
+   "frase": 20,
+   "seccion": "remate"
+  },
+  {
+   "texto": "salida",
+   "inicio": 49.92,
+   "duracion": 0.4,
+   "visible": "salida.",
+   "enfasis": false,
+   "frase": 20,
+   "seccion": "remate"
+  },
+  {
+   "texto": "todo",
+   "inicio": 50.82,
+   "duracion": 0.28,
+   "visible": "TODO",
+   "enfasis": true,
+   "frase": 21,
+   "seccion": "remate"
+  },
+  {
+   "texto": "por",
+   "inicio": 51.1,
+   "duracion": 0.4,
+   "visible": "POR",
+   "enfasis": true,
+   "frase": 21,
+   "seccion": "remate"
+  },
+  {
+   "texto": "un",
+   "inicio": 51.5,
+   "duracion": 0.18,
+   "visible": "UN",
+   "enfasis": true,
+   "frase": 21,
+   "seccion": "remate"
+  },
+  {
+   "texto": "aparatito",
+   "inicio": 51.68,
+   "duracion": 0.64,
+   "visible": "APARATITO",
+   "enfasis": true,
+   "frase": 21,
+   "seccion": "remate"
+  },
+  {
+   "texto": "de",
+   "inicio": 52.32,
+   "duracion": 0.18,
+   "visible": "DE",
+   "enfasis": true,
+   "frase": 21,
+   "seccion": "remate"
+  },
+  {
+   "texto": "cuarenta",
+   "inicio": 52.86,
+   "duracion": 0.352,
+   "visible": "40",
+   "enfasis": true,
+   "frase": 21,
+   "seccion": "remate"
+  },
+  {
+   "texto": "dolares",
+   "inicio": 53.212,
+   "duracion": 0.308,
+   "visible": "DÓLARES...",
+   "enfasis": true,
+   "frase": 21,
+   "seccion": "remate"
+  },
+  {
+   "texto": "enchufado",
+   "inicio": 53.52,
+   "duracion": 0.78,
+   "visible": "ENCHUFADO",
+   "enfasis": true,
+   "frase": 21,
+   "seccion": "remate"
+  },
+  {
+   "texto": "a",
+   "inicio": 54.3,
+   "duracion": 0.3,
+   "visible": "A",
+   "enfasis": true,
+   "frase": 21,
+   "seccion": "remate"
+  },
+  {
+   "texto": "la",
+   "inicio": 54.6,
+   "duracion": 0.14,
+   "visible": "LA",
+   "enfasis": true,
+   "frase": 21,
+   "seccion": "remate"
+  },
+  {
+   "texto": "tele",
+   "inicio": 54.74,
+   "duracion": 0.26,
+   "visible": "TELE",
+   "enfasis": true,
+   "frase": 21,
+   "seccion": "remate"
+  },
+  {
+   "texto": "de",
+   "inicio": 55.0,
+   "duracion": 0.18,
+   "visible": "DE",
+   "enfasis": true,
+   "frase": 21,
+   "seccion": "remate"
+  },
+  {
+   "texto": "un",
+   "inicio": 55.18,
+   "duracion": 0.14,
+   "visible": "UN",
+   "enfasis": true,
+   "frase": 21,
+   "seccion": "remate"
+  },
+  {
+   "texto": "hotel",
+   "inicio": 55.32,
+   "duracion": 0.18,
+   "visible": "HOTEL.",
+   "enfasis": true,
+   "frase": 21,
+   "seccion": "remate"
+  }
+ ]
+}
