@@ -26,14 +26,14 @@ export const SoundTrack: React.FC = () => (
     {/* Voz original de cada toma: sin filtros, solo cortada (fundidos de 5 ms en los bordes) */}
     {EDL.segments.map((s) => (
       <Sequence key={s.id} from={s.from_} durationInFrames={s.dur} name={`Voz ${s.id}`}>
-        <Audio src={staticFile(`clips/${s.id}.wav`)} volume={dbToGain(MASTER_DB)} />
+        <Audio src={staticFile(s.wav)} trimBefore={s.clipStart} volume={dbToGain(MASTER_DB)} />
       </Sequence>
     ))}
     {/* Voz en off bajo el montaje: "trabajando para tu negocio" */}
     <Sequence from={EDL.vo.from_} name="Voz en off montaje">
       <Audio src={staticFile(EDL.vo.file)} volume={dbToGain(MASTER_DB)} />
     </Sequence>
-    {/* Música: DivKid - Parisian Funk desde 78,83 s; el drop cae en "o solo uno" */}
+    {/* Música: DivKid - Parisian Funk; el drop cae en el "o" de "o solo uno" */}
     <Audio
       src={staticFile(EDL.music.file)}
       volume={(f) => dbToGain(Math.min(musicDb(f) + BED_OFFSET_DB, MUSIC_MAX_DB) + MASTER_DB)}

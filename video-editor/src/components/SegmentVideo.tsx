@@ -20,7 +20,7 @@ export const SegmentFrame: React.FC<{ seg: Segment; kind: Kind; offset?: number;
     <AbsoluteFill style={{ scale: String(z.s), transformOrigin: `${z.ox}% ${z.oy}%`, ...style }}>
       <OffthreadVideo
         src={staticFile(kind === "base" ? seg.file : seg.fg)}
-        trimBefore={offset}
+        trimBefore={seg.clipStart + offset}
         muted
         transparent={kind === "fg"}
         style={{ width: "100%", height: "100%", objectFit: "cover" }}

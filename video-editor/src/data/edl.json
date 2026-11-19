@@ -1,13 +1,16 @@
 {
  "fps": 30,
- "total": 813,
+ "total": 740,
  "segments": [
   {
-   "id": "s1_hook",
+   "id": "s1a_hook",
+   "clip": "s1_hook",
    "file": "clips/s1_hook.mp4",
    "fg": "clips/s1_hook_fg.webm",
+   "wav": "clips/s1_hook.wav",
+   "clipStart": 4,
    "from_": 0,
-   "dur": 160,
+   "dur": 107,
    "zoom": [
     {
      "f": 0,
@@ -16,20 +19,32 @@
      "oy": 48
     },
     {
-     "f": 105,
-     "s": 1.52,
+     "f": 107,
+     "s": 1.51,
      "ox": 50,
      "oy": 48
-    },
+    }
+   ]
+  },
+  {
+   "id": "s1b_filmmaker",
+   "clip": "s1_hook",
+   "file": "clips/s1_hook.mp4",
+   "fg": "clips/s1_hook_fg.webm",
+   "wav": "clips/s1_hook.wav",
+   "clipStart": 133,
+   "from_": 107,
+   "dur": 27,
+   "zoom": [
     {
-     "f": 118,
+     "f": 0,
      "s": 1.3,
      "ox": 45,
      "oy": 40
     },
     {
-     "f": 160,
-     "s": 1.36,
+     "f": 27,
+     "s": 1.35,
      "ox": 45,
      "oy": 40
     }
@@ -37,10 +52,13 @@
   },
   {
    "id": "s2_editor",
+   "clip": "s2_editor",
    "file": "clips/s2_editor.mp4",
    "fg": "clips/s2_editor_fg.webm",
-   "from_": 160,
-   "dur": 30,
+   "wav": "clips/s2_editor.wav",
+   "clipStart": 5,
+   "from_": 134,
+   "dur": 25,
    "zoom": [
     {
      "f": 0,
@@ -49,7 +67,7 @@
      "oy": 40
     },
     {
-     "f": 30,
+     "f": 25,
      "s": 1.36,
      "ox": 50,
      "oy": 40
@@ -58,10 +76,13 @@
   },
   {
    "id": "s3_cm",
+   "clip": "s3_cm",
    "file": "clips/s3_cm.mp4",
    "fg": "clips/s3_cm_fg.webm",
-   "from_": 190,
-   "dur": 43,
+   "wav": "clips/s3_cm.wav",
+   "clipStart": 6,
+   "from_": 159,
+   "dur": 37,
    "zoom": [
     {
      "f": 0,
@@ -70,7 +91,7 @@
      "oy": 38
     },
     {
-     "f": 43,
+     "f": 37,
      "s": 1.38,
      "ox": 50,
      "oy": 38
@@ -79,10 +100,13 @@
   },
   {
    "id": "s4_meta",
+   "clip": "s4_meta",
    "file": "clips/s4_meta.mp4",
    "fg": "clips/s4_meta_fg.webm",
-   "from_": 233,
-   "dur": 73,
+   "wav": "clips/s4_meta.wav",
+   "clipStart": 5,
+   "from_": 196,
+   "dur": 68,
    "zoom": [
     {
      "f": 0,
@@ -91,7 +115,7 @@
      "oy": 40
     },
     {
-     "f": 73,
+     "f": 68,
      "s": 1.38,
      "ox": 50,
      "oy": 40
@@ -99,11 +123,14 @@
    ]
   },
   {
-   "id": "s5_sueldos",
+   "id": "s5a_sueldos",
+   "clip": "s5_sueldos",
    "file": "clips/s5_sueldos.mp4",
    "fg": "clips/s5_sueldos_fg.webm",
-   "from_": 306,
-   "dur": 117,
+   "wav": "clips/s5_sueldos.wav",
+   "clipStart": 4,
+   "from_": 264,
+   "dur": 58,
    "zoom": [
     {
      "f": 0,
@@ -112,19 +139,46 @@
      "oy": 38
     },
     {
-     "f": 117,
-     "s": 1.24,
+     "f": 58,
+     "s": 1.22,
      "ox": 50,
      "oy": 38
     }
    ]
   },
   {
+   "id": "s5b_uno",
+   "clip": "s5_sueldos",
+   "file": "clips/s5_sueldos.mp4",
+   "fg": "clips/s5_sueldos_fg.webm",
+   "wav": "clips/s5_sueldos.wav",
+   "clipStart": 86,
+   "from_": 322,
+   "dur": 26,
+   "zoom": [
+    {
+     "f": 0,
+     "s": 1.26,
+     "ox": 50,
+     "oy": 37
+    },
+    {
+     "f": 26,
+     "s": 1.29,
+     "ox": 50,
+     "oy": 37
+    }
+   ]
+  },
+  {
    "id": "s6_marca",
+   "clip": "s6_marca",
    "file": "clips/s6_marca.mp4",
    "fg": "clips/s6_marca_fg.webm",
-   "from_": 423,
-   "dur": 116,
+   "wav": "clips/s6_marca.wav",
+   "clipStart": 2,
+   "from_": 348,
+   "dur": 113,
    "zoom": [
     {
      "f": 0,
@@ -133,7 +187,7 @@
      "oy": 36
     },
     {
-     "f": 116,
+     "f": 113,
      "s": 1.22,
      "ox": 50,
      "oy": 36
@@ -142,10 +196,13 @@
   },
   {
    "id": "s8_cta",
+   "clip": "s8_cta",
    "file": "clips/s8_cta.mp4",
    "fg": "clips/s8_cta_fg.webm",
-   "from_": 711,
-   "dur": 102,
+   "wav": "clips/s8_cta.wav",
+   "clipStart": 3,
+   "from_": 643,
+   "dur": 97,
    "zoom": [
     {
      "f": 0,
@@ -154,19 +211,19 @@
      "oy": 36
     },
     {
-     "f": 43,
+     "f": 39,
      "s": 1.18,
      "ox": 50,
      "oy": 36
     },
     {
-     "f": 44,
+     "f": 40,
      "s": 1.34,
      "ox": 50,
      "oy": 34
     },
     {
-     "f": 102,
+     "f": 97,
      "s": 1.4,
      "ox": 50,
      "oy": 34
@@ -177,53 +234,53 @@
  "montage": [
   {
    "file": "broll/full_camara.mp4",
-   "from_": 539,
-   "dur": 28,
+   "from_": 461,
+   "dur": 38,
    "label": "FILMMAKER"
   },
   {
    "file": "broll/full_edicion.mp4",
-   "from_": 567,
+   "from_": 499,
    "dur": 29,
    "label": "EDITOR"
   },
   {
    "file": "broll/full_movil.mp4",
-   "from_": 596,
-   "dur": 29,
+   "from_": 528,
+   "dur": 28,
    "label": "COMMUNITY MANAGER"
   },
   {
    "file": "broll/full_analiticas.mp4",
-   "from_": 625,
+   "from_": 556,
    "dur": 29,
    "label": "META ADS"
   },
   {
    "file": "broll/full_vlogger.mp4",
-   "from_": 654,
-   "dur": 28,
+   "from_": 585,
+   "dur": 29,
    "label": "CONTENIDO"
   },
   {
    "file": "broll/full_redes.mp4",
-   "from_": 682,
+   "from_": 614,
    "dur": 29,
    "label": "RESULTADOS"
   }
  ],
  "vo": {
   "file": "clips/s7_vo.wav",
-  "from_": 539,
+  "from_": 461,
   "src": 178.05
  },
  "highlights": [
   {
    "kicker": "DUEÑO DE",
    "big": "NEGOCIOS",
-   "kFrom": 15,
-   "bFrom": 25,
-   "to": 39,
+   "kFrom": 11,
+   "bFrom": 21,
+   "to": 35,
    "style": "red",
    "behind": false,
    "layout": {
@@ -243,9 +300,9 @@
   {
    "kicker": "¿CUÁNTAS",
    "big": "PERSONAS?",
-   "kFrom": 39,
-   "bFrom": 48,
-   "to": 76,
+   "kFrom": 35,
+   "bFrom": 44,
+   "to": 71,
    "style": "white",
    "behind": false,
    "layout": {
@@ -264,9 +321,9 @@
   {
    "kicker": "UN",
    "big": "FILMMAKER",
-   "kFrom": 136,
-   "bFrom": 140,
-   "to": 160,
+   "kFrom": 110,
+   "bFrom": 114,
+   "to": 134,
    "style": "red",
    "behind": true,
    "layout": {
@@ -285,9 +342,9 @@
   {
    "kicker": "UN",
    "big": "EDITOR",
-   "kFrom": 168,
-   "bFrom": 173,
-   "to": 190,
+   "kFrom": 137,
+   "bFrom": 142,
+   "to": 159,
    "style": "white",
    "behind": false,
    "layout": {
@@ -306,9 +363,9 @@
   {
    "kicker": "UN",
    "big": "COMMUNITY\nMANAGER",
-   "kFrom": 198,
-   "bFrom": 203,
-   "to": 233,
+   "kFrom": 161,
+   "bFrom": 166,
+   "to": 196,
    "style": "red",
    "behind": true,
    "layout": {
@@ -328,9 +385,9 @@
   {
    "kicker": "LOS ANUNCIOS EN",
    "big": "META",
-   "kFrom": 273,
-   "bFrom": 291,
-   "to": 306,
+   "kFrom": 231,
+   "bFrom": 249,
+   "to": 264,
    "style": "white",
    "behind": false,
    "layout": {
@@ -351,9 +408,9 @@
   {
    "kicker": "¿SERÍAN",
    "big": "4 SUELDOS",
-   "kFrom": 313,
-   "bFrom": 334,
-   "to": 393,
+   "kFrom": 267,
+   "bFrom": 288,
+   "to": 322,
    "style": "white",
    "behind": false,
    "layout": {
@@ -373,9 +430,9 @@
   {
    "kicker": "¿O SOLO",
    "big": "1",
-   "kFrom": 394,
-   "bFrom": 404,
-   "to": 423,
+   "kFrom": 324,
+   "bFrom": 334,
+   "to": 348,
    "style": "red",
    "behind": false,
    "layout": {
@@ -395,9 +452,9 @@
   {
    "kicker": "EN",
    "big": "305 MEDIA CLUB",
-   "kFrom": 428,
-   "bFrom": 432,
-   "to": 460,
+   "kFrom": 351,
+   "bFrom": 355,
+   "to": 383,
    "style": "red",
    "behind": false,
    "layout": {
@@ -418,9 +475,9 @@
   {
    "kicker": "TODO TU",
    "big": "EQUIPO",
-   "kFrom": 505,
-   "bFrom": 513,
-   "to": 539,
+   "kFrom": 428,
+   "bFrom": 436,
+   "to": 461,
    "style": "white",
    "behind": false,
    "layout": {
@@ -440,9 +497,9 @@
   {
    "kicker": "¿QUÉ ESTÁS",
    "big": "ESPERANDO?",
-   "kFrom": 729,
-   "bFrom": 741,
-   "to": 768,
+   "kFrom": 658,
+   "bFrom": 670,
+   "to": 698,
    "style": "red",
    "behind": true,
    "layout": {
@@ -463,8 +520,8 @@
    "kicker": null,
    "big": "YA MISMO",
    "kFrom": null,
-   "bFrom": 786,
-   "to": 813,
+   "bFrom": 715,
+   "to": 740,
    "style": "white",
    "behind": false,
    "layout": {
@@ -486,222 +543,222 @@
    "words": [
     {
      "text": "si",
-     "f": 6
+     "f": 2
     },
     {
      "text": "eres",
-     "f": 10
+     "f": 6
     }
    ],
-   "start": 6,
-   "end": 25
+   "start": 2,
+   "end": 21
   },
   {
    "words": [
     {
      "text": "necesitas",
-     "f": 61
+     "f": 57
     }
    ],
-   "start": 61,
-   "end": 75
+   "start": 57,
+   "end": 71
   },
   {
    "words": [
     {
      "text": "para",
-     "f": 75
+     "f": 71
     },
     {
      "text": "tu",
-     "f": 81
+     "f": 77
     },
     {
      "text": "equipo",
-     "f": 84
+     "f": 80
     }
    ],
-   "start": 75,
-   "end": 92
+   "start": 71,
+   "end": 88
   },
   {
    "words": [
     {
      "text": "de",
-     "f": 92
+     "f": 88
     },
     {
      "text": "marketing",
-     "f": 95
+     "f": 91
     }
    ],
-   "start": 92,
-   "end": 120
+   "start": 88,
+   "end": 107
   },
   {
    "words": [
     {
      "text": "y",
-     "f": 240
+     "f": 198
     },
     {
      "text": "alguien",
-     "f": 244
+     "f": 202
     }
    ],
-   "start": 240,
-   "end": 255
+   "start": 198,
+   "end": 213
   },
   {
    "words": [
     {
      "text": "que",
-     "f": 255
+     "f": 213
     },
     {
      "text": "te",
-     "f": 258
+     "f": 216
     },
     {
      "text": "maneje",
-     "f": 262
+     "f": 220
     }
    ],
-   "start": 255,
-   "end": 285
+   "start": 213,
+   "end": 243
   },
   {
    "words": [
     {
      "text": "por",
-     "f": 460
+     "f": 383
     },
     {
      "text": "el",
-     "f": 464
+     "f": 387
     },
     {
      "text": "sueldo",
-     "f": 467
+     "f": 390
     }
    ],
-   "start": 460,
-   "end": 475
+   "start": 383,
+   "end": 398
   },
   {
    "words": [
     {
      "text": "de",
-     "f": 475
+     "f": 398
     },
     {
      "text": "una",
-     "f": 481
+     "f": 404
     },
     {
      "text": "persona",
-     "f": 486
+     "f": 409
     }
    ],
-   "start": 475,
-   "end": 497
+   "start": 398,
+   "end": 420
   },
   {
    "words": [
     {
      "text": "tienes",
-     "f": 497
+     "f": 420
     }
    ],
-   "start": 497,
-   "end": 513
+   "start": 420,
+   "end": 436
   },
   {
    "words": [
     {
      "text": "de",
-     "f": 521
+     "f": 444
     },
     {
      "text": "marketing",
-     "f": 523
+     "f": 446
     }
    ],
-   "start": 521,
-   "end": 541
+   "start": 444,
+   "end": 461
   },
   {
    "words": [
     {
      "text": "trabajando",
-     "f": 541
+     "f": 463
     }
    ],
-   "start": 541,
-   "end": 555
+   "start": 463,
+   "end": 477
   },
   {
    "words": [
     {
      "text": "para",
-     "f": 555
+     "f": 477
     },
     {
      "text": "tu",
-     "f": 561
+     "f": 483
     },
     {
      "text": "negocio",
-     "f": 565
+     "f": 487
     }
    ],
-   "start": 555,
-   "end": 588
+   "start": 477,
+   "end": 510
   },
   {
    "words": [
     {
      "text": "así",
-     "f": 716
+     "f": 645
     },
     {
      "text": "que",
-     "f": 724
+     "f": 653
     }
    ],
-   "start": 716,
-   "end": 738
+   "start": 645,
+   "end": 667
   },
   {
    "words": [
     {
      "text": "comunícate",
-     "f": 754
+     "f": 683
     }
    ],
-   "start": 754,
-   "end": 769
+   "start": 683,
+   "end": 698
   },
   {
    "words": [
     {
      "text": "con",
-     "f": 769
+     "f": 698
     },
     {
      "text": "nosotros",
-     "f": 772
+     "f": 701
     }
    ],
-   "start": 769,
-   "end": 786
+   "start": 698,
+   "end": 715
   }
  ],
  "cards": [
   {
    "file": "broll/card_filmmaker.mp4",
-   "from_": 126,
-   "to": 160,
+   "from_": 107,
+   "to": 134,
    "x": 650,
    "y": 640,
    "w": 360,
@@ -711,8 +768,8 @@
   },
   {
    "file": "broll/card_editor.mp4",
-   "from_": 160,
-   "to": 190,
+   "from_": 134,
+   "to": 159,
    "x": 690,
    "y": 660,
    "w": 340,
@@ -722,8 +779,8 @@
   },
   {
    "file": "broll/card_cm.mp4",
-   "from_": 191,
-   "to": 233,
+   "from_": 160,
+   "to": 196,
    "x": 600,
    "y": 830,
    "w": 400,
@@ -733,8 +790,8 @@
   },
   {
    "file": "broll/card_meta.mp4",
-   "from_": 240,
-   "to": 306,
+   "from_": 201,
+   "to": 264,
    "x": 50,
    "y": 680,
    "w": 340,
@@ -744,8 +801,8 @@
   },
   {
    "file": "broll/card_dinero.mp4",
-   "from_": 455,
-   "to": 500,
+   "from_": 378,
+   "to": 423,
    "x": 650,
    "y": 150,
    "w": 300,
@@ -756,54 +813,66 @@
  ],
  "neon": {
   "pops": [
-   336,
-   340,
-   344,
-   348
+   290,
+   294,
+   298,
+   302
   ],
-  "collapse": 394,
-  "end": 423,
+  "collapse": 324,
+  "end": 348,
   "y": 290
  },
  "transitions": [
   {
-   "at": 160,
+   "at": 107,
    "kind": "blur",
    "out": 3,
    "inn": 4
   },
   {
-   "at": 190,
+   "at": 134,
    "kind": "blur",
    "out": 3,
    "inn": 4
   },
   {
-   "at": 233,
+   "at": 159,
    "kind": "blur",
    "out": 3,
    "inn": 4
   },
   {
-   "at": 306,
+   "at": 196,
+   "kind": "blur",
+   "out": 3,
+   "inn": 4
+  },
+  {
+   "at": 264,
    "kind": "blur",
    "out": 4,
    "inn": 6
   },
   {
-   "at": 423,
+   "at": 322,
+   "kind": "blur",
+   "out": 2,
+   "inn": 3
+  },
+  {
+   "at": 348,
    "kind": "blur",
    "out": 4,
    "inn": 6
   },
   {
-   "at": 539,
+   "at": 461,
    "kind": "leak",
    "out": 6,
    "inn": 10
   },
   {
-   "at": 711,
+   "at": 643,
    "kind": "blur",
    "out": 4,
    "inn": 6
@@ -813,161 +882,226 @@
   {
    "file": "sfx/bass_sub.wav",
    "from_": 0,
-   "db": -9
+   "db": -12
   },
   {
    "file": "sfx/tecla.wav",
-   "from_": 13,
+   "from_": 9,
    "db": -17
   },
   {
    "file": "sfx/whoosh_swhoosh.wav",
-   "from_": 13,
+   "from_": 9,
    "db": -13
   },
   {
    "file": "sfx/key_click1.wav",
-   "from_": 15,
+   "from_": 11,
    "db": -11
   },
   {
    "file": "sfx/key_click2.wav",
-   "from_": 16,
+   "from_": 12,
    "db": -11
   },
   {
    "file": "sfx/tecla.wav",
-   "from_": 16,
+   "from_": 12,
    "db": -17
   },
   {
    "file": "sfx/key_click1.wav",
-   "from_": 18,
+   "from_": 14,
    "db": -11
   },
   {
    "file": "sfx/key_click2.wav",
-   "from_": 20,
+   "from_": 16,
    "db": -11
   },
   {
    "file": "sfx/tecla.wav",
-   "from_": 20,
+   "from_": 16,
    "db": -17
   },
   {
    "file": "sfx/whoosh_5.wav",
-   "from_": 34,
+   "from_": 30,
    "db": -13
   },
   {
    "file": "sfx/tecla.wav",
-   "from_": 37,
+   "from_": 33,
    "db": -17
   },
   {
    "file": "sfx/key_click1.wav",
+   "from_": 35,
+   "db": -11
+  },
+  {
+   "file": "sfx/key_click2.wav",
+   "from_": 36,
+   "db": -11
+  },
+  {
+   "file": "sfx/tecla.wav",
+   "from_": 36,
+   "db": -17
+  },
+  {
+   "file": "sfx/key_click1.wav",
+   "from_": 38,
+   "db": -11
+  },
+  {
+   "file": "sfx/key_click2.wav",
    "from_": 39,
    "db": -11
   },
   {
-   "file": "sfx/key_click2.wav",
-   "from_": 40,
-   "db": -11
-  },
-  {
    "file": "sfx/tecla.wav",
-   "from_": 40,
+   "from_": 39,
    "db": -17
   },
   {
    "file": "sfx/key_click1.wav",
-   "from_": 42,
-   "db": -11
-  },
-  {
-   "file": "sfx/key_click2.wav",
-   "from_": 43,
-   "db": -11
-  },
-  {
-   "file": "sfx/tecla.wav",
-   "from_": 43,
-   "db": -17
-  },
-  {
-   "file": "sfx/key_click1.wav",
-   "from_": 45,
+   "from_": 41,
    "db": -11
   },
   {
    "file": "sfx/whoosh_4.wav",
-   "from_": 93,
+   "from_": 86,
    "db": -12
   },
   {
+   "file": "sfx/whoosh_swhoosh.wav",
+   "from_": 102,
+   "db": -13
+  },
+  {
    "file": "sfx/pop.wav",
-   "from_": 123,
+   "from_": 104,
    "db": -17
   },
   {
-   "file": "sfx/whoosh_swhoosh.wav",
+   "file": "sfx/tecla.wav",
+   "from_": 108,
+   "db": -17
+  },
+  {
+   "file": "sfx/key_click1.wav",
+   "from_": 110,
+   "db": -11
+  },
+  {
+   "file": "sfx/shutter.wav",
+   "from_": 111,
+   "db": -13
+  },
+  {
+   "file": "sfx/tecla.wav",
+   "from_": 111,
+   "db": -19
+  },
+  {
+   "file": "sfx/key_click1.wav",
+   "from_": 113,
+   "db": -13
+  },
+  {
+   "file": "sfx/key_click2.wav",
+   "from_": 114,
+   "db": -13
+  },
+  {
+   "file": "sfx/tecla.wav",
+   "from_": 114,
+   "db": -19
+  },
+  {
+   "file": "sfx/key_click1.wav",
+   "from_": 116,
+   "db": -13
+  },
+  {
+   "file": "sfx/key_click2.wav",
+   "from_": 117,
+   "db": -13
+  },
+  {
+   "file": "sfx/tecla.wav",
+   "from_": 118,
+   "db": -19
+  },
+  {
+   "file": "sfx/key_click1.wav",
+   "from_": 120,
+   "db": -13
+  },
+  {
+   "file": "sfx/whoosh_5.wav",
    "from_": 128,
    "db": -13
   },
   {
-   "file": "sfx/tecla.wav",
-   "from_": 130,
-   "db": -19
-  },
-  {
-   "file": "sfx/key_click1.wav",
-   "from_": 132,
-   "db": -13
-  },
-  {
-   "file": "sfx/key_click2.wav",
-   "from_": 133,
-   "db": -13
+   "file": "sfx/pop.wav",
+   "from_": 131,
+   "db": -17
   },
   {
    "file": "sfx/tecla.wav",
-   "from_": 133,
-   "db": -19
-  },
-  {
-   "file": "sfx/tecla.wav",
-   "from_": 134,
+   "from_": 135,
    "db": -17
   },
   {
    "file": "sfx/key_click1.wav",
-   "from_": 135,
-   "db": -13
-  },
-  {
-   "file": "sfx/key_click1.wav",
-   "from_": 136,
+   "from_": 137,
    "db": -11
   },
   {
-   "file": "sfx/key_click2.wav",
-   "from_": 136,
-   "db": -13
-  },
-  {
-   "file": "sfx/shutter.wav",
-   "from_": 137,
-   "db": -13
-  },
-  {
    "file": "sfx/tecla.wav",
-   "from_": 137,
+   "from_": 138,
    "db": -19
   },
   {
    "file": "sfx/key_click1.wav",
-   "from_": 139,
+   "from_": 140,
+   "db": -13
+  },
+  {
+   "file": "sfx/key_click2.wav",
+   "from_": 141,
+   "db": -13
+  },
+  {
+   "file": "sfx/tecla.wav",
+   "from_": 141,
+   "db": -19
+  },
+  {
+   "file": "sfx/key_click1.wav",
+   "from_": 143,
+   "db": -13
+  },
+  {
+   "file": "sfx/key_click2.wav",
+   "from_": 144,
+   "db": -13
+  },
+  {
+   "file": "sfx/tecla.wav",
+   "from_": 145,
+   "db": -19
+  },
+  {
+   "file": "sfx/key_click1.wav",
+   "from_": 147,
+   "db": -13
+  },
+  {
+   "file": "sfx/whoosh_swhoosh.wav",
+   "from_": 154,
    "db": -13
   },
   {
@@ -976,19 +1110,19 @@
    "db": -17
   },
   {
-   "file": "sfx/whoosh_5.wav",
+   "file": "sfx/tecla.wav",
    "from_": 159,
-   "db": -13
+   "db": -17
+  },
+  {
+   "file": "sfx/key_click1.wav",
+   "from_": 161,
+   "db": -11
   },
   {
    "file": "sfx/tecla.wav",
    "from_": 164,
    "db": -19
-  },
-  {
-   "file": "sfx/tecla.wav",
-   "from_": 166,
-   "db": -17
   },
   {
    "file": "sfx/key_click1.wav",
@@ -1004,11 +1138,6 @@
    "file": "sfx/tecla.wav",
    "from_": 167,
    "db": -19
-  },
-  {
-   "file": "sfx/key_click1.wav",
-   "from_": 168,
-   "db": -11
   },
   {
    "file": "sfx/key_click1.wav",
@@ -1032,108 +1161,148 @@
   },
   {
    "file": "sfx/pop.wav",
-   "from_": 188,
+   "from_": 198,
    "db": -17
   },
   {
-   "file": "sfx/whoosh_swhoosh.wav",
-   "from_": 191,
-   "db": -13
-  },
-  {
    "file": "sfx/tecla.wav",
-   "from_": 195,
+   "from_": 205,
    "db": -19
   },
   {
+   "file": "sfx/key_click1.wav",
+   "from_": 207,
+   "db": -13
+  },
+  {
+   "file": "sfx/key_click2.wav",
+   "from_": 208,
+   "db": -13
+  },
+  {
    "file": "sfx/tecla.wav",
-   "from_": 196,
+   "from_": 208,
+   "db": -19
+  },
+  {
+   "file": "sfx/key_click1.wav",
+   "from_": 210,
+   "db": -13
+  },
+  {
+   "file": "sfx/key_click2.wav",
+   "from_": 211,
+   "db": -13
+  },
+  {
+   "file": "sfx/tecla.wav",
+   "from_": 212,
+   "db": -19
+  },
+  {
+   "file": "sfx/key_click1.wav",
+   "from_": 214,
+   "db": -13
+  },
+  {
+   "file": "sfx/tecla.wav",
+   "from_": 229,
    "db": -17
   },
   {
    "file": "sfx/key_click1.wav",
-   "from_": 197,
-   "db": -13
-  },
-  {
-   "file": "sfx/key_click1.wav",
-   "from_": 198,
+   "from_": 231,
    "db": -11
   },
   {
    "file": "sfx/key_click2.wav",
-   "from_": 198,
-   "db": -13
+   "from_": 232,
+   "db": -11
   },
   {
    "file": "sfx/tecla.wav",
-   "from_": 198,
-   "db": -19
+   "from_": 233,
+   "db": -17
   },
   {
    "file": "sfx/key_click1.wav",
-   "from_": 200,
+   "from_": 235,
+   "db": -11
+  },
+  {
+   "file": "sfx/whoosh_5.wav",
+   "from_": 235,
    "db": -13
   },
   {
    "file": "sfx/key_click2.wav",
-   "from_": 201,
-   "db": -13
+   "from_": 236,
+   "db": -11
   },
   {
    "file": "sfx/tecla.wav",
-   "from_": 202,
-   "db": -19
+   "from_": 236,
+   "db": -17
   },
   {
    "file": "sfx/key_click1.wav",
-   "from_": 204,
-   "db": -13
+   "from_": 238,
+   "db": -11
   },
   {
-   "file": "sfx/pop.wav",
-   "from_": 237,
+   "file": "sfx/key_click2.wav",
+   "from_": 239,
+   "db": -11
+  },
+  {
+   "file": "sfx/tecla.wav",
+   "from_": 239,
+   "db": -17
+  },
+  {
+   "file": "sfx/key_click1.wav",
+   "from_": 241,
+   "db": -11
+  },
+  {
+   "file": "sfx/key_click2.wav",
+   "from_": 243,
+   "db": -11
+  },
+  {
+   "file": "sfx/tecla.wav",
+   "from_": 243,
    "db": -17
   },
   {
    "file": "sfx/tecla.wav",
-   "from_": 244,
-   "db": -19
+   "from_": 265,
+   "db": -17
   },
   {
    "file": "sfx/key_click1.wav",
-   "from_": 246,
-   "db": -13
+   "from_": 267,
+   "db": -11
   },
   {
    "file": "sfx/key_click2.wav",
-   "from_": 247,
-   "db": -13
+   "from_": 268,
+   "db": -11
   },
   {
    "file": "sfx/tecla.wav",
-   "from_": 247,
-   "db": -19
+   "from_": 268,
+   "db": -17
   },
   {
    "file": "sfx/key_click1.wav",
-   "from_": 249,
-   "db": -13
+   "from_": 270,
+   "db": -11
   },
   {
    "file": "sfx/key_click2.wav",
-   "from_": 250,
-   "db": -13
-  },
-  {
-   "file": "sfx/tecla.wav",
-   "from_": 251,
-   "db": -19
-  },
-  {
-   "file": "sfx/key_click1.wav",
-   "from_": 253,
-   "db": -13
+   "from_": 271,
+   "db": -11
   },
   {
    "file": "sfx/tecla.wav",
@@ -1141,194 +1310,149 @@
    "db": -17
   },
   {
-   "file": "sfx/key_click1.wav",
-   "from_": 273,
-   "db": -11
-  },
-  {
-   "file": "sfx/key_click2.wav",
-   "from_": 274,
-   "db": -11
-  },
-  {
-   "file": "sfx/tecla.wav",
-   "from_": 275,
-   "db": -17
-  },
-  {
-   "file": "sfx/key_click1.wav",
-   "from_": 277,
-   "db": -11
+   "file": "sfx/riser_sharp.wav",
+   "from_": 272,
+   "db": -12
   },
   {
    "file": "sfx/whoosh_5.wav",
-   "from_": 277,
+   "from_": 274,
    "db": -13
   },
   {
-   "file": "sfx/key_click2.wav",
-   "from_": 278,
-   "db": -11
-  },
-  {
-   "file": "sfx/tecla.wav",
-   "from_": 278,
-   "db": -17
-  },
-  {
-   "file": "sfx/key_click1.wav",
+   "file": "sfx/bass_deep1.wav",
    "from_": 280,
    "db": -11
   },
   {
-   "file": "sfx/key_click2.wav",
-   "from_": 281,
-   "db": -11
-  },
-  {
-   "file": "sfx/tecla.wav",
-   "from_": 281,
-   "db": -17
-  },
-  {
-   "file": "sfx/key_click1.wav",
-   "from_": 283,
-   "db": -11
-  },
-  {
-   "file": "sfx/key_click2.wav",
-   "from_": 285,
-   "db": -11
-  },
-  {
-   "file": "sfx/tecla.wav",
-   "from_": 285,
-   "db": -17
-  },
-  {
-   "file": "sfx/tecla.wav",
-   "from_": 311,
-   "db": -17
-  },
-  {
-   "file": "sfx/key_click1.wav",
-   "from_": 313,
-   "db": -11
-  },
-  {
-   "file": "sfx/key_click2.wav",
-   "from_": 314,
-   "db": -11
-  },
-  {
-   "file": "sfx/tecla.wav",
-   "from_": 314,
-   "db": -17
-  },
-  {
-   "file": "sfx/key_click1.wav",
-   "from_": 316,
-   "db": -11
-  },
-  {
-   "file": "sfx/key_click2.wav",
-   "from_": 317,
-   "db": -11
-  },
-  {
-   "file": "sfx/tecla.wav",
-   "from_": 317,
-   "db": -17
-  },
-  {
-   "file": "sfx/whoosh_5.wav",
-   "from_": 320,
-   "db": -13
-  },
-  {
-   "file": "sfx/bass_deep1.wav",
-   "from_": 326,
-   "db": -11
-  },
-  {
    "file": "sfx/swoosh_03.wav",
-   "from_": 334,
+   "from_": 288,
    "db": -18
   },
   {
    "file": "sfx/swoosh_03.wav",
-   "from_": 338,
+   "from_": 292,
    "db": -18
   },
   {
    "file": "sfx/swoosh_03.wav",
-   "from_": 342,
+   "from_": 296,
    "db": -18
   },
   {
-   "file": "sfx/riser_sharp.wav",
-   "from_": 342,
-   "db": -12
-  },
-  {
    "file": "sfx/swoosh_03.wav",
-   "from_": 346,
+   "from_": 300,
    "db": -18
   },
   {
    "file": "sfx/tecla.wav",
-   "from_": 392,
+   "from_": 322,
    "db": -17
   },
   {
    "file": "sfx/whoosh_swhoosh.wav",
-   "from_": 392,
+   "from_": 322,
    "db": -13
   },
   {
    "file": "sfx/bass_drop10.wav",
-   "from_": 393,
-   "db": -4
+   "from_": 323,
+   "db": -6
   },
   {
    "file": "sfx/swoosh_05.wav",
-   "from_": 393,
+   "from_": 323,
    "db": -14
   },
   {
    "file": "sfx/key_click1.wav",
-   "from_": 394,
+   "from_": 324,
    "db": -11
   },
   {
    "file": "sfx/key_click2.wav",
-   "from_": 396,
+   "from_": 326,
    "db": -11
   },
   {
    "file": "sfx/tecla.wav",
-   "from_": 396,
+   "from_": 326,
    "db": -17
   },
   {
    "file": "sfx/key_click1.wav",
-   "from_": 398,
+   "from_": 328,
    "db": -11
   },
   {
    "file": "sfx/key_click2.wav",
-   "from_": 399,
+   "from_": 329,
    "db": -11
   },
   {
    "file": "sfx/whoosh_swhoosh.wav",
-   "from_": 420,
+   "from_": 343,
    "db": -13
   },
   {
    "file": "sfx/bass_deep1.wav",
-   "from_": 424,
+   "from_": 347,
+   "db": -14
+  },
+  {
+   "file": "sfx/tecla.wav",
+   "from_": 349,
+   "db": -17
+  },
+  {
+   "file": "sfx/key_click1.wav",
+   "from_": 351,
    "db": -11
+  },
+  {
+   "file": "sfx/pop.wav",
+   "from_": 375,
+   "db": -17
+  },
+  {
+   "file": "sfx/tecla.wav",
+   "from_": 382,
+   "db": -19
+  },
+  {
+   "file": "sfx/key_click1.wav",
+   "from_": 385,
+   "db": -13
+  },
+  {
+   "file": "sfx/key_click2.wav",
+   "from_": 386,
+   "db": -13
+  },
+  {
+   "file": "sfx/tecla.wav",
+   "from_": 386,
+   "db": -19
+  },
+  {
+   "file": "sfx/key_click1.wav",
+   "from_": 388,
+   "db": -13
+  },
+  {
+   "file": "sfx/key_click2.wav",
+   "from_": 389,
+   "db": -13
+  },
+  {
+   "file": "sfx/tecla.wav",
+   "from_": 389,
+   "db": -19
+  },
+  {
+   "file": "sfx/whoosh_5.wav",
+   "from_": 422,
+   "db": -13
   },
   {
    "file": "sfx/tecla.wav",
@@ -1341,24 +1465,34 @@
    "db": -11
   },
   {
-   "file": "sfx/pop.wav",
-   "from_": 452,
-   "db": -17
-  },
-  {
-   "file": "sfx/tecla.wav",
-   "from_": 459,
-   "db": -19
-  },
-  {
-   "file": "sfx/key_click1.wav",
-   "from_": 462,
-   "db": -13
+   "file": "sfx/whoosh_2.wav",
+   "from_": 428,
+   "db": -12
   },
   {
    "file": "sfx/key_click2.wav",
-   "from_": 463,
-   "db": -13
+   "from_": 429,
+   "db": -11
+  },
+  {
+   "file": "sfx/tecla.wav",
+   "from_": 429,
+   "db": -17
+  },
+  {
+   "file": "sfx/key_click1.wav",
+   "from_": 432,
+   "db": -11
+  },
+  {
+   "file": "sfx/key_click2.wav",
+   "from_": 433,
+   "db": -11
+  },
+  {
+   "file": "sfx/boom2.wav",
+   "from_": 458,
+   "db": -15
   },
   {
    "file": "sfx/tecla.wav",
@@ -1381,459 +1515,395 @@
    "db": -19
   },
   {
-   "file": "sfx/whoosh_5.wav",
-   "from_": 499,
+   "file": "sfx/key_click1.wav",
+   "from_": 468,
+   "db": -13
+  },
+  {
+   "file": "sfx/key_click2.wav",
+   "from_": 469,
    "db": -13
   },
   {
    "file": "sfx/tecla.wav",
-   "from_": 503,
-   "db": -17
-  },
-  {
-   "file": "sfx/key_click1.wav",
-   "from_": 505,
-   "db": -11
-  },
-  {
-   "file": "sfx/key_click2.wav",
-   "from_": 506,
-   "db": -11
-  },
-  {
-   "file": "sfx/tecla.wav",
-   "from_": 506,
-   "db": -17
-  },
-  {
-   "file": "sfx/whoosh_2.wav",
-   "from_": 506,
-   "db": -12
-  },
-  {
-   "file": "sfx/key_click1.wav",
-   "from_": 509,
-   "db": -11
-  },
-  {
-   "file": "sfx/key_click2.wav",
-   "from_": 510,
-   "db": -11
-  },
-  {
-   "file": "sfx/boom2.wav",
-   "from_": 536,
-   "db": -15
-  },
-  {
-   "file": "sfx/tecla.wav",
-   "from_": 541,
+   "from_": 469,
    "db": -19
   },
   {
    "file": "sfx/key_click1.wav",
+   "from_": 471,
+   "db": -13
+  },
+  {
+   "file": "sfx/key_click2.wav",
+   "from_": 472,
+   "db": -13
+  },
+  {
+   "file": "sfx/tecla.wav",
+   "from_": 501,
+   "db": -19
+  },
+  {
+   "file": "sfx/key_click1.wav",
+   "from_": 503,
+   "db": -13
+  },
+  {
+   "file": "sfx/key_click2.wav",
+   "from_": 504,
+   "db": -13
+  },
+  {
+   "file": "sfx/tecla.wav",
+   "from_": 504,
+   "db": -19
+  },
+  {
+   "file": "sfx/key_click1.wav",
+   "from_": 506,
+   "db": -13
+  },
+  {
+   "file": "sfx/key_click2.wav",
+   "from_": 507,
+   "db": -13
+  },
+  {
+   "file": "sfx/tecla.wav",
+   "from_": 530,
+   "db": -19
+  },
+  {
+   "file": "sfx/key_click1.wav",
+   "from_": 532,
+   "db": -13
+  },
+  {
+   "file": "sfx/key_click2.wav",
+   "from_": 533,
+   "db": -13
+  },
+  {
+   "file": "sfx/tecla.wav",
+   "from_": 533,
+   "db": -19
+  },
+  {
+   "file": "sfx/key_click1.wav",
+   "from_": 535,
+   "db": -13
+  },
+  {
+   "file": "sfx/key_click2.wav",
+   "from_": 536,
+   "db": -13
+  },
+  {
+   "file": "sfx/tecla.wav",
+   "from_": 536,
+   "db": -19
+  },
+  {
+   "file": "sfx/key_click1.wav",
+   "from_": 538,
+   "db": -13
+  },
+  {
+   "file": "sfx/key_click2.wav",
+   "from_": 539,
+   "db": -13
+  },
+  {
+   "file": "sfx/tecla.wav",
+   "from_": 540,
+   "db": -19
+  },
+  {
+   "file": "sfx/key_click1.wav",
+   "from_": 542,
+   "db": -13
+  },
+  {
+   "file": "sfx/key_click2.wav",
    "from_": 543,
    "db": -13
   },
   {
-   "file": "sfx/key_click2.wav",
-   "from_": 544,
-   "db": -13
-  },
-  {
    "file": "sfx/tecla.wav",
-   "from_": 544,
+   "from_": 543,
    "db": -19
   },
   {
    "file": "sfx/key_click1.wav",
+   "from_": 545,
+   "db": -13
+  },
+  {
+   "file": "sfx/key_click2.wav",
    "from_": 546,
    "db": -13
   },
   {
-   "file": "sfx/key_click2.wav",
-   "from_": 547,
-   "db": -13
+   "file": "sfx/tecla.wav",
+   "from_": 546,
+   "db": -19
   },
   {
    "file": "sfx/tecla.wav",
-   "from_": 547,
+   "from_": 558,
    "db": -19
   },
   {
    "file": "sfx/key_click1.wav",
-   "from_": 549,
+   "from_": 560,
    "db": -13
   },
   {
    "file": "sfx/key_click2.wav",
-   "from_": 550,
+   "from_": 561,
    "db": -13
   },
   {
    "file": "sfx/tecla.wav",
-   "from_": 569,
+   "from_": 561,
    "db": -19
   },
   {
    "file": "sfx/key_click1.wav",
-   "from_": 571,
+   "from_": 564,
    "db": -13
   },
   {
    "file": "sfx/key_click2.wav",
-   "from_": 572,
+   "from_": 565,
    "db": -13
   },
   {
    "file": "sfx/tecla.wav",
-   "from_": 572,
+   "from_": 565,
+   "db": -19
+  },
+  {
+   "file": "sfx/tecla.wav",
+   "from_": 587,
    "db": -19
   },
   {
    "file": "sfx/key_click1.wav",
-   "from_": 574,
+   "from_": 589,
    "db": -13
   },
   {
    "file": "sfx/key_click2.wav",
-   "from_": 575,
+   "from_": 590,
    "db": -13
   },
   {
    "file": "sfx/tecla.wav",
-   "from_": 598,
+   "from_": 590,
    "db": -19
   },
   {
    "file": "sfx/key_click1.wav",
-   "from_": 600,
+   "from_": 592,
    "db": -13
   },
   {
    "file": "sfx/key_click2.wav",
-   "from_": 601,
+   "from_": 593,
    "db": -13
   },
   {
    "file": "sfx/tecla.wav",
-   "from_": 601,
+   "from_": 593,
    "db": -19
   },
   {
    "file": "sfx/key_click1.wav",
-   "from_": 603,
+   "from_": 595,
    "db": -13
   },
   {
    "file": "sfx/key_click2.wav",
-   "from_": 604,
+   "from_": 596,
    "db": -13
   },
   {
    "file": "sfx/tecla.wav",
-   "from_": 604,
+   "from_": 616,
    "db": -19
   },
   {
    "file": "sfx/key_click1.wav",
-   "from_": 606,
+   "from_": 618,
    "db": -13
   },
   {
    "file": "sfx/key_click2.wav",
-   "from_": 607,
+   "from_": 619,
    "db": -13
   },
   {
    "file": "sfx/tecla.wav",
-   "from_": 608,
+   "from_": 619,
    "db": -19
   },
   {
    "file": "sfx/key_click1.wav",
-   "from_": 610,
+   "from_": 621,
    "db": -13
   },
   {
    "file": "sfx/key_click2.wav",
-   "from_": 611,
+   "from_": 622,
    "db": -13
   },
   {
    "file": "sfx/tecla.wav",
-   "from_": 611,
+   "from_": 622,
    "db": -19
   },
   {
    "file": "sfx/key_click1.wav",
-   "from_": 613,
+   "from_": 624,
    "db": -13
   },
   {
    "file": "sfx/key_click2.wav",
-   "from_": 614,
+   "from_": 625,
    "db": -13
   },
   {
    "file": "sfx/tecla.wav",
-   "from_": 614,
-   "db": -19
-  },
-  {
-   "file": "sfx/tecla.wav",
-   "from_": 627,
-   "db": -19
-  },
-  {
-   "file": "sfx/key_click1.wav",
-   "from_": 629,
-   "db": -13
-  },
-  {
-   "file": "sfx/key_click2.wav",
-   "from_": 630,
-   "db": -13
-  },
-  {
-   "file": "sfx/tecla.wav",
-   "from_": 630,
-   "db": -19
-  },
-  {
-   "file": "sfx/key_click1.wav",
-   "from_": 633,
-   "db": -13
-  },
-  {
-   "file": "sfx/key_click2.wav",
-   "from_": 634,
-   "db": -13
-  },
-  {
-   "file": "sfx/tecla.wav",
-   "from_": 634,
+   "from_": 625,
    "db": -19
   },
   {
    "file": "sfx/tecla.wav",
    "from_": 656,
-   "db": -19
+   "db": -17
   },
   {
    "file": "sfx/key_click1.wav",
+   "from_": 658,
+   "db": -11
+  },
+  {
+   "file": "sfx/whoosh_swhoosh.wav",
    "from_": 658,
    "db": -13
   },
   {
    "file": "sfx/key_click2.wav",
    "from_": 659,
-   "db": -13
+   "db": -11
   },
   {
    "file": "sfx/tecla.wav",
    "from_": 659,
-   "db": -19
-  },
-  {
-   "file": "sfx/key_click1.wav",
-   "from_": 661,
-   "db": -13
-  },
-  {
-   "file": "sfx/key_click2.wav",
-   "from_": 662,
-   "db": -13
-  },
-  {
-   "file": "sfx/tecla.wav",
-   "from_": 662,
-   "db": -19
-  },
-  {
-   "file": "sfx/key_click1.wav",
-   "from_": 664,
-   "db": -13
-  },
-  {
-   "file": "sfx/key_click2.wav",
-   "from_": 665,
-   "db": -13
-  },
-  {
-   "file": "sfx/tecla.wav",
-   "from_": 684,
-   "db": -19
-  },
-  {
-   "file": "sfx/key_click1.wav",
-   "from_": 686,
-   "db": -13
-  },
-  {
-   "file": "sfx/key_click2.wav",
-   "from_": 687,
-   "db": -13
-  },
-  {
-   "file": "sfx/tecla.wav",
-   "from_": 687,
-   "db": -19
-  },
-  {
-   "file": "sfx/key_click1.wav",
-   "from_": 689,
-   "db": -13
-  },
-  {
-   "file": "sfx/key_click2.wav",
-   "from_": 690,
-   "db": -13
-  },
-  {
-   "file": "sfx/tecla.wav",
-   "from_": 690,
-   "db": -19
-  },
-  {
-   "file": "sfx/key_click1.wav",
-   "from_": 692,
-   "db": -13
-  },
-  {
-   "file": "sfx/key_click2.wav",
-   "from_": 693,
-   "db": -13
-  },
-  {
-   "file": "sfx/tecla.wav",
-   "from_": 693,
-   "db": -19
-  },
-  {
-   "file": "sfx/tecla.wav",
-   "from_": 727,
    "db": -17
   },
   {
    "file": "sfx/key_click1.wav",
-   "from_": 729,
-   "db": -11
-  },
-  {
-   "file": "sfx/whoosh_swhoosh.wav",
-   "from_": 729,
-   "db": -13
-  },
-  {
-   "file": "sfx/key_click2.wav",
-   "from_": 730,
-   "db": -11
-  },
-  {
-   "file": "sfx/tecla.wav",
-   "from_": 730,
-   "db": -17
-  },
-  {
-   "file": "sfx/key_click1.wav",
-   "from_": 733,
+   "from_": 662,
    "db": -11
   },
   {
    "file": "sfx/bass_deep1.wav",
-   "from_": 733,
+   "from_": 662,
    "db": -11
   },
   {
    "file": "sfx/key_click2.wav",
-   "from_": 734,
+   "from_": 663,
    "db": -11
   },
   {
    "file": "sfx/tecla.wav",
-   "from_": 734,
+   "from_": 663,
    "db": -17
   },
   {
    "file": "sfx/key_click1.wav",
-   "from_": 736,
+   "from_": 665,
    "db": -11
   },
   {
    "file": "sfx/key_click2.wav",
-   "from_": 737,
+   "from_": 666,
    "db": -11
   },
   {
    "file": "sfx/swoosh_03.wav",
-   "from_": 753,
+   "from_": 681,
    "db": -16
   },
   {
    "file": "sfx/whoosh_5.wav",
-   "from_": 772,
+   "from_": 701,
    "db": -13
   },
   {
    "file": "sfx/bass_sub.wav",
-   "from_": 785,
+   "from_": 714,
    "db": -13
   }
  ],
  "music": {
-  "file": "music/parisian_funk_7883.wav",
+  "file": "music/parisian_funk_8111.wav",
+  "songStart": 81.11,
   "keys": [
    {
     "f": 0,
     "db": -17
    },
    {
-    "f": 388,
+    "f": 318,
     "db": -17
    },
    {
-    "f": 394,
+    "f": 324,
     "db": -9
    },
    {
-    "f": 414,
+    "f": 344,
     "db": -10
    },
    {
-    "f": 426,
+    "f": 351,
     "db": -17
    },
    {
-    "f": 536,
+    "f": 458,
     "db": -17
    },
    {
-    "f": 539,
+    "f": 461,
     "db": -12
    },
    {
-    "f": 578,
+    "f": 500,
     "db": -12
    },
    {
-    "f": 590,
+    "f": 512,
     "db": -2
    },
    {
-    "f": 700,
+    "f": 632,
     "db": -2
    },
    {
-    "f": 714,
+    "f": 646,
     "db": -17
    },
    {
-    "f": 796,
+    "f": 723,
     "db": -17
    },
    {
-    "f": 813,
+    "f": 740,
     "db": -40
    }
   ]

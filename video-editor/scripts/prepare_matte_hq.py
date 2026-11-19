@@ -21,26 +21,30 @@ OW, OH = 1080, 1920
 edl = json.load(open(f"{ROOT}/src/data/edl.json"))
 
 
-def windows(seg):
-    """Fotogramas locales del segmento que necesitan recorte (con 3 fotogramas de margen)."""
-    a0, a1 = seg["from_"], seg["from_"] + seg["dur"]
+def windows(clip):
+    """Fotogramas DEL CLIP que necesitan recorte (con 3 de margen): los de todas las tomas que
+    salen de ese clip y tienen algo detrás de la persona (palabras "behind" o tarjetas)."""
     need = set()
     spans = [(h["bFrom"], h["to"]) for h in edl["highlights"] if h["behind"]]
     spans += [(c["from_"], c["to"]) for c in edl["cards"]]
-    for s, e in spans:
-        for f in range(max(s - 3, a0), min(e + 3, a1)):
-            need.add(f - a0)
+    for seg in edl["segments"]:
+        if seg["clip"] != clip:
+            continue
+        a0, a1 = seg["from_"], seg["from_"] + seg["dur"]
+        for s, e in spans:
+            for f in range(max(s - 3, a0), min(e + 3, a1)):
+                need.add(f - a0 + seg["clipStart"])
     return need
 
 
 def main():
     only = set(sys.argv[1:])
-    for seg in edl["segments"]:
-        if only and seg["id"] not in only:
+    for clip in dict.fromkeys(s["clip"] for s in edl["segments"]):
+        if only and clip not in only:
             continue
-        need = windows(seg)
-        mp4 = f"{ROOT}/public/clips/{seg['id']}.mp4"
-        out = f"{ROOT}/public/clips/{seg['id']}_fg.webm"
+        need = windows(clip)
+        mp4 = f"{ROOT}/public/clips/{clip}.mp4"
+        out = f"{ROOT}/public/clips/{clip}_fg.webm"
         dec = subprocess.Popen(["ffmpeg", "-v", "error", "-i", mp4, "-vf", f"scale={OW}:{OH}:flags=lanczos",
                                 "-f", "rawvideo", "-pix_fmt", "rgb24", "-"], stdout=subprocess.PIPE)
         enc = subprocess.Popen(["ffmpeg", "-v", "error", "-y", "-f", "rawvideo", "-pix_fmt", "rgba", "-s", f"{OW}x{OH}",
@@ -68,7 +72,7 @@ def main():
         enc.stdin.close()
         enc.wait()
         dec.wait()
-        print(f"ok {seg['id']}: {n} fotogramas, {len(need)} recortados con BiRefNet en {time.time() - t0:.0f}s", flush=True)
+        print(f"ok {clip}: {n} fotogramas, {len(need)} recortados con BiRefNet en {time.time() - t0:.0f}s", flush=True)
 
 
 if __name__ == "__main__":

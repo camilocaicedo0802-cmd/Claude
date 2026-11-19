@@ -1,7 +1,18 @@
 import raw from "./data/edl.json";
 
 export type ZoomKey = { f: number; s: number; ox: number; oy: number };
-export type Segment = { id: string; file: string; fg: string; from_: number; dur: number; zoom: ZoomKey[] };
+/** Toma en la línea de tiempo: sale del clip `clip` a partir de su fotograma `clipStart`. */
+export type Segment = {
+  id: string;
+  clip: string;
+  file: string;
+  fg: string;
+  wav: string;
+  clipStart: number;
+  from_: number;
+  dur: number;
+  zoom: ZoomKey[];
+};
 export type Shot = { file: string; from_: number; dur: number; label: string };
 export type Highlight = {
   kicker: string | null;
@@ -31,7 +42,7 @@ export type Edl = {
   neon: { pops: number[]; collapse: number; end: number; y: number };
   transitions: Transition[];
   sfx: Sfx[];
-  music: { file: string; keys: { f: number; db: number }[] };
+  music: { file: string; songStart: number; keys: { f: number; db: number }[] };
 };
 
 export const EDL = raw as unknown as Edl;

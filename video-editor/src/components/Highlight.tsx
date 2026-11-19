@@ -157,7 +157,7 @@ const BigWord: React.FC<{ h: H; seg: Segment; start: number }> = ({ h, seg, star
       <AbsoluteFill style={{ opacity: 0 }}>
         <OffthreadVideo
           src={staticFile(seg.file)}
-          trimBefore={offset}
+          trimBefore={seg.clipStart + offset}
           muted
           onVideoFrame={draw}
           style={{ width: "100%", height: "100%" }}
