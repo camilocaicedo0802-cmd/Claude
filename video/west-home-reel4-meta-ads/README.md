@@ -1,5 +1,14 @@
 # West Home Improvement · Reel 4 — Meta Ads: del jacuzzi a una ducha enorme (South Tulsa)
 
+**v7 (ajuste del cliente: "pon música parecida a la de los otros reels, usa la misma del reel 3"):**
+- **Música:** la misma pista del reel 3, una instrumental original de 104 BPM, montada igual que allá.
+  - El drop (tiempo 32 de la pista), con su pausa corta antes, cae en el reveal de la ducha (15,57 s).
+  - Como la pista dura 35 s, en el tiempo 56 vuelve 4 compases atrás (al tiempo 40) en un tiempo fuerte.
+  - Se desvanece con el video.
+- **Volumen:** se mantiene bajo, como en la v6 (−25 LUFS de cama; en el reel 3 es −22). Queda ~21 dB bajo la voz en los
+  problemas y ~18 dB después del reveal. El máster sigue en −14,3 LUFS.
+- La imagen no cambia (es la de la v4).
+
 **v6 (ajuste del cliente: "bájale a la música y pon algo más chill y acompañante"):**
 - **Música:** "MUSICA LOFI (Sin Copyright) #25", de la carpeta del cliente. Es lo-fi suave en tono mayor, sin melodía
   protagonista, y de las candidatas "chill" es la que menos energía tiene en la banda de la voz (1,5–5 kHz). Al no ser una

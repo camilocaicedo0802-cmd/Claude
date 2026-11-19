@@ -60,10 +60,10 @@ for path, a, b, tp in T.VOICE:
 wf.write(STEM + 'voice.wav', SR, voice)
 
 # ---------------------------------------------------------------- music
-# v6 (client: "bájale a la música y pon algo más chill y acompañante, que no resalte"): "MUSICA LOFI (Sin Copyright)
-# #25" from the client's folder — a mellow major-key lofi groove with no lead melody and very little energy in the
-# voice band (1.5-5 kHz). Not a commercial song, so it is safer for paid Meta ads than v5's "1901".
-mus = load(ROOT + 'music/lofi_25.mp3', ch=2, filt='equalizer=f=3000:t=q:w=1.0:g=-2')
+# v7 (client: "pon música parecida a la de los otros reels, usa la misma del reel 3"): the reel 3 bed — the original
+# 104 BPM track (beat 0.5769 s) — placed the same way as in reel 3: its drop (track beat 32) lands on REVEAL, and where
+# the track runs out it splices back 16 beats (4 bars) on a downbeat, from beat 56 to beat 40.
+mus = load(ROOT + 'music/reel3_track.mp3', ch=2)
 music = np.zeros((N, 2), np.float32)
 XF = int(0.012 * SR)
 
@@ -77,18 +77,16 @@ def place(dst_t0, dst_t1, src_t0, fin=True, fout=True):
     music[a:a + len(seg)] += seg
 
 
-# The track's break (132.2-144.1 s: just the chords, no bass or drums) sits under the problems; the bass and the soft
-# drums come back at 144.10 s, which lands on REVEAL — a gentle lift, not a drop. One continuous piece, no splices.
-K = 144.10
-place(0.0, T.DUR, K - T.REVEAL, fin=False)
+P3, B3 = 0.5769311385, 0.0385875471               # reel 3 track grid
+TRK = lambda k: B3 + k * P3                         # track time of beat k
+VB = lambda k: T.REVEAL + (k - 32) * P3             # video time of track beat k (beat 32 = the drop = REVEAL)
+v1 = VB(56)
+place(0.0, v1 + 0.012, TRK(32) - T.REVEAL, fin=False)
+place(v1 - 0.012, T.DUR, TRK(40))
 music[:int(0.02 * SR)] *= np.linspace(0, 1, int(0.02 * SR))[:, None]
 fo = int(1.5 * SR); music[-fo:] *= np.linspace(1, 0, fo)[:, None] ** 1.3
 ml = meter.integrated_loudness(music.astype(np.float64))
-music *= db(-26.0 - ml)          # v6: 4 dB lower than v5
-# the chords-only break under the problems is ~5 dB softer than the groove: lift it 3 dB so the bed stays present
-gl = np.ones(N, np.float32) * db(3.0); r0, r1 = int((T.REVEAL - 0.6) * SR), int((T.REVEAL - 0.05) * SR)
-gl[r0:r1] = np.linspace(db(3.0), 1.0, r1 - r0); gl[r1:] = 1.0
-music *= gl[:, None]
+music *= db(-25.0 - ml)          # v7: kept lower than reel 3 (-22), as asked for v6
 # ducking under the voice (look-ahead 40 ms, attack 60 ms, release 300 ms)
 v_rms = np.sqrt(sg.lfilter([1], [1, -0.999], voice.astype(np.float64) ** 2) * 0.001)
 gate = (v_rms > db(-45)).astype(np.float32) * vact
