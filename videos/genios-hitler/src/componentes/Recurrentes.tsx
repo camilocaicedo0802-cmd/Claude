@@ -195,7 +195,9 @@ export const Expediente: React.FC<{
 	/** sellos ya puestos (posiciones relativas 0..1) y el cuadro en que cae cada uno */
 	sellos?: {u: number; v: number; desde: number; rot?: number; texto?: string; color?: string}[];
 	abierto?: boolean;
-}> = ({x, y, ancho, rot = 0, sellos = [], abierto = false}) => {
+	/** cosas pegadas a la carpeta (coordenadas de la carpeta: 0..ancho, 0..alto) */
+	children?: React.ReactNode;
+}> = ({x, y, ancho, rot = 0, sellos = [], abierto = false, children}) => {
 	const alto = ancho * 0.72;
 	const k = ancho / 800;
 	return (
@@ -208,19 +210,43 @@ export const Expediente: React.FC<{
 				</div>
 			)}
 			{sellos.map((s, i) => (
-				<GolpeSello key={i} x={s.u * ancho} y={s.v * alto} desde={s.desde} tam={(s.texto === undefined ? 92 : 80) * k} rot={s.rot ?? -10 + i * 7} texto={s.texto} color={s.color} />
+				<GolpeSello key={i} x={s.u * ancho} y={s.v * alto} desde={s.desde} tam={(s.texto === undefined ? 68 : 60) * k} rot={s.rot ?? -10 + i * 7} texto={s.texto} color={s.color} />
 			))}
+			{children}
 		</div>
 	);
 };
 
 /** posiciones de los cuatro sellos INOFENSIVO en el expediente (siempre las mismas) */
 export const SELLOS_EXPEDIENTE = [
-	{u: 0.5, v: 0.55, rot: -10},
-	{u: 0.3, v: 0.78, rot: 6},
-	{u: 0.8, v: 0.5, rot: -4},
-	{u: 0.66, v: 0.82, rot: 12},
+	{u: 0.36, v: 0.46, rot: -10},
+	{u: 0.66, v: 0.68, rot: 6},
+	{u: 0.83, v: 0.36, rot: -4},
+	{u: 0.32, v: 0.84, rot: 10},
 ];
+
+/**
+ * El expediente con sus sellos. `n` = cuántos lleva; `ultimo` = cuadro en que cae el último (si no, ya están todos puestos).
+ * El tercero es siempre el sello postal de Hindenburg con matasellos azul INOFENSIVO (capítulo 5).
+ */
+export const ExpedienteSellado: React.FC<{x: number; y: number; ancho: number; rot?: number; n: number; ultimo?: number}> = ({x, y, ancho, rot = -2, n, ultimo}) => {
+	const f = useCurrentFrame();
+	const alto = ancho * 0.72;
+	const desde = (k: number) => (k === n - 1 && ultimo !== undefined ? ultimo : -1e9);
+	const goma = SELLOS_EXPEDIENTE.map((p, k) => ({...p, desde: desde(k), k})).filter((p) => p.k < n && p.k !== 2);
+	const p3 = SELLOS_EXPEDIENTE[2];
+	const g3 = desde(2);
+	return (
+		<Expediente x={x} y={y} ancho={ancho} rot={rot} sellos={goma}>
+			{n >= 3 && f >= g3 && (
+				<>
+					<SelloPostal x={p3.u * ancho} y={p3.v * alto} ancho={ancho * 0.19} rot={p3.rot} style={{transform: `rotate(${p3.rot}deg) scale(${1 + 0.25 * Math.max(0, 1 - (f - g3) / 4)})`}} />
+					<GolpeSello x={p3.u * ancho + ancho * 0.06} y={p3.v * alto + ancho * 0.01} desde={g3 + 1} texto="INOFENSIVO" tam={ancho * 0.046} rot={-18} color="#1d2a6b" />
+				</>
+			)}
+		</Expediente>
+	);
+};
 
 /* ---------------- 5. la jarra de votos ---------------- */
 

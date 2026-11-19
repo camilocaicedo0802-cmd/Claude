@@ -17,7 +17,7 @@ import requests
 sys.path.insert(0, os.path.dirname(__file__))
 from guion import CAPITULOS, ESTILO_MULETILLA, GUION, INDICACIONES, PRONUNCIACION, SERIAS, VOCES_EXTRA  # noqa: E402
 
-MODELO = "gemini-2.5-flash-preview-tts"
+MODELO = os.environ.get("MODELO_TTS", "gemini-2.5-flash-preview-tts")
 NARRADOR = (
     "Eres un narrador masculino latinoamericano (español neutro, con seseo) que cuenta historia en YouTube como un amigo: "
     "ritmo ágil, unas 175 palabras por minuto, frases encadenadas sin pausas largas, y una pequeña pausa antes de cada remate."
@@ -32,6 +32,10 @@ def generar(prompt, voz, salida, intentos=4):
     for k in range(intentos):
         r = requests.post(f"https://generativelanguage.googleapis.com/v1beta/models/{MODELO}:generateContent",
                           headers={"x-goog-api-key": os.environ["GEMINI_API_KEY"]}, json=cuerpo, timeout=900)
+        if r.status_code == 200 and "content" not in r.json().get("candidates", [{}])[0]:
+            print("sin audio:", str(r.json())[:300], flush=True)
+            time.sleep(5)
+            continue
         if r.status_code == 200:
             datos = r.json()["candidates"][0]["content"]["parts"][0]["inlineData"]["data"]
             subprocess.run(["ffmpeg", "-v", "error", "-y", "-f", "s16le", "-ar", "24000", "-ac", "1", "-i", "-", salida],
@@ -50,6 +54,7 @@ def main():
     ap.add_argument("--solo", default="")
     ap.add_argument("--capitulos", default="")
     ap.add_argument("--espera", type=float, default=25)
+    ap.add_argument("--voces", default="", help="solo estas voces de citas (separadas por coma)")
     args = ap.parse_args()
     os.makedirs(args.carpeta, exist_ok=True)
     trabajos = []
@@ -70,7 +75,7 @@ def main():
     if args.solo in ("", "citas"):
         hechas = set()
         for t, _cap, _e, voz in GUION:
-            if voz in VOCES_EXTRA and voz not in hechas:
+            if voz in VOCES_EXTRA and voz not in hechas and (not args.voces or voz in args.voces.split(",")):
                 hechas.add(voz)
                 nombre, estilo = VOCES_EXTRA[voz]
                 prompt = f"{estilo} {PRONUNCIACION} Español latinoamericano neutro, natural y humano.\n\nTexto a decir (lee solo esto):\n{t}"

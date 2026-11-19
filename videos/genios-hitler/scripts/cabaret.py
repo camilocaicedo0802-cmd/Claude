@@ -405,6 +405,65 @@ def corcho():
     return np.sin(2 * np.pi * np.cumsum(900 - 500 * tt) / SR) * np.exp(-tt * 25)
 
 
+def chillido():
+    """tres chillidos agudos de ratón"""
+    out = np.zeros(int(SR * 0.9), np.float32)
+    for k, ini in enumerate((0.0, 0.26, 0.5)):
+        tt = t(0.18)
+        f = 3200 + 900 * np.sin(np.pi * tt / 0.18) + 120 * np.sin(2 * np.pi * 38 * tt) + k * 150
+        x = np.sin(2 * np.pi * np.cumsum(f) / SR) * np.sin(np.pi * tt / 0.18) ** 0.6
+        poner(out, x * 0.8, ini)
+    return out
+
+
+def acorde():
+    """acorde de piano de cabaret (re menor con sexta), un golpe"""
+    out = np.zeros(int(SR * 2.4), np.float32)
+    for m in (38, 50, 57, 62, 65, 71):
+        poner(out, piano(m, 1.0, 0.85), 0.0)
+    return out
+
+
+def brindis():
+    """copas de champán que chocan"""
+    tt = t(1.6)
+    return sum(np.sin(2 * np.pi * f * tt) * np.exp(-tt * d) * a for f, d, a in ((3120, 3.5, 0.5), (4680, 5, 0.35), (6210, 7, 0.25), (3150, 3.6, 0.4))) * np.minimum(1, tt / 0.002)
+
+
+def crack():
+    """madera que se parte"""
+    tt = t(0.7)
+    golpe = banda(ruido(0.7), 300, 5000) * np.exp(-tt * 40)
+    astillas = np.zeros_like(tt)
+    for _ in range(30):
+        i = int(rng.uniform(0.0, 0.25) * SR)
+        m = int(0.003 * SR)
+        astillas[i:i + m] += rng.standard_normal(m).astype(np.float32) * rng.uniform(0.2, 0.8)
+    cuerpo = np.sin(2 * np.pi * 180 * tt) * np.exp(-tt * 25) * 0.6
+    return golpe + banda(astillas, 1200, 9000) + cuerpo
+
+
+def silbido():
+    """silbido alegre y despreocupado (una frase corta)"""
+    notas = [(79, 0.18), (83, 0.18), (86, 0.3), (84, 0.18), (83, 0.18), (79, 0.45)]
+    out = np.zeros(int(SR * 1.8), np.float32)
+    pos = 0.0
+    for m, d in notas:
+        tt = t(d)
+        f = hz(m) * (1 + 0.012 * np.sin(2 * np.pi * 6 * tt))
+        x = np.sin(2 * np.pi * np.cumsum(f) / SR) * np.minimum(1, np.minimum(tt / 0.02, (d - tt) / 0.04))
+        x += banda(ruido(d), 1500, 4000) * 0.04
+        poner(out, x * 0.6, pos)
+        pos += d
+    return out
+
+
+def palmada():
+    """palmada seca en la frente"""
+    tt = t(0.4)
+    return banda(ruido(0.4), 250, 3500) * np.exp(-tt * 45) + np.sin(2 * np.pi * 160 * tt) * np.exp(-tt * 30) * 0.4
+
+
 # ============================================================ línea de tiempo de la música
 
 def plan_musical(F, total):
@@ -479,7 +538,9 @@ if __name__ == "__main__":
     if args.solo in ("", "efectos"):
         for nombre, x, gan in [("jarras", jarras(), 0.7), ("disparo", disparo_yeso(), 0.9), ("abucheos", abucheos(), 0.6),
                                ("grillos", grillos(), 0.4), ("rayado", disco_rayado(), 0.7), ("fuego", fuego(), 0.6),
-                               ("mazo", mazo(), 0.9), ("sobres", sobres(), 0.6), ("corcho", corcho(), 0.6)]:
+                               ("mazo", mazo(), 0.9), ("sobres", sobres(), 0.6), ("corcho", corcho(), 0.6),
+                               ("chillido", chillido(), 0.5), ("acorde", acorde(), 0.8), ("brindis", brindis(), 0.6), ("crack", crack(), 0.8),
+                               ("silbido", silbido(), 0.5), ("palmada", palmada(), 0.8)]:
             guardar(f"public/sfx/{nombre}.wav", x, gan)
         print("efectos listos", flush=True)
     if args.solo in ("", "musica"):

@@ -20,13 +20,19 @@ export const ANGULO_PAPEN = 4;
 
 /* ---------- la oficina con Papen, el amigo y el contrato ---------- */
 
-export const OficinaPapen: React.FC<{desliza: number; habla?: boolean; palmadas?: boolean; papen?: boolean; amigo?: boolean; hitler?: boolean}> = ({desliza, habla = false, palmadas = true, papen = true, amigo = true, hitler = false}) => {
+export const OficinaPapen: React.FC<{desliza: number; habla?: boolean; palmadas?: boolean; papen?: boolean; amigo?: boolean; hitler?: boolean; sillaVacia?: boolean}> = ({desliza, habla = false, palmadas = true, papen = true, amigo = true, hitler = false, sillaVacia = false}) => {
 	const f = useCurrentFrame();
 	const pat = palmadas ? Math.max(0, Math.sin(f / 3.2)) * 10 : 0;
 	const cx = interpolate(desliza, [0, 1], [930, 1210]);
 	return (
 		<>
 			<EscOficinaBerlin />
+			{sillaVacia && (
+				<>
+					<div style={{position: 'absolute', left: 1380, top: 330, width: 190, height: 420, background: 'linear-gradient(90deg, #4a1c20, #6a2a30 50%, #4a1c20)', border: `9px solid ${TINTA}`, borderRadius: '40px 40px 8px 8px'}} />
+					<Chistera x={1475} y={360} ancho={150} rot={8} />
+				</>
+			)}
 			{amigo && (
 				<Actor x={1460} y={1010} alto={780} voltear>
 					<Muneco ropa={AMIGO} pose={{...manosFrente([190, 470], [215, 470]), mi: 'agarra', md: 'agarra', cabeza: 4}} ojos="grandes" cejas="preocupado" boca="mueca" />

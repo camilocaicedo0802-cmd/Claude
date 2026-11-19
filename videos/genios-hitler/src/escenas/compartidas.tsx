@@ -2,7 +2,7 @@ import React from 'react';
 import {interpolate, useCurrentFrame} from 'remotion';
 import {Actor, Muneco, Pose, alcanzar, manosEn, manosFrente} from '../componentes/Muneco';
 import {CabezaSVG} from '../componentes/Personaje';
-import {Expediente, GolpeSello, SELLOS_EXPEDIENTE, SelloGoma, SelloPostal} from '../componentes/Recurrentes';
+import {ExpedienteSellado, SELLOS_EXPEDIENTE, SelloGoma, SelloPostal} from '../componentes/Recurrentes';
 import {HINDENBURG, HITLER_1923, HITLER_ESPIA, HITLER_TRAJE, JUEZ} from '../componentes/Vestuario';
 import {EscCerveceria, EscMesaArriba, EscTribunal, Humo, Jarra} from '../escenarios/Epoca';
 import {Toma} from '../componentes/Toma';
@@ -233,25 +233,18 @@ const EXP = {x: 960, y: 560, ancho: 1000};
  * justo en «nada». `n` = número de la muletilla (1..4): trae los n-1 sellos anteriores ya puestos.
  * `postal`: la tercera vez lo que se estampa es un sello postal de Hindenburg (con matasellos INOFENSIVO).
  */
-export const PlanoMuletilla: React.FC<P & {i: number; n: number; postal?: boolean}> = ({d, h, e, s, i, n, postal = false}) => {
+export const PlanoMuletilla: React.FC<P & {i: number; n: number; postal?: boolean}> = ({d, h, e, s, i, n}) => {
 	const f = useCurrentFrame();
 	const g = golpeMuletilla(i);
 	const cae = interpolate(f, [d - 2, d + 7], [0, 1], {...clamp, easing: (u) => 1 - Math.pow(1 - u, 3)});
 	const alto = EXP.ancho * 0.72;
-	const sellos = SELLOS_EXPEDIENTE.slice(0, n).map((p, k) => ({...p, desde: k < n - 1 ? -1e9 : postal ? 1e9 : g}));
 	const pos = SELLOS_EXPEDIENTE[n - 1];
 	const px = EXP.x - EXP.ancho / 2 + pos.u * EXP.ancho;
 	const py = EXP.y - alto / 2 + pos.v * alto;
 	return (
 		<Toma escena={<EscMesaArriba tono="madera" luz={[960, 520]} />} desde={d} hasta={h} entrada={e} salida={s} cam={{s: [1.02, 1.1], y: [0, 10]}} golpes={[[g, 0.05]]}>
 			<div style={{position: 'absolute', inset: 0, transform: `scale(${1.25 - 0.25 * cae}) rotate(${(1 - cae) * 6}deg)`, opacity: interpolate(cae, [0, 0.2], [0, 1], clamp)}}>
-				<Expediente x={EXP.x} y={EXP.y} ancho={EXP.ancho} rot={-2} sellos={sellos} />
-				{postal && f >= g && (
-					<>
-						<SelloPostal x={px} y={py} ancho={190} rot={pos.rot} style={{transform: `rotate(${pos.rot}deg) scale(${1 + 0.25 * Math.max(0, 1 - (f - g) / 4)})`}} />
-						<GolpeSello x={px + 60} y={py + 10} desde={g + 1} texto="INOFENSIVO" tam={46} rot={-18} color="#1d2a6b" />
-					</>
-				)}
+				<ExpedienteSellado x={EXP.x} y={EXP.y} ancho={EXP.ancho} rot={-2} n={n} ultimo={g} />
 			</div>
 			<SelloGoma x={px} y={py} desde={g} tam={240} />
 		</Toma>

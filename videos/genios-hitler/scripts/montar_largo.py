@@ -25,6 +25,8 @@ from alinear import SR, alinear, leer, transcribir  # noqa: E402
 
 OBJ_SATIRA = 178.0
 OBJ_SERIO = 150.0
+# ajuste de cada voz de cita: (semitonos, tempo). Hindenburg más grave y lento; el resto, apenas más grave que su toma.
+AJUSTE_CITAS = {"hindenburg": (-4, 0.94), "general": (-3, 1.0), "ministro": (-2, 1.0), "papen": (-1.5, 1.0), "papen2": (-1.5, 1.0), "fundador": (-1, 1.0)}
 
 
 def a_wav(x, ruta):
@@ -32,11 +34,12 @@ def a_wav(x, ruta):
                    input=(np.clip(x, -1, 1) * 32767).astype(np.int16).tobytes(), check=True)
 
 
-def rubber(x, tempo=1.0):
-    if abs(tempo - 1) < 1e-3:
+def rubber(x, tempo=1.0, semitonos=0.0):
+    if abs(tempo - 1) < 1e-3 and abs(semitonos) < 1e-3:
         return x
+    tono = 2 ** (semitonos / 12)
     datos = subprocess.run(["ffmpeg", "-v", "error", "-f", "s16le", "-ar", str(SR), "-ac", "1", "-i", "-", "-af",
-                            f"rubberband=tempo={tempo:.4f}:formant=preserved", "-f", "s16le", "-"],
+                            f"rubberband=tempo={tempo:.4f}:pitch={tono:.4f}:formant=preserved", "-f", "s16le", "-"],
                            input=(np.clip(x, -1, 1) * 32767).astype(np.int16).tobytes(), capture_output=True, check=True).stdout
     return np.frombuffer(datos, np.int16).astype(np.float32) / 32768
 
@@ -122,6 +125,7 @@ def main():
     ap.add_argument("--tomas", required=True, help="capítulo=toma, separados por coma")
     ap.add_argument("--citas", default="", help="voz=toma, separados por coma (por defecto 1)")
     ap.add_argument("--muletilla", default="1")
+    ap.add_argument("--carpeta-citas", default="", help="carpeta de las citas (por defecto, la misma)")
     ap.add_argument("--salida", default="public/voz-cruda.wav")
     args = ap.parse_args()
     tomas = {int(a): b for a, b in (p.split("=") for p in args.tomas.split(","))}
@@ -145,8 +149,8 @@ def main():
         print(f"capítulo {c}: {len(idx)} frases (toma {k})", flush=True)
     nivel = float(np.median(ref_global))
 
-    def clip(nombre):
-        y = leer(os.path.join(args.carpeta, nombre))
+    def clip(nombre, carpeta=None):
+        y = leer(os.path.join(carpeta or args.carpeta, nombre))
         y = comprimir_silencios(recortar(y, nivel_ref(y)), nivel_ref(y))
         return y * (nivel / rms_voz(y))
 
@@ -155,7 +159,9 @@ def main():
         if voz == g.M:
             trozos[i] = muletilla
         elif voz:
-            trozos[i] = clip(f"{voz}_{citas.get(voz, '1')}.wav") * 0.92
+            y = clip(f"{voz}_{citas.get(voz, '1')}.wav", args.carpeta_citas or None) * 0.92
+            st, tempo = AJUSTE_CITAS.get(voz, (0.0, 1.0))
+            trozos[i] = rubber(y, tempo, st)
 
     # velocidades: la sátira y lo serio, cada grupo a su ritmo (contando sus pausas)
     narr = [i for i, fr in enumerate(g.GUION) if not fr[3]]
