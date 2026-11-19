@@ -60,10 +60,10 @@ for path, a, b, tp in T.VOICE:
 wf.write(STEM + 'voice.wav', SR, voice)
 
 # ---------------------------------------------------------------- music
-# v5 (client: "la música no va con la vibe"): Class Act read as epic / orchestral, like a trailer. Now Phoenix "1901"
-# (instrumental, from the client's folder): bright, optimistic, driving — a feel-good transformation-ad bed.
-# A gentle dip at 3 kHz leaves room for Peter's voice.
-mus = load(ROOT + 'music/phoenix_1901.mp3', ch=2, filt='equalizer=f=3000:t=q:w=1.0:g=-2.5')
+# v6 (client: "bájale a la música y pon algo más chill y acompañante, que no resalte"): "MUSICA LOFI (Sin Copyright)
+# #25" from the client's folder — a mellow major-key lofi groove with no lead melody and very little energy in the
+# voice band (1.5-5 kHz). Not a commercial song, so it is safer for paid Meta ads than v5's "1901".
+mus = load(ROOT + 'music/lofi_25.mp3', ch=2, filt='equalizer=f=3000:t=q:w=1.0:g=-2')
 music = np.zeros((N, 2), np.float32)
 XF = int(0.012 * SR)
 
@@ -77,19 +77,18 @@ def place(dst_t0, dst_t1, src_t0, fin=True, fout=True):
     music[a:a + len(seg)] += seg
 
 
-# 1901: 143.6 BPM (beat 0.4178 s, bar 1.671 s). The 8-bar synth intro (first downbeat 0.27 s) has a short bass break
-# and the drums come in at 13.64 s — that entry lands on REVEAL. The video needs ~1.9 s more intro than the song has,
-# so the first bars come from 4 bars later in the same vamp and the track jumps back on a downbeat (same place in the
-# chord cycle). The logo pops on beat 3 of the bar (T.beat(64) = REVEAL + 11.5 bars); the bed fades out with the video.
-K, BAR = 13.64, 4 * 0.4178
-OFF_A = K - T.REVEAL
-T1 = -OFF_A + (K - 8 * BAR) + BAR                     # video time of the intro's bar-1 downbeat
-place(0.0, T1 + 0.012, OFF_A + 4 * BAR, fin=False)
-place(T1 - 0.012, T.DUR, T1 - 0.012 + OFF_A)
+# The track's break (132.2-144.1 s: just the chords, no bass or drums) sits under the problems; the bass and the soft
+# drums come back at 144.10 s, which lands on REVEAL — a gentle lift, not a drop. One continuous piece, no splices.
+K = 144.10
+place(0.0, T.DUR, K - T.REVEAL, fin=False)
 music[:int(0.02 * SR)] *= np.linspace(0, 1, int(0.02 * SR))[:, None]
 fo = int(1.5 * SR); music[-fo:] *= np.linspace(1, 0, fo)[:, None] ** 1.3
 ml = meter.integrated_loudness(music.astype(np.float64))
-music *= db(-22.0 - ml)
+music *= db(-26.0 - ml)          # v6: 4 dB lower than v5
+# the chords-only break under the problems is ~5 dB softer than the groove: lift it 3 dB so the bed stays present
+gl = np.ones(N, np.float32) * db(3.0); r0, r1 = int((T.REVEAL - 0.6) * SR), int((T.REVEAL - 0.05) * SR)
+gl[r0:r1] = np.linspace(db(3.0), 1.0, r1 - r0); gl[r1:] = 1.0
+music *= gl[:, None]
 # ducking under the voice (look-ahead 40 ms, attack 60 ms, release 300 ms)
 v_rms = np.sqrt(sg.lfilter([1], [1, -0.999], voice.astype(np.float64) ** 2) * 0.001)
 gate = (v_rms > db(-45)).astype(np.float32) * vact

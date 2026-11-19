@@ -1,5 +1,19 @@
 # West Home Improvement · Reel 4 — Meta Ads: del jacuzzi a una ducha enorme (South Tulsa)
 
+**v6 (ajuste del cliente: "bájale a la música y pon algo más chill y acompañante"):**
+- **Música:** "MUSICA LOFI (Sin Copyright) #25", de la carpeta del cliente. Es lo-fi suave en tono mayor, sin melodía
+  protagonista, y de las candidatas "chill" es la que menos energía tiene en la banda de la voz (1,5–5 kHz). Al no ser una
+  canción comercial, es más segura que "1901" para anuncios pagados.
+  - Se eligió con CLAP (`tools/prompts3.json` y `tools/prompts4.json`).
+- **Estructura:**
+  - Bajo los problemas va la pausa de la pista (solo acordes, sin bajo ni batería).
+  - El bajo y la batería suave vuelven en el reveal (144,10 s de la pista → 15,57 s): una subida suave, no un drop.
+  - Es una sola pieza continua, sin empalmes, y se desvanece con el video.
+- **Volumen:** la música quedó 3,5 dB más baja que en la v5 (−33 LUFS de cama).
+  - Queda ~21 dB bajo la voz en los problemas y ~18,5 dB después del reveal (en la v5 eran ~15 dB).
+  - La pausa sin bajo se subió 3 dB para que no desaparezca.
+  - El máster sigue en −14,3 LUFS.
+
 **v5 (ajuste del cliente: "la música no va con la vibe"):**
 - **Música nueva:** Phoenix, "1901" (instrumental), de la carpeta de música del cliente. Es brillante, optimista y con
   impulso, más de anuncio de transformación. Class Act sonaba épica y orquestal, como un tráiler.
