@@ -602,7 +602,7 @@ const C2Dicta: React.FC<P> = ({d, h, e, s}) => {
 				<Muneco ropa={SECRETARIO} pose={{...manosFrente([170, 600 + Math.sin(f) * 6], [230, 600 - Math.sin(f) * 6]), mi: 'relajada', md: 'relajada', agacha: 0.3}} ojos="entrecerrados" cejas="preocupado" boca="seria" />
 			</Actor>
 			<MesaFrente x={1240} y={860} ancho={480} color="#e9c9a0" mantel="#f6b9c9" />
-			<MaquinaEscribir x={1240} y={860} ancho={380} hoja={0.6} titular="" desde={1e9} />
+			<MaquinaEscribir x={1240} y={860} ancho={380} hoja={0.6} titular=" " desde={1e9} />
 		</Toma>
 	);
 };
@@ -617,7 +617,7 @@ const C2Titulo: React.FC<P> = ({d, h, e, s}) => {
 	return (
 		<Toma escena={<EscMesaArriba tono="oscura" luz={[900, 500]} />} desde={d} hasta={h} entrada={e} salida={s} cam={{s: [1, 1]}} camFn={(ff) => mezclaCam(centrar(800, 480, 1.08), centrar(1180, 480, 1.08), tramo(ff, d, h))}>
 			<PortadaLisa x={700} y={500} ancho={540} titulo={TITULO_LARGO} palabras={n} rot={0} />
-			<MaquinaEscribir x={960} y={1260} ancho={1000} hoja={0} titular="" desde={1e9} />
+			<MaquinaEscribir x={960} y={1260} ancho={1000} hoja={0} titular=" " desde={1e9} />
 		</Toma>
 	);
 };
