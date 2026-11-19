@@ -1,7 +1,7 @@
 import React from 'react';
 import {interpolate, useCurrentFrame} from 'remotion';
 import {Destello} from '../componentes/Efectos';
-import {AutoLado, MaquinaEscribir} from '../componentes/Gamer';
+import {MaquinaEscribir} from '../componentes/Gamer';
 import {Colgante} from '../componentes/Hacker';
 import {Actor, Muneco, animarPose, manosEn, manosFrente} from '../componentes/Muneco';
 import {Cara} from '../componentes/Recurrentes';
@@ -14,8 +14,10 @@ import {P, Plano, TINTA, antes, centrar, clamp, fin, golpeCam, ini, mezcla, mezc
 import {MesaFrente} from './c1';
 import {CuadroJuezDeportar, CuadroTiroTecho, PlanoMuletilla, golpeMuletilla} from './compartidas';
 import {
+	AutoViejo,
 	Banquillo,
 	BilleteGrande,
+	LapizRojoMano,
 	Cama,
 	Carretilla,
 	CasaNoche,
@@ -28,7 +30,6 @@ import {
 	Flores,
 	Humareda,
 	Intertitulo,
-	LapizRojo,
 	LetreroAustria,
 	LibroLeyes,
 	LibroManoLiso,
@@ -188,8 +189,8 @@ const C2Entra: React.FC<P> = ({d, h, e, s}) => {
 			{/* la puerta que se abre de una patada */}
 			<div style={{position: 'absolute', left: 760, top: 220, width: 420, height: 660, background: '#120a04', border: `10px solid ${TINTA}`}} />
 			<div style={{position: 'absolute', left: 760, top: 220, width: 420, height: 660, background: '#5a3a1e', border: `10px solid ${TINTA}`, transform: `perspective(1400px) rotateY(${-100 * abre}deg)`, transformOrigin: '0 50%'}} />
-			{[0, 1, 2].map((i) => (
-				<Actor key={i} x={[970, 820, 1120][i]} y={900 + paso * 80 * (i === 0 ? 1 : 0.6)} alto={[640, 580, 580][i] + paso * 60}>
+			{[1, 2, 0].map((i) => (
+				<Actor key={i} x={[970, 800, 1140][i]} y={(i === 0 ? 930 : 880) + paso * 80 * (i === 0 ? 1 : 0.6)} alto={[700, 560, 560][i] + paso * 60}>
 					<Muneco ropa={i === 0 ? HITLER_1923 : UNIFORME_MARRON} semilla={i} pose={i === 0 ? {...manosEn([20, 260], [380, 260]), mi: 'abierta', md: 'abierta'} : {...manosFrente([170, 560], [230, 560]), mi: 'puno', md: 'puno'}} camina={1} ojos={i === 0 ? 'grandes' : 'normal'} cejas="enojado" boca={i === 0 ? 'grito' : 'seria'} />
 				</Actor>
 			))}
@@ -262,6 +263,10 @@ const C2Trono: React.FC<P> = ({d, h, e, s}) => {
 			cam={{s: [1.05, 1.15], y: [20, 50]}}
 			angulo={-4}
 		>
+			{/* respaldo: un barril de pie, con cojín rojo */}
+			<div style={{position: 'absolute', left: 730, top: 90, width: 340, height: 520, background: 'linear-gradient(90deg, #5a3a1e, #8a5a30 50%, #5a3a1e)', border: `9px solid ${TINTA}`, borderRadius: '70px / 120px'}}>
+				<div style={{position: 'absolute', left: 60, right: 60, top: 70, bottom: 70, background: '#a8262e', border: `7px solid ${TINTA}`, borderRadius: 40}} />
+			</div>
 			<Actor x={900} y={600} alto={520}>
 				<Muneco ropa={HITLER_1923} pose={{...manosEn([40, 520], [360, 520]), mi: 'puno', md: 'puno', cabeza: -4}} ojos="feliz" cejas="arrogante" boca="sonrisaGrande" />
 			</Actor>
@@ -342,7 +347,7 @@ const C2Huye: React.FC<P> = ({d, h, e, s}) => {
 	const salta = tramo(f, auto, auto + 8);
 	return (
 		<Toma escena={<EscCalleAlba frio={0} />} desde={d} hasta={h} entrada={e} salida={s} cam={{s: [1.05, 1.1], x: [80, -80]}}>
-			<AutoLado x={1520} y={1010} ancho={680} color="#2f4a3a" puerta={f > auto - 6 && f < auto + 10 ? 1 : 0} />
+			<AutoViejo x={1520} y={1010} ancho={640} puerta={f > auto - 6 && f < auto + 10 ? 1 : 0} />
 			<Actor x={x + salta * 200} y={1010 - Math.sin(salta * Math.PI) * 140} alto={640} opacidad={1 - tramo(f, auto + 6, auto + 9)}>
 				<Muneco ropa={HITLER_1923} pose={{...manosEn([236, 470]), mi: 'puno', bd: 70 + Math.sin(f / 2) * 30, cd: 30, md: 'abierta', cuerpo: 10}} objPecho={Cabestrillo} camina={f < auto ? 2.4 : 0} ojos="grandes" cejas="preocupado" boca="grito" />
 			</Actor>
@@ -355,7 +360,7 @@ const C2Polvo: React.FC<P> = ({d, h, e, s}) => {
 	const x = interpolate(f, [d + 2, d + 20], [1300, 3000], {...clamp, easing: (t) => t * t});
 	return (
 		<Toma escena={<EscCalleAlba frio={0} />} desde={d} hasta={h} entrada={e} salida={s} cam={{s: [1.1, 1.14]}} sacudida={(ff) => (ff < d + 16 ? 4 : 0)}>
-			<AutoLado x={x} y={1010} ancho={680} color="#2f4a3a" rueda={f * 40} />
+			<AutoViejo x={x} y={1010} ancho={640} rueda={f * 40} />
 			<Puf x={1150} y={930} desde={d + 2} tam={900} />
 			<Puf x={1500} y={960} desde={d + 6} tam={700} />
 		</Toma>
@@ -423,7 +428,7 @@ const C2Juez: React.FC<P> = ({d, h, e, s}) => {
 	return (
 		<Toma escena={<EscTribunal tono="munich" />} desde={d} hasta={h} entrada={e} salida={s} cam={{s: [1.05, 1.12], y: [-10, -30]}} angulo={6}>
 			<Actor x={960} y={1180} alto={1040}>
-				<Muneco ropa={JUEZ} pose={{...manosEn(undefined, [226, 288]), md: 'puno', frenteD: 1, ...manosFrente([150, 640]), mi: 'relajada', cabeza: f >= digamos ? 10 : 4}} ojos="feliz" cejas="preocupado" boca="sonrisa" />
+				<Muneco ropa={JUEZ} pose={{...manosEn(undefined, [224, 262]), md: 'puno', frenteD: 1, ...manosFrente([150, 640]), mi: 'relajada', cabeza: f >= digamos ? 10 : 4}} ojos="feliz" cejas="preocupado" boca="sonrisa" />
 			</Actor>
 			<div style={{position: 'absolute', left: 420, top: 820, width: 1080, height: 300, background: 'linear-gradient(180deg, #4a3220, #2e1e12)', border: `9px solid ${TINTA}`, borderRadius: 8}} />
 			{f >= digamos &&
@@ -450,11 +455,11 @@ const C2Habla: React.FC<P> = ({d, h, e, s}) => {
 			</Actor>
 			<EstradoDelante />
 			<Actor x={1240} y={1060} alto={700}>
-				<Muneco ropa={HITLER_JUICIO} pose={{...manosEn([40, 260 + Math.sin(f / 5) * 40]), mi: 'abierta', ...manosFrente(undefined, [320, 470]), md: 'agarra'}} ojos="grandes" cejas="enojado" boca="abierta" hablando />
+				<Muneco ropa={HITLER_JUICIO} pose={{...manosEn([60, 330 + Math.sin(f / 5) * 40]), mi: 'puno', ...manosFrente(undefined, [320, 470]), md: 'agarra'}} ojos="grandes" cejas="enojado" boca="abierta" hablando />
 			</Actor>
+			<Banquillo x={1240} y={820} ancho={520} />
 			{/* el discurso, larguísimo, que se desenrolla hasta el suelo */}
 			<div style={{position: 'absolute', left: hx - 50, top: hy, width: 120, height: 80 + rollo * 900, background: 'repeating-linear-gradient(180deg, #fbf8ef 0 30px, #e9e2cc 30px 34px)', border: `6px solid ${TINTA}`, borderRadius: 8, transform: 'rotate(-4deg)', transformOrigin: '50% 0'}} />
-			<Banquillo x={1240} y={820} ancho={520} />
 		</Toma>
 	);
 };
@@ -528,9 +533,12 @@ const CalendarioCondena: React.FC<{x: number; y: number}> = ({x, y}) => {
 			{Array.from({length: N}, (_, k) => {
 				const tk = t1 + ((t2 - t1) * k) / N;
 				const u = f - tk;
-				if (u < 0 || u > 20) return null;
+				if (u < 0 || u > 9) return null;
+				const vale = Math.round(60 - (51 * k) / N);
 				return (
-					<div key={k} style={{position: 'absolute', left: x - 330 + u * (30 + (k % 3) * 12), top: y - 250 - u * u * 1.4, width: 660, height: 600, background: '#fbf8ef', border: `8px solid ${TINTA}`, borderRadius: 12, transform: `rotate(${u * (k % 2 ? 6 : -5)}deg)`, opacity: 1 - u / 20}} />
+					<div key={k} style={{position: 'absolute', left: x - 300 + u * (70 + (k % 3) * 20), top: y - 220 - u * u * 6, width: 600, height: 520, background: '#fbf8ef', border: `8px solid ${TINTA}`, borderRadius: 12, transform: `rotate(${u * (k % 2 ? 9 : -7)}deg) scale(${1 - u * 0.05})`, opacity: 1 - u / 9, textAlign: 'center', fontFamily: CONDENSADA, color: '#2a2218'}}>
+						<div style={{fontSize: 300, lineHeight: 1.2}}>{vale}</div>
+					</div>
 				);
 			})}
 		</>
@@ -624,21 +632,20 @@ const C2Titulo: React.FC<P> = ({d, h, e, s}) => {
 
 const C2Editor: React.FC<P> = ({d, h, e, s}) => {
 	const f = useCurrentFrame();
-	const tacha = tramo(f, antes(pal(75, 'mejor')), antes(ini(76)) - 2, (t) => t);
+	const t0 = antes(pal(75, 'mejor'));
+	const t1 = antes(ini(76)) - 2;
+	const tacha = tramo(f, t0, t1, (t) => t);
 	const corto = tramo(f, antes(ini(76)), antes(ini(76)) + 12);
-	const fila = Math.min(2, Math.floor(tacha * 3));
-	const dentro = (tacha * 3) % 1;
-	const lx = 920 + (fila === 1 ? 1 - dentro : dentro) * 460;
-	const ly = 330 + fila * 72;
+	const rayando = tacha > 0 && tacha < 1;
+	const bd = rayando ? 92 + Math.sin(f * 0.9) * 22 - tacha * 10 : 40;
 	return (
-		<Toma escena={<EscLiso color="#3a3024" luz="255,220,170" />} desde={d} hasta={h} entrada={e} salida={s} cam={{s: [1, 1]}} camFn={(ff) => mezclaCam(centrar(960, 560, 1.05), centrar(1160, 520, 1.35), tramo(ff, antes(pal(75, 'mejor')) - 10, antes(pal(75, 'mejor')) + 10))}>
-			<Actor x={600} y={1060} alto={820}>
-				<Muneco ropa={EDITOR} pose={{...manosEn(undefined, [400, 320 + fila * 40]), md: 'agarra', ...manosFrente([170, 560]), cabeza: 6}} ojos="entrecerrados" cejas="arrogante" boca={tacha > 0 && tacha < 1 ? 'mueca' : 'seria'} hablando={f >= ini(75) + 30 && f < fin(75)} />
+		<Toma escena={<EscLiso color="#3a3024" luz="255,220,170" />} desde={d} hasta={h} entrada={e} salida={s} cam={{s: [1, 1]}} camFn={(ff) => mezclaCam(centrar(1100, 560, 1.05), centrar(1000, 560, 1.28), tramo(ff, t0 - 10, t0 + 10))}>
+			<div style={{position: 'absolute', left: 700, top: 900, width: 30, height: 200, background: '#6a4a2a', border: `6px solid ${TINTA}`}} />
+			<div style={{position: 'absolute', left: 990, top: 900, width: 30, height: 200, background: '#6a4a2a', border: `6px solid ${TINTA}`}} />
+			<PortadaLisa x={860} y={560} ancho={480} titulo={TITULO_LARGO} tachado={tacha} corto={corto} rot={0} ajustado />
+			<Actor x={1480 + tacha * 60} y={1060} alto={820} voltear>
+				<Muneco ropa={EDITOR} pose={{bd, cd: 8, md: 'agarra', ...manosFrente([170, 560]), cabeza: 6}} objDer={corto < 0.5 ? <LapizRojoMano /> : undefined} ojos="entrecerrados" cejas="arrogante" boca={rayando ? 'mueca' : 'seria'} hablando={f >= ini(75) + 30 && f < fin(75)} />
 			</Actor>
-			<div style={{position: 'absolute', left: 1000, top: 900, width: 30, height: 200, background: '#6a4a2a', border: `6px solid ${TINTA}`}} />
-			<div style={{position: 'absolute', left: 1300, top: 900, width: 30, height: 200, background: '#6a4a2a', border: `6px solid ${TINTA}`}} />
-			<PortadaLisa x={1160} y={560} ancho={520} titulo={TITULO_LARGO} tachado={tacha} corto={corto} rot={0} />
-			{tacha > 0 && corto < 0.5 && <LapizRojo x={lx} y={ly} largo={300} rot={200} />}
 		</Toma>
 	);
 };
@@ -681,7 +688,7 @@ const C2No: React.FC<P> = ({d, h, e, s}) => {
 	return (
 		<Toma escena={<EscTribunal tono="munich" />} desde={d} hasta={h} entrada={e} salida={s} cam={{s: [1.06, 1.12], y: [-10, -30]}} angulo={6} golpes={[[no, 0.06]]}>
 			<Actor x={960} y={1180} alto={1040}>
-				<Muneco ropa={JUEZ} pose={f >= porque ? {...manosEn(undefined, [236, 430]), md: 'abierta', ...manosFrente([150, 640]), cabeza: 8} : {...manosFrente([150, 640], [250, 640]), cabeza: niega}} ojos="feliz" cejas="neutral" boca="sonrisa" />
+				<Muneco ropa={JUEZ} pose={f >= porque ? {...manosEn(undefined, [240, 372]), md: 'abierta', ...manosFrente([150, 640]), cabeza: 8} : {...manosFrente([150, 640], [250, 640]), cabeza: niega}} ojos="feliz" cejas="neutral" boca="sonrisa" />
 			</Actor>
 			<div style={{position: 'absolute', left: 420, top: 820, width: 1080, height: 300, background: 'linear-gradient(180deg, #4a3220, #2e1e12)', border: `9px solid ${TINTA}`, borderRadius: 8}} />
 		</Toma>

@@ -6,17 +6,17 @@ import {Toma} from '../componentes/Toma';
 import {DOMADOR, HITLER_TRAJE, MINISTRO, SENOR_1, SENOR_2, SENOR_3} from '../componentes/Vestuario';
 import {EscCerveceria, EscLiso, EscMapa, Hemiciclo, Jarra} from '../escenarios/Epoca';
 import {CONDENSADA} from '../fuentes';
-import {P, Plano, TINTA, antes, centrar, golpeCam, ini, pal, pop, tramo} from './base';
+import {P, Plano, TINTA, antes, centrar, golpeCam, ini, pal, pop} from './base';
 import {Barra} from './c0';
 import {PlanoMuletilla, brazo, golpeMuletilla} from './compartidas';
-import {CalendarioHojas, CaraGrande, CartelCirco, Cremallera, EscCirco, EscDespachoBavaro, EscLadrillo, EscMuseoSala, EscSalaJuntas, EscritorioFrente, Gatito, GraficoCaida, Latigo, LupaMundo, MarcoMuseo, Taburete} from './utileria_c345';
+import {CalendarioHojas, CaraGrande, CartelCirco, Cremallera, EscCirco, EscDespachoBavaro, EscLadrillo, EscMuseoSala, EscSalaJuntas, EscritorioFrente, Gatito, GraficoCaida, Latigo, LupaMundo, MarcoMuseo, Taburete, tr} from './utileria_c345';
 
 /* CAPÍTULO 3 · LA FIERA DOMADA (frases 86–102). Paleta: rojo y dorado de circo. */
 
 /* ---------- el cartel de circo (rótulo) ---------- */
 
 const Cartel: React.FC<P> = ({d, h, e, s}) => (
-	<Toma escena={<EscLadrillo />} desde={d} hasta={h} entrada={e} salida={s} cam={{s: [1, 1]}} camFn={(ff) => ({...centrar(960, 500, 1.22 + 0.14 * tramo(ff, d, h)), r: -1 + 1.5 * tramo(ff, d, h)})}>
+	<Toma escena={<EscLadrillo />} desde={d} hasta={h} entrada={e} salida={s} cam={{s: [1, 1]}} camFn={(ff) => ({...centrar(960, 500, 1.22 + 0.14 * tr(ff, d, h)), r: -1 + 1.5 * tr(ff, d, h)})}>
 		<CartelCirco x={960} y={120} ancho={620} rot={-2.5} />
 	</Toma>
 );
@@ -43,10 +43,10 @@ const PapelProhibido: React.FC<{x: number; y: number; rasga?: number}> = ({x, y,
 
 const Despacho: React.FC<P> = ({d, h, e, s}) => {
 	const f = useCurrentFrame();
-	const llega = tramo(f, d + 4, d + 70);
+	const llega = tr(f, d + 4, d + 70);
 	const hx = interpolate(llega, [0, 1], [240, 700]);
 	return (
-		<Toma escena={<EscDespachoBavaro />} desde={d} hasta={h} entrada={e} salida={s} cam={{s: [1, 1]}} camFn={(ff) => centrar(interpolate(tramo(ff, d, h), [0, 1], [760, 940]), 520, 1.12)} angulo={2}>
+		<Toma escena={<EscDespachoBavaro />} desde={d} hasta={h} entrada={e} salida={s} cam={{s: [1, 1]}} camFn={(ff) => centrar(interpolate(tr(ff, d, h), [0, 1], [760, 940]), 520, 1.12)} angulo={2}>
 			<Actor x={1180} y={1000} alto={780}>
 				<Muneco ropa={MINISTRO} pose={{...manosFrente([170, 560], [230, 560]), mi: 'agarra', md: 'agarra'}} ojos="entrecerrados" cejas="arrogante" boca="seria" />
 			</Actor>
@@ -67,7 +67,7 @@ const NinoBueno: React.FC<P> = ({d, h, e, s}) => {
 	const aureola = f >= pal(87, 'niño') - 2;
 	const falla = f >= ini(88) && [0, 1, 5, 9, 10].includes((f - ini(88)) % 19);
 	return (
-		<Toma escena={<EscDespachoBavaro />} desde={d} hasta={h} entrada={e} salida={s} cam={{s: [1, 1]}} camFn={(ff) => centrar(960, 380, 1.25 + 0.15 * tramo(ff, d, h))} angulo={-6}>
+		<Toma escena={<EscDespachoBavaro />} desde={d} hasta={h} entrada={e} salida={s} cam={{s: [1, 1]}} camFn={(ff) => centrar(960, 380, 1.25 + 0.15 * tr(ff, d, h))} angulo={-6}>
 			<Actor x={960} y={1120} alto={980}>
 				<Muneco
 					ropa={HITLER_TRAJE}
@@ -86,10 +86,10 @@ const NinoBueno: React.FC<P> = ({d, h, e, s}) => {
 
 const SeLoCree: React.FC<P> = ({d, h, e, s}) => {
 	const f = useCurrentFrame();
-	const rasga = tramo(f, pal(90, 'Levanta'), pal(90, 'Levanta') + 8);
+	const rasga = tr(f, pal(90, 'Levanta'), pal(90, 'Levanta') + 8);
 	const asiente = Math.sin(f / 5) * 4 * (f < ini(90) ? 1 : 0);
 	return (
-		<Toma escena={<EscDespachoBavaro />} desde={d} hasta={h} entrada={e} salida={s} cam={{s: [1, 1]}} camFn={(ff) => centrar(interpolate(tramo(ff, d, h), [0, 1], [1100, 1040]), 470, 1.3)} angulo={5}>
+		<Toma escena={<EscDespachoBavaro />} desde={d} hasta={h} entrada={e} salida={s} cam={{s: [1, 1]}} camFn={(ff) => centrar(interpolate(tr(ff, d, h), [0, 1], [1100, 1040]), 470, 1.3)} angulo={5}>
 			<Actor x={1080} y={1000} alto={800}>
 				<Muneco
 					ropa={MINISTRO}
@@ -133,10 +133,10 @@ const Cadena: React.FC<{suelta: number}> = ({suelta}) => {
 
 const Domador: React.FC<P> = ({d, h, e, s}) => {
 	const f = useCurrentFrame();
-	const suelta = tramo(f, pal(91, 'aflojarle'), pal(91, 'aflojarle') + 10);
+	const suelta = tr(f, pal(91, 'aflojarle'), pal(91, 'aflojarle') + 10);
 	const chasq = Math.max(0, Math.sin((f - d) / 6));
 	return (
-		<Toma escena={<EscCirco foco={[1000, 560]} />} desde={d} hasta={h} entrada={e} salida={s} cam={{s: [1, 1]}} camFn={(ff) => centrar(interpolate(tramo(ff, d, h), [0, 1], [1000, 960]), 520, 1.08 + 0.06 * tramo(ff, d, h))} angulo={7}>
+		<Toma escena={<EscCirco foco={[1000, 560]} />} desde={d} hasta={h} entrada={e} salida={s} cam={{s: [1, 1]}} camFn={(ff) => centrar(interpolate(tr(ff, d, h), [0, 1], [1000, 960]), 520, 1.08 + 0.06 * tr(ff, d, h))} angulo={7}>
 			<Taburete x={700} y={1000} ancho={230} />
 			<Gatito x={700} y={812} tam={300} />
 			<Actor x={1250} y={1000} alto={820}>
@@ -162,7 +162,7 @@ const DOMADOR_SIN_SOMBRERO = {...DOMADOR, cabeza: {...DOMADOR.cabeza, gorra: und
 const Semanas: React.FC<P> = ({d, h, e, s}) => {
 	const f = useCurrentFrame();
 	const g = ini(93) - 2;
-	const ruge = tramo(f, g - 3, g + 3);
+	const ruge = tr(f, g - 3, g + 3);
 	const vuela = f - g;
 	return (
 		<Toma
@@ -176,8 +176,8 @@ const Semanas: React.FC<P> = ({d, h, e, s}) => {
 			sacudida={(ff) => (ff >= g && ff < g + 14 ? 9 * (1 - (ff - g) / 14) : 0)}
 		>
 			<CalendarioHojas x={300} y={300} ancho={300} textos={['SEMANA 1', 'SEMANA 2', 'SEMANA 3']} cambios={[ini(92) + 10, ini(92) + 22]} cabecera="1925" />
-			<Taburete x={700} y={1000} ancho={230} rompe={tramo(f, g, g + 8)} />
-			<Gatito x={700} y={interpolate(tramo(f, g, g + 8), [0, 1], [812, 1000])} tam={300} ruge={ruge} />
+			<Taburete x={700} y={1000} ancho={230} rompe={tr(f, g, g + 8)} />
+			<Gatito x={700} y={interpolate(tr(f, g, g + 8), [0, 1], [812, 1000])} tam={300} ruge={ruge} />
 			<Actor x={1250} y={1000} alto={820}>
 				<Muneco
 					ropa={vuela >= 0 ? DOMADOR_SIN_SOMBRERO : DOMADOR}
@@ -215,10 +215,10 @@ const CartelProhibidoHablar: React.FC<{desde: number}> = ({desde}) => {
 const Cremallera_: React.FC<P> = ({d, h, e, s}) => {
 	const f = useCurrentFrame();
 	const c0 = pal(94, 'hablar') - 2;
-	const cierra = tramo(f, c0, c0 + 12);
+	const cierra = tr(f, c0, c0 + 12);
 	const grita = cierra === 0;
 	return (
-		<Toma escena={<EscLiso color="#2a2028" luz="255,200,170" />} desde={d} hasta={h} entrada={e} salida={s} cam={{s: [1, 1]}} camFn={(ff) => centrar(interpolate(tramo(ff, d, h), [0, 1], [880, 960]), 560, 1.0 + 0.08 * tramo(ff, d, h))} angulo={-5}>
+		<Toma escena={<EscLiso color="#2a2028" luz="255,200,170" />} desde={d} hasta={h} entrada={e} salida={s} cam={{s: [1, 1]}} camFn={(ff) => centrar(interpolate(tr(ff, d, h), [0, 1], [880, 960]), 560, 1.0 + 0.08 * tr(ff, d, h))} angulo={-5}>
 			<CaraGrande x={720} y={520} tam={760} ojos={grita ? 'grandes' : 'entrecerrados'} cejas={grita ? 'enojado' : 'preocupado'} boca={grita ? 'grito' : 'seria'} />
 			{!grita && <Cremallera x={720} y={520} tam={760} cierra={cierra} />}
 			<CartelProhibidoHablar desde={antes(ini(95))} />
@@ -231,10 +231,10 @@ const Cremallera_: React.FC<P> = ({d, h, e, s}) => {
 const Jarra26: React.FC<P> = ({d, h, e, s}) => {
 	const f = useCurrentFrame();
 	const g = ini(97) - 2;
-	const nivel = 2.6 * tramo(f, d + 8, g - 4);
-	const lupa = tramo(f, d + 20, g);
+	const nivel = 2.6 * tr(f, d + 8, g - 4);
+	const lupa = tr(f, d + 20, g);
 	return (
-		<Toma escena={<Barra />} desde={d} hasta={h} entrada={e} salida={s} cam={{s: [1, 1]}} camFn={(ff) => golpeCam(ff, g, centrar(980, 540, 1.05 + 0.04 * tramo(ff, d, g)), centrar(880, 790, 2.3))}>
+		<Toma escena={<Barra />} desde={d} hasta={h} entrada={e} salida={s} cam={{s: [1, 1]}} camFn={(ff) => golpeCam(ff, g, centrar(980, 540, 1.05 + 0.04 * tr(ff, d, g)), centrar(880, 790, 2.3))}>
 			<JarraVotos x={1000} y={900} alto={720} nivel={nivel} />
 			<LupaMundo x={interpolate(lupa, [0, 1], [1500, 958])} y={interpolate(lupa, [0, 1], [500, 760])} tam={260} rot={-28} />
 		</Toma>
@@ -245,13 +245,13 @@ const Jarra26: React.FC<P> = ({d, h, e, s}) => {
 
 const Hemiciclo12: React.FC<P> = ({d, h, e, s}) => {
 	const f = useCurrentFrame();
-	const n = Math.round(12 * tramo(f, d + 4, d + 18));
+	const n = Math.round(12 * tr(f, d + 4, d + 18));
 	return (
 		<Toma escena={<EscLiso color="#0e0e14" luz="200,200,230" />} desde={d} hasta={h} entrada={e} salida={s} cam={{s: [1.0, 1.1], r: [-1.5, 0.5], y: [40, 60]}}>
 			<div style={{position: 'absolute', inset: 0, transform: 'scaleX(-1)'}}>
 				<Hemiciclo x={960} y={940} radio={760} encendidos={n} oscuro={1} color="#d6863a" apagado="#22222a" />
 			</div>
-			<div style={{position: 'absolute', left: 1460, top: 960, width: 300, textAlign: 'center', fontFamily: CONDENSADA, fontSize: 72, color: '#d6863a', letterSpacing: 2}}>12 / 491</div>
+			<div style={{position: 'absolute', left: 710, top: 50, width: 500, textAlign: 'center', fontFamily: CONDENSADA, fontSize: 90, color: '#f4ecd6', letterSpacing: 3}}>12 / 491</div>
 		</Toma>
 	);
 };
@@ -260,8 +260,8 @@ const Hemiciclo12: React.FC<P> = ({d, h, e, s}) => {
 
 const Startup: React.FC<P> = ({d, h, e, s}) => {
 	const f = useCurrentFrame();
-	const cae = tramo(f, pal(99, 'startup'), pal(99, 'startup') + 10, (t) => t * t);
-	const huye = tramo(f, pal(99, 'inversionistas'), h);
+	const cae = tr(f, pal(99, 'startup'), pal(99, 'startup') + 10, (t) => t * t);
+	const huye = tr(f, pal(99, 'inversionistas'), h);
 	const inversor = (i: number, ropa: typeof SENOR_1) => {
 		const x0 = 420 + i * 230;
 		const x = x0 - huye * (x0 + 300) * (0.8 + i * 0.15);
@@ -351,7 +351,7 @@ const Oceano: React.FC<P> = ({d, h, e, s}) => {
 	const f = useCurrentFrame();
 	const llega = pal(102, 'Nueva');
 	const s0 = 1.15;
-	const viaje = tramo(f, d + 2, llega - 4);
+	const viaje = tr(f, d + 2, llega - 4);
 	return (
 		<Toma
 			escena={<MapaAncho />}
@@ -361,13 +361,13 @@ const Oceano: React.FC<P> = ({d, h, e, s}) => {
 			salida={s}
 			cam={{s: [1, 1]}}
 			camFn={(ff) => {
-				const v = tramo(ff, d + 2, llega - 4);
-				return {s: s0 + 0.12 * tramo(ff, llega, h), x: interpolate(v, [0, 1], [-(3170 - 960) * s0, 100]), y: 40};
+				const v = tr(ff, d + 2, llega - 4);
+				return {s: s0 + 0.12 * tr(ff, llega, h), x: interpolate(v, [0, 1], [-(3170 - 960) * s0, 100]), y: 40};
 			}}
 			encima={f >= llega && f < llega + 4 ? <div style={{position: 'absolute', inset: 0, background: 'rgba(255,255,240,0.55)'}} /> : undefined}
 			tinte={viaje > 0.8 ? 'rgba(30,30,60,0.6)' : undefined}
 		>
-			<Skyline x={430} y={470} sube={tramo(f, llega - 10, llega + 4)} />
+			<Skyline x={430} y={470} sube={tr(f, llega - 10, llega + 4)} />
 			<Nubarrones x={430} y={150} rayo={llega} />
 		</Toma>
 	);

@@ -14,7 +14,7 @@ export const antes = (n: number) => n - 3;
 export const pal = palabra;
 export const ini = inicioFrase;
 export const fin = finFrase;
-export const tramo = (f: number, a: number, b: number, curva: (t: number) => number = suave) => interpolate(f, [a, b], [0, 1], {...clamp, easing: curva});
+export const tramo = (f: number, a: number, b: number, curva: (t: number) => number = suave) => (b <= a ? (f >= a ? 1 : 0) : interpolate(f, [a, b], [0, 1], {...clamp, easing: curva}));
 /** rebote de aparición (0 → 1 con un pequeño sobrepaso) */
 export const pop = (f: number, desde: number, dur = 8) => {
 	const t = (f - desde) / dur;

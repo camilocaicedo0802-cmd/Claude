@@ -6,7 +6,7 @@ import {Toma} from '../componentes/Toma';
 import {FUNCIONARIO, HINDENBURG, HITLER_BUROCRATA, HITLER_MESERO, HITLER_TRAJE, UNIFORME_MARRON} from '../componentes/Vestuario';
 import {EscLiso, EscMesaArriba, Humo} from '../escenarios/Epoca';
 import {CONDENSADA, SERIF, TITULAR} from '../fuentes';
-import {P, Plano, TINTA, antes, centrar, fin, golpeCam, ini, mezclaCam, pal, pop, tramo} from './base';
+import {P, Plano, TINTA, antes, centrar, fin, golpeCam, ini, mezclaCam, pal, pop} from './base';
 import {PlanoMuletilla, brazo, golpeMuletilla} from './compartidas';
 import {
 	AYUDANTE,
@@ -33,6 +33,7 @@ import {
 	Pasaporte,
 	RelojArena,
 	SobreMatasellos,
+	tr,
 } from './utileria_c345';
 
 /* CAPÍTULO 5 · EL CARTERO (frases 121–141). Paleta: azul imperial, oro de medallas, amarillo de correos. */
@@ -60,14 +61,14 @@ const Monumental: React.FC<P> = ({d, h, e, s}) => {
 			entrada={e}
 			salida={s}
 			cam={{s: [1, 1]}}
-			camFn={(ff) => golpeCam(ff, b, mezclaCam(centrar(960, 700, 1.08), centrar(960, 380, 1.12), tramo(ff, d, b - 4)), centrar(960, 250, 1.9))}
+			camFn={(ff) => golpeCam(ff, b, mezclaCam(centrar(960, 700, 1.08), centrar(960, 380, 1.12), tr(ff, d, b - 4)), centrar(960, 250, 1.9))}
 			angulo={14}
 		>
 			<Actor x={960} y={1560} alto={1700}>
 				<Muneco ropa={HINDENBURG} pose={{...manosEn([150, 560], [250, 560]), mi: 'puno', md: 'puno', cuerpo: 0}} ojos="normal" cejas="enojado" boca="seria" />
 			</Actor>
 			<Medallas x={800} y={590} tam={70} />
-			<BigoteVivo x={960} y={238} ancho={510} frunce={tramo(f, b, b + 6)} />
+			<BigoteVivo x={960} y={246} ancho={540} frunce={tr(f, b, b + 6)} />
 		</Toma>
 	);
 };
@@ -77,8 +78,8 @@ const Monumental: React.FC<P> = ({d, h, e, s}) => {
 const Mesero: React.FC<P> = ({d, h, e, s}) => {
 	const f = useCurrentFrame();
 	const m = pal(123, 'mesero') - 4;
-	const inclina = tramo(f, m, m + 6);
-	const mancha = tramo(f, m + 4, m + 16);
+	const inclina = tr(f, m, m + 6);
+	const mancha = tr(f, m + 4, m + 16);
 	return (
 		<Toma escena={<EscComedor />} desde={d} hasta={h} entrada={e} salida={s} cam={{s: [1.04, 1.12], x: [30, -20]}} angulo={4}>
 			<Actor x={640} y={1060} alto={900}>
@@ -111,16 +112,16 @@ const CartelNombre: React.FC<{x: number; y: number; tacha: number; escribe: numb
 			<div style={{position: 'absolute', inset: 0, background: '#f4efe0', border: `7px solid ${TINTA}`, textAlign: 'center', fontFamily: CONDENSADA, color: '#2a2218'}}>
 				<div style={{fontSize: 52, marginTop: 8, position: 'relative', display: 'inline-block'}}>
 					A. HITLER
-					{f >= tacha && <div style={{position: 'absolute', left: -10, right: -10, top: '48%', height: 10, background: '#c4262e', transform: `scaleX(${tramo(f, tacha, tacha + 5)})`, transformOrigin: '0 50%'}} />}
+					{f >= tacha && <div style={{position: 'absolute', left: -10, right: -10, top: '48%', height: 10, background: '#c4262e', transform: `scaleX(${tr(f, tacha, tacha + 5)})`, transformOrigin: '0 50%'}} />}
 				</div>
-				{f >= escribe && <div style={{fontFamily: "'Comic Sans MS', 'Bradley Hand', cursive", fontWeight: 700, fontSize: 40, color: '#c4262e', transform: 'rotate(-4deg)', clipPath: `inset(0 ${100 - 100 * tramo(f, escribe, escribe + 10)}% 0 0)`}}>el cabo bohemio</div>}
+				{f >= escribe && <div style={{fontFamily: "'Comic Sans MS', 'Bradley Hand', cursive", fontWeight: 700, fontSize: 40, color: '#c4262e', transform: 'rotate(-4deg)', clipPath: `inset(0 ${100 - 100 * tr(f, escribe, escribe + 10)}% 0 0)`}}>el cabo bohemio</div>}
 			</div>
 		</div>
 	);
 };
 
 const Cabo: React.FC<P> = ({d, h, e, s}) => (
-	<Toma escena={<EscImperial />} desde={d} hasta={h} entrada={e} salida={s} cam={{s: [1, 1]}} camFn={(ff) => centrar(interpolate(tramo(ff, d, h), [0, 1], [1000, 900]), 560, 1.06)} angulo={8}>
+	<Toma escena={<EscImperial />} desde={d} hasta={h} entrada={e} salida={s} cam={{s: [1, 1]}} camFn={(ff) => centrar(interpolate(tr(ff, d, h), [0, 1], [1000, 900]), 560, 1.06)} angulo={8}>
 		<Actor x={1320} y={1300} alto={1300}>
 			<Muneco ropa={HINDENBURG} pose={{...brazo(-1, alcanzar(-1, -40, 560)), mi: 'senala', ...manosEn(undefined, [260, 560]), md: 'puno', cabeza: 10}} ojos="entrecerrados" cejas="enojado" boca="mueca" />
 		</Actor>
@@ -136,9 +137,9 @@ const Cabo: React.FC<P> = ({d, h, e, s}) => (
 const Braunau: React.FC<P> = ({d, h, e, s}) => {
 	const f = useCurrentFrame();
 	const x = pal(125, 'Bohemia') - 2;
-	const ok = pal(125, 'Ni') - 2;
+	const ok = pal(125, 'Ni', 2) - 2;
 	return (
-		<Toma escena={<MapaBraunau marca={tramo(f, d + 6, d + 12)} equis={x} check={ok} puntero={tramo(f, d - 2, d + 10)} />} desde={d} hasta={h} entrada={e} salida={s} cam={{s: [1, 1]}} camFn={(ff) => mezclaCam(centrar(760, 500, 1.2), centrar(1180, 600, 1.2), tramo(ff, x + 4, ok))} />
+		<Toma escena={<MapaBraunau marca={tr(f, d + 6, d + 12)} equis={x} check={ok} puntero={tr(f, d - 2, d + 10)} />} desde={d} hasta={h} entrada={e} salida={s} cam={{s: [1, 1]}} camFn={(ff) => mezclaCam(centrar(760, 500, 1.2), centrar(1180, 600, 1.2), tr(ff, x + 4, ok))} />
 	);
 };
 
@@ -153,7 +154,7 @@ const Brocha: React.FC = () => (
 
 const Carteles: React.FC<P> = ({d, h, e, s}) => {
 	const f = useCurrentFrame();
-	const pega = tramo(f, d + 6, d + 40);
+	const pega = tr(f, d + 6, d + 40);
 	return (
 		<Toma escena={<EscLadrillo tono="#5a4a44" />} desde={d} hasta={h} entrada={e} salida={s} cam={{s: [1.02, 1.1], x: [40, -20]}} angulo={-2}>
 			<CartelCampana x={620} y={120} ancho={460} cara="hindenburg" nombre="HINDENBURG" />
@@ -170,7 +171,7 @@ const Carteles: React.FC<P> = ({d, h, e, s}) => {
 const Detallito: React.FC<P> = ({d, h, e, s}) => {
 	const f = useCurrentFrame();
 	const g = ini(128) - 2;
-	const lupa = tramo(f, d + 4, g);
+	const lupa = tr(f, d + 4, g);
 	return (
 		<Toma escena={<EscLadrillo tono="#5a4a44" />} desde={d} hasta={h} entrada={e} salida={s} cam={{s: [1, 1]}} camFn={(ff) => golpeCam(ff, g, centrar(960, 470, 1.08), centrar(960, 778, 2.7))}>
 			<CartelCampana x={960} y={60} ancho={560} cara="hitler" nombre="HITLER" letraChica="Candidato: A. Hitler · Profesión: escritor · NACIONALIDAD: NINGUNA" />
@@ -205,7 +206,7 @@ const PapelRasgado: React.FC<{x: number; y: number; ancho: number; rasga: number
 const Renuncia: React.FC<P> = ({d, h, e, s}) => {
 	const f = useCurrentFrame();
 	const r = pal(129, 'renunciado') - 2;
-	const rasga = tramo(f, r, r + 14);
+	const rasga = tr(f, r, r + 14);
 	const sie = pal(129, 'siete') - 8;
 	return (
 		<Toma escena={<EscLiso color="#2a3048" luz="230,230,240" />} desde={d} hasta={h} entrada={e} salida={s} cam={{s: [1.04, 1.12], x: [-20, -60]}} angulo={-4}>
@@ -246,7 +247,7 @@ const Ventanilla: React.FC<P> = ({d, h, e, s}) => {
 /* ---------- el estado de Brunswick lo nombra funcionario ---------- */
 
 const Brunswick: React.FC<P> = ({d, h, e, s}) => (
-	<Toma escena={<div style={{position: 'absolute', inset: 0, background: 'linear-gradient(180deg, #8a96a8, #c9cfd6)'}} />} desde={d} hasta={h} entrada={e} salida={s} cam={{s: [1, 1]}} camFn={(ff) => centrar(960, interpolate(tramo(ff, d, h), [0, 1], [380, 560]), 1.1)}>
+	<Toma escena={<div style={{position: 'absolute', inset: 0, background: 'linear-gradient(180deg, #8a96a8, #c9cfd6)'}} />} desde={d} hasta={h} entrada={e} salida={s} cam={{s: [1, 1]}} camFn={(ff) => centrar(960, interpolate(tr(ff, d, h), [0, 1], [380, 560]), 1.1)}>
 		<div style={{position: 'absolute', left: 260, top: 120, width: 1400, height: 900, background: '#d9d2bc', border: `10px solid ${TINTA}`}} />
 		<div style={{position: 'absolute', left: 200, top: 60, width: 1520, height: 90, background: '#cfc8b0', border: `10px solid ${TINTA}`, clipPath: 'polygon(0 100%, 6% 0, 94% 0, 100% 100%)'}} />
 		{[0, 1, 2, 3].map((i) => (
@@ -294,7 +295,7 @@ const Nombramiento: React.FC<P> = ({d, h, e, s}) => (
 const Burocrata: React.FC<P> = ({d, h, e, s}) => {
 	const f = useCurrentFrame();
 	const sube = Math.abs(Math.sin(f / 4));
-	const pas = tramo(f, pal(133, 'escritorio') - 6, pal(133, 'escritorio') + 6);
+	const pas = tr(f, pal(133, 'escritorio') - 6, pal(133, 'escritorio') + 6);
 	return (
 		<Toma escena={<EscLiso color="#4a4438" luz="255,236,190" />} desde={d} hasta={h} entrada={e} salida={s} cam={{s: [1.1, 1.18], y: [-20, -40]}} angulo={-8}>
 			<Actor x={960} y={1060} alto={780}>
@@ -313,10 +314,10 @@ const Burocrata: React.FC<P> = ({d, h, e, s}) => {
 const Aplasta: React.FC<P> = ({d, h, e, s}) => {
 	const f = useCurrentFrame();
 	const a = pal(134, 'aplasta') - 2;
-	const sube = ini(135) + 4;
-	const baja = f < sube ? tramo(f, a - 6, a, (u) => u * u) : 1 - tramo(f, sube, sube + 10);
-	const aplastado = f >= a && f < sube + 14;
-	const infla = f >= sube + 14 ? Math.min(1, 0.12 + pop(f, sube + 14, 10) * 0.88) : aplastado ? 0.12 : 1;
+	const sube = ini(135) - 4;
+	const baja = f < sube ? tr(f, a - 6, a, (u) => u * u) : 1 - tr(f, sube, sube + 8);
+	const aplastado = f >= a && f < sube + 8;
+	const infla = f >= sube + 8 ? Math.min(1.08, 0.12 + pop(f, sube + 8, 10) * 0.88) : aplastado ? 0.12 : 1;
 	return (
 		<Toma escena={<EscLiso color="#2a3048" luz="230,230,240" />} desde={d} hasta={h} entrada={e} salida={s} cam={{s: [1, 1]}} camFn={(ff) => centrar(960, 600, 1.05)} sacudida={(ff) => (ff >= a && ff < a + 10 ? 14 * (1 - (ff - a) / 10) : 0)}>
 			<Papeleta x={960} y={1000} ancho={1100} />
@@ -358,7 +359,7 @@ const RelojCorto: React.FC<P> = ({d, h, e, s}) => {
 				<Muneco ropa={HINDENBURG} pose={{...manosFrente([170, 640], [230, 640]), mi: 'puno', md: 'puno', cabeza: -6}} ojos="cerrados" cejas="neutral" boca="seria" />
 			</Actor>
 			<EscritorioFrente x={960} y={840} ancho={1900} color="#4a2a1a" />
-			<RelojArena x={700} y={846} alto={240} t={tramo(f, d + 4, d + 22)} />
+			<RelojArena x={700} y={846} alto={240} t={tr(f, d + 4, d + 22)} />
 		</Toma>
 	);
 };
@@ -368,7 +369,7 @@ const RelojCorto: React.FC<P> = ({d, h, e, s}) => {
 const PuertaEnLaCara: React.FC<P> = ({d, h, e, s}) => {
 	const f = useCurrentFrame();
 	const P0 = pal(137, 'NO') - 1;
-	const cierra = tramo(f, P0 - 6, P0, (u) => u * u);
+	const cierra = tr(f, P0 - 6, P0, (u) => u * u);
 	return (
 		<Toma escena={<EscImperial />} desde={d} hasta={h} entrada={e} salida={s} cam={{s: [1.12, 1.18]}} angulo={-6} sacudida={(ff) => (ff >= P0 && ff < P0 + 10 ? 14 * (1 - (ff - P0) / 10) : 0)}>
 			{/* marco de la puerta con el pasillo iluminado */}
@@ -448,10 +449,10 @@ const Muletilla: React.FC<P> = (p) => <PlanoMuletilla {...p} i={140} n={3} posta
 
 const Album: React.FC<P> = ({d, h, e, s}) => {
 	const f = useCurrentFrame();
-	const cierra = tramo(f, pal(141, 'Van') - 2, pal(141, 'Van') + 12);
+	const cierra = tr(f, pal(141, 'Van') - 2, pal(141, 'Van') + 12);
 	return (
-		<Toma escena={<EscLiso color="#1c2c5a" luz="255,226,160" />} desde={d} hasta={h} entrada={e} salida={s} cam={{s: [1, 1]}} camFn={(ff) => centrar(960, 560, 1.0 + 0.16 * tramo(ff, d, h))}>
-			<AlbumSellos x={960} y={560} ancho={520} abre={1 - cierra} entra={tramo(f, d + 2, d + 16)} brillo={0.5 + 0.4 * Math.sin(f / 4)} />
+		<Toma escena={<EscLiso color="#1c2c5a" luz="255,226,160" />} desde={d} hasta={h} entrada={e} salida={s} cam={{s: [1, 1]}} camFn={(ff) => centrar(960, 560, 1.0 + 0.16 * tr(ff, d, h))}>
+			<AlbumSellos x={960} y={560} ancho={520} abre={1 - cierra} entra={tr(f, d + 2, d + 16)} brillo={0.5 + 0.4 * Math.sin(f / 4)} />
 		</Toma>
 	);
 };
@@ -486,14 +487,14 @@ export const SONIDOS_C5: [string, number, number][] = [
 	['salpica', pal(123, 'mesero'), 0.8],
 	['garabato', pal(124, 'cabo') - 3, 0.6],
 	['beep', pal(125, 'Bohemia') - 2, 0.6],
-	['ding', pal(125, 'Ni') - 2, 0.7],
+	['ding', pal(125, 'Ni', 2) - 2, 0.7],
 	['hoja', ini(126) + 8, 0.5],
 	['rasga', pal(129, 'renunciado') - 2, 0.8],
 	['objeto', pal(131, 'PASAPORTE'), 0.9],
 	['objeto', pal(132, 'público') - 2, 0.8],
 	['objeto', pal(132, 'ciudadanía') - 2, 0.8],
 	['aplasta', pal(134, 'aplasta') - 2, 1.0],
-	['boing', ini(135) + 18, 0.7],
+	['boing', ini(135) + 4, 0.7],
 	['tic', ini(136) + 4, 0.6],
 	['puerta', pal(137, 'NO') - 1, 1.0],
 	['lamida', antes(pal(139, 'Para')) + 4, 0.7],

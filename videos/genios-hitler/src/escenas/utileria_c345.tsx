@@ -153,9 +153,13 @@ export const PuertaPresidente: React.FC<{x: number; y: number; alto: number; sil
 				<div style={{position: 'absolute', left: 50 * k, right: 50 * k, top: 60 * k, height: 380 * k, background: 'linear-gradient(180deg, #e6e2c8, #c9c4a8)', border: `${7 * k}px solid ${TINTA}`, overflow: 'hidden'}}>
 					{silueta > 0 && (
 						<svg viewBox="0 0 400 400" style={{position: 'absolute', left: 0, top: 30 * k, width: '100%', height: '100%', opacity: 0.75 * silueta, filter: `blur(${3 * k}px)`}}>
-							<path d="M 120 400 L 110 300 Q 120 240 200 230 Q 280 240 290 300 L 280 400 Z" fill="#2a2a30" />
-							<path d="M 116 160 Q 114 74 136 62 L 264 62 Q 286 74 284 160 Q 282 238 200 242 Q 118 238 116 160 Z" fill="#2a2a30" />
-							<path d="M 200 180 Q 120 160 40 186 Q 0 200 -10 160 Q -20 230 60 230 Q 140 232 200 206 Q 260 232 340 230 Q 420 230 410 160 Q 400 200 360 186 Q 280 160 200 180 Z" fill="#1a1a20" />
+							{/* hombros con charreteras, cabeza redonda con orejas y el bigotazo */}
+							<path d="M 40 400 Q 50 300 120 286 L 280 286 Q 350 300 360 400 Z" fill="#2a2a30" />
+							<ellipse cx={92} cy={296} rx={44} ry={18} fill="#2a2a30" />
+							<ellipse cx={308} cy={296} rx={44} ry={18} fill="#2a2a30" />
+							<rect x={176} y={250} width={48} height={50} fill="#2a2a30" />
+							<circle cx={200} cy={168} r={88} fill="#2a2a30" />
+							<path d="M 200 206 Q 140 192 92 206 Q 60 218 52 196 Q 46 240 90 242 Q 150 246 200 228 Q 250 246 310 242 Q 354 240 348 196 Q 340 218 308 206 Q 260 192 200 206 Z" fill="#16161c" />
 						</svg>
 					)}
 				</div>
@@ -767,7 +771,7 @@ export const Medallas: React.FC<{x: number; y: number; tam: number; n?: number}>
 export const BigoteVivo: React.FC<{x: number; y: number; ancho: number; frunce: number}> = ({x, y, ancho, frunce}) => {
 	const f = useCurrentFrame();
 	const g = frunce * (1 + 0.08 * Math.sin(f * 1.4));
-	const puntas = 34 * g;
+	const puntas = 60 * g;
 	return (
 		<svg width={ancho} height={ancho * 0.36} viewBox="0 0 400 144" style={{position: 'absolute', left: x - ancho / 2, top: y - ancho * 0.18, overflow: 'visible'}}>
 			<path
@@ -781,8 +785,8 @@ export const BigoteVivo: React.FC<{x: number; y: number; ancho: number; frunce: 
 			{/* las cejitas del propio bigote */}
 			{g > 0.2 && (
 				<>
-					<path d={`M 120 ${30 - 6 * g} L 170 ${42}`} stroke={TINTA} strokeWidth={9} strokeLinecap="round" opacity={g} />
-					<path d={`M 280 ${30 - 6 * g} L 230 ${42}`} stroke={TINTA} strokeWidth={9} strokeLinecap="round" opacity={g} />
+					<path d={`M 110 ${24 - 10 * g} L 176 ${44}`} stroke={TINTA} strokeWidth={14} strokeLinecap="round" opacity={g} />
+					<path d={`M 290 ${24 - 10 * g} L 224 ${44}`} stroke={TINTA} strokeWidth={14} strokeLinecap="round" opacity={g} />
 				</>
 			)}
 		</svg>
@@ -1059,5 +1063,8 @@ export const Cremallera: React.FC<{x: number; y: number; tam: number; cierra: nu
 		</>
 	);
 };
+
+/** tramo a prueba de tiempos reales: si el intervalo queda al revés (la voz cambió), no revienta */
+export const tr = (f: number, a: number, b: number, curva?: (t: number) => number) => tramo(f, a, Math.max(b, a + 1), curva);
 
 export {Humo, pop, tramo};

@@ -571,12 +571,12 @@ export const MontanaCartas: React.FC<{x: number; y: number; ancho: number; n?: n
 /* ---------------- libro, portada y lápiz ---------------- */
 
 /** portada lisa, sin símbolos: el título no cabe y se tacha */
-export const PortadaLisa: React.FC<{x: number; y: number; ancho: number; titulo: string; tachado?: number; corto?: number; rot?: number; palabras?: number}> = ({x, y, ancho, titulo, tachado = 0, corto = 0, rot = 2, palabras = 1e9}) => {
+export const PortadaLisa: React.FC<{x: number; y: number; ancho: number; titulo: string; tachado?: number; corto?: number; rot?: number; palabras?: number; ajustado?: boolean}> = ({x, y, ancho, titulo, tachado = 0, corto = 0, rot = 2, palabras = 1e9, ajustado = false}) => {
 	const k = ancho / 600;
 	return (
 		<div style={{position: 'absolute', left: x - ancho / 2, top: y - ancho * 0.7, width: ancho, height: ancho * 1.4, transform: `rotate(${rot}deg)`, background: '#8a7a64', border: `${10 * k}px solid ${TINTA}`, borderRadius: 10 * k, boxShadow: `${16 * k}px ${20 * k}px 0 rgba(0,0,0,0.35)`}}>
 			<div style={{position: 'absolute', left: 0, top: 0, bottom: 0, width: 50 * k, background: 'rgba(0,0,0,0.2)'}} />
-			<div style={{position: 'absolute', left: 70 * k, width: ancho * 1.9, top: 120 * k, fontFamily: SERIF, fontWeight: 900, fontSize: 64 * k, lineHeight: 1.15, color: '#f6efdc'}}>
+			<div style={{position: 'absolute', left: 70 * k, width: ajustado ? ancho - 110 * k : ancho * 1.9, top: 120 * k, fontFamily: SERIF, fontWeight: 900, fontSize: (ajustado ? 54 : 64) * k, lineHeight: 1.15, color: '#f6efdc'}}>
 				{titulo.split(' ').slice(0, Math.max(0, Math.floor(palabras))).map((w, i) => {
 					const queda = false;
 					return (
@@ -779,3 +779,51 @@ export const PancartaMano: React.FC<{x: number; y: number; ancho: number; texto?
 		</div>
 	);
 };
+
+/** auto de los años 20 visto de lado. (x, y) = suelo bajo las ruedas */
+export const AutoViejo: React.FC<{x: number; y: number; ancho: number; color?: string; rueda?: number; puerta?: number}> = ({x, y, ancho, color = '#2f4a3a', rueda = 0, puerta = 0}) => {
+	const k = ancho / 600;
+	return (
+		<svg width={ancho} height={300 * k} viewBox="0 0 600 300" style={{position: 'absolute', left: x - ancho / 2, top: y - 300 * k, overflow: 'visible'}}>
+			<ellipse cx={300} cy={292} rx={280} ry={12} fill="rgba(0,0,0,0.3)" />
+			{/* guardabarros y estribo */}
+			<path d="M 70 240 Q 80 168 150 168 Q 220 168 230 220 L 400 220 Q 410 168 480 168 Q 556 168 570 240 Z" fill="#1b1b22" stroke={TINTA} strokeWidth={8} strokeLinejoin="round" />
+			{/* capó y radiador */}
+			<path d="M 380 130 L 560 140 L 560 214 L 380 214 Z" fill={color} stroke={TINTA} strokeWidth={8} strokeLinejoin="round" />
+			<rect x={556} y={120} width={30} height={96} rx={6} fill="#c9c9d0" stroke={TINTA} strokeWidth={7} />
+			{[136, 152, 168, 184, 200].map((yy) => (
+				<line key={yy} x1={562} y1={yy} x2={580} y2={yy} stroke={TINTA} strokeWidth={3} />
+			))}
+			<circle cx={548} cy={124} r={16} fill="#fff6b0" stroke={TINTA} strokeWidth={6} />
+			{/* cabina alta */}
+			<path d="M 120 214 L 130 70 Q 134 50 160 50 L 360 50 Q 384 50 386 70 L 392 214 Z" fill={color} stroke={TINTA} strokeWidth={8} strokeLinejoin="round" />
+			<rect x={110} y={40} width={292} height={20} rx={8} fill="#1b1b22" stroke={TINTA} strokeWidth={6} />
+			<rect x={150} y={72} width={90} height={70} rx={6} fill="#9fb8c8" stroke={TINTA} strokeWidth={6} />
+			<g transform={`translate(254 0) scale(${1 - puerta * 0.6} 1) translate(-254 0)`}>
+				<path d="M 254 66 L 376 66 L 380 214 L 254 214 Z" fill={color} stroke={TINTA} strokeWidth={6} />
+				<rect x={266} y={72} width={98} height={70} rx={6} fill="#9fb8c8" stroke={TINTA} strokeWidth={6} />
+				<rect x={350} y={160} width={22} height={8} rx={4} fill={TINTA} />
+			</g>
+			{/* ruedas de rayos */}
+			{[150, 480].map((cx) => (
+				<g key={cx} transform={`rotate(${rueda} ${cx} 240)`}>
+					<circle cx={cx} cy={240} r={50} fill="#1b1b22" stroke={TINTA} strokeWidth={6} />
+					<circle cx={cx} cy={240} r={36} fill="#d9cdb0" stroke={TINTA} strokeWidth={4} />
+					{Array.from({length: 8}, (_, i) => (
+						<line key={i} x1={cx} y1={240} x2={cx + Math.cos((i * Math.PI) / 4) * 34} y2={240 + Math.sin((i * Math.PI) / 4) * 34} stroke={TINTA} strokeWidth={4} />
+					))}
+					<circle cx={cx} cy={240} r={9} fill={TINTA} />
+				</g>
+			))}
+		</svg>
+	);
+};
+
+/** lápiz rojo en la mano (punta hacia +y) */
+export const LapizRojoMano: React.FC<{rot?: number}> = ({rot = 0}) => (
+	<g transform={`rotate(${rot} 0 36)`}>
+		<rect x={-14} y={0} width={28} height={230} fill="#d6262e" stroke={TINTA} strokeWidth={6} />
+		<path d="M -14 230 L 14 230 L 0 280 Z" fill="#f2d2a0" stroke={TINTA} strokeWidth={6} strokeLinejoin="round" />
+		<path d="M -5 262 L 5 262 L 0 280 Z" fill="#d6262e" />
+	</g>
+);

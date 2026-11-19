@@ -281,7 +281,7 @@ export const EscMapa: React.FC<{tono?: 'pergamino' | 'oscuro'; marcas?: boolean}
 	const tierra = tono === 'pergamino' ? '#e9dcb4' : '#2a2e36';
 	const linea = tono === 'pergamino' ? '#5a4a2a' : '#4a505c';
 	return (
-		<div style={{...lleno, background: mar}}>
+		<div style={{position: 'absolute', left: 0, top: 0, width: 3840, height: 1080, background: mar}}>
 			<svg width={3840} height={1080} viewBox="0 0 3840 1080" style={{position: 'absolute', left: 0, top: 0}}>
 				{marcas &&
 					Array.from({length: 14}, (_, i) => <line key={i} x1={i * 300} y1={0} x2={i * 300} y2={1080} stroke={linea} strokeWidth={2} opacity={0.25} />)}

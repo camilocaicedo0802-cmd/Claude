@@ -464,6 +464,172 @@ def palmada():
     return banda(ruido(0.4), 250, 3500) * np.exp(-tt * 45) + np.sin(2 * np.pi * 160 * tt) * np.exp(-tt * 30) * 0.4
 
 
+def vapor():
+    """silbido de vapor (tetera) que sale de las orejas"""
+    tt = t(1.4)
+    silbo = np.sin(2 * np.pi * np.cumsum(2400 + 300 * tt) / SR) * 0.25
+    soplo = banda(ruido(1.4), 2500, 9000) * 0.5
+    return (silbo + soplo) * np.minimum(1, np.minimum(tt / 0.08, (1.4 - tt) / 0.3))
+
+
+def desinfla():
+    """globo que se desinfla chillando"""
+    tt = t(1.2)
+    f = 700 * np.exp(-tt * 1.3) + 180 + 60 * np.sin(2 * np.pi * 18 * tt)
+    x = np.sign(np.sin(2 * np.pi * np.cumsum(f) / SR)) * 0.3 + banda(ruido(1.2), 400, 3000) * 0.2
+    return banda(x, 150, 4000) * np.minimum(1, np.minimum(tt / 0.02, (1.2 - tt) / 0.2))
+
+
+def ronquido():
+    """ronquido suave (inspirar y soltar)"""
+    tt = t(2.4)
+    env = np.clip(np.sin(np.pi * tt / 1.2), 0, 1) ** 2
+    f = 70 + 15 * np.sin(np.pi * tt / 1.2)
+    vibra = np.sin(2 * np.pi * np.cumsum(f) / SR) * (1 + np.sin(2 * np.pi * 28 * tt)) * 0.5
+    return banda(vibra + ruido(2.4) * 0.15, 60, 900) * env
+
+
+def ticket():
+    """rollo de papel que se desenrolla con trinquete"""
+    n = int(SR * 1.6)
+    out = np.zeros(n, np.float32)
+    for k in range(40):
+        i = int((0.02 + k * 0.035 * (1 + k / 80)) * SR)
+        m = int(0.006 * SR)
+        if i + m < n:
+            out[i:i + m] += rng.standard_normal(m).astype(np.float32) * np.exp(-np.arange(m) / (SR * 0.0015))
+    return banda(out, 1500, 8000) + banda(ruido(1.6), 3000, 8000) * 0.04
+
+
+def pasos():
+    """botas marchando sobre adoquines"""
+    n = int(SR * 2.4)
+    out = np.zeros(n, np.float32)
+    for k in range(12):
+        ini = k * 0.2 + rng.uniform(-0.01, 0.01)
+        tt = t(0.12)
+        golpe = banda(ruido(0.12), 80, 1600) * np.exp(-tt * 45) + np.sin(2 * np.pi * 95 * tt) * np.exp(-tt * 40) * 0.5
+        poner(out, golpe * (0.8 if k % 2 else 1.0), ini)
+    return out
+
+
+def proyector():
+    """traqueteo de proyector de cine mudo"""
+    tt = t(2.5)
+    clac = (np.sin(2 * np.pi * 18 * tt) > 0.85).astype(np.float32)
+    x = banda(ruido(2.5) * clac, 800, 5000) * 0.6 + banda(ruido(2.5), 200, 1200) * 0.08
+    return x * np.minimum(1, np.minimum(tt / 0.1, (2.5 - tt) / 0.3))
+
+
+def flash():
+    """estallido de flash de magnesio"""
+    tt = t(0.8)
+    return banda(ruido(0.8), 300, 7000) * np.exp(-tt * 12) + np.sin(2 * np.pi * 110 * tt) * np.exp(-tt * 20) * 0.4
+
+
+def tintineo():
+    """tintineo metálico (medallas, aureola)"""
+    out = np.zeros(int(SR * 1.2), np.float32)
+    for k in range(6):
+        tt = t(0.6)
+        f = rng.uniform(2600, 5200)
+        poner(out, np.sin(2 * np.pi * f * tt) * np.exp(-tt * 9) * rng.uniform(0.3, 0.6), k * 0.07 + rng.uniform(0, 0.03))
+    return out
+
+
+def rasga():
+    """papel que se rasga"""
+    tt = t(0.7)
+    grano = (rng.random(len(tt)) < 0.08).astype(np.float32) * rng.standard_normal(len(tt)).astype(np.float32)
+    return banda(grano, 1200, 9000) * np.minimum(1, np.minimum(tt / 0.03, (0.7 - tt) / 0.15)) + banda(ruido(0.7), 2000, 7000) * 0.08
+
+
+def latigo():
+    """chasquido de látigo"""
+    tt = t(0.5)
+    silbo = banda(ruido(0.5), 1500, 6000) * np.exp(-((tt - 0.12) / 0.06) ** 2) * 0.3
+    chasq = banda(ruido(0.5), 800, 9000) * np.exp(-np.maximum(0, tt - 0.18) * 80) * (tt > 0.18)
+    return silbo + chasq
+
+
+def ronroneo():
+    """ronroneo de gato"""
+    tt = t(2.0)
+    pulso = (1 + np.sin(2 * np.pi * 26 * tt)) * 0.5
+    return banda(ruido(2.0), 40, 400) * pulso * np.minimum(1, np.minimum(tt / 0.2, (2.0 - tt) / 0.3)) * np.where((tt % 1.0) < 0.55, 1.0, 0.6)
+
+
+def cadena():
+    """cadena que cae al suelo"""
+    out = np.zeros(int(SR * 1.0), np.float32)
+    for k in range(14):
+        tt = t(0.25)
+        golpe = sum(np.sin(2 * np.pi * f * tt) for f in (1800 + k * 37, 2900 + k * 51, 4300)) * np.exp(-tt * 30) * 0.2
+        poner(out, golpe, 0.03 + k * 0.035 + rng.uniform(0, 0.02))
+    return out
+
+
+def rugido():
+    """rugido corto (de gatito con ganas de león)"""
+    tt = t(1.1)
+    f = 110 + 60 * np.sin(np.pi * tt / 1.1)
+    voz = sum(np.sin(k * 2 * np.pi * np.cumsum(f) / SR) / k for k in range(1, 10))
+    aspereza = banda(ruido(1.1), 200, 2500) * 0.5
+    return banda(np.tanh(2 * voz) + aspereza, 80, 3000) * np.sin(np.pi * tt / 1.1) ** 0.7
+
+
+def cremallera():
+    """cremallera que se cierra"""
+    tt = t(0.6)
+    dientes = (np.sin(2 * np.pi * np.cumsum(120 + 500 * tt) / SR) > 0.9).astype(np.float32)
+    return banda(ruido(0.6) * dientes, 1500, 8000) * np.minimum(1, (0.6 - tt) / 0.05)
+
+
+def estornudo():
+    """¡achú! exagerado"""
+    out = np.zeros(int(SR * 1.3), np.float32)
+    tt = t(0.5)
+    aaa = banda(ruido(0.5), 300, 2500) * np.sin(np.pi * tt / 0.5) * 0.3 + np.sin(2 * np.pi * np.cumsum(220 + 120 * tt) / SR) * np.sin(np.pi * tt / 0.5) * 0.25
+    poner(out, aaa, 0.0)
+    tt2 = t(0.5)
+    chu = banda(ruido(0.5), 1500, 9000) * np.exp(-tt2 * 8) * 1.2
+    poner(out, chu, 0.55)
+    return out
+
+
+def cohete():
+    """despegue de cohete con silbido"""
+    tt = t(1.8)
+    rugir = banda(ruido(1.8), 60, 1200) * np.minimum(1, tt / 0.2)
+    silbo = np.sin(2 * np.pi * np.cumsum(600 + 1400 * tt) / SR) * 0.25
+    return (rugir + silbo) * np.minimum(1, (1.8 - tt) / 0.4)
+
+
+def salpica():
+    """sopa que se derrama"""
+    tt = t(0.8)
+    chap = banda(ruido(0.8), 300, 4000) * np.exp(-tt * 9)
+    gotas = np.zeros_like(tt)
+    for _ in range(10):
+        i = int(rng.uniform(0.15, 0.7) * SR)
+        m = int(0.03 * SR)
+        g = np.sin(2 * np.pi * rng.uniform(900, 1800) * np.arange(m) / SR) * np.exp(-np.arange(m) / (SR * 0.006))
+        gotas[i:i + m] += g * 0.3
+    return chap + gotas
+
+
+def aplasta():
+    """golpe sordo de bota que aplasta"""
+    tt = t(0.6)
+    return np.sin(2 * np.pi * 55 * tt) * np.exp(-tt * 9) + banda(ruido(0.6), 60, 700) * np.exp(-tt * 20) * 0.8
+
+
+def lamida():
+    """lengüetazo húmedo"""
+    tt = t(0.45)
+    return banda(ruido(0.45), 500, 5000) * np.sin(np.pi * tt / 0.45) ** 2 * (1 + 0.5 * np.sin(2 * np.pi * 30 * tt))
+
+
 # ============================================================ línea de tiempo de la música
 
 def plan_musical(F, total):
@@ -540,7 +706,12 @@ if __name__ == "__main__":
                                ("grillos", grillos(), 0.4), ("rayado", disco_rayado(), 0.7), ("fuego", fuego(), 0.6),
                                ("mazo", mazo(), 0.9), ("sobres", sobres(), 0.6), ("corcho", corcho(), 0.6),
                                ("chillido", chillido(), 0.5), ("acorde", acorde(), 0.8), ("brindis", brindis(), 0.6), ("crack", crack(), 0.8),
-                               ("silbido", silbido(), 0.5), ("palmada", palmada(), 0.8)]:
+                               ("silbido", silbido(), 0.5), ("palmada", palmada(), 0.8),
+                               ("vapor", vapor(), 0.5), ("desinfla", desinfla(), 0.5), ("ronquido", ronquido(), 0.5), ("ticket", ticket(), 0.6),
+                               ("pasos", pasos(), 0.7), ("proyector", proyector(), 0.5), ("flash", flash(), 0.7),
+                               ("tintineo", tintineo(), 0.5), ("rasga", rasga(), 0.6), ("latigo", latigo(), 0.7), ("ronroneo", ronroneo(), 0.5),
+                               ("cadena", cadena(), 0.6), ("rugido", rugido(), 0.7), ("cremallera", cremallera(), 0.6), ("estornudo", estornudo(), 0.8),
+                               ("cohete", cohete(), 0.7), ("salpica", salpica(), 0.6), ("aplasta", aplasta(), 0.9), ("lamida", lamida(), 0.5)]:
             guardar(f"public/sfx/{nombre}.wav", x, gan)
         print("efectos listos", flush=True)
     if args.solo in ("", "musica"):

@@ -7,7 +7,7 @@ import {Brillos} from '../componentes/Utileria';
 import {FUNDADOR, HITLER_1919, HITLER_ESPIA, SENOR_1, SENOR_3} from '../componentes/Vestuario';
 import {Cara} from '../componentes/Recurrentes';
 import {ConoLuz, EscCerveceria, EscLiso, EscMesaArriba, EscOficinaBerlin, Humo, Jarra, Pizarra} from '../escenarios/Epoca';
-import {CONDENSADA, SERIF} from '../fuentes';
+import {CONDENSADA, SERIF, TITULAR} from '../fuentes';
 import {P, Plano, TINTA, antes, centrar, clamp, fin, golpeCam, ini, mezclaCam, pal, tramo} from './base';
 import {CuadroEspia, Silla, brazo} from './compartidas';
 import {Barba, Carnet, PancartaMano, CartelAlquila, GloboNumero, LibretaPlan, MarcoVacio, PARROQUIANOS, PlatoVacio, RelojBolsillo, RelojPared, Sudor, Vapor, enActor} from './utileria_c12';
@@ -93,7 +93,7 @@ const C1Puerta: React.FC<P> = ({d, h, e, s}) => {
 			</div>
 			<div style={{position: 'absolute', left: 1020, top: 880, width: 330, height: 14, background: 'rgba(255,214,140,0.7)', filter: 'blur(4px)'}} />
 			{/* el papelito clavado: el partido */}
-			<div style={{position: 'absolute', left: 1120, top: 440, width: 130, height: 70, background: '#f6efdc', border: `4px solid ${TINTA}`, transform: 'rotate(-6deg)', fontFamily: "'Comic Sans MS', cursive", fontSize: 15, fontWeight: 700, lineHeight: 1.05, textAlign: 'center', padding: '6px 4px', boxSizing: 'border-box', color: '#2a2218'}}>
+			<div style={{position: 'absolute', left: 1120, top: 440, width: 130, height: 70, background: '#f6efdc', border: `4px solid ${TINTA}`, transform: 'rotate(-6deg)', fontFamily: TITULAR, fontSize: 15, fontWeight: 800, lineHeight: 1.05, textAlign: 'center', padding: '6px 4px', boxSizing: 'border-box', color: '#2a2218'}}>
 				Partido Obrero Alemán
 				<div style={{position: 'absolute', left: 58, top: -8, width: 10, height: 10, borderRadius: '50%', background: '#a8262e', border: `2px solid ${TINTA}`}} />
 			</div>
@@ -264,7 +264,7 @@ const C1Dicen: React.FC<P> = ({d, h, e, s}) => {
 				<Muneco ropa={SENOR_3} pose={{...manosFrente([180, 600], [220, 600]), mi: 'agarra', md: 'agarra', cabeza: -6}} ojos="mirandoLado" cejas="sorprendido" boca="o" />
 			</Actor>
 			<Actor x={820} y={1080} alto={820}>
-				<Muneco ropa={FUNDADOR} pose={{...manosEn(undefined, [300, 214]), md: 'abierta', wd: -30, frenteD: 1, ...manosFrente([170, 520]), cabeza: 10, cuerpo: 6}} ojos="feliz" cejas="arrogante" boca="picara" hablando={habla} />
+				<Muneco ropa={FUNDADOR} pose={{bd: 86, cd: 6, md: 'abierta', ...manosFrente([170, 520]), cabeza: 10, cuerpo: 6}} ojos="feliz" cejas="arrogante" boca="picara" hablando={habla} />
 			</Actor>
 		</Toma>
 	);
@@ -450,7 +450,7 @@ const C1Letrero: React.FC<P> = ({d, h, e, s}) => {
 				<div style={{position: 'absolute', left: 40, top: 40, fontFamily: CONDENSADA, fontSize: 104, color: '#7a1e1e', letterSpacing: 6, whiteSpace: 'nowrap'}}>{texto.slice(0, n)}</div>
 			</div>
 			{/* la pancarta vieja, en el suelo */}
-			<div style={{position: 'absolute', left: 420, top: 930, width: 560, padding: '8px 0', background: '#efe6cf', border: `6px solid ${TINTA}`, transform: 'rotate(8deg)', textAlign: 'center', fontFamily: "'Comic Sans MS', cursive", fontWeight: 700, fontSize: 40, color: '#2a2218', opacity: 0.85}}>
+			<div style={{position: 'absolute', left: 420, top: 930, width: 560, padding: '8px 0', background: '#efe6cf', border: `6px solid ${TINTA}`, transform: 'rotate(8deg)', textAlign: 'center', fontFamily: TITULAR, fontWeight: 800, fontSize: 40, color: '#5a1a14', opacity: 0.85}}>
 				PARTIDO OBRERO ALEMÁN
 			</div>
 			{/* la brocha */}

@@ -17,8 +17,11 @@ export const brazo = (lado: -1 | 1, r: {a: number; c: number; k?: number}): Part
 /** pistola pequeña en la mano (cañón hacia +y) */
 export const Pistola: React.FC<{rot?: number}> = ({rot = 0}) => (
 	<g transform={`rotate(${rot} 0 36)`}>
-		<rect x={-14} y={30} width={28} height={90} rx={6} fill="#2a2a30" stroke={TINTA} strokeWidth={6} />
-		<rect x={-30} y={20} width={30} height={40} rx={6} fill="#3a3a42" stroke={TINTA} strokeWidth={6} />
+		{/* empuñadura inclinada hacia atrás y cañón largo hacia los dedos: silueta de pistola en «L» */}
+		<path d="M -14 36 L -74 6 L -84 34 L -22 74 Z" fill="#2a2a30" stroke={TINTA} strokeWidth={6} strokeLinejoin="round" />
+		<path d="M -30 64 Q -46 84 -24 92" fill="none" stroke={TINTA} strokeWidth={6} />
+		<rect x={-16} y={20} width={32} height={128} rx={5} fill="#3a3a42" stroke={TINTA} strokeWidth={6} />
+		<rect x={-8} y={136} width={16} height={18} fill="#1a1a1e" stroke={TINTA} strokeWidth={4} />
 	</g>
 );
 
@@ -171,7 +174,7 @@ export const CuadroTiroTecho: React.FC<{disparo: number; grita?: boolean}> = ({d
 				<Muneco
 					ropa={HITLER_1923}
 					pose={{...brazo(1, {a: 168, c: 4}), md: 'agarra', ...manosEn([140, 500]), mi: 'puno', cabeza: tras ? -4 : 0}}
-					objDer={<Pistola rot={180} />}
+					objDer={<Pistola rot={0} />}
 					ojos={tras ? 'cerrados' : 'grandes'}
 					cejas="enojado"
 					boca={grita ? 'grito' : 'abierta'}

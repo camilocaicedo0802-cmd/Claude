@@ -11,6 +11,7 @@ import {P, Plano, TINTA, antes, centrar, clamp, fin, golpeCam, ini, mezclaCam, p
 import {Barra, ENCUADRE_CONTRATO, ENCUADRE_VENTANA, OficinaPapen} from './c0';
 import {brazo} from './compartidas';
 import {Regalo, Silueta} from './utileria_c89';
+import {AlbumSellos} from './utileria_c345';
 
 /* CAPÍTULO 9 · La cuenta (10:33–11:54). Azul noche, madera de Núremberg y, al final, la oficina del principio.
    Segundo (y último) corte seco: la Noche de los Cuchillos Largos. */
@@ -189,27 +190,11 @@ const K8: React.FC<P> = ({d, h, e, s}) => {
 
 /* ---------- los sellos vuelven ---------- */
 
-const AlbumPagina: React.FC<{despega: number; abre: number}> = ({despega, abre}) => (
-	<div style={{position: 'absolute', left: 360, top: 150, width: 1200, height: 780, transform: `perspective(1600px) rotateX(${(1 - abre) * 70}deg)`, transformOrigin: '50% 100%'}}>
-		<div style={{position: 'absolute', inset: 0, background: '#1f3a2a', border: `10px solid ${TINTA}`, borderRadius: 14}} />
-		<div style={{position: 'absolute', left: 30, top: 30, right: 30, bottom: 30, background: '#f2ead4', border: `6px solid ${TINTA}`}}>
-			<div style={{position: 'absolute', left: 0, right: 0, top: 24, textAlign: 'center', fontFamily: SERIF, fontStyle: 'italic', fontSize: 44, color: '#2a2218'}}>Deutsches Reich</div>
-			{[0, 1, 2, 3].map((i) => (
-				<div key={i} style={{position: 'absolute', left: 60 + i * 270, top: 120, width: 230, height: 4, background: '#cfc4a8'}} />
-			))}
-			<SelloPostal x={570} y={420} ancho={250} cara="hitler" valor="12" />
-			<div style={{position: 'absolute', inset: 0, transform: `translate(${despega * 520}px, ${-despega * 260}px) rotate(${despega * 38}deg)`, transformOrigin: '570px 420px', opacity: 1 - Math.max(0, despega - 0.8) * 5}}>
-				<SelloPostal x={570} y={420} ancho={250} cara="hindenburg" valor="12" />
-			</div>
-		</div>
-	</div>
-);
-
 const K9: React.FC<P> = ({d, h, e, s}) => {
 	const f = useCurrentFrame();
 	return (
 		<Toma escena={<EscMesaArriba tono="oscura" />} desde={d} hasta={h} entrada={e} salida={s} cam={{s: [1.0, 1.1], y: [0, 20]}}>
-			<AlbumPagina abre={tramo(f, d + 2, d + 18)} despega={0} />
+			<AlbumSellos x={960} y={560} ancho={520} abre={tramo(f, d + 2, d + 18)} />
 		</Toma>
 	);
 };
@@ -218,8 +203,8 @@ const K10: React.FC<P> = ({d, h, e, s}) => {
 	const f = useCurrentFrame();
 	const sale = pal(223, 'Hitler');
 	return (
-		<Toma escena={<EscMesaArriba tono="oscura" />} desde={d} hasta={h} entrada={e} salida={s} cam={{s: [1, 1]}} camFn={(ff) => golpeCam(ff, antes(sale), centrar(930, 570, 1.25), centrar(930, 570, 1.7))}>
-			<AlbumPagina abre={1} despega={tramo(f, ini(223), sale - 2)} />
+		<Toma escena={<EscMesaArriba tono="oscura" />} desde={d} hasta={h} entrada={e} salida={s} cam={{s: [1, 1]}} camFn={(ff) => golpeCam(ff, antes(sale), centrar(1180, 500, 1.3), centrar(1210, 470, 1.75))}>
+			<AlbumSellos x={960} y={560} ancho={520} abre={1} despega={tramo(f, ini(223), sale - 2)} />
 		</Toma>
 	);
 };

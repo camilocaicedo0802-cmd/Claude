@@ -7,11 +7,11 @@ import {Toma} from '../componentes/Toma';
 import {COMENTARISTA, HITLER_TRAJE, HITLER_VENDEDOR, SENOR_2} from '../componentes/Vestuario';
 import {EscLiso, Hemiciclo} from '../escenarios/Epoca';
 import {CONDENSADA} from '../fuentes';
-import {Cam, P, Plano, TINTA, antes, centrar, fin, golpeCam, ini, mezclaCam, pal, pop, tramo} from './base';
+import {Cam, P, Plano, TINTA, antes, centrar, fin, golpeCam, ini, mezclaCam, pal, pop} from './base';
 import {Barra} from './c0';
 import {MapaAncho} from './c3';
 import {brazo} from './compartidas';
-import {AlemaniaEnferma, Banco, BolsaNY, Cohete, Estornudo, EscOficinaEmpleo, EscPasilloPresidente, Fila, GraficoCripto, ManoCuerda, Munequito, PuestoTeletienda, SobresCayendo, Teletipo, Trofeo, Urna} from './utileria_c345';
+import {AlemaniaEnferma, Banco, BolsaNY, Cohete, Estornudo, EscOficinaEmpleo, EscPasilloPresidente, Fila, GraficoCripto, ManoCuerda, Munequito, PuestoTeletienda, SobresCayendo, Teletipo, Trofeo, Urna, tr} from './utileria_c345';
 
 /* CAPÍTULO 4 · LA CRISIS (frases 103–120). Paleta: gris y negro. */
 
@@ -42,7 +42,7 @@ const WallStreet: React.FC<P> = ({d, h, e, s}) => {
 			entrada={e}
 			salida={s}
 			cam={{s: [1, 1]}}
-			camFn={(ff) => mezclaCam(centrar(1180, 990, 2.1), centrar(960, 520, 1.02 + 0.04 * tramo(ff, abre, h)), tramo(ff, d + 8, abre))}
+			camFn={(ff) => mezclaCam(centrar(1180, 990, 2.1), centrar(960, 520, 1.02 + 0.04 * tr(ff, abre, h)), tr(ff, d + 8, abre))}
 			sacudida={(ff) => (ff >= E && ff < E + 12 ? 10 * (1 - (ff - E) / 12) : 0)}
 		>
 			<BolsaNY x={960} y={900} ancho={880} estornudo={E} />
@@ -63,7 +63,7 @@ const camMapa = (cx: number, s: number): Cam => {
 
 const LineaBolsa: React.FC<{desde: number}> = ({desde}) => {
 	const f = useCurrentFrame();
-	const t = tramo(f, desde, desde + 12, (u) => u * u);
+	const t = tr(f, desde, desde + 12, (u) => u * u);
 	if (f < desde - 1) return null;
 	const largo = 2000;
 	return (
@@ -83,9 +83,9 @@ const LineaBolsa: React.FC<{desde: number}> = ({desde}) => {
 
 const Enferma: React.FC<P> = ({d, h, e, s}) => {
 	const f = useCurrentFrame();
-	const en = tramo(f, pal(104, 'enferma') - 6, pal(104, 'enferma'));
+	const en = tr(f, pal(104, 'enferma') - 6, pal(104, 'enferma'));
 	return (
-		<Toma escena={<MapaAncho />} desde={d} hasta={h} entrada={e} salida={s} cam={{s: [1, 1]}} camFn={(ff) => camMapa(interpolate(tramo(ff, d, h), [0, 1], [2700, 2780]), 1.0 + 0.08 * tramo(ff, d, h))}>
+		<Toma escena={<MapaAncho />} desde={d} hasta={h} entrada={e} salida={s} cam={{s: [1, 1]}} camFn={(ff) => camMapa(interpolate(tr(ff, d, h), [0, 1], [2700, 2780]), 1.0 + 0.08 * tr(ff, d, h))}>
 			<Estornudo x1={1850} y1={300} x2={3120} y2={440} desde={d - 6} dur={14} texto={false} />
 			<AlemaniaEnferma x={3170} y={470} tam={360} enferma={en} />
 			<LineaBolsa desde={ini(105) - 2} />
@@ -97,9 +97,9 @@ const Enferma: React.FC<P> = ({d, h, e, s}) => {
 
 const Mano: React.FC<P> = ({d, h, e, s}) => {
 	const f = useCurrentFrame();
-	const tira = tramo(f, pal(105, 'piden') - 4, pal(105, 'vuelta') + 4);
+	const tira = tr(f, pal(105, 'piden') - 4, pal(105, 'vuelta') + 4);
 	return (
-		<Toma escena={<MapaAncho />} desde={d} hasta={h} entrada={e} salida={s} cam={{s: [1, 1]}} camFn={(ff) => camMapa(interpolate(tramo(ff, d, h), [0, 1], [2380, 2260]), 1.0)}>
+		<Toma escena={<MapaAncho />} desde={d} hasta={h} entrada={e} salida={s} cam={{s: [1, 1]}} camFn={(ff) => camMapa(interpolate(tr(ff, d, h), [0, 1], [2380, 2260]), 1.0)}>
 			<Banco x={2840} y={720} ancho={220} vacio={tira} />
 			<Banco x={3080} y={660} ancho={250} vacio={tira} />
 			<ManoCuerda x={1700} y={540} tira={tira} />
@@ -111,7 +111,7 @@ const Mano: React.FC<P> = ({d, h, e, s}) => {
 /* ---------- seis millones de desempleados (neutro, gris) ---------- */
 
 const FilaEmpleo: React.FC<P> = ({d, h, e, s}) => (
-	<Toma escena={<EscOficinaEmpleo />} desde={d} hasta={h} entrada={e} salida={s} cam={{s: [1, 1]}} camFn={(ff) => centrar(interpolate(tramo(ff, d, h), [0, 1], [700, 1100]), 520, 1.1)} tinte="rgba(120,120,130,0.5)">
+	<Toma escena={<EscOficinaEmpleo />} desde={d} hasta={h} entrada={e} salida={s} cam={{s: [1, 1]}} camFn={(ff) => centrar(interpolate(tr(ff, d, h), [0, 1], [700, 1100]), 520, 1.1)} tinte="rgba(120,120,130,0.5)">
 		<Fila x0={-120} y={960} n={10} paso={150} alto={560} />
 	</Toma>
 );
@@ -131,11 +131,11 @@ const Vendedor: React.FC<P> = ({d, h, e, s}) => {
 			entrada={e}
 			salida={s}
 			cam={{s: [1, 1]}}
-			camFn={(ff) => golpeCam(ff, g, centrar(860, 540, 1.04 + 0.04 * tramo(ff, d, g)), centrar(420, 470, 1.55))}
+			camFn={(ff) => golpeCam(ff, g, centrar(860, 540, 1.04 + 0.04 * tr(ff, d, g)), centrar(420, 470, 1.55))}
 			angulo={-4}
 			tinte="rgba(120,120,130,0.4)"
 		>
-			<Fila x0={820} y={960} n={8} paso={145} alto={560} giran={tramo(f, g, g + 14)} />
+			<Fila x0={820} y={960} n={8} paso={145} alto={560} giran={tr(f, g, g + 14)} />
 			<PuestoTeletienda x={410} y={150} ancho={600} aparece={pop(f, ap + 2)} />
 			{f >= ap && (
 				<Actor x={410} y={1000} alto={720} escala={escala}>
@@ -159,9 +159,9 @@ const JarraCohete: React.FC<{x: number; nivel: number; lift: number; llama: numb
 const CoheteJarra: React.FC<P> = ({d, h, e, s}) => {
 	const f = useCurrentFrame();
 	const sal = pal(108, 'SALTA');
-	const nivel = 2.6 + 15.4 * tramo(f, sal - 4, pal(108, '18') + 2);
-	const lift = 110 * tramo(f, sal - 6, sal + 8, (u) => u * u) - 10 * Math.sin(f / 4) * tramo(f, sal, sal + 10);
-	const llama = tramo(f, sal - 8, sal - 4);
+	const nivel = 2.6 + 15.4 * tr(f, sal - 4, pal(108, '18') + 2);
+	const lift = 110 * tr(f, sal - 6, sal + 8, (u) => u * u) - 10 * Math.sin(f / 4) * tr(f, sal, sal + 10);
+	const llama = tr(f, sal - 8, sal - 4);
 	return (
 		<Toma escena={<Barra />} desde={d} hasta={h} entrada={e} salida={s} cam={{s: [1, 1]}} camFn={(ff) => centrar(960, 520 - lift * 0.4, 1.06)} sacudida={() => 3 * llama}>
 			<JarraCohete x={900} nivel={nivel} lift={lift} llama={llama} />
@@ -173,13 +173,13 @@ const CoheteJarra: React.FC<P> = ({d, h, e, s}) => {
 
 const Hemiciclo107: React.FC<P> = ({d, h, e, s}) => {
 	const f = useCurrentFrame();
-	const n = Math.round(12 + 95 * tramo(f, pal(109, 'ciento') - 8, pal(109, 'siete') + 4));
+	const n = Math.round(12 + 95 * tr(f, pal(109, 'ciento') - 8, pal(109, 'siete') + 4));
 	return (
 		<Toma escena={<EscLiso color="#0e0e14" luz="200,200,230" />} desde={d} hasta={h} entrada={e} salida={s} cam={{s: [1.04, 1.14], r: [1, -0.5], y: [40, 70]}}>
 			<div style={{position: 'absolute', inset: 0, transform: 'scaleX(-1)'}}>
 				<Hemiciclo x={960} y={940} radio={760} encendidos={n} oscuro={1} color="#d6863a" apagado="#22222a" />
 			</div>
-			<div style={{position: 'absolute', left: 1380, top: 840, width: 360, textAlign: 'center', fontFamily: CONDENSADA, fontSize: 84, color: '#d6863a', letterSpacing: 2}}>{n} / 491</div>
+			<div style={{position: 'absolute', left: 710, top: 50, width: 500, textAlign: 'center', fontFamily: CONDENSADA, fontSize: 90, color: '#f4ecd6', letterSpacing: 3}}>{n} / 491</div>
 		</Toma>
 	);
 };
@@ -191,7 +191,7 @@ const Cripto: React.FC<P> = ({d, h, e, s}) => {
 	return (
 		<Toma escena={<Barra />} desde={d} hasta={h} entrada={e} salida={s} cam={{s: [1.02, 1.08], x: [30, -30]}}>
 			<JarraCohete x={620} nivel={18} lift={100 - 10 * Math.sin(f / 4)} llama={1} alto={600} />
-			<GraficoCripto x={1370} y={820} ancho={560} dibuja={tramo(f, d + 2, d + 22)} />
+			<GraficoCripto x={1370} y={820} ancho={560} dibuja={tr(f, d + 2, d + 22)} />
 		</Toma>
 	);
 };
@@ -200,11 +200,11 @@ const Cripto: React.FC<P> = ({d, h, e, s}) => {
 
 const Trofeo37: React.FC<P> = ({d, h, e, s}) => {
 	const f = useCurrentFrame();
-	const nivel = 18 + 19 * tramo(f, pal(111, '37') - 6, pal(111, '37') + 4);
-	const entra = tramo(f, ini(112) - 4, ini(112) + 14);
+	const nivel = 18 + 19 * tr(f, pal(111, '37') - 6, pal(111, '37') + 4);
+	const entra = tr(f, ini(112) - 4, ini(112) + 14);
 	const ox = interpolate(entra, [0, 1], [2200, 1560]);
 	return (
-		<Toma escena={<Barra />} desde={d} hasta={h} entrada={e} salida={s} cam={{s: [1, 1]}} camFn={(ff) => centrar(interpolate(tramo(ff, d, h), [0, 1], [960, 1100]), 520, 1.04 + 0.05 * tramo(ff, d, h))}>
+		<Toma escena={<Barra />} desde={d} hasta={h} entrada={e} salida={s} cam={{s: [1, 1]}} camFn={(ff) => centrar(interpolate(tr(ff, d, h), [0, 1], [960, 1100]), 520, 1.04 + 0.05 * tr(ff, d, h))}>
 			<JarraVotos x={900} y={880} alto={700} nivel={nivel} />
 			<Actor x={ox} y={1000} alto={760}>
 				<Muneco ropa={SENOR_2} camina={entra > 0 && entra < 1 ? 1.4 : 0} pose={{...brazo(-1, alcanzar(-1, -30, 380)), mi: 'agarra', cabeza: -4}} ojos="feliz" cejas="neutral" boca="sonrisa" />
@@ -229,7 +229,7 @@ const Comentarista: React.FC<P> = ({d, h, e, s}) => {
 			entrada={e}
 			salida={s}
 			cam={{s: [1, 1]}}
-			camFn={(ff) => golpeCam(ff, g, centrar(980, 520, 1.03 + 0.04 * tramo(ff, d, g)), centrar(1300, 500, 2.4))}
+			camFn={(ff) => golpeCam(ff, g, centrar(980, 520, 1.03 + 0.04 * tr(ff, d, g)), centrar(1300, 500, 2.4))}
 		>
 			<JarraVotos x={1350} y={930} alto={700} nivel={37} />
 			<div style={{position: 'absolute', left: 260, top: 760, width: 620, height: 340, background: '#2f6fd1', border: `9px solid ${TINTA}`, borderRadius: 10}} />
@@ -272,11 +272,11 @@ const Diez: React.FC<P> = ({d, h, e, s}) => {
 			})}
 			{f >= seis && (
 				<>
-					<div style={{position: 'absolute', left: 870, top: 800, width: 800, height: 40, borderLeft: `8px solid #c9ced6`, borderRight: `8px solid #c9ced6`, borderBottom: `8px solid #c9ced6`, opacity: tramo(f, seis, seis + 8)}} />
-					<div style={{position: 'absolute', left: 870, top: 860, width: 800, textAlign: 'center', fontFamily: CONDENSADA, fontSize: 72, color: '#c9ced6', letterSpacing: 4, opacity: tramo(f, seis, seis + 8)}}>VOTARON POR OTRO</div>
+					<div style={{position: 'absolute', left: 870, top: 800, width: 800, height: 40, borderLeft: `8px solid #c9ced6`, borderRight: `8px solid #c9ced6`, borderBottom: `8px solid #c9ced6`, opacity: tr(f, seis, seis + 8)}} />
+					<div style={{position: 'absolute', left: 870, top: 860, width: 800, textAlign: 'center', fontFamily: CONDENSADA, fontSize: 72, color: '#c9ced6', letterSpacing: 4, opacity: tr(f, seis, seis + 8)}}>VOTARON POR OTRO</div>
 				</>
 			)}
-			{f >= enc && <div style={{position: 'absolute', left: 300, top: 860, width: 480, textAlign: 'center', fontFamily: CONDENSADA, fontSize: 72, color: '#d6863a', letterSpacing: 4, opacity: tramo(f, enc, enc + 8)}}>37 %</div>}
+			{f >= enc && <div style={{position: 'absolute', left: 300, top: 860, width: 480, textAlign: 'center', fontFamily: CONDENSADA, fontSize: 72, color: '#d6863a', letterSpacing: 4, opacity: tr(f, enc, enc + 8)}}>37 %</div>}
 		</Toma>
 	);
 };
@@ -293,13 +293,13 @@ const UrnaSeria: React.FC<P> = ({d, h, e, s}) => (
 /* ---------- el presidente: el pasillo y la puerta ---------- */
 
 const Pasillo: React.FC<P> = ({d, h, e, s}) => (
-	<Toma escena={<EscPasilloPresidente silueta={0} />} desde={d} hasta={h} entrada={e} salida={s} cam={{s: [1, 1]}} camFn={(ff) => centrar(960, 520, 1.0 + 0.12 * tramo(ff, d, h))} />
+	<Toma escena={<EscPasilloPresidente silueta={0} />} desde={d} hasta={h} entrada={e} salida={s} cam={{s: [1, 1]}} camFn={(ff) => centrar(960, 520, 1.0 + 0.12 * tr(ff, d, h))} />
 );
 
 const Puerta: React.FC<P> = ({d, h, e, s}) => {
 	const f = useCurrentFrame();
 	const P0 = pal(120, 'soportaba') + 2;
-	const cerrada = f < P0 - 3 ? 0.86 : tramo(f, P0 - 3, P0, (u) => u * u) * 0.14 + 0.86;
+	const cerrada = f < P0 - 3 ? 0.86 : tr(f, P0 - 3, P0, (u) => u * u) * 0.14 + 0.86;
 	const salto = f >= P0 ? Math.max(0, 1 - (f - P0) / 10) : 0;
 	return (
 		<Toma
@@ -309,7 +309,7 @@ const Puerta: React.FC<P> = ({d, h, e, s}) => {
 			entrada={e}
 			salida={s}
 			cam={{s: [1, 1]}}
-			camFn={(ff) => centrar(960, 560, 1.1 + 0.08 * tramo(ff, d, P0))}
+			camFn={(ff) => centrar(960, 560, 1.1 + 0.08 * tr(ff, d, P0))}
 			angulo={-6}
 			sacudida={(ff) => (ff >= P0 && ff < P0 + 10 ? 12 * (1 - (ff - P0) / 10) : 0)}
 		>
