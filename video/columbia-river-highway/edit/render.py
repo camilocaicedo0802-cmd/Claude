@@ -120,6 +120,14 @@ def worker(out, f0, f1, total, preview):
         shots[j].base.close()
 
 
+def _seg_job(job):
+    out, s, e, total, preview = job
+    tmp = out[:-4] + ".tmp.mp4"
+    worker(tmp, s, e, total, preview)
+    os.replace(tmp, out)
+    return out
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("out")
@@ -128,6 +136,8 @@ def main():
     ap.add_argument("--to", dest="t_to", type=float, default=None)
     ap.add_argument("--total", type=float, default=1076.82)
     ap.add_argument("--preview", action="store_true")
+    ap.add_argument("--seg", type=float, default=0.0,
+                    help="resumable mode: segments of this many seconds, each written whole (tmp + rename); finished ones are skipped")
     a = ap.parse_args()
     t_to = a.t_to if a.t_to is not None else a.total
     f0, f1 = int(round(a.t_from * FPS)), int(round(t_to * FPS))
@@ -136,6 +146,17 @@ def main():
     parts, procs = [], []
     tmpdir = os.path.join(os.path.dirname(os.path.abspath(a.out)), "chunks")
     os.makedirs(tmpdir, exist_ok=True)
+    if a.seg > 0:
+        sl = int(round(a.seg * FPS))
+        jobs = [(os.path.join(tmpdir, f"seg_{k:03d}.mp4"), s, min(f1, s + sl), a.total, a.preview) for k, s in enumerate(range(f0, f1, sl))]
+        parts = [j[0] for j in jobs]
+        todo = [j for j in jobs if not os.path.exists(j[0])]
+        print(f"segments {len(jobs)}, to render {len(todo)}", flush=True)
+        from multiprocessing import Pool
+        with Pool(n) as pool:
+            for done in pool.imap_unordered(_seg_job, todo):
+                print("segment done", os.path.basename(done), flush=True)
+        n = 0
     for k in range(n):
         s, e = f0 + k * step, min(f1, f0 + (k + 1) * step)
         if s >= e:

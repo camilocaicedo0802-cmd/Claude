@@ -33,7 +33,7 @@ El montaje está hecho por código: `edit/timeline.py` define los 308 planos anc
 
 ## Disco
 
-`render.py out/video_noaudio.txt` deja los trozos en `out/chunks` y escribe solo su lista (`RENDER_CRF=19`);
+`render.py out/video_noaudio.txt` deja los trozos en `out/chunks` y escribe solo su lista (`RENDER_CRF=20`; con `--seg 90` cada trozo de 90 s se escribe entero y, si el contenedor se reinicia, se retoma donde iba);
 `splice.py` con `RM_CHUNKS=1` borra cada trozo en cuanto se han codificado todas sus piezas, y `tools/terminar_cr.sh`
 corta las 4 partes, guarda el audio del máster, borra el máster y codifica el archivo optimizado a partir de las partes.
 
@@ -44,6 +44,6 @@ python3 tools/fetch_tiles.py assets/map 10:-123.2,45.1,-120.4,46.1 11:-122.45,45
 # capas USGS en assets/map/cr/ (ver data/map/ y tools/usgs.py); luego tools/cr_routes.py
 SCORE_SEED=109 python3 edit/score.py assets/score 61.7 118.7 170.2 177.8 106.8 113.8 118.2 108.5 112.4
 python3 edit/audio.py out/mix.wav
-RENDER_CRF=19 python3 edit/render.py out/video_noaudio.txt --workers 4
+RENDER_CRF=20 python3 edit/render.py out/video_noaudio.txt --workers 4 --seg 90
 PY=python3 bash tools/terminar_cr.sh PID_RENDER Columbia_River_Highway 32305
 ```
