@@ -23,6 +23,8 @@ export type Highlight = {
   style: "red" | "white";
   behind: boolean;
   kickerItalic: boolean;
+  /** Si existe, en vez de la palabra grande se muestra el logo del cliente. */
+  logo?: { file: string; width: number; top: number; aspect: number };
   layout: { align: "left" | "center" | "right"; x: number; kickerY: number; bigY: number; size: number };
 };
 export type SubBlock = { words: { text: string; f: number }[]; start: number; end: number };

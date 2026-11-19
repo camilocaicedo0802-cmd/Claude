@@ -184,6 +184,8 @@ hl("¿O SOLO", "1", "o", "uno", end("s5b_uno"), "red", False,
 # Marca
 hl("EN", "305 MEDIA CLUB", "en", "305", F("por", start("s6_marca")), "red", False,
    dict(align="center", x=540, kickerY=230, bigY=275, size=150), k_after=start("s6_marca"))
+# Logo del cliente (última variante del .ai, horizontal) en lugar del texto, solo al nombrar la empresa
+H[-1]["logo"] = dict(file="logo/305_media_club_h.png", width=860, top=262, aspect=4101 / 1008)
 hl("TODO TU", "EQUIPO", "todo", "equipo", end("s6_marca"), "white", False,
    dict(align="center", x=540, kickerY=905, bigY=950, size=250),
    covers_to=F("de", F("equipo", start("s6_marca"))), k_after=start("s6_marca"))

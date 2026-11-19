@@ -1,5 +1,5 @@
 import React, { useCallback, useRef } from "react";
-import { AbsoluteFill, Easing, interpolate, OffthreadVideo, Sequence, staticFile, useCurrentFrame } from "remotion";
+import { AbsoluteFill, Easing, Img, interpolate, OffthreadVideo, Sequence, staticFile, useCurrentFrame } from "remotion";
 import { CUTS, EDL, Highlight as H, Segment, segmentAt, zoomAt } from "../edl";
 import { BIG_TRACK, CAP, EMBOLDEN, SF } from "../fonts";
 
@@ -180,6 +180,52 @@ const BigWord: React.FC<{ h: H; seg: Segment; start: number }> = ({ h, seg, star
   );
 };
 
+/**
+ * Logo del cliente en el momento en que se nombra la empresa. Entra como las palabras rojas
+ * (aparición seca con escala 1,10 -> 1 en 3 fotogramas), un destello de luz lo recorre una vez
+ * y sale con un fundido de 5 fotogramas.
+ */
+const LogoMark: React.FC<{ h: H; start: number }> = ({ h, start }) => {
+  const frame = useCurrentFrame();
+  const g = start + frame;
+  const L = h.logo!;
+  const since = g - h.bFrom;
+  if (since < 0) return null;
+  const w = L.width;
+  const hh = w / L.aspect;
+  const scale = interpolate(since, [0, 3], [1.1, 1], { extrapolateRight: "clamp", easing: Easing.out(Easing.cubic) });
+  const opacity = Math.min(
+    interpolate(since, [0, 1], [0.4, 1], { extrapolateRight: "clamp" }),
+    CUTS.has(h.to) ? 1 : interpolate(g, [h.to - 5, h.to], [1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }),
+  );
+  const sweep = interpolate(since, [3, 15], [-0.4, 1.4], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+  return (
+    <div
+      style={{
+        position: "absolute",
+        left: (W - w) / 2,
+        top: L.top,
+        width: w,
+        height: hh,
+        opacity,
+        scale: String(scale),
+        boxShadow: "0 18px 50px rgba(0,0,0,0.35)",
+        overflow: "hidden",
+      }}
+    >
+      <Img src={staticFile(L.file)} style={{ width: w, height: hh, display: "block" }} />
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          background: `linear-gradient(105deg, rgba(255,255,255,0) ${sweep * 100 - 12}%, rgba(255,255,255,0.35) ${sweep * 100}%, rgba(255,255,255,0) ${sweep * 100 + 12}%)`,
+          mixBlendMode: "screen",
+        }}
+      />
+    </div>
+  );
+};
+
 /** Texto pequeño (kicker) tecleado letra a letra. */
 const Kicker: React.FC<{ h: H; start: number }> = ({ h, start }) => {
   const frame = useCurrentFrame();
@@ -224,7 +270,11 @@ export const HighlightItem: React.FC<{ h: H; index: number; part: "big" | "kicke
   if (!seg) return null;
   return (
     <Sequence from={start} durationInFrames={h.to - start} name={`${part === "big" ? "Palabra" : "Kicker"} ${h.big.replace("\n", " ")}`}>
-      {part === "big" ? <BigWord h={h} seg={seg} start={start} /> : <Kicker h={h} start={start} />}
+      {part === "big" ? (
+        h.logo ? <LogoMark h={h} start={start} /> : <BigWord h={h} seg={seg} start={start} />
+      ) : (
+        <Kicker h={h} start={start} />
+      )}
     </Sequence>
   );
 };

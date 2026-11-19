@@ -24,8 +24,10 @@ TMP = f"{ROOT}/analysis/tmp_clips"
 os.makedirs(OUT, exist_ok=True)
 os.makedirs(TMP, exist_ok=True)
 
-GRADE = ("curves=all='0/0 0.17/0.0 0.5/0.42 0.9/0.88 1/0.96',eq=saturation=1.45,"
-         "colorbalance=rs=0.035:bs=-0.065:rm=0.008:bm=-0.008:rh=0.01:bh=-0.006")
+# Gradación "L1" (corrección del cliente: la anterior era demasiado fuerte, se pidió más luz).
+# Antes: curves 0.17/0.0 0.5/0.42 0.9/0.88 1/0.96, saturación 1.45.
+GRADE = ("curves=all='0/0 0.10/0.04 0.5/0.48 0.9/0.91 1/0.98',eq=saturation=1.3,"
+         "colorbalance=rs=0.03:bs=-0.05:rm=0.006:bm=-0.006:rh=0.008:bh=-0.005")
 # La voz se usa TAL CUAL sale del bruto (indicación del cliente): sin reducción de ruido,
 # ecualizador, compresor, limitador ni normalización. Solo corte + fundido de 5 ms en cada
 # borde para evitar clics. (Antes había una cadena de procesado que hacía sonar "raro" el audio.)

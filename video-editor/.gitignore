@@ -27,3 +27,5 @@ analysis/tmp_clips/
 *.webm
 *.otf
 public/clips_old/
+public/clips_prev_grade/
+public/logo/
