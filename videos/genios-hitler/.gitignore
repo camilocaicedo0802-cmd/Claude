@@ -4,3 +4,5 @@ out/
 public/musica.wav
 public/sfx/
 __pycache__/
+public/voz.wav
+public/voz-cruda.wav
