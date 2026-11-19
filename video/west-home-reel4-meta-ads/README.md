@@ -3,7 +3,7 @@
 **v5 (ajuste del cliente: "la música no va con la vibe"):**
 - **Música nueva:** Phoenix, "1901" (instrumental), de la carpeta de música del cliente. Es brillante, optimista y con
   impulso, más de anuncio de transformación. Class Act sonaba épica y orquestal, como un tráiler.
-- **Cómo se eligió:** analicé las candidatas de la carpeta con CLAP (, laion/clap-htsat-unfused),
+- **Cómo se eligió:** analicé las candidatas de la carpeta con CLAP (`tools/clap_rank.py`, laion/clap-htsat-unfused),
   comparándolas con descripciones de estilo.
   - Class Act dio 94 % "épica orquestal de tráiler".
   - "1901" dio 81 % "pop alegre y positivo", sin voz cantada.
