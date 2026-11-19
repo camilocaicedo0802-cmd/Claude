@@ -364,8 +364,8 @@ const Oceano: React.FC<P> = ({d, h, e, s}) => {
 				const v = tr(ff, d + 2, llega - 4);
 				return {s: s0 + 0.12 * tr(ff, llega, h), x: interpolate(v, [0, 1], [-(3170 - 960) * s0, 100]), y: 40};
 			}}
-			encima={f >= llega && f < llega + 4 ? <div style={{position: 'absolute', inset: 0, background: 'rgba(255,255,240,0.55)'}} /> : undefined}
-			tinte={viaje > 0.8 ? 'rgba(30,30,60,0.6)' : undefined}
+			encima={f >= llega && f < llega + 10 ? <div style={{position: 'absolute', inset: 0, background: 'rgba(255,255,240,1)', opacity: interpolate(f, [llega, llega + 1, llega + 10], [0, 0.35, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'})}} /> : undefined}
+			tinte={`rgba(30,30,60,${0.6 * tr(f, d + 2 + (llega - 4 - d - 2) * 0.7, llega - 4)})`}
 		>
 			<Skyline x={430} y={470} sube={tr(f, llega - 10, llega + 4)} />
 			<Nubarrones x={430} y={150} rayo={llega} />

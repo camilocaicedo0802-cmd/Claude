@@ -398,22 +398,31 @@ export const CasaNoche: React.FC<{luz?: number}> = ({luz = 1}) => (
 
 /** sólo las manos: la de él sostiene la pistola; la de ella llega con calma y se la quita (toma 0..1) */
 export const ManosPistola: React.FC<{toma: number}> = ({toma}) => {
-	const lleva = Math.max(0, toma - 0.55) / 0.45;
+	// él: la mano floja sobre la mesa, la pistola apoyada apuntando al suelo (nunca hacia ella).
+	// ella: baja desde arriba a la derecha, la toma con calma y se la lleva.
 	const llega = Math.min(1, toma / 0.55);
-	const ella = {x: interpolate(llega, [0, 1], [1500, 1040]) + lleva * 520, y: 560 - lleva * 40};
+	const lleva = Math.max(0, toma - 0.55) / 0.45;
+	const suave = (u: number) => u * u * (3 - 2 * u);
+	const mano = {
+		x: interpolate(suave(llega), [0, 1], [1700, 1010]) + suave(lleva) * 640,
+		y: interpolate(suave(llega), [0, 1], [-160, 560]) - suave(lleva) * 700,
+	};
+	const pistola = lleva > 0 ? {x: mano.x - 70, y: mano.y + 80, r: -62 - 15 * lleva} : {x: 900, y: 640, r: -62};
 	return (
 		<div style={{position: 'absolute', inset: 0, background: 'radial-gradient(ellipse at 50% 50%, #3a3430 0%, #1a1614 75%)'}}>
-			{/* mano de él, con la manga de la gabardina */}
-			<div style={{position: 'absolute', left: -60, top: 520, width: 760, height: 150, background: '#7a6c4a', border: `9px solid ${TINTA}`, borderRadius: 40, transform: 'rotate(4deg)'}} />
-			<div style={{position: 'absolute', left: 660, top: 520, width: 190, height: 150, background: '#f2e6d8', border: `9px solid ${TINTA}`, borderRadius: '60px 80px 80px 60px', transform: 'rotate(4deg)'}} />
-			{/* la pistola (se la lleva ella) */}
-			<svg width={320} height={200} viewBox="0 0 320 200" style={{position: 'absolute', left: 760 + lleva * 520, top: 480 - lleva * 40, overflow: 'visible', transform: `rotate(${-lleva * 8}deg)`}}>
-				<rect x={20} y={40} width={260} height={56} rx={10} fill="#2a2a30" stroke={TINTA} strokeWidth={9} />
-				<rect x={30} y={90} width={70} height={100} rx={12} fill="#3a3a42" stroke={TINTA} strokeWidth={9} />
+			{/* la mesa */}
+			<div style={{position: 'absolute', left: -40, right: -40, top: 600, bottom: -40, background: 'linear-gradient(180deg, #4a3220, #241608)', borderTop: `9px solid ${TINTA}`}} />
+			{/* mano de él, floja, con la manga de la gabardina */}
+			<div style={{position: 'absolute', left: -60, top: 690, width: 700, height: 150, background: '#7a6c4a', border: `9px solid ${TINTA}`, borderRadius: 40, transform: 'rotate(-3deg)'}} />
+			<div style={{position: 'absolute', left: 610, top: 680, width: 200, height: 150, background: '#f2e6d8', border: `9px solid ${TINTA}`, borderRadius: '60px 90px 90px 60px', transform: 'rotate(-3deg)'}} />
+			{/* la pistola: apunta hacia abajo, al suelo */}
+			<svg width={300} height={200} viewBox="0 0 300 200" style={{position: 'absolute', left: pistola.x - 150, top: pistola.y - 100, overflow: 'visible', transform: `rotate(${pistola.r}deg)`}}>
+				<rect x={20} y={40} width={240} height={52} rx={10} fill="#2a2a30" stroke={TINTA} strokeWidth={9} />
+				<rect x={176} y={86} width={66} height={96} rx={12} fill="#3a3a42" stroke={TINTA} strokeWidth={9} />
 			</svg>
-			{/* mano de ella: puño de encaje y anillo */}
-			<div style={{position: 'absolute', left: ella.x, top: ella.y, width: 900, height: 140}}>
-				<div style={{position: 'absolute', left: 150, top: 0, width: 800, height: 140, background: '#4a5a7a', border: `9px solid ${TINTA}`, borderRadius: 40}} />
+			{/* mano de ella: manga azul, puño de encaje y anillo; baja desde arriba a la derecha */}
+			<div style={{position: 'absolute', left: mano.x, top: mano.y, width: 1100, height: 140, transformOrigin: '0 50%', transform: 'rotate(-38deg)'}}>
+				<div style={{position: 'absolute', left: 150, top: 0, width: 950, height: 140, background: '#4a5a7a', border: `9px solid ${TINTA}`, borderRadius: 40}} />
 				<div style={{position: 'absolute', left: 120, top: -14, width: 70, height: 168, background: '#f4f1e8', border: `7px solid ${TINTA}`, borderRadius: 24}} />
 				<div style={{position: 'absolute', left: 0, top: 6, width: 170, height: 128, background: '#f6e2d4', border: `9px solid ${TINTA}`, borderRadius: '70px 50px 50px 70px'}} />
 				<div style={{position: 'absolute', left: 40, top: 60, width: 30, height: 30, borderRadius: '50%', border: '7px solid #e0b23a'}} />
@@ -704,7 +713,7 @@ export const Flashes: React.FC<{desde: number; n?: number}> = ({desde, n = 9}) =
 					</svg>
 				);
 			})}
-			<div style={{position: 'absolute', inset: 0, background: '#fff', opacity: Math.max(0, 0.35 - (t % 6) * 0.08) * (t < 30 ? 1 : 0)}} />
+			<div style={{position: 'absolute', inset: 0, background: '#fff', opacity: interpolate(t, [0, 2, 14], [0, 0.16, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'})}} />
 		</>
 	);
 };
