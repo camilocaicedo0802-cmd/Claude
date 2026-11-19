@@ -1,4 +1,4 @@
-"""Reel 3 mix: Félix's voice + music (tape stop, bar splices, ducking) + SFX taken only from the client's library."""
+"""Reel 4 mix: Félix's voice + music (tape stop, bar splices, ducking) + SFX taken only from the client's library."""
 import sys, os, subprocess, json, math
 import numpy as np
 import scipy.signal as sg
@@ -60,7 +60,10 @@ for path, a, b, tp in T.VOICE:
 wf.write(STEM + 'voice.wav', SR, voice)
 
 # ---------------------------------------------------------------- music
-mus = load(ROOT + 'music/class_act.mp3', ch=2)
+# v5 (client: "la música no va con la vibe"): Class Act read as epic / orchestral, like a trailer. Now Phoenix "1901"
+# (instrumental, from the client's folder): bright, optimistic, driving — a feel-good transformation-ad bed.
+# A gentle dip at 3 kHz leaves room for Peter's voice.
+mus = load(ROOT + 'music/phoenix_1901.mp3', ch=2, filt='equalizer=f=3000:t=q:w=1.0:g=-2.5')
 music = np.zeros((N, 2), np.float32)
 XF = int(0.012 * SR)
 
@@ -74,17 +77,17 @@ def place(dst_t0, dst_t1, src_t0, fin=True, fout=True):
     music[a:a + len(seg)] += seg
 
 
-# v2: "Class Act" (Reprise / ANBR, 150 BPM, from the client's folder). Its first drop (51.80 s) lands on REVEAL; one
-# bar before the logo the track jumps 22 bars ahead so its second drop (106.20 s) hits the logo pop (T.beat(64)).
-OFF_A = 51.80 - T.REVEAL
-TLOGO = T.beat(64)
-OFF_B = 106.20 - TLOGO
-assert abs(((OFF_B - OFF_A) / 1.6) - round((OFF_B - OFF_A) / 1.6)) < 0.02, (OFF_A, OFF_B)
-SPL = TLOGO - 1.6
-place(0.0, SPL + 0.012, OFF_A, fin=False)
-place(SPL - 0.012, T.DUR, SPL - 0.012 + OFF_B)
+# 1901: 143.6 BPM (beat 0.4178 s, bar 1.671 s). The 8-bar synth intro (first downbeat 0.27 s) has a short bass break
+# and the drums come in at 13.64 s — that entry lands on REVEAL. The video needs ~1.9 s more intro than the song has,
+# so the first bars come from 4 bars later in the same vamp and the track jumps back on a downbeat (same place in the
+# chord cycle). The logo pops on beat 3 of the bar (T.beat(64) = REVEAL + 11.5 bars); the bed fades out with the video.
+K, BAR = 13.64, 4 * 0.4178
+OFF_A = K - T.REVEAL
+T1 = -OFF_A + (K - 8 * BAR) + BAR                     # video time of the intro's bar-1 downbeat
+place(0.0, T1 + 0.012, OFF_A + 4 * BAR, fin=False)
+place(T1 - 0.012, T.DUR, T1 - 0.012 + OFF_A)
 music[:int(0.02 * SR)] *= np.linspace(0, 1, int(0.02 * SR))[:, None]
-fo = int(0.6 * SR); music[-fo:] *= np.linspace(1, 0, fo)[:, None] ** 1.3
+fo = int(1.5 * SR); music[-fo:] *= np.linspace(1, 0, fo)[:, None] ** 1.3
 ml = meter.integrated_loudness(music.astype(np.float64))
 music *= db(-22.0 - ml)
 # ducking under the voice (look-ahead 40 ms, attack 60 ms, release 300 ms)

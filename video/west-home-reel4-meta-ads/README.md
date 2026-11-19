@@ -1,5 +1,24 @@
 # West Home Improvement · Reel 4 — Meta Ads: del jacuzzi a una ducha enorme (South Tulsa)
 
+**v5 (ajuste del cliente: "la música no va con la vibe"):**
+- **Música nueva:** Phoenix, "1901" (instrumental), de la carpeta de música del cliente. Es brillante, optimista y con
+  impulso, más de anuncio de transformación. Class Act sonaba épica y orquestal, como un tráiler.
+- **Cómo se eligió:** analicé las candidatas de la carpeta con CLAP (, laion/clap-htsat-unfused),
+  comparándolas con descripciones de estilo.
+  - Class Act dio 94 % "épica orquestal de tráiler".
+  - "1901" dio 81 % "pop alegre y positivo", sin voz cantada.
+- **Sincronía:**
+  - La intro de sintetizador va bajo la parte de los problemas. Antes de la batería hay un pequeño corte del bajo, y la
+    batería entra (13,64 s de la pista) justo en el reveal de la ducha (15,57 s).
+  - Como el video necesita ~1,9 s más de intro, los primeros compases salen de 4 compases más adelante del mismo vamp y la
+    pista vuelve atrás en un tiempo fuerte, en el mismo punto del ciclo de acordes.
+  - El logo cae en el tiempo 3 del compás.
+  - La música sigue durante el cierre y se desvanece con el video, sin silencio.
+- **Mezcla:** EQ suave (−2,5 dB a 3 kHz) para dejar espacio a la voz, ducking de −8,5 dB y máster a −14,3 LUFS. La imagen
+  es la misma de la v4.
+- **Ojo con la licencia:** "1901" es una canción comercial. En anuncios pagados de Meta puede silenciarse o rechazarse si no
+  tiene licencia.
+
 **v4 (ajustes del cliente):**
 - **11,0–12,6 s:** se quitó la foto del baño viejo y desordenado. En "We suggested to turn the jacuzzi tub area" ahora se
   ve a Peter hablando a cámara, con su recorte BiRefNet, y el whip sigue igual.
