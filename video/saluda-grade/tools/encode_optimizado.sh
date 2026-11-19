@@ -1,5 +1,7 @@
 #!/bin/bash
 # Archivo único optimizado: 1080p H.264 High, 2 pasadas a 2400 kb/s (≈350 MB para 19 min), se abre en cualquier equipo.
+# Las dos pasadas con -fps_mode passthrough: si no, la 2.ª (mp4, cfr) puede tener más fotogramas que la 1.ª y x264
+# se cuelga con «Incomplete MB-tree stats file».
 # Por trozos de 90 s y reanudable (si se reinicia el contenedor, se vuelve a lanzar y sigue donde iba).
 # usage: bash encode_optimizado.sh MAESTRO.mp4 SALIDA.mp4 CARPETA_TRABAJO
 set -e
@@ -10,8 +12,8 @@ if [ ! -f src/.done ]; then
   touch src/.done
 fi
 enc_one() {
-  s=$1; b=$(basename $s .mp4); [ -f enc/$b.mp4 ] && return 0
-  X="-c:v libx264 -preset slow -b:v 2400k -maxrate 7M -bufsize 14M -pix_fmt yuv420p -threads 2"
+  set -e; s=$1; b=$(basename $s .mp4); [ -f enc/$b.mp4 ] && return 0
+  X="-c:v libx264 -preset slow -b:v 2400k -maxrate 7M -bufsize 14M -pix_fmt yuv420p -threads 2 -fps_mode passthrough"
   ffmpeg -v error -y -i $s $X -pass 1 -passlogfile p_$b -an -f null -
   ffmpeg -v error -y -i $s $X -pass 2 -passlogfile p_$b -an enc/$b.tmp.mp4
   mv enc/$b.tmp.mp4 enc/$b.mp4; rm -f p_$b*; echo "trozo $b ok"
