@@ -112,7 +112,7 @@ const Comoda: React.FC<{frio?: number}> = ({frio = 0}) => (
 	</div>
 );
 
-const CuartoHotel: React.FC<{abre: number; chico?: boolean; frio?: number; encendida?: number; etiqueta?: number}> = ({abre, chico = true, frio = 0, encendida = 1, etiqueta}) => {
+export const CuartoHotel: React.FC<{abre: number; chico?: boolean; frio?: number; encendida?: number; etiqueta?: number}> = ({abre, chico = true, frio = 0, encendida = 1, etiqueta}) => {
 	const f = useCurrentFrame();
 	const pantalla = {w: TELE.ancho * 0.956, h: TELE.ancho * 0.6 * 0.926};
 	return (
