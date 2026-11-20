@@ -51,7 +51,7 @@ export const volumenFx = (archivo: string, base: number, fGlobal: number) => {
 };
 
 /** Música: ya viene armada por capítulos (con sus silencios); aquí solo el nivel bajo la voz y un leve ducking. */
-export const MUSICA_BASE = 0.12;
+export const MUSICA_BASE = 0.15;
 export const volumenMusica = (f: number, total: number, base = MUSICA_BASE) => {
 	const salida = Math.min(1, Math.max(0, (total - f) / 12));
 	return base * salida * (1 - 0.2 * vozEn(f));
