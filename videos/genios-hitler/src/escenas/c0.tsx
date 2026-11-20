@@ -232,7 +232,7 @@ const P6: React.FC<P> = ({d, h, e, s}) => {
 
 /* ---------- los señores que se reían de él ---------- */
 
-const Copa: React.FC<{rot?: number}> = ({rot = 0}) => (
+export const Copa: React.FC<{rot?: number}> = ({rot = 0}) => (
 	<g transform={`rotate(${rot} 0 36)`}>
 		<path d="M -30 -60 L 30 -60 L 14 -6 L -14 -6 Z" fill="#f6e7a8" stroke={TINTA} strokeWidth={5} />
 		<line x1={0} y1={-6} x2={0} y2={40} stroke={TINTA} strokeWidth={6} />
@@ -258,7 +258,7 @@ export const EscSalon: React.FC = () => (
 	</div>
 );
 
-const Senores: React.FC<{listos?: boolean}> = ({listos = false}) => {
+export const Senores: React.FC<{listos?: boolean}> = ({listos = false}) => {
 	const f = useCurrentFrame();
 	const risa = Math.abs(Math.sin(f / 4));
 	const copa = (lado: -1 | 1) => (lado < 0 ? {...brazo(-1, alcanzar(-1, 20, 300 - risa * 10)), mi: 'agarra' as const} : {...brazo(1, alcanzar(1, 380, 300 - risa * 10)), md: 'agarra' as const});
