@@ -1,0 +1,1797 @@
+{
+ "voz": "Gemini 2.5 Flash TTS · Charon",
+ "duracion": 61.787,
+ "frases": [
+  {
+   "i": 0,
+   "texto": "Le regaló el poder a Hitler... y prometió que en dos meses lo tendría chillando en un rincón.",
+   "seccion": 0,
+   "inicio": 0.03,
+   "fin": 4.812
+  },
+  {
+   "i": 1,
+   "texto": "Mira, Hitler nunca había ganado una mayoría.",
+   "seccion": 0,
+   "inicio": 5.012,
+   "fin": 6.916
+  },
+  {
+   "i": 2,
+   "texto": "Pero un aristócrata, Franz von Pápen, quería vengarse de un rival... y necesitaba sus votos.",
+   "seccion": 0,
+   "inicio": 7.116,
+   "fin": 11.727
+  },
+  {
+   "i": 3,
+   "texto": "El presidente se burlaba de Hitler:",
+   "seccion": 0,
+   "inicio": 11.927,
+   "fin": 13.738
+  },
+  {
+   "i": 4,
+   "texto": "Como mucho, lo hago cartero.",
+   "seccion": 0,
+   "inicio": 13.938,
+   "fin": 16.833
+  },
+  {
+   "i": 5,
+   "texto": "Y Pápen lo tranquiliza:",
+   "seccion": 0,
+   "inicio": 17.033,
+   "fin": 18.162
+  },
+  {
+   "i": 6,
+   "texto": "Solo tres ministros nazis de once. Lo tenemos rodeado.",
+   "seccion": 0,
+   "inicio": 18.362,
+   "fin": 23.572
+  },
+  {
+   "i": 7,
+   "texto": "Enero de 1933: Hitler es canciller.",
+   "seccion": 0,
+   "inicio": 23.772,
+   "fin": 26.814
+  },
+  {
+   "i": 8,
+   "texto": "Sin mayoría. Sin ganar.",
+   "seccion": 0,
+   "inicio": 27.014,
+   "fin": 28.318
+  },
+  {
+   "i": 9,
+   "texto": "A las cuatro semanas, se incendia el Parlamento.",
+   "seccion": 0,
+   "inicio": 28.518,
+   "fin": 30.819
+  },
+  {
+   "i": 10,
+   "texto": "A las cinco, elecciones con miedo en las calles... y ni así saca mayoría.",
+   "seccion": 0,
+   "inicio": 31.019,
+   "fin": 34.511
+  },
+  {
+   "i": 11,
+   "texto": "A los 52 días... el Parlamento vota su propia desaparición.",
+   "seccion": 0,
+   "inicio": 34.711,
+   "fin": 38.251
+  },
+  {
+   "i": 12,
+   "texto": "¿Y los hombres de Pápen, los que lo iban a controlar?",
+   "seccion": 0,
+   "inicio": 38.451,
+   "fin": 41.144
+  },
+  {
+   "i": 13,
+   "texto": "Votan a favor.",
+   "seccion": 0,
+   "inicio": 41.644,
+   "fin": 42.469
+  },
+  {
+   "i": 14,
+   "texto": "En el rincón no terminó Hitler... terminó el Parlamento entero.",
+   "seccion": 0,
+   "inicio": 42.669,
+   "fin": 45.381
+  },
+  {
+   "i": 15,
+   "texto": "Mira, creían que lo tenían rodeado.",
+   "seccion": 0,
+   "inicio": 45.581,
+   "fin": 47.033
+  },
+  {
+   "i": 16,
+   "texto": "Pero uno de esos tres ministros controlaba la policía del estado más grande de Alemania.",
+   "seccion": 0,
+   "inicio": 47.233,
+   "fin": 51.572
+  },
+  {
+   "i": 17,
+   "texto": "Cómo llegó a esa silla es todavía más absurdo: está en el video de aquí abajo.",
+   "seccion": 0,
+   "inicio": 51.772,
+   "fin": 55.104
+  },
+  {
+   "i": 18,
+   "texto": "Pero el final ya lo sabes: lo habían contratado... y el contratado se quedó con la empresa.",
+   "seccion": 0,
+   "inicio": 55.704,
+   "fin": 61.217
+  }
+ ],
+ "palabras": [
+  {
+   "texto": "le",
+   "inicio": 0.03,
+   "duracion": 0.158,
+   "visible": "Le",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": 0
+  },
+  {
+   "texto": "regalo",
+   "inicio": 0.188,
+   "duracion": 0.494,
+   "visible": "regaló",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": 0
+  },
+  {
+   "texto": "el",
+   "inicio": 0.682,
+   "duracion": 0.099,
+   "visible": "el",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": 0
+  },
+  {
+   "texto": "poder",
+   "inicio": 0.781,
+   "duracion": 0.237,
+   "visible": "poder",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": 0
+  },
+  {
+   "texto": "a",
+   "inicio": 1.018,
+   "duracion": 0.138,
+   "visible": "a",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": 0
+  },
+  {
+   "texto": "hitler",
+   "inicio": 1.156,
+   "duracion": 0.257,
+   "visible": "Hitler...",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": 0
+  },
+  {
+   "texto": "y",
+   "inicio": 1.413,
+   "duracion": 0.336,
+   "visible": "y",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": 0
+  },
+  {
+   "texto": "prometio",
+   "inicio": 1.749,
+   "duracion": 0.474,
+   "visible": "prometió",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": 0
+  },
+  {
+   "texto": "que",
+   "inicio": 2.223,
+   "duracion": 0.119,
+   "visible": "que",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": 0
+  },
+  {
+   "texto": "en",
+   "inicio": 2.342,
+   "duracion": 0.158,
+   "visible": "en",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": 0
+  },
+  {
+   "texto": "dos",
+   "inicio": 2.5,
+   "duracion": 0.257,
+   "visible": "dos",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": 0
+  },
+  {
+   "texto": "meses",
+   "inicio": 2.757,
+   "duracion": 0.415,
+   "visible": "meses",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": 0
+  },
+  {
+   "texto": "lo",
+   "inicio": 3.172,
+   "duracion": 0.316,
+   "visible": "lo",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": 0
+  },
+  {
+   "texto": "tendria",
+   "inicio": 3.488,
+   "duracion": 0.316,
+   "visible": "tendría",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": 0
+  },
+  {
+   "texto": "chillando",
+   "inicio": 3.804,
+   "duracion": 0.534,
+   "visible": "chillando",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": 0
+  },
+  {
+   "texto": "en",
+   "inicio": 4.338,
+   "duracion": 0.099,
+   "visible": "en",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": 0
+  },
+  {
+   "texto": "un",
+   "inicio": 4.437,
+   "duracion": 0.079,
+   "visible": "un",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": 0
+  },
+  {
+   "texto": "rincon",
+   "inicio": 4.516,
+   "duracion": 0.296,
+   "visible": "rincón.",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": 0
+  },
+  {
+   "texto": "mira",
+   "inicio": 5.012,
+   "duracion": 0.084,
+   "visible": "Mira,",
+   "enfasis": false,
+   "frase": 1,
+   "seccion": 0
+  },
+  {
+   "texto": "hitler",
+   "inicio": 5.368,
+   "duracion": 0.105,
+   "visible": "Hitler",
+   "enfasis": false,
+   "frase": 1,
+   "seccion": 0
+  },
+  {
+   "texto": "nunca",
+   "inicio": 5.472,
+   "duracion": 0.398,
+   "visible": "nunca",
+   "enfasis": false,
+   "frase": 1,
+   "seccion": 0
+  },
+  {
+   "texto": "habia",
+   "inicio": 5.87,
+   "duracion": 0.335,
+   "visible": "había",
+   "enfasis": false,
+   "frase": 1,
+   "seccion": 0
+  },
+  {
+   "texto": "ganado",
+   "inicio": 6.205,
+   "duracion": 0.272,
+   "visible": "ganado",
+   "enfasis": false,
+   "frase": 1,
+   "seccion": 0
+  },
+  {
+   "texto": "una",
+   "inicio": 6.477,
+   "duracion": 0.126,
+   "visible": "una",
+   "enfasis": false,
+   "frase": 1,
+   "seccion": 0
+  },
+  {
+   "texto": "mayoria",
+   "inicio": 6.602,
+   "duracion": 0.314,
+   "visible": "mayoría.",
+   "enfasis": false,
+   "frase": 1,
+   "seccion": 0
+  },
+  {
+   "texto": "pero",
+   "inicio": 7.116,
+   "duracion": 0.222,
+   "visible": "Pero",
+   "enfasis": false,
+   "frase": 2,
+   "seccion": 0
+  },
+  {
+   "texto": "un",
+   "inicio": 7.338,
+   "duracion": 0.182,
+   "visible": "un",
+   "enfasis": false,
+   "frase": 2,
+   "seccion": 0
+  },
+  {
+   "texto": "aristocrata",
+   "inicio": 7.52,
+   "duracion": 0.607,
+   "visible": "aristócrata,",
+   "enfasis": false,
+   "frase": 2,
+   "seccion": 0
+  },
+  {
+   "texto": "franz",
+   "inicio": 8.329,
+   "duracion": 0.162,
+   "visible": "Franz",
+   "enfasis": false,
+   "frase": 2,
+   "seccion": 0
+  },
+  {
+   "texto": "von",
+   "inicio": 8.491,
+   "duracion": 0.182,
+   "visible": "von",
+   "enfasis": false,
+   "frase": 2,
+   "seccion": 0
+  },
+  {
+   "texto": "papen",
+   "inicio": 8.673,
+   "duracion": 0.324,
+   "visible": "Papen,",
+   "enfasis": true,
+   "frase": 2,
+   "seccion": 0
+  },
+  {
+   "texto": "queria",
+   "inicio": 9.138,
+   "duracion": 0.182,
+   "visible": "quería",
+   "enfasis": false,
+   "frase": 2,
+   "seccion": 0
+  },
+  {
+   "texto": "vengarse",
+   "inicio": 9.32,
+   "duracion": 0.526,
+   "visible": "vengarse",
+   "enfasis": false,
+   "frase": 2,
+   "seccion": 0
+  },
+  {
+   "texto": "de",
+   "inicio": 9.846,
+   "duracion": 0.162,
+   "visible": "de",
+   "enfasis": false,
+   "frase": 2,
+   "seccion": 0
+  },
+  {
+   "texto": "un",
+   "inicio": 10.008,
+   "duracion": 0.081,
+   "visible": "un",
+   "enfasis": false,
+   "frase": 2,
+   "seccion": 0
+  },
+  {
+   "texto": "rival",
+   "inicio": 10.089,
+   "duracion": 0.182,
+   "visible": "rival...",
+   "enfasis": false,
+   "frase": 2,
+   "seccion": 0
+  },
+  {
+   "texto": "y",
+   "inicio": 10.271,
+   "duracion": 0.384,
+   "visible": "y",
+   "enfasis": false,
+   "frase": 2,
+   "seccion": 0
+  },
+  {
+   "texto": "necesitaba",
+   "inicio": 10.655,
+   "duracion": 0.566,
+   "visible": "necesitaba",
+   "enfasis": false,
+   "frase": 2,
+   "seccion": 0
+  },
+  {
+   "texto": "sus",
+   "inicio": 11.221,
+   "duracion": 0.182,
+   "visible": "sus",
+   "enfasis": false,
+   "frase": 2,
+   "seccion": 0
+  },
+  {
+   "texto": "votos",
+   "inicio": 11.403,
+   "duracion": 0.324,
+   "visible": "votos.",
+   "enfasis": false,
+   "frase": 2,
+   "seccion": 0
+  },
+  {
+   "texto": "el",
+   "inicio": 11.927,
+   "duracion": 0.155,
+   "visible": "El",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": 0
+  },
+  {
+   "texto": "presidente",
+   "inicio": 12.082,
+   "duracion": 0.353,
+   "visible": "presidente",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": 0
+  },
+  {
+   "texto": "se",
+   "inicio": 12.435,
+   "duracion": 0.309,
+   "visible": "se",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": 0
+  },
+  {
+   "texto": "burlaba",
+   "inicio": 12.744,
+   "duracion": 0.464,
+   "visible": "burlaba",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": 0
+  },
+  {
+   "texto": "de",
+   "inicio": 13.208,
+   "duracion": 0.177,
+   "visible": "de",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": 0
+  },
+  {
+   "texto": "hitler",
+   "inicio": 13.385,
+   "duracion": 0.353,
+   "visible": "Hitler:",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": 0
+  },
+  {
+   "texto": "como",
+   "inicio": 13.938,
+   "duracion": 0.333,
+   "visible": "Como",
+   "enfasis": false,
+   "frase": 4,
+   "seccion": 0
+  },
+  {
+   "texto": "mucho",
+   "inicio": 14.271,
+   "duracion": 0.704,
+   "visible": "mucho,",
+   "enfasis": false,
+   "frase": 4,
+   "seccion": 0
+  },
+  {
+   "texto": "lo",
+   "inicio": 14.975,
+   "duracion": 0.411,
+   "visible": "lo",
+   "enfasis": false,
+   "frase": 4,
+   "seccion": 0
+  },
+  {
+   "texto": "hago",
+   "inicio": 15.386,
+   "duracion": 0.333,
+   "visible": "hago",
+   "enfasis": false,
+   "frase": 4,
+   "seccion": 0
+  },
+  {
+   "texto": "cartero",
+   "inicio": 15.718,
+   "duracion": 1.115,
+   "visible": "cartero.",
+   "enfasis": false,
+   "frase": 4,
+   "seccion": 0
+  },
+  {
+   "texto": "y",
+   "inicio": 17.033,
+   "duracion": 0.141,
+   "visible": "Y",
+   "enfasis": false,
+   "frase": 5,
+   "seccion": 0
+  },
+  {
+   "texto": "papen",
+   "inicio": 17.174,
+   "duracion": 0.323,
+   "visible": "Papen",
+   "enfasis": true,
+   "frase": 5,
+   "seccion": 0
+  },
+  {
+   "texto": "lo",
+   "inicio": 17.497,
+   "duracion": 0.141,
+   "visible": "lo",
+   "enfasis": false,
+   "frase": 5,
+   "seccion": 0
+  },
+  {
+   "texto": "tranquiliza",
+   "inicio": 17.638,
+   "duracion": 0.524,
+   "visible": "tranquiliza:",
+   "enfasis": false,
+   "frase": 5,
+   "seccion": 0
+  },
+  {
+   "texto": "solo",
+   "inicio": 18.362,
+   "duracion": 0.345,
+   "visible": "Solo",
+   "enfasis": false,
+   "frase": 6,
+   "seccion": 0
+  },
+  {
+   "texto": "tres",
+   "inicio": 18.707,
+   "duracion": 0.466,
+   "visible": "tres",
+   "enfasis": false,
+   "frase": 6,
+   "seccion": 0
+  },
+  {
+   "texto": "ministros",
+   "inicio": 19.173,
+   "duracion": 0.811,
+   "visible": "ministros",
+   "enfasis": false,
+   "frase": 6,
+   "seccion": 0
+  },
+  {
+   "texto": "nazis",
+   "inicio": 19.984,
+   "duracion": 0.73,
+   "visible": "nazis",
+   "enfasis": false,
+   "frase": 6,
+   "seccion": 0
+  },
+  {
+   "texto": "de",
+   "inicio": 20.714,
+   "duracion": 0.264,
+   "visible": "de",
+   "enfasis": false,
+   "frase": 6,
+   "seccion": 0
+  },
+  {
+   "texto": "once",
+   "inicio": 20.977,
+   "duracion": 0.385,
+   "visible": "once.",
+   "enfasis": false,
+   "frase": 6,
+   "seccion": 0
+  },
+  {
+   "texto": "lo",
+   "inicio": 21.707,
+   "duracion": 0.568,
+   "visible": "Lo",
+   "enfasis": false,
+   "frase": 6,
+   "seccion": 0
+  },
+  {
+   "texto": "tenemos",
+   "inicio": 22.275,
+   "duracion": 0.345,
+   "visible": "tenemos",
+   "enfasis": false,
+   "frase": 6,
+   "seccion": 0
+  },
+  {
+   "texto": "rodeado",
+   "inicio": 22.619,
+   "duracion": 0.953,
+   "visible": "rodeado.",
+   "enfasis": false,
+   "frase": 6,
+   "seccion": 0
+  },
+  {
+   "texto": "enero",
+   "inicio": 23.772,
+   "duracion": 0.538,
+   "visible": "Enero",
+   "enfasis": false,
+   "frase": 7,
+   "seccion": 0
+  },
+  {
+   "texto": "de",
+   "inicio": 24.31,
+   "duracion": 0.13,
+   "visible": "de",
+   "enfasis": false,
+   "frase": 7,
+   "seccion": 0
+  },
+  {
+   "texto": "1933",
+   "inicio": 24.44,
+   "duracion": 0.742,
+   "visible": "1933:",
+   "enfasis": false,
+   "frase": 7,
+   "seccion": 0
+  },
+  {
+   "texto": "hitler",
+   "inicio": 25.757,
+   "duracion": 0.26,
+   "visible": "Hitler",
+   "enfasis": false,
+   "frase": 7,
+   "seccion": 0
+  },
+  {
+   "texto": "es",
+   "inicio": 26.016,
+   "duracion": 0.371,
+   "visible": "es",
+   "enfasis": false,
+   "frase": 7,
+   "seccion": 0
+  },
+  {
+   "texto": "canciller",
+   "inicio": 26.387,
+   "duracion": 0.427,
+   "visible": "canciller.",
+   "enfasis": false,
+   "frase": 7,
+   "seccion": 0
+  },
+  {
+   "texto": "sin",
+   "inicio": 27.014,
+   "duracion": 0.23,
+   "visible": "SIN",
+   "enfasis": true,
+   "frase": 8,
+   "seccion": 0
+  },
+  {
+   "texto": "mayoria",
+   "inicio": 27.244,
+   "duracion": 0.307,
+   "visible": "MAYORÍA.",
+   "enfasis": true,
+   "frase": 8,
+   "seccion": 0
+  },
+  {
+   "texto": "sin",
+   "inicio": 27.915,
+   "duracion": 0.077,
+   "visible": "SIN",
+   "enfasis": true,
+   "frase": 8,
+   "seccion": 0
+  },
+  {
+   "texto": "ganar",
+   "inicio": 27.992,
+   "duracion": 0.326,
+   "visible": "GANAR.",
+   "enfasis": true,
+   "frase": 8,
+   "seccion": 0
+  },
+  {
+   "texto": "a",
+   "inicio": 28.518,
+   "duracion": 0.175,
+   "visible": "A",
+   "enfasis": false,
+   "frase": 9,
+   "seccion": 0
+  },
+  {
+   "texto": "las",
+   "inicio": 28.693,
+   "duracion": 0.153,
+   "visible": "las",
+   "enfasis": false,
+   "frase": 9,
+   "seccion": 0
+  },
+  {
+   "texto": "cuatro",
+   "inicio": 28.847,
+   "duracion": 0.219,
+   "visible": "cuatro",
+   "enfasis": false,
+   "frase": 9,
+   "seccion": 0
+  },
+  {
+   "texto": "semanas",
+   "inicio": 29.066,
+   "duracion": 0.416,
+   "visible": "semanas,",
+   "enfasis": false,
+   "frase": 9,
+   "seccion": 0
+  },
+  {
+   "texto": "se",
+   "inicio": 29.482,
+   "duracion": 0.394,
+   "visible": "se",
+   "enfasis": false,
+   "frase": 9,
+   "seccion": 0
+  },
+  {
+   "texto": "incendia",
+   "inicio": 29.877,
+   "duracion": 0.416,
+   "visible": "incendia",
+   "enfasis": false,
+   "frase": 9,
+   "seccion": 0
+  },
+  {
+   "texto": "el",
+   "inicio": 30.293,
+   "duracion": 0.088,
+   "visible": "el",
+   "enfasis": false,
+   "frase": 9,
+   "seccion": 0
+  },
+  {
+   "texto": "parlamento",
+   "inicio": 30.381,
+   "duracion": 0.438,
+   "visible": "Parlamento.",
+   "enfasis": false,
+   "frase": 9,
+   "seccion": 0
+  },
+  {
+   "texto": "a",
+   "inicio": 31.019,
+   "duracion": 0.217,
+   "visible": "A",
+   "enfasis": false,
+   "frase": 10,
+   "seccion": 0
+  },
+  {
+   "texto": "las",
+   "inicio": 31.236,
+   "duracion": 0.152,
+   "visible": "las",
+   "enfasis": false,
+   "frase": 10,
+   "seccion": 0
+  },
+  {
+   "texto": "cinco",
+   "inicio": 31.388,
+   "duracion": 0.239,
+   "visible": "cinco,",
+   "enfasis": false,
+   "frase": 10,
+   "seccion": 0
+  },
+  {
+   "texto": "elecciones",
+   "inicio": 31.626,
+   "duracion": 0.521,
+   "visible": "elecciones",
+   "enfasis": false,
+   "frase": 10,
+   "seccion": 0
+  },
+  {
+   "texto": "con",
+   "inicio": 32.147,
+   "duracion": 0.304,
+   "visible": "con",
+   "enfasis": false,
+   "frase": 10,
+   "seccion": 0
+  },
+  {
+   "texto": "miedo",
+   "inicio": 32.451,
+   "duracion": 0.282,
+   "visible": "miedo",
+   "enfasis": false,
+   "frase": 10,
+   "seccion": 0
+  },
+  {
+   "texto": "en",
+   "inicio": 32.732,
+   "duracion": 0.152,
+   "visible": "en",
+   "enfasis": false,
+   "frase": 10,
+   "seccion": 0
+  },
+  {
+   "texto": "las",
+   "inicio": 32.884,
+   "duracion": 0.13,
+   "visible": "las",
+   "enfasis": false,
+   "frase": 10,
+   "seccion": 0
+  },
+  {
+   "texto": "calles",
+   "inicio": 33.014,
+   "duracion": 0.39,
+   "visible": "calles...",
+   "enfasis": false,
+   "frase": 10,
+   "seccion": 0
+  },
+  {
+   "texto": "y",
+   "inicio": 33.513,
+   "duracion": 0.108,
+   "visible": "y",
+   "enfasis": false,
+   "frase": 10,
+   "seccion": 0
+  },
+  {
+   "texto": "ni",
+   "inicio": 33.622,
+   "duracion": 0.13,
+   "visible": "ni",
+   "enfasis": false,
+   "frase": 10,
+   "seccion": 0
+  },
+  {
+   "texto": "asi",
+   "inicio": 33.752,
+   "duracion": 0.195,
+   "visible": "así",
+   "enfasis": false,
+   "frase": 10,
+   "seccion": 0
+  },
+  {
+   "texto": "saca",
+   "inicio": 33.947,
+   "duracion": 0.304,
+   "visible": "saca",
+   "enfasis": false,
+   "frase": 10,
+   "seccion": 0
+  },
+  {
+   "texto": "mayoria",
+   "inicio": 34.251,
+   "duracion": 0.26,
+   "visible": "mayoría.",
+   "enfasis": false,
+   "frase": 10,
+   "seccion": 0
+  },
+  {
+   "texto": "a",
+   "inicio": 34.711,
+   "duracion": 0.19,
+   "visible": "A",
+   "enfasis": false,
+   "frase": 11,
+   "seccion": 0
+  },
+  {
+   "texto": "los",
+   "inicio": 34.901,
+   "duracion": 0.126,
+   "visible": "los",
+   "enfasis": false,
+   "frase": 11,
+   "seccion": 0
+  },
+  {
+   "texto": "52",
+   "inicio": 35.722,
+   "duracion": 0.071,
+   "visible": "52",
+   "enfasis": false,
+   "frase": 11,
+   "seccion": 0
+  },
+  {
+   "texto": "dias",
+   "inicio": 35.793,
+   "duracion": 0.14,
+   "visible": "días...",
+   "enfasis": false,
+   "frase": 11,
+   "seccion": 0
+  },
+  {
+   "texto": "el",
+   "inicio": 35.933,
+   "duracion": 0.316,
+   "visible": "el",
+   "enfasis": false,
+   "frase": 11,
+   "seccion": 0
+  },
+  {
+   "texto": "parlamento",
+   "inicio": 36.249,
+   "duracion": 0.443,
+   "visible": "Parlamento",
+   "enfasis": false,
+   "frase": 11,
+   "seccion": 0
+  },
+  {
+   "texto": "vota",
+   "inicio": 36.692,
+   "duracion": 0.464,
+   "visible": "vota",
+   "enfasis": false,
+   "frase": 11,
+   "seccion": 0
+  },
+  {
+   "texto": "su",
+   "inicio": 37.155,
+   "duracion": 0.169,
+   "visible": "su",
+   "enfasis": false,
+   "frase": 11,
+   "seccion": 0
+  },
+  {
+   "texto": "propia",
+   "inicio": 37.324,
+   "duracion": 0.274,
+   "visible": "propia",
+   "enfasis": false,
+   "frase": 11,
+   "seccion": 0
+  },
+  {
+   "texto": "desaparicion",
+   "inicio": 37.598,
+   "duracion": 0.653,
+   "visible": "desaparición.",
+   "enfasis": false,
+   "frase": 11,
+   "seccion": 0
+  },
+  {
+   "texto": "y",
+   "inicio": 38.451,
+   "duracion": 0.124,
+   "visible": "¿Y",
+   "enfasis": false,
+   "frase": 12,
+   "seccion": 0
+  },
+  {
+   "texto": "los",
+   "inicio": 38.575,
+   "duracion": 0.166,
+   "visible": "los",
+   "enfasis": false,
+   "frase": 12,
+   "seccion": 0
+  },
+  {
+   "texto": "hombres",
+   "inicio": 38.741,
+   "duracion": 0.269,
+   "visible": "hombres",
+   "enfasis": false,
+   "frase": 12,
+   "seccion": 0
+  },
+  {
+   "texto": "de",
+   "inicio": 39.01,
+   "duracion": 0.249,
+   "visible": "de",
+   "enfasis": false,
+   "frase": 12,
+   "seccion": 0
+  },
+  {
+   "texto": "papen",
+   "inicio": 39.259,
+   "duracion": 0.331,
+   "visible": "Papen,",
+   "enfasis": true,
+   "frase": 12,
+   "seccion": 0
+  },
+  {
+   "texto": "los",
+   "inicio": 39.59,
+   "duracion": 0.394,
+   "visible": "los",
+   "enfasis": false,
+   "frase": 12,
+   "seccion": 0
+  },
+  {
+   "texto": "que",
+   "inicio": 39.984,
+   "duracion": 0.186,
+   "visible": "que",
+   "enfasis": false,
+   "frase": 12,
+   "seccion": 0
+  },
+  {
+   "texto": "lo",
+   "inicio": 40.17,
+   "duracion": 0.166,
+   "visible": "lo",
+   "enfasis": false,
+   "frase": 12,
+   "seccion": 0
+  },
+  {
+   "texto": "iban",
+   "inicio": 40.336,
+   "duracion": 0.207,
+   "visible": "iban",
+   "enfasis": false,
+   "frase": 12,
+   "seccion": 0
+  },
+  {
+   "texto": "a",
+   "inicio": 40.543,
+   "duracion": 0.145,
+   "visible": "a",
+   "enfasis": false,
+   "frase": 12,
+   "seccion": 0
+  },
+  {
+   "texto": "controlar",
+   "inicio": 40.688,
+   "duracion": 0.456,
+   "visible": "controlar?",
+   "enfasis": false,
+   "frase": 12,
+   "seccion": 0
+  },
+  {
+   "texto": "votan",
+   "inicio": 41.644,
+   "duracion": 0.508,
+   "visible": "VOTAN",
+   "enfasis": true,
+   "frase": 13,
+   "seccion": 0
+  },
+  {
+   "texto": "a",
+   "inicio": 42.152,
+   "duracion": 0.085,
+   "visible": "A",
+   "enfasis": true,
+   "frase": 13,
+   "seccion": 0
+  },
+  {
+   "texto": "favor",
+   "inicio": 42.236,
+   "duracion": 0.233,
+   "visible": "FAVOR.",
+   "enfasis": true,
+   "frase": 13,
+   "seccion": 0
+  },
+  {
+   "texto": "en",
+   "inicio": 42.669,
+   "duracion": 0.142,
+   "visible": "En",
+   "enfasis": false,
+   "frase": 14,
+   "seccion": 0
+  },
+  {
+   "texto": "el",
+   "inicio": 42.811,
+   "duracion": 0.101,
+   "visible": "el",
+   "enfasis": false,
+   "frase": 14,
+   "seccion": 0
+  },
+  {
+   "texto": "rincon",
+   "inicio": 42.912,
+   "duracion": 0.324,
+   "visible": "rincón",
+   "enfasis": false,
+   "frase": 14,
+   "seccion": 0
+  },
+  {
+   "texto": "no",
+   "inicio": 43.236,
+   "duracion": 0.162,
+   "visible": "no",
+   "enfasis": false,
+   "frase": 14,
+   "seccion": 0
+  },
+  {
+   "texto": "termino",
+   "inicio": 43.398,
+   "duracion": 0.324,
+   "visible": "terminó",
+   "enfasis": false,
+   "frase": 14,
+   "seccion": 0
+  },
+  {
+   "texto": "hitler",
+   "inicio": 43.721,
+   "duracion": 0.263,
+   "visible": "Hitler...",
+   "enfasis": false,
+   "frase": 14,
+   "seccion": 0
+  },
+  {
+   "texto": "termino",
+   "inicio": 44.146,
+   "duracion": 0.324,
+   "visible": "terminó",
+   "enfasis": false,
+   "frase": 14,
+   "seccion": 0
+  },
+  {
+   "texto": "el",
+   "inicio": 44.47,
+   "duracion": 0.121,
+   "visible": "el",
+   "enfasis": false,
+   "frase": 14,
+   "seccion": 0
+  },
+  {
+   "texto": "parlamento",
+   "inicio": 44.592,
+   "duracion": 0.486,
+   "visible": "Parlamento",
+   "enfasis": false,
+   "frase": 14,
+   "seccion": 0
+  },
+  {
+   "texto": "entero",
+   "inicio": 45.077,
+   "duracion": 0.304,
+   "visible": "entero.",
+   "enfasis": false,
+   "frase": 14,
+   "seccion": 0
+  },
+  {
+   "texto": "mira",
+   "inicio": 45.581,
+   "duracion": 0.102,
+   "visible": "Mira,",
+   "enfasis": false,
+   "frase": 15,
+   "seccion": 0
+  },
+  {
+   "texto": "creian",
+   "inicio": 45.97,
+   "duracion": 0.164,
+   "visible": "creían",
+   "enfasis": false,
+   "frase": 15,
+   "seccion": 0
+  },
+  {
+   "texto": "que",
+   "inicio": 46.133,
+   "duracion": 0.143,
+   "visible": "que",
+   "enfasis": false,
+   "frase": 15,
+   "seccion": 0
+  },
+  {
+   "texto": "lo",
+   "inicio": 46.276,
+   "duracion": 0.123,
+   "visible": "lo",
+   "enfasis": false,
+   "frase": 15,
+   "seccion": 0
+  },
+  {
+   "texto": "tenian",
+   "inicio": 46.399,
+   "duracion": 0.184,
+   "visible": "tenían",
+   "enfasis": false,
+   "frase": 15,
+   "seccion": 0
+  },
+  {
+   "texto": "rodeado",
+   "inicio": 46.583,
+   "duracion": 0.45,
+   "visible": "rodeado.",
+   "enfasis": false,
+   "frase": 15,
+   "seccion": 0
+  },
+  {
+   "texto": "pero",
+   "inicio": 47.233,
+   "duracion": 0.227,
+   "visible": "Pero",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": 0
+  },
+  {
+   "texto": "uno",
+   "inicio": 47.46,
+   "duracion": 0.227,
+   "visible": "uno",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": 0
+  },
+  {
+   "texto": "de",
+   "inicio": 47.688,
+   "duracion": 0.124,
+   "visible": "de",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": 0
+  },
+  {
+   "texto": "esos",
+   "inicio": 47.812,
+   "duracion": 0.207,
+   "visible": "esos",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": 0
+  },
+  {
+   "texto": "tres",
+   "inicio": 48.018,
+   "duracion": 0.186,
+   "visible": "tres",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": 0
+  },
+  {
+   "texto": "ministros",
+   "inicio": 48.204,
+   "duracion": 0.455,
+   "visible": "ministros",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": 0
+  },
+  {
+   "texto": "controlaba",
+   "inicio": 48.659,
+   "duracion": 0.537,
+   "visible": "controlaba",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": 0
+  },
+  {
+   "texto": "la",
+   "inicio": 49.196,
+   "duracion": 0.124,
+   "visible": "la",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": 0
+  },
+  {
+   "texto": "policia",
+   "inicio": 49.32,
+   "duracion": 0.517,
+   "visible": "policía",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": 0
+  },
+  {
+   "texto": "del",
+   "inicio": 49.836,
+   "duracion": 0.165,
+   "visible": "del",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": 0
+  },
+  {
+   "texto": "estado",
+   "inicio": 50.002,
+   "duracion": 0.289,
+   "visible": "estado",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": 0
+  },
+  {
+   "texto": "mas",
+   "inicio": 50.291,
+   "duracion": 0.393,
+   "visible": "más",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": 0
+  },
+  {
+   "texto": "grande",
+   "inicio": 50.684,
+   "duracion": 0.351,
+   "visible": "grande",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": 0
+  },
+  {
+   "texto": "de",
+   "inicio": 51.035,
+   "duracion": 0.124,
+   "visible": "de",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": 0
+  },
+  {
+   "texto": "alemania",
+   "inicio": 51.159,
+   "duracion": 0.413,
+   "visible": "Alemania.",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": 0
+  },
+  {
+   "texto": "como",
+   "inicio": 51.772,
+   "duracion": 0.145,
+   "visible": "Cómo",
+   "enfasis": false,
+   "frase": 17,
+   "seccion": 0
+  },
+  {
+   "texto": "llego",
+   "inicio": 51.917,
+   "duracion": 0.186,
+   "visible": "llegó",
+   "enfasis": false,
+   "frase": 17,
+   "seccion": 0
+  },
+  {
+   "texto": "a",
+   "inicio": 52.103,
+   "duracion": 0.124,
+   "visible": "a",
+   "enfasis": false,
+   "frase": 17,
+   "seccion": 0
+  },
+  {
+   "texto": "esa",
+   "inicio": 52.227,
+   "duracion": 0.103,
+   "visible": "esa",
+   "enfasis": false,
+   "frase": 17,
+   "seccion": 0
+  },
+  {
+   "texto": "silla",
+   "inicio": 52.331,
+   "duracion": 0.31,
+   "visible": "silla",
+   "enfasis": false,
+   "frase": 17,
+   "seccion": 0
+  },
+  {
+   "texto": "es",
+   "inicio": 52.641,
+   "duracion": 0.31,
+   "visible": "es",
+   "enfasis": false,
+   "frase": 17,
+   "seccion": 0
+  },
+  {
+   "texto": "todavia",
+   "inicio": 52.952,
+   "duracion": 0.228,
+   "visible": "todavía",
+   "enfasis": false,
+   "frase": 17,
+   "seccion": 0
+  },
+  {
+   "texto": "mas",
+   "inicio": 53.179,
+   "duracion": 0.331,
+   "visible": "más",
+   "enfasis": false,
+   "frase": 17,
+   "seccion": 0
+  },
+  {
+   "texto": "absurdo",
+   "inicio": 53.51,
+   "duracion": 0.497,
+   "visible": "absurdo:",
+   "enfasis": false,
+   "frase": 17,
+   "seccion": 0
+  },
+  {
+   "texto": "esta",
+   "inicio": 54.049,
+   "duracion": 0.166,
+   "visible": "está",
+   "enfasis": false,
+   "frase": 17,
+   "seccion": 0
+  },
+  {
+   "texto": "en",
+   "inicio": 54.214,
+   "duracion": 0.124,
+   "visible": "en",
+   "enfasis": false,
+   "frase": 17,
+   "seccion": 0
+  },
+  {
+   "texto": "el",
+   "inicio": 54.338,
+   "duracion": 0.062,
+   "visible": "el",
+   "enfasis": false,
+   "frase": 17,
+   "seccion": 0
+  },
+  {
+   "texto": "video",
+   "inicio": 54.4,
+   "duracion": 0.207,
+   "visible": "video",
+   "enfasis": false,
+   "frase": 17,
+   "seccion": 0
+  },
+  {
+   "texto": "de",
+   "inicio": 54.607,
+   "duracion": 0.145,
+   "visible": "de",
+   "enfasis": false,
+   "frase": 17,
+   "seccion": 0
+  },
+  {
+   "texto": "aqui",
+   "inicio": 54.752,
+   "duracion": 0.124,
+   "visible": "aquí",
+   "enfasis": false,
+   "frase": 17,
+   "seccion": 0
+  },
+  {
+   "texto": "abajo",
+   "inicio": 54.876,
+   "duracion": 0.228,
+   "visible": "abajo.",
+   "enfasis": false,
+   "frase": 17,
+   "seccion": 0
+  },
+  {
+   "texto": "pero",
+   "inicio": 55.704,
+   "duracion": 0.245,
+   "visible": "Pero",
+   "enfasis": false,
+   "frase": 18,
+   "seccion": 0
+  },
+  {
+   "texto": "el",
+   "inicio": 55.949,
+   "duracion": 0.123,
+   "visible": "el",
+   "enfasis": false,
+   "frase": 18,
+   "seccion": 0
+  },
+  {
+   "texto": "final",
+   "inicio": 56.072,
+   "duracion": 0.265,
+   "visible": "final",
+   "enfasis": false,
+   "frase": 18,
+   "seccion": 0
+  },
+  {
+   "texto": "ya",
+   "inicio": 56.337,
+   "duracion": 0.184,
+   "visible": "ya",
+   "enfasis": false,
+   "frase": 18,
+   "seccion": 0
+  },
+  {
+   "texto": "lo",
+   "inicio": 56.521,
+   "duracion": 0.123,
+   "visible": "lo",
+   "enfasis": false,
+   "frase": 18,
+   "seccion": 0
+  },
+  {
+   "texto": "sabes",
+   "inicio": 56.643,
+   "duracion": 0.265,
+   "visible": "sabes:",
+   "enfasis": false,
+   "frase": 18,
+   "seccion": 0
+  },
+  {
+   "texto": "lo",
+   "inicio": 57.399,
+   "duracion": 0.102,
+   "visible": "lo",
+   "enfasis": false,
+   "frase": 18,
+   "seccion": 0
+  },
+  {
+   "texto": "habian",
+   "inicio": 57.501,
+   "duracion": 0.265,
+   "visible": "habían",
+   "enfasis": false,
+   "frase": 18,
+   "seccion": 0
+  },
+  {
+   "texto": "contratado",
+   "inicio": 57.766,
+   "duracion": 0.796,
+   "visible": "contratado...",
+   "enfasis": false,
+   "frase": 18,
+   "seccion": 0
+  },
+  {
+   "texto": "y",
+   "inicio": 58.563,
+   "duracion": 0.388,
+   "visible": "y",
+   "enfasis": false,
+   "frase": 18,
+   "seccion": 0
+  },
+  {
+   "texto": "el",
+   "inicio": 58.951,
+   "duracion": 0.143,
+   "visible": "el",
+   "enfasis": false,
+   "frase": 18,
+   "seccion": 0
+  },
+  {
+   "texto": "contratado",
+   "inicio": 59.093,
+   "duracion": 0.817,
+   "visible": "contratado",
+   "enfasis": false,
+   "frase": 18,
+   "seccion": 0
+  },
+  {
+   "texto": "se",
+   "inicio": 59.91,
+   "duracion": 0.245,
+   "visible": "se",
+   "enfasis": false,
+   "frase": 18,
+   "seccion": 0
+  },
+  {
+   "texto": "quedo",
+   "inicio": 60.155,
+   "duracion": 0.408,
+   "visible": "quedó",
+   "enfasis": false,
+   "frase": 18,
+   "seccion": 0
+  },
+  {
+   "texto": "con",
+   "inicio": 60.564,
+   "duracion": 0.184,
+   "visible": "con",
+   "enfasis": false,
+   "frase": 18,
+   "seccion": 0
+  },
+  {
+   "texto": "la",
+   "inicio": 60.747,
+   "duracion": 0.123,
+   "visible": "la",
+   "enfasis": false,
+   "frase": 18,
+   "seccion": 0
+  },
+  {
+   "texto": "empresa",
+   "inicio": 60.87,
+   "duracion": 0.347,
+   "visible": "empresa.",
+   "enfasis": false,
+   "frase": 18,
+   "seccion": 0
+  }
+ ]
+}
