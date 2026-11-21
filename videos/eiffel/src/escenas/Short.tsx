@@ -503,7 +503,10 @@ const E17: React.FC<P> = ({d, h, e, s}) => {
 	const f = useCurrentFrame();
 	const escribe = tramo(f, antes(pal(21, 'vendedor')), fin(21), (u) => u);
 	return (
-		<Toma escena={<Escritorio />} desde={d} hasta={h} entrada={e} salida={s} cam={{s: [1, 1]}} camFn={(ff) => ({s: 1.15 + 0.25 * tramo(ff, d, pal(21, 'vendedor')), x: 0, y: interpolate(tramo(ff, d, pal(21, 'vendedor')), [0, 1], [260, -120])})}>
+		<Toma escena={<Escritorio />} desde={d} hasta={h} entrada={e} salida={s} cam={{s: [1, 1]}} camFn={(ff) => {
+			const u = tramo(ff, d, pal(21, 'vendedor'));
+			return centrarV(540, interpolate(u, [0, 1], [900, 1000]), 1.15 + 0.25 * u, interpolate(u, [0, 1], [900, 760]));
+		}}>
 			<Certificado x={540} y={480} ancho={920} escribe={escribe} />
 		</Toma>
 	);

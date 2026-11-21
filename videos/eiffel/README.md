@@ -14,7 +14,8 @@ de su certificado de defunción.
 - Medido: 199–204 palabras/min. Pausas: 0,28 s después de «Torre Éifel…», 0,56 s antes de «Y eso lo convence»,
   0,30 s antes de «y encima el soborno», 0,43 s después de «¿Y cómo terminó?», 0,32 s después de «pusieron:».
   Ningún otro silencio pasa de 0,2 s. «vendedor aprendiz» un 15 % más lento y nada después.
-- Tomas elegidas archivadas en `tomas/` (FLAC).
+- Tomas elegidas archivadas en `tomas/` (FLAC): narrador `cap0_1`, Lustig `lustig_1` y `lustig2_1`, esposa `esposa_2`
+  (la `esposa_1` decía «estasa»; la 2 dice «estafa» claro y la pregunta sube al final; va un 12 % más rápida).
 
 ## Música y efectos
 

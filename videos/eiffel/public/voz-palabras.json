@@ -1,6 +1,6 @@
 {
  "voz": "Gemini 2.5 Flash TTS · Charon",
- "duracion": 53.418,
+ "duracion": 53.336,
  "frases": [
   {
    "i": 0,
@@ -77,84 +77,84 @@
    "texto": "¿Y si es una estafa?",
    "seccion": 0,
    "inicio": 27.395,
-   "fin": 29.31
+   "fin": 29.228
   },
   {
    "i": 11,
    "texto": "Así que Lústig le confiesa que es un funcionario corrupto... y le pide un soborno.",
    "seccion": 0,
-   "inicio": 29.49,
-   "fin": 33.244
+   "inicio": 29.408,
+   "fin": 33.162
   },
   {
    "i": 12,
    "texto": "Y eso lo convence.",
    "seccion": 0,
-   "inicio": 33.844,
-   "fin": 34.643
+   "inicio": 33.762,
+   "fin": 34.561
   },
   {
    "i": 13,
    "texto": "Mira, un estafador nunca pediría un soborno... pero un funcionario de verdad, sí.",
    "seccion": 0,
-   "inicio": 34.823,
-   "fin": 38.132
+   "inicio": 34.741,
+   "fin": 38.05
   },
   {
    "i": 14,
    "texto": "Le paga la torre...",
    "seccion": 0,
-   "inicio": 38.312,
-   "fin": 39.198
+   "inicio": 38.23,
+   "fin": 39.116
   },
   {
    "i": 15,
    "texto": "y encima el soborno.",
    "seccion": 0,
-   "inicio": 39.598,
-   "fin": 40.616
+   "inicio": 39.516,
+   "fin": 40.534
   },
   {
    "i": 16,
    "texto": "¿Y la denuncia?",
    "seccion": 0,
-   "inicio": 40.796,
-   "fin": 41.498
+   "inicio": 40.714,
+   "fin": 41.416
   },
   {
    "i": 17,
    "texto": "Nunca llegó: al comprador le dio demasiada vergüenza.",
    "seccion": 0,
-   "inicio": 41.678,
-   "fin": 43.906
+   "inicio": 41.596,
+   "fin": 43.824
   },
   {
    "i": 18,
    "texto": "Así que Lústig volvió a intentarlo... y esta vez tuvo que huir.",
    "seccion": 0,
-   "inicio": 44.086,
-   "fin": 46.692
+   "inicio": 44.004,
+   "fin": 46.61
   },
   {
    "i": 19,
    "texto": "¿Y cómo terminó?",
    "seccion": 0,
-   "inicio": 46.872,
-   "fin": 47.69
+   "inicio": 46.79,
+   "fin": 47.608
   },
   {
    "i": 20,
    "texto": "Murió preso, y en su certificado de defunción, en profesión, pusieron:",
    "seccion": 0,
-   "inicio": 48.19,
-   "fin": 51.357
+   "inicio": 48.108,
+   "fin": 51.275
   },
   {
    "i": 21,
    "texto": "«vendedor aprendiz».",
    "seccion": 0,
-   "inicio": 51.757,
-   "fin": 52.848
+   "inicio": 51.675,
+   "fin": 52.766
   }
  ],
  "palabras": [
@@ -188,7 +188,7 @@
   {
    "texto": "la",
    "inicio": 1.049,
-   "duracion": 0.137,
+   "duracion": 0.157,
    "visible": "la",
    "enfasis": false,
    "frase": 0,
@@ -196,8 +196,8 @@
   },
   {
    "texto": "torre",
-   "inicio": 1.187,
-   "duracion": 0.235,
+   "inicio": 1.206,
+   "duracion": 0.216,
    "visible": "Torre",
    "enfasis": false,
    "frase": 0,
@@ -278,7 +278,7 @@
   {
    "texto": "torre",
    "inicio": 4.966,
-   "duracion": 0.219,
+   "duracion": 0.199,
    "visible": "torre",
    "enfasis": false,
    "frase": 2,
@@ -286,8 +286,8 @@
   },
   {
    "texto": "esta",
-   "inicio": 5.186,
-   "duracion": 0.14,
+   "inicio": 5.166,
+   "duracion": 0.16,
    "visible": "está",
    "enfasis": false,
    "frase": 2,
@@ -386,7 +386,7 @@
   {
    "texto": "y",
    "inicio": 8.437,
-   "duracion": 0.147,
+   "duracion": 0.166,
    "visible": "Y",
    "enfasis": false,
    "frase": 3,
@@ -394,8 +394,8 @@
   },
   {
    "texto": "un",
-   "inicio": 8.584,
-   "duracion": 0.105,
+   "inicio": 8.603,
+   "duracion": 0.104,
    "visible": "un",
    "enfasis": false,
    "frase": 3,
@@ -403,8 +403,8 @@
   },
   {
    "texto": "estafador",
-   "inicio": 8.688,
-   "duracion": 0.482,
+   "inicio": 8.707,
+   "duracion": 0.478,
    "visible": "estafador,",
    "enfasis": false,
    "frase": 3,
@@ -412,8 +412,8 @@
   },
   {
    "texto": "victor",
-   "inicio": 9.422,
-   "duracion": 0.189,
+   "inicio": 9.435,
+   "duracion": 0.187,
    "visible": "Víctor",
    "enfasis": false,
    "frase": 3,
@@ -421,8 +421,8 @@
   },
   {
    "texto": "lustig",
-   "inicio": 9.61,
-   "duracion": 0.398,
+   "inicio": 9.622,
+   "duracion": 0.395,
    "visible": "Lustig,",
    "enfasis": true,
    "frase": 3,
@@ -430,8 +430,8 @@
   },
   {
    "texto": "lo",
-   "inicio": 10.134,
-   "duracion": 0.105,
+   "inicio": 10.141,
+   "duracion": 0.104,
    "visible": "lo",
    "enfasis": false,
    "frase": 3,
@@ -439,8 +439,8 @@
   },
   {
    "texto": "lee",
-   "inicio": 10.239,
-   "duracion": 0.21,
+   "inicio": 10.245,
+   "duracion": 0.208,
    "visible": "lee",
    "enfasis": false,
    "frase": 3,
@@ -448,8 +448,8 @@
   },
   {
    "texto": "y",
-   "inicio": 10.448,
-   "duracion": 0.251,
+   "inicio": 10.453,
+   "duracion": 0.249,
    "visible": "y",
    "enfasis": false,
    "frase": 3,
@@ -457,8 +457,8 @@
   },
   {
    "texto": "piensa",
-   "inicio": 10.7,
-   "duracion": 0.335,
+   "inicio": 10.702,
+   "duracion": 0.333,
    "visible": "piensa:",
    "enfasis": false,
    "frase": 3,
@@ -503,7 +503,7 @@
   {
    "texto": "desmontar",
    "inicio": 11.969,
-   "duracion": 0.954,
+   "duracion": 0.976,
    "visible": "desmontar...",
    "enfasis": false,
    "frase": 4,
@@ -548,7 +548,7 @@
   {
    "texto": "primero",
    "inicio": 15.145,
-   "duracion": 0.388,
+   "duracion": 0.405,
    "visible": "Primero,",
    "enfasis": false,
    "frase": 5,
@@ -556,8 +556,8 @@
   },
   {
    "texto": "falsifica",
-   "inicio": 15.533,
-   "duracion": 0.593,
+   "inicio": 15.55,
+   "duracion": 0.585,
    "visible": "falsifica",
    "enfasis": false,
    "frase": 5,
@@ -565,8 +565,8 @@
   },
   {
    "texto": "papeles",
-   "inicio": 16.125,
-   "duracion": 0.388,
+   "inicio": 16.136,
+   "duracion": 0.383,
    "visible": "papeles",
    "enfasis": false,
    "frase": 5,
@@ -574,8 +574,8 @@
   },
   {
    "texto": "del",
-   "inicio": 16.513,
-   "duracion": 0.205,
+   "inicio": 16.519,
+   "duracion": 0.203,
    "visible": "del",
    "enfasis": false,
    "frase": 5,
@@ -583,8 +583,8 @@
   },
   {
    "texto": "gobierno",
-   "inicio": 16.718,
-   "duracion": 0.251,
+   "inicio": 16.721,
+   "duracion": 0.248,
    "visible": "gobierno.",
    "enfasis": false,
    "frase": 5,
@@ -773,7 +773,7 @@
   {
    "texto": "pero",
    "inicio": 23.641,
-   "duracion": 0.197,
+   "duracion": 0.175,
    "visible": "Pero",
    "enfasis": false,
    "frase": 8,
@@ -781,8 +781,8 @@
   },
   {
    "texto": "ni",
-   "inicio": 23.838,
-   "duracion": 0.284,
+   "inicio": 23.816,
+   "duracion": 0.306,
    "visible": "ni",
    "enfasis": false,
    "frase": 8,
@@ -809,7 +809,7 @@
   {
    "texto": "uno",
    "inicio": 25.219,
-   "duracion": 0.273,
+   "duracion": 0.291,
    "visible": "Uno",
    "enfasis": false,
    "frase": 9,
@@ -817,8 +817,8 @@
   },
   {
    "texto": "quiere",
-   "inicio": 25.492,
-   "duracion": 0.189,
+   "inicio": 25.51,
+   "duracion": 0.208,
    "visible": "quiere",
    "enfasis": false,
    "frase": 9,
@@ -826,8 +826,8 @@
   },
   {
    "texto": "comprarla",
-   "inicio": 25.681,
-   "duracion": 0.504,
+   "inicio": 25.718,
+   "duracion": 0.478,
    "visible": "comprarla,",
    "enfasis": false,
    "frase": 9,
@@ -835,8 +835,8 @@
   },
   {
    "texto": "pero",
-   "inicio": 26.312,
-   "duracion": 0.063,
+   "inicio": 26.321,
+   "duracion": 0.062,
    "visible": "pero",
    "enfasis": false,
    "frase": 9,
@@ -844,8 +844,8 @@
   },
   {
    "texto": "su",
-   "inicio": 26.375,
-   "duracion": 0.105,
+   "inicio": 26.383,
+   "duracion": 0.104,
    "visible": "su",
    "enfasis": false,
    "frase": 9,
@@ -853,8 +853,8 @@
   },
   {
    "texto": "esposa",
-   "inicio": 26.48,
-   "duracion": 0.273,
+   "inicio": 26.487,
+   "duracion": 0.27,
    "visible": "esposa",
    "enfasis": false,
    "frase": 9,
@@ -862,8 +862,8 @@
   },
   {
    "texto": "sospecha",
-   "inicio": 26.753,
-   "duracion": 0.462,
+   "inicio": 26.758,
+   "duracion": 0.457,
    "visible": "sospecha:",
    "enfasis": false,
    "frase": 9,
@@ -872,7 +872,7 @@
   {
    "texto": "y",
    "inicio": 27.395,
-   "duracion": 0.304,
+   "duracion": 0.216,
    "visible": "¿Y",
    "enfasis": false,
    "frase": 10,
@@ -880,8 +880,8 @@
   },
   {
    "texto": "si",
-   "inicio": 27.699,
-   "duracion": 0.234,
+   "inicio": 27.611,
+   "duracion": 0.216,
    "visible": "si",
    "enfasis": false,
    "frase": 10,
@@ -889,8 +889,8 @@
   },
   {
    "texto": "es",
-   "inicio": 27.932,
-   "duracion": 0.444,
+   "inicio": 27.826,
+   "duracion": 0.28,
    "visible": "es",
    "enfasis": false,
    "frase": 10,
@@ -898,8 +898,8 @@
   },
   {
    "texto": "una",
-   "inicio": 28.376,
-   "duracion": 0.28,
+   "inicio": 28.107,
+   "duracion": 0.259,
    "visible": "una",
    "enfasis": false,
    "frase": 10,
@@ -907,8 +907,8 @@
   },
   {
    "texto": "estafa",
-   "inicio": 28.656,
-   "duracion": 0.654,
+   "inicio": 28.365,
+   "duracion": 0.863,
    "visible": "estafa?",
    "enfasis": false,
    "frase": 10,
@@ -916,8 +916,8 @@
   },
   {
    "texto": "asi",
-   "inicio": 29.49,
-   "duracion": 0.549,
+   "inicio": 29.408,
+   "duracion": 0.439,
    "visible": "Así",
    "enfasis": false,
    "frase": 11,
@@ -925,8 +925,8 @@
   },
   {
    "texto": "que",
-   "inicio": 30.039,
-   "duracion": 0.159,
+   "inicio": 29.847,
+   "duracion": 0.165,
    "visible": "que",
    "enfasis": false,
    "frase": 11,
@@ -934,8 +934,8 @@
   },
   {
    "texto": "lustig",
-   "inicio": 30.198,
-   "duracion": 0.301,
+   "inicio": 30.012,
+   "duracion": 0.311,
    "visible": "Lustig",
    "enfasis": true,
    "frase": 11,
@@ -943,8 +943,8 @@
   },
   {
    "texto": "le",
-   "inicio": 30.499,
-   "duracion": 0.159,
+   "inicio": 30.324,
+   "duracion": 0.183,
    "visible": "le",
    "enfasis": false,
    "frase": 11,
@@ -952,8 +952,8 @@
   },
   {
    "texto": "confiesa",
-   "inicio": 30.659,
-   "duracion": 0.46,
+   "inicio": 30.507,
+   "duracion": 0.458,
    "visible": "confiesa",
    "enfasis": false,
    "frase": 11,
@@ -961,8 +961,8 @@
   },
   {
    "texto": "que",
-   "inicio": 31.119,
-   "duracion": 0.089,
+   "inicio": 30.965,
+   "duracion": 0.092,
    "visible": "que",
    "enfasis": false,
    "frase": 11,
@@ -970,8 +970,8 @@
   },
   {
    "texto": "es",
-   "inicio": 31.208,
-   "duracion": 0.124,
+   "inicio": 31.056,
+   "duracion": 0.128,
    "visible": "es",
    "enfasis": false,
    "frase": 11,
@@ -979,8 +979,8 @@
   },
   {
    "texto": "un",
-   "inicio": 31.332,
-   "duracion": 0.106,
+   "inicio": 31.184,
+   "duracion": 0.11,
    "visible": "un",
    "enfasis": false,
    "frase": 11,
@@ -988,8 +988,8 @@
   },
   {
    "texto": "funcionario",
-   "inicio": 31.438,
-   "duracion": 0.425,
+   "inicio": 31.294,
+   "duracion": 0.421,
    "visible": "funcionario",
    "enfasis": false,
    "frase": 11,
@@ -997,8 +997,8 @@
   },
   {
    "texto": "corrupto",
-   "inicio": 31.863,
-   "duracion": 0.46,
+   "inicio": 31.715,
+   "duracion": 0.476,
    "visible": "corrupto...",
    "enfasis": false,
    "frase": 11,
@@ -1006,8 +1006,8 @@
   },
   {
    "texto": "y",
-   "inicio": 32.323,
-   "duracion": 0.106,
+   "inicio": 32.191,
+   "duracion": 0.146,
    "visible": "y",
    "enfasis": false,
    "frase": 11,
@@ -1015,8 +1015,8 @@
   },
   {
    "texto": "le",
-   "inicio": 32.429,
-   "duracion": 0.124,
+   "inicio": 32.338,
+   "duracion": 0.11,
    "visible": "le",
    "enfasis": false,
    "frase": 11,
@@ -1024,8 +1024,8 @@
   },
   {
    "texto": "pide",
-   "inicio": 32.553,
-   "duracion": 0.212,
+   "inicio": 32.448,
+   "duracion": 0.22,
    "visible": "pide",
    "enfasis": false,
    "frase": 11,
@@ -1033,8 +1033,8 @@
   },
   {
    "texto": "un",
-   "inicio": 32.766,
-   "duracion": 0.106,
+   "inicio": 32.668,
+   "duracion": 0.11,
    "visible": "un",
    "enfasis": false,
    "frase": 11,
@@ -1042,8 +1042,8 @@
   },
   {
    "texto": "soborno",
-   "inicio": 32.872,
-   "duracion": 0.372,
+   "inicio": 32.777,
+   "duracion": 0.385,
    "visible": "soborno.",
    "enfasis": false,
    "frase": 11,
@@ -1051,8 +1051,8 @@
   },
   {
    "texto": "y",
-   "inicio": 33.844,
-   "duracion": 0.152,
+   "inicio": 33.762,
+   "duracion": 0.182,
    "visible": "Y",
    "enfasis": true,
    "frase": 12,
@@ -1060,8 +1060,8 @@
   },
   {
    "texto": "eso",
-   "inicio": 33.996,
-   "duracion": 0.171,
+   "inicio": 33.944,
+   "duracion": 0.163,
    "visible": "ESO",
    "enfasis": true,
    "frase": 12,
@@ -1069,8 +1069,8 @@
   },
   {
    "texto": "lo",
-   "inicio": 34.167,
-   "duracion": 0.133,
+   "inicio": 34.107,
+   "duracion": 0.127,
    "visible": "LO",
    "enfasis": true,
    "frase": 12,
@@ -1078,8 +1078,8 @@
   },
   {
    "texto": "convence",
-   "inicio": 34.301,
-   "duracion": 0.342,
+   "inicio": 34.234,
+   "duracion": 0.327,
    "visible": "CONVENCE.",
    "enfasis": true,
    "frase": 12,
@@ -1087,8 +1087,8 @@
   },
   {
    "texto": "mira",
-   "inicio": 34.823,
-   "duracion": 0.084,
+   "inicio": 34.741,
+   "duracion": 0.104,
    "visible": "Mira,",
    "enfasis": false,
    "frase": 13,
@@ -1096,8 +1096,8 @@
   },
   {
    "texto": "un",
-   "inicio": 35.074,
-   "duracion": 0.105,
+   "inicio": 35.012,
+   "duracion": 0.104,
    "visible": "un",
    "enfasis": false,
    "frase": 13,
@@ -1105,8 +1105,8 @@
   },
   {
    "texto": "estafador",
-   "inicio": 35.179,
-   "duracion": 0.44,
+   "inicio": 35.116,
+   "duracion": 0.416,
    "visible": "estafador",
    "enfasis": false,
    "frase": 13,
@@ -1114,8 +1114,8 @@
   },
   {
    "texto": "nunca",
-   "inicio": 35.619,
-   "duracion": 0.188,
+   "inicio": 35.532,
+   "duracion": 0.208,
    "visible": "nunca",
    "enfasis": false,
    "frase": 13,
@@ -1123,8 +1123,8 @@
   },
   {
    "texto": "pediria",
-   "inicio": 35.807,
-   "duracion": 0.461,
+   "inicio": 35.74,
+   "duracion": 0.458,
    "visible": "pediría",
    "enfasis": false,
    "frase": 13,
@@ -1132,8 +1132,8 @@
   },
   {
    "texto": "un",
-   "inicio": 36.268,
-   "duracion": 0.063,
+   "inicio": 36.198,
+   "duracion": 0.062,
    "visible": "un",
    "enfasis": false,
    "frase": 13,
@@ -1141,8 +1141,8 @@
   },
   {
    "texto": "soborno",
-   "inicio": 36.331,
-   "duracion": 0.356,
+   "inicio": 36.26,
+   "duracion": 0.354,
    "visible": "soborno...",
    "enfasis": false,
    "frase": 13,
@@ -1150,8 +1150,8 @@
   },
   {
    "texto": "pero",
-   "inicio": 36.75,
-   "duracion": 0.105,
+   "inicio": 36.676,
+   "duracion": 0.104,
    "visible": "pero",
    "enfasis": false,
    "frase": 13,
@@ -1159,8 +1159,8 @@
   },
   {
    "texto": "un",
-   "inicio": 36.854,
-   "duracion": 0.147,
+   "inicio": 36.781,
+   "duracion": 0.146,
    "visible": "un",
    "enfasis": false,
    "frase": 13,
@@ -1168,8 +1168,8 @@
   },
   {
    "texto": "funcionario",
-   "inicio": 37.001,
-   "duracion": 0.419,
+   "inicio": 36.926,
+   "duracion": 0.416,
    "visible": "funcionario",
    "enfasis": false,
    "frase": 13,
@@ -1177,8 +1177,8 @@
   },
   {
    "texto": "de",
-   "inicio": 37.42,
-   "duracion": 0.105,
+   "inicio": 37.342,
+   "duracion": 0.104,
    "visible": "de",
    "enfasis": false,
    "frase": 13,
@@ -1186,8 +1186,8 @@
   },
   {
    "texto": "verdad",
-   "inicio": 37.525,
-   "duracion": 0.23,
+   "inicio": 37.446,
+   "duracion": 0.229,
    "visible": "verdad,",
    "enfasis": false,
    "frase": 13,
@@ -1195,8 +1195,8 @@
   },
   {
    "texto": "si",
-   "inicio": 37.902,
-   "duracion": 0.23,
+   "inicio": 37.821,
+   "duracion": 0.229,
    "visible": "sí.",
    "enfasis": false,
    "frase": 13,
@@ -1204,8 +1204,8 @@
   },
   {
    "texto": "le",
-   "inicio": 38.312,
-   "duracion": 0.144,
+   "inicio": 38.23,
+   "duracion": 0.12,
    "visible": "Le",
    "enfasis": false,
    "frase": 14,
@@ -1213,7 +1213,7 @@
   },
   {
    "texto": "paga",
-   "inicio": 38.456,
+   "inicio": 38.35,
    "duracion": 0.287,
    "visible": "paga",
    "enfasis": false,
@@ -1222,8 +1222,8 @@
   },
   {
    "texto": "la",
-   "inicio": 38.743,
-   "duracion": 0.12,
+   "inicio": 38.637,
+   "duracion": 0.144,
    "visible": "la",
    "enfasis": false,
    "frase": 14,
@@ -1231,7 +1231,7 @@
   },
   {
    "texto": "torre",
-   "inicio": 38.863,
+   "inicio": 38.781,
    "duracion": 0.335,
    "visible": "torre...",
    "enfasis": false,
@@ -1240,7 +1240,7 @@
   },
   {
    "texto": "y",
-   "inicio": 39.598,
+   "inicio": 39.516,
    "duracion": 0.307,
    "visible": "y",
    "enfasis": false,
@@ -1249,7 +1249,7 @@
   },
   {
    "texto": "encima",
-   "inicio": 39.905,
+   "inicio": 39.823,
    "duracion": 0.251,
    "visible": "encima",
    "enfasis": false,
@@ -1258,7 +1258,7 @@
   },
   {
    "texto": "el",
-   "inicio": 40.156,
+   "inicio": 40.074,
    "duracion": 0.167,
    "visible": "el",
    "enfasis": false,
@@ -1267,7 +1267,7 @@
   },
   {
    "texto": "soborno",
-   "inicio": 40.323,
+   "inicio": 40.241,
    "duracion": 0.293,
    "visible": "soborno.",
    "enfasis": false,
@@ -1276,8 +1276,8 @@
   },
   {
    "texto": "y",
-   "inicio": 40.796,
-   "duracion": 0.084,
+   "inicio": 40.714,
+   "duracion": 0.088,
    "visible": "¿Y",
    "enfasis": false,
    "frase": 16,
@@ -1285,8 +1285,8 @@
   },
   {
    "texto": "la",
-   "inicio": 40.824,
-   "duracion": 0.14,
+   "inicio": 40.743,
+   "duracion": 0.146,
    "visible": "la",
    "enfasis": false,
    "frase": 16,
@@ -1294,8 +1294,8 @@
   },
   {
    "texto": "denuncia",
-   "inicio": 40.964,
-   "duracion": 0.534,
+   "inicio": 40.89,
+   "duracion": 0.526,
    "visible": "denuncia?",
    "enfasis": false,
    "frase": 16,
@@ -1303,8 +1303,8 @@
   },
   {
    "texto": "nunca",
-   "inicio": 41.678,
-   "duracion": 0.219,
+   "inicio": 41.596,
+   "duracion": 0.35,
    "visible": "Nunca",
    "enfasis": false,
    "frase": 17,
@@ -1312,8 +1312,8 @@
   },
   {
    "texto": "llego",
-   "inicio": 41.897,
-   "duracion": 0.318,
+   "inicio": 41.946,
+   "duracion": 0.295,
    "visible": "llegó:",
    "enfasis": false,
    "frase": 17,
@@ -1321,8 +1321,8 @@
   },
   {
    "texto": "al",
-   "inicio": 42.215,
-   "duracion": 0.259,
+   "inicio": 42.24,
+   "duracion": 0.258,
    "visible": "al",
    "enfasis": false,
    "frase": 17,
@@ -1330,8 +1330,8 @@
   },
   {
    "texto": "comprador",
-   "inicio": 42.474,
-   "duracion": 0.358,
+   "inicio": 42.498,
+   "duracion": 0.331,
    "visible": "comprador",
    "enfasis": false,
    "frase": 17,
@@ -1339,8 +1339,8 @@
   },
   {
    "texto": "le",
-   "inicio": 42.911,
-   "duracion": 0.08,
+   "inicio": 42.885,
+   "duracion": 0.074,
    "visible": "le",
    "enfasis": false,
    "frase": 17,
@@ -1348,8 +1348,8 @@
   },
   {
    "texto": "dio",
-   "inicio": 42.991,
-   "duracion": 0.119,
+   "inicio": 42.959,
+   "duracion": 0.129,
    "visible": "dio",
    "enfasis": false,
    "frase": 17,
@@ -1357,8 +1357,8 @@
   },
   {
    "texto": "demasiada",
-   "inicio": 43.11,
-   "duracion": 0.438,
+   "inicio": 43.087,
+   "duracion": 0.405,
    "visible": "demasiada",
    "enfasis": false,
    "frase": 17,
@@ -1366,8 +1366,8 @@
   },
   {
    "texto": "verguenza",
-   "inicio": 43.548,
-   "duracion": 0.358,
+   "inicio": 43.493,
+   "duracion": 0.331,
    "visible": "vergüenza.",
    "enfasis": false,
    "frase": 17,
@@ -1375,8 +1375,8 @@
   },
   {
    "texto": "asi",
-   "inicio": 44.086,
-   "duracion": 0.207,
+   "inicio": 44.004,
+   "duracion": 0.205,
    "visible": "Así",
    "enfasis": false,
    "frase": 18,
@@ -1384,8 +1384,8 @@
   },
   {
    "texto": "que",
-   "inicio": 44.293,
-   "duracion": 0.145,
+   "inicio": 44.209,
+   "duracion": 0.164,
    "visible": "que",
    "enfasis": false,
    "frase": 18,
@@ -1393,8 +1393,8 @@
   },
   {
    "texto": "lustig",
-   "inicio": 44.438,
-   "duracion": 0.31,
+   "inicio": 44.373,
+   "duracion": 0.308,
    "visible": "Lustig",
    "enfasis": true,
    "frase": 18,
@@ -1402,8 +1402,8 @@
   },
   {
    "texto": "volvio",
-   "inicio": 44.748,
-   "duracion": 0.331,
+   "inicio": 44.681,
+   "duracion": 0.328,
    "visible": "volvió",
    "enfasis": false,
    "frase": 18,
@@ -1411,7 +1411,7 @@
   },
   {
    "texto": "a",
-   "inicio": 45.079,
+   "inicio": 45.009,
    "duracion": 0.062,
    "visible": "a",
    "enfasis": false,
@@ -1420,8 +1420,8 @@
   },
   {
    "texto": "intentarlo",
-   "inicio": 45.12,
-   "duracion": 0.414,
+   "inicio": 45.071,
+   "duracion": 0.39,
    "visible": "intentarlo...",
    "enfasis": false,
    "frase": 18,
@@ -1429,8 +1429,8 @@
   },
   {
    "texto": "y",
-   "inicio": 45.534,
-   "duracion": 0.186,
+   "inicio": 45.461,
+   "duracion": 0.164,
    "visible": "y",
    "enfasis": false,
    "frase": 18,
@@ -1438,8 +1438,8 @@
   },
   {
    "texto": "esta",
-   "inicio": 45.72,
-   "duracion": 0.186,
+   "inicio": 45.625,
+   "duracion": 0.205,
    "visible": "esta",
    "enfasis": false,
    "frase": 18,
@@ -1447,8 +1447,8 @@
   },
   {
    "texto": "vez",
-   "inicio": 45.906,
-   "duracion": 0.145,
+   "inicio": 45.83,
+   "duracion": 0.144,
    "visible": "vez",
    "enfasis": false,
    "frase": 18,
@@ -1456,8 +1456,8 @@
   },
   {
    "texto": "tuvo",
-   "inicio": 46.051,
-   "duracion": 0.248,
+   "inicio": 45.974,
+   "duracion": 0.246,
    "visible": "tuvo",
    "enfasis": false,
    "frase": 18,
@@ -1465,8 +1465,8 @@
   },
   {
    "texto": "que",
-   "inicio": 46.299,
-   "duracion": 0.145,
+   "inicio": 46.22,
+   "duracion": 0.164,
    "visible": "que",
    "enfasis": false,
    "frase": 18,
@@ -1474,8 +1474,8 @@
   },
   {
    "texto": "huir",
-   "inicio": 46.444,
-   "duracion": 0.248,
+   "inicio": 46.384,
+   "duracion": 0.226,
    "visible": "huir.",
    "enfasis": false,
    "frase": 18,
@@ -1483,8 +1483,8 @@
   },
   {
    "texto": "y",
-   "inicio": 46.872,
-   "duracion": 0.102,
+   "inicio": 46.79,
+   "duracion": 0.077,
    "visible": "¿Y",
    "enfasis": false,
    "frase": 19,
@@ -1492,8 +1492,8 @@
   },
   {
    "texto": "como",
-   "inicio": 46.974,
-   "duracion": 0.205,
+   "inicio": 46.867,
+   "duracion": 0.23,
    "visible": "cómo",
    "enfasis": false,
    "frase": 19,
@@ -1501,7 +1501,7 @@
   },
   {
    "texto": "termino",
-   "inicio": 47.179,
+   "inicio": 47.097,
    "duracion": 0.511,
    "visible": "terminó?",
    "enfasis": false,
@@ -1510,8 +1510,8 @@
   },
   {
    "texto": "murio",
-   "inicio": 48.19,
-   "duracion": 0.375,
+   "inicio": 48.108,
+   "duracion": 0.429,
    "visible": "Murió",
    "enfasis": false,
    "frase": 20,
@@ -1519,8 +1519,8 @@
   },
   {
    "texto": "preso",
-   "inicio": 48.565,
-   "duracion": 0.375,
+   "inicio": 48.537,
+   "duracion": 0.347,
    "visible": "preso,",
    "enfasis": false,
    "frase": 20,
@@ -1528,8 +1528,8 @@
   },
   {
    "texto": "y",
-   "inicio": 48.94,
-   "duracion": 0.104,
+   "inicio": 48.884,
+   "duracion": 0.123,
    "visible": "y",
    "enfasis": false,
    "frase": 20,
@@ -1537,8 +1537,8 @@
   },
   {
    "texto": "en",
-   "inicio": 49.044,
-   "duracion": 0.083,
+   "inicio": 49.007,
+   "duracion": 0.082,
    "visible": "en",
    "enfasis": false,
    "frase": 20,
@@ -1546,8 +1546,8 @@
   },
   {
    "texto": "su",
-   "inicio": 49.128,
-   "duracion": 0.083,
+   "inicio": 49.089,
+   "duracion": 0.082,
    "visible": "su",
    "enfasis": false,
    "frase": 20,
@@ -1555,8 +1555,8 @@
   },
   {
    "texto": "certificado",
-   "inicio": 49.211,
-   "duracion": 0.542,
+   "inicio": 49.17,
+   "duracion": 0.531,
    "visible": "certificado",
    "enfasis": false,
    "frase": 20,
@@ -1564,8 +1564,8 @@
   },
   {
    "texto": "de",
-   "inicio": 49.753,
-   "duracion": 0.104,
+   "inicio": 49.702,
+   "duracion": 0.102,
    "visible": "de",
    "enfasis": false,
    "frase": 20,
@@ -1573,8 +1573,8 @@
   },
   {
    "texto": "defuncion",
-   "inicio": 49.857,
-   "duracion": 0.417,
+   "inicio": 49.804,
+   "duracion": 0.409,
    "visible": "defunción,",
    "enfasis": false,
    "frase": 20,
@@ -1582,8 +1582,8 @@
   },
   {
    "texto": "en",
-   "inicio": 50.274,
-   "duracion": 0.271,
+   "inicio": 50.376,
+   "duracion": 0.082,
    "visible": "en",
    "enfasis": false,
    "frase": 20,
@@ -1591,8 +1591,8 @@
   },
   {
    "texto": "profesion",
-   "inicio": 50.544,
-   "duracion": 0.417,
+   "inicio": 50.458,
+   "duracion": 0.409,
    "visible": "profesión,",
    "enfasis": false,
    "frase": 20,
@@ -1600,8 +1600,8 @@
   },
   {
    "texto": "pusieron",
-   "inicio": 50.961,
-   "duracion": 0.396,
+   "inicio": 50.866,
+   "duracion": 0.409,
    "visible": "pusieron:",
    "enfasis": false,
    "frase": 20,
@@ -1609,8 +1609,8 @@
   },
   {
    "texto": "vendedor",
-   "inicio": 51.757,
-   "duracion": 0.533,
+   "inicio": 51.675,
+   "duracion": 0.545,
    "visible": "«VENDEDOR",
    "enfasis": true,
    "frase": 21,
@@ -1618,8 +1618,8 @@
   },
   {
    "texto": "aprendiz",
-   "inicio": 52.29,
-   "duracion": 0.558,
+   "inicio": 52.221,
+   "duracion": 0.545,
    "visible": "APRENDIZ».",
    "enfasis": true,
    "frase": 21,

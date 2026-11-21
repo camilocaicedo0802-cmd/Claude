@@ -69,9 +69,9 @@ SILENCIO_FRASE = {buscar("Si la van a desmontar"): (0.40, 0.28)}
 VOCES_EXTRA = {
     "lustig": ("Enceladus", "Un caballero elegante piensa en voz alta, en un susurro suave, lento y seguro, saboreando una idea brillante, con una sonrisa que se nota al final. Sin acento extranjero."),
     "lustig2": ("Enceladus", "Un caballero elegante propone un negocio confidencial: voz baja, segura y persuasiva; 'Pero ni una palabra' casi en susurro y más grave. Sin acento extranjero."),
-    "esposa": ("Kore", "Una esposa seca y escéptica, de brazos cruzados, que desconfía; la pregunta sube al final."),
+    "esposa": ("Kore", "Una esposa seca y escéptica, de brazos cruzados, que desconfía; la pregunta sube al final. Articula bien clara la f de estafa: es-ta-FA."),
 }
-AJUSTE_CITAS = {"lustig": (0, 1.0), "lustig2": (0, 1.0), "esposa": (0, 1.0)}
+AJUSTE_CITAS = {"lustig": (0, 1.0), "lustig2": (0, 1.0), "esposa": (0, 1.12)}
 ESTILO_MULETILLA = ""
 
 VISIBLE = {
