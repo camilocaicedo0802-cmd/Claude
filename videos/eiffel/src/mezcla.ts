@@ -2,7 +2,7 @@ import datos from '../public/voz-palabras.json';
 
 /*
  * Mezcla del short: la voz siempre manda. Efectos y música se agachan mientras habla.
- * La música (piano de cabaret + tic-tac en la escalada) se corta en el giro y ya no vuelve.
+ * La música (vals musette) viene cortada en el giro y en «¿Y cómo terminó?» desde musica.wav.
  */
 
 const FPS = 30;
