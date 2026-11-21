@@ -16,6 +16,8 @@ window.REGALO = {
   fechaInicio: "2026-03-21",       // el día que se hicieron novios: de aquí sale el contador de días
 
   // ── Pantalla de bienvenida ────────────────────────────────────────
+  bienvenidaPara: "Mi yiya",       // nombre en la tarjeta del corazón (vacío = usa "para")
+  bienvenidaDe: "Camilo",          // firma en la tarjeta del corazón (vacío = usa "de")
   dedicatoria: "Hice esto pensando en ti, detalle por detalle. Ojalá te guste tanto como *me gustas tú.*",
   toquesCorazon: 4,                // cuántos toques llenan el corazón
 

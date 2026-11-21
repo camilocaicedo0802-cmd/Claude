@@ -89,7 +89,7 @@
   }
 
   // ── Textos sueltos y adornos ─────────────────────────────────────
-  $$('[data-t]').forEach((n) => { n.textContent = ''; rico(n, R[n.dataset.t] || ''); });
+  $$('[data-t]').forEach((n) => { n.textContent = ''; rico(n, R[n.dataset.t] || R[n.dataset.alt] || ''); });
   $$('[data-cora]').forEach((n) => { n.innerHTML = cora(); });
   $$('.flotantes').forEach((caja) => {
     const n = +caja.dataset.flotantes || 8;
