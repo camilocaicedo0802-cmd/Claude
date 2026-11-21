@@ -54,13 +54,18 @@ OBJETIVO_PPM = 202.0
 TEMPO_FRASE = {buscar("«vendedor aprendiz»"): 0.85, buscar("Así que Lústig le confiesa"): 0.88}
 HABLADAS = {"1925": 3}
 
-PAUSA_NORMAL = 0.08
+# Voz natural (como Napoleón): la toma del narrador queda continua (scripts/montar_natural.py). Pausas en silencio
+# real y en tiempo final: las marcadas quedan exactas; las demás solo se acortan hasta estos topes.
+PAUSA_NORMAL = 0.17
+PAUSA_INTERNA_MAX = 0.22
+SIN_RESPIRACIONES = True
+REFUERZO_FINAL = 1.15
 PAUSAS = {
-    buscar("Un estafador vendió"): 0.25,      # micro pausa después de «Torre Eiffel...»
-    buscar("Así que Lústig le confiesa"): 0.5,  # medio segundo antes de «Y eso lo convence»
-    buscar("Le paga la torre"): 0.3,          # antes de «y encima el soborno»
-    buscar("¿Y cómo terminó?"): 0.4,          # después de la pregunta misteriosa
-    buscar("Murió preso"): 0.3,               # «en profesión, pusieron:» → «vendedor aprendiz»
+    buscar("Un estafador vendió"): 0.30,      # micro pausa después de «Torre Eiffel...»
+    buscar("Así que Lústig le confiesa"): 0.50,  # medio segundo antes de «Y eso lo convence»
+    buscar("Le paga la torre"): 0.30,          # antes de «y encima el soborno»
+    buscar("¿Y cómo terminó?"): 0.40,          # después de la pregunta misteriosa
+    buscar("Murió preso"): 0.30,               # «en profesión, pusieron:» → «vendedor aprendiz»
 }
 SILENCIO_INTERNO = (0.18, 0.10)
 # en el susurro de Lustig se respeta la micro pausa de «Si la van a desmontar...» (hasta 0,28 s)
