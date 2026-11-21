@@ -34,6 +34,16 @@
     if (txt != null) e.textContent = txt;
     return e;
   }
+  /* Escribe `txt` en `nodo`; lo que va entre *asteriscos* queda resaltado en itálica. */
+  function rico(nodo, txt) {
+    String(txt == null ? '' : txt).split(/\*([^*]+)\*/).forEach((trozo, i) => {
+      if (!trozo) return;
+      nodo.append(i % 2 ? el('em', '', trozo) : trozo);
+    });
+    return nodo;
+  }
+  const elr = (tag, cls, txt) => rico(el(tag, cls), txt);
+  const liso = (txt) => String(txt == null ? '' : txt).replace(/\*([^*]+)\*/g, '$1');
   const azar = (a, b) => a + Math.random() * (b - a);
   const css = (n) => getComputedStyle(raiz).getPropertyValue(n).trim();
   function vibrar(p) { try { if (navigator.vibrate) navigator.vibrate(p); } catch (e) { /* sin vibración */ } }
@@ -79,7 +89,7 @@
   }
 
   // ── Textos sueltos y adornos ─────────────────────────────────────
-  $$('[data-t]').forEach((n) => { n.textContent = R[n.dataset.t] || ''; });
+  $$('[data-t]').forEach((n) => { n.textContent = ''; rico(n, R[n.dataset.t] || ''); });
   $$('[data-cora]').forEach((n) => { n.innerHTML = cora(); });
   $$('.flotantes').forEach((caja) => {
     const n = +caja.dataset.flotantes || 8;
@@ -180,7 +190,7 @@
     const fotos = (g.fotos || []).filter((f) => f && f.src);
     const seccion = $('.galeria');
     if (!fotos.length) { seccion.hidden = true; return; }
-    $('#galeriaTitulo').textContent = g.titulo || 'Momentos que no se borran';
+    rico($('#galeriaTitulo'), g.titulo || 'Momentos que *no se borran*');
 
     const carrusel = $('#carrusel');
     const puntos = $('#fotoPuntos');
@@ -243,9 +253,9 @@
     const parrafos = (c.parrafos || []).filter(Boolean);
     if (!parrafos.length) { $('.carta').hidden = true; return; }
     const cuerpo = $('#cartaCuerpo');
-    if (c.saludo) cuerpo.append(el('p', 'aparece', c.saludo));
-    parrafos.forEach((p) => cuerpo.append(el('p', 'aparece', p)));
-    if (c.despedida) cuerpo.append(el('p', 'aparece', c.despedida));
+    if (c.saludo) cuerpo.append(el('p', 'carta__saludo aparece', liso(c.saludo)));
+    parrafos.forEach((p) => cuerpo.append(elr('p', 'aparece', p)));
+    if (c.despedida) cuerpo.append(elr('p', 'aparece', c.despedida));
     if (R.de) {
       const firma = el('p', 'carta__firma aparece');
       firma.append(el('span', '', R.de));
@@ -257,7 +267,7 @@
   // ── Línea del tiempo ─────────────────────────────────────────────
   (() => {
     const r = R.recuerdos || {};
-    $('#recuerdosTitulo').textContent = r.titulo || 'Nuestra línea del tiempo';
+    rico($('#recuerdosTitulo'), r.titulo || 'Nuestra *línea del tiempo*');
 
     const dias = diasDesde(R.fechaInicio);
     const caja = $('.contador');
@@ -305,8 +315,8 @@
         f.append(el('span', '', fechaLarga(m.fecha)));
         cuerpo.append(f);
       }
-      cuerpo.append(el('h3', 'momento__titulo', m.titulo));
-      if (m.texto) cuerpo.append(el('p', 'momento__texto', m.texto));
+      cuerpo.append(elr('h3', 'momento__titulo', m.titulo));
+      if (m.texto) cuerpo.append(elr('p', 'momento__texto', m.texto));
       li.append(img, cuerpo);
       linea.append(li);
     });
@@ -443,8 +453,8 @@
     const puntos = (l.puntos || []).filter((p) => p && p.nombre);
     const seccion = $('.lugares');
     if (!puntos.length) { seccion.hidden = true; return; }
-    $('#lugaresTitulo').textContent = l.titulo || 'El mapa de nuestra historia';
-    $('#lugaresTexto').textContent = l.texto || '';
+    rico($('#lugaresTitulo'), l.titulo || 'El mapa de *nuestra historia*');
+    rico($('#lugaresTexto'), l.texto || '');
 
     const lista = $('#lugaresLista');
     const caja = $('.mapa');
@@ -460,10 +470,10 @@
       b.type = 'button';
       const cuerpo = el('span', 'lugar__cuerpo');
       const cabeza = el('span', 'lugar__cabeza');
-      cabeza.append(el('span', 'lugar__nombre', p.nombre));
+      cabeza.append(el('span', 'lugar__nombre', liso(p.nombre)));
       if (p.cuando) cabeza.append(el('span', 'lugar__cuando', p.cuando));
       cuerpo.append(cabeza);
-      if (p.texto) cuerpo.append(el('span', 'lugar__texto', p.texto));
+      if (p.texto) cuerpo.append(el('span', 'lugar__texto', liso(p.texto)));
       if (p.direccion) {
         const dir = el('span', 'lugar__dir');
         dir.innerHTML = ico('pin');
@@ -545,11 +555,11 @@
         if (!conSitio(p)) return null;
         const m = L.marker([p.lat, p.lng], {
           icon: L.divIcon({ className: 'pin', html: `<span class="pin__cuerpo">${forma}<b>${i + 1}</b></span>`, iconSize: [32, 42], iconAnchor: [16, 41] }),
-          title: p.nombre,
-          alt: p.nombre,
+          title: liso(p.nombre),
+          alt: liso(p.nombre),
           riseOnHover: true
         }).addTo(mapa);
-        m.bindTooltip(p.nombre, { direction: 'top', offset: [0, -42], className: 'pin-nombre', opacity: 1 });
+        m.bindTooltip(liso(p.nombre), { direction: 'top', offset: [0, -42], className: 'pin-nombre', opacity: 1 });
         m.on('click', () => elegir(i, true));
         return m;
       });
@@ -577,7 +587,7 @@
     const foto = $('#cierreFoto');
     if (f.foto) foto.src = f.foto;
     else { $('.cierre__foto').hidden = true; $('.cierre').classList.add('cierre--sin-foto'); }
-    $('#cierreFrase').textContent = f.frase || '';
+    $('#cierreFrase').textContent = liso(f.frase);
   })();
 
   // ── Última sorpresa: preguntas y vale ────────────────────────────
@@ -620,18 +630,18 @@
 
     function pregunta(i) {
       const q = preguntas[i];
-      const intro = el('p', 'juego__intro', s.intro || 'Para descubrir mi última sorpresa tendrás que responder unas preguntas sobre nosotros.');
+      const intro = elr('p', 'juego__intro', s.intro || 'Para descubrir mi última sorpresa tendrás que responder unas preguntas sobre nosotros.');
       const puntos = el('div', 'juego__puntos');
       puntos.setAttribute('aria-hidden', 'true');
       preguntas.forEach((_, k) => puntos.append(el('i', k < i ? 'hecha' : k === i ? 'activa' : '')));
       const hoja = el('div', 'pregunta tarjeta');
-      hoja.append(el('p', 'rotulo', `Pregunta ${i + 1} de ${preguntas.length}`), el('h2', 'pregunta__texto', q.pregunta));
+      hoja.append(el('p', 'rotulo', `Pregunta ${i + 1} de ${preguntas.length}`), elr('h2', 'pregunta__texto', q.pregunta));
       const eco = el('div', 'juego__eco');
       eco.setAttribute('aria-live', 'polite');
 
       let resuelta = false;
       q.opciones.forEach((texto, k) => {
-        const b = el('button', 'opcion', texto);
+        const b = el('button', 'opcion', liso(texto));
         b.type = 'button';
         b.addEventListener('click', () => {
           if (resuelta || b.classList.contains('opcion--mal')) return;
@@ -663,7 +673,7 @@
       rotular();
       const bloque = el('div', 'logro');
       const titulo = el('h2', 'logro__titulo');
-      titulo.append('Lo lograste');
+      rico(titulo, 'Lo *lograste*');
       titulo.insertAdjacentHTML('beforeend', cora());
       bloque.append(titulo, el('p', 'logro__texto', 'Esta era la última sorpresa que tenía preparada para ti.'));
       escena.replaceChildren(bloque);
@@ -678,7 +688,7 @@
       tijera.innerHTML = ico('tijera');
       const texto = el('p', 'vale__texto');
       texto.innerHTML = cora();
-      texto.append(s.vale || '');
+      rico(texto, s.vale || '');
       v.append(tijera, el('p', 'rotulo rotulo--mini', 'Vale especial'), texto);
       if (R.de) v.append(el('p', 'vale__firma', `— ${R.de}`));
       const volver = el('button', 'boton-claro', 'Volver al regalo');

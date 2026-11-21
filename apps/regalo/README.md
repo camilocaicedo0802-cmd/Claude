@@ -28,6 +28,12 @@ Todo el contenido está en [`contenido.js`](contenido.js): nombres, fecha, texto
 
 Si borras una sección de `contenido.js` (o la dejas vacía), esa parte no aparece.
 
+Para resaltar una palabra o frase en itálica, ponla entre asteriscos: `"Momentos que *no se borran*"`. Funciona en títulos, carta, preguntas y vale.
+
+## Estilo
+
+Amarillo y blanco con tinta casi negra. Textos en Poppins, títulos en Poppins Bold y palabras resaltadas en itálica con serifa. La itálica prevista es Scholar Italic; mientras no esté su archivo se usa Instrument Serif Italic, que es parecida. Los colores y las tipografías son las variables del inicio de [`estilos.css`](estilos.css).
+
 Las fotos, la melodía y el mensaje de voz que vienen incluidos son de ejemplo.
 
 ## Verlo en tu computador
@@ -46,4 +52,4 @@ La página lleva `noindex`, así que los buscadores no la listan, pero cualquier
 ## Créditos
 
 - Mapa: [Leaflet](https://leafletjs.com) (incluido en `vendor/`), teselas de CARTO con datos de OpenStreetMap y contorno de respaldo de Natural Earth.
-- Tipografías: Playfair Display e Inter (Google Fonts).
+- Tipografías: Poppins e Instrument Serif (Google Fonts).
