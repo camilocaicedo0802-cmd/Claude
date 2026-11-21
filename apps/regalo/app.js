@@ -305,11 +305,14 @@
     const momentos = (r.momentos || []).filter((m) => m && m.titulo);
     if (!momentos.length) linea.hidden = true;
     momentos.forEach((m) => {
-      const li = el('li', 'momento aparece');
-      const img = el('img', 'momento__foto');
-      img.src = m.foto || (R.portada && R.portada.foto) || '';
-      img.alt = '';
-      img.loading = 'lazy';
+      const li = el('li', m.foto ? 'momento aparece' : 'momento momento--sin-foto aparece');
+      if (m.foto) {
+        const img = el('img', 'momento__foto');
+        img.src = m.foto;
+        img.alt = '';
+        img.loading = 'lazy';
+        li.append(img);
+      }
       const cuerpo = el('div');
       if (m.fecha) {
         const f = el('p', 'momento__fecha');
@@ -319,7 +322,7 @@
       }
       cuerpo.append(elr('h3', 'momento__titulo', m.titulo));
       if (m.texto) cuerpo.append(elr('p', 'momento__texto', m.texto));
-      li.append(img, cuerpo);
+      li.append(cuerpo);
       linea.append(li);
     });
   })();

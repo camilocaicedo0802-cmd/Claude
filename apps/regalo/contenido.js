@@ -68,20 +68,18 @@ window.REGALO = {
       {
         fecha: "2023-08-17",
         titulo: "El día que nos *conocimos*",
-        texto: "Ese día no sabía que estaba conociendo a una de las personas más importantes de mi vida. Hoy lo cuento como el principio de todo.",
-        foto: "fotos/momento-1.jpg"
+        texto: "Ese día no sabía que estaba conociendo a una de las personas más importantes de mi vida. Hoy lo cuento como el principio de todo."
+        // foto: "fotos/…jpg"   (opcional: una foto redonda junto al recuerdo)
       },
       {
         fecha: "2025-06-21",
         titulo: "Empezamos a *salir*",
-        texto: "Casi dos años después de conocernos, por fin nos dimos la oportunidad. Desde esa primera salida supe que quería muchas más.",
-        foto: "fotos/momento-2.jpg"
+        texto: "Casi dos años después de conocernos, por fin nos dimos la oportunidad. Desde esa primera salida supe que quería muchas más."
       },
       {
         fecha: "2026-03-21",
         titulo: "Nos hicimos *novios*",
-        texto: "Desde ese día llevo la cuenta, y cada uno de esos días ha valido la pena.",
-        foto: "fotos/momento-3.jpg"
+        texto: "Desde ese día llevo la cuenta, y cada uno de esos días ha valido la pena."
       }
     ]
   },
