@@ -260,6 +260,18 @@ const MesaHotel: React.FC = () => (
 	<>
 		<div style={{position: 'absolute', left: -40, right: -40, top: 1420, height: 60, background: '#5a2a1e', border: `9px solid ${TINTA}`}} />
 		<div style={{position: 'absolute', left: -40, right: -40, top: 1480, height: 500, background: 'linear-gradient(180deg, #f2ead4, #d8ccb0)', borderTop: `8px solid ${TINTA}`}} />
+		{/* mantel con encaje, el contrato y el café */}
+		{Array.from({length: 14}, (_, i) => (
+			<div key={i} style={{position: 'absolute', left: i * 80 - 20, top: 1478, width: 80, height: 40, borderRadius: '0 0 40px 40px', border: `5px solid #c9b48a`, borderTop: 'none'}} />
+		))}
+		<div style={{position: 'absolute', left: 390, top: 1600, width: 300, height: 200, background: '#fbf6e8', border: `7px solid ${TINTA}`, transform: 'rotate(-4deg)', padding: 18, boxSizing: 'border-box', fontFamily: CONDENSADA, fontSize: 40, color: '#c8202a', textAlign: 'center'}}>
+			CONTRATO
+			{[0, 1, 2].map((i) => (
+				<div key={i} style={{height: 6, background: '#c9c0a8', margin: '16px 0'}} />
+			))}
+		</div>
+		<TazaCafe x={190} y={1640} />
+		<TazaCafe x={880} y={1660} />
 	</>
 );
 
@@ -505,7 +517,7 @@ const E17: React.FC<P> = ({d, h, e, s}) => {
 	return (
 		<Toma escena={<Escritorio />} desde={d} hasta={h} entrada={e} salida={s} cam={{s: [1, 1]}} camFn={(ff) => {
 			const u = tramo(ff, d, pal(21, 'vendedor'));
-			return centrarV(540, interpolate(u, [0, 1], [900, 1000]), 1.15 + 0.25 * u, interpolate(u, [0, 1], [900, 760]));
+			return centrarV(540, interpolate(u, [0, 1], [900, 1000]), 1.12 + 0.16 * u, interpolate(u, [0, 1], [900, 760]));
 		}}>
 			<Certificado x={540} y={480} ancho={920} escribe={escribe} />
 		</Toma>

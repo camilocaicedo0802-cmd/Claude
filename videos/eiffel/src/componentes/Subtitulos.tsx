@@ -90,7 +90,7 @@ export const Subtitulos: React.FC<{y?: number}> = ({y = 1152 - 60}) => {
 								transform: `scale(${pop})`,
 							}}
 						>
-							{p.visible}
+							{p.visible.replace(/«/g, '“').replace(/»/g, '”')}
 						</span>
 					);
 				})}
