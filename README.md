@@ -10,6 +10,8 @@ La antigua web de editor de video (`apps/editor`) se unió a esta: su dirección
 
 El monorepo incluye además **LIFE OS** (`apps/life-os`, puerto 3003): una aplicación personal de finanzas, clientes y agenda con datos locales en el navegador. Instrucciones y modelo de datos en [`apps/life-os/README.md`](apps/life-os/README.md).
 
+También hay una página-regalo personal en `apps/regalo`: un sitio estático sin compilación que no forma parte del portafolio ni de su publicación. Cómo personalizarla en [`apps/regalo/README.md`](apps/regalo/README.md).
+
 Identidad visual "Corte final": negro, blanco y rojo; Poppins + Playfair Display Italic. Todos los textos están en español; se mantienen en inglés los términos del oficio (motion graphics, reels, UGC, Shorts, hook).
 
 **Orden de los proyectos:** 01 Motion Graphics · 02 Ediciones destacadas · 03 Grow Marketing · 04 Bitácora House · 05 María Elena Badillo · 06 Videos generados con IA · 07 YouTube (Shorts y formato horizontal) · 08 Ryhar · 09 Beleza · 10–20 el resto, en el orden de las carpetas de Drive. Antes de Contacto va la sección **Diseño de landing pages**. El video principal es `promo_editor_motion.mp4`.
