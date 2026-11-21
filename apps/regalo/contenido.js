@@ -115,14 +115,14 @@ window.REGALO = {
         correcta: 1
       },
       {
-        pregunta: "¿Quién dijo *“te quiero”* primero?",
+        pregunta: "¿Quién dijo *“te amo”* primero?",
         opciones: ["Tú", "Yo", "Los dos al mismo tiempo"],
-        correcta: "todas"            // pendiente: Juan confirma la respuesta
+        correcta: "todas"            // cualquier respuesta vale
       },
       {
         pregunta: "¿Quién se *enamoró* primero?",
         opciones: ["Tú", "Yo", "Los dos desde el primer día"],
-        correcta: "todas"            // pendiente: Juan confirma la respuesta
+        correcta: "todas"            // cualquier respuesta vale
       }
     ],
     vale: "Vale por una escapada a una *cabaña en diciembre*, solo tú y yo."
