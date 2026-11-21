@@ -144,3 +144,100 @@ export const Miniatura: React.FC = () => (
 		</Bloque>
 	</AbsoluteFill>
 );
+
+/* ================= variantes más llamativas (para probar en vidIQ) =================
+   Más emoción, sujeto más grande, colores saturados y tensión entre dos personajes. */
+
+/** contrato en la mano izquierda (SVG en coordenadas de la mano; la izquierda no sale espejada) */
+const ContratoMano: React.FC<{rot?: number; tam?: number}> = ({rot = 0, tam = 1}) => (
+	<g transform={`rotate(${rot} 0 36) translate(0 30) scale(${tam})`}>
+		<rect x={-110} y={0} width={220} height={290} rx={8} fill="#f6efdc" stroke={TINTA} strokeWidth={8} />
+		<text x={0} y={52} textAnchor="middle" fontFamily={CONDENSADA} fontSize={34} fill="#2a2218">CONTRATO</text>
+		<line x1={-80} y1={70} x2={80} y2={70} stroke="#2a2218" strokeWidth={4} />
+		<text x={-84} y={112} fontFamily={CONDENSADA} fontSize={30} fill="#c8202a">CANCILLER</text>
+		{[140, 165, 190].map((y) => (
+			<line key={y} x1={-84} y1={y} x2={70} y2={y} stroke="#cfc4a8" strokeWidth={6} strokeLinecap="round" />
+		))}
+		<path d="M -80 250 C -60 215 -40 215 -45 245 C -40 265 0 225 20 240 C 40 255 60 230 84 238" stroke="#1d2a6b" strokeWidth={6} fill="none" strokeLinecap="round" />
+	</g>
+);
+
+const Rayos: React.FC<{cx: number; cy: number; color: string}> = ({cx, cy, color}) => (
+	<svg viewBox="0 0 1920 1080" style={{position: 'absolute', inset: 0, width: '100%', height: '100%'}}>
+		{Array.from({length: 16}, (_, i) => {
+			const a = (i / 16) * Math.PI * 2;
+			return <path key={i} d={`M ${cx} ${cy} L ${cx + Math.cos(a) * 2000} ${cy + Math.sin(a) * 2000} L ${cx + Math.cos(a + 0.13) * 2000} ${cy + Math.sin(a + 0.13) * 2000} Z`} fill={color} />;
+		})}
+	</svg>
+);
+
+/** flecha gruesa amarilla con borde negro */
+const Flecha: React.FC<{x: number; y: number; ancho: number; rot: number}> = ({x, y, ancho, rot}) => (
+	<svg width={ancho} height={ancho * 0.6} viewBox="0 0 300 180" style={{position: 'absolute', left: x, top: y, transform: `rotate(${rot}deg)`, overflow: 'visible', filter: 'drop-shadow(0 10px 0 rgba(0,0,0,0.5))'}}>
+		<path d="M 10 70 L 180 70 L 180 20 L 290 90 L 180 160 L 180 110 L 10 110 Z" fill={AMARILLO} stroke={TINTA} strokeWidth={12} strokeLinejoin="round" />
+	</svg>
+);
+
+/* ----- A · el que se ríe y el que se va a quedar con todo (frío contra fuego) ----- */
+
+export const MiniaturaA: React.FC = () => (
+	<AbsoluteFill style={{background: '#0a0a10'}}>
+		{/* mitad fría (Papen) y mitad de fuego (Hitler), en diagonal */}
+		<AbsoluteFill style={{background: 'linear-gradient(135deg, #1d3a6a 0%, #13284a 42%, #000 42.2%, #000 43%, #ff5a1a 43.2%, #c81e10 70%, #4a0806 100%)'}} />
+		<Rayos cx={1450} cy={380} color="rgba(255,220,120,0.12)" />
+		<div style={{position: 'absolute', left: 1050, top: -40, width: 820, height: 820, borderRadius: '50%', background: 'radial-gradient(circle, rgba(255,230,150,0.55) 0%, rgba(255,230,150,0) 65%)'}} />
+		{/* Hitler enorme, sonrisa de villano */}
+		<Actor x={1460} y={1830} alto={1900}>
+			<Muneco ropa={HITLER_TRAJE} pose={{...manosEn([256, 446], [146, 432]), mi: 'oculta', md: 'puno', cabeza: -5}} ojos="entrecerrados" cejas="enojado" boca="dientes" />
+		</Actor>
+		{/* Papen, muerto de risa, con el contrato firmado */}
+		<Actor x={500} y={1500} alto={1150}>
+			<Muneco ropa={PAPEN} pose={{...brazo(-1, alcanzar(-1, 30, 300)), mi: 'agarra', ...brazo(1, alcanzar(1, 360, 360)), md: 'pulgar', cabeza: 8}} objIzq={<ContratoMano rot={170} tam={0.9} />} ojos="feliz" cejas="arrogante" boca="sonrisaGrande" />
+		</Actor>
+		<Vineta />
+		<Bloque left={60} top={40}>
+			<Titular texto="LO CONTRATARON" tam={170} color={AMARILLO} rot={-3} />
+		</Bloque>
+	</AbsoluteFill>
+);
+
+/* ----- B · Hitler enorme mostrando el contrato, flecha y «SIN GANAR» ----- */
+
+export const MiniaturaB: React.FC = () => (
+	<AbsoluteFill style={{background: 'radial-gradient(ellipse at 65% 45%, #ff3b1f 0%, #b3120c 40%, #3a0404 100%)'}}>
+		<Rayos cx={1250} cy={420} color="rgba(255,236,160,0.16)" />
+		<Actor x={1250} y={1900} alto={1950}>
+			<Muneco ropa={HITLER_TRAJE} pose={{...brazo(-1, alcanzar(-1, -10, 330)), mi: 'agarra', ...manosEn(undefined, [212, 430], {}, true), md: 'oculta', cabeza: 6}} objIzq={<ContratoMano rot={-5} tam={1.05} />} ojos="entrecerrados" cejas="enojado" boca="dientes" />
+		</Actor>
+		<Vineta />
+		<Bloque left={60} top={60}>
+			<Titular texto={'SIN\nGANAR'} tam={260} color={AMARILLO} rot={-4} />
+		</Bloque>
+		<Flecha x={300} y={600} ancho={330} rot={-8} />
+	</AbsoluteFill>
+);
+
+/* ----- C · Papen en shock y la sombra gigante de Hitler detrás ----- */
+
+export const MiniaturaC: React.FC = () => (
+	<AbsoluteFill style={{background: 'linear-gradient(180deg, #2a0a40 0%, #140620 60%, #05020a 100%)'}}>
+		<div style={{position: 'absolute', left: 820, top: -120, width: 1200, height: 1200, borderRadius: '50%', background: 'radial-gradient(circle, rgba(255,90,40,0.75) 0%, rgba(200,20,10,0.25) 45%, rgba(0,0,0,0) 70%)'}} />
+		{/* la sombra gigante de Hitler, con los ojos encendidos */}
+		<Actor x={1400} y={2100} alto={2300}>
+			<div style={{width: '100%', height: '100%', filter: 'brightness(0.12)'}}>
+				<Muneco ropa={HITLER_TRAJE} pose={manosEn([150, 560], [250, 560])} sombra={false} ojos="entrecerrados" cejas="enojado" boca="dientes" parpadea={false} />
+			</div>
+		</Actor>
+		{[1270, 1500].map((x) => (
+			<div key={x} style={{position: 'absolute', left: x - 40, top: 330, width: 80, height: 26, borderRadius: 13, background: '#ffe27a', boxShadow: '0 0 40px 18px rgba(255,200,60,0.85)'}} />
+		))}
+		{/* Papen en primer plano, en shock */}
+		<Actor x={720} y={2050} alto={1500}>
+			<Muneco ropa={PAPEN} pose={{...manosEn([90, 330], [310, 330]), mi: 'abierta', md: 'abierta', cabeza: -6}} objIzq={<ContratoMano rot={150} tam={0.8} />} ojos="grandes" cejas="sorprendido" boca="grito" />
+		</Actor>
+		<Vineta />
+		<Bloque left={70} top={50}>
+			<Titular texto={'ERROR\nFATAL'} tam={230} color={AMARILLO} rot={-4} />
+		</Bloque>
+	</AbsoluteFill>
+);
