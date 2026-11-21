@@ -34,7 +34,7 @@ Para resaltar una palabra o frase en itálica, ponla entre asteriscos: `"Momento
 
 Amarillo y blanco con tinta casi negra. Textos en Poppins, títulos en Poppins Bold y palabras resaltadas en itálica con serifa. La itálica prevista es Scholar Italic; mientras no esté su archivo se usa Instrument Serif Italic, que es parecida. Los colores y las tipografías son las variables del inicio de [`estilos.css`](estilos.css).
 
-Las fotos, la melodía y el mensaje de voz que vienen incluidos son de ejemplo.
+Por ahora el mensaje de voz y el mapa están ocultos porque aún no tienen contenido.
 
 ## Verlo en tu computador
 
@@ -43,11 +43,23 @@ cd apps/regalo
 python3 -m http.server 8080   # y abre http://localhost:8080
 ```
 
-## Publicarlo
+## Dónde está publicada
 
-Sube la carpeta `apps/regalo` tal cual a cualquier hosting estático (Netlify, Vercel, Cloudflare Pages, GitHub Pages). Con la dirección final se genera el código QR de la tarjeta.
+El flujo de GitHub Pages del repositorio copia esta carpeta tal cual en `/regalo/`:
 
-La página lleva `noindex`, así que los buscadores no la listan, pero cualquiera con el enlace puede abrirla. Este repositorio es público: lo que subas aquí (fotos, carta, audio) queda visible para cualquiera.
+**https://camilocaicedo0802-cmd.github.io/Claude/regalo/**
+
+Cada cambio que llega a `main` se publica solo. El QR apunta a esa dirección, así que sigue sirviendo aunque cambies el contenido.
+
+La página lleva `noindex`, así que los buscadores no la listan, pero cualquiera con el enlace puede abrirla. El repositorio es público: las fotos y textos de esta carpeta son visibles para cualquiera. Las fotos se publicaron sin metadatos (ni fecha ni ubicación GPS).
+
+## QR y tarjeta
+
+En [`qr/`](qr/):
+
+- `qr-regalo.png`: el código con un corazón al centro (1960 px).
+- `qr-regalo.svg`: el código sin corazón, en vectores, para cualquier tamaño.
+- `tarjeta-regalo.pdf` y `tarjeta-regalo.png`: tarjeta de 10 × 15 cm lista para imprimir (300 ppp).
 
 ## Créditos
 

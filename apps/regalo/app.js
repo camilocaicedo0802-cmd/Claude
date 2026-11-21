@@ -127,7 +127,9 @@
     const disco = $('#disco');
     const boton = $('#discoBoton');
     $('#discoFoto').src = c.foto || (R.portada && R.portada.foto) || '';
-    $('#cancionMeta').textContent = [c.titulo, c.artista].filter(Boolean).join(' · ');
+    const meta = [c.titulo, c.artista].filter(Boolean).join(' · ');
+    $('#cancionMeta').textContent = meta;
+    $('#cancionMeta').hidden = !meta;
 
     let audio = null;
     if (c.archivo) {
@@ -636,6 +638,7 @@
       preguntas.forEach((_, k) => puntos.append(el('i', k < i ? 'hecha' : k === i ? 'activa' : '')));
       const hoja = el('div', 'pregunta tarjeta');
       hoja.append(el('p', 'rotulo', `Pregunta ${i + 1} de ${preguntas.length}`), elr('h2', 'pregunta__texto', q.pregunta));
+      if (q.pista) hoja.append(elr('p', 'pregunta__pista', q.pista));
       const eco = el('div', 'juego__eco');
       eco.setAttribute('aria-live', 'polite');
 

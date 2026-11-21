@@ -479,6 +479,8 @@ html.js .aparece.visto { opacity: 1; transform: none; }
 .pregunta { width: 100%; padding: 26px 20px 22px; display: flex; flex-direction: column; gap: 12px; animation: sube 0.55s var(--suave) both; }
 .pregunta .rotulo { text-align: left; font-size: 9.5px; }
 .pregunta__texto { font: 700 21px/1.28 var(--sans); letter-spacing: -0.025em; margin-bottom: 8px; text-wrap: balance; }
+.pregunta__texto:has(+ .pregunta__pista) { margin-bottom: 0; }
+.pregunta__pista { margin: -8px 0 8px; font-size: 13px; color: var(--tinta-media); }
 .opcion {
   width: 100%; padding: 14px 18px; text-align: left;
   background: var(--papel); border: 1.5px solid var(--linea-fuerte); border-radius: 22px;

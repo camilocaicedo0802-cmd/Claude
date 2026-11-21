@@ -10,10 +10,10 @@
 */
 window.REGALO = {
   // ── Quién regala y quién recibe ───────────────────────────────────
-  para: "Mi amor",                 // nombre de tu pareja
-  de: "Camilo",                    // tu nombre
-  pareja: "Tú y yo",               // línea bajo el nombre en la portada, por ejemplo "Sofía y Camilo"
-  fechaInicio: "2023-03-03",       // el día que empezaron: AAAA-MM-DD (de aquí sale el contador de días)
+  para: "Leidy",
+  de: "Juan Caicedo",
+  pareja: "Leidy y Juan",
+  fechaInicio: "2026-03-21",       // el día que se hicieron novios: de aquí sale el contador de días
 
   // ── Pantalla de bienvenida ────────────────────────────────────────
   dedicatoria: "Hice esto pensando en ti, detalle por detalle. Ojalá te guste tanto como *me gustas tú.*",
@@ -24,24 +24,24 @@ window.REGALO = {
 
   // ── Nuestra canción ───────────────────────────────────────────────
   cancion: {
-    titulo: "Melodía de ejemplo",
-    artista: "Cámbiala por la canción de ustedes",
-    foto: "fotos/galeria-1.jpg",           // la foto que gira en el disco
-    archivo: "audio/cancion-demo.mp3",     // un audio propio (o déjalo en "" si solo usas Spotify)
-    spotify: "",                           // enlace de la canción en Spotify: https://open.spotify.com/track/…
-    sonarAlAbrir: true                     // empieza a sonar cuando se abre el corazón
+    titulo: "",                            // opcional: nombre de la canción (el reproductor de Spotify ya lo muestra)
+    artista: "",
+    foto: "fotos/disco.jpg",               // la foto que gira en el disco
+    archivo: "",                           // un audio propio en "audio/" (si se deja vacío, suena desde Spotify)
+    spotify: "https://open.spotify.com/track/5Vn2XpqzUOozKNmBmAgysw",
+    sonarAlAbrir: true                     // solo aplica al audio propio
   },
 
   // ── Galería ───────────────────────────────────────────────────────
   galeria: {
     titulo: "Momentos que *no se borran*",
     fotos: [
-      { src: "fotos/galeria-1.jpg", alt: "Nosotros, foto 1" },
-      { src: "fotos/galeria-2.jpg", alt: "Nosotros, foto 2" },
-      { src: "fotos/galeria-3.jpg", alt: "Nosotros, foto 3" },
-      { src: "fotos/galeria-4.jpg", alt: "Nosotros, foto 4" },
-      { src: "fotos/galeria-5.jpg", alt: "Nosotros, foto 5" },
-      { src: "fotos/galeria-6.jpg", alt: "Nosotros, foto 6" }
+      { src: "fotos/galeria-1.jpg", alt: "Selfie de Leidy y Juan sonriendo" },
+      { src: "fotos/galeria-2.jpg", alt: "Leidy y Juan frente al espejo" },
+      { src: "fotos/galeria-3.jpg", alt: "Leidy y Juan de cerca, ella lanzando un beso" },
+      { src: "fotos/galeria-4.jpg", alt: "Leidy y Juan en un cumpleaños" },
+      { src: "fotos/galeria-5.jpg", alt: "Leidy y Juan en el grado de Juan" },
+      { src: "fotos/galeria-6.jpg", alt: "Leidy y Juan en la celebración del grado" }
     ]
   },
 
@@ -61,74 +61,39 @@ window.REGALO = {
   // ── Línea del tiempo ──────────────────────────────────────────────
   recuerdos: {
     titulo: "Nuestra *línea del tiempo*",
-    lugarInicio: "Todo empezó en Bogotá",
+    lugarInicio: "",                 // opcional, por ejemplo "Todo empezó en Medellín"
     momentos: [
       {
-        fecha: "2023-02-24",
-        titulo: "Nuestra primera cita",
-        texto: "Me temblaban las manos antes de verte. Pedimos un café que se enfrió porque no paramos de hablar. Esa tarde supe que quería una segunda cita.",
-        foto: "fotos/galeria-2.jpg"
+        fecha: "2023-08-17",
+        titulo: "El día que nos *conocimos*",
+        texto: "Ese día no sabía que estaba conociendo a una de las personas más importantes de mi vida. Hoy lo cuento como el principio de todo.",
+        foto: "fotos/momento-1.jpg"
       },
       {
-        fecha: "2023-12-12",
-        titulo: "Nuestro primer viaje",
-        texto: "Maleta mal hecha, lista de canciones eterna y cero plan. Nos perdimos dos veces y aun así fue perfecto. Contigo hasta perderse es buen plan.",
-        foto: "fotos/galeria-4.jpg"
+        fecha: "2025-06-21",
+        titulo: "Empezamos a *salir*",
+        texto: "Casi dos años después de conocernos, por fin nos dimos la oportunidad. Desde esa primera salida supe que quería muchas más.",
+        foto: "fotos/momento-2.jpg"
       },
       {
-        fecha: "2025-01-12",
-        titulo: "Un lugar que es nuestro",
-        texto: "Puede ser una casa, una banca del parque o tu lado del sofá. Donde estés tú, ahí es mi hogar.",
-        foto: "fotos/galeria-6.jpg"
+        fecha: "2026-03-21",
+        titulo: "Nos hicimos *novios*",
+        texto: "Desde ese día llevo la cuenta, y cada uno de esos días ha valido la pena.",
+        foto: "fotos/momento-3.jpg"
       }
     ]
   },
 
   // ── Mensaje de voz ────────────────────────────────────────────────
-  voz: { archivo: "audio/mensaje-demo.mp3" },   // graba un audio con tu celular y ponlo aquí
+  voz: { archivo: "" },            // graba un audio, ponlo en "audio/" y escribe aquí la ruta, por ejemplo "audio/mensaje.m4a"
 
   // ── Mapa de lugares ───────────────────────────────────────────────
-  // lat y lng: en Google Maps, clic derecho sobre el lugar → el primer dato que aparece son las coordenadas.
+  // Sin puntos, la sección no aparece. Cada punto lleva lat y lng
+  // (en Google Maps: clic derecho sobre el lugar → el primer dato son las coordenadas).
   lugares: {
     titulo: "El mapa de *nuestra historia*",
     texto: "Cada punto es un lugar que nos hizo ser quienes somos. Tócalos y revívelos.",
-    puntos: [
-      {
-        nombre: "Donde nos conocimos",
-        cuando: "Febrero de 2023",
-        texto: "Llegué tarde, pedí disculpas y tú te reíste. Ahí empezó todo.",
-        direccion: "Parque de la 93, Bogotá",
-        lat: 4.6767, lng: -74.0483
-      },
-      {
-        nombre: "El café de la primera cita",
-        cuando: "Febrero de 2023",
-        texto: "Dos cafés fríos y una conversación que no quería terminar.",
-        direccion: "Usaquén, Bogotá",
-        lat: 4.6946, lng: -74.0308
-      },
-      {
-        nombre: "Villa de Leyva",
-        cuando: "Diciembre de 2023",
-        texto: "Nuestro primer viaje. La plaza de noche, el frío y tu mano en el bolsillo de mi chaqueta.",
-        direccion: "Plaza Mayor, Villa de Leyva, Boyacá",
-        lat: 5.6333, lng: -73.5255
-      },
-      {
-        nombre: "Cartagena",
-        cuando: "2024",
-        texto: "El atardecer en la muralla y la promesa de volver cada año.",
-        direccion: "Centro Histórico, Cartagena de Indias",
-        lat: 10.4236, lng: -75.5510
-      },
-      {
-        nombre: "París",
-        cuando: "Pronto",
-        texto: "El viaje que tenemos pendiente. Ya empecé a ahorrar.",
-        direccion: "Torre Eiffel, París, Francia",
-        lat: 48.8584, lng: 2.2945
-      }
-    ]
+    puntos: []
   },
 
   // ── Cierre ────────────────────────────────────────────────────────
@@ -139,26 +104,27 @@ window.REGALO = {
 
   // ── Última sorpresa: preguntas y vale ─────────────────────────────
   // "correcta" es la posición de la respuesta buena empezando en 0.
-  // Usa correcta: "todas" si cualquier respuesta vale.
+  // Con correcta: "todas" cualquier respuesta vale.
   sorpresa: {
     intro: "Para descubrir mi última sorpresa tendrás que responder unas preguntas sobre nosotros.",
     preguntas: [
       {
-        pregunta: "¿Dónde fue nuestra *primera cita*?",
-        opciones: ["En un café", "En el cine", "En un parque"],
-        correcta: 0
-      },
-      {
-        pregunta: "¿Quién dijo *“te amo”* primero?",
-        opciones: ["Tú", "Yo", "Los dos al tiempo"],
+        pregunta: "¿Cuántos *viajes* hemos hecho?",
+        pista: "No puedes contarlos.",
+        opciones: ["8 viajes", "6 viajes", "5 viajes"],
         correcta: 1
       },
       {
-        pregunta: "¿Qué es lo que más *me gusta de ti*?",
-        opciones: ["Tu risa", "Tu forma de mirarme", "Todo, obvio"],
-        correcta: 2
+        pregunta: "¿Quién dijo *“te quiero”* primero?",
+        opciones: ["Tú", "Yo", "Los dos al mismo tiempo"],
+        correcta: "todas"            // pendiente: Juan confirma la respuesta
+      },
+      {
+        pregunta: "¿Quién se *enamoró* primero?",
+        opciones: ["Tú", "Yo", "Los dos desde el primer día"],
+        correcta: "todas"            // pendiente: Juan confirma la respuesta
       }
     ],
-    vale: "Vale por una cena en el lugar que *tú elijas.* Tú decides, yo invito."
+    vale: "Vale por una escapada a una *cabaña en diciembre*, solo tú y yo."
   }
 };

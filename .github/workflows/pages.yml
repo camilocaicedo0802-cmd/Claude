@@ -2,6 +2,7 @@
 #   https://<owner>.github.io/<repo>/disenador/  portafolio (editor de video y diseñador digital)
 #   https://<owner>.github.io/<repo>/            redirige al portafolio
 #   https://<owner>.github.io/<repo>/life-os/    LIFE OS (app personal; los datos viven en el navegador de cada dispositivo)
+#   https://<owner>.github.io/<repo>/regalo/     página-regalo (sitio estático de apps/regalo)
 # One-time setup: Settings > Pages > Source: "GitHub Actions".
 name: Publicar en GitHub Pages
 
@@ -45,6 +46,8 @@ jobs:
           # LIFE OS uses a real base path (its service worker and manifest need absolute, stable URLs).
           NEXT_PUBLIC_BASE_PATH="/${{ github.event.repository.name }}/life-os" npm run build:life-os
           cp -a apps/life-os/out _site/life-os
+          # The gift page is plain static files: publish the folder as it is.
+          cp -a apps/regalo _site/regalo
           touch _site/.nojekyll
 
       - uses: actions/configure-pages@v5
