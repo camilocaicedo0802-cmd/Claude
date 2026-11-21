@@ -1,0 +1,9 @@
+node_modules/
+out/
+# se regeneran con: python3 scripts/musette.py
+public/musica.wav
+public/sfx/
+__pycache__/
+public/voz.wav
+public/voz-cruda.wav
+node_modules
