@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f9f2ef">
+<meta name="robots" content="noindex, nofollow">
+<title>Un regalo para ti</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 90'%3E%3Cpath fill='%23a3123a' d='M50 86C20 62 4 44 4 27 4 13 15 4 27 4c9 0 18 5 23 14C55 9 64 4 73 4c12 0 23 9 23 23 0 17-16 35-46 59Z'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap">
+<link rel="stylesheet" href="vendor/leaflet/leaflet.css">
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+<!-- contenido:inicio -->
+<div class="puerta" id="puerta">
+  <div class="flotantes" data-flotantes="10" aria-hidden="true"></div>
+  <div class="puerta__col">
+    <div class="puerta__tarjeta">
+      <p class="rotulo">Tienes un regalo</p>
+      <p class="rotulo rotulo--mini">Para</p>
+      <h1 class="puerta__nombre" data-t="para"></h1>
+      <span class="filete" aria-hidden="true"></span>
+      <p class="puerta__de">De <strong data-t="de"></strong> <span data-cora></span></p>
+      <p class="puerta__dedicatoria" data-t="dedicatoria"></p>
+    </div>
+    <p class="puerta__pista">Toca el corazón para descubrir tu regalo.</p>
+    <span class="puerta__hueco" id="puertaHueco" aria-hidden="true"></span>
+  </div>
+  <button type="button" class="corazon" id="corazon" aria-label="Toca el corazón para abrir tu regalo">
+    <span class="corazon__latido">
+      <span class="corazon__relleno"><i></i></span>
+      <svg class="corazon__trazo" viewBox="0 0 100 90" aria-hidden="true"><path d="M50 86C20 62 4 44 4 27 4 13 15 4 27 4c9 0 18 5 23 14C55 9 64 4 73 4c12 0 23 9 23 23 0 17-16 35-46 59Z"/></svg>
+    </span>
+  </button>
+  <p class="puerta__toques" id="puertaToques" aria-live="polite">Cada toque abre un pedacito del recuerdo.</p>
+</div>
+
+<main class="pagina" id="pagina">
+  <header class="portada">
+    <img class="portada__foto" id="portadaFoto" alt="">
+    <div class="portada__texto">
+      <p class="rotulo rotulo--claro">Para</p>
+      <h2 class="portada__nombre" data-t="para"></h2>
+      <p class="portada__pareja" data-t="pareja"></p>
+      <p class="rotulo rotulo--claro portada__meta" id="portadaMeta"></p>
+    </div>
+  </header>
+
+  <section class="seccion cancion" id="cancion" aria-labelledby="cancionTitulo">
+    <p class="rotulo aparece">Nuestra canción</p>
+    <div class="disco aparece" id="disco">
+      <img class="disco__foto" id="discoFoto" alt="">
+      <span class="disco__ondas" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+      <button type="button" class="boton-redondo disco__boton" id="discoBoton" aria-label="Reproducir nuestra canción"></button>
+    </div>
+    <h2 class="cancion__titulo aparece" id="cancionTitulo">Nuestra canción</h2>
+    <p class="rotulo rotulo--mini aparece" id="cancionMeta"></p>
+    <div class="cancion__spotify aparece" id="cancionSpotify" hidden></div>
+  </section>
+
+  <section class="seccion galeria" aria-labelledby="galeriaTitulo">
+    <p class="rotulo aparece">Galería</p>
+    <h2 class="titulo aparece" id="galeriaTitulo"></h2>
+    <div class="carrusel" id="carrusel" tabindex="0" role="group" aria-label="Fotos"></div>
+    <div class="paginador">
+      <button type="button" class="paginador__flecha" id="fotoAnterior" aria-label="Foto anterior"></button>
+      <span class="paginador__puntos" id="fotoPuntos" aria-hidden="true"></span>
+      <button type="button" class="paginador__flecha" id="fotoSiguiente" aria-label="Foto siguiente"></button>
+    </div>
+  </section>
+
+  <section class="seccion carta" aria-label="Carta">
+    <p class="rotulo aparece">Carta</p>
+    <div class="carta__cuerpo" id="cartaCuerpo"></div>
+  </section>
+
+  <section class="seccion recuerdos" aria-labelledby="recuerdosTitulo">
+    <p class="rotulo aparece">Recuerdos</p>
+    <h2 class="titulo aparece" id="recuerdosTitulo"></h2>
+    <div class="contador aparece">
+      <p class="contador__numero" id="contadorNumero">0</p>
+      <p class="rotulo" id="contadorRotulo">Días contigo</p>
+      <p class="contador__desde" id="contadorDesde"></p>
+    </div>
+    <p class="recuerdos__inicio aparece" id="recuerdosInicio"></p>
+    <ol class="linea" id="linea"></ol>
+
+    <div class="voz tarjeta aparece" id="voz" hidden>
+      <div class="voz__cabecera">
+        <span class="voz__micro" aria-hidden="true"></span>
+        <div>
+          <p class="rotulo rotulo--izq">Mensaje de voz</p>
+          <p class="voz__de">De <span data-t="de"></span></p>
+        </div>
+      </div>
+      <div class="voz__ondas" id="vozOndas" role="slider" tabindex="0" aria-label="Posición del mensaje de voz" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
+      <div class="voz__controles">
+        <button type="button" class="boton-redondo" id="vozBoton" aria-label="Reproducir mensaje de voz"></button>
+        <span class="voz__barra"><i id="vozAvance"></i></span>
+        <span class="voz__tiempo" id="vozTiempo">0:00</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="seccion lugares" aria-labelledby="lugaresTitulo">
+    <p class="rotulo aparece">Nuestros lugares</p>
+    <h2 class="titulo aparece" id="lugaresTitulo"></h2>
+    <p class="lugares__texto aparece" id="lugaresTexto"></p>
+    <div class="mapa aparece">
+      <div class="mapa__lienzo" id="mapa"></div>
+      <p class="mapa__pista" aria-hidden="true">Toca los puntos del mapa <span data-cora></span></p>
+    </div>
+    <ol class="lugares__lista" id="lugaresLista"></ol>
+  </section>
+
+  <section class="cierre">
+    <figure class="cierre__foto"><img id="cierreFoto" alt="" loading="lazy"></figure>
+    <div class="cierre__firma">
+      <div class="flotantes" data-flotantes="8" aria-hidden="true"></div>
+      <p class="cierre__pareja" data-t="pareja"></p>
+      <p class="rotulo" id="cierreFrase"></p>
+      <div class="sorpresa tarjeta aparece">
+        <span class="sorpresa__sello" data-cora aria-hidden="true"></span>
+        <h2 class="sorpresa__titulo">Una última sorpresa</h2>
+        <p class="sorpresa__texto">Pensabas que el regalo había terminado…</p>
+        <p class="sorpresa__promesa">Pero todavía tengo algo preparado para ti.</p>
+        <button type="button" class="boton" id="sorpresaAbrir"><span id="sorpresaAbrirTexto">Descubrir la sorpresa</span> <span data-cora></span></button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="juego" id="juego" role="dialog" aria-modal="true" aria-label="Una última sorpresa" hidden>
+  <button type="button" class="juego__cerrar" id="juegoCerrar" aria-label="Volver al regalo"></button>
+  <div class="juego__escena" id="juegoEscena"></div>
+</div>
+<!-- contenido:fin -->
+
+<script src="vendor/leaflet/leaflet.js"></script>
+<script src="datos/tierra.js"></script>
+<script src="contenido.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
