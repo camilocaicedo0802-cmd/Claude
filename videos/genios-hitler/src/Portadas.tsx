@@ -241,3 +241,31 @@ export const MiniaturaC: React.FC = () => (
 		</Bloque>
 	</AbsoluteFill>
 );
+
+/* ----- A2 · la versión A pulida: contorno blanco que despega a los personajes, Papen más grande, contrato legible ----- */
+
+const Contorno: React.FC<{children: React.ReactNode}> = ({children}) => (
+	<div style={{position: 'absolute', inset: 0, filter: 'drop-shadow(0 0 0 #fff) drop-shadow(7px 0 0 #fff) drop-shadow(-7px 0 0 #fff) drop-shadow(0 7px 0 #fff) drop-shadow(0 -7px 0 #fff) drop-shadow(0 18px 24px rgba(0,0,0,0.55))'}}>{children}</div>
+);
+
+export const MiniaturaA2: React.FC = () => (
+	<AbsoluteFill style={{background: '#0a0a10'}}>
+		<AbsoluteFill style={{background: 'linear-gradient(135deg, #2458a8 0%, #163a78 40%, #000 40.2%, #000 41%, #ff6a1a 41.2%, #e0240f 66%, #5a0806 100%)', filter: 'saturate(1.15)'}} />
+		<Rayos cx={1450} cy={380} color="rgba(255,230,140,0.16)" />
+		<div style={{position: 'absolute', left: 1030, top: -60, width: 860, height: 860, borderRadius: '50%', background: 'radial-gradient(circle, rgba(255,236,160,0.6) 0%, rgba(255,236,160,0) 65%)'}} />
+		<Contorno>
+			<Actor x={1470} y={1830} alto={1900}>
+				<Muneco ropa={HITLER_TRAJE} pose={{...manosEn([256, 446], [146, 432]), mi: 'oculta', md: 'puno', cabeza: -5}} ojos="entrecerrados" cejas="enojado" boca="dientes" />
+			</Actor>
+		</Contorno>
+		<Contorno>
+			<Actor x={540} y={1720} alto={1420}>
+				<Muneco ropa={PAPEN} pose={{...brazo(-1, alcanzar(-1, 30, 300)), mi: 'agarra', ...brazo(1, alcanzar(1, 360, 360)), md: 'pulgar', cabeza: 8}} objIzq={<ContratoMano rot={170} tam={1.05} />} ojos="feliz" cejas="arrogante" boca="sonrisaGrande" />
+			</Actor>
+		</Contorno>
+		<Vineta />
+		<Bloque left={50} top={30}>
+			<Titular texto="LO CONTRATARON" tam={182} color={AMARILLO} rot={-3} />
+		</Bloque>
+	</AbsoluteFill>
+);
