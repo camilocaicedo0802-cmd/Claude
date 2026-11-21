@@ -111,3 +111,36 @@ export const PortadaInofensivo: React.FC = () => (
 );
 
 export {Copa};
+
+/* ---------- MINIATURA principal (con Hitler grande): «LO CONTRATARON» + «SIN GANAR» ----------
+   Criterios de CTR: una sola cara grande con expresión clara, 2–4 palabras, mucho contraste,
+   legible en miniatura y que complemente el título (no lo repite). Nada en la esquina inferior derecha. */
+
+export const Miniatura: React.FC = () => (
+	<AbsoluteFill style={{background: 'radial-gradient(ellipse at 72% 42%, #6a1a1e 0%, #2a0a0e 45%, #0a0a0e 100%)'}}>
+		{/* rayos de luz detrás de él */}
+		<svg viewBox="0 0 1920 1080" style={{position: 'absolute', inset: 0, width: '100%', height: '100%'}}>
+			{Array.from({length: 14}, (_, i) => {
+				const a = (i / 14) * Math.PI * 2;
+				return <path key={i} d={`M 1490 420 L ${1490 + Math.cos(a) * 1600} ${420 + Math.sin(a) * 1600} L ${1490 + Math.cos(a + 0.14) * 1600} ${420 + Math.sin(a + 0.14) * 1600} Z`} fill="rgba(255,190,110,0.07)" />;
+			})}
+		</svg>
+		<div style={{position: 'absolute', left: 1090, top: 40, width: 800, height: 800, borderRadius: '50%', background: 'radial-gradient(circle, rgba(255,214,140,0.35) 0%, rgba(255,214,140,0) 65%)'}} />
+		{/* Hitler, enorme, satisfecho, de brazos cruzados detrás del escritorio */}
+		<Actor x={1490} y={1640} alto={1560}>
+			<Muneco ropa={HITLER_TRAJE} pose={{...manosEn([256, 446], [146, 432]), mi: 'oculta', md: 'puno', cabeza: -4}} ojos="entrecerrados" cejas="arrogante" boca="picara" />
+		</Actor>
+		{/* el escritorio y el contrato firmado delante */}
+		<div style={{position: 'absolute', left: -20, top: 880, width: 1960, height: 260, background: 'linear-gradient(180deg, #6a3e26, #2e1a0e)', borderTop: `12px solid ${TINTA}`}} />
+		<div style={{position: 'absolute', left: 1100, top: 700, width: 520, height: 300, transform: 'perspective(900px) rotateX(48deg) rotate(-7deg)', transformOrigin: '50% 100%'}}>
+			<Contrato x={260} y={-60} ancho={520} rot={0} firma={1} sombra={false} />
+		</div>
+		<Vineta />
+		<Bloque left={70} top={70}>
+			<Titular texto={'LO\nCONTRATARON'} tam={196} color={AMARILLO} rot={-3} />
+		</Bloque>
+		<Bloque left={110} top={600}>
+			<SelloGrande texto="SIN GANAR" color={ROJO} tam={150} rot={-8} />
+		</Bloque>
+	</AbsoluteFill>
+);
