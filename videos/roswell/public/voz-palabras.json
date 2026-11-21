@@ -1,0 +1,1781 @@
+{
+ "voz": "Gemini 2.5 Flash TTS · Charon",
+ "duracion": 60.864,
+ "frases": [
+  {
+   "i": 0,
+   "texto": "El ejército de Estados Unidos anunció que había capturado un ovni... y horas después lo negó.",
+   "seccion": 0,
+   "inicio": 0.03,
+   "fin": 4.581
+  },
+  {
+   "i": 1,
+   "texto": "En 1947, un granjero de Róswel encuentra en su rancho unos restos rarísimos: goma, papel de aluminio, palitos.",
+   "seccion": 0,
+   "inicio": 4.781,
+   "fin": 11.641
+  },
+  {
+   "i": 2,
+   "texto": "Y la base militar del pueblo anuncia: «Capturamos un platillo volador».",
+   "seccion": 0,
+   "inicio": 11.841,
+   "fin": 15.028
+  },
+  {
+   "i": 3,
+   "texto": "Pero esa misma tarde, un general muestra los restos a la prensa:",
+   "seccion": 0,
+   "inicio": 15.228,
+   "fin": 18.032
+  },
+  {
+   "i": 4,
+   "texto": "Es un globo meteorológico.",
+   "seccion": 0,
+   "inicio": 18.232,
+   "fin": 20.287
+  },
+  {
+   "i": 5,
+   "texto": "Y el mundo se ríe del pueblo.",
+   "seccion": 0,
+   "inicio": 20.487,
+   "fin": 22.034
+  },
+  {
+   "i": 6,
+   "texto": "Durante 30 años, nadie se acuerda.",
+   "seccion": 0,
+   "inicio": 22.234,
+   "fin": 24.211
+  },
+  {
+   "i": 7,
+   "texto": "Hasta que un militar que tocó los restos dice:",
+   "seccion": 0,
+   "inicio": 24.411,
+   "fin": 26.514
+  },
+  {
+   "i": 8,
+   "texto": "Lo del globo era mentira.",
+   "seccion": 0,
+   "inicio": 26.714,
+   "fin": 28.827
+  },
+  {
+   "i": 9,
+   "texto": "Después aparecen testigos que hablan de cuerpos.",
+   "seccion": 0,
+   "inicio": 29.027,
+   "fin": 31.023
+  },
+  {
+   "i": 10,
+   "texto": "Y luego, un video de una «autopsia alienígena» que ven millones.",
+   "seccion": 0,
+   "inicio": 31.223,
+   "fin": 34.664
+  },
+  {
+   "i": 11,
+   "texto": "Y en 1994, la Fuerza Aérea lo admite: sí había un secreto.",
+   "seccion": 0,
+   "inicio": 34.864,
+   "fin": 38.811
+  },
+  {
+   "i": 12,
+   "texto": "Pero no era un ovni.",
+   "seccion": 0,
+   "inicio": 39.411,
+   "fin": 40.708
+  },
+  {
+   "i": 13,
+   "texto": "Era un proyecto ultrasecreto: cadenas de globos con micrófonos, flotando altísimo para detectar las futuras bombas atómicas soviéticas.",
+   "seccion": 0,
+   "inicio": 40.908,
+   "fin": 47.251
+  },
+  {
+   "i": 14,
+   "texto": "Por eso no podían decir la verdad... y prefirieron que el mundo se riera.",
+   "seccion": 0,
+   "inicio": 47.451,
+   "fin": 50.86
+  },
+  {
+   "i": 15,
+   "texto": "¿Y los cuerpos?",
+   "seccion": 0,
+   "inicio": 51.06,
+   "fin": 51.749
+  },
+  {
+   "i": 16,
+   "texto": "Según la Fuerza Aérea, muñecos de prueba lanzados desde globos... años después.",
+   "seccion": 0,
+   "inicio": 51.949,
+   "fin": 55.724
+  },
+  {
+   "i": 17,
+   "texto": "O sea: el ejército capturó un ovni... que era su propio globo espía.",
+   "seccion": 0,
+   "inicio": 55.924,
+   "fin": 60.294
+  }
+ ],
+ "palabras": [
+  {
+   "texto": "el",
+   "inicio": 0.03,
+   "duracion": 0.181,
+   "visible": "El",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": 0
+  },
+  {
+   "texto": "ejercito",
+   "inicio": 0.211,
+   "duracion": 0.443,
+   "visible": "ejército",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": 0
+  },
+  {
+   "texto": "de",
+   "inicio": 0.654,
+   "duracion": 0.181,
+   "visible": "de",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": 0
+  },
+  {
+   "texto": "estados",
+   "inicio": 0.835,
+   "duracion": 0.302,
+   "visible": "Estados",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": 0
+  },
+  {
+   "texto": "unidos",
+   "inicio": 1.138,
+   "duracion": 0.383,
+   "visible": "Unidos",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": 0
+  },
+  {
+   "texto": "anuncio",
+   "inicio": 1.52,
+   "duracion": 0.665,
+   "visible": "anunció",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": 0
+  },
+  {
+   "texto": "que",
+   "inicio": 2.185,
+   "duracion": 0.121,
+   "visible": "que",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": 0
+  },
+  {
+   "texto": "habia",
+   "inicio": 2.305,
+   "duracion": 0.201,
+   "visible": "había",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": 0
+  },
+  {
+   "texto": "capturado",
+   "inicio": 2.507,
+   "duracion": 0.463,
+   "visible": "capturado",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": 0
+  },
+  {
+   "texto": "un",
+   "inicio": 2.97,
+   "duracion": 0.161,
+   "visible": "un",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": 0
+  },
+  {
+   "texto": "ovni",
+   "inicio": 3.131,
+   "duracion": 0.222,
+   "visible": "ovni...",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": 0
+  },
+  {
+   "texto": "y",
+   "inicio": 3.353,
+   "duracion": 0.201,
+   "visible": "y",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": 0
+  },
+  {
+   "texto": "horas",
+   "inicio": 3.614,
+   "duracion": 0.101,
+   "visible": "horas",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": 0
+  },
+  {
+   "texto": "despues",
+   "inicio": 3.715,
+   "duracion": 0.262,
+   "visible": "después",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": 0
+  },
+  {
+   "texto": "lo",
+   "inicio": 4.319,
+   "duracion": 0.101,
+   "visible": "lo",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": 0
+  },
+  {
+   "texto": "nego",
+   "inicio": 4.42,
+   "duracion": 0.161,
+   "visible": "negó.",
+   "enfasis": false,
+   "frase": 0,
+   "seccion": 0
+  },
+  {
+   "texto": "en",
+   "inicio": 4.781,
+   "duracion": 0.125,
+   "visible": "En",
+   "enfasis": false,
+   "frase": 1,
+   "seccion": 0
+  },
+  {
+   "texto": "1947",
+   "inicio": 4.906,
+   "duracion": 0.837,
+   "visible": "1947,",
+   "enfasis": false,
+   "frase": 1,
+   "seccion": 0
+  },
+  {
+   "texto": "un",
+   "inicio": 6.329,
+   "duracion": 0.105,
+   "visible": "un",
+   "enfasis": false,
+   "frase": 1,
+   "seccion": 0
+  },
+  {
+   "texto": "granjero",
+   "inicio": 6.433,
+   "duracion": 0.439,
+   "visible": "granjero",
+   "enfasis": false,
+   "frase": 1,
+   "seccion": 0
+  },
+  {
+   "texto": "de",
+   "inicio": 6.872,
+   "duracion": 0.146,
+   "visible": "de",
+   "enfasis": false,
+   "frase": 1,
+   "seccion": 0
+  },
+  {
+   "texto": "roswel",
+   "inicio": 7.019,
+   "duracion": 0.439,
+   "visible": "Roswell",
+   "enfasis": true,
+   "frase": 1,
+   "seccion": 0
+  },
+  {
+   "texto": "encuentra",
+   "inicio": 7.458,
+   "duracion": 0.418,
+   "visible": "encuentra",
+   "enfasis": false,
+   "frase": 1,
+   "seccion": 0
+  },
+  {
+   "texto": "en",
+   "inicio": 7.876,
+   "duracion": 0.293,
+   "visible": "en",
+   "enfasis": false,
+   "frase": 1,
+   "seccion": 0
+  },
+  {
+   "texto": "su",
+   "inicio": 8.169,
+   "duracion": 0.105,
+   "visible": "su",
+   "enfasis": false,
+   "frase": 1,
+   "seccion": 0
+  },
+  {
+   "texto": "rancho",
+   "inicio": 8.274,
+   "duracion": 0.418,
+   "visible": "rancho",
+   "enfasis": false,
+   "frase": 1,
+   "seccion": 0
+  },
+  {
+   "texto": "unos",
+   "inicio": 8.692,
+   "duracion": 0.188,
+   "visible": "unos",
+   "enfasis": false,
+   "frase": 1,
+   "seccion": 0
+  },
+  {
+   "texto": "restos",
+   "inicio": 8.88,
+   "duracion": 0.397,
+   "visible": "restos",
+   "enfasis": false,
+   "frase": 1,
+   "seccion": 0
+  },
+  {
+   "texto": "rarisimos",
+   "inicio": 9.278,
+   "duracion": 0.502,
+   "visible": "rarísimos:",
+   "enfasis": false,
+   "frase": 1,
+   "seccion": 0
+  },
+  {
+   "texto": "goma",
+   "inicio": 9.989,
+   "duracion": 0.335,
+   "visible": "goma,",
+   "enfasis": false,
+   "frase": 1,
+   "seccion": 0
+  },
+  {
+   "texto": "papel",
+   "inicio": 10.449,
+   "duracion": 0.167,
+   "visible": "papel",
+   "enfasis": false,
+   "frase": 1,
+   "seccion": 0
+  },
+  {
+   "texto": "de",
+   "inicio": 10.616,
+   "duracion": 0.146,
+   "visible": "de",
+   "enfasis": false,
+   "frase": 1,
+   "seccion": 0
+  },
+  {
+   "texto": "aluminio",
+   "inicio": 10.763,
+   "duracion": 0.46,
+   "visible": "aluminio,",
+   "enfasis": false,
+   "frase": 1,
+   "seccion": 0
+  },
+  {
+   "texto": "palitos",
+   "inicio": 11.285,
+   "duracion": 0.356,
+   "visible": "palitos.",
+   "enfasis": false,
+   "frase": 1,
+   "seccion": 0
+  },
+  {
+   "texto": "y",
+   "inicio": 11.841,
+   "duracion": 0.172,
+   "visible": "Y",
+   "enfasis": false,
+   "frase": 2,
+   "seccion": 0
+  },
+  {
+   "texto": "la",
+   "inicio": 12.013,
+   "duracion": 0.108,
+   "visible": "la",
+   "enfasis": false,
+   "frase": 2,
+   "seccion": 0
+  },
+  {
+   "texto": "base",
+   "inicio": 12.121,
+   "duracion": 0.194,
+   "visible": "base",
+   "enfasis": false,
+   "frase": 2,
+   "seccion": 0
+  },
+  {
+   "texto": "militar",
+   "inicio": 12.315,
+   "duracion": 0.345,
+   "visible": "militar",
+   "enfasis": false,
+   "frase": 2,
+   "seccion": 0
+  },
+  {
+   "texto": "del",
+   "inicio": 12.659,
+   "duracion": 0.172,
+   "visible": "del",
+   "enfasis": false,
+   "frase": 2,
+   "seccion": 0
+  },
+  {
+   "texto": "pueblo",
+   "inicio": 12.832,
+   "duracion": 0.194,
+   "visible": "pueblo",
+   "enfasis": false,
+   "frase": 2,
+   "seccion": 0
+  },
+  {
+   "texto": "anuncia",
+   "inicio": 13.025,
+   "duracion": 0.495,
+   "visible": "anuncia:",
+   "enfasis": false,
+   "frase": 2,
+   "seccion": 0
+  },
+  {
+   "texto": "capturamos",
+   "inicio": 13.65,
+   "duracion": 0.474,
+   "visible": "«Capturamos",
+   "enfasis": false,
+   "frase": 2,
+   "seccion": 0
+  },
+  {
+   "texto": "un",
+   "inicio": 14.124,
+   "duracion": 0.194,
+   "visible": "un",
+   "enfasis": false,
+   "frase": 2,
+   "seccion": 0
+  },
+  {
+   "texto": "platillo",
+   "inicio": 14.317,
+   "duracion": 0.345,
+   "visible": "platillo",
+   "enfasis": false,
+   "frase": 2,
+   "seccion": 0
+  },
+  {
+   "texto": "volador",
+   "inicio": 14.662,
+   "duracion": 0.366,
+   "visible": "volador».",
+   "enfasis": false,
+   "frase": 2,
+   "seccion": 0
+  },
+  {
+   "texto": "pero",
+   "inicio": 15.228,
+   "duracion": 0.188,
+   "visible": "Pero",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": 0
+  },
+  {
+   "texto": "esa",
+   "inicio": 15.416,
+   "duracion": 0.167,
+   "visible": "esa",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": 0
+  },
+  {
+   "texto": "misma",
+   "inicio": 15.584,
+   "duracion": 0.167,
+   "visible": "misma",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": 0
+  },
+  {
+   "texto": "tarde",
+   "inicio": 15.751,
+   "duracion": 0.293,
+   "visible": "tarde,",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": 0
+  },
+  {
+   "texto": "un",
+   "inicio": 16.232,
+   "duracion": 0.105,
+   "visible": "un",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": 0
+  },
+  {
+   "texto": "general",
+   "inicio": 16.337,
+   "duracion": 0.293,
+   "visible": "general",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": 0
+  },
+  {
+   "texto": "muestra",
+   "inicio": 16.63,
+   "duracion": 0.419,
+   "visible": "muestra",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": 0
+  },
+  {
+   "texto": "los",
+   "inicio": 17.049,
+   "duracion": 0.167,
+   "visible": "los",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": 0
+  },
+  {
+   "texto": "restos",
+   "inicio": 17.216,
+   "duracion": 0.314,
+   "visible": "restos",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": 0
+  },
+  {
+   "texto": "a",
+   "inicio": 17.53,
+   "duracion": 0.084,
+   "visible": "a",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": 0
+  },
+  {
+   "texto": "la",
+   "inicio": 17.613,
+   "duracion": 0.084,
+   "visible": "la",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": 0
+  },
+  {
+   "texto": "prensa",
+   "inicio": 17.697,
+   "duracion": 0.335,
+   "visible": "prensa:",
+   "enfasis": false,
+   "frase": 3,
+   "seccion": 0
+  },
+  {
+   "texto": "es",
+   "inicio": 18.232,
+   "duracion": 0.332,
+   "visible": "Es",
+   "enfasis": false,
+   "frase": 4,
+   "seccion": 0
+  },
+  {
+   "texto": "un",
+   "inicio": 18.564,
+   "duracion": 0.27,
+   "visible": "un",
+   "enfasis": false,
+   "frase": 4,
+   "seccion": 0
+  },
+  {
+   "texto": "globo",
+   "inicio": 18.834,
+   "duracion": 0.436,
+   "visible": "globo",
+   "enfasis": false,
+   "frase": 4,
+   "seccion": 0
+  },
+  {
+   "texto": "meteorologico",
+   "inicio": 19.27,
+   "duracion": 1.017,
+   "visible": "meteorológico.",
+   "enfasis": false,
+   "frase": 4,
+   "seccion": 0
+  },
+  {
+   "texto": "y",
+   "inicio": 20.487,
+   "duracion": 0.133,
+   "visible": "Y",
+   "enfasis": false,
+   "frase": 5,
+   "seccion": 0
+  },
+  {
+   "texto": "el",
+   "inicio": 20.62,
+   "duracion": 0.155,
+   "visible": "el",
+   "enfasis": false,
+   "frase": 5,
+   "seccion": 0
+  },
+  {
+   "texto": "mundo",
+   "inicio": 20.774,
+   "duracion": 0.243,
+   "visible": "mundo",
+   "enfasis": false,
+   "frase": 5,
+   "seccion": 0
+  },
+  {
+   "texto": "se",
+   "inicio": 21.017,
+   "duracion": 0.265,
+   "visible": "se",
+   "enfasis": false,
+   "frase": 5,
+   "seccion": 0
+  },
+  {
+   "texto": "rie",
+   "inicio": 21.283,
+   "duracion": 0.287,
+   "visible": "ríe",
+   "enfasis": false,
+   "frase": 5,
+   "seccion": 0
+  },
+  {
+   "texto": "del",
+   "inicio": 21.57,
+   "duracion": 0.155,
+   "visible": "del",
+   "enfasis": false,
+   "frase": 5,
+   "seccion": 0
+  },
+  {
+   "texto": "pueblo",
+   "inicio": 21.725,
+   "duracion": 0.309,
+   "visible": "pueblo.",
+   "enfasis": false,
+   "frase": 5,
+   "seccion": 0
+  },
+  {
+   "texto": "durante",
+   "inicio": 22.234,
+   "duracion": 0.289,
+   "visible": "Durante",
+   "enfasis": false,
+   "frase": 6,
+   "seccion": 0
+  },
+  {
+   "texto": "30",
+   "inicio": 22.523,
+   "duracion": 0.289,
+   "visible": "30",
+   "enfasis": false,
+   "frase": 6,
+   "seccion": 0
+  },
+  {
+   "texto": "anos",
+   "inicio": 22.812,
+   "duracion": 0.4,
+   "visible": "años,",
+   "enfasis": false,
+   "frase": 6,
+   "seccion": 0
+  },
+  {
+   "texto": "nadie",
+   "inicio": 23.5,
+   "duracion": 0.155,
+   "visible": "nadie",
+   "enfasis": false,
+   "frase": 6,
+   "seccion": 0
+  },
+  {
+   "texto": "se",
+   "inicio": 23.656,
+   "duracion": 0.2,
+   "visible": "se",
+   "enfasis": false,
+   "frase": 6,
+   "seccion": 0
+  },
+  {
+   "texto": "acuerda",
+   "inicio": 23.856,
+   "duracion": 0.355,
+   "visible": "acuerda.",
+   "enfasis": false,
+   "frase": 6,
+   "seccion": 0
+  },
+  {
+   "texto": "hasta",
+   "inicio": 24.411,
+   "duracion": 0.26,
+   "visible": "Hasta",
+   "enfasis": false,
+   "frase": 7,
+   "seccion": 0
+  },
+  {
+   "texto": "que",
+   "inicio": 24.671,
+   "duracion": 0.152,
+   "visible": "que",
+   "enfasis": false,
+   "frase": 7,
+   "seccion": 0
+  },
+  {
+   "texto": "un",
+   "inicio": 24.823,
+   "duracion": 0.152,
+   "visible": "un",
+   "enfasis": false,
+   "frase": 7,
+   "seccion": 0
+  },
+  {
+   "texto": "militar",
+   "inicio": 24.975,
+   "duracion": 0.304,
+   "visible": "militar",
+   "enfasis": false,
+   "frase": 7,
+   "seccion": 0
+  },
+  {
+   "texto": "que",
+   "inicio": 25.278,
+   "duracion": 0.195,
+   "visible": "que",
+   "enfasis": false,
+   "frase": 7,
+   "seccion": 0
+  },
+  {
+   "texto": "toco",
+   "inicio": 25.473,
+   "duracion": 0.26,
+   "visible": "tocó",
+   "enfasis": false,
+   "frase": 7,
+   "seccion": 0
+  },
+  {
+   "texto": "los",
+   "inicio": 25.734,
+   "duracion": 0.13,
+   "visible": "los",
+   "enfasis": false,
+   "frase": 7,
+   "seccion": 0
+  },
+  {
+   "texto": "restos",
+   "inicio": 25.864,
+   "duracion": 0.347,
+   "visible": "restos",
+   "enfasis": false,
+   "frase": 7,
+   "seccion": 0
+  },
+  {
+   "texto": "dice",
+   "inicio": 26.21,
+   "duracion": 0.304,
+   "visible": "dice:",
+   "enfasis": false,
+   "frase": 7,
+   "seccion": 0
+  },
+  {
+   "texto": "lo",
+   "inicio": 26.714,
+   "duracion": 0.237,
+   "visible": "Lo",
+   "enfasis": false,
+   "frase": 8,
+   "seccion": 0
+  },
+  {
+   "texto": "del",
+   "inicio": 26.951,
+   "duracion": 0.216,
+   "visible": "del",
+   "enfasis": false,
+   "frase": 8,
+   "seccion": 0
+  },
+  {
+   "texto": "globo",
+   "inicio": 27.167,
+   "duracion": 0.561,
+   "visible": "globo",
+   "enfasis": false,
+   "frase": 8,
+   "seccion": 0
+  },
+  {
+   "texto": "era",
+   "inicio": 27.9,
+   "duracion": 0.216,
+   "visible": "era",
+   "enfasis": false,
+   "frase": 8,
+   "seccion": 0
+  },
+  {
+   "texto": "mentira",
+   "inicio": 28.115,
+   "duracion": 0.712,
+   "visible": "mentira.",
+   "enfasis": false,
+   "frase": 8,
+   "seccion": 0
+  },
+  {
+   "texto": "despues",
+   "inicio": 29.027,
+   "duracion": 0.595,
+   "visible": "Después",
+   "enfasis": false,
+   "frase": 9,
+   "seccion": 0
+  },
+  {
+   "texto": "aparecen",
+   "inicio": 29.622,
+   "duracion": 0.368,
+   "visible": "aparecen",
+   "enfasis": false,
+   "frase": 9,
+   "seccion": 0
+  },
+  {
+   "texto": "testigos",
+   "inicio": 29.99,
+   "duracion": 0.35,
+   "visible": "testigos",
+   "enfasis": false,
+   "frase": 9,
+   "seccion": 0
+  },
+  {
+   "texto": "que",
+   "inicio": 30.34,
+   "duracion": 0.158,
+   "visible": "que",
+   "enfasis": false,
+   "frase": 9,
+   "seccion": 0
+  },
+  {
+   "texto": "hablan",
+   "inicio": 30.498,
+   "duracion": 0.175,
+   "visible": "hablan",
+   "enfasis": false,
+   "frase": 9,
+   "seccion": 0
+  },
+  {
+   "texto": "de",
+   "inicio": 30.673,
+   "duracion": 0.105,
+   "visible": "de",
+   "enfasis": false,
+   "frase": 9,
+   "seccion": 0
+  },
+  {
+   "texto": "cuerpos",
+   "inicio": 30.778,
+   "duracion": 0.245,
+   "visible": "cuerpos.",
+   "enfasis": false,
+   "frase": 9,
+   "seccion": 0
+  },
+  {
+   "texto": "y",
+   "inicio": 31.223,
+   "duracion": 0.24,
+   "visible": "Y",
+   "enfasis": false,
+   "frase": 10,
+   "seccion": 0
+  },
+  {
+   "texto": "luego",
+   "inicio": 31.463,
+   "duracion": 0.174,
+   "visible": "luego,",
+   "enfasis": false,
+   "frase": 10,
+   "seccion": 0
+  },
+  {
+   "texto": "un",
+   "inicio": 31.637,
+   "duracion": 0.348,
+   "visible": "un",
+   "enfasis": false,
+   "frase": 10,
+   "seccion": 0
+  },
+  {
+   "texto": "video",
+   "inicio": 31.985,
+   "duracion": 0.261,
+   "visible": "video",
+   "enfasis": false,
+   "frase": 10,
+   "seccion": 0
+  },
+  {
+   "texto": "de",
+   "inicio": 32.247,
+   "duracion": 0.174,
+   "visible": "de",
+   "enfasis": false,
+   "frase": 10,
+   "seccion": 0
+  },
+  {
+   "texto": "una",
+   "inicio": 32.421,
+   "duracion": 0.174,
+   "visible": "una",
+   "enfasis": false,
+   "frase": 10,
+   "seccion": 0
+  },
+  {
+   "texto": "autopsia",
+   "inicio": 32.595,
+   "duracion": 0.74,
+   "visible": "«autopsia",
+   "enfasis": false,
+   "frase": 10,
+   "seccion": 0
+  },
+  {
+   "texto": "alienigena",
+   "inicio": 33.336,
+   "duracion": 0.697,
+   "visible": "alienígena»",
+   "enfasis": false,
+   "frase": 10,
+   "seccion": 0
+  },
+  {
+   "texto": "que",
+   "inicio": 34.032,
+   "duracion": 0.152,
+   "visible": "que",
+   "enfasis": false,
+   "frase": 10,
+   "seccion": 0
+  },
+  {
+   "texto": "ven",
+   "inicio": 34.185,
+   "duracion": 0.152,
+   "visible": "ven",
+   "enfasis": false,
+   "frase": 10,
+   "seccion": 0
+  },
+  {
+   "texto": "millones",
+   "inicio": 34.337,
+   "duracion": 0.327,
+   "visible": "millones.",
+   "enfasis": false,
+   "frase": 10,
+   "seccion": 0
+  },
+  {
+   "texto": "y",
+   "inicio": 34.864,
+   "duracion": 0.226,
+   "visible": "Y",
+   "enfasis": false,
+   "frase": 11,
+   "seccion": 0
+  },
+  {
+   "texto": "en",
+   "inicio": 35.09,
+   "duracion": 0.123,
+   "visible": "en",
+   "enfasis": false,
+   "frase": 11,
+   "seccion": 0
+  },
+  {
+   "texto": "1994",
+   "inicio": 35.213,
+   "duracion": 0.637,
+   "visible": "1994,",
+   "enfasis": false,
+   "frase": 11,
+   "seccion": 0
+  },
+  {
+   "texto": "la",
+   "inicio": 36.55,
+   "duracion": 0.062,
+   "visible": "la",
+   "enfasis": false,
+   "frase": 11,
+   "seccion": 0
+  },
+  {
+   "texto": "fuerza",
+   "inicio": 36.591,
+   "duracion": 0.329,
+   "visible": "Fuerza",
+   "enfasis": false,
+   "frase": 11,
+   "seccion": 0
+  },
+  {
+   "texto": "aerea",
+   "inicio": 36.92,
+   "duracion": 0.247,
+   "visible": "Aérea",
+   "enfasis": false,
+   "frase": 11,
+   "seccion": 0
+  },
+  {
+   "texto": "lo",
+   "inicio": 37.166,
+   "duracion": 0.185,
+   "visible": "lo",
+   "enfasis": false,
+   "frase": 11,
+   "seccion": 0
+  },
+  {
+   "texto": "admite",
+   "inicio": 37.351,
+   "duracion": 0.288,
+   "visible": "admite:",
+   "enfasis": false,
+   "frase": 11,
+   "seccion": 0
+  },
+  {
+   "texto": "si",
+   "inicio": 37.742,
+   "duracion": 0.247,
+   "visible": "sí",
+   "enfasis": false,
+   "frase": 11,
+   "seccion": 0
+  },
+  {
+   "texto": "habia",
+   "inicio": 38.05,
+   "duracion": 0.185,
+   "visible": "había",
+   "enfasis": false,
+   "frase": 11,
+   "seccion": 0
+  },
+  {
+   "texto": "un",
+   "inicio": 38.235,
+   "duracion": 0.185,
+   "visible": "un",
+   "enfasis": false,
+   "frase": 11,
+   "seccion": 0
+  },
+  {
+   "texto": "secreto",
+   "inicio": 38.42,
+   "duracion": 0.391,
+   "visible": "secreto.",
+   "enfasis": false,
+   "frase": 11,
+   "seccion": 0
+  },
+  {
+   "texto": "pero",
+   "inicio": 39.411,
+   "duracion": 0.33,
+   "visible": "PERO",
+   "enfasis": true,
+   "frase": 12,
+   "seccion": 0
+  },
+  {
+   "texto": "no",
+   "inicio": 39.741,
+   "duracion": 0.283,
+   "visible": "NO",
+   "enfasis": true,
+   "frase": 12,
+   "seccion": 0
+  },
+  {
+   "texto": "era",
+   "inicio": 40.024,
+   "duracion": 0.259,
+   "visible": "ERA",
+   "enfasis": true,
+   "frase": 12,
+   "seccion": 0
+  },
+  {
+   "texto": "un",
+   "inicio": 40.284,
+   "duracion": 0.189,
+   "visible": "UN",
+   "enfasis": true,
+   "frase": 12,
+   "seccion": 0
+  },
+  {
+   "texto": "ovni",
+   "inicio": 40.472,
+   "duracion": 0.236,
+   "visible": "OVNI.",
+   "enfasis": true,
+   "frase": 12,
+   "seccion": 0
+  },
+  {
+   "texto": "era",
+   "inicio": 40.908,
+   "duracion": 0.164,
+   "visible": "Era",
+   "enfasis": false,
+   "frase": 13,
+   "seccion": 0
+  },
+  {
+   "texto": "un",
+   "inicio": 41.072,
+   "duracion": 0.144,
+   "visible": "un",
+   "enfasis": false,
+   "frase": 13,
+   "seccion": 0
+  },
+  {
+   "texto": "proyecto",
+   "inicio": 41.216,
+   "duracion": 0.349,
+   "visible": "proyecto",
+   "enfasis": false,
+   "frase": 13,
+   "seccion": 0
+  },
+  {
+   "texto": "ultrasecreto",
+   "inicio": 41.914,
+   "duracion": 0.411,
+   "visible": "ultrasecreto:",
+   "enfasis": false,
+   "frase": 13,
+   "seccion": 0
+  },
+  {
+   "texto": "cadenas",
+   "inicio": 42.468,
+   "duracion": 0.246,
+   "visible": "cadenas",
+   "enfasis": false,
+   "frase": 13,
+   "seccion": 0
+  },
+  {
+   "texto": "de",
+   "inicio": 42.714,
+   "duracion": 0.185,
+   "visible": "de",
+   "enfasis": false,
+   "frase": 13,
+   "seccion": 0
+  },
+  {
+   "texto": "globos",
+   "inicio": 42.899,
+   "duracion": 0.328,
+   "visible": "globos",
+   "enfasis": false,
+   "frase": 13,
+   "seccion": 0
+  },
+  {
+   "texto": "con",
+   "inicio": 43.228,
+   "duracion": 0.123,
+   "visible": "con",
+   "enfasis": false,
+   "frase": 13,
+   "seccion": 0
+  },
+  {
+   "texto": "microfonos",
+   "inicio": 43.351,
+   "duracion": 0.534,
+   "visible": "micrófonos,",
+   "enfasis": false,
+   "frase": 13,
+   "seccion": 0
+  },
+  {
+   "texto": "flotando",
+   "inicio": 44.008,
+   "duracion": 0.411,
+   "visible": "flotando",
+   "enfasis": false,
+   "frase": 13,
+   "seccion": 0
+  },
+  {
+   "texto": "altisimo",
+   "inicio": 44.418,
+   "duracion": 0.513,
+   "visible": "altísimo",
+   "enfasis": false,
+   "frase": 13,
+   "seccion": 0
+  },
+  {
+   "texto": "para",
+   "inicio": 44.931,
+   "duracion": 0.226,
+   "visible": "para",
+   "enfasis": false,
+   "frase": 13,
+   "seccion": 0
+  },
+  {
+   "texto": "detectar",
+   "inicio": 45.157,
+   "duracion": 0.411,
+   "visible": "detectar",
+   "enfasis": false,
+   "frase": 13,
+   "seccion": 0
+  },
+  {
+   "texto": "las",
+   "inicio": 45.568,
+   "duracion": 0.123,
+   "visible": "las",
+   "enfasis": false,
+   "frase": 13,
+   "seccion": 0
+  },
+  {
+   "texto": "futuras",
+   "inicio": 45.691,
+   "duracion": 0.349,
+   "visible": "futuras",
+   "enfasis": false,
+   "frase": 13,
+   "seccion": 0
+  },
+  {
+   "texto": "bombas",
+   "inicio": 46.04,
+   "duracion": 0.308,
+   "visible": "bombas",
+   "enfasis": false,
+   "frase": 13,
+   "seccion": 0
+  },
+  {
+   "texto": "atomicas",
+   "inicio": 46.348,
+   "duracion": 0.431,
+   "visible": "atómicas",
+   "enfasis": false,
+   "frase": 13,
+   "seccion": 0
+  },
+  {
+   "texto": "sovieticas",
+   "inicio": 46.779,
+   "duracion": 0.472,
+   "visible": "soviéticas.",
+   "enfasis": false,
+   "frase": 13,
+   "seccion": 0
+  },
+  {
+   "texto": "por",
+   "inicio": 47.451,
+   "duracion": 0.302,
+   "visible": "Por",
+   "enfasis": false,
+   "frase": 14,
+   "seccion": 0
+  },
+  {
+   "texto": "eso",
+   "inicio": 47.753,
+   "duracion": 0.173,
+   "visible": "eso",
+   "enfasis": false,
+   "frase": 14,
+   "seccion": 0
+  },
+  {
+   "texto": "no",
+   "inicio": 47.926,
+   "duracion": 0.129,
+   "visible": "no",
+   "enfasis": false,
+   "frase": 14,
+   "seccion": 0
+  },
+  {
+   "texto": "podian",
+   "inicio": 48.055,
+   "duracion": 0.302,
+   "visible": "podían",
+   "enfasis": false,
+   "frase": 14,
+   "seccion": 0
+  },
+  {
+   "texto": "decir",
+   "inicio": 48.357,
+   "duracion": 0.216,
+   "visible": "decir",
+   "enfasis": false,
+   "frase": 14,
+   "seccion": 0
+  },
+  {
+   "texto": "la",
+   "inicio": 48.573,
+   "duracion": 0.194,
+   "visible": "la",
+   "enfasis": false,
+   "frase": 14,
+   "seccion": 0
+  },
+  {
+   "texto": "verdad",
+   "inicio": 48.767,
+   "duracion": 0.216,
+   "visible": "verdad...",
+   "enfasis": false,
+   "frase": 14,
+   "seccion": 0
+  },
+  {
+   "texto": "y",
+   "inicio": 48.983,
+   "duracion": 0.259,
+   "visible": "y",
+   "enfasis": false,
+   "frase": 14,
+   "seccion": 0
+  },
+  {
+   "texto": "prefirieron",
+   "inicio": 49.242,
+   "duracion": 0.539,
+   "visible": "prefirieron",
+   "enfasis": false,
+   "frase": 14,
+   "seccion": 0
+  },
+  {
+   "texto": "que",
+   "inicio": 49.781,
+   "duracion": 0.216,
+   "visible": "que",
+   "enfasis": false,
+   "frase": 14,
+   "seccion": 0
+  },
+  {
+   "texto": "el",
+   "inicio": 49.997,
+   "duracion": 0.129,
+   "visible": "el",
+   "enfasis": false,
+   "frase": 14,
+   "seccion": 0
+  },
+  {
+   "texto": "mundo",
+   "inicio": 50.126,
+   "duracion": 0.216,
+   "visible": "mundo",
+   "enfasis": false,
+   "frase": 14,
+   "seccion": 0
+  },
+  {
+   "texto": "se",
+   "inicio": 50.342,
+   "duracion": 0.237,
+   "visible": "se",
+   "enfasis": false,
+   "frase": 14,
+   "seccion": 0
+  },
+  {
+   "texto": "riera",
+   "inicio": 50.58,
+   "duracion": 0.28,
+   "visible": "riera.",
+   "enfasis": false,
+   "frase": 14,
+   "seccion": 0
+  },
+  {
+   "texto": "y",
+   "inicio": 51.06,
+   "duracion": 0.074,
+   "visible": "¿Y",
+   "enfasis": false,
+   "frase": 15,
+   "seccion": 0
+  },
+  {
+   "texto": "los",
+   "inicio": 51.134,
+   "duracion": 0.172,
+   "visible": "los",
+   "enfasis": false,
+   "frase": 15,
+   "seccion": 0
+  },
+  {
+   "texto": "cuerpos",
+   "inicio": 51.306,
+   "duracion": 0.443,
+   "visible": "cuerpos?",
+   "enfasis": false,
+   "frase": 15,
+   "seccion": 0
+  },
+  {
+   "texto": "segun",
+   "inicio": 51.949,
+   "duracion": 0.318,
+   "visible": "Según",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": 0
+  },
+  {
+   "texto": "la",
+   "inicio": 52.267,
+   "duracion": 0.191,
+   "visible": "la",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": 0
+  },
+  {
+   "texto": "fuerza",
+   "inicio": 52.458,
+   "duracion": 0.254,
+   "visible": "Fuerza",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": 0
+  },
+  {
+   "texto": "aerea",
+   "inicio": 52.712,
+   "duracion": 0.297,
+   "visible": "Aérea,",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": 0
+  },
+  {
+   "texto": "munecos",
+   "inicio": 53.179,
+   "duracion": 0.445,
+   "visible": "muñecos",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": 0
+  },
+  {
+   "texto": "de",
+   "inicio": 53.624,
+   "duracion": 0.106,
+   "visible": "de",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": 0
+  },
+  {
+   "texto": "prueba",
+   "inicio": 53.73,
+   "duracion": 0.212,
+   "visible": "prueba",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": 0
+  },
+  {
+   "texto": "lanzados",
+   "inicio": 53.943,
+   "duracion": 0.551,
+   "visible": "lanzados",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": 0
+  },
+  {
+   "texto": "desde",
+   "inicio": 54.494,
+   "duracion": 0.17,
+   "visible": "desde",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": 0
+  },
+  {
+   "texto": "globos",
+   "inicio": 54.664,
+   "duracion": 0.445,
+   "visible": "globos...",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": 0
+  },
+  {
+   "texto": "anos",
+   "inicio": 55.173,
+   "duracion": 0.233,
+   "visible": "años",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": 0
+  },
+  {
+   "texto": "despues",
+   "inicio": 55.406,
+   "duracion": 0.318,
+   "visible": "después.",
+   "enfasis": false,
+   "frase": 16,
+   "seccion": 0
+  },
+  {
+   "texto": "o",
+   "inicio": 55.924,
+   "duracion": 0.728,
+   "visible": "O",
+   "enfasis": false,
+   "frase": 17,
+   "seccion": 0
+  },
+  {
+   "texto": "sea",
+   "inicio": 56.652,
+   "duracion": 0.243,
+   "visible": "sea:",
+   "enfasis": false,
+   "frase": 17,
+   "seccion": 0
+  },
+  {
+   "texto": "el",
+   "inicio": 57.25,
+   "duracion": 0.06,
+   "visible": "el",
+   "enfasis": false,
+   "frase": 17,
+   "seccion": 0
+  },
+  {
+   "texto": "ejercito",
+   "inicio": 57.306,
+   "duracion": 0.43,
+   "visible": "ejército",
+   "enfasis": false,
+   "frase": 17,
+   "seccion": 0
+  },
+  {
+   "texto": "capturo",
+   "inicio": 57.735,
+   "duracion": 0.448,
+   "visible": "capturó",
+   "enfasis": false,
+   "frase": 17,
+   "seccion": 0
+  },
+  {
+   "texto": "un",
+   "inicio": 58.184,
+   "duracion": 0.112,
+   "visible": "un",
+   "enfasis": false,
+   "frase": 17,
+   "seccion": 0
+  },
+  {
+   "texto": "ovni",
+   "inicio": 58.296,
+   "duracion": 0.261,
+   "visible": "ovni...",
+   "enfasis": false,
+   "frase": 17,
+   "seccion": 0
+  },
+  {
+   "texto": "que",
+   "inicio": 58.557,
+   "duracion": 0.355,
+   "visible": "que",
+   "enfasis": false,
+   "frase": 17,
+   "seccion": 0
+  },
+  {
+   "texto": "era",
+   "inicio": 58.912,
+   "duracion": 0.187,
+   "visible": "era",
+   "enfasis": false,
+   "frase": 17,
+   "seccion": 0
+  },
+  {
+   "texto": "su",
+   "inicio": 59.099,
+   "duracion": 0.187,
+   "visible": "su",
+   "enfasis": false,
+   "frase": 17,
+   "seccion": 0
+  },
+  {
+   "texto": "propio",
+   "inicio": 59.286,
+   "duracion": 0.261,
+   "visible": "propio",
+   "enfasis": false,
+   "frase": 17,
+   "seccion": 0
+  },
+  {
+   "texto": "globo",
+   "inicio": 59.547,
+   "duracion": 0.392,
+   "visible": "globo",
+   "enfasis": false,
+   "frase": 17,
+   "seccion": 0
+  },
+  {
+   "texto": "espia",
+   "inicio": 59.939,
+   "duracion": 0.355,
+   "visible": "espía.",
+   "enfasis": false,
+   "frase": 17,
+   "seccion": 0
+  }
+ ]
+}
