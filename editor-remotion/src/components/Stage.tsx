@@ -85,15 +85,9 @@ export const Scrim: React.FC = () => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const t = frame / fps;
-  const testi = t >= CUTS.testimonio && t < CUTS.cta;
+  // El testimonio trae su propio velo (más suave): aquí no se oscurece.
+  if (t >= CUTS.testimonio && t < CUTS.cta) return null;
   return (
-    <AbsoluteFill
-      style={{
-        pointerEvents: "none",
-        background: testi
-          ? "linear-gradient(180deg, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.5) 26%, rgba(0,0,0,0) 46%, rgba(0,0,0,0) 62%, rgba(0,0,0,0.6) 100%)"
-          : "linear-gradient(180deg, rgba(0,0,0,0.18) 0%, rgba(0,0,0,0) 14%, rgba(0,0,0,0) 44%, rgba(0,0,0,0.6) 66%, rgba(0,0,0,0.9) 100%)",
-      }}
-    />
+    <AbsoluteFill style={{ pointerEvents: "none", background: "linear-gradient(180deg, rgba(0,0,0,0.18) 0%, rgba(0,0,0,0) 14%, rgba(0,0,0,0) 44%, rgba(0,0,0,0.6) 66%, rgba(0,0,0,0.9) 100%)" }} />
   );
 };

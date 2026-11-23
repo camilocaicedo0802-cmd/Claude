@@ -1,7 +1,7 @@
 // Bloques de subtítulos. Regla (estilo.md §2.5): 4–7 palabras por bloque, 1 palabra clave, se omiten muletillas.
 // Cada palabra lleva el instante exacto en que se pronuncia (Whisper, tiempos por palabra).
 import { BehindBlockT, CapBlock, CapRow, CapWord } from "../components/Captions";
-import { CHEST_CY, GFX_CY, LOW_CY, TOP_CY } from "../theme";
+import { CHEST_CY, GFX_CY, LOW_CY } from "../theme";
 import { CUTS, END, T, seg } from "../timeline";
 
 type Item = [number, string, CapWord["color"]?];
@@ -13,7 +13,8 @@ const M = (id: string, items: Item[], align: CapRow["align"] = "left", px?: numb
 const L = (id: string, items: Item[], extra: Partial<CapRow> = {}): CapRow => ({ size: "L", align: "center", words: ws(id, items), ...extra });
 const B = (start: number, end: number, cy: number, rows: CapRow[], extra: Partial<CapBlock> = {}): CapBlock => ({ start: start - 0.03, end, cy, rows, ...extra });
 
-const TESTI = { maxW: 860, scale: 0.9 };
+const TESTI = { maxW: 800, scale: 0.8 };
+const TESTI_CY = 1412; // bajo la barbilla, dentro del margen seguro de Instagram
 const WIDE_CY = 1215; // plano abierto: fila de continuación sobre el pecho
 
 // ───────── Texto DETRÁS del sujeto (plano abierto; la cabeza tapa parte de la palabra gigante) ─────────
@@ -94,18 +95,19 @@ export const CAPTIONS: CapBlock[] = [
   B(T("s11", 6), T("s11", 8), CHEST_CY, [S("s11", [[6, "que"]]), L("s11", [[7, "Sorprendan"]])]),
   B(T("s11", 8), CUTS.testimonio, LOW_CY, [S("s11", [[8, "y"], [9, "mantengan"], [10, "la"]]), L("s11", [[11, "Atención"]]), M("s11", [[12, "de"], [13, "la"], [14, "audiencia"]], "right")]),
 
-  // ───────── 4 · PRUEBA SOCIAL (testimonio de Alberto, pantalla completa; subtítulos arriba, sobre la pared) ─────────
-  B(T("s12", 0), T("s12", 3), TOP_CY, [S("s12", [[0, "parcero,"], [1, "actor,"]]), L("s12", [[2, "Camarada"]])], TESTI),
-  B(T("s12", 3), T("s12", 12), TOP_CY, [S("s12", [[3, "oigan,"], [4, "les"], [5, "cuento"], [6, "que"]]), S("s12", [[7, "cuando"], [8, "estoy"], [9, "presentando"]]), L("s12", [[10, "Mis"], [11, "castings"]])], TESTI),
-  B(T("s12", 12), T("s12", 20), TOP_CY, [S("s12", [[12, "o"], [13, "cuando"], [14, "estoy"], [15, "en"], [16, "medio"], [17, "de"]]), L("s12", [[18, "Alguna"], [19, "escena"]])], TESTI),
-  B(T("s12", 20), T("s12", 28), TOP_CY, [S("s12", [[20, "lo"], [21, "que"], [22, "más"]]), L("s12", [[23, "Me"], [24, "costaba"]]), S("s12", [[25, "a"], [26, "mí"], [27, "era"]], "right")], TESTI),
-  B(T("s12", 28), T("s12", 34), TOP_CY, [M("s12", [[28, "mantenerme"]]), S("s12", [[29, "durante"], [30, "toda"], [31, "la"], [32, "escena"]]), L("s12", [[33, "Arriba"]])], TESTI),
-  B(T("s12", 34), T("s12", 37), TOP_CY, [S("s12", [[34, "sin"], [35, "dejarla"]]), L("s12", [[36, "Caer"]])], TESTI),
-  B(T("s12", 37), T("s12", 42), TOP_CY, [S("s12", [[37, "hasta"], [38, "que"], [39, "conocí"], [40, "los"]]), L("s12", [[41, "BITS"]])], TESTI),
-  B(T("s12", 42), T("s12", 49), TOP_CY, [S("s12", [[42, "y"], [43, "ahí"], [44, "aprendí"], [45, "que"]]), M("s12", [[46, "en"], [47, "cada"]]), L("s12", [[48, "Línea"]])], TESTI),
-  B(T("s12", 49), T("s12", 55), TOP_CY, [S("s12", [[49, "iba"], [50, "siguiendo"], [51, "con"]]), M("s12", [[52, "una"], [53, "acción", "accent"]]), L("s12", [[54, "Diferente"]])], TESTI),
-  B(T("s12", 55), T("s12", 62), TOP_CY, [S("s12", [[55, "que"], [56, "me"], [57, "iba"], [58, "llevando"], [59, "a"]]), M("s12", [[60, "ese"]]), L("s12", [[61, "Objetivo"]])], TESTI),
-  B(T("s12", 62), CUTS.cta, TOP_CY, [S("s12", [[62, "que"], [63, "era"], [64, "obtener"]]), M("s12", [[65, "la"], [66, "respuesta"], [67, "de"], [68, "mi"]], "left", 74), L("s12", [[69, "Partner"]])], TESTI),
+  // ───────── 4 · PRUEBA SOCIAL (testimonio de Alberto, pantalla completa) ─────────
+  // Corrección del cliente: los subtítulos van ABAJO, más pequeños, sin pisar la cara.
+  B(T("s12", 0), T("s12", 3), TESTI_CY, [S("s12", [[0, "parcero,"], [1, "actor,"]]), L("s12", [[2, "Camarada"]])], TESTI),
+  B(T("s12", 3), T("s12", 12), TESTI_CY, [S("s12", [[3, "oigan,"], [4, "les"], [5, "cuento"], [6, "que"]]), S("s12", [[7, "cuando"], [8, "estoy"], [9, "presentando"]]), L("s12", [[10, "Mis"], [11, "castings"]])], TESTI),
+  B(T("s12", 12), T("s12", 20), TESTI_CY, [S("s12", [[12, "o"], [13, "cuando"], [14, "estoy"], [15, "en"], [16, "medio"], [17, "de"]]), L("s12", [[18, "Alguna"], [19, "escena"]])], TESTI),
+  B(T("s12", 20), T("s12", 28), TESTI_CY, [S("s12", [[20, "lo"], [21, "que"], [22, "más"]]), L("s12", [[23, "Me"], [24, "costaba"]])], TESTI),
+  B(T("s12", 28), T("s12", 34), TESTI_CY, [S("s12", [[28, "mantenerme"], [29, "durante"], [30, "toda"], [31, "la"], [32, "escena"]]), L("s12", [[33, "Arriba"]])], TESTI),
+  B(T("s12", 34), T("s12", 37), TESTI_CY, [S("s12", [[34, "sin"], [35, "dejarla"]]), L("s12", [[36, "Caer"]])], TESTI),
+  B(T("s12", 37), T("s12", 42), TESTI_CY, [S("s12", [[37, "hasta"], [38, "que"], [39, "conocí"], [40, "los"]]), L("s12", [[41, "BITS"]])], TESTI),
+  B(T("s12", 42), T("s12", 49), TESTI_CY, [S("s12", [[42, "y"], [43, "ahí"], [44, "aprendí"], [45, "que"], [46, "en"], [47, "cada"]]), L("s12", [[48, "Línea"]])], TESTI),
+  B(T("s12", 49), T("s12", 55), TESTI_CY, [S("s12", [[49, "iba"], [50, "siguiendo"], [51, "con"], [52, "una"]]), L("s12", [[53, "Acción"], [54, "diferente"]])], TESTI),
+  B(T("s12", 55), T("s12", 62), TESTI_CY, [S("s12", [[55, "que"], [56, "me"], [57, "iba"], [58, "llevando"], [59, "a"], [60, "ese"]]), L("s12", [[61, "Objetivo"]])], TESTI),
+  B(T("s12", 62), CUTS.cta, TESTI_CY, [S("s12", [[62, "que"], [63, "era"], [64, "obtener"], [65, "la"], [66, "respuesta"], [67, "de"], [68, "mi"]]), L("s12", [[69, "Partner"]])], TESTI),
 
   // ───────── 5 · CTA ─────────
   // «Así que no te REPITAS» → detrás del sujeto (BEHIND)

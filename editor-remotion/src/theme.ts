@@ -39,5 +39,4 @@ export const H = 1920;
 // Todo el vídeo va en recorte vertical a pantalla completa (corrección del cliente).
 export const CHEST_CY = 1185; // centro del bloque de subtítulos sobre el pecho
 export const LOW_CY = 1390; // subtítulos cuando el plano tiene la cara en el centro (b-roll)
-export const TOP_CY = 520; // variante «arriba» (testimonio)
 export const GFX_CY = 1300; // centro de tarjetas, fichas y gráficos

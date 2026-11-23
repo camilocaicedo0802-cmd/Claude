@@ -278,10 +278,10 @@ El cliente graba en horizontal (4K 16:9) y entrega en vertical. Cómo se resuelv
 | Rango de zoom | 0,92–1,13 en plano normal; saltos de 160–250 ms en palabra clave |
 | Plano abierto | zoom 0,66: el plano baja ≈ 250 px y se funde a negro por arriba y por abajo. Solo para el texto detrás del sujeto |
 | Texto detrás del sujeto | palabra gigante (hasta 400 px) centrada en y ≈ 205–290 px, fila pequeña encima a la izquierda; la cabeza la tapa en parte. El sujeto se recorta con MODNet y se pinta encima como WebM con transparencia |
-| Subtítulos | sobre el pecho, centro en y ≈ 1185 px; con b-roll de cara centrada bajan a y ≈ 1390 px; en el testimonio suben a y ≈ 520 px |
+| Subtítulos | sobre el pecho, centro en y ≈ 1185 px; con b-roll de cara centrada bajan a y ≈ 1390 px; en el testimonio van abajo, en y ≈ 1412 px y al 80 % de tamaño |
 | Tarjetas, fichas y gráficos | centro en y ≈ 1300 px, sobre un degradado negro que cubre el 45 % inferior |
 | B-roll | siempre vertical a pantalla completa; entra al 114 % y se asienta |
-| Testimonio | pantalla completa, con chip «Testimonio» arriba a la izquierda y rótulo de nombre en y ≈ 1390 px |
+| Testimonio | pantalla completa al 116–122 % pegado abajo (sube la cara); chip «Testimonio» arriba a la izquierda y nombre arriba a la derecha (y ≈ 230 px); la cara queda libre en el centro; sin oscurecer la imagen (solo velo suave arriba y abajo) |
 | Frase del guion sin grabar | se escribe en tarjeta ámbar con serif itálica, tecleada palabra a palabra sobre b-roll |
 | Música | 22 dB por debajo de la voz; el arranque de la batería coincide con el inicio de la solución |
 | Inicios de frase | sobre la rejilla de 0,25 s de la música (120 BPM) |
@@ -303,3 +303,9 @@ El cliente graba en horizontal (4K 16:9) y entrega en vertical. Cómo se resuelv
 6. **Fotos de la persona: serias.** Se saca un fotograma del propio vídeo, no una miniatura con gesto exagerado.
 7. **Sin CTA añadido al final:** el vídeo acaba cuando la persona termina de hablar.
 8. **Amarillo #FFDE21 en lugar del verde** (palabra clave, resplandores, tarjetas y fichas de solución en ámbar).
+
+### 23-nov-2026 · tras la versión 2
+
+9. **Ningún texto puede pisar la cara** de quien habla, tampoco en el testimonio: los subtítulos van **abajo**,
+   más pequeños si hace falta, y los elementos se reparten (chip y nombre arriba, cara libre, subtítulos abajo).
+10. **El vídeo del testimonio no se oscurece:** se deja con su luz natural; solo un velo suave donde hay texto.
