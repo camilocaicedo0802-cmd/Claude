@@ -1,54 +1,75 @@
-# Remotion video
+# Editor de vídeo con Remotion
 
-<p align="center">
-  <a href="https://github.com/remotion-dev/logo">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://github.com/remotion-dev/logo/raw/main/animated-logo-banner-dark.apng">
-      <img alt="Animated Remotion Logo" src="https://github.com/remotion-dev/logo/raw/main/animated-logo-banner-light.gif">
-    </picture>
-  </a>
-</p>
+Proyecto independiente del monorepo (no es un workspace). Edita reels verticales **1080×1920 a 60 fps**
+siguiendo el estilo medido en [`estilo.md`](estilo.md).
 
-Welcome to your Remotion project!
+## Qué hay
 
-## Commands
+| Ruta | Contenido |
+| --- | --- |
+| `estilo.md` | Guía de estilo extraída del vídeo de referencia, con valores concretos y las correcciones aprobadas |
+| `analisis/referencia/` | Hojas de contacto, transcripción y comparación de SFX del vídeo de referencia |
+| `src/theme.ts` | Colores, tipografías y zonas del lienzo |
+| `src/timeline.ts` | Inicio de cada frase y cambios de formato |
+| `src/edit/` | El montaje: subtítulos, zooms, b-roll, SFX y la frase escrita |
+| `src/components/` | Escenario de vídeo, subtítulos, gráficos, transiciones y testimonio |
+| `src/data/` | Palabras con tiempos (Whisper), posición de la cara y origen de cada SFX |
+| `scripts/prep/*.py` | Guiones de preparación: transcribir, cortar tomas, limpiar voz, preparar SFX |
+| `material/` y `public/media/` | Material pesado (tomas, descargas de Drive, modelos). **No se sube a Git** |
 
-**Install Dependencies**
+## Ver y exportar
 
-```console
-npm i --loglevel=error
+```bash
+npm install
 ```
 
-**Start Preview**
-
-```console
+```bash
 npm run dev
 ```
 
-**Render video**
-
-```console
-npx remotion render
+```bash
+npx remotion render ArmandoBits out/armando-bits.mp4
 ```
 
-**Upgrade Remotion**
+Fotogramas sueltos para revisar (segundos):
 
-```console
-npx remotion upgrade
+```bash
+node scripts/stills.mjs 1.6 12 36.9
 ```
 
-## Docs
+## Rehacer la preparación desde el material en crudo
 
-Get started with Remotion by reading the [fundamentals page](https://www.remotion.dev/docs/the-fundamentals).
+Hace falta ffmpeg y Whisper (`pip install openai-whisper`). Con el material en `material/crudo`,
+`material/testimonios` y `material/drive`:
 
-## Help
+```bash
+python scripts/prep/transcribir.py material/crudo/*.MOV material/testimonios/*.mp4
+```
 
-We provide help on our [Discord server](https://discord.gg/6VzzNDwUwV).
+```bash
+python scripts/prep/tomas.py
+```
 
-## Issues
+```bash
+python scripts/prep/edl.py
+```
 
-Found an issue with Remotion? [File an issue here](https://github.com/remotion-dev/remotion/issues/new).
+```bash
+python scripts/prep/exportar_tomas.py --force
+```
 
-## License
+```bash
+python scripts/prep/audio_tomas.py
+```
 
-Note that for some entities a company license is needed. [Read the terms here](https://github.com/remotion-dev/remotion/blob/main/LICENSE.md).
+```bash
+python scripts/prep/caras.py
+```
+
+```bash
+python scripts/prep/preparar_sfx.py
+```
+
+`edl.py` contiene la elección de tomas (qué frase sale de qué clip); `tomas.py` lista todas las repeticiones para elegir.
+
+Los SFX salen **solo** de las carpetas del cliente; `src/data/sfx.json` dice de qué archivo viene cada uno.

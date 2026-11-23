@@ -1,22 +1,8 @@
-import { AbsoluteFill, Composition } from "remotion";
-
-export const FPS = 60;
-export const WIDTH = 1080;
-export const HEIGHT = 1920;
+import { Composition } from "remotion";
+import { ArmandoBits } from "./Video";
+import { FPS, H, W } from "./theme";
+import { TOTAL_SECONDS } from "./timeline";
 
 export const MyComposition = () => {
-  return (
-    <Composition
-      id="Vertical"
-      component={Placeholder}
-      durationInFrames={10 * FPS}
-      fps={FPS}
-      width={WIDTH}
-      height={HEIGHT}
-    />
-  );
-};
-
-const Placeholder: React.FC = () => {
-  return <AbsoluteFill style={{ backgroundColor: "#0b0b0b" }} />;
+  return <Composition id="ArmandoBits" component={ArmandoBits} durationInFrames={Math.round(TOTAL_SECONDS * FPS)} fps={FPS} width={W} height={H} />;
 };

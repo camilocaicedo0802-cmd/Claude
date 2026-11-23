@@ -1,0 +1,152 @@
+{
+ "swish_a": {
+  "original": "SFX PACK 1/Swoosh 01 - 03.wav",
+  "duracion": 0.158,
+  "picoEn": 0.042
+ },
+ "swish_b": {
+  "original": "SFX PACK 2/Swoosh 01 - 06.wav",
+  "duracion": 0.146,
+  "picoEn": 0.038
+ },
+ "whoosh_1": {
+  "original": "SFX PACK 1/VS_Short Whoosh 1.mp3",
+  "duracion": 0.469,
+  "picoEn": 0.136
+ },
+ "whoosh_2": {
+  "original": "SFX PACK 1/VS_Short Whoosh 3.mp3",
+  "duracion": 0.483,
+  "picoEn": 0.214
+ },
+ "whoosh_3": {
+  "original": "SFX PACK 2/VS_Short Whoosh 6.mp3",
+  "duracion": 0.486,
+  "picoEn": 0.17
+ },
+ "whoosh_deep": {
+  "original": "SFX PACK 1/Woosh Effect 3.wav",
+  "duracion": 2.142,
+  "picoEn": 0.851
+ },
+ "whoosh_fast": {
+  "original": "SFX PACK 1/Woosh Effect 5.wav",
+  "duracion": 0.808,
+  "picoEn": 0.25
+ },
+ "riser": {
+  "original": "SFX PACK 1/RISER.mp3",
+  "duracion": 1.353,
+  "picoEn": 1.286
+ },
+ "pop": {
+  "original": "SFX PACK 1/Pop up SFX.mp3",
+  "duracion": 0.141,
+  "picoEn": 0.017
+ },
+ "key_1": {
+  "original": "SFX PACK 2/Teclas-Clicks/Mechanical Keyboard Click 05.wav",
+  "duracion": 0.131,
+  "picoEn": 0.01
+ },
+ "key_2": {
+  "original": "SFX PACK 2/Teclas-Clicks/Mechanical Keyboard Click 13.wav",
+  "duracion": 0.281,
+  "picoEn": 0.012
+ },
+ "key_3": {
+  "original": "SFX PACK 2/Teclas-Clicks/Mechanical Keyboard Click 17.wav",
+  "duracion": 0.131,
+  "picoEn": 0.004
+ },
+ "key_4": {
+  "original": "SFX PACK 2/Teclas-Clicks/Mechanical Keyboard Click 19.wav",
+  "duracion": 0.118,
+  "picoEn": 0.016
+ },
+ "key_5": {
+  "original": "SFX PACK 1/Tecla.mp3",
+  "duracion": 0.134,
+  "picoEn": 0.019
+ },
+ "keys_multi": {
+  "original": "SFX PACK 2/Teclas-Clicks/Mechanical Keyboard Multiple Clicks 01.wav",
+  "duracion": 0.344,
+  "picoEn": 0.266
+ },
+ "click_1": {
+  "original": "SFX PACK 2/Teclas-Clicks/Mouse Click 04.wav",
+  "duracion": 0.154,
+  "picoEn": 0.005
+ },
+ "click_2": {
+  "original": "SFX PACK 2/Teclas-Clicks/Mouse Click 02.wav",
+  "duracion": 0.104,
+  "picoEn": 0.003
+ },
+ "click_double": {
+  "original": "SFX PACK 2/Teclas-Clicks/Lighter Double Click 02.wav",
+  "duracion": 0.267,
+  "picoEn": 0.087
+ },
+ "shutter": {
+  "original": "SFX PACK 2/SFX General/Camera Flash.mp3",
+  "duracion": 0.917,
+  "picoEn": 0.068
+ },
+ "shutter_click": {
+  "original": "SFX PACK 2/Teclas-Clicks/Camera Shutter Click 01.wav",
+  "duracion": 0.191,
+  "picoEn": 0.055
+ },
+ "notif": {
+  "original": "SFX PACK 2/SFX General/snapchat-notification-sound.mp3",
+  "duracion": 0.197,
+  "picoEn": 0.075
+ },
+ "sub_hit": {
+  "original": "SFX PACK 1/Sub Bass Hit.wav",
+  "duracion": 1.248,
+  "picoEn": 0.011
+ },
+ "sub_drop": {
+  "original": "SFX PACK 1/Sub Bass Drop 2.wav",
+  "duracion": 2.358,
+  "picoEn": 0.009
+ },
+ "boom": {
+  "original": "SFX PACK 1/Boom 2.mp3",
+  "duracion": 1.539,
+  "picoEn": 0.06
+ },
+ "bass_hit": {
+  "original": "SFX PACK 1/Deep Bass Hit 1.wav",
+  "duracion": 1.962,
+  "picoEn": 0.139
+ },
+ "marker": {
+  "original": "SFX PACK 1/Subrayado rotulador.mp3",
+  "duracion": 3.886,
+  "picoEn": 3.575
+ },
+ "tick": {
+  "original": "SFX PACK 1/RELOJ.mp3",
+  "duracion": 3.108,
+  "picoEn": 2.422
+ },
+ "error": {
+  "original": "SFX PACK 1/Acierto y error.mp3",
+  "duracion": 2.83,
+  "picoEn": 2.11
+ },
+ "disappear": {
+  "original": "SFX PACK 1/disappear.wav",
+  "duracion": 1.312,
+  "picoEn": 0.304
+ },
+ "snap": {
+  "original": "SFX PACK 1/Chasquido épico.mpeg",
+  "duracion": 0.449,
+  "picoEn": 0.01
+ }
+}

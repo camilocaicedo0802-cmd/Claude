@@ -1,0 +1,1389 @@
+[
+ {
+  "id": "s01_hook",
+  "src": "crudo/C454.MOV",
+  "section": "hook",
+  "keep": [
+   [
+    1.95,
+    7.22
+   ]
+  ],
+  "duration": 5.27,
+  "cuts": [],
+  "words": [
+   {
+    "text": "Hay",
+    "start": 0.05,
+    "end": 0.19
+   },
+   {
+    "text": "actores",
+    "start": 0.19,
+    "end": 0.59
+   },
+   {
+    "text": "que",
+    "start": 0.59,
+    "end": 0.75
+   },
+   {
+    "text": "llevan",
+    "start": 0.75,
+    "end": 1.03
+   },
+   {
+    "text": "años",
+    "start": 1.03,
+    "end": 1.51
+   },
+   {
+    "text": "interpretando",
+    "start": 1.51,
+    "end": 2.31
+   },
+   {
+    "text": "el",
+    "start": 2.31,
+    "end": 2.49
+   },
+   {
+    "text": "mismo",
+    "start": 2.49,
+    "end": 2.73
+   },
+   {
+    "text": "personaje,",
+    "start": 2.73,
+    "end": 3.37
+   },
+   {
+    "text": "aunque",
+    "start": 3.39,
+    "end": 3.81
+   },
+   {
+    "text": "en",
+    "start": 3.81,
+    "end": 3.95
+   },
+   {
+    "text": "el",
+    "start": 3.95,
+    "end": 4.07
+   },
+   {
+    "text": "guion",
+    "start": 4.07,
+    "end": 4.39
+   },
+   {
+    "text": "les",
+    "start": 4.39,
+    "end": 4.59
+   },
+   {
+    "text": "cambien",
+    "start": 4.59,
+    "end": 4.83
+   },
+   {
+    "text": "el",
+    "start": 4.83,
+    "end": 4.97
+   },
+   {
+    "text": "nombre.",
+    "start": 4.97,
+    "end": 5.23
+   }
+  ],
+  "text": "Hay actores que llevan años interpretando el mismo personaje, aunque en el guion les cambien el nombre."
+ },
+ {
+  "id": "s02_casting",
+  "src": "crudo/C455.MOV",
+  "section": "problema",
+  "keep": [
+   [
+    13.77,
+    22.09
+   ]
+  ],
+  "duration": 8.32,
+  "cuts": [],
+  "words": [
+   {
+    "text": "te",
+    "start": 0.05,
+    "end": 0.13
+   },
+   {
+    "text": "llega",
+    "start": 0.13,
+    "end": 0.35
+   },
+   {
+    "text": "un",
+    "start": 0.35,
+    "end": 0.49
+   },
+   {
+    "text": "casting",
+    "start": 0.49,
+    "end": 0.89
+   },
+   {
+    "text": "y",
+    "start": 0.89,
+    "end": 1.13
+   },
+   {
+    "text": "terminas",
+    "start": 1.13,
+    "end": 1.55
+   },
+   {
+    "text": "utilizando",
+    "start": 1.55,
+    "end": 2.25
+   },
+   {
+    "text": "el",
+    "start": 2.25,
+    "end": 2.75
+   },
+   {
+    "text": "mismo",
+    "start": 2.75,
+    "end": 3.09
+   },
+   {
+    "text": "tono",
+    "start": 3.09,
+    "end": 3.39
+   },
+   {
+    "text": "de",
+    "start": 3.39,
+    "end": 3.51
+   },
+   {
+    "text": "siempre,",
+    "start": 3.51,
+    "end": 3.87
+   },
+   {
+    "text": "las",
+    "start": 4.15,
+    "end": 4.25
+   },
+   {
+    "text": "mismas",
+    "start": 4.25,
+    "end": 4.61
+   },
+   {
+    "text": "intenciones,",
+    "start": 4.61,
+    "end": 5.31
+   },
+   {
+    "text": "las",
+    "start": 5.57,
+    "end": 5.71
+   },
+   {
+    "text": "mismas",
+    "start": 5.71,
+    "end": 6.11
+   },
+   {
+    "text": "herramientas,",
+    "start": 6.11,
+    "end": 6.91
+   },
+   {
+    "text": "las",
+    "start": 7.01,
+    "end": 7.15
+   },
+   {
+    "text": "mismas",
+    "start": 7.15,
+    "end": 7.61
+   },
+   {
+    "text": "reacciones.",
+    "start": 7.61,
+    "end": 8.32
+   }
+  ],
+  "text": "te llega un casting y terminas utilizando el mismo tono de siempre, las mismas intenciones, las mismas herramientas, las mismas reacciones."
+ },
+ {
+  "id": "s03_propuesta",
+  "src": "crudo/C455.MOV",
+  "section": "problema",
+  "keep": [
+   [
+    43.81,
+    46.34
+   ],
+   [
+    46.8,
+    47.81
+   ]
+  ],
+  "duration": 3.54,
+  "cuts": [
+   2.53
+  ],
+  "words": [
+   {
+    "text": "cambies",
+    "start": 0.05,
+    "end": 0.33
+   },
+   {
+    "text": "de",
+    "start": 0.33,
+    "end": 0.43
+   },
+   {
+    "text": "personaje",
+    "start": 0.43,
+    "end": 0.89
+   },
+   {
+    "text": "pero",
+    "start": 0.89,
+    "end": 1.19
+   },
+   {
+    "text": "no",
+    "start": 1.19,
+    "end": 1.33
+   },
+   {
+    "text": "cambies",
+    "start": 1.33,
+    "end": 1.63
+   },
+   {
+    "text": "de",
+    "start": 1.63,
+    "end": 1.73
+   },
+   {
+    "text": "propuesta",
+    "start": 1.73,
+    "end": 2.31
+   },
+   {
+    "text": "eso",
+    "start": 2.31,
+    "end": 2.65
+   },
+   {
+    "text": "no",
+    "start": 2.65,
+    "end": 2.77
+   },
+   {
+    "text": "tiene",
+    "start": 2.77,
+    "end": 2.95
+   },
+   {
+    "text": "sentido",
+    "start": 2.95,
+    "end": 3.37
+   }
+  ],
+  "text": "cambies de personaje pero no cambies de propuesta eso no tiene sentido"
+ },
+ {
+  "id": "s04_escucho",
+  "src": "crudo/C455.MOV",
+  "section": "problema",
+  "keep": [
+   [
+    78.63,
+    84.48
+   ]
+  ],
+  "duration": 5.85,
+  "cuts": [],
+  "words": [
+   {
+    "text": "¿Y",
+    "start": 0.05,
+    "end": 0.13
+   },
+   {
+    "text": "sabes",
+    "start": 0.13,
+    "end": 0.33
+   },
+   {
+    "text": "qué",
+    "start": 0.33,
+    "end": 0.51
+   },
+   {
+    "text": "es",
+    "start": 0.51,
+    "end": 0.59
+   },
+   {
+    "text": "lo",
+    "start": 0.59,
+    "end": 0.69
+   },
+   {
+    "text": "que",
+    "start": 0.69,
+    "end": 0.83
+   },
+   {
+    "text": "escucho?",
+    "start": 0.83,
+    "end": 1.43
+   },
+   {
+    "text": "Ah,",
+    "start": 1.57,
+    "end": 1.69
+   },
+   {
+    "text": "es",
+    "start": 1.75,
+    "end": 1.85
+   },
+   {
+    "text": "que",
+    "start": 1.85,
+    "end": 1.97
+   },
+   {
+    "text": "a",
+    "start": 1.97,
+    "end": 2.09
+   },
+   {
+    "text": "mí",
+    "start": 2.09,
+    "end": 2.17
+   },
+   {
+    "text": "me",
+    "start": 2.17,
+    "end": 2.39
+   },
+   {
+    "text": "tienen",
+    "start": 2.39,
+    "end": 2.59
+   },
+   {
+    "text": "encasillado.",
+    "start": 2.59,
+    "end": 3.31
+   },
+   {
+    "text": "es",
+    "start": 3.31,
+    "end": 3.55
+   },
+   {
+    "text": "que",
+    "start": 3.55,
+    "end": 3.65
+   },
+   {
+    "text": "mi",
+    "start": 3.65,
+    "end": 3.83
+   },
+   {
+    "text": "manager",
+    "start": 3.83,
+    "end": 4.21
+   },
+   {
+    "text": "no",
+    "start": 4.21,
+    "end": 4.45
+   },
+   {
+    "text": "me",
+    "start": 4.45,
+    "end": 4.57
+   },
+   {
+    "text": "envía",
+    "start": 4.57,
+    "end": 4.77
+   },
+   {
+    "text": "nuevos",
+    "start": 4.77,
+    "end": 5.11
+   },
+   {
+    "text": "casting.",
+    "start": 5.11,
+    "end": 5.61
+   }
+  ],
+  "text": "¿Y sabes qué es lo que escucho? Ah, es que a mí me tienen encasillado. es que mi manager no me envía nuevos casting."
+ },
+ {
+  "id": "s05_decisiones",
+  "src": "crudo/C455.MOV",
+  "section": "problema",
+  "keep": [
+   [
+    100.1,
+    104.63
+   ]
+  ],
+  "duration": 4.53,
+  "cuts": [],
+  "words": [
+   {
+    "text": "Pero",
+    "start": 0.06,
+    "end": 0.22
+   },
+   {
+    "text": "realmente",
+    "start": 0.22,
+    "end": 0.64
+   },
+   {
+    "text": "el",
+    "start": 0.64,
+    "end": 1.0
+   },
+   {
+    "text": "problema",
+    "start": 1.05,
+    "end": 1.5
+   },
+   {
+    "text": "está",
+    "start": 1.5,
+    "end": 2.02
+   },
+   {
+    "text": "en",
+    "start": 2.02,
+    "end": 2.3
+   },
+   {
+    "text": "las",
+    "start": 2.3,
+    "end": 2.42
+   },
+   {
+    "text": "decisiones",
+    "start": 2.42,
+    "end": 2.96
+   },
+   {
+    "text": "que",
+    "start": 2.96,
+    "end": 3.06
+   },
+   {
+    "text": "tú",
+    "start": 3.06,
+    "end": 3.2
+   },
+   {
+    "text": "tomas",
+    "start": 3.2,
+    "end": 3.5
+   },
+   {
+    "text": "enfrente",
+    "start": 3.5,
+    "end": 3.88
+   },
+   {
+    "text": "de",
+    "start": 3.88,
+    "end": 4.0
+   },
+   {
+    "text": "la",
+    "start": 4.0,
+    "end": 4.08
+   },
+   {
+    "text": "cámara.",
+    "start": 4.08,
+    "end": 4.4
+   }
+  ],
+  "text": "Pero realmente el problema está en las decisiones que tú tomas enfrente de la cámara."
+ },
+ {
+  "id": "s06_bits",
+  "src": "crudo/C456.MOV",
+  "section": "solucion",
+  "keep": [
+   [
+    14.55,
+    17.98
+   ],
+   [
+    18.1,
+    23.32
+   ]
+  ],
+  "duration": 8.65,
+  "cuts": [
+   3.43
+  ],
+  "words": [
+   {
+    "text": "Si",
+    "start": 0.05,
+    "end": 0.19
+   },
+   {
+    "text": "quieres",
+    "start": 0.19,
+    "end": 0.45
+   },
+   {
+    "text": "interpretar",
+    "start": 0.45,
+    "end": 1.17
+   },
+   {
+    "text": "personajes",
+    "start": 1.17,
+    "end": 1.65
+   },
+   {
+    "text": "más",
+    "start": 1.65,
+    "end": 2.09
+   },
+   {
+    "text": "complejos",
+    "start": 2.09,
+    "end": 2.57
+   },
+   {
+    "text": "para",
+    "start": 2.57,
+    "end": 2.77
+   },
+   {
+    "text": "streaming,",
+    "start": 2.77,
+    "end": 3.19
+   },
+   {
+    "text": "necesitas",
+    "start": 3.55,
+    "end": 3.99
+   },
+   {
+    "text": "aprender",
+    "start": 3.99,
+    "end": 4.33
+   },
+   {
+    "text": "la",
+    "start": 4.33,
+    "end": 4.59
+   },
+   {
+    "text": "estructura",
+    "start": 4.59,
+    "end": 5.09
+   },
+   {
+    "text": "de",
+    "start": 5.09,
+    "end": 5.23
+   },
+   {
+    "text": "BITS",
+    "start": 5.23,
+    "end": 5.53
+   },
+   {
+    "text": "de",
+    "start": 5.53,
+    "end": 5.67
+   },
+   {
+    "text": "una",
+    "start": 5.67,
+    "end": 5.87
+   },
+   {
+    "text": "escena",
+    "start": 5.87,
+    "end": 6.21
+   },
+   {
+    "text": "y",
+    "start": 6.21,
+    "end": 6.51
+   },
+   {
+    "text": "sobre",
+    "start": 6.51,
+    "end": 6.71
+   },
+   {
+    "text": "todo",
+    "start": 6.71,
+    "end": 7.09
+   },
+   {
+    "text": "aprender",
+    "start": 7.09,
+    "end": 7.57
+   },
+   {
+    "text": "a",
+    "start": 7.57,
+    "end": 7.79
+   },
+   {
+    "text": "transitarlos.",
+    "start": 7.79,
+    "end": 8.49
+   }
+  ],
+  "text": "Si quieres interpretar personajes más complejos para streaming, necesitas aprender la estructura de BITS de una escena y sobre todo aprender a transitarlos."
+ },
+ {
+  "id": "s08_melodia",
+  "src": "crudo/C458.MOV",
+  "section": "solucion",
+  "keep": [
+   [
+    13.52,
+    16.82
+   ]
+  ],
+  "duration": 3.3,
+  "cuts": [],
+  "words": [
+   {
+    "text": "La",
+    "start": 0.05,
+    "end": 0.158
+   },
+   {
+    "text": "combinación",
+    "start": 0.158,
+    "end": 0.698
+   },
+   {
+    "text": "y",
+    "start": 0.698,
+    "end": 0.838
+   },
+   {
+    "text": "la",
+    "start": 0.838,
+    "end": 0.898
+   },
+   {
+    "text": "transición",
+    "start": 0.898,
+    "end": 1.398
+   },
+   {
+    "text": "entre",
+    "start": 1.398,
+    "end": 1.618
+   },
+   {
+    "text": "ellas",
+    "start": 1.618,
+    "end": 1.958
+   },
+   {
+    "text": "es",
+    "start": 1.958,
+    "end": 2.138
+   },
+   {
+    "text": "lo",
+    "start": 2.138,
+    "end": 2.258
+   },
+   {
+    "text": "que",
+    "start": 2.258,
+    "end": 2.358
+   },
+   {
+    "text": "crea",
+    "start": 2.358,
+    "end": 2.618
+   },
+   {
+    "text": "la",
+    "start": 2.618,
+    "end": 2.698
+   },
+   {
+    "text": "melodía.",
+    "start": 2.698,
+    "end": 3.178
+   }
+  ],
+  "text": "La combinación y la transición entre ellas es lo que crea la melodía."
+ },
+ {
+  "id": "s09_accion",
+  "src": "crudo/C459.MOV",
+  "section": "solucion",
+  "keep": [
+   [
+    9.2,
+    13.17
+   ]
+  ],
+  "duration": 3.97,
+  "cuts": [],
+  "words": [
+   {
+    "text": "En",
+    "start": 0,
+    "end": 0.18
+   },
+   {
+    "text": "actuación",
+    "start": 0.18,
+    "end": 0.7
+   },
+   {
+    "text": "cada",
+    "start": 0.7,
+    "end": 0.98
+   },
+   {
+    "text": "BIT",
+    "start": 0.98,
+    "end": 1.36
+   },
+   {
+    "text": "es",
+    "start": 1.45,
+    "end": 1.6
+   },
+   {
+    "text": "una",
+    "start": 1.6,
+    "end": 1.8
+   },
+   {
+    "text": "acción",
+    "start": 1.8,
+    "end": 2.24
+   },
+   {
+    "text": "que",
+    "start": 2.24,
+    "end": 2.48
+   },
+   {
+    "text": "busca",
+    "start": 2.48,
+    "end": 2.9
+   },
+   {
+    "text": "provocar",
+    "start": 2.9,
+    "end": 3.38
+   },
+   {
+    "text": "un",
+    "start": 3.38,
+    "end": 3.48
+   },
+   {
+    "text": "cambio.",
+    "start": 3.48,
+    "end": 3.82
+   }
+  ],
+  "text": "En actuación cada BIT es una acción que busca provocar un cambio."
+ },
+ {
+  "id": "s10_conflicto",
+  "src": "crudo/C459.MOV",
+  "section": "solucion",
+  "keep": [
+   [
+    32.41,
+    35.75
+   ]
+  ],
+  "duration": 3.34,
+  "cuts": [],
+  "words": [
+   {
+    "text": "Y",
+    "start": 0.06,
+    "end": 0.49
+   },
+   {
+    "text": "esas",
+    "start": 0.49,
+    "end": 0.67
+   },
+   {
+    "text": "transiciones",
+    "start": 0.67,
+    "end": 1.21
+   },
+   {
+    "text": "son",
+    "start": 1.21,
+    "end": 1.41
+   },
+   {
+    "text": "las",
+    "start": 1.41,
+    "end": 1.53
+   },
+   {
+    "text": "que",
+    "start": 1.53,
+    "end": 1.65
+   },
+   {
+    "text": "permiten",
+    "start": 1.65,
+    "end": 2.13
+   },
+   {
+    "text": "que",
+    "start": 2.13,
+    "end": 2.27
+   },
+   {
+    "text": "el",
+    "start": 2.27,
+    "end": 2.37
+   },
+   {
+    "text": "conflicto",
+    "start": 2.4,
+    "end": 2.85
+   },
+   {
+    "text": "avance.",
+    "start": 2.85,
+    "end": 3.25
+   }
+  ],
+  "text": "Y esas transiciones son las que permiten que el conflicto avance."
+ },
+ {
+  "id": "s11_streaming",
+  "src": "crudo/C460.MOV",
+  "section": "solucion",
+  "keep": [
+   [
+    1.41,
+    5.41
+   ],
+   [
+    5.64,
+    8.98
+   ]
+  ],
+  "duration": 7.34,
+  "cuts": [
+   4.0
+  ],
+  "words": [
+   {
+    "text": "Porque",
+    "start": 0.05,
+    "end": 0.23
+   },
+   {
+    "text": "en",
+    "start": 0.23,
+    "end": 0.37
+   },
+   {
+    "text": "streaming",
+    "start": 0.37,
+    "end": 0.73
+   },
+   {
+    "text": "necesitamos",
+    "start": 0.73,
+    "end": 1.61
+   },
+   {
+    "text": "personajes",
+    "start": 1.61,
+    "end": 2.15
+   },
+   {
+    "text": "multidimensionales",
+    "start": 2.15,
+    "end": 3.91
+   },
+   {
+    "text": "que",
+    "start": 4.06,
+    "end": 4.16
+   },
+   {
+    "text": "sorprendan",
+    "start": 4.16,
+    "end": 4.96
+   },
+   {
+    "text": "y",
+    "start": 4.96,
+    "end": 5.22
+   },
+   {
+    "text": "mantengan",
+    "start": 5.22,
+    "end": 5.96
+   },
+   {
+    "text": "la",
+    "start": 5.96,
+    "end": 6.1
+   },
+   {
+    "text": "atención",
+    "start": 6.1,
+    "end": 6.42
+   },
+   {
+    "text": "de",
+    "start": 6.42,
+    "end": 6.64
+   },
+   {
+    "text": "la",
+    "start": 6.64,
+    "end": 6.72
+   },
+   {
+    "text": "audiencia.",
+    "start": 6.72,
+    "end": 7.14
+   }
+  ],
+  "text": "Porque en streaming necesitamos personajes multidimensionales que sorprendan y mantengan la atención de la audiencia."
+ },
+ {
+  "id": "s12_testimonio",
+  "src": "testimonios/testimonio_2.mp4",
+  "section": "prueba",
+  "keep": [
+   [
+    13.94,
+    22.03
+   ]
+  ],
+  "duration": 8.09,
+  "cuts": [],
+  "words": [
+   {
+    "text": "Hasta",
+    "start": 0.08,
+    "end": 0.62
+   },
+   {
+    "text": "que",
+    "start": 0.62,
+    "end": 1.06
+   },
+   {
+    "text": "conocí",
+    "start": 1.06,
+    "end": 1.48
+   },
+   {
+    "text": "los",
+    "start": 1.48,
+    "end": 1.66
+   },
+   {
+    "text": "BITS",
+    "start": 1.66,
+    "end": 2.02
+   },
+   {
+    "text": "y",
+    "start": 2.02,
+    "end": 2.44
+   },
+   {
+    "text": "cómo",
+    "start": 2.44,
+    "end": 2.66
+   },
+   {
+    "text": "yo",
+    "start": 2.66,
+    "end": 2.82
+   },
+   {
+    "text": "podía",
+    "start": 2.82,
+    "end": 3.14
+   },
+   {
+    "text": "en",
+    "start": 3.14,
+    "end": 3.46
+   },
+   {
+    "text": "cada",
+    "start": 3.46,
+    "end": 3.76
+   },
+   {
+    "text": "uno",
+    "start": 3.76,
+    "end": 4.02
+   },
+   {
+    "text": "de",
+    "start": 4.02,
+    "end": 4.18
+   },
+   {
+    "text": "ellos",
+    "start": 4.18,
+    "end": 4.42
+   },
+   {
+    "text": "tener",
+    "start": 4.42,
+    "end": 4.68
+   },
+   {
+    "text": "una",
+    "start": 4.68,
+    "end": 4.88
+   },
+   {
+    "text": "acción",
+    "start": 4.88,
+    "end": 5.18
+   },
+   {
+    "text": "que",
+    "start": 5.18,
+    "end": 5.36
+   },
+   {
+    "text": "me",
+    "start": 5.36,
+    "end": 5.52
+   },
+   {
+    "text": "llevara",
+    "start": 5.52,
+    "end": 5.94
+   },
+   {
+    "text": "directo",
+    "start": 5.94,
+    "end": 6.48
+   },
+   {
+    "text": "a",
+    "start": 6.48,
+    "end": 6.66
+   },
+   {
+    "text": "lo",
+    "start": 6.66,
+    "end": 6.76
+   },
+   {
+    "text": "que",
+    "start": 6.76,
+    "end": 6.84
+   },
+   {
+    "text": "yo",
+    "start": 6.84,
+    "end": 6.96
+   },
+   {
+    "text": "quería",
+    "start": 6.96,
+    "end": 7.18
+   },
+   {
+    "text": "obtener",
+    "start": 7.18,
+    "end": 7.52
+   },
+   {
+    "text": "de",
+    "start": 7.52,
+    "end": 7.64
+   },
+   {
+    "text": "mi",
+    "start": 7.64,
+    "end": 7.76
+   },
+   {
+    "text": "partner.",
+    "start": 7.76,
+    "end": 8.04
+   }
+  ],
+  "text": "Hasta que conocí los BITS y cómo yo podía en cada uno de ellos tener una acción que me llevara directo a lo que yo quería obtener de mi partner."
+ },
+ {
+  "id": "s13_repitas",
+  "src": "crudo/C461.MOV",
+  "section": "cta",
+  "keep": [
+   [
+    13.42,
+    16.38
+   ]
+  ],
+  "duration": 2.96,
+  "cuts": [],
+  "words": [
+   {
+    "text": "Así",
+    "start": 0.05,
+    "end": 0.215
+   },
+   {
+    "text": "que",
+    "start": 0.215,
+    "end": 0.335
+   },
+   {
+    "text": "no",
+    "start": 0.335,
+    "end": 0.435
+   },
+   {
+    "text": "te",
+    "start": 0.435,
+    "end": 0.575
+   },
+   {
+    "text": "repitas",
+    "start": 0.575,
+    "end": 1.035
+   },
+   {
+    "text": "año",
+    "start": 1.035,
+    "end": 1.315
+   },
+   {
+    "text": "tras",
+    "start": 1.315,
+    "end": 1.495
+   },
+   {
+    "text": "año",
+    "start": 1.495,
+    "end": 1.795
+   },
+   {
+    "text": "en",
+    "start": 1.795,
+    "end": 1.915
+   },
+   {
+    "text": "los",
+    "start": 1.915,
+    "end": 2.075
+   },
+   {
+    "text": "mismos",
+    "start": 2.075,
+    "end": 2.335
+   },
+   {
+    "text": "personajes.",
+    "start": 2.335,
+    "end": 2.895
+   }
+  ],
+  "text": "Así que no te repitas año tras año en los mismos personajes."
+ },
+ {
+  "id": "s14_comenta",
+  "src": "crudo/C462.MOV",
+  "section": "cta",
+  "keep": [
+   [
+    10.24,
+    11.36
+   ],
+   [
+    11.64,
+    16.2
+   ],
+   [
+    16.35,
+    18.43
+   ]
+  ],
+  "duration": 7.76,
+  "cuts": [
+   1.12,
+   5.68
+  ],
+  "words": [
+   {
+    "text": "Comenta",
+    "start": 0.06,
+    "end": 0.5
+   },
+   {
+    "text": "BIT",
+    "start": 0.5,
+    "end": 1.0
+   },
+   {
+    "text": "y",
+    "start": 1.0,
+    "end": 1.86
+   },
+   {
+    "text": "te",
+    "start": 1.86,
+    "end": 1.96
+   },
+   {
+    "text": "regalo",
+    "start": 1.96,
+    "end": 2.24
+   },
+   {
+    "text": "la",
+    "start": 2.24,
+    "end": 2.4
+   },
+   {
+    "text": "masterclass",
+    "start": 2.4,
+    "end": 3.2
+   },
+   {
+    "text": "donde",
+    "start": 3.2,
+    "end": 3.42
+   },
+   {
+    "text": "te",
+    "start": 3.42,
+    "end": 3.58
+   },
+   {
+    "text": "enseño",
+    "start": 3.58,
+    "end": 3.88
+   },
+   {
+    "text": "a",
+    "start": 3.88,
+    "end": 3.94
+   },
+   {
+    "text": "identificar",
+    "start": 3.94,
+    "end": 4.42
+   },
+   {
+    "text": "los",
+    "start": 4.42,
+    "end": 4.66
+   },
+   {
+    "text": "BITS",
+    "start": 4.66,
+    "end": 4.94
+   },
+   {
+    "text": "de",
+    "start": 4.94,
+    "end": 5.06
+   },
+   {
+    "text": "una",
+    "start": 5.06,
+    "end": 5.22
+   },
+   {
+    "text": "escena",
+    "start": 5.22,
+    "end": 5.54
+   },
+   {
+    "text": "para",
+    "start": 5.54,
+    "end": 5.87
+   },
+   {
+    "text": "que",
+    "start": 5.87,
+    "end": 6.01
+   },
+   {
+    "text": "los",
+    "start": 6.01,
+    "end": 6.13
+   },
+   {
+    "text": "apliques",
+    "start": 6.13,
+    "end": 6.55
+   },
+   {
+    "text": "en",
+    "start": 6.55,
+    "end": 6.69
+   },
+   {
+    "text": "tu",
+    "start": 6.69,
+    "end": 6.79
+   },
+   {
+    "text": "próximo",
+    "start": 6.79,
+    "end": 7.09
+   },
+   {
+    "text": "casting.",
+    "start": 7.09,
+    "end": 7.57
+   }
+  ],
+  "text": "Comenta BIT y te regalo la masterclass donde te enseño a identificar los BITS de una escena para que los apliques en tu próximo casting."
+ }
+]
