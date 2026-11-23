@@ -318,6 +318,12 @@ El cliente graba en horizontal (4K 16:9) y entrega en vertical. Cómo se resuelv
     horizontal**, parecido a la primera versión, con **las tipografías y demás recursos arriba y abajo del vídeo**
     (§12). Mismo guion, mismas tomas, misma música y mismos tiempos en las dos.
 
+### 23-nov-2026 · tras la opción B
+
+13. **En la opción B el testimonio se queda a pantalla completa** («excepto el vídeo del testimonio, eso sí déjalo
+    así»). El formato horizontal en ventana es para las tomas de quien da la clase; el testimonio vertical de móvil
+    no se mete en ventana ni en tarjeta.
+
 ## 12. Opción B · formato horizontal («clase horizontal»)
 
 El plano horizontal va en una ventana y nada de texto se monta sobre la imagen. Todo lo de §9 y §11 sigue valiendo
@@ -336,5 +342,5 @@ El plano horizontal va en una ventana y nada de texto se monta sobre la imagen. 
 | Fila de continuación | mientras la ventana está bajada, la fila que sigue a la palabra gigante va en y ≈ 1356 |
 | B-roll | en horizontal dentro de la ventana (recorte 16:10 del mismo clip); entra al 116 % y se asienta |
 | Visor REC | esquinas y punto rojo sobre la ventana, no a pantalla completa |
-| Testimonio | **a pantalla completa**, igual que en la opción A (correcciones 5, 9 y 10): es un vídeo vertical de móvil y así lo pidió el cliente. Se entra con glitch y se vuelve a la ventana con barras + destello |
+| Testimonio | **a pantalla completa**, igual que en la opción A (correcciones 5, 9 y 10) y **confirmado por el cliente para la opción B** (corrección 13). Se entra con glitch y se vuelve a la ventana con barras + destello |
 | Transiciones y sonido | las mismas que la opción A; solo se añaden las teclas de los titulares y un whoosh para la flecha de «que el conflicto avance» |
