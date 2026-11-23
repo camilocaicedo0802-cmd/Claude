@@ -11,7 +11,7 @@ siguiendo el estilo medido en [`estilo.md`](estilo.md).
 | `analisis/referencia/` | Hojas de contacto, transcripción y comparación de SFX del vídeo de referencia |
 | `src/theme.ts` | Colores, tipografías y zonas del lienzo |
 | `src/timeline.ts` | Inicio de cada frase y cambios de formato |
-| `src/edit/` | El montaje: subtítulos, zooms, b-roll, SFX y la frase escrita |
+| `src/edit/` | El montaje: subtítulos (delante y detrás del sujeto), zooms, b-roll, SFX y la frase escrita |
 | `src/components/` | Escenario de vídeo, subtítulos, gráficos, transiciones y testimonio |
 | `src/data/` | Palabras con tiempos (Whisper), posición de la cara y origen de cada SFX |
 | `scripts/prep/*.py` | Guiones de preparación: transcribir, cortar tomas, limpiar voz, preparar SFX |
@@ -63,7 +63,11 @@ python scripts/prep/audio_tomas.py
 ```
 
 ```bash
-python scripts/prep/caras.py
+python scripts/prep/caras_seguimiento.py
+```
+
+```bash
+python scripts/prep/recortar_sujeto.py
 ```
 
 ```bash
@@ -71,5 +75,9 @@ python scripts/prep/preparar_sfx.py
 ```
 
 `edl.py` contiene la elección de tomas (qué frase sale de qué clip); `tomas.py` lista todas las repeticiones para elegir.
+`recortar_sujeto.py` genera las capas con transparencia para el texto detrás del sujeto (modelo MODNet en
+`material/matting/modnet.onnx`, descargado de Hugging Face `Xenova/modnet`).
+
+B-roll de internet usado (Mixkit, licencia libre «Stock Video Free License»): clips 41678 (partitura) y 43403 (actriz).
 
 Los SFX salen **solo** de las carpetas del cliente; `src/data/sfx.json` dice de qué archivo viene cada uno.

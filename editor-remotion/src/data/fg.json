@@ -1,0 +1,47 @@
+{
+ "s01_hook": {
+  "file": "media/fg/s01_hook.webm",
+  "from_": 0.0,
+  "to": 2.5,
+  "x": 486,
+  "y": 0,
+  "w": 2074,
+  "h": 1382
+ },
+ "s05_decisiones": {
+  "file": "media/fg/s05_decisiones.webm",
+  "from_": 0.0,
+  "to": 2.5,
+  "x": 594,
+  "y": 0,
+  "w": 2074,
+  "h": 1382
+ },
+ "s06_bits": {
+  "file": "media/fg/s06_bits.webm",
+  "from_": 3.5,
+  "to": 6.25,
+  "x": 386,
+  "y": 0,
+  "w": 2074,
+  "h": 1382
+ },
+ "s10_conflicto": {
+  "file": "media/fg/s10_conflicto.webm",
+  "from_": 2.0,
+  "to": 3.75,
+  "x": 506,
+  "y": 0,
+  "w": 2074,
+  "h": 1382
+ },
+ "s13_repitas": {
+  "file": "media/fg/s13_repitas.webm",
+  "from_": 0.0,
+  "to": 1.9166666666666667,
+  "x": 412,
+  "y": 0,
+  "w": 2074,
+  "h": 1382
+ }
+}

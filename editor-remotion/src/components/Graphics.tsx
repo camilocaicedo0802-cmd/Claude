@@ -3,16 +3,16 @@
 import React from "react";
 import { Easing, Img, staticFile } from "remotion";
 import { keys, lerp, ramp } from "../anim";
-import { C, FONT, LOWER_CY, W } from "../theme";
+import { C, FONT, GFX_CY, H, W } from "../theme";
 
 const icon = (name: string) => staticFile(`media/icons/${name}.webp`);
 
-const glass = (tone: "wine" | "green" | "dark"): React.CSSProperties => ({
+const glass = (tone: "wine" | "gold" | "dark"): React.CSSProperties => ({
   background:
     tone === "wine"
       ? `radial-gradient(120% 160% at 50% 118%, ${C.wine} 0%, #3a0009 38%, ${C.wineDark} 78%)`
-      : tone === "green"
-        ? `radial-gradient(120% 170% at 55% 120%, ${C.green} 0%, #1f3209 40%, #050704 80%)`
+      : tone === "gold"
+        ? `radial-gradient(120% 170% at 55% 120%, ${C.gold} 0%, #3a2b00 42%, #080600 82%)`
         : "linear-gradient(180deg, rgba(34,34,34,0.92), rgba(12,12,12,0.92))",
   border: "1px solid rgba(255,255,255,0.18)",
   boxShadow: "0 18px 50px rgba(0,0,0,0.55), inset 0 1px 0 rgba(255,255,255,0.08)",
@@ -23,30 +23,6 @@ const DropWord: React.FC<{ t: number; at: number; children: React.ReactNode; gap
   const p = ramp(t, at, 0.1, Easing.out(Easing.quad));
   return (
     <span style={{ display: "inline-block", marginRight: gap, opacity: t < at ? 0 : 0.3 + 0.7 * p, translate: `0px ${-20 * (1 - p)}px`, color }}>{children}</span>
-  );
-};
-
-// ───────────────────────── Titular de capítulo (formato ventana) ─────────────────────────
-export const Headline: React.FC<{ t: number; start: number; end: number; eyebrow: string; text: string }> = ({ t, start, end, eyebrow, text }) => {
-  if (t < start || t > end) return null;
-  const inP = ramp(t, start, 0.2);
-  const outP = 1 - ramp(t, end - 0.15, 0.15);
-  // Se teclea letra a letra: 1 letra cada 3 fotogramas (20 caracteres/s).
-  const typed = Math.max(0, Math.min(text.length, Math.floor((t - start - 0.12) * 20)));
-  const typing = typed < text.length;
-  const caretOn = typing || Math.floor((t - start) * 2.5) % 2 === 0;
-  return (
-    <div style={{ position: "absolute", left: 0, top: 246, width: W, textAlign: "center", opacity: inP * outP }}>
-      <div style={{ display: "inline-flex", alignItems: "center", gap: 14, fontFamily: FONT.wide, fontWeight: 400, fontSize: 25, letterSpacing: "0.24em", color: "rgba(255,255,255,0.72)", textTransform: "uppercase" }}>
-        <span style={{ width: 11, height: 11, borderRadius: 11, background: C.lime, boxShadow: `0 0 14px ${C.limeGlow}` }} />
-        {eyebrow}
-      </div>
-      <div style={{ marginTop: 16, fontFamily: FONT.grotesk, fontWeight: 700, fontSize: 86, letterSpacing: "-0.045em", lineHeight: 1, color: C.white, whiteSpace: "nowrap" }}>
-        {text.slice(0, typed)}
-        <span style={{ display: "inline-block", width: 5, height: 70, marginLeft: 6, verticalAlign: "-6px", background: C.lime, opacity: caretOn && t < start + text.length / 20 + 1.4 ? 1 : 0 }} />
-        <span style={{ opacity: 0 }}>{text.slice(typed)}</span>
-      </div>
-    </div>
   );
 };
 
@@ -87,7 +63,7 @@ export const AlertCard: React.FC<{ t: number; at: number; end: number; y: number
 
 // ───────────────────────── Fichas con icono 3D (enumeraciones) ─────────────────────────
 export type Tile = { at: number; icon: string; label: string };
-export const Tiles: React.FC<{ t: number; tiles: Tile[]; end: number; cy?: number; tone?: "wine" | "green" }> = ({ t, tiles, end, cy = LOWER_CY + 26, tone = "wine" }) => {
+export const Tiles: React.FC<{ t: number; tiles: Tile[]; end: number; cy?: number; tone?: "wine" | "gold" }> = ({ t, tiles, end, cy = GFX_CY, tone = "wine" }) => {
   if (t < tiles[0].at - 0.05 || t >= end) return null;
   const w = 317;
   const h = 337;
@@ -122,9 +98,9 @@ export const Tiles: React.FC<{ t: number; tiles: Tile[]; end: number; cy?: numbe
               background:
                 tone === "wine"
                   ? "radial-gradient(120% 120% at 50% 110%, rgba(138,0,21,0.85) 0%, rgba(58,0,9,0.82) 45%, rgba(14,2,4,0.86) 100%)"
-                  : "radial-gradient(120% 120% at 50% 110%, rgba(95,143,30,0.75) 0%, rgba(31,50,9,0.82) 45%, rgba(5,7,4,0.88) 100%)",
+                  : "radial-gradient(120% 120% at 50% 110%, rgba(184,138,0,0.8) 0%, rgba(58,43,0,0.84) 45%, rgba(8,6,0,0.9) 100%)",
               border: `1px solid rgba(255,255,255,${0.2 + 0.5 * fresh})`,
-              boxShadow: `0 18px 50px rgba(0,0,0,0.55), 0 0 ${40 * fresh}px ${tone === "wine" ? "rgba(198,0,27,0.6)" : "rgba(223,255,79,0.45)"}`,
+              boxShadow: `0 18px 50px rgba(0,0,0,0.55), 0 0 ${40 * fresh}px ${tone === "wine" ? "rgba(198,0,27,0.6)" : "rgba(255,222,33,0.45)"}`,
             }}
           >
             <Img src={icon(tile.icon)} style={{ width: 172, height: 172, filter: "drop-shadow(0 12px 18px rgba(0,0,0,0.5))" }} />
@@ -147,12 +123,12 @@ export const GreenPill: React.FC<{ t: number; at: number; end: number; cy: numbe
   return (
     <div style={{ position: "absolute", left: 110, top: cy - 66, width: 860, height: 132, opacity: p, translate: `0px ${14 * (1 - p)}px`, display: "flex", alignItems: "center", gap: 22 }}>
       <Img src={staticFile(avatar)} style={{ width: 112, height: 112, borderRadius: 112, objectFit: "cover", border: "2px solid rgba(255,255,255,0.22)", boxShadow: "0 10px 30px rgba(0,0,0,0.6)" }} />
-      <div style={{ flex: 1, height: 132, borderRadius: 34, display: "flex", alignItems: "center", padding: "0 40px", boxSizing: "border-box", position: "relative", ...glass("green") }}>
+      <div style={{ flex: 1, height: 132, borderRadius: 34, display: "flex", alignItems: "center", padding: "0 40px", boxSizing: "border-box", position: "relative", ...glass("gold") }}>
         {t < typeAt && hint ? <span style={{ fontFamily: FONT.wide, fontWeight: 300, fontSize: 34, color: "rgba(255,255,255,0.45)" }}>{hint}</span> : null}
         <span style={{ fontFamily: FONT.serif, fontStyle: "italic", fontSize: 92, lineHeight: 1, color: C.white, textShadow: "0 0 26px rgba(255,255,255,0.45)", letterSpacing: "0.01em" }}>{shown}</span>
-        <span style={{ display: "inline-block", width: 4, height: 70, marginLeft: 8, background: C.lime, opacity: Math.floor(t * 2.5) % 2 === 0 && sent < 0.5 ? 1 : 0 }} />
+        <span style={{ display: "inline-block", width: 4, height: 70, marginLeft: 8, background: C.accent, opacity: Math.floor(t * 2.5) % 2 === 0 && sent < 0.5 ? 1 : 0 }} />
         {/* Botón de enviar: aparece al terminar de teclear */}
-        <div style={{ position: "absolute", right: 22, top: 26, width: 80, height: 80, borderRadius: 80, background: C.lime, display: "flex", alignItems: "center", justifyContent: "center", scale: String(sent), boxShadow: `0 0 30px ${C.limeGlow}` }}>
+        <div style={{ position: "absolute", right: 22, top: 26, width: 80, height: 80, borderRadius: 80, background: C.accent, display: "flex", alignItems: "center", justifyContent: "center", scale: String(sent), boxShadow: `0 0 30px ${C.accentGlow}` }}>
           <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#0b0b0b" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round">
             <path d="M12 19V5M5 12l7-7 7 7" />
           </svg>
@@ -168,7 +144,7 @@ export const SerifCard: React.FC<{ t: number; at: number; end: number; cy: numbe
   const p = ramp(t, at, 0.16);
   const out = 1 - ramp(t, end - 0.12, 0.12);
   return (
-    <div style={{ position: "absolute", left: 70, top: cy - 140, width: 940, height: 280, borderRadius: 34, opacity: p * out, translate: `0px ${12 * (1 - p)}px`, display: "flex", alignItems: "center", gap: 30, padding: "0 44px", boxSizing: "border-box", ...glass("green") }}>
+    <div style={{ position: "absolute", left: 70, top: cy - 140, width: 940, height: 280, borderRadius: 34, opacity: p * out, translate: `0px ${12 * (1 - p)}px`, display: "flex", alignItems: "center", gap: 30, padding: "0 44px", boxSizing: "border-box", ...glass("gold") }}>
       <Img src={icon(ic)} style={{ width: 120, height: 120, flex: "0 0 auto", filter: "drop-shadow(0 10px 16px rgba(0,0,0,0.5))", scale: String(lerp(0.5, 1, ramp(t, at + 0.05, 0.22, Easing.out(Easing.back(2))))) }} />
       <div style={{ fontFamily: FONT.serif, fontStyle: "italic", fontSize: 62, lineHeight: 1.12, color: C.white, textShadow: "0 0 22px rgba(255,255,255,0.35)" }}>
         {lines.map((line, i) => (
@@ -228,39 +204,43 @@ export const NamePill: React.FC<{ t: number; at: number; end: number; x: number;
   );
 };
 
-// ───────────────────────── Visor REC ─────────────────────────
-export const Rec: React.FC<{ t: number; at: number; end: number; rect: { x: number; y: number; w: number; h: number } }> = ({ t, at, end, rect }) => {
+// ───────────────────────── Visor REC (pantalla completa, medidas de estilo.md §3.4) ─────────────────────────
+export const Rec: React.FC<{ t: number; at: number; end: number }> = ({ t, at, end }) => {
   if (t < at || t >= end) return null;
   const p = ramp(t, at, 0.12);
-  const inset = 26;
-  const arm = 62;
+  const insetX = 75;
+  const top = 250; // por debajo de la cabecera de Instagram
+  const bottom = H - 1560;
+  const armX = 89;
+  const armY = 81;
+  const line = "3px solid rgba(255,255,255,0.92)";
   const corner = (sx: number, sy: number): React.CSSProperties => ({
     position: "absolute",
-    left: sx < 0 ? inset : undefined,
-    right: sx > 0 ? inset : undefined,
-    top: sy < 0 ? inset : undefined,
-    bottom: sy > 0 ? inset : undefined,
-    width: arm,
-    height: arm * 0.9,
-    borderLeft: sx < 0 ? "3px solid rgba(255,255,255,0.92)" : undefined,
-    borderRight: sx > 0 ? "3px solid rgba(255,255,255,0.92)" : undefined,
-    borderTop: sy < 0 ? "3px solid rgba(255,255,255,0.92)" : undefined,
-    borderBottom: sy > 0 ? "3px solid rgba(255,255,255,0.92)" : undefined,
+    left: sx < 0 ? insetX : undefined,
+    right: sx > 0 ? insetX : undefined,
+    top: sy < 0 ? top : undefined,
+    bottom: sy > 0 ? bottom : undefined,
+    width: armX,
+    height: armY,
+    borderLeft: sx < 0 ? line : undefined,
+    borderRight: sx > 0 ? line : undefined,
+    borderTop: sy < 0 ? line : undefined,
+    borderBottom: sy > 0 ? line : undefined,
   });
   const blink = Math.floor((t - at) * 2) % 2 === 0;
   return (
-    <div style={{ position: "absolute", left: rect.x, top: rect.y, width: rect.w, height: rect.h, opacity: p, scale: String(1.04 - 0.04 * p) }}>
+    <div style={{ position: "absolute", inset: 0, opacity: p, scale: String(1.04 - 0.04 * p) }}>
       <div style={corner(-1, -1)} />
       <div style={corner(1, -1)} />
       <div style={corner(-1, 1)} />
       <div style={corner(1, 1)} />
-      <div style={{ position: "absolute", left: inset + 26, top: inset + 20, display: "flex", alignItems: "center", gap: 12, fontFamily: FONT.grotesk, fontWeight: 700, fontSize: 30, color: C.white, letterSpacing: "0.02em" }}>
-        <span style={{ width: 15, height: 15, borderRadius: 15, background: C.redDot, opacity: blink ? 1 : 0.25, boxShadow: "0 0 12px rgba(212,0,42,0.9)" }} />
+      <div style={{ position: "absolute", left: insetX + 34, top: top + 26, display: "flex", alignItems: "center", gap: 12, fontFamily: FONT.grotesk, fontWeight: 700, fontSize: 32, color: C.white, letterSpacing: "0.02em" }}>
+        <span style={{ width: 16, height: 16, borderRadius: 16, background: C.redDot, opacity: blink ? 1 : 0.25, boxShadow: "0 0 12px rgba(212,0,42,0.9)" }} />
         REC
       </div>
-      <div style={{ position: "absolute", right: inset + 30, bottom: inset + 22, width: 26, height: 26 }}>
-        <div style={{ position: "absolute", left: 12, top: 0, width: 2, height: 26, background: "rgba(255,255,255,0.85)" }} />
-        <div style={{ position: "absolute", left: 0, top: 12, width: 26, height: 2, background: "rgba(255,255,255,0.85)" }} />
+      <div style={{ position: "absolute", right: insetX + 36, bottom: bottom + 28, width: 30, height: 30 }}>
+        <div style={{ position: "absolute", left: 14, top: 0, width: 2, height: 30, background: "rgba(255,255,255,0.85)" }} />
+        <div style={{ position: "absolute", left: 0, top: 14, width: 30, height: 2, background: "rgba(255,255,255,0.85)" }} />
       </div>
     </div>
   );
@@ -275,8 +255,8 @@ export const NeonIcon: React.FC<{ t: number; at: number; end: number; x: number;
   const dy = 300 * (1 - p);
   const rot = kind === "flecha" ? -40 * (1 - p) : 55 * (1 - p) - 8;
   return (
-    <div style={{ position: "absolute", left: x + dx, top: y + dy, width: size, height: size, translate: "-50% -50%", rotate: `${rot}deg`, opacity: Math.min(1, p * 2.5), filter: `drop-shadow(0 0 10px ${C.limeGlow}) drop-shadow(0 0 22px rgba(223,255,79,0.35))` }}>
-      <svg viewBox="0 0 48 48" width={size} height={size} fill="none" stroke={C.lime} strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round">
+    <div style={{ position: "absolute", left: x + dx, top: y + dy, width: size, height: size, translate: "-50% -50%", rotate: `${rot}deg`, opacity: Math.min(1, p * 2.5), filter: `drop-shadow(0 0 10px ${C.accentGlow}) drop-shadow(0 0 22px rgba(255,222,33,0.35))` }}>
+      <svg viewBox="0 0 48 48" width={size} height={size} fill="none" stroke={C.accent} strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round">
         {kind === "claqueta" ? (
           <>
             <rect x="6" y="20" width="36" height="22" rx="3" />
@@ -301,7 +281,7 @@ export const Staff: React.FC<{ t: number; at: number; end: number; notesAt: numb
   const out = 1 - ramp(t, end - 0.12, 0.12);
   const x0 = 150;
   const wLine = 800;
-  const top = LOWER_CY - 138;
+  const top = GFX_CY - 150;
   const gap = 22;
   const notes = [
     { x: 250, line: 3.5 },
@@ -335,12 +315,12 @@ export const Staff: React.FC<{ t: number; at: number; end: number; notesAt: numb
         const y1 = ny(n.line) - 20;
         const y2 = ny(m.line) - 20;
         const cy = Math.min(y1, y2) - 58;
-        return <path key={i} d={`M ${n.x + 8} ${y1} Q ${(n.x + m.x) / 2} ${cy} ${m.x - 8} ${y2}`} fill="none" stroke={C.lime} strokeWidth={5} strokeLinecap="round" pathLength={1} strokeDasharray={1} strokeDashoffset={1 - sp} filter="url(#staffGlow)" />;
+        return <path key={i} d={`M ${n.x + 8} ${y1} Q ${(n.x + m.x) / 2} ${cy} ${m.x - 8} ${y2}`} fill="none" stroke={C.accent} strokeWidth={5} strokeLinecap="round" pathLength={1} strokeDasharray={1} strokeDashoffset={1 - sp} filter="url(#staffGlow)" />;
       })}
       {notes.map((n, i) => {
         const np = ramp(t, notesAt + i * 0.09, 0.14, Easing.out(Easing.back(2.4)));
         if (np <= 0) return null;
-        const lit = glow > 0 ? C.lime : C.white;
+        const lit = glow > 0 ? C.accent : C.white;
         return (
           <g key={i} transform={`translate(${n.x} ${ny(n.line)}) scale(${np})`} filter={glow > 0 ? "url(#staffGlow)" : undefined}>
             <ellipse rx={17} ry={12.5} transform="rotate(-22)" fill={lit} />
@@ -360,7 +340,7 @@ export const Staff: React.FC<{ t: number; at: number; end: number; notesAt: numb
 export const BitLine: React.FC<{ t: number; at: number; end: number; nodesAt: number[]; travelAt: number }> = ({ t, at, end, nodesAt, travelAt }) => {
   if (t < at || t >= end) return null;
   const out = 1 - ramp(t, end - 0.12, 0.12);
-  const cy = LOWER_CY + 6;
+  const cy = GFX_CY + 6;
   const xs = [170, 417, 663, 910];
   const lineP = ramp(t, at, 0.35);
   const travel = ramp(t, travelAt, 1.0, Easing.inOut(Easing.cubic));
@@ -386,9 +366,9 @@ export const BitLine: React.FC<{ t: number; at: number; end: number; nodesAt: nu
           </feMerge>
         </filter>
         <radialGradient id="bitNode" cx="50%" cy="120%" r="120%">
-          <stop offset="0%" stopColor={C.green} />
-          <stop offset="45%" stopColor="#1f3209" />
-          <stop offset="100%" stopColor="#050704" />
+          <stop offset="0%" stopColor={C.gold} />
+          <stop offset="45%" stopColor="#3a2b00" />
+          <stop offset="100%" stopColor="#080600" />
         </radialGradient>
       </defs>
       <line x1={xs[0]} y1={cy} x2={lerp(xs[0], xs[3], lineP)} y2={cy} stroke="rgba(255,255,255,0.22)" strokeWidth={2} strokeDasharray="4 10" />
@@ -396,7 +376,7 @@ export const BitLine: React.FC<{ t: number; at: number; end: number; nodesAt: nu
         const segP = Math.max(0, Math.min(1, travel * 3 - i));
         if (segP <= 0) return null;
         const x2 = xs[i + 1];
-        return <path key={i} d={`M ${x} ${cy - 76} Q ${(x + x2) / 2} ${cy - 76 - 160} ${x2} ${cy - 76}`} fill="none" stroke={C.lime} strokeWidth={5} strokeLinecap="round" pathLength={1} strokeDasharray={1} strokeDashoffset={1 - segP} filter="url(#bitGlow)" />;
+        return <path key={i} d={`M ${x} ${cy - 76} Q ${(x + x2) / 2} ${cy - 76 - 160} ${x2} ${cy - 76}`} fill="none" stroke={C.accent} strokeWidth={5} strokeLinecap="round" pathLength={1} strokeDasharray={1} strokeDashoffset={1 - segP} filter="url(#bitGlow)" />;
       })}
       {xs.map((x, i) => {
         const np = ramp(t, nodesAt[i], 0.14, Easing.out(Easing.back(2.2)));
@@ -404,11 +384,11 @@ export const BitLine: React.FC<{ t: number; at: number; end: number; nodesAt: nu
         const reached = travel > 0 && tx >= x - 6;
         return (
           <g key={i} transform={`translate(${x} ${cy}) scale(${np})`}>
-            <circle r={72} fill="url(#bitNode)" stroke={reached ? C.lime : "rgba(255,255,255,0.3)"} strokeWidth={reached ? 3 : 1.5} filter={reached ? "url(#bitGlow)" : undefined} />
+            <circle r={72} fill="url(#bitNode)" stroke={reached ? C.accent : "rgba(255,255,255,0.3)"} strokeWidth={reached ? 3 : 1.5} filter={reached ? "url(#bitGlow)" : undefined} />
             <text y={-10} textAnchor="middle" fontFamily={FONT.wide} fontWeight={300} fontSize={24} fill="rgba(255,255,255,0.7)" letterSpacing="0.18em">
               BIT
             </text>
-            <text y={36} textAnchor="middle" fontFamily={FONT.grotesk} fontWeight={700} fontSize={48} fill={reached ? C.lime : C.white}>
+            <text y={36} textAnchor="middle" fontFamily={FONT.grotesk} fontWeight={700} fontSize={48} fill={reached ? C.accent : C.white}>
               {i + 1}
             </text>
           </g>
@@ -426,22 +406,22 @@ export const MasterclassCard: React.FC<{ t: number; at: number; end: number; cy:
   const out = 1 - ramp(t, end - 0.12, 0.12);
   const badge = ramp(t, at + 0.35, 0.2, Easing.out(Easing.back(2.4)));
   return (
-    <div style={{ position: "absolute", left: 70, top: cy - 125, width: 940, height: 250, borderRadius: 36, opacity: Math.min(1, p * 1.4) * out, scale: String(0.94 + 0.06 * p), overflow: "hidden", display: "flex", alignItems: "center", gap: 34, padding: "0 36px", boxSizing: "border-box", ...glass("green") }}>
+    <div style={{ position: "absolute", left: 70, top: cy - 125, width: 940, height: 250, borderRadius: 36, opacity: Math.min(1, p * 1.4) * out, scale: String(0.94 + 0.06 * p), overflow: "hidden", display: "flex", alignItems: "center", gap: 34, padding: "0 36px", boxSizing: "border-box", ...glass("gold") }}>
       <Img src={staticFile("media/img/clase_doc.jpg")} style={{ position: "absolute", right: -120, top: -20, width: 760, opacity: 0.1, rotate: "-6deg", filter: "invert(1) blur(0.6px)" }} />
       <div style={{ position: "relative", width: 178, height: 178, flex: "0 0 auto" }}>
-        <Img src={staticFile("media/img/clase_avatar.jpg")} style={{ width: 178, height: 178, borderRadius: 178, objectFit: "cover", border: `3px solid ${C.lime}`, boxShadow: `0 0 34px rgba(223,255,79,0.35)` }} />
-        <div style={{ position: "absolute", right: -6, bottom: -2, width: 62, height: 62, borderRadius: 62, background: C.lime, display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 6px 16px rgba(0,0,0,0.5)" }}>
+        <Img src={staticFile("media/img/armando_serio.jpg")} style={{ width: 178, height: 178, borderRadius: 178, objectFit: "cover", border: `3px solid ${C.accent}`, boxShadow: `0 0 34px rgba(255,222,33,0.35)` }} />
+        <div style={{ position: "absolute", right: -6, bottom: -2, width: 62, height: 62, borderRadius: 62, background: C.accent, display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 6px 16px rgba(0,0,0,0.5)" }}>
           <svg width="26" height="26" viewBox="0 0 24 24" fill="#0b0b0b">
             <path d="M7 4.5v15l13-7.5z" />
           </svg>
         </div>
       </div>
       <div style={{ position: "relative" }}>
-        <div style={{ fontFamily: FONT.wide, fontWeight: 400, fontSize: 24, letterSpacing: "0.2em", color: C.lime, textTransform: "uppercase" }}>Módulo 8 · Clase 1</div>
+        <div style={{ fontFamily: FONT.wide, fontWeight: 400, fontSize: 24, letterSpacing: "0.2em", color: C.accent, textTransform: "uppercase" }}>Módulo 8 · Clase 1</div>
         <div style={{ marginTop: 8, fontFamily: FONT.grotesk, fontWeight: 700, fontSize: 84, letterSpacing: "-0.045em", lineHeight: 1, color: C.white, whiteSpace: "nowrap" }}>Qué es un BIT</div>
         <div style={{ marginTop: 12, fontFamily: FONT.wide, fontWeight: 300, fontSize: 27, color: "rgba(255,255,255,0.72)" }}>Masterclass con Armando</div>
       </div>
-      <div style={{ position: "absolute", right: 28, top: 26, padding: "8px 22px", borderRadius: 30, background: C.lime, color: "#0b0b0b", fontFamily: FONT.grotesk, fontWeight: 700, fontSize: 28, letterSpacing: "0.04em", scale: String(badge), rotate: "4deg", boxShadow: `0 0 26px ${C.limeGlow}` }}>GRATIS</div>
+      <div style={{ position: "absolute", right: 28, top: 26, padding: "8px 22px", borderRadius: 30, background: C.accent, color: "#0b0b0b", fontFamily: FONT.grotesk, fontWeight: 700, fontSize: 28, letterSpacing: "0.04em", scale: String(badge), rotate: "4deg", boxShadow: `0 0 26px ${C.accentGlow}` }}>GRATIS</div>
     </div>
   );
 };

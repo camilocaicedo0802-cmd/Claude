@@ -1,7 +1,7 @@
 """Exporta cada segmento del montaje (public/media/aroll/*.mp4) con silencios quitados y voz procesada."""
 import json, subprocess, os, re, sys
 E=json.load(open("material/edl.json")); OUT="public/media/aroll"; os.makedirs(OUT,exist_ok=True)
-FULL4K={"s01_hook","s13_repitas","s14_comenta"}
+FULL4K=None  # todo el vídeo va en recorte vertical: las tomas de Armando se exportan en 4K
 TAIL=0.40
 def chain(src):
     if "testimonio" in src:
@@ -12,9 +12,11 @@ def graph(o, extra_a):
     for i,(a,b) in enumerate(o["keep"]):
         d=b-a
         vb=b+TAIL if i==n-1 else b
-        parts.append(f"[0:v]trim={a}:{vb},setpts=PTS-STARTPTS[v{i}];[0:a]atrim={a}:{b},asetpts=PTS-STARTPTS,afade=t=in:d=0.012,afade=t=out:st={max(0,d-0.02):.3f}:d=0.02[a{i}]")
+        fo=0.035 if ("testimonio" in o["src"] and i==n-1) else 0.02
+        parts.append(f"[0:v]trim={a}:{vb},setpts=PTS-STARTPTS[v{i}];[0:a]atrim={a}:{b},asetpts=PTS-STARTPTS,afade=t=in:d=0.012,afade=t=out:st={max(0,d-fo):.3f}:d={fo}[a{i}]")
         va+=f"[v{i}][a{i}]"
-    scale="" if (o["id"] in FULL4K or "testimonio" in o["src"]) else ",scale=2560:1440:flags=lanczos"
+    # El testimonio (576×1024) se amplía a 1080×1920 para verlo a pantalla completa.
+    scale=",scale=1080:1920:flags=lanczos,unsharp=5:5:0.6:5:5:0.0" if "testimonio" in o["src"] else ""
     vs="".join(f"[v{i}]" for i in range(n)); as_="".join(f"[a{i}]" for i in range(n))
     parts.append(f"{vs}concat=n={n}:v=1:a=0,fps=24{scale},format=yuv420p[vo];{as_}concat=n={n}:v=0:a=1,{chain(o['src'])}{extra_a},apad=pad_dur={TAIL}[ao]")
     return ";".join(parts)
@@ -25,7 +27,7 @@ for o in E:
     # 1) medir sonoridad tras la cadena
     li=-24.0; gain=0.0  # la ganancia definitiva la aplica material/audio_tomas.py
     subprocess.run(["ffmpeg","-v","error","-y","-i",src,"-filter_complex",graph(o,f",volume={gain:.2f}dB,alimiter=limit=0.84:attack=3:release=60:level=disabled,aresample=48000"),
-        "-map","[vo]","-map","[ao]","-c:v","libx264","-crf","17","-preset","veryfast","-g","24","-bf","2","-color_primaries","bt709","-color_trc","bt709","-colorspace","bt709",
+        "-map","[vo]","-map","[ao]","-c:v","libx264","-crf","17","-preset","veryfast","-g","12","-bf","2","-color_primaries","bt709","-color_trc","bt709","-colorspace","bt709",
         "-c:a","aac","-b:a","192k","-movflags","+faststart",dst],check=True)
     d=float(subprocess.run(["ffprobe","-v","error","-show_entries","format=duration","-of","csv=p=0",dst],capture_output=True,text=True).stdout)
     print(f"{o['id']}: in {li:.1f} LUFS, gain {gain:+.1f} dB, dur {d:.2f}s (esperado {o['duration']:.2f}) {os.path.getsize(dst)/1e6:.1f} MB",flush=True)

@@ -994,169 +994,380 @@
  },
  {
   "id": "s12_testimonio",
-  "src": "testimonios/testimonio_2.mp4",
+  "src": "testimonios/testimonio_1.mp4",
   "section": "prueba",
   "keep": [
    [
-    13.94,
-    22.03
+    0.62,
+    2.26
+   ],
+   [
+    2.74,
+    11.7
+   ],
+   [
+    11.86,
+    23.25
    ]
   ],
-  "duration": 8.09,
-  "cuts": [],
+  "duration": 21.99,
+  "cuts": [
+   1.64,
+   10.6
+  ],
   "words": [
    {
-    "text": "Hasta",
-    "start": 0.08,
+    "text": "Parcero,",
+    "start": 0.1,
     "end": 0.62
    },
    {
+    "text": "actor,",
+    "start": 0.72,
+    "end": 0.84
+   },
+   {
+    "text": "camarada.",
+    "start": 1.08,
+    "end": 1.5
+   },
+   {
+    "text": "Oigan,",
+    "start": 1.74,
+    "end": 1.86
+   },
+   {
+    "text": "les",
+    "start": 1.98,
+    "end": 2.04
+   },
+   {
+    "text": "cuento",
+    "start": 2.04,
+    "end": 2.22
+   },
+   {
     "text": "que",
-    "start": 0.62,
-    "end": 1.06
+    "start": 2.22,
+    "end": 2.36
    },
    {
-    "text": "conocí",
-    "start": 1.06,
-    "end": 1.48
+    "text": "cuando",
+    "start": 2.36,
+    "end": 2.58
    },
    {
-    "text": "los",
-    "start": 1.48,
-    "end": 1.66
+    "text": "estoy",
+    "start": 2.58,
+    "end": 2.76
    },
    {
-    "text": "BITS",
-    "start": 1.66,
-    "end": 2.02
+    "text": "presentando",
+    "start": 2.76,
+    "end": 3.24
    },
    {
-    "text": "y",
-    "start": 2.02,
-    "end": 2.44
+    "text": "mis",
+    "start": 3.24,
+    "end": 3.42
    },
    {
-    "text": "cómo",
-    "start": 2.44,
-    "end": 2.66
+    "text": "casting",
+    "start": 3.42,
+    "end": 3.74
    },
    {
-    "text": "yo",
-    "start": 2.66,
-    "end": 2.82
+    "text": "o",
+    "start": 3.74,
+    "end": 4.2
    },
    {
-    "text": "podía",
-    "start": 2.82,
-    "end": 3.14
+    "text": "cuando",
+    "start": 4.2,
+    "end": 4.4
+   },
+   {
+    "text": "estoy",
+    "start": 4.4,
+    "end": 4.62
    },
    {
     "text": "en",
-    "start": 3.14,
-    "end": 3.46
+    "start": 4.62,
+    "end": 4.74
    },
    {
-    "text": "cada",
-    "start": 3.46,
-    "end": 3.76
-   },
-   {
-    "text": "uno",
-    "start": 3.76,
-    "end": 4.02
+    "text": "medio",
+    "start": 4.74,
+    "end": 4.86
    },
    {
     "text": "de",
-    "start": 4.02,
-    "end": 4.18
+    "start": 4.86,
+    "end": 4.94
    },
    {
-    "text": "ellos",
-    "start": 4.18,
-    "end": 4.42
+    "text": "alguna",
+    "start": 4.94,
+    "end": 5.12
    },
    {
-    "text": "tener",
-    "start": 4.42,
-    "end": 4.68
-   },
-   {
-    "text": "una",
-    "start": 4.68,
-    "end": 4.88
-   },
-   {
-    "text": "acción",
-    "start": 4.88,
-    "end": 5.18
-   },
-   {
-    "text": "que",
-    "start": 5.18,
-    "end": 5.36
-   },
-   {
-    "text": "me",
-    "start": 5.36,
-    "end": 5.52
-   },
-   {
-    "text": "llevara",
-    "start": 5.52,
-    "end": 5.94
-   },
-   {
-    "text": "directo",
-    "start": 5.94,
-    "end": 6.48
-   },
-   {
-    "text": "a",
-    "start": 6.48,
-    "end": 6.66
+    "text": "escena,",
+    "start": 5.12,
+    "end": 5.46
    },
    {
     "text": "lo",
-    "start": 6.66,
-    "end": 6.76
+    "start": 5.6,
+    "end": 5.74
    },
    {
     "text": "que",
-    "start": 6.76,
-    "end": 6.84
+    "start": 5.74,
+    "end": 5.92
    },
    {
-    "text": "yo",
-    "start": 6.84,
-    "end": 6.96
+    "text": "más",
+    "start": 5.92,
+    "end": 6.14
    },
    {
-    "text": "quería",
-    "start": 6.96,
-    "end": 7.18
+    "text": "me",
+    "start": 6.14,
+    "end": 6.28
+   },
+   {
+    "text": "costaba",
+    "start": 6.28,
+    "end": 6.64
+   },
+   {
+    "text": "a",
+    "start": 6.64,
+    "end": 6.78
+   },
+   {
+    "text": "mí",
+    "start": 6.78,
+    "end": 6.86
+   },
+   {
+    "text": "era",
+    "start": 6.86,
+    "end": 7.42
+   },
+   {
+    "text": "mantenerme",
+    "start": 7.42,
+    "end": 8.18
+   },
+   {
+    "text": "durante",
+    "start": 8.18,
+    "end": 8.5
+   },
+   {
+    "text": "toda",
+    "start": 8.5,
+    "end": 8.84
+   },
+   {
+    "text": "la",
+    "start": 8.84,
+    "end": 9.02
+   },
+   {
+    "text": "escena",
+    "start": 9.02,
+    "end": 9.32
+   },
+   {
+    "text": "arriba",
+    "start": 9.32,
+    "end": 9.58
+   },
+   {
+    "text": "sin",
+    "start": 9.58,
+    "end": 9.8
+   },
+   {
+    "text": "dejarla",
+    "start": 9.8,
+    "end": 10.18
+   },
+   {
+    "text": "caer.",
+    "start": 10.18,
+    "end": 10.48
+   },
+   {
+    "text": "Hasta",
+    "start": 10.7,
+    "end": 11.22
+   },
+   {
+    "text": "que",
+    "start": 11.22,
+    "end": 11.62
+   },
+   {
+    "text": "conocí",
+    "start": 11.62,
+    "end": 12.08
+   },
+   {
+    "text": "los",
+    "start": 12.08,
+    "end": 12.36
+   },
+   {
+    "text": "BITS",
+    "start": 12.36,
+    "end": 12.66
+   },
+   {
+    "text": "y",
+    "start": 12.66,
+    "end": 13.2
+   },
+   {
+    "text": "ahí",
+    "start": 13.2,
+    "end": 13.36
+   },
+   {
+    "text": "aprendí",
+    "start": 13.36,
+    "end": 13.82
+   },
+   {
+    "text": "que",
+    "start": 13.82,
+    "end": 14.0
+   },
+   {
+    "text": "en",
+    "start": 14.0,
+    "end": 14.3
+   },
+   {
+    "text": "cada",
+    "start": 14.3,
+    "end": 15.04
+   },
+   {
+    "text": "línea",
+    "start": 15.04,
+    "end": 15.4
+   },
+   {
+    "text": "iba",
+    "start": 15.4,
+    "end": 15.76
+   },
+   {
+    "text": "siguiendo",
+    "start": 15.76,
+    "end": 16.18
+   },
+   {
+    "text": "con",
+    "start": 16.18,
+    "end": 16.42
+   },
+   {
+    "text": "una",
+    "start": 16.42,
+    "end": 16.64
+   },
+   {
+    "text": "acción",
+    "start": 16.64,
+    "end": 16.94
+   },
+   {
+    "text": "diferente",
+    "start": 16.94,
+    "end": 17.34
+   },
+   {
+    "text": "que",
+    "start": 17.34,
+    "end": 17.58
+   },
+   {
+    "text": "me",
+    "start": 17.58,
+    "end": 17.74
+   },
+   {
+    "text": "iba",
+    "start": 17.74,
+    "end": 17.88
+   },
+   {
+    "text": "llevando",
+    "start": 17.88,
+    "end": 18.62
+   },
+   {
+    "text": "a",
+    "start": 18.62,
+    "end": 19.32
+   },
+   {
+    "text": "ese",
+    "start": 19.32,
+    "end": 19.6
+   },
+   {
+    "text": "objetivo",
+    "start": 19.6,
+    "end": 19.98
+   },
+   {
+    "text": "que",
+    "start": 19.98,
+    "end": 20.14
+   },
+   {
+    "text": "era",
+    "start": 20.14,
+    "end": 20.24
    },
    {
     "text": "obtener",
-    "start": 7.18,
-    "end": 7.52
+    "start": 20.24,
+    "end": 20.7
+   },
+   {
+    "text": "la",
+    "start": 20.7,
+    "end": 20.94
+   },
+   {
+    "text": "respuesta",
+    "start": 20.94,
+    "end": 21.36
    },
    {
     "text": "de",
-    "start": 7.52,
-    "end": 7.64
+    "start": 21.36,
+    "end": 21.48
    },
    {
     "text": "mi",
-    "start": 7.64,
-    "end": 7.76
+    "start": 21.48,
+    "end": 21.62
    },
    {
     "text": "partner.",
-    "start": 7.76,
-    "end": 8.04
+    "start": 21.62,
+    "end": 21.9
    }
   ],
-  "text": "Hasta que conocí los BITS y cómo yo podía en cada uno de ellos tener una acción que me llevara directo a lo que yo quería obtener de mi partner."
+  "text": "Parcero, actor, camarada. Oigan, les cuento que cuando estoy presentando mis casting o cuando estoy en medio de alguna escena, lo que más me costaba a mí era mantenerme durante toda la escena arriba sin dejarla caer. Hasta que conocí los BITS y ahí aprendí que en cada línea iba siguiendo con una acción diferente que me iba llevando a ese objetivo que era obtener la respuesta de mi partner."
  },
  {
   "id": "s13_repitas",

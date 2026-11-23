@@ -8,7 +8,8 @@ def chain(src):
 def agraph(o, extra):
     parts=[]; aa=""
     for i,(a,b) in enumerate(o["keep"]):
-        d=b-a; parts.append(f"[0:a]atrim={a}:{b},asetpts=PTS-STARTPTS,afade=t=in:d=0.012,afade=t=out:st={max(0,d-0.02):.3f}:d=0.02[a{i}]"); aa+=f"[a{i}]"
+        d=b-a; fo=0.035 if ("testimonio" in o["src"] and i==len(o["keep"])-1) else 0.02
+        parts.append(f"[0:a]atrim={a}:{b},asetpts=PTS-STARTPTS,afade=t=in:d=0.012,afade=t=out:st={max(0,d-fo):.3f}:d={fo}[a{i}]"); aa+=f"[a{i}]"
     parts.append(f"{aa}concat=n={len(o['keep'])}:v=0:a=1,{chain(o['src'])}{extra}[ao]")
     return ";".join(parts)
 for o in E:

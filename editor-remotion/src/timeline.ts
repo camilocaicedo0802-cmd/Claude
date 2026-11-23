@@ -26,11 +26,11 @@ export const STARTS: Record<string, number> = {
   s10_conflicto: 47.5,
   s11_streaming: 51.0,
   s12_testimonio: 58.5,
-  s13_repitas: 66.75,
-  s14_comenta: 70.0,
+  s13_repitas: 80.75,
+  s14_comenta: 84.0,
 };
 export const BEAT_PARTITURA = { start: 37.25, end: 39.75 }; // frase del guion que no está grabada: va escrita
-export const TOTAL_SECONDS = 79.5;
+export const TOTAL_SECONDS = 92.0; // termina cuando Armando acaba de hablar (sin tarjeta final)
 export const TAIL = 0.4; // cola de imagen exportada tras la última palabra
 
 export type Segment = {
@@ -39,7 +39,6 @@ export type Segment = {
   start: number;
   duration: number; // duración de la voz
   end: number; // hasta dónde se ve la imagen (inicio de lo siguiente)
-  lastFrameAt: number; // último instante con imagen en el archivo (después se congela)
   cuts: number[]; // cortes internos (absolutos)
   words: { text: string; t: number; end: number }[];
   face: { x: number; y: number };
@@ -54,23 +53,20 @@ export const SEGMENTS: Segment[] = edl.map((e, i) => {
   const nextId = order[i + 1];
   let next = nextId ? STARTS[nextId] : TOTAL_SECONDS;
   if (e.id === "s06_bits") next = BEAT_PARTITURA.start;
-  const face = caras[e.id];
-  const is4k = ["s01_hook", "s13_repitas", "s14_comenta"].includes(e.id);
+  const face = caras[e.id] ?? { cx: 0.5, cy: 0.5, w: 0.3, W: 1080, H: 1920 };
   const testi = e.id === "s12_testimonio";
   return {
     id: e.id,
     file: `media/aroll/${e.id}.mp4`,
     start,
     duration: e.duration,
-    // La última toma se queda congelada bajo la tarjeta final.
-    end: nextId ? Math.min(next, start + e.duration + TAIL) : TOTAL_SECONDS,
-    lastFrameAt: e.duration + TAIL - 0.06,
+    end: Math.min(next, start + e.duration + TAIL),
     cuts: e.cuts.map((c) => start + c),
     words: e.words.map((w) => ({ text: w.text, t: start + w.start, end: start + w.end })),
     face: { x: face.cx, y: face.cy },
     track: face.track,
-    srcW: testi ? 576 : is4k ? 3840 : 2560,
-    srcH: testi ? 1024 : is4k ? 2160 : 1440,
+    srcW: testi ? 1080 : 3840,
+    srcH: testi ? 1920 : 2160,
   };
 });
 
@@ -89,12 +85,10 @@ export const T = (id: string, i: number): number => {
 /** Fin de la voz de un segmento. */
 export const END = (id: string): number => seg(id).start + seg(id).duration;
 
-// Instantes en que cambia el formato de pantalla.
-export const MODE = {
-  toWindow: 5.5, // pico del destello de barras tras el gancho
-  toSolucion: 28.5, // pico del destello de barras problema → solución
-  toTestimonio: 58.5,
-  toFull: 66.75,
-  morphStart: 69.74, // la toma a pantalla completa se encoge a ventana para el CTA
-  morphEnd: 70.08,
+// Cambios de bloque del guion (transiciones con efecto).
+export const CUTS = {
+  problema: 5.5, // barras + destello tras el gancho
+  solucion: 28.5, // barras + destello
+  testimonio: 58.5, // glitch + corte
+  cta: 80.75, // barras + destello
 };

@@ -17,7 +17,8 @@ EDL=[
  ("s09_accion","crudo/C459.MOV",words(["C459_2"]),"solucion"),
  ("s10_conflicto","crudo/C459.MOV",words(["C459_7"]),"solucion"),
  ("s11_streaming","crudo/C460.MOV",words(["C460_1"]),"solucion"),
- ("s12_testimonio","testimonios/testimonio_2.mp4",words(["testimonio_2_3"]),"prueba"),
+ # Testimonio 1, desde el principio del vídeo hasta «…la respuesta de mi partner» (corrección del cliente).
+ ("s12_testimonio","testimonios/testimonio_1.mp4",words(["testimonio_1_1","testimonio_1_2","testimonio_1_3"]),"prueba"),
  ("s13_repitas","crudo/C461.MOV",words(["C461_4"]),"cta"),
  ("s14_comenta","crudo/C462.MOV",words(["C462_2"]),"cta"),
 ]
@@ -51,6 +52,11 @@ for sid,src,ws,sec in EDL:
             seg=db[int(b0*100):int((b0+0.30)*100)]; end=b0+int(np.argmin(seg))/100
     # silencios internos
     quiet=db[int(start*100):int(end*100)]<(sp-16); keep=[]; cur=start; k=0; n=len(quiet)
+    if "testimonio" in src:
+        # Grabación con mucho ruido de fondo: los silencios se cortan a mano sobre los huecos entre palabras.
+        start,end=0.62,23.25; quiet=np.zeros(0,dtype=bool); n=0; cur=start
+        for a,b in [(2.26,2.74),(11.70,11.86)]:
+            keep.append((cur,a)); cur=b
     while k<n:
         if quiet[k]:
             k2=k

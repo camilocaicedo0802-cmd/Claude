@@ -19,15 +19,15 @@ export const FONT = {
 };
 
 export const C = {
-  lime: "#DFFF4F",
-  limeGlow: "rgba(223,255,79,0.55)",
+  accent: "#FFDE21", // amarillo del cliente (sustituye al lima de la referencia)
+  accentGlow: "rgba(255,222,33,0.55)",
   white: "#FFFFFF",
   grey: "#C4C3B8",
   red: "#C6001B",
   redDot: "#D4002A",
   wine: "#8A0015",
   wineDark: "#0A0204",
-  green: "#5F8F1E",
+  gold: "#B88A00", // vidrio ámbar para solución/CTA (antes verde)
   cream: "#F4E6C8",
   bg: "#060606",
 };
@@ -36,8 +36,8 @@ export const FPS = 60;
 export const W = 1080;
 export const H = 1920;
 
-// Zonas del lienzo en el formato «ventana horizontal» (propuesta del reel de Instagram).
-export const WINDOW = { x: 28, y: 446, w: 1024, h: 640, r: 32 };
-export const FULL = { x: 0, y: 0, w: W, h: H, r: 0 };
-export const LOWER_CY = 1312; // centro de la zona de subtítulos/gráficos bajo la ventana
-export const FULL_CY = 1150; // centro del bloque de subtítulos a pantalla completa (55–57 %)
+// Todo el vídeo va en recorte vertical a pantalla completa (corrección del cliente).
+export const CHEST_CY = 1185; // centro del bloque de subtítulos sobre el pecho
+export const LOW_CY = 1390; // subtítulos cuando el plano tiene la cara en el centro (b-roll)
+export const TOP_CY = 520; // variante «arriba» (testimonio)
+export const GFX_CY = 1300; // centro de tarjetas, fichas y gráficos

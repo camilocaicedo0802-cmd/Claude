@@ -1,97 +1,98 @@
-// Zooms por frase (multiplicador sobre el zoom base). Reglas de estilo.md §6:
-// apertura cerrada que se aleja, salto de 250 ms en palabra clave, empuje lento y nunca un plano quieto más de 2 s.
-import { SEGMENTS, T, seg } from "../timeline";
+// Zoom por frase. 1,00 = recorte vertical a toda la altura del plano (el encuadre del gancho).
+// Menos de 1 abre el plano (la base se funde a negro por abajo) y deja sitio al texto detrás del sujeto.
+// Reglas de estilo.md §6: apertura cerrada que se aleja, salto de ~250 ms en palabra clave, nunca más de 2 s quieto.
+import { T, seg } from "../timeline";
 
 const S = (id: string) => seg(id);
-const PUNCH = 0.25;
+const P = 0.25; // salto de zoom
+export const WIDE = 0.66; // plano abierto para el texto detrás del sujeto
 
 export const ZOOMS: Record<string, [number, number][]> = {
-  // Gancho: abre cerrado (1,18) y se aleja en 900 ms; salto en «Personaje»; vuelve a abrir en el desenfoque.
   s01_hook: [
-    [0, 1.18],
-    [0.9, 1.0],
-    [T("s01", 8) - 0.02, 1.02],
-    [T("s01", 8) + PUNCH, 1.13],
-    [T("s01", 9) - 0.04, 1.16],
-    [T("s01", 9) + 0.12, 1.0],
-    [S("s01").end, 1.08],
+    [0, 1.2],
+    [0.85, WIDE], // se aleja mientras entra «Años» detrás de la cabeza
+    [T("s01", 6) - 0.05, 0.7],
+    [T("s01", 6) + 0.16, 1.04], // «el mismo Personaje»: plano cerrado
+    [T("s01", 9) - 0.08, 1.1],
+    [T("s01", 9) + 0.1, 0.94], // desenfoque + obturador
+    [S("s01").end, 1.0],
   ],
   s02_casting: [
-    [S("s02").start, 1.0],
-    [T("s02", 7), 1.04],
-    [T("s02", 9) + PUNCH, 1.14],
-    [T("s02", 12) - 0.05, 1.17],
-    [T("s02", 12) + 0.3, 1.0],
-    [S("s02").end, 1.06],
+    [S("s02").start, 0.96],
+    [T("s02", 8) - 0.02, 0.98],
+    [T("s02", 8) + P, 1.08],
+    [T("s02", 12) - 0.05, 1.11],
+    [T("s02", 12) + 0.3, 0.92], // abre para las fichas
+    [S("s02").end, 0.97],
   ],
   s03_propuesta: [
-    [S("s03").start, 1.12],
-    [S("s03").cuts[0] - 0.01, 1.17],
-    [S("s03").cuts[0], 1.0],
-    [S("s03").end, 1.06],
+    [S("s03").start, 1.04],
+    [S("s03").cuts[0] - 0.01, 1.09],
+    [S("s03").cuts[0], 0.93],
+    [S("s03").end, 0.98],
   ],
   s04_escucho: [
-    [S("s04").start, 1.0],
-    [T("s04", 6), 1.05],
-    [T("s04", 6) + PUNCH, 1.14],
-    [T("s04", 7) - 0.03, 1.16],
-    [T("s04", 7) + 0.3, 1.04],
-    [S("s04").end, 1.1],
+    [S("s04").start, 0.94],
+    [T("s04", 6) - 0.02, 0.97],
+    [T("s04", 6) + P, 1.07],
+    [T("s04", 7) - 0.05, 1.09],
+    [T("s04", 7) + 0.3, 0.93], // abre para las tarjetas
+    [S("s04").end, 0.99],
   ],
   s05_decisiones: [
     [S("s05").start, 1.0],
-    [T("s05", 9) - 0.02, 1.05],
-    [T("s05", 9) + PUNCH, 1.16],
-    [S("s05").end, 1.24],
+    [S("s05").start + 0.5, WIDE], // «El problema» detrás de la cabeza
+    [T("s05", 7) - 0.05, 0.7],
+    [T("s05", 7) + 0.16, 1.05], // «Decisiones»: plano cerrado
+    [S("s05").end, 1.13],
   ],
   s06_bits: [
-    [S("s06").start, 1.14],
-    [S("s06").cuts[0] - 0.01, 1.2],
-    [S("s06").cuts[0], 1.0],
-    [T("s06", 13) - 0.02, 1.03],
-    [T("s06", 13) + PUNCH, 1.15],
-    [S("s06").end, 1.2],
+    [S("s06").start, 0.95],
+    [S("s06").cuts[0] - 0.01, 1.0],
+    [S("s06").cuts[0], 1.06],
+    [S("s06").cuts[0] + 0.5, WIDE], // «la estructura de BITS» detrás de la cabeza
+    [T("s06", 17) - 0.05, 0.7],
+    [T("s06", 17) + 0.2, 0.95],
+    [S("s06").end, 1.0],
   ],
   s08_melodia: [
-    [S("s08").start, 1.0],
-    [T("s08", 12), 1.06],
-    [T("s08", 12) + PUNCH, 1.15],
-    [S("s08").end, 1.18],
+    [S("s08").start, 0.93],
+    [T("s08", 12) - 0.02, 0.97],
+    [T("s08", 12) + P, 1.06],
+    [S("s08").end, 1.09],
   ],
   s09_accion: [
-    [S("s09").start, 1.1],
-    [T("s09", 6) - 0.02, 1.13],
-    [T("s09", 6) + PUNCH, 1.0],
-    [S("s09").end, 1.07],
+    [S("s09").start, 0.92],
+    [S("s09").end, 0.98],
   ],
   s10_conflicto: [
-    [S("s10").start, 1.0],
-    [T("s10", 10) - 0.02, 1.05],
-    [T("s10", 10) + PUNCH, 1.17],
-    [S("s10").end, 1.2],
+    [S("s10").start, 0.97],
+    [T("s10", 2) + P, 1.05],
+    [T("s10", 7) - 0.12, 1.07],
+    [T("s10", 7) + 0.3, WIDE], // «Avance» detrás de la cabeza
+    [S("s10").end, 0.7],
   ],
   s11_streaming: [
-    [S("s11").start, 1.08],
-    [S("s11").cuts[0] - 0.01, 1.15],
-    [S("s11").cuts[0], 1.0],
-    [S("s11").end, 1.08],
+    [S("s11").start, 0.96],
+    [S("s11").cuts[0] - 0.01, 1.02],
+    [S("s11").cuts[0], 1.08],
+    [S("s11").end, 1.12],
   ],
-  // CTA mirando a cámara: pantalla completa, abre cerrado como el gancho.
   s13_repitas: [
-    [S("s13").start, 1.16],
-    [S("s13").start + 0.8, 1.0],
-    [T("s13", 11) - 0.02, 1.03],
-    [T("s13", 11) + PUNCH, 1.12],
-    [S("s13").end, 1.14],
+    [S("s13").start, 1.15],
+    [S("s13").start + 0.5, WIDE], // «No te repitas» detrás de la cabeza
+    [T("s13", 8) - 0.05, 0.7],
+    [T("s13", 8) + 0.16, 1.04],
+    [S("s13").end, 1.1],
   ],
   s14_comenta: [
-    [S("s14").start, 1.0],
-    [S("s14").cuts[0] - 0.01, 1.04],
-    [S("s14").cuts[0], 1.12],
-    [S("s14").cuts[1] - 0.01, 1.18],
-    [S("s14").cuts[1], 1.0],
-    [S("s14").start + S("s14").duration, 1.05],
-    [S("s14").end, 1.14],
+    [S("s14").start, 0.94],
+    [S("s14").cuts[0] - 0.01, 0.97],
+    [S("s14").cuts[0], 1.04],
+    [T("s14", 7) - 0.05, 1.06],
+    [T("s14", 7) + 0.3, 0.92], // abre para la tarjeta de la masterclass
+    [S("s14").cuts[1] - 0.01, 0.95],
+    [S("s14").cuts[1], 1.04],
+    [S("s14").end, 1.1],
   ],
 };
-void SEGMENTS;

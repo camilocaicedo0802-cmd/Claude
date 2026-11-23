@@ -73,7 +73,7 @@ Mapa del vídeo (segundos):
 
 | Elemento | Valor |
 | --- | --- |
-| Lima de la palabra clave | **#DFFF4F** (mediana medida #E0FF57; núcleo #E9FF6D) |
+| Lima de la palabra clave | **#DFFF4F** (mediana medida #E0FF57; núcleo #E9FF6D). *En las ediciones del cliente se usa el amarillo #FFDE21, ver §9* |
 | Resplandor de la palabra clave | mismo lima, desenfoque ≈ 28 px, opacidad ≈ 55 % + sombra negra suave 0/4/24 px al 60 % |
 | Secundarias | **#FFFFFF**, con sombra negra suave (sin trazo, sin caja de fondo) |
 | Secundaria «apagada» (última línea) | gris **#C4C3B8** al ≈ 75 % |
@@ -261,32 +261,45 @@ El punto de anclaje del zoom es la cara (los ojos se mantienen en y ≈ 22–30 
 
 ## 9. Reglas del cliente (se aplican siempre)
 
-- Formato de entrega: **vertical 1080×1920 a 60 fps**.
-- Colores y tipografías: **los de la referencia** (apartados 2 y 3).
+- Formato de entrega: **vertical 1080×1920 a 60 fps**, con **recorte vertical a pantalla completa en todo el vídeo**.
+- Tipografías: las de la referencia (apartados 2 y 3). **Color de acento: amarillo #FFDE21** (sustituye al lima/verde).
 - En los textos que se escriben en pantalla, **SFX de tecleo**.
 - SFX **únicamente** de la carpeta enviada. Música: de la carpeta de música enviada.
 - Dinámico pero premium, **sin saturar** (máximo 2 recursos gráficos a la vez, ver 3.5).
+- El vídeo **termina cuando la persona deja de hablar**: sin tarjeta final ni repetición del CTA.
 
-## 10. Formato «clase horizontal» (decisión de montaje, no viene de la referencia)
+## 10. Encuadre con material grabado en horizontal
 
-El cliente graba en horizontal (16:9) y propone como formato el reel de Instagram
-`DeU3534pDWp`: lienzo vertical oscuro, título arriba y el vídeo horizontal en el centro.
-La referencia de edición es a pantalla completa, así que se combinan así:
+El cliente graba en horizontal (4K 16:9) y entrega en vertical. Cómo se resuelve:
 
 | Elemento | Valor |
 | --- | --- |
-| Gancho y frase de cierre mirando a cámara | **pantalla completa** (recorte vertical que sigue la cara), subtítulos centrados en y ≈ 1150 px |
-| Resto | **ventana** 1024×640 px en (28, 446), radio 32 px, borde 1 px blanco al 12 %; zoom base 1,6 sobre el plano original |
-| Titular de capítulo | y ≈ 246–420 px: antetítulo Sora 25 px en mayúsculas espaciadas + titular Inter Tight 700 de 86 px, **tecleado** a 20 caracteres/s |
-| Zona de subtítulos y gráficos | bajo la ventana, centro en y ≈ 1312 px (queda libre el margen inferior de Instagram) |
-| Testimonio | tarjeta vertical 800×940 px con chip «Testimonio» y rótulo de nombre; subtítulos debajo |
-| Cambio de formato | siempre tapado por una transición de barras o por un encogimiento de 340 ms |
-| Fondo | #060606 con dos resplandores radiales muy tenues (lima y vino) |
-| Frase del guion sin grabar | se escribe en tarjeta verde con serif itálica, tecleada palabra a palabra sobre b-roll |
+| Plano base | recorte vertical a toda la altura (zoom 1,00 = 1215 px de ancho del 4K); la cámara virtual sigue la cara, que queda al 31 % de la altura |
+| Rango de zoom | 0,92–1,13 en plano normal; saltos de 160–250 ms en palabra clave |
+| Plano abierto | zoom 0,66: el plano baja ≈ 250 px y se funde a negro por arriba y por abajo. Solo para el texto detrás del sujeto |
+| Texto detrás del sujeto | palabra gigante (hasta 400 px) centrada en y ≈ 205–290 px, fila pequeña encima a la izquierda; la cabeza la tapa en parte. El sujeto se recorta con MODNet y se pinta encima como WebM con transparencia |
+| Subtítulos | sobre el pecho, centro en y ≈ 1185 px; con b-roll de cara centrada bajan a y ≈ 1390 px; en el testimonio suben a y ≈ 520 px |
+| Tarjetas, fichas y gráficos | centro en y ≈ 1300 px, sobre un degradado negro que cubre el 45 % inferior |
+| B-roll | siempre vertical a pantalla completa; entra al 114 % y se asienta |
+| Testimonio | pantalla completa, con chip «Testimonio» arriba a la izquierda y rótulo de nombre en y ≈ 1390 px |
+| Frase del guion sin grabar | se escribe en tarjeta ámbar con serif itálica, tecleada palabra a palabra sobre b-roll |
 | Música | 22 dB por debajo de la voz; el arranque de la batería coincide con el inicio de la solución |
 | Inicios de frase | sobre la rejilla de 0,25 s de la música (120 BPM) |
 
-## 11. Correcciones aprobadas
+## 11. Correcciones del cliente
 
-_(Aquí se añade cada corrección que el cliente dé por buena, con fecha, para que se mantenga en las
-siguientes ediciones.)_
+### 23-nov-2026 · tras la primera versión
+
+1. **Recorte vertical en todo el vídeo**, como la primera toma. Se descarta la ventana horizontal con título arriba.
+2. **Textos más dinámicos, como la referencia**: texto **detrás del sujeto** (palabra gigante tapada en parte por la
+   cabeza) y bloque encajado (palabras pequeñas montadas sobre la palabra clave). *Interpretación mía:* además
+   subí la energía de entrada (golpe de escala 1,28→1 con destello blanco→amarillo, las pequeñas suben 12 px,
+   el bloque crece un 3,5 % mientras está en pantalla).
+3. **B-roll en vertical** y **ningún gráfico puede tapar la cara** de quien sale en el b-roll (la notificación va arriba).
+4. **El b-roll tiene que ser del tema del que se habla.** Si la carpeta de recursos no tiene nada que encaje, se busca
+   en internet un clip de licencia libre (aquí: partitura y actriz ensayando, de Mixkit).
+5. **Testimonio:** desde el principio del vídeo original hasta el final de la frase completa («…la respuesta de mi
+   partner»), sin cortar palabras, y **a pantalla completa**.
+6. **Fotos de la persona: serias.** Se saca un fotograma del propio vídeo, no una miniatura con gesto exagerado.
+7. **Sin CTA añadido al final:** el vídeo acaba cuando la persona termina de hablar.
+8. **Amarillo #FFDE21 en lugar del verde** (palabra clave, resplandores, tarjetas y fichas de solución en ámbar).
