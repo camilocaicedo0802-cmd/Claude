@@ -14,8 +14,8 @@ const L = (id: string, items: Item[], extra: Partial<CapRow> = {}): CapRow => ({
 const B = (start: number, end: number, cy: number, rows: CapRow[], extra: Partial<CapBlock> = {}): CapBlock => ({ start: start - 0.03, end, cy, rows, ...extra });
 
 const TESTI = { maxW: 800, scale: 0.8 };
-const TESTI_CY = 1412; // bajo la barbilla, dentro del margen seguro de Instagram
-const WIDE_CY = 1215; // plano abierto: fila de continuación sobre el pecho
+export const TESTI_CY = 1412; // bajo la barbilla, dentro del margen seguro de Instagram
+export const WIDE_CY = 1215; // plano abierto: fila de continuación sobre el pecho
 
 // ───────── Texto DETRÁS del sujeto (plano abierto; la cabeza tapa parte de la palabra gigante) ─────────
 export const BEHIND: BehindBlockT[] = [

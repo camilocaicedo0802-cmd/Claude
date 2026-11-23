@@ -290,7 +290,8 @@ El cliente graba en horizontal (4K 16:9) y entrega en vertical. Cómo se resuelv
 
 ### 23-nov-2026 · tras la primera versión
 
-1. **Recorte vertical en todo el vídeo**, como la primera toma. Se descarta la ventana horizontal con título arriba.
+1. **Recorte vertical en todo el vídeo**, como la primera toma. (La ventana horizontal con título arriba vuelve
+   después como **opción B**, ver §12: se entregan las dos.)
 2. **Textos más dinámicos, como la referencia**: texto **detrás del sujeto** (palabra gigante tapada en parte por la
    cabeza) y bloque encajado (palabras pequeñas montadas sobre la palabra clave). *Interpretación mía:* además
    subí la energía de entrada (golpe de escala 1,28→1 con destello blanco→amarillo, las pequeñas suben 12 px,
@@ -309,3 +310,31 @@ El cliente graba en horizontal (4K 16:9) y entrega en vertical. Cómo se resuelv
 9. **Ningún texto puede pisar la cara** de quien habla, tampoco en el testimonio: los subtítulos van **abajo**,
    más pequeños si hace falta, y los elementos se reparten (chip y nombre arriba, cara libre, subtítulos abajo).
 10. **El vídeo del testimonio no se oscurece:** se deja con su luz natural; solo un velo suave donde hay texto.
+
+### 23-nov-2026 · tras la versión 3
+
+11. **La versión vertical queda aprobada («este vídeo está bien») y pasa a ser la opción A.** No se toca.
+12. **Se entregan dos opciones de cada reel:** A = recorte vertical a pantalla completa (§10) y B = **formato
+    horizontal**, parecido a la primera versión, con **las tipografías y demás recursos arriba y abajo del vídeo**
+    (§12). Mismo guion, mismas tomas, misma música y mismos tiempos en las dos.
+
+## 12. Opción B · formato horizontal («clase horizontal»)
+
+El plano horizontal va en una ventana y nada de texto se monta sobre la imagen. Todo lo de §9 y §11 sigue valiendo
+(amarillo #FFDE21, SFX solo del cliente, b-roll del tema, sin tarjeta final, ningún texto sobre caras).
+
+| Elemento | Valor |
+| --- | --- |
+| Lienzo | 1080×1920 a 60 fps, fondo #060606 con un resplandor ámbar muy tenue detrás de la ventana |
+| Ventana de vídeo | 1024×640 px (16:10) en x = 28, y = 446; esquinas de 32 px, borde de 1 px blanco al 13 % y sombra 0 40 px 120 px negra al 75 %; viñeta que oscurece esquinas y el lado derecho |
+| Encuadre en la ventana | zoom 1,5–1,9× sobre el ajuste a la ventana (plano medio corto), cara al 46 % del ancho y 44 % del alto; cámara quieta salvo los saltos de zoom en palabra clave |
+| **Zona superior** (y 236–446) | titular de capítulo: antetítulo Sora 25 px en mayúsculas con punto amarillo + título Inter Tight 700 de 86 px **tecleado** a 20 letras/s con cursor amarillo y teclas de la carpeta del cliente. También van aquí la notificación del casting y el globo «PERSONAJE» |
+| Titulares usados | «Perfil actoral · El actor encasillado», «La solución · Personajes complejos», «La solución · La estructura de BITS», «Masterclass gratis · Qué es un BIT» |
+| **Zona inferior** (y 1086–1545) | subtítulos con centro en y ≈ 1312 px; rótulo pequeño de fichas en y ≈ 1126; fichas en y ≈ 1348; tarjetas de alerta en 1234 y 1390; por debajo de 1545 no va nada (interfaz de Instagram) |
+| Palabra clave gigante | hasta 318 px, amarilla con resplandor, en la zona superior, **detrás de la ventana** (su base se mete un 3,5 % por detrás del borde); fila pequeña de 54 px encima, alineada a su izquierda. Sube desde detrás de la ventana en 280 ms |
+| Cabeza que sobresale | en esos 5 momentos (Años, Problema, BITS, Avance, Repitas) la ventana **baja 92 px**, el plano se abre a 1,41× y la cabeza de Armando **sobresale por encima de la ventana** (≈ 24 % del tamaño de la palabra: 53–76 px), tapando parte de la palabra. Es el «texto detrás del sujeto» de §10 llevado al formato horizontal. Usa los mismos recortes MODNet y la altura de la coronilla medida fotograma a fotograma |
+| Fila de continuación | mientras la ventana está bajada, la fila que sigue a la palabra gigante va en y ≈ 1356 |
+| B-roll | en horizontal dentro de la ventana (recorte 16:10 del mismo clip); entra al 116 % y se asienta |
+| Visor REC | esquinas y punto rojo sobre la ventana, no a pantalla completa |
+| Testimonio | **a pantalla completa**, igual que en la opción A (correcciones 5, 9 y 10): es un vídeo vertical de móvil y así lo pidió el cliente. Se entra con glitch y se vuelve a la ventana con barras + destello |
+| Transiciones y sonido | las mismas que la opción A; solo se añaden las teclas de los titulares y un whoosh para la flecha de «que el conflicto avance» |

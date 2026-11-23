@@ -187,13 +187,13 @@ export const Notif: React.FC<{ t: number; at: number; end: number; y: number; ti
 };
 
 // ───────────────────────── Globo tecleado junto al sujeto (gancho: «les cambien el nombre») ─────────────────────────
-export const NamePill: React.FC<{ t: number; at: number; end: number; x: number; y: number; names: { t: number; text: string }[] }> = ({ t, at, end, x, y, names }) => {
+export const NamePill: React.FC<{ t: number; at: number; end: number; x: number; y: number; names: { t: number; text: string }[]; k?: number }> = ({ t, at, end, x, y, names, k = 1 }) => {
   if (t < at || t >= end) return null;
   const p = ramp(t, at, 0.15, Easing.out(Easing.back(1.8)));
   const current = [...names].reverse().find((n) => t >= n.t);
   const typed = current ? Math.min(current.text.length, Math.floor((t - current.t) * 30) + 1) : 0;
   return (
-    <div style={{ position: "absolute", left: x, top: y, translate: "-50% -50%", height: 78, padding: "0 30px", borderRadius: 40, display: "flex", alignItems: "center", gap: 16, opacity: Math.min(1, p * 1.3), scale: String(0.8 + 0.2 * p), background: "linear-gradient(180deg, rgba(214,96,96,0.86), rgba(170,52,60,0.86))", border: "1px solid rgba(255,255,255,0.3)", boxShadow: "0 12px 34px rgba(0,0,0,0.5)", fontFamily: FONT.wide, whiteSpace: "nowrap" }}>
+    <div style={{ position: "absolute", left: x, top: y, translate: "-50% -50%", height: 78, padding: "0 30px", borderRadius: 40, display: "flex", alignItems: "center", gap: 16, opacity: Math.min(1, p * 1.3), scale: String((0.8 + 0.2 * p) * k), background: "linear-gradient(180deg, rgba(214,96,96,0.86), rgba(170,52,60,0.86))", border: "1px solid rgba(255,255,255,0.3)", boxShadow: "0 12px 34px rgba(0,0,0,0.5)", fontFamily: FONT.wide, whiteSpace: "nowrap" }}>
       <span style={{ width: 12, height: 12, borderRadius: 12, background: C.redDot, boxShadow: "0 0 10px rgba(212,0,42,0.8)" }} />
       <span style={{ fontSize: 26, fontWeight: 300, letterSpacing: "0.14em", color: "rgba(255,255,255,0.75)" }}>PERSONAJE</span>
       <span style={{ fontSize: 34, fontWeight: 400, color: C.white, minWidth: 190 }}>
@@ -275,13 +275,12 @@ export const NeonIcon: React.FC<{ t: number; at: number; end: number; x: number;
 };
 
 // ───────────────────────── Pentagrama: notas, ligaduras y «melodía» ─────────────────────────
-export const Staff: React.FC<{ t: number; at: number; end: number; notesAt: number; slursAt: number; glowAt: number }> = ({ t, at, end, notesAt, slursAt, glowAt }) => {
+export const Staff: React.FC<{ t: number; at: number; end: number; notesAt: number; slursAt: number; glowAt: number; top?: number }> = ({ t, at, end, notesAt, slursAt, glowAt, top = GFX_CY - 150 }) => {
   if (t < at || t >= end) return null;
   const p = ramp(t, at, 0.3);
   const out = 1 - ramp(t, end - 0.12, 0.12);
   const x0 = 150;
   const wLine = 800;
-  const top = GFX_CY - 150;
   const gap = 22;
   const notes = [
     { x: 250, line: 3.5 },
@@ -337,10 +336,9 @@ export const Staff: React.FC<{ t: number; at: number; end: number; notesAt: numb
 };
 
 // ───────────────────────── Línea de BITS: nodos y tránsito entre ellos ─────────────────────────
-export const BitLine: React.FC<{ t: number; at: number; end: number; nodesAt: number[]; travelAt: number }> = ({ t, at, end, nodesAt, travelAt }) => {
+export const BitLine: React.FC<{ t: number; at: number; end: number; nodesAt: number[]; travelAt: number; cy?: number }> = ({ t, at, end, nodesAt, travelAt, cy = GFX_CY + 6 }) => {
   if (t < at || t >= end) return null;
   const out = 1 - ramp(t, end - 0.12, 0.12);
-  const cy = GFX_CY + 6;
   const xs = [170, 417, 663, 910];
   const lineP = ramp(t, at, 0.35);
   const travel = ramp(t, travelAt, 1.0, Easing.inOut(Easing.cubic));

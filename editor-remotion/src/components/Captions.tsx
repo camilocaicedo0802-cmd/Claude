@@ -77,7 +77,7 @@ export const wordStyle = (w: CapWord, size: CapRow["size"], t: number): React.CS
   };
 };
 
-const Words: React.FC<{ words: CapWord[]; size: CapRow["size"]; t: number }> = ({ words, size, t }) => (
+export const Words: React.FC<{ words: CapWord[]; size: CapRow["size"]; t: number }> = ({ words, size, t }) => (
   <span style={{ display: "inline-block", whiteSpace: "nowrap" }}>
     {words.map((w, j) => (
       <span key={j} style={{ display: "inline-block", marginLeft: j === 0 ? 0 : "0.22em", transformOrigin: "50% 62%", ...wordStyle(w, size, t) }}>

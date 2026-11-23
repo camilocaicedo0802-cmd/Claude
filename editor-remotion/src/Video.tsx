@@ -9,7 +9,7 @@ import { BarsFlash, Glitch, barsBlur, blurPulse, glitchShift } from "./component
 import fgJson from "./data/fg.json";
 import { BEAT_LINES } from "./edit/beat";
 import { BEHIND, CAPTIONS } from "./edit/captions";
-import { SFX } from "./edit/sfx";
+import { SFX, Sfx } from "./edit/sfx";
 import { C, CHEST_CY, GFX_CY } from "./theme";
 import { BEAT_PARTITURA, CUTS, END, T, TOTAL_SECONDS, seg } from "./timeline";
 
@@ -179,21 +179,13 @@ const musicVolume = (t: number) => {
   return (base + 0.1 * beat - 0.035 * testi) * fadeIn * fadeOut;
 };
 
-export const ArmandoBits: React.FC = () => {
+/** Música + efectos. La comparten las dos opciones de montaje (cada una pasa su lista de SFX). */
+export const SoundTrack: React.FC<{ sfx: Sfx[] }> = ({ sfx }) => {
   const { fps } = useVideoConfig();
   return (
-    <AbsoluteFill style={{ backgroundColor: C.bg }}>
-      <Picture />
-      <Scrim />
-      <Graphics />
-      {CAPTIONS.map((b, i) => (
-        <CaptionBlock key={i} block={b} />
-      ))}
-      <Fx />
-
-      {/* ── Audio ── */}
+    <>
       <Audio name="Música · ANBR – Quantum" src={staticFile("media/music/quantum.m4a")} trimBefore={Math.round(MUSIC_OFFSET * fps)} volume={(f) => musicVolume(f / fps)} />
-      {SFX.map((s, i) => {
+      {sfx.map((s, i) => {
         const start = s.t - (s.lead ?? 0);
         const from = Math.max(0, Math.round(start * fps));
         const trimBefore = s.trim ? Math.round(s.trim[0] * fps) : 0;
@@ -204,6 +196,21 @@ export const ArmandoBits: React.FC = () => {
           </Sequence>
         );
       })}
+    </>
+  );
+};
+
+export const ArmandoBits: React.FC = () => {
+  return (
+    <AbsoluteFill style={{ backgroundColor: C.bg }}>
+      <Picture />
+      <Scrim />
+      <Graphics />
+      {CAPTIONS.map((b, i) => (
+        <CaptionBlock key={i} block={b} />
+      ))}
+      <Fx />
+      <SoundTrack sfx={SFX} />
     </AbsoluteFill>
   );
 };
