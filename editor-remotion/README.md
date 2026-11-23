@@ -43,6 +43,13 @@ npx remotion render ArmandoBits out/armando-bits.mp4
 npx remotion render ArmandoBitsHorizontal out/armando-bits-opcionB.mp4
 ```
 
+Si el render completo se queda sin memoria, se puede hacer por tramos de 10 s (reanudable; une los tramos sin
+recomprimir y saca solo la imagen, el audio va aparte con `--codec=wav`):
+
+```bash
+node scripts/render_tramos.mjs ArmandoBitsHorizontal out/armando-bits-opcionB-render.mp4
+```
+
 Fotogramas sueltos para revisar (segundos):
 
 ```bash
