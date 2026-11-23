@@ -267,7 +267,26 @@ El punto de anclaje del zoom es la cara (los ojos se mantienen en y ≈ 22–30 
 - SFX **únicamente** de la carpeta enviada. Música: de la carpeta de música enviada.
 - Dinámico pero premium, **sin saturar** (máximo 2 recursos gráficos a la vez, ver 3.5).
 
-## 10. Correcciones aprobadas
+## 10. Formato «clase horizontal» (decisión de montaje, no viene de la referencia)
+
+El cliente graba en horizontal (16:9) y propone como formato el reel de Instagram
+`DeU3534pDWp`: lienzo vertical oscuro, título arriba y el vídeo horizontal en el centro.
+La referencia de edición es a pantalla completa, así que se combinan así:
+
+| Elemento | Valor |
+| --- | --- |
+| Gancho y frase de cierre mirando a cámara | **pantalla completa** (recorte vertical que sigue la cara), subtítulos centrados en y ≈ 1150 px |
+| Resto | **ventana** 1024×640 px en (28, 446), radio 32 px, borde 1 px blanco al 12 %; zoom base 1,6 sobre el plano original |
+| Titular de capítulo | y ≈ 246–420 px: antetítulo Sora 25 px en mayúsculas espaciadas + titular Inter Tight 700 de 86 px, **tecleado** a 20 caracteres/s |
+| Zona de subtítulos y gráficos | bajo la ventana, centro en y ≈ 1312 px (queda libre el margen inferior de Instagram) |
+| Testimonio | tarjeta vertical 800×940 px con chip «Testimonio» y rótulo de nombre; subtítulos debajo |
+| Cambio de formato | siempre tapado por una transición de barras o por un encogimiento de 340 ms |
+| Fondo | #060606 con dos resplandores radiales muy tenues (lima y vino) |
+| Frase del guion sin grabar | se escribe en tarjeta verde con serif itálica, tecleada palabra a palabra sobre b-roll |
+| Música | 22 dB por debajo de la voz; el arranque de la batería coincide con el inicio de la solución |
+| Inicios de frase | sobre la rejilla de 0,25 s de la música (120 BPM) |
+
+## 11. Correcciones aprobadas
 
 _(Aquí se añade cada corrección que el cliente dé por buena, con fecha, para que se mantenga en las
 siguientes ediciones.)_
