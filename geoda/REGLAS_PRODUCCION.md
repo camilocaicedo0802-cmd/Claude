@@ -14,6 +14,11 @@ El montador (`pipeline/builder.py`) ya trae estas reglas por defecto.
    - Si la etiqueta sale deformada: se reemplaza la toma por material real de la landing o se superpone la etiqueta real.
    - No hacer zoom digital sobre el producto en clips de IA de 720p (deforma la etiqueta).
    - Los primeros planos del producto se generan en 1080p o se hacen con fotos/videos reales.
+   - **Toda toma con producto pasa por `pipeline/label_fix.py`**: detecta la etiqueta (SIFT contra la etiqueta real de la landing),
+     borra el texto de la IA y pega las letras reales con la luz del tubo; los dedos quedan por delante. Si el producto es muy
+     pequeño o se mueve mucho se marcan posiciones clave; si el clip deforma el producto, se regenera o se usa la imagen fija.
+   - Solo se usan los tramos donde la etiqueta está de frente (cuando el stick gira de lado, se corta antes).
+   - Ningún texto, subtítulo ni gráfico (X roja, íconos) tapa la etiqueta: el montador detecta su zona en cada plano.
 6. En grabaciones de la landing no mostrar las tarjetas con "Te dura 3/5 años" ni precios tachados.
 
 ## Hook
@@ -35,7 +40,7 @@ El montador (`pipeline/builder.py`) ya trae estas reglas por defecto.
     Una sola voz por video (mismo modelo y misma voz en todas sus frases).
 13. El avatar **habla a cámara solo en algunos videos/tomas** donde haga falta (UGC, street interview, podcast, testimonio, founder).
 14. Tomas donde el avatar habla: **WAN 3.0** con audio nativo en la API de Higgsfield (US$0,075/s en 720p): mejor calidad/precio
-    (Veo no está en la API; solo en la cuenta web). Imagen de inicio con aire sobre la cabeza para el texto del hook.
+    (voz 9,5/10; Veo no está en la API, solo en la cuenta web). Imagen de inicio con aire sobre la cabeza para el texto del hook.
 
 ## Costos y herramientas
 15. Usar la **API de Higgsfield** (secreto de red) para generar. No hacer pruebas A/B: usar directo el de mejor calidad/precio.

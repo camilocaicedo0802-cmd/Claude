@@ -9,7 +9,7 @@ Reglas del cliente:
 """
 import os, sys, json, subprocess, math, re
 G = '/tmp/claude-0/-home-user-Claude/89fb9332-1428-5876-823c-b89791e99771/scratchpad/geoda'
-sys.path.insert(0, f'{G}/a102')
+sys.path.insert(0, f'{G}/a102'); sys.path.insert(0, G)
 import build_a102 as b
 from build_a102 import (W, H, FPS, run, dur_of, render_runs, box_text, pill, word_times, chunks, sub_img, pop_scale,
                         paste_center, screen_shot, FONT_BLACK, NAVY, TEAL, YEL, WHITE, BLACK)
@@ -90,6 +90,25 @@ def faces_in(path, d, min_face=95):
     x1, y1 = max(q[2] for q in boxes), max(q[3] for q in boxes)
     return [(int(x0) - 80, int(y0) - 160, int(x1) + 80, int(y1) + 70)]
 
+def label_boxes(path, d, margin=40):
+    """Zona de la etiqueta del producto en el plano (SIFT contra la etiqueta real): los textos no la tapan."""
+    import label_fix as LF
+    qs = []
+    for fr in (0.15, 0.5, 0.85):
+        p = subprocess.run(['ffmpeg', '-v', 'error', '-ss', f'{d*fr:.2f}', '-i', path, '-frames:v', '1', '-f', 'rawvideo',
+                            '-pix_fmt', 'bgr24', '-'], capture_output=True).stdout
+        if len(p) < 1080 * 1920 * 3:
+            continue
+        f = np.frombuffer(p[:1080 * 1920 * 3], np.uint8).reshape(1920, 1080, 3)
+        q = LF.sift_quad(cv2.resize(f, (540, 960)))
+        if q is not None:
+            qs.append(q * 2)
+    if not qs:
+        return []
+    allq = np.concatenate(qs)
+    x0, y0 = allq.min(0); x1, y1 = allq.max(0)
+    return [(int(x0) - margin, int(y0) - margin, int(x1) + margin, int(y1) + margin)]
+
 def protect(box):
     """Caja de cara manual (x0,y0,x1,y1 en 1080x1920) -> zona protegida con los mismos márgenes."""
     x0, y0, x1, y1 = box
@@ -169,6 +188,7 @@ def build(cfg, hk, shots):
     obst = []
     for s in spans:
         o = s['faces'] if s['faces'] is not None else faces_in(s['f'], s['t1'] - s['t0'], cfg.get('min_face', 95))
+        o = o + label_boxes(s['f'], s['t1'] - s['t0'])  # la etiqueta del producto tampoco se tapa
         obst.append((s['t0'], s['t1'], o))
         print(f"  {os.path.basename(s['f']):16s} {s['t0']:5.2f}-{s['t1']:5.2f} caras: {o}")
     def obst_range(a, bb):

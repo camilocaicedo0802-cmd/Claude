@@ -4,6 +4,7 @@ Planos según el prompt_visual_IA del brief, hook visible desde el fotograma 1 h
 textos que nunca pisan caras (detección de rostros por plano) y producto real al frente en el cierre."""
 import os, sys, json, subprocess, math
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, '/tmp/claude-0/-home-user-Claude/89fb9332-1428-5876-823c-b89791e99771/scratchpad/geoda')
 import build_a102 as b
 from build_a102 import (G, A, TMP, W, H, FPS, S, SCR, VO, run, dur_of, shot, screen_shot, render_runs, box_text,
                         pill, word_times, chunks, sub_img, pop_scale, paste_center, FONT_BLACK, NAVY, TEAL, YEL, WHITE, BLACK)
@@ -58,7 +59,7 @@ def build_shots():
     s['B3'] = [shot('v2_b3', ka, 1.95, ss=0.3, z0=1.0, z1=1.05)]
     s['B4'] = [shot('v2_b4a', f'{S}/hi_35928.mp4', 0.9, ss=5.0, z0=1.0, z1=1.06, cx=0.55),
                shot('v2_b4b', kto, 3.88, ss=0.0, z0=1.0, z1=1.06)]
-    s['B5'] = [shot('v2_b5', kma, 2.6, ss=0.2, z0=1.0, z1=1.06)]
+    s['B5'] = [shot('v2_b5a', kma, 1.6, ss=0.0, speed=0.6, z0=1.0, z1=1.05), shot('v2_b5b', kma, 1.0, ss=2.3, speed=0.7, z0=1.05, z1=1.08)]  # solo con la etiqueta de frente
     s['B6'] = [screen_shot('v2_b6a', hold=1.4),
                shot('v2_b6b', f'{S}/hi_42137.mp4', 1.1, ss=2.0, z0=1.0, z1=1.06),
                shot('v2_b6c', ec, 1.5, still=True, z0=1.0, z1=1.04)]
@@ -128,6 +129,8 @@ def build_variant(hk, shots, ec_box):
     obst = []
     for s0, s1, f in shot_spans:
         o = faces_in(f, s1 - s0)
+        import builder as _B
+        o = o + _B.label_boxes(f, s1 - s0)  # la etiqueta del producto tampoco se tapa
         if f.endswith('v2_b6c.mp4'):
             o = o + [ec_box]
         obst.append((s0, s1, o))

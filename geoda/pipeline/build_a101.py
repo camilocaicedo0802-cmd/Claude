@@ -17,7 +17,7 @@ cfg = dict(
                    line='Si botaste la piedra de alumbre porque no te sirvió, escúchame un segundo.'),
         'HB': dict(vo='HB', dur=2.5, subs=True, text=('El error #1 con', 'la piedra de alumbre'),
                    line='Casi todo el mundo se pone la piedra al revés.',
-                   extras=[dict(type='bigx', x=540, y=1390, size=300, t0=0.05)]),
+                   extras=[dict(type='bigx', x=800, y=1420, size=220, t0=0.05)]),
     },
     body=[
         dict(key='B1', vo='B1', dur=2.4, line='Yo también la boté. Pensé que era puro cuento.'),            # titular repetía la voz
@@ -40,10 +40,10 @@ def build_shots():
     s['HA'] = [B.shot(T, 'ha', f'{HF}/m_caneca_0.mp4', 3.0, ss=0.0, speed=0.55, z0=1.0, z1=1.06)]
     s['HB'] = [B.shot(T, 'hb', f'{HF}/m_xfrente_0.mp4', 2.5, ss=0.0, z0=1.0, z1=1.04, framed=0.7)]
     s['B1'] = [B.shot(T, 'b1', f'{HF}/m_tina_0.mp4', 2.4, ss=0.0, z0=1.0, z1=1.05)]
-    s['B2'] = [B.shot(T, 'b2', f'{HF}/m_tina_0.mp4', 2.35, ss=2.4, speed=0.5, z0=1.6, z1=2.0, fx=0.42, fy=0.95)]
-    s['B3'] = [B.shot(T, 'b3', f'{HF}/m_manga_0.mp4', 2.1, ss=0.3, z0=1.0, z1=1.06) + ([],)]
+    s['B2'] = [B.shot(T, 'b2', f'{HF}/m_tina_0.mp4', 2.35, ss=1.2, speed=0.5, z0=1.85, z1=2.0, fx=0.36, fy=1.0)]
+    s['B3'] = [B.shot(T, 'b3', f'{HF}/fixed/m_manga2_0.mp4', 2.1, ss=0.3, z0=1.0, z1=1.06) + ([],)]
     s['B4'] = [B.shot(T, 'b4', f'{HF}/k_macro_0.mp4', 2.15, ss=0.0, z0=1.0, z1=1.08) + ([],)]
-    s['B5'] = [B.shot(T, 'b5', f'{HF}/m_aplicar_0.mp4', 2.45, ss=0.2, z0=1.0, z1=1.05)]
+    s['B5'] = [B.shot(T, 'b5', f'{HF}/fixed/m_aplicar2_still.mp4', 2.45, ss=0.0, z0=1.0, z1=1.1)]
     s['B6'] = [B.shot(T, 'b6a', f'{S}/hi_35928.mp4', 0.75, ss=5.0, z0=1.0, z1=1.06, fx=0.55) + ([],),
                B.shot(T, 'b6b', f'{HF}/k_toalla_0.mp4', 2.1, ss=0.0, z0=1.0, z1=1.06) + ([],)]
     s['B7'] = [B.shot(T, 'b7', f'{HF}/m_oficina_0.mp4', 3.85, ss=0.0, z0=1.0, z1=1.04)]

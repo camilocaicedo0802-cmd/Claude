@@ -42,7 +42,7 @@ def build_shots(card_dur):
      'B5': [B.shot(T, 'b5', k('k_cb5'), 2.05, ss=0.4, z0=1.0, z1=1.05, stopmo=True) + ([B.protect((405,450,600,690)), B.protect((690,570,825,690))],)],
      'B6': [B.shot(T, 'b6', k('k_cb6'), 2.9, ss=0.0, z0=1.0, z1=1.05, stopmo=True) + ([B.protect((165,405,390,660)), B.protect((705,1260,870,1410))],)],
      'B7': [B.shot(T, 'b7a', k('k_cb7'), 1.2, ss=1.3, z0=1.0, z1=1.05, stopmo=True) + ([B.protect((180,270,435,570)), B.protect((690,1140,930,1410))],),
-            B.shot(T, 'b7b', k('k_mano'), 1.15, ss=0.2, z0=1.0, z1=1.06) + ([],)],          # corte a GEODA real
+            B.shot(T, 'b7b', k('k_mano'), 1.15, ss=0.0, speed=0.85, z0=1.0, z1=1.06) + ([],)],          # corte a GEODA real
      'B8': [B.shot(T, f'b8_{card_dur}', ec, card_dur, still=True, z0=1.0, z1=1.05) + ([ec_box],)],
     }
     return s
