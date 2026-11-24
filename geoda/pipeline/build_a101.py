@@ -39,13 +39,18 @@ def build_shots():
     s = {}
     s['HA'] = [B.shot(T, 'ha', f'{HF}/m_caneca_0.mp4', 3.0, ss=0.0, speed=0.55, z0=1.0, z1=1.06)]
     s['HB'] = [B.shot(T, 'hb', f'{HF}/m_xfrente_0.mp4', 2.5, ss=0.0, z0=1.0, z1=1.04, framed=0.7)]
-    s['B1'] = [B.shot(T, 'b1', f'{HF}/m_tina_0.mp4', 2.4, ss=0.0, z0=1.0, z1=1.05)]
-    s['B2'] = [B.shot(T, 'b2', f'{HF}/m_tina_0.mp4', 2.35, ss=1.2, speed=0.5, z0=1.85, z1=2.0, fx=0.36, fy=1.0)]
-    s['B3'] = [B.shot(T, 'b3', f'{HF}/fixed/m_manga2_0.mp4', 2.1, ss=0.3, z0=1.0, z1=1.06) + ([],)]
-    s['B4'] = [B.shot(T, 'b4', f'{HF}/k_macro_0.mp4', 2.15, ss=0.0, z0=1.0, z1=1.08) + ([],)]
-    s['B5'] = [B.shot(T, 'b5', f'{HF}/fixed/m_aplicar2_still.mp4', 2.45, ss=0.0, z0=1.0, z1=1.1)]
+    # el stick sale pequeño y su etiqueta no queda perfecta -> encuadre más cerrado arriba, sin el producto
+    s['B1'] = [B.shot(T, 'b1', f'{HF}/m_tina_0.mp4', 2.4, ss=0.0, z0=1.34, z1=1.38, fx=0.5, fy=0.0)]
+    # primer plano nuevo (imagen con referencia del producto + Kling) con la etiqueta real; mentón protegido arriba
+    s['B2'] = [B.shot(T, 'b2', f'{HF}/fixed/k_error_0.mp4', 2.35, ss=0.0, speed=0.93, z0=1.0, z1=1.05) + ([B.protect((300, 0, 800, 170))],)]
+    # piedra seca frotada en la axila; solo el tramo antes de que el tubo se mueva rápido (etiqueta real, --tube --wipe)
+    s['B3'] = [B.shot(T, 'b3', f'{HF}/fixed/k_seca_0.mp4', 2.1, ss=0.0, speed=0.55, z0=1.0, z1=1.05) + ([],)]
+    # gotas solo en la punta de la piedra (el tubo queda seco), mano de hombre; etiqueta real
+    s['B4'] = [B.shot(T, 'b4', f'{HF}/fixed/k_grifo_m_0.mp4', 2.15, ss=0.0, z0=1.0, z1=1.08) + ([],)]
+    # imagen fija: zona de la etiqueta borrada completa y etiqueta real pegada al doble de resolución
+    s['B5'] = [B.shot(T, 'b5', f'{HF}/fixed/m_aplicar2_still2x.png', 2.45, still=True, z0=1.0, z1=1.1)]
     s['B6'] = [B.shot(T, 'b6a', f'{S}/hi_35928.mp4', 0.75, ss=5.0, z0=1.0, z1=1.06, fx=0.55) + ([],),
-               B.shot(T, 'b6b', f'{HF}/k_toalla_0.mp4', 2.1, ss=0.0, z0=1.0, z1=1.06) + ([],)]
+               B.shot(T, 'b6b', f'{HF}/k_toalla_0.mp4', 2.1, ss=0.0, speed=0.76, z0=1.0, z1=1.06) + ([],)]  # solo 0-1,6 s: después la etiqueta gira
     s['B7'] = [B.shot(T, 'b7', f'{HF}/m_oficina_0.mp4', 3.85, ss=0.0, z0=1.0, z1=1.04)]
     s['B8'] = [B.shot(T, 'b8a', f'{S}/hi_42130.mp4', 1.4, ss=0.3, z0=1.0, z1=1.06) + ([],),
                B.shot(T, 'b8b', ec, 2.0, still=True, z0=1.0, z1=1.04) + ([ec_box],)]

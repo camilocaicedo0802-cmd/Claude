@@ -20,6 +20,9 @@ _l = cv2.cvtColor(LAB, cv2.COLOR_BGR2GRAY).astype(np.float32)
 _sat = cv2.cvtColor(LAB, cv2.COLOR_BGR2HSV)[..., 1].astype(np.float32) / 255
 LAB_A = np.clip(np.maximum((LAB_WHITE - 12 - _l) / (LAB_WHITE - 90), _sat * 2.2 - 0.25), 0, 1)   # 1 en letras/logo, 0 en el blanco
 LAB_A = cv2.GaussianBlur(LAB_A, (0, 0), 0.6)
+_e = 8  # el recorte de la foto trae sombra del tubo en los bordes: no se pinta
+_ramp = np.clip(np.minimum.outer(np.minimum(np.arange(LH), np.arange(LH)[::-1]), np.minimum(np.arange(LW), np.arange(LW)[::-1])) / _e, 0, 1)
+LAB_A = (LAB_A * _ramp).astype(np.float32)
 
 def read_frames(path):
     w, h = map(int, subprocess.run(['ffprobe', '-v', 'error', '-select_streams', 'v', '-show_entries', 'stream=width,height',
@@ -88,10 +91,34 @@ def lk_step(prev, nxt, q):
 
 MOTION = 0.0
 
+def tube_mask(roi, L, sat, qm, skin):
+    """Silueta del tubo blanco dentro del recorte: claro y poco saturado, letras rellenadas, componente bajo la etiqueta."""
+    inq = qm > 0
+    ref = np.percentile(L[inq], 85) if inq.any() else 220
+    white = (L > ref * 0.62) & (sat < 0.22) & (skin == 0)
+    white = white.astype(np.uint8) * 255
+    bw = max(5, int(np.sqrt(inq.sum()) * 0.12) | 1)
+    white = cv2.morphologyEx(white, cv2.MORPH_CLOSE, cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (bw, bw)))
+    n, lab, st, _ = cv2.connectedComponentsWithStats(white)
+    if n <= 1:
+        return np.ones(L.shape, np.float32)
+    cnt = np.bincount(lab[inq].ravel(), minlength=n); cnt[0] = 0
+    m = (lab == int(cnt.argmax())).astype(np.uint8) * 255
+    cs, _ = cv2.findContours(m, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+    cv2.drawContours(m, cs, -1, 255, cv2.FILLED)   # rellenar huecos (letras)
+    m = cv2.erode(m, np.ones((3, 3), np.uint8), iterations=2)
+    return cv2.GaussianBlur(m.astype(np.float32) / 255, (0, 0), 1.2)
+FLIP = False   # etiqueta invertida 180° (stick boca abajo: piedra hacia abajo)
+TUBE = False   # recortar la etiqueta a la silueta blanca del tubo (no se sale por los bordes cuando el stick gira)
+WIPE = False   # borrar TODA la zona de la etiqueta (no solo las letras): para etiquetas pequeñas donde quedan restos de la IA
+BLANK = False  # solo borrar el texto de la IA (tubo sin etiqueta) cuando no se puede pegar perfecta
+
 def composite(frame, q, strength=1.0):
     if strength <= 0.01:
         return frame
     h, w = frame.shape[:2]
+    if FLIP:
+        q = np.roll(q.reshape(4, 2), 2, axis=0)
     Hm = cv2.getPerspectiveTransform(LCORN, q.astype(np.float32))
     x, y, bw, bh = cv2.boundingRect(q.astype(np.int32))
     pad = 30
@@ -124,7 +151,18 @@ def composite(frame, q, strength=1.0):
         lit = cv2.GaussianBlur(lit, (0, 0), MOTION); ta = cv2.GaussianBlur(ta, (0, 0), MOTION)
     a = ta * (1 - np.clip(cv2.GaussianBlur(skin.astype(np.float32), (0, 0), 2) * 1.3, 0, 1))
     em = cv2.GaussianBlur(textmask.astype(np.float32) / 255, (0, 0), 1.0)
+    if WIPE:  # tubo limpio = luz del tubo (máximo local) con el tono del blanco del tubo
+        kc = max(7, int(min(bw, bh) * 0.16) | 1)   # cierre mayor que las letras: queda la luz real del tubo
+        clean = cv2.morphologyEx(roi, cv2.MORPH_CLOSE, cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (kc, kc)))
+        clean = cv2.GaussianBlur(clean, (0, 0), kc / 4).astype(np.float32)
+        em = cv2.GaussianBlur(((inner > 0) & (skin == 0)).astype(np.float32), (0, 0), max(1.5, kc / 5))
+    if TUBE:
+        tm = tube_mask(roi, L, sat, qm, skin)
+        em = em * tm; ta = ta * tm
     base = roi.astype(np.float32) * (1 - em[..., None] * strength) + clean * (em[..., None] * strength)
+    if BLANK:
+        frame[y0:y1, x0:x1] = np.clip(base, 0, 255).astype(np.uint8)
+        return frame
     out = base * (1 - (a * strength)[..., None]) + lit * (a * strength)[..., None]
     frame[y0:y1, x0:x1] = np.clip(out, 0, 255).astype(np.uint8)
     return frame
@@ -136,8 +174,14 @@ def main():
     ap.add_argument('--qt', type=float, default=0.0)
     ap.add_argument('--roi', help='x0,y0,x1,y1 zona del producto para la detección inicial')
     ap.add_argument('--nosift', action='store_true')
+    ap.add_argument('--flip', action='store_true', help='pegar la etiqueta invertida 180° (piedra hacia abajo)')
+    ap.add_argument('--tube', action='store_true', help='recortar la etiqueta a la silueta del tubo')
+    ap.add_argument('--wipe', action='store_true', help='borrar toda la zona de la etiqueta antes de pegar la real')
+    ap.add_argument('--blank', action='store_true', help='solo borrar el texto de la IA, sin pegar etiqueta')
     ap.add_argument('--keys', help='t:x,y,lado;t:x,y,lado;... posiciones manuales (cuadrado) interpoladas')
     a = ap.parse_args()
+    global FLIP, BLANK, TUBE, WIPE
+    FLIP, BLANK, TUBE, WIPE = a.flip, a.blank, a.tube, a.wipe
     frames, fps, w, h = read_frames(a.src)
     n = len(frames); num, den = map(int, fps.split('/')); fr = num / den
     if a.keys:  # modo manual por fotogramas clave (producto pequeño o logo ilegible para la detección)

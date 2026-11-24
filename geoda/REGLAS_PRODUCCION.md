@@ -10,15 +10,20 @@ El montador (`pipeline/builder.py`) ya trae estas reglas por defecto.
 3. **Black Friday** solo si la oferta de temporada es real; si no, CTA neutro (K3, K5, K6, K7). Cuando haya duda se exportan las dos versiones.
 4. **Sin el rótulo "Recreación con IA"** en ningún video. Al publicar, activar la etiqueta de contenido IA de Meta/TikTok.
 5. **Etiqueta del producto tal cual la landing en TODAS las tomas** (Desodorante · GEODA · 100% NATURAL · EFECTIVO Y SEGURO · 24h).
-   - Nunca dejar que la IA invente o deforme la etiqueta: revisar cada toma donde aparezca el producto.
-   - Si la etiqueta sale deformada: se reemplaza la toma por material real de la landing o se superpone la etiqueta real.
-   - No hacer zoom digital sobre el producto en clips de IA de 720p (deforma la etiqueta).
-   - Los primeros planos del producto se generan en 1080p o se hacen con fotos/videos reales.
-   - **Toda toma con producto pasa por `pipeline/label_fix.py`**: detecta la etiqueta (SIFT contra la etiqueta real de la landing),
-     borra el texto de la IA y pega las letras reales con la luz del tubo; los dedos quedan por delante. Si el producto es muy
-     pequeño o se mueve mucho se marcan posiciones clave; si el clip deforma el producto, se regenera o se usa la imagen fija.
-   - Solo se usan los tramos donde la etiqueta está de frente (cuando el stick gira de lado, se corta antes).
+   - **Etiqueta perfecta o sin etiqueta**: si la etiqueta no puede quedar bien pegada sobre el tubo, la toma se cambia, se recorta
+     (encuadre sin el producto) o se deja el tubo sin etiqueta. Nunca letras dobles, fantasmas ni etiqueta que se salga del tubo.
+   - Revisión cuadro a cuadro a resolución completa de cada toma con producto, y solo se usan los tramos limpios
+     (cuando el stick gira de lado, se corta antes; si hace falta, el tramo bueno va en cámara lenta).
+   - **Primeros planos nuevos**: imagen 1k con la foto real del producto como referencia (Higgsfield marketing-studio, US$0,053)
+     → Kling 3.0 720p sin giros (para planos quietos, misma imagen de inicio y de fin) → `pipeline/label_fix.py --tube --wipe`.
+   - Si existe una foto real del producto que sirva para la toma, se usa la foto fija (ej. `mano.png`) en vez del clip animado.
+   - `label_fix.py`: detecta la etiqueta (SIFT contra la etiqueta real), borra la zona (`--wipe`), pega las letras reales con la luz
+     del tubo, la recorta a la silueta del tubo (`--tube`) y deja los dedos por delante. `--flip` = etiqueta invertida.
+   - **Orientación real**: con la piedra hacia abajo (ej. pasándola por el antebrazo) la etiqueta se ve invertida (`--flip`).
+   - No hacer zoom digital fuerte sobre el producto en clips de 720p.
    - Ningún texto, subtítulo ni gráfico (X roja, íconos) tapa la etiqueta: el montador detecta su zona en cada plano.
+5b. **Agua**: se moja solo la punta de la piedra (gotas o un hilo de agua sobre la piedra). El tubo y la etiqueta quedan secos;
+    nunca chorro sobre todo el tubo.
 6. En grabaciones de la landing no mostrar las tarjetas con "Te dura 3/5 años" ni precios tachados.
 
 ## Hook
@@ -48,6 +53,10 @@ El montador (`pipeline/builder.py`) ya trae estas reglas por defecto.
 17. Ahorro: reutilizar escenas que encajen con el guion, b-roll gratis (Mixkit), imágenes gratis (Magnific, 20/día;
     si se agotan, Higgsfield 1k calidad media, US$0,053), voz gratis (Gemini TTS), música y efectos de Mixkit.
 18. Informar el costo en USD de cada video al terminarlo.
+
+## CTA
+21. **Tarjeta final con ambiente** (desde el A2-01): el producto real (recorte de la foto de la landing) va sobre un baño o
+    ambiente que lo haga lucir (mesón, luz natural, plantas, toalla), no sobre un fondo blanco liso.
 
 ## Entrega
 19. Nombres según el brief: `GEO_[ETAPA]_[ÁNGULO]_[NN]_[HOOK]_[FORMATO]_v[n].mp4`, un archivo por hook (A y B).

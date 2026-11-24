@@ -43,13 +43,16 @@ def build_shots():
      'B2': [B.shot(T, 'b2', w('w_i2'), 3.25, ss=0.0, z0=1.0, z1=1.05, audio=True)],
      'B3': [B.shot(T, 'b3', w('w_i3'), 2.6, ss=0.15, z0=1.0, z1=1.05, audio=True) + ([B.protect((320, 340, 700, 800))],)],
      'B4': [B.shot(T, 'b4', fx('w_p1'), 2.75, ss=0.0, z0=1.0, z1=1.05, audio=True)],
-     'B5': [B.shot(T, 'b5', fx('w_p1'), 3.45, ss=3.2, z0=1.05, z1=1.12, audio=True)],
-     'B6': [B.shot(T, 'b6', fx('k_brazo'), 2.5, ss=0.2, z0=1.0, z1=1.06) + ([],)],
+     # gotas solo en la punta de la piedra (el tubo y la etiqueta quedan secos); etiqueta original de la imagen, sin capa
+     'B5': [B.shot(T, 'b5', w('k_gota'), 3.45, ss=0.0, speed=0.65, z0=1.0, z1=1.06) + ([],)],
+     # piedra hacia abajo sobre el antebrazo -> etiqueta real invertida (label_fix --flip --tube); solo el tramo de frente
+     'B6': [B.shot(T, 'b6', fx('k_brazo_flip'), 2.5, ss=0.05, speed=0.7, z0=1.0, z1=1.06) + ([],)],
      'B7': [B.shot(T, 'b7', w('w_i2'), 2.18, ss=4.85, z0=1.05, z1=1.1, audio=True)],
      'B8': [B.shot(T, 'b8a', w('k_map'), 2.6, ss=0.0, z0=1.0, z1=1.04) + ([],),
             B.shot(T, 'b8b', ec, 1.9, still=True, z0=1.0, z1=1.04) + ([ec_box],)],
     }
     # voz del presentador (clip WAN de la demostración) sobre el primer plano del antebrazo y el cierre
+    wav_from(fx('w_p1'), 3.2, 3.45, f'{T}/b5.wav')   # voz del presentador sobre el primer plano de las gotas
     wav_from(w('w_p2'), 0.35, 2.5, f'{T}/b6.wav')
     wav_from(w('w_p2'), 3.55, 2.6, f'{T}/b8a.wav')
     wav_from(w('w_p2'), 6.15, 1.9, f'{T}/b8b.wav')

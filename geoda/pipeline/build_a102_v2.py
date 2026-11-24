@@ -50,16 +50,19 @@ def build_shots():
     km, kt, ka, kto, kma = (f'{HF}/{n}_0.mp4' for n in ('k_macro', 'k_tres', 'k_abanico', 'k_toalla', 'k_mano'))
     ec, ec_box = endcard_png()
     s = {}
-    s['HA'] = [shot('v2_ha', km, 2.4, ss=0.0, z0=1.0, z1=1.08)]
-    s['HB'] = [shot('v2_hb', kt, 2.4, ss=0.2, z0=1.0, z1=1.06)]
-    s['B1'] = [shot('v2_b1a', km, 1.6, ss=2.4, z0=1.08, z1=1.14),
-               shot('v2_b1b', km, 1.65, ss=4.0, z0=1.32, z1=1.42, cy=0.4)]
+    kg = f'{HF}/fixed/k_grifo2_0.mp4'  # gotas solo en la punta de la piedra, tubo seco, etiqueta real
+    s['HA'] = [shot('v2_ha', kg, 2.4, ss=0.0, z0=1.0, z1=1.05)]
+    s['HB'] = [shot('v2_hb', kt, 2.4, ss=0.5, z0=1.0, z1=1.06)]
+    s['B1'] = [shot('v2_b1a', kg, 1.6, ss=2.4, z0=1.05, z1=1.09),
+               shot('v2_b1b', kg, 1.65, ss=4.0, speed=0.6, z0=1.1, z1=1.15, cy=0.4)]
     s['B2'] = [shot('v2_b2a', K_WOMAN, 2.0, ss=0.0, speed=0.62, z0=1.0, z1=1.04),
                shot('v2_b2b', K_WOMAN, 2.05, ss=1.24, speed=0.62, z0=1.18, z1=1.22, cy=0.45)]
     s['B3'] = [shot('v2_b3', ka, 1.95, ss=0.3, z0=1.0, z1=1.05)]
     s['B4'] = [shot('v2_b4a', f'{S}/hi_35928.mp4', 0.9, ss=5.0, z0=1.0, z1=1.06, cx=0.55),
-               shot('v2_b4b', kto, 3.88, ss=0.0, z0=1.0, z1=1.06)]
-    s['B5'] = [shot('v2_b5a', kma, 1.6, ss=0.0, speed=0.6, z0=1.0, z1=1.05), shot('v2_b5b', kma, 1.0, ss=2.3, speed=0.7, z0=1.05, z1=1.08)]  # solo con la etiqueta de frente
+               shot('v2_b4b', kto, 2.67, ss=0.0, speed=0.6, z0=1.0, z1=1.06),   # toalla: solo 0-1,6 s (después la etiqueta gira)
+               shot('v2_b4c', kt, 1.21, ss=1.0, speed=0.7, z0=1.0, z1=1.04)]    # guardada con su tapa
+    # foto real del producto en la mano (etiqueta intacta); el clip animado deformaba la etiqueta al girar
+    s['B5'] = [shot('v2_b5', f'{G}/v2frames/mano.png', 2.6, still=True, z0=1.0, z1=1.07)]
     s['B6'] = [screen_shot('v2_b6a', hold=1.4),
                shot('v2_b6b', f'{S}/hi_42137.mp4', 1.1, ss=2.0, z0=1.0, z1=1.06),
                shot('v2_b6c', ec, 1.5, still=True, z0=1.0, z1=1.04)]
