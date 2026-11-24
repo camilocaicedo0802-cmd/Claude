@@ -189,9 +189,16 @@ def composite(frame, q, strength=1.0):
         return frame
     T = np.float32([[1, 0, -x0], [0, 1, -y0], [0, 0, 1]]) @ Hm
     rw, rh = x1 - x0, y1 - y0
-    txt = cv2.warpPerspective(LAB, T, (rw, rh), flags=cv2.INTER_CUBIC).astype(np.float32)
-    ta = cv2.warpPerspective(LAB_A, T, (rw, rh), flags=cv2.INTER_LINEAR)
-    ta = np.clip(ta, 0, 1) ** 0.65  # más contraste en letras pequeñas
+    sc = min(1.0, max(bw, bh) * 1.3 / LW)
+    if sc < 0.95:  # etiqueta pequeña: se reduce primero por área (como una foto real a esa distancia), luego se deforma
+        sw, sh = max(8, int(LW * sc)), max(8, int(LH * sc))
+        labs, laba = cv2.resize(LAB, (sw, sh), interpolation=cv2.INTER_AREA), cv2.resize(LAB_A, (sw, sh), interpolation=cv2.INTER_AREA)
+        Ts = T @ np.float32([[LW / sw, 0, 0], [0, LH / sh, 0], [0, 0, 1]])
+    else:
+        labs, laba, Ts = LAB, LAB_A, T
+    txt = cv2.warpPerspective(labs, Ts, (rw, rh), flags=cv2.INTER_CUBIC).astype(np.float32)
+    ta = cv2.warpPerspective(laba, Ts, (rw, rh), flags=cv2.INTER_LINEAR)
+    ta = np.clip(ta, 0, 1) ** (0.65 if sc >= 0.95 else 0.85)  # más contraste en letras pequeñas
     qm = cv2.warpPerspective(np.full((LH, LW), 255, np.uint8), T, (rw, rh))
     roi = frame[y0:y1, x0:x1]
     L = cv2.cvtColor(roi, cv2.COLOR_BGR2GRAY).astype(np.float32)
@@ -199,6 +206,16 @@ def composite(frame, q, strength=1.0):
     S = cv2.GaussianBlur(cv2.dilate(L, cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (k, k))), (0, 0), max(2, k / 2))
     ycc = cv2.cvtColor(roi, cv2.COLOR_BGR2YCrCb)
     skin = ((ycc[..., 1] > 135) & (ycc[..., 1] < 178) & (ycc[..., 2] > 80) & (ycc[..., 2] < 132) & (ycc[..., 0] > 50)).astype(np.uint8)
+    # con luz cálida el tubo blanco cae en el rango de piel: piel = color lejos del tono propio del tubo y más saturado
+    qin = cv2.warpPerspective(np.full((LH, LW), 255, np.uint8), np.float32([[1, 0, -x0], [0, 1, -y0], [0, 0, 1]]) @ Hm, (x1 - x0, y1 - y0)) > 0
+    if qin.any():
+        lab = cv2.cvtColor(roi, cv2.COLOR_BGR2LAB).astype(np.float32)
+        Lq = lab[..., 0][qin]
+        tref = np.median(lab[qin & (lab[..., 0] >= np.percentile(Lq, 60))], axis=0)
+        cd = np.linalg.norm(lab[..., 1:] - tref[1:], axis=2)
+        sat0 = cv2.cvtColor(roi, cv2.COLOR_BGR2HSV)[..., 1].astype(np.float32) / 255
+        tsat = float(np.median(sat0[qin & (lab[..., 0] >= np.percentile(Lq, 60))]))
+        skin = (skin.astype(bool) & ((cd > 9) | (sat0 > tsat + 0.12))).astype(np.uint8)
     skin = cv2.dilate(skin, np.ones((5, 5), np.uint8))
     # 1) borrar el texto deformado de la IA dentro de la zona de la etiqueta
     sat = cv2.cvtColor(roi, cv2.COLOR_BGR2HSV)[..., 1].astype(np.float32) / 255
@@ -293,6 +310,25 @@ def main():
     for i in range(n - 2, -1, -1):
         if quads[i] is None and quads[i + 1] is not None:
             quads[i] = lk_step(frames[i + 1], frames[i], quads[i + 1])
+    # segunda pasada: donde no hubo detección, buscar en una zona ampliada alrededor de la posición estimada
+    if not a.nosift:
+        extra = 0
+        for i in range(n):
+            if det[i] is None and quads[i] is not None:
+                x, y, bw, bh = cv2.boundingRect(quads[i].astype(np.int32))
+                d2 = sift_quad(frames[i], (x - bw, y - bh, x + 2 * bw, y + 2 * bh))
+                if d2 is not None and np.abs(d2 - quads[i]).max() < max(bw, bh) * 0.6:
+                    det[i] = d2; extra += 1
+        if extra:
+            anchors = [i for i in range(n) if det[i] is not None]
+            print(f'  segunda pasada: +{extra} detecciones (total {len(anchors)})')
+            quads = [det[i] if det[i] is not None else None for i in range(n)]
+            for i in range(1, n):
+                if quads[i] is None and quads[i - 1] is not None:
+                    quads[i] = lk_step(frames[i - 1], frames[i], quads[i - 1])
+            for i in range(n - 2, -1, -1):
+                if quads[i] is None and quads[i + 1] is not None:
+                    quads[i] = lk_step(frames[i + 1], frames[i], quads[i + 1])
     # estimación gruesa (mediana) -> etiqueta fija al tubo (flujo óptico + corrección lenta de la deriva)
     Q = np.array(quads, np.float32)
     k = 5

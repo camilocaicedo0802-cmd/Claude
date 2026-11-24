@@ -27,7 +27,7 @@ def dur_of(f):
                                 capture_output=True, text=True).stdout.strip())
 
 # ---------------------------------------------------------------- planos
-def kb_render(out, inp, pre, nf, z0, z1, cx=0.5, cy=0.5, fx=0.5, fy=0.5, post=None, framed=None, stopmo=False):
+def kb_render(out, inp, pre, nf, z0, z1, cx=0.5, cy=0.5, fx=0.5, fy=0.5, post=None, framed=None, stopmo=False, shake=None):
     """Ken Burns con precisión de subpíxel (cv2.warpAffine): sin los saltos de 1 px de zoompan,
     así el plano y la etiqueta del producto se mueven suaves y quietos."""
     import numpy as np, cv2
@@ -49,6 +49,12 @@ def kb_render(out, inp, pre, nf, z0, z1, cx=0.5, cy=0.5, fx=0.5, fy=0.5, post=No
         z = z0 + (z1 - z0) * k / nf
         x, y = (W - W / z) * fx, (H - H / z) * fy
         M = np.float32([[z, 0, -x * z], [0, z, -y * z]])
+        if shake:  # (inicio s, duración s, amplitud px): sacudida que se apaga (golpe en la mesa)
+            ts, td, amp = shake; tt = k / FPS - ts
+            if 0 <= tt < td:
+                a = amp * (1 - tt / td) ** 2
+                M[0, 2] += a * math.sin(tt * 95); M[1, 2] += a * math.cos(tt * 71)
+                zz = 1 + 0.012 * (1 - tt / td); M[:, :2] *= zz; M[0, 2] -= (zz - 1) * W / 2; M[1, 2] -= (zz - 1) * H / 2
         fr = cv2.warpAffine(last, M, (W, H), flags=cv2.INTER_CUBIC, borderMode=cv2.BORDER_REFLECT)
         if framed:  # video reducido abajo sobre el mismo plano desenfocado
             fw, fh = int(W * framed) // 2 * 2, int(H * framed) // 2 * 2

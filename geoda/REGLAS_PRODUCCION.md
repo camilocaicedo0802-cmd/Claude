@@ -22,6 +22,9 @@ El montador (`pipeline/builder.py`) ya trae estas reglas por defecto.
    - **Etiqueta quieta sobre el tubo**: se mueve solo con el producto. El movimiento cuadro a cuadro sale del flujo óptico
      del tubo y la detección solo corrige la deriva lenta (sin temblor ni "nado" de la etiqueta).
    - **Zoom lento (Ken Burns) con precisión de subpíxel** (no `zoompan` de ffmpeg, que avanza a saltos de 1 px).
+   - Con luz cálida (sets, interiores) el tubo blanco se ve anaranjado: la detección de piel y la silueta del tubo se ajustan al
+     tono propio del tubo para no confundirlo con la mano. Si la IA inventa otra etiqueta (otro diseño), se borra el cuerpo del
+     tubo y se pega la real con las proporciones del producto (52 % del alto del cuerpo, 94 % del ancho).
    - **Orientación real**: con la piedra hacia abajo (ej. pasándola por el antebrazo) la etiqueta se ve invertida (`--flip`).
    - No hacer zoom digital fuerte sobre el producto en clips de 720p.
    - Ningún texto, subtítulo ni gráfico (X roja, íconos) tapa la etiqueta: el montador detecta su zona en cada plano.
@@ -47,6 +50,10 @@ El montador (`pipeline/builder.py`) ya trae estas reglas por defecto.
 12. **Voces alternadas por video**: mujer, hombre, mujer, hombre… (A1-02 mujer, A1-01 hombre, A1-03 mujer, A1-04 hombre, …).
     Una sola voz por video (mismo modelo y misma voz en todas sus frases).
 13. El avatar **habla a cámara solo en algunos videos/tomas** donde haga falta (UGC, street interview, podcast, testimonio, founder).
+13b. **Videos con dos personajes (podcast, entrevista)**: un solo clip largo de WAN 3.0 por personaje con todas sus frases
+    (máx. 30 s; si no alcanza, el segundo clip arranca del último cuadro del primero), así cada voz es la misma en todo el video.
+    Se transcribe con tiempos por palabra (`pipeline/tools/stt.py`) y se corta por frase (`pipeline/tools/lines.py`);
+    los subtítulos usan esos tiempos reales. Sin "whoosh" en cada corte de conversación, solo al entrar a insertos.
 14. Tomas donde el avatar habla: **WAN 3.0** con audio nativo en la API de Higgsfield (US$0,075/s en 720p): mejor calidad/precio
     (voz 9,5/10; Veo no está en la API, solo en la cuenta web). Imagen de inicio con aire sobre la cabeza para el texto del hook.
 
@@ -58,7 +65,7 @@ El montador (`pipeline/builder.py`) ya trae estas reglas por defecto.
 18. Informar el costo en USD de cada video al terminarlo.
 
 ## CTA
-21. **Tarjeta final con ambiente** (desde el A2-01): el producto real (recorte de la foto de la landing) va sobre un baño o
+21. **Tarjeta final con ambiente** (desde el A1-05): el producto real (recorte de la foto de la landing) va sobre un baño o
     ambiente que lo haga lucir (mesón, luz natural, plantas, toalla), no sobre un fondo blanco liso.
 
 ## Entrega

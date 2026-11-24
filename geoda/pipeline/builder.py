@@ -24,7 +24,7 @@ CASC = cv2.CascadeClassifier(os.path.join(cv2.data.haarcascades, 'haarcascade_fr
 CASC_P = cv2.CascadeClassifier(os.path.join(cv2.data.haarcascades, 'haarcascade_profileface.xml'))
 
 # ------------------------------------------------------------------ planos
-def shot(tmp, name, src, dur, ss=0.0, speed=1.0, z0=1.0, z1=1.0, fx=0.5, fy=0.5, still=False, sharpen=False, framed=None, stopmo=False, audio=False):
+def shot(tmp, name, src, dur, ss=0.0, speed=1.0, z0=1.0, z1=1.0, fx=0.5, fy=0.5, still=False, sharpen=False, framed=None, stopmo=False, audio=False, shake=None):
     """fx,fy: punto hacia el que se hace zoom (0-1). framed: escala (<1) del video dentro de un fondo desenfocado,
     alineado abajo, para dejar aire arriba para el texto sin tapar la cara."""
     out = f'{tmp}/{name}.mp4'
@@ -37,7 +37,7 @@ def shot(tmp, name, src, dur, ss=0.0, speed=1.0, z0=1.0, z1=1.0, fx=0.5, fy=0.5,
     post = []
     if sharpen:
         post.append('unsharp=5:5:0.8:5:5:0.0')
-    b.kb_render(out, inp, pre, nf, z0, z1, fx=fx, fy=fy, post=post, framed=framed, stopmo=stopmo)  # zoom subpíxel (sin saltos)
+    b.kb_render(out, inp, pre, nf, z0, z1, fx=fx, fy=fy, post=post, framed=framed, stopmo=stopmo, shake=shake)  # zoom subpíxel (sin saltos)
     if audio:  # voz/ambiente del propio clip (Veo), mismo tramo
         run(['ffmpeg', '-v', 'error', '-y', '-ss', f'{ss}', '-t', f'{dur}', '-i', src, '-vn', '-ac', '1', '-ar', '48000',
              '-af', f'apad=whole_dur={dur}', out.replace('.mp4', '.wav')])
@@ -128,6 +128,29 @@ def place(img, slots, obstacles, avoid=(), cx=CX, bot=SAFE_BOT + 40):
             best, best_ov = y, ov
     return best
 
+def stamp(text, size=130, angle=-14, color=(214, 32, 38)):
+    """Sello de goma (ej. MITO): texto con borde doble, textura gastada, girado."""
+    from PIL import ImageFont
+    f = ImageFont.truetype(FONT_BLACK, size)
+    tw = int(f.getlength(text)); th = int(size * 0.78)
+    pw, ph = tw + 2 * int(size * 0.42), th + 2 * int(size * 0.36)
+    im = Image.new('RGBA', (pw, ph), (0, 0, 0, 0)); d = ImageDraw.Draw(im)
+    lw = max(6, size // 14)
+    d.rounded_rectangle([lw, lw, pw - lw, ph - lw], radius=size // 5, outline=color + (255,), width=lw)
+    d.rounded_rectangle([3 * lw, 3 * lw, pw - 3 * lw, ph - 3 * lw], radius=size // 7, outline=color + (255,), width=max(2, lw // 2))
+    d.text((pw / 2, ph / 2), text, font=f, fill=color + (255,), anchor='mm')
+    rng = np.random.default_rng(3)
+    a = np.array(im.getchannel('A')).astype(np.float32)
+    a *= np.clip(0.7 + 0.5 * rng.random(a.shape), 0, 1) ** 1.5      # tinta gastada
+    im.putalpha(Image.fromarray(a.astype(np.uint8)))
+    return im.rotate(angle, resample=Image.BICUBIC, expand=True)
+
+def slam_scale(t, t0, d=0.14):
+    x = (t - t0) / d
+    if x <= 0: return 0.0
+    if x >= 1: return 1.0
+    return 1.0 + 0.9 * (1 - x) ** 2
+
 def big_x(size=380, width=46):
     im = Image.new('RGBA', (size, size), (0, 0, 0, 0)); d = ImageDraw.Draw(im)
     m = width
@@ -204,15 +227,19 @@ def build(cfg, hk, shots):
     n = len(vo_items)
     filt.append(f'{"".join(labels)}amix=inputs={n}:normalize=0,pan=stereo|c0=c0|c1=c0[vo]')
     inputs += ['-i', cfg.get('music', f'{A}/music_821.mp3')]; mi = n
-    filt.append(f'[{mi}:a]aresample=48000,atrim=0:{total},volume=0.10,afade=t=out:st={total-0.6}:d=0.6[mus]')
+    filt.append(f'[{mi}:a]aresample=48000,atrim=0:{total},volume={cfg.get("music_vol", 0.10)},afade=t=out:st={total-0.6}:d=0.6[mus]')
     sfx, k = [], mi + 1
     def add(src, at, vol, trim=None):
         nonlocal k
         inputs.extend(['-i', src]); tr = f'atrim=0:{trim},' if trim else ''
         filt.append(f'[{k}:a]aresample=48000,{tr}volume={vol},adelay={int(max(0,at)*1000)}|{int(max(0,at)*1000)}[s{k}]')
         sfx.append(f'[s{k}]'); k += 1
-    for c in cuts[1:]:
-        add(f'{A}/sfx_1489.mp3', c - 0.12, 0.22, 0.6)
+    if cfg.get('cut_sfx', True):
+        for c in cuts[1:]:
+            add(f'{A}/sfx_1489.mp3', c - 0.12, 0.22, 0.6)
+    for r in rows_cfg:  # efectos por fila: (segundos desde el inicio de la fila, archivo, volumen)
+        for off, src, vol in r.get('sfx', []):
+            add(src, rs[r['key']] + off, vol)
     for at, src, vol in cfg.get('sfx', {}).get(hk, []) + cfg.get('sfx', {}).get('body', []):
         add(src, at if at >= 0 else rs[cfg['body'][0]['key']] + (-at), vol)
     filt.append(f'{"".join(sfx)}amix=inputs={len(sfx)}:normalize=0[sfx]')
@@ -236,8 +263,11 @@ def build(cfg, hk, shots):
         elif ex['type'] == 'three':
             im = render_runs('3', 330, YEL, FONT_BLACK, stroke=12, stroke_color=NAVY)
         elif ex['type'] == 'text':
-            im = render_runs(ex['text'], ex.get('size', 200), tuple(ex.get('color', RED)), FONT_BLACK, stroke=10, stroke_color=WHITE)
-        els.append((im, ex['x'], ex['y'], ex.get('t0', 0.08), ex.get('t1', hook['dur']), True))
+            im = render_runs(ex['text'], ex.get('size', 200), tuple(ex.get('color', RED)), FONT_BLACK, stroke=ex.get('stroke', 10),
+                             stroke_color=tuple(ex.get('stroke_color', WHITE)))
+        elif ex['type'] == 'stamp':
+            im = stamp(ex['text'], ex.get('size', 130), ex.get('angle', -14))
+        els.append((im, ex['x'], ex['y'], ex.get('t0', 0.08), ex.get('t1', hook['dur']), 'slam' if ex['type'] == 'stamp' else True))
         text_rects.append((ex.get('t0', 0.08), ex.get('t1', hook['dur']), rect_at(im, ex['y'], ex['x'])))  # los subtítulos no tapan gráficos clave
     for r in cfg['body']:
         st = rs[r['key']]; t0 = max(st, HU) if r is cfg['body'][0] else st; t1 = st + r['dur']
@@ -261,6 +291,9 @@ def build(cfg, hk, shots):
     subs = []
     for r in rows_cfg:
         if not r.get('subs', True):
+            continue
+        if r.get('words'):  # [(palabra, inicio, fin)] relativos al inicio de la fila
+            subs += chunks([(re.sub(r'[,:.]$', '', wd), rs[r['key']] + a, rs[r['key']] + e) for wd, a, e in r['words']])
             continue
         if r.get('clip_audio'):
             w = shots[r['key']][r.get('speech_shot', 0)][0].replace('.mp4', '.wav')
@@ -294,7 +327,7 @@ def build(cfg, hk, shots):
         im = Image.frombytes('RGB', (W, H), raw)
         for img, cx, cy, t0, t1, pop in els:
             if t0 <= t < t1:
-                paste_center(im, img, cx, cy, pop_scale(t, t0) if pop else 1.0)
+                paste_center(im, img, cx, cy, slam_scale(t, t0) if pop == 'slam' else (pop_scale(t, t0) if pop else 1.0))
         if t < cta0:
             for ch in subs:
                 if ch[0][1] <= t < ch[-1][2] + 0.05:
