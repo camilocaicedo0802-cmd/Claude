@@ -5,26 +5,33 @@ import os, sys, json, subprocess, re
 G = '/tmp/claude-0/-home-user-Claude/89fb9332-1428-5876-823c-b89791e99771/scratchpad/geoda'
 sys.path.insert(0, G); sys.path.insert(0, f'{G}/tools')
 import builder as B
-from lines import line_spans
 A = f'{G}/a105'; T = f'{A}/tmp'; os.makedirs(T, exist_ok=True)
 HF, S, AU = f'{G}/hf', f'{G}/stock', f'{G}/audio'
 HOST, G1, G2 = f'{HF}/fixed/w_host_0.mp4', f'{HF}/fixed/w_g1_0.mp4', f'{HF}/fixed/w_g2_0.mp4'
-WORDS = {HOST: f'{A}/w_host.words.json', G1: f'{A}/w_g1.words.json', G2: f'{A}/w_g2.words.json'}
-STARTS = {HOST: '¿Por qué|En serio|A ver|¿Y entonces|¿Y uno|¿Y si', G1: 'El problema|porque el|El olor|El perfume',
-          G2: 'Error uno|Error dos|No, no|Tienes 14|No pagas'}
-
-def spans(clip):
-    W = json.load(open(WORDS[clip])); sp = line_spans(clip, WORDS[clip], STARTS[clip].split('|'))
-    out = []
-    for a0, a1 in sp:
-        last = max((w for w in W if a0 - 0.01 <= w['s'] < a1), key=lambda w: w['s'])
-        out.append((a0, min(a1, last['e'] + 0.15)))
-    return out, W
-SP = {c: spans(c) for c in (HOST, G1, G2)}
-def seg(clip, i):
-    return SP[clip][0][i]
-def words(clip, a0, a1):
-    return [(w['w'], w['s'] - a0, w['e'] - a0) for w in SP[clip][1] if a0 - 0.01 <= w['s'] < a1]
+# Frases del guion con sus tiempos REALES en cada clip (pausas medidas por energía y cada frase verificada transcribiéndola
+# sola: dice exactamente el guion, sin palabras de la frase vecina). (texto, inicio, fin) de cada tramo de voz.
+LINES = {
+ 'H0': (HOST, 0.70, 3.41, [('¿Por qué tanta gente dice que la piedra de alumbre no sirve?', 0.76, 3.35)]),
+ 'H1': (HOST, 3.64, 5.83, [('En serio, ¿por qué todo el mundo dice que no sirve?', 3.70, 5.77)]),
+ 'H2': (HOST, 6.57, 7.52, [('A ver, explícame.', 6.63, 7.46)]),
+ 'H3': (HOST, 8.26, 10.29, [('¿Y entonces por qué le falla a tanta gente?', 8.32, 10.23)]),
+ 'H4': (HOST, 11.12, 12.40, [('¿Y uno deja de sudar?', 11.27, 12.32)]),
+ 'H5': (HOST, 16.23, 17.41, [('¿Y si a mí no me funciona?', 16.29, 17.35)]),
+ 'G0': (G1, 0.25, 2.24, [('El problema casi nunca es la piedra.', 0.31, 2.18)]),
+ 'G1a': (G1, 2.59, 5.75, [('Porque el problema casi nunca es la piedra.', 2.65, 4.58), ('Es cómo la usan.', 4.83, 5.69)]),
+ 'G2l': (G1, 6.87, 10.72, [('El olor no es el sudor.', 6.93, 8.29), ('Es lo que pasa con el sudor en la piel.', 8.96, 10.66)]),
+ 'G3': (G1, 11.01, 15.85, [('El perfume lo tapa.', 11.07, 12.42), ('La piedra ayuda a neutralizarlo,', 12.75, 14.77), ('sin perfume.', 14.96, 15.79)]),
+ 'E1': (G2, 0.22, 3.04, [('Error uno: usarla seca.', 0.28, 1.87), ('Se moja la piedra.', 1.99, 2.99)]),
+ 'E2': (G2, 3.04, 5.99, [('Error dos: saltarse días.', 3.10, 4.76), ('Hay que ser constante.', 4.92, 5.93)]),
+ 'N':  (G2, 6.02, 9.45, [('No. No es antitranspirante.', 6.08, 7.76), ('Sigues sudando, pero sin olor.', 7.86, 9.39)]),
+ 'T':  (G2, 9.45, 12.88, [('Tienes 14 días: si no te funciona, te devuelven la plata.', 9.51, 12.82)]),
+ 'C':  (G2, 13.46, 16.73, [('No pagas nada ahora: pagas cuando te llegue.', 13.52, 16.67)]),
+}
+def words_of(key):
+    clip, a0, a1, pieces = LINES[key]; out = []
+    for text, s, e in pieces:
+        out += [(w, t0 - a0, t1 - a0) for w, t0, t1 in B.word_times(text, s, e - s)]
+    return out
 
 PITCH = {G2: 1.035}   # la parte 2 de la invitada sale un poco más grave: se empareja con la parte 1 (timbre conservado)
 def wav(name, clip, a0, d):
@@ -32,34 +39,34 @@ def wav(name, clip, a0, d):
     subprocess.run(['ffmpeg', '-v', 'error', '-y', '-ss', f'{a0:.3f}', '-t', f'{d:.3f}', '-i', clip, '-vn', '-ac', '1', '-ar', '48000',
                     '-af', af, f'{T}/{name}.wav'], check=True)
 
-# fila = (clave, clip de voz, índice de frase, [tomas]); toma: (nombre, tipo, fuente, duración o None=resto, opciones)
-#   'sync' = el mismo clip y tramo de la voz (labios sincronizados); 'vid' = otro video; 'still' = imagen fija
+# fila = (clave, frase, [tomas]); toma: (nombre, tipo, fuente, duración o None=resto, opciones)
+#   'sync' = el mismo clip y tramo de la voz (labios sincronizados); 'vid' = otro video (la voz sigue); 'still' = imagen fija
 ROWS = {
- 'HA':  (HOST, 0, [('ha', 'sync', HOST, None, dict(z0=1.0, z1=1.04, shake=(0.0, 0.35, 16)))]),
- 'HB':  (G1, 0, [('hb', 'sync', G1, None, dict(z0=1.0, z1=1.04))]),
- 'B1':  (HOST, 1, [('b1', 'sync', HOST, None, dict(z0=1.0, z1=1.04))]),
- 'B2':  (G1, 1, [('b2', 'vid', G1, None, dict(ss='a0', speed=0.88, z0=1.0, z1=1.04))]),   # sin el giro del stick al bajarlo
- 'B3':  (HOST, 2, [('b3', 'vid', f'{HF}/k_set_0.mp4', None, dict(ss=0.45, z0=1.0, z1=1.05))]),  # plano general
- 'B4':  (G1, 2, [('b4', 'vid', f'{T}/ins_gota.mp4', None, dict(ss=0.0))]),
- 'B5':  (G1, 3, [('b5a', 'still', f'{HF}/p_mesa_0.png', 2.4, dict(z0=1.0, z1=1.06)), ('b5b', 'sync', G1, None, dict(z0=1.04, z1=1.07))]),
- 'B6':  (HOST, 3, [('b6', 'sync', HOST, None, dict(z0=1.0, z1=1.04))]),
- 'B7':  (G2, 0, [('b7a', 'sync', G2, 0.9, dict(z0=1.0, z1=1.03)), ('b7b', 'vid', f'{HF}/fixed/k_grifo2_0.mp4', None, dict(ss=0.6, z0=1.0, z1=1.05))]),
- 'B8':  (G2, 1, [('b8', 'vid', f'{T}/ins_cal.mp4', None, dict(ss=0.0))]),
- 'B9':  (HOST, 4, [('b9', 'sync', HOST, None, dict(z0=1.0, z1=1.04))]),
- 'B10': (G2, 2, [('b10', 'sync', G2, None, dict(z0=1.0, z1=1.04))]),
- 'B11': (HOST, 5, [('b11', 'sync', HOST, None, dict(z0=1.34, z1=1.38, fx=0.5, fy=0.15))]),  # encuadre cerrado: no se ve el stick al dejarlo
- 'B12': (G2, 3, [('b12a', 'sync', G2, 0.57, dict(z0=1.0, z1=1.02)),
-                 ('b12b', 'vid', HOST, None, dict(ss=15.75, speed=0.77, z0=1.0, z1=1.04))]),    # el host con el stick frente a él
- 'B13': (G2, 4, [('b13a', 'vid', f'{S}/hi_42130.mp4', 1.3, dict(ss=0.3, z0=1.0, z1=1.06)),
-                 ('b13b', 'still', f'{HF}/fixed/p_bano_2x.png', None, dict(z0=1.0, z1=1.05))]),
+ 'HA':  ('H0', [('ha', 'sync', HOST, None, dict(z0=1.0, z1=1.04, shake=(0.0, 0.35, 16)))]),
+ 'HB':  ('G0', [('hb', 'sync', G1, None, dict(z0=1.0, z1=1.04))]),
+ 'B1':  ('H1', [('b1', 'sync', HOST, None, dict(z0=1.0, z1=1.04))]),
+ 'B2':  ('G1a', [('b2a', 'sync', G1, 2.26, dict(z0=1.0, z1=1.04)),                       # antes de que baje el stick
+                 ('b2b', 'vid', HOST, None, dict(ss=12.45, z0=1.0, z1=1.03))]),            # el host escucha
+ 'B3':  ('H2', [('b3', 'vid', f'{HF}/k_set_0.mp4', None, dict(ss=0.45, z0=1.0, z1=1.05))]),  # plano general
+ 'B4':  ('G2l', [('b4', 'vid', f'{T}/ins_gota.mp4', None, dict(ss=0.0))]),
+ 'B5':  ('G3', [('b5a', 'still', f'{HF}/p_mesa_0.png', 2.4, dict(z0=1.0, z1=1.06)), ('b5b', 'sync', G1, None, dict(z0=1.04, z1=1.07))]),
+ 'B6':  ('H3', [('b6', 'sync', HOST, None, dict(z0=1.0, z1=1.04))]),
+ 'B7':  ('E1', [('b7a', 'sync', G2, 0.9, dict(z0=1.0, z1=1.03)), ('b7b', 'vid', f'{HF}/fixed/k_grifo2_0.mp4', None, dict(ss=0.6, z0=1.0, z1=1.05))]),
+ 'B8':  ('E2', [('b8', 'vid', f'{T}/ins_cal.mp4', None, dict(ss=0.0))]),
+ 'B9':  ('H4', [('b9', 'sync', HOST, None, dict(z0=1.0, z1=1.04))]),
+ 'B10': ('N', [('b10a', 'sync', G2, 2.63, dict(z0=1.0, z1=1.04)),                         # hasta que la mano se acerca al stick
+               ('b10b', 'vid', HOST, None, dict(ss=13.40, z0=1.0, z1=1.03))]),             # el host escucha
+ 'B11': ('H5', [('b11', 'sync', HOST, None, dict(z0=1.0, z1=1.04))]),
+ 'B12': ('T', [('b12', 'vid', f'{HF}/fixed/k_empuja_0.mp4', None, dict(ss=0.2, z0=1.0, z1=1.04))]),  # empuja la piedra al host
+ 'B13': ('C', [('b13a', 'vid', f'{S}/hi_42130.mp4', 1.3, dict(ss=0.3, z0=1.0, z1=1.06)),
+               ('b13b', 'still', f'{HF}/fixed/p_bano_2x.png', None, dict(z0=1.0, z1=1.05))]),
 }
-LINES = {'HA': '¿Por qué tanta gente dice que la piedra de alumbre no sirve?', 'HB': 'El problema casi nunca es la piedra.'}
 EC_BOX = (290, 790, 900, 1530)   # producto + tapa en la tarjeta final (no se tapa)
 
 def build_shots():
     shots, rowmeta = {}, {}
-    for key, (clip, i, items) in ROWS.items():
-        a0, a1 = seg(clip, i); d = a1 - a0
+    for key, (lk, items) in ROWS.items():
+        clip, a0, a1, _ = LINES[lk]; d = a1 - a0
         fixed = sum(x[3] for x in items if x[3]); rest = d - fixed
         lst, t = [], 0.0
         for name, kind, src, dd, o in items:
@@ -70,14 +77,13 @@ def build_shots():
             elif kind == 'still':
                 sh = B.shot(T, name, src, dd, still=True, **o)
             else:
-                if o.get('ss') == 'a0': o['ss'] = a0 + t
                 sh = B.shot(T, name, src, dd, **o)
             wav(name, clip, a0 + t, dd)
             obst = None
             if name == 'b13b': obst = [EC_BOX]
-            if src.endswith(('ins_gota.mp4', 'ins_cal.mp4')) or 'k_grifo2' in src or 'p_mesa' in src or 'hi_42130' in src: obst = obst or []
+            if any(k in src for k in ('ins_gota', 'ins_cal', 'k_grifo2', 'p_mesa', 'hi_42130', 'k_empuja')): obst = obst or []
             lst.append(sh + ((obst,) if obst is not None else ())); t += dd
-        shots[key] = lst; rowmeta[key] = (d, words(clip, a0, a1))
+        shots[key] = lst; rowmeta[key] = (d, words_of(lk))
     return shots, rowmeta
 
 WH = f'{AU}/sfx_1489.mp3'

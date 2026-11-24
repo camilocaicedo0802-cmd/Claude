@@ -52,8 +52,13 @@ El montador (`pipeline/builder.py`) ya trae estas reglas por defecto.
 13. El avatar **habla a cámara solo en algunos videos/tomas** donde haga falta (UGC, street interview, podcast, testimonio, founder).
 13b. **Videos con dos personajes (podcast, entrevista)**: un solo clip largo de WAN 3.0 por personaje con todas sus frases
     (máx. 30 s; si no alcanza, el segundo clip arranca del último cuadro del primero), así cada voz es la misma en todo el video.
-    Se transcribe con tiempos por palabra (`pipeline/tools/stt.py`) y se corta por frase (`pipeline/tools/lines.py`);
-    los subtítulos usan esos tiempos reales. Sin "whoosh" en cada corte de conversación, solo al entrar a insertos.
+    **La conversación va completa y tal cual el guion**: nunca se confía en los tiempos por palabra que da el modelo
+    (se desfasan hasta 1-2 s). Se miden las pausas reales del audio (`pipeline/tools/pauses.py`), se arma cada frase con sus
+    tramos y se verifica transcribiendo cada frase sola (`pipeline/tools/verify_lines.py`): debe decir exactamente el guion,
+    sin palabras de la frase vecina. Si hay duda en una palabra, pregunta cerrada con opciones (`pipeline/tools/choice.py`).
+    Cada corte cae en silencio (se comprueba la energía en los bordes). Si el que habla hace algo que no sirve (ej. gira el
+    producto), se corta al otro escuchando o a un inserto, pero la voz sigue completa.
+    Sin "whoosh" en cada corte de conversación, solo al entrar a insertos.
 14. Tomas donde el avatar habla: **WAN 3.0** con audio nativo en la API de Higgsfield (US$0,075/s en 720p): mejor calidad/precio
     (voz 9,5/10; Veo no está en la API, solo en la cuenta web). Imagen de inicio con aire sobre la cabeza para el texto del hook.
 
