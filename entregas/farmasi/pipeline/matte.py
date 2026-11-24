@@ -3,7 +3,7 @@ from PIL import Image
 _s = {}
 def sess(name):
     if name not in _s:
-        o = ort.SessionOptions(); o.intra_op_num_threads = 4
+        o = ort.SessionOptions(); o.intra_op_num_threads = 4; o.enable_cpu_mem_arena = False
         _s[name] = ort.InferenceSession(f"models/{name}.onnx", o)
     return _s[name]
 def modnet(img):
