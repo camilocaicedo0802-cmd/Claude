@@ -7,7 +7,8 @@ import builder as B
 A = f'{G}/a104'; TMP = f'{A}/tmp'; os.makedirs(TMP, exist_ok=True)
 HF = f'{G}/hf'
 cfg = dict(
-    id='GEO_TOFU_A1_04', fmt='STREET', version=1, tmp=TMP, out_dir=A, vo_dir=TMP, min_face=50, hook_text_until=3.0,
+    id='GEO_TOFU_A1_04', fmt='STREET', version=1, tmp=TMP, out_dir=A, vo_dir=TMP, min_face=50, hook_text_until=3.6,  # 3,6 s del montaje = 3,0 s del video final a x1.2
+    speed=1.2,  # pedido de Camilo: todo el video a x1.2
     hooks={  # texto del hook = voz -> solo texto (sin subtítulo)
         'HA': dict(vo=None, clip_audio=True, dur=3.4, subs=False, text=('¿Cómo se usa la', 'piedra de alumbre?'),
                    line='Pregunta rápida: ¿usted sabe cómo se usa la piedra de alumbre?'),

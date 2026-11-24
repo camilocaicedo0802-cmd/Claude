@@ -306,5 +306,13 @@ def build(cfg, hk, shots):
             im.paste(ia, (60, 232), ia)
         enc.stdin.write(im.tobytes()); fi += 1
     enc.stdin.close(); enc.wait(); dec.wait()
-    print(out, f'{total:.2f}s', fi, 'frames')
+    sp = cfg.get('speed', 1.0)
+    if abs(sp - 1.0) > 1e-3:  # video acelerado (ej. x1.2): imagen y voz juntas, la voz sin cambiar de tono
+        tmp_out = out.replace('.mp4', '_x1.mp4'); os.replace(out, tmp_out)
+        run(['ffmpeg', '-v', 'error', '-y', '-i', tmp_out, '-filter_complex',
+             f'[0:v]setpts=PTS/{sp},fps={FPS}[v];[0:a]atempo={sp}[a]', '-map', '[v]', '-map', '[a]',
+             '-c:v', 'libx264', '-preset', 'medium', '-crf', '16', '-pix_fmt', 'yuv420p', '-profile:v', 'high',
+             '-c:a', 'aac', '-b:a', '192k', '-movflags', '+faststart', out])
+        os.remove(tmp_out); total /= sp
+    print(out, f'{total:.2f}s', fi, 'frames', f'(x{sp})' if sp != 1.0 else '')
     return out
