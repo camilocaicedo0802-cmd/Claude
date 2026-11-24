@@ -197,3 +197,13 @@ Look: frío/cian en fondos, piel cálida, contraste medio-alto, nítido. Motion 
 - **Sonido:** usar **solo** los SFX de la carpeta enviada por el cliente; nunca efectos propios.
 - **Textos:** usar los SFX de *typing* cuando aparecen textos.
 - **Colores y tipografías:** siempre los de la referencia (paleta cian/blanco/navy de §4.1 y familias de §3.1), aunque el tema sea otro.
+- **Estilo UGC, más sencillo** (corrección sobre la v1). Del estilo de la referencia se mantienen la tipografía, los colores y los subtítulos palabra a palabra, pero el montaje debe parecer contenido de creador, no un anuncio producido:
+  - **Plano hablando ≥ 85 % del tiempo.** Nada de motion graphics a pantalla completa (buscadores, objetos 3D, gráficas grandes, tarjeta de cierre).
+  - **B-roll solo con las tomas propias del creador** (producto en mano, gomita en la palma), 1,5–2 s, **corte seco** y escala 1,06→1,00. Sin stock de cine.
+  - **Subtítulos:** casi todo en estilo **cian en línea** (§3.4-1). Como mucho **2 palabras gigantes detrás de la cabeza** por vídeo (gancho y tema central). Sin palabras tecleadas gigantes.
+  - **Como mucho 1 superposición informativa** pequeña (p. ej. tarjeta con curva), a la altura del pecho.
+  - **Iconos 3D:** 2 como máximo en todo el vídeo.
+  - **Cámara:** apertura 1,12→1,00 en 0,5 s; en cada corte de salto, alternar escala 1,00 / 1,07 de golpe (4 f). Sin reencuadres grandes.
+  - **Transiciones:** cortes secos. Sin light leak ni desenfoques de corte.
+  - **Color natural:** contraste ×1,05, saturación ×1,08, sin virado cian ni viñeta.
+  - **Sonido:** tecleo suave en los destacados (≤ 4 teclas por palabra, vol. 0,3), swoosh suave (0,2) en los cortes a b-roll y pop en la superposición. Sin impactos graves, risers ni film burn.

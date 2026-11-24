@@ -10,8 +10,8 @@ export const ARoll: React.FC<{ capa: "base" | "persona" }> = ({ capa }) => {
   const t = frame / fps;
   const cam = camara(t);
   const { blur, extra } = desenfoqueTH(frame);
-  const filtroBase = "contrast(1.14) saturate(1.32) brightness(1.03)";
-  const filtroPersona = "contrast(1.1) saturate(1.18) brightness(1.04)";
+  const filtroBase = "contrast(1.05) saturate(1.08) brightness(1.02)"; // color natural (UGC)
+  const filtroPersona = filtroBase;
   return (
     <AbsoluteFill
       style={{
@@ -25,9 +25,6 @@ export const ARoll: React.FC<{ capa: "base" | "persona" }> = ({ capa }) => {
       {capa === "base" ? (
         <>
           <Video src={staticFile("edit/aroll.mp4")} muted objectFit="cover" style={{ width: "100%", height: "100%", filter: filtroBase }} />
-          {/* Virado frío del fondo: sombras hacia teal (G +0,05 · B +0,09) */}
-          <AbsoluteFill style={{ background: "linear-gradient(180deg, rgba(40,150,210,0.30), rgba(20,90,150,0.22))", mixBlendMode: "soft-light" }} />
-          <AbsoluteFill style={{ background: "rgba(10,60,110,0.10)", mixBlendMode: "multiply" }} />
         </>
       ) : (
         <Video src={staticFile("edit/aroll_persona.webm")} muted objectFit="cover" style={{ width: "100%", height: "100%", filter: filtroPersona }} />
