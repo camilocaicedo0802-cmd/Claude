@@ -250,6 +250,8 @@ def build(cfg, hk, shots):
             im = big_x(ex.get('size', 380))
         elif ex['type'] == 'three':
             im = render_runs('3', 330, YEL, FONT_BLACK, stroke=12, stroke_color=NAVY)
+        elif ex['type'] == 'text':
+            im = render_runs(ex['text'], ex.get('size', 200), tuple(ex.get('color', RED)), FONT_BLACK, stroke=10, stroke_color=WHITE)
         els.append((im, ex['x'], ex['y'], ex.get('t0', 0.08), ex.get('t1', hook['dur']), True))
         text_rects.append((ex.get('t0', 0.08), ex.get('t1', hook['dur']), rect_at(im, ex['y'], ex['x'])))  # los subtítulos no tapan gráficos clave
     for r in cfg['body']:
@@ -261,7 +263,7 @@ def build(cfg, hk, shots):
         if r.get('icon'):
             im = render_runs(r['icon'], 200, WHITE, FONT_BLACK)
             ix = r.get('icon_x', 820)
-            y = place(im, [420, 560, 700, 840], obst_range(t0, t1), [q for a, bb, q in text_rects if a < t1 and t0 < bb], cx=ix)
+            y = place(im, [420, 560, 700, 840, 980, 1100], obst_range(t0, t1), [q for a, bb, q in text_rects if a < t1 and t0 < bb], cx=ix)
             els.append((im, ix, y, t0 + 0.05, t1, True)); text_rects.append((t0, t1, rect_at(im, y, ix)))
     cta = cfg['cta']; cta0 = rs[cta['row']] + cta.get('delay', 0.0)
     ys = [360, 492, 598]
