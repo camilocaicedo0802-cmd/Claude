@@ -34,25 +34,10 @@ def shot(tmp, name, src, dur, ss=0.0, speed=1.0, z0=1.0, z1=1.0, fx=0.5, fy=0.5,
     else:
         inp = ['-ss', f'{ss}', '-t', f'{dur * speed + 0.3}', '-i', src]
         pre = [f'setpts=(PTS-STARTPTS)/{speed}', f'fps={FPS}']
-    chain = pre + [
-        f'scale={2*W}:{2*H}:force_original_aspect_ratio=increase:flags=lanczos', f'crop={2*W}:{2*H}',
-        f"zoompan=z='{z0}+({z1}-{z0})*on/{nf}':x='(iw-iw/zoom)*{fx}':y='(ih-ih/zoom)*{fy}':d=1:s={W}x{H}:fps={FPS}",
-    ]
-    if stopmo:
-        chain.append(f'fps=12,fps={FPS}')  # look de stop-motion (12 fps)
+    post = []
     if sharpen:
-        chain.append('unsharp=5:5:0.8:5:5:0.0')
-    chain.append('tpad=stop_mode=clone:stop_duration=2')
-    if framed:
-        fw, fh = int(W * framed) // 2 * 2, int(H * framed) // 2 * 2
-        vf = (f"[0:v]{','.join(chain)},split[a][b];[a]scale={W}:{H},boxblur=30:3,eq=brightness=-0.06[bg];"
-              f"[b]scale={fw}:{fh}[fg];[bg][fg]overlay=(W-w)/2:H-h,format=yuv420p[o]")
-        run(['ffmpeg', '-v', 'error', '-y', *inp, '-filter_complex', vf, '-map', '[o]', '-frames:v', str(nf),
-             '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '14', '-r', str(FPS), '-an', out])
-    else:
-        chain.append('format=yuv420p')
-        run(['ffmpeg', '-v', 'error', '-y', *inp, '-vf', ','.join(chain), '-frames:v', str(nf),
-             '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '14', '-r', str(FPS), '-an', out])
+        post.append('unsharp=5:5:0.8:5:5:0.0')
+    b.kb_render(out, inp, pre, nf, z0, z1, fx=fx, fy=fy, post=post, framed=framed, stopmo=stopmo)  # zoom subpíxel (sin saltos)
     if audio:  # voz/ambiente del propio clip (Veo), mismo tramo
         run(['ffmpeg', '-v', 'error', '-y', '-ss', f'{ss}', '-t', f'{dur}', '-i', src, '-vn', '-ac', '1', '-ar', '48000',
              '-af', f'apad=whole_dur={dur}', out.replace('.mp4', '.wav')])

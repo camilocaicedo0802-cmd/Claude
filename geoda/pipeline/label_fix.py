@@ -5,7 +5,7 @@
 - Composición: etiqueta real con la luz/sombra del tubo original, borde suave, dedos (piel) por delante.
 uso: label_fix.py entrada.mp4 salida.mp4 [--quad x0,y0,x1,y1,x2,y2,x3,y3 --qt t] [--roi x0,y0,x1,y1]
 """
-import sys, subprocess, json, argparse
+import sys, os, subprocess, json, argparse
 import numpy as np, cv2
 
 G = '/tmp/claude-0/-home-user-Claude/89fb9332-1428-5876-823c-b89791e99771/scratchpad/geoda'
@@ -88,6 +88,68 @@ def lk_step(prev, nxt, q):
     if M is None:
         return q
     return cv2.transform(q.reshape(-1, 1, 2), M).reshape(4, 2)
+
+def pair_motion(f0, f1, q):
+    """Movimiento del tubo entre dos cuadros (similaridad 3x3) con flujo óptico ida y vuelta sobre la zona de la etiqueta."""
+    g0 = cv2.cvtColor(f0, cv2.COLOR_BGR2GRAY); g1 = cv2.cvtColor(f1, cv2.COLOR_BGR2GRAY)
+    c = q.mean(0); big = (q - c) * 1.12 + c
+    mask = np.zeros_like(g0); cv2.fillConvexPoly(mask, big.astype(np.int32), 255)
+    p0 = cv2.goodFeaturesToTrack(g0, 400, 0.003, 3, mask=mask)
+    if p0 is None or len(p0) < 8:
+        return None
+    lk = dict(winSize=(21, 21), maxLevel=3, criteria=(cv2.TERM_CRITERIA_EPS | cv2.TERM_CRITERIA_COUNT, 40, 0.01))
+    p1, st, _ = cv2.calcOpticalFlowPyrLK(g0, g1, p0, None, **lk)
+    pb, st2, _ = cv2.calcOpticalFlowPyrLK(g1, g0, p1, None, **lk)
+    ok = (st.reshape(-1) == 1) & (st2.reshape(-1) == 1) & (np.linalg.norm((p0 - pb).reshape(-1, 2), axis=1) < 0.4)
+    if ok.sum() < 8:
+        return None
+    model = os.environ.get('LF_MODEL', 'aff')  # afín completa: sigue mejor la inclinación del tubo
+    if model == 'homo':
+        Hm, inl = cv2.findHomography(p0[ok], p1[ok], cv2.RANSAC, 0.8)
+        if Hm is None or inl is None or inl.sum() < 10:
+            return None
+        return Hm.astype(np.float64)
+    est = cv2.estimateAffine2D if model == 'aff' else cv2.estimateAffinePartial2D
+    M, inl = est(p0[ok], p1[ok], method=cv2.RANSAC, ransacReprojThreshold=0.8, maxIters=4000, confidence=0.999)
+    if M is None or inl is None or inl.sum() < 8:
+        return None
+    return np.vstack([M, [0, 0, 1]]).astype(np.float64)
+
+def apply_h(Hm, q):
+    return cv2.perspectiveTransform(q.reshape(-1, 1, 2).astype(np.float64), Hm).reshape(4, 2).astype(np.float32)
+
+def lock_to_tube(frames, det, rough, sigma=12.0):
+    """Etiqueta fija al tubo: el movimiento cuadro a cuadro sale del flujo óptico (sin temblor) y las detecciones SIFT
+    solo corrigen la deriva lenta (promedio gaussiano en el tiempo, sin valores atípicos)."""
+    n = len(frames)
+    A = [np.eye(3)] * n; brk = [False] * n
+    for i in range(1, n):
+        M = pair_motion(frames[i - 1], frames[i], rough[i - 1])
+        if M is None:  # sin puntos: movimiento de la estimación gruesa
+            M2, _ = cv2.estimateAffinePartial2D(rough[i - 1].reshape(-1, 1, 2), rough[i].reshape(-1, 1, 2))
+            M = np.vstack([M2, [0, 0, 1]]) if M2 is not None else np.eye(3); brk[i] = True
+        A[i] = M
+    anchors = [i for i in range(n) if det[i] is not None]
+    r = anchors[len(anchors) // 2]
+    C = [None] * n; C[r] = np.eye(3)
+    for i in range(r + 1, n):
+        C[i] = A[i] @ C[i - 1]
+    for i in range(r - 1, -1, -1):
+        C[i] = np.linalg.inv(A[i + 1]) @ C[i + 1]
+    R = {i: apply_h(np.linalg.inv(C[i]), det[i]) for i in anchors}
+    dev = {}
+    for i in anchors:  # atípicos frente a la mediana local (±15 cuadros): la deriva lenta no cuenta como error
+        near = [R[j] for j in anchors if abs(j - i) <= 15]
+        dev[i] = float(np.abs(R[i] - np.median(np.array(near), axis=0)).max())
+    mad = np.median(list(dev.values()))
+    keep = [i for i in anchors if dev[i] <= max(3.0, 3.0 * mad)] or anchors
+    kt = np.array(keep, np.float64); KR = np.array([R[i] for i in keep], np.float64)
+    out = []
+    for t in range(n):
+        wgt = np.exp(-0.5 * ((kt - t) / sigma) ** 2) + 1e-9
+        Rt = (KR * wgt[:, None, None]).sum(0) / wgt.sum()
+        out.append(apply_h(C[t], Rt))
+    return np.array(out, np.float32), sum(brk), len(keep)
 
 MOTION = 0.0
 
@@ -178,9 +240,10 @@ def main():
     ap.add_argument('--tube', action='store_true', help='recortar la etiqueta a la silueta del tubo')
     ap.add_argument('--wipe', action='store_true', help='borrar toda la zona de la etiqueta antes de pegar la real')
     ap.add_argument('--blank', action='store_true', help='solo borrar el texto de la IA, sin pegar etiqueta')
+    ap.add_argument('--nolock', action='store_true', help='sin fijar al tubo (solo suavizado)')
     ap.add_argument('--keys', help='t:x,y,lado;t:x,y,lado;... posiciones manuales (cuadrado) interpoladas')
     a = ap.parse_args()
-    global FLIP, BLANK, TUBE, WIPE
+    global FLIP, BLANK, TUBE, WIPE, MOTION
     FLIP, BLANK, TUBE, WIPE = a.flip, a.blank, a.tube, a.wipe
     frames, fps, w, h = read_frames(a.src)
     n = len(frames); num, den = map(int, fps.split('/')); fr = num / den
@@ -198,7 +261,6 @@ def main():
                                 '-pix_fmt', 'yuv420p', '-c:a', 'copy', '-shortest', a.dst], stdin=subprocess.PIPE)
         for i in range(n):
             v = np.linalg.norm(Qs[min(n - 1, i + 1)].mean(0) - Qs[max(0, i - 1)].mean(0)) / 2
-            global MOTION
             MOTION = min(2.0, v * 0.12)
             enc.stdin.write(composite(frames[i], Qs[i], 1.0).tobytes())
         enc.stdin.close(); enc.wait(); print('ok (claves)', a.dst); return
@@ -231,11 +293,15 @@ def main():
     for i in range(n - 2, -1, -1):
         if quads[i] is None and quads[i + 1] is not None:
             quads[i] = lk_step(frames[i + 1], frames[i], quads[i + 1])
-    # suavizado temporal (evita temblor)
+    # estimación gruesa (mediana) -> etiqueta fija al tubo (flujo óptico + corrección lenta de la deriva)
     Q = np.array(quads, np.float32)
     k = 5
     Qs = np.array([np.median(Q[max(0, i - k // 2):i + k // 2 + 1], axis=0) for i in range(n)], np.float32)
     Qs = np.array([Qs[max(0, i - 1):i + 2].mean(0) for i in range(n)], np.float32)
+    if len(anchors) >= 2 and not a.nolock:
+        Qs, nbrk, nkeep = lock_to_tube(frames, det, Qs)
+        print(f'  fija al tubo: {nkeep} anclas usadas, {nbrk} cuadros sin flujo')
+    np.save(a.dst + '.quads.npy', Qs)
     enc = subprocess.Popen(['ffmpeg', '-v', 'error', '-y', '-f', 'rawvideo', '-pix_fmt', 'bgr24', '-s', f'{w}x{h}', '-r', fps, '-i', '-',
                             '-i', a.src, '-map', '0:v', '-map', '1:a?', '-c:v', 'libx264', '-preset', 'medium', '-crf', '14',
                             '-pix_fmt', 'yuv420p', '-c:a', 'copy', '-shortest', a.dst], stdin=subprocess.PIPE)
@@ -243,6 +309,8 @@ def main():
     manual = a.quad is not None and len(anchors) <= 1
     for i in range(n):
         st = 1.0 if manual else float(np.clip((10 - dist[i]) / 6.0, 0, 1))
+        v = np.linalg.norm(Qs[min(n - 1, i + 1)].mean(0) - Qs[max(0, i - 1)].mean(0)) / 2
+        MOTION = min(2.0, v * 0.12)  # desenfoque de movimiento como el del clip
         enc.stdin.write(composite(frames[i], Qs[i], st).tobytes())
     enc.stdin.close(); enc.wait()
     json.dump({'anchors': len(anchors), 'n': n}, open(a.dst + '.json', 'w'))

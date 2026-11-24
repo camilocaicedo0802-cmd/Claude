@@ -27,6 +27,42 @@ def dur_of(f):
                                 capture_output=True, text=True).stdout.strip())
 
 # ---------------------------------------------------------------- planos
+def kb_render(out, inp, pre, nf, z0, z1, cx=0.5, cy=0.5, fx=0.5, fy=0.5, post=None, framed=None, stopmo=False):
+    """Ken Burns con precisión de subpíxel (cv2.warpAffine): sin los saltos de 1 px de zoompan,
+    así el plano y la etiqueta del producto se mueven suaves y quietos."""
+    import numpy as np, cv2
+    dvf = pre + [f'scale={W}:{H}:force_original_aspect_ratio=increase:flags=lanczos',
+                 f'crop={W}:{H}:(iw-{W})*{cx}:(ih-{H})*{cy}', 'format=bgr24']
+    dec = subprocess.Popen(['ffmpeg', '-v', 'error', *inp, '-vf', ','.join(dvf), '-f', 'rawvideo', '-pix_fmt', 'bgr24', '-'],
+                           stdout=subprocess.PIPE, stderr=subprocess.DEVNULL)
+    evf = (post or []) + ['format=yuv420p']
+    enc = subprocess.Popen(['ffmpeg', '-v', 'error', '-y', '-f', 'rawvideo', '-pix_fmt', 'bgr24', '-s', f'{W}x{H}', '-r', str(FPS),
+                            '-i', '-', '-vf', ','.join(evf), '-frames:v', str(nf), '-c:v', 'libx264', '-preset', 'veryfast',
+                            '-crf', '14', '-r', str(FPS), '-an', out], stdin=subprocess.PIPE)
+    fsz, last, held, hk = W * H * 3, None, None, -1
+    for k in range(nf):
+        buf = dec.stdout.read(fsz)
+        if len(buf) == fsz:
+            last = np.frombuffer(buf, np.uint8).reshape(H, W, 3)
+        if last is None:
+            raise RuntimeError(f'sin cuadros: {inp}')
+        z = z0 + (z1 - z0) * k / nf
+        x, y = (W - W / z) * fx, (H - H / z) * fy
+        M = np.float32([[z, 0, -x * z], [0, z, -y * z]])
+        fr = cv2.warpAffine(last, M, (W, H), flags=cv2.INTER_CUBIC, borderMode=cv2.BORDER_REFLECT)
+        if framed:  # video reducido abajo sobre el mismo plano desenfocado
+            fw, fh = int(W * framed) // 2 * 2, int(H * framed) // 2 * 2
+            bg = np.clip(cv2.GaussianBlur(fr, (0, 0), 28).astype(np.int16) - 15, 0, 255).astype(np.uint8)
+            bg[H - fh:, (W - fw) // 2:(W - fw) // 2 + fw] = cv2.resize(fr, (fw, fh), interpolation=cv2.INTER_AREA)
+            fr = bg
+        if stopmo:  # look de stop-motion: cada cuadro se sostiene a 12 fps, sin perder cuadros
+            if int(k * 12 / FPS) != hk:
+                hk, held = int(k * 12 / FPS), fr
+            fr = held
+        enc.stdin.write(np.ascontiguousarray(fr).tobytes())
+    dec.stdout.close(); dec.kill(); dec.wait()
+    enc.stdin.close(); enc.wait()
+
 def shot(name, src, dur, ss=0.0, speed=1.0, z0=1.0, z1=1.0, cx=0.5, cy=0.5, still=False, sharpen=False):
     out = f'{TMP}/{name}.mp4'
     nf = round(dur * FPS)
@@ -36,17 +72,7 @@ def shot(name, src, dur, ss=0.0, speed=1.0, z0=1.0, z1=1.0, cx=0.5, cy=0.5, stil
     else:
         inp = ['-ss', f'{ss}', '-t', f'{dur * speed + 0.3}', '-i', src]
         pre = [f'setpts=(PTS-STARTPTS)/{speed}', f'fps={FPS}']
-    vf = pre + [
-        f'scale={2*W}:{2*H}:force_original_aspect_ratio=increase:flags=lanczos',
-        f'crop={2*W}:{2*H}:(iw-{2*W})*{cx}:(ih-{2*H})*{cy}',
-        f"zoompan=z='{z0}+({z1}-{z0})*on/{nf}':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d=1:s={W}x{H}:fps={FPS}",
-    ]
-    if sharpen:
-        vf.append('unsharp=5:5:0.9:5:5:0.0')
-    vf.append('tpad=stop_mode=clone:stop_duration=2')
-    vf.append('format=yuv420p')
-    run(['ffmpeg', '-v', 'error', '-y', *inp, '-vf', ','.join(vf), '-frames:v', str(nf),
-         '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '14', '-r', str(FPS), '-an', out])
+    kb_render(out, inp, pre, nf, z0, z1, cx=cx, cy=cy, post=['unsharp=5:5:0.9:5:5:0.0'] if sharpen else None)
     return out, dur
 
 def screen_shot(name, hold=1.4):

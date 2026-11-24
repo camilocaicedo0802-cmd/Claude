@@ -19,6 +19,9 @@ El montador (`pipeline/builder.py`) ya trae estas reglas por defecto.
    - Si existe una foto real del producto que sirva para la toma, se usa la foto fija (ej. `mano.png`) en vez del clip animado.
    - `label_fix.py`: detecta la etiqueta (SIFT contra la etiqueta real), borra la zona (`--wipe`), pega las letras reales con la luz
      del tubo, la recorta a la silueta del tubo (`--tube`) y deja los dedos por delante. `--flip` = etiqueta invertida.
+   - **Etiqueta quieta sobre el tubo**: se mueve solo con el producto. El movimiento cuadro a cuadro sale del flujo óptico
+     del tubo y la detección solo corrige la deriva lenta (sin temblor ni "nado" de la etiqueta).
+   - **Zoom lento (Ken Burns) con precisión de subpíxel** (no `zoompan` de ffmpeg, que avanza a saltos de 1 px).
    - **Orientación real**: con la piedra hacia abajo (ej. pasándola por el antebrazo) la etiqueta se ve invertida (`--flip`).
    - No hacer zoom digital fuerte sobre el producto en clips de 720p.
    - Ningún texto, subtítulo ni gráfico (X roja, íconos) tapa la etiqueta: el montador detecta su zona en cada plano.
