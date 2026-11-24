@@ -1,0 +1,45 @@
+node_modules
+dist
+.DS_Store
+.env
+
+# Ignore the output video from Git but not videos you import into src/.
+out
+
+# Medios pesados (se descargan de Drive; no se versionan)
+public/crudo/
+public/broll/
+public/sfx/
+public/musica/
+public/proxy/
+public/img/*.mp4
+material/descargas/
+referencia/*.wav
+referencia/*.m4a
+referencia/*.mp4
+!referencia/referencia.mp4
+referencia/frames_2fps/
+referencia/frames_cortes/
+referencia/result_10fps/
+referencia/tipos/t_*.png
+referencia/g.png
+out/
+*.mov
+*.MOV
+modelos/
+public/edit/
+public/matte/
+public/stock/
+public/audio/
+public/sfx_sel/
+material/broll_thumbs/
+material/mixkit/thumbs/
+out/stills/
+
+# Material del cliente: NO se sube (el repositorio es público)
+datos/
+material/
+src/datos/edicion.json
+referencia/*
+!referencia/gemini_sfx*.md
+!referencia/transcripcion_ref.json

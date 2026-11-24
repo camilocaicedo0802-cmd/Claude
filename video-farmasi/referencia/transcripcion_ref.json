@@ -1,0 +1,618 @@
+[
+ {
+  "text": " If",
+  "startMs": 0,
+  "endMs": 140,
+  "timestampMs": 70,
+  "confidence": 0.888
+ },
+ {
+  "text": " you",
+  "startMs": 140,
+  "endMs": 240,
+  "timestampMs": 190,
+  "confidence": 0.997
+ },
+ {
+  "text": " built",
+  "startMs": 240,
+  "endMs": 440,
+  "timestampMs": 340,
+  "confidence": 0.589
+ },
+ {
+  "text": " a",
+  "startMs": 440,
+  "endMs": 580,
+  "timestampMs": 510,
+  "confidence": 0.982
+ },
+ {
+  "text": " successful",
+  "startMs": 580,
+  "endMs": 1060,
+  "timestampMs": 820,
+  "confidence": 0.988
+ },
+ {
+  "text": " medical",
+  "startMs": 1060,
+  "endMs": 1360,
+  "timestampMs": 1210,
+  "confidence": 0.908
+ },
+ {
+  "text": " practice,",
+  "startMs": 1360,
+  "endMs": 1820,
+  "timestampMs": 1590,
+  "confidence": 0.996
+ },
+ {
+  "text": " mostly",
+  "startMs": 2000,
+  "endMs": 2320,
+  "timestampMs": 2160,
+  "confidence": 0.984
+ },
+ {
+  "text": " through",
+  "startMs": 2320,
+  "endMs": 2560,
+  "timestampMs": 2440,
+  "confidence": 0.992
+ },
+ {
+  "text": " referrals,",
+  "startMs": 2560,
+  "endMs": 3040,
+  "timestampMs": 2800,
+  "confidence": 0.969
+ },
+ {
+  "text": " that's",
+  "startMs": 3280,
+  "endMs": 3480,
+  "timestampMs": 3380,
+  "confidence": 0.988
+ },
+ {
+  "text": " a",
+  "startMs": 3480,
+  "endMs": 3500,
+  "timestampMs": 3490,
+  "confidence": 0.997
+ },
+ {
+  "text": " great",
+  "startMs": 3500,
+  "endMs": 3680,
+  "timestampMs": 3590,
+  "confidence": 0.995
+ },
+ {
+  "text": " place",
+  "startMs": 3680,
+  "endMs": 3900,
+  "timestampMs": 3790,
+  "confidence": 0.999
+ },
+ {
+  "text": " to",
+  "startMs": 3900,
+  "endMs": 4080,
+  "timestampMs": 3990,
+  "confidence": 0.999
+ },
+ {
+  "text": " be",
+  "startMs": 4080,
+  "endMs": 4320,
+  "timestampMs": 4200,
+  "confidence": 0.996
+ },
+ {
+  "text": " until",
+  "startMs": 4320,
+  "endMs": 4860,
+  "timestampMs": 4590,
+  "confidence": 0.444
+ },
+ {
+  "text": " you",
+  "startMs": 4860,
+  "endMs": 5220,
+  "timestampMs": 5040,
+  "confidence": 0.997
+ },
+ {
+  "text": " decide",
+  "startMs": 5220,
+  "endMs": 5500,
+  "timestampMs": 5360,
+  "confidence": 0.991
+ },
+ {
+  "text": " to",
+  "startMs": 5500,
+  "endMs": 5720,
+  "timestampMs": 5610,
+  "confidence": 0.997
+ },
+ {
+  "text": " grow",
+  "startMs": 5720,
+  "endMs": 5880,
+  "timestampMs": 5800,
+  "confidence": 0.737
+ },
+ {
+  "text": " on",
+  "startMs": 5880,
+  "endMs": 6000,
+  "timestampMs": 5940,
+  "confidence": 0.995
+ },
+ {
+  "text": " purpose.",
+  "startMs": 6000,
+  "endMs": 6320,
+  "timestampMs": 6160,
+  "confidence": 0.986
+ },
+ {
+  "text": " Referrals",
+  "startMs": 6680,
+  "endMs": 7120,
+  "timestampMs": 6900,
+  "confidence": 0.948
+ },
+ {
+  "text": " are",
+  "startMs": 7120,
+  "endMs": 7220,
+  "timestampMs": 7170,
+  "confidence": 0.995
+ },
+ {
+  "text": " great.",
+  "startMs": 7220,
+  "endMs": 7460,
+  "timestampMs": 7340,
+  "confidence": 0.999
+ },
+ {
+  "text": " They",
+  "startMs": 7700,
+  "endMs": 7780,
+  "timestampMs": 7740,
+  "confidence": 0.983
+ },
+ {
+  "text": " usually",
+  "startMs": 7780,
+  "endMs": 8020,
+  "timestampMs": 7900,
+  "confidence": 0.954
+ },
+ {
+  "text": " come",
+  "startMs": 8020,
+  "endMs": 8280,
+  "timestampMs": 8150,
+  "confidence": 0.996
+ },
+ {
+  "text": " with",
+  "startMs": 8280,
+  "endMs": 8420,
+  "timestampMs": 8350,
+  "confidence": 0.996
+ },
+ {
+  "text": " trust",
+  "startMs": 8420,
+  "endMs": 8640,
+  "timestampMs": 8530,
+  "confidence": 0.787
+ },
+ {
+  "text": " already",
+  "startMs": 8640,
+  "endMs": 9060,
+  "timestampMs": 8850,
+  "confidence": 0.979
+ },
+ {
+  "text": " built",
+  "startMs": 9060,
+  "endMs": 9340,
+  "timestampMs": 9200,
+  "confidence": 0.993
+ },
+ {
+  "text": " in,",
+  "startMs": 9340,
+  "endMs": 9580,
+  "timestampMs": 9460,
+  "confidence": 0.973
+ },
+ {
+  "text": " but",
+  "startMs": 9840,
+  "endMs": 9940,
+  "timestampMs": 9890,
+  "confidence": 0.997
+ },
+ {
+  "text": " there's",
+  "startMs": 9940,
+  "endMs": 10160,
+  "timestampMs": 10050,
+  "confidence": 0.985
+ },
+ {
+  "text": " one",
+  "startMs": 10160,
+  "endMs": 10360,
+  "timestampMs": 10260,
+  "confidence": 0.998
+ },
+ {
+  "text": " problem.",
+  "startMs": 10360,
+  "endMs": 10820,
+  "timestampMs": 10590,
+  "confidence": 0.999
+ },
+ {
+  "text": " You",
+  "startMs": 11080,
+  "endMs": 11160,
+  "timestampMs": 11120,
+  "confidence": 0.991
+ },
+ {
+  "text": " don't",
+  "startMs": 11160,
+  "endMs": 11440,
+  "timestampMs": 11300,
+  "confidence": 0.999
+ },
+ {
+  "text": " completely",
+  "startMs": 11440,
+  "endMs": 11760,
+  "timestampMs": 11600,
+  "confidence": 0.996
+ },
+ {
+  "text": " control",
+  "startMs": 11760,
+  "endMs": 12300,
+  "timestampMs": 12030,
+  "confidence": 0.998
+ },
+ {
+  "text": " when",
+  "startMs": 12300,
+  "endMs": 12920,
+  "timestampMs": 12610,
+  "confidence": 0.875
+ },
+ {
+  "text": " they",
+  "startMs": 12920,
+  "endMs": 13300,
+  "timestampMs": 13110,
+  "confidence": 0.998
+ },
+ {
+  "text": " happen,",
+  "startMs": 13300,
+  "endMs": 13640,
+  "timestampMs": 13470,
+  "confidence": 0.985
+ },
+ {
+  "text": " and",
+  "startMs": 13900,
+  "endMs": 13980,
+  "timestampMs": 13940,
+  "confidence": 0.962
+ },
+ {
+  "text": " that",
+  "startMs": 13980,
+  "endMs": 14140,
+  "timestampMs": 14060,
+  "confidence": 0.384
+ },
+ {
+  "text": " becomes",
+  "startMs": 14140,
+  "endMs": 14360,
+  "timestampMs": 14250,
+  "confidence": 0.996
+ },
+ {
+  "text": " more",
+  "startMs": 14360,
+  "endMs": 14740,
+  "timestampMs": 14550,
+  "confidence": 0.999
+ },
+ {
+  "text": " important",
+  "startMs": 14740,
+  "endMs": 15180,
+  "timestampMs": 14960,
+  "confidence": 0.999
+ },
+ {
+  "text": " when",
+  "startMs": 15180,
+  "endMs": 15600,
+  "timestampMs": 15390,
+  "confidence": 0.95
+ },
+ {
+  "text": " you",
+  "startMs": 15600,
+  "endMs": 15700,
+  "timestampMs": 15650,
+  "confidence": 0.999
+ },
+ {
+  "text": " decide",
+  "startMs": 15700,
+  "endMs": 15980,
+  "timestampMs": 15840,
+  "confidence": 0.995
+ },
+ {
+  "text": " you",
+  "startMs": 15980,
+  "endMs": 16200,
+  "timestampMs": 16090,
+  "confidence": 0.984
+ },
+ {
+  "text": " want",
+  "startMs": 16200,
+  "endMs": 16320,
+  "timestampMs": 16260,
+  "confidence": 0.996
+ },
+ {
+  "text": " to",
+  "startMs": 16320,
+  "endMs": 16440,
+  "timestampMs": 16380,
+  "confidence": 0.999
+ },
+ {
+  "text": " deliberately",
+  "startMs": 16440,
+  "endMs": 16920,
+  "timestampMs": 16680,
+  "confidence": 0.997
+ },
+ {
+  "text": " grow",
+  "startMs": 16920,
+  "endMs": 17340,
+  "timestampMs": 17130,
+  "confidence": 0.994
+ },
+ {
+  "text": " a",
+  "startMs": 17340,
+  "endMs": 17620,
+  "timestampMs": 17480,
+  "confidence": 0.998
+ },
+ {
+  "text": " specific",
+  "startMs": 17620,
+  "endMs": 18180,
+  "timestampMs": 17900,
+  "confidence": 0.999
+ },
+ {
+  "text": " high",
+  "startMs": 18180,
+  "endMs": 18580,
+  "timestampMs": 18380,
+  "confidence": 0.985
+ },
+ {
+  "text": " -value",
+  "startMs": 18580,
+  "endMs": 18800,
+  "timestampMs": 18690,
+  "confidence": 0.558
+ },
+ {
+  "text": " service.",
+  "startMs": 18800,
+  "endMs": 19260,
+  "timestampMs": 19030,
+  "confidence": 0.996
+ },
+ {
+  "text": " You",
+  "startMs": 19640,
+  "endMs": 19740,
+  "timestampMs": 19690,
+  "confidence": 0.995
+ },
+ {
+  "text": " have",
+  "startMs": 19740,
+  "endMs": 19920,
+  "timestampMs": 19830,
+  "confidence": 0.999
+ },
+ {
+  "text": " the",
+  "startMs": 19920,
+  "endMs": 20040,
+  "timestampMs": 19980,
+  "confidence": 0.998
+ },
+ {
+  "text": " capacity,",
+  "startMs": 20040,
+  "endMs": 20440,
+  "timestampMs": 20240,
+  "confidence": 0.998
+ },
+ {
+  "text": " you",
+  "startMs": 20800,
+  "endMs": 20880,
+  "timestampMs": 20840,
+  "confidence": 0.996
+ },
+ {
+  "text": " know",
+  "startMs": 20880,
+  "endMs": 21060,
+  "timestampMs": 20970,
+  "confidence": 0.999
+ },
+ {
+  "text": " the",
+  "startMs": 21060,
+  "endMs": 21220,
+  "timestampMs": 21140,
+  "confidence": 0.974
+ },
+ {
+  "text": " service",
+  "startMs": 21220,
+  "endMs": 21540,
+  "timestampMs": 21380,
+  "confidence": 0.965
+ },
+ {
+  "text": " is",
+  "startMs": 21540,
+  "endMs": 21700,
+  "timestampMs": 21620,
+  "confidence": 0.997
+ },
+ {
+  "text": " valuable,",
+  "startMs": 21700,
+  "endMs": 22100,
+  "timestampMs": 21900,
+  "confidence": 0.998
+ },
+ {
+  "text": " and",
+  "startMs": 22460,
+  "endMs": 22520,
+  "timestampMs": 22490,
+  "confidence": 0.993
+ },
+ {
+  "text": " you",
+  "startMs": 22520,
+  "endMs": 22640,
+  "timestampMs": 22580,
+  "confidence": 0.999
+ },
+ {
+  "text": " don't",
+  "startMs": 22640,
+  "endMs": 22780,
+  "timestampMs": 22710,
+  "confidence": 0.999
+ },
+ {
+  "text": " want",
+  "startMs": 22780,
+  "endMs": 22860,
+  "timestampMs": 22820,
+  "confidence": 0.888
+ },
+ {
+  "text": " to",
+  "startMs": 22860,
+  "endMs": 22960,
+  "timestampMs": 22910,
+  "confidence": 0.998
+ },
+ {
+  "text": " just",
+  "startMs": 22960,
+  "endMs": 23120,
+  "timestampMs": 23040,
+  "confidence": 0.997
+ },
+ {
+  "text": " wait",
+  "startMs": 23120,
+  "endMs": 23420,
+  "timestampMs": 23270,
+  "confidence": 0.998
+ },
+ {
+  "text": " and",
+  "startMs": 23420,
+  "endMs": 23680,
+  "timestampMs": 23550,
+  "confidence": 0.987
+ },
+ {
+  "text": " hope",
+  "startMs": 23680,
+  "endMs": 24020,
+  "timestampMs": 23850,
+  "confidence": 0.972
+ },
+ {
+  "text": " more",
+  "startMs": 24020,
+  "endMs": 24280,
+  "timestampMs": 24150,
+  "confidence": 0.81
+ },
+ {
+  "text": " of",
+  "startMs": 24280,
+  "endMs": 24360,
+  "timestampMs": 24320,
+  "confidence": 0.981
+ },
+ {
+  "text": " those",
+  "startMs": 24360,
+  "endMs": 24480,
+  "timestampMs": 24420,
+  "confidence": 0.998
+ },
+ {
+  "text": " patients",
+  "startMs": 24480,
+  "endMs": 24840,
+  "timestampMs": 24660,
+  "confidence": 0.998
+ },
+ {
+  "text": " find",
+  "startMs": 24840,
+  "endMs": 25220,
+  "timestampMs": 25030,
+  "confidence": 0.989
+ },
+ {
+  "text": " you.",
+  "startMs": 25220,
+  "endMs": 25380,
+  "timestampMs": 25300,
+  "confidence": 0.999
+ }
+]
