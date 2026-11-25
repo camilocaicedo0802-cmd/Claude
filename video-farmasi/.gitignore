@@ -45,3 +45,6 @@ referencia/*
 !referencia/transcripcion_ref.json
 public/lote2/
 material/lote2/
+
+# Segunda referencia (vídeo de terceros): no se sube al repositorio público
+referencia_subs/
