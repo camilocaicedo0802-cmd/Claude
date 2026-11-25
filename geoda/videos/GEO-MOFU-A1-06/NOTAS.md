@@ -30,3 +30,7 @@
 - Camilo: quitar la toma de la ducha que no dice nada. El HA pasa del cajón (hook) directo al agua en la piedra.
 - Para no bajar de 30 s (MOFU) se alargan 0,2-0,3 s camisa, bus, tablero, llegada a casa y lavamanos, y +1,2 s el cierre.
   Principal 30,0 s · K2 31,1 s. El HB sigue en v2 (ahí la ducha sí lleva "Le diste una segunda oportunidad").
+
+## v7 HA / v4 HB (sin rótulo IA, sin residuo, nada estático)
+- Aplicación: k_j_toalla3 (Kling con el mismo cuadro de inicio y fin: piedra intacta, piel limpia).
+- Lavamanos y estante: fondo en video (k_lavamanos / k_estante en ida y vuelta) + producto real compuesto (tools/endcard_anim.py).
