@@ -111,6 +111,8 @@ El montador (`pipeline/builder.py`) ya trae estas reglas por defecto.
     haciendo una acción. Solo tramos con la boca cerrada mientras suena una voz que no es suya (o tomas de espaldas, de lejos
     o en primera persona). Fotos fijas solo para producto, fondos y gráficos.
 37. **Siglas y palabras en inglés** se pronuncian completas y como suenan en español: "POV" se dice "pov" (una palabra), nunca deletreado.
+38. **Nada se repite entre el hook y el cuerpo**: si el guion pone la misma frase en el hook y en el primer plano, en esa
+    variante la frase queda solo en el hook (el plano va sin voz o más corto) y se ajusta la duración para no salir del rango.
 
 ## Entrega
 34. Carpeta `GEODA_60/TOFU|MOFU|BOFU/A1…` con las versiones vigentes, `CTA_alternos/` para los re-exports de CTA y un

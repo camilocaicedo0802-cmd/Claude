@@ -20,3 +20,8 @@
 - "POV" dicho como una sola palabra en español ("pov"), no deletreado. Para Gemini TTS se escribe "Pob:" (con "Pov:" la "p"
   inicial salía débil y sonaba "of"/"uf"; con "POV" lo deletreaba "pi o vi"). Toma elegida por la señal: una sola sílaba y
   la "p" con su cierre y explosión. vo/HA_t.wav = toma nueva. El HB sigue en v2 (no dice POV).
+
+## v4 (solo el hook A: HA y HA_K2)
+- El brief repetía "le diste una segunda oportunidad" en el hook A y en el plano de la ducha. En la variante HA la frase queda
+  solo en el hook; la ducha va sin voz (1,8 s con sonido de ducha) y se alargan lavamanos (3,2 s) y cierre (+0,6 s) para
+  mantener 30 s (MOFU). Montaje: `build_ha.py`. El HB sigue en v2 (ahí la frase se dice una sola vez).
