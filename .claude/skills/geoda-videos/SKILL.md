@@ -22,7 +22,8 @@ Habla siempre en español, con frases simples. Al final de **cada respuesta** ma
 
 ## 1. Reglas que más se rompen (resumen; manda REGLAS_PRODUCCION.md)
 - **Nada se repite**: si el brief pone la misma frase en el hook y en el primer plano (pasó en el A1-06), en esa variante
-  se dice solo en el hook y el plano va sin voz o más corto (ver `geoda/videos/GEO-MOFU-A1-06/build_ha.py`).
+  se dice solo en el hook y ese plano se quita (nada de planos sin voz); se alargan 0,2-0,3 s otros planos con acción
+  y el cierre para no bajar del mínimo de la etapa (ver `geoda/videos/GEO-MOFU-A1-06/build_ha.py`).
 - **Guion exacto del brief**: cada frase tal cual; hooks A y B = dos archivos (HA, HB). Sin precios salvo que Camilo lo pida
   (Black Friday = "Paga 2 lleva 3", sin $). CTA del brief (K1…K7) + pill "Pago contraentrega · Envío gratis".
 - **Zona segura**: ningún texto en los 250 px de arriba, 670 px de abajo ni 140 px de la derecha (el montador ya lo cumple).

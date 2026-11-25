@@ -25,3 +25,8 @@
 - El brief repetía "le diste una segunda oportunidad" en el hook A y en el plano de la ducha. En la variante HA la frase queda
   solo en el hook; la ducha va sin voz (1,8 s con sonido de ducha) y se alargan lavamanos (3,2 s) y cierre (+0,6 s) para
   mantener 30 s (MOFU). Montaje: `build_ha.py`. El HB sigue en v2 (ahí la frase se dice una sola vez).
+
+## v5 (solo el hook A: HA y HA_K2)
+- Camilo: quitar la toma de la ducha que no dice nada. El HA pasa del cajón (hook) directo al agua en la piedra.
+- Para no bajar de 30 s (MOFU) se alargan 0,2-0,3 s camisa, bus, tablero, llegada a casa y lavamanos, y +1,2 s el cierre.
+  Principal 30,0 s · K2 31,1 s. El HB sigue en v2 (ahí la ducha sí lleva "Le diste una segunda oportunidad").
