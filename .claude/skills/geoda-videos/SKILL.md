@@ -94,6 +94,8 @@ Salidas pesadas (clips, mp4) en la carpeta de trabajo `G` (`cat ~/.geoda_work`):
 ## 4. Problemas conocidos
 - Cuota diaria de Gemini TTS (compartida entre chats): una sola petición por personaje y video; `tts_multi.py` prueba varios
   modelos. Si se agota: decirle a Camilo y seguir con lo visual; no cambiar de voz a mitad de un personaje.
+- Palabras en inglés o siglas se dicen como suenan en español: "POV" = una sola palabra "pov" (en el texto para TTS escribir
+  "Pob:"; "POV" lo deletrea y "Pov" a veces se come la "p"). Verificar con STT y contando sílabas en la señal.
 - Gemini texto: usar `gemini-3.1-flash-lite-preview` (los otros suelen estar en 429).
 - Higgsfield por MCP puede estar sin créditos: usar la API REST (`hf.sh`), que sí tiene.
 - Clips de Kling con la etiqueta mala: usar el tramo bueno, cambiar por foto real animada, o `label_fix.py --tube --wipe --fit`

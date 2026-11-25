@@ -110,6 +110,7 @@ El montador (`pipeline/builder.py`) ya trae estas reglas por defecto.
 36. **Avatar siempre en video** (desde el A1-06): nunca imágenes fijas de una persona/avatar; cada vez que sale, es un clip
     haciendo una acción. Solo tramos con la boca cerrada mientras suena una voz que no es suya (o tomas de espaldas, de lejos
     o en primera persona). Fotos fijas solo para producto, fondos y gráficos.
+37. **Siglas y palabras en inglés** se pronuncian completas y como suenan en español: "POV" se dice "pov" (una palabra), nunca deletreado.
 
 ## Entrega
 34. Carpeta `GEODA_60/TOFU|MOFU|BOFU/A1…` con las versiones vigentes, `CTA_alternos/` para los re-exports de CTA y un

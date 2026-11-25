@@ -15,3 +15,8 @@
 - B3: se pasa GEODA (tramo 0-1,5 s del clip, etiqueta de frente, cámara lenta interpolada).
 - B7: llega a casa y cuelga la chaqueta de espaldas, estira el cuello con alivio (los clips de frente entreabrían la boca).
 - Costo extra v2: 5 clips Kling de 3 s (US$1,07) + 1 imagen (US$0,05) = US$1,12. Total A1-06: US$2,72.
+
+## v3 (solo el hook A: HA y HA_K2)
+- "POV" dicho como una sola palabra en español ("pov"), no deletreado. Para Gemini TTS se escribe "Pob:" (con "Pov:" la "p"
+  inicial salía débil y sonaba "of"/"uf"; con "POV" lo deletreaba "pi o vi"). Toma elegida por la señal: una sola sílaba y
+  la "p" con su cierre y explosión. vo/HA_t.wav = toma nueva. El HB sigue en v2 (no dice POV).
