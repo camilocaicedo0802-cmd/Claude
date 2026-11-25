@@ -124,6 +124,10 @@ copia con `python3 geoda/pipeline/tools/nombre_entrega.py --copiar <carpeta_mp4>
   modelos. Si se agota: decirle a Camilo y seguir con lo visual; no cambiar de voz a mitad de un personaje.
 - Palabras en inglés o siglas se dicen como suenan en español: "POV" = una sola palabra "pov" (en el texto para TTS escribir
   "Pob:"; "POV" lo deletrea y "Pov" a veces se come la "p"). Verificar con STT y contando sílabas en la señal.
+- Gemini TTS a veces devuelve un WAV COMPLETO (cabecera RIFF + metadatos al final) en vez de PCM crudo. `tts_multi.py` ya lo
+  detecta (desde el A1-07). Si una toma vieja (`*.wav.pcm` que empieza con `RIFF`) se cortó antes del arreglo, la primera
+  frase trae un clic al inicio y la última un "pop" de ~0,15 s al final: revisar con la media de ventanas de 10 ms (|media| > 0,2
+  = pop) y limpiar el `_t.wav` (silenciar los primeros 6 ms / recortar antes del pop) antes de montar.
 - Gemini texto: usar `gemini-3.1-flash-lite-preview` (los otros suelen estar en 429).
 - Higgsfield por MCP puede estar sin créditos: usar la API REST (`hf.sh`), que sí tiene.
 - Clips de Kling con la etiqueta mala: usar el tramo bueno, cambiar por foto real animada, o `label_fix.py --tube --wipe --fit`

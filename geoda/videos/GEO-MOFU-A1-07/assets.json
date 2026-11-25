@@ -1,0 +1,9 @@
+{
+  "video": "GEO-MOFU-A1-07",
+  "formato": "Faceless / motion graphics (todo animado en Python, sin IA de imagen)",
+  "higgsfield": [],
+  "reales": ["v2frames/producto_cut.png (recorte real de la landing; en el repo: kit/producto/producto_cut.png)", "kit/broll/k_tapa_0.mp4 (B9)"],
+  "voz": "Gemini TTS Zephyr (Valeria), una sola toma: vo/*_t.wav",
+  "sfx_nuevos": ["kit/audio/sfx_alarma.wav", "sfx_crack.wav", "sfx_drip.wav", "sfx_scratch.wav", "sfx_type.wav", "sfx_chime.wav (generados con mg.py sfx)"],
+  "costo_usd": 0
+}

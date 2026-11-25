@@ -1,6 +1,6 @@
 # Lotes de producción GEODA (5 videos por chat, en el orden del brief)
 
-Lote 1 (A1-01 a A1-06) lo hace el primer chat. Los lotes siguen el orden del brief (A1 → A11).
+Lote 1 (A1-01 a A1-07) lo hace el primer chat. Los lotes siguen el orden del brief (A1 → A11).
 Los personajes pueden ser distintos en cada video (no hace falta repetirlos entre videos ni entre chats).
 Voces (Gemini TTS, H = hombre, M = mujer): cada lote tiene dos voces sugeridas (una M y una H) para que dos chats no usen
 la misma voz al mismo tiempo; dentro de un video, cada personaje conserva su voz. Las notas son sugerencias.
@@ -24,13 +24,15 @@ la misma voz al mismo tiempo; dentro de un video, cada personaje conserva su voz
 
 (Sin `/` ni `:`, que no se permiten en nombres de archivo.)
 
-## Lote 2 (4 videos: el A1-06 lo hace el chat del lote 1)
+Formato faceless / motion graphics: referencia `geoda/videos/GEO-MOFU-A1-07/` (`mg.py`: escenas animadas en Python con el
+recorte real del producto, fondo que siempre se mueve, SFX sintetizados; costo US$0).
+
+## Lote 2 (3 videos: el A1-06 y el A1-07 ya los hizo el chat del lote 1)
 | # | Video | Formato | Duración | CTA | Nota |
 |---|---|---|---|---|---|
-| 1 | GEO-MOFU-A1-07 | Faceless / motion graphics | 36 s | 1 piedra te dura 1 año (ahorro) | Faceless/motion: gráficos sobre fotos reales (ref. `pipeline/motion_v3.py`). |
-| 2 | GEO-BOFU-A1-08 | UGC con avatar IA | 21 s | Black Friday | UGC: voz en off storytime, la avatar no mueve los labios (ref. `pipeline/build_a101_v2.py`). |
-| 3 | GEO-TOFU-A2-01 | UGC con avatar IA | 27 s | Paga contraentrega | UGC: voz en off storytime, la avatar no mueve los labios (ref. `pipeline/build_a101_v2.py`). |
-| 4 | GEO-TOFU-A2-02 | Estilo Pixar (3D) | 27 s | Navidad / regalo | Pixar: Geo (la piedra) diseñado a partir de fotos reales de la piedra (misma forma y color); frascos genéricos sin marca; cerrar con 2 s de producto real. |
+| 1 | GEO-BOFU-A1-08 | UGC con avatar IA | 21 s | Black Friday | UGC: voz en off storytime, la avatar no mueve los labios (ref. `pipeline/build_a101_v2.py`). |
+| 2 | GEO-TOFU-A2-01 | UGC con avatar IA | 27 s | Paga contraentrega | UGC: voz en off storytime, la avatar no mueve los labios (ref. `pipeline/build_a101_v2.py`). |
+| 3 | GEO-TOFU-A2-02 | Estilo Pixar (3D) | 27 s | Navidad / regalo | Pixar: Geo (la piedra) diseñado a partir de fotos reales de la piedra (misma forma y color); frascos genéricos sin marca; cerrar con 2 s de producto real. |
 - **Voces sugeridas:** Aoede (M) y Fenrir (H)
 
 ## Lote 3

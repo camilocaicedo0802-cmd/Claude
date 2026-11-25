@@ -257,7 +257,7 @@ def build(cfg, hk, shots):
     for at, src, vol in cfg.get('sfx', {}).get(hk, []) + cfg.get('sfx', {}).get('body', []):
         add(src, at if at >= 0 else rs[cfg['body'][0]['key']] + (-at), vol)
     filt.append(f'{"".join(sfx)}amix=inputs={len(sfx)}:normalize=0[sfx]')
-    filt.append(f'[vo][mus][sfx]amix=inputs=3:normalize=0,atrim=0:{total},loudnorm=I=-14:TP=-1.5:LRA=11,aresample=48000[out]')
+    filt.append(f'[vo][mus][sfx]amix=inputs=3:normalize=0,atrim=0:{total},apad=pad_dur=1.5,loudnorm=I=-14:TP=-1.5:LRA=11,aresample=48000,alimiter=limit=0.84:level=false,atrim=0:{total}[out]')   # el relleno evita el pico de loudnorm al final
     audio = f'{tmp}/audio_{hk}.m4a'
     run(['ffmpeg', '-v', 'error', '-y', *inputs, '-filter_complex', ';'.join(filt), '-map', '[out]', '-c:a', 'aac', '-b:a', '192k', audio])
 

@@ -15,8 +15,12 @@ for M in ['gemini-3.8-flash-lite-tts', 'gemini-3.1-flash-tts-preview', 'gemini-3
                         '-H', 'Content-Type: application/json', '-d', f'@{q}'], capture_output=True, text=True, stdin=subprocess.DEVNULL)
     try:
         d = json.loads(r.stdout); raw = base64.b64decode(d['candidates'][0]['content']['parts'][0]['inlineData']['data'])
-        pcm = out + '.pcm'; open(pcm, 'wb').write(raw)
-        subprocess.run(['ffmpeg', '-v', 'error', '-y', '-f', 's16le', '-ar', '24000', '-ac', '1', '-i', pcm, out], check=True, stdin=subprocess.DEVNULL)
+        if raw[:4] == b'RIFF':   # los modelos nuevos devuelven un WAV COMPLETO (cabecera + metadatos al final): leerlo como PCM crudo
+            src = out + '.src.wav'; open(src, 'wb').write(raw)   # dejaba un clic al inicio y un ruido fuerte al final de la toma
+            subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', src, '-ac', '1', out], check=True, stdin=subprocess.DEVNULL)
+        else:
+            pcm = out + '.pcm'; open(pcm, 'wb').write(raw)
+            subprocess.run(['ffmpeg', '-v', 'error', '-y', '-f', 's16le', '-ar', '24000', '-ac', '1', '-i', pcm, out], check=True, stdin=subprocess.DEVNULL)
         print('OK', M, out); sys.exit(0)
     except Exception:
         print(M, 'fail', r.stdout[:120].replace('\n', ' '), file=sys.stderr)
