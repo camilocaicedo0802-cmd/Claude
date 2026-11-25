@@ -207,3 +207,9 @@ Look: frío/cian en fondos, piel cálida, contraste medio-alto, nítido. Motion 
   - **Transiciones:** cortes secos. Sin light leak ni desenfoques de corte.
   - **Color natural:** contraste ×1,05, saturación ×1,08, sin virado cian ni viñeta.
   - **Sonido:** tecleo suave en los destacados (≤ 4 teclas por palabra, vol. 0,3), swoosh suave (0,2) en los cortes a b-roll y pop en la superposición. Sin impactos graves, risers ni film burn.
+- **Excepción: la parte explicativa de salud lleva apoyo visual** (corrección sobre la v2). Cuando el creador explica un tema técnico o de salud (aquí, la glucosa), ese tramo sí lleva:
+  - **B-roll e imágenes de salud cada 1,0–1,6 s**: comida con glucómetro, azúcar, medición en el dedo, glóbulos en la sangre. Se buscan en bancos con licencia comercial (Unsplash, Mixkit) y se anotan en `public/img/CREDITOS.txt`.
+  - **Datos reales, con fuente y prudencia**: cada dato lleva su fuente en un pie de 25 px (p. ej. "pico 1–2 h", "2–3 h para normalizarse*", estudio del vinagre con "puede"). Las gráficas llevan "Gráfico ilustrativo. No sustituye el consejo médico."
+  - **Motion graphics de la referencia** (fondo azul claro §4.1, titulares condensados cian letra a letra, tarjetas blancas, chips cian), con entrada de desenfoque 18→0 en 12 f y whoosh. Dentro del motion graphic, las palabras dichas las pinta la propia escena, sincronizadas.
+  - **Chips y tarjetas de cristal** sobre el b-roll para explicar (p. ej. "Carbohidratos → Glucosa", barra de tiempo 0–3 h con contador).
+  - Fuera de ese tramo se mantienen las reglas UGC.

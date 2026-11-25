@@ -13,23 +13,37 @@ const teclear = (desde: number, n: number) => {
   for (let i = 0; i < n; i++) add(desde + i * 3, teclas[k++ % teclas.length], 0.3);
 };
 for (const b of BLOQUES) {
-  if (!b.destacado.length) continue;
+  if (!b.destacado.length || b.estilo === "mg") continue;
   const t0 = f(inicio(b.destacado[0]));
   const letras = b.destacado.map((i) => limpio(PALABRAS[i].text)).join("").length;
   const n = Math.min(4, Math.max(2, Math.round(letras / 3)));
   teclear(b.estilo === "detras" ? t0 - 20 : t0 - 8, n);
   if (b.icono) add(t0 + 4, "pop", 0.18);
 }
-// Cortes secos a b-roll y vuelta: swoosh suave
+// Cortes a b-roll / imagen: swoosh suave. Entrada a motion graphic: whoosh (pico a 0,54 s → −32 f).
+// Vuelta al plano hablando: swoosh muy suave (solo si no empieza otra escena justo ahí).
 for (const e of ESCENAS) {
-  add(f(e.desde) - 3, "swoosh_6", 0.2);
-  add(f(e.hasta) - 3, "swoosh_4", 0.14);
+  if (e.tipo === "mg-glucosa" || e.tipo === "mg-grafica") add(f(e.desde) - 32, "whoosh_2", 0.26);
+  else add(f(e.desde) - 3, "swoosh_6", 0.2);
+  if (!ESCENAS.some((o) => Math.abs(o.desde - e.hasta) < 0.01)) add(f(e.hasta) - 3, "swoosh_4", 0.14);
 }
-// Superposición de glucosa: pop al entrar y clic en el chip
-for (const [r, palabra] of [[UI.graficaSube, 58], [UI.graficaBaja, 87]] as const) {
-  add(f(r.desde), "pop", 0.22);
-  add(f(inicio(palabra)) - 6, "click_4", 0.3);
-}
+// Tarjeta de glucosa sobre el plano hablando: pop + clic en el chip "SUBE"
+add(f(UI.graficaSube.desde), "pop", 0.22);
+add(f(inicio(58)) - 6, "click_4", 0.3);
+// Chip "Carbohidratos → Glucosa": pop + clic cuando aparece "Glucosa"
+add(f(UI.carbohidratos.desde) + 6, "pop", 0.22);
+add(f(UI.carbohidratos.desde) + 30, "click_3", 0.3);
+// Tarjeta de tiempo: pop, contador mientras se llena la barra y pop del "2–3 h"
+add(f(UI.tiempo.desde) + 2, "pop", 0.22);
+add(f(UI.tiempo.desde) + 14, "contador", 0.12, 1.0);
+add(f(UI.tiempo.hasta) - 44, "pop", 0.24);
+// Motion graphics: tecleo en los titulares y pops en flechas y dato del estudio
+for (const i of [78, 84, 87]) teclear(f(inicio(i)) - 20, 4);
+add(f(25.4), "pop", 0.2); // chip C6H12O6
+add(f(inicio(84)) - 6, "pop", 0.22); // flecha arriba
+add(f(inicio(87)) - 14, "woosh_5", 0.18); // la curva cae
+add(f(inicio(87)) - 6, "pop", 0.22); // flecha abajo
+add(f(inicio(85)) + 4, "click_4", 0.26); // dato del estudio
 export const SFX: Sfx[] = ev.sort((a, b) => a.at - b.at);
 
 // Música: constante bajo la voz y fundido final de 0,8 s

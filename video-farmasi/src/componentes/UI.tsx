@@ -2,7 +2,7 @@ import { evolvePath } from "@remotion/paths";
 import React from "react";
 import { AbsoluteFill, Img, interpolate, staticFile, useCurrentFrame } from "remotion";
 import { C, F } from "../estilo";
-import { UI } from "../plan";
+import { DATOS, UI } from "../plan";
 import { clamp, eInOut, eOut, f, inicio } from "../util";
 
 // Única superposición del v2: tarjeta oscura con la curva de glucosa (§4.2 "Grow").
@@ -13,7 +13,7 @@ const CAMINOS = {
 };
 export const GraficaGlucosa: React.FC<{ modo: "sube" | "baja" }> = ({ modo }) => {
   const frame = useCurrentFrame();
-  const r = modo === "sube" ? UI.graficaSube : UI.graficaBaja;
+  const r = UI.graficaSube;
   const d = f(r.desde), h = f(r.hasta);
   if (frame < d - 1 || frame > h) return null;
   const pin = interpolate(frame, [d, d + 18], [0, 1], { ...clamp, easing: eOut });
@@ -29,6 +29,7 @@ export const GraficaGlucosa: React.FC<{ modo: "sube" | "baja" }> = ({ modo }) =>
     <AbsoluteFill style={{ opacity: v, scale: String(0.9 + 0.1 * pin), translate: `0px ${(1 - pin) * 60}px` }}>
       <div style={{ position: "absolute", left: 215, top: arriba ? 150 : 1260, width: 650, height: 380, borderRadius: 34, background: `linear-gradient(170deg, ${C.navy1}, ${C.navy2})`, border: "1px solid rgba(120,200,255,0.3)", boxShadow: "0 24px 60px rgba(0,0,0,0.45)", overflow: "hidden" }}>
         <div style={{ position: "absolute", left: 32, top: 20, fontFamily: F.sans, fontWeight: 500, fontSize: 54, color: "#fff" }}>Glucosa</div>
+        {modo === "sube" && <div style={{ position: "absolute", left: 34, bottom: 18, fontFamily: F.sans, fontWeight: 600, fontSize: 28, color: "rgba(160,220,255,0.9)", opacity: pc }}>{DATOS.pico}</div>}
         <svg width={650} height={380} viewBox="0 0 690 420" style={{ position: "absolute", inset: 0 }}>
           {[150, 240, 330].map((y) => <line key={y} x1={30} x2={660} y1={y} y2={y} stroke="rgba(120,200,255,0.25)" strokeWidth={1.5} />)}
           <path d={CAMINOS[modo]} fill="none" stroke="#2EC4F2" strokeWidth={6} strokeLinecap="round" strokeDasharray={ev.strokeDasharray} strokeDashoffset={ev.strokeDashoffset} style={{ filter: "drop-shadow(0 0 10px #2EC4F2)" }} />

@@ -201,7 +201,7 @@ export const CapaFrente: React.FC = () => {
   const frame = useCurrentFrame();
   return (
     <>
-      {BLOQUES.filter((b) => activo(frame, b)).map((b) => {
+      {BLOQUES.filter((b) => b.estilo !== "mg" && activo(frame, b)).map((b) => {
         if (b.estilo === "linea") return <BloqueLinea key={b.desde} b={b} />;
         if (b.estilo === "detras") return <BloqueDetrasFrente key={b.desde} b={b} />;
         if (b.estilo === "tecleada") return <BloqueTecleada key={b.desde} b={b} />;

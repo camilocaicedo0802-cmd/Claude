@@ -2,14 +2,15 @@ import "./fuentes";
 import { Audio } from "@remotion/media";
 import { AbsoluteFill, Sequence, staticFile, useVideoConfig } from "remotion";
 import { ARoll } from "./componentes/ARoll";
-import { BRoll } from "./componentes/Escenas";
+import { BRoll, Imagen } from "./componentes/Escenas";
+import { ChipCarbohidratos, MGGlucosa, MGGrafica, TarjetaTiempo } from "./componentes/MG";
 import { CapaDetras, CapaFrente } from "./componentes/Subtitulos";
 import { GraficaGlucosa } from "./componentes/UI";
-import { ESCENAS } from "./plan";
+import { ESCENAS, UI } from "./plan";
 import { SFX, volumenMusica } from "./sonido";
 import { f } from "./util";
 
-// v2 · estilo UGC sencillo
+// v3 · UGC sencillo + bloque explicativo de glucosa con b-roll de salud y motion graphics
 export const Edicion: React.FC = () => {
   const { fps } = useVideoConfig();
   return (
@@ -18,17 +19,19 @@ export const Edicion: React.FC = () => {
       <ARoll capa="base" />
       <CapaDetras />
       <ARoll capa="persona" />
-
-      {/* Única superposición: tarjeta de glucosa */}
       <GraficaGlucosa modo="sube" />
-      <GraficaGlucosa modo="baja" />
 
-      {/* B-roll propio con corte seco */}
+      {/* B-roll, imágenes de apoyo y motion graphics */}
       {ESCENAS.map((e) => (
-        <Sequence key={e.desde} name={`b-roll ${e.desde}s`} from={f(e.desde)} durationInFrames={f(e.hasta) - f(e.desde)}>
-          <BRoll e={e} />
+        <Sequence key={e.desde} name={`${e.tipo} ${e.desde}s`} from={f(e.desde)} durationInFrames={f(e.hasta) - f(e.desde)}>
+          {e.tipo === "broll" && <BRoll e={e} />}
+          {e.tipo === "imagen" && <Imagen e={e} />}
+          {e.tipo === "mg-glucosa" && <MGGlucosa desde={e.desde} />}
+          {e.tipo === "mg-grafica" && <MGGrafica desde={e.desde} />}
         </Sequence>
       ))}
+      <ChipCarbohidratos desde={UI.carbohidratos.desde} hasta={UI.carbohidratos.hasta} />
+      <TarjetaTiempo desde={UI.tiempo.desde} hasta={UI.tiempo.hasta} />
 
       {/* Subtítulos palabra a palabra */}
       <CapaFrente />
