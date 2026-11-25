@@ -102,11 +102,11 @@ Salidas pesadas (clips, mp4) en la carpeta de trabajo `G` (`cat ~/.geoda_work`):
    ajustar cajas protegidas (tercer elemento del plano), `sub_y`, `hook_slots`, `icon_x`, y volver a montar.
 6. **Entregar cada video apenas esté** (SendUserFile, HA y HB) con su costo en USD (imágenes + segundos de video).
 
-## 2b. Nombre de los archivos (con el ángulo)
-`GEO_[ETAPA]_[ÁNGULO]_[NombreÁngulo]_[NN]_[HOOK]_[FORMATO]_[CTA si es alterno]_v[n].mp4`
-ej. `GEO_TOFU_A2_AxilasMasParejas_01_HA_UGC_v1.mp4`, `GEO_TOFU_A3_PiedraDeVerdad_02_HC_CLAY_K2_v1.mp4`.
-El nombre corto de cada ángulo está en `LOTES.md` (sin espacios, tildes ni signos). En el montaje basta con
-`id='GEO_TOFU_A2_AxilasMasParejas_01'` y, para la versión con CTA alterno, `fmt='UGC_K2'`.
+## 2b. Nombre de los archivos de ENTREGA
+`<Ángulo> GEO <ETAPA>-<A#>-<NN>-Hook <X>.mp4` · ej. `La piedra no te falló GEO MOFU-A1-05-Hook A.mp4`,
+`Axilas que lucen más parejas GEO TOFU-A2-01-Hook C.mp4`. Sin formato ni CTA en el nombre (cada versión tiene su propio
+hook). Corrección de algo ya entregado: ` v2`, ` v3`… al final. Se monta con el nombre técnico de siempre y al entregar se
+copia con `python3 geoda/pipeline/tools/nombre_entrega.py --copiar <carpeta_mp4> <GEODA_60/ETAPA/A#>` (ángulos en `LOTES.md`).
 
 ## 3. Cierre del lote
 - Carpeta `GEODA_60/<TOFU|MOFU|BOFU>/<A#>/` con los mp4 vigentes (CTA alternos en `CTA_alternos/`), `LEEME.txt` (video,

@@ -13,7 +13,7 @@ G = os.environ.get('GEODA_WORK') or open(os.path.expanduser('~/.geoda_work')).re
 sys.path.insert(0, G)
 import builder as B
 AQUI = os.path.dirname(os.path.abspath(__file__))
-ID, ETAPA, ANG, NN, FMT, VERSION = 'GEO_TOFU_A2_AxilasMasParejas_01', 'TOFU', 'A2', '01', 'UGC', 1   # <- llenar (ángulo con su nombre corto, ver LOTES.md)
+ID, ETAPA, ANG, NN, FMT, VERSION = 'GEO_TOFU_A2_01', 'TOFU', 'A2', '01', 'UGC', 1     # <- llenar (nombre técnico; al entregar: tools/nombre_entrega.py)
 OUT = f'{G}/{ID.lower()}'; TMP = f'{OUT}/tmp'; os.makedirs(TMP, exist_ok=True)
 HF, K, VO, AU = f'{G}/hf', f'{G}/kit', f'{AQUI}/vo', f'{G}/kit/audio'
 SPEED = 1.0          # 1.05-1.2 si la voz deja el video largo (TOFU 21-39 s, MOFU 30-51, BOFU 18-24)
