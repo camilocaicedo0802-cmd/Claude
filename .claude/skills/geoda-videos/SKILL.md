@@ -29,6 +29,9 @@ Habla siempre en español, con frases simples. Al final de **cada respuesta** ma
   lo que ya dice la voz (queda el subtítulo; usar íconos o números grandes).
 - **Etiqueta perfecta o sin etiqueta.** Producto real (foto o clip revisado del kit) mínimo 2-3 s y en el cierre.
   Agua solo en la punta de la piedra. Piedra boca abajo → etiqueta invertida.
+- **El avatar SIEMPRE en video haciendo algo** (regla de Camilo): nunca una foto fija de una persona o avatar con zoom.
+  Toda imagen de una persona (cara, cuerpo o sus manos) se anima con Kling y se usa el clip con una acción (oler, rociar,
+  aplicar, abotonarse, escribir, colgar la chaqueta…). Las fotos fijas solo sirven para producto, fondos y gráficos.
 - **Labios**: la voz que se oye es de quien mueve los labios. Avatares UGC = voz en off (la avatar no habla a cámara).
   Personas que hablan (podcast, calle) = WAN 3.0 con audio nativo, **una toma larga por persona** y solo su plano cuando habla.
 - **Dentro de cada video, un personaje = una cara y una voz** (no cambian a mitad del video). Alternar voz de mujer y de
@@ -57,7 +60,10 @@ Salidas pesadas (clips, mp4) en la carpeta de trabajo `G` (`cat ~/.geoda_work`):
      ella como primera referencia ("the SAME woman as the first reference…"). Producto: las 2 URLs de `kit/README.md`.
    - Video sin diálogo: `kling-video/v3.0/std/image-to-video` · `{"prompt":…,"image_url":…,"duration":3-5,"sound":"off",
      "cfg_scale":0.6}` (US$0,071/s). En personas: "She does not speak, lips stay closed". Producto: "keeps exactly the same
-     shape and label", sin giros.
+     shape and label", sin giros. Kling suele entreabrir la boca al exhalar o sonreír: revisar la boca cuadro a cuadro y usar
+     solo los tramos con la boca cerrada; si no alcanzan, pedir la acción de espaldas, de perfil lejano o en primera persona
+     (manos) para que no se vea la boca. Para estirar un tramo bueno: cámara lenta con interpolación
+     (`ffmpeg -vf "setpts=PTS/0.6,minterpolate=fps=30:mi_mode=mci:mc_mode=aobmc:vsbmc=1"`), nunca congelar una foto.
    - Video con diálogo: `alibaba/wan-3.0/image-to-video` · `{"prompt":…,"image_url":…,"duration":≤15,"resolution":"720p",
      "generate_audio":true}` (US$0,075/s); en el prompt las frases exactas entre «», acento colombiano, "lips perfectly synced".
    - Hooks y planos del producto que deben moverse: animar la **foto real** en Python (destellos, giros, tachado, X que cae,

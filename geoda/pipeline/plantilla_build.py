@@ -47,6 +47,8 @@ def build_shots(cfg):
     d = {r['key']: r['dur'] for r in [dict(key=h, **cfg['hooks'][h]) for h in cfg['hooks']] + cfg['body']}
     # B.shot(tmp, nombre, fuente, duración, ss=inicio, speed=, z0/z1=zoom, fx/fy=punto del zoom, still=foto, stopmo=12 fps)
     # + ([cajas],) opcional: zonas que ningún texto tapa (cara, piedra, etiqueta). Sin caja: detecta caras/etiqueta solo.
+    # REGLA: personas/avatares siempre en clip de video con una acción (Kling); still=True solo para producto, fondos y gráficos.
+    # (Ojo: los montajes del A1-01 al A1-05 son anteriores a esta regla y tienen algunas fotos fijas de personas: no copiarlas.)
     return {
         'HA': [B.shot(T, 'ha', f'{K}/producto/mano.png', d['HA'], still=True, z0=1.0, z1=1.08) + ([(330, 560, 760, 1300)],)],
         'HB': [B.shot(T, 'hb', f'{K}/broll/k_tapa_0.mp4', d['HB'], z0=1.0, z1=1.1)],

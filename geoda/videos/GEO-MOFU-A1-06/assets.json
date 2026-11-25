@@ -189,5 +189,80 @@
    "sound": "off",
    "cfg_scale": 0.6
   }
+ },
+ "k_j_cajon": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2130c-9391-7d25-84df-76207a8b6e98/63b707b8-92f1-49a3-abef-d51de8fb85e6.mp4"
+  ],
+  "body": {
+   "prompt": "First-person POV: the hand lifts the GEODA stick a little out of the dusty drawer toward the camera and a soft puff of grey dust blows off it toward the camera and floats in the window light. The GEODA stick keeps exactly the same shape and label, the label stays facing the camera, the stick does not rotate. Realistic handheld smartphone video.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2111b-b075-7a32-b8f1-21e9c5d4aa7b/e64b7c16-fcf8-467d-8e71-d4010d175c08.png",
+   "duration": 3,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "k_j_mama": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2130c-94f0-7cf8-b023-e0788f966be4/4a30a206-675e-4478-9971-334fecdaa596.mp4"
+  ],
+  "body": {
+   "prompt": "The camera slowly pushes in toward the old printed photo taped to the mirror, a man's hand with light-brown skin enters from the right and gently straightens the corner of the photo with one finger. The photo is a still printed picture: nothing inside the photo moves. Nobody appears in the mirror. Realistic handheld smartphone video, morning light.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2111b-b1b7-7662-a9d2-39830cf6c005/3a7d9fb7-4a6c-489e-bb63-e4c0c6c16873.png",
+   "duration": 3,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "k_j_toalla": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2130c-9639-7599-84bf-992ef4fcf812/91b2dfe7-ba2e-4e8f-85e5-84fe3b10d92c.mp4"
+  ],
+  "body": {
+   "prompt": "The man calmly passes the GEODA stick over his underarm twice with slow strokes, relaxed, then lowers the stick a little. He does not speak, lips stay closed the whole time. The GEODA stick keeps exactly the same shape and label, the label stays facing the camera, the stick does not rotate. Realistic handheld smartphone video, soft morning light.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2111b-af2d-7cc4-99bc-ae4d58a9910b/5ed5013f-5f4f-461f-ad24-3db43b142381.png",
+   "duration": 3,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "k_j_casa2": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2130c-97a0-70b6-8f01-0fa23dc45419/bec18ac2-672c-4a5a-9851-171bcc0f3fac.mp4"
+  ],
+  "body": {
+   "prompt": "The man slips off his dark jacket from his shoulders, lets his shoulders drop and gives a relieved, calm closed-mouth smile to the camera, breathing out through his nose. He does not speak and never opens his mouth, lips stay closed the whole time. Realistic handheld smartphone video, warm evening light.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2111c-c3cf-717b-91c4-62d5ae37f7ab/6e335a0c-12c8-4b14-bf7d-1781dcbd77a4.png",
+   "duration": 3,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "j_casa_back": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21314-6c0b-78bc-a39d-bce7ad72a5ff/56527ab4-48bd-4aa3-8a7f-d05a2fe576f6.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2111c-c3cf-717b-91c4-62d5ae37f7ab/6e335a0c-12c8-4b14-bf7d-1781dcbd77a4.png"
+   ],
+   "prompt": "Vertical 9:16 realistic smartphone photo, warm evening lamp light, 6 pm dusk through the window. The SAME man as the first reference (same short dark hair, same light blue dress shirt and dark navy jacket) seen from behind at the entrance of his Colombian apartment, hanging his dark navy jacket on a wall coat hook next to the door, keys on a small table. His face is not visible (back to the camera). Full upper body in frame. No text, no logos."
+  }
+ },
+ "k_j_casa_back": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21314-f4de-79e6-ad39-f7f1c4c772cd/d1be638d-c375-4e2f-952d-12098e0a0701.mp4"
+  ],
+  "body": {
+   "prompt": "The man hangs his jacket on the hook, lets his shoulders drop and stretches his neck with a relieved sigh, still with his back to the camera; his face is never shown. Realistic handheld smartphone video, warm evening light.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21314-6c0b-78bc-a39d-bce7ad72a5ff/56527ab4-48bd-4aa3-8a7f-d05a2fe576f6.png",
+   "duration": 3,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
  }
 }
