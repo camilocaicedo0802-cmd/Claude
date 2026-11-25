@@ -106,6 +106,8 @@ El montador (`pipeline/builder.py`) ya trae estas reglas por defecto.
 33. **Hooks animados sobre fotos reales** (destellos, tachado, X que cae, reloj) en vez de pedirle a la IA que mueva el
     producto: la etiqueta queda perfecta. Los subtítulos no tapan la piedra ni la etiqueta (`sub_y` por fila si hace falta).
 
+35. **Personajes**: pueden ser distintos en cada video; dentro de un video, cada personaje conserva su cara y su voz.
+
 ## Entrega
 34. Carpeta `GEODA_60/TOFU|MOFU|BOFU/A1…` con las versiones vigentes, `CTA_alternos/` para los re-exports de CTA y un
     `LEEME.txt`; se envía también como .zip.

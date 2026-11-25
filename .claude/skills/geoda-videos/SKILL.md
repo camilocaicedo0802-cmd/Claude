@@ -31,23 +31,18 @@ Habla siempre en español, con frases simples. Al final de **cada respuesta** ma
   Agua solo en la punta de la piedra. Piedra boca abajo → etiqueta invertida.
 - **Labios**: la voz que se oye es de quien mueve los labios. Avatares UGC = voz en off (la avatar no habla a cámara).
   Personas que hablan (podcast, calle) = WAN 3.0 con audio nativo, **una toma larga por persona** y solo su plano cuando habla.
-- **Una voz fija por personaje** (`geoda/kit/VOCES.md`). Alternar voz de mujer y de hombre entre videos del lote.
+- **Dentro de cada video, un personaje = una cara y una voz** (no cambian a mitad del video). Alternar voz de mujer y de
+  hombre entre videos del lote.
 - **Rótulo "Recreación con IA"** (lo pone el montador con `ai_label=True`) en avatares, entrevistas, podcast, testimonios generados.
 - **Ritmo**: plano nuevo cada 2,5-3 s, sin pausas > 0,3 s, efecto de sonido en cada corte. Duración TOFU 21-39 s,
   MOFU 30-51 s, BOFU 18-24 s (usar `speed` 1.05-1.2 si sobra).
 - **Compliance**: sin primeros planos de axila (planos medios con ropa), no decir "24 horas", "100 % natural",
   "sin aluminio", "antitranspirante" ni segundos de aplicación. Founder y reseñas NO se inventan: pedir material real.
 
-## 1b. Personajes recurrentes (aparecen en varios lotes/chats)
-Geo (Pixar), podcast, presentador de calle, Sofía (clay), Andrés (demo), Camila (UGC): usar siempre la misma imagen de
-referencia (`geoda/kit/personajes/`, `geoda/videos/*/assets.json`) y la voz de `geoda/kit/VOCES.md`.
-Si el lote necesita un personaje recurrente que todavía no está en el kit (p. ej. la hoja de Geo):
-1. Buscarlo en las ramas de los otros chats: `git fetch -q origin '+refs/heads/claude/*:refs/remotes/origin/claude/*'` y
-   `for b in $(git branch -r --list 'origin/claude/*'); do git ls-tree -r --name-only $b -- geoda/kit/personajes/geo | grep -q . && echo $b; done`
-   → si aparece: `git checkout <rama> -- geoda/kit/personajes/geo`.
-2. Si no existe en ninguna rama: crearlo (Geo: hoja de personaje estilo Pixar hecha a partir de las fotos reales de la
-   piedra, misma forma y color; 3-4 poses), guardarlo en `geoda/kit/personajes/<nombre>/` con `PROMPT.md` y sus URLs,
-   registrar la voz en VOCES.md y hacer commit + push de inmediato, antes de seguir, para que los otros chats lo encuentren.
+## 1b. Personajes
+Los personajes **pueden ser distintos en cada video** (decisión de Camilo): no hace falta repetir a Geo, al presentador ni
+al podcast entre videos o chats. Si algo del kit sirve (`geoda/kit/personajes/`, `geoda/videos/*/assets.json`), se puede
+reutilizar para ahorrar, pero no es obligatorio. Para personajes nuevos, preferir las dos voces del lote (`LOTES.md`).
 
 ## 2. Flujo por video
 Carpeta del video en el repo: `geoda/videos/<ID>/` (build.py, motion.py si hay, `vo/`, `assets.json`, `NOTAS.md`).
@@ -58,7 +53,7 @@ Salidas pesadas (clips, mp4) en la carpeta de trabajo `G` (`cat ~/.geoda_work`):
    `assets.json` de otros videos (`python3 G/tools/assets.py fetch <assets.json> G/hf`).
 2. **Generar** (desde `G/hf`, con `./hf.sh submit <endpoint> <nombre>.body.json <nombre>` y `./hf.sh wait <nombre> 900`):
    - Imagen: `marketing-studio/image` · `{"resolution":"1k","aspect_ratio":"9:16","quality":"medium","enhance_prompt":false,
-     "prompt":…,"image_urls":[referencias]}` (US$0,053). Personaje recurrente: primero una imagen maestra y luego las demás con
+     "prompt":…,"image_urls":[referencias]}` (US$0,053). Personaje con varias escenas en el video: primero una imagen maestra y luego las demás con
      ella como primera referencia ("the SAME woman as the first reference…"). Producto: las 2 URLs de `kit/README.md`.
    - Video sin diálogo: `kling-video/v3.0/std/image-to-video` · `{"prompt":…,"image_url":…,"duration":3-5,"sound":"off",
      "cfg_scale":0.6}` (US$0,071/s). En personas: "She does not speak, lips stay closed". Producto: "keeps exactly the same
@@ -85,8 +80,8 @@ Salidas pesadas (clips, mp4) en la carpeta de trabajo `G` (`cat ~/.geoda_work`):
 ## 3. Cierre del lote
 - Carpeta `GEODA_60/<TOFU|MOFU|BOFU>/<A#>/` con los mp4 vigentes (CTA alternos en `CTA_alternos/`), `LEEME.txt` (video,
   duración, voz, CTA) y `.zip`; enviarlo con SendUserFile.
-- Commit y push a la rama de **este** chat solo de lo propio: `geoda/videos/<IDs del lote>/`, voces nuevas en
-  `geoda/kit/VOCES.md`, recursos nuevos reutilizables en `geoda/kit/`. No subir mp4 finales ni clips pesados (van en assets.json).
+- Commit y push a la rama de **este** chat solo de lo propio: `geoda/videos/<IDs del lote>/`, voces usadas en
+  `geoda/kit/VOCES.md` (como referencia), recursos nuevos reutilizables en `geoda/kit/`. No subir mp4 finales ni clips pesados (van en assets.json).
   Cambios al montador (`builder.py` y tools) solo si son compatibles con lo anterior, y decirlo en el commit y a Camilo.
 - Resumen final: videos entregados, costo por video y total, y lo pendiente (p. ej. founder sin material real).
 

@@ -1,4 +1,6 @@
-# Voces fijas por personaje (Gemini TTS, una sola petición por personaje y video con tools/tts_multi.py)
+# Voces usadas (referencia; Gemini TTS, una sola petición por personaje y video con tools/tts_multi.py)
+
+Los personajes pueden cambiar entre videos; dentro de un video cada personaje conserva su voz.
 
 | Personaje | Voz | Perfil (director's notes) | Usado en |
 |---|---|---|---|
@@ -11,5 +13,5 @@
 | Narrador Pixar (H) | Charon | narrador de cuento animado, cálido | (desde A2-02) |
 | Narradora faceless/motion (M) | Zephyr | explicativa, clara, ritmo ágil | (desde A1-07) |
 
-Personajes nuevos: cada lote usa sus dos voces asignadas en LOTES.md (una M y una H).
+Cada lote tiene dos voces sugeridas en LOTES.md (una M y una H).
 Agregar aquí cada personaje nuevo (y su voz) al crearlo, para que otros videos lo repitan igual.
