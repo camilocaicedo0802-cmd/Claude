@@ -1,14 +1,15 @@
 import React from "react";
 import { Video } from "@remotion/media";
 import { AbsoluteFill, Easing, Img, interpolate, spring, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
-import { GP, HN } from "./fuentes";
+import { HN } from "./fuentes";
+import { LILA } from "./Subtitulos2";
 
 const cl = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
 const eOut = Easing.bezier(0.16, 1, 0.3, 1);
 const eInOut = Easing.bezier(0.65, 0, 0.35, 1);
 
 export type Segmento = { i: number; clip: string; enc: string; editStart: number; dur: number; a: number };
-export type Golpe = { t: number; fuerza?: number; dur?: number }; // zoom de remate (chiste)
+export type Golpe = { t: number; fuerza?: number; dur?: number; temblor?: number }; // zoom de remate (chiste), con temblor opcional en px
 
 // A-roll: el vídeo ya viene reencuadrado desde el 4K. Aquí solo damos vida: empuje lento por toma
 // (1,00 → 1,035) y "golpes" de zoom rápidos en los remates cómicos.
@@ -19,13 +20,20 @@ export const ARollL2: React.FC<{ src: string; segmentos: Segmento[]; golpes?: Go
   const seg = segmentos.find((s) => t >= s.editStart && t < s.editStart + s.dur) ?? segmentos[segmentos.length - 1];
   const u = Math.min(1, Math.max(0, (t - seg.editStart) / seg.dur));
   let s = 1 + 0.035 * u;
+  let dx = 0;
+  let dy = 0;
   for (const g of golpes) {
     const d = g.dur ?? 0.9;
     const k = interpolate(t, [g.t - 0.05, g.t + 0.07, g.t + d, g.t + d + 0.25], [0, 1, 1, 0], { ...cl, easing: eOut });
     s *= 1 + (g.fuerza ?? 0.1) * k;
+    if (g.temblor && t >= g.t && t < g.t + 0.45) {
+      const a = g.temblor * (1 - (t - g.t) / 0.45);
+      dx += Math.sin(t * 95) * a;
+      dy += Math.cos(t * 77) * a * 0.7;
+    }
   }
   return (
-    <AbsoluteFill style={{ scale: String(s), transformOrigin: "50% 38%" }}>
+    <AbsoluteFill style={{ scale: String(s), transformOrigin: "50% 38%", translate: `${dx.toFixed(1)}px ${dy.toFixed(1)}px` }}>
       <Video
         src={staticFile(src)}
         muted
@@ -118,10 +126,10 @@ export const TarjetaFoto: React.FC<{
             padding: "60px 26px 22px",
             background: "linear-gradient(180deg, rgba(0,0,0,0), rgba(20,8,40,.6))",
             color: "#fff",
-            fontFamily: GP,
-            fontWeight: 600,
+            fontFamily: HN,
+            fontWeight: 800,
             fontSize: 46,
-            letterSpacing: "-0.015em",
+            letterSpacing: "-0.03em",
             textAlign: "center",
           }}
         >
@@ -232,7 +240,6 @@ export const CierreFoto: React.FC<{ src: string; t: number; titulo: string; sub:
   const kb = interpolate(k, [0, 4 * fps], [1.12, 1.0], cl);
   const tt = interpolate(k, [10, 26], [0, 1], { ...cl, easing: eOut });
   const st = interpolate(k, [22, 38], [0, 1], { ...cl, easing: eOut });
-  const luz = interpolate(k, [18, 42], [0, 1], { ...cl, easing: eInOut });
   return (
     <AbsoluteFill style={{ opacity: e, backgroundColor: "#1B0F33" }}>
       <Img src={staticFile(src)} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 30%", scale: String(kb), filter: `blur(${(1 - e) * 10}px)` }} />
@@ -240,22 +247,12 @@ export const CierreFoto: React.FC<{ src: string; t: number; titulo: string; sub:
       <div style={{ position: "absolute", left: 0, right: 0, top: 1300, textAlign: "center" }}>
         <div
           style={{
-            fontFamily: GP, fontWeight: 600, fontSize: 104, letterSpacing: "-0.015em", color: "#fff", lineHeight: 0.95,
+            fontFamily: HN, fontWeight: 800, fontSize: 100, letterSpacing: "-0.035em", color: LILA, lineHeight: 0.95,
             opacity: tt, filter: `blur(${(1 - tt) * 4}px)`, translate: `0px ${(1 - tt) * 10}px`, textShadow: "0 3px 16px rgba(0,0,0,.35)",
           }}
         >
           {titulo}
         </div>
-        <svg width={620} height={30} style={{ display: "block", margin: "6px auto 0" }}>
-          <defs>
-            <clipPath id="cierreLuz"><rect x={0} y={0} width={620 * luz} height={30} /></clipPath>
-            <filter id="cierreBlur"><feGaussianBlur stdDeviation={5} /></filter>
-          </defs>
-          <g clipPath="url(#cierreLuz)">
-            <path d="M20 20 Q310 6 600 12" stroke="#B184F5" strokeWidth={9} fill="none" strokeLinecap="round" filter="url(#cierreBlur)" />
-            <path d="M20 20 Q310 6 600 12" stroke="#EFE4FF" strokeWidth={4} fill="none" strokeLinecap="round" />
-          </g>
-        </svg>
         <div
           style={{
             marginTop: 26, display: "inline-flex", alignItems: "center", gap: 16, padding: "18px 36px 18px 22px", borderRadius: 999,

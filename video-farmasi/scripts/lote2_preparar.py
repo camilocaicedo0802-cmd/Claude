@@ -155,9 +155,9 @@ def alinear(toks, ws, s):
 # ---------- medidas reales de las fuentes ----------
 from PIL import ImageFont
 FUENTES = {"ctx": ImageFont.truetype("public/fuentes/cliente/HelveticaNeue-Medium.otf", 200),
-           "clave": ImageFont.truetype("public/fuentes/cliente/GeorgiaPro-SemiBold.ttf", 200)}
-TRACK = {"ctx": -0.035, "clave": -0.015}
-TAM = {"ctx": 64, "clave": 104}
+           "clave": ImageFont.truetype("public/fuentes/cliente/HelveticaNeue-Heavy.otf", 200)}
+TRACK = {"ctx": -0.035, "clave": -0.03}
+TAM = {"ctx": 64, "clave": 96}
 ESPACIO = 0.25
 MAX_CTX = 700  # px
 MAX_CLAVE = 880
@@ -244,6 +244,27 @@ for i, b in enumerate(bloques):
             w = ancho_linea(l["p"], "clave")
             if w > MAX_CLAVE: l["escala"] = round(MAX_CLAVE / w, 3)
     del b["_key"]
+
+# Nada pisa la cara (corrección de la clienta): si el bloque choca con una cara detectada (scripts/caras.py), baja por debajo de la barbilla
+ALTO = {"ctx": 0.95, "clave": 0.86}
+p_caras = f"src/lote2/datos/{VID}_caras.json"
+if os.path.exists(p_caras):
+    caras = json.load(open(p_caras))["caras"]
+    movidos = 0
+    for b in bloques:
+        w = max(ancho_linea(l["p"], l["tipo"]) * l.get("escala", 1) for l in b["lineas"]) + (80 if b.get("lado") else 0)
+        h = sum(TAM[l["tipo"]] * l.get("escala", 1) * ALTO[l["tipo"]] for l in b["lineas"])
+        x0, x1 = b["x"] - w / 2 - 20, b["x"] + w / 2 + 20
+        def choca(y):
+            y0, y1 = y - h / 2 - 14, y + h / 2 + 14
+            return [c for t, cc in caras if b["desde"] - 0.1 <= t <= b["hasta"] + 0.1 for c in cc
+                    if c[0] - 20 < x1 and c[0] + c[2] + 20 > x0 and c[1] - 20 < y1 and c[1] + c[3] + 24 > y0]
+        cs = choca(b["y"])
+        if cs:
+            nuevo = max(c[1] + c[3] for c in cs) + 40 + h / 2
+            b["y"] = round(min(nuevo, 1590 - h / 2)); movidos += 1
+            if choca(b["y"]): print(f"  AVISO: el bloque de {b['desde']:.2f}s sigue tocando una cara")
+    print(f"  caras: {movidos} bloques bajados para no tapar caras")
 
 json.dump({"duracionS": round(TOTAL, 4),
            "segmentos": [{"i": s["i"], "clip": s["clip"], "enc": s["enc"], "editStart": round(s["editStart"], 4), "dur": round(s["dur"], 4),

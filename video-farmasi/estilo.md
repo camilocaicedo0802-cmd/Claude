@@ -258,9 +258,16 @@ Calibrado escribiendo "If your defination of / success" con cada combinación ju
 
 ### Implementación (vídeos del lote 2)
 - Componente `src/lote2/Subtitulos2.tsx`; bloques generados por `scripts/lote2_preparar.py` desde el guion de cada vídeo (`datos/lote2/<vid>_guion.py`, no versionado), con anchos medidos con la fuente real.
-- Tamaños finales: contexto **64 px**, clave **104 px** (≈ 1,6 ×); hasta 2 líneas de contexto de ≤ 700 px + 1 línea clave (≤ 880 px; si es más larga se reduce).
+- Tamaños finales: contexto **64 px**, clave **96 px** en Helvetica Neue Heavy lila (≈ 1,5 ×; ver correcciones v2); hasta 2 líneas de contexto de ≤ 700 px + 1 línea clave (≤ 880 px; si es más larga se reduce).
 - Bloque = frase hasta la palabra clave; se corta también al cambiar de quien habla, en pausas > 0,55 s o con "/" en el guion.
-- Línea de luz lila bajo la clave: trazo tipo pincel (ancho 1,04 × la palabra), núcleo `#EFE4FF` + resplandor `#B184F5`, se dibuja en 20 f.
+- ~~Línea de luz lila bajo la clave~~ → eliminada por la clienta (v2).
 - Diálogos: triángulo junto a la primera línea apuntando a quien habla — amarillo `#F6D25A` (Chiqui, derecha) y rosa `#F5A3C7` (Gordi, izquierda).
 - Legibilidad sobre pared blanca: degradado morado oscuro muy suave en la mitad inferior (0 → 0,42) + sombra `0 2px 10px rgba(0,0,0,.35)` y una sombra ancha `0 6px 26px rgba(24,10,48,.30)`.
 - Subtítulos a la altura del pecho (y ≈ 1265 px), desplazados hacia quien habla.
+
+### Correcciones de la clienta (lote 2, v2) — mandan sobre lo anterior
+- **Palabra resaltada: Helvetica Neue Heavy** (800), **color morado/lila** y **sin subrayado** (se quita la línea de luz). El contexto sigue en Helvetica Neue Medium blanca.
+- **Nada pisa la cara** de las personas: ni subtítulos, ni fotos, ni gráficos. Se detectan las caras de cada plano (`scripts/caras.py`, YuNet) y los subtítulos bajan solos si chocan; tarjetas y gráficos van en la zona libre de cada plano.
+- **Sin emojis** en los vídeos (le quitan seriedad). Iconos, si hacen falta, en línea vectorial lila.
+- **Vídeos de producto/testimonio: motion graphics** (cortes a fondo lavanda con listas, barras y títulos animados en Helvetica Neue Heavy; los subtítulos se ocultan mientras el gráfico dice lo mismo).
+- **Sketch / diálogo: recursos de humor** que no dependan de emojis: etiquetas de personaje tipo sitcom, zooms de remate con temblor, contador de años, visor "REC", tragamonedas "???", lista de "requisitos" con ✗/✓, destellos vectoriales.
