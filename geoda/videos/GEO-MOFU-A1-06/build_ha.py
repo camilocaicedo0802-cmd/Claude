@@ -7,7 +7,7 @@ spec = importlib.util.spec_from_file_location('b106', f'{AQUI}/build_a106.py'); 
 sys.argv = ['x']; spec.loader.exec_module(m)
 EXTRA = {'B4': 0.2, 'B5': 0.3, 'B6': 0.3, 'B7': 0.2, 'B8': 0.5}
 def ha_cfg(cfg, extra_cierre):
-    c = copy.deepcopy(cfg); c['version'] = 7
+    c = copy.deepcopy(cfg); c['version'] = 8
     for r in c['body']:
         r['dur'] += EXTRA.get(r['key'], 0.0)
         if r['key'] == 'B9':

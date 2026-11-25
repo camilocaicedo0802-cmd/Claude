@@ -34,3 +34,8 @@
 ## v7 HA / v4 HB (sin rótulo IA, sin residuo, nada estático)
 - Aplicación: k_j_toalla3 (Kling con el mismo cuadro de inicio y fin: piedra intacta, piel limpia).
 - Lavamanos y estante: fondo en video (k_lavamanos / k_estante en ida y vuelta) + producto real compuesto (tools/endcard_anim.py).
+
+## v8 HA / v5 HB (ninguna escena estática)
+- Pasadas visibles sin residuo: k_j_toalla2 tramo limpio 0,1-1,05 s en ida, vuelta e ida (k_j_pasadas). Ojo: Kling con el
+  mismo cuadro de inicio y fin (k_j_toalla3/4) dejaba la escena casi quieta: no sirve como plano principal.
+- Lavamanos: acercamiento 1,00 -> 1,14; estante: 1,00 -> 1,24 (más el fondo en video y el brillo del producto).

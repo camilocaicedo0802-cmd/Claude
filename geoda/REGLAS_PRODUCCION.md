@@ -120,8 +120,8 @@ El montador (`pipeline/builder.py`) ya trae estas reglas por defecto.
     brillo) o fondo en video + producto compuesto cuadro a cuadro (`tools/endcard_anim.py`). Cierre: `kit/producto/endcard_bano_anim.mp4`.
 40. **La piedra no deja residuo**: nunca marca blanca, espuma, polvo, crema ni rastro tipo roll-on en la piel o la ropa; la piedra
     es un cristal translúcido que no cambia de forma. Revisar la piel cuadro a cuadro después de cada pasada y usar solo los tramos
-    limpios. Truco que funciona: Kling con el mismo cuadro de inicio y de fin (`last_image_url` = `image_url`) para que el clip
-    termine con la piel limpia; en el antebrazo, el tramo inicial antes de que aparezca brillo.
+    limpios. Truco que funciona: el tramo limpio del clip en ida y vuelta (parece pasadas suaves); en el antebrazo, el tramo inicial
+    antes de que aparezca brillo. (Kling con el mismo cuadro de inicio y fin deja la escena casi quieta: no sirve.)
 41. **Entrevistas en la calle**: la toma inicial (hook) muestra el plano completo de la entrevista, presentador y entrevistado
     en cuadro, con el presentador haciendo la pregunta con el micrófono (solo él mueve los labios).
 

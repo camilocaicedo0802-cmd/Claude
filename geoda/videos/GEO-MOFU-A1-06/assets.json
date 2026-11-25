@@ -301,5 +301,17 @@
    "sound": "off",
    "cfg_scale": 0.6
   }
+ },
+ "k_j_toalla2": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21437-0c54-7d56-95c9-e61b92f8ab14/9c597989-c491-49b6-ac52-9c23cd3f49a7.mp4"
+  ],
+  "body": {
+   "prompt": "The man calmly passes the GEODA stick over his underarm in two slow strokes, relaxed. The GEODA stone is a clear translucent mineral crystal (alum), it is NOT a roll-on and NOT a cream: it leaves no residue at all, the skin stays completely clean, no white mark, no streak, no foam, no powder. The round stone on top stays a clear crystal with the same shape. He does not speak, lips stay closed. The label stays facing the camera. Realistic handheld smartphone video, soft morning light.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2111b-af2d-7cc4-99bc-ae4d58a9910b/5ed5013f-5f4f-461f-ad24-3db43b142381.png",
+   "duration": 3,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
  }
 }

@@ -38,8 +38,9 @@ Habla siempre en español, con frases simples. Al final de **cada respuesta** ma
   `geoda/kit/producto/endcard_bano_anim.mp4` (10 s, producto en caja 259,960,801,1600).
 - **La piedra no deja residuo**: nada de marca blanca, espuma, polvo ni rastro tipo roll-on; es un cristal translúcido que no
   cambia de forma. En el prompt: "clear translucent alum crystal, NOT a roll-on, NOT a cream, leaves no residue, the skin
-  stays completely clean". Revisar la piel cuadro a cuadro tras cada pasada y usar solo tramos limpios; si no hay, Kling
-  con `last_image_url` = `image_url` (termina igual que empieza).
+  stays completely clean". Revisar la piel cuadro a cuadro tras cada pasada y usar solo tramos limpios, en ida y vuelta si hace
+  falta duración (se ve como pasadas suaves). No usar Kling con el mismo cuadro de inicio y fin: deja la escena casi quieta.
+  Medir el movimiento de cada plano (diferencia media entre cuadros cada 0,4 s; < 4 se ve quieto) y reforzar con cámara.
 - **Entrevistas en la calle**: el hook abre con el plano completo (presentador + entrevistado en cuadro, él pregunta con el
   micrófono; solo él mueve los labios).
 - **El avatar SIEMPRE en video haciendo algo** (regla de Camilo): nunca una foto fija de una persona o avatar con zoom.
