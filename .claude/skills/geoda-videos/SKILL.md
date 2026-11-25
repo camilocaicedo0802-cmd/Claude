@@ -32,6 +32,9 @@ Habla siempre en español, con frases simples. Al final de **cada respuesta** ma
   (Black Friday = "Paga 2 lleva 3", sin $). CTA del brief (K1…K7) + pill "Pago contraentrega · Envío gratis".
 - **Zona segura**: ningún texto en los 250 px de arriba, 670 px de abajo ni 140 px de la derecha (el montador ya lo cumple).
 - **Hook** en pantalla desde el fotograma 1 hasta el s3, dos líneas (blanca + amarilla). **Voz desde el fotograma 1.**
+- **Siempre pantalla completa**: nunca `framed` (video reducido con fondo borroso). Si el texto no cabe, buscar la zona libre
+  del cuadro con `hook_slots`, `hook_cx` + `hook_maxw` (hook angosto a un lado) y `sub_y` + `sub_cx` + `sub_scale`
+  (subtítulo a un lado); ver `geoda/videos/GEO-MOFU-A1-06/build_hooks_cd.py`. Revisar cuadro a cuadro durante todo el plano.
 - **Ningún texto sobre caras, ni sobre la piedra o la etiqueta.** Subtítulos palabra por palabra; no repetir en titular
   lo que ya dice la voz (queda el subtítulo; usar íconos o números grandes).
 - **Etiqueta perfecta o sin etiqueta.** Producto real (foto o clip revisado del kit) mínimo 2-3 s y en el cierre.

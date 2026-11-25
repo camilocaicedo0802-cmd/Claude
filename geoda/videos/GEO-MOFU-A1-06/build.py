@@ -18,7 +18,7 @@ base = dict(
     min_face=50, ai_label=False, hook_text_until=3.0, music=f'{AU}/music_847.mp3', music_vol=0.12,
     hooks={
         'HA': dict(vo='HA', dur=3.0, subs=True, text=('POV: por fin aprendiste', 'a usar la piedra'),
-                   line='POV: le diste una segunda oportunidad.', sub_y=570, sfx=[(1.95, f'{AU}/sfx_soplo.wav', 0.6)]),
+                   line='POV: le diste una segunda oportunidad.', sub_y=900, sub_cx=215, sub_scale=0.8, hook_slots=[360], sfx=[(1.95, f'{AU}/sfx_soplo.wav', 0.6)]),
         'HB': dict(vo='HB', dur=3.35, subs=True, text=('POV: tu mamá tenía razón', 'con la piedra'),
                    line='Mi mamá usaba esto y yo me reía.'),
     },
@@ -45,7 +45,7 @@ def build_shots(cfg):
     k = lambda n: f'{HF}/{n}_0.mp4'
     return {
         # la persona siempre en video haciendo algo (regla de Camilo): nada de fotos fijas del avatar
-        'HA': [B.shot(T, 's_ha2', k('k_j_cajon'), d['HA'], z0=1.0, z1=1.03, framed=0.82) + ([(250, 730, 830, 1920)],)],
+        'HA': [B.shot(T, 's_ha3', k('k_j_cajon'), d['HA'], z0=1.0, z1=1.03) + ([(380, 460, 720, 1400)],)],   # pantalla completa
         'HB': [B.shot(T, 's_hb2', k('k_j_mama'), d['HB'], speed=0.9, z0=1.0, z1=1.04) + ([(140, 800, 650, 1460)],)],
         'B1': [B.shot(T, 's_b1', k('k_j_ducha'), d['B1'], z0=1.0, z1=1.05)],
         'B2': [B.shot(T, 's_b2', GRIFO, d['B2'], z0=1.0, z1=1.05)],

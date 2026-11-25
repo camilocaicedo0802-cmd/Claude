@@ -131,6 +131,10 @@ El montador (`pipeline/builder.py`) ya trae estas reglas por defecto.
     y mismas reglas (tercera persona o POV, sin preguntar por atributos personales, sin marca en TOFU). Nombre:
     GEO_..._HC_<FORMATO>_<CTA>_v1.mp4.
 
+43. **Siempre pantalla completa** (Camilo, 25-nov): nunca el video reducido con fondo borroso (`framed`). Si el texto no cabe,
+    se busca la zona libre del cuadro (cielo, pared, cuerpos sin caras) con `hook_slots`, `hook_cx` + `hook_maxw` (bloque
+    más angosto a un lado) y, para subtítulos, `sub_y` + `sub_cx` + `sub_scale`. Ningún texto sobre caras ni sobre la piedra.
+
 ## Entrega
 34. Carpeta `GEODA_60/TOFU|MOFU|BOFU/A1…` con las versiones vigentes, `CTA_alternos/` para los re-exports de CTA y un
     `LEEME.txt`; se envía también como .zip.

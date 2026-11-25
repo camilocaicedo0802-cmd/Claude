@@ -179,10 +179,11 @@ def fit(text, size, maxw, pad):
         size -= 2; f = b.font(FONT_BLACK, size)
     return size
 
-def hook_block(l1, l2):
+def hook_block(l1, l2, maxw=860):
     # la línea blanca no baja de 64 px: si no cabe, se parte en dos renglones dentro del mismo recuadro
-    h1 = box_text(l1, max(64, fit(l1, 80, 860, (32, 16))), BLACK, WHITE, maxw=860, pad=(32, 16))
-    h2 = box_text(l2, fit(l2, 98, 860, (36, 18)), BLACK, YEL, maxw=860, pad=(36, 18))
+    # maxw < 860: bloque más angosto para ponerlo a un lado (ej. junto a una cara o la piedra)
+    h1 = box_text(l1, max(56 if maxw < 860 else 64, fit(l1, 80, maxw, (32, 16))), BLACK, WHITE, maxw=maxw, pad=(32, 16))
+    h2 = box_text(l2, max(56 if maxw < 860 else 0, fit(l2, 98, maxw, (36, 18))), BLACK, YEL, maxw=maxw, pad=(36, 18))
     blk = Image.new('RGBA', (max(h1.width, h2.width), h1.height + h2.height - 6), (0, 0, 0, 0))
     blk.paste(h1, ((blk.width - h1.width) // 2, 0), h1); blk.paste(h2, ((blk.width - h2.width) // 2, h1.height - 6), h2)
     return blk
@@ -263,17 +264,18 @@ def build(cfg, hk, shots):
     # ---------------- elementos visuales
     HU = cfg.get('hook_text_until', 3.0)
     els, text_rects = [], []
-    blk = hook_block(*hook['text'])
+    blk = hook_block(*hook['text'], maxw=hook.get('hook_maxw', 860))
+    HCX = hook.get('hook_cx', CX)   # centro horizontal del texto del hook
     hd = hook['dur']
     IA_RECT = None
     if cfg.get('ai_label'):   # espacio reservado del rótulo IA (nada se pone encima)
         _ia = ia_label(); IA_RECT = (48, SAFE_BOT - 8 - _ia.height, 48 + _ia.width, SAFE_BOT - 8)   # esquina inferior izquierda
         text_rects.append((0, total, (IA_RECT[0] - 10, IA_RECT[1] - 10, IA_RECT[2] + 10, IA_RECT[3] + 12)))
     yh = place(blk, hook.get('hook_slots', cfg.get('hook_slots', [360, 420, 470, 560, 700, 860, 1000, 1100])), obst_range(0, hd),
-               [q for a, bb, q in text_rects])
+               [q for a, bb, q in text_rects], cx=HCX)
     # el texto del hook sigue hasta HU solo si no pisa caras del plano siguiente
-    hook_end = HU if not any(overlaps(rect_at(blk, yh), o) for o in obst_range(hd, HU)) else hd
-    els.append((blk, CX, yh, 0.0, hook_end, False)); text_rects.append((0, hook_end, rect_at(blk, yh)))
+    hook_end = HU if not any(overlaps(rect_at(blk, yh, HCX), o) for o in obst_range(hd, HU)) else hd
+    els.append((blk, HCX, yh, 0.0, hook_end, False)); text_rects.append((0, hook_end, rect_at(blk, yh, HCX)))
     HU = hook_end
     for ex in hook.get('extras', []):
         if ex['type'] == 'bigx':
@@ -328,11 +330,13 @@ def build(cfg, hk, shots):
             continue
         f = f"{VOD}/{r['vo']}_t.wav"; st = rs[r['key']] + (0.02 if r['key'] == hk else 0.05)
         subs += chunks(word_times(r['line'], st, dur_of(f)))
-    sub_y = {}
+    sub_y, sub_x = {}, {}
     def sy(ch, img):
         if id(ch) not in sub_y:
             t0, t1 = ch[0][1], ch[-1][2] + 0.05
             fixed = [r.get('sub_y') for r in rows_cfg if r.get('sub_y') and rs[r['key']] <= t0 < rs[r['key']] + r['dur']]
+            row = [r for r in rows_cfg if rs[r['key']] <= t0 < rs[r['key']] + r['dur']]
+            sub_x[id(ch)] = (row[0].get('sub_cx', CX), row[0].get('sub_scale', 1.0)) if row else (CX, 1.0)
             if fixed:   # posición fija del subtítulo en esta fila (ej. bajo la etiqueta, sin tapar la piedra)
                 sub_y[id(ch)] = fixed[0]; return fixed[0]
             sub_y[id(ch)] = place(img, SUB_SLOTS, obst_range(t0, t1), [q for a, bb, q in text_rects if a < t1 and t0 < bb])
@@ -363,7 +367,10 @@ def build(cfg, hk, shots):
                 if ch[0][1] <= t < ch[-1][2] + 0.05:
                     act = max([i for i, w in enumerate(ch) if w[1] <= t] or [0])
                     si = sub_img(ch, act)
-                    paste_center(im, si, CX, sy(ch, si), pop_scale(t, ch[0][1], 0.12))
+                    yy = sy(ch, si); scx, ssc = sub_x.get(id(ch), (CX, 1.0))
+                    if ssc != 1.0:   # subtítulo a un lado y más pequeño (fila con sub_cx/sub_scale)
+                        si = si.resize((int(si.width * ssc), int(si.height * ssc)), Image.LANCZOS)
+                    paste_center(im, si, scx, yy, pop_scale(t, ch[0][1], 0.12))
                     break
         if ia is not None and t < ia_until:
             im.paste(ia, (48, SAFE_BOT - 8 - ia.height), ia)

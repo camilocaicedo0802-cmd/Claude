@@ -45,3 +45,7 @@
 - HD · la piedra de mamá: "Pov: le sacaste la piedra a tu mamá del baño." (k_j_robo, reencuadrado 0,82 para que el texto
   no tape a la mamá). Entregado como 'La piedra no te falló GEO MOFU-A1-06-Hook D.mp4'.
 - Entrega: K4 con HA v8 / HB v5; K2 con HC v1 / HD v1.
+
+## Pantalla completa (Camilo: nada de fondo borroso) · HA v9, HC v2, HD v2
+- HA: texto del hook arriba (sobre la piedra) y subtítulos a la izquierda sobre el cajón (sub_cx 215, escala 0,8).
+- HC: texto sobre los brazos del abrazo (debajo de las caras). HD: texto angosto arriba a la izquierda (hook_cx 360).
