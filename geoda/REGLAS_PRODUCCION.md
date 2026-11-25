@@ -134,5 +134,8 @@ El montador (`pipeline/builder.py`) ya trae estas reglas por defecto.
 ## Entrega
 34. Carpeta `GEODA_60/TOFU|MOFU|BOFU/A1…` con las versiones vigentes, `CTA_alternos/` para los re-exports de CTA y un
     `LEEME.txt`; se envía también como .zip.
-19. Nombres según el brief: `GEO_[ETAPA]_[ÁNGULO]_[NN]_[HOOK]_[FORMATO]_v[n].mp4`, un archivo por hook (A y B).
+19. Nombres (ajuste del 25-nov, desde el lote 2): el nombre lleva el ángulo con su nombre corto, después del código:
+    `GEO_[ETAPA]_[ÁNGULO]_[NombreÁngulo]_[NN]_[HOOK]_[FORMATO]_[CTA si es alterno]_v[n].mp4`,
+    ej. `GEO_TOFU_A2_AxilasMasParejas_01_HA_UGC_v1.mp4` y `GEO_MOFU_A1_PiedraNoTeFallo_06_HC_POV_K2_v1.mp4`.
+    Nombre corto sin espacios, tildes ni signos (tabla en `.claude/skills/geoda-videos/LOTES.md`). Un archivo por hook.
 20. **Avisar al celular** (notificación push) con cada respuesta.

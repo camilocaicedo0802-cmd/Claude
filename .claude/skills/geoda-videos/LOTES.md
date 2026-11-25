@@ -5,6 +5,23 @@ Los personajes pueden ser distintos en cada video (no hace falta repetirlos entr
 Voces (Gemini TTS, H = hombre, M = mujer): cada lote tiene dos voces sugeridas (una M y una H) para que dos chats no usen
 la misma voz al mismo tiempo; dentro de un video, cada personaje conserva su voz. Las notas son sugerencias.
 
+## Nombre del ángulo en el archivo
+`GEO_[ETAPA]_[ÁNGULO]_[NombreÁngulo]_[NN]_[HOOK]_[FORMATO]_[CTA alterno]_v[n].mp4`
+
+| Ángulo | Título en el brief | Nombre corto en el archivo |
+|---|---|---|
+| A1 | La piedra no te falló: te la pusiste mal | `PiedraNoTeFallo` |
+| A2 | Axilas que lucen más parejas | `AxilasMasParejas` |
+| A3 | La piedra de verdad, no un frasco | `PiedraDeVerdad` |
+| A4 | 1 piedra dura 1 año | `UnaPiedraUnAno` |
+| A5 | Ropa sin manchas | `RopaSinManchas` |
+| A6 | Transición de 14 días / detox | `Transicion14Dias` |
+| A7 | Sigo sudando, pero no huelo / huele a piel | `SudoPeroNoHuelo` |
+| A8 | Antes creía que era cuento (historia) | `CreiaQueEraCuento` |
+| A9 | Hombres: sin perfume, sin complicarse | `HombresSinPerfume` |
+| A10 | Calor, Costa y viaje | `CalorCostaViaje` |
+| A11 | Primer desodorante del adolescente | `PrimerDesodorante` |
+
 ## Lote 2 (4 videos: el A1-06 lo hace el chat del lote 1)
 | # | Video | Formato | Duración | CTA | Nota |
 |---|---|---|---|---|---|
