@@ -16,7 +16,7 @@ parts.append({"text": "Transcribe exactly what is said in each audio segment abo
               'Return ONLY JSON: {"segments": ["texto 1", "texto 2", ...]} with one entry per segment, in order.'})
 body = {"contents": [{"parts": parts}], "generationConfig": {"responseMimeType": "application/json", "temperature": 0}}
 fn = tempfile.mktemp(suffix='.json'); json.dump(body, open(fn, 'w'))
-for M in ['gemini-3.8-flash', 'gemini-3-flash-preview'] * 3:
+for M in ['gemini-3.1-flash-lite-preview', 'gemini-3.8-flash', 'gemini-3-flash-preview'] * 2:
     r = subprocess.run(['curl', '-sS', '--max-time', '240', f'https://generativelanguage.googleapis.com/v1beta/models/{M}:generateContent',
                         '-H', 'Content-Type: application/json', '-d', f'@{fn}'], capture_output=True, text=True)
     try:

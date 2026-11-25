@@ -14,7 +14,7 @@ def stt(clip, a, b):
              {"text": "Transcribe exactly what is said (Spanish). Include cut-off words at the start or end as heard (e.g. 'pie-'). "
                       "Return only the transcript text."}]}], "generationConfig": {"temperature": 0}}
     os.remove(fn); jf = tempfile.mktemp(suffix='.json'); json.dump(body, open(jf, 'w'))
-    for M in ['gemini-3.8-flash', 'gemini-3-flash-preview'] * 4:
+    for M in ['gemini-3.1-flash-lite-preview', 'gemini-3.8-flash', 'gemini-3-flash-preview'] * 2:
         r = subprocess.run(['curl', '-sS', '--max-time', '120', f'https://generativelanguage.googleapis.com/v1beta/models/{M}:generateContent',
                             '-H', 'Content-Type: application/json', '-d', f'@{jf}'], capture_output=True, text=True)
         try:

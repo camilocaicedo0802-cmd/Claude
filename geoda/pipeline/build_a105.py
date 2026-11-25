@@ -60,9 +60,9 @@ ROWS = {
  'B11': ('H5', [('b11', 'sync', HOST, None, dict(z0=1.0, z1=1.04))]),
  'B12': ('T', [('b12', 'vid', f'{HF}/k_empuja_0.mp4', None, dict(ss=0.2, z0=1.0, z1=1.04))]),  # empuja la piedra al host (etiqueta original del clip, sin capa: pedido de Camilo)
  'B13': ('C', [('b13a', 'vid', f'{S}/hi_42130.mp4', 1.3, dict(ss=0.3, z0=1.0, z1=1.06)),
-               ('b13b', 'still', f'{HF}/fixed/p_bano_2x.png', None, dict(z0=1.0, z1=1.05))]),
+               ('b13b', 'still', f'{HF}/fixed/endcard_bano_real.png', None, dict(z0=1.0, z1=1.04))]),
 }
-EC_BOX = (290, 790, 900, 1530)   # producto + tapa en la tarjeta final (no se tapa)
+EC_BOX = (259, 960, 801, 1600)   # producto + tapa en la tarjeta final (no se tapa)
 
 TRIM = {'B4'}   # filas sin labios a la vista: las pausas internas de más de 0,3 s se recortan (brief: cero tiempo muerto)
 MAXGAP = 0.18
@@ -125,7 +125,7 @@ def cfg_for(meta):
         return dict(key=key, clip_audio=True, dur=d, words=wd, line=' '.join(w for w, _, _ in wd), **kw)
     hooks = {
         'HA': dict(row('HA', subs=False, text=('“La piedra no sirve”:', '¿mito?'),
-                       extras=[dict(type='stamp', text='MITO', size=120, angle=-14, x=760, y=1240, t0=0.06, t1=meta['HA'][0])]),
+                       extras=[dict(type='stamp', text='MITO', size=70, angle=-12, x=812, y=655, t0=0.06, t1=meta['HA'][0])]),
                    ),
         'HB': dict(row('HB', subs=True, text=('Lo que nadie explica', 'del alumbre'),
                        extras=[dict(type='text', text='?', size=230, color=(255, 214, 0), stroke=12, stroke_color=(16, 42, 67),
@@ -136,10 +136,10 @@ def cfg_for(meta):
     body = [row('B1'), row('B2'), row('B3', icon='👀'), row('B4', sfx=[(-0.1, WH, 0.18)]), row('B5', sfx=[(-0.1, WH, 0.18)]),
             row('B6'), row('B7', sfx=[(0.8, f'{AU}/splash_1311.mp3', 0.25)]), row('B8', sfx=[(-0.1, WH, 0.18)]), row('B9'), row('B10'),
             row('B11'), row('B12'), row('B13', sfx=[(-0.1, WH, 0.18)])]
-    return dict(id='GEO_MOFU_A1_05', fmt='PODCAST', version=4, tmp=T, out_dir=A, vo_dir=T, min_face=50, hook_text_until=3.0,
-                hook_slots=[250, 300, 360, 420, 470, 560, 700, 860, 1000], cut_sfx=True, cut_sfx_vol=0.10, music_vol=0.07,
+    return dict(id='GEO_MOFU_A1_05', fmt='PODCAST', version=5, tmp=T, out_dir=A, vo_dir=T, min_face=50, hook_text_until=3.0,
+                hook_slots=[360, 420, 470, 560, 700, 860, 1000], ai_label=True, cut_sfx=True, cut_sfx_vol=0.10, music_vol=0.07,
                 hooks=hooks, body=body,
-                cta=dict(row='B13', l1='PAGA CONTRAENTREGA', l2='Pagas cuando te llegue', pill='Envío gratis a toda Colombia 🚚'),
+                cta=dict(row='B13', l1='PAGA CONTRAENTREGA', l2='Pagas cuando te llegue'),   # + 'Pago contraentrega · Envío gratis' (brief)
                 sfx={'HA': [(0.02, f'{AU}/sfx_2357.mp3', 0.6)]})
 
 if __name__ == '__main__':

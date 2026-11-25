@@ -7,26 +7,26 @@ import builder as B
 A = f'{G}/a104'; TMP = f'{A}/tmp'; os.makedirs(TMP, exist_ok=True)
 HF = f'{G}/hf'
 cfg = dict(
-    id='GEO_TOFU_A1_04', fmt='STREET', version=1, tmp=TMP, out_dir=A, vo_dir=TMP, min_face=50, hook_text_until=3.6,  # 3,6 s del montaje = 3,0 s del video final a x1.2
+    id='GEO_TOFU_A1_04', fmt='STREET', version=2, ai_label=True, tmp=TMP, out_dir=A, vo_dir=TMP, min_face=50, hook_text_until=3.6,  # 3,6 s del montaje = 3,0 s del video final a x1.2
     speed=1.2,  # pedido de Camilo: todo el video a x1.2
     hooks={  # texto del hook = voz -> solo texto (sin subtítulo)
         'HA': dict(vo=None, clip_audio=True, dur=3.4, subs=False, text=('¿Cómo se usa la', 'piedra de alumbre?'),
                    line='Pregunta rápida: ¿usted sabe cómo se usa la piedra de alumbre?'),
         'HB': dict(vo=None, clip_audio=True, dur=3.8, subs=False, text=('Le preguntamos a', '5 personas en Bogotá'),
                    line='Le preguntamos a cinco personas y casi nadie acertó.',
-                   extras=[dict(type='text', text='0/5', size=210, x=820, y=640, t0=0.15)]),
+                   extras=[dict(type='text', text='0/5', size=190, x=735, y=660, t0=0.15)]),
     },
     body=[
         dict(key='B1', clip_audio=True, dur=2.85, line='¿Seca? Uno se la frota y ya.', icon='❌'),
         dict(key='B2', clip_audio=True, dur=3.25, line='Ay, yo me mojo la axila primero.', icon='❌'),
         dict(key='B3', clip_audio=True, dur=2.6, line='Ni idea, mi abuela la usaba.', icon='❌'),
-        dict(key='B4', clip_audio=True, dur=2.75, line='Por eso dicen que no sirve. Mire.', icon='👇'),
-        dict(key='B5', clip_audio=True, dur=3.45, line='Se moja la piedra, no la axila.'),
-        dict(key='B6', clip_audio=True, dur=2.5, line='Y se pasa por la piel limpia.'),
+        dict(key='B4', clip_audio=True, dur=3.18, line='Es un desodorante mineral, y casi todos lo usan mal. Mire.', icon='👇'),   # brief corregido
+        dict(key='B5', clip_audio=True, dur=2.19, line='Se moja la piedra, no la axila.'),
+        dict(key='B6', clip_audio=True, dur=2.04, line='Y se pasa por la piel limpia.'),
         dict(key='B7', clip_audio=True, dur=2.18, line='¡Ahhh, con razón!', icon='😂'),
-        dict(key='B8', clip_audio=True, dur=4.5, line='Te la enviamos gratis a toda Colombia, y la pagas al recibir.'),
+        dict(key='B8', clip_audio=True, dur=5.05, line='Se llama GEODA, y te la enviamos gratis a toda Colombia. La pagas al recibir.'),   # brief corregido
     ],
-    cta=dict(row='B8', l1='ENVÍO GRATIS', l2='A TODA COLOMBIA', pill='Pagas al recibir 🚚'),
+    cta=dict(row='B8', l1='ENVÍO GRATIS', l2='A TODA COLOMBIA'),   # + 'Pago contraentrega · Envío gratis' (cierre del brief)
 )
 
 def wav_from(src, ss, dur, out):
@@ -34,7 +34,8 @@ def wav_from(src, ss, dur, out):
                     '-af', f'apad=whole_dur={dur}', out], check=True)
 
 def build_shots():
-    T = TMP; ec, ec_box = B.endcard(T)
+    T = TMP
+    ec, ec_box = f'{HF}/fixed/endcard_bano_real.png', (259, 960, 801, 1600)   # producto REAL de la landing en un baño
     w = lambda n: f'{HF}/{n}_0.mp4'
     fx = lambda n: f'{HF}/fixed/{n}_0.mp4'
     s = {
@@ -43,20 +44,22 @@ def build_shots():
      'B1': [B.shot(T, 'b1', w('w_i1'), 2.85, ss=0.0, z0=1.0, z1=1.05, audio=True)],
      'B2': [B.shot(T, 'b2', w('w_i2'), 3.25, ss=0.0, z0=1.0, z1=1.05, audio=True)],
      'B3': [B.shot(T, 'b3', w('w_i3'), 2.6, ss=0.15, z0=1.0, z1=1.05, audio=True) + ([B.protect((320, 340, 700, 800))],)],
-     'B4': [B.shot(T, 'b4', fx('w_p1'), 2.75, ss=0.0, z0=1.0, z1=1.05, audio=True)],
+     # frases nuevas del brief en un solo clip del presentador (verificadas); etiqueta original del clip
+     'B4': [B.shot(T, 'b4', w('w_p3'), 3.18, ss=0.22, z0=1.0, z1=1.05, audio=True)],
      # gotas solo en la punta de la piedra (el tubo y la etiqueta quedan secos); etiqueta original de la imagen, sin capa
-     'B5': [B.shot(T, 'b5', w('k_gota'), 3.45, ss=0.0, speed=0.65, z0=1.0, z1=1.06) + ([],)],
+     'B5': [B.shot(T, 'b5', w('k_gota'), 2.19, ss=0.0, speed=1.0, z0=1.0, z1=1.06) + ([],)],
      # piedra hacia abajo sobre el antebrazo -> etiqueta real invertida (label_fix --flip --tube); solo el tramo de frente
-     'B6': [B.shot(T, 'b6', fx('k_brazo_flip'), 2.5, ss=0.05, speed=0.7, z0=1.0, z1=1.06) + ([],)],
+     'B6': [B.shot(T, 'b6', fx('k_brazo_flip'), 2.04, ss=0.05, speed=0.86, z0=1.0, z1=1.06) + ([],)],
      'B7': [B.shot(T, 'b7', w('w_i2'), 2.18, ss=4.85, z0=1.05, z1=1.1, audio=True)],
      'B8': [B.shot(T, 'b8a', w('k_map'), 2.6, ss=0.0, z0=1.0, z1=1.04) + ([],),
-            B.shot(T, 'b8b', ec, 1.9, still=True, z0=1.0, z1=1.04) + ([ec_box],)],
+            B.shot(T, 'b8b', ec, 2.45, still=True, z0=1.0, z1=1.04) + ([ec_box],)],
     }
     # voz del presentador (clip WAN de la demostración) sobre el primer plano del antebrazo y el cierre
-    wav_from(fx('w_p1'), 3.2, 3.45, f'{T}/b5.wav')   # voz del presentador sobre el primer plano de las gotas
-    wav_from(w('w_p2'), 0.35, 2.5, f'{T}/b6.wav')
-    wav_from(w('w_p2'), 3.55, 2.6, f'{T}/b8a.wav')
-    wav_from(w('w_p2'), 6.15, 1.9, f'{T}/b8b.wav')
+    P3 = w('w_p3')   # frases verificadas: 0,22-3,40 / 3,65-5,84 / 6,20-8,24 / 8,56-13,61
+    wav_from(P3, 3.65, 2.19, f'{T}/b5.wav')
+    wav_from(P3, 6.20, 2.04, f'{T}/b6.wav')
+    wav_from(P3, 8.56, 2.6, f'{T}/b8a.wav')
+    wav_from(P3, 11.16, 2.45, f'{T}/b8b.wav')
     return s
 
 if __name__ == '__main__':

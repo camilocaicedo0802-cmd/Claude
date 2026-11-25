@@ -95,6 +95,19 @@ El montador (`pipeline/builder.py`) ya trae estas reglas por defecto.
 28. **Etiqueta encajada al tarro**: ocupa el 94 % del ancho visible del tubo, centrada (como en la foto de la landing);
     `label_fix.py --fit` mide los bordes reales del tubo. Si el stick está inclinado en la mano, se sigue el giro sin recentrar.
 
+## Decisiones de Camilo sobre el brief corregido (25-nov)
+29. **Rótulo 'Recreación con IA'**: se deja (pequeño, esquina inferior izquierda dentro de la zona segura, hasta la tarjeta
+    final) en avatares, entrevistas, podcast y testimonios generados.
+30. **Sin precios** salvo que Camilo lo indique: el CTA Black Friday va como 'Paga 2 lleva 3', sin $99.990.
+31. **Zona segura del brief**: ~250 px arriba, 450-670 px abajo y 140 px a la derecha libres de texto (montador: SAFE_TOP 250,
+    SAFE_BOT 1250, SAFE_RIGHT 940); el botón/toque de la landing también se baja fuera de la barra superior.
+32. **UGC con avatar = voz en off (storytime)**: la avatar no mueve los labios; una sola toma de voz por personaje
+    (`tools/tts_multi.py`), cortada por pausas y verificada frase por frase. Así nunca hay labios desfasados.
+33. **Hooks animados sobre fotos reales** (destellos, tachado, X que cae, reloj) en vez de pedirle a la IA que mueva el
+    producto: la etiqueta queda perfecta. Los subtítulos no tapan la piedra ni la etiqueta (`sub_y` por fila si hace falta).
+
 ## Entrega
+34. Carpeta `GEODA_60/TOFU|MOFU|BOFU/A1…` con las versiones vigentes, `CTA_alternos/` para los re-exports de CTA y un
+    `LEEME.txt`; se envía también como .zip.
 19. Nombres según el brief: `GEO_[ETAPA]_[ÁNGULO]_[NN]_[HOOK]_[FORMATO]_v[n].mp4`, un archivo por hook (A y B).
 20. **Avisar al celular** (notificación push) con cada respuesta.

@@ -5,7 +5,7 @@ def ask(clip, a, b, q):
     body = {"contents": [{"parts": [{"inline_data": {"mime_type": "audio/mp3", "data": base64.b64encode(open(fn, 'rb').read()).decode()}}, {"text": q}]}],
             "generationConfig": {"responseMimeType": "application/json", "temperature": 0}}
     jf = tempfile.mktemp(suffix='.json'); json.dump(body, open(jf, 'w')); os.remove(fn)
-    for M in ['gemini-3.8-flash', 'gemini-3-flash-preview'] * 4:
+    for M in ['gemini-3.1-flash-lite-preview', 'gemini-3.8-flash', 'gemini-3-flash-preview'] * 2:
         r = subprocess.run(['curl', '-sS', '--max-time', '90', f'https://generativelanguage.googleapis.com/v1beta/models/{M}:generateContent',
                             '-H', 'Content-Type: application/json', '-d', f'@{jf}'], capture_output=True, text=True)
         try:

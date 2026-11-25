@@ -17,8 +17,10 @@ from PIL import Image, ImageDraw, ImageFilter
 import numpy as np, cv2
 
 CX = 520
-SUB_SLOTS = [1450, 1490, 1400, 1350, 1300, 1250, 1190, 1130, 1010, 890, 770, 640]  # subtítulos bien abajo (pedido del cliente)
-SAFE_TOP, SAFE_BOT = 250, 1250
+# Zona segura del brief (Meta Reels y TikTok): libres ~250 px arriba, ~670 px abajo y ~140 px a la derecha.
+SAFE_TOP, SAFE_BOT, SAFE_RIGHT = 250, 1920 - 670, 1080 - 140
+SUB_SLOTS = [1190, 1150, 1100, 1040, 980, 920, 860, 800, 740, 680, 620, 560, 500, 440]  # lo más abajo posible dentro de la zona segura
+PILL_CIERRE = 'Pago contraentrega · Envío gratis'   # brief: los últimos 2-3 s llevan este texto
 RED = (230, 40, 40)
 CASC = cv2.CascadeClassifier(os.path.join(cv2.data.haarcascades, 'haarcascade_frontalface_default.xml'))
 CASC_P = cv2.CascadeClassifier(os.path.join(cv2.data.haarcascades, 'haarcascade_profileface.xml'))
@@ -115,11 +117,11 @@ def overlaps(a, q):
 def rect_at(img, y, cx=CX):
     return (cx - img.width / 2, y - img.height / 2, cx + img.width / 2, y + img.height / 2)
 
-def place(img, slots, obstacles, avoid=(), cx=CX, bot=SAFE_BOT + 40):
+def place(img, slots, obstacles, avoid=(), cx=CX, bot=SAFE_BOT):
     best, best_ov = slots[0], 1e9
     for y in slots:
         r = rect_at(img, y, cx)
-        if r[1] < SAFE_TOP or r[3] > bot:
+        if r[1] < SAFE_TOP or r[3] > min(bot, SAFE_BOT) or r[2] > SAFE_RIGHT or r[0] < 30:
             continue
         ov = sum(max(0, min(r[3], o[3]) - max(r[1], o[1])) for o in list(obstacles) + list(avoid) if overlaps(r, o))
         if ov == 0:
@@ -127,6 +129,15 @@ def place(img, slots, obstacles, avoid=(), cx=CX, bot=SAFE_BOT + 40):
         if ov < best_ov:
             best, best_ov = y, ov
     return best
+
+def ia_label(text='Recreación con IA', size=26):
+    from PIL import ImageFont
+    f = ImageFont.truetype(FONT_BLACK, size)
+    tw = int(f.getlength(text)); pw, ph = tw + 28, size + 18
+    im = Image.new('RGBA', (pw, ph), (0, 0, 0, 0)); d = ImageDraw.Draw(im)
+    d.rounded_rectangle([0, 0, pw - 1, ph - 1], radius=ph // 2, fill=(0, 0, 0, 120))
+    d.text((pw / 2, ph / 2), text, font=f, fill=(255, 255, 255, 235), anchor='mm')
+    return im
 
 def stamp(text, size=130, angle=-14, color=(214, 32, 38)):
     """Sello de goma (ej. MITO): texto con borde doble, textura gastada, girado."""
@@ -168,7 +179,8 @@ def fit(text, size, maxw, pad):
     return size
 
 def hook_block(l1, l2):
-    h1 = box_text(l1, fit(l1, 80, 860, (32, 16)), BLACK, WHITE, maxw=860, pad=(32, 16))
+    # la línea blanca no baja de 64 px: si no cabe, se parte en dos renglones dentro del mismo recuadro
+    h1 = box_text(l1, max(64, fit(l1, 80, 860, (32, 16))), BLACK, WHITE, maxw=860, pad=(32, 16))
     h2 = box_text(l2, fit(l2, 98, 860, (36, 18)), BLACK, YEL, maxw=860, pad=(36, 18))
     blk = Image.new('RGBA', (max(h1.width, h2.width), h1.height + h2.height - 6), (0, 0, 0, 0))
     blk.paste(h1, ((blk.width - h1.width) // 2, 0), h1); blk.paste(h2, ((blk.width - h2.width) // 2, h1.height - 6), h2)
@@ -252,7 +264,12 @@ def build(cfg, hk, shots):
     els, text_rects = [], []
     blk = hook_block(*hook['text'])
     hd = hook['dur']
-    yh = place(blk, cfg.get('hook_slots', [420, 470, 560, 700, 860, 1000, 1100]), obst_range(0, hd))
+    IA_RECT = None
+    if cfg.get('ai_label'):   # espacio reservado del rótulo IA (nada se pone encima)
+        _ia = ia_label(); IA_RECT = (48, SAFE_BOT - 8 - _ia.height, 48 + _ia.width, SAFE_BOT - 8)   # esquina inferior izquierda
+        text_rects.append((0, total, (IA_RECT[0] - 10, IA_RECT[1] - 10, IA_RECT[2] + 10, IA_RECT[3] + 12)))
+    yh = place(blk, hook.get('hook_slots', cfg.get('hook_slots', [360, 420, 470, 560, 700, 860, 1000, 1100])), obst_range(0, hd),
+               [q for a, bb, q in text_rects])
     # el texto del hook sigue hasta HU solo si no pisa caras del plano siguiente
     hook_end = HU if not any(overlaps(rect_at(blk, yh), o) for o in obst_range(hd, HU)) else hd
     els.append((blk, CX, yh, 0.0, hook_end, False)); text_rects.append((0, hook_end, rect_at(blk, yh)))
@@ -265,9 +282,11 @@ def build(cfg, hk, shots):
         elif ex['type'] == 'text':
             im = render_runs(ex['text'], ex.get('size', 200), tuple(ex.get('color', RED)), FONT_BLACK, stroke=ex.get('stroke', 10),
                              stroke_color=tuple(ex.get('stroke_color', WHITE)))
+        elif ex['type'] == 'img':   # gráfico PNG con alfa (ej. reloj gigante)
+            im = Image.open(ex['path']).convert('RGBA')
         elif ex['type'] == 'stamp':
             im = stamp(ex['text'], ex.get('size', 130), ex.get('angle', -14))
-        els.append((im, ex['x'], ex['y'], ex.get('t0', 0.08), ex.get('t1', hook['dur']), 'slam' if ex['type'] == 'stamp' else True))
+        els.append((im, ex['x'], ex['y'], ex.get('t0', 0.08), ex.get('t1', hook['dur']), 'slam' if ex['type'] == 'stamp' else ex.get('pop', True)))
         text_rects.append((ex.get('t0', 0.08), ex.get('t1', hook['dur']), rect_at(im, ex['y'], ex['x'])))  # los subtítulos no tapan gráficos clave
     for r in cfg['body']:
         st = rs[r['key']]; t0 = max(st, HU) if r is cfg['body'][0] else st; t1 = st + r['dur']
@@ -275,6 +294,11 @@ def build(cfg, hk, shots):
             im = box_text(r['head'], 58, NAVY, WHITE, maxw=880, pad=(30, 16))
             y = place(im, [380, 470, 560, 700, 840, 980, 1070], obst_range(t0, t1), [q for a, bb, q in text_rects if a < t1 and t0 < bb])
             els.append((im, CX, y, t0, t1, True)); text_rects.append((t0, t1, rect_at(im, y)))
+        if r.get('big'):   # número de paso grande (amarillo con borde azul), no repite la voz
+            im = render_runs(r['big'], r.get('big_size', 300), YEL, FONT_BLACK, stroke=12, stroke_color=NAVY)
+            ix = r.get('icon_x', 790)
+            y = place(im, [440, 560, 700, 840, 980, 1100], obst_range(t0, t1), [q for a, bb, q in text_rects if a < t1 and t0 < bb], cx=ix)
+            els.append((im, ix, y, t0 + 0.05, t1, 'slam')); text_rects.append((t0, t1, rect_at(im, y, ix)))
         if r.get('icon'):
             im = render_runs(r['icon'], 200, WHITE, FONT_BLACK)
             ix = r.get('icon_x', 820)
@@ -284,7 +308,7 @@ def build(cfg, hk, shots):
     ys = [360, 492, 598]
     stack = [box_text(cta['l1'], fit(cta['l1'], 92, 860, (40, 22)), WHITE, NAVY, maxw=860, pad=(40, 22)),
              box_text(cta['l2'], fit(cta['l2'], 64, 800, (34, 20)), NAVY, YEL, maxw=800),
-             pill(cta['pill'], 40, WHITE, TEAL, alpha=235, pad=(26, 12))]
+             pill(cta.get('pill', PILL_CIERRE), 40, WHITE, TEAL, alpha=235, pad=(26, 12))]
     for i, (im, y) in enumerate(zip(stack, ys)):
         els.append((im, CX, y, cta0 + 0.15 * i, total, True)); text_rects.append((cta0, total, rect_at(im, y)))
 
@@ -307,11 +331,16 @@ def build(cfg, hk, shots):
     def sy(ch, img):
         if id(ch) not in sub_y:
             t0, t1 = ch[0][1], ch[-1][2] + 0.05
-            sub_y[id(ch)] = place(img, SUB_SLOTS, obst_range(t0, t1), [q for a, bb, q in text_rects if a < t1 and t0 < bb], bot=1560)
+            fixed = [r.get('sub_y') for r in rows_cfg if r.get('sub_y') and rs[r['key']] <= t0 < rs[r['key']] + r['dur']]
+            if fixed:   # posición fija del subtítulo en esta fila (ej. bajo la etiqueta, sin tapar la piedra)
+                sub_y[id(ch)] = fixed[0]; return fixed[0]
+            sub_y[id(ch)] = place(img, SUB_SLOTS, obst_range(t0, t1), [q for a, bb, q in text_rects if a < t1 and t0 < bb])
         return sub_y[id(ch)]
 
-    ia = None  # el cliente pidió que ningún video lleve el rótulo 'Recreación con IA'
-    ia_until = rs[cta['row']] if cfg.get('ai_label') else 0
+    # rótulo 'Recreación con IA' (brief): pequeño, esquina superior izquierda dentro de la zona segura, en avatares,
+    # entrevistas, podcast y testimonios generados; todo el video
+    ia = ia_label() if cfg.get('ai_label') else None
+    ia_until = cta0   # en la tarjeta final solo va el producto real
     out = f"{cfg['out_dir']}/{cfg['id']}_{hk}_{cfg['fmt']}_v{cfg.get('version', 1)}.mp4"
     dec = subprocess.Popen(['ffmpeg', '-v', 'error', '-i', base, '-f', 'rawvideo', '-pix_fmt', 'rgb24', '-'], stdout=subprocess.PIPE)
     enc = subprocess.Popen(['ffmpeg', '-v', 'error', '-y', '-f', 'rawvideo', '-pix_fmt', 'rgb24', '-s', f'{W}x{H}', '-r', str(FPS), '-i', '-',
@@ -336,7 +365,7 @@ def build(cfg, hk, shots):
                     paste_center(im, si, CX, sy(ch, si), pop_scale(t, ch[0][1], 0.12))
                     break
         if ia is not None and t < ia_until:
-            im.paste(ia, (60, 232), ia)
+            im.paste(ia, (48, SAFE_BOT - 8 - ia.height), ia)
         enc.stdin.write(im.tobytes()); fi += 1
     enc.stdin.close(); enc.wait(); dec.wait()
     sp = cfg.get('speed', 1.0)

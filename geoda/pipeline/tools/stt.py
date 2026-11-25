@@ -12,7 +12,7 @@ body = {"contents": [{"parts": [{"inline_data": {"mime_type": "audio/mp3", "data
         "generationConfig": {"responseMimeType": "application/json", "temperature": 0}}
 fn = tempfile.mktemp(suffix='.json'); json.dump(body, open(fn, 'w'))
 import time
-for M in ['gemini-3.8-flash', 'gemini-3-flash-preview', 'gemini-3.8-flash', 'gemini-3-flash-preview', 'gemini-3.8-flash']:
+for M in ['gemini-3.1-flash-lite-preview', 'gemini-3.8-flash', 'gemini-3-flash-preview', 'gemini-3.1-flash-lite-preview']:
     r = subprocess.run(['curl', '-sS', '--max-time', '180', f'https://generativelanguage.googleapis.com/v1beta/models/{M}:generateContent',
                         '-H', 'Content-Type: application/json', '-d', f'@{fn}'], capture_output=True, text=True)
     try:

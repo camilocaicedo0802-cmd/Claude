@@ -317,6 +317,7 @@ def main():
     ap.add_argument('--tube', action='store_true', help='recortar la etiqueta a la silueta del tubo')
     ap.add_argument('--wipe', action='store_true', help='borrar toda la zona de la etiqueta antes de pegar la real')
     ap.add_argument('--blank', action='store_true', help='solo borrar el texto de la IA, sin pegar etiqueta')
+    ap.add_argument('--range', help='t0,t1: solo pegar la etiqueta en este tramo (segundos); fuera queda el clip original')
     ap.add_argument('--fit', action='store_true', help='encajar la etiqueta al ancho real del tubo (94 %% como en la landing)')
     ap.add_argument('--nolock', action='store_true', help='sin fijar al tubo (solo suavizado)')
     ap.add_argument('--keys', help='t:x,y,lado;t:x,y,lado;... posiciones manuales (cuadrado) interpoladas')
@@ -411,6 +412,9 @@ def main():
     manual = a.quad is not None and len(anchors) <= 1
     for i in range(n):
         st = 1.0 if manual else float(np.clip((10 - dist[i]) / 6.0, 0, 1))
+        if a.range:
+            r0, r1 = map(float, a.range.split(','))
+            if not (r0 <= i / fr <= r1): st = 0.0
         v = np.linalg.norm(Qs[min(n - 1, i + 1)].mean(0) - Qs[max(0, i - 1)].mean(0)) / 2
         MOTION = min(2.0, v * 0.12)  # desenfoque de movimiento como el del clip
         fr_i = frames[i]
