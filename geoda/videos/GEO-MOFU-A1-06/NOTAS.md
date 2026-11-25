@@ -39,3 +39,9 @@
 - Pasadas visibles sin residuo: k_j_toalla2 tramo limpio 0,1-1,05 s en ida, vuelta e ida (k_j_pasadas). Ojo: Kling con el
   mismo cuadro de inicio y fin (k_j_toalla3/4) dejaba la escena casi quieta: no sirve como plano principal.
 - Lavamanos: acercamiento 1,00 -> 1,14; estante: 1,00 -> 1,24 (más el fondo en video y el brillo del producto).
+
+## Hooks nuevos para el CTA alterno K2 (cada versión con un hook distinto)
+- HC · el abrazo: "Pov: te abrazan... y ya no tienes que pegar los brazos." (k_j_abrazo, reencuadrado para que el texto no tape caras).
+- HD · la piedra de mamá: "Pov: le sacaste la piedra a tu mamá del baño." Imagen j_robo lista; el clip k_j_robo falló por
+  saldo de Higgsfield: falta generarlo y montar con `build_hooks_cd.py HD`.
+- Entrega: K4 con HA v8 / HB v5; K2 con HC v1 (+ HD pendiente).

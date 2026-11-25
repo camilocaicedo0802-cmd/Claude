@@ -21,6 +21,10 @@ Habla siempre en español, con frases simples. Al final de **cada respuesta** ma
    `python3 -c "import json;print(json.load(open('geoda/brief_v2/guiones_60.json'))['GEO-TOFU-A2-01'])"`
 
 ## 1. Reglas que más se rompen (resumen; manda REGLAS_PRODUCCION.md)
+- **Un hook distinto por versión**: si el video sale con CTA alterno (4 versiones), HA y HB del brief van con el CTA principal
+  y se escriben 2 hooks nuevos (HC, HD) para el alterno: creativos, llamativos y con escenas distintas (ej. A1-03: Pedro
+  levanta la mano y la reunión se desmaya / el ascensor se vacía; A1-06: el abrazo con los brazos arriba / le roba la piedra
+  a la mamá). Misma voz y reglas del video. Ver `geoda/videos/*/build_hooks_cd.py`.
 - **Nada se repite**: si el brief pone la misma frase en el hook y en el primer plano (pasó en el A1-06), en esa variante
   se dice solo en el hook y ese plano se quita (nada de planos sin voz); se alargan 0,2-0,3 s otros planos con acción
   y el cierre para no bajar del mínimo de la etapa (ver `geoda/videos/GEO-MOFU-A1-06/build_ha.py`).

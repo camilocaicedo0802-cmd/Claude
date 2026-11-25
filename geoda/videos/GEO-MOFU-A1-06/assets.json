@@ -313,5 +313,48 @@
    "sound": "off",
    "cfg_scale": 0.6
   }
+ },
+ "j_abrazo": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2147b-9597-7f5c-ac10-55c41f066315/109fa1a0-6b67-4dc8-8896-2106b2f84b14.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic smartphone photo, warm golden evening at a friends' rooftop gathering in Bogota with string lights and city lights behind. The SAME man as the first reference (same face, short dark hair, light stubble) wearing a light blue shirt is being hugged warmly by a smiling female friend; he hugs her back with both arms raised high, relaxed and confident, big closed-mouth smile. Medium shot, both faces visible, lips closed. No text, no logos.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2111b-af2d-7cc4-99bc-ae4d58a9910b/5ed5013f-5f4f-461f-ad24-3db43b142381.png"
+   ]
+  }
+ },
+ "j_robo": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2147b-96d0-7aff-9ac3-cccc02b89c84/4f688dd0-9df3-4aa5-9f7c-fffc7fbe0a7d.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic first-person POV smartphone photo in a modest Colombian family bathroom: in the foreground a man's hand with light-brown skin sneakily takes the GEODA deodorant stick from the product references (cap on) from a small bathroom shelf with mom's things (a hairbrush, a cream jar, a small plant); the GEODA label (Desodorante, GEODA, 100% NATURAL, EFECTIVO Y SEGURO, 24h) faces the camera, sharp, exactly like the product reference. In the open doorway behind, a smiling Colombian mother in her 50s with her arms crossed catches him, one eyebrow raised, lips closed. No text.",
+   "image_urls": [
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/00cb1085-fa0c-4a03-a446-05649f4e916e.jpeg",
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/6f52cc8c-3f5d-49ad-a82f-8974d41b2c71.jpeg"
+   ]
+  }
+ },
+ "k_j_abrazo": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2147c-7484-7492-b10d-92de49652834/521ac297-11bc-4258-ac72-44d9fc5c89cd.mp4"
+  ],
+  "body": {
+   "prompt": "They hug warmly and sway a little; then he opens and lifts both arms high in a relaxed, confident hug, laughing silently with a closed-mouth smile. Nobody speaks, lips stay closed. The string lights twinkle. Realistic handheld smartphone video, warm evening.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2147b-9597-7f5c-ac10-55c41f066315/109fa1a0-6b67-4dc8-8896-2106b2f84b14.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
  }
 }

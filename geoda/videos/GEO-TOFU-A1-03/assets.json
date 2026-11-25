@@ -172,5 +172,59 @@
    "sound": "off",
    "cfg_scale": 0.6
   }
+ },
+ "c3_hc": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2147b-92ff-7773-8c35-93532fea3b76/276a2f86-b13e-4c15-9023-05e44479a36f.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Stop-motion claymation still, plasticine texture with visible fingerprints, handmade miniature set, soft warm studio light, vertical 9:16, same Pedro character as the reference image (clay man with short black hair, white t-shirt and blue jeans). IMPORTANT: the white crystal stone character from the reference is NOT in this scene. No text, no letters, no numbers, no labels, no brand names. Leave empty space in the upper third of the frame. Miniature clay office meeting room: Pedro stands at the head of a clay meeting table raising one arm high to ask something; a big gray clay smell cloud puffs out from under his raised arm; four funny clay coworkers around the table lean back in shock holding their noses, one tipping backwards off his chair, papers flying.",
+   "image_urls": [
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/dde16185-670c-414e-93ac-1e6f44f84a82.png"
+   ]
+  }
+ },
+ "c3_hd": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2147b-9460-7b61-b2d8-5ca213c709df/9f2d5a4c-f223-4343-a9d6-e3fb2fae67a0.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Stop-motion claymation still, plasticine texture with visible fingerprints, handmade miniature set, soft warm studio light, vertical 9:16, same Pedro character as the reference image (clay man with short black hair, white t-shirt and blue jeans). IMPORTANT: the white crystal stone character from the reference is NOT in this scene. No text, no letters, no numbers, no labels, no brand names. Leave empty space in the upper third of the frame. Miniature clay elevator with its doors open: Pedro stands in the center with a gray clay smell cloud above his head; three clay passengers press flat against the elevator walls holding their noses, eyes wide, one of them already running out through the doors. Clay floor indicator with only an arrow.",
+   "image_urls": [
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/dde16185-670c-414e-93ac-1e6f44f84a82.png"
+   ]
+  }
+ },
+ "k_c3_hc": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2147c-71d3-745d-9f25-6de1ed56804d/e649e968-9b72-406d-8496-fc596b2baf71.mp4"
+  ],
+  "body": {
+   "prompt": "Stop-motion claymation, plasticine texture with visible fingerprints, choppy 12 fps handmade motion, nobody speaks, mouths closed. Pedro raises his arm even higher, the gray clay smell cloud puffs out and grows bigger, the coworkers faint backwards one by one and one falls off his chair, papers fly through the air.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2147b-92ff-7773-8c35-93532fea3b76/276a2f86-b13e-4c15-9023-05e44479a36f.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "k_c3_hd": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2147c-7331-7e2e-bf72-96b2e019ead5/ec8ef878-84ae-4bf7-ba6c-4686cc3e05b9.mp4"
+  ],
+  "body": {
+   "prompt": "Stop-motion claymation, plasticine texture with visible fingerprints, choppy 12 fps handmade motion, nobody speaks, mouths closed. The clay passengers press flat against the elevator walls holding their noses, then all of them rush out of the elevator at once, leaving Pedro alone and confused while the gray smell cloud above him grows.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2147b-9460-7b61-b2d8-5ca213c709df/9f2d5a4c-f223-4343-a9d6-e3fb2fae67a0.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
  }
 }

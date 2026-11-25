@@ -125,6 +125,12 @@ El montador (`pipeline/builder.py`) ya trae estas reglas por defecto.
 41. **Entrevistas en la calle**: la toma inicial (hook) muestra el plano completo de la entrevista, presentador y entrevistado
     en cuadro, con el presentador haciendo la pregunta con el micrófono (solo él mueve los labios).
 
+42. **Un hook distinto por versión** (Camilo, 25-nov): si un video sale con varios CTA (principal + alternos), cada versión
+    arranca con un hook diferente. HA y HB del brief van con el CTA principal; para cada CTA alterno se escriben hooks nuevos
+    (HC, HD, …): creativos y llamativos, con escenas distintas a las del cuerpo y a los otros hooks, mismo estilo, misma voz
+    y mismas reglas (tercera persona o POV, sin preguntar por atributos personales, sin marca en TOFU). Nombre:
+    GEO_..._HC_<FORMATO>_<CTA>_v1.mp4.
+
 ## Entrega
 34. Carpeta `GEODA_60/TOFU|MOFU|BOFU/A1…` con las versiones vigentes, `CTA_alternos/` para los re-exports de CTA y un
     `LEEME.txt`; se envía también como .zip.
