@@ -232,11 +232,14 @@ Look: frío/cian en fondos, piel cálida, contraste medio-alto, nítido. Motion 
 
 Fuente: 22,8 s · 720x1280 · 30 fps. Valores convertidos a 1080x1920 a 60 fps.
 
-### Tipografía [SUPOSICIÓN · identificación visual, a confirmar con la clienta]
-| Uso | En la referencia | Peso | Entreletrado |
+### Tipografía (confirmada con la clienta: fuentes enviadas por ella, en `public/fuentes/cliente/`, no versionadas)
+| Uso | Fuente | Peso | Entreletrado |
 |---|---|---|---|
-| Texto de contexto (casi todo) | Grotesca estilo Apple: **SF Pro Display** o **Helvetica Neue** | Medium (500); Semibold (600) en palabras cortas fuertes ("Succeed") | **−2 % a −3 %** (muy cerrado) |
-| Palabra clave (la importante) | Serif robusta de contraste bajo: **Georgia** | Regular; Bold en titulares ("Goal") | −1 % |
+| Texto de contexto (casi todo) | **Helvetica Neue** (elegida por la clienta en lugar de SF Pro Display) | **Medium** (500) + trazo de 0,3 px del mismo color (queda como un Semibold, igual que la referencia) | **−3,5 %** |
+| Palabras cortas fuertes ("Succeed") | Helvetica Neue | Bold (700) | −3 % |
+| Palabra clave | **Georgia Pro** | **SemiBold** (600); Bold en titulares | −1,5 % |
+
+Calibrado escribiendo "If your defination of / success" con cada combinación junto al recorte de la referencia: Helvetica Neue Medium −3,5 % y Georgia Pro SemiBold son las más parecidas en peso, ancho y apretura.
 
 ### Tamaños y composición
 - Contexto: **48–66 px**. Llamadas laterales pequeñas: ~44 px.
@@ -252,3 +255,12 @@ Fuente: 22,8 s · 720x1280 · 30 fps. Valores convertidos a 1080x1920 a 60 fps.
 - **Llamadas con triángulo** (◀) junto a la boca: un triángulo de color apunta al que habla y el texto entra palabra a palabra a su lado.
 - **Color por escena:** texto blanco por defecto; el acento cambia con la escena (verde junto a una gráfica verde, amarillo en "cheatcode"). Sombra suave `0 2px 10px rgba(0,0,0,.35)`. Sobre fondos claros, sombra proyectada más marcada (efecto 3D).
 - **Salida:** el bloque se funde y desenfoca en 6–8 f cuando empieza el siguiente.
+
+### Implementación (vídeos del lote 2)
+- Componente `src/lote2/Subtitulos2.tsx`; bloques generados por `scripts/lote2_preparar.py` desde el guion de cada vídeo (`datos/lote2/<vid>_guion.py`, no versionado), con anchos medidos con la fuente real.
+- Tamaños finales: contexto **64 px**, clave **104 px** (≈ 1,6 ×); hasta 2 líneas de contexto de ≤ 700 px + 1 línea clave (≤ 880 px; si es más larga se reduce).
+- Bloque = frase hasta la palabra clave; se corta también al cambiar de quien habla, en pausas > 0,55 s o con "/" en el guion.
+- Línea de luz lila bajo la clave: trazo tipo pincel (ancho 1,04 × la palabra), núcleo `#EFE4FF` + resplandor `#B184F5`, se dibuja en 20 f.
+- Diálogos: triángulo junto a la primera línea apuntando a quien habla — amarillo `#F6D25A` (Chiqui, derecha) y rosa `#F5A3C7` (Gordi, izquierda).
+- Legibilidad sobre pared blanca: degradado morado oscuro muy suave en la mitad inferior (0 → 0,42) + sombra `0 2px 10px rgba(0,0,0,.35)` y una sombra ancha `0 6px 26px rgba(24,10,48,.30)`.
+- Subtítulos a la altura del pecho (y ≈ 1265 px), desplazados hacia quien habla.

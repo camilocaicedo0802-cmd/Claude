@@ -48,3 +48,6 @@ material/lote2/
 
 # Segunda referencia (vídeo de terceros): no se sube al repositorio público
 referencia_subs/
+
+# Fuentes con licencia enviadas por la clienta: no se suben al repositorio público
+public/fuentes/cliente/
