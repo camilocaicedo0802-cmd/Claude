@@ -14,8 +14,8 @@ K = f'{G}/kit' if os.path.isdir(f'{G}/kit') else None
 GRIFO = f'{K}/broll/k_grifo_m_0.mp4' if K else f'{HF}/fixed/k_grifo_m_0.mp4'
 
 base = dict(
-    id='GEO_MOFU_A1_06', fmt='POV', version=2, tmp=TMP, out_dir=OUT, vo_dir=VO,
-    min_face=50, ai_label=True, hook_text_until=3.0, music=f'{AU}/music_847.mp3', music_vol=0.12,
+    id='GEO_MOFU_A1_06', fmt='POV', version=3, tmp=TMP, out_dir=OUT, vo_dir=VO,
+    min_face=50, ai_label=False, hook_text_until=3.0, music=f'{AU}/music_847.mp3', music_vol=0.12,
     hooks={
         'HA': dict(vo='HA', dur=3.0, subs=True, text=('POV: por fin aprendiste', 'a usar la piedra'),
                    line='POV: le diste una segunda oportunidad.', sub_y=570, sfx=[(1.95, f'{AU}/sfx_soplo.wav', 0.6)]),

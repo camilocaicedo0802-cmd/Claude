@@ -24,7 +24,7 @@ def vd(k):           # duración de la fila = voz verificada + 0,12 s
 cfg = dict(
     id=ID, fmt=FMT, version=VERSION, tmp=TMP, out_dir=OUT, vo_dir=VO,
     min_face=50,                 # caras pequeñas también se protegen
-    ai_label=True,               # 'Recreación con IA' en avatares, entrevistas, podcast, testimonios generados
+    ai_label=False,              # sin rótulo 'Recreación con IA' (Camilo); la etiqueta IA se activa en la plataforma al publicar
     hook_text_until=3.0 * SPEED, speed=SPEED, music=f'{AU}/music_821.mp3',   # music_805 / 821 / 847
     hooks={
         # text=(línea blanca, línea amarilla grande). Si el texto dice lo mismo que la voz -> subs=False.

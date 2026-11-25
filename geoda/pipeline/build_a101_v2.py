@@ -16,8 +16,8 @@ def vd(k):
 
 DOOR = 2.0
 cfg = dict(
-    id='GEO_TOFU_A1_01', fmt='UGC', version=2, tmp=TMP, out_dir=A, vo_dir=VO,
-    min_face=50, ai_label=True, hook_text_until=3.0 * SPEED, speed=SPEED, music=f'{AU}/music_805.mp3',
+    id='GEO_TOFU_A1_01', fmt='UGC', version=3, tmp=TMP, out_dir=A, vo_dir=VO,
+    min_face=50, ai_label=False, hook_text_until=3.0 * SPEED, speed=SPEED, music=f'{AU}/music_805.mp3',
     hooks={
         # texto del hook = voz -> sin subtítulo; reloj gigante 3:00 p. m. desde el fotograma 1
         'HA': dict(vo='HA', dur=vd('HA'), subs=False, text=('Si a media tarde ya hueles, aunque', 'te eches desodorante, mira esto 👇'),

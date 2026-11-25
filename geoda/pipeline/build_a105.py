@@ -137,8 +137,8 @@ def cfg_for(meta):
     body = [row('B1'), row('B2'), row('B3', icon='👀'), row('B4', sfx=[(-0.1, WH, 0.18)]), row('B5', sfx=[(-0.1, WH, 0.18)]),
             row('B6'), row('B7', sfx=[(0.8, f'{AU}/splash_1311.mp3', 0.25)]), row('B8', sfx=[(-0.1, WH, 0.18)]), row('B9'), row('B10'),
             row('B11'), row('B12'), row('B13', sfx=[(-0.1, WH, 0.18)])]
-    return dict(id='GEO_MOFU_A1_05', fmt='PODCAST', version=5, tmp=T, out_dir=A, vo_dir=T, min_face=50, hook_text_until=3.0,
-                hook_slots=[360, 420, 470, 560, 700, 860, 1000], ai_label=True, cut_sfx=True, cut_sfx_vol=0.10, music_vol=0.07,
+    return dict(id='GEO_MOFU_A1_05', fmt='PODCAST', version=6, tmp=T, out_dir=A, vo_dir=T, min_face=50, hook_text_until=3.0,
+                hook_slots=[360, 420, 470, 560, 700, 860, 1000], ai_label=False, cut_sfx=True, cut_sfx_vol=0.10, music_vol=0.07,
                 hooks=hooks, body=body,
                 cta=dict(row='B13', l1='PAGA CONTRAENTREGA', l2='Pagas cuando te llegue'),   # + 'Pago contraentrega · Envío gratis' (brief)
                 sfx={'HA': [(0.02, f'{AU}/sfx_2357.mp3', 0.6)]})

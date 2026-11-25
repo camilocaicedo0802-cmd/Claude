@@ -96,8 +96,8 @@ El montador (`pipeline/builder.py`) ya trae estas reglas por defecto.
     `label_fix.py --fit` mide los bordes reales del tubo. Si el stick está inclinado en la mano, se sigue el giro sin recentrar.
 
 ## Decisiones de Camilo sobre el brief corregido (25-nov)
-29. **Rótulo 'Recreación con IA'**: se deja (pequeño, esquina inferior izquierda dentro de la zona segura, hasta la tarjeta
-    final) en avatares, entrevistas, podcast y testimonios generados.
+29. **Sin rótulo 'Recreación con IA'** (decisión final de Camilo, 25-nov): se quitó de todos los videos (A1-01 v3, A1-04 v3,
+    A1-05 v6, A1-06). Al publicar, activar la etiqueta de contenido IA de la plataforma (ver regla 4).
 30. **Sin precios** salvo que Camilo lo indique: el CTA Black Friday va como 'Paga 2 lleva 3', sin $99.990.
 31. **Zona segura del brief**: ~250 px arriba, 450-670 px abajo y 140 px a la derecha libres de texto (montador: SAFE_TOP 250,
     SAFE_BOT 1250, SAFE_RIGHT 940); el botón/toque de la landing también se baja fuera de la barra superior.

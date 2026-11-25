@@ -17,7 +17,7 @@ la misma voz al mismo tiempo; dentro de un video, cada personaje conserva su voz
 ## Lote 3
 | # | Video | Formato | Duración | CTA | Nota |
 |---|---|---|---|---|---|
-| 1 | GEO-TOFU-A2-03 | Testimonio | 30 s | Envío a toda Colombia | Testimonio generado: rótulo IA y sin contar resultados como reales. |
+| 1 | GEO-TOFU-A2-03 | Testimonio | 30 s | Envío a toda Colombia | Testimonio generado: sin contar resultados como reales. |
 | 2 | GEO-TOFU-A2-04 | Podcast | 39 s | Black Friday | Podcast: WAN 3.0 con audio nativo, una toma larga por persona y su plano solo cuando habla (ref. `pipeline/build_a105.py`; se puede reutilizar `kit/personajes/podcast/`). |
 | 3 | GEO-MOFU-A2-05 | Diario de 14 días | 45 s | Black Friday | Diario 14 días: la misma persona y la misma voz en los 14 días del video. |
 | 4 | GEO-MOFU-A2-06 | Comparación piedra vs frasco | 33 s | Combo 2x para regalar | Comparación: frascos genéricos sin marca. |
@@ -61,7 +61,7 @@ la misma voz al mismo tiempo; dentro de un video, cada personaje conserva su voz
 | 2 | GEO-TOFU-A5-02 | POV | 24 s | Envío a toda Colombia | POV: voz interior. |
 | 3 | GEO-TOFU-A5-03 | Estilo Pixar (3D) | 27 s | Navidad / regalo | Pixar: Geo (la piedra) diseñado a partir de fotos reales de la piedra (misma forma y color); frascos genéricos sin marca; cerrar con 2 s de producto real. |
 | 4 | GEO-MOFU-A5-04 | Comparación piedra vs frasco | 33 s | Se agota rápido | Comparación: frascos genéricos sin marca. |
-| 5 | GEO-MOFU-A5-05 | Testimonio | 33 s | Navidad / regalo | Testimonio generado: rótulo IA y sin contar resultados como reales. |
+| 5 | GEO-MOFU-A5-05 | Testimonio | 33 s | Navidad / regalo | Testimonio generado: sin contar resultados como reales. |
 - **Voces sugeridas:** Laomedeia (M) y Algieba (H)
 
 ## Lote 8
@@ -88,7 +88,7 @@ la misma voz al mismo tiempo; dentro de un video, cada personaje conserva su voz
 | # | Video | Formato | Duración | CTA | Nota |
 |---|---|---|---|---|---|
 | 1 | GEO-MOFU-A7-04 | Faceless / motion graphics | 33 s | Envío a toda Colombia | Faceless/motion: gráficos sobre fotos reales (ref. `pipeline/motion_v3.py`). |
-| 2 | GEO-MOFU-A7-05 | Testimonio | 33 s | Se agota rápido | Testimonio generado: rótulo IA y sin contar resultados como reales. |
+| 2 | GEO-MOFU-A7-05 | Testimonio | 33 s | Se agota rápido | Testimonio generado: sin contar resultados como reales. |
 | 3 | GEO-BOFU-A7-06 | UGC con avatar IA | 18 s | Combo 2x para regalar | UGC: voz en off storytime, la avatar no mueve los labios (ref. `pipeline/build_a101_v2.py`). |
 | 4 | GEO-TOFU-A8-01 | UGC con avatar IA (storytime) | 36 s | 1 piedra te dura 1 año (ahorro) | UGC: voz en off storytime, la avatar no mueve los labios (ref. `pipeline/build_a101_v2.py`). |
 | 5 | GEO-TOFU-A8-02 | Estilo Pixar (3D) | 30 s | Navidad / regalo | Pixar: Geo (la piedra) diseñado a partir de fotos reales de la piedra (misma forma y color); frascos genéricos sin marca; cerrar con 2 s de producto real. |

@@ -39,7 +39,8 @@ Habla siempre en español, con frases simples. Al final de **cada respuesta** ma
   Personas que hablan (podcast, calle) = WAN 3.0 con audio nativo, **una toma larga por persona** y solo su plano cuando habla.
 - **Dentro de cada video, un personaje = una cara y una voz** (no cambian a mitad del video). Alternar voz de mujer y de
   hombre entre videos del lote.
-- **Rótulo "Recreación con IA"** (lo pone el montador con `ai_label=True`) en avatares, entrevistas, podcast, testimonios generados.
+- **Sin rótulo "Recreación con IA"** en ningún video (`ai_label=False`; decisión de Camilo del 25-nov). Al publicar, se activa la
+  etiqueta de contenido IA de Meta/TikTok desde la plataforma.
 - **Ritmo**: plano nuevo cada 2,5-3 s, sin pausas > 0,3 s, efecto de sonido en cada corte. Duración TOFU 21-39 s,
   MOFU 30-51 s, BOFU 18-24 s (usar `speed` 1.05-1.2 si sobra).
 - **Compliance**: sin primeros planos de axila (planos medios con ropa), no decir "24 horas", "100 % natural",
@@ -82,7 +83,7 @@ Salidas pesadas (clips, mp4) en la carpeta de trabajo `G` (`cat ~/.geoda_work`):
 4. **Montaje**: copiar `geoda/pipeline/plantilla_build.py` a `geoda/videos/<ID>/build.py` y llenar (claves explicadas en la
    plantilla y en `pipeline/README.md`). Correr `python3 geoda/videos/<ID>/build.py` → `G/<id>/GEO_…_HA_<FMT>_v1.mp4` y HB.
 5. **QA obligatorio**: `python3 G/tools/qa_sheet.py <mp4> G/lab/<id>.jpg 1.0 8` y mirar la hoja: textos fuera de caras,
-   piedra y etiqueta; dentro de las guías; hook desde el cuadro 1; rótulo; CTA y producto real al final. Si algo falla,
+   piedra y etiqueta; dentro de las guías; hook desde el cuadro 1; sin rótulo IA; CTA y producto real al final. Si algo falla,
    ajustar cajas protegidas (tercer elemento del plano), `sub_y`, `hook_slots`, `icon_x`, y volver a montar.
 6. **Entregar cada video apenas esté** (SendUserFile, HA y HB) con su costo en USD (imágenes + segundos de video).
 
