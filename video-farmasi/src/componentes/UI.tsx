@@ -5,7 +5,7 @@ import { C, F } from "../estilo";
 import { DATOS, UI } from "../plan";
 import { clamp, eInOut, eOut, f, inicio } from "../util";
 
-// Única superposición del v2: tarjeta oscura con la curva de glucosa (§4.2 "Grow").
+// Única superposición del v2: tarjeta oscura con la curva de glucosa (4.2 "Grow").
 // modo "sube": la curva sube (palabra 58 "sube"). modo "baja": sube y cae rápido (palabra 87 "baje").
 const CAMINOS = {
   sube: "M 30 330 C 140 330, 200 320, 260 280 S 400 120, 470 70 S 560 40, 630 40",
@@ -27,17 +27,17 @@ export const GraficaGlucosa: React.FC<{ modo: "sube" | "baja" }> = ({ modo }) =>
   const pc = interpolate(frame, [tChip, tChip + 10], [0, 1], clamp);
   return (
     <AbsoluteFill style={{ opacity: v, scale: String(0.9 + 0.1 * pin), translate: `0px ${(1 - pin) * 60}px` }}>
-      <div style={{ position: "absolute", left: 215, top: arriba ? 150 : 1260, width: 650, height: 380, borderRadius: 34, background: `linear-gradient(170deg, ${C.navy1}, ${C.navy2})`, border: "1px solid rgba(120,200,255,0.3)", boxShadow: "0 24px 60px rgba(0,0,0,0.45)", overflow: "hidden" }}>
-        <div style={{ position: "absolute", left: 32, top: 20, fontFamily: F.sans, fontWeight: 500, fontSize: 54, color: "#fff" }}>Glucosa</div>
-        {modo === "sube" && <div style={{ position: "absolute", left: 34, bottom: 18, fontFamily: F.sans, fontWeight: 600, fontSize: 28, color: "rgba(160,220,255,0.9)", opacity: pc }}>{DATOS.pico}</div>}
+      <div style={{ position: "absolute", left: 215, top: arriba ? 150 : 1260, width: 650, height: 380, borderRadius: 34, background: `linear-gradient(170deg, ${C.navy1}, ${C.navy2})`, border: "1px solid rgba(196,165,255,0.3)", boxShadow: "0 24px 60px rgba(0,0,0,0.45)", overflow: "hidden" }}>
+        <div style={{ position: "absolute", left: 32, top: 20, fontFamily: F.sans, fontWeight: 400, fontSize: 54, color: "#fff" }}>Glucosa</div>
+        {modo === "sube" && <div style={{ position: "absolute", left: 34, bottom: 18, fontFamily: F.sans, fontWeight: 500, fontSize: 28, color: "rgba(214,190,255,0.9)", opacity: pc }}>{DATOS.pico}</div>}
         <svg width={650} height={380} viewBox="0 0 690 420" style={{ position: "absolute", inset: 0 }}>
-          {[150, 240, 330].map((y) => <line key={y} x1={30} x2={660} y1={y} y2={y} stroke="rgba(120,200,255,0.25)" strokeWidth={1.5} />)}
-          <path d={CAMINOS[modo]} fill="none" stroke="#2EC4F2" strokeWidth={6} strokeLinecap="round" strokeDasharray={ev.strokeDasharray} strokeDashoffset={ev.strokeDashoffset} style={{ filter: "drop-shadow(0 0 10px #2EC4F2)" }} />
+          {[150, 240, 330].map((y) => <line key={y} x1={30} x2={660} y1={y} y2={y} stroke="rgba(196,165,255,0.25)" strokeWidth={1.5} />)}
+          <path d={CAMINOS[modo]} fill="none" stroke="#C4A5FF" strokeWidth={6} strokeLinecap="round" strokeDasharray={ev.strokeDasharray} strokeDashoffset={ev.strokeDashoffset} style={{ filter: "drop-shadow(0 0 10px #C4A5FF)" }} />
         </svg>
       </div>
       <div style={{ position: "absolute", left: 640, top: arriba ? 96 : 1206, opacity: pc, scale: String(interpolate(pc, [0, 0.6, 1], [0.5, 1.12, 1])), background: modo === "sube" ? C.rojo2 : C.verde, borderRadius: 999, padding: "10px 28px 12px 18px", display: "flex", alignItems: "center", gap: 10, boxShadow: "0 10px 30px rgba(0,0,0,0.3)" }}>
-        <Img src={staticFile(`iconos/flecha_${modo === "sube" ? "arriba" : "abajo"}.png`)} style={{ width: 56, height: 56 }} />
-        <span style={{ fontFamily: F.sans, fontWeight: 800, fontSize: 52, color: "#fff" }}>{modo === "sube" ? "SUBE" : "BAJA"}</span>
+        <Img src={staticFile(`iconos/flecha_${modo === "sube" ? "arriba" : "abajo"}.png`)} style={{ filter: "hue-rotate(48deg) saturate(1.05)", width: 56, height: 56 }} />
+        <span style={{ fontFamily: F.sans, fontWeight: 600, fontSize: 52, color: "#fff" }}>{modo === "sube" ? "SUBE" : "BAJA"}</span>
       </div>
     </AbsoluteFill>
   );

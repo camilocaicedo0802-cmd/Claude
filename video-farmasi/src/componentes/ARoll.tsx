@@ -2,7 +2,7 @@ import { Video } from "@remotion/media";
 import { AbsoluteFill, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
 import { BASE, camara, desenfoqueTH } from "../camara";
 
-// Capa "base" = toma completa con el fondo virado a cian (§8). Capa "persona" = solo la persona (alfa),
+// Capa "base" = toma completa. Capa "persona" = solo la persona (alfa),
 // con piel cálida, por encima de las palabras gigantes que van "detrás".
 export const ARoll: React.FC<{ capa: "base" | "persona" }> = ({ capa }) => {
   const frame = useCurrentFrame();
@@ -10,8 +10,21 @@ export const ARoll: React.FC<{ capa: "base" | "persona" }> = ({ capa }) => {
   const t = frame / fps;
   const cam = camara(t);
   const { blur, extra } = desenfoqueTH(frame);
-  const filtroBase = "contrast(1.05) saturate(1.08) brightness(1.02)"; // color natural (UGC)
-  const filtroPersona = filtroBase;
+  // Color natural (UGC). Rostro más luminoso (corrección de la clienta): curva de gamma que levanta
+  // sombras y medios tonos sin quemar las altas luces; el fondo sube un poco menos para no despegarse.
+  const filtroBase = "url(#luzFondo) contrast(1.03) saturate(1.06)";
+  const filtroPersona = "url(#luzRostro) contrast(1.02) saturate(1.05)";
+  const curva = (id: string, exp: number, amp: number) => (
+    <svg width={0} height={0} style={{ position: "absolute" }}>
+      <filter id={id} colorInterpolationFilters="sRGB">
+        <feComponentTransfer>
+          <feFuncR type="gamma" amplitude={amp} exponent={exp} offset={0} />
+          <feFuncG type="gamma" amplitude={amp} exponent={exp} offset={0} />
+          <feFuncB type="gamma" amplitude={amp} exponent={exp * 1.02} offset={0} />
+        </feComponentTransfer>
+      </filter>
+    </svg>
+  );
   return (
     <AbsoluteFill
       style={{
@@ -22,6 +35,7 @@ export const ARoll: React.FC<{ capa: "base" | "persona" }> = ({ capa }) => {
         filter: blur > 0.05 ? `blur(${blur}px)` : undefined,
       }}
     >
+      {capa === "base" ? curva("luzFondo", 0.88, 1.02) : curva("luzRostro", 0.74, 1.04)}
       {capa === "base" ? (
         <>
           <Video src={staticFile("edit/aroll.mp4")} muted objectFit="cover" style={{ width: "100%", height: "100%", filter: filtroBase }} />

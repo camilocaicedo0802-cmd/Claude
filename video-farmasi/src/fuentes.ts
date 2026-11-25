@@ -2,11 +2,12 @@ import { loadFont } from "@remotion/fonts";
 import { staticFile } from "remotion";
 import { F } from "./estilo";
 
-// Sustitutas de las fuentes de la referencia (ver estilo.md §3.1):
-// Helvetica Neue → Inter Tight · Druk/Tusker condensada → League Gothic al 75 % de ancho.
-const pesos = ["400", "500", "600", "700", "800"] as const;
-for (const w of pesos) {
-  loadFont({ family: F.sans, url: staticFile(`fuentes/InterTight-${w}.ttf`), weight: w });
+// Tipografía delicada (corrección de la clienta): Jost para textos y Sofia Sans Extra Condensed ligera
+// para las palabras gigantes y titulares. Inter Tight queda solo como respaldo de símbolos (→).
+for (const w of ["300", "400", "500", "600"] as const) {
+  loadFont({ family: F.sans, url: staticFile(`fuentes/Jost-${w}.ttf`), weight: w });
 }
-loadFont({ family: F.sans, url: staticFile("fuentes/InterTight-800i.ttf"), weight: "800", style: "italic" });
-loadFont({ family: F.cond, url: staticFile("fuentes/LeagueGothic-Cond.ttf"), weight: "400" });
+for (const w of ["300", "400"] as const) {
+  loadFont({ family: F.cond, url: staticFile(`fuentes/SofiaSansExtraCond-${w}.ttf`), weight: w });
+}
+loadFont({ family: "Inter Tight", url: staticFile("fuentes/InterTight-600.ttf"), weight: "600" });

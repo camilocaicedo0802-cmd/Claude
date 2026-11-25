@@ -8,7 +8,7 @@ import { PALABRAS, clamp, eOut, entrada, f, fin, inicio, limpio } from "../util"
 const SOMBRA = "0 2px 16px rgba(0,0,0,0.45), 0 0 2px rgba(0,0,0,0.35)";
 const textoDe = (idx: number[]) => idx.map((i) => limpio(PALABRAS[i].text)).join(" ");
 
-// Salida del bloque: 6 f de desvanecido + desenfoque (§3.5)
+// Salida del bloque: 6 f de desvanecido + desenfoque (3.5)
 const salida = (frame: number, b: Bloque) => {
   const fin_ = f(b.hasta);
   const p = interpolate(frame, [fin_ - 6, fin_], [1, 0], clamp);
@@ -20,13 +20,13 @@ const Pequena: React.FC<{ i: number; size?: number; color?: string; sombra?: boo
   const frame = useCurrentFrame();
   const a = entrada(frame, f(inicio(i)) - 4, 8);
   return (
-    <span style={{ display: "inline-block", fontFamily: F.sans, fontWeight: 400, fontSize: size, color, letterSpacing: "-0.02em", textShadow: sombra ? SOMBRA : undefined, marginRight: "0.24em", ...a }}>
+    <span style={{ display: "inline-block", fontFamily: F.sans, fontWeight: 300, fontSize: size, color, letterSpacing: "-0.02em", textShadow: sombra ? SOMBRA : undefined, marginRight: "0.24em", ...a }}>
       {limpio(PALABRAS[i].text)}
     </span>
   );
 };
 
-// Icono 3D (pop con rotación, §4.2)
+// Icono 3D (pop con rotación, 4.2)
 export const Icono: React.FC<{ nombre: string; desde: number; size?: number; style?: React.CSSProperties; giro?: number }> = ({ nombre, desde, size = 150, style, giro = 12 }) => {
   const frame = useCurrentFrame();
   const p = interpolate(frame, [desde, desde + 12], [0, 1], clamp);
@@ -37,7 +37,7 @@ export const Icono: React.FC<{ nombre: string; desde: number; size?: number; sty
   );
 };
 
-// ---------- Estilo 1: cian en línea ----------
+// ---------- Estilo 1: destacado lila en línea ----------
 const BloqueLinea: React.FC<{ b: Bloque }> = ({ b }) => {
   const frame = useCurrentFrame();
   const soloDestacado = b.pequenas.length === 0;
@@ -54,7 +54,7 @@ const BloqueLinea: React.FC<{ b: Bloque }> = ({ b }) => {
           {b.destacado.map((i) => {
             const a = entrada(frame, f(inicio(i)) - 8, 10, 0, 1.15, 8);
             return (
-              <span key={i} style={{ display: "inline-block", fontFamily: F.sans, fontWeight: 800, fontSize: tam, color: C.cian, textTransform: "uppercase", letterSpacing: "-0.01em", marginRight: "0.22em", textShadow: "0 3px 18px rgba(0,0,0,0.35), 0 0 22px rgba(40,188,238,0.35)", ...a }}>
+              <span key={i} style={{ display: "inline-block", fontFamily: F.sans, fontWeight: 600, fontSize: tam, color: C.acento, textTransform: "uppercase", letterSpacing: "0.04em", marginRight: "0.22em", textShadow: "0 3px 18px rgba(0,0,0,0.35), 0 0 22px rgba(183,148,246,0.35)", ...a }}>
                 {limpio(PALABRAS[i].text)}
               </span>
             );
@@ -76,13 +76,13 @@ export const GiganteDetras: React.FC<{ b: Bloque }> = ({ b }) => {
   const t0 = f(inicio(b.destacado[0])) - 22;
   const letras = [...txt];
   return (
-    <AbsoluteFill style={{ ...salida(frame, b), filter: `${salida(frame, b).filter ?? ""} drop-shadow(0 0 24px rgba(80,170,210,0.35))` }}>
+    <AbsoluteFill style={{ ...salida(frame, b), filter: `${salida(frame, b).filter ?? ""} drop-shadow(0 0 24px rgba(155,107,242,0.35))` }}>
       <div style={{ position: "absolute", left: 0, right: 0, top: Y.giganteDetras - (size * cap("cond")) / 2 - size * 0.16, textAlign: "center", whiteSpace: "nowrap" }}>
         {letras.map((c, k) => {
           const d = t0 + k * 1.5;
           const p = interpolate(frame, [d, d + 10], [0, 1], { ...clamp, easing: eOut });
           return (
-            <span key={k} style={{ display: "inline-block", fontFamily: F.cond, fontSize: size, lineHeight: 1, letterSpacing: "0.005em", backgroundImage: `linear-gradient(180deg, ${C.cianGigArriba} 15%, ${C.cianGigAbajo} 95%)`, WebkitBackgroundClip: "text", backgroundClip: "text", color: "transparent", WebkitTextStroke: `1.5px rgba(104,216,248,0.5)`, opacity: p, filter: `blur(${(1 - p) * 14}px)`, translate: `0px ${(1 - p) * 30}px`, whiteSpace: "pre" }}>
+            <span key={k} style={{ display: "inline-block", fontFamily: F.cond, fontWeight: 400, fontSize: size, lineHeight: 1, letterSpacing: "0.01em", backgroundImage: `linear-gradient(180deg, ${C.gigArriba} 15%, ${C.gigAbajo} 95%)`, WebkitBackgroundClip: "text", backgroundClip: "text", color: "transparent", WebkitTextStroke: `1px rgba(228,212,255,0.45)`, opacity: p, filter: `blur(${(1 - p) * 14}px)`, translate: `0px ${(1 - p) * 30}px`, whiteSpace: "pre" }}>
               {c}
             </span>
           );
@@ -157,7 +157,7 @@ const BloqueTecleada: React.FC<{ b: Bloque }> = ({ b }) => {
   );
 };
 
-// ---------- Estilo 4: sobre b-roll (blanca gigante + píldora cian) ----------
+// ---------- Estilo 4: sobre b-roll (blanca gigante + píldora lila) ----------
 const BloqueBroll: React.FC<{ b: Bloque }> = ({ b }) => {
   const frame = useCurrentFrame();
   const txt = textoDe(b.destacado).toUpperCase();
@@ -176,10 +176,10 @@ const BloqueBroll: React.FC<{ b: Bloque }> = ({ b }) => {
       <Tecleada texto={txt} desde={r.desde} hasta={r.hasta} centroY={centro} anchoMax={940} maxSize={330} />
       {pil.length > 0 && (
         <div style={{ position: "absolute", left: 0, right: 0, top: centro + (size * cap("cond")) * 0.22, display: "flex", justifyContent: "center" }}>
-          <div style={{ background: C.pildora, borderRadius: 999, padding: "8px 30px 12px", rotate: "-3deg", scale: String(0.6 + 0.4 * pp), opacity: pp, boxShadow: "0 10px 30px rgba(0,60,110,0.35)", display: "flex", alignItems: "center", position: "relative" }}>
+          <div style={{ background: C.pildora, borderRadius: 999, padding: "8px 30px 12px", rotate: "-3deg", scale: String(0.6 + 0.4 * pp), opacity: pp, boxShadow: "0 10px 30px rgba(70,30,120,0.35)", display: "flex", alignItems: "center", position: "relative" }}>
             {pil.map((i) => {
               const a = entrada(frame, f(inicio(i)) - 4, 6, 0, 1.05, 4);
-              return <span key={i} style={{ fontFamily: F.sans, fontWeight: 500, fontSize: 60, color: "#fff", marginRight: "0.22em", letterSpacing: "-0.01em", ...a }}>{limpio(PALABRAS[i].text)}</span>;
+              return <span key={i} style={{ fontFamily: F.sans, fontWeight: 400, fontSize: 60, color: "#fff", marginRight: "0.22em", letterSpacing: "-0.01em", ...a }}>{limpio(PALABRAS[i].text)}</span>;
             })}
             {b.icono && <Icono nombre={b.icono} desde={f(inicio(pil[pil.length - 1])) + 2} size={120} style={{ right: -95, top: -55 }} />}
           </div>

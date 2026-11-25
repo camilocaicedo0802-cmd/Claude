@@ -8,7 +8,7 @@ const add = (at: number, src: string, vol: number, dur?: number) => ev.push({ at
 
 // Tecleo SOLO en los textos grandes e importantes (regla del cliente): las palabras gigantes detrás de la
 // cabeza y los titulares de los motion graphics. Una tecla cada 2 letras, sincronizada con la aparición
-// letra a letra (1,5 f por letra → 1 tecla cada 3 f). Los destacados cian del subtítulo van sin tecleo.
+// letra a letra (1,5 f por letra → 1 tecla cada 3 f). Los destacados en línea del subtítulo van sin tecleo.
 const teclas = ["tecla_1", "tecla_2", "tecla_3", "tecla_4", "tecla_5"];
 let k = 0;
 const teclearLetras = (desde: number, texto: string) => {

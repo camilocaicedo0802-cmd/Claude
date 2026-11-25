@@ -1,29 +1,28 @@
 // Tokens de estilo medidos en la referencia (ver estilo.md §4.1). Lienzo 1080x1920 @ 60 fps.
 export const C = {
-  cian: "#1FADD9",
-  cianClaro: "#28BCEE",
-  cianGigArriba: "#68D8F8",
-  cianGigAbajo: "#3D7BA6",
-  cianMGArriba: "#65CEF8",
-  cianMGAbajo: "#3AA0CD",
-  pildora: "#0FB2EF",
-  personas: "#1EB4EA",
+  // Acento lila (corrección de la clienta: sustituye al cian de la referencia)
+  acento: "#B794F6", // destacados sobre vídeo
+  acentoClaro: "#D2B8FF",
+  gigArriba: "#E4D4FF", // degradado de la palabra gigante detrás de la cabeza
+  gigAbajo: "#9D6FEA",
+  mgArriba: "#B892F5", // titulares sobre fondo claro
+  mgAbajo: "#7E4FDC",
+  pildora: "#9B6BF2",
   rojo: "#EC011A",
   rojo2: "#EB2C35",
-  blanco: "#F3F4F9",
-  navy1: "#0B3350",
-  navy2: "#021725",
-  navyCab: "#1D3E8A",
+  blanco: "#F7F5FB",
+  navy1: "#2E1C52", // tarjetas oscuras: morado profundo
+  navy2: "#150B2A",
   verde: "#22C55E",
-  fondoSupDer: "#8BCEFA",
-  fondoInfIzq: "#83C3EB",
-  fondoBlanco: "#F8F9FE",
+  fondoSupDer: "#DCCBFF", // fondo de los motion graphics: lavanda
+  fondoInfIzq: "#CFBDF7",
+  fondoBlanco: "#FBF8FF",
   grisMG: "#2B2B2B",
 } as const;
 
 export const F = {
-  sans: "Inter Tight",
-  cond: "League Gothic Cond",
+  sans: "Jost",
+  cond: "Sofia Sans Extra Condensed",
 } as const;
 
 // Tamaños (§3.2)
