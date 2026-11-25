@@ -115,6 +115,16 @@ El montador (`pipeline/builder.py`) ya trae estas reglas por defecto.
     variante la frase queda solo en el hook y ese plano se QUITA (no se dejan planos sin voz); para no salir del rango de
     duración se alargan un poco los demás planos con acción y el cierre.
 
+39. **Nada de escenas estáticas** (Camilo, 25-nov): todos los planos se mueven. Personas, fondos y producto son video
+    (Kling/WAN o animación propia); una foto fija con zoom NO cuenta. Producto real: la foto real animada (giro, destellos,
+    brillo) o fondo en video + producto compuesto cuadro a cuadro (`tools/endcard_anim.py`). Cierre: `kit/producto/endcard_bano_anim.mp4`.
+40. **La piedra no deja residuo**: nunca marca blanca, espuma, polvo, crema ni rastro tipo roll-on en la piel o la ropa; la piedra
+    es un cristal translúcido que no cambia de forma. Revisar la piel cuadro a cuadro después de cada pasada y usar solo los tramos
+    limpios. Truco que funciona: Kling con el mismo cuadro de inicio y de fin (`last_image_url` = `image_url`) para que el clip
+    termine con la piel limpia; en el antebrazo, el tramo inicial antes de que aparezca brillo.
+41. **Entrevistas en la calle**: la toma inicial (hook) muestra el plano completo de la entrevista, presentador y entrevistado
+    en cuadro, con el presentador haciendo la pregunta con el micrófono (solo él mueve los labios).
+
 ## Entrega
 34. Carpeta `GEODA_60/TOFU|MOFU|BOFU/A1…` con las versiones vigentes, `CTA_alternos/` para los re-exports de CTA y un
     `LEEME.txt`; se envía también como .zip.

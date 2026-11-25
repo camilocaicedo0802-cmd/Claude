@@ -43,20 +43,20 @@ cfg = dict(
 )
 
 def build_shots(cfg):
-    T = TMP; ec, ec_box = f'{K}/producto/endcard_bano_real.png', (259, 960, 801, 1600)   # producto real en el baño
+    T = TMP; ec, ec_box = f'{K}/producto/endcard_bano_anim.mp4', (259, 960, 801, 1600)   # producto real en el baño, ANIMADO
     d = {r['key']: r['dur'] for r in [dict(key=h, **cfg['hooks'][h]) for h in cfg['hooks']] + cfg['body']}
     # B.shot(tmp, nombre, fuente, duración, ss=inicio, speed=, z0/z1=zoom, fx/fy=punto del zoom, still=foto, stopmo=12 fps)
     # + ([cajas],) opcional: zonas que ningún texto tapa (cara, piedra, etiqueta). Sin caja: detecta caras/etiqueta solo.
-    # REGLA: personas/avatares siempre en clip de video con una acción (Kling); still=True solo para producto, fondos y gráficos.
+    # REGLA: NADA estático. Personas, fondos y producto siempre en video (Kling/WAN o animación propia); no usar still=True.
     # (Ojo: los montajes del A1-01 al A1-05 son anteriores a esta regla y tienen algunas fotos fijas de personas: no copiarlas.)
     return {
-        'HA': [B.shot(T, 'ha', f'{K}/producto/mano.png', d['HA'], still=True, z0=1.0, z1=1.08) + ([(330, 560, 760, 1300)],)],
+        'HA': [B.shot(T, 'ha', f'{K}/broll/k_tapa_0.mp4', d['HA'], z0=1.0, z1=1.08) + ([(300, 300, 860, 1500)],)],
         'HB': [B.shot(T, 'hb', f'{K}/broll/k_tapa_0.mp4', d['HB'], z0=1.0, z1=1.1)],
         'B1': [B.shot(T, 'b1', f'{K}/broll/k_grifo2_0.mp4', d['B1'], speed=0.8, z0=1.0, z1=1.05)],
         'B2': [B.shot(T, 'b2', f'{K}/broll/k_grifo_m_0.mp4', d['B2'])],
         'B3': [B.shot(T, 'b3', f'{K}/broll/k_toalla_0.mp4', d['B3'], speed=0.6)],
         'B4': [B.shot(T, 'b4a', f'{K}/broll/k_tres_0.mp4', 1.5),
-               B.shot(T, 'b4b', ec, d['B4'] - 1.5, still=True, z0=1.0, z1=1.05) + ([ec_box],)],
+               B.shot(T, 'b4b', ec, d['B4'] - 1.5, ss=0.0, z0=1.0, z1=1.05) + ([ec_box],)],
     }
 
 if __name__ == '__main__':

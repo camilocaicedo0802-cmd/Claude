@@ -1,1 +1,41 @@
-{}
+{
+ "s_dos": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21437-11c1-7f94-a1bc-17492f26c734/9ba381e3-0f0e-4045-a135-077d1a0b06ee.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "image_urls": [
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/7565a9c0-fad5-47f8-99bb-57e1e1055bd3.png"
+   ],
+   "prompt": "Vertical 9:16 realistic smartphone photo of a street interview on Carrera Septima in downtown Bogota, cloudy daylight, people and colonial buildings in the background. Wide two-shot showing BOTH people from the waist up: the SAME young presenter as the reference (curly dark hair, beard, navy t-shirt) on the left in three-quarter view holding a black handheld microphone toward a friendly Colombian woman in her 40s on the right (shoulder bag, casual jacket) who looks at him, listening. Both faces clearly visible in the middle of the frame, mouths closed, plain sky and buildings in the upper part. No text, no logos."
+  }
+ },
+ "w_ha2": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21437-c14b-745f-8b51-1acc7ae3b850/c6526a37-ba73-4fe1-a16b-349269340ea3.mp4"
+  ],
+  "body": {
+   "prompt": "Realistic handheld smartphone street-interview video on Carrera Septima in Bogota, natural street ambience (traffic, people), no music, no subtitles, no on-screen text. Spanish with a natural Colombian Bogota accent, lips perfectly synced. The young presenter on the left holds the microphone toward the woman and asks her, energetic and friendly: «Pregunta rápida: ¿usted sabe cómo se usa la piedra de alumbre?» Only the presenter speaks. The woman on the right listens with her mouth closed, raises her eyebrows and smiles, thinking. Both stay in frame the whole time.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21437-11c1-7f94-a1bc-17492f26c734/9ba381e3-0f0e-4045-a135-077d1a0b06ee.png",
+   "duration": 5,
+   "resolution": "720p",
+   "generate_audio": true
+  }
+ },
+ "k_brazo2": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21437-0db2-786f-be17-def6809bce16/fbf22976-e426-46d7-99fe-fbd070b11d60.mp4"
+  ],
+  "body": {
+   "prompt": "Close-up handheld video on a Bogota street. The hand slowly glides the GEODA stick over the inside of the clean forearm with gentle smooth strokes. The GEODA stone is a clear translucent mineral crystal (alum), it is NOT a roll-on and NOT a cream: it leaves no residue at all, the skin stays completely clean, no white mark, no streak, no foam, no powder. The skin of the forearm looks exactly the same before and after. The product keeps exactly the same shape and label, no rotation. No face in frame.",
+   "image_url": "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/f6cd882e-03b6-460a-a6c4-b483a94b13c7.png",
+   "duration": 3,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ }
+}

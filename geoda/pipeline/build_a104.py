@@ -1,17 +1,17 @@
 #!/usr/bin/env python3
 """GEO-TOFU-A1-04 · Street interview (voz principal hombre). Voces nativas de WAN 3.0; etiqueta real en tomas de producto."""
 import os, sys, subprocess
-import os  # carpeta de trabajo: GEODA_WORK o ~/.geoda_work (la crea setup_work.sh)
+import os
 G = os.environ.get('GEODA_WORK') or open(os.path.expanduser('~/.geoda_work')).read().strip()
 sys.path.insert(0, G)
 import builder as B
 A = f'{G}/a104'; TMP = f'{A}/tmp'; os.makedirs(TMP, exist_ok=True)
 HF = f'{G}/hf'
 cfg = dict(
-    id='GEO_TOFU_A1_04', fmt='STREET', version=3, ai_label=False, tmp=TMP, out_dir=A, vo_dir=TMP, min_face=50, hook_text_until=3.6,  # 3,6 s del montaje = 3,0 s del video final a x1.2
+    id='GEO_TOFU_A1_04', fmt='STREET', version=4, ai_label=False, tmp=TMP, out_dir=A, vo_dir=TMP, min_face=50, hook_text_until=3.6,  # 3,6 s del montaje = 3,0 s del video final a x1.2
     speed=1.2,  # pedido de Camilo: todo el video a x1.2
     hooks={  # texto del hook = voz -> solo texto (sin subtítulo)
-        'HA': dict(vo=None, clip_audio=True, dur=3.4, subs=False, text=('¿Cómo se usa la', 'piedra de alumbre?'),
+        'HA': dict(vo=None, clip_audio=True, dur=3.3, subs=False, text=('¿Cómo se usa la', 'piedra de alumbre?'),
                    line='Pregunta rápida: ¿usted sabe cómo se usa la piedra de alumbre?'),
         'HB': dict(vo=None, clip_audio=True, dur=3.8, subs=False, text=('Le preguntamos a', '5 personas en Bogotá'),
                    line='Le preguntamos a cinco personas y casi nadie acertó.',
@@ -40,7 +40,8 @@ def build_shots():
     w = lambda n: f'{HF}/{n}_0.mp4'
     fx = lambda n: f'{HF}/fixed/{n}_0.mp4'
     s = {
-     'HA': [B.shot(T, 'ha', w('w_ha'), 3.4, ss=0.15, z0=1.0, z1=1.05, audio=True)],
+     # plano completo de la entrevista: el presentador le hace la pregunta a la señora con el micrófono (los dos en cuadro)
+     'HA': [B.shot(T, 'ha', w('w_ha2'), 3.3, ss=0.50, z0=1.0, z1=1.04, audio=True)],
      'HB': [B.shot(T, 'hb', w('w_hb'), 3.8, ss=0.05, z0=1.0, z1=1.04, audio=True)],
      'B1': [B.shot(T, 'b1', w('w_i1'), 2.85, ss=0.0, z0=1.0, z1=1.05, audio=True)],
      'B2': [B.shot(T, 'b2', w('w_i2'), 3.25, ss=0.0, z0=1.0, z1=1.05, audio=True)],
@@ -50,10 +51,10 @@ def build_shots():
      # gotas solo en la punta de la piedra (el tubo y la etiqueta quedan secos); etiqueta original de la imagen, sin capa
      'B5': [B.shot(T, 'b5', w('k_gota'), 2.19, ss=0.0, speed=1.0, z0=1.0, z1=1.06) + ([],)],
      # piedra hacia abajo sobre el antebrazo -> etiqueta real invertida (label_fix --flip --tube); solo el tramo de frente
-     'B6': [B.shot(T, 'b6', fx('k_brazo_flip'), 2.04, ss=0.05, speed=0.86, z0=1.0, z1=1.06) + ([],)],
+     'B6': [B.shot(T, 'b6', fx('k_brazo2_flip'), 2.04, ss=0.0, z0=1.0, z1=1.06) + ([],)],   # sin residuo: la piedra no deja marca
      'B7': [B.shot(T, 'b7', w('w_i2'), 2.18, ss=4.85, z0=1.05, z1=1.1, audio=True)],
      'B8': [B.shot(T, 'b8a', w('k_map'), 2.6, ss=0.0, z0=1.0, z1=1.04) + ([],),
-            B.shot(T, 'b8b', ec, 2.45, still=True, z0=1.0, z1=1.04) + ([ec_box],)],
+            B.shot(T, 'b8b', f'{HF}/fixed/endcard_bano_anim.mp4', 2.45, ss=0.0, z0=1.0, z1=1.04) + ([ec_box],)],   # cierre animado
     }
     # voz del presentador (clip WAN de la demostración) sobre el primer plano del antebrazo y el cierre
     P3 = w('w_p3')   # frases verificadas: 0,22-3,40 / 3,65-5,84 / 6,20-8,24 / 8,56-13,61

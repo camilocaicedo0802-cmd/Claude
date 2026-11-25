@@ -32,9 +32,19 @@ Habla siempre en español, con frases simples. Al final de **cada respuesta** ma
   lo que ya dice la voz (queda el subtítulo; usar íconos o números grandes).
 - **Etiqueta perfecta o sin etiqueta.** Producto real (foto o clip revisado del kit) mínimo 2-3 s y en el cierre.
   Agua solo en la punta de la piedra. Piedra boca abajo → etiqueta invertida.
+- **Nada de escenas estáticas**: TODOS los planos se mueven (personas, fondos y producto). Nunca una foto fija con zoom.
+  Producto real: foto real animada (`pipeline/motion_v3.py`: giro, destellos, brillo) o fondo en video + producto real
+  compuesto cuadro a cuadro (`tools/endcard_anim.py fondo.mp4 salida.mp4 dur alto base [x1,x2] [tubo]`). Cierre listo:
+  `geoda/kit/producto/endcard_bano_anim.mp4` (10 s, producto en caja 259,960,801,1600).
+- **La piedra no deja residuo**: nada de marca blanca, espuma, polvo ni rastro tipo roll-on; es un cristal translúcido que no
+  cambia de forma. En el prompt: "clear translucent alum crystal, NOT a roll-on, NOT a cream, leaves no residue, the skin
+  stays completely clean". Revisar la piel cuadro a cuadro tras cada pasada y usar solo tramos limpios; si no hay, Kling
+  con `last_image_url` = `image_url` (termina igual que empieza).
+- **Entrevistas en la calle**: el hook abre con el plano completo (presentador + entrevistado en cuadro, él pregunta con el
+  micrófono; solo él mueve los labios).
 - **El avatar SIEMPRE en video haciendo algo** (regla de Camilo): nunca una foto fija de una persona o avatar con zoom.
   Toda imagen de una persona (cara, cuerpo o sus manos) se anima con Kling y se usa el clip con una acción (oler, rociar,
-  aplicar, abotonarse, escribir, colgar la chaqueta…). Las fotos fijas solo sirven para producto, fondos y gráficos.
+  aplicar, abotonarse, escribir, colgar la chaqueta…). (Ver también: nada de escenas estáticas.)
 - **Labios**: la voz que se oye es de quien mueve los labios. Avatares UGC = voz en off (la avatar no habla a cámara).
   Personas que hablan (podcast, calle) = WAN 3.0 con audio nativo, **una toma larga por persona** y solo su plano cuando habla.
 - **Dentro de cada video, un personaje = una cara y una voz** (no cambian a mitad del video). Alternar voz de mujer y de

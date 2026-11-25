@@ -2,7 +2,7 @@
 """GEO-MOFU-A1-05 · Podcast (host hombre + invitada mujer; la invitada es la voz principal).
 Voces nativas de WAN 3.0: un clip largo por personaje (misma voz en todo el video). Etiqueta real en todas las tomas."""
 import os, sys, json, subprocess, re
-import os  # carpeta de trabajo: GEODA_WORK o ~/.geoda_work (la crea setup_work.sh)
+import os
 G = os.environ.get('GEODA_WORK') or open(os.path.expanduser('~/.geoda_work')).read().strip()
 sys.path.insert(0, G); sys.path.insert(0, f'{G}/tools')
 import builder as B

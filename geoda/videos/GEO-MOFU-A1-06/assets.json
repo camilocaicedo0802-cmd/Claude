@@ -264,5 +264,42 @@
    "sound": "off",
    "cfg_scale": 0.6
   }
+ },
+ "k_j_toalla3": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2143a-9a24-7d7d-9c83-a7d97be83581/aa41019f-8f50-4445-bfd4-99c4d39ef6da.mp4"
+  ],
+  "body": {
+   "prompt": "The man calmly passes the GEODA stick over his underarm in one slow stroke and brings it back to the starting position. The round stone on top is a clear translucent crystal and keeps exactly its shape; it is NOT a roll-on and NOT a cream: it leaves no residue at all, the skin stays completely clean, no white mark, no foam. He does not speak, lips stay closed. The label stays facing the camera. Realistic handheld smartphone video, soft morning light.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2111b-af2d-7cc4-99bc-ae4d58a9910b/5ed5013f-5f4f-461f-ad24-3db43b142381.png",
+   "last_image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2111b-af2d-7cc4-99bc-ae4d58a9910b/5ed5013f-5f4f-461f-ad24-3db43b142381.png",
+   "duration": 3,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "k_lavamanos": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21437-0f1b-7d1a-94cd-5319215200d3/6c7fd11a-3c6d-45e2-80d0-b052b4f7a077.mp4"
+  ],
+  "body": {
+   "prompt": "Static locked-off camera, realistic bathroom. Soft morning sunlight slowly shifts across the counter, the green plant leaves sway gently, a few water droplets near the faucet glisten. Nothing else moves. No people, nothing appears on the counter.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2111b-b7f1-78e4-807a-d8f032ad753c/276e2a5b-8a9d-406f-980f-8cb6bab1c05c.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "k_estante": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21437-1063-768a-be97-21c6911518ba/01e5de69-bb19-4c38-99b0-18e3f66377af.mp4"
+  ],
+  "body": {
+   "prompt": "Static locked-off camera, realistic small shop. Soft daylight slowly shifts across the empty white shelves, out of focus people walk by outside on the street at the left. Nothing appears on the shelves, no people inside, no text.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2111b-b93c-7352-9d3a-12ac5709a338/082eb116-50fa-49d5-8a22-bcf929591bdc.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
  }
 }

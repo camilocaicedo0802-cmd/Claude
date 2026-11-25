@@ -3,7 +3,7 @@
 Narradora: una sola toma de voz (misma voz en todo el video), la avatar nunca mueve los labios (voz en off tipo storytime).
 Rótulo 'Recreación con IA'. Sin precios. CTA K5 Paga contraentrega. Video a x1.15."""
 import os, sys
-import os  # carpeta de trabajo: GEODA_WORK o ~/.geoda_work (la crea setup_work.sh)
+import os
 G = os.environ.get('GEODA_WORK') or open(os.path.expanduser('~/.geoda_work')).read().strip()
 sys.path.insert(0, G)
 import builder as B
@@ -17,7 +17,8 @@ def vd(k):
 DOOR = 2.0
 cfg = dict(
     id='GEO_TOFU_A1_01', fmt='UGC', version=3, tmp=TMP, out_dir=A, vo_dir=VO,
-    min_face=50, ai_label=False, hook_text_until=3.0 * SPEED, speed=SPEED, music=f'{AU}/music_805.mp3',
+    min_face=50, ai_label=False,  # sin rótulo IA (Camilo, 25-nov)
+    hook_text_until=3.0 * SPEED, speed=SPEED, music=f'{AU}/music_805.mp3',
     hooks={
         # texto del hook = voz -> sin subtítulo; reloj gigante 3:00 p. m. desde el fotograma 1
         'HA': dict(vo='HA', dur=vd('HA'), subs=False, text=('Si a media tarde ya hueles, aunque', 'te eches desodorante, mira esto 👇'),

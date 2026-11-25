@@ -14,7 +14,7 @@ K = f'{G}/kit' if os.path.isdir(f'{G}/kit') else None
 GRIFO = f'{K}/broll/k_grifo_m_0.mp4' if K else f'{HF}/fixed/k_grifo_m_0.mp4'
 
 base = dict(
-    id='GEO_MOFU_A1_06', fmt='POV', version=3, tmp=TMP, out_dir=OUT, vo_dir=VO,
+    id='GEO_MOFU_A1_06', fmt='POV', version=4, tmp=TMP, out_dir=OUT, vo_dir=VO,
     min_face=50, ai_label=False, hook_text_until=3.0, music=f'{AU}/music_847.mp3', music_vol=0.12,
     hooks={
         'HA': dict(vo='HA', dur=3.0, subs=True, text=('POV: por fin aprendiste', 'a usar la piedra'),
@@ -50,14 +50,14 @@ def build_shots(cfg):
         'B1': [B.shot(T, 's_b1', k('k_j_ducha'), d['B1'], z0=1.0, z1=1.05)],
         'B2': [B.shot(T, 's_b2', GRIFO, d['B2'], z0=1.0, z1=1.05)],
         # se aplica GEODA (tramo 0-1,5 s, etiqueta de frente, en cámara lenta interpolada)
-        'B3': [B.shot(T, 's_b3v', f'{T}/slow_toalla.mp4', d['B3'], z0=1.0, z1=1.03)],
+        'B3': [B.shot(T, 's_b3t3', k('k_j_toalla3'), d['B3'], z0=1.0, z1=1.03)],   # pasadas suaves: la piedra no deja residuo
         'B4': [B.shot(T, 's_b4', k('k_j_camisa'), d['B4'], speed=0.92, z0=1.0, z1=1.04)],
         'B5': [B.shot(T, 's_b5', k('k_j_bus'), d['B5'], z0=1.0, z1=1.04)],
         'B6': [B.shot(T, 's_b6', k('k_j_tablero'), d['B6'], z0=1.0, z1=1.04)],
         # llegada a casa: cuelga la chaqueta y estira el cuello con alivio, de espaldas (sin labios que no coincidan con la voz)
         'B7': [B.shot(T, 's_b7back', k('k_j_casa_back'), d['B7'], z0=1.0, z1=1.04)],
-        'B8': [B.shot(T, 's_b8', f'{T}/b8_lavamanos.png', d['B8'], still=True, z0=1.0, z1=1.06) + ([(361, 1030, 699, 1430)],)],
-        'B9': [B.shot(T, f's_b9_{d["B9"]:.2f}', f'{T}/cta_estante.png', d['B9'], still=True, z0=1.0, z1=1.04) + ([(240, 806, 911, 1236)],)],
+        'B8': [B.shot(T, f's_b8a_{d["B8"]:.2f}', f'{T}/b8_lavamanos_anim.mp4', d['B8'], z0=1.0, z1=1.06) + ([(361, 1030, 699, 1430)],)],   # animado
+        'B9': [B.shot(T, f's_b9a_{d["B9"]:.2f}', f'{T}/cta_estante_anim.mp4', d['B9'], z0=1.0, z1=1.04) + ([(240, 806, 911, 1236)],)],   # animado
     }
 
 if __name__ == '__main__':

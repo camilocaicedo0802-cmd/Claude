@@ -124,5 +124,53 @@
    "sound": "off",
    "cfg_scale": 0.5
   }
+ },
+ "k_c2_hb": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2142a-da2d-7b0f-9f30-f053554fdb42/886b7ab0-bb57-4826-8f02-25da2b9f1b24.mp4"
+  ],
+  "body": {
+   "prompt": "Stop-motion claymation, plasticine texture with visible fingerprints, choppy 12 fps handmade motion, nobody speaks, mouths closed. The giant clay finger at the side wiggles and pokes toward Pedro, the yellow clay question mark above his head wobbles and bounces, Pedro blinks, tilts his head and shrugs, confused.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21081-ad77-7c94-a981-4bfdfe7fc720/73e3384f-b385-443a-a795-25bf34434753.png",
+   "duration": 3,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "k_c2_b1": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2142a-db7d-7e0e-a113-6bdc67c863f7/56ae441f-b5b6-48bf-b3f4-7178c356ba69.mp4"
+  ],
+  "body": {
+   "prompt": "Stop-motion claymation, plasticine texture with visible fingerprints, choppy 12 fps handmade motion, nobody speaks, mouths closed. The pink perfume clouds and grey smell clouds swirl and drift around Pedro, he pinches his nose and waves his other hand to push the clouds away, then makes a disgusted face; small clay bubbles float up.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21081-aebe-7251-b374-0e7ab246ab90/5ef1095e-0f41-4b5e-b280-5e3e8346b688.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "k_c2_b4b": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21437-0af5-78a2-925b-69925c31783a/f343fc30-0ff4-45f3-9b39-e980d255b527.mp4"
+  ],
+  "body": {
+   "prompt": "Stop-motion claymation with choppy 12 fps handmade motion: Pedro rubs the dry crystal stone character up and down on his forearm and on his t-shirt sleeve; nothing happens and it leaves no mark at all: his clay arm and his shirt stay perfectly clean, no white marks, no powder, no streaks. He looks disappointed; the grey smell cloud stays above him. Nobody speaks, mouths closed.",
+   "image_url": "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/36b5dee6-ffc2-49c5-b095-adbb7b21a8e5.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "k_banofondo": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2142a-dcc3-7b2c-adf1-31225e133eb9/38cd168a-c9c5-40bd-8d40-673f73977f64.mp4"
+  ],
+  "body": {
+   "prompt": "Static locked-off camera, realistic. Soft morning sunlight slowly shifts across the marble counter, the green plant leaves sway gently in a light breeze, the tiny water droplets on the marble glisten, a little warm steam drifts in the air. Nothing else moves. No people, no products, nothing appears on the counter.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2105d-d42c-733a-a682-451dc22eb3c1/650100f1-191e-44d2-ae4a-443410ee6257.png",
+   "duration": 10,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
  }
 }
