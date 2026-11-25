@@ -30,13 +30,13 @@ const PequenaMG: React.FC<{ i: number; desde: number; size?: number }> = ({ i, d
   const frame = useCurrentFrame();
   const t = rel(i, desde) - 4;
   const p = interpolate(frame, [t, t + 8], [0, 1], { ...clamp, easing: eOut });
-  return <span style={{ display: "inline-block", fontFamily: F.sans, fontWeight: 300, fontSize: size, color: C.grisMG, letterSpacing: "-0.02em", marginRight: "0.24em", opacity: p, filter: `blur(${(1 - p) * 6}px)`, translate: `0px ${(1 - p) * -10}px` }}>{limpio(PALABRAS[i].text)}</span>;
+  return <span style={{ display: "inline-block", fontFamily: F.sans, fontWeight: 300, fontSize: size, color: C.grisMG, letterSpacing: "-0.035em", marginRight: "0.24em", opacity: p, filter: `blur(${(1 - p) * 6}px)`, translate: `0px ${(1 - p) * -10}px` }}>{limpio(PALABRAS[i].text)}</span>;
 };
 
 // Titular condensado lila, letra a letra (3.5)
 export const TitularMG: React.FC<{ texto: string; desde: number; centroY: number; anchoMax?: number; maxSize?: number; salida?: number }> = ({ texto, desde, centroY, anchoMax = 900, maxSize = 260, salida }) => {
   const frame = useCurrentFrame();
-  const size = ajustar(texto, "cond", anchoMax, maxSize, 0.005);
+  const size = ajustar(texto, "cond", anchoMax, maxSize, -0.025);
   const ps = salida !== undefined ? interpolate(frame, [salida - 6, salida], [1, 0], clamp) : 1;
   if (ps <= 0) return null;
   return (
@@ -45,7 +45,7 @@ export const TitularMG: React.FC<{ texto: string; desde: number; centroY: number
         const d = desde + k * 1.5;
         const p = interpolate(frame, [d, d + 10], [0, 1], { ...clamp, easing: eOut });
         return (
-          <span key={k} style={{ display: "inline-block", fontFamily: F.cond, fontWeight: 300, fontSize: size, lineHeight: 1, letterSpacing: "0.01em", backgroundImage: `linear-gradient(180deg, ${C.mgArriba} 10%, ${C.mgAbajo} 95%)`, WebkitBackgroundClip: "text", backgroundClip: "text", color: "transparent", opacity: p, filter: `blur(${(1 - p) * 14}px)`, translate: `0px ${(1 - p) * 30}px`, whiteSpace: "pre" }}>
+          <span key={k} style={{ display: "inline-block", fontFamily: F.cond, fontWeight: 300, fontSize: size, lineHeight: 1, letterSpacing: "-0.025em", backgroundImage: `linear-gradient(180deg, ${C.mgArriba} 10%, ${C.mgAbajo} 95%)`, WebkitBackgroundClip: "text", backgroundClip: "text", color: "transparent", opacity: p, filter: `blur(${(1 - p) * 14}px)`, translate: `0px ${(1 - p) * 30}px`, whiteSpace: "pre" }}>
             {c}
           </span>
         );

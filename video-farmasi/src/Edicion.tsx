@@ -14,7 +14,7 @@ import { f } from "./util";
 export const Edicion: React.FC = () => {
   const { fps } = useVideoConfig();
   return (
-    <AbsoluteFill style={{ backgroundColor: "#000" }}>
+    <AbsoluteFill style={{ backgroundColor: "#000", letterSpacing: "-0.02em" /* interletra más unida en todos los textos */ }}>
       {/* Plano hablando: toma → palabra gigante detrás → persona recortada */}
       <ARoll capa="base" />
       <CapaDetras />

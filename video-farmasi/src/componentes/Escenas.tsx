@@ -26,7 +26,7 @@ export const PildoraCierre: React.FC<{ desde: number }> = ({ desde }) => {
   return (
     <AbsoluteFill style={{ justifyContent: "flex-start", alignItems: "center", paddingTop: 300 }}>
       <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 14, opacity: p, translate: `0px ${(1 - p) * 30}px` }}>
-        <div style={{ fontFamily: "Jost", fontWeight: 500, fontSize: 40, letterSpacing: "0.32em", color: "#2B2B2B", paddingLeft: "0.32em" }}>FARMASI · NUTRIPLUS</div>
+        <div style={{ fontFamily: "Jost", fontWeight: 500, fontSize: 40, letterSpacing: "0.12em", color: "#2B2B2B", paddingLeft: "0.12em" }}>FARMASI · NUTRIPLUS</div>
         <div style={{ display: "flex", alignItems: "center", gap: 14, background: "#9B6BF2", borderRadius: 999, padding: "10px 36px 14px 18px", rotate: "-2deg", scale: String(0.7 + 0.3 * p), boxShadow: "0 12px 30px rgba(70,30,120,0.35)" }}>
           <Img src={staticFile("iconos/manzana.png")} style={{ width: 70, height: 70 }} />
           <span style={{ fontFamily: "Jost", fontWeight: 500, fontSize: 56, color: "#fff" }}>Gomitas de sidra de manzana</span>

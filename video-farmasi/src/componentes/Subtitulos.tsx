@@ -20,7 +20,7 @@ const Pequena: React.FC<{ i: number; size?: number; color?: string; sombra?: boo
   const frame = useCurrentFrame();
   const a = entrada(frame, f(inicio(i)) - 4, 8);
   return (
-    <span style={{ display: "inline-block", fontFamily: F.sans, fontWeight: 300, fontSize: size, color, letterSpacing: "-0.02em", textShadow: sombra ? SOMBRA : undefined, marginRight: "0.24em", ...a }}>
+    <span style={{ display: "inline-block", fontFamily: F.sans, fontWeight: 300, fontSize: size, color, letterSpacing: "-0.035em", textShadow: sombra ? SOMBRA : undefined, marginRight: "0.24em", ...a }}>
       {limpio(PALABRAS[i].text)}
     </span>
   );
@@ -54,7 +54,7 @@ const BloqueLinea: React.FC<{ b: Bloque }> = ({ b }) => {
           {b.destacado.map((i) => {
             const a = entrada(frame, f(inicio(i)) - 8, 10, 0, 1.15, 8);
             return (
-              <span key={i} style={{ display: "inline-block", fontFamily: F.sans, fontWeight: 600, fontSize: tam, color: C.acento, textTransform: "uppercase", letterSpacing: "0.04em", marginRight: "0.22em", textShadow: "0 3px 18px rgba(0,0,0,0.35), 0 0 22px rgba(183,148,246,0.35)", ...a }}>
+              <span key={i} style={{ display: "inline-block", fontFamily: F.sans, fontWeight: 600, fontSize: tam, color: C.acento, textTransform: "uppercase", letterSpacing: "-0.03em", marginRight: "0.22em", textShadow: "0 3px 18px rgba(0,0,0,0.35), 0 0 22px rgba(183,148,246,0.35)", ...a }}>
                 {limpio(PALABRAS[i].text)}
               </span>
             );
@@ -72,7 +72,7 @@ const BloqueLinea: React.FC<{ b: Bloque }> = ({ b }) => {
 export const GiganteDetras: React.FC<{ b: Bloque }> = ({ b }) => {
   const frame = useCurrentFrame();
   const txt = textoDe(b.destacado).toUpperCase();
-  const size = ajustar(txt, "cond", 990, 620, 0.005);
+  const size = ajustar(txt, "cond", 990, 620, -0.025);
   const t0 = f(inicio(b.destacado[0])) - 22;
   const letras = [...txt];
   return (
@@ -82,7 +82,7 @@ export const GiganteDetras: React.FC<{ b: Bloque }> = ({ b }) => {
           const d = t0 + k * 1.5;
           const p = interpolate(frame, [d, d + 10], [0, 1], { ...clamp, easing: eOut });
           return (
-            <span key={k} style={{ display: "inline-block", fontFamily: F.cond, fontWeight: 400, fontSize: size, lineHeight: 1, letterSpacing: "0.01em", backgroundImage: `linear-gradient(180deg, ${C.gigArriba} 15%, ${C.gigAbajo} 95%)`, WebkitBackgroundClip: "text", backgroundClip: "text", color: "transparent", WebkitTextStroke: `1px rgba(228,212,255,0.45)`, opacity: p, filter: `blur(${(1 - p) * 14}px)`, translate: `0px ${(1 - p) * 30}px`, whiteSpace: "pre" }}>
+            <span key={k} style={{ display: "inline-block", fontFamily: F.cond, fontWeight: 400, fontSize: size, lineHeight: 1, letterSpacing: "-0.025em", backgroundImage: `linear-gradient(180deg, ${C.gigArriba} 15%, ${C.gigAbajo} 95%)`, WebkitBackgroundClip: "text", backgroundClip: "text", color: "transparent", WebkitTextStroke: `1px rgba(228,212,255,0.45)`, opacity: p, filter: `blur(${(1 - p) * 14}px)`, translate: `0px ${(1 - p) * 30}px`, whiteSpace: "pre" }}>
               {c}
             </span>
           );
@@ -99,7 +99,7 @@ const BloqueDetrasFrente: React.FC<{ b: Bloque }> = ({ b }) => {
   const izq = b.pequenas.slice(0, mitad);
   const der = b.pequenas.slice(mitad);
   const txt = textoDe(b.destacado).toUpperCase();
-  const size = ajustar(txt, "cond", 990, 620, 0.005);
+  const size = ajustar(txt, "cond", 990, 620, -0.025);
   return (
     <AbsoluteFill style={{ ...salida(frame, b) }}>
       <div style={{ position: "absolute", top: Y.contextoArriba, left: 70 }}>{izq.map((i) => <Pequena key={i} i={i} size={T.contexto} />)}</div>
