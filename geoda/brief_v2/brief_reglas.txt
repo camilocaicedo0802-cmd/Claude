@@ -1,0 +1,1878 @@
+GEODA · Brief creativo: 60 videos IA TOFU-MOFU-BOFU
+
+60 guiones completos con 2 hooks cada uno (120 variantes) para Meta y TikTok: plano nuevo cada 3 s, voz, prompt visual y texto en pantalla, CTA rotado por temporada, metas de retención y reglas de compliance para el editor.
+
+On this page
+
+Objetivo y cómo usar este brief
+Regla de awareness por etapa
+Metas de performance y ritmo
+Producto y oferta
+Reglas de compliance
+Reparto de los 60 videos
+Formatos y cuándo usarlos
+Formatos especiales
+Especificaciones técnicas
+Herramientas IA y consistencia del producto
+Nombres de archivo
+Rotación de CTA
+Guiones completos por ángulo
+Guiones A1 · La piedra no te falló: te la pusiste mal
+Guiones A2 · Axilas que lucen más parejas (decisión de Alberto)
+Guiones A3 · La piedra de verdad, no un frasco
+Guiones A4 · 1 piedra dura 1 año (confirmado por Alberto)
+Guiones A5 · Ropa sin manchas
+Guiones A6 · Transición de 14 días / detox (decisión de Alberto)
+Guiones A7 · Sigo sudando, pero no huelo / huele a piel
+Guiones A8 · Antes creía que era cuento (historia)
+Guiones A9 · Hombres: sin perfume, sin complicarse
+Guiones A10 · Calor, Costa y viaje
+Guiones A11 · Primer desodorante del adolescente (para papá y mamá)
+Checklist de los 60 videos
+Show fewer
+Objetivo y cómo usar este brief
+100 / día
+Meta de ventas en Colombia
+Meta y TikTok, pago contraentrega
+60
+Videos
+30 TOFU · 18 MOFU · 12 BOFU
+120
+Variantes
+2 hooks por video, mismo cuerpo
+11
+Ángulos
+ordenados por prioridad del informe
+1
+
+Lee las reglas de compliance antes de producir
+
+Un video que rompa una regla se rechaza en Meta o TikTok y se pierde el trabajo.
+
+2
+
+Produce un cuerpo por video y dos hooks
+
+Los primeros 3 segundos cambian (hook A o B); desde el segundo 3 el cuerpo es idéntico. Exporta dos archivos.
+
+3
+
+Mete siempre planos reales de la piedra GEODA
+
+La IA hace escenas y personajes; el producto y el logo salen de material real (ver herramientas).
+
+4
+
+Marca el avance en el checklist
+
+Al final de la página hay una fila por video. También va en CSV para hoja de cálculo.
+
+5
+
+Entrega primero el lote de prioridad 1
+
+A1, A2 y A3 en TOFU (12 videos, 24 variantes): son los que se testean primero.
+
+Orden de producción sugerido
+
+Semana 1: los TOFU de A1, A2, A3 y A7. Semana 2: el resto de TOFU y los MOFU de A1, A4 y A6. Semana 3: MOFU restantes y todos los BOFU. Los videos marcados PENDIENTE (historia del fundador, reseñas reales) se producen cuando Alberto entregue el dato.
+
+Regla de awareness por etapa
+
+Antes de editar, mira en qué etapa está el video
+
+Un TOFU le habla a alguien que nunca ha oído de GEODA y quizá ni de la piedra de alumbre. Si el guion suena a que la persona ya tiene la piedra en la mano, no es TOFU.
+
+Etapa
+Quién lo ve
+Cómo habla el video
+Prohibido en esta etapa
+TOFU (frío)
+No conoce GEODA ni, a veces, la piedra de alumbre. Puede que ni sepa que tiene un problema.
+Hook y primer 60-70 % del video = el problema, el dolor, un dato curioso, un mito o una historia: olor a media tarde, rayas blancas en la ropa, perfume encima de perfume, frascos que se riegan, plata en desodorante. El producto entra tarde, como descubrimiento: 'descubrí una piedra mineral que...', 'existe una piedra que...', y se explica qué es y cómo se usa. El CTA arranca con 'Se llama GEODA...'.
+Marca en el hook. 'Tu piedra', 'tu GEODA', 'mi GEODA', 'como ya sabes', 'la piedra que usas'. Combos, precio por mes, garantía como argumento principal.
+MOFU (tibio)
+Conoce el problema y la categoría (desodorante natural, piedra de alumbre). Está comparando o tiene dudas.
+Compara (frasco vs piedra, piedra vs antitranspirante, sólida vs líquida), rompe objeciones (no sirve, se acaba, la primera semana, sudo mucho), muestra prueba y modo de uso.
+Empezar con la oferta. Prometer cosas que la prueba no muestra.
+BOFU (caliente)
+Ya conoce GEODA o ya vio sus videos (retargeting).
+Oferta, combo paga 2 lleva 3, precio, garantía de 14 días, contraentrega, envío, urgencia real y reseñas reales.
+Volver a explicar el problema desde cero. Urgencia o descuentos que no sean verdad.
+Metas de performance y ritmo
+Métrica
+Cómo se calcula
+Meta GEODA
+Referencia
+Hook rate (thumbstop)
+Reproducciones de 3 s ÷ impresiones (en TikTok: vistas de 2 s ÷ impresiones)
+30 % o más
+Este es el '30 %' que pidió Alberto; menos de 20 % = cambiar el hook
+Retención al segundo 3
+Curva de retención del video: % de quienes empezaron y siguen en el s3
+50 % o más
+Se gana con el fotograma 1 y el texto del hook visible desde el inicio
+Hold rate
+ThruPlays (15 s o completo) ÷ reproducciones de 3 s (en TikTok: vistas de 6 s ÷ vistas de 2 s)
+TOFU 25 % o más · BOFU 35 % o más
+Si cae, el problema es el cuerpo: más cortes, loop abierto, menos relleno
+Reproducción al 50 % del video
+Vistas al 50 % ÷ reproducciones de 3 s
+30 % o más
+Señal de que el payoff llega a tiempo
+CTR de enlace
+Clics en el enlace ÷ impresiones
+Más de 2-3 %
+Lo normal en Meta y TikTok es 1-3 %; un CTR de enlace de 30 % no existe en la práctica
+
+Aclaración: el 30 % aplica al hook rate (cuánta gente se detiene a ver), no al CTR de enlace. Las referencias son de la industria y se ajustan con los datos reales de las primeras 2 semanas.
+
+Cómo leer los resultados
+1
+
+Hook rate bajo (menos de 20 %)
+
+Cambia solo los primeros 3 s: prueba el otro hook o un fotograma 1 más fuerte. El cuerpo se queda igual.
+
+2
+
+Hook bien, hold rate bajo
+
+El cuerpo aburre: recorta pausas, sube el ritmo de cortes y adelanta el loop abierto.
+
+3
+
+Hold bien, CTR bajo
+
+Cambia el CTA (usa los alternos de cada guion) o la oferta en pantalla.
+
+4
+
+Decide con datos suficientes
+
+Espera al menos 1.000-2.000 impresiones por variante antes de apagar o escalar.
+
+Checklist de ritmo para el editor
+Texto del hook visible desde el fotograma 1, sin fade-in ni intro, ni logo al inicio.
+Fotograma 1 con interrupción de patrón: movimiento brusco, objeto inesperado o contraste fuerte (cada guion trae su 'Frame 1').
+Cambio visual cada 2,5-3 s en todo el video: cada fila del guion es un plano o prompt IA nuevo (zoom, ángulo, inserto o b-roll).
+Cero tiempo muerto: corta respiraciones y pausas de más de 0,3 s.
+Loop abierto en los primeros 6 s y payoff justo antes del CTA; no lo resuelvas antes.
+Subtítulos palabra por palabra y un efecto de sonido en cada corte (whoosh, pop).
+Producto real en pantalla antes del segundo 10 y en el CTA final.
+CTA final de 3 s con voz y texto; exporta el principal y los alternos que pida el calendario.
+Producto y oferta
+Producto
+GEODA · Desodorante de piedra de alumbre (geodaco.com/products/geoda)
+Promesa de la página
+'Neutraliza el olor sin perfume y sin manchar tu ropa.' 'Ataca la bacteria, no tapa el olor con perfume.' 'Se moja la piedra, no la axila.'
+1 unidad
+$79.990 (precio tachado en la página: $95.000)
+Paga 2, lleva 3
+$99.990 · $33.330 por piedra
+Combo familiar: paga 3, lleva 5
+$139.990 · $27.998 por piedra
+Pago y envío
+Pago contraentrega ('pagas al recibir') y envío gratis a toda Colombia
+Entrega
+'Recíbelo entre 1 y 3 días hábiles' · despachos desde Bogotá, Medellín y Cali (texto de la página)
+Garantía
+'Si en 14 días no te funciona, te devolvemos tu dinero.'
+Registro
+Producto cosmético con notificación sanitaria INVIMA NSOC41318-25CO; 'no es un medicamento' (texto de la página)
+Dato pendiente
+Por qué importa
+Qué hace el editor mientras tanto
+Duración de la piedra (confirmada)
+Alberto confirmó: 1 piedra dura 1 año. La página de GEODA todavía da otras cifras en los combos y en las preguntas frecuentes; hay que corregirla para que diga lo mismo que los anuncios (Ley 1480, SIC).
+Decir '1 piedra dura 1 año' o 'te dura 1 año' en voz y texto, nunca otra cifra.
+Alcance del registro sanitario
+Falta confirmar qué usos y claims cubre la notificación NSOC41318-25CO (en especial 'axilas más parejas').
+Producir A2 con la formulación de las reglas y dejarlo listo, pero no publicarlo hasta la confirmación.
+Tiempo de aplicación
+La página dice '7 segundos por axila'; usuarios reales hablan de 20 a 30 segundos.
+No decir segundos en los videos; mostrar la acción.
+'24h: lo que promete la etiqueta'
+La página lo dice, pero usuarios reales reportan que con calor o ejercicio no siempre aguanta.
+No decir '24 horas' en ningún video hasta que Alberto confirme la etiqueta y el sustento.
+Uso después de rasurarse
+La página dice que se puede usar después de depilarse o afeitarse; usuarios reales reportan ardor sobre piel recién rasurada.
+No mencionarlo en los videos (ni a favor ni en contra) hasta que Alberto decida.
+Precio tachado de $95.000
+La SIC exige que el precio anterior sea real.
+Mostrarlo solo si Alberto confirma que es real.
+Lista de ingredientes
+Para decir 'un solo ingrediente' o 'un solo mineral'.
+Decir 'piedra mineral' sin contar ingredientes.
+Historia del fundador y reseñas reales
+Los videos founder y de reseñas no pueden inventarse.
+Producirlos al final con el material real.
+Reglas de compliance (no negociables)
+Prohibido decir o mostrar
+Permitido (o cómo decirlo)
+'Blanquea', 'aclara', 'despigmenta', 'elimina manchas'
+'Mis axilas lucen más parejas desde que dejé el desodorante con perfume' (experiencia en primera persona)
+'Quita el sudor', 'antitranspirante', '24 h' o '48 h garantizado'
+'Sigo sudando, pero no huelo' · 'Ayuda a neutralizar el olor'
+'Detox', 'saca toxinas', 'desintoxica la axila'
+'Semana de adaptación' · 'transición de 14 días'
+'Cura', 'trata', acné, hongos, aftas, picaduras, 'cierra cortes', 'detiene el sangrado'
+Nada: estos usos no se mencionan en anuncios
+'Sin aluminio' (el alumbre es una sal de aluminio) · 'sin químicos' · '100 % natural' sin prueba
+'Piedra mineral' · 'sin perfume'
+'Hipoalergénico', 'dermatológicamente probado', 'apto para piel sensible'
+'Sin perfume'
+'Aprobado por INVIMA'
+'Producto cosmético con notificación sanitaria INVIMA NSOC41318-25CO'
+'Mata el 99 % de las bacterias'
+'Ataca la bacteria que causa el olor, no lo tapa con perfume' (texto de la página)
+Cualquier duración distinta de 1 año (más años, menos meses, 'hasta X')
+'1 piedra dura 1 año' · 'te dura 1 año'
+Preguntar por atributos personales: '¿Tienes axilas oscuras?', '¿Hueles mal?'
+Primera persona: 'Yo antes...', 'A mí me pasaba...'
+Nombrar o mostrar marcas competidoras
+'Un frasco', 'un spray', 'un desodorante en barra' genéricos, sin marca
+Antes y después del cuerpo, primeros planos de la axila, entrepierna, zooms al cuerpo
+Planos medios o amplios con ropa (blusa sin mangas en una situación cotidiana), prendas, producto
+Menores sin camisa o con planos del cuerpo
+Menores vestidos, mensaje dirigido a los papás
+Presentar un avatar IA como cliente real o a una persona IA 'de la calle' contando resultados
+Rótulo 'Recreación con IA' en pantalla y etiqueta de contenido IA de TikTok y Meta al publicar
+
+Ángulo A2 (axilas más parejas)
+
+Es el más rentable y el más riesgoso. TikTok restringe los anuncios de aclarado de piel: pautar primero en Meta y pasar por revisión antes de TikTok. Nunca usar las palabras 'blanquear' o 'aclarar' en texto, voz ni subtítulos, y nunca mostrar la axila de cerca.
+
+Reparto de los 60 videos
+
+Reparto 50/30/20: 30 TOFU, 18 MOFU y 12 BOFU. La piedra de alumbre ya es conocida en Colombia (la de la droguería, la de la abuela), así que el trabajo más grande es abrir la puerta con muchos hooks distintos para encontrar ganadores en Meta y TikTok. MOFU responde a las objeciones reales (no sirvió, sudo mucho, ¿cuánto dura?). BOFU es más corto porque va a audiencias de retargeting, que son más pequeñas, y solo necesita oferta, garantía y contraentrega. Los ángulos con más videos son los de mayor prioridad en el informe.
+
+Ángulo
+TOFU
+MOFU
+BOFU
+Total
+A1 · La piedra no te falló: te la pusiste mal
+4
+3
+1
+8
+A2 · Axilas que lucen más parejas (decisión de Alberto)
+4
+2
+2
+8
+A3 · La piedra de verdad, no un frasco
+4
+2
+1
+7
+A4 · 1 piedra dura 1 año (confirmado por Alberto)
+3
+2
+2
+7
+A5 · Ropa sin manchas
+3
+2
+1
+6
+A6 · Transición de 14 días / detox (decisión de Alberto)
+2
+2
+2
+6
+A7 · Sigo sudando, pero no huelo / huele a piel
+3
+2
+1
+6
+A8 · Antes creía que era cuento (historia)
+2
+1
+1
+4
+A9 · Hombres: sin perfume, sin complicarse
+2
+1
+0
+3
+A10 · Calor, Costa y viaje
+2
+1
+0
+3
+A11 · Primer desodorante del adolescente (para papá y mamá)
+1
+0
+1
+2
+Total
+30
+18
+12
+60
+Formatos y cuándo usarlos
+Formato
+Cuándo usarlo
+Etapa
+Mejores ángulos
+Videos
+UGC con avatar IA
+Para volumen de hooks y pruebas rápidas; habla en primera persona
+TOFU y BOFU
+A1, A2, A6, A7, A11
+16
+Demo de producto
+Para enseñar el uso y mostrar la piedra real
+TOFU y MOFU
+A1, A3, A5, A9
+4
+POV
+Escenas cotidianas sin narrador a cámara; muy nativo de TikTok
+TOFU y MOFU
+A1, A5, A7, A10
+4
+Comparación piedra vs frasco
+Para diferenciarse del spray y la crema
+TOFU y MOFU
+A2, A3, A5
+3
+Faceless / motion graphics
+Para explicar (errores, diferencias, cuentas) sin presentador
+MOFU
+A1, A3, A4, A7
+4
+Testimonio
+Prueba social, solo con personas y reseñas reales
+TOFU, MOFU y BOFU
+A2, A5, A7, A8
+4
+Unboxing
+Para mostrar contraentrega y empaque; quita el miedo a comprar
+BOFU
+A2
+1
+Diario de 14 días
+Para la transición y la garantía
+MOFU
+A2, A6
+2
+Duración / báscula
+Para mostrar con datos reales que 1 piedra dura 1 año
+TOFU
+A4
+1
+Estilo Pixar (3D)
+Para frenar el scroll y explicar sin mostrar cuerpos
+TOFU
+A2, A3, A5, A8
+4
+Claymation (stop-motion IA)
+Para contar el error o el paso del tiempo de forma simpática
+TOFU
+A1, A3, A4, A6
+4
+Podcast
+Para que el mensaje se sienta conversación y no anuncio; maneja objeciones
+TOFU y MOFU
+A1, A2, A4, A6, A9
+5
+Street interview
+Para romper el mito con 'pregunta a desconocidos'
+TOFU
+A1, A4, A7, A10
+4
+Founder
+Para la confianza de marca y la garantía
+MOFU y BOFU
+A3, A4, A6, A8
+4
+Formatos especiales
+Estilo Pixar (3D, la piedra como personaje)
+Etapa y ángulos
+TOFU. A2 (perfume vs piedra), A3 (frasco que se riega), A5 (camisas con miedo), A8 (piedra de la abuela). 4 videos.
+Ejemplo de escena
+Geo, una piedra translúcida con ojos grandes, en un lavamanos rodeada de frascos ruidosos que sueltan nubes de perfume. Geo se moja, brilla y dice: 'Yo no tapo nada, yo neutralizo'. Corte al plano real de la piedra GEODA en la mano.
+Cómo producirlo con IA
+1) Diseñar a Geo en un generador de imágenes a partir de fotos reales de la piedra (misma forma y color). 2) Generar fotogramas clave por escena con la misma hoja de personaje. 3) Animar con imagen a video (Kling, Veo, Seedance). 4) Voz de narrador colombiano. Alberto ya tiene una skill de anuncios Pixar musicales que sirve de base.
+Compliance
+Personajes estilizados, nada de cuerpos realistas ni antes y después. Frascos genéricos sin marca. Las mismas frases prohibidas aplican a la animación.
+Claymation / plastilina (stop-motion IA)
+Etapa y ángulos
+TOFU. A1 (piedra culpada), A3 (frascos que se acaban), A4 (calendario), A6 (14 días). 4 videos.
+Ejemplo de escena
+Personaje de plastilina frota una piedra seca, nada pasa; la piedra de plastilina levanta un cartel '¡Mójame!'; con agua, la nube gris de olor se deshace en bolitas.
+Cómo producirlo con IA
+Prompt base: 'stop-motion claymation, plasticine texture with visible fingerprints, handmade miniature set, soft studio light, 12 fps choppy motion, vertical 9:16'. Mantener la misma paleta y el mismo personaje en todos los planos. Cerrar con 2 s de producto real.
+Compliance
+Igual que Pixar. El calendario cierra con '1 piedra dura 1 año'.
+Podcast (dos personas en estudio)
+Etapa y ángulos
+TOFU y MOFU. A1 (mito 'no sirve'), A2 (rutina), A4 (¿dura un año?), A6 (semana de adaptación), A9 (hombres). 5 videos.
+Ejemplo de escena
+Host: '¿Por qué dicen que la piedra no sirve?'. Invitada: 'Porque la usan seca. Se moja la piedra, no la axila. Y ojo: no te quita el sudor, te quita el olor'. Plano de la piedra GEODA sobre la mesa con su logo hacia la cámara.
+Cómo producirlo con IA
+Dos avatares IA en un set de podcast (micrófonos, luz cálida) con voces colombianas distintas. Cortes plano a plano entre las dos personas y un plano general. Subtítulos grandes palabra por palabra. Piedra real compuesta en la mesa.
+Compliance
+Nadie se presenta como médico ni dermatólogo. Rótulo 'Recreación con IA'. Nada de explicaciones médicas.
+Street interview ('pregunta a desconocidos')
+Etapa y ángulos
+TOFU. A1 (¿cómo se usa?), A4 (¿cuánto gastas en desodorante?), A7 (¿quita el sudor?), A10 (calor en la Costa). 4 videos.
+Ejemplo de escena
+Presentador en una calle de Bogotá: '¿Cómo se usa la piedra de alumbre?'. Tres respuestas rápidas que fallan. El presentador saca GEODA: 'Se moja la piedra, no la axila'.
+Cómo producirlo con IA
+Lo mejor es grabarlo de verdad con celular y micrófono de solapa (más creíble y sin riesgo). Si se hace con IA: plano a plano con avatares en exteriores reales, audio con ruido ambiente y cortes rápidos.
+Compliance
+Personas reales con autorización firmada. Si son IA, rótulo 'Recreación' y ninguna persona IA cuenta resultados como si fueran reales.
+Founder (fundador a cámara)
+Etapa y ángulos
+MOFU y BOFU. A3 (por qué la piedra y no el spray), A4 (combo familiar), A6 (garantía de 14 días), A8 (así nació GEODA). 4 videos.
+Ejemplo de escena
+El fundador en su bodega, con cajas de GEODA detrás: 'Me dijeron que el spray vendía más. Igual escogí la piedra, porque... [motivo real]. Y si en 14 días no te funciona, te devolvemos tu dinero'.
+Cómo producirlo con IA
+Ideal: el fundador real grabado con celular, luz de ventana y micrófono de solapa. Alternativa: clon de avatar y voz del fundador (con su consentimiento) a partir de 2 a 5 minutos de video real.
+Compliance
+Historia real: PENDIENTE de que Alberto la entregue. No inventar cifras de ventas ni de clientes. Si es clon IA, rotularlo.
+Especificaciones técnicas
+Formato
+Vertical 9:16, 1080 x 1920, 30 fps, MP4 (H.264), audio AAC
+Duración por etapa
+TOFU 21-39 s · MOFU 30-51 s · BOFU 18-24 s (la duración exacta está en cada guion)
+Ritmo
+Un plano nuevo cada 3 s como máximo (se puede recortar a 2,5 s). Cada fila del guion = un corte.
+Hook
+El texto del hook aparece en el primer fotograma y dura hasta el segundo 3. Desde el segundo 3, el cuerpo es idéntico en A y B.
+Subtítulos
+Quemados en el video, máximo 2 líneas, tipografía sans gruesa, palabras clave resaltadas. Revisar ortografía.
+Zona segura
+Texto y logo dentro de la zona central. Dejar libres cerca de 250 px arriba, cerca de 450-670 px abajo (textos y botones de Meta Reels y TikTok) y cerca de 140 px a la derecha (botones de TikTok). Verificar con las plantillas oficiales de cada plataforma antes de exportar.
+Audio
+Voz clara, música por debajo de la voz; en TikTok, preferir sonidos con licencia comercial.
+Cierre
+Los últimos 2-3 s llevan el producto real, el CTA en texto y 'Pago contraentrega · Envío gratis'.
+Rótulo IA
+'Recreación con IA' pequeño en una esquina dentro de la zona segura, en avatares, entrevistas y testimonios generados.
+Herramientas IA y consistencia del producto
+Necesidad
+Herramientas sugeridas (usar las que el editor domine)
+Prompt o tip
+Avatar UGC que habla
+HeyGen, Arcads, Creatify
+Avatar colombiano de 25-40 años en baño o cuarto real; voz con acento colombiano neutro; sin exagerar gestos.
+Escenas de video
+Veo, Kling, Seedance, Runway
+'Vertical 9:16, handheld smartphone footage, natural window light, Colombian apartment, realistic' para UGC y POV.
+Pixar y claymation
+Generador de imágenes (GPT Image, Gemini, Midjourney) más imagen a video
+Hoja de personaje fija para Geo; mismos colores en cada escena.
+Voz
+ElevenLabs u otra con voces en español de Colombia
+Una voz fija por personaje en todos los videos.
+Edición y subtítulos
+CapCut, Premiere
+Plantilla de subtítulos y CTA única para los 60 videos.
+Arma un kit de referencia de la piedra GEODA real: 10 fotos (frente, 45°, macro, mojada, en la mano, con el empaque, en el lavamanos) y 5 clips cortos reales. Pídeselo a Alberto si no lo tienes.
+Usa siempre imagen a video partiendo de una foto real de la piedra. No le pidas a la IA que invente la piedra desde cero.
+Nunca dejes que la IA escriba el logo o la etiqueta: superpón el logo real en postproducción o usa un plano real.
+Cada video lleva al menos un plano real de 2-3 s del producto (macro o en la mano).
+Mantén el mismo color, tamaño y forma de la piedra en todos los videos. Si la IA la cambia, se descarta el plano.
+Iluminación cálida de baño o de ventana en todos los UGC, para que la piedra se vea igual de un video a otro.
+Nombres de archivo
+Patrón
+GEO_[ETAPA][ÁNGULO][NN][HOOK][FORMATO]_v[versión].mp4
+Ejemplo
+GEO_TOFU_A1_01_HA_UGC_v1.mp4 y GEO_TOFU_A1_01_HB_UGC_v1.mp4
+Códigos de formato
+UGC, DEMO, POV, COMP, MOTION, TEST, UNBOX, DIARIO, BASCULA, PIXAR, CLAY, PODCAST, STREET, FOUNDER
+Carpetas
+GEODA_60 / TOFU | MOFU | BOFU / A1 ... A11
+Versiones
+Subir v2, v3... cuando haya correcciones; no sobrescribir.
+Rotación de CTA
+CTA
+Voz
+Texto en pantalla
+Cuándo se puede usar
+TOFU
+MOFU
+BOFU
+Total
+K1 · Black Friday
+Es Black Friday en GEODA: paga 2 y lleva 3 por $99.990, y pagas cuando te llegue.
+BLACK FRIDAY · Paga 2 lleva 3 · $99.990
+Hasta el lunes 30 de noviembre (Cyber Monday), solo si la oferta de temporada es real
+5
+1
+2
+8
+K2 · Navidad / regalo
+Regala algo que sí se usa todos los días: GEODA. Paga 2, lleva 3, y reparte en Navidad.
+REGALO DE NAVIDAD · Paga 2 lleva 3
+Del 1 al 24 de diciembre
+4
+2
+1
+7
+K3 · Llévala hoy
+Llévala hoy: pídela ya y la pagas cuando te llegue a la puerta.
+LLÉVALA HOY · Pagas al recibir
+Siempre (neutro)
+5
+1
+2
+8
+K4 · Se agota rápido
+Este lote se está yendo rápido. Asegura la tuya antes de que se agote.
+ÚLTIMAS UNIDADES DEL LOTE
+Solo si el inventario de verdad está bajo
+0
+4
+3
+7
+K5 · Paga contraentrega
+No pagas nada ahora: pagas cuando te llegue.
+PAGA CONTRAENTREGA · Pagas cuando te llegue
+Siempre (neutro)
+6
+2
+0
+8
+K6 · Envío a toda Colombia
+Te la enviamos gratis a toda Colombia, y la pagas al recibir.
+ENVÍO GRATIS A TODA COLOMBIA
+Siempre (neutro)
+5
+3
+0
+8
+K7 · 1 piedra te dura 1 año (ahorro)
+1 piedra te dura 1 año. Haz la cuenta de cuántos frascos te ahorras.
+1 PIEDRA = 1 AÑO · Ahorra vs desodorante
+Siempre (neutro); duración confirmada por Alberto
+5
+2
+0
+7
+K8 · Combo 2x para regalar
+Paga 2 y lleva 3: una para ti y dos para regalar. Pídelo hoy.
+PAGA 2 LLEVA 3 · Para ti y para regalar
+Siempre; en diciembre con enfoque regalo
+0
+3
+4
+7
+
+Escasez, descuentos y temporada: solo si es verdad
+
+'Se agota' y 'últimas unidades' solo cuando el inventario de verdad está bajo, y 'Black Friday' solo con una oferta real de temporada; si no, es publicidad engañosa (SIC, Ley 1480 de 2011). Black Friday corre hasta el lunes 30 de noviembre (Cyber Monday); Navidad del 1 al 24 de diciembre; desde el 25 de diciembre, solo CTA neutros. La duración se dice siempre como '1 piedra dura 1 año'.
+
+Calendario de re-exportación
+Ventana
+Qué exportar
+Hoy al 30 de noviembre
+CTA principal. Donde el principal sea Navidad (K2), usar el alterno Black Friday (K1).
+1 al 24 de diciembre
+Cambiar todo K1 por su alterno Navidad (K2). Los CTA neutros siguen igual.
+Desde el 25 de diciembre
+Ningún CTA de temporada: K1 pasa a K5 y K2 pasa a K3. Neutros: K3, K5, K6, K7 y K8.
+CTA por video
+ID
+Formato
+CTA principal
+Alterno 1
+Alterno 2
+GEO-TOFU-A1-01
+UGC con avatar IA
+K5 · Paga contraentrega
+K1 · Black Friday
+K2 · Navidad / regalo
+GEO-TOFU-A1-02
+Demo de producto
+K3 · Llévala hoy
+K1 · Black Friday
+K2 · Navidad / regalo
+GEO-TOFU-A1-03
+Claymation (stop-motion IA)
+K1 · Black Friday
+K2 · Navidad / regalo
+K5 · Paga contraentrega
+GEO-TOFU-A1-04
+Street interview
+K6 · Envío a toda Colombia
+K1 · Black Friday
+K2 · Navidad / regalo
+GEO-MOFU-A1-05
+Podcast
+K5 · Paga contraentrega
+K1 · Black Friday
+K2 · Navidad / regalo
+GEO-MOFU-A1-06
+POV
+K4 · Se agota rápido
+K1 · Black Friday
+K2 · Navidad / regalo
+GEO-MOFU-A1-07
+Faceless / motion graphics
+K7 · 1 piedra te dura 1 año (ahorro)
+K2 · Navidad / regalo
+K5 · Paga contraentrega
+GEO-BOFU-A1-08
+UGC con avatar IA
+K1 · Black Friday
+K2 · Navidad / regalo
+K5 · Paga contraentrega
+GEO-TOFU-A2-01
+UGC con avatar IA
+K5 · Paga contraentrega
+K1 · Black Friday
+K2 · Navidad / regalo
+GEO-TOFU-A2-02
+Estilo Pixar (3D)
+K2 · Navidad / regalo
+K1 · Black Friday
+K3 · Llévala hoy
+GEO-TOFU-A2-03
+Testimonio
+K6 · Envío a toda Colombia
+K1 · Black Friday
+K2 · Navidad / regalo
+GEO-TOFU-A2-04
+Podcast
+K1 · Black Friday
+K2 · Navidad / regalo
+K5 · Paga contraentrega
+GEO-MOFU-A2-05
+Diario de 14 días
+K1 · Black Friday
+K2 · Navidad / regalo
+K5 · Paga contraentrega
+GEO-MOFU-A2-06
+Comparación piedra vs frasco
+K8 · Combo 2x para regalar
+K2 · Navidad / regalo
+K1 · Black Friday
+GEO-BOFU-A2-07
+UGC con avatar IA
+K8 · Combo 2x para regalar
+K2 · Navidad / regalo
+K1 · Black Friday
+GEO-BOFU-A2-08
+Unboxing
+K3 · Llévala hoy
+K1 · Black Friday
+K2 · Navidad / regalo
+GEO-TOFU-A3-01
+Comparación piedra vs frasco
+K7 · 1 piedra te dura 1 año (ahorro)
+K2 · Navidad / regalo
+K5 · Paga contraentrega
+GEO-TOFU-A3-02
+Claymation (stop-motion IA)
+K3 · Llévala hoy
+K1 · Black Friday
+K2 · Navidad / regalo
+GEO-TOFU-A3-03
+Demo de producto (macro)
+K5 · Paga contraentrega
+K1 · Black Friday
+K2 · Navidad / regalo
+GEO-TOFU-A3-04
+Estilo Pixar (3D)
+K2 · Navidad / regalo
+K1 · Black Friday
+K3 · Llévala hoy
+GEO-MOFU-A3-05
+Faceless / motion graphics
+K6 · Envío a toda Colombia
+K1 · Black Friday
+K2 · Navidad / regalo
+GEO-MOFU-A3-06
+Founder
+K4 · Se agota rápido
+K1 · Black Friday
+K2 · Navidad / regalo
+GEO-BOFU-A3-07
+UGC con avatar IA
+K4 · Se agota rápido
+K1 · Black Friday
+K2 · Navidad / regalo
+GEO-TOFU-A4-01
+Duración / báscula
+K7 · 1 piedra te dura 1 año (ahorro)
+K2 · Navidad / regalo
+K5 · Paga contraentrega
+GEO-TOFU-A4-02
+Street interview
+K1 · Black Friday
+K2 · Navidad / regalo
+K5 · Paga contraentrega
+GEO-TOFU-A4-03
+Claymation (stop-motion IA)
+K7 · 1 piedra te dura 1 año (ahorro)
+K2 · Navidad / regalo
+K5 · Paga contraentrega
+GEO-MOFU-A4-04
+Faceless / motion graphics
+K7 · 1 piedra te dura 1 año (ahorro)
+K2 · Navidad / regalo
+K5 · Paga contraentrega
+GEO-MOFU-A4-05
+Podcast
+K8 · Combo 2x para regalar
+K2 · Navidad / regalo
+K1 · Black Friday
+GEO-BOFU-A4-06
+UGC con avatar IA
+K4 · Se agota rápido
+K1 · Black Friday
+K2 · Navidad / regalo
+GEO-BOFU-A4-07
+Founder
+K8 · Combo 2x para regalar
+K2 · Navidad / regalo
+K1 · Black Friday
+GEO-TOFU-A5-01
+Demo de producto
+K3 · Llévala hoy
+K1 · Black Friday
+K2 · Navidad / regalo
+GEO-TOFU-A5-02
+POV
+K6 · Envío a toda Colombia
+K1 · Black Friday
+K2 · Navidad / regalo
+GEO-TOFU-A5-03
+Estilo Pixar (3D)
+K2 · Navidad / regalo
+K1 · Black Friday
+K3 · Llévala hoy
+GEO-MOFU-A5-04
+Comparación piedra vs frasco
+K4 · Se agota rápido
+K1 · Black Friday
+K2 · Navidad / regalo
+GEO-MOFU-A5-05
+Testimonio
+K2 · Navidad / regalo
+K1 · Black Friday
+K3 · Llévala hoy
+GEO-BOFU-A5-06
+UGC con avatar IA
+K1 · Black Friday
+K2 · Navidad / regalo
+K5 · Paga contraentrega
+GEO-TOFU-A6-01
+UGC con avatar IA
+K5 · Paga contraentrega
+K1 · Black Friday
+K2 · Navidad / regalo
+GEO-TOFU-A6-02
+Claymation (stop-motion IA)
+K1 · Black Friday
+K2 · Navidad / regalo
+K5 · Paga contraentrega
+GEO-MOFU-A6-03
+Diario de 14 días
+K8 · Combo 2x para regalar
+K2 · Navidad / regalo
+K1 · Black Friday
+GEO-MOFU-A6-04
+Podcast
+K5 · Paga contraentrega
+K1 · Black Friday
+K2 · Navidad / regalo
+GEO-BOFU-A6-05
+UGC con avatar IA
+K3 · Llévala hoy
+K1 · Black Friday
+K2 · Navidad / regalo
+GEO-BOFU-A6-06
+Founder
+K4 · Se agota rápido
+K1 · Black Friday
+K2 · Navidad / regalo
+GEO-TOFU-A7-01
+UGC con avatar IA
+K6 · Envío a toda Colombia
+K1 · Black Friday
+K2 · Navidad / regalo
+GEO-TOFU-A7-02
+Street interview
+K5 · Paga contraentrega
+K1 · Black Friday
+K2 · Navidad / regalo
+GEO-TOFU-A7-03
+POV
+K3 · Llévala hoy
+K1 · Black Friday
+K2 · Navidad / regalo
+GEO-MOFU-A7-04
+Faceless / motion graphics
+K6 · Envío a toda Colombia
+K1 · Black Friday
+K2 · Navidad / regalo
+GEO-MOFU-A7-05
+Testimonio
+K4 · Se agota rápido
+K1 · Black Friday
+K2 · Navidad / regalo
+GEO-BOFU-A7-06
+UGC con avatar IA
+K8 · Combo 2x para regalar
+K2 · Navidad / regalo
+K1 · Black Friday
+GEO-TOFU-A8-01
+UGC con avatar IA (storytime)
+K7 · 1 piedra te dura 1 año (ahorro)
+K2 · Navidad / regalo
+K5 · Paga contraentrega
+GEO-TOFU-A8-02
+Estilo Pixar (3D)
+K2 · Navidad / regalo
+K1 · Black Friday
+K3 · Llévala hoy
+GEO-MOFU-A8-03
+Founder
+K3 · Llévala hoy
+K1 · Black Friday
+K2 · Navidad / regalo
+GEO-BOFU-A8-04
+Testimonio (recopilación de reseñas)
+K2 · Navidad / regalo
+K1 · Black Friday
+K3 · Llévala hoy
+GEO-TOFU-A9-01
+UGC con avatar IA
+K6 · Envío a toda Colombia
+K1 · Black Friday
+K2 · Navidad / regalo
+GEO-TOFU-A9-02
+Podcast
+K1 · Black Friday
+K2 · Navidad / regalo
+K5 · Paga contraentrega
+GEO-MOFU-A9-03
+Demo de producto
+K2 · Navidad / regalo
+K1 · Black Friday
+K3 · Llévala hoy
+GEO-TOFU-A10-01
+Street interview
+K5 · Paga contraentrega
+K1 · Black Friday
+K2 · Navidad / regalo
+GEO-TOFU-A10-02
+POV
+K3 · Llévala hoy
+K1 · Black Friday
+K2 · Navidad / regalo
+GEO-MOFU-A10-03
+UGC con avatar IA
+K6 · Envío a toda Colombia
+K1 · Black Friday
+K2 · Navidad / regalo
+GEO-TOFU-A11-01
+UGC con avatar IA (mamá)
+K7 · 1 piedra te dura 1 año (ahorro)
+K2 · Navidad / regalo
+K5 · Paga contraentrega
+GEO-BOFU-A11-02
+UGC con avatar IA (familia)
+K8 · Combo 2x para regalar
+K2 · Navidad / regalo
+K1 · Black Friday
+Guiones completos por ángulo
+
+Cada video abre con el hook A o el B (0-3 s); desde el segundo 3 el cuerpo es idéntico y cada fila es un plano nuevo de 3 s. La última fila es el CTA: cámbialo por un alterno para re-exportar sin tocar el resto. Antepón el estilo visual IA a cada prompt. Abre cada ángulo y cada video para ver el guion.
+
+Guiones A1 · La piedra no te falló: te la pusiste mal
+GEO-TOFU-A1-01 · UGC con avatar IA · 27 s · CTA: Paga contraentrega
+GEO-TOFU-A1-02 · Demo de producto · 24 s · CTA: Llévala hoy
+Etapa y duración
+TOFU · 24 s · 8 planos de 3 s
+Estilo visual IA (va antes de cada prompt)
+Producto real GEODA, macro, baño claro, luz suave, 9:16
+CTA principal
+K3 · Llévala hoy (Siempre (neutro))
+CTA alternos para re-exportar
+K1 · Black Friday: 'Se llama GEODA, y por Black Friday: paga 2, lleva 3 por $99.990. Pagas cuando te llegue.' / K2 · Navidad / regalo: 'Se llama GEODA: una piedra que sí se usa todos los días. Regálala esta Navidad: paga 2, lleva 3.'
+Compliance
+Plano real del producto, sin IA en el logo.
+Tiempo
+Voz / diálogo
+Visual / prompt IA
+Texto en pantalla
+0-3 s · Hook A
+Esto parece un cristal... pero es un desodorante.
+Frame 1: macro de la piedra a contraluz con destello; la mano la gira rápido
+Esto parece un cristal, pero es un desodorante
+0-3 s · Hook B
+¿Sabías que existe un desodorante que no viene en frasco?
+Frame 1: un frasco genérico se tacha con una línea roja y en su lugar cae la piedra
+El desodorante que no viene en frasco
+3-6 s
+Es piedra de alumbre: un mineral que se usa como desodorante.
+Macro de la piedra girando sobre la palma
+Piedra de alumbre = mineral
+6-9 s
+No tiene perfume y no es líquido.
+Nariz la huele, cara neutra; piedra boca abajo sin que caiga nada
+Sin perfume · sin líquido
+9-12 s
+Pero hay un truco que casi nadie sabe.
+La mano tapa la piedra, zoom
+El truco 👇
+12-15 s
+Uno: se moja la piedra, no la axila.
+Macro: piedra bajo el chorro
+1. Moja la piedra
+15-18 s
+Dos: la pasas por la axila limpia.
+Plano de brazo y torso con camiseta
+2. Axila limpia
+18-21 s
+Tres: la secas y la guardas lejos de la ducha. Así no se agrieta.
+Toalla seca la piedra; la mete en su caja
+3. Sécala y guárdala
+21-24 s · CTA
+Se llama GEODA. Pruébala: pídela hoy y la pagas cuando te llegue.
+Mano toca el botón Comprar; piedra GEODA real en primer plano (producto y logo reales)
+LLÉVALA HOY · Pagas al recibir
+GEO-TOFU-A1-03 · Claymation (stop-motion IA) · 27 s · CTA: Black Friday
+GEO-TOFU-A1-04 · Street interview · 27 s · CTA: Envío a toda Colombia
+Etapa y duración
+TOFU · 27 s · 9 planos de 3 s
+Estilo visual IA (va antes de cada prompt)
+Calle colombiana real, micrófono de mano, cámara en mano, ruido ambiente, 9:16
+CTA principal
+K6 · Envío a toda Colombia (Siempre (neutro))
+CTA alternos para re-exportar
+K1 · Black Friday: 'Se llama GEODA, y por Black Friday: paga 2, lleva 3 por $99.990. Pagas cuando te llegue.' / K2 · Navidad / regalo: 'Se llama GEODA: una piedra que sí se usa todos los días. Regálala esta Navidad: paga 2, lleva 3.'
+Compliance
+Ideal grabarlo real, con autorización firmada. Si se hace con IA: rótulo 'Recreación' y nadie 'de la calle' habla de resultados.
+Tiempo
+Voz / diálogo
+Visual / prompt IA
+Texto en pantalla
+0-3 s · Hook A
+Pregunta rápida: ¿usted sabe cómo se usa la piedra de alumbre?
+Frame 1: micrófono empujado hacia la cámara en plena calle, pregunta en texto amarillo gigante
+¿Cómo se usa la piedra de alumbre?
+0-3 s · Hook B
+Le preguntamos a cinco personas y casi nadie acertó.
+Frame 1: cinco personas en fila mirando a cámara, contador '0/5' en rojo
+Le preguntamos a 5 personas en Bogotá
+3-6 s
+ENTREVISTADO 1: ¿Seca? Uno se la frota y ya.
+Señor en la carrera Séptima haciendo gesto de frotar
+❌ 'Seca'
+6-9 s
+ENTREVISTADA 2: Ay, yo me mojo la axila primero.
+Joven universitaria riéndose
+❌ 'Mojo la axila'
+9-12 s
+ENTREVISTADO 3: Ni idea, mi abuela la usaba.
+Señor mayor encogiéndose de hombros
+❌ 'Ni idea'
+12-15 s
+PRESENTADOR: Es un desodorante mineral, y casi todos lo usan mal. Mire.
+Presentador saca la piedra GEODA del bolsillo, plano cercano
+Mire 👇
+15-18 s
+PRESENTADOR: Se moja la piedra, no la axila.
+Echa agua de una botella sobre la piedra, macro
+Se moja la PIEDRA
+18-21 s
+PRESENTADOR: Y se pasa por la piel limpia.
+Presentador simula sobre su brazo, camiseta manga corta
+Piel limpia
+21-24 s
+ENTREVISTADA 2: ¡Ahhh, con razón!
+Reacción sorprendida de la joven, risa
+¡Con razón! 😂
+24-27 s · CTA
+Se llama GEODA, y te la enviamos gratis a toda Colombia. La pagas al recibir.
+Mapa de Colombia con pines que se encienden; caja GEODA real (producto y logo reales)
+ENVÍO GRATIS A TODA COLOMBIA
+GEO-MOFU-A1-05 · Podcast · 42 s · CTA: Paga contraentrega
+GEO-MOFU-A1-06 · POV · 30 s · CTA: Se agota rápido
+Etapa y duración
+MOFU · 30 s · 10 planos de 3 s
+Estilo visual IA (va antes de cada prompt)
+POV primera persona, 9:16, cotidiano colombiano, cámara en mano
+CTA principal
+K4 · Se agota rápido (Solo si el inventario de verdad está bajo)
+CTA alternos para re-exportar
+K1 · Black Friday: 'Es Black Friday en GEODA: paga 2 y lleva 3 por $99.990, y pagas cuando te llegue.' / K2 · Navidad / regalo: 'Regala algo que sí se usa todos los días: GEODA. Paga 2, lleva 3, y reparte en Navidad.'
+Compliance
+Sin primer plano de la axila.
+Tiempo
+Voz / diálogo
+Visual / prompt IA
+Texto en pantalla
+0-3 s · Hook A
+(voz en off) POV: le diste una segunda oportunidad.
+Frame 1: mano saca la piedra de un cajón empolvado y sopla el polvo hacia la cámara
+POV: por fin aprendiste a usar la piedra
+0-3 s · Hook B
+(voz en off) Mi mamá usaba esto y yo me reía.
+Frame 1: foto de mamá pegada en el espejo del baño con la piedra en la mano
+POV: tu mamá tenía razón con la piedra
+3-6 s
+VOZ EN OFF: Le diste una segunda oportunidad.
+Sale de la ducha, vapor en el espejo
+2ª oportunidad
+6-9 s
+VOZ EN OFF: Esta vez, la mojas primero.
+Macro: agua sobre la piedra
+Primero: mojarla 💧
+9-12 s
+VOZ EN OFF: Piel limpia, pasadas suaves.
+Plano medio con toalla al hombro, brazo arriba
+Pasadas suaves
+12-15 s
+VOZ EN OFF: Camisa, y para la calle.
+Se abotona la camisa frente al espejo
+7:00 a. m.
+15-18 s
+VOZ EN OFF: Bus lleno.
+POV de pie en TransMilenio, agarrado del tubo
+8:00 a. m. 🚌
+18-21 s
+VOZ EN OFF: Reunión, brazos arriba en el tablero.
+Escribe en un tablero en la oficina
+11:00 a. m.
+21-24 s
+VOZ EN OFF: Y a las seis... nada de qué preocuparte.
+Llega a casa, se quita la chaqueta, gesto de alivio
+6:00 p. m. 😌
+24-27 s
+VOZ EN OFF: Tu mamá tenía razón. Solo había que usarla bien.
+Piedra GEODA seca sobre el lavamanos
+Mamá tenía razón
+27-30 s · CTA
+Este lote se está yendo rápido. Asegura la tuya antes de que se agote.
+Estante con pocas cajas GEODA reales; contador de unidades real (producto y logo reales)
+ÚLTIMAS UNIDADES DEL LOTE
+GEO-MOFU-A1-07 · Faceless / motion graphics · 36 s · CTA: 1 piedra te dura 1 año (ahorro)
+GEO-BOFU-A1-08 · UGC con avatar IA · 21 s · CTA: Black Friday
+Etapa y duración
+BOFU · 21 s · 7 planos de 3 s
+Estilo visual IA (va antes de cada prompt)
+UGC vertical 9:16, celular en mano, luz de ventana, apartamento colombiano realista
+CTA principal
+K1 · Black Friday (Hasta el lunes 30 de noviembre (Cyber Monday), solo si la oferta de temporada es real)
+CTA alternos para re-exportar
+K2 · Navidad / regalo: 'Regala algo que sí se usa todos los días: GEODA. Paga 2, lleva 3, y reparte en Navidad.' / K5 · Paga contraentrega: 'No pagas nada ahora: pagas cuando te llegue.'
+Compliance
+Las condiciones de la garantía deben coincidir con la página (reembolso si no funciona).
+Tiempo
+Voz / diálogo
+Visual / prompt IA
+Texto en pantalla
+0-3 s · Hook A
+Dale otra oportunidad a la piedra: si en 14 días no te funciona, te devolvemos tu dinero.
+Frame 1: la avatar guarda billetes en la billetera, texto '14 DÍAS' estampado
+Si en 14 días no te funciona, te devolvemos la plata
+0-3 s · Hook B
+Ya sabes usarla. Ahora pruébala sin riesgo.
+Frame 1: la avatar le da un beso a la piedra frente a la cámara
+Dale otra oportunidad a la piedra, sin riesgo
+3-6 s
+Ya sabes el truco: mojar, aplicar, secar.
+Montaje de 3 cortes rápidos de los pasos
+Mojar · Aplicar · Secar
+6-9 s
+Si en 14 días no te funciona, te devolvemos tu dinero.
+La avatar señala un calendario en la pared
+Garantía 14 días
+9-12 s
+Y no pagas nada por adelantado.
+Abre la puerta; el domiciliario entrega la caja
+Pagas al recibir
+12-15 s
+Paga 2 y lleva 3 por $99.990.
+Tres piedras GEODA reales en la mano
+Paga 2 lleva 3 · $99.990
+15-18 s
+Una para ti y dos de repuesto o para regalar.
+La avatar reparte piedras a dos amigos
+Para ti y para regalar
+18-21 s · CTA
+Es Black Friday en GEODA: paga 2 y lleva 3 por $99.990, y pagas cuando te llegue.
+Piedra GEODA real con etiqueta negra BLACK FRIDAY, botón Comprar (producto y logo reales)
+BLACK FRIDAY · Paga 2 lleva 3 · $99.990
+Guiones A2 · Axilas que lucen más parejas (decisión de Alberto)
+Guiones A3 · La piedra de verdad, no un frasco
+GEO-TOFU-A3-01 · Comparación piedra vs frasco · 24 s · CTA: 1 piedra te dura 1 año (ahorro)
+GEO-TOFU-A3-02 · Claymation (stop-motion IA) · 27 s · CTA: Llévala hoy
+GEO-TOFU-A3-03 · Demo de producto (macro) · 24 s · CTA: Paga contraentrega
+GEO-TOFU-A3-04 · Estilo Pixar (3D) · 27 s · CTA: Navidad / regalo
+GEO-MOFU-A3-05 · Faceless / motion graphics · 36 s · CTA: Envío a toda Colombia
+GEO-MOFU-A3-06 · Founder · 36 s · CTA: Se agota rápido
+GEO-BOFU-A3-07 · UGC con avatar IA · 21 s · CTA: Se agota rápido
+Guiones A4 · 1 piedra dura 1 año (confirmado por Alberto)
+GEO-TOFU-A4-01 · Duración / báscula · 27 s · CTA: 1 piedra te dura 1 año (ahorro)
+GEO-TOFU-A4-02 · Street interview · 27 s · CTA: Black Friday
+GEO-TOFU-A4-03 · Claymation (stop-motion IA) · 27 s · CTA: 1 piedra te dura 1 año (ahorro)
+GEO-MOFU-A4-04 · Faceless / motion graphics · 33 s · CTA: 1 piedra te dura 1 año (ahorro)
+GEO-MOFU-A4-05 · Podcast · 39 s · CTA: Combo 2x para regalar
+GEO-BOFU-A4-06 · UGC con avatar IA · 21 s · CTA: Se agota rápido
+GEO-BOFU-A4-07 · Founder · 21 s · CTA: Combo 2x para regalar
+Guiones A5 · Ropa sin manchas
+Guiones A6 · Transición de 14 días / detox (decisión de Alberto)
+GEO-TOFU-A6-01 · UGC con avatar IA · 27 s · CTA: Paga contraentrega
+GEO-TOFU-A6-02 · Claymation (stop-motion IA) · 27 s · CTA: Black Friday
+GEO-MOFU-A6-03 · Diario de 14 días · 51 s · CTA: Combo 2x para regalar
+GEO-MOFU-A6-04 · Podcast · 42 s · CTA: Paga contraentrega
+GEO-BOFU-A6-05 · UGC con avatar IA · 21 s · CTA: Llévala hoy
+GEO-BOFU-A6-06 · Founder · 21 s · CTA: Se agota rápido
+Guiones A7 · Sigo sudando, pero no huelo / huele a piel
+Guiones A8 · Antes creía que era cuento (historia)
+GEO-TOFU-A8-01 · UGC con avatar IA (storytime) · 36 s · CTA: 1 piedra te dura 1 año (ahorro)
+GEO-TOFU-A8-02 · Estilo Pixar (3D) · 30 s · CTA: Navidad / regalo
+GEO-MOFU-A8-03 · Founder · 39 s · CTA: Llévala hoy
+GEO-BOFU-A8-04 · Testimonio (recopilación de reseñas) · 24 s · CTA: Navidad / regalo
+Guiones A9 · Hombres: sin perfume, sin complicarse
+Guiones A10 · Calor, Costa y viaje
+GEO-TOFU-A10-01 · Street interview · 27 s · CTA: Paga contraentrega
+GEO-TOFU-A10-02 · POV · 21 s · CTA: Llévala hoy
+GEO-MOFU-A10-03 · UGC con avatar IA · 33 s · CTA: Envío a toda Colombia
+Guiones A11 · Primer desodorante del adolescente (para papá y mamá)
+Checklist de los 60 videos
+
+Marca cada casilla al terminar. La misma lista está en CSV (brief_60_videos.csv) y los guiones completos en guiones_60_videos.csv y guiones_60_videos.docx.
+
+ID
+Ángulo
+Etapa
+Formato
+Duración
+CTA
+Guion
+Hook A
+Hook B
+Subtítulos
+Compliance
+Entregado
+GEO-TOFU-A1-01
+A1
+TOFU
+UGC con avatar IA
+27 s
+K5
+☐
+☐
+☐
+☐
+☐
+☐
+GEO-TOFU-A1-02
+A1
+TOFU
+Demo de producto
+24 s
+K3
+☐
+☐
+☐
+☐
+☐
+☐
+GEO-TOFU-A1-03
+A1
+TOFU
+Claymation (stop-motion IA)
+27 s
+K1
+☐
+☐
+☐
+☐
+☐
+☐
+GEO-TOFU-A1-04
+A1
+TOFU
+Street interview
+27 s
+K6
+☐
+☐
+☐
+☐
+☐
+☐
+GEO-MOFU-A1-05
+A1
+MOFU
+Podcast
+42 s
+K5
+☐
+☐
+☐
+☐
+☐
+☐
+GEO-MOFU-A1-06
+A1
+MOFU
+POV
+30 s
+K4
+☐
+☐
+☐
+☐
+☐
+☐
+GEO-MOFU-A1-07
+A1
+MOFU
+Faceless / motion graphics
+36 s
+K7
+☐
+☐
+☐
+☐
+☐
+☐
+GEO-BOFU-A1-08
+A1
+BOFU
+UGC con avatar IA
+21 s
+K1
+☐
+☐
+☐
+☐
+☐
+☐
+GEO-TOFU-A2-01
+A2
+TOFU
+UGC con avatar IA
+27 s
+K5
+☐
+☐
+☐
+☐
+☐
+☐
+GEO-TOFU-A2-02
+A2
+TOFU
+Estilo Pixar (3D)
+27 s
+K2
+☐
+☐
+☐
+☐
+☐
+☐
+GEO-TOFU-A2-03
+A2
+TOFU
+Testimonio
+30 s
+K6
+☐
+☐
+☐
+☐
+☐
+☐
+GEO-TOFU-A2-04
+A2
+TOFU
+Podcast
+39 s
+K1
+☐
+☐
+☐
+☐
+☐
+☐
+GEO-MOFU-A2-05
+A2
+MOFU
+Diario de 14 días
+45 s
+K1
+☐
+☐
+☐
+☐
+☐
+☐
+GEO-MOFU-A2-06
+A2
+MOFU
+Comparación piedra vs frasco
+33 s
+K8
+☐
+☐
+☐
+☐
+☐
+☐
+GEO-BOFU-A2-07
+A2
+BOFU
+UGC con avatar IA
+21 s
+K8
+☐
+☐
+☐
+☐
+☐
+☐
+GEO-BOFU-A2-08
+A2
+BOFU
+Unboxing
+21 s
+K3
+☐
+☐
+☐
+☐
+☐
+☐
+GEO-TOFU-A3-01
+A3
+TOFU
+Comparación piedra vs frasco
+24 s
+K7
+☐
+☐
+☐
+☐
+☐
+☐
+GEO-TOFU-A3-02
+A3
+TOFU
+Claymation (stop-motion IA)
+27 s
+K3
+☐
+☐
+☐
+☐
+☐
+☐
+GEO-TOFU-A3-03
+A3
+TOFU
+Demo de producto (macro)
+24 s
+K5
+☐
+☐
+☐
+☐
+☐
+☐
+GEO-TOFU-A3-04
+A3
+TOFU
+Estilo Pixar (3D)
+27 s
+K2
+☐
+☐
+☐
+☐
+☐
+☐
+GEO-MOFU-A3-05
+A3
+MOFU
+Faceless / motion graphics
+36 s
+K6
+☐
+☐
+☐
+☐
+☐
+☐
+GEO-MOFU-A3-06
+A3
+MOFU
+Founder
+36 s
+K4
+☐
+☐
+☐
+☐
+☐
+☐
+GEO-BOFU-A3-07
+A3
+BOFU
+UGC con avatar IA
+21 s
+K4
+☐
+☐
+☐
+☐
+☐
+☐
+GEO-TOFU-A4-01
+A4
+TOFU
+Duración / báscula
+27 s
+K7
+☐
+☐
+☐
+☐
+☐
+☐
+GEO-TOFU-A4-02
+A4
+TOFU
+Street interview
+27 s
+K1
+☐
+☐
+☐
+☐
+☐
+☐
+GEO-TOFU-A4-03
+A4
+TOFU
+Claymation (stop-motion IA)
+27 s
+K7
+☐
+☐
+☐
+☐
+☐
+☐
+GEO-MOFU-A4-04
+A4
+MOFU
+Faceless / motion graphics
+33 s
+K7
+☐
+☐
+☐
+☐
+☐
+☐
+GEO-MOFU-A4-05
+A4
+MOFU
+Podcast
+39 s
+K8
+☐
+☐
+☐
+☐
+☐
+☐
+GEO-BOFU-A4-06
+A4
+BOFU
+UGC con avatar IA
+21 s
+K4
+☐
+☐
+☐
+☐
+☐
+☐
+GEO-BOFU-A4-07
+A4
+BOFU
+Founder
+21 s
+K8
+☐
+☐
+☐
+☐
+☐
+☐
+GEO-TOFU-A5-01
+A5
+TOFU
+Demo de producto
+27 s
+K3
+☐
+☐
+☐
+☐
+☐
+☐
+GEO-TOFU-A5-02
+A5
+TOFU
+POV
+24 s
+K6
+☐
+☐
+☐
+☐
+☐
+☐
+GEO-TOFU-A5-03
+A5
+TOFU
+Estilo Pixar (3D)
+27 s
+K2
+☐
+☐
+☐
+☐
+☐
+☐
+GEO-MOFU-A5-04
+A5
+MOFU
+Comparación piedra vs frasco
+33 s
+K4
+☐
+☐
+☐
+☐
+☐
+☐
+GEO-MOFU-A5-05
+A5
+MOFU
+Testimonio
+33 s
+K2
+☐
+☐
+☐
+☐
+☐
+☐
+GEO-BOFU-A5-06
+A5
+BOFU
+UGC con avatar IA
+18 s
+K1
+☐
+☐
+☐
+☐
+☐
+☐
+GEO-TOFU-A6-01
+A6
+TOFU
+UGC con avatar IA
+27 s
+K5
+☐
+☐
+☐
+☐
+☐
+☐
+GEO-TOFU-A6-02
+A6
+TOFU
+Claymation (stop-motion IA)
+27 s
+K1
+☐
+☐
+☐
+☐
+☐
+☐
+GEO-MOFU-A6-03
+A6
+MOFU
+Diario de 14 días
+51 s
+K8
+☐
+☐
+☐
+☐
+☐
+☐
+GEO-MOFU-A6-04
+A6
+MOFU
+Podcast
+42 s
+K5
+☐
+☐
+☐
+☐
+☐
+☐
+GEO-BOFU-A6-05
+A6
+BOFU
+UGC con avatar IA
+21 s
+K3
+☐
+☐
+☐
+☐
+☐
+☐
+GEO-BOFU-A6-06
+A6
+BOFU
+Founder
+21 s
+K4
+☐
+☐
+☐
+☐
+☐
+☐
+GEO-TOFU-A7-01
+A7
+TOFU
+UGC con avatar IA
+24 s
+K6
+☐
+☐
+☐
+☐
+☐
+☐
+GEO-TOFU-A7-02
+A7
+TOFU
+Street interview
+27 s
+K5
+☐
+☐
+☐
+☐
+☐
+☐
+GEO-TOFU-A7-03
+A7
+TOFU
+POV
+24 s
+K3
+☐
+☐
+☐
+☐
+☐
+☐
+GEO-MOFU-A7-04
+A7
+MOFU
+Faceless / motion graphics
+33 s
+K6
+☐
+☐
+☐
+☐
+☐
+☐
+GEO-MOFU-A7-05
+A7
+MOFU
+Testimonio
+33 s
+K4
+☐
+☐
+☐
+☐
+☐
+☐
+GEO-BOFU-A7-06
+A7
+BOFU
+UGC con avatar IA
+18 s
+K8
+☐
+☐
+☐
+☐
+☐
+☐
+GEO-TOFU-A8-01
+A8
+TOFU
+UGC con avatar IA (storytime)
+36 s
+K7
+☐
+☐
+☐
+☐
+☐
+☐
+GEO-TOFU-A8-02
+A8
+TOFU
+Estilo Pixar (3D)
+30 s
+K2
+☐
+☐
+☐
+☐
+☐
+☐
+GEO-MOFU-A8-03
+A8
+MOFU
+Founder
+39 s
+K3
+☐
+☐
+☐
+☐
+☐
+☐
+GEO-BOFU-A8-04
+A8
+BOFU
+Testimonio (recopilación de reseñas)
+24 s
+K2
+☐
+☐
+☐
+☐
+☐
+☐
+GEO-TOFU-A9-01
+A9
+TOFU
+UGC con avatar IA
+24 s
+K6
+☐
+☐
+☐
+☐
+☐
+☐
+GEO-TOFU-A9-02
+A9
+TOFU
+Podcast
+36 s
+K1
+☐
+☐
+☐
+☐
+☐
+☐
+GEO-MOFU-A9-03
+A9
+MOFU
+Demo de producto
+33 s
+K2
+☐
+☐
+☐
+☐
+☐
+☐
+GEO-TOFU-A10-01
+A10
+TOFU
+Street interview
+27 s
+K5
+☐
+☐
+☐
+☐
+☐
+☐
+GEO-TOFU-A10-02
+A10
+TOFU
+POV
+21 s
+K3
+☐
+☐
+☐
+☐
+☐
+☐
+GEO-MOFU-A10-03
+A10
+MOFU
+UGC con avatar IA
+33 s
+K6
+☐
+☐
+☐
+☐
+☐
+☐
+GEO-TOFU-A11-01
+A11
+TOFU
+UGC con avatar IA (mamá)
+27 s
+K7
+☐
+☐
+☐
+☐
+☐
+☐
+GEO-BOFU-A11-02
+A11
+BOFU
+UGC con avatar IA (familia)
+21 s
+K8
+☐
+☐
+☐
+☐
+☐
+☐

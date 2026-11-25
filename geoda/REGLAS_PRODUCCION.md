@@ -4,8 +4,8 @@ Ajustes acordados con Camilo. Se aplican a **todos** los videos, a los ya hechos
 El montador (`pipeline/builder.py`) ya trae estas reglas por defecto.
 
 ## Contenido y guion
-1. **El brief manda**: guion, `prompt_visual_IA`, CTA y reglas de compliance de cada video salen del brief
-   (`guiones_60_videos.csv`). Cambios solo cuando el producto real lo exige (ej.: es un stick con tapa, no una caja).
+1. **El brief manda**: guion, `prompt_visual_IA`, CTA y reglas de compliance de cada video salen del **brief corregido**
+   (`brief_v2/guiones_60.json`, reglas en `brief_v2/brief_reglas.txt`; reemplaza al CSV anterior). Cambios solo cuando el producto real lo exige (ej.: es un stick con tapa, no una caja).
 2. **Sin precios** en voz ni en pantalla, salvo que Camilo lo indique.
 3. **Black Friday** solo si la oferta de temporada es real; si no, CTA neutro (K3, K5, K6, K7). Cuando haya duda se exportan las dos versiones.
 4. **Sin el rótulo "Recreación con IA"** en ningún video. Al publicar, activar la etiqueta de contenido IA de Meta/TikTok.
@@ -72,6 +72,22 @@ El montador (`pipeline/builder.py`) ya trae estas reglas por defecto.
 ## CTA
 21. **Tarjeta final con ambiente** (desde el A1-05): el producto real (recorte de la foto de la landing) va sobre un baño o
     ambiente que lo haga lucir (mesón, luz natural, plantas, toalla), no sobre un fondo blanco liso.
+
+## Brief corregido (v2): reglas nuevas
+22. **Awareness por etapa**: TOFU = problema/mito/dato primero, el producto entra tarde como descubrimiento y el CTA empieza
+    con "Se llama GEODA…"; sin marca en el hook ("tu piedra", "tu GEODA"), sin combos ni precio por mes. MOFU compara y rompe
+    objeciones (nunca empieza con la oferta). BOFU: oferta, combo, garantía, contraentrega.
+23. **Compliance**: nada de primeros planos de la axila ni zooms al cuerpo (planos medios con ropa); no decir "24 horas",
+    "100 % natural", "sin aluminio", "antitranspirante", segundos de aplicación, ni otra duración que "1 piedra dura 1 año";
+    sin preguntas por atributos personales; nadie de la calle/IA cuenta resultados como real.
+24. **Ritmo**: plano nuevo cada 2,5-3 s; cortar respiraciones y pausas de más de 0,3 s; efecto de sonido en cada corte
+    (en conversaciones, suave); loop abierto en los primeros 6 s.
+25. **Producto real**: en pantalla antes del segundo 10, al menos un plano real de 2-3 s (macro o en la mano) y en el cierre;
+    los últimos 2-3 s: producto real + CTA en texto + "Pago contraentrega · Envío gratis".
+26. **Duración por etapa**: TOFU 21-39 s · MOFU 30-51 s · BOFU 18-24 s.
+27. **Versiones**: cada corrección se sube como v2, v3… (no se sobrescribe).
+28. **Etiqueta encajada al tarro**: ocupa el 94 % del ancho visible del tubo, centrada (como en la foto de la landing);
+    `label_fix.py --fit` mide los bordes reales del tubo. Si el stick está inclinado en la mano, se sigue el giro sin recentrar.
 
 ## Entrega
 19. Nombres según el brief: `GEO_[ETAPA]_[ÁNGULO]_[NN]_[HOOK]_[FORMATO]_v[n].mp4`, un archivo por hook (A y B).

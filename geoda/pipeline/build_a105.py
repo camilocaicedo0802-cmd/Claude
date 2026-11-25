@@ -8,6 +8,7 @@ import builder as B
 A = f'{G}/a105'; T = f'{A}/tmp'; os.makedirs(T, exist_ok=True)
 HF, S, AU = f'{G}/hf', f'{G}/stock', f'{G}/audio'
 HOST, G1, G2 = f'{HF}/fixed/w_host_0.mp4', f'{HF}/fixed/w_g1_0.mp4', f'{HF}/fixed/w_g2_0.mp4'
+G1H = f'{HF}/fixed/w_g1_nofit_0.mp4'   # stick en la mano (inclinado): etiqueta que sigue el giro; G1 (ajustada al tubo) sobre la mesa
 # Frases del guion con sus tiempos REALES en cada clip (pausas medidas por energía y cada frase verificada transcribiéndola
 # sola: dice exactamente el guion, sin palabras de la frase vecina). (texto, inicio, fin) de cada tramo de voz.
 LINES = {
@@ -43,11 +44,10 @@ def wav(name, clip, a0, d):
 #   'sync' = el mismo clip y tramo de la voz (labios sincronizados); 'vid' = otro video (la voz sigue); 'still' = imagen fija
 ROWS = {
  'HA':  ('H0', [('ha', 'sync', HOST, None, dict(z0=1.0, z1=1.04, shake=(0.0, 0.35, 16)))]),
- 'HB':  ('G0', [('hb', 'sync', G1, None, dict(z0=1.0, z1=1.04))]),
+ 'HB':  ('G0', [('hb', 'vid', G1H, None, dict(ss='a0', z0=1.0, z1=1.04))]),
  'B1':  ('H1', [('b1', 'sync', HOST, None, dict(z0=1.0, z1=1.04))]),
- 'B2':  ('G1a', [('b2a', 'sync', G1, 2.26, dict(z0=1.0, z1=1.04)),                       # antes de que baje el stick
-                 ('b2b', 'vid', HOST, None, dict(ss=12.45, z0=1.0, z1=1.03))]),            # el host escucha
- 'B3':  ('H2', [('b3', 'vid', f'{HF}/k_set_0.mp4', None, dict(ss=0.45, z0=1.0, z1=1.05))]),  # plano general
+ 'B2':  ('G1a', [('b2', 'vid', f'{HF}/k_set_0.mp4', None, dict(ss=0.0, speed=0.95, z0=1.0, z1=1.05))]),  # plano general: ella explica
+ 'B3':  ('H2', [('b3', 'sync', HOST, None, dict(z0=1.0, z1=1.04))]),                       # 'A ver, explícame' en su primer plano
  'B4':  ('G2l', [('b4', 'vid', f'{T}/ins_gota.mp4', None, dict(ss=0.0))]),
  'B5':  ('G3', [('b5a', 'still', f'{HF}/p_mesa_0.png', 2.4, dict(z0=1.0, z1=1.06)), ('b5b', 'sync', G1, None, dict(z0=1.04, z1=1.07))]),
  'B6':  ('H3', [('b6', 'sync', HOST, None, dict(z0=1.0, z1=1.04))]),
@@ -63,27 +63,58 @@ ROWS = {
 }
 EC_BOX = (290, 790, 900, 1530)   # producto + tapa en la tarjeta final (no se tapa)
 
+TRIM = {'B4'}   # filas sin labios a la vista: las pausas internas de más de 0,3 s se recortan (brief: cero tiempo muerto)
+MAXGAP = 0.18
+
+def audio_plan(key, lk):
+    """Tramos de audio de la fila: [(inicio_clip, fin_clip)] y palabras con tiempos en la línea de tiempo de la fila."""
+    clip, a0, a1, pieces = LINES[lk]
+    if key not in TRIM or len(pieces) < 2:
+        return [(a0, a1)], words_of(lk)
+    segs, words, t = [], [], 0.0
+    for j, (text, s0, e0) in enumerate(pieces):
+        st = a0 if j == 0 else s0 - MAXGAP / 2
+        en = a1 if j == len(pieces) - 1 else e0 + MAXGAP / 2
+        words += [(w, t + (x0 - st), t + (x1 - st)) for w, x0, x1 in B.word_times(text, s0, e0 - s0)]
+        segs.append((st, en)); t += en - st
+    return segs, words
+
+def wav_segs(name, clip, segs, d):
+    parts = []
+    for k, (x0, x1) in enumerate(segs):
+        wav(f'{name}_p{k}', clip, x0, x1 - x0); parts.append(f'{T}/{name}_p{k}.wav')
+    if len(parts) == 1:
+        os.replace(parts[0], f'{T}/{name}.wav'); return
+    lst = f'{T}/{name}_parts.txt'; open(lst, 'w').write(''.join(f"file '{x}'\n" for x in parts))
+    subprocess.run(['ffmpeg', '-v', 'error', '-y', '-f', 'concat', '-safe', '0', '-i', lst, '-af', f'apad=whole_dur={d:.3f}', '-t', f'{d:.3f}',
+                    f'{T}/{name}.wav'], check=True)
+
 def build_shots():
     shots, rowmeta = {}, {}
     for key, (lk, items) in ROWS.items():
-        clip, a0, a1, _ = LINES[lk]; d = a1 - a0
+        clip, a0, a1, _ = LINES[lk]
+        segs, wds = audio_plan(key, lk); d = sum(b - a for a, b in segs)
         fixed = sum(x[3] for x in items if x[3]); rest = d - fixed
         lst, t = [], 0.0
         for name, kind, src, dd, o in items:
             dd = dd or rest
             o = dict(o)
+            if o.get('ss') == 'a0': o['ss'] = a0 + t
             if kind == 'sync':
                 sh = B.shot(T, name, src, dd, ss=a0 + t, **o)
             elif kind == 'still':
                 sh = B.shot(T, name, src, dd, still=True, **o)
             else:
                 sh = B.shot(T, name, src, dd, **o)
-            wav(name, clip, a0 + t, dd)
+            if len(segs) == 1:
+                wav(name, clip, a0 + t, dd)
+            else:   # fila recortada: una sola toma (sin labios), audio armado por tramos
+                wav_segs(name, clip, segs, dd)
             obst = None
             if name == 'b13b': obst = [EC_BOX]
             if any(k in src for k in ('ins_gota', 'ins_cal', 'k_grifo2', 'p_mesa', 'hi_42130', 'k_empuja')): obst = obst or []
             lst.append(sh + ((obst,) if obst is not None else ())); t += dd
-        shots[key] = lst; rowmeta[key] = (d, words_of(lk))
+        shots[key] = lst; rowmeta[key] = (d, wds)
     return shots, rowmeta
 
 WH = f'{AU}/sfx_1489.mp3'
@@ -104,8 +135,8 @@ def cfg_for(meta):
     body = [row('B1'), row('B2'), row('B3', icon='👀'), row('B4', sfx=[(-0.1, WH, 0.18)]), row('B5', sfx=[(-0.1, WH, 0.18)]),
             row('B6'), row('B7', sfx=[(0.8, f'{AU}/splash_1311.mp3', 0.25)]), row('B8', sfx=[(-0.1, WH, 0.18)]), row('B9'), row('B10'),
             row('B11'), row('B12'), row('B13', sfx=[(-0.1, WH, 0.18)])]
-    return dict(id='GEO_MOFU_A1_05', fmt='PODCAST', version=1, tmp=T, out_dir=A, vo_dir=T, min_face=50, hook_text_until=3.0,
-                hook_slots=[250, 300, 360, 420, 470, 560, 700, 860, 1000], cut_sfx=False, music_vol=0.07,
+    return dict(id='GEO_MOFU_A1_05', fmt='PODCAST', version=2, tmp=T, out_dir=A, vo_dir=T, min_face=50, hook_text_until=3.0,
+                hook_slots=[250, 300, 360, 420, 470, 560, 700, 860, 1000], cut_sfx=True, cut_sfx_vol=0.10, music_vol=0.07,
                 hooks=hooks, body=body,
                 cta=dict(row='B13', l1='PAGA CONTRAENTREGA', l2='Pagas cuando te llegue', pill='Envío gratis a toda Colombia 🚚'),
                 sfx={'HA': [(0.02, f'{AU}/sfx_2357.mp3', 0.6)]})

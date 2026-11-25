@@ -236,7 +236,7 @@ def build(cfg, hk, shots):
         sfx.append(f'[s{k}]'); k += 1
     if cfg.get('cut_sfx', True):
         for c in cuts[1:]:
-            add(f'{A}/sfx_1489.mp3', c - 0.12, 0.22, 0.6)
+            add(f'{A}/sfx_1489.mp3', c - 0.12, cfg.get('cut_sfx_vol', 0.22), 0.6)
     for r in rows_cfg:  # efectos por fila: (segundos desde el inicio de la fila, archivo, volumen)
         for off, src, vol in r.get('sfx', []):
             add(src, rs[r['key']] + off, vol)

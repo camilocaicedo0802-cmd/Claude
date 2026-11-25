@@ -1,0 +1,4418 @@
+{
+ "GEO-BOFU-A1-08": {
+  "head": "GEO-BOFU-A1-08 · UGC con avatar IA · 21 s · CTA: Black Friday",
+  "meta": {
+   "Etapa y duración": "BOFU · 21 s · 7 planos de 3 s",
+   "CTA principal": "K1 · Black Friday (Hasta el lunes 30 de noviembre (Cyber Monday), solo si la oferta de temporada es real)",
+   "Compliance": "Las condiciones de la garantía deben coincidir con la página (reembolso si no funciona)."
+  },
+  "rows": [
+   {
+    "t": "0-3 s · Hook A",
+    "voz": "Dale otra oportunidad a la piedra: si en 14 días no te funciona, te devolvemos tu dinero.",
+    "vis": "Frame 1: la avatar guarda billetes en la billetera, texto '14 DÍAS' estampado",
+    "txt": "Si en 14 días no te funciona, te devolvemos la plata"
+   },
+   {
+    "t": "0-3 s · Hook B",
+    "voz": "Ya sabes usarla. Ahora pruébala sin riesgo.",
+    "vis": "Frame 1: la avatar le da un beso a la piedra frente a la cámara",
+    "txt": "Dale otra oportunidad a la piedra, sin riesgo"
+   },
+   {
+    "t": "3-6 s",
+    "voz": "Ya sabes el truco: mojar, aplicar, secar.",
+    "vis": "Montaje de 3 cortes rápidos de los pasos",
+    "txt": "Mojar · Aplicar · Secar"
+   },
+   {
+    "t": "6-9 s",
+    "voz": "Si en 14 días no te funciona, te devolvemos tu dinero.",
+    "vis": "La avatar señala un calendario en la pared",
+    "txt": "Garantía 14 días"
+   },
+   {
+    "t": "9-12 s",
+    "voz": "Y no pagas nada por adelantado.",
+    "vis": "Abre la puerta; el domiciliario entrega la caja",
+    "txt": "Pagas al recibir"
+   },
+   {
+    "t": "12-15 s",
+    "voz": "Paga 2 y lleva 3 por $99.990.",
+    "vis": "Tres piedras GEODA reales en la mano",
+    "txt": "Paga 2 lleva 3 · $99.990"
+   },
+   {
+    "t": "15-18 s",
+    "voz": "Una para ti y dos de repuesto o para regalar.",
+    "vis": "La avatar reparte piedras a dos amigos",
+    "txt": "Para ti y para regalar"
+   },
+   {
+    "t": "18-21 s · CTA",
+    "voz": "Es Black Friday en GEODA: paga 2 y lleva 3 por $99.990, y pagas cuando te llegue.",
+    "vis": "Piedra GEODA real con etiqueta negra BLACK FRIDAY, botón Comprar (producto y logo reales)",
+    "txt": "BLACK FRIDAY · Paga 2 lleva 3 · $99.990"
+   }
+  ]
+ },
+ "GEO-BOFU-A11-02": {
+  "head": "GEO-BOFU-A11-02 · UGC con avatar IA (familia) · 21 s · CTA: Combo 2x para regalar",
+  "meta": {
+   "Etapa y duración": "BOFU · 21 s · 7 planos de 3 s",
+   "CTA principal": "K8 · Combo 2x para regalar (Siempre; en diciembre con enfoque regalo)",
+   "Compliance": "Menores siempre vestidos. Rótulo IA."
+  },
+  "rows": [
+   {
+    "t": "0-3 s · Hook A",
+    "voz": "Una piedra para cada uno en la casa.",
+    "vis": "Frame 1: cinco piedras alineadas en el lavamanos, cada una con un nombre escrito en cinta",
+    "txt": "Una piedra para cada uno en la casa"
+   },
+   {
+    "t": "0-3 s · Hook B",
+    "voz": "Paga tres, lleva cinco para toda la familia.",
+    "vis": "Frame 1: la familia aparece de golpe en el baño, 'PAGA 3 LLEVA 5'",
+    "txt": "Combo familiar: paga 3, lleva 5"
+   },
+   {
+    "t": "3-6 s",
+    "voz": "Una piedra para cada uno en la casa.",
+    "vis": "Familia vestida en el baño, cada uno con su piedra",
+    "txt": "Una para cada uno"
+   },
+   {
+    "t": "6-9 s",
+    "voz": "Combo familiar: paga 3, lleva 5.",
+    "vis": "Cinco piedras en fila",
+    "txt": "Paga 3 lleva 5"
+   },
+   {
+    "t": "9-12 s",
+    "voz": "$139.990: menos de $28.000 por piedra.",
+    "vis": "Precio en pantalla",
+    "txt": "$139.990"
+   },
+   {
+    "t": "12-15 s",
+    "voz": "Pagas cuando te llegue y tienes 14 días de garantía.",
+    "vis": "Domiciliario",
+    "txt": "Contraentrega · 14 días"
+   },
+   {
+    "t": "15-18 s",
+    "voz": "Nadie tiene que compartir.",
+    "vis": "Un niño abraza su piedra",
+    "txt": "Nadie comparte 😄"
+   },
+   {
+    "t": "18-21 s · CTA",
+    "voz": "Paga 2 y lleva 3: una para ti y dos para regalar. Pídelo hoy.",
+    "vis": "Tres piedras GEODA reales, dos con moño, pasan de mano en mano (producto y logo reales)",
+    "txt": "PAGA 2 LLEVA 3 · Para ti y para regalar"
+   }
+  ]
+ },
+ "GEO-BOFU-A2-07": {
+  "head": "GEO-BOFU-A2-07 · UGC con avatar IA · 21 s · CTA: Combo 2x para regalar",
+  "meta": {
+   "Etapa y duración": "BOFU · 21 s · 7 planos de 3 s",
+   "CTA principal": "K8 · Combo 2x para regalar (Siempre; en diciembre con enfoque regalo)",
+   "Compliance": "Rótulo IA. Primera persona."
+  },
+  "rows": [
+   {
+    "t": "0-3 s · Hook A",
+    "voz": "Yo ya la saqué del clóset. Tú, ¿qué esperas?",
+    "vis": "Frame 1: la puerta del clóset se abre de golpe y salen volando blusas sin mangas",
+    "txt": "La blusa sin mangas te está esperando"
+   },
+   {
+    "t": "0-3 s · Hook B",
+    "voz": "Paga dos, lleva tres: una para ti y dos para tus amigas.",
+    "vis": "Frame 1: tres piedras GEODA caen una por una en la palma, sonido de moneda",
+    "txt": "Paga 2, lleva 3: una para ti y dos para tus amigas"
+   },
+   {
+    "t": "3-6 s",
+    "voz": "Yo ya saqué las blusas sin mangas del clóset.",
+    "vis": "La avatar elige blusas en el clóset",
+    "txt": "Las saqué 💃"
+   },
+   {
+    "t": "6-9 s",
+    "voz": "Mi secreto es esta piedra, sin perfume.",
+    "vis": "Piedra GEODA real en la mano",
+    "txt": "Mi secreto"
+   },
+   {
+    "t": "9-12 s",
+    "voz": "Paga 2, lleva 3: una para ti y dos para tus amigas.",
+    "vis": "Tres piedras en abanico",
+    "txt": "Paga 2 lleva 3"
+   },
+   {
+    "t": "12-15 s",
+    "voz": "Pagas cuando te llegue y tienes 14 días de garantía.",
+    "vis": "El domiciliario entrega en la puerta",
+    "txt": "Contraentrega + 14 días"
+   },
+   {
+    "t": "15-18 s",
+    "voz": "¿Qué esperas?",
+    "vis": "La avatar guiña con la blusa puesta, plano amplio",
+    "txt": "¿Qué esperas?"
+   },
+   {
+    "t": "18-21 s · CTA",
+    "voz": "Paga 2 y lleva 3: una para ti y dos para regalar. Pídelo hoy.",
+    "vis": "Tres piedras GEODA reales, dos con moño, pasan de mano en mano (producto y logo reales)",
+    "txt": "PAGA 2 LLEVA 3 · Para ti y para regalar"
+   }
+  ]
+ },
+ "GEO-BOFU-A2-08": {
+  "head": "GEO-BOFU-A2-08 · Unboxing · 21 s · CTA: Llévala hoy",
+  "meta": {
+   "Etapa y duración": "BOFU · 21 s · 7 planos de 3 s",
+   "CTA principal": "K3 · Llévala hoy (Siempre (neutro))",
+   "Compliance": "Producto y empaque reales; grabarlo de verdad."
+  },
+  "rows": [
+   {
+    "t": "0-3 s · Hook A",
+    "voz": "Me llegó y la pagué cuando el domiciliario me la entregó.",
+    "vis": "Frame 1: las manos reciben la caja del domiciliario y el billete cambia de mano en primer plano",
+    "txt": "Me llegó GEODA y la pagué al recibir"
+   },
+   {
+    "t": "0-3 s · Hook B",
+    "voz": "Ven, la abrimos juntas.",
+    "vis": "Frame 1: tijera corta la cinta de la caja en macro, sonido ASMR",
+    "txt": "Abre conmigo mi piedra GEODA"
+   },
+   {
+    "t": "3-6 s",
+    "voz": "Me llegó y la pagué cuando el domiciliario me la entregó.",
+    "vis": "Domiciliario real entrega; pago en efectivo",
+    "txt": "Pagué al recibir 💵"
+   },
+   {
+    "t": "6-9 s",
+    "voz": "Abramos.",
+    "vis": "Manos abren la caja real",
+    "txt": "📦"
+   },
+   {
+    "t": "9-12 s",
+    "voz": "Ahí está: la piedra GEODA.",
+    "vis": "Saca la piedra y la gira a la luz",
+    "txt": "La piedra 🪨"
+   },
+   {
+    "t": "12-15 s",
+    "voz": "Primera vez: la mojo y la paso.",
+    "vis": "Moja la piedra en el lavamanos, plano medio",
+    "txt": "Primera aplicación"
+   },
+   {
+    "t": "15-18 s",
+    "voz": "Pedí el paga 2, lleva 3, así que tengo para regalar.",
+    "vis": "Tres piedras sobre la cama",
+    "txt": "3 piedras"
+   },
+   {
+    "t": "18-21 s · CTA",
+    "voz": "Llévala hoy: pídela ya y la pagas cuando te llegue a la puerta.",
+    "vis": "Mano toca el botón Comprar; piedra GEODA real en primer plano (producto y logo reales)",
+    "txt": "LLÉVALA HOY · Pagas al recibir"
+   }
+  ]
+ },
+ "GEO-BOFU-A3-07": {
+  "head": "GEO-BOFU-A3-07 · UGC con avatar IA · 21 s · CTA: Se agota rápido",
+  "meta": {
+   "Etapa y duración": "BOFU · 21 s · 7 planos de 3 s",
+   "CTA principal": "K4 · Se agota rápido (Solo si el inventario de verdad está bajo)",
+   "Compliance": "Rótulo IA."
+  },
+  "rows": [
+   {
+    "t": "0-3 s · Hook A",
+    "voz": "Tres piedras y cero frascos para la casa.",
+    "vis": "Frame 1: tres piedras caen sobre la mesa en cámara lenta y los frascos salen volando del cuadro",
+    "txt": "Paga 2, lleva 3: tres piedras, cero frascos"
+   },
+   {
+    "t": "0-3 s · Hook B",
+    "voz": "Este año dejé de comprar frascos.",
+    "vis": "Frame 1: la avatar rompe un recibo largo de compras de desodorante",
+    "txt": "Una piedra, cero frascos"
+   },
+   {
+    "t": "3-6 s",
+    "voz": "Tres piedras y cero frascos para toda la casa.",
+    "vis": "La avatar sostiene 3 piedras",
+    "txt": "3 piedras · 0 frascos"
+   },
+   {
+    "t": "6-9 s",
+    "voz": "Paga 2, lleva 3 por $99.990.",
+    "vis": "Precio grande en pantalla",
+    "txt": "$99.990"
+   },
+   {
+    "t": "9-12 s",
+    "voz": "Envío gratis y pagas cuando te llegue.",
+    "vis": "El domiciliario entrega",
+    "txt": "Envío gratis · Contraentrega"
+   },
+   {
+    "t": "12-15 s",
+    "voz": "Y 14 días de garantía.",
+    "vis": "Sello 14 días",
+    "txt": "Garantía"
+   },
+   {
+    "t": "15-18 s",
+    "voz": "Este año dejé de comprar frascos.",
+    "vis": "Tira un frasco vacío al reciclaje",
+    "txt": "Chao frascos"
+   },
+   {
+    "t": "18-21 s · CTA",
+    "voz": "Este lote se está yendo rápido. Asegura la tuya antes de que se agote.",
+    "vis": "Estante con pocas cajas GEODA reales; contador de unidades real (producto y logo reales)",
+    "txt": "ÚLTIMAS UNIDADES DEL LOTE"
+   }
+  ]
+ },
+ "GEO-BOFU-A4-06": {
+  "head": "GEO-BOFU-A4-06 · UGC con avatar IA · 21 s · CTA: Se agota rápido",
+  "meta": {
+   "Etapa y duración": "BOFU · 21 s · 7 planos de 3 s",
+   "CTA principal": "K4 · Se agota rápido (Solo si el inventario de verdad está bajo)",
+   "Compliance": "Decir '1 piedra dura 1 año'; ninguna otra cifra de duración (la página hoy dice otras en los combos)."
+  },
+  "rows": [
+   {
+    "t": "0-3 s · Hook A",
+    "voz": "Pedí tres: una para mí, una para mi pareja y una de repuesto.",
+    "vis": "Frame 1: la avatar abre el paquete y tres piedras saltan al aire",
+    "txt": "3 piedras para toda la casa"
+   },
+   {
+    "t": "0-3 s · Hook B",
+    "voz": "Paga dos, lleva tres. Así de fácil.",
+    "vis": "Frame 1: un dedo presiona un botón gigante '2 = 3'",
+    "txt": "Paga 2, lleva 3"
+   },
+   {
+    "t": "3-6 s",
+    "voz": "Pedí tres: una para mí, una para mi pareja y una de repuesto.",
+    "vis": "La avatar reparte piedras en el baño",
+    "txt": "1 + 1 + repuesto"
+   },
+   {
+    "t": "6-9 s",
+    "voz": "Paga 2, lleva 3 por $99.990.",
+    "vis": "Precio grande",
+    "txt": "$99.990"
+   },
+   {
+    "t": "9-12 s",
+    "voz": "Sale a $33.330 cada piedra.",
+    "vis": "Cálculo animado",
+    "txt": "$33.330 c/u"
+   },
+   {
+    "t": "12-15 s",
+    "voz": "Pagas al recibir y tienes 14 días de garantía.",
+    "vis": "Domiciliario",
+    "txt": "Contraentrega · 14 días"
+   },
+   {
+    "t": "15-18 s",
+    "voz": "Así de fácil.",
+    "vis": "Pareja con sus piedras, plano amplio",
+    "txt": "Así de fácil"
+   },
+   {
+    "t": "18-21 s · CTA",
+    "voz": "Este lote se está yendo rápido. Asegura la tuya antes de que se agote.",
+    "vis": "Estante con pocas cajas GEODA reales; contador de unidades real (producto y logo reales)",
+    "txt": "ÚLTIMAS UNIDADES DEL LOTE"
+   }
+  ]
+ },
+ "GEO-BOFU-A4-07": {
+  "head": "GEO-BOFU-A4-07 · Founder · 21 s · CTA: Combo 2x para regalar",
+  "meta": {
+   "Etapa y duración": "BOFU · 21 s · 7 planos de 3 s",
+   "CTA principal": "K8 · Combo 2x para regalar (Siempre; en diciembre con enfoque regalo)",
+   "Compliance": "Fundador real o clon IA con su consentimiento y rotulado."
+  },
+  "rows": [
+   {
+    "t": "0-3 s · Hook A",
+    "voz": "Armé este combo porque en una casa todos sudamos.",
+    "vis": "Frame 1: el fundador pone 5 piedras en fila de golpe sobre la mesa",
+    "txt": "Por qué armé el combo familiar"
+   },
+   {
+    "t": "0-3 s · Hook B",
+    "voz": "Paga tres y lleva cinco piedras.",
+    "vis": "Frame 1: '3 = 5' gigante con la mano del fundador tapando el 3",
+    "txt": "Combo familiar: paga 3, lleva 5"
+   },
+   {
+    "t": "3-6 s",
+    "voz": "FUNDADOR: Armé este combo porque en una casa todos sudamos.",
+    "vis": "Fundador con 5 piedras",
+    "txt": "Todos sudamos"
+   },
+   {
+    "t": "6-9 s",
+    "voz": "FUNDADOR: Una para ti, tu pareja, los muchachos y una de repuesto.",
+    "vis": "Reparte piedras sobre la mesa",
+    "txt": "Una para cada uno"
+   },
+   {
+    "t": "9-12 s",
+    "voz": "FUNDADOR: Pagas 3 y llevas 5 por $139.990.",
+    "vis": "Precio en pantalla",
+    "txt": "Paga 3 lleva 5 · $139.990"
+   },
+   {
+    "t": "12-15 s",
+    "voz": "FUNDADOR: Sale a menos de $28.000 la piedra.",
+    "vis": "Cálculo animado",
+    "txt": "$27.998 c/u"
+   },
+   {
+    "t": "15-18 s",
+    "voz": "FUNDADOR: Y lo pagas cuando te llegue, con 14 días de garantía.",
+    "vis": "Cajas listas para despacho",
+    "txt": "Contraentrega · 14 días"
+   },
+   {
+    "t": "18-21 s · CTA",
+    "voz": "Paga 2 y lleva 3: una para ti y dos para regalar. Pídelo hoy.",
+    "vis": "Tres piedras GEODA reales, dos con moño, pasan de mano en mano (producto y logo reales)",
+    "txt": "PAGA 2 LLEVA 3 · Para ti y para regalar"
+   }
+  ]
+ },
+ "GEO-BOFU-A5-06": {
+  "head": "GEO-BOFU-A5-06 · UGC con avatar IA · 18 s · CTA: Black Friday",
+  "meta": {
+   "Etapa y duración": "BOFU · 18 s · 6 planos de 3 s",
+   "CTA principal": "K1 · Black Friday (Hasta el lunes 30 de noviembre (Cyber Monday), solo si la oferta de temporada es real)",
+   "Compliance": "Rótulo IA."
+  },
+  "rows": [
+   {
+    "t": "0-3 s · Hook A",
+    "voz": "Tus camisas te lo van a agradecer.",
+    "vis": "Frame 1: una hilera de camisas en ganchos aplaude (animación sutil)",
+    "txt": "Tus camisas te lo van a agradecer"
+   },
+   {
+    "t": "0-3 s · Hook B",
+    "voz": "Y la pagas cuando te llegue a la casa.",
+    "vis": "Frame 1: el billete pasa de la mano al domiciliario en primer plano",
+    "txt": "Pagas cuando te llegue"
+   },
+   {
+    "t": "3-6 s",
+    "voz": "Tus camisas te lo van a agradecer.",
+    "vis": "Camisas colgadas",
+    "txt": "Tus camisas 🙏"
+   },
+   {
+    "t": "6-9 s",
+    "voz": "La piedra no mancha la ropa.",
+    "vis": "Camisa negra limpia",
+    "txt": "No mancha"
+   },
+   {
+    "t": "9-12 s",
+    "voz": "Paga 2, lleva 3 por $99.990.",
+    "vis": "Tres piedras",
+    "txt": "Paga 2 lleva 3"
+   },
+   {
+    "t": "12-15 s",
+    "voz": "Y la pagas cuando te llegue a la casa.",
+    "vis": "Domiciliario",
+    "txt": "Contraentrega"
+   },
+   {
+    "t": "15-18 s · CTA",
+    "voz": "Es Black Friday en GEODA: paga 2 y lleva 3 por $99.990, y pagas cuando te llegue.",
+    "vis": "Piedra GEODA real con etiqueta negra BLACK FRIDAY, botón Comprar (producto y logo reales)",
+    "txt": "BLACK FRIDAY · Paga 2 lleva 3 · $99.990"
+   }
+  ]
+ },
+ "GEO-BOFU-A6-05": {
+  "head": "GEO-BOFU-A6-05 · UGC con avatar IA · 21 s · CTA: Llévala hoy",
+  "meta": {
+   "Etapa y duración": "BOFU · 21 s · 7 planos de 3 s",
+   "CTA principal": "K3 · Llévala hoy (Siempre (neutro))",
+   "Compliance": "Condiciones de la garantía iguales a las de la página. Rótulo IA."
+  },
+  "rows": [
+   {
+    "t": "0-3 s · Hook A",
+    "voz": "Tienes catorce días para probarla. Si no te funciona, te devolvemos tu dinero.",
+    "vis": "Frame 1: un marcador tacha de golpe 14 días en un calendario",
+    "txt": "Pruébala 14 días. Si no te funciona, te devolvemos tu dinero."
+   },
+   {
+    "t": "0-3 s · Hook B",
+    "voz": "Pagas cuando te llega y además tienes catorce días.",
+    "vis": "Frame 1: un escudo animado '0 RIESGO' choca contra la cámara",
+    "txt": "Riesgo cero: pagas al recibir y tienes 14 días"
+   },
+   {
+    "t": "3-6 s",
+    "voz": "Tienes catorce días para probarla.",
+    "vis": "La avatar con un calendario",
+    "txt": "14 días"
+   },
+   {
+    "t": "6-9 s",
+    "voz": "Si no te funciona, te devolvemos tu dinero.",
+    "vis": "Billetes vuelven a la billetera",
+    "txt": "Te devolvemos tu dinero"
+   },
+   {
+    "t": "9-12 s",
+    "voz": "Y pagas solo cuando te llega.",
+    "vis": "Domiciliario",
+    "txt": "Contraentrega"
+   },
+   {
+    "t": "12-15 s",
+    "voz": "Paga 2, lleva 3 por $99.990.",
+    "vis": "Tres piedras",
+    "txt": "Paga 2 lleva 3"
+   },
+   {
+    "t": "15-18 s",
+    "voz": "Riesgo cero.",
+    "vis": "La avatar levanta el pulgar",
+    "txt": "Riesgo cero"
+   },
+   {
+    "t": "18-21 s · CTA",
+    "voz": "Llévala hoy: pídela ya y la pagas cuando te llegue a la puerta.",
+    "vis": "Mano toca el botón Comprar; piedra GEODA real en primer plano (producto y logo reales)",
+    "txt": "LLÉVALA HOY · Pagas al recibir"
+   }
+  ]
+ },
+ "GEO-BOFU-A6-06": {
+  "head": "GEO-BOFU-A6-06 · Founder · 21 s · CTA: Se agota rápido",
+  "meta": {
+   "Etapa y duración": "BOFU · 21 s · 7 planos de 3 s",
+   "CTA principal": "K4 · Se agota rápido (Solo si el inventario de verdad está bajo)",
+   "Compliance": "Fundador real o clon IA con su consentimiento y rotulado."
+  },
+  "rows": [
+   {
+    "t": "0-3 s · Hook A",
+    "voz": "Soy el fundador de GEODA y te doy catorce días para probarla.",
+    "vis": "Frame 1: el fundador abre una caja de cartón marcada '14' y saca la piedra",
+    "txt": "Te doy 14 días para probarla"
+   },
+   {
+    "t": "0-3 s · Hook B",
+    "voz": "Si no te funciona, me la devuelves y te devuelvo tu plata.",
+    "vis": "Frame 1: el fundador extiende la mano a cámara como cerrando un trato",
+    "txt": "Si no te funciona, me la devuelves"
+   },
+   {
+    "t": "3-6 s",
+    "voz": "FUNDADOR: Soy [NOMBRE], fundador de GEODA.",
+    "vis": "Fundador a cámara en la bodega",
+    "txt": "[Nombre] · Fundador"
+   },
+   {
+    "t": "6-9 s",
+    "voz": "FUNDADOR: Te doy catorce días para probarla.",
+    "vis": "Muestra la piedra",
+    "txt": "14 días"
+   },
+   {
+    "t": "9-12 s",
+    "voz": "FUNDADOR: Si no te funciona, me escribes y te devuelvo la plata.",
+    "vis": "Señala el celular",
+    "txt": "Te devuelvo tu dinero"
+   },
+   {
+    "t": "12-15 s",
+    "voz": "FUNDADOR: Y la pagas solo cuando te llegue.",
+    "vis": "Cajas para despacho",
+    "txt": "Contraentrega"
+   },
+   {
+    "t": "15-18 s",
+    "voz": "FUNDADOR: Paga 2, lleva 3.",
+    "vis": "Tres piedras en la mano",
+    "txt": "Paga 2 lleva 3"
+   },
+   {
+    "t": "18-21 s · CTA",
+    "voz": "Este lote se está yendo rápido. Asegura la tuya antes de que se agote.",
+    "vis": "Estante con pocas cajas GEODA reales; contador de unidades real (producto y logo reales)",
+    "txt": "ÚLTIMAS UNIDADES DEL LOTE"
+   }
+  ]
+ },
+ "GEO-BOFU-A7-06": {
+  "head": "GEO-BOFU-A7-06 · UGC con avatar IA · 18 s · CTA: Combo 2x para regalar",
+  "meta": {
+   "Etapa y duración": "BOFU · 18 s · 6 planos de 3 s",
+   "CTA principal": "K8 · Combo 2x para regalar (Siempre; en diciembre con enfoque regalo)",
+   "Compliance": "Rótulo IA."
+  },
+  "rows": [
+   {
+    "t": "0-3 s · Hook A",
+    "voz": "Sudas, pero no hueles. Pídela hoy.",
+    "vis": "Frame 1: una pareja choca sus piedras como si brindara",
+    "txt": "Sudas, pero no hueles"
+   },
+   {
+    "t": "0-3 s · Hook B",
+    "voz": "Paga dos, lleva tres y compártela con tu pareja.",
+    "vis": "Frame 1: 'SUDAS ✔ HUELES ✖' aparece letra por letra",
+    "txt": "Paga 2, lleva 3 y comparte con tu pareja"
+   },
+   {
+    "t": "3-6 s",
+    "voz": "Sudas, pero no hueles.",
+    "vis": "Pareja en la cocina",
+    "txt": "Sudas, no hueles"
+   },
+   {
+    "t": "6-9 s",
+    "voz": "Una para ti, otra para tu pareja y una de repuesto.",
+    "vis": "Reparten las piedras",
+    "txt": "Para los dos"
+   },
+   {
+    "t": "9-12 s",
+    "voz": "Paga 2, lleva 3 por $99.990.",
+    "vis": "Precio en pantalla",
+    "txt": "$99.990"
+   },
+   {
+    "t": "12-15 s",
+    "voz": "Pagas al recibir y tienes 14 días de garantía.",
+    "vis": "Domiciliario",
+    "txt": "Contraentrega · 14 días"
+   },
+   {
+    "t": "15-18 s · CTA",
+    "voz": "Paga 2 y lleva 3: una para ti y dos para regalar. Pídelo hoy.",
+    "vis": "Tres piedras GEODA reales, dos con moño, pasan de mano en mano (producto y logo reales)",
+    "txt": "PAGA 2 LLEVA 3 · Para ti y para regalar"
+   }
+  ]
+ },
+ "GEO-BOFU-A8-04": {
+  "head": "GEO-BOFU-A8-04 · Testimonio (recopilación de reseñas) · 24 s · CTA: Navidad / regalo",
+  "meta": {
+   "Etapa y duración": "BOFU · 24 s · 8 planos de 3 s",
+   "CTA principal": "K2 · Navidad / regalo (Del 1 al 24 de diciembre)",
+   "Compliance": "Solo reseñas reales. Las 3 'Reseña demo' de la página NO se usan. PENDIENTE: juntar reseñas reales."
+  },
+  "rows": [
+   {
+    "t": "0-3 s · Hook A",
+    "voz": "Esto es lo que dicen quienes ya la usan.",
+    "vis": "Frame 1: una avalancha de capturas de reseñas reales cae sobre la pantalla",
+    "txt": "Lo que dicen quienes ya la usan"
+   },
+   {
+    "t": "0-3 s · Hook B",
+    "voz": "Reseñas reales, sin filtro.",
+    "vis": "Frame 1: aparecen cinco estrellas una a una con sonido",
+    "txt": "Reseñas reales de GEODA"
+   },
+   {
+    "t": "3-6 s",
+    "voz": "Esto dicen quienes ya la usan.",
+    "vis": "Fondo con la piedra GEODA",
+    "txt": "Reseñas reales"
+   },
+   {
+    "t": "6-9 s",
+    "voz": "[RESEÑA REAL 1, leída en voz].",
+    "vis": "Captura real de la reseña 1",
+    "txt": "⭐ Reseña 1"
+   },
+   {
+    "t": "9-12 s",
+    "voz": "[RESEÑA REAL 2].",
+    "vis": "Captura real de la reseña 2",
+    "txt": "⭐ Reseña 2"
+   },
+   {
+    "t": "12-15 s",
+    "voz": "[RESEÑA REAL 3].",
+    "vis": "Captura real de la reseña 3",
+    "txt": "⭐ Reseña 3"
+   },
+   {
+    "t": "15-18 s",
+    "voz": "Sin filtro, de clientes de verdad.",
+    "vis": "Montaje de clientes reales, con permiso",
+    "txt": "Clientes reales"
+   },
+   {
+    "t": "18-21 s",
+    "voz": "Paga 2, lleva 3, y pagas cuando te llegue.",
+    "vis": "Tres piedras",
+    "txt": "Paga 2 lleva 3"
+   },
+   {
+    "t": "21-24 s · CTA",
+    "voz": "Regala algo que sí se usa todos los días: GEODA. Paga 2, lleva 3, y reparte en Navidad.",
+    "vis": "Piedra GEODA real con moño rojo junto a un árbol de Navidad (producto y logo reales)",
+    "txt": "REGALO DE NAVIDAD · Paga 2 lleva 3"
+   }
+  ]
+ },
+ "GEO-MOFU-A1-05": {
+  "head": "GEO-MOFU-A1-05 · Podcast · 42 s · CTA: Paga contraentrega",
+  "meta": {
+   "Etapa y duración": "MOFU · 42 s · 14 planos de 3 s",
+   "CTA principal": "K5 · Paga contraentrega (Siempre (neutro))",
+   "Compliance": "El invitado no se presenta como médico ni dermatólogo. Nada de 'mata el 99 % de las bacterias'."
+  },
+  "rows": [
+   {
+    "t": "0-3 s · Hook A",
+    "voz": "¿Por qué tanta gente dice que la piedra de alumbre no sirve?",
+    "vis": "Frame 1: el host golpea la mesa con la piedra GEODA, el micrófono vibra, sello 'MITO'",
+    "txt": "'La piedra no sirve': ¿mito?"
+   },
+   {
+    "t": "0-3 s · Hook B",
+    "voz": "El problema casi nunca es la piedra.",
+    "vis": "Frame 1: la invitada sostiene la piedra junto a su cara con un signo de interrogación animado",
+    "txt": "Lo que nadie explica del alumbre"
+   },
+   {
+    "t": "3-6 s",
+    "voz": "HOST: En serio, ¿por qué todo el mundo dice que no sirve?",
+    "vis": "Host inclinado al micrófono",
+    "txt": "¿No sirve?"
+   },
+   {
+    "t": "6-9 s",
+    "voz": "INVITADA: Porque el problema casi nunca es la piedra. Es cómo la usan.",
+    "vis": "Invitada, gesto con la piedra",
+    "txt": "El problema no es la piedra"
+   },
+   {
+    "t": "9-12 s",
+    "voz": "HOST: A ver, explícame.",
+    "vis": "Plano general del set",
+    "txt": "👀"
+   },
+   {
+    "t": "12-15 s",
+    "voz": "INVITADA: El olor no es el sudor. Es lo que pasa con el sudor en la piel.",
+    "vis": "Inserto animado simple: gota + puntitos",
+    "txt": "Sudor ≠ olor"
+   },
+   {
+    "t": "15-18 s",
+    "voz": "INVITADA: El perfume lo tapa. La piedra ayuda a neutralizarlo, sin perfume.",
+    "vis": "Piedra GEODA en la mesa, logo a cámara",
+    "txt": "Neutraliza, no tapa"
+   },
+   {
+    "t": "18-21 s",
+    "voz": "HOST: ¿Y entonces por qué le falla a tanta gente?",
+    "vis": "Host con cara escéptica",
+    "txt": "¿Por qué falla?"
+   },
+   {
+    "t": "21-24 s",
+    "voz": "INVITADA: Error uno: usarla seca. Se moja la piedra.",
+    "vis": "Inserto: chorro de agua sobre la piedra",
+    "txt": "Error 1: seca"
+   },
+   {
+    "t": "24-27 s",
+    "voz": "INVITADA: Error dos: saltarse días. Hay que ser constante.",
+    "vis": "Inserto: calendario con días tachados",
+    "txt": "Error 2: saltarse días"
+   },
+   {
+    "t": "27-30 s",
+    "voz": "HOST: ¿Y uno deja de sudar?",
+    "vis": "Host levanta una ceja",
+    "txt": "¿Deja de sudar?"
+   },
+   {
+    "t": "30-33 s",
+    "voz": "INVITADA: No. No es antitranspirante. Sigues sudando, pero sin olor.",
+    "vis": "Invitada sonríe",
+    "txt": "Sigues sudando. Sin olor."
+   },
+   {
+    "t": "33-36 s",
+    "voz": "HOST: ¿Y si a mí no me funciona?",
+    "vis": "Host cruza los brazos",
+    "txt": "¿Y si no me funciona?"
+   },
+   {
+    "t": "36-39 s",
+    "voz": "INVITADA: Tienes 14 días: si no te funciona, te devuelven la plata.",
+    "vis": "Invitada empuja la piedra hacia el host",
+    "txt": "Garantía 14 días"
+   },
+   {
+    "t": "39-42 s · CTA",
+    "voz": "No pagas nada ahora: pagas cuando te llegue.",
+    "vis": "Domiciliario entrega la caja GEODA y recibe el pago en la puerta (producto y logo reales)",
+    "txt": "PAGA CONTRAENTREGA · Pagas cuando te llegue"
+   }
+  ]
+ },
+ "GEO-MOFU-A1-06": {
+  "head": "GEO-MOFU-A1-06 · POV · 30 s · CTA: Se agota rápido",
+  "meta": {
+   "Etapa y duración": "MOFU · 30 s · 10 planos de 3 s",
+   "CTA principal": "K4 · Se agota rápido (Solo si el inventario de verdad está bajo)",
+   "Compliance": "Sin primer plano de la axila."
+  },
+  "rows": [
+   {
+    "t": "0-3 s · Hook A",
+    "voz": "(voz en off) POV: le diste una segunda oportunidad.",
+    "vis": "Frame 1: mano saca la piedra de un cajón empolvado y sopla el polvo hacia la cámara",
+    "txt": "POV: por fin aprendiste a usar la piedra"
+   },
+   {
+    "t": "0-3 s · Hook B",
+    "voz": "(voz en off) Mi mamá usaba esto y yo me reía.",
+    "vis": "Frame 1: foto de mamá pegada en el espejo del baño con la piedra en la mano",
+    "txt": "POV: tu mamá tenía razón con la piedra"
+   },
+   {
+    "t": "3-6 s",
+    "voz": "VOZ EN OFF: Le diste una segunda oportunidad.",
+    "vis": "Sale de la ducha, vapor en el espejo",
+    "txt": "2ª oportunidad"
+   },
+   {
+    "t": "6-9 s",
+    "voz": "VOZ EN OFF: Esta vez, la mojas primero.",
+    "vis": "Macro: agua sobre la piedra",
+    "txt": "Primero: mojarla 💧"
+   },
+   {
+    "t": "9-12 s",
+    "voz": "VOZ EN OFF: Piel limpia, pasadas suaves.",
+    "vis": "Plano medio con toalla al hombro, brazo arriba",
+    "txt": "Pasadas suaves"
+   },
+   {
+    "t": "12-15 s",
+    "voz": "VOZ EN OFF: Camisa, y para la calle.",
+    "vis": "Se abotona la camisa frente al espejo",
+    "txt": "7:00 a. m."
+   },
+   {
+    "t": "15-18 s",
+    "voz": "VOZ EN OFF: Bus lleno.",
+    "vis": "POV de pie en TransMilenio, agarrado del tubo",
+    "txt": "8:00 a. m. 🚌"
+   },
+   {
+    "t": "18-21 s",
+    "voz": "VOZ EN OFF: Reunión, brazos arriba en el tablero.",
+    "vis": "Escribe en un tablero en la oficina",
+    "txt": "11:00 a. m."
+   },
+   {
+    "t": "21-24 s",
+    "voz": "VOZ EN OFF: Y a las seis... nada de qué preocuparte.",
+    "vis": "Llega a casa, se quita la chaqueta, gesto de alivio",
+    "txt": "6:00 p. m. 😌"
+   },
+   {
+    "t": "24-27 s",
+    "voz": "VOZ EN OFF: Tu mamá tenía razón. Solo había que usarla bien.",
+    "vis": "Piedra GEODA seca sobre el lavamanos",
+    "txt": "Mamá tenía razón"
+   },
+   {
+    "t": "27-30 s · CTA",
+    "voz": "Este lote se está yendo rápido. Asegura la tuya antes de que se agote.",
+    "vis": "Estante con pocas cajas GEODA reales; contador de unidades real (producto y logo reales)",
+    "txt": "ÚLTIMAS UNIDADES DEL LOTE"
+   }
+  ]
+ },
+ "GEO-MOFU-A1-07": {
+  "head": "GEO-MOFU-A1-07 · Faceless / motion graphics · 36 s · CTA: 1 piedra te dura 1 año (ahorro)",
+  "meta": {
+   "Etapa y duración": "MOFU · 36 s · 12 planos de 3 s",
+   "CTA principal": "K7 · 1 piedra te dura 1 año (ahorro) (Siempre (neutro); duración confirmada por Alberto)",
+   "Compliance": "La cita es de un usuario de Reddit; parafrasearla, sin atribuirla a un cliente de GEODA."
+  },
+  "rows": [
+   {
+    "t": "0-3 s · Hook A",
+    "voz": "Estos tres errores hacen que la piedra de alumbre no te funcione.",
+    "vis": "Frame 1: tres X rojas caen sobre la piedra con sonido de error",
+    "txt": "3 errores que hacen que la piedra 'no sirva'"
+   },
+   {
+    "t": "0-3 s · Hook B",
+    "voz": "Si la piedra no te funcionó, seguro cometiste uno de estos errores.",
+    "vis": "Frame 1: alarma roja parpadeando: 'LA ESTÁS USANDO MAL'",
+    "txt": "Si te pasa esto, la estás usando mal"
+   },
+   {
+    "t": "3-6 s",
+    "voz": "Error número uno: usarla seca.",
+    "vis": "Animación: piedra seca raspando, chispa de fricción",
+    "txt": "ERROR 1: SECA"
+   },
+   {
+    "t": "6-9 s",
+    "voz": "Seca no suelta nada. Se moja la piedra, no la axila.",
+    "vis": "Gotas animadas caen sobre la piedra y brilla",
+    "txt": "Moja la PIEDRA"
+   },
+   {
+    "t": "9-12 s",
+    "voz": "Error número dos: saltarte días.",
+    "vis": "Calendario con huecos en rojo",
+    "txt": "ERROR 2: SALTARTE DÍAS"
+   },
+   {
+    "t": "12-15 s",
+    "voz": "Hay quien cuenta que si la deja uno o dos días, vuelve el olor.",
+    "vis": "Burbuja de comentario estilo foro, texto parafraseado",
+    "txt": "'Si la dejo 2 días, vuelve el olor'"
+   },
+   {
+    "t": "15-18 s",
+    "voz": "La constancia es lo que hace que funcione.",
+    "vis": "Calendario completo con chulos verdes",
+    "txt": "Todos los días ✅"
+   },
+   {
+    "t": "18-21 s",
+    "voz": "Error número tres, el peor: guardarla mojada en la ducha.",
+    "vis": "Piedra en la ducha con gotas, efecto de grieta",
+    "txt": "ERROR 3: EN LA DUCHA"
+   },
+   {
+    "t": "21-24 s",
+    "voz": "Ahí se agrieta y se daña.",
+    "vis": "Zoom a la grieta animada, sonido de crack",
+    "txt": "Se agrieta 💔"
+   },
+   {
+    "t": "24-27 s",
+    "voz": "Lo correcto: mojar, aplicar, secar y guardar.",
+    "vis": "Cuatro iconos aparecen uno por uno",
+    "txt": "Mojar · Aplicar · Secar · Guardar"
+   },
+   {
+    "t": "27-30 s",
+    "voz": "Así la piedra trabaja y te rinde.",
+    "vis": "Video real de la piedra GEODA en su caja",
+    "txt": "Así sí funciona"
+   },
+   {
+    "t": "30-33 s",
+    "voz": "Y si aun así no te funciona, tienes 14 días de garantía.",
+    "vis": "Sello animado '14 días'",
+    "txt": "Garantía 14 días"
+   },
+   {
+    "t": "33-36 s · CTA",
+    "voz": "1 piedra te dura 1 año. Haz la cuenta de cuántos frascos te ahorras.",
+    "vis": "Piedra GEODA real junto a una fila de frascos genéricos tachados (producto y logo reales)",
+    "txt": "1 PIEDRA = 1 AÑO · Ahorra vs desodorante"
+   }
+  ]
+ },
+ "GEO-MOFU-A10-03": {
+  "head": "GEO-MOFU-A10-03 · UGC con avatar IA · 33 s · CTA: Envío a toda Colombia",
+  "meta": {
+   "Etapa y duración": "MOFU · 33 s · 11 planos de 3 s",
+   "CTA principal": "K6 · Envío a toda Colombia (Siempre (neutro))",
+   "Compliance": "Honesto: no prometer que dure todo el día con ejercicio. Rótulo IA."
+  },
+  "rows": [
+   {
+    "t": "0-3 s · Hook A",
+    "voz": "Yo vivo en la Costa y la uso así.",
+    "vis": "Frame 1: la avatar costeña frente al ventilador a toda velocidad, pelo volando",
+    "txt": "En la Costa la uso así"
+   },
+   {
+    "t": "0-3 s · Hook B",
+    "voz": "Si sudas mucho, haz esto con la piedra.",
+    "vis": "Frame 1: '¿SUDAS MUCHO?' con una gota gigante que cae",
+    "txt": "Si sudas mucho, haz esto"
+   },
+   {
+    "t": "3-6 s",
+    "voz": "Yo vivo en Cartagena y aquí se suda.",
+    "vis": "Avatar en un balcón costeño",
+    "txt": "Cartagena ☀️"
+   },
+   {
+    "t": "6-9 s",
+    "voz": "Te cuento cómo la uso con este calor.",
+    "vis": "Toma la piedra",
+    "txt": "Así la uso 👇"
+   },
+   {
+    "t": "9-12 s",
+    "voz": "En la noche, después de bañarme: piedra mojada.",
+    "vis": "Recreación de noche",
+    "txt": "Noche"
+   },
+   {
+    "t": "12-15 s",
+    "voz": "En la mañana, otra vez.",
+    "vis": "Recreación de mañana",
+    "txt": "Mañana"
+   },
+   {
+    "t": "15-18 s",
+    "voz": "Todos los días, sin saltarme.",
+    "vis": "Calendario",
+    "txt": "Constancia"
+   },
+   {
+    "t": "18-21 s",
+    "voz": "Te soy honesta: sudo igual. Esto no quita el sudor.",
+    "vis": "A cámara",
+    "txt": "Sudo igual"
+   },
+   {
+    "t": "21-24 s",
+    "voz": "Lo que cambió es el olor.",
+    "vis": "La avatar se estira",
+    "txt": "Cambió el olor"
+   },
+   {
+    "t": "24-27 s",
+    "voz": "Si haces ejercicio pesado, repite después de bañarte.",
+    "vis": "Inserto de ducha después del gimnasio",
+    "txt": "Después del ejercicio, repite"
+   },
+   {
+    "t": "27-30 s",
+    "voz": "Y tienes 14 días de garantía.",
+    "vis": "Piedra + sello",
+    "txt": "14 días"
+   },
+   {
+    "t": "30-33 s · CTA",
+    "voz": "Te la enviamos gratis a toda Colombia, y la pagas al recibir.",
+    "vis": "Mapa de Colombia con pines que se encienden; caja GEODA real (producto y logo reales)",
+    "txt": "ENVÍO GRATIS A TODA COLOMBIA"
+   }
+  ]
+ },
+ "GEO-MOFU-A2-05": {
+  "head": "GEO-MOFU-A2-05 · Diario de 14 días · 45 s · CTA: Black Friday",
+  "meta": {
+   "Etapa y duración": "MOFU · 45 s · 15 planos de 3 s",
+   "CTA principal": "K1 · Black Friday (Hasta el lunes 30 de noviembre (Cyber Monday), solo si la oferta de temporada es real)",
+   "Compliance": "Nada de fotos de la axila por día. Hablar de sensaciones, no de resultados medidos."
+  },
+  "rows": [
+   {
+    "t": "0-3 s · Hook A",
+    "voz": "Catorce días usando solo la piedra. Te cuento cómo me fue.",
+    "vis": "Frame 1: selfie con un calendario y '0/14' en rojo gigante",
+    "txt": "Mi diario de 14 días sin perfume en las axilas"
+   },
+   {
+    "t": "0-3 s · Hook B",
+    "voz": "Día uno. Voy a usar solo esto por catorce días.",
+    "vis": "Frame 1: la mano tacha 'DÍA 1' con marcador rojo frente a cámara",
+    "txt": "14 días solo con piedra: mi diario"
+   },
+   {
+    "t": "3-6 s",
+    "voz": "Día uno. Solo piedra, cero perfume.",
+    "vis": "Selfie en el baño, piedra en mano",
+    "txt": "DÍA 1"
+   },
+   {
+    "t": "6-9 s",
+    "voz": "La mojo, la paso, la seco.",
+    "vis": "Macro de la piedra mojándose",
+    "txt": "Mojar · Pasar · Secar"
+   },
+   {
+    "t": "9-12 s",
+    "voz": "Día tres. Se siente raro no oler a perfume.",
+    "vis": "Selfie en el bus",
+    "txt": "DÍA 3 · raro 🤔"
+   },
+   {
+    "t": "12-15 s",
+    "voz": "Pero no huelo mal. Huelo a piel.",
+    "vis": "Se huele la muñeca y sonríe",
+    "txt": "Huelo a piel"
+   },
+   {
+    "t": "15-18 s",
+    "voz": "Día siete. Ya ni me acuerdo del frasco.",
+    "vis": "Selfie en la oficina",
+    "txt": "DÍA 7"
+   },
+   {
+    "t": "18-21 s",
+    "voz": "Hoy elegí camiseta en vez de mangas largas.",
+    "vis": "Cambio de ropa rápido frente al espejo",
+    "txt": "Camiseta ✅"
+   },
+   {
+    "t": "21-24 s",
+    "voz": "Día diez. Calor, y sigo tranquila.",
+    "vis": "Selfie caminando al sol",
+    "txt": "DÍA 10 ☀️"
+   },
+   {
+    "t": "24-27 s",
+    "voz": "Día doce. ¿Por qué no empecé antes?",
+    "vis": "Selfie en la cama, risa",
+    "txt": "DÍA 12"
+   },
+   {
+    "t": "27-30 s",
+    "voz": "Y lo que más me gustó... te lo cuento al final.",
+    "vis": "Tapa la cámara con la mano",
+    "txt": "Lo mejor, al final 👀"
+   },
+   {
+    "t": "30-33 s",
+    "voz": "Día catorce.",
+    "vis": "Calendario con 14 chulos",
+    "txt": "DÍA 14 🎉"
+   },
+   {
+    "t": "33-36 s",
+    "voz": "Saqué la blusa sin mangas.",
+    "vis": "Sale con blusa sin mangas, plano amplio",
+    "txt": "La blusa volvió"
+   },
+   {
+    "t": "36-39 s",
+    "voz": "Lo mejor: para mí, mis axilas lucen más parejas.",
+    "vis": "Brazos arriba en el parque, plano amplio",
+    "txt": "Para mí: más parejas"
+   },
+   {
+    "t": "39-42 s",
+    "voz": "Y si no te funciona en 14 días, te devuelven la plata.",
+    "vis": "Piedra GEODA real + sello 14 días",
+    "txt": "Garantía 14 días"
+   },
+   {
+    "t": "42-45 s · CTA",
+    "voz": "Es Black Friday en GEODA: paga 2 y lleva 3 por $99.990, y pagas cuando te llegue.",
+    "vis": "Piedra GEODA real con etiqueta negra BLACK FRIDAY, botón Comprar (producto y logo reales)",
+    "txt": "BLACK FRIDAY · Paga 2 lleva 3 · $99.990"
+   }
+  ]
+ },
+ "GEO-MOFU-A2-06": {
+  "head": "GEO-MOFU-A2-06 · Comparación piedra vs frasco · 33 s · CTA: Combo 2x para regalar",
+  "meta": {
+   "Etapa y duración": "MOFU · 33 s · 11 planos de 3 s",
+   "CTA principal": "K8 · Combo 2x para regalar (Siempre; en diciembre con enfoque regalo)",
+   "Compliance": "No nombrar ni mostrar marcas. Decir del frasco solo cosas verificables."
+  },
+  "rows": [
+   {
+    "t": "0-3 s · Hook A",
+    "voz": "Mi axila no quería más perfume. Por eso cambié.",
+    "vis": "Frame 1: un frasco genérico suelta una nube de perfume en cámara lenta junto a la piedra quieta",
+    "txt": "Por qué cambié el frasco perfumado por una piedra"
+   },
+   {
+    "t": "0-3 s · Hook B",
+    "voz": "De un lado, un frasco con fragancia. Del otro, una piedra.",
+    "vis": "Frame 1: pantalla partida roja y verde, frasco vs piedra, 'VS' gigante",
+    "txt": "Frasco con fragancia vs una piedra mineral"
+   },
+   {
+    "t": "3-6 s",
+    "voz": "De un lado, un frasco con fragancia.",
+    "vis": "Frasco genérico sin marca, luz dura",
+    "txt": "Frasco: fragancia"
+   },
+   {
+    "t": "6-9 s",
+    "voz": "Del otro, una piedra mineral sin perfume.",
+    "vis": "Piedra GEODA, luz suave",
+    "txt": "Piedra: sin perfume"
+   },
+   {
+    "t": "9-12 s",
+    "voz": "El frasco se acaba en semanas.",
+    "vis": "Frasco vaciándose en timelapse",
+    "txt": "Se acaba"
+   },
+   {
+    "t": "12-15 s",
+    "voz": "Una piedra te dura 1 año si la cuidas.",
+    "vis": "Piedra sobre un calendario que pasa los 12 meses",
+    "txt": "1 piedra = 1 año"
+   },
+   {
+    "t": "15-18 s",
+    "voz": "El de barra me dejaba rayas blancas en la ropa negra.",
+    "vis": "Camiseta negra con raya blanca",
+    "txt": "Rayas blancas"
+   },
+   {
+    "t": "18-21 s",
+    "voz": "La piedra se moja, se pasa y listo.",
+    "vis": "Macro de agua sobre la piedra",
+    "txt": "Mojar y listo"
+   },
+   {
+    "t": "21-24 s",
+    "voz": "Por eso yo cambié.",
+    "vis": "La avatar guarda el frasco en un cajón",
+    "txt": "Por eso cambié"
+   },
+   {
+    "t": "24-27 s",
+    "voz": "Y con el tiempo, mis axilas lucen más parejas. Experiencia mía.",
+    "vis": "Plano amplio con blusa sin mangas",
+    "txt": "Lucen más parejas (mi experiencia)"
+   },
+   {
+    "t": "27-30 s",
+    "voz": "Piedra GEODA, con 14 días de garantía.",
+    "vis": "Producto real en mano",
+    "txt": "14 días de garantía"
+   },
+   {
+    "t": "30-33 s · CTA",
+    "voz": "Paga 2 y lleva 3: una para ti y dos para regalar. Pídelo hoy.",
+    "vis": "Tres piedras GEODA reales, dos con moño, pasan de mano en mano (producto y logo reales)",
+    "txt": "PAGA 2 LLEVA 3 · Para ti y para regalar"
+   }
+  ]
+ },
+ "GEO-MOFU-A3-05": {
+  "head": "GEO-MOFU-A3-05 · Faceless / motion graphics · 36 s · CTA: Envío a toda Colombia",
+  "meta": {
+   "Etapa y duración": "MOFU · 36 s · 12 planos de 3 s",
+   "CTA principal": "K6 · Envío a toda Colombia (Siempre (neutro))",
+   "Compliance": "Comparación genérica de formatos, sin marcas. Cada fila tiene que ser verdadera."
+  },
+  "rows": [
+   {
+    "t": "0-3 s · Hook A",
+    "voz": "Antes de comprar 'piedra de alumbre', mira esta diferencia.",
+    "vis": "Frame 1: la piedra y un frasco chocan en el centro con destello 'VS'",
+    "txt": "Piedra sólida vs alumbre líquido: diferencias"
+   },
+   {
+    "t": "0-3 s · Hook B",
+    "voz": "No todo lo que dice 'alumbre' es una piedra.",
+    "vis": "Frame 1: lupa gigante sobre una etiqueta genérica que dice 'ALUMBRE', signo de alerta",
+    "txt": "Antes de comprar 'piedra de alumbre', mira esto"
+   },
+   {
+    "t": "3-6 s",
+    "voz": "No todo lo que dice alumbre es una piedra.",
+    "vis": "La palabra 'ALUMBRE' en tres empaques genéricos",
+    "txt": "No todo es piedra"
+   },
+   {
+    "t": "6-9 s",
+    "voz": "Mira estas diferencias.",
+    "vis": "Tabla animada aparece vacía",
+    "txt": "Diferencias 👇"
+   },
+   {
+    "t": "9-12 s",
+    "voz": "Formato: el líquido viene en frasco; la piedra es sólida.",
+    "vis": "Fila 1 con iconos",
+    "txt": "Líquido vs sólido"
+   },
+   {
+    "t": "12-15 s",
+    "voz": "¿Se riega? El frasco puede regarse. La piedra no.",
+    "vis": "Fila 2: gota cayendo vs piedra quieta",
+    "txt": "¿Se riega?"
+   },
+   {
+    "t": "15-18 s",
+    "voz": "¿Perfume? Depende del frasco. GEODA no lleva.",
+    "vis": "Fila 3: nube tachada",
+    "txt": "Sin perfume"
+   },
+   {
+    "t": "18-21 s",
+    "voz": "¿Cómo se usa? El spray se rocía; la piedra se moja y se pasa.",
+    "vis": "Fila 4: dos mini animaciones",
+    "txt": "Rocía vs moja"
+   },
+   {
+    "t": "21-24 s",
+    "voz": "Y la última diferencia es la que más preguntan...",
+    "vis": "Fila 5 con candado",
+    "txt": "La última 👀"
+   },
+   {
+    "t": "24-27 s",
+    "voz": "Cuánto dura: 1 piedra te dura 1 año.",
+    "vis": "Calendario animado de 12 meses junto a la piedra",
+    "txt": "1 piedra dura 1 año"
+   },
+   {
+    "t": "27-30 s",
+    "voz": "Mientras tanto, cuídala: sécala y guárdala fuera de la ducha.",
+    "vis": "Iconos secar y guardar",
+    "txt": "Sécala y guárdala"
+   },
+   {
+    "t": "30-33 s",
+    "voz": "Si buscas la piedra de verdad, es esta.",
+    "vis": "Video real de GEODA en la mano",
+    "txt": "La piedra de verdad"
+   },
+   {
+    "t": "33-36 s · CTA",
+    "voz": "Te la enviamos gratis a toda Colombia, y la pagas al recibir.",
+    "vis": "Mapa de Colombia con pines que se encienden; caja GEODA real (producto y logo reales)",
+    "txt": "ENVÍO GRATIS A TODA COLOMBIA"
+   }
+  ]
+ },
+ "GEO-MOFU-A3-06": {
+  "head": "GEO-MOFU-A3-06 · Founder · 36 s · CTA: Se agota rápido",
+  "meta": {
+   "Etapa y duración": "MOFU · 36 s · 12 planos de 3 s",
+   "CTA principal": "K4 · Se agota rápido (Solo si el inventario de verdad está bajo)",
+   "Compliance": "Historia real del fundador. Si se usa un clon IA del fundador: con su consentimiento y rotulado."
+  },
+  "rows": [
+   {
+    "t": "0-3 s · Hook A",
+    "voz": "Me dijeron que el spray vendía más. Igual escogí la piedra.",
+    "vis": "Frame 1: el fundador deja caer un spray en una caja de 'NO' y levanta la piedra",
+    "txt": "Por qué vendo la piedra y no un spray"
+   },
+   {
+    "t": "0-3 s · Hook B",
+    "voz": "Todo el mundo me decía: vende el spray.",
+    "vis": "Frame 1: chat en pantalla con cinco mensajes: 'vende el spray, se vende más'",
+    "txt": "Me dijeron que el spray vende más"
+   },
+   {
+    "t": "3-6 s",
+    "voz": "FUNDADOR: Cuando empecé GEODA, todos me decían: vende el spray.",
+    "vis": "Fundador en su bodega con cajas",
+    "txt": "'Vende el spray'"
+   },
+   {
+    "t": "6-9 s",
+    "voz": "FUNDADOR: Que se vende más fácil.",
+    "vis": "Muestra mensajes en el celular",
+    "txt": "'Se vende más'"
+   },
+   {
+    "t": "9-12 s",
+    "voz": "FUNDADOR: Y yo escogí la piedra.",
+    "vis": "Pone la piedra sobre la mesa",
+    "txt": "Escogí la piedra"
+   },
+   {
+    "t": "12-15 s",
+    "voz": "FUNDADOR: ¿Por qué? Te doy mi razón real.",
+    "vis": "Mira a cámara, zoom lento",
+    "txt": "¿Por qué? 👇"
+   },
+   {
+    "t": "15-18 s",
+    "voz": "FUNDADOR: [MOTIVO REAL DE ALBERTO, 2 o 3 frases].",
+    "vis": "Material real: fotos o video del inicio",
+    "txt": "[Motivo real]"
+   },
+   {
+    "t": "18-21 s",
+    "voz": "FUNDADOR: No se riega, no lleva perfume, la mojas y listo.",
+    "vis": "Moja la piedra en un vaso",
+    "txt": "Sin perfume · no se riega"
+   },
+   {
+    "t": "21-24 s",
+    "voz": "FUNDADOR: Es un cosmético con notificación sanitaria INVIMA.",
+    "vis": "Empaque real con el código visible",
+    "txt": "Notificación INVIMA NSOC41318-25CO"
+   },
+   {
+    "t": "24-27 s",
+    "voz": "FUNDADOR: Y la vendo con una condición.",
+    "vis": "Se cruza de brazos",
+    "txt": "Una condición"
+   },
+   {
+    "t": "27-30 s",
+    "voz": "FUNDADOR: Si en 14 días no te funciona, te devolvemos tu dinero.",
+    "vis": "Señala a cámara",
+    "txt": "Garantía 14 días"
+   },
+   {
+    "t": "30-33 s",
+    "voz": "FUNDADOR: Así de seguro estoy de la piedra.",
+    "vis": "Cajas listas para despacho",
+    "txt": "📦"
+   },
+   {
+    "t": "33-36 s · CTA",
+    "voz": "Este lote se está yendo rápido. Asegura la tuya antes de que se agote.",
+    "vis": "Estante con pocas cajas GEODA reales; contador de unidades real (producto y logo reales)",
+    "txt": "ÚLTIMAS UNIDADES DEL LOTE"
+   }
+  ]
+ },
+ "GEO-MOFU-A4-04": {
+  "head": "GEO-MOFU-A4-04 · Faceless / motion graphics · 33 s · CTA: 1 piedra te dura 1 año (ahorro)",
+  "meta": {
+   "Etapa y duración": "MOFU · 33 s · 11 planos de 3 s",
+   "CTA principal": "K7 · 1 piedra te dura 1 año (ahorro) (Siempre (neutro); duración confirmada por Alberto)",
+   "Compliance": "No inventar el precio de los frascos; dejar que el espectador ponga el suyo o usar un precio real con fuente."
+  },
+  "rows": [
+   {
+    "t": "0-3 s · Hook A",
+    "voz": "Haz esta cuenta antes de comprar otro desodorante.",
+    "vis": "Frame 1: calculadora gigante con teclas que se presionan solas, sonido de clic",
+    "txt": "La cuenta que nadie hace"
+   },
+   {
+    "t": "0-3 s · Hook B",
+    "voz": "¿Cuánto te cuesta oler bien cada mes?",
+    "vis": "Frame 1: un billete de $50.000 se rompe en pedazos animados",
+    "txt": "Desodorante en frasco vs piedra: haz la cuenta"
+   },
+   {
+    "t": "3-6 s",
+    "voz": "Haz esta cuenta antes de comprar otro desodorante.",
+    "vis": "Calculadora animada se enciende",
+    "txt": "Haz la cuenta 🧮"
+   },
+   {
+    "t": "6-9 s",
+    "voz": "¿Cuánto pagas por tu desodorante? Pon tu número.",
+    "vis": "Casilla vacía '$____' parpadea",
+    "txt": "Tu desodorante: $____"
+   },
+   {
+    "t": "9-12 s",
+    "voz": "¿Cuántos compras al año?",
+    "vis": "Casilla '× ___ al año'",
+    "txt": "× ___ al año"
+   },
+   {
+    "t": "12-15 s",
+    "voz": "Ese es tu gasto anual.",
+    "vis": "Resultado animado con '?'",
+    "txt": "= tu gasto al año"
+   },
+   {
+    "t": "15-18 s",
+    "voz": "Ahora GEODA: $79.990 una piedra.",
+    "vis": "Piedra animada con etiqueta de precio",
+    "txt": "GEODA: $79.990"
+   },
+   {
+    "t": "18-21 s",
+    "voz": "Dividido entre 12 meses, porque 1 piedra dura 1 año: menos de $6.700 al mes.",
+    "vis": "División animada",
+    "txt": "÷ 12 meses = $6.666/mes"
+   },
+   {
+    "t": "21-24 s",
+    "voz": "Y en el paga 2, lleva 3, cada piedra sale a $33.330.",
+    "vis": "Tres piedras animadas",
+    "txt": "$33.330 c/u"
+   },
+   {
+    "t": "24-27 s",
+    "voz": "Compara los dos números.",
+    "vis": "Dos barras se comparan",
+    "txt": "Compara 👀"
+   },
+   {
+    "t": "27-30 s",
+    "voz": "Tú haces la cuenta. Nosotros ponemos la piedra.",
+    "vis": "Video real de GEODA en la mano",
+    "txt": "Tú decides"
+   },
+   {
+    "t": "30-33 s · CTA",
+    "voz": "1 piedra te dura 1 año. Haz la cuenta de cuántos frascos te ahorras.",
+    "vis": "Piedra GEODA real junto a una fila de frascos genéricos tachados (producto y logo reales)",
+    "txt": "1 PIEDRA = 1 AÑO · Ahorra vs desodorante"
+   }
+  ]
+ },
+ "GEO-MOFU-A4-05": {
+  "head": "GEO-MOFU-A4-05 · Podcast · 39 s · CTA: Combo 2x para regalar",
+  "meta": {
+   "Etapa y duración": "MOFU · 39 s · 13 planos de 3 s",
+   "CTA principal": "K8 · Combo 2x para regalar (Siempre; en diciembre con enfoque regalo)",
+   "Compliance": "Decir '1 piedra dura 1 año' con las condiciones de cuidado."
+  },
+  "rows": [
+   {
+    "t": "0-3 s · Hook A",
+    "voz": "Vamos a lo que todo el mundo pregunta: ¿de verdad dura un año?",
+    "vis": "Frame 1: el host pone un reloj de arena gigante en la mesa al lado de la piedra",
+    "txt": "¿De verdad una piedra dura un año?"
+   },
+   {
+    "t": "0-3 s · Hook B",
+    "voz": "Le pregunté al fundador cuánto dura la piedra, sin rodeos.",
+    "vis": "Frame 1: el host acerca el micrófono a la cara del fundador, texto 'SIN RODEOS'",
+    "txt": "Le pregunté al fundador cuánto dura"
+   },
+   {
+    "t": "3-6 s",
+    "voz": "HOST: Vamos sin rodeos: ¿de verdad dura un año?",
+    "vis": "Host",
+    "txt": "¿1 año de verdad?"
+   },
+   {
+    "t": "6-9 s",
+    "voz": "FUNDADOR: Depende de cómo la cuides.",
+    "vis": "Fundador",
+    "txt": "Depende 👇"
+   },
+   {
+    "t": "9-12 s",
+    "voz": "FUNDADOR: Uno: úsala todos los días, con pasadas suaves.",
+    "vis": "Inserto de aplicación",
+    "txt": "1. Pasadas suaves"
+   },
+   {
+    "t": "12-15 s",
+    "voz": "FUNDADOR: Dos: sécala después de usarla.",
+    "vis": "Inserto de toalla",
+    "txt": "2. Sécala"
+   },
+   {
+    "t": "15-18 s",
+    "voz": "FUNDADOR: Tres: nunca la dejes en la ducha.",
+    "vis": "Inserto de ducha con X",
+    "txt": "3. Fuera de la ducha"
+   },
+   {
+    "t": "18-21 s",
+    "voz": "FUNDADOR: Y cuatro: que no se te caiga, porque se parte.",
+    "vis": "Piedra cayendo en cámara lenta",
+    "txt": "4. Que no se caiga"
+   },
+   {
+    "t": "21-24 s",
+    "voz": "HOST: ¿Y tienen prueba?",
+    "vis": "Host escéptico",
+    "txt": "¿Prueba?"
+   },
+   {
+    "t": "24-27 s",
+    "voz": "FUNDADOR: La estamos pesando cada mes. Mira.",
+    "vis": "Inserto de báscula con cifra real",
+    "txt": "Prueba de báscula"
+   },
+   {
+    "t": "27-30 s",
+    "voz": "FUNDADOR: Bien cuidada, 1 piedra te dura 1 año.",
+    "vis": "El fundador sostiene la piedra",
+    "txt": "1 piedra dura 1 año"
+   },
+   {
+    "t": "30-33 s",
+    "voz": "HOST: ¿Y si no me funciona?",
+    "vis": "Host",
+    "txt": "¿Y si no?"
+   },
+   {
+    "t": "33-36 s",
+    "voz": "FUNDADOR: Tienes 14 días para devolverla.",
+    "vis": "El fundador señala a cámara",
+    "txt": "Garantía 14 días"
+   },
+   {
+    "t": "36-39 s · CTA",
+    "voz": "Paga 2 y lleva 3: una para ti y dos para regalar. Pídelo hoy.",
+    "vis": "Tres piedras GEODA reales, dos con moño, pasan de mano en mano (producto y logo reales)",
+    "txt": "PAGA 2 LLEVA 3 · Para ti y para regalar"
+   }
+  ]
+ },
+ "GEO-MOFU-A5-04": {
+  "head": "GEO-MOFU-A5-04 · Comparación piedra vs frasco · 33 s · CTA: Se agota rápido",
+  "meta": {
+   "Etapa y duración": "MOFU · 33 s · 11 planos de 3 s",
+   "CTA principal": "K4 · Se agota rápido (Solo si el inventario de verdad está bajo)",
+   "Compliance": "Prueba real y repetible. Producto genérico sin marca."
+  },
+  "rows": [
+   {
+    "t": "0-3 s · Hook A",
+    "voz": "Misma camisa, dos productos. Mira.",
+    "vis": "Frame 1: dos camisas negras colgadas, una con una raya blanca enorme, signo '?'",
+    "txt": "Hice la prueba en mi camisa negra"
+   },
+   {
+    "t": "0-3 s · Hook B",
+    "voz": "Desodorante en barra contra piedra, en tela negra.",
+    "vis": "Frame 1: una barra de desodorante y la piedra apuntadas como espadas",
+    "txt": "Desodorante blanco vs piedra, en camisa negra"
+   },
+   {
+    "t": "3-6 s",
+    "voz": "Misma camisa negra. Dos productos.",
+    "vis": "Dos camisas iguales en ganchos",
+    "txt": "Misma camisa"
+   },
+   {
+    "t": "6-9 s",
+    "voz": "A la izquierda, desodorante en barra genérico.",
+    "vis": "Aplica la barra sobre la tela",
+    "txt": "Barra genérica"
+   },
+   {
+    "t": "9-12 s",
+    "voz": "A la derecha, la piedra GEODA mojada.",
+    "vis": "Pasa la piedra mojada sobre la tela",
+    "txt": "Piedra GEODA"
+   },
+   {
+    "t": "12-15 s",
+    "voz": "Dejamos secar diez minutos.",
+    "vis": "Temporizador en pantalla",
+    "txt": "10 min ⏱️"
+   },
+   {
+    "t": "15-18 s",
+    "voz": "¿Cuál crees que manchó? Comenta antes de ver.",
+    "vis": "Tapa las camisas con una toalla",
+    "txt": "¿Cuál manchó? 👇"
+   },
+   {
+    "t": "18-21 s",
+    "voz": "Destapamos.",
+    "vis": "Retira la toalla",
+    "txt": "3, 2, 1..."
+   },
+   {
+    "t": "21-24 s",
+    "voz": "La barra dejó raya blanca.",
+    "vis": "Zoom a la mancha",
+    "txt": "Raya blanca"
+   },
+   {
+    "t": "24-27 s",
+    "voz": "La piedra, nada.",
+    "vis": "Zoom a la tela limpia",
+    "txt": "Nada ✅"
+   },
+   {
+    "t": "27-30 s",
+    "voz": "Prueba real, sin trucos.",
+    "vis": "Plano general",
+    "txt": "Prueba real"
+   },
+   {
+    "t": "30-33 s · CTA",
+    "voz": "Este lote se está yendo rápido. Asegura la tuya antes de que se agote.",
+    "vis": "Estante con pocas cajas GEODA reales; contador de unidades real (producto y logo reales)",
+    "txt": "ÚLTIMAS UNIDADES DEL LOTE"
+   }
+  ]
+ },
+ "GEO-MOFU-A5-05": {
+  "head": "GEO-MOFU-A5-05 · Testimonio · 33 s · CTA: Navidad / regalo",
+  "meta": {
+   "Etapa y duración": "MOFU · 33 s · 11 planos de 3 s",
+   "CTA principal": "K2 · Navidad / regalo (Del 1 al 24 de diciembre)",
+   "Compliance": "Persona real con autorización. Si es IA, rotular 'Recreación'."
+  },
+  "rows": [
+   {
+    "t": "0-3 s · Hook A",
+    "voz": "Yo trabajo en la calle, con este calor, y uso camisa negra.",
+    "vis": "Frame 1: hombre real bajo el sol con camisa negra; termómetro animado al rojo",
+    "txt": "Trabajo en la calle y uso camisa negra"
+   },
+   {
+    "t": "0-3 s · Hook B",
+    "voz": "Calor todo el día y ni una raya blanca.",
+    "vis": "Frame 1: un dedo recorre la camisa negra por dentro, texto 'CERO RAYAS'",
+    "txt": "Calor y ni una raya blanca"
+   },
+   {
+    "t": "3-6 s",
+    "voz": "Yo trabajo en la calle, con este calor.",
+    "vis": "Cliente real en su trabajo",
+    "txt": "Trabajo en la calle"
+   },
+   {
+    "t": "6-9 s",
+    "voz": "Y uso camisa negra todos los días.",
+    "vis": "Muestra el uniforme",
+    "txt": "Camisa negra"
+   },
+   {
+    "t": "9-12 s",
+    "voz": "Antes terminaba con rayas blancas y olor.",
+    "vis": "Gesto de molestia",
+    "txt": "Antes 😩"
+   },
+   {
+    "t": "12-15 s",
+    "voz": "En la mañana: ducha, piedra mojada y listo.",
+    "vis": "Inserto de la rutina en casa",
+    "txt": "Mi rutina"
+   },
+   {
+    "t": "15-18 s",
+    "voz": "Sudo, eso sí. Eso no lo quita.",
+    "vis": "Se seca la frente",
+    "txt": "Sudo, sí"
+   },
+   {
+    "t": "18-21 s",
+    "voz": "Pero a las cinco, mire la camisa.",
+    "vis": "Voltea la camisa",
+    "txt": "5:00 p. m."
+   },
+   {
+    "t": "21-24 s",
+    "voz": "Nada de rayas.",
+    "vis": "Macro de la tela",
+    "txt": "Cero rayas"
+   },
+   {
+    "t": "24-27 s",
+    "voz": "Y no ando oliendo a perfume.",
+    "vis": "Sonríe",
+    "txt": "Sin perfume"
+   },
+   {
+    "t": "27-30 s",
+    "voz": "Eso es lo que yo uso.",
+    "vis": "Muestra la piedra GEODA",
+    "txt": "GEODA"
+   },
+   {
+    "t": "30-33 s · CTA",
+    "voz": "Regala algo que sí se usa todos los días: GEODA. Paga 2, lleva 3, y reparte en Navidad.",
+    "vis": "Piedra GEODA real con moño rojo junto a un árbol de Navidad (producto y logo reales)",
+    "txt": "REGALO DE NAVIDAD · Paga 2 lleva 3"
+   }
+  ]
+ },
+ "GEO-MOFU-A6-03": {
+  "head": "GEO-MOFU-A6-03 · Diario de 14 días · 51 s · CTA: Combo 2x para regalar",
+  "meta": {
+   "Etapa y duración": "MOFU · 51 s · 17 planos de 3 s",
+   "CTA principal": "K8 · Combo 2x para regalar (Siempre; en diciembre con enfoque regalo)",
+   "Compliance": "Creadora real. Sin fotos de la axila. Contar lo que de verdad pasó."
+  },
+  "rows": [
+   {
+    "t": "0-3 s · Hook A",
+    "voz": "Reto: catorce días sin antitranspirante, solo con la piedra.",
+    "vis": "Frame 1: la creadora mete el antitranspirante en una caja y le pone candado",
+    "txt": "Reto: 14 días sin antitranspirante"
+   },
+   {
+    "t": "0-3 s · Hook B",
+    "voz": "Día uno del reto. Vamos.",
+    "vis": "Frame 1: un marcador escribe 'DÍA 1' sobre el espejo del baño",
+    "txt": "14 días solo con piedra, día por día"
+   },
+   {
+    "t": "3-6 s",
+    "voz": "Día uno. Catorce días sin antitranspirante.",
+    "vis": "Selfie en el baño",
+    "txt": "DÍA 1"
+   },
+   {
+    "t": "6-9 s",
+    "voz": "Solo la piedra: la mojo y la paso.",
+    "vis": "Aplicación en plano medio, sin primer plano",
+    "txt": "Solo piedra"
+   },
+   {
+    "t": "9-12 s",
+    "voz": "Día dos. Normal, sin novedad.",
+    "vis": "Selfie en la cocina",
+    "txt": "DÍA 2"
+   },
+   {
+    "t": "12-15 s",
+    "voz": "Día tres. Siento que sudo más. Raro.",
+    "vis": "Selfie con cara de duda",
+    "txt": "DÍA 3 😬"
+   },
+   {
+    "t": "15-18 s",
+    "voz": "No me voy a rendir. Quiero ver qué pasa el día catorce.",
+    "vis": "Mira a cámara",
+    "txt": "¿Qué pasará? 👀"
+   },
+   {
+    "t": "18-21 s",
+    "voz": "Día cinco. Me la pongo también en la noche.",
+    "vis": "Selfie en pijama",
+    "txt": "DÍA 5"
+   },
+   {
+    "t": "21-24 s",
+    "voz": "Día siete. Mejor. Ya no lo pienso tanto.",
+    "vis": "Selfie caminando",
+    "txt": "DÍA 7"
+   },
+   {
+    "t": "24-27 s",
+    "voz": "Día ocho. Gimnasio. Aquí sí sudé, obvio.",
+    "vis": "Selfie en el gimnasio",
+    "txt": "DÍA 8 🏋️"
+   },
+   {
+    "t": "27-30 s",
+    "voz": "Pero después de la ducha, cero drama.",
+    "vis": "Sale de la ducha",
+    "txt": "Cero drama"
+   },
+   {
+    "t": "30-33 s",
+    "voz": "Día diez. Me siento normal.",
+    "vis": "Selfie en la oficina",
+    "txt": "DÍA 10"
+   },
+   {
+    "t": "33-36 s",
+    "voz": "Día doce. Mi pareja ni notó el cambio.",
+    "vis": "Selfie con la pareja, risas",
+    "txt": "DÍA 12"
+   },
+   {
+    "t": "36-39 s",
+    "voz": "Día trece. Ya no extraño el frasco.",
+    "vis": "La caja con candado, empolvada",
+    "txt": "DÍA 13"
+   },
+   {
+    "t": "39-42 s",
+    "voz": "Día catorce.",
+    "vis": "Calendario completo",
+    "txt": "DÍA 14 🎉"
+   },
+   {
+    "t": "42-45 s",
+    "voz": "Mi conclusión: la primera semana es de adaptación. Después, normal.",
+    "vis": "La creadora a cámara",
+    "txt": "Semana 1: adaptación"
+   },
+   {
+    "t": "45-48 s",
+    "voz": "Si no te convence, tienes 14 días de garantía.",
+    "vis": "Piedra real + sello",
+    "txt": "Garantía 14 días"
+   },
+   {
+    "t": "48-51 s · CTA",
+    "voz": "Paga 2 y lleva 3: una para ti y dos para regalar. Pídelo hoy.",
+    "vis": "Tres piedras GEODA reales, dos con moño, pasan de mano en mano (producto y logo reales)",
+    "txt": "PAGA 2 LLEVA 3 · Para ti y para regalar"
+   }
+  ]
+ },
+ "GEO-MOFU-A6-04": {
+  "head": "GEO-MOFU-A6-04 · Podcast · 42 s · CTA: Paga contraentrega",
+  "meta": {
+   "Etapa y duración": "MOFU · 42 s · 14 planos de 3 s",
+   "CTA principal": "K5 · Paga contraentrega (Siempre (neutro))",
+   "Compliance": "Experiencia personal, no explicación médica. Nada de 'toxinas'."
+  },
+  "rows": [
+   {
+    "t": "0-3 s · Hook A",
+    "voz": "¿Es normal que al principio sientas que hueles más?",
+    "vis": "Frame 1: el host se tapa la nariz exageradamente y la invitada se ríe",
+    "txt": "¿Es normal oler más los primeros días?"
+   },
+   {
+    "t": "0-3 s · Hook B",
+    "voz": "Hablemos de la semana que nadie te cuenta.",
+    "vis": "Frame 1: 'LA SEMANA QUE NADIE CUENTA' con un sello 'CENSURADO' que se rompe",
+    "txt": "La semana de adaptación"
+   },
+   {
+    "t": "3-6 s",
+    "voz": "HOST: Te voy a hacer la pregunta incómoda.",
+    "vis": "El host se acomoda",
+    "txt": "Pregunta incómoda"
+   },
+   {
+    "t": "6-9 s",
+    "voz": "HOST: ¿Es normal sentir que hueles más los primeros días?",
+    "vis": "Host",
+    "txt": "¿Hueles más al inicio?"
+   },
+   {
+    "t": "9-12 s",
+    "voz": "INVITADA: A mí me pasó. Te soy sincera.",
+    "vis": "Invitada",
+    "txt": "A mí me pasó"
+   },
+   {
+    "t": "12-15 s",
+    "voz": "INVITADA: Venía de años con antitranspirante.",
+    "vis": "Inserto de frasco genérico",
+    "txt": "Años de antitranspirante"
+   },
+   {
+    "t": "15-18 s",
+    "voz": "INVITADA: La primera semana sentí que sudaba distinto.",
+    "vis": "Gesto de abanico",
+    "txt": "Semana 1"
+   },
+   {
+    "t": "18-21 s",
+    "voz": "HOST: ¿Y cuánto te duró eso?",
+    "vis": "Host intrigado",
+    "txt": "¿Cuánto duró?"
+   },
+   {
+    "t": "21-24 s",
+    "voz": "INVITADA: Unos días.",
+    "vis": "La invitada levanta los dedos",
+    "txt": "Unos días"
+   },
+   {
+    "t": "24-27 s",
+    "voz": "INVITADA: Fui constante: piedra mojada, mañana y noche.",
+    "vis": "Inserto de aplicación",
+    "txt": "Mañana y noche"
+   },
+   {
+    "t": "27-30 s",
+    "voz": "HOST: ¿Y ahora?",
+    "vis": "Host",
+    "txt": "¿Y ahora?"
+   },
+   {
+    "t": "30-33 s",
+    "voz": "INVITADA: Ahora huelo a piel, no a perfume. Y feliz.",
+    "vis": "La invitada sonríe",
+    "txt": "Huelo a piel"
+   },
+   {
+    "t": "33-36 s",
+    "voz": "HOST: O sea, la clave es no rendirse la primera semana.",
+    "vis": "Plano general",
+    "txt": "No te rindas en la semana 1"
+   },
+   {
+    "t": "36-39 s",
+    "voz": "INVITADA: Exacto. Y si no te funciona, tienes 14 días para devolverla.",
+    "vis": "Piedra GEODA en la mesa",
+    "txt": "Garantía 14 días"
+   },
+   {
+    "t": "39-42 s · CTA",
+    "voz": "No pagas nada ahora: pagas cuando te llegue.",
+    "vis": "Domiciliario entrega la caja GEODA y recibe el pago en la puerta (producto y logo reales)",
+    "txt": "PAGA CONTRAENTREGA · Pagas cuando te llegue"
+   }
+  ]
+ },
+ "GEO-MOFU-A7-04": {
+  "head": "GEO-MOFU-A7-04 · Faceless / motion graphics · 33 s · CTA: Envío a toda Colombia",
+  "meta": {
+   "Etapa y duración": "MOFU · 33 s · 11 planos de 3 s",
+   "CTA principal": "K6 · Envío a toda Colombia (Siempre (neutro))",
+   "Compliance": "Usar 'ayuda a neutralizar el olor'. Prohibido 'mata el 99 % de las bacterias' o 'antibacterial' como claim médico."
+  },
+  "rows": [
+   {
+    "t": "0-3 s · Hook A",
+    "voz": "El olor no viene del sudor en sí. Te explico.",
+    "vis": "Frame 1: una gota de sudor gigante con el texto 'NO HUELE' encima",
+    "txt": "El sudor casi no huele. Esto sí."
+   },
+   {
+    "t": "0-3 s · Hook B",
+    "voz": "La piedra no te quita el sudor, y eso está bien.",
+    "vis": "Frame 1: un chulo verde sobre la palabra 'SUDOR' con sonido de acierto",
+    "txt": "Por qué la piedra no te quita el sudor (y está bien)"
+   },
+   {
+    "t": "3-6 s",
+    "voz": "El sudor casi no huele. Te explico de dónde sale el olor.",
+    "vis": "Gota animada limpia",
+    "txt": "Sudor ≈ sin olor"
+   },
+   {
+    "t": "6-9 s",
+    "voz": "En la piel viven bacterias. Es normal.",
+    "vis": "Puntitos animados amigables",
+    "txt": "Bacterias en la piel"
+   },
+   {
+    "t": "9-12 s",
+    "voz": "Cuando se juntan con el sudor, aparece el olor.",
+    "vis": "Gota + puntitos = nube gris",
+    "txt": "Sudor + bacterias = olor"
+   },
+   {
+    "t": "12-15 s",
+    "voz": "El perfume tapa el olor.",
+    "vis": "Nube rosada encima de la gris",
+    "txt": "Perfume = tapa"
+   },
+   {
+    "t": "15-18 s",
+    "voz": "Pero debajo, el olor sigue ahí.",
+    "vis": "La nube gris asoma por debajo",
+    "txt": "Sigue ahí"
+   },
+   {
+    "t": "18-21 s",
+    "voz": "La piedra ataca la bacteria que causa el olor. Sin perfume.",
+    "vis": "Piedra animada; la nube gris se disuelve",
+    "txt": "Ataca la causa"
+   },
+   {
+    "t": "21-24 s",
+    "voz": "Y por eso no te quita el sudor. Y está bien.",
+    "vis": "La gota animada sonríe",
+    "txt": "El sudor sigue. Está bien."
+   },
+   {
+    "t": "24-27 s",
+    "voz": "Sudas normal. Hueles a piel limpia.",
+    "vis": "Persona animada estirándose",
+    "txt": "Hueles a piel"
+   },
+   {
+    "t": "27-30 s",
+    "voz": "Esa es la piedra GEODA.",
+    "vis": "Video real de GEODA",
+    "txt": "GEODA"
+   },
+   {
+    "t": "30-33 s · CTA",
+    "voz": "Te la enviamos gratis a toda Colombia, y la pagas al recibir.",
+    "vis": "Mapa de Colombia con pines que se encienden; caja GEODA real (producto y logo reales)",
+    "txt": "ENVÍO GRATIS A TODA COLOMBIA"
+   }
+  ]
+ },
+ "GEO-MOFU-A7-05": {
+  "head": "GEO-MOFU-A7-05 · Testimonio · 33 s · CTA: Se agota rápido",
+  "meta": {
+   "Etapa y duración": "MOFU · 33 s · 11 planos de 3 s",
+   "CTA principal": "K4 · Se agota rápido (Solo si el inventario de verdad está bajo)",
+   "Compliance": "Persona real con autorización."
+  },
+  "rows": [
+   {
+    "t": "0-3 s · Hook A",
+    "voz": "Yo pensé que necesitaba algo más fuerte. No era así.",
+    "vis": "Frame 1: el cliente real sostiene tres antitranspirantes genéricos y los suelta",
+    "txt": "Pensé que necesitaba algo más fuerte"
+   },
+   {
+    "t": "0-3 s · Hook B",
+    "voz": "Ahora huelo a piel limpia, y ya.",
+    "vis": "Frame 1: el cliente real se huele la camiseta y levanta el pulgar",
+    "txt": "Huelo a piel limpia, y ya"
+   },
+   {
+    "t": "3-6 s",
+    "voz": "Yo pensé que necesitaba algo más fuerte.",
+    "vis": "Cliente real a cámara",
+    "txt": "Algo más fuerte"
+   },
+   {
+    "t": "6-9 s",
+    "voz": "Probé cuanto frasco hay.",
+    "vis": "Muestra frascos genéricos",
+    "txt": "Probé de todo"
+   },
+   {
+    "t": "9-12 s",
+    "voz": "Y terminaba oliendo a perfume y a sudor al tiempo.",
+    "vis": "Gesto de mezcla",
+    "txt": "Perfume + sudor 🤢"
+   },
+   {
+    "t": "12-15 s",
+    "voz": "Me recomendaron la piedra y no le creí.",
+    "vis": "Mira la piedra con desconfianza",
+    "txt": "No le creí"
+   },
+   {
+    "t": "15-18 s",
+    "voz": "La empecé a usar bien: mojada, todos los días.",
+    "vis": "Inserto de aplicación",
+    "txt": "Mojada, diario"
+   },
+   {
+    "t": "18-21 s",
+    "voz": "Sigo sudando, eso no cambia.",
+    "vis": "Se seca la frente",
+    "txt": "Sigo sudando"
+   },
+   {
+    "t": "21-24 s",
+    "voz": "Pero al final del día huelo a piel limpia.",
+    "vis": "Fin del día, en el carro",
+    "txt": "Huelo a piel"
+   },
+   {
+    "t": "24-27 s",
+    "voz": "No necesitaba algo más fuerte. Necesitaba algo distinto.",
+    "vis": "A cámara",
+    "txt": "Algo distinto"
+   },
+   {
+    "t": "27-30 s",
+    "voz": "Es esta.",
+    "vis": "Muestra GEODA",
+    "txt": "GEODA"
+   },
+   {
+    "t": "30-33 s · CTA",
+    "voz": "Este lote se está yendo rápido. Asegura la tuya antes de que se agote.",
+    "vis": "Estante con pocas cajas GEODA reales; contador de unidades real (producto y logo reales)",
+    "txt": "ÚLTIMAS UNIDADES DEL LOTE"
+   }
+  ]
+ },
+ "GEO-MOFU-A8-03": {
+  "head": "GEO-MOFU-A8-03 · Founder · 39 s · CTA: Llévala hoy",
+  "meta": {
+   "Etapa y duración": "MOFU · 39 s · 13 planos de 3 s",
+   "CTA principal": "K3 · Llévala hoy (Siempre (neutro))",
+   "Compliance": "No inventar la historia. Mencionar el registro tal como está en la página, sin 'aprobado por INVIMA'."
+  },
+  "rows": [
+   {
+    "t": "0-3 s · Hook A",
+    "voz": "Yo también pensé que la piedra era cuento.",
+    "vis": "Frame 1: el fundador con una piedra vieja agrietada en una mano y GEODA en la otra",
+    "txt": "Así nació GEODA"
+   },
+   {
+    "t": "0-3 s · Hook B",
+    "voz": "Hoy tengo una marca de piedra de alumbre. Te cuento por qué.",
+    "vis": "Frame 1: el logo de GEODA se arma con piezas de piedra que vuelan",
+    "txt": "Pensé que la piedra era cuento. Hoy tengo una marca."
+   },
+   {
+    "t": "3-6 s",
+    "voz": "FUNDADOR: Yo también pensé que la piedra era cuento.",
+    "vis": "Fundador a cámara",
+    "txt": "Yo también"
+   },
+   {
+    "t": "6-9 s",
+    "voz": "FUNDADOR: [MOMENTO REAL EN QUE LA PROBÓ].",
+    "vis": "Foto o video real de esa época",
+    "txt": "[Historia real]"
+   },
+   {
+    "t": "9-12 s",
+    "voz": "FUNDADOR: Y me di cuenta de algo.",
+    "vis": "Pausa, zoom lento",
+    "txt": "Me di cuenta..."
+   },
+   {
+    "t": "12-15 s",
+    "voz": "FUNDADOR: [APRENDIZAJE REAL, por ejemplo: la gente la usaba seca].",
+    "vis": "Inserto de piedra seca con X",
+    "txt": "[Aprendizaje real]"
+   },
+   {
+    "t": "15-18 s",
+    "voz": "FUNDADOR: Por eso creé GEODA.",
+    "vis": "Material real del inicio de la marca",
+    "txt": "Así nació GEODA"
+   },
+   {
+    "t": "18-21 s",
+    "voz": "FUNDADOR: Piedra mineral, sin perfume, con instrucciones claras.",
+    "vis": "Muestra el empaque",
+    "txt": "Instrucciones claras"
+   },
+   {
+    "t": "21-24 s",
+    "voz": "FUNDADOR: Se moja la piedra, no la axila.",
+    "vis": "Moja la piedra",
+    "txt": "Se moja la piedra"
+   },
+   {
+    "t": "24-27 s",
+    "voz": "FUNDADOR: Es un cosmético con notificación sanitaria INVIMA.",
+    "vis": "Código en el empaque",
+    "txt": "NSOC41318-25CO"
+   },
+   {
+    "t": "27-30 s",
+    "voz": "FUNDADOR: Hoy la enviamos a toda Colombia.",
+    "vis": "Cajas en despacho",
+    "txt": "A toda Colombia 📦"
+   },
+   {
+    "t": "30-33 s",
+    "voz": "FUNDADOR: Y si no te funciona en 14 días, te devolvemos tu dinero.",
+    "vis": "A cámara",
+    "txt": "Garantía 14 días"
+   },
+   {
+    "t": "33-36 s",
+    "voz": "FUNDADOR: Eso es GEODA.",
+    "vis": "Plano final con la piedra",
+    "txt": "GEODA"
+   },
+   {
+    "t": "36-39 s · CTA",
+    "voz": "Llévala hoy: pídela ya y la pagas cuando te llegue a la puerta.",
+    "vis": "Mano toca el botón Comprar; piedra GEODA real en primer plano (producto y logo reales)",
+    "txt": "LLÉVALA HOY · Pagas al recibir"
+   }
+  ]
+ },
+ "GEO-MOFU-A9-03": {
+  "head": "GEO-MOFU-A9-03 · Demo de producto · 33 s · CTA: Navidad / regalo",
+  "meta": {
+   "Etapa y duración": "MOFU · 33 s · 11 planos de 3 s",
+   "CTA principal": "K2 · Navidad / regalo (Del 1 al 24 de diciembre)",
+   "Compliance": "—"
+  },
+  "rows": [
+   {
+    "t": "0-3 s · Hook A",
+    "voz": "Mi rutina: ducha, piedra, camiseta. Listo.",
+    "vis": "Frame 1: arranca un cronómetro gigante de 60 s con sonido",
+    "txt": "Mi rutina de 1 minuto: ducha, piedra, camiseta"
+   },
+   {
+    "t": "0-3 s · Hook B",
+    "voz": "Rutina para el que no se complica.",
+    "vis": "Frame 1: una mano barre seis productos de la repisa de golpe y deja solo la piedra",
+    "txt": "Rutina de hombre que no se complica"
+   },
+   {
+    "t": "3-6 s",
+    "voz": "Rutina de hombre que no se complica.",
+    "vis": "El hombre entra al baño",
+    "txt": "Sin complicarse"
+   },
+   {
+    "t": "6-9 s",
+    "voz": "Ducha.",
+    "vis": "Agua cayendo, plano de espalda",
+    "txt": "1. Ducha 🚿"
+   },
+   {
+    "t": "9-12 s",
+    "voz": "Te secas.",
+    "vis": "Toalla",
+    "txt": "2. Secarse"
+   },
+   {
+    "t": "12-15 s",
+    "voz": "Mojas la piedra.",
+    "vis": "Macro de agua sobre la piedra",
+    "txt": "3. Mojar la piedra"
+   },
+   {
+    "t": "15-18 s",
+    "voz": "La pasas por la axila limpia.",
+    "vis": "Plano medio, camiseta sin mangas",
+    "txt": "4. Aplicar"
+   },
+   {
+    "t": "18-21 s",
+    "voz": "La secas y la guardas fuera de la ducha.",
+    "vis": "Pone la piedra en la repisa",
+    "txt": "5. Guardar"
+   },
+   {
+    "t": "21-24 s",
+    "voz": "Camiseta y sales.",
+    "vis": "Se pone la camiseta y sale",
+    "txt": "6. Listo"
+   },
+   {
+    "t": "24-27 s",
+    "voz": "Nada que se riegue en el maletín del gimnasio.",
+    "vis": "Maletín con la piedra",
+    "txt": "No se riega"
+   },
+   {
+    "t": "27-30 s",
+    "voz": "Y si no te convence, 14 días de garantía.",
+    "vis": "Sello 14 días",
+    "txt": "Garantía 14 días"
+   },
+   {
+    "t": "30-33 s · CTA",
+    "voz": "Regala algo que sí se usa todos los días: GEODA. Paga 2, lleva 3, y reparte en Navidad.",
+    "vis": "Piedra GEODA real con moño rojo junto a un árbol de Navidad (producto y logo reales)",
+    "txt": "REGALO DE NAVIDAD · Paga 2 lleva 3"
+   }
+  ]
+ },
+ "GEO-TOFU-A1-01": {
+  "head": "GEO-TOFU-A1-01 · UGC con avatar IA · 27 s · CTA: Paga contraentrega",
+  "meta": {
+   "Etapa y duración": "TOFU · 27 s · 9 planos de 3 s",
+   "CTA principal": "K5 · Paga contraentrega (Siempre (neutro))",
+   "Compliance": "No mencionar segundos de aplicación hasta que Alberto decida (ver reglas). Rótulo 'Recreación con IA'."
+  },
+  "rows": [
+   {
+    "t": "0-3 s · Hook A",
+    "voz": "Si a media tarde ya sientes olor, aunque te hayas echado desodorante, escúchame.",
+    "vis": "Frame 1: la avatar se huele la camisa, cara de alarma, reloj gigante marcando 3:00 p. m.",
+    "txt": "Si a media tarde ya hueles, aunque te eches desodorante, mira esto"
+   },
+   {
+    "t": "0-3 s · Hook B",
+    "voz": "Esto es lo que casi todo el mundo hace mal con el desodorante.",
+    "vis": "Frame 1: una X roja gigante cae sobre un frasco de desodorante genérico, sonido de error",
+    "txt": "El error #1 por el que tu desodorante 'no sirve'"
+   },
+   {
+    "t": "3-6 s",
+    "voz": "Me echaba desodorante a las siete y a las tres ya sentía olor.",
+    "vis": "Avatar en la oficina, se huele disimuladamente",
+    "txt": "3 p. m. 😳"
+   },
+   {
+    "t": "6-9 s",
+    "voz": "Y le echaba más perfume encima. Peor.",
+    "vis": "Rocía un frasco genérico, nube de perfume",
+    "txt": "+ perfume = peor"
+   },
+   {
+    "t": "9-12 s",
+    "voz": "Hasta que entendí algo: el olor no es el sudor.",
+    "vis": "Avatar mira a cámara, zoom rápido",
+    "txt": "El olor ≠ sudor"
+   },
+   {
+    "t": "12-15 s",
+    "voz": "Son las bacterias de la piel. El perfume solo lo tapa.",
+    "vis": "Animación simple de puntitos y nube gris",
+    "txt": "El perfume solo tapa"
+   },
+   {
+    "t": "15-18 s",
+    "voz": "Ahí descubrí una piedra mineral que se usa como desodorante, sin perfume.",
+    "vis": "Revela en la mano una piedra translúcida a contraluz",
+    "txt": "Una piedra mineral 🪨"
+   },
+   {
+    "t": "18-21 s",
+    "voz": "Pero ojo: casi todos la usan mal. Se moja la piedra, no la axila.",
+    "vis": "Macro: chorro de agua sobre la piedra",
+    "txt": "Se moja la PIEDRA"
+   },
+   {
+    "t": "21-24 s",
+    "voz": "Mojada, sobre la axila limpia. Desde ahí dejé de sentir olor a media tarde.",
+    "vis": "Plano medio con camiseta, brazo arriba; luego sonríe en la oficina",
+    "txt": "Adiós olor de las 3 p. m. ✅"
+   },
+   {
+    "t": "24-27 s · CTA",
+    "voz": "Se llama GEODA, y no pagas nada ahora: la pagas cuando te llegue a la casa.",
+    "vis": "Domiciliario entrega la caja GEODA y recibe el pago en la puerta (producto y logo reales)",
+    "txt": "PAGA CONTRAENTREGA · Pagas cuando te llegue"
+   }
+  ]
+ },
+ "GEO-TOFU-A1-02": {
+  "head": "GEO-TOFU-A1-02 · Demo de producto · 24 s · CTA: Llévala hoy",
+  "meta": {
+   "Etapa y duración": "TOFU · 24 s · 8 planos de 3 s",
+   "CTA principal": "K3 · Llévala hoy (Siempre (neutro))",
+   "Compliance": "Plano real del producto, sin IA en el logo."
+  },
+  "rows": [
+   {
+    "t": "0-3 s · Hook A",
+    "voz": "Esto parece un cristal... pero es un desodorante.",
+    "vis": "Frame 1: macro de la piedra a contraluz con destello; la mano la gira rápido",
+    "txt": "Esto parece un cristal, pero es un desodorante"
+   },
+   {
+    "t": "0-3 s · Hook B",
+    "voz": "¿Sabías que existe un desodorante que no viene en frasco?",
+    "vis": "Frame 1: un frasco genérico se tacha con una línea roja y en su lugar cae la piedra",
+    "txt": "El desodorante que no viene en frasco"
+   },
+   {
+    "t": "3-6 s",
+    "voz": "Es piedra de alumbre: un mineral que se usa como desodorante.",
+    "vis": "Macro de la piedra girando sobre la palma",
+    "txt": "Piedra de alumbre = mineral"
+   },
+   {
+    "t": "6-9 s",
+    "voz": "No tiene perfume y no es líquido.",
+    "vis": "Nariz la huele, cara neutra; piedra boca abajo sin que caiga nada",
+    "txt": "Sin perfume · sin líquido"
+   },
+   {
+    "t": "9-12 s",
+    "voz": "Pero hay un truco que casi nadie sabe.",
+    "vis": "La mano tapa la piedra, zoom",
+    "txt": "El truco 👇"
+   },
+   {
+    "t": "12-15 s",
+    "voz": "Uno: se moja la piedra, no la axila.",
+    "vis": "Macro: piedra bajo el chorro",
+    "txt": "1. Moja la piedra"
+   },
+   {
+    "t": "15-18 s",
+    "voz": "Dos: la pasas por la axila limpia.",
+    "vis": "Plano de brazo y torso con camiseta",
+    "txt": "2. Axila limpia"
+   },
+   {
+    "t": "18-21 s",
+    "voz": "Tres: la secas y la guardas lejos de la ducha. Así no se agrieta.",
+    "vis": "Toalla seca la piedra; la mete en su caja",
+    "txt": "3. Sécala y guárdala"
+   },
+   {
+    "t": "21-24 s · CTA",
+    "voz": "Se llama GEODA. Pruébala: pídela hoy y la pagas cuando te llegue.",
+    "vis": "Mano toca el botón Comprar; piedra GEODA real en primer plano (producto y logo reales)",
+    "txt": "LLÉVALA HOY · Pagas al recibir"
+   }
+  ]
+ },
+ "GEO-TOFU-A1-03": {
+  "head": "GEO-TOFU-A1-03 · Claymation (stop-motion IA) · 27 s · CTA: Black Friday",
+  "meta": {
+   "Etapa y duración": "TOFU · 27 s · 9 planos de 3 s",
+   "CTA principal": "K1 · Black Friday (Hasta el lunes 30 de noviembre (Cyber Monday), solo si la oferta de temporada es real)",
+   "Compliance": "Personajes estilizados, sin cuerpo realista ni antes y después."
+  },
+  "rows": [
+   {
+    "t": "0-3 s · Hook A",
+    "voz": "(narrador) Pedro probó todos los desodorantes... y seguía oliendo.",
+    "vis": "Frame 1: personaje de plastilina rodeado de una montaña de frascos, nube gris encima",
+    "txt": "Pedro probó todos los desodorantes y seguía oliendo"
+   },
+   {
+    "t": "0-3 s · Hook B",
+    "voz": "(narrador) A Pedro nadie le había dicho esto.",
+    "vis": "Frame 1: un dedo de plastilina señala a Pedro; signo de pregunta gigante sobre su cabeza",
+    "txt": "Lo que nadie le dijo a Pedro sobre su olor"
+   },
+   {
+    "t": "3-6 s",
+    "voz": "NARRADOR: Pedro olía a perfume... y a sudor, al tiempo.",
+    "vis": "Pedro de plastilina con una nube rosada y una gris mezcladas",
+    "txt": "Perfume + olor 😩"
+   },
+   {
+    "t": "6-9 s",
+    "voz": "NARRADOR: Frasco tras frasco, el olor volvía.",
+    "vis": "Frascos de plastilina caen uno tras otro a la caneca",
+    "txt": "Frasco tras frasco"
+   },
+   {
+    "t": "9-12 s",
+    "voz": "NARRADOR: Hasta que su abuela le dio esto.",
+    "vis": "La abuela de plastilina le entrega una piedra con carita",
+    "txt": "¿Una piedra? 🪨"
+   },
+   {
+    "t": "12-15 s",
+    "voz": "NARRADOR: Una piedra mineral sin perfume. Pedro la frotó seca... y nada.",
+    "vis": "Pedro frota la piedra seca, cara de decepción",
+    "txt": "Seca = nada"
+   },
+   {
+    "t": "15-18 s",
+    "voz": "PIEDRA (vocecita): ¡Mójame, Pedro!",
+    "vis": "La piedra levanta un cartelito '¡Mójame!'",
+    "txt": "¡MÓJAME!"
+   },
+   {
+    "t": "18-21 s",
+    "voz": "NARRADOR: Con agua, sobre la piel limpia... la nube se deshace.",
+    "vis": "Gotas sobre la piedra; la nube gris se rompe en bolitas",
+    "txt": "Chao nube 💨"
+   },
+   {
+    "t": "21-24 s",
+    "voz": "NARRADOR: El problema nunca fue la piedra. Era cómo la usaba.",
+    "vis": "La piedra sonríe; corte a GEODA real 2 s",
+    "txt": "No era la piedra"
+   },
+   {
+    "t": "24-27 s · CTA",
+    "voz": "Se llama GEODA, y por Black Friday: paga 2, lleva 3 por $99.990. Pagas cuando te llegue.",
+    "vis": "Piedra GEODA real con etiqueta negra BLACK FRIDAY, botón Comprar (producto y logo reales)",
+    "txt": "BLACK FRIDAY · Paga 2 lleva 3 · $99.990"
+   }
+  ]
+ },
+ "GEO-TOFU-A1-04": {
+  "head": "GEO-TOFU-A1-04 · Street interview · 27 s · CTA: Envío a toda Colombia",
+  "meta": {
+   "Etapa y duración": "TOFU · 27 s · 9 planos de 3 s",
+   "CTA principal": "K6 · Envío a toda Colombia (Siempre (neutro))",
+   "Compliance": "Ideal grabarlo real, con autorización firmada. Si se hace con IA: rótulo 'Recreación' y nadie 'de la calle' habla de resultados."
+  },
+  "rows": [
+   {
+    "t": "0-3 s · Hook A",
+    "voz": "Pregunta rápida: ¿usted sabe cómo se usa la piedra de alumbre?",
+    "vis": "Frame 1: micrófono empujado hacia la cámara en plena calle, pregunta en texto amarillo gigante",
+    "txt": "¿Cómo se usa la piedra de alumbre?"
+   },
+   {
+    "t": "0-3 s · Hook B",
+    "voz": "Le preguntamos a cinco personas y casi nadie acertó.",
+    "vis": "Frame 1: cinco personas en fila mirando a cámara, contador '0/5' en rojo",
+    "txt": "Le preguntamos a 5 personas en Bogotá"
+   },
+   {
+    "t": "3-6 s",
+    "voz": "ENTREVISTADO 1: ¿Seca? Uno se la frota y ya.",
+    "vis": "Señor en la carrera Séptima haciendo gesto de frotar",
+    "txt": "❌ 'Seca'"
+   },
+   {
+    "t": "6-9 s",
+    "voz": "ENTREVISTADA 2: Ay, yo me mojo la axila primero.",
+    "vis": "Joven universitaria riéndose",
+    "txt": "❌ 'Mojo la axila'"
+   },
+   {
+    "t": "9-12 s",
+    "voz": "ENTREVISTADO 3: Ni idea, mi abuela la usaba.",
+    "vis": "Señor mayor encogiéndose de hombros",
+    "txt": "❌ 'Ni idea'"
+   },
+   {
+    "t": "12-15 s",
+    "voz": "PRESENTADOR: Es un desodorante mineral, y casi todos lo usan mal. Mire.",
+    "vis": "Presentador saca la piedra GEODA del bolsillo, plano cercano",
+    "txt": "Mire 👇"
+   },
+   {
+    "t": "15-18 s",
+    "voz": "PRESENTADOR: Se moja la piedra, no la axila.",
+    "vis": "Echa agua de una botella sobre la piedra, macro",
+    "txt": "Se moja la PIEDRA"
+   },
+   {
+    "t": "18-21 s",
+    "voz": "PRESENTADOR: Y se pasa por la piel limpia.",
+    "vis": "Presentador simula sobre su brazo, camiseta manga corta",
+    "txt": "Piel limpia"
+   },
+   {
+    "t": "21-24 s",
+    "voz": "ENTREVISTADA 2: ¡Ahhh, con razón!",
+    "vis": "Reacción sorprendida de la joven, risa",
+    "txt": "¡Con razón! 😂"
+   },
+   {
+    "t": "24-27 s · CTA",
+    "voz": "Se llama GEODA, y te la enviamos gratis a toda Colombia. La pagas al recibir.",
+    "vis": "Mapa de Colombia con pines que se encienden; caja GEODA real (producto y logo reales)",
+    "txt": "ENVÍO GRATIS A TODA COLOMBIA"
+   }
+  ]
+ },
+ "GEO-TOFU-A10-01": {
+  "head": "GEO-TOFU-A10-01 · Street interview · 27 s · CTA: Paga contraentrega",
+  "meta": {
+   "Etapa y duración": "TOFU · 27 s · 9 planos de 3 s",
+   "CTA principal": "K5 · Paga contraentrega (Siempre (neutro))",
+   "Compliance": "No prometer 24 horas ni 'aguanta todo'. Ideal grabarlo real."
+  },
+  "rows": [
+   {
+    "t": "0-3 s · Hook A",
+    "voz": "¿Qué desodorante le aguanta este calor?",
+    "vis": "Frame 1: termómetro callejero marcando calor; el presentador se abanica con el micrófono",
+    "txt": "¿Qué desodorante aguanta el calor de Barranquilla?"
+   },
+   {
+    "t": "0-3 s · Hook B",
+    "voz": "Nos fuimos a la Costa a preguntar.",
+    "vis": "Frame 1: mapa de Colombia con zoom rápido a la Costa y un pin rojo",
+    "txt": "Preguntamos en la Costa"
+   },
+   {
+    "t": "3-6 s",
+    "voz": "ENTREVISTADO 1: ¿Aquí? Ninguno, mi rey. Aquí todo se derrite.",
+    "vis": "Hombre en el malecón de Barranquilla",
+    "txt": "'Ninguno'"
+   },
+   {
+    "t": "6-9 s",
+    "voz": "ENTREVISTADA 2: Yo me echo dos veces al día.",
+    "vis": "Mujer en la playa",
+    "txt": "'2 veces al día'"
+   },
+   {
+    "t": "9-12 s",
+    "voz": "ENTREVISTADO 3: Uno suda sí o sí.",
+    "vis": "Vendedor ambulante",
+    "txt": "'Sí o sí'"
+   },
+   {
+    "t": "12-15 s",
+    "voz": "PRESENTADOR: Sudar es normal. Lo que molesta es el olor.",
+    "vis": "El presentador saca GEODA",
+    "txt": "Sudar es normal"
+   },
+   {
+    "t": "15-18 s",
+    "voz": "PRESENTADOR: Esta piedra no quita el sudor, ayuda con el olor.",
+    "vis": "Muestra la piedra",
+    "txt": "Ayuda con el olor"
+   },
+   {
+    "t": "18-21 s",
+    "voz": "PRESENTADOR: Con calor, úsela en la noche y en la mañana.",
+    "vis": "Demostración rápida",
+    "txt": "Noche + mañana"
+   },
+   {
+    "t": "21-24 s",
+    "voz": "ENTREVISTADA 2: ¿Y sin perfume? Me gusta.",
+    "vis": "La mujer huele la piedra",
+    "txt": "'Me gusta'"
+   },
+   {
+    "t": "24-27 s · CTA",
+    "voz": "Se llama GEODA, y no pagas nada ahora: la pagas cuando te llegue a la casa.",
+    "vis": "Domiciliario entrega la caja GEODA y recibe el pago en la puerta (producto y logo reales)",
+    "txt": "PAGA CONTRAENTREGA · Pagas cuando te llegue"
+   }
+  ]
+ },
+ "GEO-TOFU-A10-02": {
+  "head": "GEO-TOFU-A10-02 · POV · 21 s · CTA: Llévala hoy",
+  "meta": {
+   "Etapa y duración": "TOFU · 21 s · 7 planos de 3 s",
+   "CTA principal": "K3 · Llévala hoy (Siempre (neutro))",
+   "Compliance": "No afirmar nada sobre las normas de equipaje de mano (PENDIENTE confirmar con Aerocivil)."
+  },
+  "rows": [
+   {
+    "t": "0-3 s · Hook A",
+    "voz": "(voz en off) POV: lo único que no se riega en tu maleta.",
+    "vis": "Frame 1: maleta abierta; un frasco explota y mancha toda la ropa",
+    "txt": "POV: empacas para la playa y no se te riega nada"
+   },
+   {
+    "t": "0-3 s · Hook B",
+    "voz": "(voz en off) Esto no se riega, no se gasta en una semana y no huele a nada.",
+    "vis": "Frame 1: la maleta se cierra de golpe y la piedra rebota encima, intacta",
+    "txt": "Lo único que no se riega en mi maleta"
+   },
+   {
+    "t": "3-6 s",
+    "voz": "VOZ EN OFF: Maleta para la playa.",
+    "vis": "Maleta en la cama",
+    "txt": "Maleta 🏖️"
+   },
+   {
+    "t": "6-9 s",
+    "voz": "VOZ EN OFF: El frasco se riega. Otra vez.",
+    "vis": "Frasco genérico regado sobre la ropa",
+    "txt": "Se regó 😩"
+   },
+   {
+    "t": "9-12 s",
+    "voz": "VOZ EN OFF: Por eso existe el desodorante en piedra: no se riega.",
+    "vis": "La piedra mineral seca e intacta en la maleta",
+    "txt": "Desodorante en piedra"
+   },
+   {
+    "t": "12-15 s",
+    "voz": "VOZ EN OFF: En la playa, agua y lista.",
+    "vis": "Moja la piedra con una botella en la playa",
+    "txt": "Agua y lista"
+   },
+   {
+    "t": "15-18 s",
+    "voz": "VOZ EN OFF: Sin perfume, sin regueros.",
+    "vis": "Atardecer con amigos",
+    "txt": "Sin regueros"
+   },
+   {
+    "t": "18-21 s · CTA",
+    "voz": "Se llama GEODA. Pruébala: pídela hoy y la pagas cuando te llegue.",
+    "vis": "Mano toca el botón Comprar; piedra GEODA real en primer plano (producto y logo reales)",
+    "txt": "LLÉVALA HOY · Pagas al recibir"
+   }
+  ]
+ },
+ "GEO-TOFU-A11-01": {
+  "head": "GEO-TOFU-A11-01 · UGC con avatar IA (mamá) · 27 s · CTA: 1 piedra te dura 1 año (ahorro)",
+  "meta": {
+   "Etapa y duración": "TOFU · 27 s · 9 planos de 3 s",
+   "CTA principal": "K7 · 1 piedra te dura 1 año (ahorro) (Siempre (neutro); duración confirmada por Alberto)",
+   "Compliance": "Dirigido a los papás. El menor siempre vestido, sin planos del cuerpo. Sin claims de seguridad pediátrica ni edades. Rótulo IA."
+  },
+  "rows": [
+   {
+    "t": "0-3 s · Hook A",
+    "voz": "Mi hijo empezó a sudar y yo no sabía qué ponerle.",
+    "vis": "Frame 1: la mamá recoge del piso una camiseta escolar y pone cara de sorpresa",
+    "txt": "Mi hijo empezó a sudar y no sabía qué ponerle"
+   },
+   {
+    "t": "0-3 s · Hook B",
+    "voz": "Este fue el primer desodorante de mi hija.",
+    "vis": "Frame 1: piedra GEODA con moño; la mamá se la entrega a su hija, de espaldas",
+    "txt": "El primer desodorante de mi hija"
+   },
+   {
+    "t": "3-6 s",
+    "voz": "Mi hijo empezó a sudar y yo no sabía qué ponerle.",
+    "vis": "Mamá en la cocina, a cámara",
+    "txt": "No sabía qué ponerle"
+   },
+   {
+    "t": "6-9 s",
+    "voz": "No quería algo con perfume fuerte.",
+    "vis": "Deja un frasco genérico",
+    "txt": "Sin perfume fuerte"
+   },
+   {
+    "t": "9-12 s",
+    "voz": "Descubrí una piedra mineral que se usa como desodorante. Sencilla.",
+    "vis": "Muestra GEODA a contraluz",
+    "txt": "Una piedra mineral 🪨"
+   },
+   {
+    "t": "12-15 s",
+    "voz": "Le enseñé: se moja la piedra, no la axila.",
+    "vis": "El hijo, vestido, en el baño; la mamá le muestra",
+    "txt": "Se moja la piedra"
+   },
+   {
+    "t": "15-18 s",
+    "voz": "Ahora lo hace solo antes del colegio.",
+    "vis": "El hijo con uniforme toma la maleta",
+    "txt": "Solo, antes del colegio"
+   },
+   {
+    "t": "18-21 s",
+    "voz": "Y ya no tengo que recordarle nada.",
+    "vis": "La mamá sonríe",
+    "txt": "🙌"
+   },
+   {
+    "t": "21-24 s",
+    "voz": "Su primer desodorante fue una piedra.",
+    "vis": "GEODA real",
+    "txt": "Su primera piedra"
+   },
+   {
+    "t": "24-27 s · CTA",
+    "voz": "Se llama GEODA: 1 piedra te dura 1 año. Toca el link y haz la cuenta.",
+    "vis": "Piedra GEODA real junto a una fila de frascos genéricos tachados (producto y logo reales)",
+    "txt": "1 PIEDRA = 1 AÑO · Ahorra vs desodorante"
+   }
+  ]
+ },
+ "GEO-TOFU-A2-01": {
+  "head": "GEO-TOFU-A2-01 · UGC con avatar IA · 27 s · CTA: Paga contraentrega",
+  "meta": {
+   "Etapa y duración": "TOFU · 27 s · 9 planos de 3 s",
+   "CTA principal": "K5 · Paga contraentrega (Siempre (neutro))",
+   "Compliance": "Primera persona y experiencia propia. Nada de '¿tienes axilas oscuras?', antes y después ni la palabra 'blanquear'. Pautar primero en Meta; en TikTok, revisar antes la política de aclarado de piel. Rótulo IA."
+  },
+  "rows": [
+   {
+    "t": "0-3 s · Hook A",
+    "voz": "Dejé el desodorante con perfume y mis axilas empezaron a lucir más parejas.",
+    "vis": "Frame 1: la avatar tira un desodorante perfumado genérico a la caneca; nube de perfume congelada en el aire",
+    "txt": "Dejé el desodorante con perfume y pasó esto"
+   },
+   {
+    "t": "0-3 s · Hook B",
+    "voz": "Yo antes levantaba el brazo con miedo. Ya no.",
+    "vis": "Frame 1: la avatar levanta los brazos bailando con blusa sin mangas, plano amplio",
+    "txt": "Ya me pongo blusa sin mangas sin pensarlo"
+   },
+   {
+    "t": "3-6 s",
+    "voz": "Llevaba años con desodorante de perfume fuerte.",
+    "vis": "Avatar frente a una repisa llena de frascos genéricos",
+    "txt": "Años de perfume 🌫️"
+   },
+   {
+    "t": "6-9 s",
+    "voz": "Rasurada a la carrera, ardor, y ropa apretada todo el día.",
+    "vis": "Montaje rápido: cuchilla, gesto de ardor, blusa ajustada",
+    "txt": "Ardor + roce"
+   },
+   {
+    "t": "9-12 s",
+    "voz": "Y mis axilas no se veían como yo quería.",
+    "vis": "Avatar mira hacia abajo, plano medio, con camiseta",
+    "txt": "Algo no me cuadraba"
+   },
+   {
+    "t": "12-15 s",
+    "voz": "Levantaba el brazo con miedo.",
+    "vis": "Recreación: brazo pegado al cuerpo en una foto grupal",
+    "txt": "Brazo pegado 😬"
+   },
+   {
+    "t": "15-18 s",
+    "voz": "Entonces descubrí una piedra mineral que se usa como desodorante, sin perfume.",
+    "vis": "Revela la piedra a contraluz en la mano",
+    "txt": "Una piedra sin perfume 🪨"
+   },
+   {
+    "t": "18-21 s",
+    "voz": "La mojo, la paso todos los días, y le sumé hidratante.",
+    "vis": "Macro de la piedra bajo el agua; crema en el brazo",
+    "txt": "Piedra + hidratante"
+   },
+   {
+    "t": "21-24 s",
+    "voz": "Con las semanas, yo las veo más parejas. A mí me funcionó.",
+    "vis": "Colgando ropa con los brazos arriba, plano amplio",
+    "txt": "Yo las veo más parejas"
+   },
+   {
+    "t": "24-27 s · CTA",
+    "voz": "Se llama GEODA, y no pagas nada ahora: la pagas cuando te llegue a la casa.",
+    "vis": "Domiciliario entrega la caja GEODA y recibe el pago en la puerta (producto y logo reales)",
+    "txt": "PAGA CONTRAENTREGA · Pagas cuando te llegue"
+   }
+  ]
+ },
+ "GEO-TOFU-A2-02": {
+  "head": "GEO-TOFU-A2-02 · Estilo Pixar (3D) · 27 s · CTA: Navidad / regalo",
+  "meta": {
+   "Etapa y duración": "TOFU · 27 s · 9 planos de 3 s",
+   "CTA principal": "K2 · Navidad / regalo (Del 1 al 24 de diciembre)",
+   "Compliance": "Animación estilizada, sin comparar piel ni mostrar antes y después. Frascos genéricos, sin marcas."
+  },
+  "rows": [
+   {
+    "t": "0-3 s · Hook A",
+    "voz": "(narrador) Tu axila vive en una guerra de perfumes. Y lo sabe.",
+    "vis": "Frame 1: frascos Pixar con caras ruidosas disparan nubes de perfume hacia la cámara",
+    "txt": "Tu axila vive en una guerra de perfumes"
+   },
+   {
+    "t": "0-3 s · Hook B",
+    "voz": "(narrador) Si tus axilas hablaran, te dirían esto.",
+    "vis": "Frame 1: una chica Pixar con blusa sin mangas pega los brazos al cuerpo, avergonzada",
+    "txt": "Lo que tus axilas te dirían si hablaran"
+   },
+   {
+    "t": "3-6 s",
+    "voz": "NARRADOR: Valentina se echaba perfume encima de perfume.",
+    "vis": "Lavamanos Pixar lleno de frascos genéricos ruidosos",
+    "txt": "Perfume x3 🌫️"
+   },
+   {
+    "t": "6-9 s",
+    "voz": "FRASCO: ¡Más fragancia, más fragancia!",
+    "vis": "Un frasco presume soltando nubes rosadas",
+    "txt": "+FRAGANCIA"
+   },
+   {
+    "t": "9-12 s",
+    "voz": "NARRADOR: Y ella seguía con los brazos pegados al cuerpo.",
+    "vis": "Valentina en una fiesta, brazos pegados",
+    "txt": "Brazos pegados 😬"
+   },
+   {
+    "t": "12-15 s",
+    "voz": "NARRADOR: Hasta que, al fondo del cajón, encontró a alguien distinto.",
+    "vis": "El cajón se abre con luz; aparece Geo, piedra translúcida con ojos",
+    "txt": "¿Y tú quién eres?"
+   },
+   {
+    "t": "15-18 s",
+    "voz": "GEO: Soy una piedra mineral. Yo no tapo con perfume, yo neutralizo.",
+    "vis": "Geo se infla con orgullo",
+    "txt": "Sin perfume. Neutraliza."
+   },
+   {
+    "t": "18-21 s",
+    "voz": "NARRADOR: Un poco de agua, cada mañana.",
+    "vis": "Gotas caen sobre Geo; brilla",
+    "txt": "💧"
+   },
+   {
+    "t": "21-24 s",
+    "voz": "VALENTINA: Desde que dejé el perfume, mis axilas lucen más parejas.",
+    "vis": "Valentina estira los brazos en un parque, plano amplio; corte a GEODA real 2 s",
+    "txt": "Lucen más parejas ✨"
+   },
+   {
+    "t": "24-27 s · CTA",
+    "voz": "Se llama GEODA: una piedra que sí se usa todos los días. Regálala esta Navidad: paga 2, lleva 3.",
+    "vis": "Piedra GEODA real con moño rojo junto a un árbol de Navidad (producto y logo reales)",
+    "txt": "REGALO DE NAVIDAD · Paga 2 lleva 3"
+   }
+  ]
+ },
+ "GEO-TOFU-A2-03": {
+  "head": "GEO-TOFU-A2-03 · Testimonio · 30 s · CTA: Envío a toda Colombia",
+  "meta": {
+   "Etapa y duración": "TOFU · 30 s · 10 planos de 3 s",
+   "CTA principal": "K6 · Envío a toda Colombia (Siempre (neutro))",
+   "Compliance": "Solo con una persona real y su autorización escrita. No prometer tiempos ni resultados. Si se hace con IA, deja de ser testimonio: rotular 'Recreación'."
+  },
+  "rows": [
+   {
+    "t": "0-3 s · Hook A",
+    "voz": "Esta es mi rutina para que mis axilas luzcan parejas.",
+    "vis": "Frame 1: la creadora levanta el brazo de golpe frente a cámara (plano medio), texto 'MI RUTINA'",
+    "txt": "Mi rutina para que mis axilas luzcan parejas"
+   },
+   {
+    "t": "0-3 s · Hook B",
+    "voz": "Me rasuraba, me ardía y se veía peor. Esto fue lo que cambié.",
+    "vis": "Frame 1: una cuchilla de afeitar cae sobre el lavamanos en cámara lenta, texto rojo",
+    "txt": "Me rasuraba, me ardía y se veía peor"
+   },
+   {
+    "t": "3-6 s",
+    "voz": "Yo me rasuraba a la carrera y me ardía.",
+    "vis": "Creadora real en su baño, a cámara",
+    "txt": "Me ardía 😣"
+   },
+   {
+    "t": "6-9 s",
+    "voz": "Y encima me echaba desodorante con perfume.",
+    "vis": "Sostiene un frasco genérico sin marca",
+    "txt": "+ perfume"
+   },
+   {
+    "t": "9-12 s",
+    "voz": "Cambié tres cosas.",
+    "vis": "Levanta tres dedos",
+    "txt": "3 cambios 👇"
+   },
+   {
+    "t": "12-15 s",
+    "voz": "Uno: rasurada sin afán.",
+    "vis": "Espuma y cuchilla sobre la pierna, sin primer plano de axila",
+    "txt": "1. Sin afán"
+   },
+   {
+    "t": "15-18 s",
+    "voz": "Dos: descubrí una piedra mineral sin perfume y la cambié por el desodorante.",
+    "vis": "Muestra la piedra a contraluz; la moja y la aplica, plano medio",
+    "txt": "2. Piedra mineral sin perfume"
+   },
+   {
+    "t": "18-21 s",
+    "voz": "Tres: hidratante en la noche.",
+    "vis": "Se aplica crema en el brazo",
+    "txt": "3. Hidratante"
+   },
+   {
+    "t": "21-24 s",
+    "voz": "Ahora, para mí, se ven más parejas.",
+    "vis": "Blusa sin mangas, plano amplio, sonrisa",
+    "txt": "Para mí: más parejas"
+   },
+   {
+    "t": "24-27 s",
+    "voz": "Cada piel es distinta, pero esta es mi rutina.",
+    "vis": "Piedra GEODA real en la mano",
+    "txt": "Mi rutina"
+   },
+   {
+    "t": "27-30 s · CTA",
+    "voz": "Se llama GEODA, y te la enviamos gratis a toda Colombia. La pagas al recibir.",
+    "vis": "Mapa de Colombia con pines que se encienden; caja GEODA real (producto y logo reales)",
+    "txt": "ENVÍO GRATIS A TODA COLOMBIA"
+   }
+  ]
+ },
+ "GEO-TOFU-A2-04": {
+  "head": "GEO-TOFU-A2-04 · Podcast · 39 s · CTA: Black Friday",
+  "meta": {
+   "Etapa y duración": "TOFU · 39 s · 13 planos de 3 s",
+   "CTA principal": "K1 · Black Friday (Hasta el lunes 30 de noviembre (Cyber Monday), solo si la oferta de temporada es real)",
+   "Compliance": "Sin explicaciones médicas de por qué se oscurece la piel. No decir 'aclara' ni 'blanquea'."
+  },
+  "rows": [
+   {
+    "t": "0-3 s · Hook A",
+    "voz": "Yo cambié tres cosas en mi rutina de axilas.",
+    "vis": "Frame 1: la invitada pone de golpe sobre la mesa tres objetos: frasco, cuchilla y piedra",
+    "txt": "Lo que cambié en mi rutina de axilas"
+   },
+   {
+    "t": "0-3 s · Hook B",
+    "voz": "Perfume, rasurada a la carrera y ropa apretada. Ese era mi combo.",
+    "vis": "Frame 1: el texto 'COMBO FATAL' explota sobre el plano de las dos mujeres",
+    "txt": "Perfume, rasurada y roce: mi combo fatal"
+   },
+   {
+    "t": "3-6 s",
+    "voz": "HOST: Cuéntame qué cambiaste.",
+    "vis": "Host al micrófono",
+    "txt": "¿Qué cambiaste?"
+   },
+   {
+    "t": "6-9 s",
+    "voz": "INVITADA: Primero, el desodorante con perfume. Lo dejé.",
+    "vis": "La invitada empuja el frasco genérico fuera de cuadro",
+    "txt": "Chao perfume"
+   },
+   {
+    "t": "9-12 s",
+    "voz": "HOST: ¿Por qué?",
+    "vis": "Host intrigada",
+    "txt": "¿Por qué?"
+   },
+   {
+    "t": "12-15 s",
+    "voz": "INVITADA: Mi piel no lo quería más. Me picaba.",
+    "vis": "Gesto con la mano",
+    "txt": "Me picaba"
+   },
+   {
+    "t": "15-18 s",
+    "voz": "INVITADA: Segundo, la rasurada a la carrera.",
+    "vis": "Señala la cuchilla",
+    "txt": "Rasurada sin afán"
+   },
+   {
+    "t": "18-21 s",
+    "voz": "INVITADA: Y tercero, la ropa súper apretada todo el día.",
+    "vis": "Gesto de apretar",
+    "txt": "Ropa menos apretada"
+   },
+   {
+    "t": "21-24 s",
+    "voz": "HOST: ¿Y qué usas ahora?",
+    "vis": "Plano general",
+    "txt": "¿Y ahora?"
+   },
+   {
+    "t": "24-27 s",
+    "voz": "INVITADA: Una piedra de alumbre. Es un mineral: la mojo y ya, sin perfume.",
+    "vis": "Moja la piedra GEODA en un vaso de agua",
+    "txt": "Piedra mojada, sin perfume"
+   },
+   {
+    "t": "27-30 s",
+    "voz": "HOST: ¿Y sí se ve distinto?",
+    "vis": "La host se inclina",
+    "txt": "¿Se ve distinto?"
+   },
+   {
+    "t": "30-33 s",
+    "voz": "INVITADA: Yo las veo más parejas. A mí me funcionó.",
+    "vis": "La invitada sonríe, blusa sin mangas, plano medio",
+    "txt": "Yo las veo más parejas"
+   },
+   {
+    "t": "33-36 s",
+    "voz": "HOST: Me la vas a prestar.",
+    "vis": "Risas; la host toma la piedra",
+    "txt": "😂"
+   },
+   {
+    "t": "36-39 s · CTA",
+    "voz": "Se llama GEODA, y por Black Friday: paga 2, lleva 3 por $99.990. Pagas cuando te llegue.",
+    "vis": "Piedra GEODA real con etiqueta negra BLACK FRIDAY, botón Comprar (producto y logo reales)",
+    "txt": "BLACK FRIDAY · Paga 2 lleva 3 · $99.990"
+   }
+  ]
+ },
+ "GEO-TOFU-A3-01": {
+  "head": "GEO-TOFU-A3-01 · Comparación piedra vs frasco · 24 s · CTA: 1 piedra te dura 1 año (ahorro)",
+  "meta": {
+   "Etapa y duración": "TOFU · 24 s · 8 planos de 3 s",
+   "CTA principal": "K7 · 1 piedra te dura 1 año (ahorro) (Siempre (neutro); duración confirmada por Alberto)",
+   "Compliance": "No nombrar marcas ni mostrar productos reconocibles de la competencia."
+  },
+  "rows": [
+   {
+    "t": "0-3 s · Hook A",
+    "voz": "Tu desodorante se riega, se acaba y huele a perfume. ¿Y si no tuviera que ser así?",
+    "vis": "Frame 1: un frasco genérico volteado en un bolso, líquido chorreando sobre el maquillaje",
+    "txt": "Tu desodorante se riega, se acaba y huele a perfume"
+   },
+   {
+    "t": "0-3 s · Hook B",
+    "voz": "Esto que parece un cristal es un desodorante. Te explico.",
+    "vis": "Frame 1: macro de la piedra brillando a contraluz junto a un signo de interrogación",
+    "txt": "Esto que parece un cristal es un desodorante"
+   },
+   {
+    "t": "3-6 s",
+    "voz": "El frasco se riega en el bolso.",
+    "vis": "Bolso con un frasco regado, manos frustradas",
+    "txt": "Se riega 😩"
+   },
+   {
+    "t": "6-9 s",
+    "voz": "Se acaba en unas semanas y vuelves a comprar.",
+    "vis": "Frasco vaciándose en timelapse; otro sale de la bolsa del mercado",
+    "txt": "Se acaba"
+   },
+   {
+    "t": "9-12 s",
+    "voz": "Y huele a perfume encima de tu olor.",
+    "vis": "Nube rosada sobre nube gris",
+    "txt": "Perfume encima"
+   },
+   {
+    "t": "12-15 s",
+    "voz": "Existe otra opción: una piedra mineral que se usa como desodorante.",
+    "vis": "Revela la piedra GEODA a contraluz, macro",
+    "txt": "Una piedra mineral 🪨"
+   },
+   {
+    "t": "15-18 s",
+    "voz": "Se moja, se pasa por la axila limpia, y listo. Sin perfume.",
+    "vis": "Agua sobre la piedra; la mano la pasa por el brazo con camiseta",
+    "txt": "Mojar y pasar"
+   },
+   {
+    "t": "18-21 s",
+    "voz": "No se riega, y 1 piedra dura 1 año.",
+    "vis": "Bolso volteado; la piedra rebota sin daño sobre un cojín",
+    "txt": "No se riega · 1 piedra = 1 año"
+   },
+   {
+    "t": "21-24 s · CTA",
+    "voz": "Se llama GEODA: 1 piedra te dura 1 año. Toca el link y haz la cuenta.",
+    "vis": "Piedra GEODA real junto a una fila de frascos genéricos tachados (producto y logo reales)",
+    "txt": "1 PIEDRA = 1 AÑO · Ahorra vs desodorante"
+   }
+  ]
+ },
+ "GEO-TOFU-A3-02": {
+  "head": "GEO-TOFU-A3-02 · Claymation (stop-motion IA) · 27 s · CTA: Llévala hoy",
+  "meta": {
+   "Etapa y duración": "TOFU · 27 s · 9 planos de 3 s",
+   "CTA principal": "K3 · Llévala hoy (Siempre (neutro))",
+   "Compliance": "La duración se dice como '1 piedra dura 1 año'."
+  },
+  "rows": [
+   {
+    "t": "0-3 s · Hook A",
+    "voz": "(narrador) Frasco, frasco, frasco... y la piedra ahí.",
+    "vis": "Frame 1: un frasco de plastilina se vacía de golpe y salta solo a la caneca",
+    "txt": "El frasco que siempre se acaba"
+   },
+   {
+    "t": "0-3 s · Hook B",
+    "voz": "(narrador) Mientras los frascos se acaban, la piedra sigue.",
+    "vis": "Frame 1: diez frascos de plastilina caen como dominó contra una piedra que no se mueve",
+    "txt": "Una piedra vs una fila de frascos"
+   },
+   {
+    "t": "3-6 s",
+    "voz": "NARRADOR: Lunes, frasco nuevo.",
+    "vis": "Frasco de plastilina brillante en la repisa",
+    "txt": "Lunes"
+   },
+   {
+    "t": "6-9 s",
+    "voz": "NARRADOR: Unas semanas después...",
+    "vis": "El frasco se encoge y llora",
+    "txt": "Se acabó 😢"
+   },
+   {
+    "t": "9-12 s",
+    "voz": "NARRADOR: Frasco nuevo. Otra vez.",
+    "vis": "Aparece otro frasco; el anterior salta a la caneca",
+    "txt": "Otra vez..."
+   },
+   {
+    "t": "12-15 s",
+    "voz": "NARRADOR: Y otra vez.",
+    "vis": "Montaje rápido de 3 frascos saltando",
+    "txt": "Y otra vez"
+   },
+   {
+    "t": "15-18 s",
+    "voz": "NARRADOR: Mientras tanto, la piedra... ahí.",
+    "vis": "La piedra de plastilina silba tranquila mientras pasan hojas de calendario",
+    "txt": "La piedra, ahí 😌"
+   },
+   {
+    "t": "18-21 s",
+    "voz": "PIEDRA: ¿Qué? Yo te duro 1 año.",
+    "vis": "La piedra guiña a cámara",
+    "txt": "1 piedra dura 1 año"
+   },
+   {
+    "t": "21-24 s",
+    "voz": "NARRADOR: Una piedra. Cero frascos.",
+    "vis": "Corte a la piedra GEODA real 2 s",
+    "txt": "1 piedra · 0 frascos"
+   },
+   {
+    "t": "24-27 s · CTA",
+    "voz": "Se llama GEODA. Pruébala: pídela hoy y la pagas cuando te llegue.",
+    "vis": "Mano toca el botón Comprar; piedra GEODA real en primer plano (producto y logo reales)",
+    "txt": "LLÉVALA HOY · Pagas al recibir"
+   }
+  ]
+ },
+ "GEO-TOFU-A3-03": {
+  "head": "GEO-TOFU-A3-03 · Demo de producto (macro) · 24 s · CTA: Paga contraentrega",
+  "meta": {
+   "Etapa y duración": "TOFU · 24 s · 8 planos de 3 s",
+   "CTA principal": "K5 · Paga contraentrega (Siempre (neutro))",
+   "Compliance": "'Un solo ingrediente' queda PENDIENTE hasta revisar la lista de ingredientes de la etiqueta."
+  },
+  "rows": [
+   {
+    "t": "0-3 s · Hook A",
+    "voz": "¿Qué crees que es esto? Pista: va en tu axila.",
+    "vis": "Frame 1: macro extremo de un cristal brillante girando, sin mostrar qué es",
+    "txt": "¿Qué es esto? Pista: va en tu axila"
+   },
+   {
+    "t": "0-3 s · Hook B",
+    "voz": "Llevas años echándote perfume en la axila. ¿Para qué?",
+    "vis": "Frame 1: una nube de perfume explota frente a la cámara desde un frasco genérico",
+    "txt": "Llevas años echándote perfume en la axila"
+   },
+   {
+    "t": "3-6 s",
+    "voz": "La mayoría tapamos el olor con perfume.",
+    "vis": "Frasco genérico rociando, cámara lenta",
+    "txt": "Tapar con perfume"
+   },
+   {
+    "t": "6-9 s",
+    "voz": "Pero el olor viene de las bacterias, no del sudor.",
+    "vis": "Animación simple: gota + puntitos",
+    "txt": "El olor = bacterias"
+   },
+   {
+    "t": "9-12 s",
+    "voz": "Esto es piedra de alumbre: un mineral.",
+    "vis": "Macro de la textura cristalina, giro de 360°",
+    "txt": "Piedra de alumbre"
+   },
+   {
+    "t": "12-15 s",
+    "voz": "Sin perfume y sin líquido que se riegue.",
+    "vis": "Piedra boca abajo; no cae nada",
+    "txt": "Sin perfume · sin líquido"
+   },
+   {
+    "t": "15-18 s",
+    "voz": "Unas gotas de agua, y se pasa por la axila limpia.",
+    "vis": "Gotas en cámara lenta sobre la superficie; aplicación en plano medio",
+    "txt": "Mojar y pasar"
+   },
+   {
+    "t": "18-21 s",
+    "voz": "Ayuda a neutralizar el olor, sin taparlo.",
+    "vis": "Plano final de la piedra GEODA real en la mano",
+    "txt": "Neutraliza, no tapa"
+   },
+   {
+    "t": "21-24 s · CTA",
+    "voz": "Se llama GEODA, y no pagas nada ahora: la pagas cuando te llegue a la casa.",
+    "vis": "Domiciliario entrega la caja GEODA y recibe el pago en la puerta (producto y logo reales)",
+    "txt": "PAGA CONTRAENTREGA · Pagas cuando te llegue"
+   }
+  ]
+ },
+ "GEO-TOFU-A3-04": {
+  "head": "GEO-TOFU-A3-04 · Estilo Pixar (3D) · 27 s · CTA: Navidad / regalo",
+  "meta": {
+   "Etapa y duración": "TOFU · 27 s · 9 planos de 3 s",
+   "CTA principal": "K2 · Navidad / regalo (Del 1 al 24 de diciembre)",
+   "Compliance": "Frascos genéricos sin marca."
+  },
+  "rows": [
+   {
+    "t": "0-3 s · Hook A",
+    "voz": "(narrador) Otra vez se regó el desodorante en el bolso...",
+    "vis": "Frame 1: interior de un bolso Pixar; un frasco explota y salpica a la cámara",
+    "txt": "Otra vez se te regó el desodorante en el bolso"
+   },
+   {
+    "t": "0-3 s · Hook B",
+    "voz": "(narrador) Esto es lo que pasa dentro de tu bolso.",
+    "vis": "Frame 1: el celular Pixar grita empapado dentro del bolso",
+    "txt": "Lo que tu desodorante le hace a tu bolso"
+   },
+   {
+    "t": "3-6 s",
+    "voz": "NARRADOR: Otra vez se regó el frasco en el bolso.",
+    "vis": "Frasco destapado moja el labial y el celular",
+    "txt": "😱"
+   },
+   {
+    "t": "6-9 s",
+    "voz": "LABIAL: ¡Otra vez no!",
+    "vis": "Labial animado empapado grita",
+    "txt": "¡Otra vez!"
+   },
+   {
+    "t": "9-12 s",
+    "voz": "CELULAR: ¡Y todo huele a perfume!",
+    "vis": "El celular tose entre nubes rosadas",
+    "txt": "Todo huele a perfume"
+   },
+   {
+    "t": "12-15 s",
+    "voz": "NARRADOR: Hasta que llegó una vecina nueva al bolso.",
+    "vis": "Una piedra translúcida con ojos (Geo) entra rodando, seca e intacta",
+    "txt": "¿Y esa quién es?"
+   },
+   {
+    "t": "15-18 s",
+    "voz": "GEO: Soy una piedra mineral. A mí no se me riega nada.",
+    "vis": "Geo sonríe",
+    "txt": "No me riego 😎"
+   },
+   {
+    "t": "18-21 s",
+    "voz": "NARRADOR: En el baño de la oficina, un poquito de agua, y lista.",
+    "vis": "La chica moja a Geo bajo el grifo y la aplica, plano medio",
+    "txt": "💧"
+   },
+   {
+    "t": "21-24 s",
+    "voz": "NARRADOR: Un desodorante sin perfume que no se riega.",
+    "vis": "La chica cierra el bolso, todo seco; corte a GEODA real 2 s",
+    "txt": "No se riega ✅"
+   },
+   {
+    "t": "24-27 s · CTA",
+    "voz": "Se llama GEODA: una piedra que sí se usa todos los días. Regálala esta Navidad: paga 2, lleva 3.",
+    "vis": "Piedra GEODA real con moño rojo junto a un árbol de Navidad (producto y logo reales)",
+    "txt": "REGALO DE NAVIDAD · Paga 2 lleva 3"
+   }
+  ]
+ },
+ "GEO-TOFU-A4-01": {
+  "head": "GEO-TOFU-A4-01 · Duración / báscula · 27 s · CTA: 1 piedra te dura 1 año (ahorro)",
+  "meta": {
+   "Etapa y duración": "TOFU · 27 s · 9 planos de 3 s",
+   "CTA principal": "K7 · 1 piedra te dura 1 año (ahorro) (Siempre (neutro); duración confirmada por Alberto)",
+   "Compliance": "Solo cifras reales de la báscula de GEODA; no inventar gramos. La báscula es la demostración visual de que 1 piedra dura 1 año."
+  },
+  "rows": [
+   {
+    "t": "0-3 s · Hook A",
+    "voz": "¿Cuánta plata se te va en desodorante al año? Yo hice la cuenta.",
+    "vis": "Frame 1: una montaña de frascos vacíos cae sobre la mesa; calculadora con signo de pesos",
+    "txt": "¿Cuánta plata se te va en desodorante al año?"
+   },
+   {
+    "t": "0-3 s · Hook B",
+    "voz": "Hice la cuenta de lo que gasto en desodorante y me asusté.",
+    "vis": "Frame 1: billetes salen volando de una billetera abierta",
+    "txt": "Hice la cuenta de mi desodorante y me asusté"
+   },
+   {
+    "t": "3-6 s",
+    "voz": "Yo compraba un desodorante casi cada mes.",
+    "vis": "Fila de frascos vacíos en la repisa",
+    "txt": "1 frasco al mes"
+   },
+   {
+    "t": "6-9 s",
+    "voz": "Haz la cuenta de lo que gastas tú en un año.",
+    "vis": "Calculadora animada, casilla '$____'",
+    "txt": "Tu gasto: $____"
+   },
+   {
+    "t": "9-12 s",
+    "voz": "Ahí descubrí esto: una piedra mineral que se usa como desodorante.",
+    "vis": "Revela la piedra GEODA a contraluz",
+    "txt": "Una piedra mineral 🪨"
+   },
+   {
+    "t": "12-15 s",
+    "voz": "La marca dice que 1 piedra dura 1 año. La puse en la báscula.",
+    "vis": "Piedra sobre báscula de cocina: [GRAMOS REALES]",
+    "txt": "Día 1: [__] g"
+   },
+   {
+    "t": "15-18 s",
+    "voz": "Se moja, se pasa, se guarda seca. Todos los días.",
+    "vis": "Montaje de uso diario, 3 cortes",
+    "txt": "Uso diario"
+   },
+   {
+    "t": "18-21 s",
+    "voz": "Día 30: pesa [GRAMOS DÍA 30]; perdió solo [DIFERENCIA].",
+    "vis": "Báscula con la cifra real, zoom",
+    "txt": "Día 30: [__] g"
+   },
+   {
+    "t": "21-24 s",
+    "voz": "Por eso 1 piedra dura 1 año. Lo actualizo cada mes.",
+    "vis": "Creador a cámara con la piedra",
+    "txt": "1 piedra = 1 año 🔁"
+   },
+   {
+    "t": "24-27 s · CTA",
+    "voz": "Se llama GEODA: 1 piedra te dura 1 año. Toca el link y haz la cuenta.",
+    "vis": "Piedra GEODA real junto a una fila de frascos genéricos tachados (producto y logo reales)",
+    "txt": "1 PIEDRA = 1 AÑO · Ahorra vs desodorante"
+   }
+  ]
+ },
+ "GEO-TOFU-A4-02": {
+  "head": "GEO-TOFU-A4-02 · Street interview · 27 s · CTA: Black Friday",
+  "meta": {
+   "Etapa y duración": "TOFU · 27 s · 9 planos de 3 s",
+   "CTA principal": "K1 · Black Friday (Hasta el lunes 30 de noviembre (Cyber Monday), solo si la oferta de temporada es real)",
+   "Compliance": "Solo las cifras que diga la gente real. La duración se dice como '1 piedra dura 1 año'. Rótulo si hay IA."
+  },
+  "rows": [
+   {
+    "t": "0-3 s · Hook A",
+    "voz": "¿Cuántos desodorantes se compra usted en un año?",
+    "vis": "Frame 1: el presentador muestra un carrito de mercado lleno de desodorantes genéricos",
+    "txt": "¿Cuántos desodorantes compras al año?"
+   },
+   {
+    "t": "0-3 s · Hook B",
+    "voz": "Pregunta: ¿cuánta plata se le va en desodorante al año?",
+    "vis": "Frame 1: billetes caen sobre la cabeza del entrevistado, texto '$$$'",
+    "txt": "¿Cuánto gastas en desodorante al año?"
+   },
+   {
+    "t": "3-6 s",
+    "voz": "ENTREVISTADA 1: Uff, como uno al mes.",
+    "vis": "Mujer en un centro comercial",
+    "txt": "'1 al mes'"
+   },
+   {
+    "t": "6-9 s",
+    "voz": "ENTREVISTADO 2: Yo como dos al mes, sudo mucho.",
+    "vis": "Joven con mochila",
+    "txt": "'2 al mes'"
+   },
+   {
+    "t": "9-12 s",
+    "voz": "ENTREVISTADA 3: Nunca lo había contado.",
+    "vis": "Señora sorprendida",
+    "txt": "'Nunca lo conté'"
+   },
+   {
+    "t": "12-15 s",
+    "voz": "PRESENTADOR: ¿Y si le digo que esta piedra le dura 1 año?",
+    "vis": "El presentador saca GEODA",
+    "txt": "1 piedra = 1 año"
+   },
+   {
+    "t": "15-18 s",
+    "voz": "ENTREVISTADO 2: ¿Una piedra? ¡No le creo!",
+    "vis": "Reacción incrédula",
+    "txt": "¡No le creo!"
+   },
+   {
+    "t": "18-21 s",
+    "voz": "PRESENTADOR: Se moja, se pasa y se guarda seca.",
+    "vis": "Demostración rápida",
+    "txt": "Mojar · pasar · guardar"
+   },
+   {
+    "t": "21-24 s",
+    "voz": "ENTREVISTADA 1: Ahora sí quiero hacer la cuenta.",
+    "vis": "Saca el celular a calcular",
+    "txt": "Hagamos la cuenta 🧮"
+   },
+   {
+    "t": "24-27 s · CTA",
+    "voz": "Se llama GEODA, y por Black Friday: paga 2, lleva 3 por $99.990. Pagas cuando te llegue.",
+    "vis": "Piedra GEODA real con etiqueta negra BLACK FRIDAY, botón Comprar (producto y logo reales)",
+    "txt": "BLACK FRIDAY · Paga 2 lleva 3 · $99.990"
+   }
+  ]
+ },
+ "GEO-TOFU-A4-03": {
+  "head": "GEO-TOFU-A4-03 · Claymation (stop-motion IA) · 27 s · CTA: 1 piedra te dura 1 año (ahorro)",
+  "meta": {
+   "Etapa y duración": "TOFU · 27 s · 9 planos de 3 s",
+   "CTA principal": "K7 · 1 piedra te dura 1 año (ahorro) (Siempre (neutro); duración confirmada por Alberto)",
+   "Compliance": "Cierre: '1 piedra dura 1 año'."
+  },
+  "rows": [
+   {
+    "t": "0-3 s · Hook A",
+    "voz": "(narrador) Enero, febrero, marzo...",
+    "vis": "Frame 1: hojas de calendario de plastilina vuelan contra la cámara",
+    "txt": "Enero, febrero, marzo... y sigue ahí"
+   },
+   {
+    "t": "0-3 s · Hook B",
+    "voz": "(narrador) ¿Cuántos frascos de desodorante botas en un año?",
+    "vis": "Frame 1: piedra de plastilina con una corona de 'campeona'",
+    "txt": "¿Cuántos frascos botas en un año?"
+   },
+   {
+    "t": "3-6 s",
+    "voz": "NARRADOR: Enero.",
+    "vis": "Calendario de plastilina en enero; frasco nuevo",
+    "txt": "ENERO"
+   },
+   {
+    "t": "6-9 s",
+    "voz": "NARRADOR: Febrero.",
+    "vis": "El frasco se vacía y salta a la caneca",
+    "txt": "FEBRERO"
+   },
+   {
+    "t": "9-12 s",
+    "voz": "NARRADOR: Marzo, abril...",
+    "vis": "Dos frascos más aparecen y desaparecen",
+    "txt": "MARZO · ABRIL"
+   },
+   {
+    "t": "12-15 s",
+    "voz": "NARRADOR: Y la piedra, casi igual.",
+    "vis": "La piedra de plastilina sonríe, apenas más pequeña",
+    "txt": "Casi igual 🪨"
+   },
+   {
+    "t": "15-18 s",
+    "voz": "NARRADOR: Julio, agosto, septiembre...",
+    "vis": "El calendario pasa rápido; montaña de frascos en la caneca",
+    "txt": "..."
+   },
+   {
+    "t": "18-21 s",
+    "voz": "NARRADOR: Diciembre. Y sigue ahí.",
+    "vis": "La piedra con gorrito navideño de plastilina",
+    "txt": "Sigue ahí"
+   },
+   {
+    "t": "21-24 s",
+    "voz": "NARRADOR: 1 piedra dura 1 año.",
+    "vis": "Corte a GEODA real 2 s",
+    "txt": "1 piedra dura 1 año"
+   },
+   {
+    "t": "24-27 s · CTA",
+    "voz": "Se llama GEODA: 1 piedra te dura 1 año. Toca el link y haz la cuenta.",
+    "vis": "Piedra GEODA real junto a una fila de frascos genéricos tachados (producto y logo reales)",
+    "txt": "1 PIEDRA = 1 AÑO · Ahorra vs desodorante"
+   }
+  ]
+ },
+ "GEO-TOFU-A5-01": {
+  "head": "GEO-TOFU-A5-01 · Demo de producto · 27 s · CTA: Llévala hoy",
+  "meta": {
+   "Etapa y duración": "TOFU · 27 s · 9 planos de 3 s",
+   "CTA principal": "K3 · Llévala hoy (Siempre (neutro))",
+   "Compliance": "Grabarlo de verdad, en tiempo real, sin trucos. Mostrar la prenda, no la axila."
+  },
+  "rows": [
+   {
+    "t": "0-3 s · Hook A",
+    "voz": "Me puse la piedra a las 7. Mira mi camisa negra a las 3.",
+    "vis": "Frame 1: camisa negra volteada al revés frente a cámara, reloj marcando 3:00 p. m.",
+    "txt": "Mi camisa negra después de 8 horas"
+   },
+   {
+    "t": "0-3 s · Hook B",
+    "voz": "¿Cuántas camisas blancas has botado por la mancha amarilla?",
+    "vis": "Frame 1: montaña de camisas blancas con manchas amarillas cae a la caneca",
+    "txt": "¿Cuántas camisas blancas has botado?"
+   },
+   {
+    "t": "3-6 s",
+    "voz": "Mi desodorante me dejaba rayas blancas en la ropa negra.",
+    "vis": "Camisa negra con rayas blancas, macro",
+    "txt": "Rayas blancas 😩"
+   },
+   {
+    "t": "6-9 s",
+    "voz": "Y manchas amarillas en las camisas blancas.",
+    "vis": "Camisa blanca con mancha amarilla en la prenda",
+    "txt": "Manchas amarillas"
+   },
+   {
+    "t": "9-12 s",
+    "voz": "Probé una piedra mineral que se usa como desodorante, sin perfume.",
+    "vis": "Revela la piedra a contraluz; la moja",
+    "txt": "Una piedra mineral 🪨"
+   },
+   {
+    "t": "12-15 s",
+    "voz": "Siete de la mañana: la mojo, la paso y me pongo la camisa negra.",
+    "vis": "Reloj 7:00; aplicación con camiseta; se pone la camisa",
+    "txt": "7:00 a. m."
+   },
+   {
+    "t": "15-18 s",
+    "voz": "Bus, oficina, almuerzo al sol.",
+    "vis": "Montaje de 3 cortes rápidos",
+    "txt": "8:00 · 11:00 · 1:00 ☀️"
+   },
+   {
+    "t": "18-21 s",
+    "voz": "Tres de la tarde. Mira por dentro.",
+    "vis": "Voltea la camisa, macro a la costura",
+    "txt": "3:00 p. m."
+   },
+   {
+    "t": "21-24 s",
+    "voz": "Ni una raya blanca.",
+    "vis": "Macro de la tela limpia",
+    "txt": "Cero rayas blancas ✅"
+   },
+   {
+    "t": "24-27 s · CTA",
+    "voz": "Se llama GEODA. Pruébala: pídela hoy y la pagas cuando te llegue.",
+    "vis": "Mano toca el botón Comprar; piedra GEODA real en primer plano (producto y logo reales)",
+    "txt": "LLÉVALA HOY · Pagas al recibir"
+   }
+  ]
+ },
+ "GEO-TOFU-A5-02": {
+  "head": "GEO-TOFU-A5-02 · POV · 24 s · CTA: Envío a toda Colombia",
+  "meta": {
+   "Etapa y duración": "TOFU · 24 s · 8 planos de 3 s",
+   "CTA principal": "K6 · Envío a toda Colombia (Siempre (neutro))",
+   "Compliance": "—"
+  },
+  "rows": [
+   {
+    "t": "0-3 s · Hook A",
+    "voz": "(voz en off) POV: ya no te miras la camisa en el espejo del ascensor.",
+    "vis": "Frame 1: espejo del ascensor, persona tapándose la axila con la mano",
+    "txt": "POV: ya no revisas la camisa antes de salir"
+   },
+   {
+    "t": "0-3 s · Hook B",
+    "voz": "(voz en off) POV: volvió tu camisa negra favorita.",
+    "vis": "Frame 1: la camisa negra sale del clóset con un efecto de luz celestial",
+    "txt": "POV: volvió tu camisa negra favorita"
+   },
+   {
+    "t": "3-6 s",
+    "voz": "VOZ EN OFF: Antes te mirabas la camisa en cada espejo.",
+    "vis": "Mirada nerviosa al espejo",
+    "txt": "Antes 😬"
+   },
+   {
+    "t": "6-9 s",
+    "voz": "VOZ EN OFF: Ahora sales sin revisar.",
+    "vis": "Sale de casa sin mirarse",
+    "txt": "Ahora 😌"
+   },
+   {
+    "t": "9-12 s",
+    "voz": "VOZ EN OFF: Reunión, brazos arriba.",
+    "vis": "Señala el tablero",
+    "txt": "Brazos arriba"
+   },
+   {
+    "t": "12-15 s",
+    "voz": "VOZ EN OFF: Foto con los amigos.",
+    "vis": "Selfie grupal, brazos sobre los hombros",
+    "txt": "📸"
+   },
+   {
+    "t": "15-18 s",
+    "voz": "VOZ EN OFF: Abrazo de bienvenida.",
+    "vis": "Abrazo completo",
+    "txt": "Abrazo completo"
+   },
+   {
+    "t": "18-21 s",
+    "voz": "VOZ EN OFF: El cambio: una piedra mineral sin perfume que no mancha la ropa.",
+    "vis": "Piedra GEODA a contraluz en el lavamanos",
+    "txt": "Una piedra que no mancha"
+   },
+   {
+    "t": "21-24 s · CTA",
+    "voz": "Se llama GEODA, y te la enviamos gratis a toda Colombia. La pagas al recibir.",
+    "vis": "Mapa de Colombia con pines que se encienden; caja GEODA real (producto y logo reales)",
+    "txt": "ENVÍO GRATIS A TODA COLOMBIA"
+   }
+  ]
+ },
+ "GEO-TOFU-A5-03": {
+  "head": "GEO-TOFU-A5-03 · Estilo Pixar (3D) · 27 s · CTA: Navidad / regalo",
+  "meta": {
+   "Etapa y duración": "TOFU · 27 s · 9 planos de 3 s",
+   "CTA principal": "K2 · Navidad / regalo (Del 1 al 24 de diciembre)",
+   "Compliance": "No mostrar desodorantes de marca como villanos."
+  },
+  "rows": [
+   {
+    "t": "0-3 s · Hook A",
+    "voz": "(narrador) En este clóset, las camisas vivían con miedo.",
+    "vis": "Frame 1: una camisa blanca Pixar tiembla de miedo en un gancho; relámpago",
+    "txt": "Las camisas blancas tienen un enemigo"
+   },
+   {
+    "t": "0-3 s · Hook B",
+    "voz": "(narrador) Esta camisa ya no quería salir de casa.",
+    "vis": "Frame 1: una camisa llora lágrimas amarillas gigantes; música dramática",
+    "txt": "La camisa que lloraba manchas"
+   },
+   {
+    "t": "3-6 s",
+    "voz": "NARRADOR: En este clóset, las camisas vivían con miedo.",
+    "vis": "Clóset oscuro, camisas temblando",
+    "txt": "😨"
+   },
+   {
+    "t": "6-9 s",
+    "voz": "CAMISA BLANCA: ¿Hoy me toca salir?",
+    "vis": "La camisa blanca se esconde",
+    "txt": "¿Hoy me toca?"
+   },
+   {
+    "t": "9-12 s",
+    "voz": "CAMISA NEGRA: A mí me dejan rayas blancas.",
+    "vis": "Camisa negra con rayas",
+    "txt": "Rayas blancas"
+   },
+   {
+    "t": "12-15 s",
+    "voz": "NARRADOR: Hasta que llegó alguien nuevo.",
+    "vis": "La puerta se abre, luz cálida, entra Geo",
+    "txt": "Alguien nuevo..."
+   },
+   {
+    "t": "15-18 s",
+    "voz": "GEO: Tranquilas, yo no mancho.",
+    "vis": "Geo saluda",
+    "txt": "Yo no mancho"
+   },
+   {
+    "t": "18-21 s",
+    "voz": "NARRADOR: Y las camisas salieron felices a la calle.",
+    "vis": "Camisas bailando en la calle",
+    "txt": "🎉"
+   },
+   {
+    "t": "21-24 s",
+    "voz": "CAMISA BLANCA: ¡Por fin!",
+    "vis": "La camisa salta; corte a GEODA real 2 s",
+    "txt": "¡Por fin!"
+   },
+   {
+    "t": "24-27 s · CTA",
+    "voz": "Se llama GEODA: una piedra que sí se usa todos los días. Regálala esta Navidad: paga 2, lleva 3.",
+    "vis": "Piedra GEODA real con moño rojo junto a un árbol de Navidad (producto y logo reales)",
+    "txt": "REGALO DE NAVIDAD · Paga 2 lleva 3"
+   }
+  ]
+ },
+ "GEO-TOFU-A6-01": {
+  "head": "GEO-TOFU-A6-01 · UGC con avatar IA · 27 s · CTA: Paga contraentrega",
+  "meta": {
+   "Etapa y duración": "TOFU · 27 s · 9 planos de 3 s",
+   "CTA principal": "K5 · Paga contraentrega (Siempre (neutro))",
+   "Compliance": "Decir 'transición' o 'adaptación'. Prohibido 'saca toxinas' o 'desintoxica'. Rótulo IA."
+  },
+  "rows": [
+   {
+    "t": "0-3 s · Hook A",
+    "voz": "Si dejas el antitranspirante, la primera semana pasa algo raro. Nadie te lo cuenta.",
+    "vis": "Frame 1: la avatar se huele y pone cara exagerada de sorpresa, texto 'ES NORMAL'",
+    "txt": "Si dejas el antitranspirante, la primera semana pasa algo raro"
+   },
+   {
+    "t": "0-3 s · Hook B",
+    "voz": "Esto es lo que nadie te dice de dejar el antitranspirante.",
+    "vis": "Frame 1: un antitranspirante genérico tachado con marcador rojo frente a cámara",
+    "txt": "Lo que nadie te dice de dejar el antitranspirante"
+   },
+   {
+    "t": "3-6 s",
+    "voz": "Yo quería dejar el antitranspirante: rayas en la ropa y perfume fuerte.",
+    "vis": "Avatar con camiseta negra rayada y un frasco genérico",
+    "txt": "Quería dejarlo"
+   },
+   {
+    "t": "6-9 s",
+    "voz": "La primera semana fue rara. Sentía que sudaba distinto.",
+    "vis": "Se abanica con la mano",
+    "txt": "Semana 1: rara"
+   },
+   {
+    "t": "9-12 s",
+    "voz": "Es normal: es una semana de adaptación.",
+    "vis": "Calendario con la primera semana marcada",
+    "txt": "Adaptación"
+   },
+   {
+    "t": "12-15 s",
+    "voz": "Y para la segunda semana, ya me sentía normal.",
+    "vis": "La avatar sonríe en la calle",
+    "txt": "Semana 2 ✅"
+   },
+   {
+    "t": "15-18 s",
+    "voz": "Lo que usé en el cambio fue una piedra mineral, sin perfume.",
+    "vis": "Revela la piedra a contraluz",
+    "txt": "Una piedra mineral 🪨"
+   },
+   {
+    "t": "18-21 s",
+    "voz": "Se moja la piedra y se pasa por la axila limpia, todos los días.",
+    "vis": "Macro de agua sobre la piedra; aplicación en plano medio",
+    "txt": "Constancia"
+   },
+   {
+    "t": "21-24 s",
+    "voz": "No te quita el sudor; ayuda con el olor. Dale 14 días.",
+    "vis": "Piedra GEODA real sobre un calendario",
+    "txt": "Dale 14 días"
+   },
+   {
+    "t": "24-27 s · CTA",
+    "voz": "Se llama GEODA, y no pagas nada ahora: la pagas cuando te llegue a la casa.",
+    "vis": "Domiciliario entrega la caja GEODA y recibe el pago en la puerta (producto y logo reales)",
+    "txt": "PAGA CONTRAENTREGA · Pagas cuando te llegue"
+   }
+  ]
+ },
+ "GEO-TOFU-A6-02": {
+  "head": "GEO-TOFU-A6-02 · Claymation (stop-motion IA) · 27 s · CTA: Black Friday",
+  "meta": {
+   "Etapa y duración": "TOFU · 27 s · 9 planos de 3 s",
+   "CTA principal": "K1 · Black Friday (Hasta el lunes 30 de noviembre (Cyber Monday), solo si la oferta de temporada es real)",
+   "Compliance": "Sin cuerpo realista."
+  },
+  "rows": [
+   {
+    "t": "0-3 s · Hook A",
+    "voz": "(narrador) Lucas dejó el antitranspirante... y el día 3 casi se rinde.",
+    "vis": "Frame 1: un número 3 de plastilina cae junto a Lucas, que levanta una bandera blanca",
+    "txt": "Lucas dejó el antitranspirante y el día 3 casi se rinde"
+   },
+   {
+    "t": "0-3 s · Hook B",
+    "voz": "(narrador) La semana uno sin antitranspirante es la más difícil.",
+    "vis": "Frame 1: pantalla partida de plastilina: semana 1 con lluvia, semana 2 con sol",
+    "txt": "Semana 1 sin antitranspirante vs semana 2"
+   },
+   {
+    "t": "3-6 s",
+    "voz": "NARRADOR: Lucas estaba cansado de las rayas blancas en su ropa.",
+    "vis": "Lucas de plastilina con camiseta negra rayada",
+    "txt": "Rayas blancas 😩"
+   },
+   {
+    "t": "6-9 s",
+    "voz": "NARRADOR: Botó el antitranspirante y probó una piedra mineral, sin perfume.",
+    "vis": "Lucas bota un frasco; una piedra con carita aparece en su mano",
+    "txt": "Una piedra mineral 🪨"
+   },
+   {
+    "t": "9-12 s",
+    "voz": "NARRADOR: Día tres. Dudas.",
+    "vis": "Lucas con cara de duda, nube con '?'",
+    "txt": "Día 3 🤔"
+   },
+   {
+    "t": "12-15 s",
+    "voz": "LUCAS: ¿Será que sí funciona?",
+    "vis": "Lucas le habla a la piedra",
+    "txt": "¿Sí funciona?"
+   },
+   {
+    "t": "15-18 s",
+    "voz": "PIEDRA: Mójame todos los días y dame tiempo.",
+    "vis": "La piedra guiña con una gota encima",
+    "txt": "Dame tiempo 💧"
+   },
+   {
+    "t": "18-21 s",
+    "voz": "NARRADOR: Día diez. Tranquilidad.",
+    "vis": "Lucas sonríe al sol",
+    "txt": "Día 10 😊"
+   },
+   {
+    "t": "21-24 s",
+    "voz": "NARRADOR: Día catorce. ¡Lo logró!",
+    "vis": "Confeti de plastilina; corte a GEODA real 2 s",
+    "txt": "Día 14 🎉"
+   },
+   {
+    "t": "24-27 s · CTA",
+    "voz": "Se llama GEODA, y por Black Friday: paga 2, lleva 3 por $99.990. Pagas cuando te llegue.",
+    "vis": "Piedra GEODA real con etiqueta negra BLACK FRIDAY, botón Comprar (producto y logo reales)",
+    "txt": "BLACK FRIDAY · Paga 2 lleva 3 · $99.990"
+   }
+  ]
+ },
+ "GEO-TOFU-A7-01": {
+  "head": "GEO-TOFU-A7-01 · UGC con avatar IA · 24 s · CTA: Envío a toda Colombia",
+  "meta": {
+   "Etapa y duración": "TOFU · 24 s · 8 planos de 3 s",
+   "CTA principal": "K6 · Envío a toda Colombia (Siempre (neutro))",
+   "Compliance": "Nunca decir que quita o reduce el sudor. Rótulo IA."
+  },
+  "rows": [
+   {
+    "t": "0-3 s · Hook A",
+    "voz": "Sigo sudando, pero ya no huelo.",
+    "vis": "Frame 1: la avatar entra sudando, con la frente brillante, y se la señala",
+    "txt": "Sigo sudando. Lo que ya no tengo es olor."
+   },
+   {
+    "t": "0-3 s · Hook B",
+    "voz": "No me quita el sudor. Me quita la pena.",
+    "vis": "Frame 1: la avatar levanta los brazos y una nube gris se disuelve en el aire",
+    "txt": "No me quita el sudor, me quita la pena"
+   },
+   {
+    "t": "3-6 s",
+    "voz": "Vengo de caminar y sí, estoy sudando.",
+    "vis": "La avatar llega acalorada",
+    "txt": "Sudando 🥵"
+   },
+   {
+    "t": "6-9 s",
+    "voz": "Dato: el sudor casi no huele. El olor sale de las bacterias de la piel.",
+    "vis": "Animación simple: gota limpia + puntitos",
+    "txt": "Sudor ≠ olor"
+   },
+   {
+    "t": "9-12 s",
+    "voz": "Por eso el perfume no lo arregla: solo lo tapa.",
+    "vis": "Nube rosada sobre una gris",
+    "txt": "Perfume = tapa"
+   },
+   {
+    "t": "12-15 s",
+    "voz": "Yo descubrí una piedra mineral que ayuda con el olor, sin perfume.",
+    "vis": "Revela la piedra a contraluz",
+    "txt": "Una piedra mineral 🪨"
+   },
+   {
+    "t": "15-18 s",
+    "voz": "No te quita el sudor. No es antitranspirante. Ayuda con el olor.",
+    "vis": "Sostiene la piedra y la moja",
+    "txt": "No quita el sudor"
+   },
+   {
+    "t": "18-21 s",
+    "voz": "Sudo, pero no huelo. Y ya no me da pena.",
+    "vis": "Abraza a una amiga",
+    "txt": "Sudo, pero no huelo"
+   },
+   {
+    "t": "21-24 s · CTA",
+    "voz": "Se llama GEODA, y te la enviamos gratis a toda Colombia. La pagas al recibir.",
+    "vis": "Mapa de Colombia con pines que se encienden; caja GEODA real (producto y logo reales)",
+    "txt": "ENVÍO GRATIS A TODA COLOMBIA"
+   }
+  ]
+ },
+ "GEO-TOFU-A7-02": {
+  "head": "GEO-TOFU-A7-02 · Street interview · 27 s · CTA: Paga contraentrega",
+  "meta": {
+   "Etapa y duración": "TOFU · 27 s · 9 planos de 3 s",
+   "CTA principal": "K5 · Paga contraentrega (Siempre (neutro))",
+   "Compliance": "Ideal grabarlo real. Rótulo si hay IA."
+  },
+  "rows": [
+   {
+    "t": "0-3 s · Hook A",
+    "voz": "Pregunta rápida: ¿usted sabe por qué huele el sudor?",
+    "vis": "Frame 1: micrófono frente a un señor sudando bajo el sol, pregunta en texto amarillo",
+    "txt": "¿Usted sabe por qué huele el sudor?"
+   },
+   {
+    "t": "0-3 s · Hook B",
+    "voz": "¿Usted sabe la diferencia entre desodorante y antitranspirante?",
+    "vis": "Frame 1: chocan dos palabras: 'DESODORANTE' vs 'ANTITRANSPIRANTE'",
+    "txt": "¿Desodorante o antitranspirante? ¿Sabes la diferencia?"
+   },
+   {
+    "t": "3-6 s",
+    "voz": "ENTREVISTADO 1: Porque uno suda mucho, ¿no?",
+    "vis": "Hombre en la calle",
+    "txt": "'Porque suda'"
+   },
+   {
+    "t": "6-9 s",
+    "voz": "ENTREVISTADA 2: ¿Y el desodorante no es para no sudar?",
+    "vis": "Joven pensando",
+    "txt": "'¿No es para no sudar?'"
+   },
+   {
+    "t": "9-12 s",
+    "voz": "ENTREVISTADO 3: ¿No es lo mismo desodorante y antitranspirante?",
+    "vis": "Estudiante confundido",
+    "txt": "'¿Es lo mismo?'"
+   },
+   {
+    "t": "12-15 s",
+    "voz": "PRESENTADOR: No es lo mismo. El antitranspirante busca que sudes menos.",
+    "vis": "Gráfico simple en pantalla",
+    "txt": "Antitranspirante"
+   },
+   {
+    "t": "15-18 s",
+    "voz": "PRESENTADOR: Y el olor no es el sudor: son las bacterias de la piel.",
+    "vis": "Animación: gota + puntitos",
+    "txt": "Olor = bacterias"
+   },
+   {
+    "t": "18-21 s",
+    "voz": "PRESENTADOR: Esto es una piedra mineral: no quita el sudor, ayuda a que no huelas.",
+    "vis": "El presentador saca GEODA",
+    "txt": "Piedra: ayuda con el olor"
+   },
+   {
+    "t": "21-24 s",
+    "voz": "ENTREVISTADO 1: ¡Ah, con razón seguía sudando!",
+    "vis": "Risa",
+    "txt": "¡Con razón!"
+   },
+   {
+    "t": "24-27 s · CTA",
+    "voz": "Se llama GEODA, y no pagas nada ahora: la pagas cuando te llegue a la casa.",
+    "vis": "Domiciliario entrega la caja GEODA y recibe el pago en la puerta (producto y logo reales)",
+    "txt": "PAGA CONTRAENTREGA · Pagas cuando te llegue"
+   }
+  ]
+ },
+ "GEO-TOFU-A7-03": {
+  "head": "GEO-TOFU-A7-03 · POV · 24 s · CTA: Llévala hoy",
+  "meta": {
+   "Etapa y duración": "TOFU · 24 s · 8 planos de 3 s",
+   "CTA principal": "K3 · Llévala hoy (Siempre (neutro))",
+   "Compliance": "—"
+  },
+  "rows": [
+   {
+    "t": "0-3 s · Hook A",
+    "voz": "(voz en off) POV: hueles a piel limpia, no a desodorante.",
+    "vis": "Frame 1: un frasco de loción y un desodorante chocan y sueltan una nube",
+    "txt": "POV: hueles a piel, no a perfume"
+   },
+   {
+    "t": "0-3 s · Hook B",
+    "voz": "(voz en off) Por fin mi loción huele a mi loción.",
+    "vis": "Frame 1: una nariz en primer plano olfatea una muñeca",
+    "txt": "Mi loción ya no pelea con el desodorante"
+   },
+   {
+    "t": "3-6 s",
+    "voz": "VOZ EN OFF: Te echas desodorante con perfume.",
+    "vis": "Rocía un frasco genérico",
+    "txt": "Desodorante con perfume"
+   },
+   {
+    "t": "6-9 s",
+    "voz": "VOZ EN OFF: Encima, tu loción favorita. Y pelean.",
+    "vis": "Dos nubes de olor chocan",
+    "txt": "Pelean 😵"
+   },
+   {
+    "t": "9-12 s",
+    "voz": "VOZ EN OFF: Hasta que descubres una piedra mineral sin perfume.",
+    "vis": "Revela la piedra a contraluz; la moja y la aplica, plano medio",
+    "txt": "Una piedra sin perfume 🪨"
+   },
+   {
+    "t": "12-15 s",
+    "voz": "VOZ EN OFF: Ahora tu loción huele a tu loción.",
+    "vis": "Spray de loción en el cuello",
+    "txt": "Tu loción, sola"
+   },
+   {
+    "t": "15-18 s",
+    "voz": "VOZ EN OFF: En la cita...",
+    "vis": "Cena con la pareja",
+    "txt": "En la cita"
+   },
+   {
+    "t": "18-21 s",
+    "voz": "ACOMPAÑANTE: ¡Qué rico hueles!",
+    "vis": "La pareja se acerca",
+    "txt": "'Qué rico hueles'"
+   },
+   {
+    "t": "21-24 s · CTA",
+    "voz": "Se llama GEODA. Pruébala: pídela hoy y la pagas cuando te llegue.",
+    "vis": "Mano toca el botón Comprar; piedra GEODA real en primer plano (producto y logo reales)",
+    "txt": "LLÉVALA HOY · Pagas al recibir"
+   }
+  ]
+ },
+ "GEO-TOFU-A8-01": {
+  "head": "GEO-TOFU-A8-01 · UGC con avatar IA (storytime) · 36 s · CTA: 1 piedra te dura 1 año (ahorro)",
+  "meta": {
+   "Etapa y duración": "TOFU · 36 s · 12 planos de 3 s",
+   "CTA principal": "K7 · 1 piedra te dura 1 año (ahorro) (Siempre (neutro); duración confirmada por Alberto)",
+   "Compliance": "Avatar IA = dramatización: rotular 'Recreación con IA' y no presentarlo como cliente real."
+  },
+  "rows": [
+   {
+    "t": "0-3 s · Hook A",
+    "voz": "A las once de la mañana yo ya olía. Todos los días.",
+    "vis": "Frame 1: un reloj marca las 11:00 con alarma; la avatar se huele, alarmada",
+    "txt": "A las 11 de la mañana ya olía"
+   },
+   {
+    "t": "0-3 s · Hook B",
+    "voz": "Hace años yo daba el abrazo de lado. Te cuento por qué.",
+    "vis": "Frame 1: la avatar recrea un abrazo de lado incómodo, congelado con texto",
+    "txt": "Hace años yo daba el abrazo de lado"
+   },
+   {
+    "t": "3-6 s",
+    "voz": "Te cuento algo que me daba mucha pena.",
+    "vis": "Avatar en la cama, tono confidente",
+    "txt": "Me daba pena"
+   },
+   {
+    "t": "6-9 s",
+    "voz": "Hace años, a media mañana yo ya sentía olor.",
+    "vis": "Recreación en la oficina",
+    "txt": "Media mañana 😳"
+   },
+   {
+    "t": "9-12 s",
+    "voz": "Daba los abrazos de lado. Siempre.",
+    "vis": "Recreación de abrazo de lado",
+    "txt": "Abrazo de lado"
+   },
+   {
+    "t": "12-15 s",
+    "voz": "Probé de todo: frascos, barras, sprays.",
+    "vis": "Montaje de productos genéricos",
+    "txt": "Probé de todo"
+   },
+   {
+    "t": "15-18 s",
+    "voz": "Mi tía me dijo: usa la piedra. Yo pensé: eso es cuento.",
+    "vis": "Recreación: la tía le entrega la piedra",
+    "txt": "'Es cuento'"
+   },
+   {
+    "t": "18-21 s",
+    "voz": "Pero el problema era cómo la usaba.",
+    "vis": "La avatar se toca la frente",
+    "txt": "El problema era yo"
+   },
+   {
+    "t": "21-24 s",
+    "voz": "La usaba seca. Se moja la piedra, no la axila.",
+    "vis": "Macro de agua sobre la piedra",
+    "txt": "Se moja la piedra"
+   },
+   {
+    "t": "24-27 s",
+    "voz": "Y todos los días, sin saltarme ninguno.",
+    "vis": "Calendario con chulos",
+    "txt": "Todos los días"
+   },
+   {
+    "t": "27-30 s",
+    "voz": "Hoy doy el abrazo completo.",
+    "vis": "Abrazo completo con amigas",
+    "txt": "Abrazo completo 🤗"
+   },
+   {
+    "t": "30-33 s",
+    "voz": "Esta es la piedra.",
+    "vis": "GEODA real en la mano",
+    "txt": "GEODA"
+   },
+   {
+    "t": "33-36 s · CTA",
+    "voz": "Se llama GEODA: 1 piedra te dura 1 año. Toca el link y haz la cuenta.",
+    "vis": "Piedra GEODA real junto a una fila de frascos genéricos tachados (producto y logo reales)",
+    "txt": "1 PIEDRA = 1 AÑO · Ahorra vs desodorante"
+   }
+  ]
+ },
+ "GEO-TOFU-A8-02": {
+  "head": "GEO-TOFU-A8-02 · Estilo Pixar (3D) · 30 s · CTA: Navidad / regalo",
+  "meta": {
+   "Etapa y duración": "TOFU · 30 s · 10 planos de 3 s",
+   "CTA principal": "K2 · Navidad / regalo (Del 1 al 24 de diciembre)",
+   "Compliance": "Animación estilizada."
+  },
+  "rows": [
+   {
+    "t": "0-3 s · Hook A",
+    "voz": "(narrador) Todos se reían de la piedra de la abuela.",
+    "vis": "Frame 1: una abuela Pixar levanta la piedra como un trofeo con rayos de luz",
+    "txt": "La piedra de la abuela tenía razón"
+   },
+   {
+    "t": "0-3 s · Hook B",
+    "voz": "(narrador) Hasta que el nieto la probó.",
+    "vis": "Frame 1: una familia Pixar se ríe a carcajadas de la piedra en la mesa",
+    "txt": "Todos se reían de la piedra de la abuela"
+   },
+   {
+    "t": "3-6 s",
+    "voz": "NARRADOR: En esta familia, todos se reían de la piedra de la abuela.",
+    "vis": "Mesa familiar Pixar, risas",
+    "txt": "😂"
+   },
+   {
+    "t": "6-9 s",
+    "voz": "NIETO: Abuela, eso es de los tiempos de antes.",
+    "vis": "Nieto adolescente burlón",
+    "txt": "'Eso es de antes'"
+   },
+   {
+    "t": "9-12 s",
+    "voz": "ABUELA: Pruébala una semana, mijo.",
+    "vis": "La abuela le entrega la piedra",
+    "txt": "'Pruébala, mijo'"
+   },
+   {
+    "t": "12-15 s",
+    "voz": "NARRADOR: El nieto aceptó... de mala gana.",
+    "vis": "El nieto pone los ojos en blanco",
+    "txt": "De mala gana 🙄"
+   },
+   {
+    "t": "15-18 s",
+    "voz": "NARRADOR: La mojaba cada mañana.",
+    "vis": "El nieto, vestido, moja la piedra en el baño",
+    "txt": "Cada mañana 💧"
+   },
+   {
+    "t": "18-21 s",
+    "voz": "NARRADOR: Sábado, partido de fútbol, calor.",
+    "vis": "El nieto jugando en la cancha",
+    "txt": "Sábado ⚽"
+   },
+   {
+    "t": "21-24 s",
+    "voz": "NARRADOR: Después del partido... abrazo de equipo, sin pena.",
+    "vis": "El equipo se abraza",
+    "txt": "Abrazo de equipo"
+   },
+   {
+    "t": "24-27 s",
+    "voz": "NIETO: Abuela... tenías razón.",
+    "vis": "El nieto abraza a la abuela; corte a GEODA real 2 s",
+    "txt": "La abuela tenía razón"
+   },
+   {
+    "t": "27-30 s · CTA",
+    "voz": "Se llama GEODA: una piedra que sí se usa todos los días. Regálala esta Navidad: paga 2, lleva 3.",
+    "vis": "Piedra GEODA real con moño rojo junto a un árbol de Navidad (producto y logo reales)",
+    "txt": "REGALO DE NAVIDAD · Paga 2 lleva 3"
+   }
+  ]
+ },
+ "GEO-TOFU-A9-01": {
+  "head": "GEO-TOFU-A9-01 · UGC con avatar IA · 24 s · CTA: Envío a toda Colombia",
+  "meta": {
+   "Etapa y duración": "TOFU · 24 s · 8 planos de 3 s",
+   "CTA principal": "K6 · Envío a toda Colombia (Siempre (neutro))",
+   "Compliance": "No sugerir que se aplique recién rasurado ni que calma irritación. Rótulo IA."
+  },
+  "rows": [
+   {
+    "t": "0-3 s · Hook A",
+    "voz": "Hermano, el desodorante no tiene que oler a perfume de discoteca.",
+    "vis": "Frame 1: un hombre rocía un spray genérico y la nube cubre toda la cámara; tose",
+    "txt": "Hermano, el desodorante no tiene que oler a perfume"
+   },
+   {
+    "t": "0-3 s · Hook B",
+    "voz": "Mi papá usaba una piedra. Yo me reía. Ya no.",
+    "vis": "Frame 1: foto vieja del papá con la piedra, efecto de cinta VHS",
+    "txt": "El desodorante de mi papá era una piedra"
+   },
+   {
+    "t": "3-6 s",
+    "voz": "Hermano, no tienes que oler a discoteca para oler bien.",
+    "vis": "Hombre en el gimnasio, a cámara",
+    "txt": "No a discoteca 🪩"
+   },
+   {
+    "t": "6-9 s",
+    "voz": "Mi papá usaba una piedra. Yo me reía.",
+    "vis": "Recreación de foto antigua",
+    "txt": "Me reía"
+   },
+   {
+    "t": "9-12 s",
+    "voz": "Hoy mi rutina es un solo paso.",
+    "vis": "Levanta un dedo",
+    "txt": "1 paso"
+   },
+   {
+    "t": "12-15 s",
+    "voz": "Es una piedra mineral sin perfume: la mojo y la paso. Listo.",
+    "vis": "Aplica la piedra, camiseta sin mangas, plano medio",
+    "txt": "Piedra mineral · mojar y pasar"
+   },
+   {
+    "t": "15-18 s",
+    "voz": "Entreno con camiseta oscura y nada de rayas blancas.",
+    "vis": "Entrena, camiseta oscura limpia",
+    "txt": "Cero rayas"
+   },
+   {
+    "t": "18-21 s",
+    "voz": "Sin perfume, sin complicarse.",
+    "vis": "Guarda la piedra en el maletín",
+    "txt": "Sin complicarse"
+   },
+   {
+    "t": "21-24 s · CTA",
+    "voz": "Se llama GEODA, y te la enviamos gratis a toda Colombia. La pagas al recibir.",
+    "vis": "Mapa de Colombia con pines que se encienden; caja GEODA real (producto y logo reales)",
+    "txt": "ENVÍO GRATIS A TODA COLOMBIA"
+   }
+  ]
+ },
+ "GEO-TOFU-A9-02": {
+  "head": "GEO-TOFU-A9-02 · Podcast · 36 s · CTA: Black Friday",
+  "meta": {
+   "Etapa y duración": "TOFU · 36 s · 12 planos de 3 s",
+   "CTA principal": "K1 · Black Friday (Hasta el lunes 30 de noviembre (Cyber Monday), solo si la oferta de temporada es real)",
+   "Compliance": "Nada de 'cierra cortes' ni 'detiene el sangrado' (claims médicos)."
+  },
+  "rows": [
+   {
+    "t": "0-3 s · Hook A",
+    "voz": "¿Por qué los hombres terminamos oliendo a desodorante y a sudor al tiempo?",
+    "vis": "Frame 1: el host huele el aire y pone cara de '¿qué es ese olor?'",
+    "txt": "¿Por qué los hombres olemos a desodorante?"
+   },
+   {
+    "t": "0-3 s · Hook B",
+    "voz": "En la barbería me enseñaron esto del alumbre.",
+    "vis": "Frame 1: tijeras de barbero cortan el aire frente al micrófono",
+    "txt": "Lo que aprendí del alumbre en la barbería"
+   },
+   {
+    "t": "3-6 s",
+    "voz": "HOST: ¿Por qué los hombres terminamos oliendo a desodorante y a sudor al tiempo?",
+    "vis": "Host",
+    "txt": "Desodorante + sudor"
+   },
+   {
+    "t": "6-9 s",
+    "voz": "INVITADO: Porque tapamos con perfume y ya.",
+    "vis": "Invitado",
+    "txt": "Tapamos con perfume"
+   },
+   {
+    "t": "9-12 s",
+    "voz": "HOST: ¿Y tú qué usas?",
+    "vis": "Host curioso",
+    "txt": "¿Qué usas?"
+   },
+   {
+    "t": "12-15 s",
+    "voz": "INVITADO: Una piedra. Me la recomendaron en la barbería.",
+    "vis": "El invitado saca la piedra GEODA",
+    "txt": "En la barbería 💈"
+   },
+   {
+    "t": "15-18 s",
+    "voz": "HOST: ¿Una piedra? ¿En serio?",
+    "vis": "El host se ríe",
+    "txt": "¿En serio? 😂"
+   },
+   {
+    "t": "18-21 s",
+    "voz": "INVITADO: Ducha, mojo la piedra, la paso, y me visto.",
+    "vis": "Inserto de la rutina",
+    "txt": "Ducha · Piedra · Listo"
+   },
+   {
+    "t": "21-24 s",
+    "voz": "HOST: ¿Y huele a algo?",
+    "vis": "El host huele la piedra",
+    "txt": "¿Huele a algo?"
+   },
+   {
+    "t": "24-27 s",
+    "voz": "INVITADO: A nada. Esa es la gracia.",
+    "vis": "El invitado sonríe",
+    "txt": "A nada. Esa es la gracia."
+   },
+   {
+    "t": "27-30 s",
+    "voz": "HOST: ¿Y el sudor?",
+    "vis": "Host",
+    "txt": "¿Y el sudor?"
+   },
+   {
+    "t": "30-33 s",
+    "voz": "INVITADO: Sudo normal, pero no huelo. Y mi loción huele a mi loción.",
+    "vis": "Plano general",
+    "txt": "Sudo, no huelo"
+   },
+   {
+    "t": "33-36 s · CTA",
+    "voz": "Se llama GEODA, y por Black Friday: paga 2, lleva 3 por $99.990. Pagas cuando te llegue.",
+    "vis": "Piedra GEODA real con etiqueta negra BLACK FRIDAY, botón Comprar (producto y logo reales)",
+    "txt": "BLACK FRIDAY · Paga 2 lleva 3 · $99.990"
+   }
+  ]
+ }
+}

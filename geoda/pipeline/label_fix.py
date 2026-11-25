@@ -151,6 +151,66 @@ def lock_to_tube(frames, det, rough, sigma=12.0):
         out.append(apply_h(C[t], Rt))
     return np.array(out, np.float32), sum(brk), len(keep)
 
+LABEL_TUBE_FRAC = 302 / 320   # en la foto de la landing la etiqueta ocupa el 94 % del ancho visible del tubo, centrada
+
+def tube_extent(frame, q):
+    """Bordes del tubo (izq/der) medidos perpendicular a su eje, en varias alturas de la etiqueta. -> (centro, ancho, u, v) o None."""
+    q = q.reshape(4, 2).astype(np.float64)
+    top, bot = (q[0] + q[1]) / 2, (q[3] + q[2]) / 2
+    v = bot - top; hgt = np.linalg.norm(v); v /= hgt + 1e-9; u = np.array([v[1], -v[0]])
+    if u[0] < 0: u = -u
+    c = q.mean(0); wq = np.linalg.norm(q[1] - q[0])
+    h, w = frame.shape[:2]
+    L = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY).astype(np.float32)
+    hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV); sat = hsv[..., 1].astype(np.float32) / 255
+    xs = np.clip(np.round(np.linspace(c[0] - wq * 0.3, c[0] + wq * 0.3, 9)).astype(int), 0, w - 1)
+    ys = np.clip(np.round(np.linspace(c[1] - hgt * 0.3, c[1] + hgt * 0.3, 9)).astype(int), 0, h - 1)
+    ref = float(np.percentile(L[ys[:, None], xs[None, :]], 80))
+    tsat = float(np.median(sat[ys[:, None], xs[None, :]]))
+    def is_tube(p):
+        x, y = int(round(p[0])), int(round(p[1]))
+        if not (0 <= x < w and 0 <= y < h): return False
+        return L[y, x] > ref * 0.55 and sat[y, x] < tsat + 0.16
+    lefts, rights = [], []
+    for f in np.linspace(-0.35, 0.35, 8):
+        o = c + v * hgt * f
+        for sgn, acc in ((-1, lefts), (1, rights)):
+            miss, k, last = 0, 0, 0
+            while k < wq * 1.2:
+                if is_tube(o + sgn * u * k): last, miss = k, 0
+                else:
+                    miss += 1
+                    if miss > 3: break
+                k += 1
+            acc.append(last)
+    if not lefts: return None
+    l, r = np.percentile(lefts, 70), np.percentile(rights, 70)   # los dedos tapan algún borde: se toman los más anchos
+    return c + u * (r - l) / 2, l + r, u, v
+
+def fit_to_tube(frames, Qs, frac=LABEL_TUBE_FRAC):
+    """Reubica la etiqueta según la silueta real del tubo (ancho y centro), con la proporción de la foto de la landing."""
+    n = len(frames); meas = []
+    for i in range(n):
+        e = tube_extent(frames[i], Qs[i]); meas.append(e)
+    est = np.array([np.linalg.norm(Qs[i][1] - Qs[i][0]) / frac for i in range(n)])
+    # medición poco fiable (fondo tan claro como el tubo, dedos encima): se usa la estimación por la etiqueta
+    ok = [m is not None and 0.8 < m[1] / est[i] < 1.25 for i, m in enumerate(meas)]
+    cs = np.array([meas[i][0] if ok[i] else Qs[i].mean(0) for i in range(n)])
+    ws = np.array([meas[i][1] if ok[i] else est[i] for i in range(n)])
+    print(f'  bordes del tubo medidos en {sum(ok)}/{n} cuadros')
+    k = 7  # suavizado temporal
+    ws = np.array([np.median(ws[max(0, i - k):i + k + 1]) for i in range(n)])
+    cs = np.array([np.median(cs[max(0, i - k):i + k + 1], axis=0) for i in range(n)])
+    out = []
+    for i in range(n):
+        q = Qs[i].astype(np.float64); top, bot = (q[0] + q[1]) / 2, (q[3] + q[2]) / 2
+        v = bot - top; v /= np.linalg.norm(v) + 1e-9; u = np.array([v[1], -v[0]])
+        if u[0] < 0: u = -u
+        cy = q.mean(0); c = cs[i] + v * np.dot(cy - cs[i], v)   # centro horizontal del tubo, altura de la etiqueta
+        lw = ws[i] * frac; lh = lw * LH / LW
+        out.append(np.float32([c - u * lw / 2 - v * lh / 2, c + u * lw / 2 - v * lh / 2, c + u * lw / 2 + v * lh / 2, c - u * lw / 2 + v * lh / 2]))
+    return np.array(out, np.float32)
+
 MOTION = 0.0
 
 def tube_mask(roi, L, sat, qm, skin):
@@ -257,6 +317,7 @@ def main():
     ap.add_argument('--tube', action='store_true', help='recortar la etiqueta a la silueta del tubo')
     ap.add_argument('--wipe', action='store_true', help='borrar toda la zona de la etiqueta antes de pegar la real')
     ap.add_argument('--blank', action='store_true', help='solo borrar el texto de la IA, sin pegar etiqueta')
+    ap.add_argument('--fit', action='store_true', help='encajar la etiqueta al ancho real del tubo (94 %% como en la landing)')
     ap.add_argument('--nolock', action='store_true', help='sin fijar al tubo (solo suavizado)')
     ap.add_argument('--keys', help='t:x,y,lado;t:x,y,lado;... posiciones manuales (cuadrado) interpoladas')
     a = ap.parse_args()
@@ -337,6 +398,11 @@ def main():
     if len(anchors) >= 2 and not a.nolock:
         Qs, nbrk, nkeep = lock_to_tube(frames, det, Qs)
         print(f'  fija al tubo: {nkeep} anclas usadas, {nbrk} cuadros sin flujo')
+    Qwipe = None
+    if a.fit:
+        Qwipe = Qs.copy()   # zona donde estaba la etiqueta de la IA: se borra aunque la real quede en otra posición
+        Qs = fit_to_tube(frames, Qs)
+        print('  ajustada al ancho real del tubo')
     np.save(a.dst + '.quads.npy', Qs)
     enc = subprocess.Popen(['ffmpeg', '-v', 'error', '-y', '-f', 'rawvideo', '-pix_fmt', 'bgr24', '-s', f'{w}x{h}', '-r', fps, '-i', '-',
                             '-i', a.src, '-map', '0:v', '-map', '1:a?', '-c:v', 'libx264', '-preset', 'medium', '-crf', '14',
@@ -347,7 +413,14 @@ def main():
         st = 1.0 if manual else float(np.clip((10 - dist[i]) / 6.0, 0, 1))
         v = np.linalg.norm(Qs[min(n - 1, i + 1)].mean(0) - Qs[max(0, i - 1)].mean(0)) / 2
         MOTION = min(2.0, v * 0.12)  # desenfoque de movimiento como el del clip
-        enc.stdin.write(composite(frames[i], Qs[i], st).tobytes())
+        fr_i = frames[i]
+        if Qwipe is not None and st > 0.01:
+            b0, w0 = BLANK, WIPE; BLANK, WIPE = True, True
+            qw = Qwipe[i]; cq = qw.mean(0); fr_i = composite(fr_i.copy(), (qw - cq) * 1.1 + cq, st)
+            qf = Qs[i]; cf = qf.mean(0)   # y todo el frente del tubo alrededor de la etiqueta real
+            fr_i = composite(fr_i, (qf - cf) * np.float32([1.12, 1.18]) + cf, st)
+            BLANK, WIPE = b0, w0
+        enc.stdin.write(composite(fr_i, Qs[i], st).tobytes())
     enc.stdin.close(); enc.wait()
     json.dump({'anchors': len(anchors), 'n': n}, open(a.dst + '.json', 'w'))
     print('ok', a.dst)
