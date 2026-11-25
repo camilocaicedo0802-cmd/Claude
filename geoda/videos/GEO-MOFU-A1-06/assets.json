@@ -356,5 +356,17 @@
    "sound": "off",
    "cfg_scale": 0.6
   }
+ },
+ "k_j_robo": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a214a4-3fbb-7adc-ae38-b1f53bfe65a4/b883857e-47e1-442e-ae13-abb5248dc457.mp4"
+  ],
+  "body": {
+   "prompt": "First-person POV: the hand slowly and sneakily brings the GEODA stick toward the camera; in the doorway the mother keeps her arms crossed, raises an eyebrow and shakes her head with a knowing smile, lips closed, nobody speaks. The GEODA stick keeps exactly the same shape and label and does not rotate. Realistic handheld smartphone video.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2147b-96d0-7aff-9ac3-cccc02b89c84/4f688dd0-9df3-4aa5-9f7c-fffc7fbe0a7d.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
  }
 }

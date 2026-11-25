@@ -16,7 +16,7 @@ shots = m.build_shots(k2)
 k = lambda n: f'{m.HF}/{n}_0.mp4'
 shots['HC'] = [B.shot(m.TMP, 's_hc2', k('k_j_abrazo'), k2['hooks']['HC']['dur'], z0=1.0, z1=1.03, framed=0.78) + ([(250, 700, 960, 1500)],)]
 if os.path.exists(k('k_j_robo')):
-    shots['HD'] = [B.shot(m.TMP, 's_hd', k('k_j_robo'), k2['hooks']['HD']['dur'], z0=1.0, z1=1.04)]
+    shots['HD'] = [B.shot(m.TMP, 's_hd2', k('k_j_robo'), k2['hooks']['HD']['dur'], z0=1.0, z1=1.03, framed=0.82) + ([(640, 600, 920, 880), (250, 700, 720, 1600)],)]
 for hk in args or ['HC', 'HD']:
     if hk in shots: B.build(k2, hk, shots)
     else: print('falta el clip de', hk)

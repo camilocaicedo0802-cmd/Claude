@@ -42,6 +42,6 @@
 
 ## Hooks nuevos para el CTA alterno K2 (cada versión con un hook distinto)
 - HC · el abrazo: "Pov: te abrazan... y ya no tienes que pegar los brazos." (k_j_abrazo, reencuadrado para que el texto no tape caras).
-- HD · la piedra de mamá: "Pov: le sacaste la piedra a tu mamá del baño." Imagen j_robo lista; el clip k_j_robo falló por
-  saldo de Higgsfield: falta generarlo y montar con `build_hooks_cd.py HD`.
-- Entrega: K4 con HA v8 / HB v5; K2 con HC v1 (+ HD pendiente).
+- HD · la piedra de mamá: "Pov: le sacaste la piedra a tu mamá del baño." (k_j_robo, reencuadrado 0,82 para que el texto
+  no tape a la mamá). Entregado como 'La piedra no te falló GEO MOFU-A1-06-Hook D.mp4'.
+- Entrega: K4 con HA v8 / HB v5; K2 con HC v1 / HD v1.
