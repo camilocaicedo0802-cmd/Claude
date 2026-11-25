@@ -57,7 +57,7 @@ ROWS = {
  'B10': ('N', [('b10a', 'sync', G2, 2.63, dict(z0=1.0, z1=1.04)),                         # hasta que la mano se acerca al stick
                ('b10b', 'vid', HOST, None, dict(ss=13.40, z0=1.0, z1=1.03))]),             # el host escucha
  'B11': ('H5', [('b11', 'sync', HOST, None, dict(z0=1.0, z1=1.04))]),
- 'B12': ('T', [('b12', 'vid', f'{HF}/fixed/k_empuja_0.mp4', None, dict(ss=0.2, z0=1.0, z1=1.04))]),  # empuja la piedra al host
+ 'B12': ('T', [('b12', 'vid', f'{HF}/k_empuja_0.mp4', None, dict(ss=0.2, z0=1.0, z1=1.04))]),  # empuja la piedra al host (etiqueta original del clip, sin capa: pedido de Camilo)
  'B13': ('C', [('b13a', 'vid', f'{S}/hi_42130.mp4', 1.3, dict(ss=0.3, z0=1.0, z1=1.06)),
                ('b13b', 'still', f'{HF}/fixed/p_bano_2x.png', None, dict(z0=1.0, z1=1.05))]),
 }
@@ -135,7 +135,7 @@ def cfg_for(meta):
     body = [row('B1'), row('B2'), row('B3', icon='👀'), row('B4', sfx=[(-0.1, WH, 0.18)]), row('B5', sfx=[(-0.1, WH, 0.18)]),
             row('B6'), row('B7', sfx=[(0.8, f'{AU}/splash_1311.mp3', 0.25)]), row('B8', sfx=[(-0.1, WH, 0.18)]), row('B9'), row('B10'),
             row('B11'), row('B12'), row('B13', sfx=[(-0.1, WH, 0.18)])]
-    return dict(id='GEO_MOFU_A1_05', fmt='PODCAST', version=2, tmp=T, out_dir=A, vo_dir=T, min_face=50, hook_text_until=3.0,
+    return dict(id='GEO_MOFU_A1_05', fmt='PODCAST', version=3, tmp=T, out_dir=A, vo_dir=T, min_face=50, hook_text_until=3.0,
                 hook_slots=[250, 300, 360, 420, 470, 560, 700, 860, 1000], cut_sfx=True, cut_sfx_vol=0.10, music_vol=0.07,
                 hooks=hooks, body=body,
                 cta=dict(row='B13', l1='PAGA CONTRAENTREGA', l2='Pagas cuando te llegue', pill='Envío gratis a toda Colombia 🚚'),

@@ -16,6 +16,8 @@ El montador (`pipeline/builder.py`) ya trae estas reglas por defecto.
      (cuando el stick gira de lado, se corta antes; si hace falta, el tramo bueno va en cámara lenta).
    - **Primeros planos nuevos**: imagen 1k con la foto real del producto como referencia (Higgsfield marketing-studio, US$0,053)
      → Kling 3.0 720p sin giros (para planos quietos, misma imagen de inicio y de fin) → `pipeline/label_fix.py --tube --wipe`.
+   - Si el clip ya trae la etiqueta bien (sale de una imagen hecha con la foto real del producto y no gira), se deja la
+     etiqueta original del clip, sin capa encima (pedido de Camilo en A1-05, 0:32).
    - Si existe una foto real del producto que sirva para la toma, se usa la foto fija (ej. `mano.png`) en vez del clip animado.
    - `label_fix.py`: detecta la etiqueta (SIFT contra la etiqueta real), borra la zona (`--wipe`), pega las letras reales con la luz
      del tubo, la recorta a la silueta del tubo (`--tube`) y deja los dedos por delante. `--flip` = etiqueta invertida.
