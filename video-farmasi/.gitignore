@@ -43,3 +43,5 @@ src/datos/edicion.json
 referencia/*
 !referencia/gemini_sfx*.md
 !referencia/transcripcion_ref.json
+public/lote2/
+material/lote2/

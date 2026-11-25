@@ -223,3 +223,32 @@ Look: frío/cian en fondos, piel cálida, contraste medio-alto, nítido. Motion 
   - Se termina con un **plano de producto de 1,2–1,5 s** y una píldora cian sencilla con el nombre del producto (y la marca en pequeño), colocada en una zona limpia sin tapar la etiqueta.
   - La música **sube un poco al terminar la voz** (0,12 → 0,20) y **se funde en el último segundo**.
 - **Legibilidad sobre b-roll claro:** degradado oscuro suave detrás de los subtítulos (transparente → 38 % de negro entre el 66 % y el 76 % de la altura → transparente) en todas las imágenes y b-roll.
+
+---
+
+## Subtítulos · Lote 2 (referencia `referencia_subs/referencia_subs.mp4`)
+
+*Para los vídeos del lote 2 (3 vídeos de Farmasi) los subtítulos siguen esta segunda referencia. El resto del montaje sigue las reglas aprendidas de arriba (UGC, rostro luminoso, cierre completo, acento lila).*
+
+Fuente: 22,8 s · 720x1280 · 30 fps. Valores convertidos a 1080x1920 a 60 fps.
+
+### Tipografía [SUPOSICIÓN · identificación visual, a confirmar con la clienta]
+| Uso | En la referencia | Peso | Entreletrado |
+|---|---|---|---|
+| Texto de contexto (casi todo) | Grotesca estilo Apple: **SF Pro Display** o **Helvetica Neue** | Medium (500); Semibold (600) en palabras cortas fuertes ("Succeed") | **−2 % a −3 %** (muy cerrado) |
+| Palabra clave (la importante) | Serif robusta de contraste bajo: **Georgia** | Regular; Bold en titulares ("Goal") | −1 % |
+
+### Tamaños y composición
+- Contexto: **48–66 px**. Llamadas laterales pequeñas: ~44 px.
+- Palabra clave: **82–100 px**, en la línea de abajo (≈ 1,5 × contexto).
+- Interlineado muy cerrado (**0,9–0,95**); la línea grande casi toca la de arriba.
+- **Posición contextual:** a la altura de la boca o el pecho, a un lado del sujeto o dentro del motion graphic. No es una franja fija abajo.
+- Bloques de **2–5 palabras** de contexto + **1 palabra clave**.
+
+### Animación (a 60 fps)
+- **Entrada de cada palabra:** aparece al **40 %** de opacidad (gris), con **desenfoque 3–4 px** y **6–8 px por debajo** de la línea. En **10–12 f** pasa a blanco 100 %, nítida y en su sitio. Empieza 2–4 f antes de pronunciarse.
+- **Reflujo fluido:** al añadir una palabra, la línea se **recentra suavemente** (desplazamiento animado de 8–10 f, ease-out), sin saltos. Cuando entra una línea nueva, el bloque entero sube con suavidad.
+- **Palabra clave:** misma entrada (gris + desenfoque → blanco), más larga (**14 f**). Puede llevar una **línea de luz** bajo la palabra que se dibuja de izquierda a derecha en **20 f** (en la referencia cian con resplandor; aquí, lila).
+- **Llamadas con triángulo** (◀) junto a la boca: un triángulo de color apunta al que habla y el texto entra palabra a palabra a su lado.
+- **Color por escena:** texto blanco por defecto; el acento cambia con la escena (verde junto a una gráfica verde, amarillo en "cheatcode"). Sombra suave `0 2px 10px rgba(0,0,0,.35)`. Sobre fondos claros, sombra proyectada más marcada (efecto 3D).
+- **Salida:** el bloque se funde y desenfoca en 6–8 f cuando empieza el siguiente.
