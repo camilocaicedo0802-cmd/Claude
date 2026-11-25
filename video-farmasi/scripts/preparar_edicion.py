@@ -30,7 +30,7 @@ if "--sin-video" not in sys.argv:
 # Voz: cortes con microfundidos + limpieza + compresión + loudness
 f = 0.012
 parts = "".join(f"[0:a]atrim=start={s['in']}:end={s['out']},asetpts=PTS-STARTPTS,afade=t=in:d={f},afade=t=out:st={s['out']-s['in']-f:.4f}:d={f}[a{i}];" for i, s in enumerate(segs))
-chain = parts + "".join(f"[a{i}]" for i in range(len(segs))) + f"concat=n={len(segs)}:v=0:a=1,highpass=f=85,afftdn=nf=-28,equalizer=f=220:t=q:w=1.2:g=-2,equalizer=f=3500:t=q:w=1.5:g=2.5,acompressor=threshold=-21dB:ratio=3:attack=4:release=90:makeup=2,loudnorm=I=-16:TP=-1.5:LRA=7[out]"
+chain = parts + "".join(f"[a{i}]" for i in range(len(segs))) + f"concat=n={len(segs)}:v=0:a=1,afade=t=out:st={total-0.6:.3f}:d=0.6,highpass=f=85,afftdn=nf=-28,equalizer=f=220:t=q:w=1.2:g=-2,equalizer=f=3500:t=q:w=1.5:g=2.5,acompressor=threshold=-21dB:ratio=3:attack=4:release=90:makeup=2,loudnorm=I=-16:TP=-1.5:LRA=7[out]"
 subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", "public/crudo/toma_ugc.mov", "-filter_complex", chain, "-map", "[out]", "-ar", "48000", "-ac", "2", "public/edit/voz.wav"], check=True)
 
 # Palabras en tiempos de edición

@@ -2,7 +2,7 @@ import "./fuentes";
 import { Audio } from "@remotion/media";
 import { AbsoluteFill, Sequence, staticFile, useVideoConfig } from "remotion";
 import { ARoll } from "./componentes/ARoll";
-import { BRoll, Imagen } from "./componentes/Escenas";
+import { BRoll, Imagen, PildoraCierre } from "./componentes/Escenas";
 import { ChipCarbohidratos, MGGlucosa, MGGrafica, TarjetaTiempo } from "./componentes/MG";
 import { CapaDetras, CapaFrente } from "./componentes/Subtitulos";
 import { GraficaGlucosa } from "./componentes/UI";
@@ -32,6 +32,7 @@ export const Edicion: React.FC = () => {
       ))}
       <ChipCarbohidratos desde={UI.carbohidratos.desde} hasta={UI.carbohidratos.hasta} />
       <TarjetaTiempo desde={UI.tiempo.desde} hasta={UI.tiempo.hasta} />
+      <PildoraCierre desde={UI.cierre.desde} />
 
       {/* Subtítulos palabra a palabra */}
       <CapaFrente />

@@ -46,8 +46,13 @@ add(f(inicio(87)) - 6, "pop", 0.22); // flecha abajo
 add(f(inicio(85)) + 4, "click_4", 0.26); // dato del estudio
 export const SFX: Sfx[] = ev.sort((a, b) => a.at - b.at);
 
-// Música: constante bajo la voz y fundido final de 0,8 s
+// Cierre: pop en la píldora final
+add(f(UI.cierre.desde), "pop", 0.24);
+
+// Música: constante bajo la voz; cuando ella termina de hablar sube un poco y se funde en el último segundo
 export const volumenMusica = (frame: number) => {
   const finF = f(DURACION_TOTAL_S);
-  return 0.12 * Math.min(1, Math.max(0, (finF - frame) / 48));
+  const finVoz = f(36.1);
+  const base = frame < finVoz ? 0.12 : Math.min(0.2, 0.12 + ((frame - finVoz) / 30) * 0.08);
+  return base * Math.min(1, Math.max(0, (finF - frame) / 60));
 };

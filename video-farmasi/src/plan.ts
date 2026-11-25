@@ -46,7 +46,7 @@ export const BLOQUES: Bloque[] = [
   L(31.6, 32.43, [], [96, 97]),
   L(32.43, 34.13, [98, 99, 100], [101, 102]),
   L(34.13, 34.89, [103, 104, 105, 106], [107, 108]),
-  L(34.89, DURACION_VOZ_S, [109, 110, 111, 112, 113], [114, 115]),
+  L(34.89, 36.9, [109, 110, 111, 112, 113], [114, 115]),
 ];
 
 // ---------- Escenas: solo b-roll propio del producto, corte seco ----------
@@ -64,9 +64,11 @@ export const ESCENAS: Escena[] = [
   { tipo: "broll", desde: 23.38, hasta: 24.95, src: "proxy/apoyo_1.mp4", trim: 2.0 }, // "lo que le ayuda la sidra de manzana"
   { tipo: "mg-glucosa", desde: 24.95, hasta: 26.5 }, // "a que esa GLUCOSA"
   { tipo: "mg-grafica", desde: 26.5, hasta: 29.27 }, // "no quede ARRIBA, sino que BAJE"
+  // ---- Cierre: ella se echa las gomitas (cola de la toma) y plano del producto ----
+  { tipo: "broll", desde: 36.9, hasta: DURACION_VOZ_S + 0.4, src: "proxy/apoyo_3.mp4", trim: 5.4, kb: [1.08, 1.0] },
   { tipo: "broll", desde: 32.43, hasta: 34.13, src: "proxy/apoyo_2.mp4", trim: 2.9 }, // "una antes de la comida"
 ];
-export const DURACION_TOTAL_S = DURACION_VOZ_S;
+export const DURACION_TOTAL_S = DURACION_VOZ_S + 0.4; // 0,4 s de cola sobre el plano del producto
 
 // ---------- Cámara: apertura suave + alternar 1,00 / 1,07 en cada corte de salto ----------
 export type Mov = { t: number; s: number; y: number; d: number; lineal?: boolean };
@@ -86,6 +88,7 @@ export const UI = {
   graficaSube: { desde: 20.0, hasta: 21.27 }, // tarjeta oscura con la curva subiendo (sobre el plano hablando)
   carbohidratos: { desde: 18.15, hasta: 19.8 }, // chip "Carbohidratos → Glucosa" sobre el b-roll del azúcar
   tiempo: { desde: 21.27, hasta: 23.38 }, // tarjeta "2–3 h para normalizarse" sobre medición + glóbulos
+  cierre: { desde: 37.05 }, // píldora final sobre el plano del producto
 };
 
 // Datos usados en los gráficos (fuentes en el pie de cada gráfico)

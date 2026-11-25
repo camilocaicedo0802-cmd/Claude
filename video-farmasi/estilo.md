@@ -213,3 +213,8 @@ Look: frío/cian en fondos, piel cálida, contraste medio-alto, nítido. Motion 
   - **Motion graphics de la referencia** (fondo azul claro §4.1, titulares condensados cian letra a letra, tarjetas blancas, chips cian), con entrada de desenfoque 18→0 en 12 f y whoosh. Dentro del motion graphic, las palabras dichas las pinta la propia escena, sincronizadas.
   - **Chips y tarjetas de cristal** sobre el b-roll para explicar (p. ej. "Carbohidratos → Glucosa", barra de tiempo 0–3 h con contador).
   - Fuera de ese tramo se mantienen las reglas UGC.
+- **El vídeo nunca termina en seco: debe cerrar la idea** (corrección sobre la v3).
+  - Después de la última palabra se deja **≥ 0,8 s de la acción natural** del creador (aquí, echándose las gomitas en la mano). La voz se funde en 0,6 s.
+  - Se termina con un **plano de producto de 1,2–1,5 s** y una píldora cian sencilla con el nombre del producto (y la marca en pequeño), colocada en una zona limpia sin tapar la etiqueta.
+  - La música **sube un poco al terminar la voz** (0,12 → 0,20) y **se funde en el último segundo**.
+- **Legibilidad sobre b-roll claro:** degradado oscuro suave detrás de los subtítulos (transparente → 38 % de negro entre el 66 % y el 76 % de la altura → transparente) en todas las imágenes y b-roll.
