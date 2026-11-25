@@ -46,7 +46,8 @@ ROWS = {
  'HA':  ('H0', [('ha', 'sync', HOST, None, dict(z0=1.0, z1=1.04, shake=(0.0, 0.35, 16)))]),
  'HB':  ('G0', [('hb', 'vid', G1H, None, dict(ss='a0', z0=1.0, z1=1.04))]),
  'B1':  ('H1', [('b1', 'sync', HOST, None, dict(z0=1.0, z1=1.04))]),
- 'B2':  ('G1a', [('b2', 'vid', f'{HF}/k_set_0.mp4', None, dict(ss=0.0, speed=0.95, z0=1.0, z1=1.05))]),  # plano general: ella explica
+ 'B2':  ('G1a', [('b2a', 'vid', f'{HF}/k_set_0.mp4', 1.59, dict(ss=1.4, speed=0.85, z0=1.0, z1=1.04)),  # plano general: solo el tramo en que habla ella (él calla)
+                 ('b2b', 'vid', HOST, None, dict(ss=13.35, speed=0.8, z0=1.0, z1=1.03))]),          # el host escucha (boca quieta 12,5-14,6 s)
  'B3':  ('H2', [('b3', 'sync', HOST, None, dict(z0=1.0, z1=1.04))]),                       # 'A ver, explícame' en su primer plano
  'B4':  ('G2l', [('b4', 'vid', f'{T}/ins_gota.mp4', None, dict(ss=0.0))]),
  'B5':  ('G3', [('b5a', 'still', f'{HF}/p_mesa_0.png', 2.4, dict(z0=1.0, z1=1.06)), ('b5b', 'sync', G1, None, dict(z0=1.04, z1=1.07))]),
@@ -55,7 +56,7 @@ ROWS = {
  'B8':  ('E2', [('b8', 'vid', f'{T}/ins_cal.mp4', None, dict(ss=0.0))]),
  'B9':  ('H4', [('b9', 'sync', HOST, None, dict(z0=1.0, z1=1.04))]),
  'B10': ('N', [('b10a', 'sync', G2, 2.63, dict(z0=1.0, z1=1.04)),                         # hasta que la mano se acerca al stick
-               ('b10b', 'vid', HOST, None, dict(ss=13.40, z0=1.0, z1=1.03))]),             # el host escucha
+               ('b10b', 'vid', HOST, None, dict(ss=12.50, z0=1.0, z1=1.03))]),             # el host escucha (boca quieta)
  'B11': ('H5', [('b11', 'sync', HOST, None, dict(z0=1.0, z1=1.04))]),
  'B12': ('T', [('b12', 'vid', f'{HF}/k_empuja_0.mp4', None, dict(ss=0.2, z0=1.0, z1=1.04))]),  # empuja la piedra al host (etiqueta original del clip, sin capa: pedido de Camilo)
  'B13': ('C', [('b13a', 'vid', f'{S}/hi_42130.mp4', 1.3, dict(ss=0.3, z0=1.0, z1=1.06)),
@@ -135,7 +136,7 @@ def cfg_for(meta):
     body = [row('B1'), row('B2'), row('B3', icon='👀'), row('B4', sfx=[(-0.1, WH, 0.18)]), row('B5', sfx=[(-0.1, WH, 0.18)]),
             row('B6'), row('B7', sfx=[(0.8, f'{AU}/splash_1311.mp3', 0.25)]), row('B8', sfx=[(-0.1, WH, 0.18)]), row('B9'), row('B10'),
             row('B11'), row('B12'), row('B13', sfx=[(-0.1, WH, 0.18)])]
-    return dict(id='GEO_MOFU_A1_05', fmt='PODCAST', version=3, tmp=T, out_dir=A, vo_dir=T, min_face=50, hook_text_until=3.0,
+    return dict(id='GEO_MOFU_A1_05', fmt='PODCAST', version=4, tmp=T, out_dir=A, vo_dir=T, min_face=50, hook_text_until=3.0,
                 hook_slots=[250, 300, 360, 420, 470, 560, 700, 860, 1000], cut_sfx=True, cut_sfx_vol=0.10, music_vol=0.07,
                 hooks=hooks, body=body,
                 cta=dict(row='B13', l1='PAGA CONTRAENTREGA', l2='Pagas cuando te llegue', pill='Envío gratis a toda Colombia 🚚'),

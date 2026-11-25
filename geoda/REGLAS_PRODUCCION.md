@@ -17,7 +17,8 @@ El montador (`pipeline/builder.py`) ya trae estas reglas por defecto.
    - **Primeros planos nuevos**: imagen 1k con la foto real del producto como referencia (Higgsfield marketing-studio, US$0,053)
      → Kling 3.0 720p sin giros (para planos quietos, misma imagen de inicio y de fin) → `pipeline/label_fix.py --tube --wipe`.
    - Si el clip ya trae la etiqueta bien (sale de una imagen hecha con la foto real del producto y no gira), se deja la
-     etiqueta original del clip, sin capa encima (pedido de Camilo en A1-05, 0:32).
+     etiqueta original del clip, sin capa encima (pedido de Camilo en A1-05, 0:32). Aplica a los videos desde el A1-05;
+     A1-01 a A1-04 se dejan como están.
    - Si existe una foto real del producto que sirva para la toma, se usa la foto fija (ej. `mano.png`) en vez del clip animado.
    - `label_fix.py`: detecta la etiqueta (SIFT contra la etiqueta real), borra la zona (`--wipe`), pega las letras reales con la luz
      del tubo, la recorta a la silueta del tubo (`--tube`) y deja los dedos por delante. `--flip` = etiqueta invertida.
@@ -60,7 +61,10 @@ El montador (`pipeline/builder.py`) ya trae estas reglas por defecto.
     sin palabras de la frase vecina. Si hay duda en una palabra, pregunta cerrada con opciones (`pipeline/tools/choice.py`).
     Cada corte cae en silencio (se comprueba la energía en los bordes). Si el que habla hace algo que no sirve (ej. gira el
     producto), se corta al otro escuchando o a un inserto, pero la voz sigue completa.
-    Sin "whoosh" en cada corte de conversación, solo al entrar a insertos.
+    **Sincronía de labios**: la voz que suena siempre es de quien mueve la boca en pantalla. Si se corta al otro personaje
+    (escuchando) o a un plano general, se usa solo un tramo donde esa persona tiene la boca quieta (se mide el movimiento
+    de la boca cuadro a cuadro) y, en el plano general, el tramo en que habla quien tiene la voz.
+    Efecto de sonido suave en cada corte de conversación (el brief pide sonido en cada corte).
 14. Tomas donde el avatar habla: **WAN 3.0** con audio nativo en la API de Higgsfield (US$0,075/s en 720p): mejor calidad/precio
     (voz 9,5/10; Veo no está en la API, solo en la cuenta web). Imagen de inicio con aire sobre la cabeza para el texto del hook.
 
