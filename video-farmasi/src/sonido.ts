@@ -6,20 +6,25 @@ export type Sfx = { at: number; src: string; vol: number; dur?: number }; // at 
 const ev: Sfx[] = [];
 const add = (at: number, src: string, vol: number, dur?: number) => ev.push({ at: Math.max(0, Math.round(at)), src, vol, dur });
 
-// Tecleo suave en los destacados (regla del cliente): ≤ 4 teclas por destacado, vol. 0,3
+// Tecleo SOLO en los textos grandes e importantes (regla del cliente): las palabras gigantes detrás de la
+// cabeza y los titulares de los motion graphics. Una tecla cada 2 letras, sincronizada con la aparición
+// letra a letra (1,5 f por letra → 1 tecla cada 3 f). Los destacados cian del subtítulo van sin tecleo.
 const teclas = ["tecla_1", "tecla_2", "tecla_3", "tecla_4", "tecla_5"];
 let k = 0;
-const teclear = (desde: number, n: number) => {
-  for (let i = 0; i < n; i++) add(desde + i * 3, teclas[k++ % teclas.length], 0.3);
+const teclearLetras = (desde: number, texto: string) => {
+  const n = Math.ceil(texto.replace(/ /g, "").length / 2);
+  for (let i = 0; i < n; i++) add(desde + 2 + i * 3, teclas[k++ % teclas.length], 0.38);
 };
 for (const b of BLOQUES) {
-  if (!b.destacado.length || b.estilo === "mg") continue;
+  if (!b.destacado.length) continue;
   const t0 = f(inicio(b.destacado[0]));
-  const letras = b.destacado.map((i) => limpio(PALABRAS[i].text)).join("").length;
-  const n = Math.min(4, Math.max(2, Math.round(letras / 3)));
-  teclear(b.estilo === "detras" ? t0 - 20 : t0 - 8, n);
-  if (b.icono) add(t0 + 4, "pop", 0.18);
+  if (b.estilo === "detras") teclearLetras(t0 - 22, b.destacado.map((i) => limpio(PALABRAS[i].text)).join(""));
+  if (b.icono && b.estilo !== "mg") add(t0 + 4, "pop", 0.18);
 }
+// Titulares de los motion graphics (mismo arranque que TitularMG en MG.tsx)
+teclearLetras(f(inicio(78)) - 20, "GLUCOSA");
+teclearLetras(f(inicio(84)) - 18, "ARRIBA");
+teclearLetras(f(inicio(87)) - 18, "BAJE");
 // Cortes a b-roll / imagen: swoosh suave. Entrada a motion graphic: whoosh (pico a 0,54 s → −32 f).
 // Vuelta al plano hablando: swoosh muy suave (solo si no empieza otra escena justo ahí).
 for (const e of ESCENAS) {
@@ -37,8 +42,7 @@ add(f(UI.carbohidratos.desde) + 30, "click_3", 0.3);
 add(f(UI.tiempo.desde) + 2, "pop", 0.22);
 add(f(UI.tiempo.desde) + 14, "contador", 0.12, 1.0);
 add(f(UI.tiempo.hasta) - 44, "pop", 0.24);
-// Motion graphics: tecleo en los titulares y pops en flechas y dato del estudio
-for (const i of [78, 84, 87]) teclear(f(inicio(i)) - 20, 4);
+// Motion graphics: pops en flechas y dato del estudio
 add(f(25.4), "pop", 0.2); // chip C6H12O6
 add(f(inicio(84)) - 6, "pop", 0.22); // flecha arriba
 add(f(inicio(87)) - 14, "woosh_5", 0.18); // la curva cae

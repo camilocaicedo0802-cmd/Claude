@@ -195,7 +195,7 @@ Look: frío/cian en fondos, piel cálida, contraste medio-alto, nítido. Motion 
 *Aquí se añaden las correcciones que el cliente apruebe, para que se mantengan en las siguientes ediciones.*
 
 - **Sonido:** usar **solo** los SFX de la carpeta enviada por el cliente; nunca efectos propios.
-- **Textos:** usar los SFX de *typing* cuando aparecen textos.
+- **Textos:** usar los SFX de *typing* **solo en los textos grandes e importantes** (corrección sobre la v4): las palabras gigantes detrás de la cabeza y los titulares condensados de los motion graphics. Una tecla mecánica cada 2 letras (cada 3 f a 60 fps), sincronizada con la aparición letra a letra, vol. 0,38. Los subtítulos y los destacados cian en línea van **sin** tecleo.
 - **Colores y tipografías:** siempre los de la referencia (paleta cian/blanco/navy de §4.1 y familias de §3.1), aunque el tema sea otro.
 - **Estilo UGC, más sencillo** (corrección sobre la v1). Del estilo de la referencia se mantienen la tipografía, los colores y los subtítulos palabra a palabra, pero el montaje debe parecer contenido de creador, no un anuncio producido:
   - **Plano hablando ≥ 85 % del tiempo.** Nada de motion graphics a pantalla completa (buscadores, objetos 3D, gráficas grandes, tarjeta de cierre).
@@ -206,7 +206,7 @@ Look: frío/cian en fondos, piel cálida, contraste medio-alto, nítido. Motion 
   - **Cámara:** apertura 1,12→1,00 en 0,5 s; en cada corte de salto, alternar escala 1,00 / 1,07 de golpe (4 f). Sin reencuadres grandes.
   - **Transiciones:** cortes secos. Sin light leak ni desenfoques de corte.
   - **Color natural:** contraste ×1,05, saturación ×1,08, sin virado cian ni viñeta.
-  - **Sonido:** tecleo suave en los destacados (≤ 4 teclas por palabra, vol. 0,3), swoosh suave (0,2) en los cortes a b-roll y pop en la superposición. Sin impactos graves, risers ni film burn.
+  - **Sonido:** tecleo solo en los textos grandes (ver regla de "Textos"), swoosh suave (0,2) en los cortes a b-roll y pop en la superposición. Sin impactos graves, risers ni film burn.
 - **Excepción: la parte explicativa de salud lleva apoyo visual** (corrección sobre la v2). Cuando el creador explica un tema técnico o de salud (aquí, la glucosa), ese tramo sí lleva:
   - **B-roll e imágenes de salud cada 1,0–1,6 s**: comida con glucómetro, azúcar, medición en el dedo, glóbulos en la sangre. Se buscan en bancos con licencia comercial (Unsplash, Mixkit) y se anotan en `public/img/CREDITOS.txt`.
   - **Datos reales, con fuente y prudencia**: cada dato lleva su fuente en un pie de 25 px (p. ej. "pico 1–2 h", "2–3 h para normalizarse*", estudio del vinagre con "puede"). Las gráficas llevan "Gráfico ilustrativo. No sustituye el consejo médico."
