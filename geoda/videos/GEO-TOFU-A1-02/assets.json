@@ -1,0 +1,107 @@
+{
+ "k_grifo_m": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a20f3b-d2cd-7d4b-b2fd-e6ee6368aa64/70c3fbe8-501d-4081-a43a-1085afcbda8b.mp4"
+  ],
+  "body": {
+   "prompt": "Static handheld close-up in a bathroom. Only small single water drops fall from the faucet one by one onto the top of the white mineral stone, making it glisten wet. Everything else stays still: the hand, the stick and the label do not move or rotate, the white tube stays dry and keeps exactly the same shape and label. Very subtle natural hand movement only.",
+   "image_url": "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/6e5a5412-c498-4ace-9657-5bd25c8bfc5c.png",
+   "last_image_url": "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/6e5a5412-c498-4ace-9657-5bd25c8bfc5c.png",
+   "duration": 3,
+   "sound": "off",
+   "cfg_scale": 0.8
+  }
+ },
+ "k_huele": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a210a0-ccfc-7b5f-abbe-cf039e05eafa/6865524b-81ae-42df-894f-b8ce90c2786b.mp4"
+  ],
+  "body": {
+   "prompt": "Realistic handheld smartphone close-up in a bright bathroom. The man calmly smells the white stone of the GEODA stick with a neutral face, then lowers it and turns the stick upside down in front of him: nothing drips or falls, it is a solid stone. He does not speak, mouth closed. The product keeps exactly the same shape and label.",
+   "image_url": "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/6265e06b-050f-4f37-b721-44d9e767351b.png",
+   "duration": 3,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "k_tapa": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2109f-34d8-7987-b7c3-a5701135105a/21c519b0-9512-4c2b-bc6f-7e8929a98c62.mp4"
+  ],
+  "body": {
+   "prompt": "Real handheld smartphone close-up by a window. The person's other hand slowly comes in from the side and cups over the top of the GEODA stick, covering the stone, as the camera slowly pushes in. The stick does not rotate; the product keeps exactly the same shape and label.",
+   "image_url": "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/1c52a010-d162-47d5-a2bd-c265749b0eee.jpeg",
+   "duration": 3,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "k_toalla": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a20e20-0d91-79aa-a95d-8b010244b314/1e8f6943-16dc-407e-8cfb-a650ccbec199.mp4"
+  ],
+  "body": {
+   "prompt": "The hand gently pats the wet white stone dry with the small white cotton towel, then puts the towel aside, picks up the clear cap from the counter and places it on top of the GEODA stick. Smooth natural motion, soft daylight, close-up. The product shape and label stay unchanged.",
+   "image_url": "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/c744ae75-7fac-4dd9-a217-b0bacf27a87a.png",
+   "duration": 4,
+   "sound": "off",
+   "cfg_scale": 0.5
+  }
+ },
+ "k_tres": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a20e1f-fb4b-735b-8fe8-c9ee17289ded/8893f653-d615-41ac-8d63-f432aee9c7e6.mp4"
+  ],
+  "body": {
+   "prompt": "The hand holds up three fingers steadily next to the GEODA deodorant stick on the bathroom counter, with a small natural bounce as if counting to three. Slight handheld camera movement. The product stays still and unchanged.",
+   "image_url": "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/2ec09faa-fbe8-4606-b4cd-6c3d98146a3b.png",
+   "duration": 3,
+   "sound": "off",
+   "cfg_scale": 0.5
+  }
+ },
+ "p_aerosol": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2109f-2889-725c-8581-7abf7712f503/425b3dac-2533-4934-91d7-7e23b1297c6a.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic product photo in a bright clean bathroom with soft window light: a single generic unbranded white aerosol deodorant spray can standing on a light marble counter in the center of the frame, completely plain with no text, no logo, no label. Upper half of the frame is soft clean blurred background. No text."
+  }
+ },
+ "p_huele": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2109f-2b36-7db0-a71a-188b57bebb66/24bb5941-2ba0-4c4f-a4e2-deadaa038313.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic smartphone photo in a bright bathroom with soft window light. Close-up, a young Colombian man in a plain grey t-shirt seen in three-quarter profile brings the GEODA deodorant stick from the product references close to his nose to smell the white mineral stone, calm neutral expression, eyes open; the GEODA label (Desodorante, GEODA, 100% NATURAL, EFECTIVO Y SEGURO, 24h) faces the camera, exactly like the product reference. Empty soft background in the upper part. No text.",
+   "image_urls": [
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/00cb1085-fa0c-4a03-a446-05649f4e916e.jpeg",
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/6f52cc8c-3f5d-49ad-a82f-8974d41b2c71.jpeg"
+   ]
+  }
+ },
+ "p_palma": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2109f-29db-716e-bb07-d295e0a5208b/f96ef0b8-6a87-4773-b541-de1bd76a4979.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic macro product photo, bright bathroom, soft window light from behind (backlight with a soft glow). A man's open palm holds the GEODA deodorant stick from the product references lying slightly tilted, cap removed, the round translucent white mineral stone catching the light like a crystal; the GEODA label (Desodorante, GEODA, 100% NATURAL, EFECTIVO Y SEGURO, 24h) faces the camera, sharp, exactly like the product reference. No text.",
+   "image_urls": [
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/00cb1085-fa0c-4a03-a446-05649f4e916e.jpeg",
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/6f52cc8c-3f5d-49ad-a82f-8974d41b2c71.jpeg"
+   ]
+  }
+ }
+}

@@ -2,7 +2,8 @@
 """Clip del host: desde que el stick queda quieto en la mesa, se borra la etiqueta inventada por la IA
 (franja celeste) y se pega la etiqueta real con las proporciones del producto, siguiendo el leve desplazamiento."""
 import sys, subprocess, numpy as np, cv2
-G = '/tmp/claude-0/-home-user-Claude/89fb9332-1428-5876-823c-b89791e99771/scratchpad/geoda'
+import os  # carpeta de trabajo: GEODA_WORK o ~/.geoda_work (la crea setup_work.sh)
+G = os.environ.get('GEODA_WORK') or open(os.path.expanduser('~/.geoda_work')).read().strip()
 sys.argv = sys.argv[:1]; sys.path.insert(0, G)
 import label_fix as F
 src, dst = f'{G}/hf/orig/w_host_0.mp4', f'{G}/hf/fixed/w_host_0.mp4'

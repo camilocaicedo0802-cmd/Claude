@@ -4,7 +4,8 @@ Genera GEO_TOFU_A1_02_HA_DEMO_v1.mp4 y GEO_TOFU_A1_02_HB_DEMO_v1.mp4 (1080x1920,
 import subprocess, os, json, re, math, sys
 from PIL import Image, ImageDraw, ImageFont
 
-G = '/tmp/claude-0/-home-user-Claude/89fb9332-1428-5876-823c-b89791e99771/scratchpad/geoda'
+import os  # carpeta de trabajo: GEODA_WORK o ~/.geoda_work (la crea setup_work.sh)
+G = os.environ.get('GEODA_WORK') or open(os.path.expanduser('~/.geoda_work')).read().strip()
 A = f'{G}/a102'
 TMP = f'{A}/tmp'
 os.makedirs(TMP, exist_ok=True)

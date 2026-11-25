@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Tramos de voz de un clip (pausas reales por energía). uso: pauses.py clip.mp4 [min_pausa]"""
 import sys, numpy as np
-sys.path.insert(0, '/tmp/claude-0/-home-user-Claude/89fb9332-1428-5876-823c-b89791e99771/scratchpad/geoda/tools')
+import os
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from lines import envelope
 def segments(src, min_gap=0.12, min_seg=0.12):
     db, hop = envelope(src)

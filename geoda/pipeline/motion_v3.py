@@ -9,7 +9,8 @@ uso: motion_v3.py [ha hb b1 land sfx]"""
 import os, sys, math, subprocess
 import numpy as np, cv2
 from PIL import Image, ImageDraw, ImageFilter
-G = '/tmp/claude-0/-home-user-Claude/89fb9332-1428-5876-823c-b89791e99771/scratchpad/geoda'
+import os  # carpeta de trabajo: GEODA_WORK o ~/.geoda_work (la crea setup_work.sh)
+G = os.environ.get('GEODA_WORK') or open(os.path.expanduser('~/.geoda_work')).read().strip()
 A = f'{G}/a102'; T = f'{A}/tmp3'; os.makedirs(T, exist_ok=True)
 W, H, FPS = 1080, 1920, 30
 

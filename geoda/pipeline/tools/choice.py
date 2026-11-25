@@ -16,6 +16,7 @@ def ask(clip, a, b, q):
 if __name__ == '__main__':
     q = ("Listen very carefully, syllable by syllable. Which of these is said? A) '¿Y uno deja de sudar?'  B) '¿Y no deja de sudar?'  "
          "C) '¿Y uno no deja de sudar?'. Answer as JSON {\"choice\":\"A|B|C\",\"syllables_before_deja\":n}")
-    G = '/tmp/claude-0/-home-user-Claude/89fb9332-1428-5876-823c-b89791e99771/scratchpad/geoda'
+    import os  # carpeta de trabajo: GEODA_WORK o ~/.geoda_work (la crea setup_work.sh)
+    G = os.environ.get('GEODA_WORK') or open(os.path.expanduser('~/.geoda_work')).read().strip()
     for clip, a, b in [(f'{G}/hf/w_host_0.mp4', 11.1, 12.45), (f'{G}/hf/w_h4_0.mp4', 0.0, 1.5)]:
         print(clip.split('/')[-1], ask(clip, a, b, q))

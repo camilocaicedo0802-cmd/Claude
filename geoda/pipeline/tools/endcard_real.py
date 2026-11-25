@@ -3,7 +3,8 @@
 uso: endcard_real.py fondo.png salida.png [alto_producto] [base_y]  -> imprime la caja del producto"""
 import sys, numpy as np
 from PIL import Image, ImageFilter, ImageEnhance
-G = '/tmp/claude-0/-home-user-Claude/89fb9332-1428-5876-823c-b89791e99771/scratchpad/geoda'
+import os  # carpeta de trabajo: GEODA_WORK o ~/.geoda_work (la crea setup_work.sh)
+G = os.environ.get('GEODA_WORK') or open(os.path.expanduser('~/.geoda_work')).read().strip()
 W, H = 1080, 1920
 bg_p, out = sys.argv[1], sys.argv[2]
 ph = int(sys.argv[3]) if len(sys.argv) > 3 else 640

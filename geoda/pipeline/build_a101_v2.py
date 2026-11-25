@@ -3,7 +3,8 @@
 Narradora: una sola toma de voz (misma voz en todo el video), la avatar nunca mueve los labios (voz en off tipo storytime).
 Rótulo 'Recreación con IA'. Sin precios. CTA K5 Paga contraentrega. Video a x1.15."""
 import os, sys
-G = '/tmp/claude-0/-home-user-Claude/89fb9332-1428-5876-823c-b89791e99771/scratchpad/geoda'
+import os  # carpeta de trabajo: GEODA_WORK o ~/.geoda_work (la crea setup_work.sh)
+G = os.environ.get('GEODA_WORK') or open(os.path.expanduser('~/.geoda_work')).read().strip()
 sys.path.insert(0, G)
 import builder as B
 A = f'{G}/a101'; TMP = f'{A}/tmp2'; os.makedirs(TMP, exist_ok=True)

@@ -8,7 +8,8 @@ uso: label_fix.py entrada.mp4 salida.mp4 [--quad x0,y0,x1,y1,x2,y2,x3,y3 --qt t]
 import sys, os, subprocess, json, argparse
 import numpy as np, cv2
 
-G = '/tmp/claude-0/-home-user-Claude/89fb9332-1428-5876-823c-b89791e99771/scratchpad/geoda'
+import os  # carpeta de trabajo: GEODA_WORK o ~/.geoda_work (la crea setup_work.sh)
+G = os.environ.get('GEODA_WORK') or open(os.path.expanduser('~/.geoda_work')).read().strip()
 LAB = cv2.imread(f'{G}/labelfix/label_real.png')
 LH, LW = LAB.shape[:2]
 LCORN = np.float32([[0, 0], [LW, 0], [LW, LH], [0, LH]])

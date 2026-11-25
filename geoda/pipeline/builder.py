@@ -8,7 +8,8 @@ Reglas del cliente:
 - Hook visible desde el fotograma 1 hasta HOOK_TEXT_UNTIL.
 """
 import os, sys, json, subprocess, math, re
-G = '/tmp/claude-0/-home-user-Claude/89fb9332-1428-5876-823c-b89791e99771/scratchpad/geoda'
+import os  # carpeta de trabajo: GEODA_WORK o ~/.geoda_work (la crea setup_work.sh)
+G = os.environ.get('GEODA_WORK') or open(os.path.expanduser('~/.geoda_work')).read().strip()
 sys.path.insert(0, f'{G}/a102'); sys.path.insert(0, G)
 import build_a102 as b
 from build_a102 import (W, H, FPS, run, dur_of, render_runs, box_text, pill, word_times, chunks, sub_img, pop_scale,

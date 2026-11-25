@@ -2,7 +2,8 @@
 """Etiqueta real sobre una imagen fija, al doble de resolución (borra la zona y pega la etiqueta de la landing).
 uso: fix_still.py entrada.png salida.png [--flip]   -> imprime la caja del producto (x0,y0,x1,y1) en la salida"""
 import sys, cv2, numpy as np
-G = '/tmp/claude-0/-home-user-Claude/89fb9332-1428-5876-823c-b89791e99771/scratchpad/geoda'
+import os  # carpeta de trabajo: GEODA_WORK o ~/.geoda_work (la crea setup_work.sh)
+G = os.environ.get('GEODA_WORK') or open(os.path.expanduser('~/.geoda_work')).read().strip()
 sys.argv, args = sys.argv[:1], sys.argv[1:]
 sys.path.insert(0, G)
 import label_fix as F

@@ -1,0 +1,128 @@
+{
+ "c2_b1": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21081-aebe-7251-b374-0e7ab246ab90/5ef1095e-0f41-4b5e-b280-5e3e8346b688.png"
+  ],
+  "body": {
+   "prompt": "Stop-motion claymation still, plasticine texture with visible fingerprints, handmade miniature set, soft warm studio light, vertical 9:16, same Pedro character as the reference image (clay man with short black hair, white t-shirt and blue jeans). IMPORTANT: only Pedro appears; the white crystal stone character from the reference is NOT in this scene. No text, no letters, no labels, no brand names. Leave empty space in the upper third of the frame. Miniature clay bathroom: Pedro stands with a disgusted face; around him a pink clay perfume cloud and a gray clay smell cloud swirl and mix together.",
+   "image_urls": [
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/dde16185-670c-414e-93ac-1e6f44f84a82.png"
+   ],
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false
+  }
+ },
+ "c2_hb": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21081-ad77-7c94-a981-4bfdfe7fc720/73e3384f-b385-443a-a795-25bf34434753.png"
+  ],
+  "body": {
+   "prompt": "Stop-motion claymation still, plasticine texture with visible fingerprints, handmade miniature set, soft warm studio light, vertical 9:16, same Pedro character as the reference image (clay man with short black hair, white t-shirt and blue jeans). IMPORTANT: only Pedro appears; the white crystal stone character from the reference is NOT in this scene. No text, no letters, no labels, no brand names. Leave empty space in the upper third of the frame. Miniature clay bathroom: a giant clay finger enters from the right side and points at Pedro; a big yellow clay question mark sculpture floats above his head; Pedro looks confused.",
+   "image_urls": [
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/dde16185-670c-414e-93ac-1e6f44f84a82.png"
+   ],
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false
+  }
+ },
+ "k_c2_b2": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21082-96d8-7a01-8662-48ba65476ce4/ebf3d36b-8c91-43fe-b929-a058d502e171.mp4"
+  ],
+  "body": {
+   "prompt": "Stop-motion claymation with choppy 12 fps motion: Pedro drops the clay bottle into the full trash can, it bounces in with the other bottles; he shakes his head. Handmade plasticine look, no text.",
+   "image_url": "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/f49c3049-123c-4a62-af9c-63c430afee84.png",
+   "duration": 3,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "k_c2_b3": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21082-a427-75e0-b7ea-d3d43df4a493/eb68c1b8-3b0f-429b-8daa-9568113e48ee.mp4"
+  ],
+  "body": {
+   "prompt": "Stop-motion claymation with choppy 12 fps motion: the grandmother places the smiling white stone character in Pedro's hands; Pedro looks at it surprised; the stone blinks its big eyes. Handmade plasticine look, no text.",
+   "image_url": "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/04a20f36-04a9-4fe0-8706-3a35ff28ba73.png",
+   "duration": 3,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "k_c2_b4": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21082-b128-75eb-8f54-b235c6657e87/921ebcda-d65c-4355-81f7-66cab5d0d752.mp4"
+  ],
+  "body": {
+   "prompt": "Stop-motion claymation with choppy 12 fps motion: Pedro rubs the dry white stone character up and down on his t-shirt sleeve; nothing happens; he looks disappointed; the gray cloud stays above him. Handmade plasticine look, no text.",
+   "image_url": "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/36b5dee6-ffc2-49c5-b095-adbb7b21a8e5.png",
+   "duration": 3,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "k_c2_ha": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21082-8e31-7cd3-981a-e257c061d6c4/7010ca82-b0e4-4f80-ae8d-82d04a45134c.mp4"
+  ],
+  "body": {
+   "prompt": "Stop-motion claymation with choppy 12 fps motion: a few clay deodorant bottles tumble down from the pile around Pedro, the gray clay smell cloud above his head puffs and grows; Pedro sighs with his arms crossed. Handmade plasticine look, no text.",
+   "image_url": "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/b491acfe-b1d2-4e74-ad7c-f4ea22b120ec.png",
+   "duration": 3,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "k_cb3": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a20e7d-37ff-7eec-bbbf-acb7de655d0e/c7c5461d-02ca-47eb-9d44-9da7749d178e.mp4"
+  ],
+  "body": {
+   "prompt": "Stop-motion claymation animation, handmade plasticine look with fingerprints, slightly choppy stop-motion movement, miniature set, soft warm light. The stone character shouts with its mouth wide open and waves the tiny blank clay sign up and down energetically.",
+   "image_url": "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/4d90e011-ad2b-4e6e-b0c8-2b271a4f27b7.png",
+   "duration": 3,
+   "sound": "off",
+   "cfg_scale": 0.5
+  }
+ },
+ "k_cb4": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a20e7d-403e-7add-8f2f-edf8a946497a/ed773bc9-fc81-4737-b16c-4c7006c68d22.mp4"
+  ],
+  "body": {
+   "prompt": "Stop-motion claymation animation, handmade plasticine look with fingerprints, slightly choppy stop-motion movement, miniature set, soft warm light. Blue clay water droplets keep falling on the stone character; it shines with sparkles and smiles happily while Pedro watches.",
+   "image_url": "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/4c442652-8d9a-471c-8c6e-0ee286d2c412.png",
+   "duration": 3,
+   "sound": "off",
+   "cfg_scale": 0.5
+  }
+ },
+ "k_cb6": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a20e7d-5b76-72bc-ba55-485538736ae9/a291d682-126d-4142-96b6-465c7d0a8d10.mp4"
+  ],
+  "body": {
+   "prompt": "Stop-motion claymation animation, handmade plasticine look with fingerprints, slightly choppy stop-motion movement, miniature set, soft warm light. The grey clay odor cloud breaks apart into many little grey clay balls that bounce and fall to the floor; Pedro smiles relieved.",
+   "image_url": "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/ff092231-379d-4294-8dd3-dbd7dd0bdee0.png",
+   "duration": 3,
+   "sound": "off",
+   "cfg_scale": 0.5
+  }
+ },
+ "k_cb7": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a20e7d-63c4-75b5-9cb5-2eaee335501e/5e90b370-350f-4b01-9d1f-d796f562fd39.mp4"
+  ],
+  "body": {
+   "prompt": "Stop-motion claymation animation, handmade plasticine look with fingerprints, slightly choppy stop-motion movement, miniature set, soft warm light. The stone character smiles big and waves, and Pedro gives a thumbs up to the camera, both happy.",
+   "image_url": "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/3f383e7d-f2c7-412b-a95d-c370258f836a.png",
+   "duration": 3,
+   "sound": "off",
+   "cfg_scale": 0.5
+  }
+ }
+}

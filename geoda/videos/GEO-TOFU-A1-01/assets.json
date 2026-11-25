@@ -1,0 +1,164 @@
+{
+ "f_aplica": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a210b8-8865-79dc-86bc-32c969fc234c/460a6b61-84c9-4aed-82bf-de675278b11f.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic smartphone UGC photo, natural light, realistic skin. The SAME woman as the first reference (same face, same dark wavy shoulder-length hair, same light blue button-up blouse) face and hair, now at home in a bright bathroom with soft window light, wearing a plain white crew-neck t-shirt. Medium shot from the waist up: she raises one arm and passes the GEODA deodorant stick from the product references (cap removed, the round white mineral stone on top, slightly wet) over her clean underarm through the t-shirt sleeve opening, relaxed natural expression, lips closed. The GEODA label (Desodorante, GEODA, 100% NATURAL, EFECTIVO Y SEGURO, 24h) faces the camera, upright and sharp, exactly like the product reference. Not a close-up of the armpit. No text.",
+   "image_urls": [
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/e258bff0-41e6-47bf-9f57-72d0751ae989.png",
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/00cb1085-fa0c-4a03-a446-05649f4e916e.jpeg",
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/6f52cc8c-3f5d-49ad-a82f-8974d41b2c71.jpeg"
+   ]
+  }
+ },
+ "f_huele": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a210b7-d7f5-7150-943a-20f9e686943d/28714d74-a5f4-4d90-848c-c56c3e813aac.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic smartphone UGC photo, natural afternoon window light in a modern Colombian open-plan office. A 29-year-old Colombian woman with warm medium-brown skin and dark wavy shoulder-length hair, wearing a light blue button-up blouse, sits at her desk with a laptop and discreetly tilts her head down toward her own shoulder and underarm to smell her blouse, eyes wide open with an alarmed, embarrassed expression, lips closed. A round white wall clock behind her shows 3:00. Waist-up framing, her face clearly visible in the center of the frame, soft out-of-focus office background, plain empty wall in the upper part. No text, no logos."
+  }
+ },
+ "f_mira": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a210b8-8713-734b-9d67-ccd692744d1a/da3fb5a3-7b41-4996-a6bb-edf6d8fb14b0.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic smartphone UGC photo, natural light, realistic skin. The SAME woman as the first reference (same face, same dark wavy shoulder-length hair, same light blue button-up blouse), in the same office at her desk, looks straight into the camera with a knowing, confident half-smile and slightly raised eyebrows, lips closed, as if she just understood something important. Chest-up framing, face in the center, plain wall in the upper part. No text, no logos.",
+   "image_urls": [
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/e258bff0-41e6-47bf-9f57-72d0751ae989.png"
+   ]
+  }
+ },
+ "f_perfume": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a210b8-85b3-7452-97c6-e3c4ef402351/74e697bc-54e3-4fae-9700-a194f652e514.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic smartphone UGC photo, natural light, realistic skin. The SAME woman as the first reference (same face, same dark wavy shoulder-length hair, same light blue button-up blouse), in the same office at her desk, sprays a plain unbranded generic perfume bottle (no label, no logo) onto her neck and blouse, a visible fine mist cloud of perfume in the air around her, slightly worried face, lips closed. Waist-up framing, face in the center of the frame, plain wall in the upper part. No text, no logos.",
+   "image_urls": [
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/e258bff0-41e6-47bf-9f57-72d0751ae989.png"
+   ]
+  }
+ },
+ "f_puerta": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a210b8-8aec-7f6c-8480-f68cbd4a26a2/52d68fa7-2468-4d69-baa2-c315f160a19d.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic smartphone UGC photo, natural daylight. The SAME woman as the first reference (same face and hair), at the open front door of her Colombian apartment, receives a small kraft cardboard box from a friendly delivery courier in a plain grey polo shirt and cap (no logos), and she hands him cash bills with her other hand, both smiling. Medium shot, both faces visible, plain wall above. No text, no logos.",
+   "image_urls": [
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/e258bff0-41e6-47bf-9f57-72d0751ae989.png"
+   ]
+  }
+ },
+ "f_sonrie": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a210b8-89aa-7f85-ad5d-df4c89d99c63/5fbe9efd-5939-40a6-9557-2b520132274d.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic smartphone UGC photo, natural light, realistic skin. The SAME woman as the first reference (same face, same dark wavy shoulder-length hair, same light blue button-up blouse), back in the same office at her desk in the afternoon, the round wall clock behind her at 3:00, she leans back relaxed and smiles happily and confidently at the camera, lips closed, fresh and comfortable. Waist-up framing, face in the center, plain wall in the upper part. No text, no logos.",
+   "image_urls": [
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/e258bff0-41e6-47bf-9f57-72d0751ae989.png"
+   ]
+  }
+ },
+ "k_f_huele": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a210b9-ac07-7f88-8384-ae54eff21963/f48e6685-8e8b-4785-9819-327740537f6e.mp4"
+  ],
+  "body": {
+   "prompt": "The woman discreetly smells her blouse at the shoulder and underarm, then pulls her head back with wide alarmed eyes and glances up at the wall clock with an embarrassed expression. She does not speak, lips stay closed the whole time. Realistic handheld smartphone UGC video, natural light, subtle handheld camera movement. The wall clock keeps showing 3:00.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a210b7-d7f5-7150-943a-20f9e686943d/28714d74-a5f4-4d90-848c-c56c3e813aac.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "k_f_mira": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a210b9-ae90-7fcf-8bed-b2eafe21d00e/2a356e71-5ac5-45be-8406-d42fbd69fd98.mp4"
+  ],
+  "body": {
+   "prompt": "The woman looks straight into the camera, slowly raises her eyebrows and gives a small knowing nod with a confident half-smile. She does not speak, lips stay closed the whole time. Realistic handheld smartphone UGC video, natural light, subtle handheld camera movement.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a210b8-8713-734b-9d67-ccd692744d1a/da3fb5a3-7b41-4996-a6bb-edf6d8fb14b0.png",
+   "duration": 3,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "k_f_perfume": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a210b9-ad53-78b9-a67d-3ba836c06afa/e6fd888f-17f0-4bd6-9469-a7a0ff8ab1f3.mp4"
+  ],
+  "body": {
+   "prompt": "The woman presses the spray of the plain perfume bottle twice toward her neck and blouse, a soft visible mist cloud of perfume floats in the air around her, then she frowns slightly, unconvinced. She does not speak, lips stay closed the whole time. Realistic handheld smartphone UGC video, natural light, subtle handheld camera movement.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a210b8-85b3-7452-97c6-e3c4ef402351/74e697bc-54e3-4fae-9700-a194f652e514.png",
+   "duration": 3,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "k_f_puerta": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a210b9-b12b-7bc3-9ef0-de6eb19f5f5d/bc07cc06-cb43-4e47-a85d-5a8ea1e41653.mp4"
+  ],
+  "body": {
+   "prompt": "At the apartment door the delivery courier hands the small kraft box to the woman and takes the cash bills from her hand, both smiling and nodding warmly. Nobody speaks, lips closed. Realistic handheld smartphone UGC video, natural daylight.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a210b8-8aec-7f6c-8480-f68cbd4a26a2/52d68fa7-2468-4d69-baa2-c315f160a19d.png",
+   "duration": 3,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "k_f_sonrie": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a210b9-afe1-7ad4-ab0a-cd3a559427b1/e2a670d9-80b1-453d-9308-a1ad8a885332.mp4"
+  ],
+  "body": {
+   "prompt": "The woman leans back relaxed in her office chair and smiles happily at the camera, fresh and comfortable, a small satisfied nod. She does not speak, lips stay closed the whole time. Realistic handheld smartphone UGC video, natural light, subtle handheld camera movement. The wall clock keeps showing 3:00.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a210b8-89aa-7f85-ad5d-df4c89d99c63/5fbe9efd-5939-40a6-9557-2b520132274d.png",
+   "duration": 3,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "k_grifo2": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a20f33-e616-7849-8259-3482f5be9c14/0578bca0-dd33-4b94-9e6d-b2b267718865.mp4"
+  ],
+  "body": {
+   "prompt": "Static handheld close-up in a bathroom. Only small single water drops fall from the faucet one by one onto the top of the white mineral stone, making it glisten wet. Everything else stays still: the hand, the stick and the label do not move or rotate, the white tube stays dry and keeps exactly the same shape and label. Very subtle natural hand movement only.",
+   "image_url": "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/d9730a80-0a50-4675-86c7-8e28073b6820.png",
+   "last_image_url": "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/d9730a80-0a50-4675-86c7-8e28073b6820.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.8
+  }
+ }
+}

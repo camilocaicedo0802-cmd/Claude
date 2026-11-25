@@ -4,7 +4,8 @@ Planos según el prompt_visual_IA del brief, hook visible desde el fotograma 1 h
 textos que nunca pisan caras (detección de rostros por plano) y producto real al frente en el cierre."""
 import os, sys, json, subprocess, math
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-sys.path.insert(0, '/tmp/claude-0/-home-user-Claude/89fb9332-1428-5876-823c-b89791e99771/scratchpad/geoda')
+import os
+sys.path.insert(0, os.environ.get('GEODA_WORK') or open(os.path.expanduser('~/.geoda_work')).read().strip())
 import build_a102 as b
 from build_a102 import (G, A, TMP, W, H, FPS, S, SCR, VO, run, dur_of, shot, screen_shot, render_runs, box_text,
                         pill, word_times, chunks, sub_img, pop_scale, paste_center, FONT_BLACK, NAVY, TEAL, YEL, WHITE, BLACK)

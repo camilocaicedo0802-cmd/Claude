@@ -3,7 +3,8 @@
 Narradora mujer (una sola toma de voz, misma voz en todo el video) + vocecita de la piedra. Sin precios.
 CTA principal K1 Black Friday (sin precio) + alterno K5 Paga contraentrega. Video a x1.15 (ritmo del brief, 27 s)."""
 import os, sys, copy
-G = '/tmp/claude-0/-home-user-Claude/89fb9332-1428-5876-823c-b89791e99771/scratchpad/geoda'
+import os  # carpeta de trabajo: GEODA_WORK o ~/.geoda_work (la crea setup_work.sh)
+G = os.environ.get('GEODA_WORK') or open(os.path.expanduser('~/.geoda_work')).read().strip()
 sys.path.insert(0, G)
 import builder as B
 A = f'{G}/a103'; TMP = f'{A}/tmp2'; os.makedirs(TMP, exist_ok=True)

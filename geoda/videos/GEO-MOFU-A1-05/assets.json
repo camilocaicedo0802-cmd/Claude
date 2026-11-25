@@ -1,0 +1,142 @@
+{
+ "k_empuja": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a20fd3-cd50-750d-b6e1-de9d97d34529/d9ef4e21-5a93-4eef-b4c2-49ff4d652b16.mp4"
+  ],
+  "body": {
+   "prompt": "Close-up insert from a video podcast on a dark wood table with warm light. The woman's hand slowly and smoothly slides the GEODA stick forward across the table toward the left side of the frame, as if offering it to the person sitting there. The stick stays upright, glides on the table and does not rotate or tilt; the label always faces the camera. The product keeps exactly the same shape and label.",
+   "image_url": "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/f7fab8ca-db69-4b8a-9f3e-9d8c9a5ba0b7.png",
+   "duration": 4,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "k_grifo2": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a20f33-e616-7849-8259-3482f5be9c14/0578bca0-dd33-4b94-9e6d-b2b267718865.mp4"
+  ],
+  "body": {
+   "prompt": "Static handheld close-up in a bathroom. Only small single water drops fall from the faucet one by one onto the top of the white mineral stone, making it glisten wet. Everything else stays still: the hand, the stick and the label do not move or rotate, the white tube stays dry and keeps exactly the same shape and label. Very subtle natural hand movement only.",
+   "image_url": "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/d9730a80-0a50-4675-86c7-8e28073b6820.png",
+   "last_image_url": "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/d9730a80-0a50-4675-86c7-8e28073b6820.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.8
+  }
+ },
+ "k_set": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a20f9d-6c3f-750f-8c9e-d2ea652c2178/d4357bdb-38d9-4aa6-ad8a-84386647d75a.mp4"
+  ],
+  "body": {
+   "prompt": "Static wide shot of a cozy video podcast studio with warm light. The host and the guest sit at the table talking naturally; the host nods and gestures toward her as if saying 'tell me more', she smiles and starts to explain with her hands. Subtle natural movement only, very slow camera push-in. The GEODA stick on the table keeps exactly the same shape and label.",
+   "image_url": "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/4b17e874-7dac-4658-bc8d-1ef07ba06932.png",
+   "duration": 3,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "p_guest": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a20f88-7c72-78a1-b44c-dc895f966080/b6eca538-76b3-4ae0-a8cd-bf969489623c.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic photo, a still from a real video podcast. Same podcast studio, same warm light and same female guest as the woman on the right of the first reference (wavy shoulder-length brown hair, cream knit sweater). Medium close-up of the guest seated at the dark wood table, black podcast microphone on a boom arm in front of her slightly to the side so her mouth is visible, three-quarter view toward the host just off camera, warm confident smile. She holds the GEODA deodorant stick from the product references next to her face at cheek height, cap removed, the GEODA label (Desodorante, GEODA, 100% NATURAL, EFECTIVO Y SEGURO, 24h) facing the camera, sharp, exactly like the product reference. Blurred bookshelf, plants and acoustic panels behind. Plenty of empty headroom above her head (top quarter of the frame is background). No text, no logos.",
+   "image_urls": [
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/4b17e874-7dac-4658-bc8d-1ef07ba06932.png",
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/00cb1085-fa0c-4a03-a446-05649f4e916e.jpeg",
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/6f52cc8c-3f5d-49ad-a82f-8974d41b2c71.jpeg"
+   ]
+  }
+ },
+ "p_host": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a20f88-7b3c-73a7-ae9e-4824e7e72de9/b1a175de-815c-4072-bd99-fb02907129e9.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic photo, a still from a real video podcast. Same podcast studio, same warm light and same male host as the man on the left of the first reference (short dark hair, trimmed beard, olive green overshirt). Medium close-up of the host seated at the dark wood table, black podcast microphone on a boom arm in front of his mouth slightly to the side so his mouth is visible, three-quarter view looking toward the guest just off camera, curious expression. His right hand rests on the table holding the GEODA deodorant stick from the product references, cap removed. Blurred bookshelf, plants and acoustic panels behind. Plenty of empty headroom above his head (top quarter of the frame is background). No text, no logos.",
+   "image_urls": [
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/4b17e874-7dac-4658-bc8d-1ef07ba06932.png",
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/00cb1085-fa0c-4a03-a446-05649f4e916e.jpeg",
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/6f52cc8c-3f5d-49ad-a82f-8974d41b2c71.jpeg"
+   ]
+  }
+ },
+ "p_mesa": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a20f9d-69ab-79b5-827d-b059bf5f9493/4fea9c1c-8227-4fd1-a1f0-187ebe460192.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic photo, a close-up insert from a real video podcast. Same podcast studio and warm tungsten light as the first reference, dark wood table. The GEODA deodorant stick from the product references stands upright on the table in the lower-middle of the frame, cap removed and placed beside it, the round white mineral stone on top, the GEODA label (Desodorante, GEODA, 100% NATURAL, EFECTIVO Y SEGURO, 24h) facing the camera, large and sharp, exactly like the product reference. A black podcast microphone softly out of focus behind it, warm bokeh lights. Upper part of the frame is soft dark background. No text.",
+   "image_urls": [
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/4b17e874-7dac-4658-bc8d-1ef07ba06932.png",
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/00cb1085-fa0c-4a03-a446-05649f4e916e.jpeg",
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/6f52cc8c-3f5d-49ad-a82f-8974d41b2c71.jpeg"
+   ]
+  }
+ },
+ "p_set": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a20f87-c2d4-78f1-abd4-89616e715059/faf6a7d9-e002-450e-a33f-a156f9e54e7d.png"
+  ],
+  "body": {
+   "prompt": "Vertical 9:16 realistic photo, a still from a real video podcast recorded in Bogotá. Cozy podcast studio with warm tungsten light, dark wood table, two black podcast microphones on boom arms, soft acoustic panels and a bookshelf with plants blurred behind, no logos, no text, no neon signs. Wide shot from the end of the table: on the left a Colombian male host around 32 years old, short dark hair, trimmed beard, olive green overshirt; on the right a Colombian female guest around 30 years old, wavy shoulder-length brown hair, warm smile, cream knit sweater; they sit facing each other across the table, each at a microphone, chatting naturally. In the center of the table stands the GEODA deodorant stick from the product references, upright, cap removed, the GEODA label facing the camera. Lots of headroom above them.",
+   "image_urls": [
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/00cb1085-fa0c-4a03-a446-05649f4e916e.jpeg",
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/6f52cc8c-3f5d-49ad-a82f-8974d41b2c71.jpeg"
+   ],
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false
+  }
+ },
+ "w_g1": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a20f89-a0dc-79e6-bb6a-ab3130aec699/913e8a0d-d8e6-4f1c-abb1-0921bedbf34a.mp4"
+  ],
+  "body": {
+   "prompt": "Realistic video podcast recording in a warm cozy studio, static camera on a tripod, natural room sound, no music, no subtitles, no on-screen text. Spanish dialogue with a natural Colombian Bogotá accent, lips perfectly synced, conversational pace with short natural pauses while listening to the other person off camera. The female guest has a warm, friendly, confident mid-pitched voice. In order: 1) Holding the GEODA stick next to her face, she smiles and says: «El problema casi nunca es la piedra.» 2) Gesturing gently with the stick: «Porque el problema casi nunca es la piedra. Es cómo la usan.» 3) She sets the stick down on the table in front of her and explains: «El olor no es el sudor. Es lo que pasa con el sudor en la piel.» 4) «El perfume lo tapa. La piedra ayuda a neutralizarlo, sin perfume.»",
+   "image_url": "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/c060d163-9370-463c-9eed-55ec868c5083.png",
+   "duration": 16,
+   "resolution": "720p",
+   "generate_audio": true
+  }
+ },
+ "w_g2": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a20f90-75fe-7224-99c4-b127d207a901/36d77500-c678-4e2d-b7c5-82fad09c4179.mp4"
+  ],
+  "body": {
+   "prompt": "Realistic video podcast recording in a warm cozy studio, static camera on a tripod, natural room sound, no music, no subtitles, no on-screen text. Spanish dialogue with a natural Colombian Bogotá accent, lips perfectly synced, conversational pace with short natural pauses while listening to the other person off camera. The female guest has a warm, friendly, confident mid-pitched voice. In order: 1) Counting on one finger: «Error uno: usarla seca. Se moja la piedra.» 2) Showing two fingers: «Error dos: saltarse días. Hay que ser constante.» 3) She smiles and shakes her head: «No. No es antitranspirante. Sigues sudando, pero sin olor.» 4) She slides the GEODA stick across the table toward the host off camera to the left: «Tienes catorce días: si no te funciona, te devuelven la plata.» 5) She looks into the camera with a friendly smile: «No pagas nada ahora: pagas cuando te llegue.»",
+   "image_url": "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/4bf14b54-8191-4ec9-b381-b98f2f7ad502.png",
+   "duration": 17,
+   "resolution": "720p",
+   "generate_audio": true
+  }
+ },
+ "w_host": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a20f89-9f89-7bd4-b76b-b7628b23f7a6/1840fe5c-d947-4771-9745-9cb2a17a9606.mp4"
+  ],
+  "body": {
+   "prompt": "Realistic video podcast recording in a warm cozy studio, static camera on a tripod, natural room sound, no music, no subtitles, no on-screen text. Spanish dialogue with a natural Colombian Bogotá accent, lips perfectly synced, conversational pace with short natural pauses while listening to the other person off camera. The male host has a warm, relaxed mid-low voice. In order: 1) He taps the GEODA stick firmly on the wooden table once so the microphone shakes, and asks intrigued: «¿Por qué tanta gente dice que la piedra de alumbre no sirve?» 2) He leans into the microphone: «En serio, ¿por qué todo el mundo dice que no sirve?» 3) He nods, curious: «A ver, explícame.» 4) With a skeptical face: «¿Y entonces por qué le falla a tanta gente?» 5) He raises one eyebrow: «¿Y uno deja de sudar?» 6) He crosses his arms: «¿Y si a mí no me funciona?»",
+   "image_url": "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/b9ddad95-d519-458d-9f89-56c809ada6be.png",
+   "duration": 18,
+   "resolution": "720p",
+   "generate_audio": true
+  }
+ }
+}

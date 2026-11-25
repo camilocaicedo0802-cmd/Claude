@@ -1,5 +1,12 @@
 # Pipeline de montaje GEODA
 
+Sesión nueva: `bash geoda/pipeline/setup_work.sh <scratchpad>/geoda` y luego `python3 geoda/pipeline/smoke_test.py`.
+Los scripts encuentran la carpeta de trabajo con `GEODA_WORK` o `~/.geoda_work` (lo escribe setup_work.sh).
+Skill para producir por lotes: `.claude/skills/geoda-videos/` (SKILL.md + LOTES.md).
+
+- `plantilla_build.py`: plantilla comentada de un montaje nuevo (copiar a `geoda/videos/<ID>/build.py`).
+- `tools/assets.py`: guardar/recuperar los enlaces de lo generado (`geoda/videos/<ID>/assets.json`).
+
 - `builder.py`: montador genérico (planos 9:16, detección de caras, ubicación de textos, subtítulos, audio, exportación).
 - `build_a10X*.py`: configuración de cada video ya producido (A1-01 v2, A1-02 v3, A1-03 v2, A1-04 v2, A1-05 v5 son los vigentes).
 - `motion_v3.py` (A1-02) y `motion_a101_v2.py` (A1-01): hooks y gráficos animados sobre fotos reales (destellos, frasco tachado,

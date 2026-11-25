@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """GEO-TOFU-A1-01 · UGC con avatar IA (voz y avatar hombre). Montaje con builder.py."""
 import os, sys
-G = '/tmp/claude-0/-home-user-Claude/89fb9332-1428-5876-823c-b89791e99771/scratchpad/geoda'
+import os  # carpeta de trabajo: GEODA_WORK o ~/.geoda_work (la crea setup_work.sh)
+G = os.environ.get('GEODA_WORK') or open(os.path.expanduser('~/.geoda_work')).read().strip()
 sys.path.insert(0, G)
 import builder as B
 
@@ -48,7 +49,7 @@ def build_shots():
     # gotas solo en la punta de la piedra (el tubo queda seco), mano de hombre; etiqueta real
     s['B4'] = [B.shot(T, 'b4', f'{HF}/fixed/k_grifo_m_0.mp4', 2.15, ss=0.0, z0=1.0, z1=1.08) + ([],)]
     # imagen fija: zona de la etiqueta borrada completa y etiqueta real pegada al doble de resolución
-    s['B5'] = [B.shot(T, 'b5', f'{HF}/fixed/m_aplicar2_still2x.png', 2.45, still=True, z0=1.0, z1=1.1)]
+    s['B5'] = [B.shot(T, 'b5', f'{HF}/fixed/m_aplicar2_still2x.jpg', 2.45, still=True, z0=1.0, z1=1.1)]
     s['B6'] = [B.shot(T, 'b6a', f'{S}/hi_35928.mp4', 0.75, ss=5.0, z0=1.0, z1=1.06, fx=0.55) + ([],),
                B.shot(T, 'b6b', f'{HF}/k_toalla_0.mp4', 2.1, ss=0.0, speed=0.76, z0=1.0, z1=1.06) + ([],)]  # solo 0-1,6 s: después la etiqueta gira
     s['B7'] = [B.shot(T, 'b7', f'{HF}/m_oficina_0.mp4', 3.85, ss=0.0, z0=1.0, z1=1.04)]

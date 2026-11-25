@@ -4,7 +4,8 @@ Narrador hombre (una sola toma, misma voz en todo el video). Sin precios. CTA K3
 Hook A: foto real a contraluz con destellos y giro. Hook B: frasco genérico tachado -> cae GEODA real.
 Planos de producto con la etiqueta nativa buena (sin etiqueta sobrepuesta). Video a x1.05 (24 s del brief)."""
 import os, sys
-G = '/tmp/claude-0/-home-user-Claude/89fb9332-1428-5876-823c-b89791e99771/scratchpad/geoda'
+import os  # carpeta de trabajo: GEODA_WORK o ~/.geoda_work (la crea setup_work.sh)
+G = os.environ.get('GEODA_WORK') or open(os.path.expanduser('~/.geoda_work')).read().strip()
 sys.path.insert(0, G)
 import builder as B
 A = f'{G}/a102'; TMP = f'{A}/tmp3'; os.makedirs(TMP, exist_ok=True)
@@ -53,7 +54,7 @@ def build_shots(cfg):
      'B2': [B.shot(T, 's_b2', f'{HF}/k_huele_0.mp4', d['B2'], ss=0.05, speed=1.24, z0=1.0, z1=1.04)],
      'B3': [B.shot(T, 's_b3', f'{HF}/k_tapa_0.mp4', d['B3'], ss=0.2, z0=1.0, z1=1.14, fx=0.5, fy=0.45)],
      'B4': [B.shot(T, 's_b4', f'{HF}/fixed/k_grifo_m_0.mp4', d['B4'], ss=0.0, z0=1.0, z1=1.05)],
-     'B5': [B.shot(T, 's_b5', f'{HF}/fixed/m_aplicar2_still2x.png', d['B5'], still=True, z0=1.0, z1=1.06) + ([(330, 330, 620, 720), (690, 960, 860, 1260)],)],
+     'B5': [B.shot(T, 's_b5', f'{HF}/fixed/m_aplicar2_still2x.jpg', d['B5'], still=True, z0=1.0, z1=1.06) + ([(330, 330, 620, 720), (690, 960, 860, 1260)],)],
      'B6': [B.shot(T, 's_b6a', f'{HF}/fixed/k_tres_0.mp4', 1.53, ss=0.3, speed=0.8, z0=1.0, z1=1.04),
             B.shot(T, 's_b6b', f'{HF}/fixed/k_toalla_0.mp4', d['B6'] - 1.53, ss=0.0, speed=0.6, z0=1.0, z1=1.05)],
      'B7': [B.shot(T, 's_b7a', f'{T}/land.mp4', LAND) + ([],),

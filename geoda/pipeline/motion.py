@@ -2,7 +2,8 @@
 """Insertos animados del A1-05 (1080x1920, 30 fps) sobre el set del podcast desenfocado."""
 import subprocess, math, numpy as np, random
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
-G = '/tmp/claude-0/-home-user-Claude/89fb9332-1428-5876-823c-b89791e99771/scratchpad/geoda'
+import os  # carpeta de trabajo: GEODA_WORK o ~/.geoda_work (la crea setup_work.sh)
+G = os.environ.get('GEODA_WORK') or open(os.path.expanduser('~/.geoda_work')).read().strip()
 W, H, FPS = 1080, 1920, 30
 FB = '/usr/share/fonts/opentype/inter/InterDisplay-Black.otf'
 def bg():
