@@ -6,6 +6,10 @@
 | Sofía, narradora de cuento animado (M, 27, Bogotá) | Kore | cálida, expresiva y divertida, ritmo ágil | A1-03 (clay) |
 | Camila, avatar UGC de oficina (M, 29, Bogotá) | Leda | UGC con el celular, sincera, como contándole un secreto a una amiga | A1-01 |
 | Presentador de calle (H) | voz nativa WAN 3.0 (toma larga) | energético, acento bogotano | A1-04 |
-| Podcast: presentador y invitada | voces nativas WAN 3.0 | conversación natural | A1-05 |
+| Podcast: presentador e invitada | voces nativas WAN 3.0 (mismas imágenes de `personajes/podcast/`) | conversación natural | A1-05 |
+| Geo, la piedra (Pixar) | Puck | personaje animado, voz aguda, divertida y tierna | (desde A2-02) |
+| Narrador Pixar (H) | Charon | narrador de cuento animado, cálido | (desde A2-02) |
+| Narradora faceless/motion (M) | Zephyr | explicativa, clara, ritmo ágil | (desde A1-07) |
 
+Personajes nuevos: cada lote usa sus dos voces asignadas en LOTES.md (una M y una H).
 Agregar aquí cada personaje nuevo (y su voz) al crearlo, para que otros videos lo repitan igual.

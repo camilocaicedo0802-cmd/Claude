@@ -5,8 +5,8 @@ description: Producir un lote de 5 anuncios en video de GEODA (desodorante de pi
 
 # GEODA · producción de un lote de videos
 
-Camilo produce para Alberto los 60 videos del brief (`geoda/brief_v2/`). Cada chat hace **un lote de 5** (`LOTES.md`, en esta
-carpeta). El argumento es el número de lote (`lote 3`) o una lista de IDs. Si no viene, pregunta cuál lote hacer.
+Camilo produce para Alberto los 60 videos del brief (`geoda/brief_v2/`). Cada chat hace **un lote de 5**, en el orden del brief
+(`LOTES.md`, en esta carpeta). El argumento es el número de lote (`lote 3`) o una lista de IDs. Si no viene, pregunta cuál lote hacer.
 Habla siempre en español, con frases simples. Al final de **cada respuesta** manda una notificación push corta (regla de Camilo).
 
 ## 0. Arranque (una vez por chat)
@@ -37,6 +37,17 @@ Habla siempre en español, con frases simples. Al final de **cada respuesta** ma
   MOFU 30-51 s, BOFU 18-24 s (usar `speed` 1.05-1.2 si sobra).
 - **Compliance**: sin primeros planos de axila (planos medios con ropa), no decir "24 horas", "100 % natural",
   "sin aluminio", "antitranspirante" ni segundos de aplicación. Founder y reseñas NO se inventan: pedir material real.
+
+## 1b. Personajes recurrentes (aparecen en varios lotes/chats)
+Geo (Pixar), podcast, presentador de calle, Sofía (clay), Andrés (demo), Camila (UGC): usar siempre la misma imagen de
+referencia (`geoda/kit/personajes/`, `geoda/videos/*/assets.json`) y la voz de `geoda/kit/VOCES.md`.
+Si el lote necesita un personaje recurrente que todavía no está en el kit (p. ej. la hoja de Geo):
+1. Buscarlo en las ramas de los otros chats: `git fetch -q origin '+refs/heads/claude/*:refs/remotes/origin/claude/*'` y
+   `for b in $(git branch -r --list 'origin/claude/*'); do git ls-tree -r --name-only $b -- geoda/kit/personajes/geo | grep -q . && echo $b; done`
+   → si aparece: `git checkout <rama> -- geoda/kit/personajes/geo`.
+2. Si no existe en ninguna rama: crearlo (Geo: hoja de personaje estilo Pixar hecha a partir de las fotos reales de la
+   piedra, misma forma y color; 3-4 poses), guardarlo en `geoda/kit/personajes/<nombre>/` con `PROMPT.md` y sus URLs,
+   registrar la voz en VOCES.md y hacer commit + push de inmediato, antes de seguir, para que los otros chats lo encuentren.
 
 ## 2. Flujo por video
 Carpeta del video en el repo: `geoda/videos/<ID>/` (build.py, motion.py si hay, `vo/`, `assets.json`, `NOTAS.md`).
