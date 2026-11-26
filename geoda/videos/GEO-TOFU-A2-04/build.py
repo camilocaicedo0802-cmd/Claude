@@ -14,6 +14,7 @@ G1, G2, H = f'{HF}/wq_g1_0.mp4', f'{HF}/wq_g2_0.mp4', f'{HF}/wq_h_0.mp4'
 CTA_BF, CTA_NAV = f'{G}/a108/tmp/cta_bf.mp4', f'{G}/a202/tmp/xmas_ec_bow.mp4'
 PITCH = {G2: 0.917}   # toma 2 de la invitada un 9 % más aguda: se baja al tono de la toma 1 (formantes conservados)
 PAD = 0.04
+SPEED = 1.2   # v2 (Camilo): video a 1,2x, imagen y voz juntas (la voz conserva el tono; labios sincronizados)
 # (clip, inicio, fin, texto) medidos por energía y verificados transcribiendo cada frase sola
 LINES = {
  'HA': (G1, 0.64, 4.11, 'Yo cambié tres cosas en mi rutina de axilas.'),
@@ -41,7 +42,9 @@ def seg(k):
     clip, a0, a1, text = LINES[k]; return clip, max(0, a0 - PAD), a1 + PAD, text
 
 def wav(name, clip, a0, d):
-    af = (f'rubberband=pitch={PITCH[clip]}:formant=preserved,' if clip in PITCH else '') + f'apad=whole_dur={d:.3f}'
+    af = ((f'rubberband=pitch={PITCH[clip]}:formant=preserved,' if clip in PITCH else '')
+          + 'highpass=f=90,alimiter=limit=0.6:attack=1:release=40:level=false,'   # quita golpes de micrófono (plosivas) del audio nativo
+          + f'apad=whole_dur={d:.3f}')
     subprocess.run(['ffmpeg', '-v', 'error', '-y', '-ss', f'{a0:.3f}', '-t', f'{d:.3f}', '-i', clip, '-vn', '-ac', '1', '-ar', '48000',
                     '-af', af, f'{T}/{name}.wav'], check=True)
 
@@ -87,8 +90,8 @@ def cfg_for(meta, cta):
             row('B8', sfx=[(1.8, f'{AU}/splash_1180.mp3', 0.25)]), row('B9'), row('B10'), row('B11'),
             row('B12', sfx=[(1.6, f'{AU}/sfx_tap.wav', 0.5), (3.4, f'{AU}/sfx_tap.wav', 0.5)] if cta == 'K1' else [])]
     ctad = dict(row='B12', delay=0.2, l1='BLACK FRIDAY', l2='Paga 2 lleva 3') if cta == 'K1' else dict(row='B12', delay=0.2, l1='REGALO DE NAVIDAD', l2='Paga 2 lleva 3')
-    return dict(id='GEO_TOFU_A2_04', fmt='PODCAST' if cta == 'K1' else 'PODCAST_K2', version=1, tmp=T, out_dir=A, vo_dir=T,
-                min_face=50, hook_text_until=3.0, ai_label=False, cut_sfx=True, cut_sfx_vol=0.10, music=f'{AU}/music_847.mp3', music_vol=0.06,
+    return dict(id='GEO_TOFU_A2_04', fmt='PODCAST' if cta == 'K1' else 'PODCAST_K2', version=2, tmp=T, out_dir=A, vo_dir=T,
+                min_face=50, hook_text_until=3.0 * SPEED, speed=SPEED, ai_label=False, cut_sfx=True, cut_sfx_vol=0.10, music=f'{AU}/music_847.mp3', music_vol=0.06,
                 hooks=hooks, body=body, cta=ctad)
 
 if __name__ == '__main__':

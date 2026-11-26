@@ -17,3 +17,8 @@
 - Costo: 3 imágenes (US$0,21) + 69 s de WAN 3.0 (US$5,18) = US$5,39.
 - HD (primer plano de la toma 2): título más compacto y arriba (hook_slots 356, hook_maxw 680) y zoom anclado arriba
   (1,26-1,29) para que la cabeza baje y quede espacio libre entre el título y el pelo.
+
+## v2 (Camilo: a 1,2x)
+- Video a 1,2x (imagen y voz juntas; la voz conserva el tono, los labios siguen sincronizados): 30,5-31,8 s.
+- Voces con filtro paso alto (90 Hz) y limitador suave: la toma 2 de la invitada traía un golpe de micrófono (plosiva
+  saturada) en "de mi rutina" del hook D que a 1,2x se notaba como un "pop".
