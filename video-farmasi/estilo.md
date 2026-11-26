@@ -277,3 +277,7 @@ Calibrado escribiendo "If your defination of / success" con cada combinación ju
 - **Elegir siempre la toma en la que la persona dice la línea del guion en personaje**: descartar tomas donde se nota que le hablan o le soplan desde detrás de cámara (mirada a cámara/al equipo, voz de fondo).
 - **Evitar repeticiones de vocativos** ("Chiqui… Chiqui…") en líneas seguidas: se corta el nombre de la segunda.
 - **Logos reales** cuando se nombra una marca o un canal: logo de la agencia (305 Media Club, archivo de la clienta) y logo de WhatsApp en 3D al decir "escríbeme al WhatsApp".
+
+### Correcciones de la clienta (lote 2, v3 · vídeo 2)
+- **En cada lista o grupo, todos los elementos del mismo tipo:** o todo iconos o todo imágenes; nunca mezclar.
+- **Final en la última palabra:** en este vídeo termina cuando ella deja de hablar (≈ 0,25 s de cola, música fuera en 0,7 s), sin tarjeta de resumen ni cierre extra. Esto sustituye aquí a la regla de "cierre con plano de producto".
