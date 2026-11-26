@@ -33,6 +33,7 @@ import { cn, whatsappLink } from "@/lib/utils";
 import { DueLabel, JobCard, PaymentBadge, PriorityFlag, StatusBadge } from "./bits";
 import { FOLLOWUP_LABEL } from "@/components/forms/life-forms";
 import { ClientIncomeCard } from "./recurring-income";
+import { clientPayMode, PAY_MODE_BADGE } from "@/domain/finance";
 
 export function DetailHost() {
   const { detail, closeDetail } = useUI();
@@ -275,6 +276,10 @@ function ClientSheet({ id, open, onOpenChange }: { id: string; open: boolean; on
   const [note, setNote] = React.useState("");
   const allIncomes = useClientIncomes();
   const incomes = allIncomes.filter((v) => v.income.clientId === id);
+  // Finished agreements with nothing pending go behind a toggle (they keep their history).
+  const currentIncomes = incomes.filter((v) => !v.ended || v.overdue.length > 0);
+  const pastIncomes = incomes.filter((v) => v.ended && v.overdue.length === 0);
+  const [showPastIncomes, setShowPastIncomes] = React.useState(false);
   const client = data.clients.find((c) => c.id === id);
   const summary = React.useMemo(() => (client ? summarizeClients([client], views)[0] : undefined), [client, views]);
   if (!client || !summary) {
@@ -306,6 +311,9 @@ function ClientSheet({ id, open, onOpenChange }: { id: string; open: boolean; on
       <div className="space-y-6">
         <div className="flex flex-wrap items-center gap-2">
           <Badge tone={client.status === "active" ? "income" : client.status === "lead" ? "brand" : "neutral"}>{CLIENT_STATUS_LABEL[client.status]}</Badge>
+          <Badge tone="info">
+            <Wallet aria-hidden /> {PAY_MODE_BADGE[clientPayMode(incomes)]}
+          </Badge>
           {client.archived && <Badge tone="outline">Archivado</Badge>}
           {client.tags.map((t) => (
             <Badge key={t} tone="outline">
@@ -377,9 +385,15 @@ function ClientSheet({ id, open, onOpenChange }: { id: string; open: boolean; on
               Sueldo y pagos periódicos
             </SectionTitle>
             <div className="space-y-3">
-              {incomes.map((v) => (
+              {currentIncomes.map((v) => (
                 <ClientIncomeCard key={v.income.id} view={v} />
               ))}
+              {pastIncomes.length > 0 && (
+                <Button variant="subtle" size="sm" className="w-full" aria-expanded={showPastIncomes} onClick={() => setShowPastIncomes((x) => !x)}>
+                  {showPastIncomes ? "Ocultar acuerdos terminados" : `Ver acuerdos terminados (${pastIncomes.length})`}
+                </Button>
+              )}
+              {showPastIncomes && pastIncomes.map((v) => <ClientIncomeCard key={v.income.id} view={v} />)}
             </div>
           </section>
         )}

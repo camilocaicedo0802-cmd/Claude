@@ -3,6 +3,7 @@ import { db, LifeOSDB, setDB } from "@/db/db";
 import { ensureDefaults } from "@/db/defaults";
 import { buildAlerts } from "@/domain/alerts";
 import {
+  clientPayMode,
   computeSpendCapacity,
   monthlyEquivalent,
   plannedIncomeOccurrences,
@@ -19,6 +20,7 @@ import {
   createPlannedIncome,
   deleteTransaction,
   receivePlannedIncome,
+  setClientPayPlan,
   skipPlannedIncome,
   updatePlannedIncome,
 } from "@/services/finance-service";
@@ -218,5 +220,113 @@ describe("sueldo de un cliente", () => {
     expect(r.horizon.nextIncome?.date).toBe("2026-11-30");
     expect(r.horizon.end).toBe("2026-11-29");
     expect(incomeId).toBeTruthy();
+  });
+});
+
+describe("¿cómo te paga? (forma de pago del cliente)", () => {
+  async function client() {
+    const accountId = await createAccount({ name: "Banco", type: "bank", openingBalance: 0, openingDate: "2026-01-01", spendable: true, color: "iris" });
+    const clientId = await createClient({ name: "Estudio Sur", status: "active", tags: [] });
+    return { accountId, clientId };
+  }
+  async function state(clientId: string) {
+    const d = db();
+    const incomes = (await d.plannedIncomes.toArray()).filter((p) => p.clientId === clientId);
+    const views = recurringIncomeViews(incomes, await d.transactions.toArray(), TODAY);
+    return { incomes, views, mode: clientPayMode(views) };
+  }
+
+  it("a client without a fixed salary is paid per job", async () => {
+    const { clientId } = await client();
+    expect((await state(clientId)).mode).toBe("job");
+    await setClientPayPlan(clientId, { mode: "job" }, TODAY); // no-op
+    expect((await state(clientId)).incomes).toHaveLength(0);
+  });
+
+  it("monthly, quincenal and weekly create one salary with that periodicity", async () => {
+    for (const [mode, expected] of [
+      ["monthly", ["2026-11-30", "2026-12-30"]],
+      ["semimonthly", ["2026-11-15", "2026-11-30", "2026-12-15", "2026-12-30"]],
+      ["weekly", ["2026-11-13", "2026-11-20", "2026-11-27", "2026-12-04"]],
+    ] as const) {
+      const { clientId } = await client();
+      const start = mode === "semimonthly" ? TODAY : mode === "weekly" ? "2026-11-13" : "2026-11-30";
+      await setClientPayPlan(clientId, { mode, amount: M(1_000_000), startDate: start, days: mode === "semimonthly" ? [15, 30] : undefined }, TODAY);
+      const { incomes, mode: got } = await state(clientId);
+      expect(got).toBe(mode);
+      expect(incomes).toHaveLength(1);
+      expect(incomes[0].name).toBe("Sueldo");
+      expect(incomes[0].confirmed).toBe(true);
+      expect(occurrencesBetween(incomes[0].startDate, incomes[0].recurrence, TODAY, "2026-12-31").slice(0, expected.length)).toEqual(expected);
+    }
+  });
+
+  it("changing only the value keeps the received months as they were", async () => {
+    const { accountId, clientId } = await client();
+    await setClientPayPlan(clientId, { mode: "monthly", amount: M(2_000_000), startDate: "2026-10-30" }, "2026-10-01");
+    const [p] = (await state(clientId)).incomes;
+    await receivePlannedIncome({ plannedIncomeId: p.id, dueDate: "2026-10-30", amount: M(2_000_000), date: "2026-10-30", accountId });
+
+    await setClientPayPlan(clientId, { mode: "monthly", amount: M(2_400_000), startDate: "2026-11-30" }, TODAY);
+    const { incomes, views } = await state(clientId);
+    expect(incomes).toHaveLength(1);
+    expect(views[0].recent[0].status).toBe("paid");
+    expect(views[0].recent[0].amount).toBe(M(2_000_000));
+    expect(views[0].next?.amount).toBe(M(2_400_000));
+  });
+
+  it("switching monthly → quincenal closes the old series and starts the new one, without touching history", async () => {
+    const { accountId, clientId } = await client();
+    await setClientPayPlan(clientId, { mode: "monthly", amount: M(2_000_000), startDate: "2026-10-30" }, "2026-10-01");
+    const [old] = (await state(clientId)).incomes;
+    await receivePlannedIncome({ plannedIncomeId: old.id, dueDate: "2026-10-30", amount: M(2_000_000), date: "2026-10-30", accountId });
+
+    await setClientPayPlan(clientId, { mode: "semimonthly", amount: M(1_100_000), startDate: "2026-11-15", days: [15, 30] }, TODAY);
+    const { incomes, views, mode } = await state(clientId);
+    expect(mode).toBe("semimonthly");
+    expect(incomes).toHaveLength(2);
+    const closed = incomes.find((p) => p.id === old.id)!;
+    expect(closed.recurrence?.until).toBe("2026-11-14");
+    const d = db();
+    const all = plannedIncomeOccurrences(incomes, await d.transactions.toArray(), "2026-10-01", "2026-12-31", TODAY);
+    expect(all.map((o) => [o.dueDate, o.amount, o.status])).toEqual([
+      ["2026-10-30", M(2_000_000), "paid"],
+      ["2026-11-15", M(1_100_000), "pending"],
+      ["2026-11-30", M(1_100_000), "pending"],
+      ["2026-12-15", M(1_100_000), "pending"],
+      ["2026-12-30", M(1_100_000), "pending"],
+    ]);
+    expect(views.filter((v) => !v.ended)).toHaveLength(1);
+  });
+
+  it("a salary with no history is simply edited in place", async () => {
+    const { clientId } = await client();
+    await setClientPayPlan(clientId, { mode: "monthly", amount: M(2_000_000), startDate: "2026-11-30" }, TODAY);
+    await setClientPayPlan(clientId, { mode: "weekly", amount: M(500_000), startDate: "2026-11-13" }, TODAY);
+    const { incomes, mode } = await state(clientId);
+    expect(incomes).toHaveLength(1);
+    expect(mode).toBe("weekly");
+    expect(incomes[0].amount).toBe(M(500_000));
+  });
+
+  it("back to per job ends the salary yesterday but keeps what was received", async () => {
+    const { accountId, clientId } = await client();
+    await setClientPayPlan(clientId, { mode: "monthly", amount: M(2_000_000), startDate: "2026-10-30" }, "2026-10-01");
+    const [p] = (await state(clientId)).incomes;
+    await receivePlannedIncome({ plannedIncomeId: p.id, dueDate: "2026-10-30", amount: M(2_000_000), date: "2026-10-30", accountId });
+
+    await setClientPayPlan(clientId, { mode: "job" }, TODAY);
+    const { incomes, views, mode } = await state(clientId);
+    expect(mode).toBe("job");
+    expect(incomes[0].recurrence?.until).toBe("2026-11-10");
+    expect(views[0].ended).toBe(true);
+    expect(views[0].recent.map((o) => o.status)).toEqual(["paid"]);
+    expect((await db().transactions.toArray()).filter((t) => t.plannedIncomeId === p.id)).toHaveLength(1);
+
+    // A salary that never started is removed instead.
+    const other = await client();
+    await setClientPayPlan(other.clientId, { mode: "weekly", amount: M(300_000), startDate: "2026-11-20" }, TODAY);
+    await setClientPayPlan(other.clientId, { mode: "job" }, TODAY);
+    expect((await state(other.clientId)).incomes).toHaveLength(0);
   });
 });

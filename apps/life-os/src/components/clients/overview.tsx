@@ -17,6 +17,7 @@ import { SectionPage } from "@/components/shared/section-page";
 import { useUI } from "@/components/shell/ui-context";
 import { PaymentBadge } from "./bits";
 import { PeriodBadge } from "./recurring-income";
+import { clientPayMode, PAY_MODE_BADGE, PAY_MODE_LABEL, PAY_MODES, payModeOf, type PayMode } from "@/domain/finance";
 
 type ClientFilter = "all" | "active" | "lead" | "paused" | "inactive" | "balance" | "archived";
 const FILTER_LABEL: Record<ClientFilter, string> = { all: "Todos", active: "Activos", lead: "Prospectos", paused: "En pausa", inactive: "Inactivos", balance: "Con saldo", archived: "Archivados" };
@@ -31,6 +32,7 @@ export function ClientsOverview() {
   const [query, setQuery] = React.useState("");
   const [filter, setFilter] = React.useState<ClientFilter>("all");
   const [sort, setSort] = React.useState<"activity" | "name" | "balance" | "billed">("activity");
+  const [payFilter, setPayFilter] = React.useState<PayMode | "all">("all");
   const listRef = React.useRef<HTMLDivElement>(null);
 
   const summaries = React.useMemo(() => summarizeClients(data.clients, views), [data.clients, views]);
@@ -81,6 +83,7 @@ export function ClientsOverview() {
   const list = summaries
     .filter((s) => (filter === "archived" ? s.client.archived : !s.client.archived))
     .filter((s) => (filter === "all" || filter === "archived" ? true : filter === "balance" ? s.balance > 0 : s.client.status === filter))
+    .filter((s) => payFilter === "all" || clientPayMode(incomesByClient.get(s.client.id) ?? []) === payFilter)
     .filter((s) => matches([s.client.name, s.client.company, s.client.serviceType, s.client.email, s.client.phone, ...s.client.tags], query))
     .sort((a, b) =>
       sort === "name"
@@ -241,12 +244,23 @@ export function ClientsOverview() {
       <div ref={listRef} className="scroll-mt-20 space-y-3">
         <div className="flex flex-wrap items-center justify-between gap-2">
           <h2 className="text-[15px] font-semibold">Directorio</h2>
-          <NativeSelect aria-label="Ordenar" className="w-48" value={sort} onChange={(e) => setSort(e.target.value as typeof sort)}>
-            <option value="activity">Actividad reciente</option>
-            <option value="name">Nombre</option>
-            <option value="balance">Saldo pendiente</option>
-            <option value="billed">Facturación</option>
-          </NativeSelect>
+          <div className="flex w-full gap-2 sm:w-auto">
+            <NativeSelect aria-label="Forma de pago" className="min-w-0 flex-1 sm:w-44 sm:flex-none" value={payFilter} onChange={(e) => setPayFilter(e.target.value as typeof payFilter)}>
+              <option value="all">Forma de pago</option>
+              {PAY_MODES.map((m) => (
+                <option key={m} value={m}>
+                  {PAY_MODE_LABEL[m]}
+                </option>
+              ))}
+              {incomes.some((v) => !v.ended && payModeOf(v.income.recurrence) === "other") && <option value="other">{PAY_MODE_LABEL.other}</option>}
+            </NativeSelect>
+            <NativeSelect aria-label="Ordenar" className="min-w-0 flex-1 sm:w-44 sm:flex-none" value={sort} onChange={(e) => setSort(e.target.value as typeof sort)}>
+              <option value="activity">Actividad reciente</option>
+              <option value="name">Nombre</option>
+              <option value="balance">Saldo pendiente</option>
+              <option value="billed">Facturación</option>
+            </NativeSelect>
+          </div>
         </div>
         <div className="relative">
           <Search className="pointer-events-none absolute top-1/2 left-3 size-4 -translate-y-1/2 text-muted-foreground" />
@@ -293,6 +307,9 @@ export function ClientsOverview() {
                     <div className="min-w-0">
                       <p className="truncate text-sm font-semibold">{s.client.name}</p>
                       <p className="truncate text-xs text-muted-foreground">{[s.client.company, s.client.serviceType].filter(Boolean).join(" · ") || "Sin detalles"}</p>
+                      <p className="mt-1 flex items-center gap-1 text-xs font-medium text-info [&_svg]:size-3">
+                        <Wallet aria-hidden /> {PAY_MODE_BADGE[clientPayMode(incomesByClient.get(s.client.id) ?? [])]}
+                      </p>
                     </div>
                     <Badge tone={s.client.status === "active" ? "income" : s.client.status === "lead" ? "brand" : "neutral"}>{CLIENT_STATUS_LABEL[s.client.status]}</Badge>
                   </div>
@@ -305,12 +322,9 @@ export function ClientsOverview() {
                       ) : null}
                       {nextDue && <span className="block text-xs">Próxima entrega {formatRelativeDay(nextDue.job.dueDate!, today).toLowerCase()}</span>}
                       {salary && (
-                        <>
-                          <span className="block truncate text-xs">{salary.income.name}</span>
-                          <span className="block truncate text-xs tabular">
-                            {money(salary.income.amount)} · {describeRecurrence(salary.income.recurrence).toLowerCase()}
-                          </span>
-                        </>
+                        <span className="block truncate text-xs tabular">
+                          {salary.income.name}: {money(salary.income.amount)}
+                        </span>
                       )}
                     </div>
                     {salaryLate ? (

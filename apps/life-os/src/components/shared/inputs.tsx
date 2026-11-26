@@ -267,3 +267,15 @@ export function IconPicker({ value, onChange, icons, color }: { value: string; o
     </div>
   );
 }
+
+/** Two paydays of a quincena (days of the month). Takes the props of each input, e.g. from react-hook-form's register. */
+export function PaydaysInput({ id, first, second }: { id?: string; first: React.ComponentProps<"input">; second: React.ComponentProps<"input"> }) {
+  return (
+    <div className="flex items-center gap-2">
+      <Input id={id} type="number" inputMode="numeric" min={1} max={31} className="w-20 tabular" aria-label="Primer día de pago" {...first} />
+      <span className="text-[13px] text-muted-foreground">y</span>
+      <Input type="number" inputMode="numeric" min={1} max={31} className="w-20 tabular" aria-label="Segundo día de pago" {...second} />
+      <span className="text-[13px] text-muted-foreground">de cada mes</span>
+    </div>
+  );
+}

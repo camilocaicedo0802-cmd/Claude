@@ -30,14 +30,14 @@ import {
   updatePlannedIncome,
 } from "@/services/finance-service";
 import type { AccountType, CategoryKind, ExpenseNature, ObligationType } from "@/db/types";
-import { accountBalances, obligationOccurrences, plannedIncomeOccurrences } from "@/domain/finance";
-import { addDays, formatDateLong } from "@/lib/dates";
+import { accountBalances, firstOpenPeriod, obligationOccurrences, plannedIncomeOccurrences } from "@/domain/finance";
+import { formatDateLong } from "@/lib/dates";
 import { parseMoney } from "@/lib/money";
 import { DEFAULT_SEMIMONTHLY_DAYS, PRESET_LABELS, presetToRecurrence, recurrenceToPreset, type RecurrencePreset } from "@/lib/recurrence";
 import { Field, Input, NativeSelect, SwitchRow, Textarea } from "@/components/ui/form-controls";
 import { Segmented } from "@/components/ui/misc";
 import { Button } from "@/components/ui/button";
-import { AccountSelect, AmountInput, ColorPicker, DateField, IconPicker, amountToText } from "@/components/shared/inputs";
+import { AccountSelect, AmountInput, ColorPicker, DateField, IconPicker, PaydaysInput, amountToText } from "@/components/shared/inputs";
 import { ICON_CHOICES, PALETTE } from "@/components/shared/primitives";
 import { useUI } from "@/components/shell/ui-context";
 import { FormSheet, lastAccount, rememberAccount, runSave, useBusy } from "./form-kit";
@@ -507,7 +507,17 @@ const plannedSchema = z
     if (v.preset !== "none" && v.until && v.until < v.startDate) ctx.addIssue({ code: "custom", path: ["until"], message: "Debe ser posterior al primer pago" });
   });
 
-const PLANNED_PRESETS: RecurrencePreset[] = ["monthly", "semimonthly", "biweekly", "weekly", "quarterly", "yearly", "none"];
+const PLANNED_MAIN: Array<[RecurrencePreset, string]> = [
+  ["monthly", "Mensual"],
+  ["semimonthly", "Quincenal"],
+  ["weekly", "Semanal"],
+];
+const PLANNED_OTHER: Array<[RecurrencePreset, string]> = [
+  ["biweekly", "Cada dos semanas"],
+  ["quarterly", "Cada tres meses"],
+  ["yearly", "Cada año"],
+  ["none", "Una sola vez"],
+];
 
 export function PlannedIncomeForm({ id, defaults, onDone }: { id?: string; defaults?: { clientId?: string; forClient?: boolean }; onDone: () => void }) {
   const data = useData();
@@ -533,9 +543,7 @@ export function PlannedIncomeForm({ id, defaults, onDone }: { id?: string; defau
       day2: String(monthDays[1] ?? 30),
       until: existing?.recurrence?.until ?? "",
       // A raise applies from the first period not received yet, so money already in hand is not reopened.
-      amountFrom: existing
-        ? (plannedIncomeOccurrences([existing], data.transactions, today, addDays(today, 400), today).find((o) => o.movements.length === 0 && !o.settlement)?.dueDate ?? today)
-        : today,
+      amountFrom: existing ? (firstOpenPeriod(existing, data.transactions, today) ?? today) : today,
     },
   });
   const { watch, setValue, register, handleSubmit, formState } = form;
@@ -613,11 +621,18 @@ export function PlannedIncomeForm({ id, defaults, onDone }: { id?: string; defau
         <div className="grid gap-4 sm:grid-cols-2">
           <Field label="Periodicidad" htmlFor="pi-freq">
             <NativeSelect id="pi-freq" {...register("preset")}>
-              {PLANNED_PRESETS.map((p) => (
+              {PLANNED_MAIN.map(([p, label]) => (
                 <option key={p} value={p}>
-                  {p === "none" ? "Una sola vez" : p === "monthly" ? "Mensual (cada mes)" : PRESET_LABELS[p]}
+                  {label}
                 </option>
               ))}
+              <optgroup label="Otras">
+                {PLANNED_OTHER.map(([p, label]) => (
+                  <option key={p} value={p}>
+                    {label}
+                  </option>
+                ))}
+              </optgroup>
             </NativeSelect>
           </Field>
           <Field label="Cliente que paga" htmlFor="pi-client" optional={!defaults?.forClient} error={formState.errors.clientId?.message}>
@@ -634,12 +649,7 @@ export function PlannedIncomeForm({ id, defaults, onDone }: { id?: string; defau
         </div>
         {preset === "semimonthly" && (
           <Field label="Días de pago" htmlFor="pi-day1" error={formState.errors.day2?.message} hint="Si el mes es más corto, se paga el último día (por ejemplo, el 28 de febrero).">
-            <div className="flex items-center gap-2">
-              <Input id="pi-day1" type="number" inputMode="numeric" min={1} max={31} className="w-20 tabular" aria-label="Primer día de pago" {...register("day1")} />
-              <span className="text-[13px] text-muted-foreground">y</span>
-              <Input type="number" inputMode="numeric" min={1} max={31} className="w-20 tabular" aria-label="Segundo día de pago" {...register("day2")} />
-              <span className="text-[13px] text-muted-foreground">de cada mes</span>
-            </div>
+            <PaydaysInput id="pi-day1" first={register("day1")} second={register("day2")} />
           </Field>
         )}
         <Field

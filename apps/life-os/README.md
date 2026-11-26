@@ -53,9 +53,10 @@ La primera vez aparece un onboarding opcional (moneda, zona horaria, cuentas, ga
 
 ## Sueldos y pagos periódicos de clientes
 
-Para los lugares que te pagan un valor fijo (sueldo, honorarios, retainer):
+Cada cliente tiene **¿Cómo te paga?**: **Por trabajo**, **Mensual**, **Quincenal** o **Semanal**. Se elige al crear o editar el cliente; con un pago fijo se indica el valor de cada pago y el próximo pago (en quincenal, los dos días del mes). La ficha y el directorio muestran la forma de pago, y el directorio se puede filtrar por ella.
 
-- En la ficha del cliente, botón **Sueldo** (o `+` › «Sueldo de cliente»): valor de cada pago, **periodicidad** (mensual, quincenal, cada dos semanas, semanal, trimestral, anual o una sola vez), fecha del próximo pago y, si el contrato termina, fecha final.
+- Cambiar la forma de pago nunca reescribe el pasado: el acuerdo anterior termina el día antes del nuevo inicio (con sus pagos recibidos o pendientes) y empieza uno nuevo. Pasar a «Por trabajo» termina el sueldo ayer; si nunca empezó, se elimina.
+- Para casos menos comunes, el botón **Sueldo** de la ficha (o `+` › «Sueldo de cliente») permite varios acuerdos por cliente y otras periodicidades (cada dos semanas, trimestral, anual o una sola vez), además de fecha final.
 - **Quincenal**: dos días fijos al mes (15 y 30 por defecto, editables). En meses más cortos se paga el último día (28 o 29 de febrero).
 - Mensual se repite el mismo día de cada mes; si el mes es más corto, el último día.
 - Cada periodo se registra con **Recibir** y entra a Finanzas como **un** ingreso vinculado al cliente y al periodo: no se duplica, admite pagos parciales y «No llegó / omitir». Borrar el movimiento vuelve a abrir el periodo.
@@ -123,7 +124,7 @@ Para los lugares que te pagan un valor fijo (sueldo, honorarios, retainer):
 
 ## Pruebas
 
-`npm run test:life-os` ejecuta 62 pruebas sobre IndexedDB simulada (fake-indexeddb), incluidos los escenarios de aceptación: financiero, clientes, agenda, hábitos, transferencias, tarjetas, cobros vinculados, recurrencias (incluida la quincena), sueldos de clientes, tracker, planificador, migraciones y respaldo.
+`npm run test:life-os` ejecuta 68 pruebas sobre IndexedDB simulada (fake-indexeddb), incluidos los escenarios de aceptación: financiero, clientes, agenda, hábitos, transferencias, tarjetas, cobros vinculados, recurrencias (incluida la quincena), sueldos de clientes, tracker, planificador, migraciones y respaldo.
 
 ## Estructura
 

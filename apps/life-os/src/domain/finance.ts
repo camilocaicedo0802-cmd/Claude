@@ -21,7 +21,7 @@ import {
   type DateStr,
 } from "@/lib/dates";
 import { divideFloor, prorate, sumMinor, type Minor } from "@/lib/money";
-import { occurrencesBetween, occurrencesPerMonth } from "@/lib/recurrence";
+import { occurrencesBetween, occurrencesPerMonth, recurrenceToPreset } from "@/lib/recurrence";
 import type {
   Account,
   Budget,
@@ -277,6 +277,44 @@ export function recurringIncomeViews(incomes: PlannedIncome[], transactions: Tra
       ended: !p.active || upcoming.length === 0,
     };
   });
+}
+
+/** First period on or after `today` with nothing received and not skipped: where a change can start. */
+export function firstOpenPeriod(p: PlannedIncome, transactions: Transaction[], today: DateStr): DateStr | null {
+  return (
+    plannedIncomeOccurrences([{ ...p, active: true }], transactions, today, addDays(today, 400), today).find((o) => o.movements.length === 0 && !o.settlement)
+      ?.dueDate ?? null
+  );
+}
+
+/** How a client pays: per job, or a fixed amount every month, quincena or week. */
+export type PayMode = "job" | "monthly" | "semimonthly" | "weekly" | "other";
+export const PAY_MODES: Exclude<PayMode, "other">[] = ["job", "monthly", "semimonthly", "weekly"];
+export const PAY_MODE_LABEL: Record<PayMode, string> = {
+  job: "Por trabajo",
+  monthly: "Mensual",
+  semimonthly: "Quincenal",
+  weekly: "Semanal",
+  other: "Otra periodicidad",
+};
+export const PAY_MODE_BADGE: Record<PayMode, string> = {
+  job: "Paga por trabajo",
+  monthly: "Pago mensual",
+  semimonthly: "Pago quincenal",
+  weekly: "Pago semanal",
+  other: "Pago periódico",
+};
+
+export function payModeOf(r: PlannedIncome["recurrence"]): PayMode {
+  if (!r) return "other";
+  const preset = recurrenceToPreset(r);
+  return preset === "monthly" || preset === "semimonthly" || preset === "weekly" ? preset : "other";
+}
+
+/** A client's pay mode, from its live salaries (per job when it has none). */
+export function clientPayMode(views: RecurringIncomeView[]): PayMode {
+  const live = views.filter((v) => !v.ended && v.income.recurrence);
+  return live.length === 0 ? "job" : payModeOf(live[0].income.recurrence);
 }
 
 /** Approximate monthly value of a recurring income (0 for a one-off). */
