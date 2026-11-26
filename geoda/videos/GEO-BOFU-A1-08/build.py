@@ -18,12 +18,12 @@ def vd(k, extra=0.0):
 
 TAPS = [(1.6, f'{AU}/sfx_tap.wav', 0.5), (3.4, f'{AU}/sfx_tap.wav', 0.5)]   # toques al botón Comprar (clip del cierre arranca 0,2 s antes)
 base = dict(
-    id='GEO_BOFU_A1_08', fmt='UGC', version=1, tmp=TMP, out_dir=OUT, vo_dir=VO,
+    id='GEO_BOFU_A1_08', fmt='UGC', version=2, tmp=TMP, out_dir=OUT, vo_dir=VO,
     min_face=50, ai_label=False, hook_text_until=3.0, music=f'{AU}/music_805.mp3', music_vol=0.10,
     hooks={
         'HA': dict(vo='HA', dur=vd('HA'), subs=False, text=('Si en 14 días no te funciona,', 'te devolvemos la plata'),
                    line='Dale otra oportunidad a la piedra: si en catorce días no te funciona, te devolvemos tu dinero.',
-                   extras=[dict(type='stamp', text='14 DÍAS', x=790, y=1080, t0=0.35, size=110)],
+                   extras=[dict(type='stamp', text='14 DÍAS', x=520, y=680, t0=0.35, size=92)],
                    sfx=[(0.35, f'{AU}/sfx_thud.wav', 0.7)]),
         'HB': dict(vo='HB', dur=vd('HB'), subs=True, text=('Dale otra oportunidad', 'a la piedra, sin riesgo'),
                    line='Ya sabes usarla. Ahora pruébala sin riesgo.', sfx=[(0.35, f'{AU}/sfx_glint.wav', 0.3)]),
@@ -35,7 +35,7 @@ base = dict(
     },
     body=[
         dict(key='B1', vo='B1', dur=vd('B1'), line='Ya sabes el truco: mojar, aplicar, secar.', sfx=[(0.3, f'{AU}/splash_1180.mp3', 0.3)]),
-        dict(key='B2', vo='B2', dur=vd('B2'), line='Si en catorce días no te funciona, te devolvemos tu dinero.', head='✅ Garantía 14 días'),
+        dict(key='B2', vo='B2', dur=vd('B2'), line='Si en catorce días no te funciona, te devolvemos tu dinero.', head='✅ Garantía 14 días', sub_cx=300, sub_scale=0.85),
         dict(key='B3', vo='B3', dur=vd('B3'), line='Y no pagas nada por adelantado.', head='Pagas al recibir 📦'),
         dict(key='B4', vo='B4', dur=vd('B4'), line='Paga dos y lleva tres.'),
         dict(key='B5', vo='B5', dur=vd('B5'), line='Una para ti, y dos de repuesto, o para regalar.'),
@@ -55,18 +55,19 @@ def build_shots(cfg):
     cta = 'cta_navidad' if cfg['fmt'].endswith('K2') else 'cta_bf'
     a1, a2 = 1.85, 0.90   # cortes en 'mojar' / 'aplicar' / 'secar'
     return {
-        'HA': [B.shot(T, f's_ha_{d["HA"]:.2f}', k('m_ha'), d['HA'], z0=1.0, z1=1.05)],
-        'HB': [B.shot(T, f's_hb_{d["HB"]:.2f}', k('m_hb'), d['HB'], ss=0.3, speed=1.25, z0=1.0, z1=1.04)],
-        'HC': [B.shot(T, f's_hc_{d["HC"]:.2f}', k('m_hc'), d['HC'], ss=0.4, speed=1.2, z0=1.0, z1=1.04)],
-        'HD': [B.shot(T, f's_hd_{d["HD"]:.2f}', k('m_hd'), d['HD'], ss=0.0, speed=1.3, z0=1.0, z1=1.06)],
+        # hooks v2: plano abierto con la pared vacía arriba (ahí va el título); cajas = cabeza (con pelo) y producto en todo el plano
+        'HA': [B.shot(T, f's_ha2_{d["HA"]:.2f}', k('n_ha'), d['HA'], z0=1.0, z1=1.03) + ([(400, 740, 800, 1200)],)],
+        'HB': [B.shot(T, f's_hb2_{d["HB"]:.2f}', k('n_hb'), d['HB'], ss=0.2, speed=1.4, z0=1.0, z1=1.03) + ([(150, 640, 780, 1430)],)],
+        'HC': [B.shot(T, f's_hc2_{d["HC"]:.2f}', k('n_hc'), d['HC'], ss=0.0, z0=1.0, z1=1.03) + ([(440, 780, 800, 1160), (360, 1080, 720, 1520)],)],
+        'HD': [B.shot(T, f's_hd2_{d["HD"]:.2f}', k('n_hd'), d['HD'], ss=0.0, speed=1.3, z0=1.0, z1=1.10) + ([(460, 700, 800, 1080), (150, 980, 420, 1260)],)],
         # montaje de 3 cortes: agua en la punta de la piedra (kit) / Mateo la pasa (solo 0,1-1,0 s: piel limpia) / se seca (kit)
         'B1': [B.shot(T, 's_b1a', f'{KIT}/broll/k_grifo_m_0.mp4', a1, ss=0.3, z0=1.0, z1=1.06),
-               B.shot(T, 's_b1b', k('m_apl'), a2, ss=0.1, z0=1.04, z1=1.08),
+               B.shot(T, 's_b1b', k('m_apl'), a2, ss=0.1, z0=1.04, z1=1.08) + ([(200, 0, 640, 800)],),
                B.shot(T, f's_b1c_{d["B1"]:.2f}', f'{KIT}/broll/k_toalla_0.mp4', d['B1'] - a1 - a2, ss=0.8, z0=1.0, z1=1.04)],
-        'B2': [B.shot(T, f's_b2_{d["B2"]:.2f}', k('m_cal'), d['B2'], ss=0.5, z0=1.0, z1=1.04) + ([(600, 580, 1080, 1520)],)],
-        'B3': [B.shot(T, f's_b3_{d["B3"]:.2f}', k('m_door'), d['B3'], ss=0.0, z0=1.0, z1=1.04)],
+        'B2': [B.shot(T, f's_b2_{d["B2"]:.2f}', k('m_cal'), d['B2'], ss=0.5, z0=1.0, z1=1.04) + ([(600, 580, 1080, 1520), (150, 420, 640, 1080)],)],
+        'B3': [B.shot(T, f's_b3_{d["B3"]:.2f}', k('m_door'), d['B3'], ss=0.0, z0=1.0, z1=1.04) + ([(60, 300, 540, 920), (700, 440, 1080, 920)],)],
         'B4': [B.shot(T, f's_b4_{d["B4"]:.2f}', k('m_tres'), d['B4'], ss=0.0, z0=1.0, z1=1.03) + ([(100, 800, 980, 1800)],)],
-        'B5': [B.shot(T, f's_b5_{d["B5"]:.2f}', k('m_amigos'), d['B5'], ss=0.0, z0=1.0, z1=1.04)],
+        'B5': [B.shot(T, f's_b5_{d["B5"]:.2f}', k('m_amigos'), d['B5'], ss=0.0, z0=1.0, z1=1.04) + ([(0, 370, 1080, 1020)],)],
         'B6': [B.shot(T, f's_b6_{cta}_{d["B6"]:.2f}', f'{T}/{cta}.mp4', d['B6'], z0=1.0, z1=1.09, fx=0.5, fy=0.62)
                + ([(259, 940, 801, 1620), (75, 500, 405, 930), (400, 720, 880, 880)],)],
     }

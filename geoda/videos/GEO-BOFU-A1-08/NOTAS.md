@@ -17,3 +17,13 @@
 - Costo: 10 imágenes (US$0,735) + 39 s de Kling (US$2,785) = US$3,52. Voz gratis.
 
 Montaje: `python3 cta.py bf 5.6 && python3 cta.py navidad 6.6 && python3 build.py` (clips de Higgsfield en assets.json → G/hf/k_*_0.mp4).
+
+## v2 (Camilo: ningún título puede tapar la cara)
+- Los 4 hooks se rehicieron en plano abierto: imagen con "el 40 % de arriba vacío (pared/techo)" y Kling con cámara fija
+  (prompt FRAMING en assets.json, n_*). El título va arriba en la pared; la cabeza de Mateo queda en el centro del cuadro.
+- Hook A: el sello '14 DÍAS' pasa entre el título y la cabeza.
+- Cajas manuales de cabeza (con pelo) y producto en todos los planos con personas: el detector automático no ve la cara cuando
+  Mateo mira hacia abajo. B2: subtítulo a la izquierda (sub_cx) para no tapar ni la cara ni el calendario.
+- Arreglo del montador: `place()` descartaba todas las posiciones si el bloque del hook era más ancho que la zona segura y
+  lo dejaba siempre arriba (y=360), sin mirar las caras. Ahora solo descarta por alto, y el bloque del hook mide máx. 840 px.
+- Costo extra v2: 4 imágenes (US$0,33) + 20 s de Kling (US$1,43) = US$1,76. Total A1-08: US$5,28.

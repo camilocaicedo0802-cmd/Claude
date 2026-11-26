@@ -122,8 +122,8 @@ def place(img, slots, obstacles, avoid=(), cx=CX, bot=SAFE_BOT):
     best, best_ov = slots[0], 1e9
     for y in slots:
         r = rect_at(img, y, cx)
-        if r[1] < SAFE_TOP or r[3] > min(bot, SAFE_BOT) or r[2] > SAFE_RIGHT or r[0] < 30:
-            continue
+        if r[1] < SAFE_TOP or r[3] > min(bot, SAFE_BOT):
+            continue   # (antes también descartaba por ancho: un bloque más ancho que la zona segura caía SIEMPRE en el primer hueco, encima de las caras)
         ov = sum(max(0, min(r[3], o[3]) - max(r[1], o[1])) for o in list(obstacles) + list(avoid) if overlaps(r, o))
         if ov == 0:
             return y
@@ -179,11 +179,11 @@ def fit(text, size, maxw, pad):
         size -= 2; f = b.font(FONT_BLACK, size)
     return size
 
-def hook_block(l1, l2, maxw=860):
+def hook_block(l1, l2, maxw=840):   # 840 = ancho de la zona segura con el centro en CX (520 ± 420 ≤ 940)
     # la línea blanca no baja de 64 px: si no cabe, se parte en dos renglones dentro del mismo recuadro
     # maxw < 860: bloque más angosto para ponerlo a un lado (ej. junto a una cara o la piedra)
-    h1 = box_text(l1, max(56 if maxw < 860 else 64, fit(l1, 80, maxw, (32, 16))), BLACK, WHITE, maxw=maxw, pad=(32, 16))
-    h2 = box_text(l2, max(56 if maxw < 860 else 0, fit(l2, 98, maxw, (36, 18))), BLACK, YEL, maxw=maxw, pad=(36, 18))
+    h1 = box_text(l1, max(56 if maxw < 840 else 64, fit(l1, 80, maxw, (32, 16))), BLACK, WHITE, maxw=maxw, pad=(32, 16))
+    h2 = box_text(l2, max(56 if maxw < 840 else 0, fit(l2, 98, maxw, (36, 18))), BLACK, YEL, maxw=maxw, pad=(36, 18))
     blk = Image.new('RGBA', (max(h1.width, h2.width), h1.height + h2.height - 6), (0, 0, 0, 0))
     blk.paste(h1, ((blk.width - h1.width) // 2, 0), h1); blk.paste(h2, ((blk.width - h2.width) // 2, h1.height - 6), h2)
     return blk

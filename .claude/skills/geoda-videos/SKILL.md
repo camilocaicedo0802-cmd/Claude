@@ -35,6 +35,10 @@ Habla siempre en español, con frases simples. Al final de **cada respuesta** ma
 - **Siempre pantalla completa**: nunca `framed` (video reducido con fondo borroso). Si el texto no cabe, buscar la zona libre
   del cuadro con `hook_slots`, `hook_cx` + `hook_maxw` (hook angosto a un lado) y `sub_y` + `sub_cx` + `sub_scale`
   (subtítulo a un lado); ver `geoda/videos/GEO-MOFU-A1-06/build_hooks_cd.py`. Revisar cuadro a cuadro durante todo el plano.
+- **Títulos lejos de las caras (incluye pelo y frente)** (Camilo, A1-08): en planos con persona, la imagen se pide con
+  "el 40 % de arriba vacío (pared/techo), la cabeza en el centro del cuadro" y Kling con cámara fija (ver `FR` en
+  `geoda/videos/GEO-BOFU-A1-08/assets.json`). Poner cajas manuales de cabeza y producto en `build_shots` (el detector falla
+  cuando la persona mira abajo) y revisar cuadro a cuadro los 3 s del hook.
 - **Ningún texto sobre caras, ni sobre la piedra o la etiqueta.** Subtítulos palabra por palabra; no repetir en titular
   lo que ya dice la voz (queda el subtítulo; usar íconos o números grandes).
 - **Etiqueta perfecta o sin etiqueta.** Producto real (foto o clip revisado del kit) mínimo 2-3 s y en el cierre.

@@ -293,8 +293,134 @@
   "kit/producto/endcard_bano_anim.mp4 (cierre, con cta.py)"
  ],
  "costo_usd": {
-  "imagenes": 0.735,
-  "kling_39s": 2.785,
-  "total": 3.52
+  "v1_imagenes": 0.735,
+  "v1_kling_39s": 2.785,
+  "v2_hooks_imagenes": 0.332,
+  "v2_hooks_kling_20s": 1.428,
+  "total": 5.28
+ },
+ "n_ha": {
+  "endpoint": "marketing-studio/image",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21536-3216-711e-8c3e-5f73d0f0bbdd/ec1078ec-a7d6-4ffc-b2a6-557fc22a4023.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic smartphone UGC photo, soft window light, modest modern Bogota apartment. FRAMING (very important): wide shot taken from about 3 meters away with the phone on a tripod at chest height. The UPPER 40% of the frame is completely EMPTY: only plain light wall and ceiling, nothing else there (space for text). His head is in the middle of the frame (the top of his hair at about 42% of the frame height), never near the top edge. The SAME man as the first reference image (Mateo: Colombian, about 30, light-brown skin, short dark wavy hair, short trimmed beard, olive green t-shirt) sits at his small dining table and happily puts a few Colombian peso banknotes back into his brown leather wallet, closed-mouth smile, looking at the wallet. On the table in front of him stands one GEODA deodorant stick. The GEODA deodorant stick is exactly like the product references (white tube, clear cap, translucent white alum crystal on top) and its label (Desodorante, GEODA, 100% NATURAL, EFECTIVO Y SEGURO, 24h) faces the camera, upright and sharp. No text.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21512-7c92-7d23-8856-a33114f7ead7/596b57f7-19ed-4d3b-a4c0-05fcc7638530.png",
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/00cb1085-fa0c-4a03-a446-05649f4e916e.jpeg",
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/6f52cc8c-3f5d-49ad-a82f-8974d41b2c71.jpeg"
+   ]
+  }
+ },
+ "k_n_ha": {
+  "endpoint": "kling-video/v3.0/std/image-to-video",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21536-ede8-76e1-9034-d57649a74e97/90924742-aa56-46e4-b65d-7c000919a5fd.mp4"
+  ],
+  "body": {
+   "prompt": "He slides the banknotes fully into the wallet, closes the wallet with a satisfied nod and pats it, then looks up at the camera with a relaxed closed-mouth smile. Nobody speaks, lips stay closed. The GEODA stick keeps exactly the same shape and label and does not rotate. Static camera on a tripod: no zoom in, no camera movement, the empty wall at the top of the frame stays empty. Realistic smartphone UGC video, soft window light.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21536-3216-711e-8c3e-5f73d0f0bbdd/ec1078ec-a7d6-4ffc-b2a6-557fc22a4023.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "n_hb": {
+  "endpoint": "marketing-studio/image",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21536-337a-78b5-bbc6-7fca98d085b2/a959f96f-9937-4e3e-8e11-ef7d75249437.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic smartphone UGC photo, soft window light, modest modern Bogota apartment. FRAMING (very important): wide shot taken from about 3 meters away with the phone on a tripod at chest height. The UPPER 40% of the frame is completely EMPTY: only plain light wall and ceiling, nothing else there (space for text). His head is in the middle of the frame (the top of his hair at about 42% of the frame height), never near the top edge. The SAME man as the first reference image (Mateo: Colombian, about 30, light-brown skin, short dark wavy hair, short trimmed beard, olive green t-shirt) stands in his living room holding the GEODA deodorant stick up to his lips with one hand, giving the crystal stone on top a playful kiss, eyes on the camera. The GEODA deodorant stick is exactly like the product references (white tube, clear cap, translucent white alum crystal on top) and its label (Desodorante, GEODA, 100% NATURAL, EFECTIVO Y SEGURO, 24h) faces the camera, upright and sharp. No text.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21512-7c92-7d23-8856-a33114f7ead7/596b57f7-19ed-4d3b-a4c0-05fcc7638530.png",
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/00cb1085-fa0c-4a03-a446-05649f4e916e.jpeg",
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/6f52cc8c-3f5d-49ad-a82f-8974d41b2c71.jpeg"
+   ]
+  }
+ },
+ "k_n_hb": {
+  "endpoint": "kling-video/v3.0/std/image-to-video",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21536-ef39-7440-b044-2e06e063e80d/f67784de-c39a-441c-b567-5ce1ae83d2ed.mp4"
+  ],
+  "body": {
+   "prompt": "He gives the crystal stone on top of the GEODA stick a quick playful kiss, then moves the stick a little away from his face toward the camera, label facing the camera, and smiles with lips closed, raising his eyebrows. He does not speak. The GEODA stick keeps exactly the same shape and label and does not rotate. Static camera on a tripod: no zoom in, no camera movement, the empty wall at the top of the frame stays empty. Realistic smartphone UGC video, soft window light.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21536-337a-78b5-bbc6-7fca98d085b2/a959f96f-9937-4e3e-8e11-ef7d75249437.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "n_hc": {
+  "endpoint": "marketing-studio/image",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21536-34db-7dfa-9c08-d4817fb1ac6e/411ef83c-2de2-4ddd-a5b9-69744ecb0501.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic smartphone UGC photo, soft window light, modest modern Bogota apartment. FRAMING (very important): wide shot taken from about 3 meters away with the phone on a tripod at chest height. The UPPER 40% of the frame is completely EMPTY: only plain light wall and ceiling, nothing else there (space for text). His head is in the middle of the frame (the top of his hair at about 42% of the frame height), never near the top edge. The SAME man as the first reference image (Mateo: Colombian, about 30, light-brown skin, short dark wavy hair, short trimmed beard, olive green t-shirt) sits on the grey sofa next to a small decorated Christmas tree with warm lights (the tree stays low, below his head height), holding an opened small gift box with a red ribbon on his lap; inside the box lies a GEODA deodorant stick. He looks into the box with one eyebrow raised, curious and a bit skeptical, lips closed. The GEODA deodorant stick is exactly like the product references (white tube, clear cap, translucent white alum crystal on top) and its label (Desodorante, GEODA, 100% NATURAL, EFECTIVO Y SEGURO, 24h) faces the camera, upright and sharp. No text.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21512-7c92-7d23-8856-a33114f7ead7/596b57f7-19ed-4d3b-a4c0-05fcc7638530.png",
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/00cb1085-fa0c-4a03-a446-05649f4e916e.jpeg",
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/6f52cc8c-3f5d-49ad-a82f-8974d41b2c71.jpeg"
+   ]
+  }
+ },
+ "k_n_hc": {
+  "endpoint": "kling-video/v3.0/std/image-to-video",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21536-f08e-7f86-b785-72fe45a0540c/80f0d139-c773-42ad-8581-c9e5f7927bff.mp4"
+  ],
+  "body": {
+   "prompt": "He lifts the GEODA stick up and looks at it with one eyebrow raised, skeptical, then slowly breaks into a warm closed-mouth smile and nods, holding the gift box on his lap. The Christmas tree lights twinkle. Nobody speaks, lips stay closed. The GEODA stick keeps exactly the same shape and label and does not rotate. Static camera on a tripod: no zoom in, no camera movement, the empty wall at the top of the frame stays empty. Realistic smartphone UGC video, soft window light.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21536-34db-7dfa-9c08-d4817fb1ac6e/411ef83c-2de2-4ddd-a5b9-69744ecb0501.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "n_hd": {
+  "endpoint": "marketing-studio/image",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21536-363a-7c49-8421-d94ba0effa0c/b3229a2b-bc5f-4cf0-8a9f-7501edacae71.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic smartphone UGC photo, soft window light, modest modern Bogota apartment. FRAMING (very important): wide shot taken from about 3 meters away with the phone on a tripod at chest height. The UPPER 40% of the frame is completely EMPTY: only plain light wall and ceiling, nothing else there (space for text). His head is in the middle of the frame (the top of his hair at about 42% of the frame height), never near the top edge. The SAME man as the first reference image (Mateo: Colombian, about 30, light-brown skin, short dark wavy hair, short trimmed beard, olive green t-shirt) stands in his small kitchen next to an open grey pedal trash bin, holding a GEODA deodorant stick above the trash bin as if about to throw it away, looking at it with doubt, lips closed. The GEODA deodorant stick is exactly like the product references (white tube, clear cap, translucent white alum crystal on top) and its label (Desodorante, GEODA, 100% NATURAL, EFECTIVO Y SEGURO, 24h) faces the camera, upright and sharp. No text.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21512-7c92-7d23-8856-a33114f7ead7/596b57f7-19ed-4d3b-a4c0-05fcc7638530.png",
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/00cb1085-fa0c-4a03-a446-05649f4e916e.jpeg",
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/6f52cc8c-3f5d-49ad-a82f-8974d41b2c71.jpeg"
+   ]
+  }
+ },
+ "k_n_hd": {
+  "endpoint": "kling-video/v3.0/std/image-to-video",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21536-f1c2-7cf4-b3d8-c497535be466/731e5511-66d9-4f77-ac5f-c0874d0d2995.mp4"
+  ],
+  "body": {
+   "prompt": "He moves the GEODA stick over the open trash bin as if to drop it, hesitates, stops, pulls it back toward his chest and looks at it again with a thoughtful face, then gives a small closed-mouth smile. The trash bin lid stays open. Nobody speaks, lips stay closed. The GEODA stick keeps exactly the same shape and label and does not rotate. Static camera on a tripod: no zoom in, no camera movement, the empty wall at the top of the frame stays empty. Realistic smartphone UGC video, soft window light.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21536-363a-7c49-8421-d94ba0effa0c/b3229a2b-bc5f-4cf0-8a9f-7501edacae71.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
  }
 }

@@ -135,6 +135,10 @@ El montador (`pipeline/builder.py`) ya trae estas reglas por defecto.
     se busca la zona libre del cuadro (cielo, pared, cuerpos sin caras) con `hook_slots`, `hook_cx` + `hook_maxw` (bloque
     más angosto a un lado) y, para subtítulos, `sub_y` + `sub_cx` + `sub_scale`. Ningún texto sobre caras ni sobre la piedra.
 
+44. **Ningún título ni texto tapa una cara** (Camilo, A1-08), tampoco el pelo o la frente. En planos con persona se genera la
+    imagen con el 40 % de arriba vacío (pared/techo) y la cabeza en el centro, Kling con cámara fija, y se ponen cajas
+    manuales de cabeza/producto en el montaje. Si no cabe arriba, el texto va al pecho (debajo de la barbilla), nunca encima.
+
 ## Entrega
 34. Carpeta `GEODA_60/TOFU|MOFU|BOFU/A1…` con las versiones vigentes, `CTA_alternos/` para los re-exports de CTA y un
     `LEEME.txt`; se envía también como .zip.
