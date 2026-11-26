@@ -1,0 +1,357 @@
+{
+ "d_ref": {
+  "endpoint": "marketing-studio/image",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2160d-993f-7f06-8df3-d1433dc38b77/75b96e5e-cc9f-46fa-9d99-36c50d6c4e60.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic smartphone UGC photo of Daniela, a friendly Colombian woman around 27 years old, warm tan skin, shoulder-length dark brown straight hair with a middle part, natural makeup, small silver stud earrings, wearing a plain white t-shirt, standing in her bright modest Bogota apartment bathroom with natural window light. Natural relaxed closed-mouth smile, looking at the camera. Medium shot from the waist up, face in the middle of the frame. No text, no logos."
+  }
+ },
+ "d_ha": {
+  "endpoint": "marketing-studio/image",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2160e-7dc7-70c5-a3fd-ebb26223a862/4e47b462-34f1-469f-ac5b-e374906f1236.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic smartphone UGC photo, natural window light, modest modern Bogota apartment. FRAMING (very important): wide shot taken from about 3 meters away with the phone on a tripod at chest height. The UPPER 40% of the frame is completely EMPTY: only plain light wall and ceiling, nothing else there (space for text). Her head is in the middle of the frame (the top of her hair at about 42% of the frame height), never near the top edge. The SAME woman as the first reference image (Daniela: Colombian, about 27, warm tan skin, shoulder-length dark brown straight hair with a middle part, small silver stud earrings), wearing a plain grey sleeveless top, stands in her bright bathroom and has just raised one arm up quickly, hand behind her head, confident. She looks straight into the camera, mouth slightly open as if talking, natural expression. No text.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2160d-993f-7f06-8df3-d1433dc38b77/75b96e5e-cc9f-46fa-9d99-36c50d6c4e60.png"
+   ]
+  }
+ },
+ "d_hc": {
+  "endpoint": "marketing-studio/image",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2160e-7f1e-7e9b-b464-5786e1f55e03/1055ad03-955e-459b-864e-1b86c8e43064.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic smartphone UGC photo, natural window light, modest modern Bogota apartment. FRAMING (very important): wide shot taken from about 3 meters away with the phone on a tripod at chest height. The UPPER 40% of the frame is completely EMPTY: only plain light wall and ceiling, nothing else there (space for text). Her head is in the middle of the frame (the top of her hair at about 42% of the frame height), never near the top edge. The SAME woman as the first reference image (Daniela: Colombian, about 27, warm tan skin, shoulder-length dark brown straight hair with a middle part, small silver stud earrings), wearing a pretty sleeveless red top, stands in her living room next to a decorated Christmas tree with warm lights, relaxed and happy, arms loose at her sides. She looks straight into the camera, mouth slightly open as if talking, natural expression. No text.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2160d-993f-7f06-8df3-d1433dc38b77/75b96e5e-cc9f-46fa-9d99-36c50d6c4e60.png"
+   ]
+  }
+ },
+ "d_b1": {
+  "endpoint": "marketing-studio/image",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2160e-8087-7e2d-95cc-c5959e80112c/7a1f210c-0897-44fa-a74e-345681536ebc.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic smartphone UGC photo, natural window light, modest modern Bogota apartment. The SAME woman as the first reference image (Daniela: Colombian, about 27, warm tan skin, shoulder-length dark brown straight hair with a middle part, small silver stud earrings), wearing a plain white t-shirt, stands in her bathroom and rubs her upper arm with one hand, a little annoyed. She looks straight into the camera, mouth slightly open as if talking, natural expression. Medium shot, her head in the upper-middle part of the frame (not touching the top edge). No text.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2160d-993f-7f06-8df3-d1433dc38b77/75b96e5e-cc9f-46fa-9d99-36c50d6c4e60.png"
+   ]
+  }
+ },
+ "d_b2": {
+  "endpoint": "marketing-studio/image",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2160e-81c2-7568-a9c1-5da794e315dc/cfc74405-8e23-4452-8d4b-d6e8d249e0d7.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic smartphone UGC photo, natural window light, modest modern Bogota apartment. The SAME woman as the first reference image (Daniela: Colombian, about 27, warm tan skin, shoulder-length dark brown straight hair with a middle part, small silver stud earrings), wearing a plain white t-shirt, stands in her bathroom holding up a generic unbranded pink aerosol deodorant can with no text and no logo next to her face, with a slightly disapproving look. She looks straight into the camera, mouth slightly open as if talking, natural expression. Medium shot, her head in the upper-middle part of the frame (not touching the top edge). No text.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2160d-993f-7f06-8df3-d1433dc38b77/75b96e5e-cc9f-46fa-9d99-36c50d6c4e60.png"
+   ]
+  }
+ },
+ "d_b3": {
+  "endpoint": "marketing-studio/image",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2160e-8321-706c-991c-9eec44ae6682/7077149f-e584-4406-932d-0c6bea184464.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic smartphone UGC photo, natural window light, modest modern Bogota apartment. The SAME woman as the first reference image (Daniela: Colombian, about 27, warm tan skin, shoulder-length dark brown straight hair with a middle part, small silver stud earrings), wearing a plain white t-shirt, stands in her bathroom and holds up three fingers toward the camera. She looks straight into the camera, mouth slightly open as if talking, natural expression. Medium shot, her head in the upper-middle part of the frame (not touching the top edge). No text.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2160d-993f-7f06-8df3-d1433dc38b77/75b96e5e-cc9f-46fa-9d99-36c50d6c4e60.png"
+   ]
+  }
+ },
+ "d_hb": {
+  "endpoint": "marketing-studio/image",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2160e-847c-7b13-a1ac-d0c9bc07e62c/d3f040db-1334-4967-8f8e-c3498a8fa152.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic smartphone photo, close-up of a white bathroom sink in morning light: a pink disposable razor is falling into the sink in mid-air, a few water drops around it. The UPPER 40% of the frame is a plain empty tiled wall. No person, no text."
+  }
+ },
+ "d_hd": {
+  "endpoint": "marketing-studio/image",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2160e-85a7-7609-928d-59874e8f56bc/16fb3bd4-4ffb-4850-8a72-763dba6397d7.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic first-person POV smartphone photo: a hand opens a bathroom mirror cabinet that is almost empty and very tidy: on the shelf there are only a plain white lotion bottle with no text and a small white deodorant stick seen from behind (no label visible), soft morning light. No text, no logos."
+  }
+ },
+ "d_b4": {
+  "endpoint": "marketing-studio/image",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2160e-86db-7b3f-8838-b7d78dcc2338/a6d66934-7c4f-4d35-bad7-87f176715a48.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic smartphone photo, close-up of a woman's lower leg with light-tan skin covered with white shaving foam, a pink razor gliding slowly and calmly over the shin, in a bathtub with soft light. Only the leg and the hand are visible. No text."
+  }
+ },
+ "d_b5": {
+  "endpoint": "marketing-studio/image",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2160e-881c-7170-8916-f9f0c3bf7ce3/f9c1dc5e-171c-4332-8000-3a81e216f969.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic smartphone UGC photo, natural window light, modest modern Bogota apartment. The SAME woman as the first reference image (Daniela: Colombian, about 27, warm tan skin, shoulder-length dark brown straight hair with a middle part, small silver stud earrings), wearing a plain white t-shirt, stands by a bright window and holds up the GEODA deodorant stick (cap off) against the backlight; the translucent crystal on top glows in the light. Closed-mouth smile, looking at it. The GEODA deodorant stick is exactly like the product references (white tube, translucent white alum crystal on top) and its label (Desodorante, GEODA, 100% NATURAL, EFECTIVO Y SEGURO, 24h) faces the camera, upright and sharp. Medium shot, her head in the upper-middle part of the frame (not touching the top edge). No text.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2160d-993f-7f06-8df3-d1433dc38b77/75b96e5e-cc9f-46fa-9d99-36c50d6c4e60.png",
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/00cb1085-fa0c-4a03-a446-05649f4e916e.jpeg",
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/6f52cc8c-3f5d-49ad-a82f-8974d41b2c71.jpeg"
+   ]
+  }
+ },
+ "d_b6": {
+  "endpoint": "marketing-studio/image",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2160e-895f-7896-b43b-ca5f5b843dbb/ca16f004-99e6-4d03-b258-c1e56c7763bf.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic smartphone photo at night in a cozy bedroom with a warm bedside lamp: The SAME woman as the first reference image (Daniela: Colombian, about 27, warm tan skin, shoulder-length dark brown straight hair with a middle part, small silver stud earrings), wearing a plain grey sleeveless top, sits on her bed and smooths a little white moisturizing lotion onto her arm, relaxed closed-mouth smile; a plain white lotion bottle with no text beside her. Medium shot, her head in the upper-middle part of the frame (not touching the top edge). No text.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2160d-993f-7f06-8df3-d1433dc38b77/75b96e5e-cc9f-46fa-9d99-36c50d6c4e60.png"
+   ]
+  }
+ },
+ "d_b7": {
+  "endpoint": "marketing-studio/image",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2160e-8ab0-7f00-aee0-fd17d9e6d333/9535e51c-726c-4999-adf5-bf6de479d669.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic smartphone UGC photo, natural window light, modest modern Bogota apartment. The SAME woman as the first reference image (Daniela: Colombian, about 27, warm tan skin, shoulder-length dark brown straight hair with a middle part, small silver stud earrings), wearing a plain white sleeveless top and jeans, stands in her sunny living room, relaxed and confident, arms loose, big closed-mouth smile. Wide shot, full body, she is in the middle of the frame. No text.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2160d-993f-7f06-8df3-d1433dc38b77/75b96e5e-cc9f-46fa-9d99-36c50d6c4e60.png"
+   ]
+  }
+ },
+ "d_map": {
+  "endpoint": "marketing-studio/image",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2160e-8bfe-786e-8613-801f640714b0/1008945e-33f4-4c26-8930-dfd87a1e8395.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 clean flat vector-style illustration: an accurate map of Colombia in soft teal with a slightly darker outline, centered, filling the left two-thirds of the frame from top to bottom, on a plain very light warm background. No text, no labels, no city names, no pins, no logos."
+  }
+ },
+ "w_ha": {
+  "endpoint": "wan/v2.7/image-to-video (audio_url = la voz: labios sincronizados)",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2160f-90ee-77b9-9fa0-c117ca8bee75/6f732f51-1a27-49d3-8190-12c8c7fda6dd.mp4"
+  ],
+  "body": {
+   "prompt": "Handheld smartphone UGC testimonial video, natural window light. The woman talks to the camera naturally, natural lip movement matching the speech, small natural head movements and blinks. She keeps one arm raised with her hand behind her head the whole time, confident and relaxed. Static camera, the empty wall at the top stays empty.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2160e-7dc7-70c5-a3fd-ebb26223a862/4e47b462-34f1-469f-ac5b-e374906f1236.png",
+   "audio_url": "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/bd91940f-babe-48cd-8172-123bb8e4b6ad.wav",
+   "duration": 4,
+   "resolution": "720p",
+   "negative_prompt": "text, subtitles, watermark, extra fingers, distorted hands, distorted face, logo"
+  }
+ },
+ "w_hc": {
+  "endpoint": "wan/v2.7/image-to-video (audio_url = la voz: labios sincronizados)",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2160f-9749-7ac8-a444-822cd0be6fe4/d9725fd3-9d4a-4f0b-8ca1-c92fee3e3336.mp4"
+  ],
+  "body": {
+   "prompt": "Handheld smartphone UGC testimonial video, natural window light. The woman talks to the camera naturally, natural lip movement matching the speech, small natural head movements and blinks. She smiles warmly, the Christmas tree lights twinkle beside her. Static camera, the empty wall at the top stays empty.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2160e-7f1e-7e9b-b464-5786e1f55e03/1055ad03-955e-459b-864e-1b86c8e43064.png",
+   "audio_url": "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/2382302c-fbeb-4aa4-a037-580c618c0379.wav",
+   "duration": 4,
+   "resolution": "720p",
+   "negative_prompt": "text, subtitles, watermark, extra fingers, distorted hands, distorted face, logo"
+  }
+ },
+ "w_b1": {
+  "endpoint": "wan/v2.7/image-to-video (audio_url = la voz: labios sincronizados)",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2160f-9e61-7e40-8cc0-83b2a6203027/5c78f5b8-f107-420d-81b0-852ad6394284.mp4"
+  ],
+  "body": {
+   "prompt": "Handheld smartphone UGC testimonial video, natural window light. The woman talks to the camera naturally, natural lip movement matching the speech, small natural head movements and blinks. She rubs her upper arm a little, annoyed, while she talks.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2160e-8087-7e2d-95cc-c5959e80112c/7a1f210c-0897-44fa-a74e-345681536ebc.png",
+   "audio_url": "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/edce9498-0f99-44cd-8465-f8ac5e22fa91.wav",
+   "duration": 4,
+   "resolution": "720p",
+   "negative_prompt": "text, subtitles, watermark, extra fingers, distorted hands, distorted face, logo"
+  }
+ },
+ "w_b2": {
+  "endpoint": "wan/v2.7/image-to-video (audio_url = la voz: labios sincronizados)",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2160f-a4db-706e-bb01-6379cf175897/8cd5bcc2-a135-40af-8bef-d5f9076593c6.mp4"
+  ],
+  "body": {
+   "prompt": "Handheld smartphone UGC testimonial video, natural window light. The woman talks to the camera naturally, natural lip movement matching the speech, small natural head movements and blinks. She holds up the pink aerosol can and shakes her head slightly while she talks. The can stays unchanged, with no text.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2160e-81c2-7568-a9c1-5da794e315dc/cfc74405-8e23-4452-8d4b-d6e8d249e0d7.png",
+   "audio_url": "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/9f20c31a-6c14-481b-8844-daf00f29d455.wav",
+   "duration": 3,
+   "resolution": "720p",
+   "negative_prompt": "text, subtitles, watermark, extra fingers, distorted hands, distorted face, logo"
+  }
+ },
+ "w_b3": {
+  "endpoint": "wan/v2.7/image-to-video (audio_url = la voz: labios sincronizados)",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2160f-aabd-7673-b2b4-6cc18b0bea5a/511cd648-6216-469c-abfc-fc5bab9ad085.mp4"
+  ],
+  "body": {
+   "prompt": "Handheld smartphone UGC testimonial video, natural window light. The woman talks to the camera naturally, natural lip movement matching the speech, small natural head movements and blinks. She keeps three fingers raised toward the camera while she talks.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2160e-8321-706c-991c-9eec44ae6682/7077149f-e584-4406-932d-0c6bea184464.png",
+   "audio_url": "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/81b24166-ae7c-42e6-b80c-ac06024630b5.wav",
+   "duration": 2,
+   "resolution": "720p",
+   "negative_prompt": "text, subtitles, watermark, extra fingers, distorted hands, distorted face, logo"
+  }
+ },
+ "k_d_hb": {
+  "endpoint": "kling-video/v3.0/std/image-to-video",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2160f-ac4d-789a-89aa-f664b4b7957e/f0469c90-1b91-42ed-b861-59efb7b6c2fd.mp4"
+  ],
+  "body": {
+   "prompt": "The pink razor drops into the white sink in slow motion, bounces once and comes to rest, a few water drops splash. Realistic handheld smartphone UGC video, soft natural light.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2160e-847c-7b13-a1ac-d0c9bc07e62c/d3f040db-1334-4967-8f8e-c3498a8fa152.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "k_d_hd": {
+  "endpoint": "kling-video/v3.0/std/image-to-video",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2160f-ad90-7fab-b74c-246e4673790e/06df980b-6b76-479c-82cf-5b28088ba944.mp4"
+  ],
+  "body": {
+   "prompt": "The hand slowly opens the mirror cabinet door fully, revealing the tidy almost empty shelf with the lotion bottle and the small white stick; the light shifts softly. Realistic handheld smartphone UGC video, soft natural light.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2160e-85a7-7609-928d-59874e8f56bc/16fb3bd4-4ffb-4850-8a72-763dba6397d7.png",
+   "duration": 3,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "k_d_b4": {
+  "endpoint": "kling-video/v3.0/std/image-to-video",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2160f-aec4-7d94-85f2-2bf8c8600e18/26247197-164e-4673-bf4f-21f1947cc8a5.mp4"
+  ],
+  "body": {
+   "prompt": "The pink razor glides slowly and calmly over the foamy shin in one long careful stroke, unhurried. Realistic handheld smartphone UGC video, soft natural light.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2160e-86db-7b3f-8838-b7d78dcc2338/a6d66934-7c4f-4d35-bad7-87f176715a48.png",
+   "duration": 3,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "k_d_b5": {
+  "endpoint": "kling-video/v3.0/std/image-to-video",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2160f-b002-7b0d-a881-0490b64167c1/41065ddb-1d35-4105-9e25-1dee4cfd33dc.mp4"
+  ],
+  "body": {
+   "prompt": "She slowly raises the GEODA stick toward the bright window light and turns it a little so the translucent crystal glows, closed-mouth smile; she does not speak. The GEODA stick keeps exactly the same shape and label. Realistic handheld smartphone UGC video, soft natural light.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2160e-881c-7170-8916-f9f0c3bf7ce3/f9c1dc5e-171c-4332-8000-3a81e216f969.png",
+   "duration": 3,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "k_d_b6": {
+  "endpoint": "kling-video/v3.0/std/image-to-video",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2160f-b153-7504-9e65-2ff1eb4f866b/9f91fd40-5359-4a10-818c-082be85a0d73.mp4"
+  ],
+  "body": {
+   "prompt": "She gently smooths the moisturizing lotion along her arm with her other hand, relaxed, closed-mouth smile; she does not speak. Realistic handheld smartphone UGC video, soft natural light.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2160e-895f-7896-b43b-ca5f5b843dbb/ca16f004-99e6-4d03-b258-c1e56c7763bf.png",
+   "duration": 3,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "k_d_b7": {
+  "endpoint": "kling-video/v3.0/std/image-to-video",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2160f-b2aa-7f60-81b2-b66809fcb9b4/84b97e05-a73a-4e97-91bb-4bb2b7d9a00e.mp4"
+  ],
+  "body": {
+   "prompt": "She smiles at the camera, sways a little, tucks her hair behind her ear and relaxes her shoulders, confident and happy, lips closed; she does not speak. Realistic handheld smartphone UGC video, soft natural light.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2160e-8ab0-7f00-aee0-fd17d9e6d333/9535e51c-726c-4999-adf5-bf6de479d669.png",
+   "duration": 3,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "kit": [
+  "kit/broll/k_grifo_m_0.mp4 (B5 se moja)",
+  "kit/broll/k_tapa_0.mp4 (B8 GEODA real en la mano)",
+  "mapa.py + kit/fondos/mapa_colombia.png (cierre K6)",
+  "cierre K2: a202/tmp/xmas_ec_bow.mp4 (A2-02)"
+ ],
+ "costo_usd": {
+  "imagenes_13": 0.7,
+  "wan27_17s": 1.28,
+  "kling_20s": 1.43,
+  "total": 3.4
+ }
+}

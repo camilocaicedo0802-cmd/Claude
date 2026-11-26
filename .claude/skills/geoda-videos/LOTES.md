@@ -38,7 +38,7 @@ recorte real del producto, fondo que siempre se mueve, SFX sintetizados; costo U
 ## Lote 3
 | # | Video | Formato | Duración | CTA | Nota |
 |---|---|---|---|---|---|
-| 1 | GEO-TOFU-A2-03 | Testimonio | 30 s | Envío a toda Colombia | Testimonio generado: sin contar resultados como reales. |
+| ✓ | GEO-TOFU-A2-03 (hecho) | Testimonio | 30 s | Envío a toda Colombia | Testimonio generado: sin contar resultados como reales. |
 | 2 | GEO-TOFU-A2-04 | Podcast | 39 s | Black Friday | Podcast: WAN 3.0 con audio nativo, una toma larga por persona y su plano solo cuando habla (ref. `pipeline/build_a105.py`; se puede reutilizar `kit/personajes/podcast/`). |
 | 3 | GEO-MOFU-A2-05 | Diario de 14 días | 45 s | Black Friday | Diario 14 días: la misma persona y la misma voz en los 14 días del video. |
 | 4 | GEO-MOFU-A2-06 | Comparación piedra vs frasco | 33 s | Combo 2x para regalar | Comparación: frascos genéricos sin marca. |

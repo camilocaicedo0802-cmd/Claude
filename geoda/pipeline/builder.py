@@ -300,7 +300,7 @@ def build(cfg, hk, shots):
         if r.get('big'):   # número de paso grande (amarillo con borde azul), no repite la voz
             im = render_runs(r['big'], r.get('big_size', 300), YEL, FONT_BLACK, stroke=12, stroke_color=NAVY)
             ix = r.get('icon_x', 790)
-            y = place(im, [440, 560, 700, 840, 980, 1100], obst_range(t0, t1), [q for a, bb, q in text_rects if a < t1 and t0 < bb], cx=ix)
+            y = r['big_y'] if r.get('big_y') else place(im, [440, 560, 700, 840, 980, 1100], obst_range(t0, t1), [q for a, bb, q in text_rects if a < t1 and t0 < bb], cx=ix)   # big_y: posición fija (zona libre)
             els.append((im, ix, y, t0 + 0.05, t1, 'slam')); text_rects.append((t0, t1, rect_at(im, y, ix)))
         if r.get('icon'):
             im = render_runs(r['icon'], 200, WHITE, FONT_BLACK)
