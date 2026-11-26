@@ -6,7 +6,7 @@ Voces (Gemini TTS, H = hombre, M = mujer): cada lote tiene dos voces sugeridas (
 la misma voz al mismo tiempo; dentro de un video, cada personaje conserva su voz. Las notas son sugerencias.
 
 ## Nombre de entrega
-`<Ángulo> GEO <ETAPA>-<A#>-<NN>-Hook <X>.mp4` · ej. `La piedra no te falló GEO MOFU-A1-05-Hook A.mp4`
+`<Ángulo> GEO <ETAPA>-<A#>-<NN>-Hook <X>-<Formato>.mp4` · ej. `Axilas que lucen más parejas GEO TOFU-A2-04-Hook B-Podcast.mp4` (formato al final desde el 26-nov; corrección: ` v2` al final)
 
 | Ángulo | Texto en el nombre |
 |---|---|

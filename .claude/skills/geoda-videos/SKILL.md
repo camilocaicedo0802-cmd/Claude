@@ -110,7 +110,7 @@ Salidas pesadas (clips, mp4) en la carpeta de trabajo `G` (`cat ~/.geoda_work`):
 6. **Entregar cada video apenas esté** (SendUserFile, HA y HB) con su costo en USD (imágenes + segundos de video).
 
 ## 2b. Nombre de los archivos de ENTREGA
-`<Ángulo> GEO <ETAPA>-<A#>-<NN>-Hook <X>.mp4` · ej. `La piedra no te falló GEO MOFU-A1-05-Hook A.mp4`,
+`<Ángulo> GEO <ETAPA>-<A#>-<NN>-Hook <X>-<Formato>.mp4` · ej. `Axilas que lucen más parejas GEO TOFU-A2-04-Hook B-Podcast.mp4` (formato al final desde el 26-nov; corrección: ` v2` al final),
 `Axilas que lucen más parejas GEO TOFU-A2-01-Hook C.mp4`. Sin formato ni CTA en el nombre (cada versión tiene su propio
 hook). Corrección de algo ya entregado: ` v2`, ` v3`… al final. Se monta con el nombre técnico de siempre y al entregar se
 copia con `python3 geoda/pipeline/tools/nombre_entrega.py --copiar <carpeta_mp4> <GEODA_60/ETAPA/A#>` (ángulos en `LOTES.md`).

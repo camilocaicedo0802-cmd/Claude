@@ -146,8 +146,10 @@ El montador (`pipeline/builder.py`) ya trae estas reglas por defecto.
 ## Entrega
 34. Carpeta `GEODA_60/TOFU|MOFU|BOFU/A1…` con las versiones vigentes, `CTA_alternos/` para los re-exports de CTA y un
     `LEEME.txt`; se envía también como .zip.
-19. Nombres de ENTREGA (formato de Camilo, 25-nov, desde el lote 2): `<Ángulo> GEO <ETAPA>-<A#>-<NN>-Hook <X>.mp4`,
-    ej. `La piedra no te falló GEO MOFU-A1-05-Hook A.mp4`. Cada versión tiene su hook (A, B, C, D…), así que el CTA alterno no
+19. Nombres de ENTREGA (formato de Camilo; desde el 26-nov con el FORMATO al final):
+    `<Ángulo> GEO <ETAPA>-<A#>-<NN>-Hook <X>-<Formato>.mp4`, ej. `Axilas que lucen más parejas GEO TOFU-A2-04-Hook B-Podcast.mp4`
+    (Formato: UGC, Demo, POV, Comparación, Motion graphics, Testimonio, Unboxing, Diario 14 días, Báscula, Pixar, Claymation,
+    Podcast, Street interview, Founder). Cada versión tiene su hook (A, B, C, D…), así que el CTA alterno no
     va en el nombre. Correcciones de algo ya entregado: ` v2`, ` v3`… al final. El montaje usa internamente el nombre técnico
     (GEO_MOFU_A1_05_HA_PODCAST_v6) y `pipeline/tools/nombre_entrega.py` lo traduce al copiar a la carpeta de entrega.
 20. **Avisar al celular** (notificación push) con cada respuesta.
