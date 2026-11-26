@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { BellRing, HandCoins, Link2, MessageCircle, Plus } from "lucide-react";
-import { useData, useJobViews, useMoney, useToday } from "@/hooks/data";
+import { useClientIncomes, useData, useJobViews, useMoney, useToday } from "@/hooks/data";
 import { PAYMENT_KIND_LABEL, summarizeClients, totalReceivables } from "@/domain/clients";
 import { addDays, endOfMonth, formatRelativeDay, startOfMonth } from "@/lib/dates";
 import { sumMinor } from "@/lib/money";
@@ -15,6 +15,7 @@ import { useUI } from "@/components/shell/ui-context";
 import { runSave } from "@/components/forms/form-kit";
 import { createTask } from "@/services/life-service";
 import { PaymentBadge } from "./bits";
+import { PeriodRow } from "./recurring-income";
 
 export function CollectionsPage() {
   const data = useData();
@@ -42,6 +43,16 @@ export function CollectionsPage() {
     .sort((a, b) => b.billed - a.billed);
   const jobById = new Map(data.jobs.map((j) => [j.id, j]));
   const clientById = new Map(data.clients.map((c) => [c.id, c]));
+
+  // Salaries and fixed payments: late periods first, then each agreement's next payday (30 days ahead).
+  const clientIncomes = useClientIncomes();
+  const periods = clientIncomes
+    .flatMap((v) => [...v.overdue, ...(v.next && v.next.dueDate <= addDays(today, 30) ? [v.next] : [])])
+    .filter((o) => (filter === "vencidos" ? o.status === "overdue" : filter === "proximos" ? o.dueDate >= today && o.dueDate <= addDays(today, 7) : true))
+    .sort((a, b) => a.dueDate.localeCompare(b.dueDate));
+  const receivedIncomeMonth = sumMinor(
+    data.transactions.filter((t) => t.kind === "income" && t.clientId && t.plannedIncomeId && t.date >= monthFrom && t.date <= monthTo).map((t) => t.amount),
+  );
 
   const remind = (jobId: string) => {
     const v = views.find((x) => x.job.id === jobId);
@@ -129,6 +140,34 @@ export function CollectionsPage() {
           </ul>
         )}
       </Card>
+
+      {clientIncomes.length > 0 && (
+        <Card>
+          <CardHeader
+            title="Sueldos y pagos periódicos"
+            description={`Pagos atrasados y próximos 30 días · recibido este mes: ${money(receivedIncomeMonth)}`}
+          />
+          {periods.length === 0 ? (
+            <p className="px-5 pb-5 text-[13px] text-muted-foreground">{filter === "all" ? "Todo al día. Los próximos pagos aparecerán aquí." : "Nada en este filtro."}</p>
+          ) : (
+            <ul className="divide-y divide-border">
+              {periods.map((o) => {
+                const client = clientById.get(o.source.clientId ?? "");
+                return (
+                  <PeriodRow
+                    key={o.key}
+                    occ={o}
+                    title={client?.name ?? o.source.name}
+                    subtitle={client ? o.source.name : undefined}
+                    onTitleClick={client ? () => openDetail({ type: "client", id: client.id }) : undefined}
+                    className="px-4 sm:px-5"
+                  />
+                );
+              })}
+            </ul>
+          )}
+        </Card>
+      )}
 
       <div className="grid gap-4 lg:grid-cols-2">
         <Card>

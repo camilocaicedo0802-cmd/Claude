@@ -15,8 +15,9 @@ import {
   Phone,
   Plus,
   StickyNote,
+  Wallet,
 } from "lucide-react";
-import { useData, useJobViews, useMoney, useToday } from "@/hooks/data";
+import { useClientIncomes, useData, useJobViews, useMoney, useToday } from "@/hooks/data";
 import { useUI } from "@/components/shell/ui-context";
 import { Sheet } from "@/components/ui/overlays";
 import { Button } from "@/components/ui/button";
@@ -31,6 +32,7 @@ import { formatDateNumeric, formatDateShort, formatRelativeDay, instantToDate } 
 import { cn, whatsappLink } from "@/lib/utils";
 import { DueLabel, JobCard, PaymentBadge, PriorityFlag, StatusBadge } from "./bits";
 import { FOLLOWUP_LABEL } from "@/components/forms/life-forms";
+import { ClientIncomeCard } from "./recurring-income";
 
 export function DetailHost() {
   const { detail, closeDetail } = useUI();
@@ -271,6 +273,8 @@ function ClientSheet({ id, open, onOpenChange }: { id: string; open: boolean; on
   const today = useToday();
   const { openForm, openDetail } = useUI();
   const [note, setNote] = React.useState("");
+  const allIncomes = useClientIncomes();
+  const incomes = allIncomes.filter((v) => v.income.clientId === id);
   const client = data.clients.find((c) => c.id === id);
   const summary = React.useMemo(() => (client ? summarizeClients([client], views)[0] : undefined), [client, views]);
   if (!client || !summary) {
@@ -330,6 +334,7 @@ function ClientSheet({ id, open, onOpenChange }: { id: string; open: boolean; on
           </div>
         )}
 
+        {(summary.jobs.length > 0 || incomes.length === 0) && (
         <dl className="grid grid-cols-3 gap-2">
           {[
             { label: "Facturado", value: summary.billed, cls: "" },
@@ -342,20 +347,44 @@ function ClientSheet({ id, open, onOpenChange }: { id: string; open: boolean; on
             </div>
           ))}
         </dl>
+        )}
         {summary.overdue > 0 && <p className="-mt-3 text-xs text-expense">{money(summary.overdue)} con fecha de cobro vencida.</p>}
 
-        <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
+        <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
           <Button onClick={() => openForm({ kind: "job", defaults: { clientId: client.id } })}>
             <Plus /> Trabajo
           </Button>
           <Button variant="outline" onClick={() => openForm({ kind: "payment", defaults: { clientId: client.id } })} disabled={summary.balance <= 0}>
             <HandCoins /> Pago
           </Button>
-          <Button variant="outline" className="col-span-2 sm:col-span-1" onClick={() => openForm({ kind: "task", defaults: { clientId: client.id, area: "clientes", followUp: "contact", title: `Contactar a ${client.name}` } })}>
+          <Button variant="outline" onClick={() => openForm({ kind: "plannedIncome", defaults: { clientId: client.id } })}>
+            <Wallet /> Sueldo
+          </Button>
+          <Button variant="outline" onClick={() => openForm({ kind: "task", defaults: { clientId: client.id, area: "clientes", followUp: "contact", title: `Contactar a ${client.name}` } })}>
             <CalendarPlus /> Seguimiento
           </Button>
         </div>
 
+        {incomes.length > 0 && (
+          <section>
+            <SectionTitle
+              action={
+                <Button variant="ghost" size="sm" onClick={() => openForm({ kind: "plannedIncome", defaults: { clientId: client.id } })}>
+                  <Plus /> Agregar
+                </Button>
+              }
+            >
+              Sueldo y pagos periódicos
+            </SectionTitle>
+            <div className="space-y-3">
+              {incomes.map((v) => (
+                <ClientIncomeCard key={v.income.id} view={v} />
+              ))}
+            </div>
+          </section>
+        )}
+
+        {(jobs.length > 0 || incomes.length === 0) && (
         <section>
           <SectionTitle>Trabajos ({jobs.length})</SectionTitle>
           {jobs.length === 0 ? (
@@ -371,6 +400,7 @@ function ClientSheet({ id, open, onOpenChange }: { id: string; open: boolean; on
             </div>
           )}
         </section>
+        )}
 
         {followUps.length > 0 && (
           <section>
@@ -389,6 +419,7 @@ function ClientSheet({ id, open, onOpenChange }: { id: string; open: boolean; on
           </section>
         )}
 
+        {(payments.length > 0 || incomes.length === 0) && (
         <section>
           <SectionTitle>Historial de pagos</SectionTitle>
           {payments.length === 0 ? (
@@ -411,6 +442,7 @@ function ClientSheet({ id, open, onOpenChange }: { id: string; open: boolean; on
             </ul>
           )}
         </section>
+        )}
 
         {client.notes && (
           <section>

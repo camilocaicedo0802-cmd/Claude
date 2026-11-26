@@ -12,6 +12,7 @@ import {
   ListTodo,
   Repeat,
   UserPlus,
+  Wallet,
   type LucideIcon,
 } from "lucide-react";
 import { useIsDesktop } from "@/hooks/use-media";
@@ -43,6 +44,7 @@ export const QUICK_ACTIONS: QuickAction[] = [
 const SECONDARY: QuickAction[] = [
   { key: "", label: "Transferencia", hint: "", icon: ArrowLeftRight, tone: "", request: { kind: "transaction", defaults: { kind: "transfer" } } },
   { key: "", label: "Obligación de pago", hint: "", icon: CalendarClock, tone: "", request: { kind: "obligation" } },
+  { key: "", label: "Sueldo de cliente", hint: "", icon: Wallet, tone: "", request: { kind: "plannedIncome", defaults: { forClient: true } } },
 ];
 
 function ActionGrid({ onPick, showKeys }: { onPick: (r: FormRequest) => void; showKeys: boolean }) {

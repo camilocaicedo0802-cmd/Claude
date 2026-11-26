@@ -124,9 +124,10 @@ export async function seedDemo(d: LifeOSDB) {
 
   const planned: PlannedIncome = {
     id: uid(),
-    name: "Retainer agencia",
+    name: "Sueldo medio tiempo",
     amount: M(2500000),
-    startDate: addMonths(monthStart, 1),
+    // Paid on the 1st: last month's salary was received, this month's is still to register.
+    startDate: addMonths(monthStart, -1),
     recurrence: { freq: "monthly", interval: 1 },
     confirmed: true,
     accountId: bank.id,
@@ -136,6 +137,16 @@ export async function seedDemo(d: LifeOSDB) {
     ...ts,
   };
   await d.plannedIncomes.add(planned);
+  tx({
+    kind: "income",
+    amount: planned.amount,
+    date: planned.startDate,
+    accountId: bank.id,
+    categoryId: planned.categoryId,
+    description: planned.name,
+    plannedIncomeId: planned.id,
+    occurrenceDate: planned.startDate,
+  });
 
   await d.budgets.bulkAdd([
     { id: uid(), categoryId: cat("food"), amount: M(900000), ...ts },
@@ -173,7 +184,10 @@ export async function seedDemo(d: LifeOSDB) {
   const c2 = client("Andrés Ruiz", "Ruiz Arquitectos", "Diseño de marca", "active", ["nuevo"]);
   const c3 = client("Valentina Mora", "Estudio Mora", "Motion graphics", "active", []);
   const c4 = client("Fundación Semilla", "", "Contenido para redes", "paused", ["ONG"]);
-  await d.clients.bulkAdd([c1, c2, c3, c4]);
+  const c5 = client("Agencia Norte", "Agencia Norte SAS", "Edición · medio tiempo", "active", ["sueldo"]);
+  await d.clients.bulkAdd([c1, c2, c3, c4, c5]);
+  await d.plannedIncomes.update(planned.id, { clientId: c5.id });
+  for (const t of txs) if (t.plannedIncomeId === planned.id) t.clientId = c5.id;
 
   const job = (c: Client, title: string, price: number, status: string, due: number | null, payDue: number | null, priority: Job["priority"] = "medium"): Job => ({
     id: uid(),

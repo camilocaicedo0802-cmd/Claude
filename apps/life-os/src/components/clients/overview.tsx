@@ -2,10 +2,11 @@
 
 import * as React from "react";
 import { useRouter } from "next/navigation";
-import { AlarmClock, BriefcaseBusiness, CircleCheck, HandCoins, Plus, Search, TriangleAlert, UserPlus, Users } from "lucide-react";
-import { useData, useJobViews, useMoney, useToday } from "@/hooks/data";
+import { AlarmClock, BriefcaseBusiness, CircleCheck, HandCoins, Plus, Search, TriangleAlert, UserPlus, Users, Wallet } from "lucide-react";
+import { useClientIncomes, useData, useJobViews, useMoney, useToday } from "@/hooks/data";
 import { CLIENT_STATUS_LABEL, summarizeClients, totalReceivables, type ClientSummary } from "@/domain/clients";
 import { diffDays, endOfMonth, formatRelativeDay, startOfMonth } from "@/lib/dates";
+import { describeRecurrence } from "@/lib/recurrence";
 import { sumMinor } from "@/lib/money";
 import { cn, matches } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -15,6 +16,7 @@ import { Card, CardHeader, EmptyState, MetricCard, Money } from "@/components/sh
 import { SectionPage } from "@/components/shared/section-page";
 import { useUI } from "@/components/shell/ui-context";
 import { PaymentBadge } from "./bits";
+import { PeriodBadge } from "./recurring-income";
 
 type ClientFilter = "all" | "active" | "lead" | "paused" | "inactive" | "balance" | "archived";
 const FILTER_LABEL: Record<ClientFilter, string> = { all: "Todos", active: "Activos", lead: "Prospectos", paused: "En pausa", inactive: "Inactivos", balance: "Con saldo", archived: "Archivados" };
@@ -41,6 +43,18 @@ export function ClientsOverview() {
   const monthFrom = startOfMonth(today);
   const collectedMonth = sumMinor(data.clientPayments.filter((p) => p.date >= monthFrom && p.date <= endOfMonth(today)).map((p) => p.amount));
   const activeClients = data.clients.filter((c) => !c.archived && c.status === "active").length;
+  const incomes = useClientIncomes();
+  const liveIncomes = incomes.filter((v) => !v.ended);
+  const fixedMonthly = sumMinor(liveIncomes.map((v) => v.monthly));
+  const incomesByClient = React.useMemo(() => {
+    const map = new Map<string, typeof incomes>();
+    for (const v of incomes) {
+      const list = map.get(v.income.clientId!) ?? [];
+      list.push(v);
+      map.set(v.income.clientId!, list);
+    }
+    return map;
+  }, [incomes]);
 
   // Clients that need a follow-up: overdue follow-up tasks, overdue collections, or owing money with no activity in 14 days.
   const attention = React.useMemo(() => {
@@ -49,13 +63,20 @@ export function ClientsOverview() {
       if (s.client.archived) continue;
       const overdueFollow = data.tasks.find((t) => t.clientId === s.client.id && t.status === "todo" && t.date && t.date < today);
       const lateJob = s.jobs.find((j) => j.isOverdue && !j.job.archived);
+      const lateIncome = incomesByClient.get(s.client.id)?.find((v) => v.overdue.length > 0);
       if (lateJob) out.push({ s, reason: `Entrega atrasada: ${lateJob.job.title}`, tone: "expense" });
       else if (s.overdue > 0) out.push({ s, reason: `Cobro vencido de ${money(s.overdue)}`, tone: "expense" });
+      else if (lateIncome)
+        out.push({
+          s,
+          reason: `${lateIncome.income.name}: ${lateIncome.overdue.length === 1 ? "1 pago sin registrar" : `${lateIncome.overdue.length} pagos sin registrar`}`,
+          tone: "expense",
+        });
       else if (overdueFollow) out.push({ s, reason: `Seguimiento pendiente: ${overdueFollow.title}`, tone: "warning" });
       else if (s.balance > 0 && diffDays(s.lastActivity.slice(0, 10), today) > 14) out.push({ s, reason: `Debe ${money(s.balance)} y no hay actividad hace más de 2 semanas`, tone: "warning" });
     }
     return out.slice(0, 6);
-  }, [summaries, data.tasks, today, money]);
+  }, [summaries, data.tasks, today, money, incomesByClient]);
 
   const list = summaries
     .filter((s) => (filter === "archived" ? s.client.archived : !s.client.archived))
@@ -164,6 +185,59 @@ export function ClientsOverview() {
         </Card>
       </div>
 
+      <Card>
+        <CardHeader
+          title="Sueldos y pagos periódicos"
+          description={liveIncomes.length > 0 ? `Ingreso fijo de clientes: unos ${money(fixedMonthly)} al mes` : "Clientes que te pagan un valor fijo cada semana, quincena o mes"}
+          action={
+            <Button size="sm" variant="ghost" onClick={() => openForm({ kind: "plannedIncome", defaults: { forClient: true } })}>
+              <Plus /> Agregar
+            </Button>
+          }
+        />
+        {incomes.length === 0 ? (
+          <div className="flex flex-col gap-3 px-4 pb-4 sm:flex-row sm:items-center sm:px-5">
+            <p className="flex-1 text-[13px] text-muted-foreground">
+              Registra el sueldo con su periodicidad (mensual, quincenal…) y LIFE OS te mostrará cada día de pago. Al recibirlo entra a Finanzas una sola vez.
+            </p>
+            <Button variant="outline" onClick={() => openForm({ kind: "plannedIncome", defaults: { forClient: true } })}>
+              <Wallet /> Agregar sueldo
+            </Button>
+          </div>
+        ) : (
+          <ul className="px-2 pb-2 sm:px-3">
+            {incomes.map((v) => {
+              const client = data.clients.find((c) => c.id === v.income.clientId);
+              const shown = v.overdue[0] ?? v.next;
+              return (
+                <li key={v.income.id}>
+                  <button
+                    type="button"
+                    onClick={() => (client ? openDetail({ type: "client", id: client.id }) : openForm({ kind: "plannedIncome", id: v.income.id }))}
+                    className="flex w-full items-center gap-3 rounded-lg px-2 py-2.5 text-left hover:bg-accent"
+                  >
+                    <span className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-income-soft text-income [&_svg]:size-4" aria-hidden>
+                      <Wallet />
+                    </span>
+                    <span className="min-w-0 flex-1">
+                      <span className="block truncate text-sm font-medium">{client?.name ?? "Cliente"}</span>
+                      <span className="block truncate text-xs text-muted-foreground">
+                        {v.income.name} · {describeRecurrence(v.income.recurrence)}
+                        {v.ended ? " · terminado" : v.next ? ` · próximo ${formatRelativeDay(v.next.dueDate, today).toLowerCase()}` : ""}
+                      </span>
+                    </span>
+                    <span className="flex shrink-0 flex-col items-end gap-1">
+                      <Money amount={v.income.amount} className="text-sm font-semibold" />
+                      {shown && <PeriodBadge occ={shown} today={today} />}
+                    </span>
+                  </button>
+                </li>
+              );
+            })}
+          </ul>
+        )}
+      </Card>
+
       <div ref={listRef} className="scroll-mt-20 space-y-3">
         <div className="flex flex-wrap items-center justify-between gap-2">
           <h2 className="text-[15px] font-semibold">Directorio</h2>
@@ -205,6 +279,9 @@ export function ClientsOverview() {
             {list.map((s) => {
               const worst = s.jobs.find((j) => j.finance.state === "overdue") ?? s.jobs.find((j) => j.finance.balance > 0);
               const nextDue = s.jobs.filter((j) => j.isOpen && j.job.dueDate).sort((a, b) => a.job.dueDate!.localeCompare(b.job.dueDate!))[0];
+              const clientIncomes = (incomesByClient.get(s.client.id) ?? []).filter((v) => !v.ended);
+              const salary = clientIncomes[0];
+              const salaryLate = s.balance > 0 ? undefined : clientIncomes.find((v) => v.overdue.length > 0)?.overdue[0];
               return (
                 <button
                   key={s.client.id}
@@ -220,11 +297,27 @@ export function ClientsOverview() {
                     <Badge tone={s.client.status === "active" ? "income" : s.client.status === "lead" ? "brand" : "neutral"}>{CLIENT_STATUS_LABEL[s.client.status]}</Badge>
                   </div>
                   <div className="mt-3 flex items-end justify-between gap-2 text-[13px]">
-                    <div className="text-muted-foreground">
-                      {s.openJobs} {s.openJobs === 1 ? "trabajo abierto" : "trabajos abiertos"}
+                    <div className="min-w-0 text-muted-foreground">
+                      {s.openJobs > 0 || !salary ? (
+                        <>
+                          {s.openJobs} {s.openJobs === 1 ? "trabajo abierto" : "trabajos abiertos"}
+                        </>
+                      ) : null}
                       {nextDue && <span className="block text-xs">Próxima entrega {formatRelativeDay(nextDue.job.dueDate!, today).toLowerCase()}</span>}
+                      {salary && (
+                        <>
+                          <span className="block truncate text-xs">{salary.income.name}</span>
+                          <span className="block truncate text-xs tabular">
+                            {money(salary.income.amount)} · {describeRecurrence(salary.income.recurrence).toLowerCase()}
+                          </span>
+                        </>
+                      )}
                     </div>
-                    {s.balance > 0 ? (
+                    {salaryLate ? (
+                      <div className="text-right">
+                        <PeriodBadge occ={salaryLate} today={today} />
+                      </div>
+                    ) : s.balance > 0 ? (
                       <div className="text-right">
                         <Money amount={s.balance} className="block font-semibold" />
                         {worst && <PaymentBadge state={worst.finance.state} className="mt-1" />}

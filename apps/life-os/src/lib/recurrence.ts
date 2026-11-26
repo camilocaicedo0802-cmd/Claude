@@ -10,13 +10,31 @@ export interface Recurrence {
   interval: number;
   /** Weekly only: 0 = Sunday … 6 = Saturday. Empty/undefined = the start's weekday. */
   byWeekday?: number[];
+  /**
+   * Monthly only: fixed days of the month (e.g. [15, 30] for a quincena). A day past the end
+   * of a short month falls on its last day (30 → 28 Feb). Empty/undefined = the start's day.
+   */
+  byMonthDay?: number[];
   /** Last date (inclusive) an occurrence may fall on. */
   until?: DateStr | null;
   /** Maximum number of occurrences (e.g. 12 cuotas). */
   count?: number | null;
 }
 
-export type RecurrencePreset = "none" | "daily" | "weekdays" | "weekly" | "biweekly" | "monthly" | "quarterly" | "yearly" | "custom-days";
+export type RecurrencePreset =
+  | "none"
+  | "daily"
+  | "weekdays"
+  | "weekly"
+  | "biweekly"
+  | "semimonthly"
+  | "monthly"
+  | "quarterly"
+  | "yearly"
+  | "custom-days";
+
+/** Default paydays of a quincena: the 15th and the 30th (last day in February). */
+export const DEFAULT_SEMIMONTHLY_DAYS = [15, 30];
 
 export const PRESET_LABELS: Record<RecurrencePreset, string> = {
   none: "No se repite",
@@ -24,12 +42,16 @@ export const PRESET_LABELS: Record<RecurrencePreset, string> = {
   weekdays: "Lunes a viernes",
   weekly: "Cada semana",
   biweekly: "Cada dos semanas",
+  semimonthly: "Quincenal",
   monthly: "Cada mes",
   quarterly: "Cada tres meses",
   yearly: "Cada año",
   "custom-days": "Días específicos",
 };
 
+/**
+ * `days` are weekdays for "custom-days" and days of the month for "semimonthly".
+ */
 export function presetToRecurrence(preset: RecurrencePreset, days?: number[]): Recurrence | null {
   switch (preset) {
     case "none":
@@ -42,6 +64,8 @@ export function presetToRecurrence(preset: RecurrencePreset, days?: number[]): R
       return { freq: "weekly", interval: 1 };
     case "biweekly":
       return { freq: "weekly", interval: 2 };
+    case "semimonthly":
+      return { freq: "monthly", interval: 1, byMonthDay: normalizeMonthDays(days && days.length ? days : DEFAULT_SEMIMONTHLY_DAYS) };
     case "monthly":
       return { freq: "monthly", interval: 1 };
     case "quarterly":
@@ -62,7 +86,10 @@ export function recurrenceToPreset(r: Recurrence | null | undefined): Recurrence
     if (days.length > 0) return "custom-days";
     return r.interval === 2 ? "biweekly" : "weekly";
   }
-  if (r.freq === "monthly") return r.interval === 3 ? "quarterly" : "monthly";
+  if (r.freq === "monthly") {
+    if (r.byMonthDay && r.byMonthDay.length > 1) return "semimonthly";
+    return r.interval === 3 ? "quarterly" : "monthly";
+  }
   if (r.freq === "yearly") return "yearly";
   return "custom-days";
 }
@@ -73,9 +100,35 @@ export function describeRecurrence(r: Recurrence | null | undefined): string {
     const names = ["dom", "lun", "mar", "mié", "jue", "vie", "sáb"];
     return r.byWeekday.map((d) => names[d]).join(", ");
   }
-  let label = PRESET_LABELS[preset];
+  let label = preset === "semimonthly" && r?.byMonthDay ? `Quincenal · días ${joinDays(r.byMonthDay)}` : PRESET_LABELS[preset];
   if (r?.count) label += ` · ${r.count} veces`;
   return label;
+}
+
+/** Sorted, unique days in 1–31. */
+export function normalizeMonthDays(days: number[]): number[] {
+  return [...new Set(days.map((d) => Math.min(31, Math.max(1, Math.round(d)))))].sort((a, b) => a - b);
+}
+
+function joinDays(days: number[]): string {
+  const list = normalizeMonthDays(days).map(String);
+  return list.length <= 1 ? list.join("") : `${list.slice(0, -1).join(", ")} y ${list[list.length - 1]}`;
+}
+
+/** Average number of occurrences per month (0 for a one-off). Used for monthly equivalents. */
+export function occurrencesPerMonth(r: Recurrence | null | undefined): number {
+  if (!r) return 0;
+  const interval = Math.max(1, Math.floor(r.interval || 1));
+  switch (r.freq) {
+    case "daily":
+      return 365.25 / 12 / interval;
+    case "weekly":
+      return ((r.byWeekday?.length || 1) * 52.1775) / 12 / interval;
+    case "monthly":
+      return (r.byMonthDay?.length || 1) / interval;
+    case "yearly":
+      return 1 / (12 * interval);
+  }
 }
 
 /**
@@ -137,6 +190,33 @@ export function occurrencesBetween(
         if (d > until) break;
       }
       w += interval;
+    }
+    return out;
+  }
+
+  // monthly with fixed days (e.g. quincena on the 15th and 30th)
+  if (rule.freq === "monthly" && rule.byMonthDay && rule.byMonthDay.length > 0) {
+    const days = normalizeMonthDays(rule.byMonthDay);
+    const firstMonth = `${start.slice(0, 7)}-01`;
+    let m = 0;
+    if (from > start && !Number.isFinite(maxCount)) {
+      const monthsBetween =
+        (Number(from.slice(0, 4)) - Number(start.slice(0, 4))) * 12 + (Number(from.slice(5, 7)) - Number(start.slice(5, 7)));
+      m = Math.max(0, Math.floor(monthsBetween / interval) - 1) * interval;
+    }
+    let guard = 0;
+    while (out.length < limit && guard < 5000) {
+      guard++;
+      const monthStart = addMonths(firstMonth, m, 1);
+      if (monthStart > until) break;
+      for (const day of days) {
+        const d = addMonths(firstMonth, m, day);
+        if (d < start) continue;
+        if (d > until || index >= maxCount) return out;
+        index++;
+        push(d);
+      }
+      m += interval;
     }
     return out;
   }

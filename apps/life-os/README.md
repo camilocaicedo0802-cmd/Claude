@@ -5,7 +5,7 @@ Aplicación web para organizar tres dimensiones en un solo sistema conectado:
 | Pestaña | Para qué sirve |
 | --- | --- |
 | **Finanzas** | Saldo real, ingresos y gastos, cuentas y tarjetas, obligaciones, presupuestos, análisis y **¿Cuánto puedo gastar?** |
-| **Clientes** | CRM personal: clientes, trabajos (tablero Kanban y lista), cobros, abonos, seguimientos |
+| **Clientes** | CRM personal: clientes, trabajos (tablero Kanban y lista), cobros, abonos, seguimientos, **sueldos y pagos periódicos** |
 | **Mi Vida** | Mi día, planificador del día (cronograma por bloques y modo enfoque), tracker de tareas estilo Notion, calendario, hábitos y planificación semanal |
 
 Ajustes se abre desde el encabezado (no es una cuarta sección).
@@ -51,6 +51,18 @@ La primera vez aparece un onboarding opcional (moneda, zona horaria, cuentas, ga
 - **Cerrar el día**: resumen (completadas, puntos, minutos de enfoque) y mover lo pendiente a mañana en un toque.
 - Ajustes › Planificador y enfoque: horario del día, horas de máxima energía, pausa entre bloques, duración por defecto y duración de enfoque/descanso.
 
+## Sueldos y pagos periódicos de clientes
+
+Para los lugares que te pagan un valor fijo (sueldo, honorarios, retainer):
+
+- En la ficha del cliente, botón **Sueldo** (o `+` › «Sueldo de cliente»): valor de cada pago, **periodicidad** (mensual, quincenal, cada dos semanas, semanal, trimestral, anual o una sola vez), fecha del próximo pago y, si el contrato termina, fecha final.
+- **Quincenal**: dos días fijos al mes (15 y 30 por defecto, editables). En meses más cortos se paga el último día (28 o 29 de febrero).
+- Mensual se repite el mismo día de cada mes; si el mes es más corto, el último día.
+- Cada periodo se registra con **Recibir** y entra a Finanzas como **un** ingreso vinculado al cliente y al periodo: no se duplica, admite pagos parciales y «No llegó / omitir». Borrar el movimiento vuelve a abrir el periodo.
+- Si pasa el día de pago sin registrarlo, aparece como **Sin registrar** en la ficha, en Cobros, en «Necesitan atención» y en las notificaciones.
+- **Aumentos**: al cambiar el valor eliges desde cuándo aplica (por defecto, el primer periodo aún no recibido); los periodos anteriores conservan su valor.
+- Clientes › Resumen muestra el ingreso fijo mensual equivalente; los sueldos también salen en Finanzas › Obligaciones (ingresos previstos), en la agenda y marcan el horizonte de **¿Cuánto puedo gastar?** si son confirmados. Nunca cuentan como dinero disponible antes de recibirlos.
+
 ## Tracker de tareas
 
 `Mi Vida › Tareas` funciona como una base de datos tipo Notion:
@@ -81,7 +93,7 @@ La primera vez aparece un onboarding opcional (moneda, zona horaria, cuentas, ga
 | `transactions` | Ingreso, gasto o **transferencia** (nunca cuenta como ingreso/gasto). Vínculos explícitos: `clientPaymentId`, `obligationId` + `occurrenceDate`, `plannedIncomeId` |
 | `budgets` | Límite mensual por categoría |
 | `obligations` | Un registro por compromiso; los vencimientos recurrentes se **calculan** (no se duplican). Los pagos son movimientos vinculados a `(obligación, fecha de vencimiento)`, por lo que admiten pagos parciales |
-| `plannedIncomes` | Ingresos previstos, confirmados o inciertos |
+| `plannedIncomes` | Ingresos previstos, confirmados o inciertos. Con `clientId` son el sueldo o pago periódico de un cliente; `amountHistory` guarda los valores anteriores para que un aumento no cambie periodos pasados |
 | `goals`, `goalContributions` | Metas de ahorro y fondo de emergencia |
 | `clients`, `jobs`, `jobStatuses`, `jobTemplates` | Estado de producción (personalizable) separado del estado de cobro |
 | `clientPayments` | Anticipos, abonos y pagos finales. Con cuenta receptora tienen **exactamente un** ingreso vinculado |
@@ -111,7 +123,7 @@ La primera vez aparece un onboarding opcional (moneda, zona horaria, cuentas, ga
 
 ## Pruebas
 
-`npm run test:life-os` ejecuta 36 pruebas sobre IndexedDB simulada (fake-indexeddb), incluidos los escenarios de aceptación: financiero, clientes, agenda, hábitos, transferencias, tarjetas, cobros vinculados, recurrencias y respaldo.
+`npm run test:life-os` ejecuta 62 pruebas sobre IndexedDB simulada (fake-indexeddb), incluidos los escenarios de aceptación: financiero, clientes, agenda, hábitos, transferencias, tarjetas, cobros vinculados, recurrencias (incluida la quincena), sueldos de clientes, tracker, planificador, migraciones y respaldo.
 
 ## Estructura
 

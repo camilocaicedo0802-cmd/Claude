@@ -1,7 +1,7 @@
-import { addDays, diffDays, formatRelativeDay, type DateStr } from "@/lib/dates";
-import type { Minor } from "@/lib/money";
-import type { NotificationPrefs, Obligation, Task } from "@/db/types";
-import type { BudgetStatus, Occurrence, SpendCapacity } from "./finance";
+import { addDays, diffDays, formatDayMonth, formatRelativeDay, type DateStr } from "@/lib/dates";
+import { sumMinor, type Minor } from "@/lib/money";
+import type { Client, NotificationPrefs, Obligation, Task } from "@/db/types";
+import type { BudgetStatus, Occurrence, RecurringIncomeView, SpendCapacity } from "./finance";
 import type { JobView } from "./clients";
 
 export interface Alert {
@@ -21,6 +21,9 @@ export interface AlertInput {
   jobViews: JobView[];
   tasks: Task[];
   capacity: SpendCapacity | null;
+  /** Salaries and fixed payments; only those linked to a client raise alerts. */
+  recurringIncomes?: RecurringIncomeView[];
+  clients?: Client[];
   format: (m: Minor) => string;
 }
 
@@ -95,6 +98,25 @@ export function buildAlerts(input: AlertInput): Alert[] {
         title: `Cobro vencido: ${v.client?.name ?? v.job.title}`,
         description: `${v.job.title} · pendiente ${format(v.finance.balance)}`,
         href: `/clientes/cobros/`,
+      });
+    }
+  }
+
+  if (prefs.collections) {
+    for (const v of input.recurringIncomes ?? []) {
+      if (!v.income.clientId || v.overdue.length === 0) continue;
+      const last = v.overdue[v.overdue.length - 1];
+      const client = input.clients?.find((c) => c.id === v.income.clientId);
+      out.push({
+        key: `salary:${v.income.id}:${last.dueDate}`,
+        severity: "warning",
+        area: "clientes",
+        title:
+          v.overdue.length === 1
+            ? `${v.income.name}: pago del ${formatDayMonth(last.dueDate)} sin registrar`
+            : `${v.income.name}: ${v.overdue.length} pagos sin registrar`,
+        description: `${client ? `${client.name} · ` : ""}${format(sumMinor(v.overdue.map((o) => o.remaining)))}. ¿Ya llegó? Regístralo u omítelo.`,
+        href: "/clientes/cobros/",
       });
     }
   }

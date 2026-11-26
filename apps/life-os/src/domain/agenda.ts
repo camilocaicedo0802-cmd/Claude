@@ -175,7 +175,7 @@ export function buildAgenda(input: AgendaInput): AgendaItem[] {
       kind: "income",
       date: p.dueDate,
       title: `Ingreso: ${p.source.name}`,
-      subtitle: p.source.confirmed ? "Confirmado" : "Por confirmar",
+      subtitle: [p.source.clientId ? clientName.get(p.source.clientId) : null, p.source.confirmed ? "Confirmado" : "Por confirmar"].filter(Boolean).join(" · "),
       color: "emerald",
       amount: p.remaining > 0 ? p.remaining : p.amount,
       done: p.remaining === 0,

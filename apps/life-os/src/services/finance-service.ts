@@ -10,8 +10,9 @@ import type {
   SavingsGoal,
   Transaction,
 } from "@/db/types";
-import { nowISO, todayIn, type DateStr } from "@/lib/dates";
-import type { Minor } from "@/lib/money";
+import { addDays, formatDayMonth, nowISO, todayIn, type DateStr } from "@/lib/dates";
+import { formatMoney, type Minor } from "@/lib/money";
+import { plannedAmountAt } from "@/domain/finance";
 import { uid } from "@/lib/utils";
 import { DomainError, logActivity } from "./common";
 
@@ -262,19 +263,62 @@ export async function settleOccurrence(obligationId: string, dueDate: DateStr, s
 
 // ── Planned income ───────────────────────────────────────────────────────────
 
-export type PlannedIncomeInput = Omit<PlannedIncome, "id" | "createdAt" | "updatedAt" | "settled" | "active">;
+export type PlannedIncomeInput = Omit<PlannedIncome, "id" | "createdAt" | "updatedAt" | "settled" | "active" | "amountHistory">;
+
+function validateRecurrence(r: PlannedIncome["recurrence"], startDate: DateStr) {
+  if (r?.until && r.until < startDate) throw new DomainError("La fecha final no puede ser anterior al primer pago.");
+}
 
 export async function createPlannedIncome(input: PlannedIncomeInput): Promise<string> {
   if (!input.name.trim()) throw new DomainError("Ponle un nombre al ingreso.");
   if (input.amount <= 0) throw new DomainError("El valor debe ser mayor que cero.");
+  validateRecurrence(input.recurrence, input.startDate);
   const now = nowISO();
-  const p: PlannedIncome = { ...input, name: input.name.trim(), id: uid(), active: true, settled: {}, createdAt: now, updatedAt: now };
-  await db().plannedIncomes.add(p);
+  const p: PlannedIncome = { ...input, name: input.name.trim(), clientId: input.clientId ?? null, id: uid(), active: true, settled: {}, createdAt: now, updatedAt: now };
+  const d = db();
+  await d.transaction("rw", [d.plannedIncomes, d.activities], async () => {
+    await d.plannedIncomes.add(p);
+    if (p.clientId) {
+      await logActivity({ clientId: p.clientId, type: "client", message: `Pago periódico agregado: ${p.name} · ${formatMoney(p.amount)}` });
+    }
+  });
   return p.id;
 }
 
-export async function updatePlannedIncome(id: string, patch: Partial<PlannedIncomeInput & { active: boolean }>) {
-  await db().plannedIncomes.update(id, { ...patch, updatedAt: nowISO() });
+/**
+ * Edits a planned income. When the value changes and `amountFrom` is given, periods due before
+ * that date keep the value they had (a raise does not turn paid months into partial ones).
+ */
+export async function updatePlannedIncome(
+  id: string,
+  patch: Partial<PlannedIncomeInput & { active: boolean }>,
+  options: { amountFrom?: DateStr } = {},
+) {
+  const d = db();
+  await d.transaction("rw", [d.plannedIncomes, d.activities], async () => {
+    const current = await d.plannedIncomes.get(id);
+    if (!current) throw new DomainError("El ingreso previsto ya no existe.");
+    if (patch.amount !== undefined && patch.amount <= 0) throw new DomainError("El valor debe ser mayor que cero.");
+    const next: Partial<PlannedIncome> = { ...patch, updatedAt: nowISO() };
+    if (patch.name !== undefined) next.name = patch.name.trim();
+    validateRecurrence(patch.recurrence !== undefined ? patch.recurrence : current.recurrence, patch.startDate ?? current.startDate);
+    const startDate = patch.startDate ?? current.startDate;
+    const amountChanged = patch.amount !== undefined && patch.amount !== current.amount;
+    if (amountChanged && options.amountFrom && options.amountFrom > startDate) {
+      const until = addDays(options.amountFrom, -1);
+      const previous = plannedAmountAt(current, until);
+      next.amountHistory = [...(current.amountHistory ?? []).filter((h) => h.until < until), { until, amount: previous }];
+    }
+    await d.plannedIncomes.update(id, next);
+    const clientId = patch.clientId !== undefined ? patch.clientId : current.clientId;
+    if (clientId && amountChanged) {
+      await logActivity({
+        clientId,
+        type: "client",
+        message: `${patch.name?.trim() || current.name}: nuevo valor ${formatMoney(patch.amount!)}${options.amountFrom ? ` desde el ${formatDayMonth(options.amountFrom)}` : ""}`,
+      });
+    }
+  });
 }
 
 export async function deletePlannedIncome(id: string) {
@@ -289,15 +333,23 @@ export async function deletePlannedIncome(id: string) {
 export async function receivePlannedIncome(input: { plannedIncomeId: string; dueDate: DateStr; amount: Minor; date: DateStr; accountId: string }) {
   const p = await db().plannedIncomes.get(input.plannedIncomeId);
   if (!p) throw new DomainError("El ingreso previsto ya no existe.");
-  return createTransaction({
-    kind: "income",
-    amount: input.amount,
-    date: input.date,
-    accountId: input.accountId,
-    categoryId: p.categoryId ?? null,
-    description: p.name,
-    plannedIncomeId: p.id,
-    occurrenceDate: input.dueDate,
+  const d = db();
+  return d.transaction("rw", [d.transactions, d.activities], async () => {
+    const txId = await createTransaction({
+      kind: "income",
+      amount: input.amount,
+      date: input.date,
+      accountId: input.accountId,
+      categoryId: p.categoryId ?? null,
+      description: p.name,
+      clientId: p.clientId ?? null,
+      plannedIncomeId: p.id,
+      occurrenceDate: input.dueDate,
+    });
+    if (p.clientId) {
+      await logActivity({ clientId: p.clientId, type: "payment", message: `${p.name}: recibido ${formatMoney(input.amount)} (periodo del ${formatDayMonth(input.dueDate)})` });
+    }
+    return txId;
   });
 }
 

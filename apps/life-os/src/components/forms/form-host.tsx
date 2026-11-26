@@ -32,7 +32,7 @@ export function FormHost() {
     case "obligationPayment":
       return <ObligationPaymentForm key={key} obligationId={form.obligationId} dueDate={form.dueDate} onDone={done} />;
     case "plannedIncome":
-      return <PlannedIncomeForm key={key} id={form.id} onDone={done} />;
+      return <PlannedIncomeForm key={key} id={form.id} defaults={form.defaults} onDone={done} />;
     case "receiveIncome":
       return <ReceiveIncomeForm key={key} plannedIncomeId={form.plannedIncomeId} dueDate={form.dueDate} onDone={done} />;
     case "budget":
