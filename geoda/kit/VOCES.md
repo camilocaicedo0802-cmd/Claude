@@ -22,6 +22,7 @@ Los personajes pueden cambiar entre videos; dentro de un video cada personaje co
 | Sara, avatar UGC (M, ~28, Medellín) · ref. `personajes/sara/sara_ref.png` | Despina | storytime sincera, como contándole a una amiga | A1-10 |
 | Narrador faceless/motion (H) | Iapetus | explicativo, claro, ritmo ágil | A1-11 |
 | Mariana, diario selfie (M, ~26, Cali) · ref. `personajes/mariana/mariana_ref.png` | Callirrhoe | diario en voz en off, sincera, cálida y un poco divertida | A2-05 |
+| Natalia, comparación (M, ~32, Bogotá) · ref. `personajes/natalia/natalia_ref.png` | Aoede | segura, clara y cercana, como una amiga que explica algo práctico | A2-06 |
 
 Cada lote tiene dos voces sugeridas en LOTES.md (una M y una H).
 Agregar aquí cada personaje nuevo (y su voz) al crearlo, para que otros videos lo repitan igual.

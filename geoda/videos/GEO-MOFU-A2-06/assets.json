@@ -1,0 +1,266 @@
+{
+ "n_ref": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2197d-6593-7efd-9919-83a8bd175bd3/5a61d4db-80e1-43f1-b3e2-b61b2df09866.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic smartphone UGC portrait photo of Natalia, a friendly Colombian woman about 32 years old from Bogotá, light-brown skin, straight dark-brown hair in a sleek chin-length bob, small gold stud earrings, natural makeup, wearing a cream knit top, in her bright modern bathroom with soft window light, relaxed confident closed-mouth smile, looking at the camera. Medium shot, her head in the middle of the frame, plain light wall above her head. No text, no watermark."
+  }
+ },
+ "c_ha": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2197d-5e2c-7dee-82f3-cfeb1526e0ea/4b5cdb08-8f38-4848-9a20-923ec4365504.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic product photo on a clean seamless light-grey studio table, soft studio light. On the left, a plain generic white aerosol deodorant can with NO brand, NO logo and NO text on it, spraying a fine white fragrance mist cloud sideways; on the right, the GEODA deodorant stick (cap off, clear cap next to it) stands perfectly still. Both in the lower half of the frame; the upper 40% of the frame is plain light-grey background. No text, no watermark. The GEODA deodorant stick is exactly like the product references (white tube, clear cap, translucent white alum crystal on top) and its label (Desodorante, GEODA, 100% NATURAL, EFECTIVO Y SEGURO, 24h) faces the camera, upright and sharp.",
+   "image_urls": [
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/00cb1085-fa0c-4a03-a446-05649f4e916e.jpeg",
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/6f52cc8c-3f5d-49ad-a82f-8974d41b2c71.jpeg"
+   ]
+  }
+ },
+ "c_b1": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2197d-5f74-7ba0-8557-e5f7977a17ed/97ec3014-aeb3-4489-ab58-e7afaafcf34b.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic product photo on a clean seamless light-grey studio table, hard, harsh direct light with strong dark shadows: a plain generic white aerosol deodorant can with NO brand, NO logo and NO text on it standing alone in the center of the frame, slightly below the middle. Plain background, nothing else. No text, no watermark."
+  }
+ },
+ "c_b2": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2197d-60a9-7e66-9084-571b11102c89/af0ba0f4-8515-49fb-a734-8c987a16e3b1.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic product photo on a clean seamless light-grey studio table, soft, diffused warm studio light, gentle shadows: the GEODA deodorant stick (cap off, clear cap next to it) standing alone in the center of the frame, slightly below the middle. Plain background. No text, no watermark. The GEODA deodorant stick is exactly like the product references (white tube, clear cap, translucent white alum crystal on top) and its label (Desodorante, GEODA, 100% NATURAL, EFECTIVO Y SEGURO, 24h) faces the camera, upright and sharp.",
+   "image_urls": [
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/00cb1085-fa0c-4a03-a446-05649f4e916e.jpeg",
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/6f52cc8c-3f5d-49ad-a82f-8974d41b2c71.jpeg"
+   ]
+  }
+ },
+ "c_b3": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2197d-61dd-7876-be47-2198016b40e3/6fddc94f-d7e4-47a2-9002-7d01d0c800ea.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic product photo on a clean seamless light-grey studio table, neutral light: a hand holds a plain generic white aerosol deodorant can with NO brand, NO logo and NO text on it and presses the nozzle, but only a weak last sputter comes out, the can is almost empty. The can in the center of the frame. No text, no watermark."
+  }
+ },
+ "c_b5": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2197d-6325-7965-ac51-9bdd5559258f/3228dec2-6cb6-44b7-9199-9db0e3ce652a.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic close-up photo on a clean light-grey studio table: two hands hold up a plain black cotton t-shirt, showing visible white chalky deodorant streak marks on the black fabric near the sleeve opening. No logos, no text, no watermark."
+  }
+ },
+ "c_hc": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2197d-645a-75bb-b7b8-bf1d37e27fdb/c916b22c-38f3-4d9f-adbe-e83c4f40352c.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic smartphone photo of a clean white bathroom shelf in soft morning light: a hand is taking away a plain generic white aerosol deodorant can with NO brand, NO logo and NO text on it from the shelf while the GEODA deodorant stick (cap on) already stands in its place. The shelf is in the lower half of the frame; plain light wall above. No text, no watermark. The GEODA deodorant stick is exactly like the product references (white tube, clear cap, translucent white alum crystal on top) and its label (Desodorante, GEODA, 100% NATURAL, EFECTIVO Y SEGURO, 24h) faces the camera, upright and sharp.",
+   "image_urls": [
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/00cb1085-fa0c-4a03-a446-05649f4e916e.jpeg",
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/6f52cc8c-3f5d-49ad-a82f-8974d41b2c71.jpeg"
+   ]
+  }
+ },
+ "n_hd": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2197e-529a-78ac-9a63-e9470da7eeda/910b2930-aa1d-4dcc-afb0-1eebca888ce3.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic smartphone UGC photo in her bright modern bathroom, soft window light. the SAME woman as the first reference image (Natalia: Colombian, about 32, light-brown skin, straight dark-brown chin-length bob, small gold stud earrings), wearing a cream knit top, holds a plain generic white aerosol deodorant can with NO brand, NO logo and NO text on it in her left hand and the GEODA deodorant stick (cap on) in her right hand at chest height, comparing them with one raised eyebrow and a knowing closed-mouth smile. Medium shot, her head in the middle of the frame (not near the top), plain light wall filling the upper 40% of the frame. Her lips are closed. No text, no watermark. The GEODA deodorant stick is exactly like the product references (white tube, clear cap, translucent white alum crystal on top) and its label (Desodorante, GEODA, 100% NATURAL, EFECTIVO Y SEGURO, 24h) faces the camera, upright and sharp.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2197d-6593-7efd-9919-83a8bd175bd3/5a61d4db-80e1-43f1-b3e2-b61b2df09866.png",
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/00cb1085-fa0c-4a03-a446-05649f4e916e.jpeg",
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/6f52cc8c-3f5d-49ad-a82f-8974d41b2c71.jpeg"
+   ]
+  }
+ },
+ "n_b7": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2197e-53fb-70a0-8c4c-c100467fdaab/7b18ed08-25dc-4f85-8a47-5fe399a6c5fc.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic smartphone UGC photo in her bright bathroom: the SAME woman as the first reference image (Natalia: Colombian, about 32, light-brown skin, straight dark-brown chin-length bob, small gold stud earrings), wearing a cream knit top, puts a plain generic white aerosol deodorant can with NO brand, NO logo and NO text on it into an open white vanity drawer, about to close it, calm decided closed-mouth smile. Medium shot. Her lips are closed. No text, no watermark.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2197d-6593-7efd-9919-83a8bd175bd3/5a61d4db-80e1-43f1-b3e2-b61b2df09866.png"
+   ]
+  }
+ },
+ "n_b8": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2197e-5554-705c-a180-0eb27aefbd62/415ed19b-2401-48d6-b440-c66bd2a99cae.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic smartphone photo, wide shot: the SAME woman as the first reference image (Natalia: Colombian, about 32, light-brown skin, straight dark-brown chin-length bob, small gold stud earrings), wearing a black sleeveless blouse and white trousers, stands confidently in a bright modern living room with plants, one hand on her hip, relaxed happy closed-mouth smile. Full body visible from a few meters away, no close-up. Her lips are closed. No text, no watermark.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2197d-6593-7efd-9919-83a8bd175bd3/5a61d4db-80e1-43f1-b3e2-b61b2df09866.png"
+   ]
+  }
+ },
+ "k_c_ha": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2197e-5699-7e43-a9e2-8d107e0089aa/4faa92a8-cb4c-4137-b73c-f10ec833f1ed.mp4"
+  ],
+  "body": {
+   "prompt": "Slow motion: the generic aerosol keeps releasing a soft white fragrance mist cloud that drifts slowly across the frame, while the GEODA stick stays perfectly still. Static camera, studio light, realistic product video. The GEODA stick keeps exactly the same shape and label and does not move.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2197d-5e2c-7dee-82f3-cfeb1526e0ea/4b5cdb08-8f38-4848-9a20-923ec4365504.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "k_c_b1": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2197e-57dc-7a99-a21f-28b2679cfdb8/83e375b1-c354-4149-b1a2-1c8ab6245c24.mp4"
+  ],
+  "body": {
+   "prompt": "Static camera, very slow push-in on the plain unbranded aerosol can under hard direct light; the hard shadow stays crisp. Realistic product video. The can stays plain white with no text.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2197d-5f74-7ba0-8557-e5f7977a17ed/97ec3014-aeb3-4489-ab58-e7afaafcf34b.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "k_c_b2": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2197e-5909-7cdc-b399-5093ee6a2b40/dc8708dd-86ec-4083-be5e-03dfd95e67c7.mp4"
+  ],
+  "body": {
+   "prompt": "Static camera with a very slow push-in; a soft warm light slowly sweeps across the translucent crystal. Realistic product video. The GEODA stick keeps exactly the same shape and label and does not move.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2197d-60a9-7e66-9084-571b11102c89/af0ba0f4-8515-49fb-a734-8c987a16e3b1.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "k_c_b3": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2197e-5a38-7d25-9417-3c35f48a666a/33a1eb70-eacf-47be-90c0-179369bc1115.mp4"
+  ],
+  "body": {
+   "prompt": "The hand presses the nozzle again but only a weak, short sputter comes out and stops; the hand shakes the nearly empty can twice and presses again with nothing coming out. Static camera, realistic product video. The can stays plain white with no text.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2197d-61dd-7876-be47-2198016b40e3/6fddc94f-d7e4-47a2-9002-7d01d0c800ea.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "k_c_b5": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2197e-5b6f-719b-91b4-d69d98722f1c/72aac04a-0a8a-40cd-9764-595ad380ac1b.mp4"
+  ],
+  "body": {
+   "prompt": "The hands slowly stretch the black t-shirt toward the camera, showing the white chalky deodorant streaks on the black fabric. Static camera, realistic video. No logos.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2197d-6325-7965-ac51-9bdd5559258f/3228dec2-6cb6-44b7-9199-9db0e3ce652a.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "k_c_hc": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2197e-5c9e-7546-870b-cb618d046557/2e0a9b12-5627-443d-ac8c-ae9b68971f56.mp4"
+  ],
+  "body": {
+   "prompt": "The hand takes the plain white aerosol can away and out of the frame, leaving the GEODA stick alone on the shelf; soft morning light. Static camera, realistic smartphone video. The GEODA stick keeps exactly the same shape and label and does not move.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2197d-645a-75bb-b7b8-bf1d37e27fdb/c916b22c-38f3-4d9f-adbe-e83c4f40352c.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "k_n_hd": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2197e-f618-73f0-83ed-6ce87a5313e6/2561fd93-a26b-4eef-bd29-52d59c08f3c1.mp4"
+  ],
+  "body": {
+   "prompt": "She looks at the aerosol can, then at the GEODA stick, raises one eyebrow and gives the camera a knowing closed-mouth smile, slightly lifting the GEODA stick. The GEODA stick keeps exactly the same shape and label and does not rotate. Her lips stay closed the whole time, nobody speaks. Static camera on a tripod: no zoom, the plain wall at the top of the frame stays empty. Realistic smartphone UGC video.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2197e-529a-78ac-9a63-e9470da7eeda/910b2930-aa1d-4dcc-afb0-1eebca888ce3.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "k_n_b7": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2197e-f76f-7bd0-a490-43df0ab2e38a/33d61367-9861-40d9-b2ff-d9451332f8f9.mp4"
+  ],
+  "body": {
+   "prompt": "She drops the plain white aerosol can into the drawer and closes the drawer with a decided push, then looks at the camera with a calm closed-mouth smile. Her lips stay closed the whole time, nobody speaks. Static camera. Realistic smartphone UGC video.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2197e-53fb-70a0-8c4c-c100467fdaab/7b18ed08-25dc-4f85-8a47-5fe399a6c5fc.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "k_n_b8": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2197e-f8aa-7568-a016-6fc45a78a12e/cccd8460-9826-4416-b24b-cc4e67dde5f5.mp4"
+  ],
+  "body": {
+   "prompt": "She shifts her weight, brushes her hair back with one hand and smiles confidently at the camera, relaxed; wide shot, the camera stays far away, no zoom in. Her lips stay closed the whole time, nobody speaks. Realistic smartphone video.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2197e-5554-705c-a180-0eb27aefbd62/415ed19b-2401-48d6-b440-c66bd2a99cae.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "kit": [
+  "kit/personajes/natalia/natalia_ref.png (Natalia)",
+  "kit/broll/k_grifo2_0.mp4 (B6 mojar)",
+  "kit/broll/k_tapa_0.mp4 (B9 producto real en mano)",
+  "kit/fondos/p_banofondo_0.png + kit/producto/producto_cut.png + mono_rojo.png (cierre K8 local, mg206.py)",
+  "a108/tmp/cta_bf.mp4 (cierre K1; del A1-08)"
+ ],
+ "notas": "k_c_b2 solo 0-2,9 s (después la luz quema la etiqueta). k_c_b3 desde 1,2 s (ya no sale nada y lo sacude). k_n_b7 0,3-1,85 s a 1,5x.",
+ "costo_usd": {
+  "imagenes_10": 0.58,
+  "kling_9x5s": 3.21,
+  "total": 3.79
+ }
+}
