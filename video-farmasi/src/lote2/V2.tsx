@@ -5,7 +5,7 @@ import "./fuentes";
 import datos from "./datos/v2.json";
 import { Subtitulos2, B2 } from "./Subtitulos2";
 import { ARollL2, DegradadoTexto, Segmento, Chip } from "./Piezas";
-import { BarraMG, CorteMG, Gotas, ListaMG, TituloMG } from "./Graficos";
+import { BarraMG, CorteMG, FichasProducto, Gotas, TituloMG } from "./Graficos";
 
 // Vídeo 2 del lote 2 · unboxing (gel limpiador, línea Aqua, vaso Morning Glow)
 // Correcciones de la clienta: sin emojis, nada sobre la cara, con motion graphics, iconos iguales en cada lista
@@ -17,7 +17,8 @@ export const V2_CIERRE = 0;
 export const V2_DURACION = datos.duracionS + V2_CIERRE;
 
 // cortes de motion graphics
-const MG_AQUA: [number, number] = [A.toner.s - 0.25, A.calendula.e + 0.05];
+// Skincare (corrección de la clienta): uno es de la línea Aqua y dos de Caléndula → fotos reales de producto, sin iconos
+const MG_SKIN: [number, number] = [A.aqua.s - 0.2, A.calendula.e + 0.05];
 const MG_HIDRATA: [number, number] = [A.hidrata.s - 0.2, finSeg(3)];
 
 const GOLPES = [
@@ -28,11 +29,11 @@ const GOLPES = [
 type Sfx = { t: number; src: string; vol: number };
 const SFX: Sfx[] = [
   { t: A.norecomiendo.s, src: "pop.wav", vol: 0.22 },
-  { t: MG_AQUA[0] - 0.08, src: "swoosh_6.wav", vol: 0.24 },
+  { t: MG_SKIN[0] - 0.08, src: "swoosh_6.wav", vol: 0.24 },
+  { t: A.aqua.s - 0.05, src: "pop.wav", vol: 0.24 },
   { t: A.toner.s, src: "pop.wav", vol: 0.24 },
-  { t: A.tonico.s, src: "pop.wav", vol: 0.24 },
   { t: A.crema.s, src: "pop.wav", vol: 0.24 },
-  { t: MG_AQUA[1] - 0.05, src: "swoosh_7.wav", vol: 0.2 },
+  { t: MG_SKIN[1] - 0.05, src: "swoosh_7.wav", vol: 0.2 },
   { t: MG_HIDRATA[0] - 0.08, src: "swoosh_6.wav", vol: 0.22 },
   { t: MG_HIDRATA[1] - 0.05, src: "swoosh_7.wav", vol: 0.2 },
   { t: A.vasito.s, src: "pop.wav", vol: 0.24 },
@@ -56,17 +57,17 @@ export const V2: React.FC = () => {
       <Chip texto="No se los recomiendo, solo se los muestro" t={A.norecomiendo.s} hasta={A.norecomiendo.s + 2.4} x={540} y={300} tam={40} />
       <Chip texto="Vaso Morning Glow" t={A.vasito.s - 0.05} hasta={finSeg(5) - 0.05} x={540} y={200} />
 
-      <Subtitulos2 bloques={datos.bloques as B2[]} sombraFuerte ocultar={[MG_AQUA, MG_HIDRATA]} />
+      <Subtitulos2 bloques={datos.bloques as B2[]} sombraFuerte ocultar={[MG_SKIN, MG_HIDRATA]} />
 
       {/* MG 1 · línea Aqua: los productos aparecen al nombrarlos */}
-      <CorteMG desde={MG_AQUA[0]} hasta={MG_AQUA[1]}>
-        <TituloMG texto="Línea Aqua" sub="Lo que me llegó" t0={MG_AQUA[0]} y={430} />
-        <ListaMG
-          y={820}
+      <CorteMG desde={MG_SKIN[0]} hasta={MG_SKIN[1]}>
+        <TituloMG texto="Skincare" sub="Lo que me llegó" t0={MG_SKIN[0]} y={430} />
+        <FichasProducto
+          y={700}
           items={[
-            { texto: "Tóner", t: A.toner.s, icono: "frasco" },
-            { texto: "Tónico", t: A.tonico.s, icono: "gota" },
-            { texto: "Crema facial de caléndula", t: A.crema.s, icono: "flor" },
+            { texto: "Gel limpiador Aqua", t: A.aqua.s - 0.05, img: "lote2/img/v2_aqua_gel.jpg" },
+            { texto: "Tónico de caléndula", t: A.toner.s, img: "lote2/img/v2_calendula_tonico.jpg" },
+            { texto: "Crema facial de caléndula", t: A.crema.s, img: "lote2/img/v2_calendula_crema.jpg" },
           ]}
         />
       </CorteMG>

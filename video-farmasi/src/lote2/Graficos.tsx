@@ -114,8 +114,8 @@ export const ListaMG: React.FC<{ items: ItemMG[]; y: number; alto?: number; anch
               opacity: p, translate: `${((1 - p) * 60).toFixed(1)}px 0px`, filter: p < 0.99 ? `blur(${((1 - p) * 6).toFixed(2)}px)` : undefined,
             }}
           >
-            <div style={{ width: alto - 40, height: alto - 40, borderRadius: 30, background: "#F3ECFF", display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden", flexShrink: 0 }}>
-              {it.img ? <Img src={staticFile(it.img)} style={{ width: "100%", height: "100%", objectFit: "cover" }} /> : it.icono ? <Icono n={it.icono} tam={alto - 56} /> : null}
+            <div style={{ width: alto - 40, height: alto - 40, borderRadius: 30, background: it.img ? "#fff" : "#F3ECFF", boxShadow: it.img ? "inset 0 0 0 2px #EFE6FF" : undefined, display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden", flexShrink: 0 }}>
+              {it.img ? <Img src={staticFile(it.img)} style={{ width: "100%", height: "100%", objectFit: "contain" }} /> : it.icono ? <Icono n={it.icono} tam={alto - 56} /> : null}
             </div>
             <div style={{ position: "relative", flex: 1, fontFamily: HN, fontWeight: 700, fontSize: 56, letterSpacing: "-0.03em", color: MORADO, lineHeight: 1 }}>
               {it.texto}
@@ -487,5 +487,39 @@ export const MemeRecorte: React.FC<{ src: string; t0: number; dur: number; x: nu
         <Video src={staticFile(src)} muted loop={bucle} style={{ width: "100%", height: "100%", objectFit: "contain" }} />
       </Sequence>
     </div>
+  );
+};
+
+// Fichas de producto en fila (foto grande + nombre), entran una a una al nombrarlas
+export type FichaMG = { texto: string; t: number; img: string };
+export const FichasProducto: React.FC<{ items: FichaMG[]; y: number; ancho?: number; alto?: number; hueco?: number }> = ({ items, y, ancho = 310, alto = 470, hueco = 24 }) => {
+  const { t, fps } = useT();
+  const total = items.length * ancho + (items.length - 1) * hueco;
+  const x0 = (1080 - total) / 2;
+  return (
+    <>
+      {items.map((it, i) => {
+        if (t < it.t - 0.05) return null;
+        const sp = spring({ frame: Math.round((t - it.t) * fps), fps, config: { damping: 13, stiffness: 190, mass: 0.7 } });
+        const b = interpolate(t, [it.t - 0.05, it.t + 0.2], [8, 0], cl);
+        return (
+          <div
+            key={i}
+            style={{
+              position: "absolute", left: x0 + i * (ancho + hueco), top: y, width: ancho, height: alto, borderRadius: 36, background: "#fff",
+              boxShadow: "0 22px 46px rgba(46,28,82,.16), inset 0 0 0 3px rgba(179,139,255,.35)", overflow: "hidden",
+              opacity: Math.min(1, sp * 1.4), translate: `0px ${((1 - sp) * 70).toFixed(1)}px`, scale: String(0.9 + 0.1 * sp), filter: b > 0.05 ? `blur(${b.toFixed(2)}px)` : undefined,
+            }}
+          >
+            <div style={{ position: "absolute", left: 18, right: 18, top: 18, height: alto - 150 }}>
+              <Img src={staticFile(it.img)} style={{ width: "100%", height: "100%", objectFit: "contain" }} />
+            </div>
+            <div style={{ position: "absolute", left: 16, right: 16, bottom: 22, height: 104, display: "flex", alignItems: "center", justifyContent: "center", textAlign: "center", fontFamily: HN, fontWeight: 700, fontSize: 40, letterSpacing: "-0.03em", lineHeight: 1.02, color: MORADO }}>
+              {it.texto}
+            </div>
+          </div>
+        );
+      })}
+    </>
   );
 };
