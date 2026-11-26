@@ -5,7 +5,7 @@ import "./fuentes";
 import datos from "./datos/v1.json";
 import { Subtitulos2, B2 } from "./Subtitulos2";
 import { ARollL2, CierreFoto, DegradadoTexto, Segmento, TarjetaFoto, Chip } from "./Piezas";
-import { ContadorAnios, Destellos, FlujoIconos, LogoPlaca, Pegatina, Requisitos, Tragamonedas, VisorREC, WhatsApp3D } from "./Graficos";
+import { ContadorAnios, Destellos, FlujoIconos, LogoPlaca, MemeRecorte, Pegatina, Tragamonedas, VisorREC, WhatsApp3D } from "./Graficos";
 
 // Vídeo 1 del lote 2 · sketch "Bienvenida al equipo" (Chiqui y Gordi)
 // Correcciones de la clienta: sin emojis, nada sobre las caras, más recursos de humor y sin etiquetas de personaje.
@@ -27,11 +27,15 @@ const GOLPES = [
 ];
 
 type Sfx = { t: number; src: string; vol: number };
+// Sonidos de meme (fuentes que indicó la clienta: creatorset.com)
+const SFX_MEME: Sfx[] = [
+  { t: A.abuela.e - 0.05, src: "lote2/memes/boom.wav", vol: 0.2 },
+  { t: A.final.e + 0.05, src: "lote2/memes/risas.wav", vol: 0.32 },
+];
 const SFX: Sfx[] = [
   { t: A.turquia.s - 0.08, src: "swoosh_4.wav", vol: 0.22 },
   { t: A.chiste.s - 0.05, src: "whip.wav", vol: 0.24 },
   { t: A.chiste.s + 0.25, src: "contador.wav", vol: 0.16 },
-  { t: A.abuela.s, src: "whip.wav", vol: 0.3 },
   { t: A.conservada.s + 0.05, src: "chasquido.wav", vol: 0.4 },
   { t: A.maquillaje.s - 0.06, src: "swoosh_6.wav", vol: 0.22 },
   { t: A.skincare.s - 0.06, src: "swoosh_7.wav", vol: 0.2 },
@@ -50,8 +54,7 @@ const SFX: Sfx[] = [
   { t: A.ultima.s - 0.35, src: "whoosh_2.wav", vol: 0.22 },
   { t: A.gym.s - 0.03, src: "whip.wav", vol: 0.26 },
   { t: ini(22) + 0.05, src: "error.wav", vol: 0.18 },
-  { t: A.cafe.s, src: "pop.wav", vol: 0.28 },
-  { t: A.final.s, src: "acierto.wav", vol: 0.22 },
+  { t: A.cafe.s - 0.1, src: "pop.wav", vol: 0.26 },
   { t: datos.duracionS - 0.15, src: "swoosh_std.wav", vol: 0.25 },
 ];
 
@@ -72,6 +75,8 @@ export const V1: React.FC = () => {
 
       {/* "¿En 1950?": Gordi hace cuentas (a su derecha, lejos de su cara) */}
       <ContadorAnios t0={A.chiste.s} t1={A.abuela.s - 0.1} x={830} y={380} />
+      {/* "más vieja que mi abuela": meme de la abuela bailando + "boom" */}
+      <MemeRecorte src="lote2/memes/abuela.webm" t0={A.abuela.e - 0.05} dur={finSeg(3) - A.abuela.e + 0.03} x={835} y={250} ancho={400} alto={870} giro={3} />
       {/* "pero mejor conservada": destellos alrededor de Chiqui, sin tocar la cara */}
       <Destellos
         t0={A.conservada.s - 0.05}
@@ -85,9 +90,9 @@ export const V1: React.FC = () => {
       />
 
       {/* productos: tarjetas en el hueco entre las dos */}
-      <TarjetaFoto src="lote2/img/maquillaje.jpg" t={A.maquillaje.s - 0.1} hasta={A.skincare.s - 0.08} x={556} y={600} w={350} h={440} giro={-2} etiqueta="Maquillaje" />
-      <TarjetaFoto src="lote2/img/skincare.jpg" t={A.skincare.s - 0.1} hasta={A.cabello.s - 0.08} x={556} y={600} w={350} h={440} giro={2} etiqueta="Skin care" />
-      <TarjetaFoto src="lote2/img/cabello.jpg" t={A.cabello.s - 0.1} hasta={A.nutriplus.s - 0.08} x={556} y={600} w={350} h={440} giro={-2} etiqueta="Cabello" />
+      <TarjetaFoto src="lote2/img/farmasi_maquillaje.jpg" t={A.maquillaje.s - 0.1} hasta={A.skincare.s - 0.08} x={556} y={600} w={350} h={440} giro={-2} etiqueta="Maquillaje" />
+      <TarjetaFoto src="lote2/img/farmasi_skincare.jpg" t={A.skincare.s - 0.1} hasta={A.cabello.s - 0.08} x={556} y={600} w={350} h={440} giro={2} etiqueta="Skin care" />
+      <TarjetaFoto src="lote2/img/farmasi_cabello.jpg" t={A.cabello.s - 0.1} hasta={A.nutriplus.s - 0.08} x={556} y={600} w={350} h={440} giro={-2} etiqueta="Cabello" />
       <TarjetaFoto src="lote2/img/nutriplus.jpg" t={A.nutriplus.s - 0.1} hasta={finSeg(5) - 0.2} x={556} y={600} w={350} h={440} giro={2} foco="50% 40%" etiqueta="Nutriplus" />
 
       <FlujoIconos
@@ -108,17 +113,8 @@ export const V1: React.FC = () => {
       <Chip texto="Escríbeme al WhatsApp" t={A.whatsapp.s - 0.05} hasta={finSeg(19) - 0.05} x={540} y={360} color="#25D366" />
       {/* logo de WhatsApp en 3D a su lado (la cara de Chiqui está a la derecha del encuadre) */}
       <WhatsApp3D t0={A.whatsapp.s - 0.1} t1={finSeg(19) - 0.05} x={270} y={720} tam={280} />
-      <Requisitos
-        t0={ini(22) + 0.02}
-        t1={finSeg(22) - 0.1}
-        x={250}
-        y={330}
-        items={[
-          { texto: "Ir al gym todos los días", t: ini(22) + 0.02, marca: "cross", tm: ini(22) + 0.1 },
-          { texto: "Cafecito después de entrenar", t: A.cafe.s - 0.1, marca: "check", tm: A.cafe.s + 0.15 },
-          { texto: "¡Ya eres parte del equipo!", t: A.final.s - 0.3, marca: "check", tm: A.final.s },
-        ]}
-      />
+      {/* "con que me acompañes al cafecito…": no es verdad → meme del chill guy tomando café (zona libre a la izquierda) */}
+      <MemeRecorte src="lote2/memes/chillguy.webm" t0={A.cafe.s - 0.1} dur={finSeg(22) - A.cafe.s + 0.02} x={250} y={400} ancho={420} alto={445} giro={-3} bucle />
 
       <Subtitulos2 bloques={datos.bloques as B2[]} />
 
@@ -127,6 +123,11 @@ export const V1: React.FC = () => {
       {/* sonido */}
       <Audio src={staticFile("lote2/edit/v1_voz.wav")} />
       <Audio src={staticFile("lote2/edit/v1_musica.wav")} volume={musica} />
+      {SFX_MEME.map((s, i) => (
+        <Sequence key={`m${i}`} from={Math.max(0, Math.round(s.t * fps))} durationInFrames={Math.round(3.3 * fps)}>
+          <Audio src={staticFile(s.src)} volume={s.vol} />
+        </Sequence>
+      ))}
       {SFX.map((s, i) => (
         <Sequence key={i} from={Math.max(0, Math.round(s.t * fps))} durationInFrames={Math.round(2.2 * fps)}>
           <Audio src={staticFile(`sfx_sel/${s.src}`)} volume={s.vol} />

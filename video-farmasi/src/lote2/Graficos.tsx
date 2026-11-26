@@ -1,5 +1,6 @@
 import React from "react";
-import { AbsoluteFill, Easing, Img, interpolate, random, spring, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
+import { Video } from "@remotion/media";
+import { AbsoluteFill, Easing, Img, interpolate, random, Sequence, spring, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
 import { HN } from "./fuentes";
 import { LILA } from "./Subtitulos2";
 
@@ -463,6 +464,28 @@ export const WhatsApp3D: React.FC<{ t0: number; t1: number; x: number; y: number
           </g>
         </svg>
       </div>
+    </div>
+  );
+};
+
+// Meme recortado (vídeo con transparencia) que entra con rebote y sale encogiendo; sin taparle la cara a nadie
+export const MemeRecorte: React.FC<{ src: string; t0: number; dur: number; x: number; y: number; ancho: number; alto: number; giro?: number; bucle?: boolean }> = ({ src, t0, dur, x, y, ancho, alto, giro = 0, bucle = false }) => {
+  const { t, fps } = useT();
+  if (t < t0 - 0.02 || t > t0 + dur + 0.02) return null;
+  const k = t - t0;
+  const sp = spring({ frame: Math.round(k * fps), fps, config: { damping: 11, stiffness: 200, mass: 0.6 } });
+  const s = interpolate(k, [dur - 0.18, dur], [0, 1], { ...cl, easing: eInOut });
+  return (
+    <div
+      style={{
+        position: "absolute", left: x - ancho / 2, top: y, width: ancho, height: alto,
+        scale: String(sp * (1 - 0.6 * s)), opacity: 1 - s, rotate: `${giro + (1 - sp) * -8}deg`, transformOrigin: "50% 100%",
+        filter: "drop-shadow(0 18px 28px rgba(20,8,40,.35))",
+      }}
+    >
+      <Sequence from={Math.round(t0 * fps)} durationInFrames={Math.round(dur * fps) + 2} layout="none">
+        <Video src={staticFile(src)} muted loop={bucle} style={{ width: "100%", height: "100%", objectFit: "contain" }} />
+      </Sequence>
     </div>
   );
 };

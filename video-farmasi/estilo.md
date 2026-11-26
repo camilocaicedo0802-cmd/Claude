@@ -288,3 +288,8 @@ Calibrado escribiendo "If your defination of / success" con cada combinación ju
 ### Corrección de la clienta (lote 2 · vídeo 1, v5)
 - **Sin tarjetas/etiquetas sobre las personas** (nada de "Gordi · la nueva", "Chiqui · ya es del equipo").
 - La clienta se queda con los cortes de la v3 del vídeo 1 (los ajustes de cola de palabra de la v4 se descartan en este vídeo).
+
+### Correcciones de la clienta (lote 2 · vídeo 1, v6)
+- **Imágenes de apoyo de producto: siempre productos reales de Farmasi** (fotos oficiales de co.farmasi.com), nunca fotos genéricas de stock. Cabello = kit de shampoo (p. ej. Set Reviving), no un cepillo.
+- **Memes en los remates cómicos** (imagen + sonido momentáneo): plantillas de fondo verde de greenscreenmemes.com y sonidos gratuitos de creatorset.com (fuentes indicadas por la clienta; excepción a la regla de "solo SFX de su carpeta"). Se recortan con chroma a WebM con transparencia, se colocan en la zona libre (nunca sobre caras) y se deja ~1 s de pausa tras el remate para que respire.
+- Ejemplos aplicados: "más vieja que mi abuela" → señora bailando + "vine boom"; "con que me acompañes al cafecito" (no es verdad) → chill guy tomando café + risas de público.
