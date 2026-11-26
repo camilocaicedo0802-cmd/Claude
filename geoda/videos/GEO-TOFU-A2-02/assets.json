@@ -1,0 +1,391 @@
+{
+ "p_geo": {
+  "endpoint": "marketing-studio/image",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a215c7-fc11-7ed5-a751-23ee7d48503e/87c851b4-2f30-4f6b-8f6e-93d7b21231ed.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "3D animated movie still in Pixar style, warm colors, soft cinematic lighting, vertical 9:16. Character design of GEO: a small cute stone character made of translucent milky-white alum crystal, with the same rounded dome shape, color and soft translucency as the white crystal on top of the deodorant in the product references (only the crystal, no tube, no label). Two big expressive glossy cartoon eyes with tiny eyebrows, NO mouth, two tiny stubby crystal arms. Geo stands proudly in the center of a clean white bathroom counter, soft glow inside the crystal. Plain soft background. No text, no logos.",
+   "image_urls": [
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/00cb1085-fa0c-4a03-a446-05649f4e916e.jpeg",
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/6f52cc8c-3f5d-49ad-a82f-8974d41b2c71.jpeg"
+   ]
+  }
+ },
+ "p_vale": {
+  "endpoint": "marketing-studio/image",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a215c7-fd71-76d0-bd64-149b9431d299/07465973-a5af-43a9-9ffc-0a81a3c019a7.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "3D animated movie still in Pixar style, warm colors, soft cinematic lighting, vertical 9:16. Character design of VALENTINA: a cheerful Colombian young woman about 25 years old, warm light-brown skin, long dark brown wavy hair, big expressive brown eyes, friendly smile with lips closed, wearing a sleeveless coral top and blue jeans. Full body, standing in a cozy colorful apartment living room. Stylized animated proportions (not realistic). No text, no logos."
+  }
+ },
+ "p_ha": {
+  "endpoint": "marketing-studio/image",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a215c9-5807-7965-bc0d-09a64d323ec3/2246ac04-692e-4f5e-b850-8625b8f872d8.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "3D animated movie still in Pixar style, warm colors, soft cinematic lighting, vertical 9:16, stylized cartoon proportions. FRAMING: the UPPER 40% of the frame is completely EMPTY plain pastel wall (space for text, nothing there); all characters are in the middle and lower part of the frame, never near the top edge. In a cartoon bathroom, four generic cartoon perfume bottles and aerosol deodorant cans with no brand, no text and no logos, each with an angry cartoon face (furrowed eyebrows, mouth CLOSED, determined), stand on the sink in a battle line and fire big puffy pink and lilac perfume clouds toward the camera like cannons. No text."
+  }
+ },
+ "k_p_ha": {
+  "endpoint": "kling-video/v3.0/std/image-to-video",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a215cb-346e-774c-8e09-2e8bbd672fe0/1c1af7f3-55fa-4192-9527-b32342115588.mp4"
+  ],
+  "body": {
+   "prompt": "The angry perfume bottles fire puffy pink and lilac perfume clouds toward the camera one after another, recoiling like little cannons, the clouds billow toward the lens. Their mouths stay closed. Static camera: no zoom in, no camera movement, the empty wall at the top of the frame stays empty. 3D Pixar-style animation, smooth expressive cartoon motion, warm cinematic lighting.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a215c9-5807-7965-bc0d-09a64d323ec3/2246ac04-692e-4f5e-b850-8625b8f872d8.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "p_hb": {
+  "endpoint": "marketing-studio/image",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a215c9-594e-71e5-84de-e503e01fa0a2/fa7e2f7e-5daa-4e12-a2bb-95e6a77041ac.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "3D animated movie still in Pixar style, warm colors, soft cinematic lighting, vertical 9:16, stylized cartoon proportions. FRAMING: the UPPER 40% of the frame is completely EMPTY plain pastel wall (space for text, nothing there); all characters are in the middle and lower part of the frame, never near the top edge. VALENTINA, the same character as the Valentina reference image (warm light-brown skin, long dark brown wavy hair, big brown eyes), wearing a sleeveless coral top, stands in her cozy bedroom in front of a tall mirror and presses both arms tightly against her body, embarrassed, blushing, lips closed, looking at her reflection. No text.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a215c7-fd71-76d0-bd64-149b9431d299/07465973-a5af-43a9-9ffc-0a81a3c019a7.png"
+   ]
+  }
+ },
+ "p_hb2": {
+  "endpoint": "marketing-studio/image",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a215cb-3351-7ecd-b0e7-738b30c5f6e7/09ca3af7-e7dc-4572-afa8-c4e04bbac1c8.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "3D animated movie still in Pixar style, warm colors, soft cinematic lighting, vertical 9:16, stylized cartoon proportions. FRAMING: the UPPER 40% of the frame is completely EMPTY plain pastel wall (space for text, nothing there); the character is in the middle and lower part of the frame, never near the top edge. VALENTINA, the same character as the Valentina reference image (warm light-brown skin, long dark brown wavy hair, big brown eyes), wearing a loose sleeveless coral top, stands FACING THE CAMERA in her cozy bedroom, medium-wide shot from the knees up, pressing both arms tightly against her sides, shy and embarrassed, cheeks blushing, closed-mouth awkward smile, eyes glancing sideways. No mirror. No text.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a215c7-fd71-76d0-bd64-149b9431d299/07465973-a5af-43a9-9ffc-0a81a3c019a7.png"
+   ]
+  }
+ },
+ "k_p_hb2": {
+  "endpoint": "kling-video/v3.0/std/image-to-video",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a215cb-e4d4-7c09-ad63-2de972fb7c8d/627a2a00-591d-49d6-b6cd-57a170598893.mp4"
+  ],
+  "body": {
+   "prompt": "Valentina shyly presses her arms even tighter against her sides, glances sideways, blushes and sways a little, embarrassed, with a closed-mouth awkward smile; she does not speak. Static camera: no zoom in, no camera movement, the empty wall at the top of the frame stays empty. 3D Pixar-style animation, smooth expressive cartoon motion, warm cinematic lighting.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a215cb-3351-7ecd-b0e7-738b30c5f6e7/09ca3af7-e7dc-4572-afa8-c4e04bbac1c8.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "p_hc": {
+  "endpoint": "marketing-studio/image",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a215c9-5a90-7298-b1a4-09252b327d3a/ac7cf2e5-d559-4b86-94ed-6329c7c3a3ab.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "3D animated movie still in Pixar style, warm colors, soft cinematic lighting, vertical 9:16, stylized cartoon proportions. FRAMING: the UPPER 40% of the frame is completely EMPTY plain pastel wall (space for text, nothing there); all characters are in the middle and lower part of the frame, never near the top edge. An open bathroom medicine cabinet: several generic cartoon perfume bottles and aerosol deodorant cans with no brand, no text and no logos with cartoon faces lean together nervously, one of them puts a tiny finger to its closed mouth (shhh), eyes darting sideways; below them a small drawer glows softly with a mysterious warm light. No text."
+  }
+ },
+ "k_p_hc": {
+  "endpoint": "kling-video/v3.0/std/image-to-video",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a215cb-3597-7fa8-b4de-4dbe5c8abbf6/2b032580-63ec-4960-899e-871935ee7bfc.mp4"
+  ],
+  "body": {
+   "prompt": "The perfume bottles shush nervously, glance sideways at the softly glowing drawer and shuffle together to hide it, eyes darting; their mouths stay closed. Static camera: no zoom in, no camera movement, the empty wall at the top of the frame stays empty. 3D Pixar-style animation, smooth expressive cartoon motion, warm cinematic lighting.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a215c9-5a90-7298-b1a4-09252b327d3a/ac7cf2e5-d559-4b86-94ed-6329c7c3a3ab.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "p_hd": {
+  "endpoint": "marketing-studio/image",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a215c9-5bd5-7111-be85-c5c875d65b7f/2f412cef-d19b-4280-baec-95297f9fffc7.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "3D animated movie still in Pixar style, warm colors, soft cinematic lighting, vertical 9:16, stylized cartoon proportions. FRAMING: the UPPER 40% of the frame is completely EMPTY plain pastel wall (space for text, nothing there); all characters are in the middle and lower part of the frame, never near the top edge. A vanity table at night with a round mirror: several generic cartoon perfume bottles and aerosol deodorant cans with no brand, no text and no logos with cartoon faces hide behind each other with wide shocked eyes and closed mouths, while a soft magical white glow shines in from the open bathroom door at the side. No text."
+  }
+ },
+ "k_p_hd": {
+  "endpoint": "kling-video/v3.0/std/image-to-video",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a215cb-36cc-7820-9d52-af6774b88543/388e5345-1d1a-4681-9227-fc1a5381e86b.mp4"
+  ],
+  "body": {
+   "prompt": "The magical white glow from the door grows brighter; the perfume bottles tremble and scramble to hide behind each other, eyes wide in shock, mouths closed. Static camera: no zoom in, no camera movement, the empty wall at the top of the frame stays empty. 3D Pixar-style animation, smooth expressive cartoon motion, warm cinematic lighting.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a215c9-5bd5-7111-be85-c5c875d65b7f/2f412cef-d19b-4280-baec-95297f9fffc7.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "p_b1": {
+  "endpoint": "marketing-studio/image",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a215c9-5d11-7e42-97d9-eb7296ffbd40/bdcc96b5-452d-4037-90d6-88a42fed962e.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "3D animated movie still in Pixar style, warm colors, soft cinematic lighting, vertical 9:16, stylized cartoon proportions. VALENTINA, the same character as the Valentina reference image (warm light-brown skin, long dark brown wavy hair, big brown eyes), wearing a sleeveless coral top, stands at her bathroom sink crowded with many noisy generic cartoon perfume bottles and aerosol deodorant cans with no brand, no text and no logos with cartoon faces, and sprays one more perfume can at her side, making a big pink cloud; medium shot, her head in the upper-middle of the frame, lips closed. No text.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a215c7-fd71-76d0-bd64-149b9431d299/07465973-a5af-43a9-9ffc-0a81a3c019a7.png"
+   ]
+  }
+ },
+ "k_p_b1": {
+  "endpoint": "kling-video/v3.0/std/image-to-video",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a215cb-37f9-7df8-b28f-30f4e01d3a50/747fdf60-6a6f-4024-9584-df209365638c.mp4"
+  ],
+  "body": {
+   "prompt": "Valentina keeps spraying perfume at her side and the pink cloud grows bigger; the crowded perfume bottles on the sink bounce and jiggle noisily. Valentina's lips stay closed. 3D Pixar-style animation, smooth expressive cartoon motion, warm cinematic lighting.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a215c9-5d11-7e42-97d9-eb7296ffbd40/bdcc96b5-452d-4037-90d6-88a42fed962e.png",
+   "duration": 3,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "p_b2": {
+  "endpoint": "marketing-studio/image",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a215c9-5e63-7673-9426-8c191fcda230/8aa2a317-331f-44d3-9eac-51874c51b163.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "3D animated movie still in Pixar style, warm colors, soft cinematic lighting, vertical 9:16, stylized cartoon proportions. Close-up on a bathroom sink: one big showy generic cartoon perfume bottle (no brand, no text) with a cocky cartoon face, mouth wide open shouting happily, proudly puffing big pink perfume clouds around itself, the other bottles look at it. No text."
+  }
+ },
+ "k_p_b2": {
+  "endpoint": "kling-video/v3.0/std/image-to-video",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a215cb-3934-7466-a3a7-fe1ee6606f1c/8fdfeb40-c590-482b-9e4b-17e83e5fa493.mp4"
+  ],
+  "body": {
+   "prompt": "The showy perfume bottle shouts happily with its mouth moving as if saying 'more fragrance, more fragrance!', proudly puffing two big pink perfume clouds; the other bottles roll their eyes. 3D Pixar-style animation, smooth expressive cartoon motion, warm cinematic lighting.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a215c9-5e63-7673-9426-8c191fcda230/8aa2a317-331f-44d3-9eac-51874c51b163.png",
+   "duration": 3,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "p_b3": {
+  "endpoint": "marketing-studio/image",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a215c9-600a-71c6-b682-337743800132/8babb05d-a2d7-46d9-85f8-0e4418535d04.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "3D animated movie still in Pixar style, warm colors, soft cinematic lighting, vertical 9:16, stylized cartoon proportions. A lively cartoon house party with colorful lights: friends dance with their arms up, while VALENTINA, the same character as the Valentina reference image (warm light-brown skin, long dark brown wavy hair, big brown eyes), wearing a sleeveless coral top, stands among them keeping both arms pressed tightly against her body, with an awkward closed-mouth smile. Her head in the upper-middle of the frame. No text.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a215c7-fd71-76d0-bd64-149b9431d299/07465973-a5af-43a9-9ffc-0a81a3c019a7.png"
+   ]
+  }
+ },
+ "k_p_b3": {
+  "endpoint": "kling-video/v3.0/std/image-to-video",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a215cb-3a67-7c5e-b4ac-93d7f7a806ec/26aceb45-c6c1-4eb4-a1c6-454938db438b.mp4"
+  ],
+  "body": {
+   "prompt": "The friends dance with their arms up to the music while Valentina sways awkwardly in place, keeping her arms pressed tightly against her body, closed-mouth awkward smile. The party lights blink. 3D Pixar-style animation, smooth expressive cartoon motion, warm cinematic lighting.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a215c9-600a-71c6-b682-337743800132/8babb05d-a2d7-46d9-85f8-0e4418535d04.png",
+   "duration": 3,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "p_b4": {
+  "endpoint": "marketing-studio/image",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a215c9-6153-73fa-aeae-43d63b47938e/a741bb08-9390-40f1-90a6-5cadcb161557.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "3D animated movie still in Pixar style, warm colors, soft cinematic lighting, vertical 9:16, stylized cartoon proportions. A bathroom drawer is being pulled open by a cartoon hand and a warm magical beam of light shines out of it; at the back of the drawer, among old forgotten things, GEO, the same character as the Geo reference image (small translucent milky-white crystal stone, big glossy eyes, tiny eyebrows, NO mouth, tiny stubby arms) looks up at the camera with big curious surprised eyes. No text.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a215c7-fc11-7ed5-a751-23ee7d48503e/87c851b4-2f30-4f6b-8f6e-93d7b21231ed.png"
+   ]
+  }
+ },
+ "k_p_b4": {
+  "endpoint": "kling-video/v3.0/std/image-to-video",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a215cb-3b82-760b-99dc-b31f7e8b9d15/ea0ff12e-4082-42fe-bc37-2d2311763434.mp4"
+  ],
+  "body": {
+   "prompt": "The drawer slides fully open and a warm magical beam of light pours out; Geo, at the back of the drawer, blinks twice, tilts its crystal head and looks up curiously. Geo has no mouth. 3D Pixar-style animation, smooth expressive cartoon motion, warm cinematic lighting.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a215c9-6153-73fa-aeae-43d63b47938e/a741bb08-9390-40f1-90a6-5cadcb161557.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "p_b5": {
+  "endpoint": "marketing-studio/image",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a215c9-6291-7c61-9c40-2fc1bd6fae39/652682e0-2139-402e-a697-4ac744cdecf0.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "3D animated movie still in Pixar style, warm colors, soft cinematic lighting, vertical 9:16, stylized cartoon proportions. GEO, the same character as the Geo reference image (small translucent milky-white crystal stone, big glossy eyes, tiny eyebrows, NO mouth, tiny stubby arms) stands proudly on a clean white bathroom counter, puffing up with pride with its tiny arms on its sides, little sparkles around it, eyes confident; in the soft-focus background some generic cartoon perfume bottles and aerosol deodorant cans with no brand, no text and no logos look at it surprised. Geo in the middle of the frame. No text.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a215c7-fc11-7ed5-a751-23ee7d48503e/87c851b4-2f30-4f6b-8f6e-93d7b21231ed.png"
+   ]
+  }
+ },
+ "k_p_b5": {
+  "endpoint": "kling-video/v3.0/std/image-to-video",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a215cb-3ca2-74d4-b139-c2e0a42754c3/5bbde159-0925-461c-ae9d-049a454558b9.mp4"
+  ],
+  "body": {
+   "prompt": "Geo puffs up proudly, growing a little rounder with its tiny arms on its sides, glowing and sparkling, then gives a confident nod; the perfume bottles in the background stare, surprised, mouths closed. Geo has no mouth. 3D Pixar-style animation, smooth expressive cartoon motion, warm cinematic lighting.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a215c9-6291-7c61-9c40-2fc1bd6fae39/652682e0-2139-402e-a697-4ac744cdecf0.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "p_b6": {
+  "endpoint": "marketing-studio/image",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a215c9-63c2-71da-9aa4-f79ac25d5557/8dd415a2-7c49-4af3-8fec-78448d677c34.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "3D animated movie still in Pixar style, warm colors, soft cinematic lighting, vertical 9:16, stylized cartoon proportions. GEO, the same character as the Geo reference image (small translucent milky-white crystal stone, big glossy eyes, tiny eyebrows, NO mouth, tiny stubby arms) stands under a bathroom faucet; a few clear water drops fall onto the top of its crystal head and it glows softly, eyes closed with joy. Close-up, Geo in the middle of the frame. No text.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a215c7-fc11-7ed5-a751-23ee7d48503e/87c851b4-2f30-4f6b-8f6e-93d7b21231ed.png"
+   ]
+  }
+ },
+ "k_p_b6": {
+  "endpoint": "kling-video/v3.0/std/image-to-video",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a215cb-3dd8-7edd-9ed3-38518d3fdb4d/bfab35c7-b887-4b51-8449-b28a996b9073.mp4"
+  ],
+  "body": {
+   "prompt": "Clear water drops fall from the faucet onto the top of Geo's crystal head; Geo glows brighter and wiggles happily with its eyes closed in joy. Geo has no mouth. 3D Pixar-style animation, smooth expressive cartoon motion, warm cinematic lighting.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a215c9-63c2-71da-9aa4-f79ac25d5557/8dd415a2-7c49-4af3-8fec-78448d677c34.png",
+   "duration": 3,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "p_b7": {
+  "endpoint": "marketing-studio/image",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a215c9-64f6-756a-9730-92a3ddfcb90a/375d409c-1337-4aa0-bde2-909f87b425f9.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "3D animated movie still in Pixar style, warm colors, soft cinematic lighting, vertical 9:16, stylized cartoon proportions. A sunny green city park in Bogota: VALENTINA, the same character as the Valentina reference image (warm light-brown skin, long dark brown wavy hair, big brown eyes), wearing a sleeveless coral top and jeans, stretches both arms up high to the sky, happy and relaxed, eyes closed, closed-mouth smile; wide shot, full body, she is in the middle of the frame. No text.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a215c7-fd71-76d0-bd64-149b9431d299/07465973-a5af-43a9-9ffc-0a81a3c019a7.png"
+   ]
+  }
+ },
+ "k_p_b7": {
+  "endpoint": "kling-video/v3.0/std/image-to-video",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a215cb-3f08-777a-a49f-6b39f8f9e858/53481801-db70-4d63-9781-1e8a26d4ac1a.mp4"
+  ],
+  "body": {
+   "prompt": "Valentina stretches both arms up high, sways happily and spins a little, the breeze moves her hair and the trees sway; closed-mouth smile, she does not speak. 3D Pixar-style animation, smooth expressive cartoon motion, warm cinematic lighting.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a215c9-64f6-756a-9730-92a3ddfcb90a/375d409c-1337-4aa0-bde2-909f87b425f9.png",
+   "duration": 3,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "p_xmas": {
+  "endpoint": "marketing-studio/image",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a215c9-6643-7440-9a5d-0ee4165d1bb2/75f6c38f-cd95-464e-ac3b-824af626c85f.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic photo of a cozy Colombian living room at Christmas: a decorated Christmas tree with warm fairy lights on the left side in soft focus, warm bokeh lights, and in the lower-middle foreground an EMPTY light wooden table top (nothing on it) in sharp focus. Warm cinematic light. No text, no logos, no people."
+  }
+ },
+ "k_p_xmas": {
+  "endpoint": "kling-video/v3.0/std/image-to-video",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a215cb-4051-735d-9400-e89853ab700f/0b3d60c2-73cc-4575-999c-c9ec1da1b7e9.mp4"
+  ],
+  "body": {
+   "prompt": "Static camera, no camera movement at all. The Christmas tree fairy lights twinkle and the warm bokeh lights shimmer softly; a candle flame flickers in the background. Realistic video.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a215c9-6643-7440-9a5d-0ee4165d1bb2/75f6c38f-cd95-464e-ac3b-824af626c85f.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "kit": [
+  "kit/broll/k_tapa_0.mp4 (B7 GEODA real)",
+  "kit/producto/endcard_bano_anim.mp4 (cierre K3)",
+  "cierre K2: k_p_xmas en ida y vuelta + tools/endcard_anim.py (producto real) + kit/producto/mono_rojo.png sobre la tapa"
+ ],
+ "costo_usd": {
+  "imagenes_15": 0.783,
+  "kling_50s": 3.57,
+  "total": 4.35
+ }
+}
