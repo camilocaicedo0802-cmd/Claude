@@ -5,10 +5,10 @@ import "./fuentes";
 import datos from "./datos/v1.json";
 import { Subtitulos2, B2 } from "./Subtitulos2";
 import { ARollL2, CierreFoto, DegradadoTexto, Segmento, TarjetaFoto, Chip } from "./Piezas";
-import { ContadorAnios, Destellos, EtiquetaPersonaje, FlujoIconos, LogoPlaca, Pegatina, Requisitos, Tragamonedas, VisorREC, WhatsApp3D } from "./Graficos";
+import { ContadorAnios, Destellos, FlujoIconos, LogoPlaca, Pegatina, Requisitos, Tragamonedas, VisorREC, WhatsApp3D } from "./Graficos";
 
 // Vídeo 1 del lote 2 · sketch "Bienvenida al equipo" (Chiqui y Gordi)
-// Corrección de la clienta: sin emojis, nada sobre las caras y más recursos de humor.
+// Correcciones de la clienta: sin emojis, nada sobre las caras, más recursos de humor y sin etiquetas de personaje.
 // Las posiciones salen de la detección de caras por toma (scripts/caras.py).
 const A = datos.anclas as Record<string, { s: number; e: number; seg: number }>;
 const SEG = datos.segmentos as Segmento[];
@@ -28,8 +28,6 @@ const GOLPES = [
 
 type Sfx = { t: number; src: string; vol: number };
 const SFX: Sfx[] = [
-  { t: A.gordi.s, src: "pop.wav", vol: 0.24 },
-  { t: 1.35, src: "pop.wav", vol: 0.24 },
   { t: A.turquia.s - 0.08, src: "swoosh_4.wav", vol: 0.22 },
   { t: A.chiste.s - 0.05, src: "whip.wav", vol: 0.24 },
   { t: A.chiste.s + 0.25, src: "contador.wav", vol: 0.16 },
@@ -69,10 +67,6 @@ export const V1: React.FC = () => {
     <AbsoluteFill style={{ backgroundColor: "#000" }}>
       <ARollL2 src="lote2/edit/v1_aroll.mp4" segmentos={SEG} golpes={GOLPES} />
       <DegradadoTexto />
-
-      {/* presentación de personajes tipo sitcom (debajo de las caras) */}
-      <EtiquetaPersonaje nombre="Gordi" rol="la nueva" t0={A.gordi.s} t1={finSeg(0) - 0.1} x={300} y={800} />
-      <EtiquetaPersonaje nombre="Chiqui" rol="ya es del equipo" t0={1.35} t1={finSeg(0) - 0.1} x={800} y={800} />
 
       <TarjetaFoto src="lote2/img/turquia.jpg" t={A.turquia.s - 0.1} hasta={finSeg(2) - 0.15} x={290} y={640} w={380} h={480} giro={-3} etiqueta="Turquía" />
 

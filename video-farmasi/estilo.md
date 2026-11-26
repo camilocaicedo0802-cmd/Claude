@@ -270,7 +270,7 @@ Calibrado escribiendo "If your defination of / success" con cada combinación ju
 - **Nada pisa la cara** de las personas: ni subtítulos, ni fotos, ni gráficos. Se detectan las caras de cada plano (`scripts/caras.py`, YuNet) y los subtítulos bajan solos si chocan; tarjetas y gráficos van en la zona libre de cada plano.
 - **Sin emojis** en los vídeos (le quitan seriedad). Iconos, si hacen falta, en línea vectorial lila.
 - **Vídeos de producto/testimonio: motion graphics** (cortes a fondo lavanda con listas, barras y títulos animados en Helvetica Neue Heavy; los subtítulos se ocultan mientras el gráfico dice lo mismo).
-- **Sketch / diálogo: recursos de humor** que no dependan de emojis: etiquetas de personaje tipo sitcom, zooms de remate con temblor, contador de años, visor "REC", tragamonedas "???", lista de "requisitos" con ✗/✓, destellos vectoriales.
+- **Sketch / diálogo: recursos de humor** que no dependan de emojis: zooms de remate con temblor, contador de años, visor "REC", tragamonedas "???", lista de "requisitos" con ✗/✓, destellos vectoriales.
 
 ### Correcciones de la clienta (lote 2, v3 · vídeo 1)
 - **Sin triángulos/flechitas** junto a los subtítulos (tampoco en diálogos).
@@ -284,3 +284,7 @@ Calibrado escribiendo "If your defination of / success" con cada combinación ju
 
 ### Corrección de la clienta (lote 2, v3 · vídeo 3)
 - **Nunca cortar una palabra ni una frase a medias.** Los puntos de corte se comprueban con la envolvente de audio (fin real de la última sílaba + 60–100 ms), no solo con los tiempos de Whisper, que se quedan cortos en las palabras largas.
+
+### Corrección de la clienta (lote 2 · vídeo 1, v5)
+- **Sin tarjetas/etiquetas sobre las personas** (nada de "Gordi · la nueva", "Chiqui · ya es del equipo").
+- La clienta se queda con los cortes de la v3 del vídeo 1 (los ajustes de cola de palabra de la v4 se descartan en este vídeo).
