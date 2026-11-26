@@ -1,0 +1,433 @@
+{
+ "l_ref": {
+  "endpoint": "marketing-studio/image",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21597-bcaa-76a2-8752-52a1b2a0dfc5/f1a2ccfa-00df-4205-83bc-f3c423c50caa.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic smartphone UGC photo of Laura, a friendly Colombian woman around 28 years old, light-brown skin, long dark brown wavy hair tied in a low ponytail, natural makeup, small gold hoop earrings, wearing a plain coral t-shirt, standing in her modest modern Bogota apartment living room with soft window light. Natural relaxed closed-mouth smile, looking at the camera. Medium shot from the waist up, face in the middle of the frame. No text, no logos."
+  }
+ },
+ "l_ha": {
+  "endpoint": "marketing-studio/image",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21598-87e8-7cbb-a4e5-850895c1269f/f36f02d2-5a11-45bf-8726-daea31852916.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic smartphone UGC photo, soft window light, modest modern Bogota apartment. FRAMING (very important): wide shot taken from about 3 meters away with the phone on a tripod at chest height. The UPPER 40% of the frame is completely EMPTY: only plain light wall and ceiling, nothing else there (space for text). Her head is in the middle of the frame (the top of her hair at about 42% of the frame height), never near the top edge. The SAME woman as the first reference image (Laura: Colombian, about 28, light-brown skin, long dark brown wavy hair in a low ponytail, small gold hoop earrings), wearing a plain coral t-shirt, stands in her small kitchen and tosses a generic unbranded pink aerosol deodorant can (no text, no logo) into an open pedal trash bin; a soft pink cloud of perfume mist hangs in the air around the can. Determined closed-mouth smile. No text.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21597-bcaa-76a2-8752-52a1b2a0dfc5/f1a2ccfa-00df-4205-83bc-f3c423c50caa.png"
+   ]
+  }
+ },
+ "k_l_ha": {
+  "endpoint": "kling-video/v3.0/std/image-to-video",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21599-b34b-7d1c-bdb0-d0ecfc5cbe5c/eab50429-fbeb-4f40-bbc9-c92a5ecd6926.mp4"
+  ],
+  "body": {
+   "prompt": "She throws the pink aerosol can into the trash bin, the lid closes, she waves away the pink perfume mist with her hand and then smiles relieved with lips closed. Nobody speaks, lips stay closed. Static camera on a tripod: no zoom in, no camera movement, the empty wall at the top of the frame stays empty. Realistic smartphone UGC video, soft window light.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21598-87e8-7cbb-a4e5-850895c1269f/f36f02d2-5a11-45bf-8726-daea31852916.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "l_hb": {
+  "endpoint": "marketing-studio/image",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21598-8925-7ad3-93f5-9fd4d032cd5f/44ff1e25-2e66-4382-a224-6950c3eae181.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic smartphone UGC photo, soft window light, modest modern Bogota apartment. FRAMING (very important): wide shot taken from about 3 meters away with the phone on a tripod at chest height. The UPPER 40% of the frame is completely EMPTY: only plain light wall and ceiling, nothing else there (space for text). Her head is in the middle of the frame (the top of her hair at about 42% of the frame height), never near the top edge. The SAME woman as the first reference image (Laura: Colombian, about 28, light-brown skin, long dark brown wavy hair in a low ponytail, small gold hoop earrings), wearing a plain white sleeveless top and jeans, dances happily in her living room with both arms raised high, full body visible, small in the frame, joyful closed-mouth smile. No text.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21597-bcaa-76a2-8752-52a1b2a0dfc5/f1a2ccfa-00df-4205-83bc-f3c423c50caa.png"
+   ]
+  }
+ },
+ "k_l_hb": {
+  "endpoint": "kling-video/v3.0/std/image-to-video",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21599-b4b7-7783-9efd-2025c3224954/8e8a89d1-d682-4911-9042-c81c3c65ef12.mp4"
+  ],
+  "body": {
+   "prompt": "She dances happily and freely in her living room, swaying her hips and waving both raised arms to the rhythm, joyful closed-mouth smile. Nobody speaks, lips stay closed. Static camera on a tripod: no zoom in, no camera movement, the empty wall at the top of the frame stays empty. Realistic smartphone UGC video, soft window light.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21598-8925-7ad3-93f5-9fd4d032cd5f/44ff1e25-2e66-4382-a224-6950c3eae181.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "l_hc": {
+  "endpoint": "marketing-studio/image",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21598-8a62-7410-ba2c-8ea05dcc021e/b387c469-aa2d-47b7-908d-ea6ef68693dc.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic smartphone UGC photo, soft window light, modest modern Bogota apartment. FRAMING (very important): wide shot taken from about 3 meters away with the phone on a tripod at chest height. The UPPER 40% of the frame is completely EMPTY: only plain light wall and ceiling, nothing else there (space for text). Her head is in the middle of the frame (the top of her hair at about 42% of the frame height), never near the top edge. The SAME woman as the first reference image (Laura: Colombian, about 28, light-brown skin, long dark brown wavy hair in a low ponytail, small gold hoop earrings), wearing a plain coral t-shirt, stands in her bedroom in front of an open wardrobe and pulls out a pretty sleeveless floral blouse from the back of it, holding it up in front of her with a happy surprised closed-mouth smile. No text.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21597-bcaa-76a2-8752-52a1b2a0dfc5/f1a2ccfa-00df-4205-83bc-f3c423c50caa.png"
+   ]
+  }
+ },
+ "k_l_hc": {
+  "endpoint": "kling-video/v3.0/std/image-to-video",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21599-b61e-75e0-ad05-1447bcd3dcc7/25605d23-dfca-4b21-8e65-499fa59ddf9f.mp4"
+  ],
+  "body": {
+   "prompt": "She holds the sleeveless floral blouse up against her body, looks down at it, then turns slightly to check it with a big happy closed-mouth smile and nods. Nobody speaks, lips stay closed. Static camera on a tripod: no zoom in, no camera movement, the empty wall at the top of the frame stays empty. Realistic smartphone UGC video, soft window light.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21598-8a62-7410-ba2c-8ea05dcc021e/b387c469-aa2d-47b7-908d-ea6ef68693dc.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "l_hd": {
+  "endpoint": "marketing-studio/image",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21598-8ba2-7f89-b4e4-96ad38d76425/a748c908-1f8e-42a3-82b5-265292771a67.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic smartphone UGC photo in a cozy Bogota cafe, warm light. FRAMING (very important): wide shot taken from about 3 meters away with the phone on a tripod at chest height. The UPPER 40% of the frame is completely EMPTY: only plain light cafe wall, nothing else there (space for text). Her head is in the middle of the frame (the top of her hair at about 42% of the frame height), never near the top edge. The SAME woman as the first reference image (Laura: Colombian, about 28, light-brown skin, long dark brown wavy hair in a low ponytail, small gold hoop earrings), wearing a plain coral t-shirt, sits at a small table with two female friends; she holds her closed fist in front of her with a mischievous closed-mouth smile, keeping a secret, while both friends lean in curiously, eyebrows raised, lips closed. Coffee cups on the table. No text.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21597-bcaa-76a2-8752-52a1b2a0dfc5/f1a2ccfa-00df-4205-83bc-f3c423c50caa.png"
+   ]
+  }
+ },
+ "k_l_hd": {
+  "endpoint": "kling-video/v3.0/std/image-to-video",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21599-b767-7642-ad12-8cbb800d6688/f0c7555d-1e37-4706-b617-c6e1cce8d9e3.mp4"
+  ],
+  "body": {
+   "prompt": "She keeps the secret with a finger on her lips and a mischievous closed-mouth smile, shaking her head playfully, while her two friends lean in closer, curious, raising their eyebrows and smiling with lips closed. Nobody speaks, lips stay closed. Static camera on a tripod: no zoom in, no camera movement, the empty wall at the top of the frame stays empty. Realistic smartphone UGC video, soft window light.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21598-8ba2-7f89-b4e4-96ad38d76425/a748c908-1f8e-42a3-82b5-265292771a67.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "l_b1": {
+  "endpoint": "marketing-studio/image",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21598-8ce2-73ef-a7c6-e79f31db03a0/c5ce7b30-90cc-4372-a5f9-334fef4428f4.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic smartphone UGC photo, soft window light, modest modern Bogota apartment. The SAME woman as the first reference image (Laura: Colombian, about 28, light-brown skin, long dark brown wavy hair in a low ponytail, small gold hoop earrings), wearing a plain coral t-shirt, stands in her bathroom in front of a shelf crowded with many generic unbranded deodorant cans and bottles with no text and no logos; she holds one aerosol can near her nose and makes a slight grimace at the strong perfume. Medium shot. Her head is in the upper-middle part of the frame (not touching the top edge). No text.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21597-bcaa-76a2-8752-52a1b2a0dfc5/f1a2ccfa-00df-4205-83bc-f3c423c50caa.png"
+   ]
+  }
+ },
+ "k_l_b1": {
+  "endpoint": "kling-video/v3.0/std/image-to-video",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21599-b8d7-7cd0-9ade-fe5ded90cd04/f52b0166-1891-4d8a-9dc7-f4bdb225ec1d.mp4"
+  ],
+  "body": {
+   "prompt": "She sniffs the aerosol can, wrinkles her nose at the strong perfume and puts it back on the crowded shelf, shaking her head. Nobody speaks, lips stay closed. Realistic handheld smartphone UGC video, soft natural light.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21598-8ce2-73ef-a7c6-e79f31db03a0/c5ce7b30-90cc-4372-a5f9-334fef4428f4.png",
+   "duration": 3,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "l_b2a": {
+  "endpoint": "marketing-studio/image",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21598-8e33-7e14-b22b-b88eb8861e4a/95c639c4-fdb1-42f2-af8d-e566e48010cf.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic smartphone photo, close-up: a woman's hand with light-brown skin hurriedly grabs a pink disposable razor from a white bathroom sink counter, morning rush, a phone showing nothing on the counter, soft light. Only the hand and the sink are visible. No text.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21597-bcaa-76a2-8752-52a1b2a0dfc5/f1a2ccfa-00df-4205-83bc-f3c423c50caa.png"
+   ]
+  }
+ },
+ "k_l_b2a": {
+  "endpoint": "kling-video/v3.0/std/image-to-video",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21599-ba29-7aba-b121-611690b5ab2b/806e5ffa-f906-48f6-902c-af60bbf17537.mp4"
+  ],
+  "body": {
+   "prompt": "The hand quickly grabs the pink razor and lifts it out of frame in a hurry. Realistic handheld smartphone UGC video, soft natural light.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21598-8e33-7e14-b22b-b88eb8861e4a/95c639c4-fdb1-42f2-af8d-e566e48010cf.png",
+   "duration": 3,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "l_b2b": {
+  "endpoint": "marketing-studio/image",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21598-8f7a-70d9-83ec-95e07a6078f5/07227b5d-a3dd-4660-b7fb-f33cb476d1e9.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic smartphone UGC photo, soft window light, modest modern Bogota apartment. The SAME woman as the first reference image (Laura: Colombian, about 28, light-brown skin, long dark brown wavy hair in a low ponytail, small gold hoop earrings), wearing a fitted light-blue blouse, stands in her hallway and winces with discomfort, pressing one hand against her side just below the arm over the blouse, eyes squinting, lips closed. Medium shot. Her head is in the upper-middle part of the frame (not touching the top edge). No text.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21597-bcaa-76a2-8752-52a1b2a0dfc5/f1a2ccfa-00df-4205-83bc-f3c423c50caa.png"
+   ]
+  }
+ },
+ "k_l_b2b": {
+  "endpoint": "kling-video/v3.0/std/image-to-video",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21599-bb80-7059-865f-115b4235bfbf/477352f2-7ae1-492d-bf44-121c5f86df82.mp4"
+  ],
+  "body": {
+   "prompt": "She winces with discomfort, pressing her hand against her side under the arm over the blouse, and breathes out, lips closed. Nobody speaks, lips stay closed. Realistic handheld smartphone UGC video, soft natural light.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21598-8f7a-70d9-83ec-95e07a6078f5/07227b5d-a3dd-4660-b7fb-f33cb476d1e9.png",
+   "duration": 3,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "l_b2c": {
+  "endpoint": "marketing-studio/image",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21598-90bd-7b0e-b02e-10c8e252a212/93dbc55a-246a-419e-854b-2cb23485a3e0.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic smartphone photo in a bright office, The SAME woman as the first reference image (Laura: Colombian, about 28, light-brown skin, long dark brown wavy hair in a low ponytail, small gold hoop earrings), wearing a tight fitted light-blue blouse, sits at her desk and uncomfortably tugs the blouse fabric away from her sides with both hands, annoyed, lips closed. Medium shot. Her head is in the upper-middle part of the frame (not touching the top edge). No text.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21597-bcaa-76a2-8752-52a1b2a0dfc5/f1a2ccfa-00df-4205-83bc-f3c423c50caa.png"
+   ]
+  }
+ },
+ "k_l_b2c": {
+  "endpoint": "kling-video/v3.0/std/image-to-video",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21599-bcc6-7341-bb82-353329f0d6bc/e5a08cf2-bb7b-48bc-9f1f-a77f9d2847bf.mp4"
+  ],
+  "body": {
+   "prompt": "She tugs the tight blouse fabric away from her sides twice, annoyed and uncomfortable, then sighs with lips closed. Nobody speaks, lips stay closed. Realistic handheld smartphone UGC video, soft natural light.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21598-90bd-7b0e-b02e-10c8e252a212/93dbc55a-246a-419e-854b-2cb23485a3e0.png",
+   "duration": 3,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "l_b3": {
+  "endpoint": "marketing-studio/image",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21598-91fb-7a7a-bbe3-11942b423ac3/4655df21-4565-456d-8879-5890de50f3c9.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic smartphone UGC photo, soft window light, modest modern Bogota apartment. The SAME woman as the first reference image (Laura: Colombian, about 28, light-brown skin, long dark brown wavy hair in a low ponytail, small gold hoop earrings), wearing a plain grey t-shirt, sits on the edge of her bed and looks down at herself, thoughtful and a bit insecure, lips closed. Medium shot. Her head is in the upper-middle part of the frame (not touching the top edge). No text.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21597-bcaa-76a2-8752-52a1b2a0dfc5/f1a2ccfa-00df-4205-83bc-f3c423c50caa.png"
+   ]
+  }
+ },
+ "k_l_b3": {
+  "endpoint": "kling-video/v3.0/std/image-to-video",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21599-be10-79fa-bbdd-917d1d92b205/c5b38aff-3388-4bd3-ac88-f7fca3eeb056.mp4"
+  ],
+  "body": {
+   "prompt": "She slowly looks down at herself, thoughtful and a bit insecure, then lets out a small sigh with lips closed. Nobody speaks, lips stay closed. Realistic handheld smartphone UGC video, soft natural light.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21598-91fb-7a7a-bbe3-11942b423ac3/4655df21-4565-456d-8879-5890de50f3c9.png",
+   "duration": 3,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "l_b4": {
+  "endpoint": "marketing-studio/image",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21598-932d-7681-9e8e-60b8a4fe0f3a/7e4c0205-2a36-4961-994e-d3fb39367921.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic smartphone photo at a friends' birthday party in a Bogota apartment with balloons: four young Colombian friends pose for a group photo; the others raise their arms high cheering, while The SAME woman as the first reference image (Laura: Colombian, about 28, light-brown skin, long dark brown wavy hair in a low ponytail, small gold hoop earrings), wearing a sleeveless black top, keeps both arms pressed tight against her body with an awkward closed-mouth smile. Everyone's head in the upper-middle of the frame. No text.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21597-bcaa-76a2-8752-52a1b2a0dfc5/f1a2ccfa-00df-4205-83bc-f3c423c50caa.png"
+   ]
+  }
+ },
+ "k_l_b4": {
+  "endpoint": "kling-video/v3.0/std/image-to-video",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21599-bf4e-7278-bc1b-189fbe3bfbe8/3cfdccf7-80a6-4676-a7f4-ec89cb53fb85.mp4"
+  ],
+  "body": {
+   "prompt": "The friends hold their cheerful pose for the group photo, arms raised, smiling with lips closed; the woman in the black sleeveless top keeps her arms pressed tight against her body with an awkward closed-mouth smile; a phone flash blinks once. Nobody speaks. Realistic handheld smartphone UGC video, soft natural light.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21598-932d-7681-9e8e-60b8a4fe0f3a/7e4c0205-2a36-4961-994e-d3fb39367921.png",
+   "duration": 3,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "l_b5": {
+  "endpoint": "marketing-studio/image",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21598-946d-7091-b6b9-bd8e1a477c59/07ad9af0-1d94-4104-bf43-3c7d36206b19.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic smartphone UGC photo, soft window light, modest modern Bogota apartment. The SAME woman as the first reference image (Laura: Colombian, about 28, light-brown skin, long dark brown wavy hair in a low ponytail, small gold hoop earrings), wearing a plain coral t-shirt, stands by a bright window and holds up the GEODA deodorant stick (cap off) against the backlight; the translucent crystal on top glows in the light. She looks at it with curiosity, closed-mouth smile. The GEODA deodorant stick is exactly like the product references (white tube, translucent white alum crystal on top) and its label (Desodorante, GEODA, 100% NATURAL, EFECTIVO Y SEGURO, 24h) faces the camera, upright and sharp. Medium shot. Her head is in the upper-middle part of the frame (not touching the top edge). No text.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21597-bcaa-76a2-8752-52a1b2a0dfc5/f1a2ccfa-00df-4205-83bc-f3c423c50caa.png",
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/00cb1085-fa0c-4a03-a446-05649f4e916e.jpeg",
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/6f52cc8c-3f5d-49ad-a82f-8974d41b2c71.jpeg"
+   ]
+  }
+ },
+ "k_l_b5": {
+  "endpoint": "kling-video/v3.0/std/image-to-video",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21599-c0af-77a6-aba7-2fbbce1afaf7/aca7efa8-a85d-4f24-b395-e83adc66efe2.mp4"
+  ],
+  "body": {
+   "prompt": "She slowly raises the GEODA stick toward the bright window light and turns it a little so the translucent crystal on top glows, looking at it with curiosity and a closed-mouth smile. The GEODA stick keeps exactly the same shape and label. Nobody speaks, lips stay closed. Realistic handheld smartphone UGC video, soft natural light.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21598-946d-7091-b6b9-bd8e1a477c59/07ad9af0-1d94-4104-bf43-3c7d36206b19.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "l_b6": {
+  "endpoint": "marketing-studio/image",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21598-95c5-7cf5-9a94-766c9ff3b426/5618ab54-28a5-49c4-9bb3-779418dca7a3.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic smartphone UGC photo, soft window light, modest modern Bogota apartment. The SAME woman as the first reference image (Laura: Colombian, about 28, light-brown skin, long dark brown wavy hair in a low ponytail, small gold hoop earrings), wearing a plain grey sleeveless top, sits on her bed and smooths a little white moisturizing lotion onto her forearm with her other hand, relaxed closed-mouth smile; a plain white lotion bottle (no text) next to her. Medium shot. Her head is in the upper-middle part of the frame (not touching the top edge). No text.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21597-bcaa-76a2-8752-52a1b2a0dfc5/f1a2ccfa-00df-4205-83bc-f3c423c50caa.png"
+   ]
+  }
+ },
+ "k_l_b6": {
+  "endpoint": "kling-video/v3.0/std/image-to-video",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21599-c208-79aa-af83-a26b767a341f/143beeb3-b958-461e-be1e-47e650db2594.mp4"
+  ],
+  "body": {
+   "prompt": "She gently smooths the moisturizing lotion along her forearm with her other hand, relaxed, closed-mouth smile. Nobody speaks, lips stay closed. Realistic handheld smartphone UGC video, soft natural light.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21598-95c5-7cf5-9a94-766c9ff3b426/5618ab54-28a5-49c4-9bb3-779418dca7a3.png",
+   "duration": 3,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "l_b7": {
+  "endpoint": "marketing-studio/image",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21598-9704-740b-87b3-9d4b589583e2/efa73f1e-c77f-4dfc-8760-bc9236d30032.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic smartphone photo on a sunny small balcony of a Bogota apartment: The SAME woman as the first reference image (Laura: Colombian, about 28, light-brown skin, long dark brown wavy hair in a low ponytail, small gold hoop earrings), wearing a plain white sleeveless top, hangs a shirt on a clothesline with both arms up, full body visible, relaxed happy closed-mouth smile, city buildings behind. Wide shot. No text.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21597-bcaa-76a2-8752-52a1b2a0dfc5/f1a2ccfa-00df-4205-83bc-f3c423c50caa.png"
+   ]
+  }
+ },
+ "k_l_b7": {
+  "endpoint": "kling-video/v3.0/std/image-to-video",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21599-c351-7ef7-a591-8e40fda261dc/bda291e5-c41c-4ed3-a796-bb2bacdffce9.mp4"
+  ],
+  "body": {
+   "prompt": "She pins the shirt on the clothesline with both arms up, then reaches up for another clothespin, relaxed and happy, closed-mouth smile; the laundry moves in the breeze. Nobody speaks, lips stay closed. Realistic handheld smartphone UGC video, soft natural light.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21598-9704-740b-87b3-9d4b589583e2/efa73f1e-c77f-4dfc-8760-bc9236d30032.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "l_b8": {
+  "endpoint": "marketing-studio/image",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21598-983d-7785-8827-b5312a5c739d/793b988d-e8a8-43a9-b056-0a281893ad94.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic smartphone UGC photo, soft window light, modest modern Bogota apartment. The SAME woman as the first reference image (Laura: Colombian, about 28, light-brown skin, long dark brown wavy hair in a low ponytail, small gold hoop earrings), wearing a plain coral t-shirt, stands at her open front door; a friendly delivery man with a plain grey cap and plain dark jacket (no logos) hands her a small brown cardboard box while she hands him some Colombian peso banknotes (paying on delivery). Both smile with lips closed. Shot from inside the apartment. Her head is in the upper-middle part of the frame (not touching the top edge). No text, no logos.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21597-bcaa-76a2-8752-52a1b2a0dfc5/f1a2ccfa-00df-4205-83bc-f3c423c50caa.png"
+   ]
+  }
+ },
+ "k_l_b8": {
+  "endpoint": "kling-video/v3.0/std/image-to-video",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21599-c49a-7c59-ac0d-c9a5d414cd6e/520d3e3c-f1b0-4055-9271-7b667ae93128.mp4"
+  ],
+  "body": {
+   "prompt": "The delivery man hands her the small brown box and takes the banknotes she gives him; both give a small thankful nod, smiling with lips closed. Nobody speaks. Realistic handheld smartphone UGC video, soft natural light.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21598-983d-7785-8827-b5312a5c739d/793b988d-e8a8-43a9-b056-0a281893ad94.png",
+   "duration": 3,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "kit": [
+  "kit/broll/k_grifo_m_0.mp4 (B6 mojar)",
+  "kit/producto/endcard_bano_anim.mp4 (cierre K5)",
+  "a108/tmp/cta_navidad.mp4 (cierre K2: videos/GEO-BOFU-A1-08/cta.py navidad 6.6)"
+ ],
+ "costo_usd": {
+  "imagenes": 0.853,
+  "kling_54s": 3.856,
+  "total": 4.71
+ }
+}

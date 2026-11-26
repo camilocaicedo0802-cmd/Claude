@@ -27,11 +27,11 @@ la misma voz al mismo tiempo; dentro de un video, cada personaje conserva su voz
 Formato faceless / motion graphics: referencia `geoda/videos/GEO-MOFU-A1-07/` (`mg.py`: escenas animadas en Python con el
 recorte real del producto, fondo que siempre se mueve, SFX sintetizados; costo US$0).
 
-## Lote 2 (el A1-06, el A1-07 y el A1-08 ya los hizo el chat del lote 1: quedan A2-01 y A2-02)
+## Lote 2 (el A1-06, A1-07, A1-08 y A2-01 ya los hizo el chat del lote 1: queda A2-02)
 | # | Video | Formato | Duración | CTA | Nota |
 |---|---|---|---|---|---|
 | ✓ | GEO-BOFU-A1-08 (hecho) | UGC con avatar IA | 21 s | Black Friday | UGC: voz en off storytime, la avatar no mueve los labios (ref. `pipeline/build_a101_v2.py`). |
-| 2 | GEO-TOFU-A2-01 | UGC con avatar IA | 27 s | Paga contraentrega | UGC: voz en off storytime, la avatar no mueve los labios (ref. `pipeline/build_a101_v2.py`). |
+| ✓ | GEO-TOFU-A2-01 (hecho) | UGC con avatar IA | 27 s | Paga contraentrega | UGC: voz en off storytime, la avatar no mueve los labios (ref. `pipeline/build_a101_v2.py`). |
 | 3 | GEO-TOFU-A2-02 | Estilo Pixar (3D) | 27 s | Navidad / regalo | Pixar: Geo (la piedra) diseñado a partir de fotos reales de la piedra (misma forma y color); frascos genéricos sin marca; cerrar con 2 s de producto real. |
 - **Voces sugeridas:** Aoede (M) y Fenrir (H)
 

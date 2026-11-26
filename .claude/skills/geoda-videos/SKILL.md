@@ -132,6 +132,9 @@ copia con `python3 geoda/pipeline/tools/nombre_entrega.py --copiar <carpeta_mp4>
   detecta (desde el A1-07). Si una toma vieja (`*.wav.pcm` que empieza con `RIFF`) se cortó antes del arreglo, la primera
   frase trae un clic al inicio y la última un "pop" de ~0,15 s al final: revisar con la media de ventanas de 10 ms (|media| > 0,2
   = pop) y limpiar el `_t.wav` (silenciar los primeros 6 ms / recortar antes del pop) antes de montar.
+- Regrabar una frase SIEMPRE con el mismo modelo de TTS de la toma principal (ver `OK <modelo>` en la salida): con otro modelo
+  la misma voz sale más aguda. Si `tts_multi.py` cae a otro modelo, repetir forzando el modelo (A2-01).
+- Emojis que la fuente no dibuja bien: 🌫️ (cuadro blanco), 👚 y 🤫 (pálidos). Seguros: 👇 🎁 📦 😬 ✅ 🪨 💧.
 - Gemini texto: usar `gemini-3.1-flash-lite-preview` (los otros suelen estar en 429).
 - Higgsfield por MCP puede estar sin créditos: usar la API REST (`hf.sh`), que sí tiene.
 - Clips de Kling con la etiqueta mala: usar el tramo bueno, cambiar por foto real animada, o `label_fix.py --tube --wipe --fit`
