@@ -1,7 +1,7 @@
 import React from "react";
 import { Video } from "@remotion/media";
 import { AbsoluteFill, Easing, Img, interpolate, random, Sequence, spring, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
-import { HN } from "./fuentes";
+import { GP, HN } from "./fuentes";
 import { LILA } from "./Subtitulos2";
 
 // Gráficos del lote 2 (corrección de la clienta: sin emojis; iconos en línea vectorial lila; nada sobre las caras).
@@ -521,5 +521,46 @@ export const FichasProducto: React.FC<{ items: FichaMG[]; y: number; ancho?: num
         );
       })}
     </>
+  );
+};
+
+// "Película de 1950": imagen congelada que se vuelve cine antiguo (sepia, grano, rayas, parpadeo, temblor, viñeta)
+// con un rótulo de archivo. Entra de golpe (destello de 2 f) para que el remate sea disruptivo.
+export const PeliculaAntigua: React.FC<{ src: string; t0: number; t1: number; rotulo?: string; escala0?: number }> = ({ src, t0, t1, rotulo = "Archivo histórico · 1950", escala0 = 1.12 }) => {
+  const { t, frame, fps } = useT();
+  if (t < t0 || t > t1) return null;
+  const k = t - t0;
+  const f = frame;
+  const jx = (random(`jx${f}`) - 0.5) * 10;
+  const jy = (random(`jy${f}`) - 0.5) * 8;
+  const parpadeo = 0.86 + random(`fl${f}`) * 0.18;
+  const destello = interpolate(k, [0, 2 / fps, 4 / fps], [1, 0.6, 0], cl);
+  const escala = escala0 + 0.06 * Math.min(1, k / (t1 - t0));
+  const rayas = [0, 1, 2].map((i) => ({ x: random(`rx${i}${Math.floor(f / 2)}`) * 1080, o: random(`ro${i}${Math.floor(f / 2)}`) > 0.45 ? 0.55 : 0, w: 1 + random(`rw${i}${f}`) * 2.5 }));
+  const motas = Array.from({ length: 10 }).map((_, i) => ({ x: random(`mx${i}${f}`) * 1080, y: random(`my${i}${f}`) * 1920, r: 1 + random(`mr${i}${f}`) * 5, o: random(`mo${i}${f}`) > 0.6 ? 0.7 : 0 }));
+  return (
+    <AbsoluteFill style={{ backgroundColor: "#140d06", overflow: "hidden" }}>
+      <AbsoluteFill style={{ translate: `${jx.toFixed(1)}px ${jy.toFixed(1)}px`, scale: String(escala), transformOrigin: "50% 38%" }}>
+        <Img src={staticFile(src)} style={{ width: "100%", height: "100%", objectFit: "cover", filter: `grayscale(1) sepia(0.85) contrast(1.35) brightness(${parpadeo.toFixed(3)}) blur(0.6px)` }} />
+      </AbsoluteFill>
+      {/* grano */}
+      <svg width={1080} height={1920} style={{ position: "absolute", inset: 0, opacity: 0.32, mixBlendMode: "overlay" }}>
+        <filter id={`grano${f}`}><feTurbulence type="fractalNoise" baseFrequency={0.9} numOctaves={2} seed={f % 97} /></filter>
+        <rect width="100%" height="100%" filter={`url(#grano${f})`} />
+      </svg>
+      {/* rayas y motas de polvo */}
+      {rayas.map((r, i) => <div key={i} style={{ position: "absolute", left: r.x, top: 0, width: r.w, height: 1920, background: "rgba(245,235,210,.9)", opacity: r.o }} />)}
+      {motas.map((m, i) => <div key={i} style={{ position: "absolute", left: m.x, top: m.y, width: m.r * 2, height: m.r * 2, borderRadius: "50%", background: "#1b1208", opacity: m.o }} />)}
+      {/* viñeta y marco de proyector */}
+      <AbsoluteFill style={{ background: "radial-gradient(ellipse 70% 60% at 50% 45%, rgba(0,0,0,0) 45%, rgba(20,12,4,.75) 100%)" }} />
+      <AbsoluteFill style={{ boxShadow: "inset 0 0 0 26px #140d06, inset 0 0 60px 40px rgba(20,12,4,.9)", borderRadius: 60 }} />
+      {/* rótulo de archivo */}
+      <div style={{ position: "absolute", left: 0, right: 0, top: 210, textAlign: "center", opacity: interpolate(k, [0.08, 0.22], [0, 1], cl) * parpadeo }}>
+        <div style={{ display: "inline-block", padding: "14px 34px", border: "4px solid #F1E3C2", borderRadius: 10, fontFamily: GP, fontWeight: 700, fontSize: 54, letterSpacing: "0.06em", color: "#F1E3C2", textTransform: "uppercase", background: "rgba(20,12,4,.55)" }}>
+          {rotulo}
+        </div>
+      </div>
+      <AbsoluteFill style={{ background: "#fff", opacity: destello }} />
+    </AbsoluteFill>
   );
 };

@@ -5,7 +5,7 @@ import "./fuentes";
 import datos from "./datos/v1.json";
 import { Subtitulos2, B2 } from "./Subtitulos2";
 import { ARollL2, CierreFoto, DegradadoTexto, Segmento, TarjetaFoto, Chip } from "./Piezas";
-import { ContadorAnios, Destellos, FlujoIconos, LogoPlaca, MemeRecorte, Pegatina, Tragamonedas, VisorREC, WhatsApp3D } from "./Graficos";
+import { ContadorAnios, Destellos, FlujoIconos, LogoPlaca, MemeRecorte, PeliculaAntigua, Pegatina, Tragamonedas, VisorREC, WhatsApp3D } from "./Graficos";
 
 // Vídeo 1 del lote 2 · sketch "Bienvenida al equipo" (Chiqui y Gordi)
 // Correcciones de la clienta: sin emojis, nada sobre las caras, más recursos de humor y sin etiquetas de personaje.
@@ -29,7 +29,8 @@ const GOLPES = [
 type Sfx = { t: number; src: string; vol: number };
 // Sonidos de meme (fuentes que indicó la clienta: creatorset.com)
 const SFX_MEME: Sfx[] = [
-  { t: A.abuela.e - 0.05, src: "lote2/memes/boom.wav", vol: 0.2 },
+  { t: A.abuela.e - 0.03, src: "lote2/memes/rayado.wav", vol: 0.5 },
+  { t: A.abuela.e + 0.02, src: "sfx_sel/film_burn.wav", vol: 0.35 },
   { t: A.final.e + 0.05, src: "lote2/memes/risas.wav", vol: 0.32 },
 ];
 const SFX: Sfx[] = [
@@ -65,7 +66,7 @@ export const V1: React.FC = () => {
     interpolate(f / fps, [0, 0.4, datos.duracionS - 0.4, datos.duracionS + 0.3, total - 0.9, total], [0, 0.085, 0.085, 0.2, 0.2, 0], {
       extrapolateLeft: "clamp",
       extrapolateRight: "clamp",
-    });
+    }) * (f / fps >= A.abuela.e - 0.03 && f / fps < finSeg(3) ? 0 : 1);
   return (
     <AbsoluteFill style={{ backgroundColor: "#000" }}>
       <ARollL2 src="lote2/edit/v1_aroll.mp4" segmentos={SEG} golpes={GOLPES} />
@@ -75,8 +76,8 @@ export const V1: React.FC = () => {
 
       {/* "¿En 1950?": Gordi hace cuentas (a su derecha, lejos de su cara) */}
       <ContadorAnios t0={A.chiste.s} t1={A.abuela.s - 0.1} x={830} y={380} />
-      {/* "más vieja que mi abuela": meme de la abuela bailando + "boom" */}
-      <MemeRecorte src="lote2/memes/abuela.webm" t0={A.abuela.e - 0.05} dur={finSeg(3) - A.abuela.e + 0.03} x={835} y={250} ancho={400} alto={870} giro={3} />
+      {/* "más vieja que mi abuela": rayado de disco y la imagen se congela como película de 1950 (la música se corta) */}
+      <PeliculaAntigua src="lote2/img/v1_congelado.jpg" t0={A.abuela.e} t1={finSeg(3)} />
       {/* "pero mejor conservada": destellos alrededor de Chiqui, sin tocar la cara */}
       <Destellos
         t0={A.conservada.s - 0.05}
