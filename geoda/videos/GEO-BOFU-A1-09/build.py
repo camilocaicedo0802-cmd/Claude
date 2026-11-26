@@ -35,7 +35,8 @@ base = dict(
     },
     body=[
         dict(key='B1', vo='B1', dur=vd('B1'), line='Seca, la piedra no suelta nada, y a media tarde vuelve el olor.', sfx=[(0.0, f'{AU}/sfx_clock.wav', 0.3)]),
-        dict(key='B2', vo='B2', dur=vd('B2'), line='GEODA es piedra de alumbre natural, sin perfume.', sfx=[(0.3, f'{AU}/sfx_glint.wav', 0.3)]),
+        dict(key='B2', vo='B2', dur=vd('B2'), line='GEODA es piedra de alumbre natural, sin perfume.', sub_y=820, sub_cx=165, sub_scale=0.72,   # a la izquierda: la piedra ocupa el centro
+             sfx=[(0.3, f'{AU}/sfx_glint.wav', 0.3)]),
         dict(key='B3', vo='B3', dur=vd('B3'), line='Mójala, pásala por la axila limpia y déjala secar.',
              sfx=[(0.1, f'{AU}/splash_1180.mp3', 0.3), (2.1, f'{AU}/sfx_soplo.wav', 0.25)]),
         dict(key='B4', vo='B4', dur=vd('B4'), line='Así sí neutraliza el olor.', sfx=[(0.7, f'{AU}/sfx_tap.wav', 0.35)]),
@@ -64,7 +65,7 @@ def build_shots(cfg):
         'HC': [B.shot(T, f's9_hc_{d["HC"]:.2f}', k('k_a9_hc'), d['HC'], ss=0.0, z0=1.0, z1=1.06) + ([(330, 840, 720, 1420)],)],
         'HD': [B.shot(T, f's9_hd_{d["HD"]:.2f}', k('k_a9_hd2'), d['HD'], ss=0.0, z0=1.0, z1=1.06, fy=0.65) + ([(230, 680, 940, 1560)],)],
         'B1': [B.shot(T, f's9_b1_{d["B1"]:.2f}', k('k_a9_b1'), d['B1'], ss=0.0, z0=1.0, z1=1.04) + ([(380, 40, 840, 440)],)],
-        'B2': [B.shot(T, f's9_b2_{d["B2"]:.2f}', k('k_a9_b2'), d['B2'], ss=0.0, z0=1.0, z1=1.03, framed=0.8) + ([(300, 640, 820, 1520)],)],
+        'B2': [B.shot(T, f's9_b2b_{d["B2"]:.2f}', k('k_a9_b2'), d['B2'], ss=0.0, z0=1.0, z1=1.03) + ([(330, 330, 820, 1400)],)],
         'B3': [B.shot(T, 's9_b3a', f'{KIT}/broll/k_grifo_m_0.mp4', a1, ss=0.3, z0=1.0, z1=1.05) + ([(350, 560, 960, 1560)],),
                B.shot(T, 's9_b3b', k('k_a9_apl'), a2, ss=0.1, z0=1.0, z1=1.04) + ([(400, 760, 720, 1460), (0, 0, 260, 400)],),
                B.shot(T, f's9_b3c_{d["B3"]:.2f}', f'{KIT}/broll/k_toalla_0.mp4', d['B3'] - a1 - a2, ss=0.8, z0=1.0, z1=1.04)],

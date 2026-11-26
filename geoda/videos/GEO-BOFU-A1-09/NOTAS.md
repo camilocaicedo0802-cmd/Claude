@@ -9,7 +9,7 @@
   - HB (K5): la mano está a punto de botar GEODA a la caneca y se arrepiente (20,1 s).
   - HC (K2 Navidad, hook nuevo): unas manos abren una caja de regalo con GEODA junto al árbol (19,5 s).
   - HD (K2, hook nuevo): GEODA sobre pizarra oscura con barrido de luz (el primer clip deformó la piedra; se rehízo con cámara fija) (19,0 s).
-- Cuerpo: B1 oficina, el reloj marca las 3 p. m. y él despega la camisa de la axila (sin cara) · B2 foto REAL en la mano (Kling) ·
+- Cuerpo: B1 oficina, el reloj marca las 3 p. m. y él despega la camisa de la axila (sin cara) · B2 foto REAL en la mano (Kling; subtítulo pequeño a la izquierda, la piedra ocupa el centro) ·
   B3 mojar (kit) / aplicar (solo 0,1-1,2 s) / secar (kit) · B4 la mano tapa la piedra (kit) ·
   B5 K5: domicilio (manos) + cierre con producto real, tarjeta 'PÍDELA HOY / La pagas cuando te llegue / Garantía 14 días';
   K2: producto real con moño junto al árbol (del A2-02), tarjeta 'REGALA GEODA EN NAVIDAD / Paga 2 lleva 3'.

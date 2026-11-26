@@ -4,7 +4,7 @@ Voz en off de Sara (Gemini TTS Despina, una sola toma). Sara nunca habla a cáma
 (revisado cuadro a cuadro: se descartan B1 desde 3,1 s y B4 antes de 3,3 s porque abre la boca).
 Estructura: HOOK → PROBLEMA (B1 oficina + reloj) → PRODUCTO (B2) → SOLUCIÓN (B3 mojar/aplicar + B4 llega tranquila) → CTA (B5).
 Versiones: HA y HB con K7; HC y HD (hooks nuevos) con K3. Todo el video a 1,15x (BOFU 18-24 s). Sin rótulo IA.
-Encuadre FR: cabeza en el centro y pared vacía arriba (HA 90 %, HB y HD 85 %, HC 80 % sobre fondo desenfocado: el título nunca toca el pelo)."""
+Encuadre FR: cabeza en el centro y pared vacía arriba (siempre pantalla completa: HA, HB y HD con zoom anclado arriba que baja la cabeza; el HC se regeneró con la cabeza a media altura)."""
 import os, sys, copy
 G = os.environ.get('GEODA_WORK') or open(os.path.expanduser('~/.geoda_work')).read().strip()
 sys.path.insert(0, G)
@@ -35,7 +35,8 @@ base = dict(
     },
     body=[
         dict(key='B1', vo='B1', dur=vd('B1'), line='Me la pasaba seca, rapidito, y a media tarde ya sentía olor.', sfx=[(1.7, f'{AU}/sfx_clock.wav', 0.3)]),
-        dict(key='B2', vo='B2', dur=vd('B2'), line='Es GEODA: piedra de alumbre natural, sin perfume.', sfx=[(0.3, f'{AU}/sfx_glint.wav', 0.3)]),
+        dict(key='B2', vo='B2', dur=vd('B2'), line='Es GEODA: piedra de alumbre natural, sin perfume.', sub_y=1190, sub_cx=620,   # abajo a la derecha: arriba rozaba el pelo y a la izquierda está la piedra
+             sfx=[(0.3, f'{AU}/sfx_glint.wav', 0.3)]),
         # B3 partida en dos filas (misma toma de voz cortada en la pausa de 'mojo,'): el subtítulo de la aplicación va fijo abajo a la derecha,
         # lejos de la cara y de la piedra
         dict(key='B3a', vo='B3a', dur=vd('B3a'), line='Ahora la mojo,', sfx=[(0.1, f'{AU}/splash_1180.mp3', 0.3)]),
@@ -61,10 +62,10 @@ def build_shots(cfg):
         cta = [B.shot(T, 's10_b5anio', MG_ANIO, 4.4, z0=1.0, z1=1.03) + ([(10, 800, 1000, 1560)],),
                B.shot(T, f's10_b5ec_{e:.2f}', f'{KIT}/producto/endcard_bano_anim.mp4', e, z0=1.0, z1=1.06, fx=0.5, fy=0.62) + ([(259, 940, 801, 1620)],)]
     return {
-        'HA': [B.shot(T, f's10_ha2_{d["HA"]:.2f}', k('k_s_ha'), d['HA'], ss=0.1, z0=1.0, z1=1.02, framed=0.9) + ([(396, 732, 846, 1227), (144, 930, 360, 1272)],)],
-        'HB': [B.shot(T, f's10_hb2_{d["HB"]:.2f}', k('k_s_hb'), d['HB'], ss=0.0, z0=1.0, z1=1.02, framed=0.85) + ([(268, 730, 761, 1265), (166, 832, 421, 1121), (676, 1206, 931, 1631)],)],   # al 85 %: el título no toca el pelo
-        'HC': [B.shot(T, f's10_hc_{d["HC"]:.2f}', k('k_s_hc'), d['HC'], ss=0.6, z0=1.0, z1=1.02, framed=0.8) + ([(400, 700, 760, 1060), (380, 900, 760, 1300)],)],
-        'HD': [B.shot(T, f's10_hd2_{d["HD"]:.2f}', k('k_s_hd'), d['HD'], ss=0.0, z0=1.0, z1=1.02, framed=0.85) + ([(234, 764, 863, 1266), (438, 1223, 727, 1521)],)],
+        'HA': [B.shot(T, f's10_ha3_{d["HA"]:.2f}', k('k_s_ha'), d['HA'], ss=0.1, z0=1.10, z1=1.12, fy=0.0) + ([(362, 666, 917, 1277), (52, 910, 318, 1332)],)],
+        'HB': [B.shot(T, f's10_hb3_{d["HB"]:.2f}', k('k_s_hb'), d['HB'], ss=0.0, z0=1.13, z1=1.15, fy=0.0) + ([(174, 593, 836, 1311), (37, 730, 379, 1117), (722, 1231, 1064, 1801)],)],
+        'HC': [B.shot(T, f's10_hc3_{d["HC"]:.2f}', k('k_s_hc2'), d['HC'], ss=0.0, z0=1.06, z1=1.09, fy=0.0) + ([(250, 540, 700, 1000), (700, 1150, 920, 1480), (380, 600, 760, 1300)],)],
+        'HD': [B.shot(T, f's10_hd3_{d["HD"]:.2f}', k('k_s_hd'), d['HD'], ss=0.0, z0=1.12, z1=1.14, fy=0.0) + ([(136, 633, 969, 1300), (404, 1243, 788, 1639)],)],
         'B1': [B.shot(T, 's10_b1a', k('k_s_b1'), c1, ss=0.0, z0=1.0, z1=1.04) + ([(280, 360, 760, 860)],),
                B.shot(T, 's10_b1reloj', k('k_a9_b1'), c2, ss=0.5, z0=2.5, z1=2.65, fx=0.62, fy=0.08),
                B.shot(T, f's10_b1b_{d["B1"]:.2f}', k('k_s_b1'), d['B1'] - c1 - c2, ss=c1, speed=0.8, z0=1.04, z1=1.07) + ([(280, 360, 760, 860)],)],
