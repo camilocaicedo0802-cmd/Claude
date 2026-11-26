@@ -5,7 +5,7 @@ import "./fuentes";
 import datos from "./datos/v1.json";
 import { Subtitulos2, B2 } from "./Subtitulos2";
 import { ARollL2, CierreFoto, DegradadoTexto, Segmento, TarjetaFoto, Chip } from "./Piezas";
-import { ContadorAnios, Destellos, EtiquetaPersonaje, FlujoIconos, Pegatina, Requisitos, Tragamonedas, VisorREC } from "./Graficos";
+import { ContadorAnios, Destellos, EtiquetaPersonaje, FlujoIconos, LogoPlaca, Pegatina, Requisitos, Tragamonedas, VisorREC, WhatsApp3D } from "./Graficos";
 
 // Vídeo 1 del lote 2 · sketch "Bienvenida al equipo" (Chiqui y Gordi)
 // Corrección de la clienta: sin emojis, nada sobre las caras y más recursos de humor.
@@ -45,9 +45,10 @@ const SFX: Sfx[] = [
   { t: A.casa.s, src: "pop.wav", vol: 0.24 },
   { t: A.descuento.s, src: "pop.wav", vol: 0.28 },
   { t: A.grabar.s - 0.6, src: "shutter.wav", vol: 0.3 },
-  { t: A.agencia.s, src: "pop.wav", vol: 0.24 },
+  { t: A.agencia.s - 0.05, src: "swoosh_std.wav", vol: 0.24 },
   { t: A.ganar.s - 1.2, src: "contador.wav", vol: 0.22 },
   { t: A.whatsapp.s, src: "notif.wav", vol: 0.3 },
+  { t: A.whatsapp.s - 0.1, src: "swoosh_6.wav", vol: 0.2 },
   { t: A.ultima.s - 0.35, src: "whoosh_2.wav", vol: 0.22 },
   { t: A.gym.s - 0.03, src: "whip.wav", vol: 0.26 },
   { t: ini(22) + 0.05, src: "error.wav", vol: 0.18 },
@@ -107,9 +108,12 @@ export const V1: React.FC = () => {
       />
       <Pegatina texto="% descuento" sub="en tus compras" t0={A.descuento.s} t1={finSeg(9) - 0.05} x={790} y={520} giro={-6} />
       <VisorREC t0={A.grabar.s - 0.6} t1={finSeg(11) - 0.05} />
-      <Chip texto="305 Media Club" t={A.agencia.s - 0.05} hasta={finSeg(13) - 0.05} x={540} y={380} />
+      {/* logo de la agencia (enviado por la clienta) sobre las cabezas, entre las dos */}
+      <LogoPlaca src="lote2/img/logo305.png" t0={A.agencia.s - 0.05} t1={finSeg(14) - 0.1} x={540} y={120} ancho={300} />
       <Tragamonedas t0={A.ganar.s - 1.25} t1={finSeg(15) - 0.05} x={790} y={420} />
       <Chip texto="Escríbeme al WhatsApp" t={A.whatsapp.s - 0.05} hasta={finSeg(19) - 0.05} x={540} y={360} color="#25D366" />
+      {/* logo de WhatsApp en 3D a su lado (la cara de Chiqui está a la derecha del encuadre) */}
+      <WhatsApp3D t0={A.whatsapp.s - 0.1} t1={finSeg(19) - 0.05} x={270} y={720} tam={280} />
       <Requisitos
         t0={ini(22) + 0.02}
         t1={finSeg(22) - 0.1}

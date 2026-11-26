@@ -401,3 +401,68 @@ export const PanelBarra: React.FC<{ titulo: string; etiqueta: string; t0: number
     </Tarjeta>
   );
 };
+
+// Logo de marca (imagen) en placa redondeada que aparece con rebote y flota suave
+export const LogoPlaca: React.FC<{ src: string; t0: number; t1: number; x: number; y: number; ancho: number; radio?: number }> = ({ src, t0, t1, x, y, ancho, radio = 34 }) => {
+  const { t, p, s, visible } = usePop(t0, t1);
+  if (!visible) return null;
+  const flota = Math.sin((t - t0) * 2.6) * 5;
+  const brillo = interpolate(t, [t0 + 0.25, t0 + 0.85], [-0.4, 1.4], cl);
+  return (
+    <div
+      style={{
+        position: "absolute", left: x - ancho / 2, top: y + flota, width: ancho, borderRadius: radio, overflow: "hidden",
+        opacity: p * (1 - s), scale: String((0.7 + 0.3 * p) * (1 - 0.08 * s)), rotate: `${(1 - p) * -6}deg`,
+        filter: s > 0.01 ? `blur(${s * 6}px)` : undefined, boxShadow: "0 24px 50px rgba(0,0,0,.35)",
+      }}
+    >
+      <Img src={staticFile(src)} style={{ width: "100%", display: "block" }} />
+      <div style={{ position: "absolute", inset: 0, background: `linear-gradient(115deg, rgba(255,255,255,0) ${(brillo - 0.15) * 100}%, rgba(255,255,255,.28) ${brillo * 100}%, rgba(255,255,255,0) ${(brillo + 0.15) * 100}%)` }} />
+    </div>
+  );
+};
+
+// Logo de WhatsApp en 3D: burbuja verde con grosor (capas apiladas), brillo y giro en Y
+const WA_TEL =
+  "M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347";
+const WA_BURBUJA = "M12.05 0.1 A11.85 11.85 0 1 1 6.4 22.3 L0.2 23.9 L1.85 17.8 A11.85 11.85 0 0 1 12.05 0.1 Z";
+export const WhatsApp3D: React.FC<{ t0: number; t1: number; x: number; y: number; tam?: number }> = ({ t0, t1, x, y, tam = 280 }) => {
+  const { t, p, s, visible } = usePop(t0, t1);
+  if (!visible) return null;
+  const k = t - t0;
+  const giro = (1 - p) * -70 + Math.sin(k * 2.2) * 16 * Math.min(1, k * 2);
+  const flota = Math.sin(k * 2.6) * 8;
+  const capas = 14;
+  return (
+    <div style={{ position: "absolute", left: x - tam / 2, top: y - tam / 2, width: tam, height: tam, perspective: 900, opacity: p * (1 - s) }}>
+      <div style={{ position: "absolute", left: tam * 0.12, right: tam * 0.12, bottom: -tam * 0.1, height: tam * 0.12, borderRadius: "50%", background: "radial-gradient(closest-side, rgba(0,0,0,.35), rgba(0,0,0,0))", scale: String(1 - flota / 80) }} />
+      <div style={{ width: "100%", height: "100%", transformStyle: "preserve-3d", transform: `translateY(${flota}px) rotateY(${giro}deg) rotateX(8deg) scale(${0.6 + 0.4 * p})` }}>
+        <svg width={tam} height={tam} viewBox="-1 -1 26 27" style={{ overflow: "visible" }}>
+          <defs>
+            <radialGradient id="waCara" cx="30%" cy="25%" r="85%">
+              <stop offset="0%" stopColor="#7CF5A6" />
+              <stop offset="45%" stopColor="#2BD96B" />
+              <stop offset="100%" stopColor="#12A548" />
+            </radialGradient>
+            <linearGradient id="waBrillo" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stopColor="#fff" stopOpacity={0.55} />
+              <stop offset="100%" stopColor="#fff" stopOpacity={0} />
+            </linearGradient>
+            <filter id="waSombraTel" x="-20%" y="-20%" width="140%" height="140%">
+              <feDropShadow dx={0.25} dy={0.35} stdDeviation={0.25} floodColor="#0A6E30" floodOpacity={0.6} />
+            </filter>
+          </defs>
+          {/* grosor: capas apiladas hacia abajo-derecha */}
+          {Array.from({ length: capas }).map((_, i) => (
+            <path key={i} d={WA_BURBUJA} fill={i === capas - 1 ? "#0B5E2A" : "#0E7A37"} transform={`translate(${(capas - i) * 0.05} ${(capas - i) * 0.09})`} />
+          ))}
+          <path d={WA_BURBUJA} fill="url(#waCara)" />
+          <ellipse cx={9.5} cy={6} rx={7.5} ry={4.2} fill="url(#waBrillo)" transform="rotate(-18 9.5 6)" />
+          <g transform="translate(12 12) scale(1.18) translate(-12 -12)">
+            <path d={WA_TEL} fill="#fff" filter="url(#waSombraTel)" />
+          </g>
+        </svg>
+      </div>
+    </div>
+  );
+};

@@ -271,3 +271,9 @@ Calibrado escribiendo "If your defination of / success" con cada combinación ju
 - **Sin emojis** en los vídeos (le quitan seriedad). Iconos, si hacen falta, en línea vectorial lila.
 - **Vídeos de producto/testimonio: motion graphics** (cortes a fondo lavanda con listas, barras y títulos animados en Helvetica Neue Heavy; los subtítulos se ocultan mientras el gráfico dice lo mismo).
 - **Sketch / diálogo: recursos de humor** que no dependan de emojis: etiquetas de personaje tipo sitcom, zooms de remate con temblor, contador de años, visor "REC", tragamonedas "???", lista de "requisitos" con ✗/✓, destellos vectoriales.
+
+### Correcciones de la clienta (lote 2, v3 · vídeo 1)
+- **Sin triángulos/flechitas** junto a los subtítulos (tampoco en diálogos).
+- **Elegir siempre la toma en la que la persona dice la línea del guion en personaje**: descartar tomas donde se nota que le hablan o le soplan desde detrás de cámara (mirada a cámara/al equipo, voz de fondo).
+- **Evitar repeticiones de vocativos** ("Chiqui… Chiqui…") en líneas seguidas: se corta el nombre de la segunda.
+- **Logos reales** cuando se nombra una marca o un canal: logo de la agencia (305 Media Club, archivo de la clienta) y logo de WhatsApp en 3D al decir "escríbeme al WhatsApp".
