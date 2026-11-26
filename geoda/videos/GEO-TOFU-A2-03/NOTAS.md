@@ -19,3 +19,14 @@
 - Cierre K6: mapa de Colombia con pines que se encienden y un camioncito que recorre la ruta + producto REAL (`mapa.py`).
   K2: cierre de Navidad del A2-02 (producto real + moño).
 - Costo: 13 imágenes (US$0,70) + 17 s de Wan 2.7 (US$1,28) + 20 s de Kling (US$1,43) = US$3,40. Voz gratis.
+
+## v2 (Camilo: en 0:03 los labios no van con la voz)
+- Medido cuadro a cuadro (`pipeline/tools/lips_strip.py`, `lip_open.py`, `lipsync_check.py`): Wan 2.7 con nuestra voz
+  sincronizó bien el HA (la boca sigue la frase y se cierra al terminar) y mal B1 (gira la cabeza y cierra la boca mientras
+  habla: eso era el 0:03), B2 y el HC. Probado además: 6 tomas nuevas de Wan 2.7, Seedance 2.5 (re-voza la frase con su
+  propio audio y la boca arranca antes) y WAN 3.0 con referencia de voz (tampoco exacto). Ninguno garantiza sílaba por sílaba.
+- Regla aplicada: labios perfectos o labios cerrados. Solo el HA habla a cámara; B1, B2, B3 y HC son Kling con los labios
+  cerrados haciendo la acción, con la voz en off (se saltan los primeros 0,2-0,5 s, donde la foto tenía la boca abierta).
+  B3: plano nuevo (asiente) porque en la toma de los 3 dedos se veía también el meñique (parecían 4).
+- Costo extra v2: tomas de Wan 2.7 (22 s, US$1,65) + prueba Seedance 2.5 (US$1,06) + prueba WAN 3.0 (US$0,30) +
+  5 planos Kling con labios cerrados (19 s, US$1,36) + 1 imagen (US$0,06) = US$4,43. Total A2-03: US$7,83.

@@ -349,9 +349,76 @@
   "cierre K2: a202/tmp/xmas_ec_bow.mp4 (A2-02)"
  ],
  "costo_usd": {
-  "imagenes_13": 0.7,
-  "wan27_17s": 1.28,
-  "kling_20s": 1.43,
-  "total": 3.4
+  "v1": 3.4,
+  "v2_sincronia": 4.43,
+  "total": 7.83
+ },
+ "k_c_b1": {
+  "endpoint": "kling-video/v3.0/std/image-to-video (labios cerrados)",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2163f-6c42-7bb4-9cb2-9edf0a2f5989/80b869e9-db73-4d3f-acaa-2bf73714519f.mp4"
+  ],
+  "body": {
+   "prompt": "She rubs her upper arm slowly with a slightly annoyed face, looks at the camera and sighs through her nose. Her lips stay completely CLOSED the whole time: she does not speak at all, no mouth movement, only a soft closed-mouth expression. Realistic handheld smartphone UGC video, natural window light.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2160e-8087-7e2d-95cc-c5959e80112c/7a1f210c-0897-44fa-a74e-345681536ebc.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "k_c_b2": {
+  "endpoint": "kling-video/v3.0/std/image-to-video (labios cerrados)",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2163f-6d81-7b80-a7b6-a65dfcd86224/17cd83b0-08d3-4154-a405-f89769c07c9d.mp4"
+  ],
+  "body": {
+   "prompt": "She holds the pink aerosol can next to her face, glances at it, wrinkles her nose and shakes her head slightly in disapproval. The can stays unchanged, with no text. Her lips stay completely CLOSED the whole time: she does not speak at all, no mouth movement, only a soft closed-mouth expression. Realistic handheld smartphone UGC video, natural window light.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2160e-81c2-7568-a9c1-5da794e315dc/cfc74405-8e23-4452-8d4b-d6e8d249e0d7.png",
+   "duration": 3,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "k_c_b3b": {
+  "endpoint": "kling-video/v3.0/std/image-to-video (labios cerrados)",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21649-de0b-76a9-9155-cab197d299bf/c47864ed-1292-439b-9e01-3c66fecc2c3f.mp4"
+  ],
+  "body": {
+   "prompt": "She looks at the camera and gives one slow confident nod with a closed-mouth smile, then raises her eyebrows slightly, sure of herself. Her lips stay completely CLOSED the whole time: she does not speak at all. Her hands stay relaxed at her sides. Realistic handheld smartphone UGC video, natural window light.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21649-5533-7a26-be64-294d60eba5bd/784e8a84-2b6d-47e0-a5a5-22e72ea15b71.png",
+   "duration": 3,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "k_c_hc": {
+  "endpoint": "kling-video/v3.0/std/image-to-video (labios cerrados)",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2163f-6ff4-7689-b179-a9d9c2a39b4e/98618546-3f22-4b59-a728-ba14d3b4b04a.mp4"
+  ],
+  "body": {
+   "prompt": "She stands next to the Christmas tree, smiles warmly at the camera, sways a little and relaxes her bare shoulders, happy; the tree lights twinkle. Her lips stay completely CLOSED the whole time: she does not speak at all, no mouth movement, only a soft closed-mouth expression. Static camera, the empty wall at the top stays empty. Realistic handheld smartphone UGC video, natural window light.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2160e-7f1e-7e9b-b464-5786e1f55e03/1055ad03-955e-459b-864e-1b86c8e43064.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "d_b3b": {
+  "endpoint": "marketing-studio/image",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21649-5533-7a26-be64-294d60eba5bd/784e8a84-2b6d-47e0-a5a5-22e72ea15b71.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic smartphone UGC photo, natural window light, modest modern Bogota apartment bathroom. The SAME woman as the reference image (Daniela: Colombian, about 27, warm tan skin, shoulder-length dark brown straight hair with a middle part, small silver stud earrings), wearing a plain white t-shirt, stands in her bathroom with her hands relaxed at her sides, looking straight at the camera with a confident closed-mouth smile, lips closed. Medium shot, her head in the upper-middle part of the frame (not touching the top edge). No text.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2160d-993f-7f06-8df3-d1433dc38b77/75b96e5e-cc9f-46fa-9d99-36c50d6c4e60.png"
+   ]
+  }
  }
 }

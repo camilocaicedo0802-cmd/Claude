@@ -139,6 +139,10 @@ El montador (`pipeline/builder.py`) ya trae estas reglas por defecto.
     imagen con el 40 % de arriba vacío (pared/techo) y la cabeza en el centro, Kling con cámara fija, y se ponen cajas
     manuales de cabeza/producto en el montaje. Si no cabe arriba, el texto va al pecho (debajo de la barbilla), nunca encima.
 
+45. **Labios: sincronía perfecta o labios cerrados** (Camilo, A2-03). Todo plano donde alguien mueve la boca debe coincidir
+    sílaba por sílaba con la voz (revisar con `pipeline/tools/lips_strip.py`). Si el modelo no lo logra, ese plano va con la
+    persona haciendo la acción con los labios cerrados y la voz en off.
+
 ## Entrega
 34. Carpeta `GEODA_60/TOFU|MOFU|BOFU/A1…` con las versiones vigentes, `CTA_alternos/` para los re-exports de CTA y un
     `LEEME.txt`; se envía también como .zip.

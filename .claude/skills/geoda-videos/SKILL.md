@@ -137,9 +137,12 @@ copia con `python3 geoda/pipeline/tools/nombre_entrega.py --copiar <carpeta_mp4>
 - Emojis que la fuente no dibuja bien: 🌫️ (cuadro blanco), 👚 y 🤫 (pálidos). Seguros: 👇 🎁 📦 😬 ✅ 🪨 💧.
 - Cuota diaria de TTS por modelo (FreeTier, ~decenas de peticiones): si `gemini-3.8-flash-lite-tts` da 429 por día, grabar
   TODO el video nuevo con otro modelo (`gemini-3.1-flash-tts-preview`) y regrabar con ese mismo. No mezclar modelos.
-- Persona que habla a cámara con NUESTRA voz (testimonio, founder, UGC hablado): Wan 2.7 `wan/v2.7/image-to-video` con
-  `audio_url` = la frase `_t.wav` rellenada al largo del clip (US$0,075/s) → labios sincronizados con la misma voz en todo
-  el video (ver `geoda/videos/GEO-TOFU-A2-03`). WAN 3.0 con audio nativo inventa la voz: solo para podcast/calle.
+- **Sincronía de labios PERFECTA o labios cerrados** (Camilo, A2-03): Wan 2.7 con `audio_url` (nuestra voz) a veces sincroniza
+  bien y a veces no (gira la cabeza, cierra la boca hablando, la abre en silencio); Seedance 2.5 y WAN 3.0 con referencia de
+  voz tampoco son exactos. Revisar CADA plano hablado con `tools/lips_strip.py clip.mp4 voz.wav salida.jpg` (boca cada 0,1 s
+  con la energía de la voz): la boca se abre con cada sílaba y se cierra en pausas y al terminar. Si no es perfecto, ese plano
+  va con los labios cerrados (Kling: 'her lips stay completely closed, she does not speak') y la voz en off. Saltar los
+  primeros ~0,4 s del clip si la foto de inicio tenía la boca abierta. Ver `geoda/videos/GEO-TOFU-A2-03` (v2).
 - Gemini texto: usar `gemini-3.1-flash-lite-preview` (los otros suelen estar en 429).
 - Higgsfield por MCP puede estar sin créditos: usar la API REST (`hf.sh`), que sí tiene.
 - Clips de Kling con la etiqueta mala: usar el tramo bueno, cambiar por foto real animada, o `label_fix.py --tube --wipe --fit`

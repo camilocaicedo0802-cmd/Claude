@@ -4,7 +4,8 @@
 sin prometer tiempos ni resultados: 'para mí', 'cada piel es distinta') y al publicar se activa la etiqueta de IA.
 Ángulo A2: NO PUBLICAR hasta que Alberto confirme el registro sanitario; nunca la axila de cerca; sin 'blanquear'.
 Voz: Gemini TTS Callirrhoe (todas con gemini-3.1-flash-tts-preview; B1 y B9 regrabadas con el mismo modelo).
-Habla a cámara (HA, HC, B1, B2, B3): Wan 2.7 con la voz como audio_url -> los labios siguen la voz. El resto, voz en off.
+v2: solo el HA habla a cámara (Wan 2.7 con la voz como audio_url; sincronía revisada cuadro a cuadro). HC, B1, B2 y B3 van con los
+labios cerrados y voz en off (Kling): Wan 2.7 no sincronizaba bien esas frases (Camilo, 0:03).
 Versiones: HA y HB del brief con K6; HC y HD nuevos con K2. En el HB el hook ya dice 'me rasuraba, me ardía': sin B1."""
 import os, sys, copy
 G = os.environ.get('GEODA_WORK') or open(os.path.expanduser('~/.geoda_work')).read().strip()
@@ -21,7 +22,7 @@ def vd(k, extra=0.0):
     return round(B.dur_of(f'{VO}/{k}_t.wav') + 0.12 + extra, 2)
 
 base = dict(
-    id='GEO_TOFU_A2_03', fmt='TEST', version=1, tmp=TMP, out_dir=OUT, vo_dir=VO,
+    id='GEO_TOFU_A2_03', fmt='TEST', version=2, tmp=TMP, out_dir=OUT, vo_dir=VO,
     min_face=50, ai_label=False, hook_text_until=3.0, music=f'{AU}/music_821.mp3', music_vol=0.09,
     hooks={
         'HA': dict(vo='HA', dur=vd('HA'), subs=False, text=('Mi rutina para que mis', 'axilas luzcan parejas'),
@@ -65,11 +66,11 @@ def build_shots(cfg):
         # habla a cámara (Wan 2.7, labios con la voz): el clip arranca con la frase
         'HA': [B.shot(T, f's_ha_{d["HA"]:.2f}', w('w_ha'), d['HA'], z0=1.0, z1=1.10, fy=0.6) + ([(280, 800, 780, 1300)],)],
         'HB': [B.shot(T, f's_hb2_{d["HB"]:.2f}', f'{T}/hb_slow.mp4', d['HB'], z0=1.0, z1=1.18, fx=0.55, fy=0.7) + ([(150, 900, 1000, 1500)],)],   # caída real (2,55-4,6 s) en cámara lenta interpolada
-        'HC': [B.shot(T, f's_hc_{d["HC"]:.2f}', w('w_hc'), d['HC'], z0=1.0, z1=1.10, fy=0.6) + ([(300, 740, 780, 1300)],)],
+        'HC': [B.shot(T, f's_hc2_{d["HC"]:.2f}', w('k_c_hc'), d['HC'], ss=0.4, z0=1.0, z1=1.10, fy=0.6) + ([(300, 740, 780, 1300)],)],   # labios cerrados (voz en off)
         'HD': [B.shot(T, f's_hd_{d["HD"]:.2f}', w('k_d_hd'), d['HD'], z0=1.0, z1=1.06)],
-        'B1': [B.shot(T, f's_b1_{d["B1"]:.2f}', w('w_b1'), d['B1'], z0=1.0, z1=1.04) + ([(260, 240, 820, 840)],)],
-        'B2': [B.shot(T, f's_b2_{d["B2"]:.2f}', w('w_b2'), d['B2'], z0=1.0, z1=1.04) + ([(280, 280, 840, 880), (120, 420, 440, 1080)],)],
-        'B3': [B.shot(T, f's_b3_{d["B3"]:.2f}', w('w_b3'), d['B3'], z0=1.0, z1=1.04) + ([(280, 280, 840, 880), (80, 700, 460, 1120)],)],
+        'B1': [B.shot(T, f's_b1c_{d["B1"]:.2f}', w('k_c_b1'), d['B1'], ss=0.45, z0=1.0, z1=1.05) + ([(260, 240, 820, 840)],)],   # labios cerrados (voz en off)
+        'B2': [B.shot(T, f's_b2c_{d["B2"]:.2f}', w('k_c_b2'), d['B2'], ss=0.2, z0=1.0, z1=1.05) + ([(280, 280, 840, 880), (120, 420, 440, 1080)],)],
+        'B3': [B.shot(T, f's_b3d_{d["B3"]:.2f}', w('k_c_b3b'), d['B3'], ss=0.2, z0=1.0, z1=1.10, fy=0.35) + ([(300, 260, 780, 760)],)],   # asiente, labios cerrados (el '3' grande da la cuenta)
         'B4': [B.shot(T, f's_b4_{d["B4"]:.2f}', w('k_d_b4'), d['B4'], z0=1.0, z1=1.04)],
         'B5': [B.shot(T, 's_b5a', w('k_d_b5'), b5, z0=1.0, z1=1.04) + ([(320, 360, 880, 980), (40, 520, 420, 1180)],),
                B.shot(T, f's_b5b_{d["B5"]:.2f}', f'{KIT}/broll/k_grifo_m_0.mp4', d['B5'] - b5, ss=0.3, z0=1.0, z1=1.06) + ([(260, 540, 840, 1500)],)],
