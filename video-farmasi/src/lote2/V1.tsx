@@ -76,7 +76,7 @@ export const V1: React.FC = () => {
 
       {/* "¿En 1950?": Gordi hace cuentas (a su derecha, lejos de su cara) */}
       <ContadorAnios t0={A.chiste.s} t1={A.abuela.s - 0.1} x={830} y={380} />
-      {/* "más vieja que mi abuela": rayado de disco y la imagen se congela como película de 1950 (la música se corta) */}
+      {/* "más vieja que mi abuela": rayado de disco y la imagen se congela en blanco y negro (la música se corta) */}
       <PeliculaAntigua src="lote2/img/v1_congelado.jpg" t0={A.abuela.e} t1={finSeg(3)} />
       {/* "pero mejor conservada": destellos alrededor de Chiqui, sin tocar la cara */}
       <Destellos
