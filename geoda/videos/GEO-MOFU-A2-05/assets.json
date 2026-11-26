@@ -1,0 +1,468 @@
+{
+ "d_ref": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a218ff-ce06-7df6-a875-b39c9fcd486e/c0b84464-425a-40c8-81dc-ae3d8a86fbd9.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic front-camera smartphone selfie photo taken at arm's length of Mariana, a friendly Colombian woman about 26 years old from Cali, warm medium-brown skin, long dark-brown curly hair worn loose, small silver stud earrings, natural makeup, wearing a plain white t-shirt, in her bright bathroom with soft morning window light, relaxed closed-mouth smile, looking at the camera. Medium close-up from the chest up, her head in the middle of the frame, plain light wall above her head. No phone visible, no text, no watermark."
+  }
+ },
+ "d_ha": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2190f-7d56-7e91-a740-04402835b11e/0cc2045e-2b9f-4e41-a0c4-73bd901da90f.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic front-camera smartphone selfie photo taken at arm's length (no phone visible), natural soft daylight. the SAME woman as the first reference image (Mariana: Colombian, about 26, warm medium-brown skin, long dark-brown curly hair, small silver stud earrings), wearing a plain white t-shirt, in her bedroom, holds the GEODA stick (cap off) up next to her face with a determined, slightly skeptical closed-mouth smile. Her head is in the middle of the frame (not near the top) and the upper 40% of the frame is plain wall. The GEODA deodorant stick is exactly like the product references (white tube, clear cap, translucent white alum crystal on top) and its label (Desodorante, GEODA, 100% NATURAL, EFECTIVO Y SEGURO, 24h) faces the camera, upright and sharp. Her lips are closed. No text, no watermark.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a218ff-ce06-7df6-a875-b39c9fcd486e/c0b84464-425a-40c8-81dc-ae3d8a86fbd9.png",
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/00cb1085-fa0c-4a03-a446-05649f4e916e.jpeg",
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/6f52cc8c-3f5d-49ad-a82f-8974d41b2c71.jpeg"
+   ]
+  }
+ },
+ "d_ha2": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21913-5fd5-7277-a6e0-dceadfd058ce/4d14831e-eda5-43e1-9509-11e253358d2e.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic front-camera smartphone selfie photo (no phone visible), natural soft daylight, taken with her arm fully extended and the phone held high above her eye level and angled down, so the camera sees a lot of plain wall above her head. the SAME woman as the first reference image (Mariana: Colombian, about 26, warm medium-brown skin, long dark-brown curly hair, small silver stud earrings), wearing a plain white t-shirt, in her bedroom, holds the GEODA stick (cap off) up next to her face with a determined, slightly skeptical closed-mouth smile. The TOP of her hair is at about 40% of the frame height from the top edge; the whole upper 40% of the frame is plain wall with nothing in it. The GEODA deodorant stick is exactly like the product references (white tube, clear cap, translucent white alum crystal on top) and its label (Desodorante, GEODA, 100% NATURAL, EFECTIVO Y SEGURO, 24h) faces the camera, upright and sharp. Her lips are closed. No text, no watermark.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a218ff-ce06-7df6-a875-b39c9fcd486e/c0b84464-425a-40c8-81dc-ae3d8a86fbd9.png",
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/00cb1085-fa0c-4a03-a446-05649f4e916e.jpeg",
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/6f52cc8c-3f5d-49ad-a82f-8974d41b2c71.jpeg"
+   ]
+  }
+ },
+ "d_hb": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2190f-7ea1-7c0f-ae53-921d07458116/53d6b6e9-8f7f-4a0a-8d48-0c0219205d56.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic smartphone close-up photo: a white paper calendar sheet taped on a bathroom mirror with a grid of fourteen big squares labeled with large handwritten numbers 1 to 14; a woman's hand (warm medium-brown skin) holds an open red marker touching the square number 1, about to cross it out. Bright bathroom light. No other text, no watermark."
+  }
+ },
+ "d_hc": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2190f-7ff2-78dc-8888-4890f875b31d/f8036bcc-8a26-4f47-9f77-ebe37fcd3545.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic front-camera smartphone selfie photo taken at arm's length (no phone visible), natural soft daylight. the SAME woman as the first reference image (Mariana: Colombian, about 26, warm medium-brown skin, long dark-brown curly hair, small silver stud earrings), wearing a cozy red knit sweater, in her living room at Christmas with the warm bokeh lights of a decorated Christmas tree behind her, holds up an open small gift box with the GEODA stick inside, pleasantly surprised closed-mouth smile. Her head is in the middle of the frame (not near the top) and the upper 40% of the frame is plain wall. The GEODA deodorant stick is exactly like the product references (white tube, clear cap, translucent white alum crystal on top) and its label (Desodorante, GEODA, 100% NATURAL, EFECTIVO Y SEGURO, 24h) faces the camera, upright and sharp. Her lips are closed. No text, no watermark.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a218ff-ce06-7df6-a875-b39c9fcd486e/c0b84464-425a-40c8-81dc-ae3d8a86fbd9.png",
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/00cb1085-fa0c-4a03-a446-05649f4e916e.jpeg",
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/6f52cc8c-3f5d-49ad-a82f-8974d41b2c71.jpeg"
+   ]
+  }
+ },
+ "d_hc2": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21913-614b-7c15-852e-24ac247c0da0/cc82b9d4-a207-41af-a840-e6468088e479.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic front-camera smartphone selfie photo (no phone visible), natural soft daylight, taken with her arm fully extended and the phone held high above her eye level and angled down, so the camera sees a lot of plain wall above her head. the SAME woman as the first reference image (Mariana: Colombian, about 26, warm medium-brown skin, long dark-brown curly hair, small silver stud earrings), wearing a cozy red knit sweater, in her living room at Christmas with the warm bokeh lights of a decorated Christmas tree behind her, holds up an open small gift box with the GEODA stick inside, pleasantly surprised closed-mouth smile. The TOP of her hair is at about 40% of the frame height from the top edge; the whole upper 40% of the frame is plain wall with nothing in it. The GEODA deodorant stick is exactly like the product references (white tube, clear cap, translucent white alum crystal on top) and its label (Desodorante, GEODA, 100% NATURAL, EFECTIVO Y SEGURO, 24h) faces the camera, upright and sharp. Her lips are closed. No text, no watermark.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a218ff-ce06-7df6-a875-b39c9fcd486e/c0b84464-425a-40c8-81dc-ae3d8a86fbd9.png",
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/00cb1085-fa0c-4a03-a446-05649f4e916e.jpeg",
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/6f52cc8c-3f5d-49ad-a82f-8974d41b2c71.jpeg"
+   ]
+  }
+ },
+ "d_hd": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2190f-8138-7efe-9006-bed1bf125eee/05768f5b-3e65-4fec-9d23-c170ca189fdf.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic front-camera smartphone selfie photo taken at arm's length (no phone visible), natural soft daylight. the SAME woman as the first reference image (Mariana: Colombian, about 26, warm medium-brown skin, long dark-brown curly hair, small silver stud earrings), wearing a plain white t-shirt, in her bright bathroom; her younger sister (Colombian, about 20, short curly black hair, yellow hoodie) leans into the frame from the side, pointing at the GEODA stick in Mariana's hand with a playful challenging look; both with closed mouths. Her head is in the middle of the frame (not near the top) and the upper 40% of the frame is plain wall. The GEODA deodorant stick is exactly like the product references (white tube, clear cap, translucent white alum crystal on top) and its label (Desodorante, GEODA, 100% NATURAL, EFECTIVO Y SEGURO, 24h) faces the camera, upright and sharp. Her lips are closed. No text, no watermark.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a218ff-ce06-7df6-a875-b39c9fcd486e/c0b84464-425a-40c8-81dc-ae3d8a86fbd9.png",
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/00cb1085-fa0c-4a03-a446-05649f4e916e.jpeg",
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/6f52cc8c-3f5d-49ad-a82f-8974d41b2c71.jpeg"
+   ]
+  }
+ },
+ "d_b1": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2190f-8274-74e7-b579-cb657580f2b5/70f6ff7c-7bc2-4396-a523-7261266387f3.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic front-camera smartphone selfie photo taken at arm's length (no phone visible), natural soft daylight. the SAME woman as the first reference image (Mariana: Colombian, about 26, warm medium-brown skin, long dark-brown curly hair, small silver stud earrings), wearing a plain white t-shirt, in her bright bathroom in the morning, holds the GEODA stick (cap off) at chest height, calm closed-mouth smile. Her face in the upper-middle of the frame. The GEODA deodorant stick is exactly like the product references (white tube, clear cap, translucent white alum crystal on top) and its label (Desodorante, GEODA, 100% NATURAL, EFECTIVO Y SEGURO, 24h) faces the camera, upright and sharp. Her lips are closed. No text, no watermark.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a218ff-ce06-7df6-a875-b39c9fcd486e/c0b84464-425a-40c8-81dc-ae3d8a86fbd9.png",
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/00cb1085-fa0c-4a03-a446-05649f4e916e.jpeg",
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/6f52cc8c-3f5d-49ad-a82f-8974d41b2c71.jpeg"
+   ]
+  }
+ },
+ "d_b3": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2190f-83b8-7970-8a49-9230a4e74295/d53e8763-6f6d-4046-8ff2-4c6e9a606c9e.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic front-camera smartphone selfie photo taken at arm's length (no phone visible), natural soft daylight. the SAME woman as the first reference image (Mariana: Colombian, about 26, warm medium-brown skin, long dark-brown curly hair, small silver stud earrings), wearing a light-blue blouse, sitting by the window on a city bus in Cali, sunny street outside, slightly puzzled curious look, raised eyebrow. Her face in the upper-middle of the frame. Her lips are closed. No text, no watermark.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a218ff-ce06-7df6-a875-b39c9fcd486e/c0b84464-425a-40c8-81dc-ae3d8a86fbd9.png"
+   ]
+  }
+ },
+ "d_b4": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2190f-84f0-7e0d-8fd2-ee8fd0c9c0be/aaefb53c-5ddf-4697-a4b9-8af5b1fadd20.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic front-camera smartphone selfie photo taken at arm's length (no phone visible), natural soft daylight. the SAME woman as the first reference image (Mariana: Colombian, about 26, warm medium-brown skin, long dark-brown curly hair, small silver stud earrings), wearing a light-blue blouse, sitting by the window on a city bus in Cali, raises her inner wrist close to her nose to smell it, eyes closed, calm. Her face in the upper-middle of the frame. Her lips are closed. No text, no watermark.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a218ff-ce06-7df6-a875-b39c9fcd486e/c0b84464-425a-40c8-81dc-ae3d8a86fbd9.png"
+   ]
+  }
+ },
+ "d_b5": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2190f-862c-7ec4-8403-e737b5b25fca/a518f084-dec0-4d9e-b84a-2a715fe24583.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic front-camera smartphone selfie photo taken at arm's length (no phone visible), natural soft daylight. the SAME woman as the first reference image (Mariana: Colombian, about 26, warm medium-brown skin, long dark-brown curly hair, small silver stud earrings), wearing a mustard-yellow blouse, at her desk in a bright modern office in Cali with a laptop and plants behind her, relaxed confident closed-mouth smile. Her face in the upper-middle of the frame. Her lips are closed. No text, no watermark.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a218ff-ce06-7df6-a875-b39c9fcd486e/c0b84464-425a-40c8-81dc-ae3d8a86fbd9.png"
+   ]
+  }
+ },
+ "d_b6": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2190f-877a-7909-b62d-6b3dfab2a064/1c960e66-171c-40a4-90b4-1285f95676c7.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic smartphone photo taken in front of a full-length bedroom mirror: the SAME woman as the first reference image (Mariana: Colombian, about 26, warm medium-brown skin, long dark-brown curly hair, small silver stud earrings), wearing a coral short-sleeve t-shirt and jeans, holds up a beige long-sleeve shirt on a hanger in one hand as if deciding, then about to toss it on the bed, playful closed-mouth smile. Medium-wide shot, her head in the upper-middle of the frame. Her lips are closed. No text, no watermark.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a218ff-ce06-7df6-a875-b39c9fcd486e/c0b84464-425a-40c8-81dc-ae3d8a86fbd9.png"
+   ]
+  }
+ },
+ "d_b7": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2190f-88bf-7c10-b901-5930075ad043/40fb0c16-34c6-400a-87c1-3e15e4b5f22a.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic front-camera smartphone selfie photo taken at arm's length (no phone visible), natural soft daylight. the SAME woman as the first reference image (Mariana: Colombian, about 26, warm medium-brown skin, long dark-brown curly hair, small silver stud earrings), wearing a lilac t-shirt and sunglasses pushed up on her head, walking on a sunny tree-lined street in Cali at midday, bright warm sunlight, calm happy closed-mouth smile. Her face in the upper-middle of the frame. Her lips are closed. No text, no watermark.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a218ff-ce06-7df6-a875-b39c9fcd486e/c0b84464-425a-40c8-81dc-ae3d8a86fbd9.png"
+   ]
+  }
+ },
+ "d_b8": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2190f-89f8-703f-b596-0094b8c27cd1/6ee18d3b-1c4c-4992-adae-42f5daf069c8.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic front-camera smartphone selfie photo taken at arm's length (no phone visible), natural soft daylight. the SAME woman as the first reference image (Mariana: Colombian, about 26, warm medium-brown skin, long dark-brown curly hair, small silver stud earrings), wearing a grey cotton pajama t-shirt, lying in bed on a white pillow with messy curly hair, laughing silently with lips closed and eyes squinting happily. Her face in the upper-middle of the frame. Her lips are closed. No text, no watermark.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a218ff-ce06-7df6-a875-b39c9fcd486e/c0b84464-425a-40c8-81dc-ae3d8a86fbd9.png"
+   ]
+  }
+ },
+ "d_b9": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2190f-8b3e-7d6c-89ee-322fc626aa7c/6730b4b7-bd9d-43cc-8597-54114a9f31a2.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic front-camera smartphone selfie photo taken at arm's length (no phone visible), natural soft daylight. the SAME woman as the first reference image (Mariana: Colombian, about 26, warm medium-brown skin, long dark-brown curly hair, small silver stud earrings), wearing a plain white t-shirt, in her living room, gives a playful knowing look with closed lips and starts to reach her open palm toward the camera lens to cover it. Her face in the upper-middle of the frame. Her lips are closed. No text, no watermark.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a218ff-ce06-7df6-a875-b39c9fcd486e/c0b84464-425a-40c8-81dc-ae3d8a86fbd9.png"
+   ]
+  }
+ },
+ "d_b11": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2190f-8c9f-727f-b2e9-59d5897baf9a/acc88bcc-8507-4856-a5cf-4bb50be63d2c.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic smartphone photo, wide shot: the SAME woman as the first reference image (Mariana: Colombian, about 26, warm medium-brown skin, long dark-brown curly hair, small silver stud earrings), wearing a black sleeveless blouse and light jeans, confidently steps out of the door of her apartment building in Cali on a sunny morning, happy closed-mouth smile, arms relaxed at her sides. Full body visible, her head in the upper-middle of the frame. Her lips are closed. No text, no watermark.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a218ff-ce06-7df6-a875-b39c9fcd486e/c0b84464-425a-40c8-81dc-ae3d8a86fbd9.png"
+   ]
+  }
+ },
+ "d_b12": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2190f-8ddf-7134-9001-5a1712a3f07d/e010afbe-55b3-4b9e-b5aa-133c7b3e4ada.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic smartphone photo, wide shot from a few meters away in a green park in Cali on a sunny day: the SAME woman as the first reference image (Mariana: Colombian, about 26, warm medium-brown skin, long dark-brown curly hair, small silver stud earrings), wearing the same black sleeveless blouse and light jeans, raises both arms up high in a happy stretch, eyes closed, closed-mouth smile. Full body visible, small in the frame, no close-up. Her lips are closed. No text, no watermark.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a218ff-ce06-7df6-a875-b39c9fcd486e/c0b84464-425a-40c8-81dc-ae3d8a86fbd9.png"
+   ]
+  }
+ },
+ "k_d_ha": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21910-b316-793d-b06a-3e6c6a816f98/8c52ef6d-5cff-4ae3-bb90-03ceacf21ed5.mp4"
+  ],
+  "body": {
+   "prompt": "She looks at the GEODA stick, then back at the camera with a determined closed-mouth smile and a small confident nod. The GEODA stick keeps exactly the same shape and label and does not rotate. Her lips stay closed the whole time, nobody speaks. Gentle handheld selfie motion, no zoom; the plain wall at the top stays empty.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2190f-7d56-7e91-a740-04402835b11e/0cc2045e-2b9f-4e41-a0c4-73bd901da90f.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "k_d_ha2": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21914-1ca9-729d-9409-c3030262e2ac/cdbf4621-eb8f-461b-abc0-f5ff281115e2.mp4"
+  ],
+  "body": {
+   "prompt": "She holds the GEODA stick steady next to her face with the label toward the camera, looks at it, then back at the camera with a determined closed-mouth smile and a small confident nod. The GEODA stick keeps exactly the same shape and label and does not rotate. Her lips stay closed the whole time, nobody speaks. Gentle handheld selfie motion with the phone held high; no zoom in; the plain wall at the top of the frame stays empty.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21913-5fd5-7277-a6e0-dceadfd058ce/4d14831e-eda5-43e1-9509-11e253358d2e.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "k_d_hb": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21910-b463-7342-9e52-e8bce118a66d/5bad1c9a-b235-4df8-b858-535be8234f2a.mp4"
+  ],
+  "body": {
+   "prompt": "The hand finishes crossing out the number 1 with a bold red X using the marker, then pulls the marker away. The other numbers stay unchanged. Static close-up, realistic smartphone video.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2190f-7ea1-7c0f-ae53-921d07458116/53d6b6e9-8f7f-4a0a-8d48-0c0219205d56.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "k_d_hc": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21910-b5b2-7ccd-a610-94965710560d/d7bd6fb7-60f6-4954-b38d-5d4f8083dc02.mp4"
+  ],
+  "body": {
+   "prompt": "She lifts the open gift box a little toward the camera, looks at the GEODA stick inside and back at the camera with a pleasantly surprised closed-mouth smile; the Christmas tree lights twinkle softly. The GEODA stick keeps exactly the same shape and label and does not rotate. Her lips stay closed the whole time, nobody speaks. Realistic front-camera selfie video, gentle natural handheld motion.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2190f-7ff2-78dc-8888-4890f875b31d/f8036bcc-8a26-4f47-9f77-ebe37fcd3545.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "k_d_hc2": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21914-1df5-7195-9835-d65c0c68631c/40a3f518-7e24-4171-a6eb-df04e9b06975.mp4"
+  ],
+  "body": {
+   "prompt": "She lifts the open gift box a little toward the camera, glances at the GEODA stick inside and back at the camera with a pleasantly surprised closed-mouth smile; the Christmas tree lights twinkle softly. The GEODA stick keeps exactly the same shape and label and does not rotate. Her lips stay closed the whole time, nobody speaks. Gentle handheld selfie motion with the phone held high; no zoom in; the plain wall at the top of the frame stays empty.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21913-614b-7c15-852e-24ac247c0da0/cc82b9d4-a207-41af-a840-e6468088e479.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "k_d_hd": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21910-b700-7983-b61f-6027d00834e6/1f112898-a571-4f12-ac2e-10e5db353157.mp4"
+  ],
+  "body": {
+   "prompt": "Her sister keeps pointing at the GEODA stick with a playful challenging look and raises her eyebrows; Mariana looks at her sister, then back at the camera and accepts the challenge with a confident nod. The GEODA stick keeps exactly the same shape and label and does not rotate. Both keep their lips closed the whole time, nobody speaks. Realistic front-camera selfie video, gentle natural handheld motion.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2190f-8138-7efe-9006-bed1bf125eee/05768f5b-3e65-4fec-9d23-c170ca189fdf.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "k_d_b1": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21910-b825-7ac2-ba37-8a305b8c727a/1f046fdd-24ff-42b4-bd9c-f223fac045ee.mp4"
+  ],
+  "body": {
+   "prompt": "She shows the GEODA stick to the camera, tilts her head slightly and gives a calm closed-mouth smile. The GEODA stick keeps exactly the same shape and label and does not rotate. Her lips stay closed the whole time, nobody speaks. Realistic front-camera selfie video, gentle natural handheld motion.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2190f-8274-74e7-b579-cb657580f2b5/70f6ff7c-7bc2-4396-a523-7261266387f3.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "k_d_b3": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21910-b95f-7e4f-973d-56208cc1db97/d639312c-c34d-4cca-8285-91c843e8fd80.mp4"
+  ],
+  "body": {
+   "prompt": "The bus moves gently; she glances out of the window, then back at the camera with a curious, slightly puzzled look, raising an eyebrow; the sunny street passes by outside. Her lips stay closed the whole time, nobody speaks. Realistic front-camera selfie video, gentle natural handheld motion.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2190f-83b8-7970-8a49-9230a4e74295/d53e8763-6f6d-4046-8ff2-4c6e9a606c9e.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "k_d_b4": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21910-ba95-76b6-928e-a6b6df9111a8/777e779c-3fad-4691-b812-46bd387a4190.mp4"
+  ],
+  "body": {
+   "prompt": "She smells her inner wrist with her eyes closed, then lowers her hand and smiles calmly at the camera; the sunny street passes by outside the bus window. Her lips stay closed the whole time, nobody speaks. Realistic front-camera selfie video, gentle natural handheld motion.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2190f-84f0-7e0d-8fd2-ee8fd0c9c0be/aaefb53c-5ddf-4697-a4b9-8af5b1fadd20.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "k_d_b5": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21910-bbc3-720a-bb58-504ac3ad2f1a/9acebe3f-feca-43d6-a299-37dbae4ed0ba.mp4"
+  ],
+  "body": {
+   "prompt": "She leans back in her office chair, relaxed, and gives the camera a confident closed-mouth smile and a small shrug, as if she forgot about something. Her lips stay closed the whole time, nobody speaks. Realistic front-camera selfie video, gentle natural handheld motion.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2190f-862c-7ec4-8403-e737b5b25fca/a518f084-dec0-4d9e-b84a-2a715fe24583.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "k_d_b6": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21910-bd05-75ae-9607-32850119ef0f/a12ab0bb-d219-4a02-be88-e53ed64492c5.mp4"
+  ],
+  "body": {
+   "prompt": "She looks at the beige long-sleeve shirt, shakes her head playfully, tosses it onto the bed and turns back to the mirror in her coral t-shirt with a happy closed-mouth smile. Her lips stay closed the whole time, nobody speaks. Realistic smartphone video in front of a mirror.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2190f-877a-7909-b62d-6b3dfab2a064/1c960e66-171c-40a4-90b4-1285f95676c7.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "k_d_b7": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21910-be3b-7f64-9c91-c8272927857d/8b0fb41a-9ed9-4813-89a7-e66cca5dbafa.mp4"
+  ],
+  "body": {
+   "prompt": "She keeps walking on the sunny street, the trees and houses pass behind her, she squints a little in the sunlight and gives a calm happy closed-mouth smile. Her lips stay closed the whole time, nobody speaks. Realistic front-camera selfie video, gentle natural handheld motion.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2190f-88bf-7c10-b901-5930075ad043/40fb0c16-34c6-400a-87c1-3e15e4b5f22a.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "k_d_b8": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21910-bf88-7fa2-a082-e550b37a062a/1f6e2b7b-fbe3-4ae3-9cd3-9c2562560eb5.mp4"
+  ],
+  "body": {
+   "prompt": "She laughs silently with her lips closed, shaking her head on the pillow, eyes squinting happily, then looks at the camera with a big closed-mouth smile. Her lips stay closed the whole time, nobody speaks. Realistic front-camera selfie video, gentle natural handheld motion.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2190f-89f8-703f-b596-0094b8c27cd1/6ee18d3b-1c4c-4992-adae-42f5daf069c8.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "k_d_b9": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21910-c0bf-728e-a150-3bc7be9e6a23/b16aaf43-e6f6-4fbd-9778-667de236ea4d.mp4"
+  ],
+  "body": {
+   "prompt": "She gives a playful knowing look and moves her open palm toward the camera until it completely covers the lens and the frame goes dark. Her lips stay closed the whole time, nobody speaks. Realistic front-camera selfie video, gentle natural handheld motion.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2190f-8b3e-7d6c-89ee-322fc626aa7c/6730b4b7-bd9d-43cc-8597-54114a9f31a2.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "k_d_b11": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21910-c217-7cea-973f-996aabec946b/20f69421-c945-4374-9747-17eb8ed4f50b.mp4"
+  ],
+  "body": {
+   "prompt": "She walks confidently out of the building door toward the camera in her black sleeveless blouse, sunny morning, happy closed-mouth smile. Her lips stay closed the whole time, nobody speaks. Realistic smartphone video, static camera.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2190f-8c9f-727f-b2e9-59d5897baf9a/acc88bcc-8507-4856-a5cf-4bb50be63d2c.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "k_d_b12": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21910-c350-735c-b92a-c3530602f9e9/18a90d7a-c149-4c42-be82-d1d944054eef.mp4"
+  ],
+  "body": {
+   "prompt": "In the green park she keeps her arms raised high, sways happily and stretches, then lowers her arms slowly with a relaxed closed-mouth smile. Wide shot, the camera stays far away, no zoom in. Her lips stay closed the whole time, nobody speaks. Realistic smartphone video.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2190f-8ddf-7134-9001-5a1712a3f07d/e010afbe-55b3-4b9e-b5aa-133c7b3e4ada.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "kit": [
+  "kit/personajes/mariana/mariana_ref.png (Mariana)",
+  "kit/broll/k_grifo_m_0.mp4 (B2 mojar)",
+  "a107/tmp/mg_b10.mp4 (sello 14 días + producto real, B13; del A1-07)",
+  "a108/tmp/cta_bf.mp4 y cta_navidad.mp4 (cierres K1 y K2; del A1-08)",
+  "cal14.py (calendario B10, local)"
+ ],
+ "notas": "Descartados: d_ha/k_d_ha y d_hc/k_d_hc (la cabeza quedaba muy arriba: el título tocaba el pelo; se rehicieron con el celular más alto). k_d_hb solo 0-2,6 s a 0,8x (al quitar la mano Kling cambia el 9 por un 2). k_d_hc2 solo 0-3,5 s a 0,72x y k_d_b8 0-1,1 s de ida y vuelta (luego sonríe con la boca abierta).",
+ "costo_usd": {
+  "imagenes_17": 1.09,
+  "kling_16x5s": 5.71,
+  "total": 6.8
+ }
+}
