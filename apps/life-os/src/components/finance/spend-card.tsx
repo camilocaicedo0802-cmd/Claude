@@ -2,8 +2,8 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { ChevronDown, CircleAlert, Info, Settings2 } from "lucide-react";
-import { useCapacity, useMoney } from "@/hooks/data";
+import { ChevronDown, CircleAlert, CircleCheck, Info, PiggyBank, Settings2 } from "lucide-react";
+import { useCapacity, useData, useMoney } from "@/hooks/data";
 import { formatDayMonth } from "@/lib/dates";
 import { cn } from "@/lib/utils";
 import { Card } from "@/components/shared/primitives";
@@ -13,6 +13,7 @@ import { useUI } from "@/components/shell/ui-context";
 /** "¿Cuánto puedo gastar?" — the decision card. Conservative and transparent by design. */
 export function SpendCapacityCard({ className }: { className?: string }) {
   const c = useCapacity();
+  const data = useData();
   const money = useMoney();
   const { openForm } = useUI();
   const [open, setOpen] = React.useState(false);
@@ -96,6 +97,8 @@ export function SpendCapacityCard({ className }: { className?: string }) {
         </div>
       </div>
 
+      {c.savings.share > 0 && <SavingsTip c={c} accounts={data.accounts} />}
+
       <div className={cn("border-t border-border px-5 py-4 text-sm", negative ? "bg-expense-soft" : "bg-muted/50")}>
         <p className={cn("flex gap-2 leading-relaxed", negative && "text-expense")}>
           {negative && <CircleAlert className="mt-0.5 size-4 shrink-0" />}
@@ -144,10 +147,87 @@ export function SpendCapacityCard({ className }: { className?: string }) {
               <li className="flex gap-1.5">
                 <Info className="mt-0.5 size-3 shrink-0" /> Las obligaciones futuras no se descuentan de tu saldo real hasta que las pagas; aquí solo se reservan.
               </li>
+              {c.savings.share > 0 && c.savings.base > 0 && (
+                <li className="flex gap-1.5">
+                  <Info className="mt-0.5 size-3 shrink-0" />
+                  Ahorro sugerido: {c.savings.share} % de {money(c.savings.base)}, lo libre de este período (desde el {formatDayMonth(c.savings.since)})
+                  {c.savings.saved > 0 ? `, incluidos ${money(c.savings.saved)} que ya apartaste` : ""}. Se cuenta como apartado lo que pasas a una cuenta de ahorro o a una meta.
+                </li>
+              )}
             </ul>
           </div>
         )}
       </div>
     </Card>
+  );
+}
+
+type Capacity = ReturnType<typeof useCapacity>;
+
+/** Savings recommendation: a share of what is free this pay period, with a one-tap transfer to savings. */
+function SavingsTip({ c, accounts }: { c: Capacity; accounts: ReturnType<typeof useData>["accounts"] }) {
+  const money = useMoney();
+  const { openForm } = useUI();
+  const { suggested, target, saved, share } = c.savings;
+  const until = formatDayMonth(c.horizon.end);
+  const savingsAccount =
+    accounts.find((a) => !a.archived && a.type === "savings" && !a.spendable) ?? accounts.find((a) => !a.archived && a.type !== "credit" && !a.spendable);
+  const fromAccount = accounts
+    .filter((a) => !a.archived && a.type !== "credit" && a.spendable)
+    .sort((a, b) => (c.balances.byAccount.get(b.id) ?? 0) - (c.balances.byAccount.get(a.id) ?? 0))[0];
+  const done = suggested === 0 && target > 0 && saved >= target;
+
+  const setAside = () => {
+    if (!savingsAccount) {
+      openForm({ kind: "account", defaults: { type: "savings" } });
+      return;
+    }
+    openForm({
+      kind: "transaction",
+      defaults: { kind: "transfer", amount: suggested, accountId: fromAccount?.id, toAccountId: savingsAccount.id, description: "Ahorro" },
+    });
+  };
+
+  return (
+    <div className="px-5 pb-5">
+      <div className="flex flex-col gap-3 rounded-xl border border-border bg-card p-4 sm:flex-row sm:items-center">
+        <div className="flex min-w-0 flex-1 items-start gap-3">
+          <span className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-income-soft text-income [&_svg]:size-[18px]" aria-hidden>
+            {done ? <CircleCheck /> : <PiggyBank />}
+          </span>
+          <div className="min-w-0">
+            <p className="text-[13px] font-medium text-muted-foreground">Recomendación de ahorro</p>
+            {done ? (
+              <>
+                <p className="mt-0.5 text-[15px] font-semibold">Ya apartaste {money(saved)} este período</p>
+                <p className="mt-0.5 text-xs text-muted-foreground">Cumpliste tu {share} %. Lo que queda libre es para gastar con tranquilidad.</p>
+              </>
+            ) : suggested > 0 ? (
+              <>
+                <p className="mt-0.5 text-[15px] font-semibold">
+                  Aparta <span className="tabular text-income">{money(suggested)}</span>
+                </p>
+                <p className="mt-0.5 text-xs text-muted-foreground">
+                  {saved > 0
+                    ? `Ya apartaste ${money(saved)}; esto completa el ${share} % de lo libre de este período. `
+                    : `Es el ${share} % de tu margen libre hasta el ${until}. `}
+                  Después te quedan {money(Math.max(0, c.free - suggested))} libres.
+                </p>
+              </>
+            ) : (
+              <>
+                <p className="mt-0.5 text-[15px] font-semibold">Hoy no hay margen para ahorrar</p>
+                <p className="mt-0.5 text-xs text-muted-foreground">Primero cubre lo comprometido. Cuando tengas margen libre te diré cuánto apartar ({share} %).</p>
+              </>
+            )}
+          </div>
+        </div>
+        {suggested > 0 && (
+          <Button size="sm" variant="income" className="shrink-0 max-sm:w-full" onClick={setAside}>
+            {savingsAccount ? "Apartar ahora" : "Crear cuenta de ahorro"}
+          </Button>
+        )}
+      </div>
+    </div>
   );
 }

@@ -20,6 +20,7 @@ import { runSave } from "@/components/forms/form-kit";
 import { InstallInstructions, lastBackupAt, markBackupDone, useInstall } from "@/components/shell/pwa";
 import { NATURE_LABEL } from "@/components/forms/finance-forms";
 import { errorMessage } from "@/services/common";
+import { DEFAULT_SAVINGS_SHARE } from "@/db/defaults";
 import { discardDemo, exportBackup, parseBackup, requestPersistentStorage, resetAllData, restoreBackup, switchMode, updateSettings } from "@/services/settings-service";
 
 const TIME_ZONES = ["America/Bogota", "America/Mexico_City", "America/Lima", "America/Santiago", "America/Argentina/Buenos_Aires", "America/Caracas", "America/New_York", "America/Los_Angeles", "Europe/Madrid", "UTC"];
@@ -187,6 +188,9 @@ export function SettingsPage() {
           </Button>
           <Field label={`Porcentaje del margen sugerido para ocio: ${s.leisureShare} %`} htmlFor="st-leisure" hint="Solo se usa si no tienes presupuestos de ocio o compras personales.">
             <input id="st-leisure" type="range" min={0} max={60} step={5} defaultValue={s.leisureShare} onPointerUp={(e) => save({ leisureShare: Number((e.target as HTMLInputElement).value) })} onKeyUp={(e) => save({ leisureShare: Number((e.target as HTMLInputElement).value) })} className="w-full max-w-sm accent-[var(--brand)]" />
+          </Field>
+          <Field label={`Ahorro sugerido: ${s.savingsShare ?? DEFAULT_SAVINGS_SHARE} % de lo libre en cada período`} htmlFor="st-savings" hint="Se recomienda en «¿Cuánto puedo gastar?». Lo que ya pasaste a una cuenta de ahorro o a una meta desde tu último ingreso cuenta. 0 % lo oculta.">
+            <input id="st-savings" type="range" min={0} max={50} step={5} defaultValue={s.savingsShare ?? DEFAULT_SAVINGS_SHARE} onPointerUp={(e) => save({ savingsShare: Number((e.target as HTMLInputElement).value) })} onKeyUp={(e) => save({ savingsShare: Number((e.target as HTMLInputElement).value) })} className="w-full max-w-sm accent-[var(--brand)]" />
           </Field>
           <SwitchRow id="st-confirmed" label="Contar ingresos confirmados dentro del período" description="Apagado por defecto: lo más prudente es no gastar dinero que aún no llega." checked={s.includeConfirmedIncome} onCheckedChange={(v) => save({ includeConfirmedIncome: v })} />
           <SwitchRow id="st-goals" label="Reservar aportes a metas de ahorro" description="Aparta lo que deberías ahorrar al mes para llegar a tus metas con fecha." checked={s.reserveSavingsGoals} onCheckedChange={(v) => save({ reserveSavingsGoals: v })} />
