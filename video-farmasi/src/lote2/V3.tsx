@@ -4,15 +4,16 @@ import { AbsoluteFill, interpolate, Sequence, staticFile, useVideoConfig } from 
 import "./fuentes";
 import datos from "./datos/v3.json";
 import { Subtitulos2, B2 } from "./Subtitulos2";
-import { ARollL2, CierreFoto, DegradadoTexto, Segmento, Chip } from "./Piezas";
+import { ARollL2, DegradadoTexto, Segmento, Chip } from "./Piezas";
 import { CabelloMG, CorteMG, ListaMG, PanelBarra, Sello, TituloMG } from "./Graficos";
 
 // Vídeo 3 del lote 2 · línea de reparación intensiva para el cabello
-// Corrección de la clienta: sin emojis, nada sobre la cara y con motion graphics.
+// Correcciones de la clienta: sin emojis, nada sobre la cara, con motion graphics y el vídeo termina cuando ella
+// deja de hablar (sin foto ni tarjeta final).
 const A = datos.anclas as Record<string, { s: number; e: number; seg: number }>;
 const SEG = datos.segmentos as Segmento[];
 const finSeg = (i: number) => SEG[i].editStart + SEG[i].dur;
-export const V3_CIERRE = 2.6;
+export const V3_CIERRE = 0;
 export const V3_DURACION = datos.duracionS + V3_CIERRE;
 
 const MG_PROMESAS: [number, number] = [A.promesa.s - 0.1, A.mentira.e + 0.1];
@@ -37,14 +38,13 @@ const SFX: Sfx[] = [
   { t: MG_CABELLO[0] - 0.08, src: "swoosh_6.wav", vol: 0.24 },
   { t: MG_CABELLO[1] - 0.05, src: "swoosh_7.wav", vol: 0.2 },
   { t: A.reparacion.s - 0.35, src: "pop.wav", vol: 0.24 },
-  { t: datos.duracionS - 0.15, src: "swoosh_std.wav", vol: 0.24 },
 ];
 
 export const V3: React.FC = () => {
   const { fps } = useVideoConfig();
   const total = V3_DURACION;
   const musica = (f: number) =>
-    interpolate(f / fps, [0, 0.4, datos.duracionS - 0.4, datos.duracionS + 0.3, total - 0.9, total], [0, 0.08, 0.08, 0.2, 0.2, 0], {
+    interpolate(f / fps, [0, 0.4, total - 0.7, total], [0, 0.08, 0.08, 0], {
       extrapolateLeft: "clamp",
       extrapolateRight: "clamp",
     });
@@ -79,8 +79,6 @@ export const V3: React.FC = () => {
         <TituloMG texto="Mi cabello" t0={MG_CABELLO[0]} y={660} tam={120} />
         <CabelloMG t0={MG_CABELLO[0] + 0.1} tRubio={A.rubio.s} tPoco={A.poco.s} tRecupera={A.recuperando.s} y={920} />
       </CorteMG>
-
-      <CierreFoto src="lote2/img/v3_cierre.jpg" t={datos.duracionS} titulo="Reparación intensiva" sub="Les voy contando" />
 
       <Audio src={staticFile("lote2/edit/v3_voz.wav")} />
       <Audio src={staticFile("lote2/edit/v3_musica.wav")} volume={musica} />
