@@ -12,6 +12,7 @@ Los personajes pueden cambiar entre videos; dentro de un video cada personaje co
 | Geo, la piedra (Pixar) | Puck | personaje animado, voz aguda, divertida y tierna | (desde A2-02) |
 | Narrador Pixar (H) | Charon | narrador de cuento animado, cálido | (desde A2-02) |
 | Narradora faceless/motion (M) | Zephyr | explicativa, clara, ritmo ágil | (desde A1-07) |
+| Mateo, avatar UGC (H, 30) · ref. `personajes/mateo/mateo_ref.png` | Fenrir | UGC con el celular, cercano y entusiasta pero creíble | A1-08 |
 
 Cada lote tiene dos voces sugeridas en LOTES.md (una M y una H).
 Agregar aquí cada personaje nuevo (y su voz) al crearlo, para que otros videos lo repitan igual.

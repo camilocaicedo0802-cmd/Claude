@@ -1,0 +1,300 @@
+{
+ "m_ref": {
+  "endpoint": "marketing-studio/image",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21512-7c92-7d23-8856-a33114f7ead7/596b57f7-19ed-4d3b-a4c0-05fcc7638530.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic smartphone UGC photo of Mateo, a friendly Colombian man around 30 years old, light-brown skin, short dark wavy hair, neatly trimmed short beard, wearing a plain olive green t-shirt, standing in his modest modern Bogota apartment living room with soft window light, plants and a grey sofa behind him. Natural relaxed closed-mouth smile, looking at the camera. Medium shot from the waist up, face in the middle of the frame. No text, no logos."
+  }
+ },
+ "m_ha": {
+  "endpoint": "marketing-studio/image",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21513-4577-74f4-9c9a-102c20e4a2ae/36482a49-4040-4310-ae2f-ed80746554b8.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic smartphone UGC photo, soft window light, modest modern Bogota apartment. The SAME man as the first reference image (Mateo: Colombian, about 30, light-brown skin, short dark wavy hair, short trimmed beard, olive green t-shirt) sits at his small dining table and happily puts a few Colombian peso banknotes back into his brown leather wallet, closed-mouth smile, looking at the wallet. On the table in front of him stands one GEODA deodorant stick. The GEODA deodorant stick is exactly like the product references (white tube, clear cap, translucent white alum crystal on top) and its label (Desodorante, GEODA, 100% NATURAL, EFECTIVO Y SEGURO, 24h) faces the camera, upright and sharp. Plain light wall in the upper third of the frame. No text.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21512-7c92-7d23-8856-a33114f7ead7/596b57f7-19ed-4d3b-a4c0-05fcc7638530.png",
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/00cb1085-fa0c-4a03-a446-05649f4e916e.jpeg",
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/6f52cc8c-3f5d-49ad-a82f-8974d41b2c71.jpeg"
+   ]
+  }
+ },
+ "k_m_ha": {
+  "endpoint": "kling-video/v3.0/std/image-to-video",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21514-434d-707f-88f6-f0e68d472e95/368b45a9-21e7-45df-a3b4-6d7fc10a1bbc.mp4"
+  ],
+  "body": {
+   "prompt": "He slides the banknotes fully into the wallet, closes the wallet with a satisfied nod and pats it, then looks up at the camera with a relaxed closed-mouth smile. Nobody speaks, lips stay closed. The GEODA stick keeps exactly the same shape and label and does not rotate. Realistic handheld smartphone UGC video, soft window light.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21513-4577-74f4-9c9a-102c20e4a2ae/36482a49-4040-4310-ae2f-ed80746554b8.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "m_hb": {
+  "endpoint": "marketing-studio/image",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21513-46c4-7705-aab8-1ac03ac54e59/74e9f760-bbb2-4ecc-9521-e1b81738d1a3.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic smartphone UGC photo, soft window light, modest modern Bogota apartment. The SAME man as the first reference image (Mateo: Colombian, about 30, light-brown skin, short dark wavy hair, short trimmed beard, olive green t-shirt) holds the GEODA deodorant stick (cap off) up near his face with one hand, looking at the camera with a playful closed-mouth smile, about to give the crystal stone on top a quick kiss. The GEODA deodorant stick is exactly like the product references (white tube, clear cap, translucent white alum crystal on top) and its label (Desodorante, GEODA, 100% NATURAL, EFECTIVO Y SEGURO, 24h) faces the camera, upright and sharp. Medium close-up, face in the middle of the frame, plain light wall above his head. No text.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21512-7c92-7d23-8856-a33114f7ead7/596b57f7-19ed-4d3b-a4c0-05fcc7638530.png",
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/00cb1085-fa0c-4a03-a446-05649f4e916e.jpeg",
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/6f52cc8c-3f5d-49ad-a82f-8974d41b2c71.jpeg"
+   ]
+  }
+ },
+ "k_m_hb": {
+  "endpoint": "kling-video/v3.0/std/image-to-video",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21514-44a3-7551-8dd8-68f8dd1907e4/3f4247fd-a1e4-4fcd-a931-4231028dc211.mp4"
+  ],
+  "body": {
+   "prompt": "He gives the top of the GEODA stick a quick playful kiss, then moves it a little away from his face toward the camera, label facing the camera, and smiles with lips closed, raising his eyebrows. He does not speak. The GEODA stick keeps exactly the same shape and label and does not rotate. Realistic handheld smartphone UGC video, soft window light.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21513-46c4-7705-aab8-1ac03ac54e59/74e9f760-bbb2-4ecc-9521-e1b81738d1a3.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "m_hc": {
+  "endpoint": "marketing-studio/image",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21513-4823-7790-987e-1a3e45661da6/96474bb6-ad70-4678-aacb-630bb053e2d3.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic smartphone UGC photo, soft window light, modest modern Bogota apartment. The SAME man as the first reference image (Mateo: Colombian, about 30, light-brown skin, short dark wavy hair, short trimmed beard, olive green t-shirt) sits on the grey sofa next to a small decorated Christmas tree with warm lights, holding an opened small gift box with a red ribbon on his lap; inside the box lies a GEODA deodorant stick. He looks into the box with one eyebrow raised, curious and a bit skeptical, lips closed. The GEODA deodorant stick is exactly like the product references (white tube, clear cap, translucent white alum crystal on top) and its label (Desodorante, GEODA, 100% NATURAL, EFECTIVO Y SEGURO, 24h) faces the camera, upright and sharp. Medium shot. No text.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21512-7c92-7d23-8856-a33114f7ead7/596b57f7-19ed-4d3b-a4c0-05fcc7638530.png",
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/00cb1085-fa0c-4a03-a446-05649f4e916e.jpeg",
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/6f52cc8c-3f5d-49ad-a82f-8974d41b2c71.jpeg"
+   ]
+  }
+ },
+ "k_m_hc": {
+  "endpoint": "kling-video/v3.0/std/image-to-video",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21514-45f0-73c2-9125-996f703ad60f/61f919f0-5b11-40de-a907-12c9437ba875.mp4"
+  ],
+  "body": {
+   "prompt": "He takes the GEODA stick out of the gift box, lifts it up and looks at it with one eyebrow raised, skeptical, then slowly breaks into a warm closed-mouth smile and nods. The Christmas tree lights twinkle. Nobody speaks, lips stay closed. The GEODA stick keeps exactly the same shape and label and does not rotate. Realistic handheld smartphone UGC video, soft window light.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21513-4823-7790-987e-1a3e45661da6/96474bb6-ad70-4678-aacb-630bb053e2d3.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "m_hd": {
+  "endpoint": "marketing-studio/image",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21513-4989-7440-b789-638d85bbc1f2/def4007c-bf2b-4535-9786-72674fd4db82.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic smartphone UGC photo, soft window light, modest modern Bogota apartment. The SAME man as the first reference image (Mateo: Colombian, about 30, light-brown skin, short dark wavy hair, short trimmed beard, olive green t-shirt) stands in his small kitchen next to an open grey pedal trash bin, holding a GEODA deodorant stick above the trash bin as if about to throw it away, looking at it with doubt, lips closed. The GEODA deodorant stick is exactly like the product references (white tube, clear cap, translucent white alum crystal on top) and its label (Desodorante, GEODA, 100% NATURAL, EFECTIVO Y SEGURO, 24h) faces the camera, upright and sharp. Medium shot, his face in the middle of the frame, plain light kitchen wall above. No text.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21512-7c92-7d23-8856-a33114f7ead7/596b57f7-19ed-4d3b-a4c0-05fcc7638530.png",
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/00cb1085-fa0c-4a03-a446-05649f4e916e.jpeg",
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/6f52cc8c-3f5d-49ad-a82f-8974d41b2c71.jpeg"
+   ]
+  }
+ },
+ "k_m_hd": {
+  "endpoint": "kling-video/v3.0/std/image-to-video",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21514-4737-7bd7-b447-f88d44d2d1c3/ccfe8ffc-f854-44dd-9ab0-a6fadee6fb56.mp4"
+  ],
+  "body": {
+   "prompt": "He moves the GEODA stick over the open trash bin as if to drop it, hesitates, stops, pulls it back toward himself and looks at it again with a thoughtful face, then gives a small closed-mouth smile. The trash bin lid stays open. Nobody speaks, lips stay closed. The GEODA stick keeps exactly the same shape and label and does not rotate. Realistic handheld smartphone UGC video, soft window light.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21513-4989-7440-b789-638d85bbc1f2/def4007c-bf2b-4535-9786-72674fd4db82.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "m_apl": {
+  "endpoint": "marketing-studio/image",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21513-4aed-7765-9ed2-be15798a122f/43247797-a0e8-4b99-a7ae-6dc22ed60a76.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic smartphone UGC photo, soft window light, modest modern Bogota apartment. The SAME man as the first reference image (Mateo: Colombian, about 30, light-brown skin, short dark wavy hair, short trimmed beard, olive green t-shirt), now wearing a plain grey sleeveless tank top, stands in front of a white bathroom sink with one arm raised and smoothly glides the GEODA deodorant stick (cap off) over his clean underarm. The round crystal on top is clear and translucent; the skin stays completely clean, no white mark, no foam, no residue. The GEODA deodorant stick is exactly like the product references (white tube, clear cap, translucent white alum crystal on top) and its label (Desodorante, GEODA, 100% NATURAL, EFECTIVO Y SEGURO, 24h) faces the camera, upright and sharp. Medium shot, relaxed closed-mouth smile. No text.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21512-7c92-7d23-8856-a33114f7ead7/596b57f7-19ed-4d3b-a4c0-05fcc7638530.png",
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/00cb1085-fa0c-4a03-a446-05649f4e916e.jpeg",
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/6f52cc8c-3f5d-49ad-a82f-8974d41b2c71.jpeg"
+   ]
+  }
+ },
+ "k_m_apl": {
+  "endpoint": "kling-video/v3.0/std/image-to-video",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21514-4887-7c9a-bb05-de743e11d735/1bb83f21-5ce0-48c2-8f4e-209657a02817.mp4"
+  ],
+  "body": {
+   "prompt": "He calmly glides the GEODA stick up and down over his raised underarm in two slow smooth strokes. The round stone on top is a clear translucent crystal and keeps exactly its shape; it is NOT a roll-on and NOT a cream: it leaves no residue at all, the skin stays completely clean, no white mark, no foam. He does not speak, lips stay closed. Realistic handheld smartphone UGC video, soft window light.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21513-4aed-7765-9ed2-be15798a122f/43247797-a0e8-4b99-a7ae-6dc22ed60a76.png",
+   "duration": 3,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "m_cal": {
+  "endpoint": "marketing-studio/image",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21513-4c45-73ad-818e-4d6f3296299b/3450deff-2ca4-4848-aa9e-b445170c68b3.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic smartphone UGC photo, soft window light, modest modern Bogota apartment. The SAME man as the first reference image (Mateo: Colombian, about 30, light-brown skin, short dark wavy hair, short trimmed beard, olive green t-shirt) stands next to a large paper wall calendar hanging on a light wall and points at it with his index finger; the calendar shows a simple monthly grid of numbers and the number 14 is circled with a thick red marker. He looks at the camera with a confident closed-mouth smile. Medium shot. No other text.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21512-7c92-7d23-8856-a33114f7ead7/596b57f7-19ed-4d3b-a4c0-05fcc7638530.png"
+   ]
+  }
+ },
+ "k_m_cal": {
+  "endpoint": "kling-video/v3.0/std/image-to-video",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21514-49cf-750c-a43f-1b3a32c2e0ae/78947812-a0e0-4cf1-8933-9c98e6bc697e.mp4"
+  ],
+  "body": {
+   "prompt": "He moves his index finger up and taps the red-circled number 14 on the wall calendar twice, then turns to the camera with a confident closed-mouth smile and a small nod. The calendar stays still and its numbers do not change. Nobody speaks, lips stay closed. Realistic handheld smartphone UGC video, soft window light.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21513-4c45-73ad-818e-4d6f3296299b/3450deff-2ca4-4848-aa9e-b445170c68b3.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "m_door": {
+  "endpoint": "marketing-studio/image",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21513-4d87-778b-99c2-7d1d7282b1aa/d1263b5e-e89d-4cd6-bf31-d312de9e4f56.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic smartphone UGC photo, soft window light, modest modern Bogota apartment. The SAME man as the first reference image (Mateo: Colombian, about 30, light-brown skin, short dark wavy hair, short trimmed beard, olive green t-shirt) has just opened the front door of his apartment; in the hallway a friendly delivery man with a plain grey cap and plain dark jacket (no logos) hands him a brown cardboard box with both hands. Mateo receives it smiling, lips closed; the delivery man also smiles with lips closed. Shot from inside the apartment, both visible. No text, no logos.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21512-7c92-7d23-8856-a33114f7ead7/596b57f7-19ed-4d3b-a4c0-05fcc7638530.png"
+   ]
+  }
+ },
+ "k_m_door": {
+  "endpoint": "kling-video/v3.0/std/image-to-video",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21514-4b1b-7794-b4c3-0252d1423302/857a872c-5d17-453d-a6ce-33733b4e5629.mp4"
+  ],
+  "body": {
+   "prompt": "The delivery man hands the cardboard box to Mateo, who takes it with both hands and gives a small thankful nod; both smile with lips closed. Nobody speaks. Realistic handheld smartphone UGC video, soft window light.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21513-4d87-778b-99c2-7d1d7282b1aa/d1263b5e-e89d-4cd6-bf31-d312de9e4f56.png",
+   "duration": 3,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "m_tres": {
+  "endpoint": "marketing-studio/image",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21513-4ede-7ba1-bcc0-3086852967a3/3df6986e-f5a5-4687-a505-51a026f430d6.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic smartphone UGC photo, soft window light, modest modern Bogota apartment. Close-up of a man's hand with light-brown skin holding three GEODA deodorant sticks fanned out side by side in front of a bright kitchen background (soft blur). All three are identical to the product references, caps on, labels (Desodorante, GEODA, 100% NATURAL, EFECTIVO Y SEGURO, 24h) facing the camera, upright and sharp. The three sticks fill the lower-middle of the frame; plain soft background above. No other text.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21512-7c92-7d23-8856-a33114f7ead7/596b57f7-19ed-4d3b-a4c0-05fcc7638530.png",
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/00cb1085-fa0c-4a03-a446-05649f4e916e.jpeg",
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/6f52cc8c-3f5d-49ad-a82f-8974d41b2c71.jpeg"
+   ]
+  }
+ },
+ "k_m_tres": {
+  "endpoint": "kling-video/v3.0/std/image-to-video",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21514-4c48-7eab-9326-3654b85978db/c0b4b4c0-2144-41cd-a04c-c6a0a145539d.mp4"
+  ],
+  "body": {
+   "prompt": "The hand gently moves the three GEODA sticks a little closer to the camera and tilts them slightly, the camera slowly pushes in. The three sticks keep exactly the same shape and labels, facing the camera, and do not rotate. Realistic handheld smartphone UGC video, soft window light.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21513-4ede-7ba1-bcc0-3086852967a3/3df6986e-f5a5-4687-a505-51a026f430d6.png",
+   "duration": 3,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "m_amigos": {
+  "endpoint": "marketing-studio/image",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21513-501c-7ba7-ad28-a84831f50c68/ba586e96-c29c-4bc7-bf3c-15d7ddfc22ea.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic smartphone UGC photo, soft window light, modest modern Bogota apartment. Living room: The SAME man as the first reference image (Mateo: Colombian, about 30, light-brown skin, short dark wavy hair, short trimmed beard, olive green t-shirt) hands a GEODA deodorant stick to a smiling male friend while a smiling female friend next to him already holds one in her hand; the three of them are standing, everyone smiling with lips closed, relaxed and happy. The GEODA deodorant stick is exactly like the product references (white tube, clear cap, translucent white alum crystal on top) and its label (Desodorante, GEODA, 100% NATURAL, EFECTIVO Y SEGURO, 24h) faces the camera, upright and sharp. Medium-wide shot, all three faces visible in the middle of the frame. No text.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21512-7c92-7d23-8856-a33114f7ead7/596b57f7-19ed-4d3b-a4c0-05fcc7638530.png",
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/00cb1085-fa0c-4a03-a446-05649f4e916e.jpeg",
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/6f52cc8c-3f5d-49ad-a82f-8974d41b2c71.jpeg"
+   ]
+  }
+ },
+ "k_m_amigos": {
+  "endpoint": "kling-video/v3.0/std/image-to-video",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21514-4d84-7464-92ae-d1e20025fe5b/ccd733d2-6f2f-4a37-a4da-615a6d9086ff.mp4"
+  ],
+  "body": {
+   "prompt": "Mateo hands his GEODA stick to the male friend, who takes it and looks at it pleased; the female friend shows hers to the camera; all three laugh silently with closed-mouth smiles. Nobody speaks, lips stay closed. Realistic handheld smartphone UGC video, soft window light.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21513-501c-7ba7-ad28-a84831f50c68/ba586e96-c29c-4bc7-bf3c-15d7ddfc22ea.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "kit": [
+  "kit/broll/k_grifo_m_0.mp4 (B1 mojar)",
+  "kit/broll/k_toalla_0.mp4 (B1 secar)",
+  "kit/producto/endcard_bano_anim.mp4 (cierre, con cta.py)"
+ ],
+ "costo_usd": {
+  "imagenes": 0.735,
+  "kling_39s": 2.785,
+  "total": 3.52
+ }
+}
