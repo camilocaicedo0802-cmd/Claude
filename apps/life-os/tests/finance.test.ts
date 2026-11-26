@@ -248,3 +248,71 @@ describe("budgets", () => {
     expect(leisure.state).toBe("over");
   });
 });
+
+describe("recomendación de ahorro (20 % de lo libre)", () => {
+  const bank = account("bank", "bank", 1_000_000);
+  const savings = account("savings", "savings", 0);
+  const card = account("visa", "credit", 0);
+
+  it("suggests 20 % of the free margin, rounded to whole pesos", () => {
+    const r = computeSpendCapacity(input({ accounts: [bank, savings] }));
+    expect(r.free).toBe(M(1_000_000));
+    expect(r.savings).toMatchObject({ share: 20, base: M(1_000_000), target: M(200_000), saved: 0, suggested: M(200_000) });
+
+    const odd = computeSpendCapacity(input({ accounts: [account("b2", "bank", 167_533)] }));
+    expect(odd.savings.suggested).toBe(M(33_506)); // 33.506,6 → 33.506
+  });
+
+  it("counts what was already moved to savings this period, so it does not ask again", () => {
+    const partial = computeSpendCapacity(
+      input({ accounts: [bank, savings], transactions: [tx({ kind: "transfer", amount: M(50_000), date: TODAY, accountId: "bank", toAccountId: "savings" })] }),
+    );
+    expect(partial.free).toBe(M(950_000));
+    expect(partial.savings).toMatchObject({ base: M(1_000_000), saved: M(50_000), suggested: M(150_000) });
+
+    const done = computeSpendCapacity(
+      input({ accounts: [bank, savings], transactions: [tx({ kind: "transfer", amount: M(200_000), date: TODAY, accountId: "bank", toAccountId: "savings" })] }),
+    );
+    expect(done.savings).toMatchObject({ saved: M(200_000), target: M(200_000), suggested: 0 });
+  });
+
+  it("does not treat a card payment as savings, and withdrawals from savings undo it", () => {
+    const r = computeSpendCapacity(
+      input({
+        accounts: [bank, savings, card],
+        transactions: [
+          tx({ kind: "transfer", amount: M(100_000), date: TODAY, accountId: "bank", toAccountId: "visa" }),
+          tx({ kind: "transfer", amount: M(80_000), date: TODAY, accountId: "bank", toAccountId: "savings" }),
+          tx({ kind: "transfer", amount: M(30_000), date: TODAY, accountId: "savings", toAccountId: "bank" }),
+        ],
+      }),
+    );
+    expect(r.savings.saved).toBe(M(50_000));
+  });
+
+  it("starts a new period with each income", () => {
+    const r = computeSpendCapacity(
+      input({
+        accounts: [bank, savings],
+        transactions: [
+          tx({ kind: "transfer", amount: M(100_000), date: "2026-11-02", accountId: "bank", toAccountId: "savings" }),
+          tx({ kind: "income", amount: M(500_000), date: "2026-11-05", accountId: "bank" }),
+        ],
+      }),
+    );
+    expect(r.savings.since).toBe("2026-11-05");
+    expect(r.savings.saved).toBe(0);
+    expect(r.savings.suggested).toBe(M(280_000)); // 20 % of 1.400.000 free
+  });
+
+  it("recommends nothing when there is no free margin, and respects the configured share", () => {
+    const tight = computeSpendCapacity(input({ accounts: [account("b3", "bank", 100_000)], obligations: [obligation("rent", 400_000, "2026-11-20")] }));
+    expect(tight.free).toBeLessThan(0);
+    expect(tight.savings.suggested).toBe(0);
+
+    const custom = computeSpendCapacity(input({ accounts: [bank], settings: { ...input({}).settings, savingsShare: 10 } }));
+    expect(custom.savings.suggested).toBe(M(100_000));
+    const off = computeSpendCapacity(input({ accounts: [bank], settings: { ...input({}).settings, savingsShare: 0 } }));
+    expect(off.savings.suggested).toBe(0);
+  });
+});

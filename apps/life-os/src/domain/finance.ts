@@ -22,6 +22,7 @@ import {
 } from "@/lib/dates";
 import { divideFloor, prorate, sumMinor, type Minor } from "@/lib/money";
 import { occurrencesBetween, occurrencesPerMonth, recurrenceToPreset } from "@/lib/recurrence";
+import { DEFAULT_SAVINGS_SHARE } from "@/db/defaults";
 import type {
   Account,
   Budget,
@@ -393,6 +394,7 @@ export interface FinanceInput {
     Settings,
     | "safetyReserve"
     | "leisureShare"
+    | "savingsShare"
     | "horizonMode"
     | "horizonDays"
     | "includeConfirmedIncome"
@@ -446,6 +448,11 @@ export interface SpendCapacity {
   availableToday: Minor;
   week: { available: Minor; days: number };
   leisure: { available: Minor; method: "budget" | "share"; budgetRemaining: Minor | null; share: number };
+  /**
+   * Savings suggestion: `share` % of what is free this pay period (`base` = free margin plus what was
+   * already set aside since the last income, `since`). `suggested` is what is still left to set aside.
+   */
+  savings: { suggested: Minor; target: Minor; saved: Minor; base: Minor; share: number; since: DateStr };
   monthEnd: { date: DateStr; projected: Minor };
   summary: string;
   notes: string[];
@@ -624,7 +631,42 @@ export function computeSpendCapacity(input: FinanceInput): SpendCapacity {
     leisureMethod = "share";
   }
 
-  // 7. Month-end projection (estimate).
+  // 7. Savings: a share of what is free this pay period. Money already moved to savings since the
+  //    last income counts toward it, so saving does not raise a new suggestion on the rest.
+  const savingsShare = Math.max(0, Math.min(100, settings.savingsShare ?? DEFAULT_SAVINGS_SHARE));
+  const lastIncome = transactions
+    .filter((t) => t.kind === "income" && t.date <= today && t.date >= addDays(today, -45))
+    .reduce<DateStr | null>((max, t) => (!max || t.date > max ? t.date : max), null);
+  const savingsSince = lastIncome ?? startOfMonth(today);
+  const isSpendableAccount = (id?: string | null) => {
+    const a = id ? accountById.get(id) : undefined;
+    return !!a && a.type !== "credit" && a.spendable;
+  };
+  const isSavingsAccount = (id?: string | null) => {
+    const a = id ? accountById.get(id) : undefined;
+    return !!a && a.type !== "credit" && !a.spendable;
+  };
+  let savedThisPeriod = 0;
+  for (const t of transactions) {
+    if (t.kind !== "transfer" || t.date < savingsSince || t.date > today) continue;
+    if (isSpendableAccount(t.accountId) && isSavingsAccount(t.toAccountId)) savedThisPeriod += t.amount;
+    else if (isSavingsAccount(t.accountId) && isSpendableAccount(t.toAccountId)) savedThisPeriod -= t.amount;
+  }
+  const goalById = new Map(input.goals.map((g) => [g.id, g]));
+  for (const c of input.contributions) {
+    if (c.date < savingsSince || c.date > today) continue;
+    const g = goalById.get(c.goalId);
+    // Goals kept in a spendable account are already reserved above; a goal in a savings account is
+    // funded by the transfer, so its contribution is not counted twice.
+    if (g && !g.archived && (!g.accountId || isSpendableAccount(g.accountId))) savedThisPeriod += c.amount;
+  }
+  savedThisPeriod = Math.max(0, savedThisPeriod);
+  const savingsBase = Math.max(0, free) + savedThisPeriod;
+  const wholeUnits = (m: Minor) => Math.floor(m / 100) * 100;
+  const savingsTarget = wholeUnits(Math.floor((savingsBase * savingsShare) / 100));
+  const savingsSuggested = free > 0 ? Math.min(free, Math.max(0, savingsTarget - savedThisPeriod)) : 0;
+
+  // 8. Month-end projection (estimate).
   const monthEndDate = endOfMonth(today);
   const obligationsToMonthEnd = sumMinor(pendingObligations(input.obligations, transactions, monthEndDate, today).map((o) => o.remaining));
   const essentialsToMonthEnd =
@@ -636,7 +678,7 @@ export function computeSpendCapacity(input: FinanceInput): SpendCapacity {
   );
   const monthEndProjected = startingBalance - obligationsToMonthEnd - essentialsToMonthEnd + confirmedToMonthEnd;
 
-  // 8. Status, warnings, explanation.
+  // 9. Status, warnings, explanation.
   let status: SpendCapacity["status"] = "ok";
   if (liquidAccounts.length === 0) {
     status = "no-accounts";
@@ -704,6 +746,10 @@ export function computeSpendCapacity(input: FinanceInput): SpendCapacity {
     availableToday: status === "no-accounts" ? 0 : availableToday,
     week: { available: status === "no-accounts" ? 0 : weekAvailable, days: weekDays },
     leisure: { available: status === "no-accounts" ? 0 : leisureAvailable, method: leisureMethod, budgetRemaining, share: settings.leisureShare },
+    savings:
+      status === "no-accounts"
+        ? { suggested: 0, target: 0, saved: 0, base: 0, share: savingsShare, since: savingsSince }
+        : { suggested: savingsSuggested, target: savingsTarget, saved: savedThisPeriod, base: savingsBase, share: savingsShare, since: savingsSince },
     monthEnd: { date: monthEndDate, projected: monthEndProjected },
     summary,
     notes,

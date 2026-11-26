@@ -14,7 +14,7 @@ import { Field, Input, NativeSelect, Checkbox } from "@/components/ui/form-contr
 import { Segmented } from "@/components/ui/misc";
 import { Button } from "@/components/ui/button";
 import { AccountSelect, AmountInput, CategoryPicker, DateField, amountToText } from "@/components/shared/inputs";
-import { useUI } from "@/components/shell/ui-context";
+import { useUI, type TransactionDefaults } from "@/components/shell/ui-context";
 import { Disclosure, FormSheet, lastAccount, rememberAccount, runSave, useBusy } from "./form-kit";
 
 const schema = z
@@ -46,7 +46,7 @@ export function TransactionForm({
   onDone,
 }: {
   id?: string;
-  defaults?: { kind?: TransactionKind; clientId?: string | null; jobId?: string | null; categoryId?: string; accountId?: string };
+  defaults?: TransactionDefaults;
   onDone: () => void;
 }) {
   const data = useData();
@@ -71,13 +71,13 @@ export function TransactionForm({
     resolver: zodResolver(schema),
     defaultValues: {
       kind: initialKind,
-      amount: existing ? amountToText(existing.amount, data.settings.currency) : "",
+      amount: existing ? amountToText(existing.amount, data.settings.currency) : defaults?.amount ? amountToText(defaults.amount, data.settings.currency) : "",
       date: existing?.date ?? today,
       time: existing?.time ?? "",
       accountId: existing?.accountId ?? defaults?.accountId ?? fallbackAccount,
-      toAccountId: existing?.toAccountId ?? "",
+      toAccountId: existing?.toAccountId ?? defaults?.toAccountId ?? "",
       categoryId: existing?.categoryId ?? defaults?.categoryId ?? "",
-      description: existing?.description ?? "",
+      description: existing?.description ?? defaults?.description ?? "",
       clientId: existing?.clientId ?? defaults?.clientId ?? "",
       jobId: existing?.jobId ?? defaults?.jobId ?? "",
       recurring: existing?.recurring ?? false,

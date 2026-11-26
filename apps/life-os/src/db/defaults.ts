@@ -3,6 +3,9 @@ import { uid } from "@/lib/utils";
 import type { LifeOSDB } from "./db";
 import type { Category, DayTemplate, ExpenseNature, JobStatus, PlannerSettings, Settings, TaskCategory } from "./types";
 
+/** Suggested savings: 20 % of what is free each pay period. */
+export const DEFAULT_SAVINGS_SHARE = 20;
+
 export const DEFAULT_TASK_CATEGORIES: TaskCategory[] = [
   { key: "trabajo", name: "Trabajo", color: "orange" },
   { key: "proyecto", name: "Proyecto personal", color: "amber" },
@@ -54,6 +57,7 @@ export function defaultSettings(): Settings {
     onboardingCompleted: false,
     safetyReserve: 0,
     leisureShare: 30,
+    savingsShare: DEFAULT_SAVINGS_SHARE,
     horizonMode: "nextIncome",
     horizonDays: 30,
     includeConfirmedIncome: false,

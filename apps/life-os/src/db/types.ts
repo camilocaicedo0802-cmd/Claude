@@ -37,6 +37,8 @@ export interface Settings {
   safetyReserve: Minor;
   /** Share of the free margin suggested for leisure when no leisure budget exists. */
   leisureShare: number;
+  /** Share of what is free this pay period suggested for savings (default 20). Missing in older data. */
+  savingsShare?: number;
   horizonMode: HorizonMode;
   horizonDays: number;
   /** Count confirmed future income inside the horizon (off by default: conservative). */

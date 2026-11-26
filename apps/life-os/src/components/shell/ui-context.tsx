@@ -5,12 +5,19 @@ import type { CalendarEvent, Task, TransactionKind, AccountType, CategoryKind } 
 import type { DateStr } from "@/lib/dates";
 import { ConfirmDialog } from "@/components/ui/overlays";
 
+export interface TransactionDefaults {
+  kind?: TransactionKind;
+  clientId?: string | null;
+  jobId?: string | null;
+  categoryId?: string;
+  accountId?: string;
+  toAccountId?: string;
+  amount?: number;
+  description?: string;
+}
+
 export type FormRequest =
-  | {
-      kind: "transaction";
-      id?: string;
-      defaults?: { kind?: TransactionKind; clientId?: string | null; jobId?: string | null; categoryId?: string; accountId?: string };
-    }
+  | { kind: "transaction"; id?: string; defaults?: TransactionDefaults }
   | { kind: "client"; id?: string }
   | { kind: "job"; id?: string; defaults?: { clientId?: string; dueDate?: DateStr } }
   | { kind: "payment"; id?: string; defaults?: { jobId?: string; clientId?: string } }
