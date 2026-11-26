@@ -281,3 +281,6 @@ Calibrado escribiendo "If your defination of / success" con cada combinación ju
 ### Correcciones de la clienta (lote 2, v3 · vídeo 2)
 - **En cada lista o grupo, todos los elementos del mismo tipo:** o todo iconos o todo imágenes; nunca mezclar.
 - **Final en la última palabra:** en este vídeo termina cuando ella deja de hablar (≈ 0,25 s de cola, música fuera en 0,7 s), sin tarjeta de resumen ni cierre extra. Esto sustituye aquí a la regla de "cierre con plano de producto".
+
+### Corrección de la clienta (lote 2, v3 · vídeo 3)
+- **Nunca cortar una palabra ni una frase a medias.** Los puntos de corte se comprueban con la envolvente de audio (fin real de la última sílaba + 60–100 ms), no solo con los tiempos de Whisper, que se quedan cortos en las palabras largas.

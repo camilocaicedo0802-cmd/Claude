@@ -71,6 +71,19 @@ def nivel_voz(s):
     r = np.array([np.sqrt(np.mean(x[i * hop:(i + 1) * hop] ** 2)) for i in range(n)]) + 1e-9
     return 20 * np.log10(np.percentile(r, 85))
 
+# Aviso si un corte cae en mitad de una palabra (voz fuerte justo antes y justo después del corte)
+from scipy.signal import butter, sosfilt
+_sos = butter(4, [200, 3500], btype="band", fs=16000, output="sos")
+_filt = {c: sosfilt(_sos, x) for c, x in audio.items()}
+def _db(c, t0, t1):
+    seg = _filt[c][int(max(0, t0) * 16000):int(t1 * 16000)]
+    return 20 * np.log10(np.sqrt(np.mean(seg ** 2)) + 1e-9) if len(seg) else -99
+for k, s in enumerate(segs):
+    sig = segs[k + 1] if k + 1 < len(segs) else None
+    continuo = sig is not None and sig["clip"] == s["clip"] and abs(sig["a"] - s["b"]) < 0.06
+    if not continuo and _db(s["clip"], s["b"] - 0.06, s["b"]) > -24 and _db(s["clip"], s["b"], s["b"] + 0.08) > -24:
+        print(f"  AVISO corte: la toma {k} ({s['clip']} {s['b']:.2f}s) termina con voz sonando: revisa que no corte una palabra")
+
 if "--sin-audio" not in sys.argv:
     niveles = [nivel_voz(s) for s in segs]
     ref = float(np.median([n for s, n in zip(segs, niveles) if not s.get("mudo")]))
