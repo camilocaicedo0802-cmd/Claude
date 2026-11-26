@@ -17,6 +17,7 @@ Los personajes pueden cambiar entre videos; dentro de un video cada personaje co
 | Mateo, avatar UGC (H, 30) · ref. `personajes/mateo/mateo_ref.png` | Fenrir | UGC con el celular, cercano y entusiasta pero creíble | A1-08 |
 | Laura, avatar UGC (M, 28) · ref. `personajes/laura/laura_ref.png` | Aoede | UGC storytime, sincera y cercana | A2-01 |
 | Daniela, creadora 'mi rutina' (M, 27) · ref. `personajes/daniela/daniela_ref.png` | Callirrhoe (gemini-3.1-flash-tts-preview) | testimonio a cámara, cercana y sincera | A2-03 |
+| Podcast 2: host (M, rizos, cárdigan mostaza) e invitada (M, pelo liso, blusa verde) · `personajes/podcast2/` | voces nativas WAN 3.0 | conversación natural | A2-04 |
 
 Cada lote tiene dos voces sugeridas en LOTES.md (una M y una H).
 Agregar aquí cada personaje nuevo (y su voz) al crearlo, para que otros videos lo repitan igual.

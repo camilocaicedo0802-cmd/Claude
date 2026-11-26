@@ -1,0 +1,101 @@
+{
+ "q_set": {
+  "endpoint": "marketing-studio/image",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21667-a839-7f5e-a235-afc7f50fce7e/06d27b5a-158d-4dd2-89d4-09a31c5d04c0.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "image_urls": [
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/00cb1085-fa0c-4a03-a446-05649f4e916e.jpeg",
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/6f52cc8c-3f5d-49ad-a82f-8974d41b2c71.jpeg"
+   ],
+   "prompt": "Vertical 9:16 realistic photo, a still from a real video podcast recorded in Bogotá. Cozy podcast studio with warm tungsten light, dark wood table, two black podcast microphones on boom arms, soft acoustic panels and a bookshelf with plants blurred behind, no logos, no text, no neon signs. Wide shot from the end of the table: on the left the HOST, a Colombian woman around 32, curly dark hair in a high ponytail, small gold hoops, mustard knit cardigan; on the right the GUEST, a Colombian woman around 28, straight long black hair, natural makeup, sleeveless sage-green top; they sit facing each other, smiling. On the table between them stands one GEODA deodorant stick exactly like the product references, its label (Desodorante, GEODA, 100% NATURAL, EFECTIVO Y SEGURO, 24h) facing the camera. The upper third of the frame is the plain warm studio wall. No text."
+  }
+ },
+ "q_guest": {
+  "endpoint": "marketing-studio/image",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21668-75bb-743a-b51d-a1eb6f84322b/14c703a6-c151-4521-95ef-d92422130d47.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic photo, a still from a real video podcast. Same podcast studio, same warm light and same GUEST as the woman on the right of the first reference (straight long black hair, sleeveless sage-green top). Medium shot of the guest seated at the dark wood table, black podcast microphone on a boom arm in front of her slightly to the side so her mouth is fully visible, three-quarter view toward the host just off camera, warm confident smile, lips closed. On the table in front of her, in a row: a generic pink perfume deodorant bottle with no text and no logo, a pink disposable razor, the GEODA deodorant stick exactly like the product references with its label (Desodorante, GEODA, 100% NATURAL, EFECTIVO Y SEGURO, 24h) facing the camera, and a clear glass of water. FRAMING: the UPPER 35% of the frame is the plain warm studio wall with nothing in it (space for text); her head is in the middle of the frame, never near the top edge. No text.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21667-a839-7f5e-a235-afc7f50fce7e/06d27b5a-158d-4dd2-89d4-09a31c5d04c0.png",
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/00cb1085-fa0c-4a03-a446-05649f4e916e.jpeg",
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/6f52cc8c-3f5d-49ad-a82f-8974d41b2c71.jpeg"
+   ]
+  }
+ },
+ "q_host": {
+  "endpoint": "marketing-studio/image",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21668-773c-7e9b-8f0c-51e6ad38fe70/27251ade-4c02-4653-b744-b448a8ca77cd.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic photo, a still from a real video podcast. Same podcast studio, same warm light and same HOST as the woman on the left of the first reference (curly dark hair in a high ponytail, small gold hoops, mustard knit cardigan). Medium shot of the host seated at the dark wood table, black podcast microphone on a boom arm in front of her slightly to the side so her mouth is fully visible, three-quarter view looking toward the guest just off camera, curious friendly expression, lips closed. FRAMING: the UPPER 35% of the frame is the plain warm studio wall with nothing in it (space for text); her head is in the middle of the frame, never near the top edge. No text.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21667-a839-7f5e-a235-afc7f50fce7e/06d27b5a-158d-4dd2-89d4-09a31c5d04c0.png"
+   ]
+  }
+ },
+ "wq_g1": {
+  "endpoint": "alibaba/wan-3.0/image-to-video (audio nativo)",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21669-6454-7f85-bb2c-5c529af62f7e/d604d76f-1217-41d4-a166-4314f41dccce.mp4"
+  ],
+  "body": {
+   "prompt": "Realistic video podcast recording in a warm cozy studio, static camera on a tripod, natural room sound, no music, no subtitles, no on-screen text. Spanish dialogue with a natural Colombian Bogotá accent, lips perfectly synced with every syllable, lips closed while she is not speaking, conversational pace with very short natural pauses while listening to the other person off camera. The female guest has a warm, friendly, confident mid-pitched voice. Only the guest speaks. The GEODA stick keeps exactly the same shape and label. In order: 1) She firmly slides the three objects forward on the table all at once with her hand and says: «Yo cambié tres cosas en mi rutina de axilas.» 2) Counting on her fingers, she says: «Perfume, rasurada a la carrera y ropa apretada. Ese era mi combo.» 3) She pushes the pink perfume bottle away out of the frame and says: «Primero, el desodorante con perfume. Lo dejé.» 4) She lightly scratches her upper arm with a small grimace and says: «Mi piel no lo quería más. Me picaba.» 5) She points at the razor on the table and says: «Segundo, la rasurada a la carrera.» 6) She makes a squeezing gesture with both hands and says: «Y tercero, la ropa súper apretada todo el día.» 7) She dips the round crystal top of the GEODA stick into the glass of water and says: «Una piedra de alumbre. Es un mineral: la mojo y ya, sin perfume.» 8) She smiles warmly and says: «Yo las veo más parejas. A mí me funcionó.»",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21668-75bb-743a-b51d-a1eb6f84322b/14c703a6-c151-4521-95ef-d92422130d47.png",
+   "duration": 30,
+   "resolution": "720p",
+   "generate_audio": true
+  }
+ },
+ "wq_g2": {
+  "endpoint": "alibaba/wan-3.0/image-to-video (audio nativo)",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21669-65ae-753a-babc-9057703713ea/7c893ade-841c-4f4d-ab8f-330aceb078b7.mp4"
+  ],
+  "body": {
+   "prompt": "Realistic video podcast recording in a warm cozy studio, static camera on a tripod, natural room sound, no music, no subtitles, no on-screen text. Spanish dialogue with a natural Colombian Bogotá accent, lips perfectly synced with every syllable, lips closed while she is not speaking, conversational pace with very short natural pauses while listening to the other person off camera. The female guest has a warm, friendly, confident mid-pitched voice. Only the guest speaks. The GEODA stick keeps exactly the same shape and label. In order: 1) She leans a little toward the camera and says: «Se llama GEODA, y por Black Friday: paga dos, lleva tres. Pagas cuando te llegue.» 2) She smiles and says: «Se llama GEODA: una piedra que sí se usa todos los días. Regálala esta Navidad: paga dos, lleva tres.» 3) She lifts a small red wrapped Christmas gift box from her lap and says happily: «Este año voy a regalar lo que me cambió la rutina.» 4) She leans very close to the microphone and says in a low confidential voice: «Lo que nadie me cree de mi rutina de axilas.»",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21668-75bb-743a-b51d-a1eb6f84322b/14c703a6-c151-4521-95ef-d92422130d47.png",
+   "duration": 24,
+   "resolution": "720p",
+   "generate_audio": true
+  }
+ },
+ "wq_h": {
+  "endpoint": "alibaba/wan-3.0/image-to-video (audio nativo)",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21669-66f8-70c1-973d-2db00b4454a6/634ea339-d2e5-4f1e-a71b-2615c29a3a21.mp4"
+  ],
+  "body": {
+   "prompt": "Realistic video podcast recording in a warm cozy studio, static camera on a tripod, natural room sound, no music, no subtitles, no on-screen text. Spanish dialogue with a natural Colombian Bogotá accent, lips perfectly synced with every syllable, lips closed while she is not speaking, conversational pace with very short natural pauses while listening to the other person off camera. The female host has a bright, playful, slightly higher voice. Only the host speaks. In order: 1) She leans in curious and says: «Cuéntame qué cambiaste.» 2) Intrigued, raising her eyebrows: «¿Por qué?» 3) She asks: «¿Y qué usas ahora?» 4) She leans forward toward the guest and asks: «¿Y sí se ve distinto?» 5) She laughs, reaches toward the table and says playfully: «Me la vas a prestar.» and laughs a little.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21668-773c-7e9b-8f0c-51e6ad38fe70/27251ade-4c02-4653-b744-b448a8ca77cd.png",
+   "duration": 15,
+   "resolution": "720p",
+   "generate_audio": true
+  }
+ },
+ "cierres": [
+  "K1: a108/tmp/cta_bf.mp4 (videos/GEO-BOFU-A1-08/cta.py bf 5.6)",
+  "K2: a202/tmp/xmas_ec_bow.mp4 (A2-02)"
+ ],
+ "costo_usd": {
+  "imagenes_3": 0.21,
+  "wan30_69s": 5.18,
+  "total": 5.39
+ }
+}
