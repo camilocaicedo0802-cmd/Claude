@@ -21,7 +21,7 @@ import {
   type DateStr,
 } from "@/lib/dates";
 import { divideFloor, prorate, sumMinor, type Minor } from "@/lib/money";
-import { occurrencesBetween } from "@/lib/recurrence";
+import { occurrencesBetween, occurrencesPerMonth, recurrenceToPreset } from "@/lib/recurrence";
 import type {
   Account,
   Budget,
@@ -156,17 +156,18 @@ function settle<T extends { id: string; amount: Minor; settled: Record<DateStr, 
   dueDate: DateStr,
   movements: Transaction[],
   today: DateStr,
+  amount: Minor = source.amount,
 ): Occurrence<T> {
   const paid = sumMinor(movements.map((m) => m.amount));
   const settlement = source.settled?.[dueDate];
-  const remaining = settlement ? 0 : Math.max(0, source.amount - paid);
+  const remaining = settlement ? 0 : Math.max(0, amount - paid);
   let status: OccurrenceStatus;
   if (settlement) status = "settled";
   else if (remaining === 0) status = "paid";
   else if (dueDate < today) status = "overdue";
   else if (paid > 0) status = "partial";
   else status = "pending";
-  return { key: `${source.id}:${dueDate}`, source, dueDate, amount: source.amount, paid, remaining, status, settlement, movements };
+  return { key: `${source.id}:${dueDate}`, source, dueDate, amount, paid, remaining, status, settlement, movements };
 }
 
 function linkedMovements(transactions: Transaction[], field: "obligationId" | "plannedIncomeId") {
@@ -224,10 +225,101 @@ export function plannedIncomeOccurrences(
   for (const p of incomes) {
     if (!p.active) continue;
     for (const d of occurrencesBetween(p.startDate, p.recurrence, from, to)) {
-      out.push(settle(p, d, receipts.get(`${p.id}:${d}`) ?? [], today));
+      out.push(settle(p, d, receipts.get(`${p.id}:${d}`) ?? [], today, plannedAmountAt(p, d)));
     }
   }
   return out.sort((a, b) => a.dueDate.localeCompare(b.dueDate));
+}
+
+/** The value of a planned income for the period due on `date` (raises do not touch past periods). */
+export function plannedAmountAt(p: Pick<PlannedIncome, "amount" | "amountHistory">, date: DateStr): Minor {
+  for (const h of p.amountHistory ?? []) if (date <= h.until) return h.amount;
+  return p.amount;
+}
+
+/** A salary, retainer or other recurring income seen as an agreement: next payday, late periods, history. */
+export interface RecurringIncomeView {
+  income: PlannedIncome;
+  /** Monthly equivalent of the current value. */
+  monthly: Minor;
+  /** First period on or after today that is not received yet. */
+  next: Occurrence<PlannedIncome> | null;
+  /** Periods already due (before today) that were neither received in full nor skipped, oldest first. */
+  overdue: Occurrence<PlannedIncome>[];
+  /** Up to the last 4 past periods (plus periods already received ahead of time), newest first. */
+  recent: Occurrence<PlannedIncome>[];
+  /** Money received for this income in the current calendar year. */
+  receivedYear: Minor;
+  /** True when the series has no periods left (end date passed or one-off already due). */
+  ended: boolean;
+}
+
+const OVERDUE_LOOKBACK_DAYS = 366;
+
+export function recurringIncomeViews(incomes: PlannedIncome[], transactions: Transaction[], today: DateStr): RecurringIncomeView[] {
+  const yearStart = `${today.slice(0, 4)}-01-01`;
+  return incomes.map((p) => {
+    const lookback = addDays(today, -OVERDUE_LOOKBACK_DAYS);
+    const past = p.active
+      ? plannedIncomeOccurrences([p], transactions, p.startDate > lookback ? p.startDate : lookback, addDays(today, -1), today)
+      : [];
+    const upcoming = p.active ? plannedIncomeOccurrences([p], transactions, today, addDays(today, 400), today) : [];
+    const receivedYear = sumMinor(transactions.filter((t) => t.plannedIncomeId === p.id && t.kind === "income" && t.date >= yearStart).map((t) => t.amount));
+    const next = upcoming.find((o) => o.remaining > 0) ?? null;
+    const ahead = upcoming.filter((o) => o.remaining === 0 && (!next || o.dueDate < next.dueDate));
+    return {
+      income: p,
+      monthly: monthlyEquivalent(p),
+      next,
+      overdue: past.filter((o) => o.status === "overdue"),
+      recent: [...past.slice(-4), ...ahead].slice(-4).reverse(),
+      receivedYear,
+      ended: !p.active || upcoming.length === 0,
+    };
+  });
+}
+
+/** First period on or after `today` with nothing received and not skipped: where a change can start. */
+export function firstOpenPeriod(p: PlannedIncome, transactions: Transaction[], today: DateStr): DateStr | null {
+  return (
+    plannedIncomeOccurrences([{ ...p, active: true }], transactions, today, addDays(today, 400), today).find((o) => o.movements.length === 0 && !o.settlement)
+      ?.dueDate ?? null
+  );
+}
+
+/** How a client pays: per job, or a fixed amount every month, quincena or week. */
+export type PayMode = "job" | "monthly" | "semimonthly" | "weekly" | "other";
+export const PAY_MODES: Exclude<PayMode, "other">[] = ["job", "monthly", "semimonthly", "weekly"];
+export const PAY_MODE_LABEL: Record<PayMode, string> = {
+  job: "Por trabajo",
+  monthly: "Mensual",
+  semimonthly: "Quincenal",
+  weekly: "Semanal",
+  other: "Otra periodicidad",
+};
+export const PAY_MODE_BADGE: Record<PayMode, string> = {
+  job: "Paga por trabajo",
+  monthly: "Pago mensual",
+  semimonthly: "Pago quincenal",
+  weekly: "Pago semanal",
+  other: "Pago periódico",
+};
+
+export function payModeOf(r: PlannedIncome["recurrence"]): PayMode {
+  if (!r) return "other";
+  const preset = recurrenceToPreset(r);
+  return preset === "monthly" || preset === "semimonthly" || preset === "weekly" ? preset : "other";
+}
+
+/** A client's pay mode, from its live salaries (per job when it has none). */
+export function clientPayMode(views: RecurringIncomeView[]): PayMode {
+  const live = views.filter((v) => !v.ended && v.income.recurrence);
+  return live.length === 0 ? "job" : payModeOf(live[0].income.recurrence);
+}
+
+/** Approximate monthly value of a recurring income (0 for a one-off). */
+export function monthlyEquivalent(p: Pick<PlannedIncome, "amount" | "recurrence">): Minor {
+  return Math.round(p.amount * occurrencesPerMonth(p.recurrence));
 }
 
 // ── Budgets ──────────────────────────────────────────────────────────────────

@@ -19,7 +19,7 @@ export type FormRequest =
   | { kind: "habit"; id?: string }
   | { kind: "obligation"; id?: string }
   | { kind: "obligationPayment"; obligationId: string; dueDate: DateStr }
-  | { kind: "plannedIncome"; id?: string }
+  | { kind: "plannedIncome"; id?: string; defaults?: { clientId?: string; forClient?: boolean } }
   | { kind: "receiveIncome"; plannedIncomeId: string; dueDate: DateStr }
   | { kind: "account"; id?: string; defaults?: { type?: AccountType } }
   | { kind: "goal"; id?: string }

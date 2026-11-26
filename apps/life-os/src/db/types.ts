@@ -166,6 +166,13 @@ export interface PlannedIncome extends Timestamps {
   confirmed: boolean;
   accountId?: ID | null;
   categoryId?: ID | null;
+  /** Who pays it: a salary, retainer or fixed fee from this client. */
+  clientId?: ID | null;
+  /**
+   * Earlier values, so a raise does not rewrite past periods: an occurrence due on or before
+   * `until` uses the first entry whose `until` covers it; later ones use `amount`. Sorted by `until`.
+   */
+  amountHistory?: Array<{ until: DateStr; amount: Minor }>;
   notes?: string;
   active: boolean;
   settled: Record<DateStr, OccurrenceSettlement>;

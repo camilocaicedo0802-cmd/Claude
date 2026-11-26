@@ -30,7 +30,15 @@ import type {
   WeekPlan,
 } from "@/db/types";
 import { buildJobViews, receivablesByDate, totalReceivables, type JobView } from "@/domain/clients";
-import { budgetStatuses, computeSpendCapacity, pendingObligations, setEngineFormatter, type FinanceInput } from "@/domain/finance";
+import {
+  budgetStatuses,
+  computeSpendCapacity,
+  pendingObligations,
+  recurringIncomeViews,
+  setEngineFormatter,
+  type FinanceInput,
+  type RecurringIncomeView,
+} from "@/domain/finance";
 import { buildAlerts } from "@/domain/alerts";
 import { addDays, todayIn, zonedNow } from "@/lib/dates";
 import { formatMoney, type Minor } from "@/lib/money";
@@ -284,12 +292,23 @@ export function useReceivablesByDate() {
   return React.useMemo(() => receivablesByDate(views, today), [views, today]);
 }
 
+/** Salaries and fixed payments from clients (planned incomes linked to a client). */
+export function useClientIncomes(): RecurringIncomeView[] {
+  const data = useData();
+  const today = useToday();
+  return React.useMemo(
+    () => recurringIncomeViews(data.plannedIncomes.filter((p) => p.clientId), data.transactions, today),
+    [data.plannedIncomes, data.transactions, today],
+  );
+}
+
 export function useAlerts() {
   const data = useData();
   const today = useToday();
   const views = useJobViews();
   const capacity = useCapacity();
   const money = useMoney();
+  const clientIncomes = useClientIncomes();
   return React.useMemo(() => {
     const obligations = pendingObligations(data.obligations, data.transactions, addDays(today, 14), today);
     const budgets = budgetStatuses(data.budgets, data.categories, data.transactions, today, today);
@@ -301,6 +320,8 @@ export function useAlerts() {
       jobViews: views,
       tasks: data.tasks,
       capacity,
+      recurringIncomes: clientIncomes,
+      clients: data.clients,
       format: money,
     });
     // Data lives only on this device: remind to download a backup every two weeks once there is data.
@@ -324,7 +345,7 @@ export function useAlerts() {
     }
     const dismissed = new Set(data.alertState.map((a) => a.key));
     return { all, unread: all.filter((a) => !dismissed.has(a.key)) };
-  }, [data, today, views, capacity, money]);
+  }, [data, today, views, capacity, money, clientIncomes]);
 }
 
 export function useCategoryMap() {

@@ -107,7 +107,7 @@ export function Segmented<T extends string>({
             }}
             className={cn(
               "inline-flex flex-1 items-center justify-center gap-1.5 rounded-md font-medium whitespace-nowrap text-muted-foreground transition-[color,background-color,box-shadow] duration-150 outline-none hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring [&_svg]:size-3.5",
-              size === "sm" ? "h-7 px-2.5 text-xs" : "h-8 px-3 text-[13px]",
+              size === "sm" ? "h-7 px-1.5 text-xs min-[400px]:px-2.5" : "h-8 px-3 text-[13px]",
               active && "bg-card text-foreground shadow-[0_1px_2px_oklch(0.2_0.01_75/0.12)] dark:bg-accent",
             )}
           >

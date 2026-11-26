@@ -10,8 +10,10 @@ import type {
   SavingsGoal,
   Transaction,
 } from "@/db/types";
-import { nowISO, todayIn, type DateStr } from "@/lib/dates";
-import type { Minor } from "@/lib/money";
+import { addDays, formatDayMonth, nowISO, todayIn, type DateStr } from "@/lib/dates";
+import { formatMoney, type Minor } from "@/lib/money";
+import { firstOpenPeriod, plannedAmountAt } from "@/domain/finance";
+import { nextOccurrence, occurrencesBetween, presetToRecurrence, recurrenceToPreset } from "@/lib/recurrence";
 import { uid } from "@/lib/utils";
 import { DomainError, logActivity } from "./common";
 
@@ -262,19 +264,62 @@ export async function settleOccurrence(obligationId: string, dueDate: DateStr, s
 
 // ── Planned income ───────────────────────────────────────────────────────────
 
-export type PlannedIncomeInput = Omit<PlannedIncome, "id" | "createdAt" | "updatedAt" | "settled" | "active">;
+export type PlannedIncomeInput = Omit<PlannedIncome, "id" | "createdAt" | "updatedAt" | "settled" | "active" | "amountHistory">;
+
+function validateRecurrence(r: PlannedIncome["recurrence"], startDate: DateStr) {
+  if (r?.until && r.until < startDate) throw new DomainError("La fecha final no puede ser anterior al primer pago.");
+}
 
 export async function createPlannedIncome(input: PlannedIncomeInput): Promise<string> {
   if (!input.name.trim()) throw new DomainError("Ponle un nombre al ingreso.");
   if (input.amount <= 0) throw new DomainError("El valor debe ser mayor que cero.");
+  validateRecurrence(input.recurrence, input.startDate);
   const now = nowISO();
-  const p: PlannedIncome = { ...input, name: input.name.trim(), id: uid(), active: true, settled: {}, createdAt: now, updatedAt: now };
-  await db().plannedIncomes.add(p);
+  const p: PlannedIncome = { ...input, name: input.name.trim(), clientId: input.clientId ?? null, id: uid(), active: true, settled: {}, createdAt: now, updatedAt: now };
+  const d = db();
+  await d.transaction("rw", [d.plannedIncomes, d.activities], async () => {
+    await d.plannedIncomes.add(p);
+    if (p.clientId) {
+      await logActivity({ clientId: p.clientId, type: "client", message: `Pago periódico agregado: ${p.name} · ${formatMoney(p.amount)}` });
+    }
+  });
   return p.id;
 }
 
-export async function updatePlannedIncome(id: string, patch: Partial<PlannedIncomeInput & { active: boolean }>) {
-  await db().plannedIncomes.update(id, { ...patch, updatedAt: nowISO() });
+/**
+ * Edits a planned income. When the value changes and `amountFrom` is given, periods due before
+ * that date keep the value they had (a raise does not turn paid months into partial ones).
+ */
+export async function updatePlannedIncome(
+  id: string,
+  patch: Partial<PlannedIncomeInput & { active: boolean }>,
+  options: { amountFrom?: DateStr } = {},
+) {
+  const d = db();
+  await d.transaction("rw", [d.plannedIncomes, d.activities], async () => {
+    const current = await d.plannedIncomes.get(id);
+    if (!current) throw new DomainError("El ingreso previsto ya no existe.");
+    if (patch.amount !== undefined && patch.amount <= 0) throw new DomainError("El valor debe ser mayor que cero.");
+    const next: Partial<PlannedIncome> = { ...patch, updatedAt: nowISO() };
+    if (patch.name !== undefined) next.name = patch.name.trim();
+    validateRecurrence(patch.recurrence !== undefined ? patch.recurrence : current.recurrence, patch.startDate ?? current.startDate);
+    const startDate = patch.startDate ?? current.startDate;
+    const amountChanged = patch.amount !== undefined && patch.amount !== current.amount;
+    if (amountChanged && options.amountFrom && options.amountFrom > startDate) {
+      const until = addDays(options.amountFrom, -1);
+      const previous = plannedAmountAt(current, until);
+      next.amountHistory = [...(current.amountHistory ?? []).filter((h) => h.until < until), { until, amount: previous }];
+    }
+    await d.plannedIncomes.update(id, next);
+    const clientId = patch.clientId !== undefined ? patch.clientId : current.clientId;
+    if (clientId && amountChanged) {
+      await logActivity({
+        clientId,
+        type: "client",
+        message: `${patch.name?.trim() || current.name}: nuevo valor ${formatMoney(patch.amount!)}${options.amountFrom ? ` desde el ${formatDayMonth(options.amountFrom)}` : ""}`,
+      });
+    }
+  });
 }
 
 export async function deletePlannedIncome(id: string) {
@@ -289,15 +334,118 @@ export async function deletePlannedIncome(id: string) {
 export async function receivePlannedIncome(input: { plannedIncomeId: string; dueDate: DateStr; amount: Minor; date: DateStr; accountId: string }) {
   const p = await db().plannedIncomes.get(input.plannedIncomeId);
   if (!p) throw new DomainError("El ingreso previsto ya no existe.");
-  return createTransaction({
-    kind: "income",
-    amount: input.amount,
-    date: input.date,
-    accountId: input.accountId,
-    categoryId: p.categoryId ?? null,
-    description: p.name,
-    plannedIncomeId: p.id,
-    occurrenceDate: input.dueDate,
+  const d = db();
+  return d.transaction("rw", [d.transactions, d.activities], async () => {
+    const txId = await createTransaction({
+      kind: "income",
+      amount: input.amount,
+      date: input.date,
+      accountId: input.accountId,
+      categoryId: p.categoryId ?? null,
+      description: p.name,
+      clientId: p.clientId ?? null,
+      plannedIncomeId: p.id,
+      occurrenceDate: input.dueDate,
+    });
+    if (p.clientId) {
+      await logActivity({ clientId: p.clientId, type: "payment", message: `${p.name}: recibido ${formatMoney(input.amount)} (periodo del ${formatDayMonth(input.dueDate)})` });
+    }
+    return txId;
+  });
+}
+
+/** How a client pays, as chosen in the client form. */
+export type PayPlan =
+  | { mode: "job" }
+  | { mode: "monthly" | "semimonthly" | "weekly"; amount: Minor; startDate: DateStr; days?: number[] };
+
+function hasPeriodsFrom(p: PlannedIncome, date: DateStr) {
+  return p.active && p.recurrence !== null && nextOccurrence(p.startDate, p.recurrence, date) !== null;
+}
+
+/**
+ * Sets how a client pays. Past periods are never rewritten: changing the periodicity or the
+ * payday closes the current series the day before the new start and opens a new one, and
+ * switching to "per job" ends the series yesterday. Without history the series is edited in place.
+ */
+export async function setClientPayPlan(clientId: string, plan: PayPlan, today: DateStr) {
+  const d = db();
+  await d.transaction("rw", [d.plannedIncomes, d.transactions, d.activities, d.categories], async () => {
+    const live = (await d.plannedIncomes.toArray()).filter((p) => p.clientId === clientId && hasPeriodsFrom(p, today));
+    if (live.length > 1) throw new DomainError("Este cliente tiene varios pagos periódicos: edítalos desde su ficha.");
+    const current = live[0];
+    const receipts = current ? await d.transactions.where("plannedIncomeId").equals(current.id).toArray() : [];
+    const now = nowISO();
+
+    if (plan.mode === "job") {
+      if (!current) return;
+      if (current.startDate < today || receipts.length > 0) {
+        await d.plannedIncomes.update(current.id, { recurrence: { ...current.recurrence!, until: addDays(today, -1) }, updatedAt: now });
+      } else {
+        await d.plannedIncomes.delete(current.id);
+      }
+      await logActivity({ clientId, type: "client", message: "Forma de pago: por trabajo" });
+      return;
+    }
+
+    if (!Number.isSafeInteger(plan.amount) || plan.amount <= 0) throw new DomainError("El valor de cada pago debe ser mayor que cero.");
+    const recurrence = presetToRecurrence(plan.mode, plan.days)!;
+    const label = { monthly: "mensual", semimonthly: "quincenal", weekly: "semanal" }[plan.mode];
+    const log = () => logActivity({ clientId, type: "client", message: `Forma de pago: ${label} · ${formatMoney(plan.amount)}` });
+
+    if (!current) {
+      const salaryCat = (await d.categories.toArray()).find((c) => c.systemKey === "salary")?.id ?? null;
+      await d.plannedIncomes.add({
+        id: uid(),
+        name: "Sueldo",
+        amount: plan.amount,
+        startDate: plan.startDate,
+        recurrence,
+        confirmed: true,
+        accountId: null,
+        categoryId: salaryCat,
+        clientId,
+        active: true,
+        settled: {},
+        createdAt: now,
+        updatedAt: now,
+      });
+      await log();
+      return;
+    }
+
+    const sameRule =
+      recurrenceToPreset(current.recurrence) === plan.mode &&
+      (current.recurrence?.byMonthDay ?? []).join(",") === (recurrence.byMonthDay ?? []).join(",");
+    const openPeriod = firstOpenPeriod(current, receipts, today);
+    if (sameRule && plan.startDate === openPeriod) {
+      if (plan.amount !== current.amount) {
+        const until = addDays(openPeriod, -1);
+        const history = until >= current.startDate ? [...(current.amountHistory ?? []).filter((h) => h.until < until), { until, amount: plannedAmountAt(current, until) }] : [];
+        await d.plannedIncomes.update(current.id, { amount: plan.amount, amountHistory: history, updatedAt: now });
+        await log();
+      }
+      return;
+    }
+
+    const past = occurrencesBetween(current.startDate, current.recurrence, current.startDate, addDays(plan.startDate, -1));
+    if (past.length === 0 && receipts.length === 0) {
+      await d.plannedIncomes.update(current.id, { amount: plan.amount, startDate: plan.startDate, recurrence, amountHistory: [], updatedAt: now });
+    } else {
+      await d.plannedIncomes.update(current.id, { recurrence: { ...current.recurrence!, until: addDays(plan.startDate, -1) }, updatedAt: now });
+      await d.plannedIncomes.add({
+        ...current,
+        id: uid(),
+        amount: plan.amount,
+        amountHistory: [],
+        startDate: plan.startDate,
+        recurrence,
+        settled: {},
+        createdAt: now,
+        updatedAt: now,
+      });
+    }
+    await log();
   });
 }
 

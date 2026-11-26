@@ -6,7 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Trash2 } from "lucide-react";
 import { toast } from "sonner";
-import { useData, useMoney, useToday } from "@/hooks/data";
+import { useClientIncomes, useData, useMoney, useToday } from "@/hooks/data";
 import {
   addClientPayment,
   createClient,
@@ -25,7 +25,10 @@ import { parseMoney } from "@/lib/money";
 import { Field, Input, NativeSelect, Textarea, Checkbox } from "@/components/ui/form-controls";
 import { Segmented } from "@/components/ui/misc";
 import { Button } from "@/components/ui/button";
-import { AccountSelect, AmountInput, DateField, amountToText } from "@/components/shared/inputs";
+import { AccountSelect, AmountInput, DateField, PaydaysInput, amountToText } from "@/components/shared/inputs";
+import { firstOpenPeriod, PAY_MODE_LABEL, PAY_MODES, payModeOf } from "@/domain/finance";
+import { DEFAULT_SEMIMONTHLY_DAYS, describeRecurrence } from "@/lib/recurrence";
+import { setClientPayPlan, type PayPlan } from "@/services/finance-service";
 import { useUI } from "@/components/shell/ui-context";
 import { Disclosure, FormSheet, lastAccount, rememberAccount, runSave, useBusy } from "./form-kit";
 
@@ -50,7 +53,30 @@ const clientSchema = z.object({
   status: z.enum(["lead", "active", "paused", "inactive"]),
   tags: z.string().optional(),
   notes: z.string().optional(),
+  payMode: z.enum(["job", "monthly", "semimonthly", "weekly"]),
+  payAmount: z.string(),
+  payStart: z.string(),
+  payDay1: z.string(),
+  payDay2: z.string(),
+}).superRefine((v, ctx) => {
+  if (v.payMode === "job") return;
+  if (!((parseMoney(v.payAmount) ?? 0) > 0)) ctx.addIssue({ code: "custom", path: ["payAmount"], message: "Escribe cuánto te paga cada vez" });
+  if (v.payStart.length < 10) ctx.addIssue({ code: "custom", path: ["payStart"], message: "Elige la fecha del próximo pago" });
+  if (v.payMode === "semimonthly") {
+    const days = [v.payDay1, v.payDay2].map(Number);
+    if (days.some((d) => !Number.isInteger(d) || d < 1 || d > 31)) ctx.addIssue({ code: "custom", path: ["payDay2"], message: "Usa días entre 1 y 31" });
+    else if (days[0] === days[1]) ctx.addIssue({ code: "custom", path: ["payDay2"], message: "Elige dos días distintos" });
+  }
 });
+
+type PayChoice = "job" | "monthly" | "semimonthly" | "weekly";
+
+const PAY_HINT: Record<PayChoice, string> = {
+  job: "Te paga por cada trabajo: registra trabajos con su precio y sus abonos.",
+  monthly: "Un valor fijo cada mes, el mismo día (en meses más cortos, el último día).",
+  semimonthly: "Un valor fijo dos veces al mes, en los días que elijas.",
+  weekly: "Un valor fijo cada semana, el mismo día de la semana.",
+};
 
 export function ClientForm({ id, onDone }: { id?: string; onDone: () => void }) {
   const data = useData();
@@ -59,6 +85,14 @@ export function ClientForm({ id, onDone }: { id?: string; onDone: () => void }) 
   const [busy, wrap] = useBusy();
   const existing = id ? data.clients.find((c) => c.id === id) : undefined;
   const services = [...new Set(data.clients.map((c) => c.serviceType).filter(Boolean))] as string[];
+  const today = useToday();
+  const incomes = useClientIncomes();
+  // The pay menu edits the client's live salary; with several (or an unusual periodicity) they are edited from the sheet.
+  const live = existing ? incomes.filter((v) => v.income.clientId === existing.id && !v.ended && v.income.recurrence) : [];
+  const salary = live.length === 1 ? live[0].income : undefined;
+  const salaryMode = salary ? payModeOf(salary.recurrence) : "job";
+  const payEditable = live.length === 0 || (live.length === 1 && salaryMode !== "other");
+  const salaryDays = salary?.recurrence?.byMonthDay && salary.recurrence.byMonthDay.length > 1 ? salary.recurrence.byMonthDay : DEFAULT_SEMIMONTHLY_DAYS;
   const form = useForm<z.infer<typeof clientSchema>>({
     resolver: zodResolver(clientSchema),
     defaultValues: {
@@ -72,8 +106,14 @@ export function ClientForm({ id, onDone }: { id?: string; onDone: () => void }) 
       status: existing?.status ?? "active",
       tags: existing?.tags.join(", ") ?? "",
       notes: existing?.notes ?? "",
+      payMode: salaryMode === "other" ? "job" : salaryMode,
+      payAmount: salary ? amountToText(salary.amount, data.settings.currency) : "",
+      payStart: (salary && firstOpenPeriod(salary, data.transactions, today)) ?? today,
+      payDay1: String(salaryDays[0]),
+      payDay2: String(salaryDays[1] ?? 30),
     },
   });
+  const payMode = form.watch("payMode");
   const { register, handleSubmit, watch, setValue, formState } = form;
   const submit = handleSubmit((v) =>
     wrap(async () => {
@@ -88,11 +128,23 @@ export function ClientForm({ id, onDone }: { id?: string; onDone: () => void }) 
         tags: parseTags(v.tags ?? ""),
         notes: v.notes?.trim() || undefined,
       };
+      const plan: PayPlan =
+        v.payMode === "job"
+          ? { mode: "job" }
+          : { mode: v.payMode, amount: parseMoney(v.payAmount)!, startDate: v.payStart, days: v.payMode === "semimonthly" ? [Number(v.payDay1), Number(v.payDay2)] : undefined };
       if (existing) {
-        if (await runSave(() => updateClient(existing.id, payload), "Cliente actualizado")) close();
+        const save = async () => {
+          await updateClient(existing.id, payload);
+          if (payEditable) await setClientPayPlan(existing.id, plan, today);
+        };
+        if (await runSave(save, "Cliente actualizado")) close();
       } else {
         let newId = "";
-        if (await runSave(async () => void (newId = await createClient(payload)), `${payload.name} agregado`)) {
+        const save = async () => {
+          newId = await createClient(payload);
+          if (plan.mode !== "job") await setClientPayPlan(newId, plan, today);
+        };
+        if (await runSave(save, `${payload.name} agregado`)) {
           close();
           setTimeout(() => openDetail({ type: "client", id: newId }), 220);
         }
@@ -144,6 +196,43 @@ export function ClientForm({ id, onDone }: { id?: string; onDone: () => void }) 
             options={(Object.keys(CLIENT_STATUS_LABEL) as ClientStatus[]).map((s) => ({ value: s, label: CLIENT_STATUS_LABEL[s] }))}
           />
         </Field>
+        {payEditable ? (
+          <>
+            <Field label="¿Cómo te paga?" hint={PAY_HINT[payMode]}>
+              <Segmented
+                className="w-full"
+                size="sm"
+                ariaLabel="Cómo te paga"
+                value={payMode}
+                onChange={(m) => setValue("payMode", m)}
+                options={PAY_MODES.map((m) => ({ value: m, label: PAY_MODE_LABEL[m] }))}
+              />
+            </Field>
+            {payMode !== "job" && (
+              <div className="space-y-4 rounded-xl border border-border bg-muted/40 p-3.5">
+                <Field label={`Valor de cada pago ${PAY_MODE_LABEL[payMode].toLowerCase()}`} htmlFor="cl-pay" error={formState.errors.payAmount?.message}>
+                  <AmountInput id="cl-pay" value={watch("payAmount")} onChange={(v) => setValue("payAmount", v)} />
+                </Field>
+                {payMode === "semimonthly" && (
+                  <Field label="Días de pago" htmlFor="cl-day1" error={formState.errors.payDay2?.message} hint="Si el mes es más corto, se paga el último día.">
+                    <PaydaysInput id="cl-day1" first={register("payDay1")} second={register("payDay2")} />
+                  </Field>
+                )}
+                <Field
+                  label={payMode === "semimonthly" ? "Desde" : "Próximo pago"}
+                  error={formState.errors.payStart?.message}
+                  hint={salary ? "Los pagos anteriores conservan su valor y periodicidad." : undefined}
+                >
+                  <DateField value={watch("payStart")} onChange={(v) => setValue("payStart", v ?? today)} quick={["today", "tomorrow", "nextweek"]} />
+                </Field>
+              </div>
+            )}
+          </>
+        ) : (
+          <p className="rounded-lg bg-muted px-3 py-2.5 text-[13px] text-muted-foreground">
+            {live.length > 1 ? `Este cliente tiene ${live.length} pagos periódicos.` : `Te paga: ${live[0] ? describeRecurrence(live[0].income.recurrence).toLowerCase() : ""}.`} Edítalos desde su ficha, en «Sueldo y pagos periódicos».
+          </p>
+        )}
         <Field label="Etiquetas" htmlFor="cl-tags" optional hint="Separadas por comas: recurrente, referido…">
           <Input id="cl-tags" {...register("tags")} />
         </Field>

@@ -144,7 +144,9 @@ export function ObligationOccurrenceRow({ occ, compact }: { occ: Occurrence<Obli
 export function PlannedIncomeRow({ occ }: { occ: Occurrence<PlannedIncome> }) {
   const today = useToday();
   const { openForm } = useUI();
+  const data = useData();
   const p = occ.source;
+  const client = p.clientId ? data.clients.find((c) => c.id === p.clientId) : undefined;
   return (
     <li className="flex items-center gap-3 px-2 py-2.5">
       <button type="button" className="min-w-0 flex-1 text-left" onClick={() => openForm({ kind: "plannedIncome", id: p.id })}>
@@ -155,6 +157,7 @@ export function PlannedIncomeRow({ occ }: { occ: Occurrence<PlannedIncome> }) {
         <span className="text-xs text-muted-foreground">
           {formatRelativeDay(occ.dueDate, today)}
           {p.recurrence ? ` · ${describeRecurrence(p.recurrence)}` : ""}
+          {client ? ` · ${client.name}` : ""}
         </span>
       </button>
       <Money amount={occ.remaining > 0 ? occ.remaining : occ.amount} tone="income" className="text-sm font-semibold" />

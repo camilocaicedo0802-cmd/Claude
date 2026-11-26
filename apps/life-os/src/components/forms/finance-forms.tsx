@@ -30,14 +30,14 @@ import {
   updatePlannedIncome,
 } from "@/services/finance-service";
 import type { AccountType, CategoryKind, ExpenseNature, ObligationType } from "@/db/types";
-import { accountBalances, obligationOccurrences, plannedIncomeOccurrences } from "@/domain/finance";
+import { accountBalances, firstOpenPeriod, obligationOccurrences, plannedIncomeOccurrences } from "@/domain/finance";
 import { formatDateLong } from "@/lib/dates";
 import { parseMoney } from "@/lib/money";
-import { PRESET_LABELS, presetToRecurrence, recurrenceToPreset, type RecurrencePreset } from "@/lib/recurrence";
+import { DEFAULT_SEMIMONTHLY_DAYS, PRESET_LABELS, presetToRecurrence, recurrenceToPreset, type RecurrencePreset } from "@/lib/recurrence";
 import { Field, Input, NativeSelect, SwitchRow, Textarea } from "@/components/ui/form-controls";
 import { Segmented } from "@/components/ui/misc";
 import { Button } from "@/components/ui/button";
-import { AccountSelect, AmountInput, ColorPicker, DateField, IconPicker, amountToText } from "@/components/shared/inputs";
+import { AccountSelect, AmountInput, ColorPicker, DateField, IconPicker, PaydaysInput, amountToText } from "@/components/shared/inputs";
 import { ICON_CHOICES, PALETTE } from "@/components/shared/primitives";
 import { useUI } from "@/components/shell/ui-context";
 import { FormSheet, lastAccount, rememberAccount, runSave, useBusy } from "./form-kit";
@@ -483,23 +483,51 @@ export function ObligationPaymentForm({ obligationId, dueDate, onDone }: { oblig
 
 // ── Planned income ───────────────────────────────────────────────────────────
 
-const plannedSchema = z.object({
-  name: z.string().trim().min(1, "Ponle un nombre"),
-  amount: amountRule,
-  startDate: z.string().min(10),
-  preset: z.string(),
-  confirmed: z.boolean(),
-  accountId: z.string().optional(),
-  categoryId: z.string().optional(),
-});
+const plannedSchema = z
+  .object({
+    name: z.string().trim().min(1, "Ponle un nombre"),
+    amount: amountRule,
+    startDate: z.string().min(10),
+    preset: z.string(),
+    confirmed: z.boolean(),
+    accountId: z.string().optional(),
+    categoryId: z.string().optional(),
+    clientId: z.string().optional(),
+    day1: z.string(),
+    day2: z.string(),
+    until: z.string().optional(),
+    amountFrom: z.string().optional(),
+  })
+  .superRefine((v, ctx) => {
+    if (v.preset === "semimonthly") {
+      const days = [v.day1, v.day2].map((d) => Number(d));
+      if (days.some((d) => !Number.isInteger(d) || d < 1 || d > 31)) ctx.addIssue({ code: "custom", path: ["day2"], message: "Usa días entre 1 y 31" });
+      else if (days[0] === days[1]) ctx.addIssue({ code: "custom", path: ["day2"], message: "Elige dos días distintos" });
+    }
+    if (v.preset !== "none" && v.until && v.until < v.startDate) ctx.addIssue({ code: "custom", path: ["until"], message: "Debe ser posterior al primer pago" });
+  });
 
-export function PlannedIncomeForm({ id, onDone }: { id?: string; onDone: () => void }) {
+const PLANNED_MAIN: Array<[RecurrencePreset, string]> = [
+  ["monthly", "Mensual"],
+  ["semimonthly", "Quincenal"],
+  ["weekly", "Semanal"],
+];
+const PLANNED_OTHER: Array<[RecurrencePreset, string]> = [
+  ["biweekly", "Cada dos semanas"],
+  ["quarterly", "Cada tres meses"],
+  ["yearly", "Cada año"],
+  ["none", "Una sola vez"],
+];
+
+export function PlannedIncomeForm({ id, defaults, onDone }: { id?: string; defaults?: { clientId?: string; forClient?: boolean }; onDone: () => void }) {
   const data = useData();
   const today = useToday();
+  const money = useMoney();
   const { confirm } = useUI();
   const { open, close } = useClosable(onDone);
   const [busy, wrap] = useBusy();
   const existing = id ? data.plannedIncomes.find((p) => p.id === id) : undefined;
+  const monthDays = existing?.recurrence?.byMonthDay && existing.recurrence.byMonthDay.length > 1 ? existing.recurrence.byMonthDay : DEFAULT_SEMIMONTHLY_DAYS;
   const form = useForm<z.infer<typeof plannedSchema>>({
     resolver: zodResolver(plannedSchema),
     defaultValues: {
@@ -510,65 +538,145 @@ export function PlannedIncomeForm({ id, onDone }: { id?: string; onDone: () => v
       confirmed: existing?.confirmed ?? true,
       accountId: existing?.accountId ?? "",
       categoryId: existing?.categoryId ?? data.categories.find((c) => c.systemKey === "salary")?.id ?? "",
+      clientId: existing?.clientId ?? defaults?.clientId ?? "",
+      day1: String(monthDays[0]),
+      day2: String(monthDays[1] ?? 30),
+      until: existing?.recurrence?.until ?? "",
+      // A raise applies from the first period not received yet, so money already in hand is not reopened.
+      amountFrom: existing ? (firstOpenPeriod(existing, data.transactions, today) ?? today) : today,
     },
   });
   const { watch, setValue, register, handleSubmit, formState } = form;
+  const preset = watch("preset") as RecurrencePreset;
+  const clientId = watch("clientId");
+  const client = clientId ? data.clients.find((c) => c.id === clientId) : undefined;
+  const clients = data.clients.filter((c) => !c.archived || c.id === clientId).sort((a, b) => a.name.localeCompare(b.name));
+  const newAmount = parseMoney(watch("amount"));
+  // A raise on a series that already has past periods: ask from when it applies.
+  const askAmountFrom = !!existing && existing.recurrence !== null && preset !== "none" && newAmount !== null && newAmount > 0 && newAmount !== existing.amount && existing.startDate < today;
   const submit = handleSubmit((v) =>
     wrap(async () => {
+      if (defaults?.forClient && !v.clientId) {
+        form.setError("clientId", { message: "Elige el cliente que te paga" });
+        return;
+      }
+      if (defaults?.forClient && !v.clientId) {
+        form.setError("clientId", { message: "Elige el cliente que te paga" });
+        return;
+      }
+      const base = presetToRecurrence(v.preset as RecurrencePreset, v.preset === "semimonthly" ? [Number(v.day1), Number(v.day2)] : undefined);
+      const recurrence = base ? { ...base, until: v.until || null, count: existing?.recurrence?.count ?? null } : null;
       const payload = {
         name: v.name,
         amount: parseMoney(v.amount)!,
         startDate: v.startDate,
-        recurrence: presetToRecurrence(v.preset as RecurrencePreset),
+        recurrence,
         confirmed: v.confirmed,
         accountId: v.accountId || null,
         categoryId: v.categoryId || null,
+        clientId: v.clientId || null,
       };
+      const label = v.clientId ? "Pago periódico" : "Ingreso previsto";
       if (existing) {
-        if (await runSave(() => updatePlannedIncome(existing.id, payload), "Ingreso previsto actualizado")) close();
-      } else if (await runSave(() => createPlannedIncome(payload), "Ingreso previsto creado")) close();
+        const options = askAmountFrom ? { amountFrom: v.amountFrom || today } : {};
+        if (await runSave(() => updatePlannedIncome(existing.id, payload, options), `${label} actualizado`)) close();
+      } else if (await runSave(() => createPlannedIncome(payload), `${label} creado`)) close();
     }),
   );
   const remove = async () => {
     if (!existing) return;
-    if (await confirm({ title: `¿Eliminar «${existing.name}»?`, confirmLabel: "Eliminar", destructive: true })) {
-      if (await runSave(() => deletePlannedIncome(existing.id), "Ingreso previsto eliminado")) close();
+    if (
+      await confirm({
+        title: `¿Eliminar «${existing.name}»?`,
+        description: "Los pagos que ya registraste se conservan en Finanzas como ingresos normales.",
+        confirmLabel: "Eliminar",
+        destructive: true,
+      })
+    ) {
+      if (await runSave(() => deletePlannedIncome(existing.id), "Eliminado")) close();
     }
   };
+  const forClient = !!clientId || !!defaults?.forClient;
   return (
     <FormSheet
       open={open}
       onOpenChange={(v) => !v && close()}
-      title={existing ? "Editar ingreso previsto" : "Nuevo ingreso previsto"}
-      description="Salario, honorarios fijos u otros ingresos esperados. Nunca se suman a tu dinero disponible hasta que los recibas."
+      title={forClient ? (existing ? "Editar sueldo o pago periódico" : "Sueldo o pago periódico") : existing ? "Editar ingreso previsto" : "Nuevo ingreso previsto"}
+      description={
+        forClient
+          ? `Lo que ${client?.name ?? "este cliente"} te paga cada periodo. Cada pago que registres entra a Finanzas una sola vez y no cuenta como dinero disponible hasta que llega.`
+          : "Salario, honorarios fijos u otros ingresos esperados. Nunca se suman a tu dinero disponible hasta que los recibas."
+      }
       formId="planned-form"
       busy={busy}
       extraActions={existing && <Button variant="destructive-ghost" size="sm" onClick={remove}><Trash2 /> Eliminar</Button>}
     >
       <form id="planned-form" onSubmit={submit} className="space-y-4" noValidate>
         <Field label="Nombre" htmlFor="pi-name" error={formState.errors.name?.message}>
-          <Input id="pi-name" autoFocus={!existing} placeholder="Ej. Salario" {...register("name")} />
+          <Input id="pi-name" autoFocus={!existing} placeholder={forClient ? "Ej. Sueldo, honorarios, retainer" : "Ej. Salario"} {...register("name")} />
         </Field>
-        <Field label="Valor" htmlFor="pi-amount" error={formState.errors.amount?.message}>
+        <Field label={preset === "none" ? "Valor" : "Valor de cada pago"} htmlFor="pi-amount" error={formState.errors.amount?.message}>
           <AmountInput id="pi-amount" large value={watch("amount")} onChange={(v) => setValue("amount", v)} />
-        </Field>
-        <Field label="Próxima fecha">
-          <DateField value={watch("startDate")} onChange={(v) => setValue("startDate", v ?? today)} quick={["today", "tomorrow", "nextweek"]} />
         </Field>
         <div className="grid gap-4 sm:grid-cols-2">
           <Field label="Periodicidad" htmlFor="pi-freq">
             <NativeSelect id="pi-freq" {...register("preset")}>
-              {(["none", "weekly", "biweekly", "monthly", "quarterly", "yearly"] as RecurrencePreset[]).map((p) => (
+              {PLANNED_MAIN.map(([p, label]) => (
                 <option key={p} value={p}>
-                  {p === "none" ? "Una sola vez" : PRESET_LABELS[p]}
+                  {label}
+                </option>
+              ))}
+              <optgroup label="Otras">
+                {PLANNED_OTHER.map(([p, label]) => (
+                  <option key={p} value={p}>
+                    {label}
+                  </option>
+                ))}
+              </optgroup>
+            </NativeSelect>
+          </Field>
+          <Field label="Cliente que paga" htmlFor="pi-client" optional={!defaults?.forClient} error={formState.errors.clientId?.message}>
+            <NativeSelect id="pi-client" {...register("clientId")}>
+              <option value="">Ninguno</option>
+              {clients.map((c) => (
+                <option key={c.id} value={c.id}>
+                  {c.name}
+                  {c.company ? ` · ${c.company}` : ""}
                 </option>
               ))}
             </NativeSelect>
           </Field>
-          <Field label="Cuenta donde llega" htmlFor="pi-acc" optional>
-            <AccountSelect id="pi-acc" allowNone noneLabel="Elegir al recibir" value={watch("accountId")} onChange={(v) => setValue("accountId", v ?? "")} filter={(a) => a.type !== "credit"} />
-          </Field>
         </div>
+        {preset === "semimonthly" && (
+          <Field label="Días de pago" htmlFor="pi-day1" error={formState.errors.day2?.message} hint="Si el mes es más corto, se paga el último día (por ejemplo, el 28 de febrero).">
+            <PaydaysInput id="pi-day1" first={register("day1")} second={register("day2")} />
+          </Field>
+        )}
+        <Field
+          label={preset === "semimonthly" ? "Desde" : preset === "none" ? "Fecha" : "Próximo pago"}
+          hint={
+            preset === "monthly" || preset === "quarterly"
+              ? "Se repite ese mismo día; en meses más cortos, el último día."
+              : preset === "semimonthly"
+                ? "Cuenta los días de pago a partir de esta fecha."
+                : undefined
+          }
+        >
+          <DateField value={watch("startDate")} onChange={(v) => setValue("startDate", v ?? today)} quick={["today", "tomorrow", "nextweek"]} />
+        </Field>
+        {preset !== "none" && (
+          <Field label="Hasta" optional error={formState.errors.until?.message} hint="Si el contrato termina en una fecha. Sin fecha, se repite indefinidamente.">
+            <DateField value={watch("until") || null} onChange={(v) => setValue("until", v ?? "")} quick={[]} allowEmpty emptyLabel="Sin fecha final" />
+          </Field>
+        )}
+        {askAmountFrom && (
+          <Field label="El nuevo valor aplica desde" hint={`Los pagos anteriores conservan su valor de ${money(existing.amount)}.`}>
+            <DateField value={watch("amountFrom") || today} onChange={(v) => setValue("amountFrom", v ?? today)} quick={["today"]} />
+          </Field>
+        )}
+        <Field label="Cuenta donde llega" htmlFor="pi-acc" optional>
+          <AccountSelect id="pi-acc" allowNone noneLabel="Elegir al recibir" value={watch("accountId")} onChange={(v) => setValue("accountId", v ?? "")} filter={(a) => a.type !== "credit"} />
+        </Field>
         <SwitchRow
           id="pi-confirmed"
           label="Ingreso confirmado"
