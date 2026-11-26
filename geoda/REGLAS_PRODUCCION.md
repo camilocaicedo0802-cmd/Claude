@@ -143,6 +143,12 @@ El montador (`pipeline/builder.py`) ya trae estas reglas por defecto.
     sílaba por sílaba con la voz (revisar con `pipeline/tools/lips_strip.py`). Si el modelo no lo logra, ese plano va con la
     persona haciendo la acción con los labios cerrados y la voz en off.
 
+46. **BOFU extra en ángulos con pocos BOFU** (Camilo, 26-nov). Si un ángulo tiene pocos videos BOFU, se agregan BOFU extra
+    con la numeración siguiente del ángulo (A1-09, A1-10, A1-11…), guion HOOK → INTRODUCCIÓN AL PROBLEMA → INTRODUCCIÓN AL
+    PRODUCTO → LA SOLUCIÓN → CTA, 18-24 s, oferta + garantía 14 días + contraentrega, y las 4 versiones de siempre (HA/HB con el
+    CTA principal, HC/HD con hooks nuevos y CTA alterno). Variar el formato entre ellos (ej. demo, UGC, motion graphics) y
+    escribir los guiones en `brief_v2/guiones_bofu_extra.md` antes de producir.
+
 ## Entrega
 34. Carpeta `GEODA_60/TOFU|MOFU|BOFU/A1…` con las versiones vigentes, `CTA_alternos/` para los re-exports de CTA y un
     `LEEME.txt`; se envía también como .zip.

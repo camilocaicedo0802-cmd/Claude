@@ -1,0 +1,11 @@
+{
+ "kit": [
+  "videos/GEO-MOFU-A1-07/mg.py (piezas animadas del A1-07: fondo, recorte real, frascos, 4 pasos, sello 14 días)",
+  "a203/tmp/cta_mapa.mp4 (cierre K6, del A2-03)",
+  "a108/tmp/cta_bf.mp4 (cierre K1, del A1-08)"
+ ],
+ "costo_usd": {
+  "total": 0.0,
+  "nota": "todo animado en local (mg11.py) + voz Gemini TTS (gratis)"
+ }
+}

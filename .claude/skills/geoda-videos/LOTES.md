@@ -27,6 +27,15 @@ la misma voz al mismo tiempo; dentro de un video, cada personaje conserva su voz
 Formato faceless / motion graphics: referencia `geoda/videos/GEO-MOFU-A1-07/` (`mg.py`: escenas animadas en Python con el
 recorte real del producto, fondo que siempre se mueve, SFX sintetizados; costo US$0).
 
+## BOFU extra del A1 (HECHOS, 26-nov; regla 46)
+| ✓ | ID | Formato | Duración | CTA principal / alterno |
+|---|---|---|---|---|
+| ✓ | GEO-BOFU-A1-09 | Demo de producto (manos, voz H Orus) | 19-20 s | K5 Paga contraentrega / K2 Navidad |
+| ✓ | GEO-BOFU-A1-10 | UGC con avatar IA (Sara, voz M Despina, 1,15x) | 20-23 s | K7 1 piedra = 1 año / K3 Pruébala hoy |
+| ✓ | GEO-BOFU-A1-11 | Motion graphics (voz H Iapetus) | 22-23 s | K6 Envío gratis / K1 Black Friday |
+
+En los próximos ángulos: si hay pocos BOFU, agregar BOFU extra igual (guiones en `geoda/brief_v2/guiones_bofu_extra.md`).
+
 ## Lote 2 (HECHO por el chat del lote 1: A1-06, A1-07, A1-08, A2-01 y A2-02)
 | # | Video | Formato | Duración | CTA | Nota |
 |---|---|---|---|---|---|

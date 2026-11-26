@@ -111,9 +111,14 @@ Salidas pesadas (clips, mp4) en la carpeta de trabajo `G` (`cat ~/.geoda_work`):
 
 ## 2b. Nombre de los archivos de ENTREGA
 `<Ángulo> GEO <ETAPA>-<A#>-<NN>-Hook <X>-<Formato>.mp4` · ej. `Axilas que lucen más parejas GEO TOFU-A2-04-Hook B-Podcast.mp4` (formato al final desde el 26-nov; corrección: ` v2` al final),
-`Axilas que lucen más parejas GEO TOFU-A2-01-Hook C.mp4`. Sin formato ni CTA en el nombre (cada versión tiene su propio
-hook). Corrección de algo ya entregado: ` v2`, ` v3`… al final. Se monta con el nombre técnico de siempre y al entregar se
+sin CTA en el nombre (cada versión tiene su propio hook). Corrección de algo ya entregado: ` v2`, ` v3`… al final. Se monta con el nombre técnico de siempre y al entregar se
 copia con `python3 geoda/pipeline/tools/nombre_entrega.py --copiar <carpeta_mp4> <GEODA_60/ETAPA/A#>` (ángulos en `LOTES.md`).
+
+## 2c. BOFU extra
+Si un ángulo tiene pocos BOFU, Camilo pide BOFU extra (regla 46): numeración siguiente del ángulo, guion HOOK → PROBLEMA →
+PRODUCTO → SOLUCIÓN → CTA (18-24 s), 4 versiones (HC/HD con hooks nuevos y CTA alterno), formatos distintos entre sí.
+Guiones primero en `geoda/brief_v2/guiones_bofu_extra.md`. Ejemplos hechos: `videos/GEO-BOFU-A1-09` (demo solo manos),
+`-10` (UGC avatar con voz en off y video a 1,15x) y `-11` (motion graphics sin costo, `mg11.py`).
 
 ## 3. Cierre del lote
 - Carpeta `GEODA_60/<TOFU|MOFU|BOFU>/<A#>/` con los mp4 vigentes (CTA alternos en `CTA_alternos/`), `LEEME.txt` (video,

@@ -18,6 +18,9 @@ Los personajes pueden cambiar entre videos; dentro de un video cada personaje co
 | Laura, avatar UGC (M, 28) · ref. `personajes/laura/laura_ref.png` | Aoede | UGC storytime, sincera y cercana | A2-01 |
 | Daniela, creadora 'mi rutina' (M, 27) · ref. `personajes/daniela/daniela_ref.png` | Callirrhoe (gemini-3.1-flash-tts-preview) | testimonio a cámara, cercana y sincera | A2-03 |
 | Podcast 2: host (M, rizos, cárdigan mostaza) e invitada (M, pelo liso, blusa verde) · `personajes/podcast2/` | voces nativas WAN 3.0 | conversación natural | A2-04 |
+| Narrador demo de producto (H), solo manos | Orus | demo cercano y seguro, ritmo ágil | A1-09 |
+| Sara, avatar UGC (M, ~28, Medellín) · ref. `personajes/sara/sara_ref.png` | Despina | storytime sincera, como contándole a una amiga | A1-10 |
+| Narrador faceless/motion (H) | Iapetus | explicativo, claro, ritmo ágil | A1-11 |
 
 Cada lote tiene dos voces sugeridas en LOTES.md (una M y una H).
 Agregar aquí cada personaje nuevo (y su voz) al crearlo, para que otros videos lo repitan igual.

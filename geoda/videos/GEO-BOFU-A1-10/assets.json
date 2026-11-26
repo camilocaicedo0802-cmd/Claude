@@ -1,0 +1,276 @@
+{
+ "s_ref": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2188a-dc99-700c-ad49-dbe9ab40a074/356a3de2-4be9-48c8-948c-09612e0db09a.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic smartphone UGC portrait photo of Sara, a friendly Colombian woman about 28 years old, warm tan skin, shoulder-length straight black hair with short bangs, small gold hoop earrings, natural makeup, wearing a sage-green button-up blouse. She stands in her modest modern Medellin apartment living room with soft window light and a few plants behind her, relaxed closed-mouth smile, looking at the camera. Medium shot from the waist up, her head in the middle of the frame, plain light wall above her head. No text, no watermark."
+  }
+ },
+ "s_ha": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2188b-f61d-7a65-8d75-245543a5295a/506a8f32-3536-457c-8e38-5515e0ee39da.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic smartphone UGC photo, soft window light, modest modern Medellin apartment living room. the SAME woman as the first reference image (Sara: Colombian, about 28, warm tan skin, shoulder-length straight black hair with short bangs, small gold hoop earrings), wearing a sage-green button-up blouse, holds the GEODA deodorant stick (cap off) up in one hand and looks at it with a skeptical raised eyebrow and a doubtful closed-mouth half-smile. Medium shot, her head in the middle of the frame (not near the top), plain light wall filling the upper 40% of the frame. The GEODA deodorant stick is exactly like the product references (white tube, clear cap, translucent white alum crystal on top) and its label (Desodorante, GEODA, 100% NATURAL, EFECTIVO Y SEGURO, 24h) faces the camera, upright and sharp. Her lips are closed. No text, no watermark.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2188a-dc99-700c-ad49-dbe9ab40a074/356a3de2-4be9-48c8-948c-09612e0db09a.png",
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/00cb1085-fa0c-4a03-a446-05649f4e916e.jpeg",
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/6f52cc8c-3f5d-49ad-a82f-8974d41b2c71.jpeg"
+   ]
+  }
+ },
+ "s_hb": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2188b-f762-78e4-b904-14c9af3107e7/1245d5d6-28bf-42f7-800b-8821ec3a2a2e.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic smartphone UGC photo in a small bright bathroom. In the foreground the SAME woman as the first reference image (Sara: Colombian, about 28, warm tan skin, shoulder-length straight black hair with short bangs, small gold hoop earrings), wearing a white sleeveless tank top, holds the GEODA deodorant stick (cap off) about to apply it. In the background, standing in the open bathroom doorway, her younger sister (Colombian, about 20, curly brown hair in a messy bun, grey hoodie) laughs covering her mouth with her hand. Both heads in the middle band of the frame; plain light wall above them in the upper 40% of the frame. The GEODA deodorant stick is exactly like the product references (white tube, clear cap, translucent white alum crystal on top) and its label (Desodorante, GEODA, 100% NATURAL, EFECTIVO Y SEGURO, 24h) faces the camera, upright and sharp. Her lips are closed. No text, no watermark.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2188a-dc99-700c-ad49-dbe9ab40a074/356a3de2-4be9-48c8-948c-09612e0db09a.png",
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/00cb1085-fa0c-4a03-a446-05649f4e916e.jpeg",
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/6f52cc8c-3f5d-49ad-a82f-8974d41b2c71.jpeg"
+   ]
+  }
+ },
+ "s_hc": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2188b-f8a3-7c10-ac86-29e8ba976277/df2efb3c-2763-48b2-b95e-241bfd7415e6.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic smartphone UGC photo, bright early-morning sunlight in a cozy bedroom. the SAME woman as the first reference image (Sara: Colombian, about 28, warm tan skin, shoulder-length straight black hair with short bangs, small gold hoop earrings), wearing a sage-green button-up blouse, stands by the window buttoning her cuff, and the GEODA deodorant stick stands on the wooden dresser in front of her, closer to the camera. Fresh energetic morning mood. Medium shot, her head in the middle of the frame (not near the top), plain light wall filling the upper 40% of the frame. The GEODA deodorant stick is exactly like the product references (white tube, clear cap, translucent white alum crystal on top) and its label (Desodorante, GEODA, 100% NATURAL, EFECTIVO Y SEGURO, 24h) faces the camera, upright and sharp. Her lips are closed. No text, no watermark.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2188a-dc99-700c-ad49-dbe9ab40a074/356a3de2-4be9-48c8-948c-09612e0db09a.png",
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/00cb1085-fa0c-4a03-a446-05649f4e916e.jpeg",
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/6f52cc8c-3f5d-49ad-a82f-8974d41b2c71.jpeg"
+   ]
+  }
+ },
+ "s_hd": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2188b-f9f1-7e16-81b8-f003a552b375/ab3ab3a8-2306-4048-9060-25630f9a7856.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic smartphone UGC photo in the warm kitchen of a traditional Colombian family home, colorful tiles and clay pots. A sweet elderly grandmother (Colombian, about 75, grey hair in a bun, beige cardigan) hands the GEODA deodorant stick to the SAME woman as the first reference image (Sara: Colombian, about 28, warm tan skin, shoulder-length straight black hair with short bangs, small gold hoop earrings), who wears a sage-green button-up blouse. Both smile warmly with closed mouths. Both heads in the middle band of the frame; plain wall above them in the upper 40% of the frame. The GEODA deodorant stick is exactly like the product references (white tube, clear cap, translucent white alum crystal on top) and its label (Desodorante, GEODA, 100% NATURAL, EFECTIVO Y SEGURO, 24h) faces the camera, upright and sharp. Her lips are closed. No text, no watermark.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2188a-dc99-700c-ad49-dbe9ab40a074/356a3de2-4be9-48c8-948c-09612e0db09a.png",
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/00cb1085-fa0c-4a03-a446-05649f4e916e.jpeg",
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/6f52cc8c-3f5d-49ad-a82f-8974d41b2c71.jpeg"
+   ]
+  }
+ },
+ "s_b1": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2188b-fb3b-75dd-80ab-e50f6101448f/3e7276db-3f90-48cd-ac3f-e3c8519a2d15.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic smartphone UGC photo in a Medellin office in the afternoon, laptop and coffee cup on the desk. the SAME woman as the first reference image (Sara: Colombian, about 28, warm tan skin, shoulder-length straight black hair with short bangs, small gold hoop earrings), wearing a sage-green button-up blouse, sits at her desk pressing her arm tight against her side and glances down at her underarm, uncomfortable and self-conscious, closed mouth. Medium shot. The GEODA deodorant stick is exactly like the product references (white tube, clear cap, translucent white alum crystal on top) and its label (Desodorante, GEODA, 100% NATURAL, EFECTIVO Y SEGURO, 24h) faces the camera, upright and sharp. Her lips are closed. No text, no watermark.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2188a-dc99-700c-ad49-dbe9ab40a074/356a3de2-4be9-48c8-948c-09612e0db09a.png",
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/00cb1085-fa0c-4a03-a446-05649f4e916e.jpeg",
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/6f52cc8c-3f5d-49ad-a82f-8974d41b2c71.jpeg"
+   ]
+  }
+ },
+ "s_b2": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2188b-fc5d-7b31-8f7a-d1ac58ab4c5b/180fcd86-2c10-4707-81fd-495738c087b4.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic smartphone UGC photo, soft window light, Sara's bright bathroom. the SAME woman as the first reference image (Sara: Colombian, about 28, warm tan skin, shoulder-length straight black hair with short bangs, small gold hoop earrings), wearing a sage-green button-up blouse, holds the GEODA deodorant stick (cap off) up near her face toward the camera with a warm confident closed-mouth smile. Medium close-up, her face in the middle of the frame, plain light wall above her head. The GEODA deodorant stick is exactly like the product references (white tube, clear cap, translucent white alum crystal on top) and its label (Desodorante, GEODA, 100% NATURAL, EFECTIVO Y SEGURO, 24h) faces the camera, upright and sharp. Her lips are closed. No text, no watermark.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2188a-dc99-700c-ad49-dbe9ab40a074/356a3de2-4be9-48c8-948c-09612e0db09a.png",
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/00cb1085-fa0c-4a03-a446-05649f4e916e.jpeg",
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/6f52cc8c-3f5d-49ad-a82f-8974d41b2c71.jpeg"
+   ]
+  }
+ },
+ "s_b3a": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2188b-fd9b-7b66-b853-9dca5f3581a7/02f7f4a3-4aa9-4f12-9e33-944123015a63.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic smartphone close-up photo at a white bathroom sink with a chrome faucet running a thin stream of water. A woman's hands with a thin gold ring hold the GEODA deodorant stick (cap off) and wet ONLY the tip of the translucent alum crystal under the stream. Only hands visible, no face. The GEODA deodorant stick is exactly like the product references (white tube, clear cap, translucent white alum crystal on top) and its label (Desodorante, GEODA, 100% NATURAL, EFECTIVO Y SEGURO, 24h) faces the camera, upright and sharp. Her lips are closed. No text, no watermark.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2188a-dc99-700c-ad49-dbe9ab40a074/356a3de2-4be9-48c8-948c-09612e0db09a.png",
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/00cb1085-fa0c-4a03-a446-05649f4e916e.jpeg",
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/6f52cc8c-3f5d-49ad-a82f-8974d41b2c71.jpeg"
+   ]
+  }
+ },
+ "s_b3b": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2188b-feda-7260-a571-c105f5adb30f/a9dbd55c-ddc2-49d0-a77c-c286b5c0c0dc.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic smartphone UGC photo in a bright bathroom. the SAME woman as the first reference image (Sara: Colombian, about 28, warm tan skin, shoulder-length straight black hair with short bangs, small gold hoop earrings), wearing a white sleeveless tank top, raises one arm and glides the GEODA deodorant stick (cap off, crystal wet and glistening) over the clean skin under her arm, no foam, no white residue, relaxed closed-mouth smile. Medium shot, her head in the middle of the frame. The GEODA deodorant stick is exactly like the product references (white tube, clear cap, translucent white alum crystal on top) and its label (Desodorante, GEODA, 100% NATURAL, EFECTIVO Y SEGURO, 24h) faces the camera, upright and sharp. Her lips are closed. No text, no watermark.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2188a-dc99-700c-ad49-dbe9ab40a074/356a3de2-4be9-48c8-948c-09612e0db09a.png",
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/00cb1085-fa0c-4a03-a446-05649f4e916e.jpeg",
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/6f52cc8c-3f5d-49ad-a82f-8974d41b2c71.jpeg"
+   ]
+  }
+ },
+ "s_b4": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2188c-001b-7a45-903d-6ba20b879498/1680af96-8aed-4a53-9b39-15397c5d3093.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic smartphone UGC photo in the evening, warm lamp light, the entrance of her modest Medellin apartment. the SAME woman as the first reference image (Sara: Colombian, about 28, warm tan skin, shoulder-length straight black hair with short bangs, small gold hoop earrings), wearing the same sage-green button-up blouse, has just come home from work: she hangs her tote bag on a hook by the door, relaxed and happy, closed-mouth smile. Medium shot, her head in the middle of the frame. The GEODA stick does not appear. No text, no watermark.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2188a-dc99-700c-ad49-dbe9ab40a074/356a3de2-4be9-48c8-948c-09612e0db09a.png",
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/00cb1085-fa0c-4a03-a446-05649f4e916e.jpeg",
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/6f52cc8c-3f5d-49ad-a82f-8974d41b2c71.jpeg"
+   ]
+  }
+ },
+ "k_s_ha": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2188d-fefc-72ac-a390-d2cf8959bcb9/12ed4299-7484-4bf4-99ec-d68482f2723b.mp4"
+  ],
+  "body": {
+   "prompt": "She looks at the stone with a skeptical raised eyebrow, shrugs her shoulders, then her expression changes to a convinced closed-mouth smile and she nods at the camera. The GEODA stick keeps exactly the same shape and label and does not rotate. Her lips stay closed the whole time, nobody speaks. Static camera on a tripod: no zoom, no camera movement, the plain wall at the top of the frame stays empty. Realistic smartphone UGC video.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2188b-f61d-7a65-8d75-245543a5295a/506a8f32-3536-457c-8e38-5515e0ee39da.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "k_s_hb": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2188e-0062-7a32-9985-824ffd80df54/6d9c06f3-0ac3-4ed5-8be8-31235af15fe9.mp4"
+  ],
+  "body": {
+   "prompt": "In the background her sister laughs harder covering her mouth with her hand, shoulders shaking. Sara turns her head toward her sister with a playful annoyed look, then looks back at the camera and rolls her eyes with a closed-mouth smile. The GEODA stick keeps exactly the same shape and label and does not rotate. Her lips stay closed the whole time, nobody speaks. Static camera on a tripod: no zoom, no camera movement, the plain wall at the top of the frame stays empty. Realistic smartphone UGC video.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2188b-f762-78e4-b904-14c9af3107e7/1245d5d6-28bf-42f7-800b-8821ec3a2a2e.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "k_s_hc": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2188e-01c7-7c4e-aa64-2ff2338904fe/ca71d170-87f8-4da3-bb22-fad0d16dffc5.mp4"
+  ],
+  "body": {
+   "prompt": "She quickly finishes buttoning her cuff, picks up the GEODA stick from the dresser and holds it up toward the camera with a confident closed-mouth smile, bright fresh morning energy. The GEODA stick keeps exactly the same shape and label and does not rotate. Her lips stay closed the whole time, nobody speaks. Static camera on a tripod: no zoom, no camera movement, the plain wall at the top of the frame stays empty. Realistic smartphone UGC video.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2188b-f8a3-7c10-ac86-29e8ba976277/df2efb3c-2763-48b2-b95e-241bfd7415e6.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "k_s_hd": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2188e-0307-7565-a69b-1f6f4daa02e4/66f3e1fe-09bd-408d-8947-63c1e65ba2d1.mp4"
+  ],
+  "body": {
+   "prompt": "The grandmother places the GEODA stick in Sara's hands and gently pats her hand; Sara looks at her grandmother with a warm closed-mouth smile and nods. The GEODA stick keeps exactly the same shape and label and does not rotate. Her lips stay closed the whole time, nobody speaks. Static camera on a tripod: no zoom, no camera movement, the plain wall at the top of the frame stays empty. Realistic smartphone UGC video.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2188b-f9f1-7e16-81b8-f003a552b375/ab3ab3a8-2306-4048-9060-25630f9a7856.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "k_s_b1": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2188e-0449-7a25-be68-b6ab4cb19153/1e785456-c18f-48a3-ae2a-77af7d1b48c8.mp4"
+  ],
+  "body": {
+   "prompt": "She slowly lowers her raised arm, presses it tight against her side and glances around the office, uncomfortable and self-conscious. The GEODA stick keeps exactly the same shape and label and does not rotate. Her lips stay closed the whole time, nobody speaks. Static camera on a tripod: no zoom, no camera movement, the plain wall at the top of the frame stays empty. Realistic smartphone UGC video.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2188b-fb3b-75dd-80ab-e50f6101448f/3e7276db-3f90-48cd-ac3f-e3c8519a2d15.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "k_s_b2": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2188e-05b5-7eb9-b048-06bbc9d45463/81782f7b-7086-449d-8ffd-c99a0aa49153.mp4"
+  ],
+  "body": {
+   "prompt": "She gently presents the GEODA stick toward the camera and gives a small confident nod with a closed-mouth smile. The GEODA stick keeps exactly the same shape and label and does not rotate. Her lips stay closed the whole time, nobody speaks. Static camera on a tripod: no zoom, no camera movement, the plain wall at the top of the frame stays empty. Realistic smartphone UGC video.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2188b-fc5d-7b31-8f7a-d1ac58ab4c5b/180fcd86-2c10-4707-81fd-495738c087b4.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "k_s_b3b": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2188e-06f9-72d3-9561-3507cc668fc0/ff114740-050e-4e5c-a944-230818f8623f.mp4"
+  ],
+  "body": {
+   "prompt": "She glides the wet crystal slowly up and down twice under her arm, smooth motion, no foam, no white residue, then lowers her arm with a relaxed closed-mouth smile. The GEODA stick keeps exactly the same shape and label and does not rotate. Her lips stay closed the whole time, nobody speaks. Static camera on a tripod: no zoom, no camera movement, the plain wall at the top of the frame stays empty. Realistic smartphone UGC video.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2188b-feda-7260-a571-c105f5adb30f/a9dbd55c-ddc2-49d0-a77c-c286b5c0c0dc.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "k_s_b4": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2188e-0837-7c17-9402-e8fde1a34746/1d2c6ecb-2850-4c11-b3c7-7e54e7f0e358.mp4"
+  ],
+  "body": {
+   "prompt": "She hangs the tote bag on the hook, exhales relaxed, rolls her shoulders and smiles calmly at the camera. Her lips stay closed the whole time, nobody speaks. Static camera on a tripod: no zoom, no camera movement, the plain wall at the top of the frame stays empty. Realistic smartphone UGC video.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2188c-001b-7a45-903d-6ba20b879498/1680af96-8aed-4a53-9b39-15397c5d3093.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "kit": [
+  "kit/personajes/sara/sara_ref.png (Sara)",
+  "kit/broll/k_grifo_m_0.mp4 (B3a mojar)",
+  "hf/k_a9_b1_0.mp4 (reloj, inserto en B1; del A1-09)",
+  "a107/tmp/mg_b11.mp4 (frascos tachados, cierre K7; del A1-07)",
+  "kit/producto/endcard_bano_anim.mp4 (cierres)"
+ ],
+ "notas": "s_b3a descartada (objeto raro bajo el grifo; se usa kit k_grifo_m). Tramos con labios cerrados: B1 0-3,1 s, B4 3,3-4,9 s; B3b 0,1-3,07 s (sin rastro blanco).",
+ "costo_usd": {
+  "imagenes_ref_0.043+9x0.083": 0.79,
+  "kling_8x5s": 2.86,
+  "total": 3.65
+ }
+}
