@@ -27,6 +27,9 @@ la misma voz al mismo tiempo; dentro de un video, cada personaje conserva su voz
 Formato faceless / motion graphics: referencia `geoda/videos/GEO-MOFU-A1-07/` (`mg.py`: escenas animadas en Python con el
 recorte real del producto, fondo que siempre se mueve, SFX sintetizados; costo US$0).
 
+## Videos extra modelados de referencias (HECHOS)
+| ✓ | GEO-MOFU-A3-08 | Podcast 'ranking de desodorantes' (modelado de un reel que pasó Camilo) | 44-49 s | K5 contraentrega / K2 Navidad |
+
 ## BOFU extra del A1 (HECHOS, 26-nov; regla 46)
 | ✓ | ID | Formato | Duración | CTA principal / alterno |
 |---|---|---|---|---|

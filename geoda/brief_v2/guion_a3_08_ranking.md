@@ -29,3 +29,5 @@ garantía 14 días, contraentrega, envío gratis). Sin precios. Sin "24 h", "sin
 | B12 | Y si en catorce días no te funciona, te devuelven la plata. | GEODA · 10/10 |
 | CTA K5 (HA/HB) | Si ves el botón aquí abajo, pídela hoy: la pagas cuando te llegue y el envío es gratis. | Producto real + Comprar |
 | CTA K2 (HC/HD) | Si ves el botón aquí abajo, aprovecha: paga dos, lleva tres, y regala GEODA esta Navidad. | Producto real + moño + Comprar |
+
+Estado (27-nov): HECHO (4 versiones) → `videos/GEO-MOFU-A3-08`. Entrega: `La piedra de verdad, no un frasco GEO MOFU-A3-08-Hook X-Podcast.mp4`.

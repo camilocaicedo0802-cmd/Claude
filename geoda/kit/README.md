@@ -16,6 +16,7 @@ URLs ya subidas a Higgsfield (sirven de referencia en `image_urls` / `image_url`
 - Producto (referencias para imágenes): https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/00cb1085-fa0c-4a03-a446-05649f4e916e.jpeg
   y https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/6f52cc8c-3f5d-49ad-a82f-8974d41b2c71.jpeg
 - Foto real en la mano (para Kling i2v): https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/1c52a010-d162-47d5-a2bd-c265749b0eee.jpeg
+- Presentadora del ranking (set de podcast del A3-08, `personajes/ranking/set_presentadora.png`): https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21eb1-baec-7254-b429-acb8f7df712a/54201935-085c-4411-bcd3-3743833ec73b.png
 - Natalia (comparación del A2-06, `personajes/natalia/natalia_ref.png`): https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2197d-6593-7efd-9919-83a8bd175bd3/5a61d4db-80e1-43f1-b3e2-b61b2df09866.png
 - Mariana (diario del A2-05, `personajes/mariana/mariana_ref.png`): https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a218ff-ce06-7df6-a875-b39c9fcd486e/c0b84464-425a-40c8-81dc-ae3d8a86fbd9.png
 - Sara (avatar del A1-10, `personajes/sara/sara_ref.png`): https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2188a-dc99-700c-ad49-dbe9ab40a074/356a3de2-4be9-48c8-948c-09612e0db09a.png

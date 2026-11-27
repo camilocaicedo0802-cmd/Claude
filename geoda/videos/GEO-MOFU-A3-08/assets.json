@@ -1,0 +1,106 @@
+{
+ "r_set": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21eb1-baec-7254-b429-acb8f7df712a/54201935-085c-4411-bcd3-3743833ec73b.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic photo, a still from a real video podcast recorded in Bogotá. Cozy podcast studio with a warm terracotta-colored wall, a big monstera plant and warm soft lighting, no logos, no text, no neon signs. A Colombian woman around 34, shoulder-length wavy black hair, small silver hoop earrings, natural makeup, wearing an olive-green blazer over a white top and light blue jeans, sits on a beige linen couch with her legs crossed, facing the camera, a black podcast microphone on a boom arm in front of her slightly to the side so her mouth is fully visible, warm confident closed-mouth smile. On a small round wooden side table next to the couch, at the right edge of the frame, stands one GEODA deodorant stick exactly like the product references, its label (Desodorante, GEODA, 100% NATURAL, EFECTIVO Y SEGURO, 24h) facing the camera. Medium-wide shot. FRAMING: the upper 28% of the frame is the plain terracotta wall with nothing in it; her head is just above the middle of the frame, never near the top edge. Her lips are closed. No text.",
+   "image_urls": [
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/00cb1085-fa0c-4a03-a446-05649f4e916e.jpeg",
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/6f52cc8c-3f5d-49ad-a82f-8974d41b2c71.jpeg"
+   ]
+  }
+ },
+ "r_barra": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21eb2-a415-7c9a-859f-ede09baffa2b/9a46f14f-1ae7-4cfd-af6a-367d4e69aee0.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Square-ish vertical 9:16 realistic product photo on a pure white seamless background, soft even studio light: a plain generic white solid stick deodorant (twist-up stick with a light grey cap) with NO brand, NO logo, NO text and NO label at all, standing upright in the center, filling about half of the frame height. Nothing else in the frame. No text, no watermark."
+  }
+ },
+ "r_rollon": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21eb2-a580-7876-9844-10ee31906ed7/65298279-0d55-4ed7-878d-0edd1cfd37de.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Square-ish vertical 9:16 realistic product photo on a pure white seamless background, soft even studio light: a plain generic roll-on deodorant bottle (white plastic bottle with a white cap, a rolling ball visible under a clear dome) with NO brand, NO logo, NO text and NO label at all, standing upright in the center, filling about half of the frame height. Nothing else in the frame. No text, no watermark."
+  }
+ },
+ "wr_t1": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21eb2-a015-79a6-8e60-d76a92b2b2f3/e28aa667-39be-428a-8b65-2dc2f9f444c0.mp4"
+  ],
+  "body": {
+   "prompt": "Realistic video podcast recording in a warm cozy studio, static camera on a tripod, natural room sound, no music, no subtitles, no on-screen text. Spanish monologue to the camera with a natural Colombian Bogotá accent, lips perfectly synced with every syllable, lips closed during the short pauses. The woman has a warm, confident, expressive mid-pitched voice, like a relaxed podcast host giving her honest opinion. She speaks directly to the camera with natural hand gestures, keeps sitting on the couch, the microphone stays in front of her slightly to the side so her mouth is always visible. The small GEODA stick on the side table keeps exactly the same shape and label and does not move. Short natural pauses between sentences. In order: 1) She raises her eyebrows, tilts her head and asks: «¿Desodorante en aerosol con perfume?» 2) She makes a so-so face and says firmly: «Cuatro de diez.» 3) Explaining with her hands: «Huele rico al principio, pero a mí el perfume solo me tapaba el olor, y a media tarde volvía.» 4) She shrugs: «Y el frasco se me acababa en semanas.» 5) She tilts her head the other way and asks: «¿Desodorante en barra? Cinco de diez.» 6) She brushes her sleeve with her hand: «Es práctico, pero a mí me dejaba rayas blancas en la ropa negra.» 7) She raises one finger: «¿Roll-on? Seis de diez.» 8) She waves her hand, a bit impatient: «Funciona, pero me quedaba húmedo y tardaba en secar. Y en la mañana, con afán, no.»",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21eb1-baec-7254-b429-acb8f7df712a/54201935-085c-4411-bcd3-3743833ec73b.png",
+   "duration": 30,
+   "resolution": "720p",
+   "generate_audio": true
+  }
+ },
+ "wr_t2": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21eb2-a15b-7575-bc95-8220c1cb569a/88050f7a-c0e8-4892-8d70-60b95917f838.mp4"
+  ],
+  "body": {
+   "prompt": "Realistic video podcast recording in a warm cozy studio, static camera on a tripod, natural room sound, no music, no subtitles, no on-screen text. Spanish monologue to the camera with a natural Colombian Bogotá accent, lips perfectly synced with every syllable, lips closed during the short pauses. The woman has a warm, confident, expressive mid-pitched voice, like a relaxed podcast host giving her honest opinion. She speaks directly to the camera with natural hand gestures, keeps sitting on the couch, the microphone stays in front of her slightly to the side so her mouth is always visible. The small GEODA stick on the side table keeps exactly the same shape and label and does not move. Short natural pauses between sentences. In order: 1) Her face lights up with a big smile, she points to the side table and says: «¿Piedra de alumbre GEODA? Diez de diez.» 2) Explaining calmly with her hands: «Es una piedra mineral sin perfume: ataca la bacteria que causa el olor, no lo tapa.» 3) She mimes wetting something with her fingers: «Se moja la piedra, no la axila, y no me mancha la ropa.» 4) She raises one finger: «Y una sola piedra te dura un año.» 5) She nods confidently: «Y si en catorce días no te funciona, te devuelven la plata.» 6) She points down toward the bottom of the screen and smiles: «Si ves el botón aquí abajo, pídela hoy: la pagas cuando te llegue y el envío es gratis.»",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21eb1-baec-7254-b429-acb8f7df712a/54201935-085c-4411-bcd3-3743833ec73b.png",
+   "duration": 30,
+   "resolution": "720p",
+   "generate_audio": true
+  }
+ },
+ "wr_t3": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21eb2-a29d-764a-8974-f2a31860c9fa/32c5ac13-6071-4f9f-bf00-256bdd786e06.mp4"
+  ],
+  "body": {
+   "prompt": "Realistic video podcast recording in a warm cozy studio, static camera on a tripod, natural room sound, no music, no subtitles, no on-screen text. Spanish monologue to the camera with a natural Colombian Bogotá accent, lips perfectly synced with every syllable, lips closed during the short pauses. The woman has a warm, confident, expressive mid-pitched voice, like a relaxed podcast host giving her honest opinion. She speaks directly to the camera with natural hand gestures, keeps sitting on the couch, the microphone stays in front of her slightly to the side so her mouth is always visible. The small GEODA stick on the side table keeps exactly the same shape and label and does not move. Short natural pauses between sentences. In order: 1) She leans slightly toward the camera with a playful look and says: «Le puse nota a todos los desodorantes que he usado. Solo uno sacó diez.» 2) She counts on her fingers: «Desodorantes, del peor al mejor. El último te va a sorprender.» 3) Honest and direct: «Probé de todo para el olor de las axilas. Esta es mi nota sincera.» 4) She points down toward the bottom of the screen with a warm smile: «Si ves el botón aquí abajo, aprovecha: paga dos, lleva tres, y regala GEODA esta Navidad.»",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21eb1-baec-7254-b429-acb8f7df712a/54201935-085c-4411-bcd3-3743833ec73b.png",
+   "duration": 24,
+   "resolution": "720p",
+   "generate_audio": true
+  }
+ },
+ "c_b1": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2197d-5f74-7ba0-8557-e5f7977a17ed/97ec3014-aeb3-4489-ab58-e7afaafcf34b.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic product photo on a clean seamless light-grey studio table, hard, harsh direct light with strong dark shadows: a plain generic white aerosol deodorant can with NO brand, NO logo and NO text on it standing alone in the center of the frame, slightly below the middle. Plain background, nothing else. No text, no watermark."
+  }
+ },
+ "kit": [
+  "kit/personajes/ranking/set_presentadora.png (set + presentadora)",
+  "hf/c_b1_0.png (aerosol genérico del A2-06, tarjeta)",
+  "kit/producto/producto_cut.png + mono_rojo.png (tarjeta GEODA real)"
+ ],
+ "referencia": "Reel de Facebook que pasó Camilo (formato ranking X/10 de un suplemento); solo se modeló el formato, no se usa material suyo.",
+ "tomas": {
+  "wr_t1": "B1-B7 (aerosol, barra, roll-on)",
+  "wr_t2": "B8-B12 + cierre K5 (tono x0,93)",
+  "wr_t3": "hooks B/C/D + cierre K2 (tono x1,057)"
+ },
+ "costo_usd": {
+  "imagenes_3": 0.16,
+  "wan30_84s_720p": 6.3,
+  "total": 6.46
+ }
+}
