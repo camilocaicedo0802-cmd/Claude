@@ -149,6 +149,21 @@ El montador (`pipeline/builder.py`) ya trae estas reglas por defecto.
     CTA principal, HC/HD con hooks nuevos y CTA alterno). Variar el formato entre ellos (ej. demo, UGC, motion graphics) y
     escribir los guiones en `brief_v2/guiones_bofu_extra.md` antes de producir.
 
+47. **Voces naturales, nunca robóticas** (Camilo, 27-nov, A3-08). Toda voz debe sonar a persona real: acentuación, énfasis,
+    preguntas que suben, pausas de suspenso, titubeos ("mmm"), risitas y emoción cuando toca. Cómo:
+    - Gemini TTS **gemini-3.8-flash-tts** (no la versión lite) con un perfil de director que describe a la persona y pide
+      expresividad concreta; puntuación expresiva en el guion ("Mmm...", "¿sí?", "¡Diez de diez!"); todas las frases del
+      personaje en UNA sola toma.
+    - Prohibido cambiar el tono (rubberband) o acelerar la voz para cuadrar duración: se corrigen las pausas largas con
+      cortes y, si sobra tiempo, se recorta guion. Las voces nativas de WAN 3.0 (generadas con el video) sonaron robóticas: no usarlas.
+    - Para que la persona hable a cámara: la voz de TTS se sube como audio y se manda a **alibaba/wan-3.0/reference-to-video**
+      (`image_urls` = imagen del set, `audio_urls` = la voz, duración entera = largo del audio rellenado con silencio, nunca
+      más larga: si sobra tiempo el modelo inventa o repite palabras). Se usa el audio DEL PROPIO CLIP (voz y labios salen
+      juntos) y se verifica cada frase transcribiéndola sola; lo repetido o inventado se corta.
+48. **Imágenes superpuestas sin fondo y lejos de la cara** (Camilo, 27-nov). Productos y objetos que se superponen al video van
+    recortados (sin fondo blanco ni tarjeta), con sombra suave, y nunca sobre la cara de quien habla, tampoco en los
+    acercamientos (zona libre: abajo a la izquierda / abajo a la derecha, por encima de la zona segura inferior).
+
 ## Entrega
 34. Carpeta `GEODA_60/TOFU|MOFU|BOFU/A1…` con las versiones vigentes, `CTA_alternos/` para los re-exports de CTA y un
     `LEEME.txt`; se envía también como .zip.

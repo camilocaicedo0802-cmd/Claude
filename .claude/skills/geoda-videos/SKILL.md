@@ -114,6 +114,13 @@ Salidas pesadas (clips, mp4) en la carpeta de trabajo `G` (`cat ~/.geoda_work`):
 sin CTA en el nombre (cada versión tiene su propio hook). Corrección de algo ya entregado: ` v2`, ` v3`… al final. Se monta con el nombre técnico de siempre y al entregar se
 copia con `python3 geoda/pipeline/tools/nombre_entrega.py --copiar <carpeta_mp4> <GEODA_60/ETAPA/A#>` (ángulos en `LOTES.md`).
 
+## 2b2. Voz y personas que hablan (reglas 45, 47 y 48)
+- Voz: Gemini TTS gemini-3.8-flash-tts (no lite), perfil de director con expresividad concreta, una toma por personaje;
+  sin cambiar tono ni acelerar. Nada de voces nativas de WAN 3.0 (suenan robóticas).
+- Hablar a cámara: voz de TTS → alibaba/wan-3.0/reference-to-video (image_urls + audio_urls, duración entera = audio
+  rellenado con silencio); usar el audio del propio clip y verificar cada frase. Ejemplo: `videos/GEO-MOFU-A3-08` (v3).
+- Productos superpuestos recortados (sin fondo blanco) y nunca sobre la cara, ni en acercamientos.
+
 ## 2c. BOFU extra
 Si un ángulo tiene pocos BOFU, Camilo pide BOFU extra (regla 46): numeración siguiente del ángulo, guion HOOK → PROBLEMA →
 PRODUCTO → SOLUCIÓN → CTA (18-24 s), 4 versiones (HC/HD con hooks nuevos y CTA alterno), formatos distintos entre sí.
