@@ -64,6 +64,7 @@ function input(partial: Partial<FinanceInput>): FinanceInput {
       horizonDays: 30,
       includeConfirmedIncome: false,
       reserveSavingsGoals: true,
+      reserveEssentials: true,
       weekStartsOn: 1,
     },
     accounts: [],
@@ -314,5 +315,27 @@ describe("recomendación de ahorro (20 % de lo libre)", () => {
     expect(custom.savings.suggested).toBe(M(100_000));
     const off = computeSpendCapacity(input({ accounts: [bank], settings: { ...input({}).settings, savingsShare: 0 } }));
     expect(off.savings.suggested).toBe(0);
+  });
+});
+
+describe("gastos esenciales estimados (apagados por defecto)", () => {
+  const history = Array.from({ length: 20 }, (_, i) =>
+    tx({ kind: "expense", amount: M(30_000), date: `2026-10-${String(12 + i).padStart(2, "0")}`, accountId: "bank", categoryId: cat("food") }),
+  );
+  const bank = account("bank", "bank", 3_000_000, { openingDate: "2026-10-01" });
+
+  it("reserves nothing for essentials unless the user turns it on", () => {
+    const settings = { ...input({}).settings, reserveEssentials: undefined };
+    const r = computeSpendCapacity(input({ accounts: [bank], transactions: history, obligations: [obligation("rent", 400_000, "2026-11-20")], settings }));
+    expect(r.essentials).toMatchObject({ total: 0, lines: [], method: "off" });
+    expect(r.free).toBe(r.startingBalance - M(400_000));
+    expect(r.summary).not.toMatch(/esenciales/);
+    expect(r.missing.join(" ")).not.toMatch(/esenciales/);
+    expect(r.notes.join(" ")).not.toMatch(/esenciales/);
+
+    const on = computeSpendCapacity(input({ accounts: [bank], transactions: history, obligations: [obligation("rent", 400_000, "2026-11-20")] }));
+    expect(on.essentials.method).toBe("history");
+    expect(on.essentials.total).toBeGreaterThan(0);
+    expect(on.free).toBe(r.free - on.essentials.total);
   });
 });

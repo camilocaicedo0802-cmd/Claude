@@ -192,6 +192,13 @@ export function SettingsPage() {
           <Field label={`Ahorro sugerido: ${s.savingsShare ?? DEFAULT_SAVINGS_SHARE} % de lo libre en cada período`} htmlFor="st-savings" hint="Se recomienda en «¿Cuánto puedo gastar?». Lo que ya pasaste a una cuenta de ahorro o a una meta desde tu último ingreso cuenta. 0 % lo oculta.">
             <input id="st-savings" type="range" min={0} max={50} step={5} defaultValue={s.savingsShare ?? DEFAULT_SAVINGS_SHARE} onPointerUp={(e) => save({ savingsShare: Number((e.target as HTMLInputElement).value) })} onKeyUp={(e) => save({ savingsShare: Number((e.target as HTMLInputElement).value) })} className="w-full max-w-sm accent-[var(--brand)]" />
           </Field>
+          <SwitchRow
+            id="st-essentials"
+            label="Reservar gastos esenciales estimados"
+            description="Apagado: no se estima nada para alimentación, transporte y similares; tú decides qué reservar (por ejemplo, como obligaciones). Encendido: se apartan según tus presupuestos o tu historial."
+            checked={s.reserveEssentials === true}
+            onCheckedChange={(v) => save({ reserveEssentials: v })}
+          />
           <SwitchRow id="st-confirmed" label="Contar ingresos confirmados dentro del período" description="Apagado por defecto: lo más prudente es no gastar dinero que aún no llega." checked={s.includeConfirmedIncome} onCheckedChange={(v) => save({ includeConfirmedIncome: v })} />
           <SwitchRow id="st-goals" label="Reservar aportes a metas de ahorro" description="Aparta lo que deberías ahorrar al mes para llegar a tus metas con fecha." checked={s.reserveSavingsGoals} onCheckedChange={(v) => save({ reserveSavingsGoals: v })} />
         </div>

@@ -69,7 +69,7 @@ export function BudgetsPage() {
           <EmptyState
             icon={<Target />}
             title="Aún no tienes presupuestos"
-            description="Ej.: Alimentación $600.000, Transporte $250.000, Ocio $200.000. Los presupuestos de gastos esenciales también mejoran el cálculo de «¿Cuánto puedo gastar?»."
+            description={`Ej.: Alimentación $600.000, Transporte $250.000, Ocio $200.000.${data.settings.reserveEssentials ? " Los presupuestos de gastos esenciales también mejoran el cálculo de «¿Cuánto puedo gastar?»." : ""}`}
             action={
               <Button onClick={() => openForm({ kind: "budget" })}>
                 <Plus /> Crear el primero

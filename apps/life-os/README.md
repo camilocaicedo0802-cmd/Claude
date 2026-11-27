@@ -106,7 +106,7 @@ Cada cliente tiene **¿Cómo te paga?**: **Por trabajo**, **Mensual**, **Quincen
 
 ## Reglas clave
 
-- **¿Cuánto puedo gastar?** parte del dinero disponible para gastar y resta obligaciones hasta el horizonte (incluidas las vencidas), gastos esenciales estimados (presupuestos o historial), colchón de seguridad y reservas para metas. Muestra **Disponible hoy**, **Esta semana** y **Para ocio**, con el cálculo completo visible. Nunca suma dinero de clientes ni ingresos futuros (salvo que actives contar ingresos confirmados). Sin cuentas, explica qué falta en lugar de inventar una cifra.
+- **¿Cuánto puedo gastar?** parte del dinero disponible para gastar y resta obligaciones hasta el horizonte (incluidas las vencidas), colchón de seguridad y reservas para metas. La estimación de gastos esenciales (por presupuestos o historial) está **apagada por defecto** y se enciende en Ajustes › Cálculo. Muestra **Disponible hoy**, **Esta semana** y **Para ocio**, con el cálculo completo visible. Nunca suma dinero de clientes ni ingresos futuros (salvo que actives contar ingresos confirmados). Sin cuentas, explica qué falta en lugar de inventar una cifra.
 - El horizonte por defecto va **hasta el día antes del próximo ingreso confirmado** (o fin de mes si no hay uno).
 - **Recomendación de ahorro**: sugiere apartar el **20 %** de lo libre en el período (configurable en Ajustes, 0 % la oculta), con un botón que abre la transferencia a tu cuenta de ahorro ya llena. Lo que pasas a una cuenta de ahorro o a una meta desde tu último ingreso cuenta como apartado, así que no vuelve a pedirte ahorrar sobre lo que ya guardaste; un pago de tarjeta no cuenta como ahorro.
 - Pagar una tarjeta desde una obligación es una **transferencia**, para no contar dos veces las compras.
@@ -125,7 +125,7 @@ Cada cliente tiene **¿Cómo te paga?**: **Por trabajo**, **Mensual**, **Quincen
 
 ## Pruebas
 
-`npm run test:life-os` ejecuta 73 pruebas sobre IndexedDB simulada (fake-indexeddb), incluidos los escenarios de aceptación: financiero, clientes, agenda, hábitos, transferencias, tarjetas, cobros vinculados, recurrencias (incluida la quincena), sueldos de clientes, recomendación de ahorro, tracker, planificador, migraciones y respaldo.
+`npm run test:life-os` ejecuta 74 pruebas sobre IndexedDB simulada (fake-indexeddb), incluidos los escenarios de aceptación: financiero, clientes, agenda, hábitos, transferencias, tarjetas, cobros vinculados, recurrencias (incluida la quincena), sueldos de clientes, recomendación de ahorro, tracker, planificador, migraciones y respaldo.
 
 ## Estructura
 

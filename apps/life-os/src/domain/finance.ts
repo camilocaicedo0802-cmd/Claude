@@ -395,6 +395,7 @@ export interface FinanceInput {
     | "safetyReserve"
     | "leisureShare"
     | "savingsShare"
+    | "reserveEssentials"
     | "horizonMode"
     | "horizonDays"
     | "includeConfirmedIncome"
@@ -436,7 +437,8 @@ export interface SpendCapacity {
   /** Money the engine starts from (spendable accounts). */
   startingBalance: Minor;
   obligations: { total: Minor; items: Occurrence<Obligation>[]; overdue: Minor };
-  essentials: { total: Minor; lines: EssentialLine[]; method: "budget" | "history" | "mixed" | "none"; historyDays: number };
+  /** `off`: the user does not want essentials estimated (Ajustes); nothing is reserved for them. */
+  essentials: { total: Minor; lines: EssentialLine[]; method: "budget" | "history" | "mixed" | "none" | "off"; historyDays: number };
   reserves: { safety: Minor; goalsSetAside: Minor; goalsPlanned: Minor; total: Minor };
   /** Sum of everything reserved: saldo comprometido. */
   committed: Minor;
@@ -524,7 +526,8 @@ export function computeSpendCapacity(input: FinanceInput): SpendCapacity {
   const obligationsTotal = sumMinor(obligationItems.map((o) => o.remaining));
   const overdueTotal = sumMinor(obligationItems.filter((o) => o.status === "overdue").map((o) => o.remaining));
 
-  // 2. Essential spending not already represented by obligations.
+  // 2. Essential spending not already represented by obligations (only when the user turns it on).
+  const reserveEssentials = settings.reserveEssentials === true;
   const obligationCategories = new Set(input.obligations.filter((o) => o.active && o.categoryId).map((o) => o.categoryId!));
   const monthFrom = startOfMonth(today);
   const spentThisMonth = expensesByCategory(transactions, monthFrom, today);
@@ -547,7 +550,7 @@ export function computeSpendCapacity(input: FinanceInput): SpendCapacity {
   const lines: EssentialLine[] = [];
   let usedBudget = false;
   let usedHistory = false;
-  for (const c of essentialCats) {
+  for (const c of reserveEssentials ? essentialCats : []) {
     const budget = budgetByCat.get(c.id);
     if (budget !== undefined) {
       const amount = budgetNeedInRange(budget, spentThisMonth.get(c.id) ?? 0, today, end);
@@ -563,7 +566,7 @@ export function computeSpendCapacity(input: FinanceInput): SpendCapacity {
     }
   }
   const essentialsTotal = sumMinor(lines.map((l) => l.amount));
-  const essentialsMethod = usedBudget && usedHistory ? "mixed" : usedBudget ? "budget" : usedHistory ? "history" : "none";
+  const essentialsMethod = !reserveEssentials ? "off" : usedBudget && usedHistory ? "mixed" : usedBudget ? "budget" : usedHistory ? "history" : "none";
   if (essentialsMethod === "none") {
     missing.push(
       historyDays < 7
