@@ -103,11 +103,13 @@ def cfg_for(meta, cta):
         'HC': r('HC', subs=False, text=('Desodorantes: del peor', 'al mejor 👇')),
         'HD': r('HD', subs=False, text=('Mi nota sincera a', 'cada desodorante')),
     }
-    for h in hooks.values(): h.pop('key')
+    for h in hooks.values():
+        h.pop('key')
+        h['hook_slots'] = [B.SAFE_TOP + 4 + B.hook_block(*h['text']).height // 2]   # v2 (Camilo): título pegado arriba (borde superior de la zona segura)
     body = [r(f'B{i}', sub_y=520) for i in range(1, 13)] + [r('B13', sub_y=520)]
     ctad = (dict(row='B13', delay=0.3, l1='PÍDELA HOY', l2='La pagas cuando te llegue', pill='Envío gratis a toda Colombia 🚚') if cta == 'K5'
             else dict(row='B13', delay=0.3, l1='REGALA GEODA EN NAVIDAD', l2='Paga 2 lleva 3'))
-    return dict(id='GEO_MOFU_A3_08', fmt='PODCAST' if cta == 'K5' else 'PODCAST_K2', version=1, tmp=T, out_dir=A, vo_dir=T,
+    return dict(id='GEO_MOFU_A3_08', fmt='PODCAST' if cta == 'K5' else 'PODCAST_K2', version=2, tmp=T, out_dir=A, vo_dir=T,
                 min_face=50, hook_text_until=3.0 * SPEED, speed=SPEED, ai_label=False, cut_sfx=True, cut_sfx_vol=0.08,
                 music=f'{AU}/music_805.mp3', music_vol=0.05, hooks=hooks, body=body, cta=ctad)
 

@@ -23,3 +23,8 @@
 - Costo: 3 imágenes (US$0,16) + 84 s de WAN 3.0 720p (US$6,30) = US$6,46.
 
 Montaje: `python3 build.py` (tomas en assets.json → G/hf/wr_t*_0.mp4).
+
+## v2 (Camilo: el título en la parte de arriba)
+- El título del hook (2 líneas, 243-279 px de alto) no cabía en la primera posición y el montador lo bajaba a y≈285-555.
+  Ahora cada hook lleva `hook_slots` calculado para que el bloque arranque justo en el borde superior de la zona segura
+  (y = 254). Nada más cambia.
