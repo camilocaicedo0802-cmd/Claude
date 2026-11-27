@@ -99,8 +99,152 @@
   "wr_t3": "hooks B/C/D + cierre K2 (tono x1,057)"
  },
  "costo_usd": {
-  "imagenes_3": 0.16,
-  "wan30_84s_720p": 6.3,
-  "total": 6.46
- }
+  "v1": 6.46,
+  "v3_imagen_aerosol": 0.04,
+  "v3_pruebas_labios_4x5s_y_minimax": 1.89,
+  "v3_wan30_ref_80s": 6.0,
+  "v3_total": 7.93,
+  "total_A3_08": 14.39
+ },
+ "r_aerosol": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21f27-b1c0-72fa-8e0a-9e7eecb4edb6/f412b683-8e9b-48cd-b25e-31e6d2e5a3f3.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic product photo on a pure white seamless background, soft even studio light, no shadow: a plain generic white aerosol deodorant spray can with a white cap, with NO brand, NO logo, NO text and NO label at all, standing upright in the center, filling about half of the frame height. Nothing else in the frame. No text, no watermark."
+  }
+ },
+ "v_a": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21f2a-e8ee-7d16-b8d8-9e1689bba8e3/50b94457-f686-47b5-97f2-b5e4f8e90b9e.mp4"
+  ],
+  "body": {
+   "prompt": "Realistic video podcast recording in a warm cozy studio, static camera on a tripod, the same framing as the reference image. The woman on the couch speaks to the camera, saying exactly the words of the provided audio, her lips perfectly synced with every syllable, lips closed during the pauses, natural expressive face, small natural head movements and blinks, like a real podcast host giving her honest opinion. She keeps sitting; the microphone stays in front of her slightly to the side so her mouth is always visible. The GEODA stick on the side table does not move. No text, no subtitles. For the first question she tilts her head with a doubtful face, hums 'mmm', then gives a so-so hand wave for the low score; then explains with relaxed hand gestures and shrugs at the end.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21eb1-baec-7254-b429-acb8f7df712a/54201935-085c-4411-bcd3-3743833ec73b.png"
+   ],
+   "audio_urls": [
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/495ef41f-2ca2-429b-9e23-9f552c5017a9.wav"
+   ],
+   "duration": 13,
+   "resolution": "720p"
+  }
+ },
+ "v_b": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21f2a-ea37-7137-946a-83c86741458c/900b9ae2-395f-4a82-9d2d-01719e848f83.mp4"
+  ],
+  "body": {
+   "prompt": "Realistic video podcast recording in a warm cozy studio, static camera on a tripod, the same framing as the reference image. The woman on the couch speaks to the camera, saying exactly the words of the provided audio, her lips perfectly synced with every syllable, lips closed during the pauses, natural expressive face, small natural head movements and blinks, like a real podcast host giving her honest opinion. She keeps sitting; the microphone stays in front of her slightly to the side so her mouth is always visible. The GEODA stick on the side table does not move. No text, no subtitles. She raises her eyebrows asking the question, gives a so-so gesture for the score, then brushes her sleeve with her hand while explaining; then raises one finger for the next question.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21eb1-baec-7254-b429-acb8f7df712a/54201935-085c-4411-bcd3-3743833ec73b.png"
+   ],
+   "audio_urls": [
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/80edd16b-def9-4cec-9747-6733e6eb5080.wav"
+   ],
+   "duration": 9,
+   "resolution": "720p"
+  }
+ },
+ "v_c": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21f2a-eb6d-7c88-bad6-5471141e1ede/748d4d21-32e4-482c-9e93-1ab88168fdc0.mp4"
+  ],
+  "body": {
+   "prompt": "Realistic video podcast recording in a warm cozy studio, static camera on a tripod, the same framing as the reference image. The woman on the couch speaks to the camera, saying exactly the words of the provided audio, her lips perfectly synced with every syllable, lips closed during the pauses, natural expressive face, small natural head movements and blinks, like a real podcast host giving her honest opinion. She keeps sitting; the microphone stays in front of her slightly to the side so her mouth is always visible. The GEODA stick on the side table does not move. No text, no subtitles. She explains with an impatient little hand wave and shakes her head at the end; then her face lights up with a big excited smile and she points toward the side table for the ten out of ten.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21eb1-baec-7254-b429-acb8f7df712a/54201935-085c-4411-bcd3-3743833ec73b.png"
+   ],
+   "audio_urls": [
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/a6cf7dbe-a634-4509-b7e4-8e61b953ca72.wav"
+   ],
+   "duration": 9,
+   "resolution": "720p"
+  }
+ },
+ "v_d": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21f2a-ecaa-7e9e-b0b4-42acf3e3208c/021c8954-85a2-4a26-8470-2691dc2362fd.mp4"
+  ],
+  "body": {
+   "prompt": "Realistic video podcast recording in a warm cozy studio, static camera on a tripod, the same framing as the reference image. The woman on the couch speaks to the camera, saying exactly the words of the provided audio, her lips perfectly synced with every syllable, lips closed during the pauses, natural expressive face, small natural head movements and blinks, like a real podcast host giving her honest opinion. She keeps sitting; the microphone stays in front of her slightly to the side so her mouth is always visible. The GEODA stick on the side table does not move. No text, no subtitles. Calm and convinced, explaining with open hands, mimes wetting something with her fingers, then raises one finger for 'un año'.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21eb1-baec-7254-b429-acb8f7df712a/54201935-085c-4411-bcd3-3743833ec73b.png"
+   ],
+   "audio_urls": [
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/b506f440-a345-4e59-81d7-bf73317c1927.wav"
+   ],
+   "duration": 12,
+   "resolution": "720p"
+  }
+ },
+ "v_e": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21f2a-edbd-7b11-b5c1-9ffbd639818c/a42c9c91-491a-4207-b0aa-86306e96b508.mp4"
+  ],
+  "body": {
+   "prompt": "Realistic video podcast recording in a warm cozy studio, static camera on a tripod, the same framing as the reference image. The woman on the couch speaks to the camera, saying exactly the words of the provided audio, her lips perfectly synced with every syllable, lips closed during the pauses, natural expressive face, small natural head movements and blinks, like a real podcast host giving her honest opinion. She keeps sitting; the microphone stays in front of her slightly to the side so her mouth is always visible. The GEODA stick on the side table does not move. No text, no subtitles. She nods confidently, then points down toward the bottom of the screen with a warm smile.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21eb1-baec-7254-b429-acb8f7df712a/54201935-085c-4411-bcd3-3743833ec73b.png"
+   ],
+   "audio_urls": [
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/1fb0da8c-692c-4a70-b3f4-e90b3071a848.wav"
+   ],
+   "duration": 8,
+   "resolution": "720p"
+  }
+ },
+ "v_f": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21f2a-eee7-7d07-a59b-20feed8de993/9c40acd1-11d1-4b32-986f-4e4a9cfcef25.mp4"
+  ],
+  "body": {
+   "prompt": "Realistic video podcast recording in a warm cozy studio, static camera on a tripod, the same framing as the reference image. The woman on the couch speaks to the camera, saying exactly the words of the provided audio, her lips perfectly synced with every syllable, lips closed during the pauses, natural expressive face, small natural head movements and blinks, like a real podcast host giving her honest opinion. She keeps sitting; the microphone stays in front of her slightly to the side so her mouth is always visible. The GEODA stick on the side table does not move. No text, no subtitles. She points down toward the bottom of the screen with a warm smile and counts two and three on her fingers.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21eb1-baec-7254-b429-acb8f7df712a/54201935-085c-4411-bcd3-3743833ec73b.png"
+   ],
+   "audio_urls": [
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/a04d83c3-39ab-4bf5-b557-1a1d9cd155e5.wav"
+   ],
+   "duration": 8,
+   "resolution": "720p"
+  }
+ },
+ "v_g": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21f2a-f01b-715d-a07c-c2ce2d5bc660/e90739f6-8dec-4b2b-a47c-ed8909c8c0cd.mp4"
+  ],
+  "body": {
+   "prompt": "Realistic video podcast recording in a warm cozy studio, static camera on a tripod, the same framing as the reference image. The woman on the couch speaks to the camera, saying exactly the words of the provided audio, her lips perfectly synced with every syllable, lips closed during the pauses, natural expressive face, small natural head movements and blinks, like a real podcast host giving her honest opinion. She keeps sitting; the microphone stays in front of her slightly to the side so her mouth is always visible. The GEODA stick on the side table does not move. No text, no subtitles. She leans slightly toward the camera with a playful look, holds up one finger for 'solo uno'; then counts on her fingers with a mischievous smile.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21eb1-baec-7254-b429-acb8f7df712a/54201935-085c-4411-bcd3-3743833ec73b.png"
+   ],
+   "audio_urls": [
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/39d80ef6-a9f4-409f-9aee-0d7275deb9bd.wav"
+   ],
+   "duration": 11,
+   "resolution": "720p"
+  }
+ },
+ "v_h2": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21f36-9b96-733a-8a37-77f17819f961/bff303c1-b5b7-4894-a2c8-a119be14db08.mp4"
+  ],
+  "body": {
+   "prompt": "Realistic video podcast recording in a warm cozy studio, static camera on a tripod, the same framing as the reference image. The woman on the couch speaks to the camera, saying exactly the words of the provided audio, her lips perfectly synced with every syllable, lips closed during the pauses, natural expressive face, small natural head movements and blinks, like a real podcast host giving her honest opinion. She keeps sitting; the microphone stays in front of her slightly to the side so her mouth is always visible. The GEODA stick on the side table does not move. No text, no subtitles. She says the sentences only once, never repeats words; after the last sentence she stays silent with a calm closed-mouth smile. Honest and direct, with a hand on her chest.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a21eb1-baec-7254-b429-acb8f7df712a/54201935-085c-4411-bcd3-3743833ec73b.png"
+   ],
+   "audio_urls": [
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/5c947b27-0e05-4f09-b975-6292b038d546.wav"
+   ],
+   "duration": 5,
+   "resolution": "720p"
+  }
+ },
+ "notas_v3": "Voz: vo/carolina.wav (Gemini 3.8 flash TTS, Sulafat, una toma). Labios: alibaba/wan-3.0/reference-to-video con image_urls=[set] y audio_urls=[clip de voz]. v_h descartado (repetía \"de las axilas\"; rehecho como v_h2 con el audio rellenado a 5 s). Pruebas de sincronía: wan 2.7 audio_url (bien pero menos expresivo), WAN 3.0 referencia (elegido), MiniMax H3 (cambia el audio, descartado)."
 }

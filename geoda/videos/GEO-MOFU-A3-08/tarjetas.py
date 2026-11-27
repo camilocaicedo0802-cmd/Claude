@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""A3-08 · tarjetas del ranking sobre las tomas de la presentadora (como el reel de referencia):
+"""A3-08 · tarjetas del ranking (v2: producto recortado SIN fondo blanco, abajo y lejos de la cara) sobre las tomas de la presentadora (como el reel de referencia):
 producto en tarjeta blanca abajo a la izquierda + nota 'X/10' a la derecha (GEODA: recorte REAL y 10/10 en verde con destellos).
 En el cierre la nota se cambia por el botón 'Comprar' y una mano 👇 que señala hacia abajo ("si ves el botón aquí abajo").
 uso (desde build): componer(toma.mp4, salida.mp4, eventos) con eventos = [(t0, t1, producto, nota|'cta'|'cta_regalo'), ...]"""
@@ -11,32 +11,30 @@ sys.path.insert(0, f'{G}/a102'); sys.path.insert(0, G)
 from build_a102 import render_runs, FONT_BLACK, NAVY, TEAL, YEL, WHITE
 KIT = f'{G}/kit' if os.path.isdir(f'{G}/kit') else '/home/user/Claude/geoda/kit'
 W, H, FPS = 1080, 1920, 30
-CX0, CY0, CW = 70, 930, 300            # tarjeta del producto (x, y, lado)
-BX, BY = 815, 1060                     # centro de la nota
+CX0, CY0, CW = 70, 930, 300            # (v1) zona de la tarjeta
+PX, PBOT, PH = 165, 1240, 360          # v2: producto recortado, centro x, base y alto (abajo a la izquierda, lejos de la cara)
+BX, BY = 812, 1150                     # centro de la nota (abajo a la derecha)
 GREEN = (24, 160, 90)
 
 def _photo(name):
     if name == 'geoda':
         return Image.open(f'{KIT}/producto/producto_cut.png').convert('RGBA')
-    src = {'aerosol': f'{G}/hf/c_b1_0.png', 'barra': f'{G}/hf/r_barra_0.png', 'rollon': f'{G}/hf/r_rollon_0.png'}[name]
-    im = Image.open(src).convert('RGB')
-    if name == 'aerosol':   # recorte del aerosol genérico (A2-06) centrado
-        w, h = im.size; im = im.crop((int(w * 0.28), int(h * 0.22), int(w * 0.72), int(h * 0.80)))
-    else:
-        w, h = im.size; im = im.crop((int(w * 0.12), int(h * 0.18), int(w * 0.88), int(h * 0.86)))
-    return im.convert('RGBA')
+    return Image.open(f'{G}/a308/cut/{name}.png').convert('RGBA')   # recortes sin fondo (aerosol, barra, roll-on genéricos)
 
 def card(name, bow=False):
-    S = 2; c = Image.new('RGBA', ((CW + 40) * S, (CW + 40) * S), (0, 0, 0, 0)); d = ImageDraw.Draw(c)
-    d.rounded_rectangle([20 * S, 28 * S, (CW + 20) * S, (CW + 28) * S], 34 * S, fill=(0, 0, 0, 70))
-    c = c.filter(ImageFilter.GaussianBlur(10)); d = ImageDraw.Draw(c)
-    d.rounded_rectangle([20 * S, 20 * S, (CW + 20) * S, (CW + 20) * S], 34 * S, fill=(255, 255, 255, 255))
-    p = _photo(name); box = (CW - 36) * S; p.thumbnail((box, box), Image.LANCZOS)
-    c.alpha_composite(p, (20 * S + (CW * S - p.width) // 2, 20 * S + (CW * S - p.height) // 2))
+    """v2 (Camilo): sin fondo blanco. Recorte del producto + sombra suave en el piso + moño opcional."""
+    p = _photo(name); h = PH if name != 'geoda' else int(PH * 0.86)
+    p = p.resize((int(p.width * h / p.height), h), Image.LANCZOS)
+    W2, H2 = p.width + 120, p.height + 90
+    c = Image.new('RGBA', (W2, H2), (0, 0, 0, 0))
+    sh = Image.new('RGBA', (W2, H2), (0, 0, 0, 0)); ImageDraw.Draw(sh).ellipse([30, p.height + 30, W2 - 30, p.height + 70], fill=(0, 0, 0, 110))
+    c.alpha_composite(sh.filter(ImageFilter.GaussianBlur(12)))
+    glow = Image.new('RGBA', (W2, H2), (0, 0, 0, 0)); glow.paste((0, 0, 0, 90), (60, 48), p.getchannel('A')); c.alpha_composite(glow.filter(ImageFilter.GaussianBlur(14)))
+    c.alpha_composite(p, (60, 40))
     if bow:
-        b = Image.open(f'{KIT}/producto/mono_rojo.png').convert('RGBA'); b = b.resize((150 * S, int(150 * S * b.height / b.width)), Image.LANCZOS)
-        c.alpha_composite(b, ((CW - 120) * S, 0))
-    return c.resize((c.width // S, c.height // S), Image.LANCZOS)
+        b = Image.open(f'{KIT}/producto/mono_rojo.png').convert('RGBA'); b = b.resize((130, int(130 * b.height / b.width)), Image.LANCZOS)
+        c.alpha_composite(b, (60 + p.width - 95, 30))
+    return c
 
 def badge(nota):
     hi = nota.startswith('10'); S = 2; w, h = 236, 124
@@ -83,13 +81,13 @@ def componer(src, out, eventos):
             u = (t - t0) / 0.28; sc_in = (back(u) if u < 1 else 1.0) if pop else 1.0
             sc_out = min(1.0, (t1 - t) / 0.15)
             cd = get(('c', prod, nota == 'cta_regalo'), lambda: card(prod, bow=(nota == 'cta_regalo')))
-            paste(im, cd, CX0 + CW / 2 + 20, CY0 + CW / 2 + 20, min(sc_in, sc_out) * (1 + 0.015 * math.sin(t * 3)))
+            paste(im, cd, PX, PBOT - cd.height / 2 + 45, min(sc_in, sc_out) * (1 + 0.015 * math.sin(t * 3)))
             if nota.startswith('cta'):
                 v = (t - t0 - 0.2) / 0.3
                 if v > 0:
                     sc = (back(v) if v < 1 else 1.0) * (1 + 0.035 * math.sin(t * 6)) * sc_out
-                    paste(im, get('btn', button), BX - 40, BY - 10, sc)
-                    bob = 14 * abs(math.sin(t * 5)); paste(im, HAND, BX - 40, BY + 105 + bob, sc_out)
+                    paste(im, get('btn', button), BX - 20, BY - 40, sc)
+                    bob = 12 * abs(math.sin(t * 5)); paste(im, HAND, BX - 20, BY + 55 + bob, sc_out)
             else:
                 v = (t - tb) / 0.28
                 if v > 0:
@@ -110,8 +108,8 @@ if __name__ == '__main__':   # prueba visual sobre la imagen del set
     T = f'{G}/a308/tmp'; os.makedirs(T, exist_ok=True)
     base = Image.open(f'{G}/hf/r_set_0.png').convert('RGBA').resize((W, H))
     for i, (p, n) in enumerate([('aerosol', '4/10'), ('barra', '5/10'), ('rollon', '6/10'), ('geoda', '10/10')]):
-        im = base.copy(); paste(im, card(p), CX0 + CW / 2 + 20, CY0 + CW / 2 + 20); paste(im, badge(n), BX, BY); im.convert('RGB').resize((360, 640)).save(f'{T}/prev_{i}.png')
-    im = base.copy(); paste(im, card('geoda', True), CX0 + CW / 2 + 20, CY0 + CW / 2 + 20); paste(im, button(), BX - 40, BY - 10); paste(im, HAND, BX - 40, BY + 105)
+        im = base.copy(); cd = card(p); paste(im, cd, PX, PBOT - cd.height / 2 + 45); paste(im, badge(n), BX, BY); im.convert('RGB').resize((360, 640)).save(f'{T}/prev_{i}.png')
+    im = base.copy(); cd = card('geoda', True); paste(im, cd, PX, PBOT - cd.height / 2 + 45); paste(im, button(), BX - 20, BY - 40); paste(im, HAND, BX - 20, BY + 55)
     im.convert('RGB').resize((360, 640)).save(f'{T}/prev_4.png')
     c = Image.new('RGB', (360 * 5, 640))
     for i in range(5): c.paste(Image.open(f'{T}/prev_{i}.png'), (i * 360, 0))

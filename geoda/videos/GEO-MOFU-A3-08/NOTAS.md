@@ -28,3 +28,18 @@ Montaje: `python3 build.py` (tomas en assets.json → G/hf/wr_t*_0.mp4).
 - El título del hook (2 líneas, 243-279 px de alto) no cabía en la primera posición y el montador lo bajaba a y≈285-555.
   Ahora cada hook lleva `hook_slots` calculado para que el bloque arranque justo en el borde superior de la zona segura
   (y = 254). Nada más cambia.
+
+## v3 (Camilo: productos sin fondo blanco y lejos de la cara; voces naturales, no robóticas)
+- Voz nueva: Gemini TTS gemini-3.8-flash-tts (versión completa), voz Sulafat, una sola toma con perfil de presentadora real
+  (énfasis, suspenso antes de cada nota, "mmm...", preguntas que suben, emoción en el 10/10). Sin cambiar tono ni velocidad
+  (la v1/v2 usaba voces nativas de WAN 3.0 en 3 tomas, igualadas con rubberband y a 1,2x: por eso sonaba robótica).
+- Labios: la voz se manda como audio a WAN 3.0 reference-to-video (8 clips de 5-13 s con la imagen del set). Se probó antes
+  con una frase: WAN 2.7 con audio (sincroniza, menos expresivo), WAN 3.0 por referencia (elegido: conserva la voz y gesticula
+  natural) y MiniMax H3 (cambia el audio: descartado). Cada frase usa el audio de su propio clip y se verificó transcribiéndola.
+  Donde el modelo repitió palabras se usó el tramo limpio (clip A) o se rehizo el clip con el audio rellenado a la duración
+  exacta (clip H): si el video pide más tiempo que el audio, el modelo inventa o repite palabras.
+- Productos: recortes sin fondo (aerosol, barra y roll-on genéricos en `recortes/`; GEODA con el recorte real del kit), con
+  sombra suave, abajo a la izquierda; la nota abajo a la derecha; nada toca la cara, tampoco en los acercamientos.
+- Sin acelerar: 41,4 / 46,3 / 48,9 / 48,6 s. -14 LUFS.
+- Costo v3: 1 imagen (US$0,04) + pruebas de sincronía (US$1,89, incluye un trabajo de prueba enviado por error al explorar la
+  API) + 80 s de WAN 3.0 por referencia (US$6,00) = US$7,93. Total A3-08: US$14,39.
