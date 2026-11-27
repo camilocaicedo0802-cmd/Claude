@@ -42,12 +42,16 @@ export function SpendCapacityCard({ className }: { className?: string }) {
   const rows: Array<{ label: string; value: number; tone?: "minus" | "plus" | "total"; hint?: string }> = [
     { label: "Dinero disponible para gastar", value: c.startingBalance, hint: c.balances.protectedSavings ? `No incluye ${money(c.balances.protectedSavings)} en ahorros apartados.` : undefined },
     { label: "Obligaciones por pagar", value: -c.obligations.total, tone: "minus", hint: c.obligations.items.length ? `${c.obligations.items.length} pago(s) ${horizonLabel}${c.obligations.overdue ? `, incluye ${money(c.obligations.overdue)} vencido` : ""}.` : undefined },
-    {
-      label: "Gastos esenciales estimados",
-      value: -c.essentials.total,
-      tone: "minus",
-      hint: c.essentials.lines.length ? c.essentials.lines.map((l) => `${l.name} ${money(l.amount)}${l.method === "history" ? " (historial)" : ""}`).join(" · ") : undefined,
-    },
+    ...(c.essentials.method === "off"
+      ? []
+      : [
+          {
+            label: "Gastos esenciales estimados",
+            value: -c.essentials.total,
+            tone: "minus" as const,
+            hint: c.essentials.lines.length ? c.essentials.lines.map((l) => `${l.name} ${money(l.amount)}${l.method === "history" ? " (historial)" : ""}`).join(" · ") : undefined,
+          },
+        ]),
     ...(c.reserves.safety ? [{ label: "Colchón de seguridad", value: -c.reserves.safety, tone: "minus" as const }] : []),
     ...(c.reserves.goalsSetAside ? [{ label: "Dinero apartado para metas", value: -c.reserves.goalsSetAside, tone: "minus" as const }] : []),
     ...(c.reserves.goalsPlanned ? [{ label: "Aportes planificados a metas", value: -c.reserves.goalsPlanned, tone: "minus" as const }] : []),
@@ -78,7 +82,7 @@ export function SpendCapacityCard({ className }: { className?: string }) {
           <p className="mt-2 text-xs text-muted-foreground">
             {c.todaySpentDiscretionary > 0
               ? `Ya gastaste ${money(c.todaySpentDiscretionary)} en no esenciales hoy · ritmo ${money(c.dailyAllowance)}/día`
-              : `Para gastos no esenciales · ritmo ${money(c.dailyAllowance)}/día`}
+              : `${c.essentials.method === "off" ? "Para tus gastos del día" : "Para gastos no esenciales"} · ritmo ${money(c.dailyAllowance)}/día`}
           </p>
         </div>
         <div className="sm:px-5">

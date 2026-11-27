@@ -58,6 +58,7 @@ export function defaultSettings(): Settings {
     safetyReserve: 0,
     leisureShare: 30,
     savingsShare: DEFAULT_SAVINGS_SHARE,
+    reserveEssentials: false,
     horizonMode: "nextIncome",
     horizonDays: 30,
     includeConfirmedIncome: false,

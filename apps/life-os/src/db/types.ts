@@ -37,6 +37,11 @@ export interface Settings {
   safetyReserve: Minor;
   /** Share of the free margin suggested for leisure when no leisure budget exists. */
   leisureShare: number;
+  /**
+   * Reserve estimated essential spending (food, transport…) from budgets or history. Off unless the
+   * user turns it on (missing = off): the user plans essentials their own way, e.g. as obligations.
+   */
+  reserveEssentials?: boolean;
   /** Share of what is free this pay period suggested for savings (default 20). Missing in older data. */
   savingsShare?: number;
   horizonMode: HorizonMode;

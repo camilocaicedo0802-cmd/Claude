@@ -177,7 +177,11 @@ export function AnalysisPage() {
       <Card>
         <CardHeader
           title="Proyección de flujo de caja"
-          description="Saldo disponible día a día restando pagos programados y gastos esenciales estimados."
+          description={
+            capacity.essentials.method === "off"
+              ? "Saldo disponible día a día restando pagos programados."
+              : "Saldo disponible día a día restando pagos programados y gastos esenciales estimados."
+          }
           action={
             <Segmented
               size="sm"
@@ -202,8 +206,8 @@ export function AnalysisPage() {
                 <p className={cn("mt-3 px-2 text-[13px]", minPoint.conservative < 0 ? "text-expense" : "text-muted-foreground")}>
                   {minPoint.conservative < 0
                     ? `Sin contar ingresos, tu saldo quedaría negativo hacia el ${formatDateLong(minPoint.date)} (${money(minPoint.conservative)}).`
-                    : `Punto más bajo sin contar ingresos: ${money(minPoint.conservative)} el ${formatDateLong(minPoint.date)}.`}{" "}
-                  Esencial estimado: {money(essentialsDaily)}/día.
+                    : `Punto más bajo sin contar ingresos: ${money(minPoint.conservative)} el ${formatDateLong(minPoint.date)}.`}
+                  {essentialsDaily > 0 && ` Esencial estimado: ${money(essentialsDaily)}/día.`}
                 </p>
               )}
             </>

@@ -130,7 +130,7 @@ export function FinanceOverview() {
         <MetricCard
           label="Proyección fin de mes"
           value={<Money amount={c.monthEnd.projected} className={c.monthEnd.projected < 0 ? "text-expense" : ""} />}
-          hint="Estimado: saldo − pagos − esenciales + confirmados"
+          hint={c.essentials.method === "off" ? "Estimado: saldo − pagos + confirmados" : "Estimado: saldo − pagos − esenciales + confirmados"}
           icon={<Target />}
           tone="brand"
           href="/finanzas/analisis/"
