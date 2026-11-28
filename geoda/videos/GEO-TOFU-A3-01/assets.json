@@ -90,5 +90,18 @@
   "imagenes_3": 0.16,
   "kling_3x5s": 1.07,
   "total": 1.23
+ },
+ "k_macro_orig": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a20e1f-f218-7cff-81d2-245bd273442b/0b0b4dda-3ee9-45fe-b761-9279fff937ea.mp4"
+  ],
+  "body": {
+   "prompt": "Macro shot. The tap water stream keeps hitting the white mineral stone on top of the GEODA stick; droplets splash and fly toward the camera in slow motion, sparkling in the daylight. The hand slowly turns the stick a little under the stream, then the camera gently pushes in on the wet glistening stone. Shallow depth of field. The product shape, colors and label stay exactly the same.",
+   "image_url": "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/e0369d18-bd93-4322-ab8b-7b67deed0e49.png",
+   "duration": 6,
+   "sound": "off",
+   "cfg_scale": 0.5
+  },
+  "nota": "clip original de Kling del A1-02 (sin label_fix); en G/hf se guarda como k_macro_orig_0.mp4"
  }
 }

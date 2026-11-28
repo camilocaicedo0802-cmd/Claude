@@ -74,7 +74,7 @@ def build_shots(cfg):
            [B.shot(T, f's31_b7anio_{d["B7"]:.2f}', MG_ANIO, d['B7'], speed=0.88, z0=1.0, z1=1.04) + ([(10, 800, 1000, 1560)],)])
     return {
         'HA': [B.shot(T, f's31_ha_{d["HA"]:.2f}', k('k_a3_ha'), d['HA'], speed=0.68, z0=1.0, z1=1.06) + ([(100, 620, 1080, 1560)],)],
-        'HB': [B.shot(T, f's31_hb_{d["HB"]:.2f}', k('k_macro'), d['HB'], ss=0.3, speed=0.95, z0=1.0, z1=1.06) + ([(250, 900, 820, 1700)],)],
+        'HB': [B.shot(T, f's31_hb2_{d["HB"]:.2f}', k('k_macro_orig'), d['HB'], ss=0.3, speed=0.95, z0=1.0, z1=1.06) + ([(250, 900, 820, 1700)],)],   # v2 (Camilo): etiqueta original del clip, sin la sobrepuesta
         'HC': [B.shot(T, f's31_hc_{d["HC"]:.2f}', k('k_a3_hc'), d['HC'], speed=0.6, z0=1.0, z1=1.05) + ([(130, 760, 560, 1300), (500, 760, 900, 1150)],)],
         'HD': [B.shot(T, f's31_hd_{d["HD"]:.2f}', k('k_a3_hd'), d['HD'], ss=0.5, z0=1.0, z1=1.05) + ([(0, 560, 1080, 840)],)],
         'B1': [B.shot(T, f's31_b1_{d["B1"]:.2f}', k('k_a3_ha'), d['B1'], ss=2.3, z0=1.04, z1=1.1) + ([(100, 400, 1080, 1560)],)],
@@ -89,7 +89,8 @@ def build_shots(cfg):
     }
 
 if __name__ == '__main__':
-    plan = {'HA': sin(base, 'B1'), 'HB': base, 'HC': k2, 'HD': k2}
+    hb = copy.deepcopy(base); hb['version'] = 2   # v2: etiqueta original en el hook B
+    plan = {'HA': sin(base, 'B1'), 'HB': hb, 'HC': k2, 'HD': k2}
     for hk in sys.argv[1:] or list(plan):
         cfg = plan[hk]; print(hk, 'dur %.1f' % (cfg['hooks'][hk]['dur'] + sum(r['dur'] for r in cfg['body'])))
         B.build(cfg, hk, build_shots(cfg))

@@ -18,3 +18,8 @@
 - QA: movimiento ≥ 3 en todos los planos (se dio más zoom a frasco, nubes y revelación); -14 LUFS; textos fuera de la piedra y la etiqueta.
 
 Montaje: `python3 build.py` y normalizar audio a -14 LUFS (loudnorm 2 pasadas, video copiado).
+
+## HB v2 (Camilo: quitar la etiqueta sobrepuesta y dejar la original)
+- El clip del grifo (k_macro del A1-02) traía pegada encima la etiqueta real con `label_fix` y se veía doble y torcida.
+  Se volvió a descargar el clip original de Kling (`k_macro_orig_0.mp4`, misma URL de Higgsfield) y el hook B usa ese.
+  Ojo: la etiqueta que dibujó Kling tiene letras pequeñas imperfectas ("Deonorente", "NATTIRAL"). Sin costo extra.
