@@ -20,7 +20,7 @@ def vd(k, extra=0.0):
     return round(B.dur_of(f'{VO}/{k}_t.wav') + 0.12 + extra, 2)
 
 base = dict(
-    id='GEO_TOFU_A3_03', fmt='DEMO', version=1, tmp=TMP, out_dir=OUT, vo_dir=VO,
+    id='GEO_TOFU_A3_03', fmt='DEMO', version=2, tmp=TMP, out_dir=OUT, vo_dir=VO,
     min_face=50, ai_label=False, hook_text_until=3.0, music=f'{AU}/music_847.mp3', music_vol=0.08,
     hooks={
         'HA': dict(vo='HA', dur=vd('HA', 0.2), subs=False, text=('¿Qué es esto?', 'Pista: va en tu axila 👇'),
@@ -53,10 +53,18 @@ def local(name, dur):
         subprocess.run([sys.executable, f'{AQUI}/mg303.py', name, f'{dur + 0.3:.2f}'], check=True)
     return out
 
+def axila():
+    out = f'{TMP}/axila_vaiven.mp4'
+    if not os.path.exists(out):
+        subprocess.run(['ffmpeg', '-v', 'error', '-y', '-ss', '0.1', '-t', '0.72', '-i', f'{HF}/k_a9_apl_0.mp4', '-filter_complex',
+                        '[0:v]split[x][y];[y]reverse[r];[x][r]concat=n=2:v=1:a=0,setpts=PTS-STARTPTS', '-an', '-c:v', 'libx264',
+                        '-crf', '14', '-pix_fmt', 'yuv420p', out], check=True)
+    return out
+
 def build_shots(cfg, hk):
     T = TMP; k = lambda n: f'{HF}/{n}_0.mp4'
     d = {r['key']: r['dur'] for r in [dict(key=h, **cfg['hooks'][h]) for h in cfg['hooks']] + cfg['body']}
-    g, dom = 1.2, 2.2
+    g, dom = 1.1, 2.2
     if cfg['fmt'].endswith('K2'):
         cta = [B.shot(T, f's33_b7nav_{d["B7"]:.2f}', XMAS, d['B7'], z0=1.0, z1=1.12, fx=0.5, fy=0.62) + ([(320, 940, 880, 1620)],)]
     else:
@@ -78,7 +86,8 @@ def build_shots(cfg, hk):
         'B3': b3,
         'B4': [B.shot(T, f's33_b4_{d["B4"]:.2f}', local('boca_abajo', 2.7), d['B4'], z0=1.0, z1=1.14) + ([(80, 560, 1000, 1480)],)],
         'B5': [B.shot(T, 's33_b5a', f'{KIT}/broll/k_grifo_m_0.mp4', g, ss=0.3, z0=1.0, z1=1.05) + ([(350, 560, 960, 1560)],),
-               B.shot(T, f's33_b5b_{d["B5"]:.2f}', f'{KIT}/broll/k_brazo_seco_flip_0.mp4', d['B5'] - g, ss=0.2, z0=1.0, z1=1.06) + ([(300, 640, 920, 1400)],)],
+               # v2 (Camilo): 'se pasa por la axila' -> GEODA pasando por la axila en plano cercano (A1-09, solo 0,1-0,82 s de ida y vuelta: desde 0,9 s Kling pinta una mancha blanca)
+               B.shot(T, f's33_b5ax2_{d["B5"]:.2f}', axila(), d['B5'] - g, z0=1.02, z1=1.1, fx=0.4, fy=0.6) + ([(330, 760, 900, 1500)],)],
         'B6': [B.shot(T, f's33_b6_{d["B6"]:.2f}', k('k_u_b3'), d['B6'], ss=0.0, z0=1.0, z1=1.06) + ([(300, 360, 820, 1260)],)],
         'B7': cta,
     }

@@ -14,3 +14,8 @@
   - HD (K2, hook nuevo): la mano cubre la piedra: "Cabe en tu mano... y te dura un año."
 - Cierres: K5 domicilio que entrega la caja (A1-09) + producto real; K2 GEODA real con moño (A2-02).
 - QA: el plano de perfume ya no muestra GEODA antes de presentarla; ningún texto sobre la piedra o la etiqueta; movimiento ≥ 2,6; -14 LUFS.
+
+## v2 (Camilo: en "se pasa por la axila" mostrar GEODA pasando por la axila en plano cercano)
+- B5 (0:13): después del agua en la punta, GEODA pasando por la axila en plano cercano (clip del A1-09). Solo el tramo
+  0,1-0,82 s, de ida y vuelta: desde 0,9 s Kling pinta una mancha blanca en la piedra (la piedra no deja residuo).
+  Ángulo A3: se permite el primer plano de la axila (la restricción es del A2). Sin costo extra.
