@@ -1,0 +1,81 @@
+{
+ "d3_cr": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a221f4-bb04-781f-8370-58667e9ec752/c951664c-fdcb-47ae-b31e-ce82a625f3a3.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 extreme macro photo of a translucent white alum crystal surface: pearly, slightly frosted crystalline texture with tiny facets catching soft light, sparkling highlights, very shallow depth of field, dark softly lit background. Only the crystal fills the center of the frame; you cannot tell what object it belongs to. No text, no logos."
+  }
+ },
+ "d3_hc": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a221f4-bc4d-7161-9258-ef27e893c541/5ad95ce9-39ca-4660-9b42-145b8036d0d5.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic close-up product photo at Christmas: the GEODA deodorant stick (cap off) stands on a wooden table with a red satin ribbon tied around it in a bow, warm bokeh lights of a Christmas tree glowing behind, a few tiny water droplets sparkling on the crystal. The GEODA deodorant stick is exactly like the product references (white tube, clear cap, translucent white alum crystal on top) and its label (Desodorante, GEODA, 100% NATURAL, EFECTIVO Y SEGURO, 24h) faces the camera, upright and sharp. Product in the lower-middle of the frame; the upper 35% of the frame is the soft blurred bokeh. No text, no watermark.",
+   "image_urls": [
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/00cb1085-fa0c-4a03-a446-05649f4e916e.jpeg",
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/6f52cc8c-3f5d-49ad-a82f-8974d41b2c71.jpeg"
+   ]
+  }
+ },
+ "k_d3_cr": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a221f9-7bfc-7506-8ce8-114de7f5ac6b/a335ad55-7159-487f-aebf-bdf57588b370.mp4"
+  ],
+  "body": {
+   "prompt": "Extreme macro: the translucent alum crystal slowly rotates a full turn in front of the camera, light glints travel across its frosted facets and sparkle; very shallow depth of field, dark soft background. Realistic macro video, no text.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a221f4-bb04-781f-8370-58667e9ec752/c951664c-fdcb-47ae-b31e-ce82a625f3a3.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "k_d3_hc": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a221f9-7d2d-75d7-929e-37b8c659f7a1/8bf74ac4-26e0-401b-997d-b27151ffba4d.mp4"
+  ],
+  "body": {
+   "prompt": "Very slow camera push-in toward the GEODA stick; the Christmas tree lights twinkle in the bokeh and a soft glint travels across the crystal; the red ribbon flutters slightly. The GEODA stick keeps exactly the same shape and label and does not rotate. Realistic product video.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a221f4-bc4d-7161-9258-ef27e893c541/5ad95ce9-39ca-4660-9b42-145b8036d0d5.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "k_d3_spray": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a221f4-c06d-7eee-983b-b19da474e070/2b0d3632-bec3-40f7-a36c-4b79c31fe4c3.mp4"
+  ],
+  "body": {
+   "prompt": "Slow motion: the nozzle of the plain unbranded white aerosol can sprays a big dense white perfume mist cloud straight toward the camera, the cloud billows and fills the frame, studio light, static camera. The can stays plain white with no text. Realistic product video.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2197d-5f74-7ba0-8557-e5f7977a17ed/97ec3014-aeb3-4489-ab58-e7afaafcf34b.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "reutilizado": [
+  "hf/c_b1_0.png (imagen del aerosol del A2-06, base del clip k_d3_spray)",
+  "hf/k_c_b3_0.mp4 (aerosol, A2-06)",
+  "kit/broll/k_tapa_0.mp4 (hook D)",
+  "kit/broll/k_grifo_m_0.mp4 y k_brazo_seco_flip_0.mp4",
+  "hf/k_u_b3_0.mp4 (GEODA en la mano, A2-08)",
+  "hf/k_a9_dom_0.mp4 (domicilio, A1-09)",
+  "kit/producto/endcard_bano_anim.mp4",
+  "a202/tmp/xmas_ec_bow.mp4 (cierre K2)"
+ ],
+ "costo_usd": {
+  "imagenes_2": 0.11,
+  "kling_3x5s": 1.07,
+  "total": 1.18
+ }
+}
