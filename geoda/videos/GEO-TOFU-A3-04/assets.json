@@ -1,0 +1,248 @@
+{
+ "p4_bolso": {
+  "endpoint": "marketing-studio/image",
+  "request_id": "01a2234b-4ea4-70a9-8501-119ab4722f49",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2234b-4ea4-70a9-8501-119ab4722f49/02460ce7-4fce-4a2d-bd20-a1ccb5213e71.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "3D animated movie still in Pixar style, warm colors, soft cinematic lighting, vertical 9:16, stylized cartoon proportions. FRAMING: the UPPER 35% of the frame is simple soft background with no characters and no faces (space for text); all characters are in the middle and lower part of the frame. Inside a woman's open handbag seen from inside: cozy pink fabric lining, soft daylight coming in from the open zipper far above. A generic cartoon roll-on deodorant bottle with NO brand, no text, no label, lies tipped over with its cap popped off, a puddle of liquid deodorant leaking out and splashing. Next to it two cute cartoon characters with big glossy expressive eyes, tiny eyebrows, NO mouths and tiny stubby arms: a red lipstick character and a smartphone character (its dark screen is its face, with big eyes), both getting splashed, wide-eyed in shock. Keys, coins and a small notebook around. No text, no logos."
+  }
+ },
+ "p4_hd": {
+  "endpoint": "marketing-studio/image",
+  "request_id": "01a2234b-4feb-7a17-af88-6e9a603851c4",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2234b-4feb-7a17-af88-6e9a603851c4/c2e2d1b2-b678-4f70-94d7-0f94b8065b74.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "3D animated movie still in Pixar style, warm colors, soft cinematic lighting, vertical 9:16, stylized cartoon proportions. FRAMING: the UPPER 35% of the frame is simple soft background with no characters and no faces (space for text); all characters are in the middle and lower part of the frame. Inside a woman's handbag turned into a tiny battlefield: a big generic cartoon roll-on deodorant bottle with NO brand, no label and no text, with big stern eyes, tiny eyebrows and NO mouth, wearing a tiny green army helmet, stands like a victorious general on top of a pile of soaked items, liquid splashing around it; below it a soaked red lipstick character and a smartphone character (big glossy eyes, NO mouths, tiny stubby arms) hide behind a wallet like a trench, holding a tiny white flag. Dramatic warm war-movie lighting, wisps of pink perfume smoke. No text, no logos."
+  }
+ },
+ "p4_hc": {
+  "endpoint": "marketing-studio/image",
+  "request_id": "01a2234b-5133-7c65-9327-be3247cb0974",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2234b-5133-7c65-9327-be3247cb0974/90d5a2db-e187-45f9-8295-f1508c54287d.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "3D animated movie still in Pixar style, warm colors, soft cinematic lighting, vertical 9:16, stylized cartoon proportions. FRAMING: the UPPER 35% of the frame is simple soft background with no characters and no faces (space for text); all characters are in the middle and lower part of the frame. VALENTINA, the same character as the reference image (cheerful Colombian young woman, warm light-brown skin, long dark brown wavy hair, big brown eyes, lips closed), now wearing a white blouse, in a bright modern office, holds her handbag in front of her chest and peeks inside it hopefully; a soft warm magical glow shines out of the handbag onto her face. Medium shot, her head is in the middle of the frame, below the empty upper third. No text, no logos.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a215c7-fd71-76d0-bd64-149b9431d299/07465973-a5af-43a9-9ffc-0a81a3c019a7.png"
+   ]
+  }
+ },
+ "p4_cel": {
+  "endpoint": "marketing-studio/image",
+  "request_id": "01a2234c-254e-7065-b1ee-2130e85d5f1b",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2234c-254e-7065-b1ee-2130e85d5f1b/facee17f-d80a-473f-b80b-332f8e980af6.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "3D animated movie still in Pixar style, warm colors, soft cinematic lighting, vertical 9:16, stylized cartoon proportions. FRAMING: the UPPER 35% of the frame is simple soft background with no characters and no faces (space for text); all characters are in the middle and lower part of the frame. Close-up inside the same pink handbag as the reference image: the same cute cartoon smartphone character (dark screen face with big glossy panicked eyes, tiny eyebrows, NO mouth, tiny stubby arms) is completely soaked, dripping with liquid deodorant, holding its tiny arms up in alarm, drops flying off it; behind it the generic white roll-on bottle (no brand, no label) lies spilled. No text, no logos.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2234b-4ea4-70a9-8501-119ab4722f49/02460ce7-4fce-4a2d-bd20-a1ccb5213e71.png"
+   ]
+  }
+ },
+ "p4_tos": {
+  "endpoint": "marketing-studio/image",
+  "request_id": "01a2234c-2692-745a-b61f-83de11f44a17",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2234c-2692-745a-b61f-83de11f44a17/901990f7-37a6-4eae-b1a3-dab2d6a91315.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "3D animated movie still in Pixar style, warm colors, soft cinematic lighting, vertical 9:16, stylized cartoon proportions. FRAMING: the UPPER 35% of the frame is simple soft background with no characters and no faces (space for text); all characters are in the middle and lower part of the frame. Inside the same pink handbag as the reference image: the same cute cartoon smartphone character (dark screen face with big eyes, NO mouth, tiny stubby arms) is surrounded by thick pink perfume clouds, eyes squeezed shut, coughing and fanning the pink clouds away with its tiny arms; the same red lipstick character next to it squeezes its eyes too. No text, no logos.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2234b-4ea4-70a9-8501-119ab4722f49/02460ce7-4fce-4a2d-bd20-a1ccb5213e71.png"
+   ]
+  }
+ },
+ "p4_rueda": {
+  "endpoint": "marketing-studio/image",
+  "request_id": "01a2234c-27d7-7a89-b723-d919eadcf387",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2234c-27d7-7a89-b723-d919eadcf387/80b08f2a-f9ab-4e11-b915-9ba61963482d.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "3D animated movie still in Pixar style, warm colors, soft cinematic lighting, vertical 9:16, stylized cartoon proportions. FRAMING: the UPPER 35% of the frame is simple soft background with no characters and no faces (space for text); all characters are in the middle and lower part of the frame. Inside the same soaked pink handbag as the first reference image, with the same red lipstick and smartphone characters (big eyes, NO mouths) dripping wet on the right. On the left GEO, the same character as the second reference image (small translucent milky-white crystal stone, dome shaped, big glossy eyes, tiny eyebrows, NO mouth, tiny stubby arms), rolls in tilted sideways, completely DRY and clean, glowing softly. The lipstick and smartphone turn to look at Geo in surprise. No text, no logos.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2234b-4ea4-70a9-8501-119ab4722f49/02460ce7-4fce-4a2d-bd20-a1ccb5213e71.png",
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a215c7-fc11-7ed5-a751-23ee7d48503e/87c851b4-2f30-4f6b-8f6e-93d7b21231ed.png"
+   ]
+  }
+ },
+ "p4_gafas": {
+  "endpoint": "marketing-studio/image",
+  "request_id": "01a2234c-2946-71a9-9b44-679b1d98a188",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2234c-2946-71a9-9b44-679b1d98a188/efd14adf-f393-4cbf-ac6c-5d2f1b1fe937.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "3D animated movie still in Pixar style, warm colors, soft cinematic lighting, vertical 9:16, stylized cartoon proportions. FRAMING: the UPPER 35% of the frame is simple soft background with no characters and no faces (space for text); all characters are in the middle and lower part of the frame. Inside the same pink handbag as the first reference image: GEO, the same character as the second reference image (small translucent milky-white crystal stone, dome shaped, big glossy eyes, tiny eyebrows, NO mouth, tiny stubby arms), wearing tiny cool black sunglasses pushed down a bit so its eyes show, stands proudly with tiny arms on its hips on a DRY clean spot, glowing softly; beside it the soaked red lipstick and smartphone characters (big eyes, NO mouths) look at Geo with admiration, dripping. No text, no logos.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2234b-4ea4-70a9-8501-119ab4722f49/02460ce7-4fce-4a2d-bd20-a1ccb5213e71.png",
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a215c7-fc11-7ed5-a751-23ee7d48503e/87c851b4-2f30-4f6b-8f6e-93d7b21231ed.png"
+   ]
+  }
+ },
+ "p4_rueda2": {
+  "endpoint": "marketing-studio/image",
+  "request_id": "01a2234f-311c-7c6b-94f7-bb379c3f0be8",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2234f-311c-7c6b-94f7-bb379c3f0be8/0a440783-91c5-4a1d-97d5-cedecd19f808.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2234c-254e-7065-b1ee-2130e85d5f1b/facee17f-d80a-473f-b80b-332f8e980af6.png",
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a215c7-fc11-7ed5-a751-23ee7d48503e/87c851b4-2f30-4f6b-8f6e-93d7b21231ed.png"
+   ],
+   "prompt": "3D animated movie still in Pixar style, warm colors, soft cinematic lighting, vertical 9:16, stylized cartoon proportions. FRAMING: the UPPER 30% of the frame is simple soft background with no characters and no faces (space for text). Inside the same soaked pink handbag as the first reference image, wide shot: the soaked smartphone character and a red lipstick character (big eyes, NO mouths) stand dripping in the lower right among the spilled liquid. On the left edge of the open zipper, GEO, the same character as the second reference image (ONE single small translucent milky-white crystal stone, dome shaped, big glossy eyes, tiny eyebrows, NO mouth, tiny stubby arms), completely DRY and clean, glowing softly, is tumbling in sideways, about to roll down into the handbag. Only one Geo in the image. No text, no logos."
+  }
+ },
+ "k_p4_bolso": {
+  "endpoint": "kling-video/v3.0/std/image-to-video",
+  "request_id": "01a2234c-2a8a-792e-b572-7e95cc0ad5b9",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2234c-2a8a-792e-b572-7e95cc0ad5b9/51f4f957-407e-4c46-8723-8d3a0e238563.mp4"
+  ],
+  "body": {
+   "prompt": "The tipped-over roll-on bottle suddenly bursts and a big splash of liquid flies toward the camera; then the lipstick character and the smartphone character jump in shock and wave their tiny arms in panic, dripping wet, the lipstick shakes its whole body desperately. The characters have no mouths. 3D Pixar-style animation, smooth expressive cartoon motion, warm cinematic lighting.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2234b-4ea4-70a9-8501-119ab4722f49/02460ce7-4fce-4a2d-bd20-a1ccb5213e71.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "k_p4_hd": {
+  "endpoint": "kling-video/v3.0/std/image-to-video",
+  "request_id": "01a2234c-2bb8-7e95-b72d-7874edf5be1b",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2234c-2bb8-7e95-b72d-7874edf5be1b/de74d90a-1078-4b6b-aa3a-18a8fbf9b367.mp4"
+  ],
+  "body": {
+   "prompt": "The bottle general raises its tiny arm triumphantly and splashes liquid all around; the lipstick and smartphone characters duck behind the wallet trench, trembling and waving the tiny white flag; pink perfume smoke drifts. The characters have no mouths. 3D Pixar-style animation, smooth expressive cartoon motion, warm cinematic lighting.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2234b-4feb-7a17-af88-6e9a603851c4/c2e2d1b2-b678-4f70-94d7-0f94b8065b74.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "k_p4_hc": {
+  "endpoint": "kling-video/v3.0/std/image-to-video",
+  "request_id": "01a2234c-2cea-7a63-9f54-4d6803633393",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2234c-2cea-7a63-9f54-4d6803633393/bc5f97c8-85c0-4a70-bf98-1ecaedb1f7f0.mp4"
+  ],
+  "body": {
+   "prompt": "She slowly opens the handbag wider and peeks inside; the warm magical glow grows and lights her face, she raises her eyebrows in delighted surprise and smiles with closed lips. She does not talk. Slow gentle camera push-in. 3D Pixar-style animation, smooth expressive cartoon motion, warm cinematic lighting.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2234b-5133-7c65-9327-be3247cb0974/90d5a2db-e187-45f9-8295-f1508c54287d.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "k_p4_cel": {
+  "endpoint": "kling-video/v3.0/std/image-to-video",
+  "request_id": "01a2234c-e306-7b04-8daf-710ee4dbe4fa",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2234c-e306-7b04-8daf-710ee4dbe4fa/6ecd1de7-ea0b-479b-804c-82744d815cc0.mp4"
+  ],
+  "body": {
+   "prompt": "The soaked smartphone character shakes and vibrates in alarm, eyes wide, waving its tiny arms frantically while drops of liquid fly off it; the spilled bottle keeps dripping. The phone has no mouth. 3D Pixar-style animation, smooth expressive cartoon motion, warm cinematic lighting.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2234c-254e-7065-b1ee-2130e85d5f1b/facee17f-d80a-473f-b80b-332f8e980af6.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "k_p4_tos": {
+  "endpoint": "kling-video/v3.0/std/image-to-video",
+  "request_id": "01a2234c-e45d-7dd7-bd8c-0202a8fbbee6",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2234c-e45d-7dd7-bd8c-0202a8fbbee6/12634355-bfbc-4413-b96a-4249e915feb1.mp4"
+  ],
+  "body": {
+   "prompt": "Thick pink perfume clouds swirl and puff around; the smartphone character coughs, its whole body jerking with each cough, fanning the pink clouds away with its tiny arms, eyes squeezed shut; the lipstick character fans the clouds too. The characters have no mouths. 3D Pixar-style animation, smooth expressive cartoon motion, warm cinematic lighting.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2234c-2692-745a-b61f-83de11f44a17/901990f7-37a6-4eae-b1a3-dab2d6a91315.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "k_p4_rueda": {
+  "endpoint": "kling-video/v3.0/std/image-to-video",
+  "request_id": "01a2234c-e5b1-7645-8a28-afb3026ccf6f",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2234c-e5b1-7645-8a28-afb3026ccf6f/0a1f48d1-c6ab-44b4-90d5-a7d00dc57c85.mp4"
+  ],
+  "body": {
+   "prompt": "Geo, the translucent crystal stone character, rolls in from the left across the fabric lining, completely dry, and stops with a little bounce, blinking its big eyes; the soaked lipstick and smartphone characters turn to look at Geo, amazed, dripping. The characters have no mouths. 3D Pixar-style animation, smooth expressive cartoon motion, warm cinematic lighting.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2234c-27d7-7a89-b723-d919eadcf387/80b08f2a-f9ab-4e11-b915-9ba61963482d.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  },
+  "nota": "descartado: Kling agregó un segundo Geo; se rehízo con p4_rueda2"
+ },
+ "k_p4_gafas": {
+  "endpoint": "kling-video/v3.0/std/image-to-video",
+  "request_id": "01a2234c-e703-78ef-b335-19e5b61d5752",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2234c-e703-78ef-b335-19e5b61d5752/78768c45-567b-4e23-ad3c-f8534f6c7e62.mp4"
+  ],
+  "body": {
+   "prompt": "Geo, the crystal stone character with tiny sunglasses, puffs up proudly with its tiny arms on its hips, bounces slightly and glows brighter, then pushes the sunglasses down with one tiny arm to wink; the soaked lipstick and smartphone characters stare in awe, dripping. The characters have no mouths. 3D Pixar-style animation, smooth expressive cartoon motion, warm cinematic lighting.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2234c-2946-71a9-9b44-679b1d98a188/efd14adf-f393-4cbf-ac6c-5d2f1b1fe937.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "k_p4_rueda2": {
+  "endpoint": "kling-video/v3.0/std/image-to-video",
+  "request_id": "01a2234f-ed3c-76c3-9250-b8839ae0776d",
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2234f-ed3c-76c3-9250-b8839ae0776d/1233de04-f35c-4717-ba20-ec3b5a7196d8.mp4"
+  ],
+  "body": {
+   "prompt": "Geo, the small translucent crystal stone character, tumbles over the zipper edge, rolls down into the handbag and lands with a soft little bounce on a dry spot at the left, completely dry and glowing, then blinks its big eyes; the soaked smartphone and lipstick characters turn their heads to look at Geo, amazed, dripping. Geo has no mouth; the characters have no mouths. No new characters appear. 3D Pixar-style animation, smooth expressive cartoon motion, warm cinematic lighting.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a2234f-311c-7c6b-94f7-bb379c3f0be8/0a440783-91c5-4a1d-97d5-cedecd19f808.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ }
+}

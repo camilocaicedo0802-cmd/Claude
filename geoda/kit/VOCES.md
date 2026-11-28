@@ -9,7 +9,7 @@ Los personajes pueden cambiar entre videos; dentro de un video cada personaje co
 | Camila, avatar UGC de oficina (M, 29, Bogotá) | Leda | UGC con el celular, sincera, como contándole un secreto a una amiga | A1-01 |
 | Presentador de calle (H) | voz nativa WAN 3.0 (toma larga) | energético, acento bogotano | A1-04 |
 | Podcast: presentador e invitada | voces nativas WAN 3.0 (mismas imágenes de `personajes/podcast/`) | conversación natural | A1-05 |
-| Geo, la piedra (Pixar) · ref. `personajes/pixar/geo_ref.png` (sin boca) | Puck | personaje animado, voz aguda, divertida y tierna | A2-02 |
+| Geo, la piedra (Pixar) · ref. `personajes/pixar/geo_ref.png` (sin boca) | Puck | personaje animado, voz aguda, divertida y tierna | A2-02, A3-04 |
 | Narrador Pixar (H) | Charon | narrador de cuento animado, cálido | A2-02 |
 | Frasco presumido (Pixar) | Fenrir | voz chillona y exagerada, vendedor de feria | A2-02 |
 | Valentina (Pixar, M 25) · ref. `personajes/pixar/valentina_ref.png` | Leda | voz interior alegre y sincera | A2-02 |
@@ -29,6 +29,9 @@ Los personajes pueden cambiar entre videos; dentro de un video cada personaje co
 | Narradora de plastilina (M) | Achernar (gemini-3.1-flash-tts-preview) | cuento cómico, deadpan | A3-02 |
 | La piedra de plastilina (sin boca) · ref. `personajes/clay_piedra/set_ref.png` | Puck (gemini-3.8-flash-tts) | aguda, pícara y orgullosa | A3-02 |
 | Daniel, narrador de demo macro (H, ~33, Bogotá) | Alnilam (gemini-3.8-flash-tts) | dato curioso, intrigante y cercano | A3-03 |
+| Narradora Pixar del bolso (M, 29) | Erinome (gemini-3.8-flash-tts) | cuento animado con humor: resignación cómica, suspenso juguetón, cálida al final | A3-04 |
+| Labial (Pixar, solo ojos) | Laomedeia (gemini-3.8-flash-tts) | dramático y teatral, grita con fastidio cómico | A3-04 |
+| Celular (Pixar, solo ojos) | Fenrir (gemini-3.8-flash-tts) | tose entre nubes de perfume, indignado y cómico | A3-04 |
 
 Cada lote tiene dos voces sugeridas en LOTES.md (una M y una H).
 Agregar aquí cada personaje nuevo (y su voz) al crearlo, para que otros videos lo repitan igual.

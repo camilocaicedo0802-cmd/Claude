@@ -1,0 +1,13 @@
+[{"id":"HA","clip":"vo_n.wav","a":0,"b":3.1,"texto":"Otra vez se regó el desodorante en el bolso."},
+{"id":"HB","clip":"vo_n.wav","a":4.75,"b":7.15,"texto":"Esto es lo que pasa dentro de tu bolso."},
+{"id":"HC","clip":"vo_n.wav","a":8.35,"b":11.0,"texto":"¿Y si tu desodorante nunca se regara?"},
+{"id":"HD","clip":"vo_n.wav","a":12.27,"b":16.0,"texto":"Dentro de tu bolso hay una guerra... y el frasco siempre gana."},
+{"id":"B1","clip":"vo_n.wav","a":17.28,"b":19.33,"texto":"Otra vez se regó el frasco en el bolso."},
+{"id":"B4","clip":"vo_n.wav","a":20.35,"b":23.05,"texto":"Hasta que llegó una vecina nueva al bolso."},
+{"id":"B6","clip":"vo_n.wav","a":24.32,"b":27.4,"texto":"En el baño de la oficina, un poquito de agua, y lista."},
+{"id":"B7","clip":"vo_n.wav","a":28.5,"b":31.35,"texto":"Un desodorante sin perfume que no se riega."},
+{"id":"K2","clip":"vo_n.wav","a":32.24,"b":39.05,"texto":"Se llama GEODA: una piedra que sí se usa todos los días. Regálala esta Navidad: paga dos, lleva tres."},
+{"id":"K3","clip":"vo_n.wav","a":39.93,"b":43.98,"texto":"Se llama GEODA. Pruébala: pídela hoy, y la pagas cuando te llegue."},
+{"id":"B2","clip":"vo_l.wav","a":0,"b":1.98,"texto":"¡Otra vez no!"},
+{"id":"B3","clip":"vo_c.wav","a":0,"b":5.97,"texto":"Cof cof. ¡Y todo huele a perfume!"},
+{"id":"B5","clip":"vo_g.wav","a":0,"b":4.15,"texto":"Soy una piedra mineral. A mí no se me riega nada."}]
