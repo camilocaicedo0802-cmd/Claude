@@ -60,7 +60,7 @@ En los próximos ángulos: si hay pocos BOFU, agregar BOFU extra igual (guiones 
 ## Lote 4
 | # | Video | Formato | Duración | CTA | Nota |
 |---|---|---|---|---|---|
-| 1 | GEO-BOFU-A2-08 | Unboxing | 21 s | Llévala hoy | Unboxing: producto real; manos sin cara. |
+| ✓ | GEO-BOFU-A2-08 (hecho) | Unboxing | 20-23 s | Llévala hoy | Unboxing: producto real; manos sin cara. |
 | 2 | GEO-TOFU-A3-01 | Comparación piedra vs frasco | 24 s | 1 piedra te dura 1 año (ahorro) | Comparación: frascos genéricos sin marca. |
 | 3 | GEO-TOFU-A3-02 | Claymation (stop-motion IA) | 27 s | Llévala hoy | Claymation: prompt base del brief (plastilina, 12 fps), ref. `pipeline/build_a103_v2.py`. |
 | 4 | GEO-TOFU-A3-03 | Demo de producto (macro) | 24 s | Paga contraentrega | Demo: producto real animado (ref. `pipeline/build_a102_v3.py`). |
