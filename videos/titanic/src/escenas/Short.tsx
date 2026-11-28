@@ -115,7 +115,7 @@ const T2: React.FC<P> = ({d, h, e, s}) => {
 				<Muneco ropa={BLAIR} pose={{...manosEn([150, 560]), mi: 'relajada', ...brazo(1, alcanzar(1, 330, 560)), md: 'agarra'}} ojos={f >= tierra ? 'grandes' : 'normal'} cejas={f >= tierra ? 'preocupado' : 'neutral'} boca={f >= tierra ? 'o' : 'sonrisa'} />
 			</Actor>
 			<Maleta x={470} y={1560} tam={170} />
-			<Sello x={330} y={560} texto="SE QUEDA EN TIERRA" desde={tierra} color="#c8202a" tam={62} rot={-8} solido />
+			<Sello x={540} y={560} texto="SE QUEDA EN TIERRA" desde={tierra} color="#c8202a" tam={54} rot={-6} solido />
 		</Toma>
 	);
 };
@@ -180,7 +180,7 @@ const Cofa: React.FC<{iceberg?: number; asombro?: number; campana?: number; hori
 			</div>
 		)}
 		<Actor x={300} y={1500} alto={900}>
-			<Muneco ropa={VIGIA} pose={asombro ? {...brazo(1, alcanzar(1, 390, 290)), md: 'senala'} : {...manosEn(undefined, [205, 118], {}, true), md: 'abierta', frenteD: 1}} ojos={asombro ? 'grandes' : 'entrecerrados'} cejas={asombro ? 'sorprendido' : 'neutral'} boca={asombro ? 'o' : 'seria'} />
+			<Muneco ropa={VIGIA} pose={asombro ? {...brazo(1, alcanzar(1, 390, 290)), md: 'senala'} : manosFrente([150, 520], [250, 520])} ojos={asombro ? 'grandes' : 'entrecerrados'} cejas={asombro ? 'sorprendido' : 'neutral'} boca={asombro ? 'o' : 'seria'} />
 		</Actor>
 		<Actor x={640} y={1500} alto={880}>
 			<Muneco ropa={VIGIA2} pose={manosFrente([150, 520], [250, 520])} ojos={asombro ? 'grandes' : 'entrecerrados'} cejas={asombro ? 'sorprendido' : 'neutral'} boca={asombro ? 'o' : 'seria'} />
@@ -325,7 +325,16 @@ const T10: React.FC<P> = ({d, h, e, s}) => (
 
 const T11: React.FC<P> = ({d, h, e, s}) => {
 	const f = useCurrentFrame();
-	return <Toma escena={<EscNocheMar horizonte={1500} luna={1 - tramo(f, d + 4, d + 18)} />} desde={d} hasta={h} entrada={e} salida={s} cam={{s: [1.1, 1.0]}} />;
+	const sin = tramo(f, d + 4, d + 18);
+	return (
+		<Toma escena={<EscNocheMar horizonte={1500} luna={1 - sin} />} desde={d} hasta={h} entrada={e} salida={s} cam={{s: [1.1, 1.0]}}>
+			{/* el hueco de la luna: un contorno punteado tachado */}
+			<svg width={1080} height={1920} style={{position: 'absolute', inset: 0, opacity: sin}}>
+				<circle cx={795} cy={355} r={95} fill="none" stroke="#c8d8ff" strokeWidth={7} strokeDasharray="22 16" />
+				<line x1={700} y1={450} x2={890} y2={260} stroke="#c8202a" strokeWidth={14} strokeLinecap="round" />
+			</svg>
+		</Toma>
+	);
 };
 
 /** mar en calma total: el barco y las estrellas se reflejan como en un espejo */

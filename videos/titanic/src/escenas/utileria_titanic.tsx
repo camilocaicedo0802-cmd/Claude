@@ -43,7 +43,7 @@ const ESTRELLAS = Array.from({length: 90}, (_, i) => ({x: (i * 397) % 1080, y: (
 export const EscNocheMar: React.FC<{luna?: number; espejo?: number; horizonte?: number}> = ({luna = 0, espejo = 1, horizonte = 1150}) => {
 	const f = useCurrentFrame();
 	return (
-		<div style={{...lleno, background: `linear-gradient(180deg, #03060f 0%, #0a1326 ${(horizonte / 1920) * 100}%, #050a16 ${(horizonte / 1920) * 100}%, #02050c 100%)`}}>
+		<div style={{...lleno, background: `linear-gradient(180deg, #071022 0%, #15284a ${(horizonte / 1920) * 100}%, #0a1530 ${(horizonte / 1920) * 100}%, #050b1c 100%)`}}>
 			<svg width={1080} height={1920} style={{position: 'absolute', inset: 0}}>
 				{ESTRELLAS.filter((e) => e.y < horizonte - 20).map((e, i) => (
 					<circle key={i} cx={e.x} cy={e.y} r={e.r} fill="#e8f0ff" opacity={0.55 + 0.45 * Math.sin(f / 9 + e.t)} />

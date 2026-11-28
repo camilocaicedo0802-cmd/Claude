@@ -2,7 +2,7 @@ import datos from '../public/voz-palabras.json';
 
 /*
  * Mezcla del short: la voz siempre manda. Efectos y música se agachan mientras habla.
- * La música (vals musette) viene cortada en el giro y en «¿Y cómo terminó?» desde musica.wav.
+ * La música (misterio marino) viene cortada desde musica.wav: silencio para el «No.» y en la pausa final.
  */
 
 const FPS = 30;
@@ -38,7 +38,7 @@ const RECORTE: Record<string, number> = {sello: 0.6, fuego: 0.6, aplausos: 0.7, 
 export const volumenFx = (archivo: string, base: number, fGlobal: number) => base * GANANCIA_FX * (RECORTE[archivo] ?? 1) * (1 - (1 - DUCK_FX) * vozEn(fGlobal));
 
 /** la música ya viene cortada en el giro (musica.wav); aquí solo su nivel bajo la voz */
-export const MUSICA_BASE = 0.13;
+export const MUSICA_BASE = 0.165;
 export const volumenMusica = (f: number, total: number, base = MUSICA_BASE) => {
 	const salida = Math.min(1, Math.max(0, (total - f) / 12));
 	return base * salida * (1 - 0.35 * vozEn(f));
