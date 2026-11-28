@@ -54,7 +54,7 @@ En los próximos ángulos: si hay pocos BOFU, agregar BOFU extra igual (guiones 
 | ✓ | GEO-TOFU-A2-04 (hecho) | Podcast | 39 s | Black Friday | Podcast: WAN 3.0 con audio nativo, una toma larga por persona y su plano solo cuando habla (ref. `pipeline/build_a105.py`; se puede reutilizar `kit/personajes/podcast/`). |
 | ✓ | GEO-MOFU-A2-05 (hecho) | Diario de 14 días | 41 s | Black Friday | Diario 14 días: la misma persona y la misma voz en los 14 días del video. |
 | ✓ | GEO-MOFU-A2-06 (hecho) | Comparación piedra vs frasco | 32 s | Combo 2x para regalar | Comparación: frascos genéricos sin marca. |
-| 5 | GEO-BOFU-A2-07 | UGC con avatar IA | 21 s | Combo 2x para regalar | UGC: voz en off storytime, la avatar no mueve los labios (ref. `pipeline/build_a101_v2.py`). |
+| ✓ | GEO-BOFU-A2-07 (hecho) | UGC con avatar IA | 18-24 s | Combo 2x para regalar | UGC: voz en off storytime, la avatar no mueve los labios (ref. `pipeline/build_a101_v2.py`). |
 - **Voces sugeridas:** Callirrhoe (M) y Orus (H)
 
 ## Lote 4

@@ -21,7 +21,7 @@ Los personajes pueden cambiar entre videos; dentro de un video cada personaje co
 | Narrador demo de producto (H), solo manos | Orus | demo cercano y seguro, ritmo ágil | A1-09 |
 | Sara, avatar UGC (M, ~28, Medellín) · ref. `personajes/sara/sara_ref.png` | Despina | storytime sincera, como contándole a una amiga | A1-10 |
 | Narrador faceless/motion (H) | Iapetus | explicativo, claro, ritmo ágil | A1-11 |
-| Mariana, diario selfie (M, ~26, Cali) · ref. `personajes/mariana/mariana_ref.png` | Callirrhoe | diario en voz en off, sincera, cálida y un poco divertida | A2-05 |
+| Mariana, diario selfie (M, ~26, Cali) · ref. `personajes/mariana/mariana_ref.png` | Callirrhoe (A2-05 lite; A2-07 gemini-3.8-flash-tts completo) | diario en voz en off, sincera, cálida y un poco divertida; coqueta y cómplice en el A2-07 | A2-05, A2-07 |
 | Natalia, comparación (M, ~32, Bogotá) · ref. `personajes/natalia/natalia_ref.png` | Aoede | segura, clara y cercana, como una amiga que explica algo práctico | A2-06 |
 | Presentadora del ranking (M, ~34) · `personajes/ranking/set_presentadora.png` | voz nativa WAN 3.0 (3 tomas, tono igualado a 225 Hz) | podcast, opinión sincera y expresiva | A3-08 |
 
