@@ -1,0 +1,94 @@
+{
+ "a3_ha": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a220a6-b3bc-7ec2-9516-dfeb694583a2/3a399654-4b1b-4e42-8635-2c8d6c6071d0.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic smartphone photo, top-down view into an open beige leather handbag on a bed: a plain generic white roll-on deodorant bottle with NO brand, NO logo, NO text and NO label lies tipped over inside the bag with its cap off, and a sticky clear liquid has spilled over a lipstick, a compact powder and a small makeup bag; a woman's hands (light-brown skin) hold the bag open, frustrated. The upper 30% of the frame is the plain bedspread. No faces, no text, no watermark."
+  }
+ },
+ "a3_hc": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a220a6-b506-7805-bfbe-e33065036be0/257e9be0-fc80-4882-b849-d80c67e8fa7a.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic smartphone photo of a cozy Colombian living room at Christmas (decorated tree with warm lights blurred behind): on a wooden table, the GEODA deodorant stick stands next to a small open kraft gift box with red ribbon and tissue paper; a hand places a gift tag next to it. The GEODA deodorant stick is exactly like the product references (white tube, clear cap, translucent white alum crystal on top) and its label (Desodorante, GEODA, 100% NATURAL, EFECTIVO Y SEGURO, 24h) faces the camera, upright and sharp. The upper 35% of the frame is the soft blurred room. No faces, no text on the tag, no watermark.",
+   "image_urls": [
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/00cb1085-fa0c-4a03-a446-05649f4e916e.jpeg",
+    "https://d3snorpfx4xhv8.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/6f52cc8c-3f5d-49ad-a82f-8974d41b2c71.jpeg"
+   ]
+  }
+ },
+ "a3_hd": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a220a6-b64d-74e0-afa0-f680c1db899e/1840323e-3c6d-4a3d-9464-1e510962d691.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "Vertical 9:16 realistic smartphone photo, top-down on a white kitchen table: a man's hands (light-brown skin) type on a simple calculator next to a long row of six empty plain generic white deodorant bottles with NO brand, NO logo, NO text, and a few crumpled supermarket receipts. Soft daylight. The upper 30% of the frame is plain white table. No faces, no readable text, no watermark."
+  }
+ },
+ "k_a3_ha": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a220a7-6224-72f6-8d40-514b98ef0a8a/c38d6b43-5515-4283-8943-f7dea769b1f9.mp4"
+  ],
+  "body": {
+   "prompt": "The hands lift the tipped-over roll-on bottle out of the bag; sticky liquid drips from it onto the makeup; the hands shake it with frustration. Gentle handheld motion. The bottle stays plain white with no text. No faces ever enter the frame, only hands. Realistic smartphone video.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a220a6-b3bc-7ec2-9516-dfeb694583a2/3a399654-4b1b-4e42-8635-2c8d6c6071d0.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "k_a3_hc": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a220a7-6383-7f7e-a947-f08c8a27552d/de74d452-d383-4024-8327-b4e10f27d2db.mp4"
+  ],
+  "body": {
+   "prompt": "The hand places the gift tag next to the gift box and gently pushes the GEODA stick a little closer to the box; the Christmas tree lights twinkle softly in the background. Static camera. The GEODA stick keeps exactly the same shape and label and does not rotate. No faces ever enter the frame, only hands. Realistic smartphone video.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a220a6-b506-7805-bfbe-e33065036be0/257e9be0-fc80-4882-b849-d80c67e8fa7a.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "k_a3_hd": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a220a7-64c3-7863-b673-9409ed4ae2e3/9fe8c532-b91b-4b91-a4fa-04514287abbf.mp4"
+  ],
+  "body": {
+   "prompt": "The fingers type quickly on the calculator, then the man taps the row of empty bottles one by one with his finger as if counting them. Static top-down camera. The bottles stay plain white with no text. No faces ever enter the frame, only hands. Realistic smartphone video.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a220a6-b64d-74e0-afa0-f680c1db899e/1840323e-3c6d-4a3d-9464-1e510962d691.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "reutilizado": [
+  "hf/k_macro_0.mp4 (hook B, del A1-02)",
+  "hf/k_c_b3_0.mp4 (frasco vacío, A2-06)",
+  "hf/c_b1_0.png (frasco, fondo de las nubes, A2-06)",
+  "kit/broll/k_tapa_0.mp4 al revés (revela la piedra)",
+  "hf/k_a9_b2_0.mp4 (piedra a contraluz, A1-09)",
+  "kit/broll/k_grifo_m_0.mp4 y k_brazo_seco_flip_0.mp4 (mojar y pasar)",
+  "hf/u_bed_0.png (cama del rebote, A2-08)",
+  "a107/tmp/mg_b11.mp4 (cierre K7, A1-07)",
+  "a202/tmp/xmas_ec_bow.mp4 (cierre K2, A2-02)"
+ ],
+ "costo_usd": {
+  "imagenes_3": 0.16,
+  "kling_3x5s": 1.07,
+  "total": 1.23
+ }
+}

@@ -25,6 +25,7 @@ Los personajes pueden cambiar entre videos; dentro de un video cada personaje co
 | Natalia, comparación (M, ~32, Bogotá) · ref. `personajes/natalia/natalia_ref.png` | Aoede | segura, clara y cercana, como una amiga que explica algo práctico | A2-06 |
 | Presentadora del ranking (M, ~34) · `personajes/ranking/set_presentadora.png` | voz nativa WAN 3.0 (3 tomas, tono igualado a 225 Hz) | podcast, opinión sincera y expresiva | A3-08 |
 | Valentina, unboxing solo manos (M, ~29, Bogotá) | Autonoe (gemini-3.8-flash-tts) | emocionada y cómplice, susurra al abrir | A2-08 |
+| Andrés, narrador de comparación (H, ~31, Medellín) | Enceladus (gemini-3.1-flash-tts-preview) | cercano, humor seco, fastidiado con el frasco y entusiasmado con la piedra | A3-01 |
 
 Cada lote tiene dos voces sugeridas en LOTES.md (una M y una H).
 Agregar aquí cada personaje nuevo (y su voz) al crearlo, para que otros videos lo repitan igual.

@@ -153,7 +153,9 @@ El montador (`pipeline/builder.py`) ya trae estas reglas por defecto.
     preguntas que suben, pausas de suspenso, titubeos ("mmm"), risitas y emoción cuando toca. Cómo:
     - Gemini TTS **gemini-3.8-flash-tts** (no la versión lite) con un perfil de director que describe a la persona y pide
       expresividad concreta; puntuación expresiva en el guion ("Mmm...", "¿sí?", "¡Diez de diez!"); todas las frases del
-      personaje en UNA sola toma.
+      personaje en UNA sola toma. Si la cuota diaria del 3.8 se agotó, usar gemini-3.1-flash-tts-preview (también completo),
+      nunca la versión lite. Optimizar costos: reutilizar clips ya pagados de otros videos y animaciones locales; generar solo
+      lo que no existe (normalmente los hooks).
     - Prohibido cambiar el tono (rubberband) o acelerar la voz para cuadrar duración: se corrigen las pausas largas con
       cortes y, si sobra tiempo, se recorta guion. Las voces nativas de WAN 3.0 (generadas con el video) sonaron robóticas: no usarlas.
     - Para que la persona hable a cámara: la voz de TTS se sube como audio y se manda a **alibaba/wan-3.0/reference-to-video**
