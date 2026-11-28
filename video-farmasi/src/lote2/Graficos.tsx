@@ -541,3 +541,35 @@ export const PeliculaAntigua: React.FC<{ src: string; t0: number; t1: number; es
     </AbsoluteFill>
   );
 };
+
+// Vídeos de fondo en la mitad superior, detrás de la persona (que va recortada en otra capa por encima),
+// con desvanecido hacia abajo y fundidos cortos entre clips.
+export type ClipFondo = { src: string; desde: number; hasta: number };
+export const FondosArriba: React.FC<{ clips: ClipFondo[]; alto?: number; fundido?: number }> = ({ clips, alto = 1150, fundido = 0.15 }) => {
+  const { t, fps } = useT();
+  const ini = clips[0].desde;
+  const fin = clips[clips.length - 1].hasta;
+  if (t < ini - 0.02 || t > fin + 0.02) return null;
+  const banda = interpolate(t, [ini, ini + 0.25], [0, 1], { ...cl, easing: eOut });
+  return (
+    <div
+      style={{
+        position: "absolute", left: 0, top: 0, width: 1080, height: alto, opacity: banda,
+        WebkitMaskImage: "linear-gradient(to bottom, #000 0%, #000 52%, rgba(0,0,0,.55) 72%, transparent 100%)",
+        maskImage: "linear-gradient(to bottom, #000 0%, #000 52%, rgba(0,0,0,.55) 72%, transparent 100%)",
+      }}
+    >
+      {clips.map((c, i) => {
+        const op = interpolate(t, [c.desde, c.desde + fundido], [0, 1], cl);
+        if (t < c.desde - 0.02 || t > c.hasta + fundido + 0.02) return null;
+        return (
+          <AbsoluteFill key={i} style={{ opacity: i === 0 ? 1 : op }}>
+            <Sequence from={Math.round(c.desde * fps)} durationInFrames={Math.round((c.hasta - c.desde + fundido + 0.1) * fps)} layout="none">
+              <Video src={staticFile(c.src)} muted style={{ width: "100%", height: "100%", objectFit: "cover", filter: "brightness(1.03) saturate(0.95)" }} />
+            </Sequence>
+          </AbsoluteFill>
+        );
+      })}
+    </div>
+  );
+};

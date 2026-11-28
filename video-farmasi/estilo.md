@@ -298,3 +298,7 @@ Calibrado escribiendo "If your defination of / success" con cada combinación ju
 ### Corrección de la clienta (lote 2 · vídeo 2, v5)
 - En el gráfico de lo que le llegó: **fotos reales de los productos (no iconos)** y título genérico **"Skincare"** (no "Línea Aqua": un producto es de Aqua y dos de Caléndula). Los nombres en pantalla deben corresponder al producto real de la tienda (Gel limpiador Aqua, Tónico de caléndula, Crema facial de caléndula).
 - Para mostrar productos en un motion graphic: **fichas grandes en fila** (foto del producto sobre blanco + nombre debajo), no miniaturas dentro de una lista.
+
+### Corrección de la clienta (lote 2 · vídeo 3, v5)
+- **Fondos de vídeo detrás de la persona** (en vez de un corte de motion graphics) cuando enumera acciones: clips de b-roll en la **mitad superior**, detrás de ella, con **desvanecido hacia abajo** (opaco hasta ~52 %, fuera al 100 % de una banda de 1150 px) y fundidos cortos (0,15 s) entre clips; cambian al empezar cada frase. La persona va recortada con RVM (`scripts/recortar_persona.py`) en una capa encima, con el mismo encuadre que el A-roll, para que capas y máscaras encajen. Referencia: chica con playa detrás que se funde en la habitación.
+- Ejemplo: "no me voy a tinturar… plancha… ni secador" → tinte (Mixkit 16979), plancha (Mixkit 17033), secador (Mixkit 33501).

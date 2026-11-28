@@ -1,11 +1,11 @@
 import React from "react";
 import { Audio } from "@remotion/media";
-import { AbsoluteFill, interpolate, Sequence, staticFile, useVideoConfig } from "remotion";
+import { AbsoluteFill, interpolate, Sequence, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
 import "./fuentes";
 import datos from "./datos/v3.json";
 import { Subtitulos2, B2 } from "./Subtitulos2";
 import { ARollL2, DegradadoTexto, Segmento, Chip } from "./Piezas";
-import { CabelloMG, CorteMG, ListaMG, PanelBarra, Sello, TituloMG } from "./Graficos";
+import { CabelloMG, CorteMG, FondosArriba, PanelBarra, TituloMG } from "./Graficos";
 
 // Vídeo 3 del lote 2 · línea de reparación intensiva para el cabello
 // Correcciones de la clienta: sin emojis, nada sobre la cara, con motion graphics y el vídeo termina cuando ella
@@ -16,7 +16,15 @@ const finSeg = (i: number) => SEG[i].editStart + SEG[i].dur;
 export const V3_CIERRE = 0;
 export const V3_DURACION = datos.duracionS + V3_CIERRE;
 
-const MG_PROMESAS: [number, number] = [A.promesa.s - 0.1, A.mentira.e + 0.1];
+// Gancho (corrección de la clienta): en vez del gráfico, vídeos de tinte, plancha y secador detrás de ella en la
+// mitad de arriba, con desvanecido; cambian cuando nombra cada cosa.
+const B = datos.bloques as B2[];
+const bloqueCon = (w: string) => B.find((b) => b.lineas.some((l) => l.p.some((p) => p.t.toLowerCase().includes(w))))!.desde;
+const FONDOS = [
+  { src: "lote2/broll/v3_tinte.mp4", desde: bloqueCon("tinturar"), hasta: bloqueCon("plancha") },
+  { src: "lote2/broll/v3_plancha.mp4", desde: bloqueCon("plancha"), hasta: bloqueCon("secador") },
+  { src: "lote2/broll/v3_secador.mp4", desde: bloqueCon("secador"), hasta: SEG[0].editStart + SEG[0].dur },
+];
 const MG_CABELLO: [number, number] = [A.rubio.s - 0.35, A.recuperando.e + 0.25];
 
 const GOLPES = [
@@ -26,12 +34,10 @@ const GOLPES = [
 
 type Sfx = { t: number; src: string; vol: number };
 const SFX: Sfx[] = [
-  { t: MG_PROMESAS[0] - 0.08, src: "swoosh_6.wav", vol: 0.24 },
-  { t: A.tinte.s, src: "pop.wav", vol: 0.24 },
-  { t: A.plancha.s, src: "pop.wav", vol: 0.24 },
-  { t: A.secador.s, src: "pop.wav", vol: 0.24 },
-  { t: A.mentira.s - 0.03, src: "error.wav", vol: 0.2 },
-  { t: MG_PROMESAS[1] - 0.05, src: "whip.wav", vol: 0.24 },
+  { t: FONDOS[0].desde - 0.05, src: "swoosh_6.wav", vol: 0.2 },
+  { t: FONDOS[1].desde - 0.05, src: "swoosh_7.wav", vol: 0.18 },
+  { t: FONDOS[2].desde - 0.05, src: "swoosh_4.wav", vol: 0.18 },
+  { t: A.mentira.s - 0.03, src: "error.wav", vol: 0.18 },
   { t: A.farmasi.s, src: "swoosh_std.wav", vol: 0.18 },
   { t: A.norecomiendo.s, src: "pop.wav", vol: 0.22 },
   { t: A.reales.s, src: "acierto.wav", vol: 0.15 },
@@ -42,37 +48,26 @@ const SFX: Sfx[] = [
 
 export const V3: React.FC = () => {
   const { fps } = useVideoConfig();
+  const frame = useCurrentFrame();
   const total = V3_DURACION;
   const musica = (f: number) =>
     interpolate(f / fps, [0, 0.4, total - 0.7, total], [0, 0.08, 0.08, 0], {
       extrapolateLeft: "clamp",
       extrapolateRight: "clamp",
     });
-  const m = A.mentira.s;
   return (
     <AbsoluteFill style={{ backgroundColor: "#000" }}>
       <ARollL2 src="lote2/edit/v3_aroll.mp4" segmentos={SEG} golpes={GOLPES} luz={1.03} />
+      {/* fondos detrás de ella + la misma toma recortada (solo la persona) encima, con el mismo encuadre */}
+      <FondosArriba clips={FONDOS} />
+      {frame / fps < SEG[0].editStart + SEG[0].dur ? <ARollL2 src="lote2/edit/v3_persona_gancho.webm" segmentos={SEG} golpes={GOLPES} luz={1.03} /> : null}
       <DegradadoTexto fuerza={0.5} />
 
       <Chip texto="No se los recomiendo, se los muestro" t={A.norecomiendo.s} hasta={A.norecomiendo.s + 2.4} x={540} y={290} tam={40} />
       {/* panel en la zona libre (a la derecha de la cara) mientras enseña los productos */}
       <PanelBarra titulo="Reparación intensiva" etiqueta="Reparación" t0={A.reparacion.s - 0.35} t1={finSeg(8) - 0.05} tLlenar={[A.reparacion.s, A.intensiva.e + 0.1]} x={850} y={240} w={380} />
 
-      <Subtitulos2 bloques={datos.bloques as B2[]} sombraFuerte ocultar={[MG_PROMESAS, MG_CABELLO]} />
-
-      {/* MG 1 · las promesas que siempre rompemos */}
-      <CorteMG desde={MG_PROMESAS[0]} hasta={MG_PROMESAS[1]}>
-        <TituloMG texto="Lo que decimos" sub="Por más que digamos…" t0={MG_PROMESAS[0]} y={380} tam={112} />
-        <ListaMG
-          y={720}
-          items={[
-            { texto: "No me vuelvo a tinturar", t: A.tinte.s - 0.1, icono: "tinte", tachar: m + 0.05 },
-            { texto: "Nada de plancha", t: A.plancha.s - 0.05, icono: "plancha", tachar: m + 0.12 },
-            { texto: "Ni secador", t: A.secador.s - 0.05, icono: "secador", tachar: m + 0.19 },
-          ]}
-        />
-        <Sello texto="¡MENTIRA!" t0={m} y={1320} />
-      </CorteMG>
+      <Subtitulos2 bloques={datos.bloques as B2[]} sombraFuerte ocultar={[MG_CABELLO]} />
 
       {/* MG 2 · del rubio a recuperar el cabello */}
       <CorteMG desde={MG_CABELLO[0]} hasta={MG_CABELLO[1]}>
