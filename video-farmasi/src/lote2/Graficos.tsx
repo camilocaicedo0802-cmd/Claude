@@ -545,7 +545,9 @@ export const PeliculaAntigua: React.FC<{ src: string; t0: number; t1: number; es
 // Vídeos de fondo en la mitad superior, detrás de la persona (que va recortada en otra capa por encima),
 // con desvanecido hacia abajo y fundidos cortos entre clips.
 export type ClipFondo = { src: string; desde: number; hasta: number };
-export const FondosArriba: React.FC<{ clips: ClipFondo[]; alto?: number; fundido?: number }> = ({ clips, alto = 1150, fundido = 0.15 }) => {
+// Ojo: <Video> de @remotion/media encaja el clip entero (no recorta como "cover"), así que los clips se exportan
+// exactamente al tamaño de la franja (1080 × 1200) para que lleguen al borde superior sin dejar línea.
+export const FondosArriba: React.FC<{ clips: ClipFondo[]; alto?: number; fundido?: number }> = ({ clips, alto = 1200, fundido = 0.15 }) => {
   const { t, fps } = useT();
   const ini = clips[0].desde;
   const fin = clips[clips.length - 1].hasta;
@@ -554,7 +556,7 @@ export const FondosArriba: React.FC<{ clips: ClipFondo[]; alto?: number; fundido
   return (
     <div
       style={{
-        position: "absolute", left: 0, top: 0, width: 1080, height: alto, opacity: banda,
+        position: "absolute", left: 0, top: -2, width: 1080, height: alto + 2, opacity: banda,
         WebkitMaskImage: "linear-gradient(to bottom, #000 0%, #000 52%, rgba(0,0,0,.55) 72%, transparent 100%)",
         maskImage: "linear-gradient(to bottom, #000 0%, #000 52%, rgba(0,0,0,.55) 72%, transparent 100%)",
       }}
