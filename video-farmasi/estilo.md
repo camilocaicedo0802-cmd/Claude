@@ -305,3 +305,7 @@ Calibrado escribiendo "If your defination of / success" con cada combinación ju
 
 ### Corrección de la clienta (lote 2 · vídeo 3, v6)
 - **El b-roll de fondo debe tocar el borde superior del vídeo**: se veía una línea arriba porque asomaba el A-roll por encima del clip. Causa: `<Video>` de `@remotion/media` encaja el clip entero (como *contain*) y no lo recorta como *cover*, así que un clip de 1080 × 1100 en una banda de 1150 px dejaba ~25 px vacíos. Regla: exportar cada clip de fondo **exactamente al tamaño de la banda** (1080 × 1200) y colocar la banda desde `top: -2` para no dejar ni un píxel. Comprobar siempre las primeras filas del fotograma (recorte de los 60 px de arriba) antes de entregar.
+
+### Correcciones de la clienta (lote 2 · vídeo 1, v9)
+- **Ofertas como botón**: cuando se habla de descuento, el gráfico es un **botón "50% OFF / de descuento"** que entra justo en la respuesta ("Pues claro"), no en la pregunta. Debe **resaltar**: rebote de entrada, la cifra sube de 10 a 50, un cursor lo pulsa (el botón se hunde sobre su canto, onda y chispas, clic + acierto) y después late con un brillo que lo recorre. Se queda toda la toma de la respuesta, al lado de la cara (nunca encima) y con el cursor en la esquina, sin tapar el texto del botón.
+- **Memes de café**: el chill guy era poco gracioso; se cambió por el **gato bailando con su café** (greenscreenmemes.com), más grande (≈620 × 713) en la zona libre. Preferir memes con movimiento y expresión clara antes que ilustraciones quietas.

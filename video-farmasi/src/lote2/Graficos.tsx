@@ -469,6 +469,70 @@ export const WhatsApp3D: React.FC<{ t0: number; t1: number; x: number; y: number
 };
 
 // Meme recortado (vídeo con transparencia) que entra con rebote y sale encogiendo; sin taparle la cara a nadie
+// Botón "50% OFF" (corrección de la clienta, vídeo 1): entra con rebote al decir "pues claro", un cursor lo pulsa
+// (el botón se hunde, sale una onda y unas chispas) y luego late con un brillo que lo recorre para que resalte.
+export const BotonDescuento: React.FC<{ t0: number; t1: number; x: number; y: number; tClic?: number; texto?: number; sub?: string; giro?: number }> = ({
+  t0, t1, x, y, tClic = 0.6, texto = 50, sub = "de descuento", giro = -4,
+}) => {
+  const { t, p, s, visible } = usePop(t0, t1);
+  if (!visible) return null;
+  const k = t - t0;
+  const W = 540;
+  const H = 210;
+  const kc = k - tClic;
+  const hunde = kc >= 0 ? interpolate(kc, [0, 0.07, 0.26], [0, 1, 0], { ...cl, easing: eOut }) : 0;
+  const late = kc > 0.35 ? 0.5 - 0.5 * Math.cos(((kc - 0.35) * Math.PI * 2) / 0.95) : 0;
+  const cifra = Math.round(interpolate(k, [0.05, 0.4], [10, texto], { ...cl, easing: eOut }));
+  const barrido = k > 0.3 ? ((k - 0.3) % 1.4) / 0.6 : -1; // 0→1 cruza el botón; >1 en reposo
+  const ondas = [0, 0.95, 1.9].map((d) => kc - d).filter((v) => v >= 0 && v < 0.75);
+  const cur = interpolate(k, [0.05, tClic], [0, 1], { ...cl, easing: eOut });
+  const curSal = interpolate(kc, [0.35, 0.6], [0, 1], cl);
+  const curPulsa = kc >= 0 ? interpolate(kc, [0, 0.06, 0.2], [0, 1, 0], cl) : 0;
+  const chispa = kc >= 0 ? interpolate(kc, [0, 0.4], [0, 1], { ...cl, easing: eOut }) : 0;
+  return (
+    <div style={{ position: "absolute", left: x - W / 2, top: y - H / 2, width: W, height: H, rotate: `${giro + (1 - p) * -10}deg`, opacity: Math.min(1, p * 1.6) * (1 - s), scale: String((0.5 + 0.5 * p) * (1 + 0.04 * late) * (1 - 0.2 * s)) }}>
+      {/* ondas al pulsar */}
+      {ondas.map((v, i) => (
+        <div key={i} style={{ position: "absolute", inset: 0, borderRadius: H / 2, border: `6px solid ${LILA}`, scale: String(1 + 0.4 * (v / 0.75)), opacity: 0.8 * (1 - v / 0.75) }} />
+      ))}
+      {/* chispas */}
+      {chispa > 0 && chispa < 1
+        ? Array.from({ length: 12 }).map((_, i) => {
+            const a = (i / 12) * Math.PI * 2;
+            const r0 = 1 + 0.12 * chispa;
+            const cx = W / 2 + Math.cos(a) * (W / 2) * r0 * 1.02;
+            const cy = H / 2 + Math.sin(a) * (H / 2) * r0 * 1.25;
+            return <div key={i} style={{ position: "absolute", left: cx - 4, top: cy - 16, width: 8, height: 32 * (1 - chispa) + 6, borderRadius: 4, background: i % 2 ? "#fff" : LILA, rotate: `${(a * 180) / Math.PI + 90}deg`, opacity: 1 - chispa }} />;
+          })
+        : null}
+      {/* canto inferior (da volumen; el botón baja hacia él al pulsarlo) */}
+      <div style={{ position: "absolute", left: 0, right: 0, top: 14, height: H, borderRadius: H / 2, background: "#4C1D95", boxShadow: `0 24px 44px rgba(30,8,70,.45), 0 0 ${46 + 34 * late}px rgba(179,139,255,${0.5 + 0.3 * late})` }} />
+      <div
+        style={{
+          position: "absolute", left: 0, right: 0, top: 12 * hunde, height: H, borderRadius: H / 2, overflow: "hidden",
+          background: "linear-gradient(180deg, #CDB0FF 0%, #A77BFF 42%, #7C3AED 100%)", boxShadow: "inset 0 0 0 4px rgba(255,255,255,.6), inset 0 -10px 22px rgba(60,10,140,.35)",
+          display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
+        }}
+      >
+        <div style={{ position: "absolute", left: 18, right: 18, top: 8, height: H * 0.42, borderRadius: H, background: "linear-gradient(180deg, rgba(255,255,255,.5), rgba(255,255,255,0))" }} />
+        {barrido >= 0 && barrido <= 1 ? (
+          <div style={{ position: "absolute", top: -40, bottom: -40, width: 110, left: -160 + barrido * (W + 220), rotate: "18deg", background: "linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,.55), rgba(255,255,255,0))" }} />
+        ) : null}
+        <div style={{ position: "relative", fontFamily: HN, fontWeight: 800, fontSize: 118, letterSpacing: "-0.045em", lineHeight: 0.9, color: "#fff", fontVariantNumeric: "tabular-nums", textShadow: "0 5px 0 rgba(76,29,149,.45)", whiteSpace: "nowrap" }}>
+          {cifra}% OFF
+        </div>
+        <div style={{ position: "relative", marginTop: 6, fontFamily: HN, fontWeight: 700, fontSize: 40, letterSpacing: "-0.02em", color: "#fff", opacity: 0.96, whiteSpace: "nowrap" }}>{sub}</div>
+      </div>
+      {/* cursor que pulsa el botón */}
+      {curSal < 1 ? (
+        <svg width={96} height={120} viewBox="-2 -2 28 38" style={{ position: "absolute", left: W * 0.85 + (1 - cur) * 200, top: H * 0.7 + (1 - cur) * 240 + 6 * curPulsa, opacity: Math.min(1, cur * 3) * (1 - curSal), scale: String(1 - 0.12 * curPulsa), transformOrigin: "0 0", filter: "drop-shadow(0 6px 10px rgba(0,0,0,.4))" }}>
+          <path d="M0 0 L0 30 L8 23 L13 35 L18 33 L13 21 L23 21 Z" fill="#fff" stroke="#1B1030" strokeWidth={1.8} strokeLinejoin="round" />
+        </svg>
+      ) : null}
+    </div>
+  );
+};
+
 export const MemeRecorte: React.FC<{ src: string; t0: number; dur: number; x: number; y: number; ancho: number; alto: number; giro?: number; bucle?: boolean }> = ({ src, t0, dur, x, y, ancho, alto, giro = 0, bucle = false }) => {
   const { t, fps } = useT();
   if (t < t0 - 0.02 || t > t0 + dur + 0.02) return null;

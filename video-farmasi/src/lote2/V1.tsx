@@ -5,7 +5,7 @@ import "./fuentes";
 import datos from "./datos/v1.json";
 import { Subtitulos2, B2 } from "./Subtitulos2";
 import { ARollL2, CierreFoto, DegradadoTexto, Segmento, TarjetaFoto, Chip } from "./Piezas";
-import { ContadorAnios, Destellos, FlujoIconos, LogoPlaca, MemeRecorte, PeliculaAntigua, Pegatina, Tragamonedas, VisorREC, WhatsApp3D } from "./Graficos";
+import { BotonDescuento, ContadorAnios, Destellos, FlujoIconos, LogoPlaca, MemeRecorte, PeliculaAntigua, Tragamonedas, VisorREC, WhatsApp3D } from "./Graficos";
 
 // Vídeo 1 del lote 2 · sketch "Bienvenida al equipo" (Chiqui y Gordi)
 // Correcciones de la clienta: sin emojis, nada sobre las caras, más recursos de humor y sin etiquetas de personaje.
@@ -16,6 +16,15 @@ const ini = (i: number) => SEG[i].editStart;
 const finSeg = (i: number) => SEG[i].editStart + SEG[i].dur;
 export const V1_CIERRE = 2.7;
 export const V1_DURACION = datos.duracionS + V1_CIERRE;
+const B = datos.bloques as B2[];
+// tiempo de una palabra dicha (a partir de cierto segundo), sacado de los subtítulos
+const palabra = (w: string, desde = 0) => {
+  for (const b of B) for (const l of b.lineas) for (const q of l.p) if (q.s >= desde && q.t.toLowerCase().replace(/[¿?¡!.,]/g, "") === w) return q.s;
+  throw new Error(`palabra no encontrada: ${w}`);
+};
+// "¿Y yo tengo descuento?" → "Pues claro": botón 50% OFF (corrección de la clienta) en toda la respuesta de Chiqui
+const BOTON: [number, number] = [palabra("claro", A.descuento.e) - 0.05, finSeg(10) - 0.15];
+const CLIC = 0.6;
 
 const GOLPES = [
   { t: A.chiste.s, fuerza: 0.1, dur: 0.6 },
@@ -46,7 +55,9 @@ const SFX: Sfx[] = [
   { t: A.link.s, src: "pop.wav", vol: 0.24 },
   { t: A.compra.s, src: "pop.wav", vol: 0.24 },
   { t: A.casa.s, src: "pop.wav", vol: 0.24 },
-  { t: A.descuento.s, src: "pop.wav", vol: 0.28 },
+  { t: BOTON[0], src: "pop.wav", vol: 0.28 },
+  { t: BOTON[0] + CLIC, src: "click_4.wav", vol: 0.45 },
+  { t: BOTON[0] + CLIC + 0.03, src: "acierto.wav", vol: 0.14 },
   { t: A.grabar.s - 0.6, src: "shutter.wav", vol: 0.3 },
   { t: A.agencia.s - 0.05, src: "swoosh_std.wav", vol: 0.24 },
   { t: A.ganar.s - 1.2, src: "contador.wav", vol: 0.22 },
@@ -106,7 +117,8 @@ export const V1: React.FC = () => {
         hasta={finSeg(8) - 0.15}
         y={790}
       />
-      <Pegatina texto="% descuento" sub="en tus compras" t0={A.descuento.s} t1={finSeg(9) - 0.05} x={790} y={520} giro={-6} />
+      {/* botón 50% OFF a la izquierda de Chiqui (su cara queda a la derecha del encuadre) */}
+      <BotonDescuento t0={BOTON[0]} t1={BOTON[1]} tClic={CLIC} x={300} y={790} />
       <VisorREC t0={A.grabar.s - 0.6} t1={finSeg(11) - 0.05} />
       {/* logo de la agencia (enviado por la clienta) sobre las cabezas, entre las dos */}
       <LogoPlaca src="lote2/img/logo305.png" t0={A.agencia.s - 0.05} t1={finSeg(14) - 0.1} x={540} y={120} ancho={300} />
@@ -114,8 +126,8 @@ export const V1: React.FC = () => {
       <Chip texto="Escríbeme al WhatsApp" t={A.whatsapp.s - 0.05} hasta={finSeg(19) - 0.05} x={540} y={360} color="#25D366" />
       {/* logo de WhatsApp en 3D a su lado (la cara de Chiqui está a la derecha del encuadre) */}
       <WhatsApp3D t0={A.whatsapp.s - 0.1} t1={finSeg(19) - 0.05} x={270} y={720} tam={280} />
-      {/* "con que me acompañes al cafecito…": no es verdad → meme del chill guy tomando café (zona libre a la izquierda) */}
-      <MemeRecorte src="lote2/memes/chillguy.webm" t0={A.cafe.s - 0.1} dur={finSeg(22) - A.cafe.s + 0.02} x={250} y={400} ancho={420} alto={445} giro={-3} bucle />
+      {/* "con que me acompañes al cafecito…": no es verdad → gato bailando con su café (zona libre a la izquierda) */}
+      <MemeRecorte src="lote2/memes/gato_cafe.webm" t0={A.cafe.s - 0.1} dur={finSeg(22) - A.cafe.s + 0.02} x={300} y={290} ancho={620} alto={713} giro={-3} bucle />
 
       <Subtitulos2 bloques={datos.bloques as B2[]} />
 
