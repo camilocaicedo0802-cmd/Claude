@@ -1,0 +1,183 @@
+{
+ "cl_ref": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a220c6-5491-7172-9057-d597b8f38caa/5af2cc2d-1626-4c43-86fe-ee7f89dd202d.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "stop-motion claymation, plasticine texture with visible fingerprints, handmade miniature set, soft studio light, vertical 9:16. A cozy miniature clay bathroom set: a light mint-green clay wall, a small wooden clay shelf, and a little grey clay trash can with a pedal on the floor. On the shelf stand two characters made of plasticine: on the left a glossy pink generic deodorant bottle with a white cap, NO brand and NO text, with big cute cartoon eyes and a small mouth; on the right a chunky translucent white crystal stone made of clay, slightly faceted and pearly, with two big friendly cartoon eyes and NO mouth. Both characters in the middle of the frame; the upper 35% of the frame is the plain mint clay wall. No text, no logos."
+  }
+ },
+ "cl_ha": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a220ca-8bc9-7971-aa33-ddd085cca254/cc5fb33b-6e3b-493c-80f4-c12145e81964.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "stop-motion claymation, plasticine texture with visible fingerprints, handmade miniature set, soft studio light, vertical 9:16, same mint-green clay bathroom set, same characters and colors as the reference image (glossy pink clay deodorant bottle with a white cap, cartoon eyes and small mouth, NO brand, NO text; chunky translucent white crystal clay stone with two big cartoon eyes and NO mouth). Below the wooden shelf, the little grey clay trash can is overflowing with many empty, deflated pink clay bottles with sad closed eyes, piled high and spilling onto the floor; on the shelf above, the white crystal clay stone sits calmly alone, looking down at the pile. The upper 30% of the frame is the plain mint wall. No text.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a220c6-5491-7172-9057-d597b8f38caa/5af2cc2d-1626-4c43-86fe-ee7f89dd202d.png"
+   ]
+  }
+ },
+ "cl_hb": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a220ca-8d21-7432-8425-ddcbf0c3b901/dd72b9f7-ccf2-425d-b2af-510cf790554f.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "stop-motion claymation, plasticine texture with visible fingerprints, handmade miniature set, soft studio light, vertical 9:16, same mint-green clay bathroom set, same characters and colors as the reference image (glossy pink clay deodorant bottle with a white cap, cartoon eyes and small mouth, NO brand, NO text; chunky translucent white crystal clay stone with two big cartoon eyes and NO mouth). On a long wooden clay table, a straight row of ten small pink clay bottles with worried faces stands like dominoes, tilting and starting to fall one after another toward the right end, where the white crystal clay stone stands firmly, unbothered. Side view, the whole row visible across the middle of the frame. The upper 35% of the frame is the plain mint wall. No text.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a220c6-5491-7172-9057-d597b8f38caa/5af2cc2d-1626-4c43-86fe-ee7f89dd202d.png"
+   ]
+  }
+ },
+ "cl_hc": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a220ca-8e4e-788a-932b-2f73b8dd08df/b16cc1c0-34b3-4849-b788-4a20a09c2843.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "stop-motion claymation, plasticine texture with visible fingerprints, handmade miniature set, soft studio light, vertical 9:16, same mint-green clay bathroom set, same characters and colors as the reference image (glossy pink clay deodorant bottle with a white cap, cartoon eyes and small mouth, NO brand, NO text; chunky translucent white crystal clay stone with two big cartoon eyes and NO mouth). Christmas version of the set: a tiny clay Christmas tree with little lights on the left; in the center, an open red clay gift box with a big red clay bow, and the white crystal clay stone sitting inside the box, happy eyes, a tiny red clay bow on its top. The upper 35% of the frame is the plain mint wall with a small clay garland. No text.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a220c6-5491-7172-9057-d597b8f38caa/5af2cc2d-1626-4c43-86fe-ee7f89dd202d.png"
+   ]
+  }
+ },
+ "cl_hd": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a220ca-8f7b-7fd8-8c0a-680c96c1774c/f459b6c7-dadd-4ec7-a723-006580b9b95d.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "stop-motion claymation, plasticine texture with visible fingerprints, handmade miniature set, soft studio light, vertical 9:16, same mint-green clay bathroom set, same characters and colors as the reference image (glossy pink clay deodorant bottle with a white cap, cartoon eyes and small mouth, NO brand, NO text; chunky translucent white crystal clay stone with two big cartoon eyes and NO mouth). The white crystal clay stone stands proudly on top of a small clay winners podium with a gold clay medal around it; around the podium, a row of pink clay bottles lie knocked over with dizzy spiral eyes. The upper 35% of the frame is the plain mint wall. No text.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a220c6-5491-7172-9057-d597b8f38caa/5af2cc2d-1626-4c43-86fe-ee7f89dd202d.png"
+   ]
+  }
+ },
+ "cl_b56": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a220ca-90a8-72b6-b341-61a653ff1f08/cba0358c-b27d-4a4c-8db4-35fc10510039.png"
+  ],
+  "body": {
+   "resolution": "1k",
+   "aspect_ratio": "9:16",
+   "quality": "medium",
+   "enhance_prompt": false,
+   "prompt": "stop-motion claymation, plasticine texture with visible fingerprints, handmade miniature set, soft studio light, vertical 9:16, same mint-green clay bathroom set, same characters and colors as the reference image (glossy pink clay deodorant bottle with a white cap, cartoon eyes and small mouth, NO brand, NO text; chunky translucent white crystal clay stone with two big cartoon eyes and NO mouth). The white crystal clay stone sits alone and relaxed on the wooden shelf with its eyes half closed, three small clay musical notes floating next to it; on the mint wall behind it hangs a small clay tear-off wall calendar. The upper 30% of the frame is the plain mint wall above the calendar. No text, no readable numbers.",
+   "image_urls": [
+    "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a220c6-5491-7172-9057-d597b8f38caa/5af2cc2d-1626-4c43-86fe-ee7f89dd202d.png"
+   ]
+  }
+ },
+ "k_cl_ha": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a220cb-5c38-7090-b265-8e6047f16893/f1046583-a962-4f3b-bb4b-9aed5e56fdaf.mp4"
+  ],
+  "body": {
+   "prompt": "Two more empty pink clay bottles fall from above and bounce onto the overflowing pile in the trash can, while the white crystal stone on the shelf blinks calmly and tilts its head. Stop-motion claymation animation at 12 fps with slightly choppy handmade motion, static camera, the plasticine characters keep the same shapes and colors; the stone has no mouth. No text.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a220ca-8bc9-7971-aa33-ddd085cca254/cc5fb33b-6e3b-493c-80f4-c12145e81964.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "k_cl_hb": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a220cb-5d68-7564-8655-08df49c3253c/cc36709e-59c6-475c-aa04-bf9973340927.mp4"
+  ],
+  "body": {
+   "prompt": "The ten pink clay bottles fall one after another like dominoes toward the right; the last one bumps into the white crystal stone, which doesn't move at all and just blinks. Stop-motion claymation animation at 12 fps with slightly choppy handmade motion, static camera, the plasticine characters keep the same shapes and colors; the stone has no mouth. No text.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a220ca-8d21-7432-8425-ddcbf0c3b901/dd72b9f7-ccf2-425d-b2af-510cf790554f.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "k_cl_hc": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a220cb-5e9d-7b89-9308-c608b2db9d75/5964fb68-b098-4b1e-8393-5958ca8371b6.mp4"
+  ],
+  "body": {
+   "prompt": "The white crystal stone wiggles happily inside the red gift box, its little red bow bounces; the pink bottle next to it slowly deflates and droops; the tiny Christmas tree lights twinkle. Stop-motion claymation animation at 12 fps with slightly choppy handmade motion, static camera, the plasticine characters keep the same shapes and colors; the stone has no mouth. No text.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a220ca-8e4e-788a-932b-2f73b8dd08df/b16cc1c0-34b3-4849-b788-4a20a09c2843.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "k_cl_hd": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a220cb-5fc3-74d5-b45d-74f683b31fa4/5b4821f9-6b4c-48df-ae2a-98db8883ee41.mp4"
+  ],
+  "body": {
+   "prompt": "The white crystal stone bounces proudly on top of the podium and its gold medal swings; the knocked-over pink bottles below roll a little with dizzy spiral eyes. Stop-motion claymation animation at 12 fps with slightly choppy handmade motion, static camera, the plasticine characters keep the same shapes and colors; the stone has no mouth. No text.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a220ca-8f7b-7fd8-8c0a-680c96c1774c/f459b6c7-dadd-4ec7-a723-006580b9b95d.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "k_cl_b12": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a220cb-6102-78e7-a9d4-6292449ff6fa/c3798b25-ea7e-4e04-b904-0db27305014d.mp4"
+  ],
+  "body": {
+   "prompt": "First the pink clay bottle stands shiny and proud next to the stone for a moment; then it slowly shrinks and deflates, its eyes fill with tears and it starts crying, while the white crystal stone next to it stays exactly the same and just blinks. Stop-motion claymation animation at 12 fps with slightly choppy handmade motion, static camera, the plasticine characters keep the same shapes and colors; the stone has no mouth. No text.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a220c6-5491-7172-9057-d597b8f38caa/5af2cc2d-1626-4c43-86fe-ee7f89dd202d.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "k_cl_b3": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a220cb-6221-7c5c-8c96-7819545044ba/971cc104-6117-4dd0-bde0-e6047102d261.mp4"
+  ],
+  "body": {
+   "prompt": "The pink clay bottle hops off the shelf and jumps straight into the little trash can below; a new shiny pink clay bottle pops up onto the shelf in its place next to the stone, which just blinks. Stop-motion claymation animation at 12 fps with slightly choppy handmade motion, static camera, the plasticine characters keep the same shapes and colors; the stone has no mouth. No text.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a220c6-5491-7172-9057-d597b8f38caa/5af2cc2d-1626-4c43-86fe-ee7f89dd202d.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "k_cl_b56": {
+  "urls": [
+   "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a220cb-633e-7217-b72e-e1bf26dba91f/d8c2bc95-09a0-4360-b036-c8bdfe0cc486.mp4"
+  ],
+  "body": {
+   "prompt": "The calendar pages tear off and fly away one after another behind the stone; the white crystal stone sways calmly with its eyes half closed and the clay musical notes bob; at the end the stone opens its eyes, turns toward the camera and gives a big wink. Stop-motion claymation animation at 12 fps with slightly choppy handmade motion, static camera, the plasticine characters keep the same shapes and colors; the stone has no mouth. No text.",
+   "image_url": "https://d3u0tzju9qaucj.cloudfront.net/69681d2d-5b85-4720-aa21-b3d13867e79e/01a220ca-90a8-72b6-b341-61a653ff1f08/cba0358c-b27d-4a4c-8db4-35fc10510039.png",
+   "duration": 5,
+   "sound": "off",
+   "cfg_scale": 0.6
+  }
+ },
+ "reutilizado": [
+  "a301/tmp/m31_rebote.mp4 (GEODA real cae en la cama, A3-01)",
+  "a208/tmp/m8_cta_k3.mp4 (cierre K3, A2-08)",
+  "a202/tmp/xmas_ec_bow.mp4 (cierre K2, A2-02)"
+ ],
+ "costo_usd": {
+  "imagenes_6": 0.33,
+  "kling_7x5s": 2.5,
+  "total": 2.83
+ }
+}

@@ -26,6 +26,8 @@ Los personajes pueden cambiar entre videos; dentro de un video cada personaje co
 | Presentadora del ranking (M, ~34) · `personajes/ranking/set_presentadora.png` | voz nativa WAN 3.0 (3 tomas, tono igualado a 225 Hz) | podcast, opinión sincera y expresiva | A3-08 |
 | Valentina, unboxing solo manos (M, ~29, Bogotá) | Autonoe (gemini-3.8-flash-tts) | emocionada y cómplice, susurra al abrir | A2-08 |
 | Andrés, narrador de comparación (H, ~31, Medellín) | Enceladus (gemini-3.1-flash-tts-preview) | cercano, humor seco, fastidiado con el frasco y entusiasmado con la piedra | A3-01 |
+| Narradora de plastilina (M) | Achernar (gemini-3.1-flash-tts-preview) | cuento cómico, deadpan | A3-02 |
+| La piedra de plastilina (sin boca) · ref. `personajes/clay_piedra/set_ref.png` | Puck (gemini-3.8-flash-tts) | aguda, pícara y orgullosa | A3-02 |
 
 Cada lote tiene dos voces sugeridas en LOTES.md (una M y una H).
 Agregar aquí cada personaje nuevo (y su voz) al crearlo, para que otros videos lo repitan igual.
